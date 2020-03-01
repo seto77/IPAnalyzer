@@ -3,6 +3,7 @@
 
 references/
 IPAnalyzerSetup/
+*.exe
 
 # User-specific files
 *.suo

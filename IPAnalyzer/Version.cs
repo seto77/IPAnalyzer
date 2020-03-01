@@ -25,6 +25,7 @@ namespace IPAnalyzer
 
         static public string History =
             "History" +
+            "\r\n ver3.886(2020/02/28) Improved: Sacla XFEL option." +
             "\r\n ver3.885(2019/11/11) Fixed a minor bug on loading sequential image." +
             "\r\n ver3.884(2019/11/07) Fixed a minor bug on the ’Find parameter' function." +
             "\r\n ver3.881(2019/10/06) Fixed a minor bug on the ’Find parameter' function." +

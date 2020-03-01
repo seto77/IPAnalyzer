@@ -44,23 +44,23 @@ namespace IPAnalyzer
         {
             set
             {
-                if (SkipTextChangeEvent)
+                if (SkipEvent)
                 {
-                    numericalTextBoxCenterPositionX.Value = value.X;
-                    numericalTextBoxCenterPositionY.Value = value.Y;
+                    numericBoxCenterPositionX.Value = value.X;
+                    numericBoxCenterPositionY.Value = value.Y;
                 }
                 else
                 {
-                    SkipTextChangeEvent = true;
-                    numericalTextBoxCenterPositionX.Value = value.X;
-                    numericalTextBoxCenterPositionY.Value = value.Y;
-                    SkipTextChangeEvent = false;
-                    textBox_TextChanged(numericalTextBoxCenterPositionX, new EventArgs());
+                    SkipEvent = true;
+                    numericBoxCenterPositionX.Value = value.X;
+                    numericBoxCenterPositionY.Value = value.Y;
+                    SkipEvent = false;
+                    textBox_TextChanged(numericBoxCenterPositionX, new EventArgs());
                 }
             }
             get
             {
-                return new PointD(numericalTextBoxCenterPositionX.Value, numericalTextBoxCenterPositionY.Value);
+                return new PointD(numericBoxCenterPositionX.Value, numericBoxCenterPositionY.Value);
             }
         }
 
@@ -188,9 +188,9 @@ namespace IPAnalyzer
         private void checkBoxTiltCorrection_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxTiltCorrection.Checked)
-                numericalTextBoxTiltCorrectionPhi.Enabled = numericalTextBoxTiltCorrectionTau.Enabled = true;
+                numericBoxTiltCorrectionPhi.Enabled = numericBoxTiltCorrectionTau.Enabled = true;
             else
-                numericalTextBoxTiltCorrectionPhi.Enabled = numericalTextBoxTiltCorrectionTau.Enabled = false;
+                numericBoxTiltCorrectionPhi.Enabled = numericBoxTiltCorrectionTau.Enabled = false;
         }
 
         private void comboBoxRectangleDirection_SelectedIndexChanged(object sender, EventArgs e)
@@ -465,11 +465,11 @@ namespace IPAnalyzer
             numericBoxGandlfiRadius.Value = p.GandolfiRadius;
 
             CameraLength = p.CameraLength;
-            numericalTextBoxPixelSizeX.Value = p.PixelSizeX;
-            numericalTextBoxPixelSizeY.Value = p.PixelSizeY;
+            numericBoxPixelSizeX.Value = p.PixelSizeX;
+            numericBoxPixelSizeY.Value = p.PixelSizeY;
             numericalTextBoxPixelKsi.RadianValue = p.PixelKsi;
-            numericalTextBoxTiltCorrectionPhi.RadianValue = p.Phi;
-            numericalTextBoxTiltCorrectionTau.RadianValue = p.Tau;
+            numericBoxTiltCorrectionPhi.RadianValue = p.Phi;
+            numericBoxTiltCorrectionTau.RadianValue = p.Tau;
 
             waveLengthControl.WaveSource = p.WaveSource;
             waveLengthControl.XrayWaveSourceElementNumber = p.XrayWaveSourceElementNumber;
@@ -554,10 +554,10 @@ namespace IPAnalyzer
         }
 
         //テキストボックスが変更されたときの措置　
-        public bool SkipTextChangeEvent = false;
+        public bool SkipEvent = false;
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            if (SkipTextChangeEvent) return;
+            if (SkipEvent) return;
 
             formMain.IntegralArea_Changed(new object(), new EventArgs());
 
@@ -784,14 +784,18 @@ namespace IPAnalyzer
 
         private void saclaControl_ValueChanged(object sender, EventArgs e)
         {
-            numericalTextBoxTiltCorrectionTau.Value = saclaControl.TwoThetaDegree;
-            numericalTextBoxTiltCorrectionPhi.Value = 0;
-            numericalTextBoxPixelSizeX.Value = saclaControl.PixelSize;
-            numericalTextBoxPixelSizeY.Value = saclaControl.PixelSize;
+            numericBoxTiltCorrectionTau.Value = saclaControl.TauDegree;
+            numericBoxTiltCorrectionPhi.Value = saclaControl.PhiDegree;
+            numericBoxPixelSizeX.Value = saclaControl.PixelSize;
+            numericBoxPixelSizeY.Value = saclaControl.PixelSize;
 
-            numericalTextBoxCenterPositionX.Value = saclaControl.FootPoint.X;
-            numericalTextBoxCenterPositionY.Value = saclaControl.Distance * Math.Tan(saclaControl.TwoThetaRadian) / saclaControl.PixelSize + saclaControl.FootPoint.Y;
-            numericalTextBoxCameraLength.Value = saclaControl.Distance / Math.Cos(saclaControl.TwoThetaRadian);
+            //numericalTextBoxCenterPositionX.Value = saclaControl.FootPoint.X;
+            //numericalTextBoxCenterPositionY.Value = saclaControl.Distance * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize + saclaControl.FootPoint.Y;
+
+            numericBoxCenterPositionX.Value = saclaControl.Foot.X - saclaControl.CameraLength2 * Math.Sin(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize;
+            numericBoxCenterPositionY.Value = saclaControl.Foot.Y + saclaControl.CameraLength2 * Math.Cos(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize;
+
+            numericalTextBoxCameraLength.Value = saclaControl.CameraLength2 / Math.Cos(saclaControl.TauRadian);
             
         }
 

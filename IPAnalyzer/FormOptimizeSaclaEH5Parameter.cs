@@ -1,15 +1,11 @@
-﻿using System;
+﻿using Crystallography;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Crystallography;
-using System.Diagnostics;
-using Microsoft.Scripting.Hosting;
 
 namespace IPAnalyzer
 {
@@ -25,13 +21,13 @@ namespace IPAnalyzer
 
         public double PixX
         {
-            set { FormMain.FormProperty.numericalTextBoxPixelSizeX.Value = value; }
-            get { return FormMain.FormProperty.numericalTextBoxPixelSizeX.Value; }
+            set { FormMain.FormProperty.numericBoxPixelSizeX.Value = value; }
+            get { return FormMain.FormProperty.numericBoxPixelSizeX.Value; }
         }
         public double PixY
         {
-            set { FormMain.FormProperty.numericalTextBoxPixelSizeY.Value = value; }
-            get { return FormMain.FormProperty.numericalTextBoxPixelSizeY.Value; }
+            set { FormMain.FormProperty.numericBoxPixelSizeY.Value = value; }
+            get { return FormMain.FormProperty.numericBoxPixelSizeY.Value; }
         }
         public PointD Center
         {
@@ -39,17 +35,9 @@ namespace IPAnalyzer
             get { return FormMain.FormProperty.ImageCenter; }
         }
 
-        public double Phi
-        {
-            set { FormMain.FormProperty.numericalTextBoxTiltCorrectionPhi.Value = value; }
-            get { return FormMain.FormProperty.numericalTextBoxTiltCorrectionPhi.Value; }
-        }
+        public double Phi { set => FormMain.FormProperty.saclaControl.PhiDegree = value; get => FormMain.FormProperty.saclaControl.PhiDegree; }
 
-        public double Tau
-        {
-            set { FormMain.FormProperty.numericalTextBoxTiltCorrectionTau.Value = value; }
-            get { return FormMain.FormProperty.numericalTextBoxTiltCorrectionTau.Value; }
-        }
+        public double Tau { set => FormMain.FormProperty.saclaControl.TauDegree = value; get => FormMain.FormProperty.saclaControl.TauDegree; }
 
         public double Radius
         {
@@ -59,24 +47,19 @@ namespace IPAnalyzer
 
         public double Distance
         {
-            set { FormMain.FormProperty.saclaControl.Distance = value; }
-            get { return FormMain.FormProperty.saclaControl.Distance; }
+            set { FormMain.FormProperty.saclaControl.CameraLength2 = value; }
+            get { return FormMain.FormProperty.saclaControl.CameraLength2; }
         }
 
-        public double TwoTheta
+        public double FootX
         {
-            set { FormMain.FormProperty.saclaControl.TwoThetaDegree = value; }
-            get { return FormMain.FormProperty.saclaControl.TwoThetaDegree; }
+            set { FormMain.FormProperty.saclaControl.Foot = new PointD(value, FormMain.FormProperty.saclaControl.Foot.Y); }
+            get { return FormMain.FormProperty.saclaControl.Foot.X; }
         }
-        public double FootPointX
+        public double FootY
         {
-            set { FormMain.FormProperty.saclaControl.FootPoint = new PointD(value, FormMain.FormProperty.saclaControl.FootPoint.Y); }
-            get { return FormMain.FormProperty.saclaControl.FootPoint.X; }
-        }
-        public double FootPointY
-        {
-            set { FormMain.FormProperty.saclaControl.FootPoint = new PointD(FormMain.FormProperty.saclaControl.FootPoint.X, value); }
-            get { return FormMain.FormProperty.saclaControl.FootPoint.Y; }
+            set { FormMain.FormProperty.saclaControl.Foot = new PointD(FormMain.FormProperty.saclaControl.Foot.X, value); }
+            get { return FormMain.FormProperty.saclaControl.Foot.Y; }
         }
 
         public FormOptimizeSaclaEH5Parameter()
@@ -305,12 +288,12 @@ namespace IPAnalyzer
             if (crystal.Plane.Count == 0) return;
 
             //積分範囲を設定
-            bool[] originalSpots = new bool[Ring.IsOutsideOfIntegralProperty.Count];
-            originalSpots = Ring.IsSpots.ToArray();
+            bool[] originalSpots = Ring.IsSpots.ToArray();
 
             bool[] area = new bool[Ring.IsOutsideOfIntegralProperty.Count];
             for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
                 area[j] = true;
+            
             for (int i = 0; i < crystal.Plane.Count; i++)
             {
                 FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - 1.5;
@@ -328,102 +311,122 @@ namespace IPAnalyzer
             FormMain.Draw();
             Ring.SetMask(true, true, true);
             double distanceStep = (double)numericUpDownDistanceStep.Value;
-            double twoThetaStep = (double)numericUpDownTwoThetaStep.Value;
-            double footXStep = (double)numericUpDownFootPointXStep.Value, footYStep = (double)numericUpDownFootPointYStep.Value;
+            double tauStep = (double)numericUpDownTauStep.Value;
+            double phiStep = (double)numericUpDownPhiStep.Value;
+            double footXStep = (double)numericUpDownFootPointXStep.Value;
+            double footYStep = (double)numericUpDownFootPointYStep.Value;
 
             int distanceRange = checkBoxDistance.Checked ? (int)numericUpDownDistanceRange.Value : 0;
-            int twoThetaRange = checkBoxTwoTheta.Checked ? (int)numericUpDownTwoThetaRange.Value : 0;
+            int tauRange = checkBoxTwoTheta.Checked ? (int)numericUpDownTauRange.Value : 0;
+            int phiRange = checkBoxPhi.Checked ? (int)numericUpDownPhiRange.Value : 0;
             int footXRange = checkBoxFootX.Checked ? (int)numericUpDownFootPointXRange.Value : 0;
             int footYRange = checkBoxFootY.Checked ? (int)numericUpDownFootPointYRange.Value : 0;
 
             int cycle = (int)numericUpDownIteration.Value;
+            
 
             Stopwatch sw = new Stopwatch();
             sw.Start();
             long beforeTime = 0;
             int count = 0;
             SortedList<double, saclaValues> results = new SortedList<double, saclaValues>();
+
+            var renewalTime = 7;
+            void report(Profile profile, int n)
+            {
+                int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
+                double progress = (double)count / cycle / total;
+                toolStripStatusLabel1.Text = "  " + ((sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime).ToString("f1") + " ms / step.  "
+                    + (progress * 100).ToString("f2") + " % completed.  "
+                    + "Elappsed Time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.  "
+                    + "Wait about " + (sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress).ToString("f0") + " sec.";
+                textBox1.Text = "Cycle: " + n.ToString() + "\r\n";
+                textBox1.Text += "Current best values\r\n     Distance:\t" + results.Values[0].Distance + "\r\n     Phi:\t\t" + results.Values[0].Phi + "\r\n     Tau:\t\t" + results.Values[0].Tau
+                     + "\r\n     Foot X:\t" + results.Values[0].FootX + "\r\n     Foot Y:\t" + results.Values[0].FootY + "\r\n"
+                     + "Current steps: \r\n     Distance:\t" + distanceStep + "\r\n     Phi:\t\t" + phiStep + "\r\n     Tau:\t\t" + tauStep
+                     + "\r\n     Foot X:\t" + footXStep + "\r\n     Foot Y:\t" + footYStep + "\r\n";
+                if (results.Count > 4)
+                    textBox1.Text += "\r\n No.1: " + results.Keys[0].ToString() + "\r\n No.2: " + results.Keys[1].ToString()
+                        + "\r\n No.3: " + results.Keys[2].ToString() + "\r\n No.4: " + results.Keys[3].ToString();
+
+                beforeTime = sw.ElapsedMilliseconds;
+                toolStripProgressBar1.Value = (int)(progress * toolStripProgressBar1.Maximum);
+                drawGraph(profile, crystal.Plane);
+                Application.DoEvents();
+            }
+
             for (int n = 0; n < cycle; n++)
             {
-                FormMain.FormProperty.SkipTextChangeEvent = true;
+                
+                FormMain.FormProperty.SkipEvent = true;
 
-                saclaValues initialValue = new saclaValues(Distance, TwoTheta, FootPointX, FootPointY);
+                saclaValues initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY);
                 results = new SortedList<double, saclaValues>();
 
-                for (int param3 = -footXRange; param3 <= footXRange; param3++)
+                //PhiとFootX
+                for (int paramPhi = -phiRange; paramPhi <= phiRange; paramPhi++)
                 {
-                    FootPointX = initialValue.FootX + param3 * footXStep;
-                    count++;
-                    var values = new saclaValues(Distance, TwoTheta, FootPointX, FootPointY);
-                    if (!results.ContainsValue(values))
+                    Phi = initialValue.Phi + paramPhi * phiStep;
+                    for (int paramFootX = -footXRange; paramFootX <= footXRange; paramFootX++)
                     {
+                        FootX = initialValue.FootX + paramFootX * footXStep;
+                        count++;
+                        var values = new saclaValues(Distance, Phi, Tau, FootX, FootY);
                         FormMain.SetIntegralProperty();
                         Profile profile = Ring.GetProfile(Ring.IP);
                         Fitting(profile, crystal.Plane);
 
-                        double r = evaluatePeakHeight(profile, crystal.Plane);
-                        if (!results.ContainsKey(r))
-                            results.Add(r, new saclaValues(Distance, TwoTheta, FootPointX, FootPointY));
+                        double r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
+                        if (!results.ContainsKey(r) && !double.IsNaN(r))
+                            results.Add(r, values);
+
+                        if (count % renewalTime == 0)
+                            report(profile, n);
                     }
                 }
-                FootPointX = results.Values[0].FootX;
-                if (FootPointX == initialValue.FootX)
-                    footXStep = nextStep(footXStep);
+                Phi = results.Values[0].Phi;
+                FootX = results.Values[0].FootX;
 
-                results = new SortedList<double, saclaValues>();
-                for (int param1 = -distanceRange; param1 <= distanceRange; param1++)
+                //次にDistance, Tau, FootY
+                for (int paramDistance = -distanceRange; paramDistance <= distanceRange; paramDistance++)
                 {
-                    Distance = initialValue.Distance + param1 * distanceStep;
-                    for (int param2 = -twoThetaRange; param2 <= twoThetaRange; param2++)
+                    Distance = initialValue.Distance + paramDistance * distanceStep;
+                    for (int paramTau = -tauRange; paramTau <= tauRange; paramTau++)
                     {
-                        TwoTheta = initialValue.TwoTheta + param2 * twoThetaStep;
-                        for (int param4 = -footYRange; param4 <= footYRange; param4++)
+                        Tau = initialValue.Tau + paramTau * tauStep;
+
+                        for (int paramFootY = -footYRange; paramFootY <= footYRange; paramFootY++)
                         {
-                            FootPointY = initialValue.FootY + param4 * footYStep;
+                            FootY = initialValue.FootY + paramFootY * footYStep;
                             count++;
 
-                            if (Math.Abs(param2 + param4) < (twoThetaRange + footYRange) / 2.0)
-                            {
-                                var values = new saclaValues(Distance, TwoTheta, FootPointX, FootPointY);
-                                FormMain.SetIntegralProperty();
-                                Profile profile = Ring.GetProfile(Ring.IP);
-                                Fitting(profile, crystal.Plane);
+                            var values = new saclaValues(Distance, Phi, Tau, FootX, FootY);
+                            FormMain.SetIntegralProperty();
+                            Profile profile = Ring.GetProfile(Ring.IP);
+                            Fitting(profile, crystal.Plane);
 
-                                double r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
-                                if (!results.ContainsKey(r))
-                                    results.Add(r, values);
+                            double r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
+                            if (!results.ContainsKey(r) && !double.IsNaN(r))
+                                results.Add(r, values);
 
-                                if (count % 10 == 0)
-                                {
-                                    double progress = (double)count / cycle / (2 * footYRange + 1 + (2 * footXRange + 1) * (2 * twoThetaRange + 1) * (2 * distanceRange + 1));
-                                    toolStripStatusLabel1.Text = "  " + ((sw.ElapsedMilliseconds - beforeTime) / 10).ToString() + " ms / step.  "
-                                        + (progress * 100).ToString("f2") + " % completed.  "
-                                        + "Elappsed Time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.  "
-                                        + "Wait about " + (sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress).ToString("f0") + " sec.";
-                                    textBox1.Text = "Current best values\r\n     Distance:\t" + results.Values[0].Distance + "\r\n     2 theta:\t" + results.Values[0].TwoTheta
-                                         + "\r\n     Foot X:\t" + results.Values[0].FootX + "\r\n     Foot Y:\t" + results.Values[0].FootY + "\r\n"
-                                         + "Current steps: \r\n     Distance:\t" + distanceStep + "\r\n     2 theta:\t" + twoThetaStep
-                                         + "\r\n     Foot X:\t" + footXStep + "\r\n     Foot Y:\t" + footYStep + "\r\n";
-                                    beforeTime = sw.ElapsedMilliseconds;
-                                    toolStripProgressBar1.Value = (int)(progress * toolStripProgressBar1.Maximum);
-                                    drawGraph(profile, crystal.Plane);
-                                    Application.DoEvents();
-                                }
-                            }
+                            if (count % renewalTime == 0)
+                                report(profile, n);
                         }
                     }
                 }
-                FormMain.FormProperty.SkipTextChangeEvent = false;
+                FormMain.FormProperty.SkipEvent = false;
                 Distance = results.Values[0].Distance;
-                TwoTheta = results.Values[0].TwoTheta;
-                FootPointY = results.Values[0].FootY;
-                if (Distance == initialValue.Distance && TwoTheta == initialValue.TwoTheta && FootPointY == initialValue.FootY)
+                Tau = results.Values[0].Tau;
+                FootY = results.Values[0].FootY;
+                
+                if (Distance == initialValue.Distance && Tau == initialValue.Tau && Phi == initialValue.Phi && FootX == initialValue.FootX && FootY == initialValue.FootY)
                 {
                     distanceStep = nextStep(distanceStep);
-                    twoThetaStep = nextStep(twoThetaStep);
+                    tauStep = nextStep(tauStep);
+                    phiStep = nextStep(phiStep);
+                    footXStep = nextStep(footXStep);
                     footYStep = nextStep(footYStep);
                 }
-
             }
             toolStripStatusLabel1.Text = "Complete! Total time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.";
             FormMain.SetIntegralProperty();
@@ -434,11 +437,12 @@ namespace IPAnalyzer
 
         struct saclaValues
         {
-            public double Distance, TwoTheta, FootX, FootY;
-            public saclaValues(double distance, double twoTheta, double footX, double footY)
+            public double Distance, Tau, Phi, FootX, FootY;
+            public saclaValues(double distance,double phi, double twoTheta, double footX, double footY)
             {
                 Distance = distance;
-                TwoTheta = twoTheta;
+                Phi = phi;
+                Tau = twoTheta;
                 FootX = footX;
                 FootY = footY;
             }
@@ -464,14 +468,6 @@ namespace IPAnalyzer
 
         public double nextStep(double step)
         {
-            /*  if (step > 2)
-                  return step * 0.75;
-              else if (step > 1.5)
-                  return 1.5;
-              else if (step > 1.2)
-                  return 1.2;
-              else
-              {*/
             int n = (int)(Math.Floor(Math.Log10(step)));
 
             if (step > Math.Pow(10, n) * 7.5)
@@ -498,43 +494,28 @@ namespace IPAnalyzer
 
         }
 
-        /*private void optimizeSubRoutine(Crystal crystal, double value, ref SortedList<double, double> results)
-        {
-            FormMain.SetIntegralProperty();
-            Profile profile = Ring.GetProfile(Ring.IP);
-            Fitting(profile, crystal.Plane);
-            drawGraph(profile, crystal.Plane);
-            double r = getResidual(profile, crystal.Plane);
-            if (!results.ContainsKey(r))
-                results.Add(r, value);
-
-            Application.DoEvents();
-        }*/
-        private void optimizeSubRoutine(Crystal crystal, saclaValues values, ref SortedList<double, saclaValues> results, bool renewForm)
-        {
-
-        }
-
         private double evaluatePeakHeightAndTwoTheta(Profile profile, List<Plane> planes)
         {
-            if (FormMain.IsFlatPanelMode) { 
-            double twoThetaDeviation = 0; //, hkWidth = 0;
-            double height = 0;
-            for (int i = 0; i < planes.Count; i++)
+            if (FormMain.IsFlatPanelMode)
             {
+                double twoThetaDeviation = 0; //, hkWidth = 0;
+                double height = 0;
+                for (int i = 0; i < planes.Count; i++)
+                {
+                    if (!double.IsNaN(planes[i].peakFunction.X))
+                    {
+                        var targetRange = profile.Pt.Where(p => Math.Abs(p.X - planes[i].XCalc) < 0.5);
 
-                var targetRange = profile.Pt.Where(p => Math.Abs(p.X - planes[i].XCalc) < 0.5);
-                
-                double topHeight = targetRange.Max(p => p.Y);
-                height += topHeight;
-                twoThetaDeviation += (planes[i].XCalc - planes[i].peakFunction.X) * (planes[i].XCalc - planes[i].peakFunction.X);
-
+                        double topHeight = targetRange.Max(p => p.Y);
+                        height += topHeight;
+                        twoThetaDeviation += (planes[i].XCalc - planes[i].peakFunction.X) * (planes[i].XCalc - planes[i].peakFunction.X);
+                    }
+                }
+                return twoThetaDeviation + 100 / height;// + 1 / hkWidth;
             }
-            return twoThetaDeviation + 100 / height;// + 1 / hkWidth;
-        }
             else
             {
-                
+
                 double twoThetaDeviation = 0; //, hkWidth = 0;
                 //double height = 0;
                 for (int i = 0; i < planes.Count; i++)
@@ -547,7 +528,7 @@ namespace IPAnalyzer
                 if (FormMain.FormProperty.waveLengthControl.WaveSource == WaveSource.Xray && FormMain.FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka)
                 {
                     ratio = 0;
-                    for (int i = 0; i < planes.Count; i+=2)
+                    for (int i = 0; i < planes.Count; i += 2)
                     {
                         ratio += (planes[i].peakFunction.Int / planes[i + 1].peakFunction.Int - 2) * (planes[i].peakFunction.Int / planes[i + 1].peakFunction.Int - 2);
                     }
@@ -633,7 +614,7 @@ namespace IPAnalyzer
             Profile profile;
             for (int n = 0; n < cycle; n++)
             {
-                FormMain.FormProperty.SkipTextChangeEvent = true;
+                FormMain.FormProperty.SkipEvent = true;
 
                 var initialValue = new gandolfiValues(CL, PixX, PixY, Center.X, Center.Y, Tau, Phi, Radius);
                 var results = new SortedList<double, gandolfiValues>();
@@ -712,7 +693,7 @@ namespace IPAnalyzer
                     Application.DoEvents();
                 }
 
-                FormMain.FormProperty.SkipTextChangeEvent = false;
+                FormMain.FormProperty.SkipEvent = false;
                 CL = results.Values[0].CameraLength;
                 Center = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
                 PixX = results.Values[0].PixelSizeX;

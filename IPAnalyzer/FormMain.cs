@@ -258,13 +258,13 @@ namespace IPAnalyzer
                 regKey.SetValue("formPropertyLocationX", FormProperty.Location.X);
                 regKey.SetValue("formPropertyLocationY", FormProperty.Location.Y);
 
-                regKey.SetValue("textBoxPixelSizeXText", FormProperty.numericalTextBoxPixelSizeX.Text);
-                regKey.SetValue("textBoxPixelSizeYText", FormProperty.numericalTextBoxPixelSizeY.Text);
+                regKey.SetValue("textBoxPixelSizeXText", FormProperty.numericBoxPixelSizeX.Text);
+                regKey.SetValue("textBoxPixelSizeYText", FormProperty.numericBoxPixelSizeY.Text);
                 regKey.SetValue("textBoxPixelKsiText", FormProperty.numericalTextBoxPixelKsi.Text);
 
                 regKey.SetValue("textBoxFilmDistanceText", FormProperty.CameraLengthText);
-                regKey.SetValue("textBoxCenterPositionXText", FormProperty.numericalTextBoxCenterPositionX.Text);
-                regKey.SetValue("textBoxCenterPositionYText", FormProperty.numericalTextBoxCenterPositionY.Text);
+                regKey.SetValue("textBoxCenterPositionXText", FormProperty.numericBoxCenterPositionX.Text);
+                regKey.SetValue("textBoxCenterPositionYText", FormProperty.numericBoxCenterPositionY.Text);
 
                 //ConcentricかRadialか
                 regKey.SetValue("formProperty.radioButtonConcentric.Checked", FormProperty.radioButtonConcentric.Checked);
@@ -305,8 +305,8 @@ namespace IPAnalyzer
                 regKey.SetValue("formProperty.radioButtonChiBottom.Checked", FormProperty.radioButtonChiBottom.Checked);
 
                 regKey.SetValue("checkBoxTiltCorrectionChecked", FormProperty.checkBoxTiltCorrection.Checked);
-                regKey.SetValue("textBoxTiltCorrectionPhiText", FormProperty.numericalTextBoxTiltCorrectionPhi.Text);
-                regKey.SetValue("textBoxTiltCorrectionPsiText", FormProperty.numericalTextBoxTiltCorrectionTau.Text);
+                regKey.SetValue("textBoxTiltCorrectionPhiText", FormProperty.numericBoxTiltCorrectionPhi.Text);
+                regKey.SetValue("textBoxTiltCorrectionPsiText", FormProperty.numericBoxTiltCorrectionTau.Text);
 
                 regKey.SetValue("radioButtonRectangleChecked", FormProperty.radioButtonRectangle.Checked);
 
@@ -464,13 +464,13 @@ namespace IPAnalyzer
                    
 
 
-                    FormProperty.numericalTextBoxPixelSizeX.Text = (string)regKey.GetValue("textBoxPixelSizeXText", "0.1");
-                    FormProperty.numericalTextBoxPixelSizeY.Text = (string)regKey.GetValue("textBoxPixelSizeYText", "0.1");
+                    FormProperty.numericBoxPixelSizeX.Text = (string)regKey.GetValue("textBoxPixelSizeXText", "0.1");
+                    FormProperty.numericBoxPixelSizeY.Text = (string)regKey.GetValue("textBoxPixelSizeYText", "0.1");
                     FormProperty.numericalTextBoxPixelKsi.Text = (string)regKey.GetValue("textBoxPixelKsiText", "0");
 
                     FormProperty.CameraLengthText = (string)regKey.GetValue("textBoxFilmDistanceText", "445");
-                    FormProperty.numericalTextBoxCenterPositionX.Text = (string)regKey.GetValue("textBoxCenterPositionXText", "1500");
-                    FormProperty.numericalTextBoxCenterPositionY.Text = (string)regKey.GetValue("textBoxCenterPositionYText", "1500");
+                    FormProperty.numericBoxCenterPositionX.Text = (string)regKey.GetValue("textBoxCenterPositionXText", "1500");
+                    FormProperty.numericBoxCenterPositionY.Text = (string)regKey.GetValue("textBoxCenterPositionYText", "1500");
 
                     //ConcentricかRadialか
                     //  if ((string)regKey.GetValue("formProperty.radioButtonConcentric.Checked", "True") == "True")
@@ -525,8 +525,8 @@ namespace IPAnalyzer
 
                     //ここからTilt Correction
                     FormProperty.checkBoxTiltCorrection.Checked = (string)regKey.GetValue("checkBoxTiltCorrectionChecked", "True") == "True";
-                    FormProperty.numericalTextBoxTiltCorrectionPhi.Text = (string)regKey.GetValue("textBoxTiltCorrectionPhiText", FormProperty.numericalTextBoxTiltCorrectionPhi.Text);
-                    FormProperty.numericalTextBoxTiltCorrectionTau.Text = (string)regKey.GetValue("textBoxTiltCorrectionPsiText", FormProperty.numericalTextBoxTiltCorrectionTau.Text);
+                    FormProperty.numericBoxTiltCorrectionPhi.Text = (string)regKey.GetValue("textBoxTiltCorrectionPhiText", FormProperty.numericBoxTiltCorrectionPhi.Text);
+                    FormProperty.numericBoxTiltCorrectionTau.Text = (string)regKey.GetValue("textBoxTiltCorrectionPsiText", FormProperty.numericBoxTiltCorrectionTau.Text);
 
                     //ここから積分領域
                     if ((string)regKey.GetValue("radioButtonRectangleChecked", "True") == "True")
@@ -997,12 +997,12 @@ namespace IPAnalyzer
                 Pen pen = new Pen(Brushes.LightBlue);
                 //傾きを考慮していないので、正確ではないが、とりあえず。
                 PointD upperLeft = new PointD(
-                    FormProperty.ImageCenter.X - FormSaveImage.ImageCenter.X * FormSaveImage.ImageResolution / FormProperty.numericalTextBoxPixelSizeX.Value,
-                    FormProperty.ImageCenter.Y - FormSaveImage.ImageCenter.Y * FormSaveImage.ImageResolution / FormProperty.numericalTextBoxPixelSizeY.Value);
+                    FormProperty.ImageCenter.X - FormSaveImage.ImageCenter.X * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeX.Value,
+                    FormProperty.ImageCenter.Y - FormSaveImage.ImageCenter.Y * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeY.Value);
 
                 PointD lowerRight = new PointD(
-                    FormProperty.ImageCenter.X + (FormSaveImage.ImageSize.Width - FormSaveImage.ImageCenter.X) * FormSaveImage.ImageResolution / FormProperty.numericalTextBoxPixelSizeX.Value,
-                    FormProperty.ImageCenter.Y + (FormSaveImage.ImageSize.Height - FormSaveImage.ImageCenter.Y) * FormSaveImage.ImageResolution / FormProperty.numericalTextBoxPixelSizeY.Value);
+                    FormProperty.ImageCenter.X + (FormSaveImage.ImageSize.Width - FormSaveImage.ImageCenter.X) * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeX.Value,
+                    FormProperty.ImageCenter.Y + (FormSaveImage.ImageSize.Height - FormSaveImage.ImageCenter.Y) * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeY.Value);
 
                 RectangleF rect = scalablePictureBox.ConvertToClientRect(new RectangleD(upperLeft.X, upperLeft.Y, lowerRight.X - upperLeft.X, lowerRight.Y - upperLeft.Y)).ToRectangleF();
 
@@ -1013,7 +1013,7 @@ namespace IPAnalyzer
             //中心点にペケ
             try
             {
-                PointD pt = scalablePictureBox.ConvertToClientPt(new PointD(FormProperty.numericalTextBoxCenterPositionX.Value, FormProperty.numericalTextBoxCenterPositionY.Value));
+                PointD pt = scalablePictureBox.ConvertToClientPt(new PointD(FormProperty.numericBoxCenterPositionX.Value, FormProperty.numericBoxCenterPositionY.Value));
                 Pen pen = new Pen(Brushes.Fuchsia);
                 g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
                 g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
@@ -1057,8 +1057,8 @@ namespace IPAnalyzer
                     PointD OffSet = new PointD(0, 0);
                     RectangleF Rect = new RectangleF(0, 0, 0, 0);
                     double Filmdistance = FormProperty.CameraLength;
-                    double Phi = FormProperty.numericalTextBoxTiltCorrectionPhi.RadianValue;
-                    double Tau = FormProperty.numericalTextBoxTiltCorrectionTau.RadianValue;
+                    double Phi = FormProperty.numericBoxTiltCorrectionPhi.RadianValue;
+                    double Tau = FormProperty.numericBoxTiltCorrectionTau.RadianValue;
                     double EllipseWidth = 0;
                     double EllipseHeight = 0;
                     double Cos = 0;
@@ -1082,8 +1082,8 @@ namespace IPAnalyzer
                     
                     m = m * new Matrix3D(1 / scale, 0, 0, 0, 1 / scale, 0, 0, 0, 1);
                     //次に画像ピクセル空間を実空間にする
-                    float pixelSizeX = (float)FormProperty.numericalTextBoxPixelSizeX.Value;
-                    float pixelSizeY = (float)FormProperty.numericalTextBoxPixelSizeY.Value;
+                    float pixelSizeX = (float)FormProperty.numericBoxPixelSizeX.Value;
+                    float pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
                     float TanKsi = (float)Math.Tan(FormProperty.numericalTextBoxPixelKsi.RadianValue);
                    
                     m = m * new Matrix3D(1 / pixelSizeX, 0, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0, 0, 1);
@@ -1149,7 +1149,7 @@ namespace IPAnalyzer
             else
             {
                 scalablePictureBoxThumbnail.Zoom = 12f;
-                scalablePictureBoxThumbnail.Center = new PointD(FormProperty.numericalTextBoxCenterPositionX.Value, FormProperty.numericalTextBoxCenterPositionY.Value);
+                scalablePictureBoxThumbnail.Center = new PointD(FormProperty.numericBoxCenterPositionX.Value, FormProperty.numericBoxCenterPositionY.Value);
             }
 
             Bitmap bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
@@ -1166,7 +1166,7 @@ namespace IPAnalyzer
             {
                 try
                 {
-                    PointF pt = scalablePictureBoxThumbnail.ConvertToClientPt(new PointD(FormProperty.numericalTextBoxCenterPositionX.Value, FormProperty.numericalTextBoxCenterPositionY.Value)).ToPointF();
+                    PointF pt = scalablePictureBoxThumbnail.ConvertToClientPt(new PointD(FormProperty.numericBoxCenterPositionX.Value, FormProperty.numericBoxCenterPositionY.Value)).ToPointF();
                     Pen pen = new Pen(Brushes.Fuchsia);
                     g.DrawLine(pen, new PointF(pt.X + 4, pt.Y + 3), new PointF(pt.X - 4, pt.Y - 4));
                     g.DrawLine(pen, new PointF(pt.X - 4, pt.Y + 3), new PointF(pt.X + 4, pt.Y - 4));
@@ -1868,15 +1868,15 @@ namespace IPAnalyzer
             {
                 FormProperty.waveLengthControl.Property = Ring.IP.WaveProperty;
                 FormProperty.CameraLength = Ring.IP.FilmDistance;
-                FormProperty.numericalTextBoxPixelSizeX.Value = Ring.IP.PixSizeX;
-                FormProperty.numericalTextBoxPixelSizeY.Value = Ring.IP.PixSizeY;
+                FormProperty.numericBoxPixelSizeX.Value = Ring.IP.PixSizeX;
+                FormProperty.numericBoxPixelSizeY.Value = Ring.IP.PixSizeY;
                 FormProperty.ImageCenter = new PointD(Ring.IP.CenterX, Ring.IP.CenterY);
-                FormProperty.numericalTextBoxTiltCorrectionPhi.Value = FormProperty.numericalTextBoxTiltCorrectionTau.Value = FormProperty.numericalTextBoxPixelKsi.Value = 0;
+                FormProperty.numericBoxTiltCorrectionPhi.Value = FormProperty.numericBoxTiltCorrectionTau.Value = FormProperty.numericalTextBoxPixelKsi.Value = 0;
             }
             else if (ext == "h5")
             {
-                FormProperty.numericalTextBoxPixelSizeX.Value = Ring.IP.PixSizeX;
-                FormProperty.numericalTextBoxPixelSizeY.Value = Ring.IP.PixSizeY;
+                FormProperty.numericBoxPixelSizeX.Value = Ring.IP.PixSizeX;
+                FormProperty.numericBoxPixelSizeY.Value = Ring.IP.PixSizeY;
                 if (Ring.IP.SrcWidth == 1024 && Ring.IP.SrcHeight == 1024)
                     toolStripButtonFixCenter.Checked = true;
             }
@@ -1958,10 +1958,10 @@ namespace IPAnalyzer
                 if (Math.Abs(FormProperty.waveLengthControl.Energy*1000 - acc )/acc > 0.2)
                     FormProperty.waveLengthControl.Energy = acc / 1000;
 
-                if (Math.Abs((FormProperty.numericalTextBoxPixelSizeX.Value - size) / size) > 0.2)
+                if (Math.Abs((FormProperty.numericBoxPixelSizeX.Value - size) / size) > 0.2)
                 {
-                    FormProperty.numericalTextBoxPixelSizeX.Value = size;
-                    FormProperty.numericalTextBoxPixelSizeY.Value = size;
+                    FormProperty.numericBoxPixelSizeX.Value = size;
+                    FormProperty.numericBoxPixelSizeY.Value = size;
                     FormProperty.numericalTextBoxPixelKsi.Value = 0;
                 }
                 double length = size / Math.Tan(2 * FormProperty.waveLengthControl.WaveLength * scale / 2);
@@ -2197,10 +2197,10 @@ namespace IPAnalyzer
 
                 IP.SrcWidth = SrcImgSize.Width; ;//ソース画像の幅
                 IP.SrcHeight = SrcImgSize.Height; ;//ソース画像の高さ
-                IP.CenterX = FormProperty.numericalTextBoxCenterPositionX.Value;//センターのx位置
-                IP.CenterY = FormProperty.numericalTextBoxCenterPositionY.Value;//センターのy位置
-                IP.PixSizeX = FormProperty.numericalTextBoxPixelSizeX.Value;
-                IP.PixSizeY = FormProperty.numericalTextBoxPixelSizeY.Value;//ピクセルサイズ
+                IP.CenterX = FormProperty.numericBoxCenterPositionX.Value;//センターのx位置
+                IP.CenterY = FormProperty.numericBoxCenterPositionY.Value;//センターのy位置
+                IP.PixSizeX = FormProperty.numericBoxPixelSizeX.Value;
+                IP.PixSizeY = FormProperty.numericBoxPixelSizeY.Value;//ピクセルサイズ
                 IP.ksi = FormProperty.numericalTextBoxPixelKsi.RadianValue;
 
                 IP.SpericalRadiusInverse = FormProperty.numericalTextBoxSphericalCorections.Value / 1000;
@@ -2260,8 +2260,8 @@ namespace IPAnalyzer
 
 
                 IP.FilmDistance = FormProperty.CameraLength;//カメラ長
-                IP.phi = FormProperty.numericalTextBoxTiltCorrectionPhi.RadianValue; //IPの角度Tilt
-                IP.tau = FormProperty.numericalTextBoxTiltCorrectionTau.RadianValue; ;//IPの角度Azumuth;
+                IP.phi = FormProperty.numericBoxTiltCorrectionPhi.RadianValue; //IPの角度Tilt
+                IP.tau = FormProperty.numericBoxTiltCorrectionTau.RadianValue; ;//IPの角度Azumuth;
 
                 if (FormProperty.radioButtonRectangle.Checked) IP.IsRectangle = true;//RectangleかSectorか
                 else IP.IsRectangle = false;
@@ -2952,13 +2952,14 @@ namespace IPAnalyzer
 
                 if (FormProperty.checkBoxSACLA.Checked)
                 {
-                    prm.SACLA_EH5_Distance = FormProperty.saclaControl.Distance.ToString();
-                    prm.SACLA_EH5_TwoTheta = FormProperty.saclaControl.TwoThetaDegree.ToString();
+                    prm.SACLA_EH5_CameraLength2 = FormProperty.saclaControl.CameraLength2.ToString();
+                    prm.SACLA_EH5_Phi = FormProperty.saclaControl.PhiDegree.ToString();
+                    prm.SACLA_EH5_Tau = FormProperty.saclaControl.TauDegree.ToString();
                     prm.SACLA_EH5_PixelHeight = FormProperty.saclaControl.PixelHeight.ToString();
                     prm.SACLA_EH5_PixelWidth = FormProperty.saclaControl.PixelWidth.ToString();
                     prm.SACLA_EH5_PixleSize = FormProperty.saclaControl.PixelSize.ToString();
-                    prm.SACLA_EH5_FootX = FormProperty.saclaControl.FootPoint.X.ToString();
-                    prm.SACLA_EH5_FootY = FormProperty.saclaControl.FootPoint.Y.ToString();
+                    prm.SACLA_EH5_FootX = FormProperty.saclaControl.Foot.X.ToString();
+                    prm.SACLA_EH5_FootY = FormProperty.saclaControl.Foot.Y.ToString();
                 }
 
                 prm.cameraMode = (FormParameterOption.CameraModeChecked) ? (FormProperty.radioButtonFlatPanel.Checked ? "FlatPanel" : "Gandolfi") : null;
@@ -2971,15 +2972,15 @@ namespace IPAnalyzer
 
                 prm.cameraLength = (FormParameterOption.CameraLengthChecked) ? FormProperty.CameraLengthText : null;
 
-                prm.pixSizeX = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericalTextBoxPixelSizeX.Text : null;
-                prm.pixSizeY = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericalTextBoxPixelSizeY.Text : null;
+                prm.pixSizeX = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericBoxPixelSizeX.Text : null;
+                prm.pixSizeY = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericBoxPixelSizeY.Text : null;
                 prm.pixKsi = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericalTextBoxPixelKsi.Text : null;
 
-                prm.tiltPhi = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericalTextBoxTiltCorrectionPhi.Text : null;
-                prm.tiltTau = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericalTextBoxTiltCorrectionTau.Text : null;
+                prm.tiltPhi = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericBoxTiltCorrectionPhi.Text : null;
+                prm.tiltTau = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericBoxTiltCorrectionTau.Text : null;
 
-                prm.centerX = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericalTextBoxCenterPositionX.Text : null;
-                prm.centerY = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericalTextBoxCenterPositionY.Text : null;
+                prm.centerX = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericBoxCenterPositionX.Text : null;
+                prm.centerY = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericBoxCenterPositionY.Text : null;
 
                 prm.sphericalRadiusInverse = (FormParameterOption.SphericalCorrectionChecked) ? FormProperty.numericalTextBoxSphericalCorections.Text : null;
 
@@ -3038,7 +3039,6 @@ namespace IPAnalyzer
             {
                 DiffractionOptics.Parameter prm = DiffractionOptics.Read(filename);
 
-
                 if (!fullyRead)
                 {
                     FormParameterOption.Text = "Read checked parameters";
@@ -3049,22 +3049,31 @@ namespace IPAnalyzer
                 else
                     FormParameterOption.AllCheck();
 
-                
 
                 FormProperty.checkBoxSACLA.Checked = prm.SACLA_EH5 == "True";
                 if (prm.SACLA_EH5 == "True")
                 {
-
-                    FormProperty.saclaControl.Distance = Convert.ToDouble(prm.SACLA_EH5_Distance);
+                    if (prm.SACLA_EH5_CameraLength2 != null)
+                        FormProperty.saclaControl.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_CameraLength2);
+                    else
+                        FormProperty.saclaControl.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_Distance);
 
                     FormProperty.saclaControl.PixelHeight = Convert.ToDouble(prm.SACLA_EH5_PixelHeight);
                     FormProperty.saclaControl.PixelWidth = Convert.ToDouble(prm.SACLA_EH5_PixelWidth);
                     FormProperty.saclaControl.PixelSize = Convert.ToDouble(prm.SACLA_EH5_PixleSize);
 
-                    FormProperty.saclaControl.FootPoint = new PointD(Convert.ToDouble(prm.SACLA_EH5_FootX), Convert.ToDouble(prm.SACLA_EH5_FootY));
+                    FormProperty.saclaControl.Foot = new PointD(Convert.ToDouble(prm.SACLA_EH5_FootX), Convert.ToDouble(prm.SACLA_EH5_FootY));
 
-
-                    FormProperty.saclaControl.TwoThetaDegree = Convert.ToDouble(prm.SACLA_EH5_TwoTheta);
+                    if (prm.SACLA_EH5_Phi != null)
+                    {
+                        FormProperty.saclaControl.PhiDegree = Convert.ToDouble(prm.SACLA_EH5_Phi);
+                        FormProperty.saclaControl.TauDegree = Convert.ToDouble(prm.SACLA_EH5_Tau);
+                    }
+                    else
+                    {
+                        FormProperty.saclaControl.PhiDegree = 0;
+                        FormProperty.saclaControl.TauDegree = Convert.ToDouble(prm.SACLA_EH5_TwoTheta);
+                    }
                 }
 
                 //Camera Mode
@@ -3104,13 +3113,13 @@ namespace IPAnalyzer
                 {
                     if (prm.pixSizeX != null)
                     {
-                        FormProperty.numericalTextBoxPixelSizeX.Text = prm.pixSizeX;
-                        FormProperty.numericalTextBoxPixelSizeY.Text = prm.pixSizeY;
+                        FormProperty.numericBoxPixelSizeX.Text = prm.pixSizeX;
+                        FormProperty.numericBoxPixelSizeY.Text = prm.pixSizeY;
                     }
                     else if (prm.pixSize != null)
                     {
-                        FormProperty.numericalTextBoxPixelSizeX.Text = prm.pixSize;
-                        FormProperty.numericalTextBoxPixelSizeY.Text = (Convert.ToDouble(prm.pixSize) * Convert.ToDouble(prm.aspectRatio)).ToString();
+                        FormProperty.numericBoxPixelSizeX.Text = prm.pixSize;
+                        FormProperty.numericBoxPixelSizeY.Text = (Convert.ToDouble(prm.pixSize) * Convert.ToDouble(prm.aspectRatio)).ToString();
                     }
                     if (prm.pixKsi != null)
                         FormProperty.numericalTextBoxPixelKsi.Text = prm.pixKsi;
@@ -3120,15 +3129,15 @@ namespace IPAnalyzer
                 //CenterPorition
                 if (FormParameterOption.CenterPositionChecked && prm.centerX != null)
                 {
-                    FormProperty.numericalTextBoxCenterPositionX.Text = prm.centerX;
-                    FormProperty.numericalTextBoxCenterPositionY.Text = prm.centerY;
+                    FormProperty.numericBoxCenterPositionX.Text = prm.centerX;
+                    FormProperty.numericBoxCenterPositionY.Text = prm.centerY;
                 }
 
                 //TiltCorrection
                 if (FormParameterOption.TiltCorrectionChecked && prm.tiltPhi != null)
                 {
-                    FormProperty.numericalTextBoxTiltCorrectionPhi.Text = prm.tiltPhi;
-                    FormProperty.numericalTextBoxTiltCorrectionTau.Text = prm.tiltTau;
+                    FormProperty.numericBoxTiltCorrectionPhi.Text = prm.tiltPhi;
+                    FormProperty.numericBoxTiltCorrectionTau.Text = prm.tiltTau;
                 }
 
                 //SphericalRadius
@@ -4966,13 +4975,13 @@ namespace IPAnalyzer
                 }
                 public double PixelSizeX
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericalTextBoxPixelSizeX.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericalTextBoxPixelSizeX.Value)); }
+                    set { Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeX.Value = value)); }
+                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxPixelSizeX.Value)); }
                 }
                 public double PixelSizeY
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericalTextBoxPixelSizeY.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericalTextBoxPixelSizeY.Value)); }
+                    set { Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeY.Value = value)); }
+                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxPixelSizeY.Value)); }
                 }
                 public double PixelKsi
                 {
@@ -4981,13 +4990,13 @@ namespace IPAnalyzer
                 }
                 public double TiltPhi
                 {
-                    set {Execute(new Action(() =>  p.main.FormProperty.numericalTextBoxTiltCorrectionPhi.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericalTextBoxTiltCorrectionPhi.Value)); }
+                    set {Execute(new Action(() =>  p.main.FormProperty.numericBoxTiltCorrectionPhi.Value = value)); }
+                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxTiltCorrectionPhi.Value)); }
                 }
                 public double TiltTau
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericalTextBoxTiltCorrectionTau.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericalTextBoxTiltCorrectionTau.Value)); }
+                    set { Execute(new Action(() => p.main.FormProperty.numericBoxTiltCorrectionTau.Value = value)); }
+                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxTiltCorrectionTau.Value)); }
                 }
 
 
