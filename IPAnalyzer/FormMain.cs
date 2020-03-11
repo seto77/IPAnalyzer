@@ -2539,15 +2539,13 @@ namespace IPAnalyzer
                     //PDIndexerへの送信
                     if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
                     {
-                        using (Mutex clipboard = new Mutex(false, "ClipboardOperation"))
+                        using Mutex clipboard = new Mutex(false, "ClipboardOperation");
+                        if (clipboard.WaitOne(500, false))
                         {
-                            if (clipboard.WaitOne(500, false))
-                            {
-                                Clipboard.SetDataObject(dpList.ToArray());
-                                clipboard.ReleaseMutex();
-                            }
-                            clipboard.Close();
+                            Clipboard.SetDataObject(dpList.ToArray());
+                            clipboard.ReleaseMutex();
                         }
+                        clipboard.Close();
                     }
                     //ファイル保存
                     if (FormProperty.checkBoxSaveFile.Checked)
@@ -4274,16 +4272,14 @@ namespace IPAnalyzer
                 {
                     try
                     {
-                        using (Mutex clipboard = new Mutex(false, "ClipboardOperation"))
+                        using Mutex clipboard = new Mutex(false, "ClipboardOperation");
+                        bool result = clipboard.WaitOne(10000, false);
+                        if (result)
                         {
-                            bool result = clipboard.WaitOne(10000, false);
-                            if (result)
-                            {
-                                Clipboard.SetDataObject(new MacroTriger("PDI", Debug, obj, name));
-                                clipboard.ReleaseMutex();
-                            }
-                            clipboard.Close();
+                            Clipboard.SetDataObject(new MacroTriger("PDI", Debug, obj, name));
+                            clipboard.ReleaseMutex();
                         }
+                        clipboard.Close();
                     }
                     catch { }
                 }
@@ -4480,13 +4476,11 @@ namespace IPAnalyzer
                     if (filename != "")
                         SaveProfileAfterGetProfile = true;
                     p.main.GetProfile(filename);
-                    using (Mutex clipboard = new Mutex(false, "ClipboardOperation"))
+                    using Mutex clipboard = new Mutex(false, "ClipboardOperation");
+                    if (clipboard.WaitOne(10000, false))
                     {
-                        if (clipboard.WaitOne(10000, false))
-                        {
-                            clipboard.ReleaseMutex();
-                            clipboard.Close();
-                        }
+                        clipboard.ReleaseMutex();
+                        clipboard.Close();
                     }
                 }
             }
@@ -4630,26 +4624,26 @@ namespace IPAnalyzer
                     {
                         Execute(new Action(() =>
                         {
-                            switch (value)
+                            p.main.FormProperty.waveLengthControl.WaveSource = value switch
                             {
-                                case 1: p.main.FormProperty.waveLengthControl.WaveSource = Crystallography.WaveSource.Xray; break;
-                                case 2: p.main.FormProperty.waveLengthControl.WaveSource = Crystallography.WaveSource.Electron; break;
-                                case 3: p.main.FormProperty.waveLengthControl.WaveSource = Crystallography.WaveSource.Neutron; break;
-                                default: p.main.FormProperty.waveLengthControl.WaveSource = Crystallography.WaveSource.None; break;
-                            }
+                                1 => Crystallography.WaveSource.Xray,
+                                2 => Crystallography.WaveSource.Electron,
+                                3 => Crystallography.WaveSource.Neutron,
+                                _ => Crystallography.WaveSource.None,
+                            };
                         }));
                     }
                     get
                     {
                         return Execute(new Func<int>(() =>
                         {
-                            switch (p.main.FormProperty.waveLengthControl.WaveSource)
+                            return p.main.FormProperty.waveLengthControl.WaveSource switch
                             {
-                                case Crystallography.WaveSource.Xray: return 1;
-                                case Crystallography.WaveSource.Electron: return 2;
-                                case Crystallography.WaveSource.Neutron: return 3;
-                                default: return 0;
-                            }
+                                Crystallography.WaveSource.Xray => 1,
+                                Crystallography.WaveSource.Electron => 2,
+                                Crystallography.WaveSource.Neutron => 3,
+                                _ => 0,
+                            };
                         }));
                     }
                 }
