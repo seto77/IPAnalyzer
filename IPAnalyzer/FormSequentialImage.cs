@@ -13,7 +13,7 @@ namespace IPAnalyzer
 {
     public partial class FormSequentialImage : Form
     {
-
+        #region プロパティ
         public bool MultiSelection
         {
             set
@@ -188,7 +188,7 @@ namespace IPAnalyzer
             }
             get { return trackBar1.Maximum+1; }
         }
-
+        #endregion
 
         public FormSequentialImage()
         {

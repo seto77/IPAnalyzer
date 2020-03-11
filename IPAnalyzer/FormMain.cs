@@ -2768,6 +2768,15 @@ namespace IPAnalyzer
                     sw.WriteLine(dp.OriginalProfile.Pt[i].X.ToString() + "," + dp.OriginalProfile.Pt[i].Y.ToString());
                 sw.Close();
             }
+            else if (FormProperty.radioButtonAsTSVformat.Checked)
+            {
+                if (!filename.EndsWith(".tsv"))
+                    filename += ".tsv";
+                StreamWriter sw = new StreamWriter(filename);
+                for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
+                    sw.WriteLine(dp.OriginalProfile.Pt[i].X.ToString() + "\t" + dp.OriginalProfile.Pt[i].Y.ToString());
+                sw.Close();
+            }
         }
 
       //  private void SaveProfile(string filename, DiffractionProfile dp)
@@ -4416,22 +4425,23 @@ namespace IPAnalyzer
                     p.help.Add("IPA.Profile.SaveProfileAfterGetProfile  # True/False. \r\n If true, the profile will be saved after 'Get Profile'");
                     p.help.Add("IPA.Profile.SaveProfileAsPDI   # True/False. \r\n If true, the profile will be saved as PDI format");
                     p.help.Add("IPA.Profile.SaveProfileAsCSV  # True/False. \r\n If true, the profile will be saved as CSV format");
+                    p.help.Add("IPA.Profile.SaveProfileAsTSV  # True/False. \r\n If true, the profile will be saved as TSV format");
                 }
 
                 public bool ConcentricIntegration
                 {
-                    set { Execute(new Action(()=> p.main.toolStripMenuItemConcenctricIntegration.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.toolStripMenuItemConcenctricIntegration.Checked)); }
+                    set => Execute(new Action(() => p.main.toolStripMenuItemConcenctricIntegration.Checked = value));
+                    get => Execute(new Func<bool>(() => p.main.toolStripMenuItemConcenctricIntegration.Checked));
                 }
                 public bool RadialIntegration
                 {
-                    set { Execute(new Action(()=>p.main.toolStripMenuItemRadialIntegration.Checked = value)); }
-                    get { return p.main.toolStripMenuItemRadialIntegration.Checked; }
+                    set => Execute(new Action(() => p.main.toolStripMenuItemRadialIntegration.Checked = value));
+                    get => Execute(new Func<bool>(() => p.main.toolStripMenuItemRadialIntegration.Checked));
                 }
                 public bool FindCenterBeforeGetProfile
                 {
-                    set {Execute(new Action(()=> p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked)); }
+                    set => Execute(new Action(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked = value));
+                    get => Execute(new Func<bool>(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked));
                 }
                 public bool FindSpotsBeforeGetProfile
                 {
@@ -4457,6 +4467,11 @@ namespace IPAnalyzer
                 {
                     set { Execute(new Action(()=>p.main.FormProperty.radioButtonAsCSVformat.Checked = value)); }
                     get { return Execute(new Func<bool>(() => p.main.FormProperty.radioButtonAsCSVformat.Checked)); }
+                }
+                public bool SaveProfileAsTSV
+                {
+                    set => Execute(new Action(() => p.main.FormProperty.radioButtonAsTSVformat.Checked = value));
+                    get => Execute(new Func<bool>(() => p.main.FormProperty.radioButtonAsTSVformat.Checked));
                 }
 
                 public void GetProfile(string filename = "") { Execute(() => getProfile(filename)); }
@@ -4819,7 +4834,8 @@ namespace IPAnalyzer
                 {
                     p = _p;
                     p.help.Add("IPA.Sequential.SequentialImageMode # True/False. Get whether the current file is sequential image or not.");
-                    p.help.Add("IPA.Sequential.SelectedIndex # Integer. \r\n Set or get number of selected index of the current sequential image.");
+                    p.help.Add("IPA.Sequential.Count # Integer.\r\n  Get the number of images");
+                    p.help.Add("IPA.Sequential.SelectedIndex # Integer. \r\n Set or get the selected index of the current sequential image.");
                     p.help.Add("IPA.Sequential.SelectedIndices # Array of itegers (like 1,3,5,9). \r\n Set or get the selected indices of the current sequential image.");
 
                     p.help.Add("IPA.Sequential.SelectIndex(int index) # Set number of selected index.");
@@ -4833,15 +4849,15 @@ namespace IPAnalyzer
 
                 }
 
-                public bool SequentialImageMode
-                {
-                    get { return Execute(new Func<bool>(() => p.main.SequentialImageMode)); }
-                }
+                public bool SequentialImageMode => Execute(new Func<bool>(() => p.main.SequentialImageMode));
                 public int SelectedIndex
                 {
-                    set { Execute(new Action(() => p.main.FormSequentialImage.SelectedIndex = value)); }
-                    get { return Execute(new Func<int>(() =>p.main.FormSequentialImage.SelectedIndex)); }
+                    set => Execute(new Action(() => p.main.FormSequentialImage.SelectedIndex = value));
+                    get => Execute(new Func<int>(() => p.main.FormSequentialImage.SelectedIndex));
                 }
+
+                public int Count => Execute(new Func<int>(() => p.main.FormSequentialImage.MaximumNumber));
+
                 public int[] SelectedIndices
                 {
                     set {Execute(new Action(() =>  p.main.FormSequentialImage.SelectedIndices = value)); }

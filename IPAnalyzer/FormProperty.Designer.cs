@@ -148,6 +148,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButtonAsPDIformat = new System.Windows.Forms.RadioButton();
             this.radioButtonAsCSVformat = new System.Windows.Forms.RadioButton();
+            this.radioButtonAsTSVformat = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButtonSetDirectoryEachTime = new System.Windows.Forms.RadioButton();
             this.radioButtonSaveAtImageDirectory = new System.Windows.Forms.RadioButton();
@@ -411,10 +412,10 @@
             this.groupBoxDirectSpotPosition.Name = "groupBoxDirectSpotPosition";
             this.groupBoxDirectSpotPosition.TabStop = false;
             // 
-            // numericalTextBoxCenterPositionY
+            // numericBoxCenterPositionY
             // 
             this.numericBoxCenterPositionY.AllowMouseControl = false;
-            resources.ApplyResources(this.numericBoxCenterPositionY, "numericalTextBoxCenterPositionY");
+            resources.ApplyResources(this.numericBoxCenterPositionY, "numericBoxCenterPositionY");
             this.numericBoxCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxCenterPositionY.DecimalPlaces = -1;
             this.numericBoxCenterPositionY.Maximum = double.PositiveInfinity;
@@ -422,7 +423,7 @@
             this.numericBoxCenterPositionY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
             this.numericBoxCenterPositionY.MouseSpeed = 1D;
             this.numericBoxCenterPositionY.Multiline = false;
-            this.numericBoxCenterPositionY.Name = "numericalTextBoxCenterPositionY";
+            this.numericBoxCenterPositionY.Name = "numericBoxCenterPositionY";
             this.numericBoxCenterPositionY.RadianValue = 26.179938779914945D;
             this.numericBoxCenterPositionY.ReadOnly = false;
             this.numericBoxCenterPositionY.RestrictLimitValue = true;
@@ -440,10 +441,10 @@
             this.numericBoxCenterPositionY.WordWrap = true;
             this.numericBoxCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
-            // numericalTextBoxCenterPositionX
+            // numericBoxCenterPositionX
             // 
             this.numericBoxCenterPositionX.AllowMouseControl = false;
-            resources.ApplyResources(this.numericBoxCenterPositionX, "numericalTextBoxCenterPositionX");
+            resources.ApplyResources(this.numericBoxCenterPositionX, "numericBoxCenterPositionX");
             this.numericBoxCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxCenterPositionX.DecimalPlaces = -1;
             this.numericBoxCenterPositionX.Maximum = double.PositiveInfinity;
@@ -451,7 +452,7 @@
             this.numericBoxCenterPositionX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
             this.numericBoxCenterPositionX.MouseSpeed = 1D;
             this.numericBoxCenterPositionX.Multiline = false;
-            this.numericBoxCenterPositionX.Name = "numericalTextBoxCenterPositionX";
+            this.numericBoxCenterPositionX.Name = "numericBoxCenterPositionX";
             this.numericBoxCenterPositionX.RadianValue = 26.179938779914945D;
             this.numericBoxCenterPositionX.ReadOnly = false;
             this.numericBoxCenterPositionX.RestrictLimitValue = true;
@@ -516,10 +517,10 @@
             this.numericalTextBoxPixelKsi.WordWrap = true;
             this.numericalTextBoxPixelKsi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
-            // numericalTextBoxPixelSizeY
+            // numericBoxPixelSizeY
             // 
             this.numericBoxPixelSizeY.AllowMouseControl = false;
-            resources.ApplyResources(this.numericBoxPixelSizeY, "numericalTextBoxPixelSizeY");
+            resources.ApplyResources(this.numericBoxPixelSizeY, "numericBoxPixelSizeY");
             this.numericBoxPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeY.DecimalPlaces = -1;
             this.numericBoxPixelSizeY.Maximum = double.PositiveInfinity;
@@ -527,7 +528,7 @@
             this.numericBoxPixelSizeY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
             this.numericBoxPixelSizeY.MouseSpeed = 1D;
             this.numericBoxPixelSizeY.Multiline = false;
-            this.numericBoxPixelSizeY.Name = "numericalTextBoxPixelSizeY";
+            this.numericBoxPixelSizeY.Name = "numericBoxPixelSizeY";
             this.numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
             this.numericBoxPixelSizeY.ReadOnly = false;
             this.numericBoxPixelSizeY.RestrictLimitValue = true;
@@ -546,10 +547,10 @@
             this.numericBoxPixelSizeY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             this.numericBoxPixelSizeY.Load += new System.EventHandler(this.numericalTextBoxPixelSizeY_Load);
             // 
-            // numericalTextBoxPixelSizeX
+            // numericBoxPixelSizeX
             // 
             this.numericBoxPixelSizeX.AllowMouseControl = false;
-            resources.ApplyResources(this.numericBoxPixelSizeX, "numericalTextBoxPixelSizeX");
+            resources.ApplyResources(this.numericBoxPixelSizeX, "numericBoxPixelSizeX");
             this.numericBoxPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeX.DecimalPlaces = -1;
             this.numericBoxPixelSizeX.Maximum = double.PositiveInfinity;
@@ -557,7 +558,7 @@
             this.numericBoxPixelSizeX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
             this.numericBoxPixelSizeX.MouseSpeed = 1D;
             this.numericBoxPixelSizeX.Multiline = false;
-            this.numericBoxPixelSizeX.Name = "numericalTextBoxPixelSizeX";
+            this.numericBoxPixelSizeX.Name = "numericBoxPixelSizeX";
             this.numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
             this.numericBoxPixelSizeX.ReadOnly = false;
             this.numericBoxPixelSizeX.RestrictLimitValue = true;
@@ -664,10 +665,10 @@
             this.groupBoxTiltCorrection.Name = "groupBoxTiltCorrection";
             this.groupBoxTiltCorrection.TabStop = false;
             // 
-            // numericalTextBoxTiltCorrectionTau
+            // numericBoxTiltCorrectionTau
             // 
             this.numericBoxTiltCorrectionTau.AllowMouseControl = false;
-            resources.ApplyResources(this.numericBoxTiltCorrectionTau, "numericalTextBoxTiltCorrectionTau");
+            resources.ApplyResources(this.numericBoxTiltCorrectionTau, "numericBoxTiltCorrectionTau");
             this.numericBoxTiltCorrectionTau.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionTau.DecimalPlaces = -1;
             this.numericBoxTiltCorrectionTau.Maximum = double.PositiveInfinity;
@@ -675,7 +676,7 @@
             this.numericBoxTiltCorrectionTau.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
             this.numericBoxTiltCorrectionTau.MouseSpeed = 1D;
             this.numericBoxTiltCorrectionTau.Multiline = false;
-            this.numericBoxTiltCorrectionTau.Name = "numericalTextBoxTiltCorrectionTau";
+            this.numericBoxTiltCorrectionTau.Name = "numericBoxTiltCorrectionTau";
             this.numericBoxTiltCorrectionTau.RadianValue = 0D;
             this.numericBoxTiltCorrectionTau.ReadOnly = false;
             this.numericBoxTiltCorrectionTau.RestrictLimitValue = true;
@@ -693,10 +694,10 @@
             this.numericBoxTiltCorrectionTau.WordWrap = true;
             this.numericBoxTiltCorrectionTau.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
-            // numericalTextBoxTiltCorrectionPhi
+            // numericBoxTiltCorrectionPhi
             // 
             this.numericBoxTiltCorrectionPhi.AllowMouseControl = false;
-            resources.ApplyResources(this.numericBoxTiltCorrectionPhi, "numericalTextBoxTiltCorrectionPhi");
+            resources.ApplyResources(this.numericBoxTiltCorrectionPhi, "numericBoxTiltCorrectionPhi");
             this.numericBoxTiltCorrectionPhi.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionPhi.DecimalPlaces = -1;
             this.numericBoxTiltCorrectionPhi.Maximum = double.PositiveInfinity;
@@ -704,7 +705,7 @@
             this.numericBoxTiltCorrectionPhi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
             this.numericBoxTiltCorrectionPhi.MouseSpeed = 1D;
             this.numericBoxTiltCorrectionPhi.Multiline = false;
-            this.numericBoxTiltCorrectionPhi.Name = "numericalTextBoxTiltCorrectionPhi";
+            this.numericBoxTiltCorrectionPhi.Name = "numericBoxTiltCorrectionPhi";
             this.numericBoxTiltCorrectionPhi.RadianValue = 0D;
             this.numericBoxTiltCorrectionPhi.ReadOnly = false;
             this.numericBoxTiltCorrectionPhi.RestrictLimitValue = true;
@@ -726,7 +727,10 @@
             // 
             resources.ApplyResources(this.saclaControl, "saclaControl");
             this.saclaControl.CameraLength2 = 300D;
+            this.saclaControl.Foot = ((Crystallography.PointD)(resources.GetObject("saclaControl.Foot")));
             this.saclaControl.Name = "saclaControl";
+            this.saclaControl.PhiDegree = 0D;
+            this.saclaControl.PhiRadian = 0D;
             this.saclaControl.PixelHeight = 1024D;
             this.saclaControl.PixelSize = 0.05D;
             this.saclaControl.PixelWidth = 1024D;
@@ -1627,6 +1631,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsPDIformat);
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsCSVformat);
+            this.flowLayoutPanel2.Controls.Add(this.radioButtonAsTSVformat);
             resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
@@ -1643,6 +1648,12 @@
             this.radioButtonAsCSVformat.Name = "radioButtonAsCSVformat";
             this.radioButtonAsCSVformat.TabStop = true;
             this.radioButtonAsCSVformat.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAsTSVformat
+            // 
+            resources.ApplyResources(this.radioButtonAsTSVformat, "radioButtonAsTSVformat");
+            this.radioButtonAsTSVformat.Name = "radioButtonAsTSVformat";
+            this.radioButtonAsTSVformat.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -2462,5 +2473,6 @@
         private System.Windows.Forms.Button buttonClearBackgroundImage;
         public Crystallography.Controls.NumericBox numericBoxBackgroundCoeff;
         private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.RadioButton radioButtonAsTSVformat;
     }
 }
