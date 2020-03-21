@@ -128,8 +128,14 @@
   <data name="statusStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
-  <data name="toolStripStatusLabelComputationTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
+  <data name="toolStripProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 34</value>
+  </data>
+  <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 36</value>
+  </data>
+  <data name="toolStripStatusLabel.Text" xml:space="preserve">
+    <value>         </value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -142,7 +148,7 @@
     <value>True</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 22</value>
+    <value>1348, 46</value>
   </data>
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -186,6 +192,9 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
@@ -195,6 +204,9 @@
   <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="splitContainer2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="textBoxInformation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -202,7 +214,10 @@
     <value>メイリオ, 9pt</value>
   </data>
   <data name="textBoxInformation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 17</value>
+    <value>0, 36</value>
+  </data>
+  <data name="textBoxInformation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="textBoxInformation.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -214,7 +229,7 @@
     <value>True</value>
   </data>
   <data name="textBoxInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 139</value>
+    <value>134, 245</value>
   </data>
   <data name="textBoxInformation.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -246,11 +261,14 @@
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
+  </data>
   <data name="label11.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
+    <value>227, 36</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -274,16 +292,16 @@
     <value>Fill</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 163</value>
+    <value>0, 326</value>
   </data>
   <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="panel4.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 156</value>
+    <value>134, 281</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -304,7 +322,7 @@
     <value>Fill</value>
   </data>
   <data name="scalablePictureBoxThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 42</value>
+    <value>0, 80</value>
   </data>
   <data name="scalablePictureBoxThumbnail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -313,7 +331,7 @@
     <value>True</value>
   </data>
   <data name="scalablePictureBoxThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 121</value>
+    <value>134, 246</value>
   </data>
   <data name="scalablePictureBoxThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -322,7 +340,7 @@
     <value>scalablePictureBoxThumbnail</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.3.11.902, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.3.1.854, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Parent" xml:space="preserve">
     <value>panel3</value>
@@ -343,13 +361,16 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonNearCenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 21</value>
+    <value>0, 40</value>
+  </data>
+  <data name="radioButtonNearCenter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="radioButtonNearCenter.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="radioButtonNearCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 21</value>
+    <value>134, 40</value>
   </data>
   <data name="radioButtonNearCenter.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -384,11 +405,14 @@
   <data name="radioButtonWhole.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="radioButtonWhole.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="radioButtonWhole.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="radioButtonWhole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 21</value>
+    <value>134, 40</value>
   </data>
   <data name="radioButtonWhole.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -415,13 +439,13 @@
     <value>0, 0</value>
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="panel3.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 163</value>
+    <value>134, 326</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -457,13 +481,16 @@
     <value>Cold-Warm scale</value>
   </data>
   <data name="comboBoxScale2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 103</value>
+    <value>4, 200</value>
+  </data>
+  <data name="comboBoxScale2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="comboBoxScale2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="comboBoxScale2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 25</value>
+    <value>126, 44</value>
   </data>
   <data name="comboBoxScale2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -493,13 +520,16 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 86</value>
+    <value>4, 164</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label9.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
+    <value>95, 36</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -532,13 +562,16 @@
     <value>Liner Scale</value>
   </data>
   <data name="comboBoxScale1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 61</value>
+    <value>4, 120</value>
+  </data>
+  <data name="comboBoxScale1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="comboBoxScale1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="comboBoxScale1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 25</value>
+    <value>126, 44</value>
   </data>
   <data name="comboBoxScale1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -574,13 +607,16 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 44</value>
+    <value>4, 84</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label7.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
+    <value>95, 36</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -613,13 +649,16 @@
     <value>Negative Film</value>
   </data>
   <data name="comboBoxGradient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 19</value>
+    <value>4, 40</value>
+  </data>
+  <data name="comboBoxGradient.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="comboBoxGradient.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="comboBoxGradient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 25</value>
+    <value>126, 44</value>
   </data>
   <data name="comboBoxGradient.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -652,13 +691,16 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+    <value>4, 4</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label5.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 17</value>
+    <value>114, 36</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -682,19 +724,19 @@
     <value>Bottom</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 319</value>
+    <value>0, 607</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="panel2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 130</value>
+    <value>134, 248</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -730,7 +772,7 @@
     <value>Fill</value>
   </data>
   <data name="scalablePictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 42</value>
+    <value>0, 84</value>
   </data>
   <data name="scalablePictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -739,7 +781,7 @@
     <value>True</value>
   </data>
   <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>423, 407</value>
+    <value>986, 771</value>
   </data>
   <data name="scalablePictureBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -748,7 +790,7 @@
     <value>scalablePictureBox</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.3.11.902, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.3.1.854, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -772,7 +814,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelResolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>481, 0</value>
+    <value>959, 0</value>
   </data>
   <data name="labelResolution.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -781,7 +823,7 @@
     <value>True</value>
   </data>
   <data name="labelResolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 18</value>
+    <value>68, 36</value>
   </data>
   <data name="labelResolution.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -814,7 +856,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointChi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 0</value>
+    <value>757, 0</value>
   </data>
   <data name="labelMousePointChi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -823,7 +865,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointChi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 17</value>
+    <value>63, 36</value>
   </data>
   <data name="labelMousePointChi.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -856,7 +898,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 0</value>
+    <value>601, 0</value>
   </data>
   <data name="labelMousePointD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -865,7 +907,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 17</value>
+    <value>63, 36</value>
   </data>
   <data name="labelMousePointD.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -898,7 +940,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointTheta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 0</value>
+    <value>445, 0</value>
   </data>
   <data name="labelMousePointTheta.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -907,7 +949,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointTheta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 17</value>
+    <value>63, 36</value>
   </data>
   <data name="labelMousePointTheta.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -940,7 +982,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 0</value>
+    <value>275, 0</value>
   </data>
   <data name="labelMousePointR.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -949,7 +991,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+    <value>91, 36</value>
   </data>
   <data name="labelMousePointR.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -982,7 +1024,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointIntensity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 0</value>
+    <value>58, 0</value>
   </data>
   <data name="labelMousePointIntensity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -991,7 +1033,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointIntensity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 17</value>
+    <value>71, 36</value>
   </data>
   <data name="labelMousePointIntensity.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1033,7 +1075,7 @@
     <value>True</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 17</value>
+    <value>58, 36</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1066,7 +1108,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 0</value>
+    <value>178, 0</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1075,7 +1117,7 @@
     <value>True</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
+    <value>97, 36</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1108,7 +1150,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 0</value>
+    <value>395, 0</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1117,7 +1159,7 @@
     <value>True</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 17</value>
+    <value>50, 36</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1150,7 +1192,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 0</value>
+    <value>565, 0</value>
   </data>
   <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1159,7 +1201,7 @@
     <value>True</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 17</value>
+    <value>36, 36</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1192,7 +1234,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 0</value>
+    <value>721, 0</value>
   </data>
   <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1201,7 +1243,7 @@
     <value>True</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 16</value>
+    <value>36, 32</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1234,7 +1276,7 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 0</value>
+    <value>877, 0</value>
   </data>
   <data name="label14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1243,7 +1285,7 @@
     <value>True</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 18</value>
+    <value>82, 36</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1270,7 +1312,7 @@
     <value>Top</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 21</value>
+    <value>0, 42</value>
   </data>
   <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1282,7 +1324,7 @@
     <value>True</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>423, 21</value>
+    <value>986, 42</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -1300,7 +1342,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelResolution" Row="0" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointChi" Row="0" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointD" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointTheta" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointR" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointIntensity" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="0" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelResolution" Row="0" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointChi" Row="0" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointD" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointTheta" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointR" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointIntensity" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="0" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,120,AutoSize,0,Absolute,120,AutoSize,0,Absolute,120,AutoSize,0,Absolute,120,AutoSize,0,Absolute,120,AutoSize,0,Absolute,120" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel3.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1318,7 +1360,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointReal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 0</value>
+    <value>710, 0</value>
   </data>
   <data name="labelMousePointReal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1327,7 +1369,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointReal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 18</value>
+    <value>167, 36</value>
   </data>
   <data name="labelMousePointReal.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1360,7 +1402,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 0</value>
+    <value>482, 0</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1369,7 +1411,7 @@
     <value>True</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 18</value>
+    <value>228, 36</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1411,7 +1453,7 @@
     <value>True</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 18</value>
+    <value>242, 36</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1444,7 +1486,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelMousePointPixel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 0</value>
+    <value>242, 0</value>
   </data>
   <data name="labelMousePointPixel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1453,7 +1495,7 @@
     <value>True</value>
   </data>
   <data name="labelMousePointPixel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 18</value>
+    <value>151, 36</value>
   </data>
   <data name="labelMousePointPixel.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1492,7 +1534,7 @@
     <value>True</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>423, 21</value>
+    <value>986, 42</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -1510,7 +1552,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelMousePointReal" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointPixel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,120,AutoSize,0,Absolute,183" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelMousePointReal" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointPixel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,240,AutoSize,0,Absolute,366" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="splitContainer2.Panel2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1531,10 +1573,13 @@
     <value>True</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 449</value>
+    <value>1128, 855</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
     <value>134</value>
+  </data>
+  <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -1570,7 +1615,7 @@
     <value>NoControl</value>
   </data>
   <data name="trackBarMaxInt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 30</value>
+    <value>494, 94</value>
   </data>
   <data name="trackBarMaxInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1579,7 +1624,7 @@
     <value>True</value>
   </data>
   <data name="trackBarMaxInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 30</value>
+    <value>634, 94</value>
   </data>
   <data name="trackBarMaxInt.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1606,7 +1651,7 @@
     <value>NoControl</value>
   </data>
   <data name="trackBarMinInt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 0</value>
+    <value>494, 0</value>
   </data>
   <data name="trackBarMinInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1615,7 +1660,7 @@
     <value>True</value>
   </data>
   <data name="trackBarMinInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 30</value>
+    <value>634, 94</value>
   </data>
   <data name="trackBarMinInt.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1636,16 +1681,16 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericUpDownMaxInt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 32</value>
+    <value>336, 98</value>
   </data>
   <data name="numericUpDownMaxInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 0, 0</value>
+    <value>4, 4, 0, 0</value>
   </data>
   <data name="numericUpDownMaxInt.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="numericUpDownMaxInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 25</value>
+    <value>158, 42</value>
   </data>
   <data name="numericUpDownMaxInt.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1669,16 +1714,16 @@
     <value>NoControl</value>
   </data>
   <data name="buttonAutoLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 2</value>
+    <value>6, 4</value>
   </data>
   <data name="buttonAutoLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 0, 0</value>
+    <value>6, 4, 0, 0</value>
   </data>
   <data name="buttonAutoLevel.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="buttonAutoLevel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 24</value>
+    <value>214, 48</value>
   </data>
   <data name="buttonAutoLevel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1702,16 +1747,16 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericUpDownMinInt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 2</value>
+    <value>336, 4</value>
   </data>
   <data name="numericUpDownMinInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 0, 3</value>
+    <value>4, 4, 0, 6</value>
   </data>
   <data name="numericUpDownMinInt.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="numericUpDownMinInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 25</value>
+    <value>158, 42</value>
   </data>
   <data name="numericUpDownMinInt.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1735,16 +1780,16 @@
     <value>NoControl</value>
   </data>
   <data name="buttonReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
+    <value>6, 98</value>
   </data>
   <data name="buttonReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 0, 0</value>
+    <value>6, 4, 0, 0</value>
   </data>
   <data name="buttonReset.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="buttonReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 24</value>
+    <value>214, 48</value>
   </data>
   <data name="buttonReset.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1774,16 +1819,16 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 33</value>
+    <value>226, 100</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 0, 0</value>
+    <value>6, 6, 0, 0</value>
   </data>
   <data name="label1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 17</value>
+    <value>106, 36</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1813,16 +1858,16 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 3</value>
+    <value>226, 6</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 0, 0</value>
+    <value>6, 6, 0, 0</value>
   </data>
   <data name="label2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 17</value>
+    <value>102, 36</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1846,10 +1891,10 @@
     <value>Bottom</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 449</value>
+    <value>0, 855</value>
   </data>
   <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1858,7 +1903,7 @@
     <value>True</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 60</value>
+    <value>1128, 188</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1887,11 +1932,14 @@
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="flowLayoutPanel1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 0</value>
+    <value>1128, 0</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1920,11 +1968,14 @@
   <data name="panelMousePos.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="panelMousePos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="panelMousePos.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="panelMousePos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 0</value>
+    <value>1128, 0</value>
   </data>
   <data name="panelMousePos.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -1966,13 +2017,13 @@
     <value>0, 0</value>
   </data>
   <data name="graphControlFrequency.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>6, 8, 6, 8</value>
   </data>
   <data name="graphControlFrequency.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 169</value>
+    <value>1112, 350</value>
   </data>
   <data name="graphControlFrequency.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1981,7 +2032,7 @@
     <value>graphControlFrequency</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.3.11.902, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.3.1.854, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -1990,7 +2041,7 @@
     <value>0</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
+    <value>8, 50</value>
   </data>
   <data name="tabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1999,7 +2050,7 @@
     <value>True</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 169</value>
+    <value>1112, 350</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2029,13 +2080,13 @@
     <value>0, 0</value>
   </data>
   <data name="graphControlProfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>6, 8, 6, 8</value>
   </data>
   <data name="graphControlProfile.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 169</value>
+    <value>892, 300</value>
   </data>
   <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2044,7 +2095,7 @@
     <value>graphControlProfile</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.3.11.902, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.3.1.854, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -2053,7 +2104,7 @@
     <value>0</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
+    <value>8, 50</value>
   </data>
   <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2062,7 +2113,7 @@
     <value>True</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 169</value>
+    <value>892, 300</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2086,7 +2137,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 54</value>
+    <value>618, 108</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2098,7 +2152,7 @@
     <value>True</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 109</value>
+    <value>468, 158</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2119,7 +2173,10 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 54</value>
+    <value>18, 108</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2131,7 +2188,7 @@
     <value>True</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 109</value>
+    <value>584, 158</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2161,16 +2218,16 @@
     <value>NoControl</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 5</value>
+    <value>0, 10</value>
   </data>
   <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>0, 10, 0, 0</value>
   </data>
   <data name="label17.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
+    <value>190, 36</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2191,16 +2248,16 @@
     <value>0</value>
   </data>
   <data name="numericUpDownSelectedAreaX1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 3</value>
+    <value>190, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaX1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
+    <value>0, 6, 0, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaX1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaX1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 25</value>
+    <value>128, 42</value>
   </data>
   <data name="numericUpDownSelectedAreaX1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2224,16 +2281,16 @@
     <value>NoControl</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 5</value>
+    <value>318, 10</value>
   </data>
   <data name="label18.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>0, 10, 0, 0</value>
   </data>
   <data name="label18.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 17</value>
+    <value>21, 36</value>
   </data>
   <data name="label18.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2254,16 +2311,16 @@
     <value>2</value>
   </data>
   <data name="numericUpDownSelectedAreaY1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 3</value>
+    <value>339, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaY1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
+    <value>0, 6, 0, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaY1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaY1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 25</value>
+    <value>128, 42</value>
   </data>
   <data name="numericUpDownSelectedAreaY1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2287,16 +2344,16 @@
     <value>NoControl</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 5</value>
+    <value>467, 10</value>
   </data>
   <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>0, 10, 0, 0</value>
   </data>
   <data name="label19.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 17</value>
+    <value>63, 36</value>
   </data>
   <data name="label19.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2317,16 +2374,16 @@
     <value>4</value>
   </data>
   <data name="numericUpDownSelectedAreaX2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 3</value>
+    <value>530, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaX2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
+    <value>0, 6, 0, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaX2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaX2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 25</value>
+    <value>128, 42</value>
   </data>
   <data name="numericUpDownSelectedAreaX2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2350,16 +2407,16 @@
     <value>NoControl</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 5</value>
+    <value>658, 10</value>
   </data>
   <data name="label20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>0, 10, 0, 0</value>
   </data>
   <data name="label20.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 17</value>
+    <value>21, 36</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2380,16 +2437,16 @@
     <value>6</value>
   </data>
   <data name="numericUpDownSelectedAreaY2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 3</value>
+    <value>679, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaY2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
+    <value>0, 6, 0, 6</value>
   </data>
   <data name="numericUpDownSelectedAreaY2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaY2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 25</value>
+    <value>128, 42</value>
   </data>
   <data name="numericUpDownSelectedAreaY2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2413,16 +2470,16 @@
     <value>NoControl</value>
   </data>
   <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>409, 5</value>
+    <value>807, 10</value>
   </data>
   <data name="label21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>0, 10, 0, 0</value>
   </data>
   <data name="label21.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 17</value>
+    <value>30, 36</value>
   </data>
   <data name="label21.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2445,11 +2502,14 @@
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="flowLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="flowLayoutPanel2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 31</value>
+    <value>837, 54</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2473,13 +2533,16 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 34</value>
+    <value>612, 68</value>
+  </data>
+  <data name="label15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label15.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 17</value>
+    <value>498, 36</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2506,13 +2569,16 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 34</value>
+    <value>12, 68</value>
+  </data>
+  <data name="label16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label16.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
+    <value>303, 36</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2533,16 +2599,19 @@
     <value>4</value>
   </data>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
+    <value>8, 50</value>
+  </data>
+  <data name="tabPage3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="tabPage3.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 169</value>
+    <value>892, 300</value>
   </data>
   <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2578,7 +2647,7 @@
     <value>True</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 199</value>
+    <value>1128, 408</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2614,10 +2683,13 @@
     <value>True</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 712</value>
+    <value>1128, 1459</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>509</value>
+    <value>1043</value>
+  </data>
+  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -2634,11 +2706,14 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="toolStripContainer1.ContentPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="toolStripContainer1.ContentPanel.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 712</value>
+    <value>1128, 1459</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -2695,7 +2770,7 @@
     <value>White</value>
   </data>
   <data name="toolStripButtonIntensityTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 72</value>
+    <value>217, 110</value>
   </data>
   <data name="toolStripButtonIntensityTable.Text" xml:space="preserve">
     <value>Intensity
@@ -2709,7 +2784,7 @@
 現在の中心位置に隣接するピクセルの強度テーブルを表示します。</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStripButtonAutoProcedure.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -2721,7 +2796,7 @@
     <value>White</value>
   </data>
   <data name="toolStripButtonAutoProcedure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 72</value>
+    <value>217, 110</value>
   </data>
   <data name="toolStripButtonAutoProcedure.Text" xml:space="preserve">
     <value>Auto
@@ -2735,7 +2810,7 @@ Procedure</value>
 作業を連続して実行するためのフォームを表示します。</value>
   </data>
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStripButtonRing.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -2747,7 +2822,7 @@ Procedure</value>
     <value>White</value>
   </data>
   <data name="toolStripButtonRing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 55</value>
+    <value>217, 74</value>
   </data>
   <data name="toolStripButtonRing.Text" xml:space="preserve">
     <value>Draw Ring</value>
@@ -2760,7 +2835,7 @@ Procedure</value>
 </value>
   </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStripButtonFindParameter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -2772,7 +2847,7 @@ Procedure</value>
     <value>White</value>
   </data>
   <data name="toolStripButtonFindParameter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 72</value>
+    <value>217, 110</value>
   </data>
   <data name="toolStripButtonFindParameter.Text" xml:space="preserve">
     <value>Find
@@ -2787,7 +2862,7 @@ by starndard diffraction patterns
 </value>
   </data>
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStripButtonUnroll.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -2799,7 +2874,7 @@ by starndard diffraction patterns
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonUnroll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 70</value>
+    <value>217, 108</value>
   </data>
   <data name="toolStripButtonUnroll.Text" xml:space="preserve">
     <value>Unroll
@@ -2812,7 +2887,7 @@ image</value>
     <value>toolStripButtonUnroll</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStripButtonCircumferentialBlur.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -2824,7 +2899,7 @@ image</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonCircumferentialBlur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 70</value>
+    <value>217, 108</value>
   </data>
   <data name="toolStripButtonCircumferentialBlur.Text" xml:space="preserve">
     <value>Circumferential
@@ -2837,7 +2912,7 @@ blur </value>
     <value>toolStripButtonUnroll</value>
   </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStripButtonImageSequence.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2852,7 +2927,7 @@ blur </value>
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonImageSequence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 53</value>
+    <value>217, 72</value>
   </data>
   <data name="toolStripButtonImageSequence.Text" xml:space="preserve">
     <value>Sequential Image</value>
@@ -2864,16 +2939,16 @@ blur </value>
     <value>Image Sequence Option</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>217, 6</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
+    <value>0, 6</value>
   </data>
   <data name="toolStrip1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 538</value>
+    <value>220, 796</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2912,7 +2987,7 @@ blur </value>
     <value>True</value>
   </data>
   <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 818</value>
+    <value>1348, 1636</value>
   </data>
   <data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -2933,25 +3008,25 @@ blur </value>
     <value>Alt+O</value>
   </data>
   <data name="readImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
     <value>Read Image</value>
   </data>
   <data name="tiffToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 24</value>
+    <value>937, 50</value>
   </data>
   <data name="tiffToolStripMenuItem.Text" xml:space="preserve">
     <value>as TIFF format</value>
   </data>
   <data name="pngToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 24</value>
+    <value>937, 50</value>
   </data>
   <data name="pngToolStripMenuItem.Text" xml:space="preserve">
     <value>as PNG format (preserve brightness, contrast, masked area)</value>
   </data>
   <data name="ipaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 24</value>
+    <value>937, 50</value>
   </data>
   <data name="ipaToolStripMenuItem.Text" xml:space="preserve">
     <value>as IPA format (original format)</value>
@@ -2960,46 +3035,46 @@ blur </value>
     <value>MiddleLeft</value>
   </data>
   <data name="toolStripMenuItemSaveImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
     <value>Save Image</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>408, 6</value>
   </data>
   <data name="toolStripMenuItemReadParameter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="toolStripMenuItemReadParameter.Text" xml:space="preserve">
     <value>Read Parameter</value>
   </data>
   <data name="toolStripMenuItemSaveParameter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="toolStripMenuItemSaveParameter.Text" xml:space="preserve">
     <value>Save Parameter</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>408, 6</value>
   </data>
   <data name="toolStripMenuItemReadMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="toolStripMenuItemReadMask.Text" xml:space="preserve">
     <value>Read Mask</value>
   </data>
   <data name="toolStripMenuItemSaveMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="toolStripMenuItemSaveMask.Text" xml:space="preserve">
     <value>Save Mask</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>408, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>411, 50</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Close</value>
@@ -3008,31 +3083,31 @@ blur </value>
     <value>Alt+F</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 24</value>
+    <value>83, 45</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
   <data name="resetFrequencyProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
+    <value>466, 50</value>
   </data>
   <data name="resetFrequencyProfileToolStripMenuItem.Text" xml:space="preserve">
     <value>Reset Frequency Profile</value>
   </data>
   <data name="calibrateRaxisImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
+    <value>466, 50</value>
   </data>
   <data name="calibrateRaxisImageToolStripMenuItem.Text" xml:space="preserve">
     <value>Calibrate Raxis Image</value>
   </data>
   <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 24</value>
+    <value>97, 45</value>
   </data>
   <data name="toolToolStripMenuItem.Text" xml:space="preserve">
     <value>Tool</value>
   </data>
   <data name="toolStripMenuItemPropertyWaveSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItemPropertyWaveSource.Text" xml:space="preserve">
     <value>Wave Source</value>
@@ -3042,7 +3117,7 @@ blur </value>
 X線の波長とカメラ長を設定します。</value>
   </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Imaging Plate Condition</value>
@@ -3052,91 +3127,91 @@ X線の波長とカメラ長を設定します。</value>
 イメージングプレートの画素形状や傾き、ビームの中心を設定します。</value>
   </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>473, 6</value>
   </data>
   <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>Integral Region</value>
   </data>
   <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem11.Text" xml:space="preserve">
     <value>Integral Property</value>
   </data>
   <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>473, 6</value>
   </data>
   <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem12.Text" xml:space="preserve">
     <value>Manual Mask Mode</value>
   </data>
   <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>473, 6</value>
   </data>
   <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem13.Text" xml:space="preserve">
     <value>After "Get Profile"</value>
   </data>
   <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>473, 6</value>
   </data>
   <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
     <value>Unrolled Image Option</value>
   </data>
   <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>473, 6</value>
   </data>
   <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Associated Extensions</value>
   </data>
   <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>473, 6</value>
   </data>
   <data name="misToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 24</value>
+    <value>476, 50</value>
   </data>
   <data name="misToolStripMenuItem.Text" xml:space="preserve">
     <value>Miscellaneous</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 24</value>
+    <value>152, 45</value>
   </data>
   <data name="toolStripMenuItem5.Text" xml:space="preserve">
     <value>Property</value>
   </data>
   <data name="toolTipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>347, 50</value>
   </data>
   <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
     <value>ToolTip</value>
   </data>
   <data name="flipHorizontallyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 24</value>
+    <value>314, 50</value>
   </data>
   <data name="flipHorizontallyToolStripMenuItem.Text" xml:space="preserve">
     <value>Horizontally</value>
   </data>
   <data name="flipVerticallyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 24</value>
+    <value>314, 50</value>
   </data>
   <data name="flipVerticallyToolStripMenuItem.Text" xml:space="preserve">
     <value>Vertically</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>347, 50</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Flip</value>
@@ -3154,25 +3229,25 @@ X線の波長とカメラ長を設定します。</value>
     <value>270 deg</value>
   </data>
   <data name="toolStripComboBoxRotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>121, 40</value>
   </data>
   <data name="rotateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>347, 50</value>
   </data>
   <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
     <value>Rotate</value>
   </data>
   <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 6</value>
+    <value>344, 6</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>347, 50</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
     <value>Ngen Compile</value>
   </data>
   <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 24</value>
+    <value>131, 45</value>
   </data>
   <data name="optionToolStripMenuItem.Text" xml:space="preserve">
     <value>Option</value>
@@ -3190,7 +3265,7 @@ X線の波長とカメラ長を設定します。</value>
 </value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 24</value>
+    <value>276, 50</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
@@ -3204,70 +3279,70 @@ X線の波長とカメラ長を設定します。</value>
 </value>
   </data>
   <data name="japaneseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 24</value>
+    <value>276, 50</value>
   </data>
   <data name="japaneseToolStripMenuItem.Text" xml:space="preserve">
     <value>Japanese</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 24</value>
+    <value>168, 45</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Language</value>
   </data>
   <data name="editorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 24</value>
+    <value>233, 50</value>
   </data>
   <data name="editorToolStripMenuItem.Text" xml:space="preserve">
     <value>Editor</value>
   </data>
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 6</value>
+    <value>230, 6</value>
   </data>
   <data name="macroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 24</value>
+    <value>122, 45</value>
   </data>
   <data name="macroToolStripMenuItem.Text" xml:space="preserve">
     <value>Macro</value>
   </data>
   <data name="aboutMeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 24</value>
+    <value>388, 50</value>
   </data>
   <data name="aboutMeToolStripMenuItem.Text" xml:space="preserve">
     <value>About Me</value>
   </data>
   <data name="programUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 24</value>
+    <value>388, 50</value>
   </data>
   <data name="programUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Program Updates</value>
   </data>
   <data name="hintToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 24</value>
+    <value>388, 50</value>
   </data>
   <data name="hintToolStripMenuItem.Text" xml:space="preserve">
     <value>Hint</value>
   </data>
   <data name="webPageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 24</value>
+    <value>388, 50</value>
   </data>
   <data name="webPageToolStripMenuItem.Text" xml:space="preserve">
     <value>Help (web)</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 24</value>
+    <value>100, 45</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 82</value>
   </data>
   <data name="menuStrip.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 28</value>
+    <value>1348, 49</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -3294,7 +3369,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Arial, 9pt</value>
   </data>
   <data name="resetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>342, 44</value>
   </data>
   <data name="resetToolStripMenuItem.Text" xml:space="preserve">
     <value>Reset</value>
@@ -3303,7 +3378,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 22</value>
+    <value>421, 44</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
     <value>Lower (% of image size)</value>
@@ -3327,13 +3402,13 @@ X線の波長とカメラ長を設定します。</value>
     <value>25</value>
   </data>
   <data name="toolStripComboBoxBackgroundLower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>121, 40</value>
   </data>
   <data name="toolStripComboBoxBackgroundLower.Text" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 22</value>
+    <value>421, 44</value>
   </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
     <value>Upper (% of image size)</value>
@@ -3354,7 +3429,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>100</value>
   </data>
   <data name="toolStripComboBoxBackgroundUpper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>121, 40</value>
   </data>
   <data name="toolStripComboBoxBackgroundUpper.Text" xml:space="preserve">
     <value>90</value>
@@ -3363,7 +3438,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>342, 44</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Detection Range</value>
@@ -3372,7 +3447,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="fourierToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>342, 44</value>
   </data>
   <data name="fourierToolStripMenuItem.Text" xml:space="preserve">
     <value>Fourier</value>
@@ -3381,7 +3456,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItemReferenceBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>342, 44</value>
   </data>
   <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
     <value>Reference image</value>
@@ -3399,7 +3474,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>White</value>
   </data>
   <data name="toolStripSplitButtonBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 56</value>
+    <value>175, 82</value>
   </data>
   <data name="toolStripSplitButtonBackground.Text" xml:space="preserve">
     <value>Background</value>
@@ -3408,10 +3483,10 @@ X線の波長とカメラ長を設定します。</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 56</value>
+    <value>6, 82</value>
   </data>
   <data name="toolStripMenuItemFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 22</value>
+    <value>487, 44</value>
   </data>
   <data name="toolStripMenuItemFindCenterOption.Text" xml:space="preserve">
     <value>Option</value>
@@ -3424,7 +3499,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="findCenterBasedOnTheRingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 22</value>
+    <value>487, 44</value>
   </data>
   <data name="findCenterBasedOnTheRingToolStripMenuItem.Text" xml:space="preserve">
     <value>Find center based on the ring</value>
@@ -3442,7 +3517,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripSplitButtonFindCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 56</value>
+    <value>171, 82</value>
   </data>
   <data name="toolStripSplitButtonFindCenter.Text" xml:space="preserve">
     <value>Find Center</value>
@@ -3462,7 +3537,7 @@ X線の波長とカメラ長を設定します。</value>
   <data name="toolStripButtonFixCenter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
         YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
         0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
         bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
@@ -3478,17 +3553,17 @@ X線の波長とカメラ長を設定します。</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonFixCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 53</value>
+    <value>96, 76</value>
   </data>
   <data name="toolStripButtonFixCenter.Text" xml:space="preserve">
     <value>Fix
 Center</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 56</value>
+    <value>6, 82</value>
   </data>
   <data name="toolStripMenuItemClearMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>310, 44</value>
   </data>
   <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
     <value>Clear All Mask</value>
@@ -3498,7 +3573,7 @@ Center</value>
 マスクされた部分を全てクリアします。</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>310, 44</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
     <value>Mask All Area</value>
@@ -3508,16 +3583,16 @@ Center</value>
 全てをマスクします</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>310, 44</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
     <value>Inverse Mask</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 6</value>
+    <value>307, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>310, 44</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Text" xml:space="preserve">
     <value>Manual Mode</value>
@@ -3528,10 +3603,10 @@ Center</value>
 スポットの大きさは"Option"から変更できます。</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 6</value>
+    <value>307, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>310, 44</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Text" xml:space="preserve">
     <value>Option</value>
@@ -3550,7 +3625,7 @@ Find Spotsのオプション設定をします</value>
     <value>White</value>
   </data>
   <data name="toolStripSplitButtonFindSpots.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 56</value>
+    <value>169, 82</value>
   </data>
   <data name="toolStripSplitButtonFindSpots.Text" xml:space="preserve">
     <value>Mask Spots</value>
@@ -3568,7 +3643,7 @@ Find Spotsのオプション設定をします</value>
   <data name="toolStripButtonManualSpotMode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
         YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
         0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
         bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
@@ -3584,7 +3659,7 @@ Find Spotsのオプション設定をします</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonManualSpotMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 53</value>
+    <value>104, 76</value>
   </data>
   <data name="toolStripButtonManualSpotMode.Text" xml:space="preserve">
     <value>Manual
@@ -3633,10 +3708,10 @@ Mode</value>
     <value>False</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 56</value>
+    <value>6, 82</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralProperty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralProperty.Text" xml:space="preserve">
     <value>Integral Property</value>
@@ -3649,7 +3724,7 @@ Mode</value>
     <value>Arial, 9pt</value>
   </data>
   <data name="toolStripMenuItemConcenctricIntegration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemConcenctricIntegration.Text" xml:space="preserve">
     <value>     Concentric Integration</value>
@@ -3658,16 +3733,16 @@ Mode</value>
     <value>Arial, 9pt</value>
   </data>
   <data name="toolStripMenuItemRadialIntegration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemRadialIntegration.Text" xml:space="preserve">
     <value>     Radial integration</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 6</value>
+    <value>572, 6</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralRegion.Text" xml:space="preserve">
     <value>Integral Region</value>
@@ -3677,13 +3752,13 @@ Mode</value>
 画像の積算範囲・形状を変更します。</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 6</value>
+    <value>572, 6</value>
   </data>
   <data name="findCenterBeforeGetProfileToolStripMenuItem.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="findCenterBeforeGetProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="findCenterBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
     <value>Find Center before Get Profile</value>
@@ -3692,7 +3767,7 @@ Mode</value>
     <value>プロファイルを取得する前に中心点を検出します</value>
   </data>
   <data name="findSpotsBeforeGetProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="findSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
     <value>Find Spots before Get Profile</value>
@@ -3701,31 +3776,31 @@ Mode</value>
     <value>プロファイルを取得する前にスポット(回折斑点)を検出します</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 6</value>
+    <value>572, 6</value>
   </data>
   <data name="toolStripMenuItemSendProfileToPDIndexer.ShortcutKeyDisplayString" xml:space="preserve">
     <value />
   </data>
   <data name="toolStripMenuItemSendProfileToPDIndexer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemSendProfileToPDIndexer.Text" xml:space="preserve">
     <value>Send profile to PDIndexer</value>
   </data>
   <data name="toolStripMenuItemSendUnrolledImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemSendUnrolledImage.Text" xml:space="preserve">
     <value>     with unrolled image</value>
   </data>
   <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 6</value>
+    <value>572, 6</value>
   </data>
   <data name="toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>372, 44</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>angle step (degree)</value>
@@ -3773,28 +3848,28 @@ Mode</value>
     <value>60</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>121, 37</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Text" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="toolStripMenuItemDividedByAngleStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemDividedByAngleStep.Text" xml:space="preserve">
     <value>Lattice Preferred Orientation Analysis</value>
   </data>
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 6</value>
+    <value>572, 6</value>
   </data>
   <data name="toolStripMenuItemAllSequentialImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemAllSequentialImages.Text" xml:space="preserve">
     <value>Get Profiles for all sequential images</value>
   </data>
   <data name="toolStripMenuItemSelectedSequentialImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>575, 44</value>
   </data>
   <data name="toolStripMenuItemSelectedSequentialImages.Text" xml:space="preserve">
     <value>Get Profiles for selected images</value>
@@ -3809,7 +3884,7 @@ Mode</value>
     <value>White</value>
   </data>
   <data name="toolStripSplitButtonGetProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 53</value>
+    <value>159, 76</value>
   </data>
   <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
     <value>Get Profile</value>
@@ -3821,7 +3896,7 @@ Mode</value>
     <value>Convert the two-dimensional diffraction pattern to one dimensional 2θ-intensity profile</value>
   </data>
   <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
+    <value>0, 0</value>
   </data>
   <data name="toolStrip2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3830,7 +3905,7 @@ Mode</value>
     <value>True</value>
   </data>
   <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 56</value>
+    <value>1348, 82</value>
   </data>
   <data name="toolStrip2.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -3890,10 +3965,10 @@ Mode</value>
     <value>74</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
+    <value>192, 192</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>674, 818</value>
+    <value>1348, 1636</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 11.25pt</value>
@@ -3963,16 +4038,25 @@ Mode</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>IPAnalyzer</value>
   </data>
-  <data name="&gt;&gt;toolStripStatusLabelComputationTime.Name" xml:space="preserve">
-    <value>toolStripStatusLabelComputationTime</value>
+  <data name="&gt;&gt;toolStripProgressBar.Name" xml:space="preserve">
+    <value>toolStripProgressBar</value>
   </data>
-  <data name="&gt;&gt;toolStripStatusLabelComputationTime.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel.Name" xml:space="preserve">
+    <value>toolStripStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripButtonIntensityTable.Name" xml:space="preserve">

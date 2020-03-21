@@ -16,19 +16,19 @@ namespace IPAnalyzer
     {
         public double WaveLength
         {
-            set { waveLengthControl.WaveLength = value; }
-            get { return waveLengthControl.WaveLength; }
+            set => waveLengthControl.WaveLength = value;
+            get => waveLengthControl.WaveLength;
         }
         public string WaveLengthText
         {
-            set { waveLengthControl.WaveLengthText = value; }
-            get { return waveLengthControl.WaveLengthText; }
+            set => waveLengthControl.WaveLengthText = value;
+            get => waveLengthControl.WaveLengthText;
         }
 
         public double CameraLength
         {
-            set { numericalTextBoxCameraLength.Value = value; }
-            get { return numericalTextBoxCameraLength.Value; }
+            set => numericalTextBoxCameraLength.Value = value;
+            get => numericalTextBoxCameraLength.Value;
         }
         public string CameraLengthText
         {
@@ -67,45 +67,20 @@ namespace IPAnalyzer
 
         public FormMain formMain;
 
-        //Integral Property 角度
-        private double startAngle = 1;
-        public double StartAngle { set { startAngle = value; } get { return startAngle; } }
-        private double endAngle = 30;
-        public double EndAngle { set { endAngle = value; } get { return endAngle; } }
-        private double stepAngle = 0.01;
-        public double StepAngle { set { stepAngle = value; } get { return stepAngle; } }
-
-        //Integral Property 長さ
-        private double startLength =1;
-        public double StartLength { set { startLength = value; } get { return startLength; } }
-        private double endLength = 30;
-        public double EndLength { set { endLength = value; } get { return endLength; } }
-        private double stepLength = 0.01;
-        public double StepLength { set { stepLength = value; } get { return stepLength; } }
-
-        //Integral Property d値
-        private double startDspacing = 0.5;
-        public double StartDspacing { set { startDspacing = value; } get { return startDspacing; } }
-        private double endDspacing = 5;
-        public double EndDspacing { set { endDspacing = value; } get { return endDspacing; } }
-        private double stepDspacing = 0.005;
-        public double StepDspacing { set { stepDspacing = value; } get { return stepDspacing; } }
-
-        //Integral Property CakePattern d値
-        private double sectorRadiusD = 1.5;
-        public double SectorRadiusD { set { sectorRadiusD = value; } get { return sectorRadiusD; } }
-        private double sectorRadiusDRange = 0.01;
-        public double SectorRadiusDRange { set { sectorRadiusDRange = value; } get { return sectorRadiusDRange; } }
-
-        //Integral Property CakePattern 角度
-        private double sectorRadiusTheta = 20;
-        public double SectorRadiusTheta { set { sectorRadiusTheta = value; } get { return sectorRadiusTheta; } }
-        private double sectorRadiusThetaRange = 0.1;
-        public double SectorRadiusThetaRange { set { sectorRadiusThetaRange = value; } get { return sectorRadiusThetaRange; } }
-
-        //Integral Property CakePattern セクター角度
-        private double sectorAngle = 0.05;
-        public double SectorAngle { set { sectorAngle = value; } get { return sectorAngle; } }
+        public double StartAngle { set; get; } = 1;
+        public double EndAngle { set; get; } = 30;
+        public double StepAngle { set; get; } = 0.01;
+        public double StartLength { set; get; } = 1;
+        public double EndLength { set; get; } = 30;
+        public double StepLength { set; get; } = 0.01;
+        public double StartDspacing { set; get; } = 0.5;
+        public double EndDspacing { set; get; } = 5;
+        public double StepDspacing { set; get; } = 0.005;
+        public double SectorRadiusD { set; get; } = 1.5;
+        public double SectorRadiusDRange { set; get; } = 0.01;
+        public double SectorRadiusTheta { set; get; } = 20;
+        public double SectorRadiusThetaRange { set; get; } = 0.1;
+        public double SectorAngle { set; get; } = 0.05;
 
 
         public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues( typeof( Ring.ImageTypeEnum)).Length];
@@ -825,7 +800,7 @@ namespace IPAnalyzer
                 groupBoxGandlfiRadius.Visible = true;
 
             }
-            textBox_TextChanged(sectorAngle, e);
+            textBox_TextChanged(SectorAngle, e);
 
 
         }

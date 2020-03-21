@@ -20,6 +20,7 @@ using IronPython.Hosting;
 using System.Threading.Tasks;
 using System.Numerics;
 using System.Diagnostics;
+using System.Net;
 
 namespace IPAnalyzer
 {
@@ -119,6 +120,8 @@ namespace IPAnalyzer
 
         public PointD selectedSpot = new PointD(double.NaN,double.NaN);
 
+        private IProgress<(long, long, long, string)> ip;//IReport
+
         //public string ImageFilterString = "FujiBAS2000/2500; R-AXIS4/5; ITEX; Bruker CCD; IP Display; IPAimage; Fuji FDL; Rayonix; Marresearch; Perkin Elmer; ADSC; RadIcon; general image"
         //        + "|*.img;*.stl;*.ccd;*.ipf;*.ipa;*.0???;*.gel;*.osc;*.mar*;*.mccd; *.his; *.h5; *.raw; *.bmp;*.jpg;*.tif";
 
@@ -196,6 +199,8 @@ namespace IPAnalyzer
 
         public FormMain()
         {
+            ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
+
             RegistryKey regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer");
             try
             {
@@ -747,9 +752,10 @@ namespace IPAnalyzer
             toolStripComboBoxRotate.SelectedIndex = 0;
 
             InitialDialog = new WaitDlg();
+            InitialDialog.ShowHints = false;
             LoadRegistry();
             InitialDialog.Owner = this;
-            InitialDialog.Version = "IPAnalyzer  " + Version.VersionAndDate;
+            InitialDialog.Version = $"IPAnalyzer  {Version.VersionAndDate}";
             InitialDialog.Text = "Now Loading...";
             InitialDialog.ShowVersion = true;
             InitialDialog.Hint = Version.Hint;
@@ -2307,7 +2313,7 @@ namespace IPAnalyzer
                     FormProperty.ImageCenter = center;
                 }
                 toolStripSplitButtonFindCenter.Enabled = true;
-                this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Find Center):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
+                this.toolStripStatusLabel.Text = "Calculating Time (Find Center):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
 
                 FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosX = FormProperty.ImageCenter.X;
                 FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosY = FormProperty.ImageCenter.Y;
@@ -2394,7 +2400,7 @@ namespace IPAnalyzer
             Draw();
             this.Cursor = Cursors.Default;
             toolStripSplitButtonFindSpots.Enabled = true;
-            this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Find Spots):  " + (Environment.TickCount - d).ToString() + "ms";
+            this.toolStripStatusLabel.Text = "Calculating Time (Find Spots):  " + (Environment.TickCount - d).ToString() + "ms";
         }
 
 
@@ -2554,7 +2560,7 @@ namespace IPAnalyzer
                     graphControlProfile.Profile = diffractionProfile.OriginalProfile;
 
                     toolStripSplitButtonGetProfile.Enabled = true;
-                    this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
+                    this.toolStripStatusLabel.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
                 }
 
                 catch (Exception ex)
@@ -2589,7 +2595,7 @@ namespace IPAnalyzer
                     diffractionProfile.IsLPOmain = true;
                     diffractionProfile.IsLPOchild = false;
 
-                    this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
+                    this.toolStripStatusLabel.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
 
                     dpList.Add((DiffractionProfile)diffractionProfile.Clone());
 
@@ -2633,7 +2639,7 @@ namespace IPAnalyzer
                         diffractionProfile.IsLPOmain = false;
                         diffractionProfile.IsLPOchild = true;
 
-                        this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
+                        this.toolStripStatusLabel.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
                         //toolStripSplitButtonGetProfile.Enabled = true;
 
                         dpList.Add((DiffractionProfile)diffractionProfile.Clone());
@@ -2802,7 +2808,7 @@ namespace IPAnalyzer
             else
                 Ring.SetInsideArea(IP);
 
-            this.toolStripStatusLabelComputationTime.Text = "Calculating Time (SetIntegralArea):  " + sw.ElapsedMilliseconds.ToString() + "ms";
+            this.toolStripStatusLabel.Text = "Calculating Time (SetIntegralArea):  " + sw.ElapsedMilliseconds.ToString() + "ms";
 
             SetMask();
             Draw();
@@ -3621,7 +3627,7 @@ namespace IPAnalyzer
 
                     double[] imageArray = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
 
-                    this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
+                    this.toolStripStatusLabel.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
 
                     byte[] scale = new byte[256];
                     for (int i = 0; i < 256; i++)
@@ -3742,9 +3748,81 @@ namespace IPAnalyzer
 
         private void programUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ProgramUpdates.CheckUpdate(Version.Software, Version.VersionAndDate))
-                Close();
+            toolStripProgressBar.Visible = true;
+
+            (var Title, var Message, var NeedUpdate, var URL, var Path) = ProgramUpdates.Check(Version.Software, Version.VersionAndDate);
+
+            if (!NeedUpdate)
+                MessageBox.Show(Message, Title, MessageBoxButtons.OK);
+            else if (MessageBox.Show(Message, Title, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                using (var wc = new WebClient())
+                {
+                    long counter = 1;
+                    wc.DownloadProgressChanged += (s, ev) =>
+                    {
+                        if (counter++ % 10 == 0)
+                            ip.Report(ProgramUpdates.ProgressMessage(ev, sw));
+                    };
+
+                    wc.DownloadFileCompleted += (s, ev) =>
+                    {
+                        if (ProgramUpdates.Execute(Path))
+                            Close();
+                        else
+                            MessageBox.Show($"Failed to downlod {Path}. \r\nSorry!", "Error!");
+                    };
+                    sw.Restart();
+                    wc.DownloadFileAsync(new Uri(URL), Path);
+                }
         }
+
+        private bool skipProgressEvent { get; set; } = false;
+        /// <summary>
+        /// 進捗状況を更新
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="total"></param>
+        /// <param name="elapsedMilliseconds">経過時間</param>
+        /// <param name="message">メッセージ</param>
+        /// <param name="interval">何回に一回更新するか</param>
+        /// <param name="sleep"></param>
+        /// <param name="showPercentage"></param>
+        /// <param name="showEllapsedTime"></param>
+        /// <param name="showRemainTime"></param>
+        /// <param name="digit"></param>
+        private void reportProgress(long current, long total, long elapsedMilliseconds, string message,
+            int sleep = 0, bool showPercentage = true, bool showEllapsedTime = true, bool showRemainTime = true, int digit = 1)
+        {
+            if (skipProgressEvent || current > total)
+                return;
+            skipProgressEvent = true;
+            try
+            {
+                toolStripProgressBar.Maximum = int.MaxValue;
+                var ratio = (double)current / total;
+                toolStripProgressBar.Value = (int)(ratio * toolStripProgressBar.Maximum);
+                var ellapsedSec = elapsedMilliseconds / 1000.0;
+                var format = $"f{digit}";
+
+                if (showPercentage) message += $" Completed: {(ratio * 100).ToString(format)} %.";
+                if (showEllapsedTime) message += $" Elappsed: {ellapsedSec.ToString(format)} s.";
+                if (showRemainTime) message += $" Remaining: {(ellapsedSec / current * (total - current)).ToString(format)} s.";
+
+                toolStripStatusLabel.Text = message;
+
+                Application.DoEvents();
+
+                if (sleep != 0) Thread.Sleep(sleep);
+            }
+            catch (Exception e)
+            {
+
+            }
+            skipProgressEvent = false;
+        }
+        private void reportProgress((long current, long total, long elapsedMilliseconds, string message) o)
+            => reportProgress(o.current, o.total, o.elapsedMilliseconds, o.message);
+
 
         private void toolStripMenuItemAllSequentialImages_CheckedChanged(object sender, EventArgs e)
         {
@@ -3849,7 +3927,7 @@ namespace IPAnalyzer
                 #endregion
 
                 Ring.Intensity = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex);
-                this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
+                this.toolStripStatusLabel.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
             }
             //偏光補正ここまで
 

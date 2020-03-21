@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Crystallography.Controls
@@ -30,7 +29,7 @@ namespace Crystallography.Controls
         public void ChangeCrystal(Crystal crystal)
         {
             this.crystal = crystal;
-            numericUpDownThresholdD.Minimum = (decimal)((crystal.A + crystal.B + crystal.C) / 20);
+            numericUpDownThresholdD.Minimum = (decimal)((crystal.A + crystal.B + crystal.C) / 6);
             SetSortedPlanes();
         }
 
@@ -84,11 +83,6 @@ namespace Crystallography.Controls
                     c.VectorOfG[i].RelativeIntensity = c.VectorOfG[i].RawIntensity / max;
             }
 
-            var dataMember = bindingSourceScatteringFactor.DataMember;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            bindingSourceScatteringFactor.DataMember = "";
             foreach (Vector3D g in c.VectorOfG)
             {
                 int multi = 0;
@@ -102,16 +96,10 @@ namespace Crystallography.Controls
                         var twoTheta = 2 * Math.Asin(g.Length* waveLengthControl1.WaveLength / 2) / Math.PI * 180;
                         if (double.IsNaN(twoTheta))
                             twoTheta = double.PositiveInfinity;
-                       dataSet.DataTableScatteringFactor.Add(g.h, g.k, g.l, multi, d, twoTheta, g.F, g.RelativeIntensity, g.Extinction);
+                        dataSet.DataTableScatteringFactor.Add(g.h, g.k, g.l, multi, d, twoTheta, g.F, g.RelativeIntensity, g.Extinction);
                     }
                 }
             }
-            bindingSourceScatteringFactor.DataMember = dataMember;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
-
-
         }
 
         private void FormCrystallographicInformation_FormClosing(object sender, FormClosingEventArgs e)
@@ -122,21 +110,20 @@ namespace Crystallography.Controls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var str = new StringBuilder();
-           
+            string str = "";
             for (int i = 0; i < dataGridView2.Columns.Count; i++)
                 if (dataGridView2.Columns[i].Visible)
-                    str.Append(dataGridView2.Columns[i].HeaderText + "\t");
-            str.Append("\r\n");
+                    str += dataGridView2.Columns[i].HeaderText + "\t";
+            str += "\r\n";
 
             for (int j = 0; j < dataGridView2.Rows.Count; j++)
             {
                 for (int i = 0; i < dataGridView2.ColumnCount; i++)
                     if (dataGridView2.Columns[i].Visible)
-                        str.Append(dataGridView2[i, j].Value.ToString() + "\t");
-                str.Append("\r\n");
+                        str += (string)dataGridView2[i, j].Value.ToString() + "\t";
+                str += "\r\n";
             }
-            Clipboard.SetDataObject(str.ToString());
+            Clipboard.SetDataObject(str);
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

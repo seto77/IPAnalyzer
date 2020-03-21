@@ -1918,7 +1918,7 @@
 
             sw.Stop();
             resetHorizontalMode();
-            formMain.toolStripStatusLabelComputationTime.Text = "Calculating Time (Find Parameter):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
+            formMain.toolStripStatusLabel.Text = "Calculating Time (Find Parameter):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
 
             IsSkipTextChangeEvent = false;
 

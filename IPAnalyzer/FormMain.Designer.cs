@@ -50,7 +50,8 @@ namespace IPAnalyzer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelComputationTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -312,14 +313,20 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelComputationTime});
+            this.toolStripProgressBar,
+            this.toolStripStatusLabel});
             this.statusStrip1.Name = "statusStrip1";
             this.helpProvider.SetShowHelp(this.statusStrip1, ((bool)(resources.GetObject("statusStrip1.ShowHelp"))));
             // 
-            // toolStripStatusLabelComputationTime
+            // toolStripStatusLabel
             // 
-            this.toolStripStatusLabelComputationTime.Name = "toolStripStatusLabelComputationTime";
-            resources.ApplyResources(this.toolStripStatusLabelComputationTime, "toolStripStatusLabelComputationTime");
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
+            // 
+            // toolStripProgressBar
+            // 
+            this.toolStripProgressBar.Name = "toolStripProgressBar";
+            resources.ApplyResources(this.toolStripProgressBar, "toolStripProgressBar");
             // 
             // splitContainer1
             // 
@@ -2128,7 +2135,7 @@ namespace IPAnalyzer
         private ToolStripSeparator toolStripSeparator26;
         private ToolStripMenuItem toolStripMenuItem15;
         private StatusStrip statusStrip1;
-        public ToolStripStatusLabel toolStripStatusLabelComputationTime;
+        public ToolStripStatusLabel toolStripStatusLabel;
         private ToolStripMenuItem tiffToolStripMenuItem;
         private ToolStripMenuItem ipaToolStripMenuItem;
         private ToolStripMenuItem pngToolStripMenuItem;
@@ -2189,6 +2196,7 @@ namespace IPAnalyzer
         public ToolStripComboBox toolStripComboBoxRotate;
         public ToolStripMenuItem toolStripMenuItemSelectedSequentialImages;
         public ToolStripMenuItem toolStripMenuItemAllSequentialImages;
+        private ToolStripProgressBar toolStripProgressBar;
         //private ScalablePictureBox scalablePictureBox;
 
 

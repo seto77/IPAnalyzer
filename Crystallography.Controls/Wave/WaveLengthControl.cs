@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Crystallography;
 
 namespace Crystallography.Controls
 {
@@ -117,7 +116,6 @@ namespace Crystallography.Controls
             }
             get
             {
-                
                 if (radioButtonXray.Checked)
                     return WaveSource.Xray;
                 else if (radioButtonElectron.Checked)
