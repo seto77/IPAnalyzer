@@ -5,7 +5,10 @@ The software *IPAnalyzer* is a Windows application (.Net Framework 4.8) which pr
 Access https://github.com/seto77/IPAnalyzer/releases/latest, download *IPAnalyzerSetup.msi*, and execute it.
 
 ## Main features
-* something
+* Supports many file formats.
+  * .stl (Rigaku R-Axis), .img (Fuji BAS2000,2500), .ccd (BruckerCCD),  ITEX, Rayonix SX, MAR, ...
+* Convert diffraction image to 2theta-intensity profile.
+* Calivration of optics using diffraction images of standard material.
   
 ## Screenshots
 <img src="Screenshots/Main.png" width="600px">  <img src="Screenshots/Property1.png" width="320px">  <img src="Screenshots/Property2.png" width="320px">
