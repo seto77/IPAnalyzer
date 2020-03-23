@@ -1,5 +1,5 @@
 # IPAnalyzer
-*The software *IPAnalyzer* processes Debye-ring patterns collected by flat panel detectors.
+* The software *IPAnalyzer* processes Debye-ring patterns collected by flat panel detectors.
   * Runs on Windows with .Net Framework 4.8.
 
 ## Install
