@@ -219,7 +219,7 @@ namespace Crystallography
             Statistics.LineFitting(EllipseCenter, ref phi1, ref A);
             double CosPhi1 = Math.Cos(phi1);
             double SinPhi1 = Math.Sin(phi1);
-            bool xMode = Math.Abs(CosPhi1) > 1 / Math.Sqrt(2) ? true : false;
+            bool xMode = Math.Abs(CosPhi1) > 1 / Math.Sqrt(2);
 
             //この直線上の点B(x,y)と、各CenterPtの距離Riとしたとき
             //δ^2= ( Ri - Cameralength * Tan(2θ)^2 *Sin(ψ) / pixelSize )^2　
@@ -301,12 +301,12 @@ namespace Crystallography
                     }
                 }
                 startCenter = BestCenter - 2.4 * stepCenter;
-                endCenter = BestCenter + 2.4 * stepCenter;
-                stepCenter = stepCenter * 0.8;
+                endCenter = BestCenter + (2.4 * stepCenter);
+                stepCenter *= 0.8;
 
                 startTau1 = bestTau1 - 2.4 * stepTau1;
                 endTau1 = bestTau1 + 2.4 * stepTau1;
-                stepTau1 = stepTau1 * 0.8;
+                stepTau1 *= 0.8;
             }//最適化終了
 
             offset = new PointD(BestX, BestY);
@@ -541,8 +541,8 @@ namespace Crystallography
                 int next = i < ptAlpha.Count - 1 ? i + 1 : 0;
                 if (ptAlpha[i].Flag != ptAlpha[next].Flag)
                 {
-                    var crossPt = getCrossPoint(ptAlpha[i], ptAlpha[next], a, b, c);
-                    (double X, double Y, bool Flag) v = (crossPt.X, crossPt.Y, true);
+                    var (X, Y) = getCrossPoint(ptAlpha[i], ptAlpha[next], a, b, c);
+                    (double X, double Y, bool Flag) v = (X, Y, true);
                     ptAlpha.Insert(i + 1, v);
                     i++;
                 }
@@ -887,7 +887,7 @@ namespace Crystallography
         }
 
         /// <summary>
-        /// a1 => b1 かつ a2 => b2に写すような回転行列を求める. a1,a2,b1,b2の長さは1でなくても構わない（関数中で規格化する）
+        /// ベクトルa1 => ベクトルb1 かつ ベクトルa2 => ベクトルb2に写すような回転行列を求める. a1,a2,b1,b2の長さは1でなくても構わない（関数中で規格化する）
         /// </summary>
         /// <param name="a1"></param>
         /// <param name="a2"></param>
@@ -910,8 +910,20 @@ namespace Crystallography
 
 
 
-        //円錐は、頂点(0,0,0), 円錐半角(alpha), 円錐中心軸は(cosPhi*sinTau, -sinPhi*sinTau, cosTau) 
-        //断面は、中心(0,0,L)
+        /// <summary>
+        /// 円錐と平面との交点(断面座標系)の集合を得る。
+        /// 円錐は頂点(0,0,0), 円錐半角(alpha), 円錐中心軸は(cosPhi*sinTau, -sinPhi*sinTau, cosTau)で定義される。
+        /// 断面はZ=Lを満たし、左上の点がupperLeft(断面座標系)、右上の点がlowerRight(断面座標系)で定義される矩形平面である。
+        /// 断面座標系とは、交点(X,Y,L)について、(X,Y)の部分のことである(断面の中心は(00L)である))。
+        /// </summary>
+        /// <param name="alpha">円錐半角(alpha)</param>
+        /// <param name="phi"> 円錐中心軸のパラメータ. 円錐中心軸方向は(cosPhi*sinTau, -sinPhi*sinTau, cosTau)で定義される</param>
+        /// <param name="tau">円錐中心軸のパラメータ. 円錐中心軸方向は(cosPhi*sinTau, -sinPhi*sinTau, cosTau)で定義される</param>
+        /// <param name="l">断面のパラメータ. 断面はZ=Lで定義される. </param>
+        /// <param name="upperLeft"></param>
+        /// <param name="lowerRight"></param>
+        /// <param name="bothCone"></param>
+        /// <returns></returns>
         public static List<List<PointD>> ConicSection(double alpha, double phi, double tau, double l,
             PointD upperLeft, PointD lowerRight, bool bothCone = false)
         {

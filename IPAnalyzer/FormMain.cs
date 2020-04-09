@@ -41,7 +41,7 @@ namespace IPAnalyzer
 
         public bool IsImageReady = false;
 
-        public WaitDlg InitialDialog;
+        public Crystallography.Controls.CommonDialog InitialDialog;
         public FormIntTable FormIntTable;
         public FormAutoProcedure FormAutoProc;
         public FormFindParameter FormFindParameter;
@@ -435,8 +435,8 @@ namespace IPAnalyzer
                     InitialDialog.AutomaricallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "False") == "True";
                 }
 
-                
-                if ((int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y) >= 0)
+
+                if (FormFindParameter != null && (int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y) >= 0)
                 {
                     FormFindParameter.Width = (int)regKey.GetValue("formFindParameterWidth", FormFindParameter.Width);
                     FormFindParameter.Height = (int)regKey.GetValue("formFindParameterHeight", FormFindParameter.Height);
@@ -444,16 +444,16 @@ namespace IPAnalyzer
                         (int)regKey.GetValue("formFindParameterLocationX", FormFindParameter.Location.X),
                         (int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y));
                 }
-                
 
-                if ((int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
+
+                if (FormIntTable != null && (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
                 {
                     FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
                     FormIntTable.Height = (int)regKey.GetValue("formIntTableHeight", FormIntTable.Height);
                     FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
                     (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
                 }
-                if ((int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y) >= 0)
+                if (FormDrawRing != null && (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y) >= 0)
                 {
                     FormDrawRing.Width = (int)regKey.GetValue("formDrawRingWidth", FormDrawRing.Width);
                     FormDrawRing.Height = (int)regKey.GetValue("formDrawRingHeight", FormDrawRing.Height);
@@ -461,12 +461,12 @@ namespace IPAnalyzer
                 }
                 //サイズ、位置関係終了
 
-                if ((int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y) >= 0)
+                if (FormProperty != null && (int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y) >= 0)
                 {
                     //formMain.formProperty.Width = (int)regKey.GetValue("formPropertyWidth", formMain.formProperty.Width);
                     //formMain.formProperty.Height = (int)regKey.GetValue("formPropertyHeight", formMain.formProperty.Height);
                     FormProperty.Location = new Point((int)regKey.GetValue("formPropertyLocationX", FormProperty.Location.X), (int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y));
-                   
+
 
 
                     FormProperty.numericBoxPixelSizeX.Text = (string)regKey.GetValue("textBoxPixelSizeXText", "0.1");
@@ -549,6 +549,9 @@ namespace IPAnalyzer
                     FormProperty.WaveLengthText = (string)regKey.GetValue("textBoxWaveLengthText", "0.4");
                     FormProperty.comboBoxRectangleDirection.Text = (string)regKey.GetValue("comboBoxRectangleDirectionText", FormProperty.comboBoxRectangleDirection.Text);
                     FormProperty.numericUpDownFindSpotsDeviation.Value = Convert.ToDecimal((string)regKey.GetValue("numericUpDownFindSpotsDeviationValue", FormProperty.numericUpDownFindSpotsDeviation.Value.ToString()));
+
+                    //偏光補正
+                    FormProperty.checkBoxCorrectPolarization.Checked = (string)regKey.GetValue("FormProperty.checkBoxCorrectPolarization.Checked", "True") == "True";
 
                     //ここからイメージタイプごとのパラメータ読み込み
                     for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
@@ -705,11 +708,10 @@ namespace IPAnalyzer
                 //byte[][] byteArray = new byte[length][];
                 //for (int i = 0; i < length; i++)
                 //    byteArray[i] = (byte[])regKey.GetValue("Macro" + i.ToString(), null);
+                if (FormMacro != null)
+                    FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", new byte[0]);
 
-                FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", new byte[0]);
 
-                //偏光補正
-                FormProperty.checkBoxCorrectPolarization.Checked = (string)regKey.GetValue("FormProperty.checkBoxCorrectPolarization.Checked", "True") == "True";
 
                 regKey.Close();
             }
@@ -751,14 +753,17 @@ namespace IPAnalyzer
 
             toolStripComboBoxRotate.SelectedIndex = 0;
 
-            InitialDialog = new WaitDlg();
-            InitialDialog.ShowHints = false;
+            InitialDialog = new Crystallography.Controls.CommonDialog
+            {
+                Owner = this,
+                DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.Initialize,
+                Software = Version.Software,
+                VersionAndDate = Version.VersionAndDate,
+                History = Version.History,
+                Hint = Version.Hint,
+
+            };
             LoadRegistry();
-            InitialDialog.Owner = this;
-            InitialDialog.Version = $"IPAnalyzer  {Version.VersionAndDate}";
-            InitialDialog.Text = "Now Loading...";
-            InitialDialog.ShowVersion = true;
-            InitialDialog.Hint = Version.Hint;
 
             InitialDialog.Show();
             Application.DoEvents();
@@ -1668,56 +1673,52 @@ namespace IPAnalyzer
         public bool SkipMax = false;
         public bool SkipMin = false;
         //NumetricUpDownpseudBitmap.MaxValue変更時
-        private void numericUpDownMaxInt_ValueChanged(object sender, System.EventArgs e)
+
+
+        private bool trackBarAdvancedMaxInt_ValueChanged(object sender, double value)
         {
-            if (SkipMax) return;
+            if (SkipMax) return true;
             SkipMax = true;
 
-            pseudoBitmap.MaxValue = (uint)numericUpDownMaxInt.Value;
+            pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value;
 
             if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
-                numericUpDownMinInt.Value = numericUpDownMaxInt.Value - 1;
-
-
-            if (numericUpDownMaxInt.Value <= 1)
-                trackBarMaxInt.Value = 1;
-            else
-                trackBarMaxInt.Value = (int)(Math.Log((double)numericUpDownMaxInt.Value, (double)numericUpDownMaxInt.Maximum) * (double)trackBarMaxInt.Maximum);
+                trackBarAdvancedMinInt.Value = trackBarAdvancedMaxInt.Value - 1;
 
             if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
             {
-                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 1 : 0].X = (double)numericUpDownMaxInt.Value;
+                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 1 : 0].X = trackBarAdvancedMaxInt.Value;
                 graphControlFrequency.Draw();
             }
 
             Draw();
             SkipMax = false;
+            return true;
         }
-        //NumetricUpDownpseudBitmap.MinValue変更時
-        private void numericUpDownMinInt_ValueChanged(object sender, System.EventArgs e)
+
+        private bool trackBarAdvancedMinInt_ValueChanged(object sender, double value)
         {
-            if (SkipMin) return;
+            if (SkipMin) return true;
             SkipMin = true;
-            pseudoBitmap.MinValue = (uint)numericUpDownMinInt.Value;
+            pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value;
 
             if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
-                numericUpDownMaxInt.Value = numericUpDownMinInt.Value + 1;
-
-            if (numericUpDownMinInt.Value == 0)
-                trackBarMinInt.Value = 0;
-            else
-                trackBarMinInt.Value = (int)(Math.Log((double)numericUpDownMinInt.Value, (double)numericUpDownMinInt.Maximum) * (double)trackBarMinInt.Maximum);
+                trackBarAdvancedMaxInt.Value = trackBarAdvancedMinInt.Value + 1;
 
             if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
             {
-                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 0 : 1].X = (double)numericUpDownMinInt.Value;
+                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 0 : 1].X = trackBarAdvancedMinInt.Value;
                 graphControlFrequency.Draw();
             }
 
             Draw();
             SkipMin = false;
+            return true;
         }
 
+
+ 
+        /*
         //TrackBarpseudBitmap.MaxValueスクロール時
         private void trackBarMaxInt_Scroll(object sender, System.EventArgs e)
         {
@@ -1759,14 +1760,15 @@ namespace IPAnalyzer
 
             Draw();
         }
+        */
 
         //AutoAdjustボタンクリック時
         public void buttonAutoLevel_Click(object sender, System.EventArgs e)
         {
             if (variance != 0)
             {
-                numericUpDownMaxInt.Value = Math.Min((decimal)(sumOfIntensity / Ring.Intensity.Count + 2 * variance), numericUpDownMaxInt.Maximum);
-                numericUpDownMinInt.Value = Math.Max((decimal)(sumOfIntensity / Ring.Intensity.Count - 2 * variance), numericUpDownMinInt.Minimum);
+                trackBarAdvancedMaxInt.Value = Math.Min((sumOfIntensity / Ring.Intensity.Count + 2 * variance), trackBarAdvancedMaxInt.Maximum);
+                trackBarAdvancedMinInt.Value = Math.Max((sumOfIntensity / Ring.Intensity.Count - 2 * variance), trackBarAdvancedMinInt.Minimum);
             }
 
         }
@@ -1774,10 +1776,10 @@ namespace IPAnalyzer
         private void buttonReset_Click(object sender, System.EventArgs e)
         {
             if (!IsImageReady) return;
-            numericUpDownMaxInt.Maximum = (decimal)65535;
-            numericUpDownMinInt.Maximum = (decimal)65534;
-            numericUpDownMaxInt.Value = (decimal)65535;
-            numericUpDownMinInt.Value = (decimal)0;
+            trackBarAdvancedMaxInt.Maximum = 65535;
+            trackBarAdvancedMinInt.Maximum = 65534;
+            trackBarAdvancedMaxInt.Value = 65535;
+            trackBarAdvancedMinInt.Value = 0;
             pseudoBitmap.MaxValue = 65535;
             pseudoBitmap.MinValue = 0;
             Draw();
@@ -1869,7 +1871,7 @@ namespace IPAnalyzer
             if (!ImageIO.ReadImage(str, flag))
                 return;
 
-            string ext = Path.GetExtension(str).TrimStart(new char[] { '.' });
+            string ext = Path.GetExtension(str).TrimStart(new char[] { '.' }).ToLower();
             if (ext == "ipa")
             {
                 FormProperty.waveLengthControl.Property = Ring.IP.WaveProperty;
@@ -1889,6 +1891,8 @@ namespace IPAnalyzer
 
             SrcImgSize = Ring.SrcImgSize;
 
+          
+
             GC.Collect();
 
             diffractionProfile = new DiffractionProfile();
@@ -1898,9 +1902,8 @@ namespace IPAnalyzer
             FormProperty.checkBoxThreshold_CheckedChanged(new object(), new EventArgs());
             IsImageReady = true;
             IntegralArea_Changed(new object(), new EventArgs());
-
             
-            graphControlFrequency.LineList = new PointD[2] { new PointD((double)numericUpDownMinInt.Value, double.NaN), new PointD((double)numericUpDownMaxInt.Value, double.NaN) };
+            graphControlFrequency.LineList = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             Ring.CalcFreq();
             SetFrequencyProfile();//強度頻度グラフを作成
             graphControlProfile.Profile = new Profile();//プロファイルは初期化
@@ -1920,11 +1923,17 @@ namespace IPAnalyzer
             if (FormAutoProc != null && FormAutoProc.Visible && FormAutoProc.checkBoxAutoAfterLoad.Checked)
                 FormAutoProc.buttonAuto_Click(new object(), new EventArgs());
 
+            //SP8-BL43LXUのような32bit signed tiffの場合は、負の値をマスク
+            if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0)
+            {
+                for (int i = 0; i < Ring.Intensity.Count; i++)
+                    if (Ring.Intensity[i] < 0)
+                        Ring.IsSpots[i] = true;
+            }
 
-            numericUpDownMaxInt.Maximum = (decimal)Ring.Intensity.Max();
-            numericUpDownMinInt.Maximum = numericUpDownMaxInt.Maximum - 1;
-            numericUpDownMaxInt.Minimum = 1;
-            numericUpDownMinInt.Minimum = 0;
+
+            trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
+            trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = Ring.Intensity.Min();
 
 
             //SequentialImageを読み込んだ時の処理
@@ -1938,8 +1947,8 @@ namespace IPAnalyzer
                 FormSequentialImage.MaximumNumber = Ring.SequentialImageIntensities.Count;
                 FormSequentialImage.SelectedIndex = 0;
 
-                numericUpDownMaxInt.Maximum = (decimal)Ring.SequentialImageIntensities.Max(i => i.Max());
-                numericUpDownMinInt.Maximum = numericUpDownMaxInt.Maximum - 1;
+                trackBarAdvancedMaxInt.Maximum = Ring.SequentialImageIntensities.Max(i => i.Max());
+                trackBarAdvancedMinInt.Maximum = trackBarAdvancedMaxInt.Maximum - 1;
 
             }
             bool renewEnergy = true;//hdfファイルのように、エネルギーが埋め込まれているファイルへの対応
@@ -1974,6 +1983,8 @@ namespace IPAnalyzer
                 if (Math.Abs((FormProperty.CameraLength - length) / length) > 0.2)
                     FormProperty.CameraLength = length;
             }
+
+            
         }
 
         public void SetInformation()
@@ -2033,8 +2044,8 @@ namespace IPAnalyzer
             pseudoBitmap.Filter4 = Ring.IsOutsideOfIntegralRegion;
             pseudoBitmap.Filter5 = Ring.IsOutsideOfIntegralProperty;
             pseudoBitmap.FilterTemporary.AddRange(new bool[SrcImgSize.Width * SrcImgSize.Height]);
-            pseudoBitmap.MaxValue = (uint)((double)numericUpDownMaxInt.Value);
-            pseudoBitmap.MinValue = (uint)((double)numericUpDownMinInt.Value);
+            pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value;
+            pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value;
             scalablePictureBox.PseudoBitmap = pseudoBitmap;
             scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
             setScale();
@@ -2898,8 +2909,8 @@ namespace IPAnalyzer
                     pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLinerColorB;
                     pseudoBitmap.GrayScale = false;
                 }
-            numericUpDownMaxInt_ValueChanged(new object(), new EventArgs());
-            numericUpDownMinInt_ValueChanged(new object(), new EventArgs());
+            trackBarAdvancedMaxInt_ValueChanged(new object(), 0);
+            trackBarAdvancedMinInt_ValueChanged(new object(),0);
         }
 
         #endregion
@@ -3480,9 +3491,20 @@ namespace IPAnalyzer
 
         private void hintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitialDialog.ShowProgressBar = false;
-            InitialDialog.Text = "Hint";
-            InitialDialog.Show();
+            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.Hint;
+            InitialDialog.Visible = true;
+        }
+
+        private void licenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.License;
+            InitialDialog.Visible = true;
+        }
+
+        private void versionHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.History;
+            InitialDialog.Visible = true;
         }
 
 
@@ -3517,21 +3539,21 @@ namespace IPAnalyzer
         {
             if (graphControlFrequency.LineList.Length == 2)
             {
-                decimal max = (decimal)((int)Math.Max(graphControlFrequency.LineList[0].X, graphControlFrequency.LineList[1].X));
-                if (numericUpDownMaxInt.Maximum < max)
-                    numericUpDownMaxInt.Value = numericUpDownMaxInt.Maximum;
-                else if (numericUpDownMinInt.Minimum > max)
-                    numericUpDownMaxInt.Value = numericUpDownMaxInt.Minimum;
+                var max = Math.Max(graphControlFrequency.LineList[0].X, graphControlFrequency.LineList[1].X);
+                if (trackBarAdvancedMaxInt.Maximum < max)
+                    trackBarAdvancedMaxInt.Value = trackBarAdvancedMaxInt.Maximum;
+                else if (trackBarAdvancedMinInt.Minimum > max)
+                    trackBarAdvancedMaxInt.Value = trackBarAdvancedMaxInt.Minimum;
                 else
-                    numericUpDownMaxInt.Value = max;
+                    trackBarAdvancedMaxInt.Value = max;
 
-                decimal min = (decimal)((int)Math.Min(graphControlFrequency.LineList[0].X, graphControlFrequency.LineList[1].X));
-                if (numericUpDownMinInt.Maximum < min)
-                    numericUpDownMinInt.Value = numericUpDownMinInt.Maximum;
-                else if (numericUpDownMinInt.Minimum > min)
-                    numericUpDownMinInt.Value = numericUpDownMinInt.Minimum;
+                var min = Math.Min(graphControlFrequency.LineList[0].X, graphControlFrequency.LineList[1].X);
+                if (trackBarAdvancedMinInt.Maximum < min)
+                    trackBarAdvancedMinInt.Value = trackBarAdvancedMinInt.Maximum;
+                else if (trackBarAdvancedMinInt.Minimum > min)
+                    trackBarAdvancedMinInt.Value = trackBarAdvancedMinInt.Minimum;
                 else
-                    numericUpDownMinInt.Value = min;
+                    trackBarAdvancedMinInt.Value = min;
             }
         }
 
@@ -4301,6 +4323,10 @@ namespace IPAnalyzer
             FormProperty.Visible = true;
             FormProperty.tabControl.SelectedIndex = 9;
         }
+
+  
+
+
         #endregion
 
         /// <summary>
@@ -4424,20 +4450,20 @@ namespace IPAnalyzer
                     set
                     {
                         Execute(new Action(() =>
-                            p.main.numericUpDownMaxInt.Value = Math.Max(Math.Min(p.main.numericUpDownMaxInt.Maximum, (decimal)value), p.main.numericUpDownMaxInt.Minimum)
+                            p.main.trackBarAdvancedMaxInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMaxInt.Maximum, value), p.main.trackBarAdvancedMaxInt.Minimum)
                             ));
                     }
-                    get { return Execute(new Func<double>(() => (double)p.main.numericUpDownMaxInt.Value)); }
+                    get { return Execute(new Func<double>(() => (double)p.main.trackBarAdvancedMaxInt.Value)); }
                 }
                 public double Minimum
                 {
                     set
                     {
                         Execute(new Action(() =>
-                            p.main.numericUpDownMinInt.Value = Math.Max(Math.Min(p.main.numericUpDownMinInt.Maximum, (decimal)value), p.main.numericUpDownMinInt.Minimum)
+                            p.main.trackBarAdvancedMinInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMinInt.Maximum, value), p.main.trackBarAdvancedMinInt.Minimum)
                             ));
                     }
-                    get { return Execute(new Func<double>(() => (double)p.main.numericUpDownMinInt.Value)); }
+                    get { return Execute(new Func<double>(() => (double)p.main.trackBarAdvancedMinInt.Value)); }
                 }
 
                 public double CanvasMagnification {

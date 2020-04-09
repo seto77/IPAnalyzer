@@ -92,13 +92,14 @@ namespace IPAnalyzer
 
             for (int i = 0; i < ImageTypeParameters.Length; i++)
                 ImageTypeParameters[i] = new ImageTypeParameter();
+           
             //LoadInitialFile();
             try
             {
-                checkBoxExtensionCCD.Checked = AssociatedExtension.Check(".ccd", "IPAnalyzer");
-                checkBoxExtensionIMG.Checked = AssociatedExtension.Check(".img", "IPAnalyzer");
-                checkBoxExtensionSTL.Checked = AssociatedExtension.Check(".stl", "IPAnalyzer");
-                checkBoxExtensionIPF.Checked = AssociatedExtension.Check(".ipf", "IPAnalyzer");
+            //    checkBoxExtensionCCD.Checked = AssociatedExtension.Check(".ccd", "IPAnalyzer");
+            //    checkBoxExtensionIMG.Checked = AssociatedExtension.Check(".img", "IPAnalyzer");
+            //    checkBoxExtensionSTL.Checked = AssociatedExtension.Check(".stl", "IPAnalyzer");
+            //    checkBoxExtensionIPF.Checked = AssociatedExtension.Check(".ipf", "IPAnalyzer");
             }
             catch { }
         }

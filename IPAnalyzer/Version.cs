@@ -25,6 +25,7 @@ namespace IPAnalyzer
 
         static public string History =
             "History" +
+            "\r\n ver3.890(2020/04/09) Added an image format: 32 bit signed Tiff (output of PILATUS CdSe detector)." +
             "\r\n ver3.889(2020/03/11) Minor improvements to the macro functions." +
             "\r\n ver3.888(2020/03/03) Fixed a minor bug on distribution problem." +
             "\r\n ver3.887(2020/03/01) Changed: Distribution site is changed to GitHub." +

@@ -117,7 +117,7 @@ namespace Crystallography
             this.Y = pos.Y;
             this.Z = pos.Z;
 
-            Atoms temp = WyckoffPosition.GetEquivalentAtomsPosition(pos, symmetrySeriesNumber);
+            var temp = WyckoffPosition.GetEquivalentAtomsPosition(pos, symmetrySeriesNumber);
             WyckoffLeter = temp.WyckoffLeter;
             SiteSymmetry = temp.SiteSymmetry;
             Multiplicity = temp.Multiplicity;
@@ -230,7 +230,7 @@ namespace Crystallography
         /// <param name="threshold">動かす最大値 (相対位置) </param>
         public void ShakeKeepingWykoff(double threshold, Random r)
         {
-            WyckoffPosition wyk = SymmetryStatic.WyckoffPositions[SymmetrySeriesNumber][WyckoffNumber];
+            var wyk = SymmetryStatic.WyckoffPositions[SymmetrySeriesNumber][WyckoffNumber];
             if (wyk.FreedomX) X += (r.NextDouble() - 1) * (r.NextDouble() - 1) * 4 * threshold;
             if (wyk.FreedomY) Y += (r.NextDouble() - 1) * (r.NextDouble() - 1) * 4 * threshold;
             if (wyk.FreedomZ) Z += (r.NextDouble() - 1) * (r.NextDouble() - 1) * 4 * threshold;
@@ -285,37 +285,33 @@ namespace Crystallography
         /// </summary>
         /// <param name="S2">S2: (Sin(theta)/ramda)^2</param>
         /// <returns></returns>
-        public double GetAtomicScatteringFactorForElectron(double s2)
-        {
-            return AtomConstants.ElectronScattering[AtomicNumber][SubNumberElectron].Factor(s2) * Occ;
-        }
+        public double GetAtomicScatteringFactorForElectron(double s2) 
+            => AtomConstants.ElectronScattering[AtomicNumber][SubNumberElectron].Factor(s2) * Occ;
 
         /// <summary>
         /// X線の原子散乱因子を計算
         /// </summary>
         /// <param name="s2"></param>
         /// <returns></returns>
-        public double GetAtomicScatteringFactorForXray(double s2)
-        {
-            return AtomConstants.XrayScattering[AtomicNumber][SubNumberXray].Factor(s2) * Occ;
-        }
+        public double GetAtomicScatteringFactorForXray(double s2) 
+            => AtomConstants.XrayScattering[AtomicNumber][SubNumberXray].Factor(s2) * Occ;
 
         public Complex GetAtomicScatteringFactorForNeutron()
         {
             if (Isotope != null && Isotope.Length == AtomConstants.IsotopeAbundance[AtomicNumber].Count)
             {
-                Complex f = new Complex();
+                var f = new Complex();
                 for (int i = 0; i < AtomConstants.IsotopeAbundance[AtomicNumber].Count; i++)
                     f += AtomConstants.NeutronCoherentScattering[AtomicNumber][i + 1] * Isotope[i] / 100.0;
-                return f;
+                return f * Occ;
             }
             else
-                return AtomConstants.NeutronCoherentScattering[AtomicNumber][0];
+                return AtomConstants.NeutronCoherentScattering[AtomicNumber][0] * Occ;
         }
 
         public override string ToString()
         {
-            return Label + "\t" + ElementName + "\t" + GetStringFromDouble(X) + "\t" + GetStringFromDouble(Y) + "\t" + GetStringFromDouble(Z) + "\t" + GetStringFromDouble(Occ) + "\t" + Multiplicity.ToString() + "\t" + WyckoffLeter + "\t" + SiteSymmetry;
+            return $"{Label}\t{ElementName}\t{GetStringFromDouble(X)}\t{GetStringFromDouble(Y)}\t{GetStringFromDouble(Z)}\t{GetStringFromDouble(Occ)}\t{Multiplicity}\t{WyckoffLeter}\t{SiteSymmetry}";
         }
 
         public static string GetStringFromDouble(double d)
