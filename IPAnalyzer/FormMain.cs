@@ -1990,19 +1990,19 @@ namespace IPAnalyzer
         public void SetInformation()
         {
             textBoxInformation.Text =
-                "Size:\r\n " + SrcImgSize.Width.ToString() + "*" + SrcImgSize.Height.ToString() + "\r\n" +
-                "Dynamic range:\r\n " + Ring.Intensity.Min().ToString() + " - " + Ring.Intensity.Max().ToString("#,#") + "\r\n" +
-                "Max Intensity:\r\n " + maxIntensity.ToString("#,#") + "\r\n" +
-                "Sum Intensity:\r\n " + sumOfIntensity.ToString("#,#") + "\r\n" +
-                "Ave. Intensity:\r\n " + (sumOfIntensity / Ring.Intensity.Count).ToString("#,#.####") + "\r\n\r\n"
-                + Ring.Comments;
+                $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n"+
+                $"Dynamic range:\r\n {Ring.Intensity.Min()} - {Ring.Intensity.Max():#,#}\r\n"+
+                $"Max Intensity:\r\n {maxIntensity:#,#}\r\n"+
+                $"Sum Intensity:\r\n {sumOfIntensity:#,#}\r\n"+
+                $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Count:#,#.####}\r\n\r\n"+
+                $"{Ring.Comments}";
 
             if (Ring.SequentialImagePulsePower != null && Ring.SequentialImagePulsePower.Count == Ring.SequentialImageIntensities.Count)//イメージごとにエネルギーが設定されているとき
             {
                 if (Ring.SequentialImageIntensities.Count == 1)
-                    textBoxInformation.Text += "\r\nPulse Power: " + Ring.SequentialImagePulsePower[0].ToString();
+                    textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[0]}";
                 else if(FormSequentialImage.SelectedIndex>-1)
-                    textBoxInformation.Text += "\r\nPulse Power: " + Ring.SequentialImagePulsePower[FormSequentialImage.SelectedIndex].ToString();
+                    textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[FormSequentialImage.SelectedIndex]}";
             }
         }
 
