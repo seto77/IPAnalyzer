@@ -1670,13 +1670,6 @@
             this.crystalControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crystalControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.crystalControl1.CellConstants = new double[] {
-        0D,
-        0D,
-        0D,
-        0D,
-        0D,
-        0D};
             this.crystalControl1.Crystal = null;
             this.crystalControl1.DefaultTabNumber = 0;
             this.crystalControl1.Location = new System.Drawing.Point(0, 349);
@@ -1687,7 +1680,6 @@
             this.crystalControl1.SymmetryInformationVisible = false;
             this.crystalControl1.SymmetrySeriesNumber = 0;
             this.crystalControl1.TabIndex = 1;
-            this.crystalControl1.VisibleAtomAdvancedTab = false;
             this.crystalControl1.VisibleAtomTab = true;
             this.crystalControl1.VisibleBasicInfoTab = true;
             this.crystalControl1.VisibleBondsPolyhedraTab = false;

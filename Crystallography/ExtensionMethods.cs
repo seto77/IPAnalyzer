@@ -107,7 +107,7 @@ namespace Crystallography
         /// <param name="c"></param>
         /// <returns></returns>
         public static string[] Split(this string s, string separator, bool removeEmptyEntries = true)
-            => s.Split(new[] { separator }, removeEmptyEntries ? System.StringSplitOptions.RemoveEmptyEntries: System.StringSplitOptions.None);
+            => s.Split(new[] { separator }, removeEmptyEntries ? StringSplitOptions.RemoveEmptyEntries: StringSplitOptions.None);
 
         /// <summary>
         /// 拡張メソッド.  指定したseparatorで文字を区切り、文字の配列を返す.
@@ -117,14 +117,23 @@ namespace Crystallography
         /// <param name="removeEmptyEntries"></param>
         /// <returns></returns>
         public static string[] Split(this string s, char separator, bool removeEmptyEntries = true)
-             => s.Split(new[] { separator }, removeEmptyEntries ? System.StringSplitOptions.RemoveEmptyEntries : System.StringSplitOptions.None);
+             => s.Split(new[] { separator }, removeEmptyEntries ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
+
 
         /// <summary>
-        /// 拡張メソッド.  ConvertToDoubleを拡張メソッドとして呼び出す. 変換できない場合は例外発生
+        /// 拡張メソッド.  スペースかカンマで文字を区切り、文字の配列を返す.
+        /// </summary>
+        /// <returns></returns>
+        public static string[] Split(this string s, bool removeEmptyEntries = true)
+            => s.Split(new[] { " ", "," }, removeEmptyEntries ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
+
+
+        /// <summary>
+        /// 拡張メソッド. ConvertToDoubleを拡張メソッドとして呼び出す. 実数と、分数に対応. 変換できない場合は例外発生
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public static double ToDouble(this string s) => Convert.ToDouble(s);
+        public static double ToDouble(this string s) => !s.Contains("/") ? Convert.ToDouble(s) : s.Split("/")[0].ToDouble() / s.Split("/")[1].ToDouble();
 
         /// <summary>
         /// 拡張メソッド.  ConvertToInt32を拡張メソッドとして呼び出す. 変換できない場合は例外発生

@@ -1613,14 +1613,11 @@
             // 
             // numericBoxPrimaryImageNum
             // 
-            this.numericBoxPrimaryImageNum.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxPrimaryImageNum, "numericBoxPrimaryImageNum");
             this.numericBoxPrimaryImageNum.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPrimaryImageNum.DecimalPlaces = -2;
             this.numericBoxPrimaryImageNum.Maximum = double.PositiveInfinity;
             this.numericBoxPrimaryImageNum.Minimum = double.NegativeInfinity;
-            this.numericBoxPrimaryImageNum.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxPrimaryImageNum.MouseSpeed = 1D;
             this.numericBoxPrimaryImageNum.Multiline = false;
             this.numericBoxPrimaryImageNum.Name = "numericBoxPrimaryImageNum";
             this.numericBoxPrimaryImageNum.RadianValue = 0D;
@@ -1641,14 +1638,11 @@
             // 
             // numericTextBoxPrimaryCenterPositionY
             // 
-            this.numericTextBoxPrimaryCenterPositionY.AllowMouseControl = false;
             resources.ApplyResources(this.numericTextBoxPrimaryCenterPositionY, "numericTextBoxPrimaryCenterPositionY");
             this.numericTextBoxPrimaryCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxPrimaryCenterPositionY.DecimalPlaces = -1;
             this.numericTextBoxPrimaryCenterPositionY.Maximum = double.PositiveInfinity;
             this.numericTextBoxPrimaryCenterPositionY.Minimum = double.NegativeInfinity;
-            this.numericTextBoxPrimaryCenterPositionY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericTextBoxPrimaryCenterPositionY.MouseSpeed = 1D;
             this.numericTextBoxPrimaryCenterPositionY.Multiline = false;
             this.numericTextBoxPrimaryCenterPositionY.Name = "numericTextBoxPrimaryCenterPositionY";
             this.numericTextBoxPrimaryCenterPositionY.RadianValue = 0D;
@@ -1672,14 +1666,11 @@
             // 
             // numericTextBoxPrimaryFilmDistance
             // 
-            this.numericTextBoxPrimaryFilmDistance.AllowMouseControl = false;
             resources.ApplyResources(this.numericTextBoxPrimaryFilmDistance, "numericTextBoxPrimaryFilmDistance");
             this.numericTextBoxPrimaryFilmDistance.BackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxPrimaryFilmDistance.DecimalPlaces = -1;
             this.numericTextBoxPrimaryFilmDistance.Maximum = double.PositiveInfinity;
             this.numericTextBoxPrimaryFilmDistance.Minimum = double.NegativeInfinity;
-            this.numericTextBoxPrimaryFilmDistance.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericTextBoxPrimaryFilmDistance.MouseSpeed = 1D;
             this.numericTextBoxPrimaryFilmDistance.Multiline = false;
             this.numericTextBoxPrimaryFilmDistance.Name = "numericTextBoxPrimaryFilmDistance";
             this.numericTextBoxPrimaryFilmDistance.RadianValue = 0D;
@@ -1702,14 +1693,11 @@
             // 
             // numericalTextBoxPrimaryCenterPositionX
             // 
-            this.numericalTextBoxPrimaryCenterPositionX.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionX, "numericalTextBoxPrimaryCenterPositionX");
             this.numericalTextBoxPrimaryCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionX.DecimalPlaces = -1;
             this.numericalTextBoxPrimaryCenterPositionX.Maximum = double.PositiveInfinity;
             this.numericalTextBoxPrimaryCenterPositionX.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPrimaryCenterPositionX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxPrimaryCenterPositionX.MouseSpeed = 1D;
             this.numericalTextBoxPrimaryCenterPositionX.Multiline = false;
             this.numericalTextBoxPrimaryCenterPositionX.Name = "numericalTextBoxPrimaryCenterPositionX";
             this.numericalTextBoxPrimaryCenterPositionX.RadianValue = 0D;
@@ -1733,14 +1721,11 @@
             // 
             // numericalTextBoxPrimaryCenterPositionYDev
             // 
-            this.numericalTextBoxPrimaryCenterPositionYDev.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionYDev, "numericalTextBoxPrimaryCenterPositionYDev");
             this.numericalTextBoxPrimaryCenterPositionYDev.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionYDev.DecimalPlaces = 10;
             this.numericalTextBoxPrimaryCenterPositionYDev.Maximum = double.PositiveInfinity;
             this.numericalTextBoxPrimaryCenterPositionYDev.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPrimaryCenterPositionYDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxPrimaryCenterPositionYDev.MouseSpeed = 1D;
             this.numericalTextBoxPrimaryCenterPositionYDev.Multiline = false;
             this.numericalTextBoxPrimaryCenterPositionYDev.Name = "numericalTextBoxPrimaryCenterPositionYDev";
             this.numericalTextBoxPrimaryCenterPositionYDev.RadianValue = 0D;
@@ -1761,14 +1746,11 @@
             // 
             // numericalTextBoxPrimaryCenterPositionXDev
             // 
-            this.numericalTextBoxPrimaryCenterPositionXDev.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionXDev, "numericalTextBoxPrimaryCenterPositionXDev");
             this.numericalTextBoxPrimaryCenterPositionXDev.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionXDev.DecimalPlaces = 10;
             this.numericalTextBoxPrimaryCenterPositionXDev.Maximum = double.PositiveInfinity;
             this.numericalTextBoxPrimaryCenterPositionXDev.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPrimaryCenterPositionXDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxPrimaryCenterPositionXDev.MouseSpeed = 1D;
             this.numericalTextBoxPrimaryCenterPositionXDev.Multiline = false;
             this.numericalTextBoxPrimaryCenterPositionXDev.Name = "numericalTextBoxPrimaryCenterPositionXDev";
             this.numericalTextBoxPrimaryCenterPositionXDev.RadianValue = 0D;
@@ -1789,14 +1771,11 @@
             // 
             // numericBoxSecondaryImageNum
             // 
-            this.numericBoxSecondaryImageNum.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxSecondaryImageNum, "numericBoxSecondaryImageNum");
             this.numericBoxSecondaryImageNum.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxSecondaryImageNum.DecimalPlaces = -2;
             this.numericBoxSecondaryImageNum.Maximum = double.PositiveInfinity;
             this.numericBoxSecondaryImageNum.Minimum = double.NegativeInfinity;
-            this.numericBoxSecondaryImageNum.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxSecondaryImageNum.MouseSpeed = 1D;
             this.numericBoxSecondaryImageNum.Multiline = false;
             this.numericBoxSecondaryImageNum.Name = "numericBoxSecondaryImageNum";
             this.numericBoxSecondaryImageNum.RadianValue = 0D;
@@ -1817,14 +1796,11 @@
             // 
             // numericTextBoxSecondaryCenterPositionY
             // 
-            this.numericTextBoxSecondaryCenterPositionY.AllowMouseControl = false;
             resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionY, "numericTextBoxSecondaryCenterPositionY");
             this.numericTextBoxSecondaryCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionY.DecimalPlaces = -1;
             this.numericTextBoxSecondaryCenterPositionY.Maximum = double.PositiveInfinity;
             this.numericTextBoxSecondaryCenterPositionY.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericTextBoxSecondaryCenterPositionY.MouseSpeed = 1D;
             this.numericTextBoxSecondaryCenterPositionY.Multiline = false;
             this.numericTextBoxSecondaryCenterPositionY.Name = "numericTextBoxSecondaryCenterPositionY";
             this.numericTextBoxSecondaryCenterPositionY.RadianValue = 0D;
@@ -1848,14 +1824,11 @@
             // 
             // numericTextBoxSecondaryCenterPositionX
             // 
-            this.numericTextBoxSecondaryCenterPositionX.AllowMouseControl = false;
             resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionX, "numericTextBoxSecondaryCenterPositionX");
             this.numericTextBoxSecondaryCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionX.DecimalPlaces = -1;
             this.numericTextBoxSecondaryCenterPositionX.Maximum = double.PositiveInfinity;
             this.numericTextBoxSecondaryCenterPositionX.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericTextBoxSecondaryCenterPositionX.MouseSpeed = 1D;
             this.numericTextBoxSecondaryCenterPositionX.Multiline = false;
             this.numericTextBoxSecondaryCenterPositionX.Name = "numericTextBoxSecondaryCenterPositionX";
             this.numericTextBoxSecondaryCenterPositionX.RadianValue = 0D;
@@ -1879,14 +1852,11 @@
             // 
             // textBoxFilmDistanceDiscrepancy
             // 
-            this.textBoxFilmDistanceDiscrepancy.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxFilmDistanceDiscrepancy, "textBoxFilmDistanceDiscrepancy");
             this.textBoxFilmDistanceDiscrepancy.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxFilmDistanceDiscrepancy.DecimalPlaces = -1;
             this.textBoxFilmDistanceDiscrepancy.Maximum = double.PositiveInfinity;
             this.textBoxFilmDistanceDiscrepancy.Minimum = double.NegativeInfinity;
-            this.textBoxFilmDistanceDiscrepancy.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxFilmDistanceDiscrepancy.MouseSpeed = 1D;
             this.textBoxFilmDistanceDiscrepancy.Multiline = false;
             this.textBoxFilmDistanceDiscrepancy.Name = "textBoxFilmDistanceDiscrepancy";
             this.textBoxFilmDistanceDiscrepancy.RadianValue = 1.7453292519943295D;
@@ -1910,14 +1880,11 @@
             // 
             // textBoxPrimaryFilmDistanceCopy
             // 
-            this.textBoxPrimaryFilmDistanceCopy.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPrimaryFilmDistanceCopy, "textBoxPrimaryFilmDistanceCopy");
             this.textBoxPrimaryFilmDistanceCopy.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPrimaryFilmDistanceCopy.DecimalPlaces = -1;
             this.textBoxPrimaryFilmDistanceCopy.Maximum = double.PositiveInfinity;
             this.textBoxPrimaryFilmDistanceCopy.Minimum = double.NegativeInfinity;
-            this.textBoxPrimaryFilmDistanceCopy.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPrimaryFilmDistanceCopy.MouseSpeed = 1D;
             this.textBoxPrimaryFilmDistanceCopy.Multiline = false;
             this.textBoxPrimaryFilmDistanceCopy.Name = "textBoxPrimaryFilmDistanceCopy";
             this.textBoxPrimaryFilmDistanceCopy.RadianValue = 7.7667151713747664D;
@@ -1938,14 +1905,11 @@
             // 
             // numericTextBoxSecondaryCenterPositionYDev
             // 
-            this.numericTextBoxSecondaryCenterPositionYDev.AllowMouseControl = false;
             resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionYDev, "numericTextBoxSecondaryCenterPositionYDev");
             this.numericTextBoxSecondaryCenterPositionYDev.BackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionYDev.DecimalPlaces = 10;
             this.numericTextBoxSecondaryCenterPositionYDev.Maximum = double.PositiveInfinity;
             this.numericTextBoxSecondaryCenterPositionYDev.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionYDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericTextBoxSecondaryCenterPositionYDev.MouseSpeed = 1D;
             this.numericTextBoxSecondaryCenterPositionYDev.Multiline = false;
             this.numericTextBoxSecondaryCenterPositionYDev.Name = "numericTextBoxSecondaryCenterPositionYDev";
             this.numericTextBoxSecondaryCenterPositionYDev.RadianValue = 0D;
@@ -1966,14 +1930,11 @@
             // 
             // numericTextBoxSecondaryCenterPositionXDev
             // 
-            this.numericTextBoxSecondaryCenterPositionXDev.AllowMouseControl = false;
             resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionXDev, "numericTextBoxSecondaryCenterPositionXDev");
             this.numericTextBoxSecondaryCenterPositionXDev.BackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionXDev.DecimalPlaces = 10;
             this.numericTextBoxSecondaryCenterPositionXDev.Maximum = double.PositiveInfinity;
             this.numericTextBoxSecondaryCenterPositionXDev.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionXDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericTextBoxSecondaryCenterPositionXDev.MouseSpeed = 1D;
             this.numericTextBoxSecondaryCenterPositionXDev.Multiline = false;
             this.numericTextBoxSecondaryCenterPositionXDev.Name = "numericTextBoxSecondaryCenterPositionXDev";
             this.numericTextBoxSecondaryCenterPositionXDev.RadianValue = 0D;
@@ -1994,14 +1955,11 @@
             // 
             // numericBoxAwayFrom
             // 
-            this.numericBoxAwayFrom.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxAwayFrom, "numericBoxAwayFrom");
             this.numericBoxAwayFrom.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxAwayFrom.DecimalPlaces = 2;
             this.numericBoxAwayFrom.Maximum = double.PositiveInfinity;
             this.numericBoxAwayFrom.Minimum = 0D;
-            this.numericBoxAwayFrom.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxAwayFrom.MouseSpeed = 1D;
             this.numericBoxAwayFrom.Multiline = false;
             this.numericBoxAwayFrom.Name = "numericBoxAwayFrom";
             this.numericBoxAwayFrom.RadianValue = 0.017453292519943295D;
@@ -2023,14 +1981,11 @@
             // 
             // numericBoxLowerThan
             // 
-            this.numericBoxLowerThan.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxLowerThan, "numericBoxLowerThan");
             this.numericBoxLowerThan.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxLowerThan.DecimalPlaces = 2;
             this.numericBoxLowerThan.Maximum = double.PositiveInfinity;
             this.numericBoxLowerThan.Minimum = 0D;
-            this.numericBoxLowerThan.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxLowerThan.MouseSpeed = 1D;
             this.numericBoxLowerThan.Multiline = false;
             this.numericBoxLowerThan.Name = "numericBoxLowerThan";
             this.numericBoxLowerThan.RadianValue = 2.6179938779914944D;
@@ -2052,14 +2007,11 @@
             // 
             // textBoxPixelKsi
             // 
-            this.textBoxPixelKsi.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPixelKsi, "textBoxPixelKsi");
             this.textBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelKsi.DecimalPlaces = -1;
             this.textBoxPixelKsi.Maximum = double.PositiveInfinity;
             this.textBoxPixelKsi.Minimum = double.NegativeInfinity;
-            this.textBoxPixelKsi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPixelKsi.MouseSpeed = 1D;
             this.textBoxPixelKsi.Multiline = false;
             this.textBoxPixelKsi.Name = "textBoxPixelKsi";
             this.textBoxPixelKsi.RadianValue = 0D;
@@ -2083,14 +2035,11 @@
             // 
             // textBoxTiltCorrectionSecondaryTau
             // 
-            this.textBoxTiltCorrectionSecondaryTau.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxTiltCorrectionSecondaryTau, "textBoxTiltCorrectionSecondaryTau");
             this.textBoxTiltCorrectionSecondaryTau.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionSecondaryTau.DecimalPlaces = -1;
             this.textBoxTiltCorrectionSecondaryTau.Maximum = double.PositiveInfinity;
             this.textBoxTiltCorrectionSecondaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionSecondaryTau.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxTiltCorrectionSecondaryTau.MouseSpeed = 1D;
             this.textBoxTiltCorrectionSecondaryTau.Multiline = false;
             this.textBoxTiltCorrectionSecondaryTau.Name = "textBoxTiltCorrectionSecondaryTau";
             this.textBoxTiltCorrectionSecondaryTau.RadianValue = 0D;
@@ -2113,14 +2062,11 @@
             // 
             // textBoxTiltCorrectionPrimaryTau
             // 
-            this.textBoxTiltCorrectionPrimaryTau.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxTiltCorrectionPrimaryTau, "textBoxTiltCorrectionPrimaryTau");
             this.textBoxTiltCorrectionPrimaryTau.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionPrimaryTau.DecimalPlaces = -1;
             this.textBoxTiltCorrectionPrimaryTau.Maximum = double.PositiveInfinity;
             this.textBoxTiltCorrectionPrimaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionPrimaryTau.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxTiltCorrectionPrimaryTau.MouseSpeed = 1D;
             this.textBoxTiltCorrectionPrimaryTau.Multiline = false;
             this.textBoxTiltCorrectionPrimaryTau.Name = "textBoxTiltCorrectionPrimaryTau";
             this.textBoxTiltCorrectionPrimaryTau.RadianValue = 0D;
@@ -2144,14 +2090,11 @@
             // 
             // numericalTextBoxSphericalRadius
             // 
-            this.numericalTextBoxSphericalRadius.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxSphericalRadius, "numericalTextBoxSphericalRadius");
             this.numericalTextBoxSphericalRadius.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxSphericalRadius.DecimalPlaces = -1;
             this.numericalTextBoxSphericalRadius.Maximum = double.PositiveInfinity;
             this.numericalTextBoxSphericalRadius.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxSphericalRadius.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxSphericalRadius.MouseSpeed = 1D;
             this.numericalTextBoxSphericalRadius.Multiline = false;
             this.numericalTextBoxSphericalRadius.Name = "numericalTextBoxSphericalRadius";
             this.numericalTextBoxSphericalRadius.RadianValue = 0D;
@@ -2174,14 +2117,11 @@
             // 
             // textBoxTiltCorrectionSecondaryPhi
             // 
-            this.textBoxTiltCorrectionSecondaryPhi.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxTiltCorrectionSecondaryPhi, "textBoxTiltCorrectionSecondaryPhi");
             this.textBoxTiltCorrectionSecondaryPhi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionSecondaryPhi.DecimalPlaces = -1;
             this.textBoxTiltCorrectionSecondaryPhi.Maximum = double.PositiveInfinity;
             this.textBoxTiltCorrectionSecondaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionSecondaryPhi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxTiltCorrectionSecondaryPhi.MouseSpeed = 1D;
             this.textBoxTiltCorrectionSecondaryPhi.Multiline = false;
             this.textBoxTiltCorrectionSecondaryPhi.Name = "textBoxTiltCorrectionSecondaryPhi";
             this.textBoxTiltCorrectionSecondaryPhi.RadianValue = 0D;
@@ -2204,14 +2144,11 @@
             // 
             // textBoxTiltCorrectionPrimaryPhi
             // 
-            this.textBoxTiltCorrectionPrimaryPhi.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxTiltCorrectionPrimaryPhi, "textBoxTiltCorrectionPrimaryPhi");
             this.textBoxTiltCorrectionPrimaryPhi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionPrimaryPhi.DecimalPlaces = -1;
             this.textBoxTiltCorrectionPrimaryPhi.Maximum = double.PositiveInfinity;
             this.textBoxTiltCorrectionPrimaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionPrimaryPhi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxTiltCorrectionPrimaryPhi.MouseSpeed = 1D;
             this.textBoxTiltCorrectionPrimaryPhi.Multiline = false;
             this.textBoxTiltCorrectionPrimaryPhi.Name = "textBoxTiltCorrectionPrimaryPhi";
             this.textBoxTiltCorrectionPrimaryPhi.RadianValue = 0D;
@@ -2235,14 +2172,11 @@
             // 
             // textBoxRefinedPixelKsiDev
             // 
-            this.textBoxRefinedPixelKsiDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPixelKsiDev, "textBoxRefinedPixelKsiDev");
             this.textBoxRefinedPixelKsiDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPixelKsiDev.DecimalPlaces = 10;
             this.textBoxRefinedPixelKsiDev.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPixelKsiDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelKsiDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPixelKsiDev.MouseSpeed = 1D;
             this.textBoxRefinedPixelKsiDev.Multiline = false;
             this.textBoxRefinedPixelKsiDev.Name = "textBoxRefinedPixelKsiDev";
             this.textBoxRefinedPixelKsiDev.RadianValue = 0D;
@@ -2264,14 +2198,11 @@
             // 
             // textBoxWaveLengthDev
             // 
-            this.textBoxWaveLengthDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxWaveLengthDev, "textBoxWaveLengthDev");
             this.textBoxWaveLengthDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxWaveLengthDev.DecimalPlaces = 10;
             this.textBoxWaveLengthDev.Maximum = double.PositiveInfinity;
             this.textBoxWaveLengthDev.Minimum = double.NegativeInfinity;
-            this.textBoxWaveLengthDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxWaveLengthDev.MouseSpeed = 1D;
             this.textBoxWaveLengthDev.Multiline = false;
             this.textBoxWaveLengthDev.Name = "textBoxWaveLengthDev";
             this.textBoxWaveLengthDev.RadianValue = 0D;
@@ -2293,14 +2224,11 @@
             // 
             // textBoxRefinedPixelKsi
             // 
-            this.textBoxRefinedPixelKsi.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPixelKsi, "textBoxRefinedPixelKsi");
             this.textBoxRefinedPixelKsi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPixelKsi.DecimalPlaces = -1;
             this.textBoxRefinedPixelKsi.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPixelKsi.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelKsi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPixelKsi.MouseSpeed = 1D;
             this.textBoxRefinedPixelKsi.Multiline = false;
             this.textBoxRefinedPixelKsi.Name = "textBoxRefinedPixelKsi";
             this.textBoxRefinedPixelKsi.RadianValue = 0D;
@@ -2322,14 +2250,11 @@
             // 
             // textBoxPrimaryFilmDistanceCopy2
             // 
-            this.textBoxPrimaryFilmDistanceCopy2.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPrimaryFilmDistanceCopy2, "textBoxPrimaryFilmDistanceCopy2");
             this.textBoxPrimaryFilmDistanceCopy2.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPrimaryFilmDistanceCopy2.DecimalPlaces = -1;
             this.textBoxPrimaryFilmDistanceCopy2.Maximum = double.PositiveInfinity;
             this.textBoxPrimaryFilmDistanceCopy2.Minimum = double.NegativeInfinity;
-            this.textBoxPrimaryFilmDistanceCopy2.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPrimaryFilmDistanceCopy2.MouseSpeed = 1D;
             this.textBoxPrimaryFilmDistanceCopy2.Multiline = false;
             this.textBoxPrimaryFilmDistanceCopy2.Name = "textBoxPrimaryFilmDistanceCopy2";
             this.textBoxPrimaryFilmDistanceCopy2.RadianValue = 7.7667151713747664D;
@@ -2350,14 +2275,11 @@
             // 
             // numericalTextBoxRadiusInverseDev
             // 
-            this.numericalTextBoxRadiusInverseDev.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxRadiusInverseDev, "numericalTextBoxRadiusInverseDev");
             this.numericalTextBoxRadiusInverseDev.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxRadiusInverseDev.DecimalPlaces = 10;
             this.numericalTextBoxRadiusInverseDev.Maximum = double.PositiveInfinity;
             this.numericalTextBoxRadiusInverseDev.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxRadiusInverseDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxRadiusInverseDev.MouseSpeed = 1D;
             this.numericalTextBoxRadiusInverseDev.Multiline = false;
             this.numericalTextBoxRadiusInverseDev.Name = "numericalTextBoxRadiusInverseDev";
             this.numericalTextBoxRadiusInverseDev.RadianValue = 0D;
@@ -2379,14 +2301,11 @@
             // 
             // textBoxRefinedSecondaryTauDev
             // 
-            this.textBoxRefinedSecondaryTauDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedSecondaryTauDev, "textBoxRefinedSecondaryTauDev");
             this.textBoxRefinedSecondaryTauDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryTauDev.DecimalPlaces = 10;
             this.textBoxRefinedSecondaryTauDev.Maximum = double.PositiveInfinity;
             this.textBoxRefinedSecondaryTauDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryTauDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedSecondaryTauDev.MouseSpeed = 1D;
             this.textBoxRefinedSecondaryTauDev.Multiline = false;
             this.textBoxRefinedSecondaryTauDev.Name = "textBoxRefinedSecondaryTauDev";
             this.textBoxRefinedSecondaryTauDev.RadianValue = 0D;
@@ -2408,14 +2327,11 @@
             // 
             // textBoxPixelSizeYDev
             // 
-            this.textBoxPixelSizeYDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPixelSizeYDev, "textBoxPixelSizeYDev");
             this.textBoxPixelSizeYDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeYDev.DecimalPlaces = 10;
             this.textBoxPixelSizeYDev.Maximum = double.PositiveInfinity;
             this.textBoxPixelSizeYDev.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeYDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPixelSizeYDev.MouseSpeed = 1D;
             this.textBoxPixelSizeYDev.Multiline = false;
             this.textBoxPixelSizeYDev.Name = "textBoxPixelSizeYDev";
             this.textBoxPixelSizeYDev.RadianValue = 0D;
@@ -2437,14 +2353,11 @@
             // 
             // textBoxWaveLength
             // 
-            this.textBoxWaveLength.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxWaveLength, "textBoxWaveLength");
             this.textBoxWaveLength.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxWaveLength.DecimalPlaces = -1;
             this.textBoxWaveLength.Maximum = double.PositiveInfinity;
             this.textBoxWaveLength.Minimum = double.NegativeInfinity;
-            this.textBoxWaveLength.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxWaveLength.MouseSpeed = 1D;
             this.textBoxWaveLength.Multiline = false;
             this.textBoxWaveLength.Name = "textBoxWaveLength";
             this.textBoxWaveLength.RadianValue = 0.0069813170079773184D;
@@ -2469,14 +2382,11 @@
             // 
             // textBoxRefinedPixelSizeY
             // 
-            this.textBoxRefinedPixelSizeY.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPixelSizeY, "textBoxRefinedPixelSizeY");
             this.textBoxRefinedPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPixelSizeY.DecimalPlaces = -1;
             this.textBoxRefinedPixelSizeY.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPixelSizeY.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelSizeY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPixelSizeY.MouseSpeed = 1D;
             this.textBoxRefinedPixelSizeY.Multiline = false;
             this.textBoxRefinedPixelSizeY.Name = "textBoxRefinedPixelSizeY";
             this.textBoxRefinedPixelSizeY.RadianValue = 0.0017453292519943296D;
@@ -2498,14 +2408,11 @@
             // 
             // textBoxRefinedPrimaryTauDev
             // 
-            this.textBoxRefinedPrimaryTauDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPrimaryTauDev, "textBoxRefinedPrimaryTauDev");
             this.textBoxRefinedPrimaryTauDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryTauDev.DecimalPlaces = 10;
             this.textBoxRefinedPrimaryTauDev.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPrimaryTauDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryTauDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPrimaryTauDev.MouseSpeed = 1D;
             this.textBoxRefinedPrimaryTauDev.Multiline = false;
             this.textBoxRefinedPrimaryTauDev.Name = "textBoxRefinedPrimaryTauDev";
             this.textBoxRefinedPrimaryTauDev.RadianValue = 0D;
@@ -2527,14 +2434,11 @@
             // 
             // textBoxPixelSizeY
             // 
-            this.textBoxPixelSizeY.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPixelSizeY, "textBoxPixelSizeY");
             this.textBoxPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeY.DecimalPlaces = -1;
             this.textBoxPixelSizeY.Maximum = double.PositiveInfinity;
             this.textBoxPixelSizeY.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPixelSizeY.MouseSpeed = 1D;
             this.textBoxPixelSizeY.Multiline = false;
             this.textBoxPixelSizeY.Name = "textBoxPixelSizeY";
             this.textBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
@@ -2558,14 +2462,11 @@
             // 
             // textBoxRefinedSecondaryPhiDev
             // 
-            this.textBoxRefinedSecondaryPhiDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedSecondaryPhiDev, "textBoxRefinedSecondaryPhiDev");
             this.textBoxRefinedSecondaryPhiDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryPhiDev.DecimalPlaces = 10;
             this.textBoxRefinedSecondaryPhiDev.Maximum = double.PositiveInfinity;
             this.textBoxRefinedSecondaryPhiDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryPhiDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedSecondaryPhiDev.MouseSpeed = 1D;
             this.textBoxRefinedSecondaryPhiDev.Multiline = false;
             this.textBoxRefinedSecondaryPhiDev.Name = "textBoxRefinedSecondaryPhiDev";
             this.textBoxRefinedSecondaryPhiDev.RadianValue = 0D;
@@ -2587,14 +2488,11 @@
             // 
             // textBoxRefinedPrimaryFilmDistance
             // 
-            this.textBoxRefinedPrimaryFilmDistance.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPrimaryFilmDistance, "textBoxRefinedPrimaryFilmDistance");
             this.textBoxRefinedPrimaryFilmDistance.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryFilmDistance.DecimalPlaces = -1;
             this.textBoxRefinedPrimaryFilmDistance.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPrimaryFilmDistance.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryFilmDistance.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPrimaryFilmDistance.MouseSpeed = 1D;
             this.textBoxRefinedPrimaryFilmDistance.Multiline = false;
             this.textBoxRefinedPrimaryFilmDistance.Name = "textBoxRefinedPrimaryFilmDistance";
             this.textBoxRefinedPrimaryFilmDistance.RadianValue = 6.9813170079773181D;
@@ -2616,14 +2514,11 @@
             // 
             // textBoxRefinedPrimaryPhiDev
             // 
-            this.textBoxRefinedPrimaryPhiDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPrimaryPhiDev, "textBoxRefinedPrimaryPhiDev");
             this.textBoxRefinedPrimaryPhiDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryPhiDev.DecimalPlaces = 10;
             this.textBoxRefinedPrimaryPhiDev.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPrimaryPhiDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryPhiDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPrimaryPhiDev.MouseSpeed = 1D;
             this.textBoxRefinedPrimaryPhiDev.Multiline = false;
             this.textBoxRefinedPrimaryPhiDev.Name = "textBoxRefinedPrimaryPhiDev";
             this.textBoxRefinedPrimaryPhiDev.RadianValue = 0D;
@@ -2645,14 +2540,11 @@
             // 
             // textBoxPixelSizeX
             // 
-            this.textBoxPixelSizeX.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPixelSizeX, "textBoxPixelSizeX");
             this.textBoxPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeX.DecimalPlaces = -1;
             this.textBoxPixelSizeX.Maximum = double.PositiveInfinity;
             this.textBoxPixelSizeX.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPixelSizeX.MouseSpeed = 1D;
             this.textBoxPixelSizeX.Multiline = false;
             this.textBoxPixelSizeX.Name = "textBoxPixelSizeX";
             this.textBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
@@ -2674,14 +2566,11 @@
             // 
             // textBoxRefinedWaveLength
             // 
-            this.textBoxRefinedWaveLength.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedWaveLength, "textBoxRefinedWaveLength");
             this.textBoxRefinedWaveLength.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedWaveLength.DecimalPlaces = -1;
             this.textBoxRefinedWaveLength.Maximum = double.PositiveInfinity;
             this.textBoxRefinedWaveLength.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedWaveLength.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedWaveLength.MouseSpeed = 1D;
             this.textBoxRefinedWaveLength.Multiline = false;
             this.textBoxRefinedWaveLength.Name = "textBoxRefinedWaveLength";
             this.textBoxRefinedWaveLength.RadianValue = 0.0069813170079773184D;
@@ -2703,14 +2592,11 @@
             // 
             // textBoxRefinedPixelSizeX
             // 
-            this.textBoxRefinedPixelSizeX.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPixelSizeX, "textBoxRefinedPixelSizeX");
             this.textBoxRefinedPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPixelSizeX.DecimalPlaces = -1;
             this.textBoxRefinedPixelSizeX.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPixelSizeX.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelSizeX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPixelSizeX.MouseSpeed = 1D;
             this.textBoxRefinedPixelSizeX.Multiline = false;
             this.textBoxRefinedPixelSizeX.Name = "textBoxRefinedPixelSizeX";
             this.textBoxRefinedPixelSizeX.RadianValue = 0.0017453292519943296D;
@@ -2732,14 +2618,11 @@
             // 
             // numericalTextBoxRefinedSphericalRadius
             // 
-            this.numericalTextBoxRefinedSphericalRadius.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxRefinedSphericalRadius, "numericalTextBoxRefinedSphericalRadius");
             this.numericalTextBoxRefinedSphericalRadius.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxRefinedSphericalRadius.DecimalPlaces = -1;
             this.numericalTextBoxRefinedSphericalRadius.Maximum = double.PositiveInfinity;
             this.numericalTextBoxRefinedSphericalRadius.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxRefinedSphericalRadius.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxRefinedSphericalRadius.MouseSpeed = 1D;
             this.numericalTextBoxRefinedSphericalRadius.Multiline = false;
             this.numericalTextBoxRefinedSphericalRadius.Name = "numericalTextBoxRefinedSphericalRadius";
             this.numericalTextBoxRefinedSphericalRadius.RadianValue = 0D;
@@ -2761,14 +2644,11 @@
             // 
             // textBoxRefinedSecondaryTau
             // 
-            this.textBoxRefinedSecondaryTau.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedSecondaryTau, "textBoxRefinedSecondaryTau");
             this.textBoxRefinedSecondaryTau.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryTau.DecimalPlaces = -1;
             this.textBoxRefinedSecondaryTau.Maximum = double.PositiveInfinity;
             this.textBoxRefinedSecondaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryTau.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedSecondaryTau.MouseSpeed = 1D;
             this.textBoxRefinedSecondaryTau.Multiline = false;
             this.textBoxRefinedSecondaryTau.Name = "textBoxRefinedSecondaryTau";
             this.textBoxRefinedSecondaryTau.RadianValue = 0D;
@@ -2790,14 +2670,11 @@
             // 
             // textBoxPixelSizeXDev
             // 
-            this.textBoxPixelSizeXDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxPixelSizeXDev, "textBoxPixelSizeXDev");
             this.textBoxPixelSizeXDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeXDev.DecimalPlaces = 10;
             this.textBoxPixelSizeXDev.Maximum = double.PositiveInfinity;
             this.textBoxPixelSizeXDev.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeXDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxPixelSizeXDev.MouseSpeed = 1D;
             this.textBoxPixelSizeXDev.Multiline = false;
             this.textBoxPixelSizeXDev.Name = "textBoxPixelSizeXDev";
             this.textBoxPixelSizeXDev.RadianValue = 0D;
@@ -2819,14 +2696,11 @@
             // 
             // textBoxRefinedPrimaryTau
             // 
-            this.textBoxRefinedPrimaryTau.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPrimaryTau, "textBoxRefinedPrimaryTau");
             this.textBoxRefinedPrimaryTau.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryTau.DecimalPlaces = -1;
             this.textBoxRefinedPrimaryTau.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPrimaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryTau.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPrimaryTau.MouseSpeed = 1D;
             this.textBoxRefinedPrimaryTau.Multiline = false;
             this.textBoxRefinedPrimaryTau.Name = "textBoxRefinedPrimaryTau";
             this.textBoxRefinedPrimaryTau.RadianValue = 0D;
@@ -2848,14 +2722,11 @@
             // 
             // textBoxCameraLengthDev
             // 
-            this.textBoxCameraLengthDev.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxCameraLengthDev, "textBoxCameraLengthDev");
             this.textBoxCameraLengthDev.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxCameraLengthDev.DecimalPlaces = 10;
             this.textBoxCameraLengthDev.Maximum = double.PositiveInfinity;
             this.textBoxCameraLengthDev.Minimum = double.NegativeInfinity;
-            this.textBoxCameraLengthDev.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxCameraLengthDev.MouseSpeed = 1D;
             this.textBoxCameraLengthDev.Multiline = false;
             this.textBoxCameraLengthDev.Name = "textBoxCameraLengthDev";
             this.textBoxCameraLengthDev.RadianValue = 0D;
@@ -2877,14 +2748,11 @@
             // 
             // textBoxRefinedSecondaryPhi
             // 
-            this.textBoxRefinedSecondaryPhi.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedSecondaryPhi, "textBoxRefinedSecondaryPhi");
             this.textBoxRefinedSecondaryPhi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryPhi.DecimalPlaces = -1;
             this.textBoxRefinedSecondaryPhi.Maximum = double.PositiveInfinity;
             this.textBoxRefinedSecondaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryPhi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedSecondaryPhi.MouseSpeed = 1D;
             this.textBoxRefinedSecondaryPhi.Multiline = false;
             this.textBoxRefinedSecondaryPhi.Name = "textBoxRefinedSecondaryPhi";
             this.textBoxRefinedSecondaryPhi.RadianValue = 0D;
@@ -2906,14 +2774,11 @@
             // 
             // textBoxRefinedPrimaryPhi
             // 
-            this.textBoxRefinedPrimaryPhi.AllowMouseControl = false;
             resources.ApplyResources(this.textBoxRefinedPrimaryPhi, "textBoxRefinedPrimaryPhi");
             this.textBoxRefinedPrimaryPhi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryPhi.DecimalPlaces = -1;
             this.textBoxRefinedPrimaryPhi.Maximum = double.PositiveInfinity;
             this.textBoxRefinedPrimaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryPhi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.textBoxRefinedPrimaryPhi.MouseSpeed = 1D;
             this.textBoxRefinedPrimaryPhi.Multiline = false;
             this.textBoxRefinedPrimaryPhi.Name = "textBoxRefinedPrimaryPhi";
             this.textBoxRefinedPrimaryPhi.RadianValue = 0D;

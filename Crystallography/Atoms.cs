@@ -1,5 +1,8 @@
+using MathNet.Numerics.Integration;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
 
@@ -22,7 +25,7 @@ namespace Crystallography
 
         public int ID;
 
-        [XmlIgnoreAttribute]
+        [XmlIgnore]
         public List<Vector3D> Atom = new List<Vector3D>();
 
         public double X, Y, Z;
@@ -36,16 +39,16 @@ namespace Crystallography
 
         public string Label;
 
-        [XmlIgnoreAttribute]
+        [XmlIgnore]
         public string ElementName;
 
-        [XmlIgnoreAttribute]
+        [XmlIgnore]
         public string WyckoffLeter, SiteSymmetry;
 
-        [XmlIgnoreAttribute]
+        [XmlIgnore]
         public int WyckoffNumber;
 
-        [XmlIgnoreAttribute]
+        [XmlIgnore]
         public int Multiplicity;
 
         public DiffuseScatteringFactor Dsf;
@@ -56,19 +59,47 @@ namespace Crystallography
         //public string str;
 
         public int Argb;
-        public float Ambient = 0.1f;//環境光
-        public float Diffusion = 0.8f;//拡散光
-        public float Emission = 0.2f;//自己証明
-        public float Shininess = 50f;//反射光の強度
-        public float Specular = 0.7f;//反射光
-        public float Transparency = 1f;
+
 
         public float Radius = 0.6f;
+
+
+        public float Ambient = Material.DefaultTexture.Ambient;//環境光
+        public float Diffusion = Material.DefaultTexture.Diffuse;//拡散光
+        public float Emission = Material.DefaultTexture.Emission;//自己証明
+        public float Shininess = Material.DefaultTexture.SpecularPow;//反射光の強度
+        public float Specular = Material.DefaultTexture.Specular;//反射光
+        [XmlIgnore]
+        public (float Ambient, float Diffusion, float Specular, float Shininess, float Emission) Texture
+        {
+            get => (Ambient, Diffusion, Specular, Shininess, Emission);
+            set
+            {
+                Ambient = value.Ambient;
+                Diffusion = value.Diffusion;
+                Specular = value.Specular;
+                Shininess = value.Shininess;
+                Emission = value.Emission;
+            }
+        }
+
+        /// <summary>
+        /// OpenGL描画時に、ラベルを表示するか
+        /// </summary>
+        public bool ShowLabel = false;
+
+        /// <summary>
+        /// OpenGLの描画時に有効にするかどうか
+        /// </summary>
+        public bool GLEnabled = true;
+
+        #region コンストラクタ
 
         public Atoms()
         {
             //Atom = new List<Vector3D>();
         }
+
 
         /// <summary>
         /// ワイコフポジションだけ指定して、原子位置は実態のないコンストラクタ
@@ -105,6 +136,18 @@ namespace Crystallography
             Isotope = isotope;
         }
 
+        /// <summary>
+        /// 基本コンストラクタ
+        /// </summary>
+        /// <param name="label"></param>
+        /// <param name="atomicNumber"></param>
+        /// <param name="subXray"></param>
+        /// <param name="subElectron"></param>
+        /// <param name="isotope"></param>
+        /// <param name="symmetrySeriesNumber"></param>
+        /// <param name="pos"></param>
+        /// <param name="occ"></param>
+        /// <param name="dsf"></param>
         public Atoms(string label, int atomicNumber, int subXray, int subElectron, double[] isotope, int symmetrySeriesNumber,
             Vector3D pos, double occ, DiffuseScatteringFactor dsf)
         {
@@ -112,10 +155,10 @@ namespace Crystallography
 
             Label = label;
 
-            this.Occ = occ;
-            this.X = pos.X;
-            this.Y = pos.Y;
-            this.Z = pos.Z;
+            Occ = occ;
+            X = pos.X;
+            Y = pos.Y;
+            Z = pos.Z;
 
             var temp = WyckoffPosition.GetEquivalentAtomsPosition(pos, symmetrySeriesNumber);
             WyckoffLeter = temp.WyckoffLeter;
@@ -128,55 +171,68 @@ namespace Crystallography
 
             SubNumberXray = subXray;
             SubNumberElectron = subElectron;
-            Isotope = isotope;
+            Isotope = isotope != null ? isotope : new double[0];
             AtomicNumber = atomicNumber;
             ElementName = AtomicNumber.ToString() + ": " + AtomConstants.AtomicName(atomicNumber);
         }
 
+        /// <summary>
+        /// 基本コンストラクタ + エラー
+        /// </summary>
+        /// <param name="label"></param>
+        /// <param name="atomicNumber"></param>
+        /// <param name="subXray"></param>
+        /// <param name="subElectron"></param>
+        /// <param name="isotope"></param>
+        /// <param name="symmetrySeriesNumber"></param>
+        /// <param name="pos"></param>
+        /// <param name="pos_err"></param>
+        /// <param name="occ"></param>
+        /// <param name="occ_err"></param>
+        /// <param name="dsf"></param>
         public Atoms(string label, int atomicNumber, int subXray, int subElectron, double[] isotope, int symmetrySeriesNumber,
-           Vector3D pos, Vector3D pos_err, double occ, double occ_err,
-            DiffuseScatteringFactor dsf,
-            AtomMaterial mat, float radius)
+           Vector3D pos, Vector3D pos_err, double occ, double occ_err, DiffuseScatteringFactor dsf)
+            : this(label, atomicNumber, subXray, subElectron, isotope, symmetrySeriesNumber, pos, occ, dsf)
         {
-            SymmetrySeriesNumber = symmetrySeriesNumber;
 
-            Label = label;
-            X = pos.X;
-            Y = pos.Y;
-            Z = pos.Z;
-            Occ = occ;
             X_err = pos_err.X;
             Y_err = pos_err.Y;
             Z_err = pos_err.Z;
             Occ_err = occ_err;
+        }
 
-            Atoms temp = WyckoffPosition.GetEquivalentAtomsPosition(pos, symmetrySeriesNumber);
-            WyckoffLeter = temp.WyckoffLeter;
-            SiteSymmetry = temp.SiteSymmetry;
-            Multiplicity = temp.Multiplicity;
-            WyckoffNumber = temp.WyckoffNumber;
-
-            Atom = temp.Atom;
-            this.Dsf = dsf;
-
-            SubNumberXray = subXray;
-            SubNumberElectron = subElectron;
-            Isotope = isotope;
-            AtomicNumber = atomicNumber;
-            ElementName = AtomicNumber.ToString() + ": " + AtomConstants.AtomicName(atomicNumber);
-
-            this.Radius = radius;
+        /// <summary>
+        /// 基本コンストラクタ + エラー + Material
+        /// </summary>
+        /// <param name="label"></param>
+        /// <param name="atomicNumber"></param>
+        /// <param name="subXray"></param>
+        /// <param name="subElectron"></param>
+        /// <param name="isotope"></param>
+        /// <param name="symmetrySeriesNumber"></param>
+        /// <param name="pos"></param>
+        /// <param name="pos_err"></param>
+        /// <param name="occ"></param>
+        /// <param name="occ_err"></param>
+        /// <param name="dsf"></param>
+        /// <param name="mat"></param>
+        /// <param name="radius"></param>
+        public Atoms(string label, int atomicNumber, int subXray, int subElectron, double[] isotope, int symmetrySeriesNumber,
+           Vector3D pos, Vector3D pos_err, double occ, double occ_err,
+            DiffuseScatteringFactor dsf, Material mat, float radius, bool glEnabled = true, bool showLabel = false)
+            : this(label, atomicNumber, subXray, subElectron, isotope, symmetrySeriesNumber, pos, pos_err, occ, occ_err, dsf)
+        {
+            Radius = radius;
             if (mat != null)
             {
-                this.Argb = mat.Argb;
-                this.Ambient = mat.Ambient;//環境光
-                this.Diffusion = mat.Diffusion;//拡散光
-                this.Emission = mat.Emission;//自己証明
-                this.Shininess = mat.Shininess;//反射光の強度
-                this.Specular = mat.Specular;//反射光
-                this.Transparency = mat.Transparency;//透明度
+                Argb = mat.Argb;
+                Texture = mat.Texture;
             }
+            GLEnabled = glEnabled;
+            ShowLabel = showLabel;
+
         }
+        #endregion
 
         public void ResetSymmetry(int symmetrySeriesNumber)
         {
@@ -187,17 +243,118 @@ namespace Crystallography
             SiteSymmetry = temp.SiteSymmetry;
             Multiplicity = temp.Multiplicity;
             WyckoffNumber = temp.WyckoffNumber;
-
-            //SubNumberXray = subXray;
-            //SubNumberElectron = subElectron;
-            //AtomicNumber = atomicNumber;
             ElementName = AtomicNumber.ToString() + ": " + AtomConstants.AtomicName(AtomicNumber);
 
-            if (Dsf.IsIso == false)
-                if (Dsf.B11 + Dsf.B12 + Dsf.B31 + Dsf.B22 + Dsf.B23 + Dsf.B33 == 0)
-                    Dsf.IsIso = true;
             Atom = temp.Atom;
         }
+
+        public void ResetVesta()
+        {
+            #region Vestaの色設定
+            Texture = Material.DefaultTexture;
+            switch (AtomicNumber)
+            {
+                case 1: Radius = (float)(0.46 * 0.4); Argb = Color.FromArgb(255, 204, 204).ToArgb(); break;
+                case 2: Radius = (float)(1.22 * 0.4); Argb = Color.FromArgb(252, 233, 207).ToArgb(); break;
+                case 3: Radius = (float)(1.57 * 0.4); Argb = Color.FromArgb(134, 224, 116).ToArgb(); break;
+                case 4: Radius = (float)(1.12 * 0.4); Argb = Color.FromArgb(95, 216, 123).ToArgb(); break;
+                case 5: Radius = (float)(0.81 * 0.4); Argb = Color.FromArgb(32, 162, 15).ToArgb(); break;
+                case 6: Radius = (float)(0.77 * 0.4); Argb = Color.FromArgb(129, 73, 41).ToArgb(); break;
+                case 7: Radius = (float)(0.74 * 0.4); Argb = Color.FromArgb(176, 186, 230).ToArgb(); break;
+                case 8: Radius = (float)(0.74 * 0.4); Argb = Color.FromArgb(255, 3, 0).ToArgb(); break;
+                case 9: Radius = (float)(0.72 * 0.4); Argb = Color.FromArgb(176, 186, 230).ToArgb(); break;
+                case 10: Radius = (float)(1.6 * 0.4); Argb = Color.FromArgb(255, 56, 181).ToArgb(); break;
+                case 11: Radius = (float)(1.91 * 0.4); Argb = Color.FromArgb(250, 221, 61).ToArgb(); break;
+                case 12: Radius = (float)(1.6 * 0.4); Argb = Color.FromArgb(252, 124, 22).ToArgb(); break;
+                case 13: Radius = (float)(1.43 * 0.4); Argb = Color.FromArgb(129, 179, 214).ToArgb(); break;
+                case 14: Radius = (float)(1.18 * 0.4); Argb = Color.FromArgb(27, 59, 250).ToArgb(); break;
+                case 15: Radius = (float)(1.1 * 0.4); Argb = Color.FromArgb(193, 156, 195).ToArgb(); break;
+                case 16: Radius = (float)(1.04 * 0.4); Argb = Color.FromArgb(255, 250, 0).ToArgb(); break;
+                case 17: Radius = (float)(0.99 * 0.4); Argb = Color.FromArgb(50, 252, 3).ToArgb(); break;
+                case 18: Radius = (float)(1.92 * 0.4); Argb = Color.FromArgb(207, 254, 197).ToArgb(); break;
+                case 19: Radius = (float)(2.35 * 0.4); Argb = Color.FromArgb(161, 34, 247).ToArgb(); break;
+                case 20: Radius = (float)(1.97 * 0.4); Argb = Color.FromArgb(91, 150, 190).ToArgb(); break;
+                case 21: Radius = (float)(1.64 * 0.4); Argb = Color.FromArgb(182, 99, 172).ToArgb(); break;
+                case 22: Radius = (float)(1.47 * 0.4); Argb = Color.FromArgb(120, 202, 255).ToArgb(); break;
+                case 23: Radius = (float)(1.35 * 0.4); Argb = Color.FromArgb(230, 26, 0).ToArgb(); break;
+                case 24: Radius = (float)(1.29 * 0.4); Argb = Color.FromArgb(0, 0, 158).ToArgb(); break;
+                case 25: Radius = (float)(1.37 * 0.4); Argb = Color.FromArgb(169, 9, 158).ToArgb(); break;
+                case 26: Radius = (float)(1.26 * 0.4); Argb = Color.FromArgb(181, 114, 0).ToArgb(); break;
+                case 27: Radius = (float)(1.25 * 0.4); Argb = Color.FromArgb(0, 0, 175).ToArgb(); break;
+                case 28: Radius = (float)(1.25 * 0.4); Argb = Color.FromArgb(184, 188, 190).ToArgb(); break;
+                case 29: Radius = (float)(1.28 * 0.4); Argb = Color.FromArgb(34, 71, 221).ToArgb(); break;
+                case 30: Radius = (float)(1.37 * 0.4); Argb = Color.FromArgb(143, 144, 130).ToArgb(); break;
+                case 31: Radius = (float)(1.53 * 0.4); Argb = Color.FromArgb(159, 228, 116).ToArgb(); break;
+                case 32: Radius = (float)(1.22 * 0.4); Argb = Color.FromArgb(126, 111, 166).ToArgb(); break;
+                case 33: Radius = (float)(1.21 * 0.4); Argb = Color.FromArgb(117, 208, 87).ToArgb(); break;
+                case 34: Radius = (float)(1.04 * 0.4); Argb = Color.FromArgb(154, 239, 16).ToArgb(); break;
+                case 35: Radius = (float)(1.14 * 0.4); Argb = Color.FromArgb(127, 49, 3).ToArgb(); break;
+                case 36: Radius = (float)(1.98 * 0.4); Argb = Color.FromArgb(250, 193, 243).ToArgb(); break;
+                case 37: Radius = (float)(2.5 * 0.4); Argb = Color.FromArgb(255, 0, 153).ToArgb(); break;
+                case 38: Radius = (float)(2.15 * 0.4); Argb = Color.FromArgb(0, 255, 39).ToArgb(); break;
+                case 39: Radius = (float)(1.82 * 0.4); Argb = Color.FromArgb(103, 152, 142).ToArgb(); break;
+                case 40: Radius = (float)(1.6 * 0.4); Argb = Color.FromArgb(0, 255, 0).ToArgb(); break;
+                case 41: Radius = (float)(1.47 * 0.4); Argb = Color.FromArgb(76, 179, 118).ToArgb(); break;
+                case 42: Radius = (float)(1.4 * 0.4); Argb = Color.FromArgb(180, 134, 176).ToArgb(); break;
+                case 43: Radius = (float)(1.35 * 0.4); Argb = Color.FromArgb(205, 175, 203).ToArgb(); break;
+                case 44: Radius = (float)(1.34 * 0.4); Argb = Color.FromArgb(207, 184, 174).ToArgb(); break;
+                case 45: Radius = (float)(1.34 * 0.4); Argb = Color.FromArgb(206, 210, 171).ToArgb(); break;
+                case 46: Radius = (float)(1.37 * 0.4); Argb = Color.FromArgb(194, 196, 185).ToArgb(); break;
+                case 47: Radius = (float)(1.44 * 0.4); Argb = Color.FromArgb(184, 188, 190).ToArgb(); break;
+                case 48: Radius = (float)(1.52 * 0.4); Argb = Color.FromArgb(243, 31, 220).ToArgb(); break;
+                case 49: Radius = (float)(1.67 * 0.4); Argb = Color.FromArgb(215, 129, 187).ToArgb(); break;
+                case 50: Radius = (float)(1.58 * 0.4); Argb = Color.FromArgb(155, 143, 186).ToArgb(); break;
+                case 51: Radius = (float)(1.41 * 0.4); Argb = Color.FromArgb(216, 131, 80).ToArgb(); break;
+                case 52: Radius = (float)(1.37 * 0.4); Argb = Color.FromArgb(173, 162, 82).ToArgb(); break;
+                case 53: Radius = (float)(1.33 * 0.4); Argb = Color.FromArgb(143, 31, 139).ToArgb(); break;
+                case 54: Radius = (float)(2.18 * 0.4); Argb = Color.FromArgb(155, 161, 248).ToArgb(); break;
+                case 55: Radius = (float)(2.72 * 0.4); Argb = Color.FromArgb(15, 255, 185).ToArgb(); break;
+                case 56: Radius = (float)(2.24 * 0.4); Argb = Color.FromArgb(30, 240, 45).ToArgb(); break;
+                case 57: Radius = (float)(1.88 * 0.4); Argb = Color.FromArgb(90, 196, 73).ToArgb(); break;
+                case 58: Radius = (float)(1.82 * 0.4); Argb = Color.FromArgb(209, 253, 6).ToArgb(); break;
+                case 59: Radius = (float)(1.82 * 0.4); Argb = Color.FromArgb(253, 226, 6).ToArgb(); break;
+                case 60: Radius = (float)(1.82 * 0.4); Argb = Color.FromArgb(252, 142, 7).ToArgb(); break;
+                case 61: Radius = (float)(1.81 * 0.4); Argb = Color.FromArgb(0, 0, 245).ToArgb(); break;
+                case 62: Radius = (float)(1.81 * 0.4); Argb = Color.FromArgb(253, 6, 125).ToArgb(); break;
+                case 63: Radius = (float)(2.06 * 0.4); Argb = Color.FromArgb(251, 8, 213).ToArgb(); break;
+                case 64: Radius = (float)(1.79 * 0.4); Argb = Color.FromArgb(192, 4, 255).ToArgb(); break;
+                case 65: Radius = (float)(1.77 * 0.4); Argb = Color.FromArgb(113, 4, 254).ToArgb(); break;
+                case 66: Radius = (float)(1.77 * 0.4); Argb = Color.FromArgb(49, 6, 253).ToArgb(); break;
+                case 67: Radius = (float)(1.76 * 0.4); Argb = Color.FromArgb(7, 66, 251).ToArgb(); break;
+                case 68: Radius = (float)(1.75 * 0.4); Argb = Color.FromArgb(73, 115, 59).ToArgb(); break;
+                case 69: Radius = (float)(1 * 0.4); Argb = Color.FromArgb(0, 0, 224).ToArgb(); break;
+                case 70: Radius = (float)(1.94 * 0.4); Argb = Color.FromArgb(39, 253, 244).ToArgb(); break;
+                case 71: Radius = (float)(1.72 * 0.4); Argb = Color.FromArgb(38, 253, 181).ToArgb(); break;
+                case 72: Radius = (float)(1.59 * 0.4); Argb = Color.FromArgb(180, 180, 89).ToArgb(); break;
+                case 73: Radius = (float)(1.47 * 0.4); Argb = Color.FromArgb(183, 155, 86).ToArgb(); break;
+                case 74: Radius = (float)(1.41 * 0.4); Argb = Color.FromArgb(142, 138, 128).ToArgb(); break;
+                case 75: Radius = (float)(1.37 * 0.4); Argb = Color.FromArgb(179, 177, 142).ToArgb(); break;
+                case 76: Radius = (float)(1.35 * 0.4); Argb = Color.FromArgb(201, 177, 121).ToArgb(); break;
+                case 77: Radius = (float)(1.36 * 0.4); Argb = Color.FromArgb(201, 207, 115).ToArgb(); break;
+                case 78: Radius = (float)(1.39 * 0.4); Argb = Color.FromArgb(204, 198, 191).ToArgb(); break;
+                case 79: Radius = (float)(1.44 * 0.4); Argb = Color.FromArgb(254, 179, 56).ToArgb(); break;
+                case 80: Radius = (float)(1.55 * 0.4); Argb = Color.FromArgb(211, 184, 204).ToArgb(); break;
+                case 81: Radius = (float)(1.71 * 0.4); Argb = Color.FromArgb(150, 137, 109).ToArgb(); break;
+                case 82: Radius = (float)(1.75 * 0.4); Argb = Color.FromArgb(83, 83, 91).ToArgb(); break;
+                case 83: Radius = (float)(1.82 * 0.4); Argb = Color.FromArgb(210, 48, 248).ToArgb(); break;
+                case 84: Radius = (float)(1.77 * 0.4); Argb = Color.FromArgb(0, 0, 255).ToArgb(); break;
+                case 85: Radius = (float)(0.62 * 0.4); Argb = Color.FromArgb(0, 0, 255).ToArgb(); break;
+                case 86: Radius = (float)(0.8 * 0.4); Argb = Color.FromArgb(255, 255, 0).ToArgb(); break;
+                case 87: Radius = (float)(1 * 0.4); Argb = Color.FromArgb(0, 0, 0).ToArgb(); break;
+                case 88: Radius = (float)(2.35 * 0.4); Argb = Color.FromArgb(110, 170, 89).ToArgb(); break;
+                case 89: Radius = (float)(2.03 * 0.4); Argb = Color.FromArgb(100, 158, 115).ToArgb(); break;
+                case 90: Radius = (float)(1.8 * 0.4); Argb = Color.FromArgb(38, 254, 120).ToArgb(); break;
+                case 91: Radius = (float)(1.63 * 0.4); Argb = Color.FromArgb(41, 251, 53).ToArgb(); break;
+                case 92: Radius = (float)(1.56 * 0.4); Argb = Color.FromArgb(122, 162, 170).ToArgb(); break;
+                case 93: Radius = (float)(1.56 * 0.4); Argb = Color.FromArgb(77, 77, 77).ToArgb(); break;
+                case 94: Radius = (float)(1.64 * 0.4); Argb = Color.FromArgb(77, 77, 77).ToArgb(); break;
+                case 95: Radius = (float)(1.73 * 0.4); Argb = Color.FromArgb(77, 77, 77).ToArgb(); break;
+                case 96: Radius = (float)(0.8 * 0.4); Argb = Color.FromArgb(77, 77, 77).ToArgb(); break;
+            }
+            #endregion
+        }
+
+
 
         /// <summary>
         /// 多重度を保ったまま、原子位置を乱数的的に変化させる。ワイコフ位置も多重度をもとにきまる
@@ -285,7 +442,7 @@ namespace Crystallography
         /// </summary>
         /// <param name="S2">S2: (Sin(theta)/ramda)^2</param>
         /// <returns></returns>
-        public double GetAtomicScatteringFactorForElectron(double s2) 
+        public double GetAtomicScatteringFactorForElectron(double s2)
             => AtomConstants.ElectronScattering[AtomicNumber][SubNumberElectron].Factor(s2) * Occ;
 
         /// <summary>
@@ -293,7 +450,7 @@ namespace Crystallography
         /// </summary>
         /// <param name="s2"></param>
         /// <returns></returns>
-        public double GetAtomicScatteringFactorForXray(double s2) 
+        public double GetAtomicScatteringFactorForXray(double s2)
             => AtomConstants.XrayScattering[AtomicNumber][SubNumberXray].Factor(s2) * Occ;
 
         public Complex GetAtomicScatteringFactorForNeutron()
@@ -1025,106 +1182,190 @@ namespace Crystallography
     [Serializable()]
     public class DiffuseScatteringFactor
     {
-        public double Biso = 0, B11 = 0, B22 = 0, B33 = 0, B12 = 0, B23 = 0, B31 = 0;
-        public double Biso_err = 0, B11_err = 0, B22_err = 0, B33_err = 0, B12_err = 0, B23_err = 0, B31_err = 0;
+        static readonly double PI2 = Math.PI * Math.PI;
+        public enum Type { U, B }
+        //Biomolecular Crystallography: Principles, Practice, and Application to Structural Biology
+        //641ページ
 
-        public bool IsIso;
 
-        public DiffuseScatteringFactor(bool isIso, double biso, double b11, double b22, double b33, double b12, double b23, double b31)
+        #region B type. Getのみ
+        public double Biso => OriginalType == Type.B ? Iso : Iso * PI2 * 8;
+        public double Biso_err => OriginalType == Type.B ? Iso_err : Iso_err * PI2 * 8;
+
+        public double B11 => OriginalType == Type.B ? Aniso11 : Aniso11 * coeff11;
+
+        public double B22 => OriginalType == Type.B ? Aniso22 : Aniso22 * coeff22;
+
+        public double B33 => OriginalType == Type.B ? Aniso33 : Aniso33 * coeff33;
+
+        public double B12 => OriginalType == Type.B ? Aniso12 : Aniso12 * coeff12;
+
+        public double B23 => OriginalType == Type.B ? Aniso23 : Aniso23 * coeff23;
+
+        public double B31 => OriginalType == Type.B ? Aniso31 : Aniso31 * coeff31;
+
+        public double B11_err => OriginalType == Type.B ? Aniso11_err : Aniso11_err * coeff11;
+
+        public double B22_err => OriginalType == Type.B ? Aniso22_err : Aniso22_err * coeff22;
+
+        public double B33_err => OriginalType == Type.B ? Aniso33_err : Aniso33_err * coeff33;
+
+        public double B12_err => OriginalType == Type.B ? Aniso12_err : Aniso12_err * coeff12;
+
+        public double B23_err => OriginalType == Type.B ? Aniso23_err : Aniso23_err * coeff23;
+
+        public double B31_err => OriginalType == Type.B ? Aniso31_err : Aniso31_err * coeff31;
+
+        #endregion
+
+        #region U type. Getのみ
+        public double Uiso => OriginalType == Type.U ? Iso : Iso / PI2 / 8;
+        public double Uiso_err => OriginalType == Type.U ? Iso_err : Iso_err / PI2 / 8;
+        public double U11 => OriginalType == Type.U ? Aniso11 : Aniso11 / coeff11;
+        public double U22 => OriginalType == Type.U ? Aniso22 : Aniso22 / coeff22;
+        public double U33 => OriginalType == Type.U ? Aniso33 : Aniso33 / coeff33;
+        public double U12 => OriginalType == Type.U ? Aniso12 : Aniso12 / coeff12;
+        public double U23 => OriginalType == Type.U ? Aniso23 : Aniso23 / coeff23;
+        public double U31 => OriginalType == Type.U ? Aniso31 : Aniso31 / coeff31;
+        public double U11_err => OriginalType == Type.U ? Aniso11_err : Aniso11_err / coeff11;
+        public double U22_err => OriginalType == Type.U ? Aniso22_err : Aniso22_err / coeff22;
+        public double U33_err => OriginalType == Type.U ? Aniso33_err : Aniso33_err / coeff33;
+        public double U12_err => OriginalType == Type.U ? Aniso12_err : Aniso12_err / coeff12;
+        public double U23_err => OriginalType == Type.U ? Aniso23_err : Aniso23_err / coeff23;
+        public double U31_err => OriginalType == Type.U ? Aniso31_err : Aniso31_err / coeff31;
+        #endregion
+
+
+        #region オリジナルの値
+        /// <summary>
+        /// 単位は nm^2
+        /// </summary>
+        public double Iso { get; set; }
+        /// <summary>
+        /// 単位は nm^2
+        /// </summary>
+        public double Iso_err { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso11 { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso22 { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso33 { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso12 { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso23 { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso31 { get; set; }
+
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso11_err { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso22_err { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso33_err { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso12_err { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso23_err { get; set; }
+        /// <summary>
+        /// 単位は Uの場合 nm^2,  Bの場合　無次元
+        /// </summary>
+        public double Aniso31_err { get; set; }
+
+        #endregion
+
+        public bool UseIso { get; set; }
+        public Type OriginalType { get; set; } = Type.B;
+
+        public (double A, double B, double C, double Alpha, double Beta, double Gamma) Cell
         {
-            IsIso = isIso;
-            Biso = biso;
-            B11 = b11;
-            B22 = b22;
-            B33 = b33;
-            B12 = b12;
-            B23 = b23;
-            B31 = b31;
-            Biso_err = B11_err = B22_err = B33_err = B12_err = B23_err = B31_err = 0;
-        }
-
-        //B のコンストラクタ Bはnm単位
-        public DiffuseScatteringFactor(bool isIso, double biso, double b11, double b22, double b33, double b12, double b23, double b31,
-            double biso_err, double b11_err, double b22_err, double b33_err, double b12_err, double b23_err, double b31_err)
-            : this(isIso, biso, b11, b22, b33, b12, b23, b31)
-        {
-            Biso_err = biso_err;
-            B11_err = b11_err;
-            B22_err = b22_err;
-            B33_err = b33_err;
-            B12_err = b12_err;
-            B23_err = b23_err;
-            B31_err = b31_err;
-        }
-
-        public DiffuseScatteringFactor(bool isIso, double uiso, double u11, double u22, double u33, double u12, double u23, double u31, double aStar, double bStar, double cStar)
-        {
-            double PI2 = Math.PI * Math.PI;
-            IsIso = isIso;
-            Biso = uiso * PI2 * 8;
-            B11 = u11 * PI2 * 2 * aStar * aStar;
-            B22 = u22 * PI2 * 2 * bStar * bStar;
-            B33 = u33 * PI2 * 2 * cStar * cStar;
-            B12 = u12 * PI2 * 2 * aStar * bStar;
-            B23 = u23 * PI2 * 2 * bStar * cStar;
-            B31 = u31 * PI2 * 2 * cStar * aStar;
-        }
-
-        public DiffuseScatteringFactor(bool isIso, double uiso, double u11, double u22, double u33, double u12, double u23, double u31,
-            double uiso_err, double u11_err, double u22_err, double u33_err, double u12_err, double u23_err, double u31_err, double aStar, double bStar, double cStar)
-            : this(isIso, uiso, u11, u22, u33, u12, u23, u31, aStar, bStar, cStar)
-        {
-            double PI2 = Math.PI * Math.PI;
-
-            Biso_err = uiso_err * PI2 * 8;
-            B11_err = u11_err * PI2 * 2 * aStar * aStar;
-            B22_err = u22_err * PI2 * 2 * bStar * bStar;
-            B33_err = u33_err * PI2 * 2 * cStar * cStar;
-            B12_err = u12_err * PI2 * 2 * aStar * bStar;
-            B23_err = u23_err * PI2 * 2 * bStar * cStar;
-            B31_err = u31_err * PI2 * 2 * cStar * aStar;
-        }
-
-        //B のコンストラクタ Bはnm単位
-        public DiffuseScatteringFactor(bool isIso, float[] biso, float[] baniso)
-        {
-            IsIso = isIso;
-            if (biso != null)
+            get => cell;
+            set
             {
-                Biso = biso[0];
-                if (biso.Length == 2)
-                    Biso_err = biso[1];
-            }
-            if (baniso != null)
-            {
-                B11 = baniso[0];
-                B22 = baniso[1];
-                B33 = baniso[2];
-                B12 = baniso[3];
-                B23 = baniso[4];
-                B31 = baniso[5];
-                if (baniso.Length == 12)
-                {
-                    B11_err = baniso[6];
-                    B22_err = baniso[7];
-                    B33_err = baniso[8];
-                    B12_err = baniso[9];
-                    B23_err = baniso[10];
-                    B31_err = baniso[11];
-                }
+                cell = value;
+                var cosAlpha = Math.Cos(cell.Alpha);
+                var sinAlpha = Math.Sin(cell.Alpha);
+                var cosBeta = Math.Cos(cell.Beta);
+                var sinBeta = Math.Sin(cell.Beta);
+                var cosGamma = Math.Cos(cell.Gamma);
+                var sinGamma = Math.Sin(cell.Gamma);
+                var v = cell.A * cell.B * cell.C * Math.Sqrt(1 - cosAlpha * cosAlpha - cosBeta * cosBeta - cosGamma * cosGamma + 2 * cosAlpha * cosBeta * cosGamma);
+                var aStar = cell.B * cell.C * sinAlpha / v;
+                var bStar = cell.C * cell.A * sinBeta / v;
+                var cStar = cell.A * cell.B * sinGamma / v;
+                var cosAlphaStar = (cosBeta * cosGamma - cosAlpha) / sinBeta / sinGamma;
+                var cosBetaStar = (cosGamma * cosAlpha - cosBeta) / sinGamma / sinAlpha;
+                var cosGammaStar = (cosAlpha * cosBeta - cosGamma) / sinAlpha / sinBeta;
+                coeff11 = PI2 * 2 * aStar * aStar;
+                coeff22 = PI2 * 2 * bStar * bStar;
+                coeff33 = PI2 * 2 * cStar * cStar;
+                coeff12 = PI2 * 2 * aStar * bStar * cosGammaStar;
+                coeff23 = PI2 * 2 * bStar * cStar * cosAlphaStar;
+                coeff31 = PI2 * 2 * cStar * aStar * cosBetaStar;
             }
         }
+        private (double A, double B, double C, double Alpha, double Beta, double Gamma) cell = (0, 0, 0, 0, 0, 0);
+
+        private double coeff11, coeff22, coeff33, coeff12, coeff23, coeff31;
 
         public DiffuseScatteringFactor()
         {
-            IsIso = true;
-            Biso = 0;
-            B11 = 0;
-            B22 = 0;
-            B33 = 0;
-            B12 = 0;
-            B23 = 0;
-            B31 = 0;
+        }
+
+        /// <summary>
+        /// コンストラクタ. B##は無次元, 他はnm^2. Cellの 単位は nm & radians.
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="useIso"></param>
+        /// <param name="iso"></param>
+        /// <param name="iso_err"></param>
+        /// <param name="aniso"></param>
+        /// <param name="aniso_err"></param>
+        /// <param name="cell"></param>
+        public DiffuseScatteringFactor(Type t, bool useIso, double iso, double iso_err, double[] aniso, double[] aniso_err,
+            (double A, double B, double C, double Alpha, double Beta, double Gamma) cell)
+        {
+            OriginalType = t;
+            UseIso = useIso;
+            Iso = iso;
+            Iso_err = iso_err;
+            Aniso11 = aniso[0];
+            Aniso22 = aniso[1];
+            Aniso33 = aniso[2];
+            Aniso12 = aniso[3];
+            Aniso23 = aniso[4];
+            Aniso31 = aniso[5];
+            Aniso11_err = aniso_err[0];
+            Aniso22_err = aniso_err[1];
+            Aniso33_err = aniso_err[2];
+            Aniso12_err = aniso_err[3];
+            Aniso23_err = aniso_err[4];
+            Aniso31_err = aniso_err[5];
+
+            Cell = cell;
         }
     }
 }

@@ -11,20 +11,10 @@ namespace IPAnalyzer
             "IPAnalyzer"
             ;
         static public string VersionAndDate { get => History.Remove(0, 10).Remove(20); }
-        static public string RecentHistory
-        {
-            get
-            {
-                var list = History.Remove(0, 10).Split(new string[] { "\r\n " }, StringSplitOptions.RemoveEmptyEntries);
-                var str = "";
-                for (int i = 0; i < 5; i++)
-                    str += list[i] + "<br>\r\n";
-                return str;
-            }
-        }
 
         static public string History =
             "History" +
+            "\r\n ver3.892(2020/06/24) Added 'Summation' mode for a sequential image" +
             "\r\n ver3.891(2020/04/10) Fixed a minor bug on 'Program update function'" +
             "\r\n ver3.890(2020/04/09) Added an image format: 32 bit signed Tiff (output of PILATUS CdSe detector)." +
             "\r\n ver3.889(2020/03/11) Minor improvements to the macro functions." +

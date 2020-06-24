@@ -47,7 +47,7 @@ namespace IPAnalyzer
 
         private void FormCrystal_Load(object sender, EventArgs e)
         {
-            crystalControl.CrystalChanged += new CrystalControl.MyEventHandler(crystalForm_CrystalChanged);
+            crystalControl.CrystalChanged += new EventHandler(crystalForm_CrystalChanged);
         }
 
         private void FormCrystal_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,9 +57,9 @@ namespace IPAnalyzer
             this.Visible = false;
         }
 
-        void crystalForm_CrystalChanged(Crystal crystal)
+        void crystalForm_CrystalChanged(object sender, EventArgs e)
         {
-            this.crystal = crystal;
+            this.crystal = crystalControl.Crystal;
             formFindParameter.CrystalChanged(crystal);
         }
 

@@ -70,6 +70,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>8.0</LangVersion>
     <DebugSymbols>true</DebugSymbols>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -117,31 +118,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="IronPython, Version=2.7.10.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\IronPython.2.7.10-candidate1\lib\net45\IronPython.dll</HintPath>
+      <HintPath>..\packages\IronPython.2.7.10\lib\net45\IronPython.dll</HintPath>
     </Reference>
     <Reference Include="IronPython.Modules, Version=2.7.10.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\IronPython.2.7.10-candidate1\lib\net45\IronPython.Modules.dll</HintPath>
+      <HintPath>..\packages\IronPython.2.7.10\lib\net45\IronPython.Modules.dll</HintPath>
     </Reference>
     <Reference Include="IronPython.SQLite, Version=2.7.10.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\IronPython.2.7.10-candidate1\lib\net45\IronPython.SQLite.dll</HintPath>
+      <HintPath>..\packages\IronPython.2.7.10\lib\net45\IronPython.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="IronPython.Wpf, Version=2.7.10.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\IronPython.2.7.10-candidate1\lib\net45\IronPython.Wpf.dll</HintPath>
+      <HintPath>..\packages\IronPython.2.7.10\lib\net45\IronPython.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="MathNet.Numerics, Version=4.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\MathNet.Numerics.4.9.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    <Reference Include="MathNet.Numerics, Version=4.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.11.0\lib\net461\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Dynamic, Version=1.2.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\DynamicLanguageRuntime.1.2.3-candidate1\lib\net45\Microsoft.Dynamic.dll</HintPath>
+      <HintPath>..\packages\DynamicLanguageRuntime.1.2.3\lib\net45\Microsoft.Dynamic.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Scripting, Version=1.2.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\DynamicLanguageRuntime.1.2.3-candidate1\lib\net45\Microsoft.Scripting.dll</HintPath>
+      <HintPath>..\packages\DynamicLanguageRuntime.1.2.3\lib\net45\Microsoft.Scripting.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Scripting.Metadata, Version=1.2.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\..\ReciPro\packages\DynamicLanguageRuntime.1.2.3-candidate1\lib\net45\Microsoft.Scripting.Metadata.dll</HintPath>
+      <HintPath>..\packages\DynamicLanguageRuntime.1.2.3\lib\net45\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OpenTK, Version=3.2.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.2\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -191,11 +195,23 @@
     <Compile Include="Crystal\AtomCoordinateTable.Designer.cs">
       <DependentUpon>AtomCoordinateTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Crystal\AtomInputControl.cs">
+    <Compile Include="Crystal\AtomControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crystal\AtomInputControl.Designer.cs">
-      <DependentUpon>AtomInputControl.cs</DependentUpon>
+    <Compile Include="Crystal\AtomControl.Designer.cs">
+      <DependentUpon>AtomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crystal\BondControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crystal\BondControl.Designer.cs">
+      <DependentUpon>BondControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crystal\BoundControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crystal\BoundControl.Designer.cs">
+      <DependentUpon>BoundControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Crystal\CrystalControl.cs">
       <SubType>UserControl</SubType>
@@ -239,6 +255,18 @@
     <Compile Include="Crystal\FormScatteringFactor.Designer.cs">
       <DependentUpon>FormScatteringFactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crystal\LatticePlaneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crystal\LatticePlaneControl.Designer.cs">
+      <DependentUpon>LatticePlaneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crystal\SymmetryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crystal\SymmetryControl.Designer.cs">
+      <DependentUpon>SymmetryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet.cs">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
@@ -264,12 +292,6 @@
     </Compile>
     <Compile Include="FormCrystalSelection.Designer.cs">
       <DependentUpon>FormCrystalSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormElasticity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormElasticity.Designer.cs">
-      <DependentUpon>FormElasticity.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPDF.cs">
       <SubType>Form</SubType>
@@ -314,6 +336,12 @@
       <DependentUpon>FormMacroList.cs</DependentUpon>
     </Compile>
     <Compile Include="Macro\Macro.cs" />
+    <Compile Include="Numeric\NumericBoxWithMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Numeric\NumericBoxWithMenu.Designer.cs">
+      <DependentUpon>NumericBoxWithMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="SaclaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -394,12 +422,24 @@
       <DependentUpon>AtomCoordinateTable.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Crystal\AtomInputControl.ja.resx">
-      <DependentUpon>AtomInputControl.cs</DependentUpon>
+    <EmbeddedResource Include="Crystal\AtomControl.ja.resx">
+      <DependentUpon>AtomControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Crystal\AtomInputControl.resx">
-      <DependentUpon>AtomInputControl.cs</DependentUpon>
+    <EmbeddedResource Include="Crystal\AtomControl.resx">
+      <DependentUpon>AtomControl.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\BondControl.ja.resx">
+      <DependentUpon>BondControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\BondControl.resx">
+      <DependentUpon>BondControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\BoundControl.ja.resx">
+      <DependentUpon>BoundControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\BoundControl.resx">
+      <DependentUpon>BoundControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Crystal\CrystalControl.ja.resx">
       <DependentUpon>CrystalControl.cs</DependentUpon>
@@ -431,8 +471,17 @@
       <DependentUpon>FormScatteringFactor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\LatticePlaneControl.resx">
+      <DependentUpon>LatticePlaneControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crystal\PoleFigureControl.ja.resx">
       <DependentUpon>PoleFigureControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\SymmetryControl.ja.resx">
+      <DependentUpon>SymmetryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal\SymmetryControl.resx">
+      <DependentUpon>SymmetryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DistributionGraphControl.resx">
       <DependentUpon>DistributionGraphControl.cs</DependentUpon>
@@ -441,9 +490,6 @@
     <EmbeddedResource Include="FormCrystalSelection.resx">
       <DependentUpon>FormCrystalSelection.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormElasticity.resx">
-      <DependentUpon>FormElasticity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPDF.resx">
       <DependentUpon>FormPDF.cs</DependentUpon>
@@ -469,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Numeric\NumericBox.ja.resx">
       <DependentUpon>NumericBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeric\NumericBoxWithMenu.resx">
+      <DependentUpon>NumericBoxWithMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaclaControl.resx">
       <DependentUpon>SaclaControl.cs</DependentUpon>
@@ -583,10 +632,11 @@
     <Content Include="doc\CrystalInformationManual.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Crystallography\Crystallography.csproj">
+    <ProjectReference Include="..\..\Crystallography\Crystallography\Crystallography.csproj">
       <Project>{433b6cbf-1e0b-4e01-ab6d-753d92dc354e}</Project>
       <Name>Crystallography</Name>
     </ProjectReference>

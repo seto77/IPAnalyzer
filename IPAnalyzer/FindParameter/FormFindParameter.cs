@@ -109,10 +109,10 @@
 
             formCrystal = new FormCrystal();
 
-            crystal[0] = new Crystal(0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2, 523, "CeO2", "0GPa", Color.Violet);
-            crystal[1] = new Crystal(0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2, 523, "CeO2", "0GPa", Color.Violet);
-            flexibleCrystal[0] = new Crystal(0, 0, 0, 0, 0, 0, 0, "", "", Color.Violet);
-            flexibleCrystal[1] = new Crystal(0, 0, 0, 0, 0, 0, 0, "", "", Color.Violet);
+            crystal[0] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2",  Color.Violet);
+            crystal[1] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2",  Color.Violet);
+            flexibleCrystal[0] = new Crystal((0, 0, 0, 0, 0, 0), 0,  "", Color.Violet);
+            flexibleCrystal[1] = new Crystal((0, 0, 0, 0, 0, 0), 0,  "", Color.Violet);
             flexibleCrystal[0].Plane = new List<Plane>();
             flexibleCrystal[1].Plane = new List<Plane>();
 
@@ -1137,8 +1137,8 @@
 
         public void CrystalChanged(Crystal c)
         {
-            crystal[0] = new Crystal(c.A, c.B, c.C, c.Alpha, c.Beta, c.Gamma, c.Symmetry.SeriesNumber, c.Name, c.Note, pictureBoxPattern1.BackColor);
-            crystal[1] = new Crystal(c.A, c.B, c.C, c.Alpha, c.Beta, c.Gamma, c.Symmetry.SeriesNumber, c.Name, c.Note, pictureBoxPattern1.BackColor);
+            crystal[0] = new Crystal((c.A, c.B, c.C, c.Alpha, c.Beta, c.Gamma), c.Symmetry.SeriesNumber, c.Name,  pictureBoxPattern1.BackColor);
+            crystal[1] = new Crystal((c.A, c.B, c.C, c.Alpha, c.Beta, c.Gamma), c.Symmetry.SeriesNumber, c.Name,  pictureBoxPattern1.BackColor);
             InitializeCrystalPlane(true);
             Fitting();
         }

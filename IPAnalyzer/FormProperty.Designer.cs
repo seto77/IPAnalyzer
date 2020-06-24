@@ -377,14 +377,11 @@
             // 
             // numericalTextBoxCameraLength
             // 
-            this.numericalTextBoxCameraLength.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxCameraLength, "numericalTextBoxCameraLength");
             this.numericalTextBoxCameraLength.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxCameraLength.DecimalPlaces = -1;
             this.numericalTextBoxCameraLength.Maximum = double.PositiveInfinity;
             this.numericalTextBoxCameraLength.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxCameraLength.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxCameraLength.MouseSpeed = 1D;
             this.numericalTextBoxCameraLength.Multiline = false;
             this.numericalTextBoxCameraLength.Name = "numericalTextBoxCameraLength";
             this.numericalTextBoxCameraLength.RadianValue = 7.7667151713747664D;
@@ -414,14 +411,11 @@
             // 
             // numericBoxCenterPositionY
             // 
-            this.numericBoxCenterPositionY.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxCenterPositionY, "numericBoxCenterPositionY");
             this.numericBoxCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxCenterPositionY.DecimalPlaces = -1;
             this.numericBoxCenterPositionY.Maximum = double.PositiveInfinity;
             this.numericBoxCenterPositionY.Minimum = double.NegativeInfinity;
-            this.numericBoxCenterPositionY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxCenterPositionY.MouseSpeed = 1D;
             this.numericBoxCenterPositionY.Multiline = false;
             this.numericBoxCenterPositionY.Name = "numericBoxCenterPositionY";
             this.numericBoxCenterPositionY.RadianValue = 26.179938779914945D;
@@ -443,14 +437,11 @@
             // 
             // numericBoxCenterPositionX
             // 
-            this.numericBoxCenterPositionX.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxCenterPositionX, "numericBoxCenterPositionX");
             this.numericBoxCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxCenterPositionX.DecimalPlaces = -1;
             this.numericBoxCenterPositionX.Maximum = double.PositiveInfinity;
             this.numericBoxCenterPositionX.Minimum = double.NegativeInfinity;
-            this.numericBoxCenterPositionX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxCenterPositionX.MouseSpeed = 1D;
             this.numericBoxCenterPositionX.Multiline = false;
             this.numericBoxCenterPositionX.Name = "numericBoxCenterPositionX";
             this.numericBoxCenterPositionX.RadianValue = 26.179938779914945D;
@@ -490,14 +481,11 @@
             // 
             // numericalTextBoxPixelKsi
             // 
-            this.numericalTextBoxPixelKsi.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxPixelKsi, "numericalTextBoxPixelKsi");
             this.numericalTextBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPixelKsi.DecimalPlaces = -1;
             this.numericalTextBoxPixelKsi.Maximum = double.PositiveInfinity;
             this.numericalTextBoxPixelKsi.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPixelKsi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxPixelKsi.MouseSpeed = 1D;
             this.numericalTextBoxPixelKsi.Multiline = false;
             this.numericalTextBoxPixelKsi.Name = "numericalTextBoxPixelKsi";
             this.numericalTextBoxPixelKsi.RadianValue = 0D;
@@ -519,14 +507,11 @@
             // 
             // numericBoxPixelSizeY
             // 
-            this.numericBoxPixelSizeY.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxPixelSizeY, "numericBoxPixelSizeY");
             this.numericBoxPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeY.DecimalPlaces = -1;
             this.numericBoxPixelSizeY.Maximum = double.PositiveInfinity;
             this.numericBoxPixelSizeY.Minimum = double.NegativeInfinity;
-            this.numericBoxPixelSizeY.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxPixelSizeY.MouseSpeed = 1D;
             this.numericBoxPixelSizeY.Multiline = false;
             this.numericBoxPixelSizeY.Name = "numericBoxPixelSizeY";
             this.numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
@@ -549,14 +534,11 @@
             // 
             // numericBoxPixelSizeX
             // 
-            this.numericBoxPixelSizeX.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxPixelSizeX, "numericBoxPixelSizeX");
             this.numericBoxPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeX.DecimalPlaces = -1;
             this.numericBoxPixelSizeX.Maximum = double.PositiveInfinity;
             this.numericBoxPixelSizeX.Minimum = double.NegativeInfinity;
-            this.numericBoxPixelSizeX.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxPixelSizeX.MouseSpeed = 1D;
             this.numericBoxPixelSizeX.Multiline = false;
             this.numericBoxPixelSizeX.Name = "numericBoxPixelSizeX";
             this.numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
@@ -594,14 +576,11 @@
             // 
             // numericBoxGandlfiRadius
             // 
-            this.numericBoxGandlfiRadius.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxGandlfiRadius, "numericBoxGandlfiRadius");
             this.numericBoxGandlfiRadius.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxGandlfiRadius.DecimalPlaces = -1;
             this.numericBoxGandlfiRadius.Maximum = double.PositiveInfinity;
             this.numericBoxGandlfiRadius.Minimum = double.NegativeInfinity;
-            this.numericBoxGandlfiRadius.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxGandlfiRadius.MouseSpeed = 1D;
             this.numericBoxGandlfiRadius.Multiline = false;
             this.numericBoxGandlfiRadius.Name = "numericBoxGandlfiRadius";
             this.numericBoxGandlfiRadius.RadianValue = 0D;
@@ -630,14 +609,11 @@
             // 
             // numericalTextBoxSphericalCorections
             // 
-            this.numericalTextBoxSphericalCorections.AllowMouseControl = false;
             resources.ApplyResources(this.numericalTextBoxSphericalCorections, "numericalTextBoxSphericalCorections");
             this.numericalTextBoxSphericalCorections.BackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxSphericalCorections.DecimalPlaces = -1;
             this.numericalTextBoxSphericalCorections.Maximum = double.PositiveInfinity;
             this.numericalTextBoxSphericalCorections.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxSphericalCorections.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericalTextBoxSphericalCorections.MouseSpeed = 1D;
             this.numericalTextBoxSphericalCorections.Multiline = false;
             this.numericalTextBoxSphericalCorections.Name = "numericalTextBoxSphericalCorections";
             this.numericalTextBoxSphericalCorections.RadianValue = 0D;
@@ -667,14 +643,11 @@
             // 
             // numericBoxTiltCorrectionTau
             // 
-            this.numericBoxTiltCorrectionTau.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxTiltCorrectionTau, "numericBoxTiltCorrectionTau");
             this.numericBoxTiltCorrectionTau.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionTau.DecimalPlaces = -1;
             this.numericBoxTiltCorrectionTau.Maximum = double.PositiveInfinity;
             this.numericBoxTiltCorrectionTau.Minimum = double.NegativeInfinity;
-            this.numericBoxTiltCorrectionTau.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxTiltCorrectionTau.MouseSpeed = 1D;
             this.numericBoxTiltCorrectionTau.Multiline = false;
             this.numericBoxTiltCorrectionTau.Name = "numericBoxTiltCorrectionTau";
             this.numericBoxTiltCorrectionTau.RadianValue = 0D;
@@ -696,14 +669,11 @@
             // 
             // numericBoxTiltCorrectionPhi
             // 
-            this.numericBoxTiltCorrectionPhi.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxTiltCorrectionPhi, "numericBoxTiltCorrectionPhi");
             this.numericBoxTiltCorrectionPhi.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionPhi.DecimalPlaces = -1;
             this.numericBoxTiltCorrectionPhi.Maximum = double.PositiveInfinity;
             this.numericBoxTiltCorrectionPhi.Minimum = double.NegativeInfinity;
-            this.numericBoxTiltCorrectionPhi.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxTiltCorrectionPhi.MouseSpeed = 1D;
             this.numericBoxTiltCorrectionPhi.Multiline = false;
             this.numericBoxTiltCorrectionPhi.Name = "numericBoxTiltCorrectionPhi";
             this.numericBoxTiltCorrectionPhi.RadianValue = 0D;
@@ -1037,14 +1007,11 @@
             // 
             // numericBoxRadialRange
             // 
-            this.numericBoxRadialRange.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxRadialRange, "numericBoxRadialRange");
             this.numericBoxRadialRange.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxRadialRange.DecimalPlaces = 3;
             this.numericBoxRadialRange.Maximum = double.PositiveInfinity;
             this.numericBoxRadialRange.Minimum = double.NegativeInfinity;
-            this.numericBoxRadialRange.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxRadialRange.MouseSpeed = 1D;
             this.numericBoxRadialRange.Multiline = false;
             this.numericBoxRadialRange.Name = "numericBoxRadialRange";
             this.numericBoxRadialRange.RadianValue = 0.0017453292519943296D;
@@ -1066,14 +1033,11 @@
             // 
             // numericBoxRadialRadius
             // 
-            this.numericBoxRadialRadius.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxRadialRadius, "numericBoxRadialRadius");
             this.numericBoxRadialRadius.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxRadialRadius.DecimalPlaces = 4;
             this.numericBoxRadialRadius.Maximum = double.PositiveInfinity;
             this.numericBoxRadialRadius.Minimum = double.NegativeInfinity;
-            this.numericBoxRadialRadius.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxRadialRadius.MouseSpeed = 1D;
             this.numericBoxRadialRadius.Multiline = false;
             this.numericBoxRadialRadius.Name = "numericBoxRadialRadius";
             this.numericBoxRadialRadius.RadianValue = 0.3490658503988659D;
@@ -1095,14 +1059,11 @@
             // 
             // numericBoxRadialStep
             // 
-            this.numericBoxRadialStep.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxRadialStep, "numericBoxRadialStep");
             this.numericBoxRadialStep.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxRadialStep.DecimalPlaces = 3;
             this.numericBoxRadialStep.Maximum = double.PositiveInfinity;
             this.numericBoxRadialStep.Minimum = double.NegativeInfinity;
-            this.numericBoxRadialStep.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxRadialStep.MouseSpeed = 1D;
             this.numericBoxRadialStep.Multiline = false;
             this.numericBoxRadialStep.Name = "numericBoxRadialStep";
             this.numericBoxRadialStep.RadianValue = 0.0008726646259971648D;
@@ -1192,14 +1153,11 @@
             // 
             // numericBoxConcentricStep
             // 
-            this.numericBoxConcentricStep.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxConcentricStep, "numericBoxConcentricStep");
             this.numericBoxConcentricStep.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxConcentricStep.DecimalPlaces = 4;
             this.numericBoxConcentricStep.Maximum = double.PositiveInfinity;
             this.numericBoxConcentricStep.Minimum = double.NegativeInfinity;
-            this.numericBoxConcentricStep.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxConcentricStep.MouseSpeed = 1D;
             this.numericBoxConcentricStep.Multiline = false;
             this.numericBoxConcentricStep.Name = "numericBoxConcentricStep";
             this.numericBoxConcentricStep.RadianValue = 8.7266462599716482E-05D;
@@ -1227,14 +1185,11 @@
             // 
             // numericBoxConcentricEnd
             // 
-            this.numericBoxConcentricEnd.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxConcentricEnd, "numericBoxConcentricEnd");
             this.numericBoxConcentricEnd.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxConcentricEnd.DecimalPlaces = 4;
             this.numericBoxConcentricEnd.Maximum = double.PositiveInfinity;
             this.numericBoxConcentricEnd.Minimum = double.NegativeInfinity;
-            this.numericBoxConcentricEnd.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxConcentricEnd.MouseSpeed = 1D;
             this.numericBoxConcentricEnd.Multiline = false;
             this.numericBoxConcentricEnd.Name = "numericBoxConcentricEnd";
             this.numericBoxConcentricEnd.RadianValue = 0.52359877559829882D;
@@ -1262,14 +1217,11 @@
             // 
             // numericBoxConcentricStart
             // 
-            this.numericBoxConcentricStart.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxConcentricStart, "numericBoxConcentricStart");
             this.numericBoxConcentricStart.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxConcentricStart.DecimalPlaces = 4;
             this.numericBoxConcentricStart.Maximum = double.PositiveInfinity;
             this.numericBoxConcentricStart.Minimum = double.NegativeInfinity;
-            this.numericBoxConcentricStart.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxConcentricStart.MouseSpeed = 1D;
             this.numericBoxConcentricStart.Multiline = false;
             this.numericBoxConcentricStart.Name = "numericBoxConcentricStart";
             this.numericBoxConcentricStart.RadianValue = 0.017453292519943295D;
@@ -1571,14 +1523,11 @@
             // 
             // numericBoxTest
             // 
-            this.numericBoxTest.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxTest, "numericBoxTest");
             this.numericBoxTest.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTest.DecimalPlaces = -2;
             this.numericBoxTest.Maximum = 2D;
             this.numericBoxTest.Minimum = 0D;
-            this.numericBoxTest.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxTest.MouseSpeed = 1D;
             this.numericBoxTest.Multiline = false;
             this.numericBoxTest.Name = "numericBoxTest";
             this.numericBoxTest.RadianValue = 0.0087266462599716477D;
@@ -2009,14 +1958,11 @@
             // 
             // numericBoxFindCenterPeakFittingRange
             // 
-            this.numericBoxFindCenterPeakFittingRange.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxFindCenterPeakFittingRange, "numericBoxFindCenterPeakFittingRange");
             this.numericBoxFindCenterPeakFittingRange.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxFindCenterPeakFittingRange.DecimalPlaces = 3;
             this.numericBoxFindCenterPeakFittingRange.Maximum = double.PositiveInfinity;
             this.numericBoxFindCenterPeakFittingRange.Minimum = 0D;
-            this.numericBoxFindCenterPeakFittingRange.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxFindCenterPeakFittingRange.MouseSpeed = 1D;
             this.numericBoxFindCenterPeakFittingRange.Multiline = false;
             this.numericBoxFindCenterPeakFittingRange.Name = "numericBoxFindCenterPeakFittingRange";
             this.numericBoxFindCenterPeakFittingRange.RadianValue = 0.0017453292519943296D;
@@ -2044,14 +1990,11 @@
             // 
             // numericBoxFindCenterSearchArea
             // 
-            this.numericBoxFindCenterSearchArea.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxFindCenterSearchArea, "numericBoxFindCenterSearchArea");
             this.numericBoxFindCenterSearchArea.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxFindCenterSearchArea.DecimalPlaces = 0;
             this.numericBoxFindCenterSearchArea.Maximum = double.PositiveInfinity;
             this.numericBoxFindCenterSearchArea.Minimum = double.NegativeInfinity;
-            this.numericBoxFindCenterSearchArea.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxFindCenterSearchArea.MouseSpeed = 1D;
             this.numericBoxFindCenterSearchArea.Multiline = false;
             this.numericBoxFindCenterSearchArea.Name = "numericBoxFindCenterSearchArea";
             this.numericBoxFindCenterSearchArea.RadianValue = 0.13962634015954636D;
@@ -2129,14 +2072,11 @@
             // 
             // numericBoxBackgroundCoeff
             // 
-            this.numericBoxBackgroundCoeff.AllowMouseControl = false;
             resources.ApplyResources(this.numericBoxBackgroundCoeff, "numericBoxBackgroundCoeff");
             this.numericBoxBackgroundCoeff.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxBackgroundCoeff.DecimalPlaces = 3;
             this.numericBoxBackgroundCoeff.Maximum = 10D;
             this.numericBoxBackgroundCoeff.Minimum = 0D;
-            this.numericBoxBackgroundCoeff.MouseDirection = Crystallography.VH_DirectionEnum.Vertical;
-            this.numericBoxBackgroundCoeff.MouseSpeed = 1D;
             this.numericBoxBackgroundCoeff.Multiline = false;
             this.numericBoxBackgroundCoeff.Name = "numericBoxBackgroundCoeff";
             this.numericBoxBackgroundCoeff.RadianValue = 0.017453292519943295D;

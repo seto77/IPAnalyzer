@@ -65,7 +65,7 @@ namespace IPAnalyzer
         public FormOptimizeSaclaEH5Parameter()
         {
             InitializeComponent();
-            crystalControl1.Crystal = new Crystal(0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2, 523, "Au", "0GPa", Color.Violet);
+            crystalControl1.Crystal = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
         }
 
         private void crystalControl1_Load(object sender, EventArgs e)
@@ -567,14 +567,14 @@ namespace IPAnalyzer
         {
             if (FormMain.IsFlatPanelMode)
             {
-                Crystal c = new Crystal(0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2, 523, "Au", "0GPa", Color.Violet);
+                Crystal c = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au",  Color.Violet);
                 c.AddAtoms(new Atoms("Au", 79, 0, 0, new double[] { 1 }, 523, new Vector3D(0, 0, 0), 1, new DiffuseScatteringFactor()));
                 crystalControl1.Crystal = c;
                 tabControl1.SelectedIndex = 0;
             }
             else
             {
-                crystalControl1.Crystal = new Crystal(0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2, 523, "CeO2", "0GPa", Color.Violet);
+                crystalControl1.Crystal = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2",  Color.Violet);
                 tabControl1.SelectedIndex = 1;
             }
 

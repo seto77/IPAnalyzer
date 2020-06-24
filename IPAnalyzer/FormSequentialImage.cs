@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Crystallography;
 
@@ -21,7 +16,7 @@ namespace IPAnalyzer
                 skipEvent = true;
                 if (checkBoxMultiSelection.Checked != value)
                     checkBoxMultiSelection.Checked = value;
-                checkBoxAverage.Enabled = checkBoxMultiSelection.Checked;
+                checkBoxAverage.Enabled = checkBoxSummation.Enabled = checkBoxMultiSelection.Checked;
                 listBox_SelectedIndexChanged(new object(), new EventArgs());
                 
                 listBox.SelectionMode = checkBoxMultiSelection.Checked ? SelectionMode.MultiExtended : SelectionMode.One;
@@ -40,6 +35,16 @@ namespace IPAnalyzer
             }
             get { return checkBoxAverage.Checked; }
 
+        }
+
+        public bool SummationMode
+        {
+            set
+            {
+                if (checkBoxSummation.Checked != value)
+                    checkBoxSummation.Checked = value;
+            }
+            get => checkBoxSummation.Checked;
         }
 
         public FormMain formMain;
@@ -104,7 +109,7 @@ namespace IPAnalyzer
                 int selectedIndex = listBox.SelectedIndex;
                 for (int i = 0; i < listBox.Items.Count; i++)
                     listBox.SetSelected(i, value.Contains(i));
-                if(value.Contains(selectedIndex))
+                if (value.Contains(selectedIndex))
                     listBox.SelectedIndex = selectedIndex;
                 skipEvent = false;
                 for (int i = 0; i < value.Length; i++)
@@ -112,7 +117,7 @@ namespace IPAnalyzer
                         return;
                 selectedIndices = value;
 
-                if (AverageMode)
+                if (AverageMode || SummationMode)
                 {
                     checkBoxMultiSelection.Checked = true;
                     double energy = 0;
@@ -122,12 +127,10 @@ namespace IPAnalyzer
                             energy += Ring.SequentialImageEnergy[selectedIndices[j]] / selectedIndices.Length;
                         for (int i = 0; i < Ring.Intensity.Count; i++)
                             if (j == 0)
-                                Ring.IntensityOriginal[i] = Ring.SequentialImageIntensities[selectedIndices[j]][i] / selectedIndices.Length;
+                                Ring.IntensityOriginal[i] = Ring.SequentialImageIntensities[selectedIndices[j]][i] / (AverageMode ? selectedIndices.Length : 1);
                             else
-                                Ring.IntensityOriginal[i] += Ring.SequentialImageIntensities[selectedIndices[j]][i] / selectedIndices.Length;
+                                Ring.IntensityOriginal[i] += Ring.SequentialImageIntensities[selectedIndices[j]][i] / (AverageMode ? selectedIndices.Length : 1);
                     }
-                    //for (int i = 0; i < Ring.Intensity.Count; i++)
-                    //    formMain.pseudoBitmap.SrcValuesGray[i] = formMain.pseudoBitmap.SrcValuesGrayOriginal[i] = Ring.Intensity[i];
 
                     formMain.FlipRotate_Pollalization_Background(false);
 
@@ -135,15 +138,14 @@ namespace IPAnalyzer
                         formMain.FormProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(energy);
 
                     Ring.CalcFreq();
-                    //formMain.SetFrequencyProfile();
 
                     string text = "";
 
-                   
+
                     for (int i = 0; i < selectedIndices.Length; i++)
                     {
                         if (i == 0)
-                                text += Ring.SequentialImageNames[selectedIndices[i]];
+                            text += Ring.SequentialImageNames[selectedIndices[i]];
                         else if (selectedIndices[i] == selectedIndices[i - 1] + 1)
                         {
                             if (!text.EndsWith("-"))
@@ -154,11 +156,11 @@ namespace IPAnalyzer
                         else
                         {
                             if (text.EndsWith("-"))
-                                text +=Ring.SequentialImageNames[selectedIndices[i-1]] ;
+                                text += Ring.SequentialImageNames[selectedIndices[i - 1]];
                             text += ", " + Ring.SequentialImageNames[selectedIndices[i]];
                         }
                     }
-                    formMain.SetText(formMain.FileName, "Ave. of #" + text);
+                    formMain.SetText(formMain.FileName, (AverageMode ? "Ave. of #" : "Sum. of #") + text);
                     formMain.SetStasticalInformation(false);
                     formMain.SetFrequencyProfile();
                     formMain.Draw();
@@ -167,7 +169,7 @@ namespace IPAnalyzer
                     SelectedIndex = listBox.SelectedIndex;
 
             }
-            get { return selectedIndices; }
+            get => selectedIndices;
         }
 
 
@@ -225,6 +227,15 @@ namespace IPAnalyzer
         private void checkBoxAverage_CheckedChanged(object sender, EventArgs e)
         {
             listBox_SelectedIndexChanged(new object(), new EventArgs());
+            if (checkBoxAverage.Checked && checkBoxSummation.Checked)
+                checkBoxSummation.Checked = false;
+                
+        }
+        private void checkBoxSummation_CheckedChanged(object sender, EventArgs e)
+        {
+            listBox_SelectedIndexChanged(new object(), new EventArgs());
+            if (checkBoxAverage.Checked && checkBoxSummation.Checked)
+                checkBoxAverage.Checked = false;
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -320,5 +331,7 @@ namespace IPAnalyzer
                 radioButtonGetProfileOnlyTopmost.Checked = true;
             skipEvent = false;
         }
+
+      
     }
 }

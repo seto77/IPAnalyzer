@@ -34,10 +34,11 @@
             this.checkBoxMultiSelection = new System.Windows.Forms.CheckBox();
             this.checkBoxAverage = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonGetProfileOnlyTopmost = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButtonGetProfileOnlyTopmost = new System.Windows.Forms.RadioButton();
             this.radioButtonGetProfileAllImages = new System.Windows.Forms.RadioButton();
             this.radioButtonGetProfileSelectedImages = new System.Windows.Forms.RadioButton();
+            this.checkBoxSummation = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -50,7 +51,7 @@
             this.trackBar1.Location = new System.Drawing.Point(12, 217);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(249, 45);
+            this.trackBar1.Size = new System.Drawing.Size(289, 45);
             this.trackBar1.TabIndex = 3;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -67,7 +68,7 @@
             this.listBox.Location = new System.Drawing.Point(3, 26);
             this.listBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(268, 184);
+            this.listBox.Size = new System.Drawing.Size(308, 184);
             this.listBox.TabIndex = 4;
             this.listBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_DrawItem);
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
@@ -111,6 +112,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Target(s) of \"Get Profile\"";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileOnlyTopmost);
+            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileAllImages);
+            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileSelectedImages);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 19);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(262, 60);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
             // radioButtonGetProfileOnlyTopmost
             // 
             this.radioButtonGetProfileOnlyTopmost.AutoSize = true;
@@ -124,17 +136,6 @@
             this.radioButtonGetProfileOnlyTopmost.Text = "Only the topmost image";
             this.radioButtonGetProfileOnlyTopmost.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileOnlyTopmost.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileOnlyTopmost);
-            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileAllImages);
-            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileSelectedImages);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 19);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(262, 60);
-            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // radioButtonGetProfileAllImages
             // 
@@ -160,13 +161,28 @@
             this.radioButtonGetProfileSelectedImages.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileSelectedImages.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
             // 
+            // checkBoxSummation
+            // 
+            this.checkBoxSummation.AutoSize = true;
+            this.checkBoxSummation.Enabled = false;
+            this.checkBoxSummation.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxSummation.Location = new System.Drawing.Point(217, 3);
+            this.checkBoxSummation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBoxSummation.Name = "checkBoxSummation";
+            this.checkBoxSummation.Size = new System.Drawing.Size(92, 21);
+            this.checkBoxSummation.TabIndex = 5;
+            this.checkBoxSummation.Text = "Summation";
+            this.checkBoxSummation.UseVisualStyleBackColor = true;
+            this.checkBoxSummation.CheckedChanged += new System.EventHandler(this.checkBoxSummation_CheckedChanged);
+            // 
             // FormSequentialImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(273, 349);
+            this.ClientSize = new System.Drawing.Size(313, 349);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.checkBoxSummation);
             this.Controls.Add(this.checkBoxAverage);
             this.Controls.Add(this.checkBoxMultiSelection);
             this.Controls.Add(this.listBox);
@@ -201,5 +217,6 @@
         public System.Windows.Forms.RadioButton radioButtonGetProfileOnlyTopmost;
         public System.Windows.Forms.RadioButton radioButtonGetProfileAllImages;
         public System.Windows.Forms.RadioButton radioButtonGetProfileSelectedImages;
+        private System.Windows.Forms.CheckBox checkBoxSummation;
     }
 }

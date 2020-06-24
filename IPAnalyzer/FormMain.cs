@@ -746,6 +746,10 @@ namespace IPAnalyzer
         //ファームロード時
         private void Form1_Load(object sender, System.EventArgs e)
         {
+            //UserAppDataPathに空フォルダがあったら削除
+            foreach (var dir in Directory.GetDirectories(UserAppDataPath))
+                if (!Directory.EnumerateFileSystemEntries(dir).Any())
+                    Directory.Delete(dir);
 
             //#if !DEBUG
             //            Ngen.Compile();
@@ -933,6 +937,8 @@ namespace IPAnalyzer
             Directory.Delete(Application.UserAppDataPath, true);
             if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
                 File.Delete(UserAppDataPath + "IPAnalyzerSetup.msi");
+
+           
         }
 
         //フォームクローズ時
@@ -2757,7 +2763,7 @@ namespace IPAnalyzer
             string extension = FormProperty.radioButtonAsPDIformat.Checked ? ".pdi" : ".csv";
             if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
             {
-                SaveFileDialog dialog = new SaveFileDialog();
+                var dialog = new SaveFileDialog();
                 dialog.Filter = extension + "|" + extension;
                 dialog.FileName = dp.Name.Substring(0, dp.Name.LastIndexOf('.'));
                 if (dialog.ShowDialog() == DialogResult.OK)
@@ -2780,7 +2786,7 @@ namespace IPAnalyzer
                     filename += ".csv";
                 StreamWriter sw = new StreamWriter(filename);
                 for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
-                    sw.WriteLine(dp.OriginalProfile.Pt[i].X.ToString() + "," + dp.OriginalProfile.Pt[i].Y.ToString());
+                    sw.WriteLine($"{dp.OriginalProfile.Pt[i].X},{dp.OriginalProfile.Pt[i].Y},{dp.OriginalProfile.Err[i].Y}");
                 sw.Close();
             }
             else if (FormProperty.radioButtonAsTSVformat.Checked)
@@ -2789,7 +2795,7 @@ namespace IPAnalyzer
                     filename += ".tsv";
                 StreamWriter sw = new StreamWriter(filename);
                 for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
-                    sw.WriteLine(dp.OriginalProfile.Pt[i].X.ToString() + "\t" + dp.OriginalProfile.Pt[i].Y.ToString());
+                    sw.WriteLine($"{dp.OriginalProfile.Pt[i].X}\t{dp.OriginalProfile.Pt[i].Y}\t{dp.OriginalProfile.Err[i].Y}");
                 sw.Close();
             }
         }
