@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptimizeSaclaEH5Parameter));
             this.buttonOptimize = new System.Windows.Forms.Button();
             this.buttonGetProfile = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -137,6 +138,8 @@
             this.numericUpDownIterationGandolfi = new System.Windows.Forms.NumericUpDown();
             this.graphControl1 = new Crystallography.Controls.GraphControl();
             this.crystalControl1 = new Crystallography.Controls.CrystalControl();
+            this.numericBoxFittingRange = new Crystallography.Controls.NumericBox();
+            this.numericBoxWeight = new Crystallography.Controls.NumericBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIteration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistanceStep)).BeginInit();
@@ -888,7 +891,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(325, 321);
+            this.textBox1.Size = new System.Drawing.Size(325, 293);
             this.textBox1.TabIndex = 9;
             // 
             // groupBox2
@@ -1670,25 +1673,59 @@
             this.crystalControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crystalControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.crystalControl1.Crystal = null;
+            this.crystalControl1.CellConstants = ((System.ValueTuple<double, double, double, double, double, double>)(resources.GetObject("crystalControl1.CellConstants")));
+            this.crystalControl1.Crystal = ((Crystallography.Crystal)(resources.GetObject("crystalControl1.Crystal")));
             this.crystalControl1.DefaultTabNumber = 0;
             this.crystalControl1.Location = new System.Drawing.Point(0, 349);
             this.crystalControl1.Margin = new System.Windows.Forms.Padding(0);
             this.crystalControl1.Name = "crystalControl1";
             this.crystalControl1.ScatteringFactorVisible = false;
             this.crystalControl1.Size = new System.Drawing.Size(789, 306);
+            this.crystalControl1.SkipEvent = false;
             this.crystalControl1.SymmetryInformationVisible = false;
             this.crystalControl1.SymmetrySeriesNumber = 0;
             this.crystalControl1.TabIndex = 1;
             this.crystalControl1.VisibleAtomTab = true;
             this.crystalControl1.VisibleBasicInfoTab = true;
             this.crystalControl1.VisibleBondsPolyhedraTab = false;
+            this.crystalControl1.VisibleBoundTab = false;
             this.crystalControl1.VisibleElasticityTab = false;
             this.crystalControl1.VisibleEOSTab = false;
+            this.crystalControl1.VisibleLatticePlaneTab = false;
             this.crystalControl1.VisiblePolycrystallineTab = false;
             this.crystalControl1.VisibleReferenceTab = false;
             this.crystalControl1.VisibleStressStrainTab = false;
             this.crystalControl1.Load += new System.EventHandler(this.crystalControl1_Load);
+            // 
+            // numericBoxFittingRange
+            // 
+            this.numericBoxFittingRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxFittingRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxFittingRange.HeaderText = "Fitting Range";
+            this.numericBoxFittingRange.Location = new System.Drawing.Point(1005, 349);
+            this.numericBoxFittingRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxFittingRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxFittingRange.MinimumSize = new System.Drawing.Size(1, 25);
+            this.numericBoxFittingRange.Name = "numericBoxFittingRange";
+            this.numericBoxFittingRange.RadianValue = 0.0069813170079773184D;
+            this.numericBoxFittingRange.Size = new System.Drawing.Size(136, 25);
+            this.numericBoxFittingRange.TabIndex = 13;
+            this.numericBoxFittingRange.Value = 0.4D;
+            // 
+            // numericBoxWeight
+            // 
+            this.numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxWeight.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxWeight.HeaderText = "Height:Dspacing";
+            this.numericBoxWeight.Location = new System.Drawing.Point(987, 318);
+            this.numericBoxWeight.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxWeight.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxWeight.MinimumSize = new System.Drawing.Size(1, 25);
+            this.numericBoxWeight.Name = "numericBoxWeight";
+            this.numericBoxWeight.RadianValue = 1.7453292519943295D;
+            this.numericBoxWeight.Size = new System.Drawing.Size(154, 25);
+            this.numericBoxWeight.TabIndex = 13;
+            this.numericBoxWeight.Value = 100D;
             // 
             // FormOptimizeSaclaEH5Parameter
             // 
@@ -1697,6 +1734,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1153, 679);
+            this.Controls.Add(this.numericBoxWeight);
+            this.Controls.Add(this.numericBoxFittingRange);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.graphControl1);
             this.Controls.Add(this.textBox1);
@@ -1901,5 +1940,7 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.NumericUpDown numericUpDownPhiRange;
         private System.Windows.Forms.Label label38;
+        private Crystallography.Controls.NumericBox numericBoxFittingRange;
+        private Crystallography.Controls.NumericBox numericBoxWeight;
     }
 }

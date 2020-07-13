@@ -221,7 +221,7 @@ namespace IPAnalyzer
                     planes[j].peakFunction = new PeakFunction();
                     planes[j].peakFunction.Option = PeakFunctionForm.PseudoVoigt;
                     double twoTheta = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / planes[j].d);
-                    planes[j].peakFunction.range = /*(double)numericUpDownSearchRange.Value*/ 0.4 / Math.Cos(twoTheta / 2);
+                    planes[j].peakFunction.range = /*(double)numericUpDownSearchRange.Value*/ numericBoxFittingRange.Value / Math.Cos(twoTheta / 2);
                     planes[j].peakFunction.Hk = planes[j].peakFunction.range / 2;
                     planes[j].peakFunction.X = planes[j].XCalc;
                     PeakFunction[] pf = new[] { planes[j].peakFunction };
@@ -504,14 +504,18 @@ namespace IPAnalyzer
                 {
                     if (!double.IsNaN(planes[i].peakFunction.X))
                     {
-                        var targetRange = profile.Pt.Where(p => Math.Abs(p.X - planes[i].XCalc) < 0.5);
+                        var targetRange = profile.Pt.Where(p => Math.Abs(p.X - planes[i].XCalc) < 0.4);
 
-                        double topHeight = targetRange.Max(p => p.Y);
+                        //double topHeight = targetRange.Max(p => p.Y);
+                        double topHeight = planes[i].peakFunction.GetValue(planes[i].XCalc, true);
                         height += topHeight;
+
+                        planes[i].peakFunction.GetValue(planes[i].XCalc, true);
+
                         twoThetaDeviation += (planes[i].XCalc - planes[i].peakFunction.X) * (planes[i].XCalc - planes[i].peakFunction.X);
                     }
                 }
-                return twoThetaDeviation + 100 / height;// + 1 / hkWidth;
+                return twoThetaDeviation + numericBoxWeight.Value / height;// + 1 / hkWidth;
             }
             else
             {
