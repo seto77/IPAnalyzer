@@ -547,6 +547,7 @@ namespace IPAnalyzer
                            || name.Contains("PixelSize") || name.Contains("TiltCorrection"))
                         formMain.FlipRotate_Pollalization_Background();
                 }
+ 
             formMain.Draw();
         }
 
@@ -751,15 +752,36 @@ namespace IPAnalyzer
         private void checkBoxSACLA_CheckedChanged(object sender, EventArgs e)
         {
             groupBoxCameaLength.Enabled = groupBoxDirectSpotPosition.Enabled = groupBoxPixelShape.Enabled =
-                groupBoxTiltCorrection.Enabled = groupBoxSphericalCorrection.Enabled = !checkBoxSACLA.Checked;
+                groupBoxTiltCorrection.Enabled = groupBoxSphericalCorrection.Enabled = groupBoxGandlfiRadius.Enabled = !checkBoxSACLA.Checked;
             saclaControl.Visible = buttonOptimizeSaclaEH5Parameter.Visible = checkBoxSACLA.Checked;
-            if (saclaControl.Visible)
-                saclaControl_ValueChanged(sender, e);
-                
+            if (saclaControl.Visible && formMain.IsImageReady && Ring.IP!=null)
+            {
+                //現在の入力情報に応じて、画像をセッティング
+
+                SkipEvent = true;
+
+                saclaControl.PixelWidth = Ring.IP.SrcWidth;
+                saclaControl.PixelHeight = Ring.IP.SrcHeight;
+
+                saclaControl.TauDegree= numericBoxTiltCorrectionTau.Value;
+                saclaControl.PhiDegree = numericBoxTiltCorrectionPhi.Value;
+                saclaControl.PixelSize= numericBoxPixelSizeX.Value;
+
+                saclaControl.Foot = new PointD(
+                    numericBoxCenterPositionX.Value + saclaControl.CameraLength2 * Math.Sin(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize,
+                    numericBoxCenterPositionY.Value + saclaControl.CameraLength2 * Math.Cos(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize);
+
+                saclaControl.CameraLength2 = numericalTextBoxCameraLength.Value * Math.Cos(saclaControl.TauRadian);
+
+                SkipEvent = false;
+            }  
         }
 
-        private void saclaControl_ValueChanged(object sender, EventArgs e)
+        public void saclaControl_ValueChanged(object sender, EventArgs e)
         {
+            if (SkipEvent) return;
+            SkipEvent = true;
+
             numericBoxTiltCorrectionTau.Value = saclaControl.TauDegree;
             numericBoxTiltCorrectionPhi.Value = saclaControl.PhiDegree;
             numericBoxPixelSizeX.Value = saclaControl.PixelSize;
@@ -772,7 +794,8 @@ namespace IPAnalyzer
             numericBoxCenterPositionY.Value = saclaControl.Foot.Y + saclaControl.CameraLength2 * Math.Cos(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize;
 
             numericalTextBoxCameraLength.Value = saclaControl.CameraLength2 / Math.Cos(saclaControl.TauRadian);
-            
+            SkipEvent = false;
+            textBox_TextChanged(sender, e);
         }
 
         private void buttonOptimizeSaclaEH5Parameter_Click(object sender, EventArgs e)

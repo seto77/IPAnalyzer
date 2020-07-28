@@ -140,6 +140,11 @@
             this.crystalControl1 = new Crystallography.Controls.CrystalControl();
             this.numericBoxFittingRange = new Crystallography.Controls.NumericBox();
             this.numericBoxWeight = new Crystallography.Controls.NumericBox();
+            this.radioButtonStandardAu = new System.Windows.Forms.RadioButton();
+            this.radioButtonStandardCeO2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonStandardLaB6 = new System.Windows.Forms.RadioButton();
+            this.radioButtonStandardAl2O3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonStandardOther = new System.Windows.Forms.RadioButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIteration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistanceStep)).BeginInit();
@@ -1649,7 +1654,7 @@
             this.graphControl1.MousePositionVisible = true;
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControl1.Size = new System.Drawing.Size(810, 345);
+            this.graphControl1.Size = new System.Drawing.Size(810, 316);
             this.graphControl1.Smoothing = false;
             this.graphControl1.TabIndex = 10;
             this.graphControl1.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1727,6 +1732,63 @@
             this.numericBoxWeight.TabIndex = 13;
             this.numericBoxWeight.Value = 100D;
             // 
+            // radioButtonStandardAu
+            // 
+            this.radioButtonStandardAu.AutoSize = true;
+            this.radioButtonStandardAu.Checked = true;
+            this.radioButtonStandardAu.Location = new System.Drawing.Point(12, 318);
+            this.radioButtonStandardAu.Name = "radioButtonStandardAu";
+            this.radioButtonStandardAu.Size = new System.Drawing.Size(40, 19);
+            this.radioButtonStandardAu.TabIndex = 14;
+            this.radioButtonStandardAu.TabStop = true;
+            this.radioButtonStandardAu.Text = "Au";
+            this.radioButtonStandardAu.UseVisualStyleBackColor = true;
+            this.radioButtonStandardAu.CheckedChanged += new System.EventHandler(this.radioButtonStandard_CheckedChanged);
+            // 
+            // radioButtonStandardCeO2
+            // 
+            this.radioButtonStandardCeO2.AutoSize = true;
+            this.radioButtonStandardCeO2.Location = new System.Drawing.Point(67, 318);
+            this.radioButtonStandardCeO2.Name = "radioButtonStandardCeO2";
+            this.radioButtonStandardCeO2.Size = new System.Drawing.Size(54, 19);
+            this.radioButtonStandardCeO2.TabIndex = 14;
+            this.radioButtonStandardCeO2.Text = "CeO2";
+            this.radioButtonStandardCeO2.UseVisualStyleBackColor = true;
+            this.radioButtonStandardCeO2.CheckedChanged += new System.EventHandler(this.radioButtonStandard_CheckedChanged);
+            // 
+            // radioButtonStandardLaB6
+            // 
+            this.radioButtonStandardLaB6.AutoSize = true;
+            this.radioButtonStandardLaB6.Location = new System.Drawing.Point(130, 318);
+            this.radioButtonStandardLaB6.Name = "radioButtonStandardLaB6";
+            this.radioButtonStandardLaB6.Size = new System.Drawing.Size(50, 19);
+            this.radioButtonStandardLaB6.TabIndex = 14;
+            this.radioButtonStandardLaB6.Text = "LaB6";
+            this.radioButtonStandardLaB6.UseVisualStyleBackColor = true;
+            this.radioButtonStandardLaB6.CheckedChanged += new System.EventHandler(this.radioButtonStandard_CheckedChanged);
+            // 
+            // radioButtonStandardAl2O3
+            // 
+            this.radioButtonStandardAl2O3.AutoSize = true;
+            this.radioButtonStandardAl2O3.Location = new System.Drawing.Point(189, 318);
+            this.radioButtonStandardAl2O3.Name = "radioButtonStandardAl2O3";
+            this.radioButtonStandardAl2O3.Size = new System.Drawing.Size(57, 19);
+            this.radioButtonStandardAl2O3.TabIndex = 14;
+            this.radioButtonStandardAl2O3.Text = "Al2O3";
+            this.radioButtonStandardAl2O3.UseVisualStyleBackColor = true;
+            this.radioButtonStandardAl2O3.CheckedChanged += new System.EventHandler(this.radioButtonStandard_CheckedChanged);
+            // 
+            // radioButtonStandardOther
+            // 
+            this.radioButtonStandardOther.AutoSize = true;
+            this.radioButtonStandardOther.Location = new System.Drawing.Point(253, 318);
+            this.radioButtonStandardOther.Name = "radioButtonStandardOther";
+            this.radioButtonStandardOther.Size = new System.Drawing.Size(55, 19);
+            this.radioButtonStandardOther.TabIndex = 14;
+            this.radioButtonStandardOther.Text = "Other";
+            this.radioButtonStandardOther.UseVisualStyleBackColor = true;
+            this.radioButtonStandardOther.CheckedChanged += new System.EventHandler(this.radioButtonStandard_CheckedChanged);
+            // 
             // FormOptimizeSaclaEH5Parameter
             // 
             this.AllowDrop = true;
@@ -1734,6 +1796,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1153, 679);
+            this.Controls.Add(this.radioButtonStandardOther);
+            this.Controls.Add(this.radioButtonStandardAl2O3);
+            this.Controls.Add(this.radioButtonStandardLaB6);
+            this.Controls.Add(this.radioButtonStandardCeO2);
+            this.Controls.Add(this.radioButtonStandardAu);
             this.Controls.Add(this.numericBoxWeight);
             this.Controls.Add(this.numericBoxFittingRange);
             this.Controls.Add(this.tabControl1);
@@ -1942,5 +2009,10 @@
         private System.Windows.Forms.Label label38;
         private Crystallography.Controls.NumericBox numericBoxFittingRange;
         private Crystallography.Controls.NumericBox numericBoxWeight;
+        private System.Windows.Forms.RadioButton radioButtonStandardAu;
+        private System.Windows.Forms.RadioButton radioButtonStandardCeO2;
+        private System.Windows.Forms.RadioButton radioButtonStandardLaB6;
+        private System.Windows.Forms.RadioButton radioButtonStandardAl2O3;
+        private System.Windows.Forms.RadioButton radioButtonStandardOther;
     }
 }

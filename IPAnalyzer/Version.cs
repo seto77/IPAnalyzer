@@ -14,6 +14,7 @@ namespace IPAnalyzer
 
         static public string History =
             "History" +
+            "\r\n ver3.893(2020/07/28) Improved SACLA EH5 mode." +
             "\r\n ver3.892(2020/06/24) Added 'Summation' mode for a sequential image" +
             "\r\n ver3.891(2020/04/10) Fixed a minor bug on 'Program update function'" +
             "\r\n ver3.890(2020/04/09) Added an image format: 32 bit signed Tiff (output of PILATUS CdSe detector)." +

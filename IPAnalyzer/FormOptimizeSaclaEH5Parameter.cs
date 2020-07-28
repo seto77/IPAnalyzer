@@ -358,18 +358,21 @@ namespace IPAnalyzer
             for (int n = 0; n < cycle; n++)
             {
                 
-                FormMain.FormProperty.SkipEvent = true;
+               
 
                 saclaValues initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY);
                 results = new SortedList<double, saclaValues>();
 
                 //PhiとFootX
                 for (int paramPhi = -phiRange; paramPhi <= phiRange; paramPhi++)
-                {
-                    Phi = initialValue.Phi + paramPhi * phiStep;
                     for (int paramFootX = -footXRange; paramFootX <= footXRange; paramFootX++)
                     {
+                        FormMain.FormProperty.SkipEvent = true;
+                        Phi = initialValue.Phi + paramPhi * phiStep;
                         FootX = initialValue.FootX + paramFootX * footXStep;
+                        FormMain.FormProperty.SkipEvent = false;
+                        FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
+
                         count++;
                         var values = new saclaValues(Distance, Phi, Tau, FootX, FootY);
                         FormMain.SetIntegralProperty();
@@ -383,21 +386,21 @@ namespace IPAnalyzer
                         if (count % renewalTime == 0)
                             report(profile, n);
                     }
-                }
                 Phi = results.Values[0].Phi;
                 FootX = results.Values[0].FootX;
 
                 //次にDistance, Tau, FootY
                 for (int paramDistance = -distanceRange; paramDistance <= distanceRange; paramDistance++)
-                {
-                    Distance = initialValue.Distance + paramDistance * distanceStep;
                     for (int paramTau = -tauRange; paramTau <= tauRange; paramTau++)
-                    {
-                        Tau = initialValue.Tau + paramTau * tauStep;
-
                         for (int paramFootY = -footYRange; paramFootY <= footYRange; paramFootY++)
                         {
+                            FormMain.FormProperty.SkipEvent = true;
+                            Distance = initialValue.Distance + paramDistance * distanceStep;
+                            Tau = initialValue.Tau + paramTau * tauStep;
                             FootY = initialValue.FootY + paramFootY * footYStep;
+                            FormMain.FormProperty.SkipEvent = false;
+                            FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
+
                             count++;
 
                             var values = new saclaValues(Distance, Phi, Tau, FootX, FootY);
@@ -412,8 +415,6 @@ namespace IPAnalyzer
                             if (count % renewalTime == 0)
                                 report(profile, n);
                         }
-                    }
-                }
                 FormMain.FormProperty.SkipEvent = false;
                 Distance = results.Values[0].Distance;
                 Tau = results.Values[0].Tau;
@@ -618,7 +619,7 @@ namespace IPAnalyzer
             Profile profile;
             for (int n = 0; n < cycle; n++)
             {
-                FormMain.FormProperty.SkipEvent = true;
+                
 
                 var initialValue = new gandolfiValues(CL, PixX, PixY, Center.X, Center.Y, Tau, Phi, Radius);
                 var results = new SortedList<double, gandolfiValues>();
@@ -651,6 +652,8 @@ namespace IPAnalyzer
                 int count = 0;
                 foreach (var v in parameters)
                 {
+                    FormMain.FormProperty.SkipEvent = true;
+
                     CL = v.CameraLength;
                     Center = new PointD(v.CenterX, v.CenterY);
                     PixX = v.PixelSizeX;
@@ -658,6 +661,9 @@ namespace IPAnalyzer
                     Tau = v.Tau;
                     Phi = v.Phi;
                     Radius = v.Radius;
+                    FormMain.FormProperty.SkipEvent = false;
+
+                    FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
 
                     FormMain.SetIntegralProperty();
                     profile = Ring.GetProfile(Ring.IP);
@@ -697,7 +703,7 @@ namespace IPAnalyzer
                     Application.DoEvents();
                 }
 
-                FormMain.FormProperty.SkipEvent = false;
+                
                 CL = results.Values[0].CameraLength;
                 Center = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
                 PixX = results.Values[0].PixelSizeX;
@@ -772,6 +778,51 @@ namespace IPAnalyzer
 
             return false;
             ;
+        }
+
+        private void radioButtonStandard_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!(sender as RadioButton).Checked)
+                return;
+            var name = (sender as RadioButton).Name;
+            Crystal crystal;
+           
+            if (name.Contains("Au"))
+            {
+                crystal = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
+                crystal.AddAtoms("Au", 79, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
+
+            }
+            else if(name.Contains("CeO2"))
+            {
+                crystal = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
+                crystal.AddAtoms("Ce", 58, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
+                crystal.AddAtoms("O", 8, 0, 0, null, 0.25, 0.25, 0.25, 1, new DiffuseScatteringFactor());
+
+
+            }
+            else if (name.Contains("LaB6"))
+            {
+                crystal = new Crystal((0.4157, 0.4157, 0.4157, Math.PI / 2, Math.PI / 2, Math.PI / 2), 517, "LaB6", Color.Violet);
+
+                crystal.AddAtoms("La", 57, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
+                crystal.AddAtoms("B", 5, 0, 0, null, 0.1975, 0.5, 0.5, 1, new DiffuseScatteringFactor());
+            }
+            else if (name .Contains("Al2O3"))
+            {
+                crystal = new Crystal((0.47657, 0.47657, 1.301, Math.PI / 2, Math.PI / 2, Math.PI *2/ 3), 460, "Al2O3", Color.Violet);
+
+                crystal.AddAtoms("Al", 13, 0, 0, null, 0, 0, 0.352, 1, new DiffuseScatteringFactor());
+                crystal.AddAtoms("O", 8, 0, 0, null, 0.306, 0, 0.25, 1, new DiffuseScatteringFactor());
+            }
+            else
+            {
+                crystalControl1.Enabled = true;
+                return;
+            }
+
+            crystalControl1.Crystal = crystal;
+            crystalControl1.Enabled = false;
         }
     }
 }
