@@ -1721,7 +1721,7 @@
             // 
             this.numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxWeight.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.numericBoxWeight.HeaderText = "Height:Dspacing";
+            this.numericBoxWeight.HeaderText = "Height : Dspacing";
             this.numericBoxWeight.Location = new System.Drawing.Point(987, 318);
             this.numericBoxWeight.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxWeight.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -1731,6 +1731,7 @@
             this.numericBoxWeight.Size = new System.Drawing.Size(154, 25);
             this.numericBoxWeight.TabIndex = 13;
             this.numericBoxWeight.Value = 100D;
+            this.numericBoxWeight.Visible = false;
             // 
             // radioButtonStandardAu
             // 
