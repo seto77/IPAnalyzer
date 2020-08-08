@@ -39,11 +39,7 @@ namespace IPAnalyzer
 
         public double Tau { set => FormMain.FormProperty.saclaControl.TauDegree = value; get => FormMain.FormProperty.saclaControl.TauDegree; }
 
-        public double Radius
-        {
-            set { FormMain.FormProperty.numericBoxGandlfiRadius.Value = value; }
-            get { return FormMain.FormProperty.numericBoxGandlfiRadius.Value; }
-        }
+        public double Radius { set => FormMain.FormProperty.numericBoxGandlfiRadius.Value = value; get => FormMain.FormProperty.numericBoxGandlfiRadius.Value; }
 
         public double Distance
         {
@@ -60,6 +56,12 @@ namespace IPAnalyzer
         {
             set { FormMain.FormProperty.saclaControl.Foot = new PointD(FormMain.FormProperty.saclaControl.Foot.X, value); }
             get { return FormMain.FormProperty.saclaControl.Foot.Y; }
+        }
+
+        public double WaveLength
+        {
+            set { FormMain.FormProperty.WaveLength = value; }
+            get { return FormMain.FormProperty.WaveLength; }
         }
 
         public FormOptimizeSaclaEH5Parameter()
@@ -217,6 +219,8 @@ namespace IPAnalyzer
                 //いったん初期化
                 for (int j = 0; j < planes.Count; j++)
                 {
+                    planes[j].XCalc = Math.Asin (WaveLength / 2 / planes[j].d) /Math.PI*360;
+
                     //planes[j].XCalc = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / planes[j].d) / Math.PI * 180;
                     planes[j].peakFunction = new PeakFunction();
                     planes[j].peakFunction.Option = PeakFunctionForm.PseudoVoigt;
@@ -296,31 +300,33 @@ namespace IPAnalyzer
             
             for (int i = 0; i < crystal.Plane.Count; i++)
             {
-                FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - 1.5;
-                FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[i].XCalc + 1.5;
+                FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - numericBoxFittingRange.Value * 4;
+                FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[i].XCalc + numericBoxFittingRange.Value * 4;
                 for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
                     if (Ring.IsOutsideOfIntegralProperty[j] == false)
                         area[j] = false;
             }
            
-            FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[0].XCalc - 1.5;
-            FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[crystal.Plane.Count - 1].XCalc + 1.5;
+            FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[0].XCalc - numericBoxFittingRange.Value * 4;
+            FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[crystal.Plane.Count - 1].XCalc + numericBoxFittingRange.Value * 4;
             for (int i = 0; i < Ring.IsSpots.Count; i++)
                 Ring.IsSpots[i] = area[i] || originalSpots[i];
             
             FormMain.Draw();
             Ring.SetMask(true, true, true);
-            double distanceStep = (double)numericUpDownDistanceStep.Value;
-            double tauStep = (double)numericUpDownTauStep.Value;
-            double phiStep = (double)numericUpDownPhiStep.Value;
-            double footXStep = (double)numericUpDownFootPointXStep.Value;
-            double footYStep = (double)numericUpDownFootPointYStep.Value;
+            var distanceStep = numericBoxDistanceStep.Value;
+            var tauStep = numericBoxTauStep.Value;
+            var phiStep = numericBoxPhiStep.Value;
+            var footXStep = numericBoxFootPointXStep.Value;
+            var footYStep = numericBoxFootPointYStep.Value;
+            var waveLengthStep = numericBoxWaveLengthStep.Value;
 
-            int distanceRange = checkBoxDistance.Checked ? (int)numericUpDownDistanceRange.Value : 0;
-            int tauRange = checkBoxTwoTheta.Checked ? (int)numericUpDownTauRange.Value : 0;
-            int phiRange = checkBoxPhi.Checked ? (int)numericUpDownPhiRange.Value : 0;
-            int footXRange = checkBoxFootX.Checked ? (int)numericUpDownFootPointXRange.Value : 0;
-            int footYRange = checkBoxFootY.Checked ? (int)numericUpDownFootPointYRange.Value : 0;
+            var distanceRange = checkBoxDistance.Checked ? (int)numericBoxDistanceRange.Value : 0;
+            var tauRange = checkBoxTwoTheta.Checked ? (int)numericBoxTauRange.Value : 0;
+            var phiRange = checkBoxPhi.Checked ? (int)numericBoxPhiRange.Value : 0;
+            var footXRange = checkBoxFootX.Checked ? (int)numericBoxFootPointXRange.Value : 0;
+            var footYRange = checkBoxFootY.Checked ? (int)numericBoxFootPointYRange.Value : 0;
+            var waveLengthRange = checkBoxWaveLength.Checked ? (int)numericBoxWaveLengthRange.Value : 0;
 
             int cycle = (int)numericUpDownIteration.Value;
             
@@ -329,12 +335,14 @@ namespace IPAnalyzer
             sw.Start();
             long beforeTime = 0;
             int count = 0;
-            SortedList<double, saclaValues> results = new SortedList<double, saclaValues>();
+            var results = new SortedList<double, saclaValues>();
 
             var renewalTime = 7;
             void report(Profile profile, int n)
             {
-                int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
+                //int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
+
+                var total = (2 * phiRange + 1) * (2 * footXRange + 1) * (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1) * (2 * waveLengthRange + 1);
                 double progress = (double)count / cycle / total;
                 toolStripStatusLabel1.Text = "  " + ((sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime).ToString("f1") + " ms / step.  "
                     + (progress * 100).ToString("f2") + " % completed.  "
@@ -342,9 +350,9 @@ namespace IPAnalyzer
                     + "Wait about " + (sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress).ToString("f0") + " sec.";
                 textBox1.Text = "Cycle: " + n.ToString() + "\r\n";
                 textBox1.Text += "Current best values\r\n     Distance:\t" + results.Values[0].Distance + "\r\n     Phi:\t\t" + results.Values[0].Phi + "\r\n     Tau:\t\t" + results.Values[0].Tau
-                     + "\r\n     Foot X:\t" + results.Values[0].FootX + "\r\n     Foot Y:\t" + results.Values[0].FootY + "\r\n"
+                     + "\r\n     Foot X:\t" + results.Values[0].FootX + "\r\n     Foot Y:\t" + results.Values[0].FootY + "\r\n     Wave length:\t" + results.Values[0].WaveLength + "\r\n"
                      + "Current steps: \r\n     Distance:\t" + distanceStep + "\r\n     Phi:\t\t" + phiStep + "\r\n     Tau:\t\t" + tauStep
-                     + "\r\n     Foot X:\t" + footXStep + "\r\n     Foot Y:\t" + footYStep + "\r\n";
+                     + "\r\n     Foot X:\t" + footXStep + "\r\n     Foot Y:\t" + footYStep + "\r\n     Wave length:\t" + waveLengthStep + "\r\n";
                 if (results.Count > 4)
                     textBox1.Text += "\r\n No.1: " + results.Keys[0].ToString() + "\r\n No.2: " + results.Keys[1].ToString()
                         + "\r\n No.3: " + results.Keys[2].ToString() + "\r\n No.4: " + results.Keys[3].ToString();
@@ -358,94 +366,79 @@ namespace IPAnalyzer
             for (int n = 0; n < cycle; n++)
             {
                 
-               
-
-                saclaValues initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY);
+                var initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY, WaveLength);
                 results = new SortedList<double, saclaValues>();
 
-                //PhiとFootX
+                //次にDistance, Tau, FootY
                 for (int paramPhi = -phiRange; paramPhi <= phiRange; paramPhi++)
                     for (int paramFootX = -footXRange; paramFootX <= footXRange; paramFootX++)
-                    {
-                        FormMain.FormProperty.SkipEvent = true;
-                        Phi = initialValue.Phi + paramPhi * phiStep;
-                        FootX = initialValue.FootX + paramFootX * footXStep;
-                        FormMain.FormProperty.SkipEvent = false;
-                        FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
+                        for (int paramDistance = -distanceRange; paramDistance <= distanceRange; paramDistance++)
+                            for (int paramTau = -tauRange; paramTau <= tauRange; paramTau++)
+                                for (int paramFootY = -footYRange; paramFootY <= footYRange; paramFootY++)
+                                {
+                                    FormMain.FormProperty.SkipEvent = true;
+                                    Distance = initialValue.Distance + paramDistance * distanceStep;
+                                    Tau = initialValue.Tau + paramTau * tauStep;
+                                    Phi = initialValue.Phi + paramPhi * phiStep;
+                                    FootX = initialValue.FootX + paramFootX * footXStep;
+                                    FootY = initialValue.FootY + paramFootY * footYStep;
+                                    FormMain.FormProperty.SkipEvent = false;
+                                    FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
+                                    FormMain.SetIntegralProperty();
 
-                        count++;
-                        var values = new saclaValues(Distance, Phi, Tau, FootX, FootY);
-                        FormMain.SetIntegralProperty();
-                        Profile profile = Ring.GetProfile(Ring.IP);
-                        Fitting(profile, crystal.Plane);
+                                    var profile = Ring.GetProfile(Ring.IP);
 
-                        double r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
-                        if (!results.ContainsKey(r) && !double.IsNaN(r))
-                            results.Add(r, values);
+                                    for (int paramWaveLength = -waveLengthRange; paramWaveLength <= waveLengthRange; paramWaveLength++)
+                                    {
+                                        WaveLength = initialValue.WaveLength + paramWaveLength * waveLengthStep * 0.1;
+                                       
+                                        count++;
+                                        Fitting(profile, crystal.Plane);
+                                        var r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
+                                        if (!results.ContainsKey(r) && !double.IsNaN(r))
+                                            results.Add(r, new saclaValues(Distance, Phi, Tau, FootX, FootY, WaveLength));
 
-                        if (count % renewalTime == 0)
-                            report(profile, n);
-                    }
-                Phi = results.Values[0].Phi;
-                FootX = results.Values[0].FootX;
-
-                //次にDistance, Tau, FootY
-                for (int paramDistance = -distanceRange; paramDistance <= distanceRange; paramDistance++)
-                    for (int paramTau = -tauRange; paramTau <= tauRange; paramTau++)
-                        for (int paramFootY = -footYRange; paramFootY <= footYRange; paramFootY++)
-                        {
-                            FormMain.FormProperty.SkipEvent = true;
-                            Distance = initialValue.Distance + paramDistance * distanceStep;
-                            Tau = initialValue.Tau + paramTau * tauStep;
-                            FootY = initialValue.FootY + paramFootY * footYStep;
-                            FormMain.FormProperty.SkipEvent = false;
-                            FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
-
-                            count++;
-
-                            var values = new saclaValues(Distance, Phi, Tau, FootX, FootY);
-                            FormMain.SetIntegralProperty();
-                            Profile profile = Ring.GetProfile(Ring.IP);
-                            Fitting(profile, crystal.Plane);
-
-                            double r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
-                            if (!results.ContainsKey(r) && !double.IsNaN(r))
-                                results.Add(r, values);
-
-                            if (count % renewalTime == 0)
-                                report(profile, n);
-                        }
+                                        if (count % renewalTime == 0)
+                                            report(profile, n);
+                                    }
+                                }
                 FormMain.FormProperty.SkipEvent = false;
                 Distance = results.Values[0].Distance;
+                Phi = results.Values[0].Phi;
                 Tau = results.Values[0].Tau;
+                FootX = results.Values[0].FootX;
                 FootY = results.Values[0].FootY;
-                
-                if (Distance == initialValue.Distance && Tau == initialValue.Tau && Phi == initialValue.Phi && FootX == initialValue.FootX && FootY == initialValue.FootY)
+                WaveLength = results.Values[0].WaveLength;
+
+                if (Distance == initialValue.Distance && Tau == initialValue.Tau && Phi == initialValue.Phi
+                 && WaveLength == initialValue.WaveLength && FootX == initialValue.FootX && FootY == initialValue.FootY)
                 {
                     distanceStep = nextStep(distanceStep);
                     tauStep = nextStep(tauStep);
                     phiStep = nextStep(phiStep);
                     footXStep = nextStep(footXStep);
                     footYStep = nextStep(footYStep);
+                    waveLengthStep = nextStep(waveLengthStep);
                 }
             }
             toolStripStatusLabel1.Text = "Complete! Total time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.";
             FormMain.SetIntegralProperty();
-            Profile finalProfile = Ring.GetProfile(Ring.IP);
+            var finalProfile = Ring.GetProfile(Ring.IP);
             Fitting(finalProfile, crystal.Plane);
             drawGraph(finalProfile, crystal.Plane);
         }
 
         struct saclaValues
         {
-            public double Distance, Tau, Phi, FootX, FootY;
-            public saclaValues(double distance,double phi, double twoTheta, double footX, double footY)
+            public double Distance, Tau, Phi, FootX, FootY, WaveLength;
+            public saclaValues(double distance,double phi, double twoTheta, double footX, double footY, double waveLength)
             {
                 Distance = distance;
                 Phi = phi;
                 Tau = twoTheta;
                 FootX = footX;
                 FootY = footY;
+                WaveLength = waveLength;
             }
 
         }
@@ -508,11 +501,13 @@ namespace IPAnalyzer
                         var targetRange = profile.Pt.Where(p => Math.Abs(p.X - planes[i].XCalc) < 0.4);
 
                         //double topHeight = targetRange.Max(p => p.Y);
-                        double topHeight = planes[i].peakFunction.GetValue(planes[i].XCalc, true);
+                        //double topHeight = planes[i].peakFunction.GetValue(planes[i].XCalc, true);
+                        double topHeight = planes[i].peakFunction.GetValue(planes[i].peakFunction.X, true);
                         height += topHeight;
 
                         planes[i].peakFunction.GetValue(planes[i].XCalc, true);
 
+                        
                         twoThetaDeviation += (planes[i].XCalc - planes[i].peakFunction.X) * (planes[i].XCalc - planes[i].peakFunction.X);
                     }
                 }
@@ -561,10 +556,12 @@ namespace IPAnalyzer
 
         private void checkBoxDistance_CheckedChanged(object sender, EventArgs e)
         {
-            flowLayoutPanelDistanceRange.Enabled = flowLayoutPanelDistanceStep.Enabled = checkBoxDistance.Checked;
-            flowLayoutPanelTwoThetaRange.Enabled = flowLayoutPanelTwoThetaStep.Enabled = checkBoxTwoTheta.Checked;
-            flowLayoutPanelFootPointXRange.Enabled = flowLayoutPanelFootPointXStep.Enabled = checkBoxFootX.Checked;
-            flowLayoutPanelFootPointYRange.Enabled = flowLayoutPanelFootPointYStep.Enabled = checkBoxFootY.Checked;
+            numericBoxDistanceRange.Enabled = numericBoxDistanceStep.Enabled = checkBoxDistance.Checked;
+            numericBoxWaveLengthRange.Enabled = numericBoxWaveLengthStep.Enabled = checkBoxWaveLength.Checked;
+            numericBoxTauRange.Enabled = numericBoxTauStep.Enabled = checkBoxTwoTheta.Checked;
+            numericBoxPhiRange.Enabled = numericBoxPhiStep.Enabled = checkBoxPhi.Checked;
+            numericBoxFootPointXRange.Enabled = numericBoxFootPointXStep.Enabled = checkBoxFootX.Checked;
+            numericBoxFootPointYRange.Enabled = numericBoxFootPointYStep.Enabled = checkBoxFootY.Checked;
 
         }
 
@@ -823,6 +820,11 @@ namespace IPAnalyzer
 
             crystalControl1.Crystal = crystal;
             crystalControl1.Enabled = false;
+        }
+
+        private void numericBoxFootPointYRange_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

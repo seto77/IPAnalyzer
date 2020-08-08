@@ -2981,8 +2981,8 @@
             IP.PixSizeX *= mag;
             IP.PixSizeY *= mag;
 
-            textBoxRefinedPixelSizeX.Text = (IP.PixSizeX).ToString("f10");
-            textBoxRefinedPixelSizeY.Text = (IP.PixSizeY).ToString("f10");
+            textBoxRefinedPixelSizeX.Text = IP.PixSizeX.ToString("f10");
+            textBoxRefinedPixelSizeY.Text = IP.PixSizeY.ToString("f10");
             textBoxPixelSizeXDev.Text = textBoxPixelSizeYDev.Text = (PixSizeYDev).ToString("f10");
             textBoxPixelSizeX.Text = textBoxRefinedPixelSizeX.Text;
             textBoxPixelSizeY.Text = textBoxRefinedPixelSizeX.Text;

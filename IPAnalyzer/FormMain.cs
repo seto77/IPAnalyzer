@@ -3072,7 +3072,7 @@ namespace IPAnalyzer
                 if (!fullyRead)
                 {
                     FormParameterOption.Text = "Read checked parameters";
-                    FormParameterOption.Location = new Point(MousePosition.X - FormParameterOption.Width / 2, MousePosition.Y - FormParameterOption.Height / 2);
+                    FormParameterOption.Location = new Point(this.Location.X+100,this.Location.Y+100);
                     if (FormParameterOption.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                         return;
                 }

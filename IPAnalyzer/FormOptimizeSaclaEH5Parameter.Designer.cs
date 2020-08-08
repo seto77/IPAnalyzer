@@ -42,46 +42,24 @@
             this.checkBoxTwoTheta = new System.Windows.Forms.CheckBox();
             this.checkBoxFootX = new System.Windows.Forms.CheckBox();
             this.checkBoxFootY = new System.Windows.Forms.CheckBox();
-            this.numericUpDownDistanceStep = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanelDistanceStep = new System.Windows.Forms.FlowLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelTwoThetaStep = new System.Windows.Forms.FlowLayoutPanel();
-            this.numericUpDownTauStep = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelDistanceRange = new System.Windows.Forms.FlowLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numericUpDownDistanceRange = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelTwoThetaRange = new System.Windows.Forms.FlowLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numericUpDownTauRange = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelFootPointYStep = new System.Windows.Forms.FlowLayoutPanel();
-            this.numericUpDownFootPointYStep = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelFootPointYRange = new System.Windows.Forms.FlowLayoutPanel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.numericUpDownFootPointYRange = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelFootPointXStep = new System.Windows.Forms.FlowLayoutPanel();
-            this.numericUpDownFootPointXStep = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
             this.checkBoxPhi = new System.Windows.Forms.CheckBox();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.numericUpDownPhiStep = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelFootPointXRange = new System.Windows.Forms.FlowLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.numericUpDownFootPointXRange = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label37 = new System.Windows.Forms.Label();
-            this.numericUpDownPhiRange = new System.Windows.Forms.NumericUpDown();
-            this.label38 = new System.Windows.Forms.Label();
+            this.numericBoxFootPointXStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxFootPointYStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxFootPointYRange = new Crystallography.Controls.NumericBox();
+            this.numericBoxFootPointXRange = new Crystallography.Controls.NumericBox();
+            this.numericBoxPhiRange = new Crystallography.Controls.NumericBox();
+            this.numericBoxTauRange = new Crystallography.Controls.NumericBox();
+            this.numericBoxDistanceRange = new Crystallography.Controls.NumericBox();
+            this.numericBoxDistanceStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxTauStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxPhiStep = new Crystallography.Controls.NumericBox();
+            this.checkBoxWaveLength = new System.Windows.Forms.CheckBox();
+            this.numericBoxWaveLengthStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxWaveLengthRange = new Crystallography.Controls.NumericBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -147,28 +125,8 @@
             this.radioButtonStandardOther = new System.Windows.Forms.RadioButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIteration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistanceStep)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanelDistanceStep.SuspendLayout();
-            this.flowLayoutPanelTwoThetaStep.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTauStep)).BeginInit();
-            this.flowLayoutPanelDistanceRange.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistanceRange)).BeginInit();
-            this.flowLayoutPanelTwoThetaRange.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTauRange)).BeginInit();
-            this.flowLayoutPanelFootPointYStep.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointYStep)).BeginInit();
-            this.flowLayoutPanelFootPointYRange.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointYRange)).BeginInit();
-            this.flowLayoutPanelFootPointXStep.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointXStep)).BeginInit();
-            this.flowLayoutPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPhiStep)).BeginInit();
-            this.flowLayoutPanelFootPointXRange.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointXRange)).BeginInit();
-            this.flowLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPhiRange)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -215,7 +173,7 @@
             this.buttonGetProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGetProfile.AutoSize = true;
             this.buttonGetProfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonGetProfile.Location = new System.Drawing.Point(792, 349);
+            this.buttonGetProfile.Location = new System.Drawing.Point(788, 431);
             this.buttonGetProfile.Name = "buttonGetProfile";
             this.buttonGetProfile.Size = new System.Drawing.Size(72, 25);
             this.buttonGetProfile.TabIndex = 3;
@@ -228,9 +186,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 657);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 739);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1153, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1149, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -294,7 +252,7 @@
             this.checkBoxTwoTheta.AutoSize = true;
             this.checkBoxTwoTheta.Checked = true;
             this.checkBoxTwoTheta.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTwoTheta.Location = new System.Drawing.Point(0, 43);
+            this.checkBoxTwoTheta.Location = new System.Drawing.Point(0, 45);
             this.checkBoxTwoTheta.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxTwoTheta.Name = "checkBoxTwoTheta";
             this.checkBoxTwoTheta.Size = new System.Drawing.Size(90, 19);
@@ -308,7 +266,7 @@
             this.checkBoxFootX.AutoSize = true;
             this.checkBoxFootX.Checked = true;
             this.checkBoxFootX.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFootX.Location = new System.Drawing.Point(0, 93);
+            this.checkBoxFootX.Location = new System.Drawing.Point(0, 99);
             this.checkBoxFootX.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxFootX.Name = "checkBoxFootX";
             this.checkBoxFootX.Size = new System.Drawing.Size(91, 19);
@@ -322,7 +280,7 @@
             this.checkBoxFootY.AutoSize = true;
             this.checkBoxFootY.Checked = true;
             this.checkBoxFootY.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFootY.Location = new System.Drawing.Point(0, 118);
+            this.checkBoxFootY.Location = new System.Drawing.Point(0, 126);
             this.checkBoxFootY.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxFootY.Name = "checkBoxFootY";
             this.checkBoxFootY.Size = new System.Drawing.Size(91, 19);
@@ -331,32 +289,13 @@
             this.checkBoxFootY.UseVisualStyleBackColor = true;
             this.checkBoxFootY.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
-            // numericUpDownDistanceStep
-            // 
-            this.numericUpDownDistanceStep.DecimalPlaces = 3;
-            this.numericUpDownDistanceStep.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownDistanceStep.Location = new System.Drawing.Point(0, 0);
-            this.numericUpDownDistanceStep.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownDistanceStep.Name = "numericUpDownDistanceStep";
-            this.numericUpDownDistanceStep.Size = new System.Drawing.Size(54, 23);
-            this.numericUpDownDistanceStep.TabIndex = 5;
-            this.numericUpDownDistanceStep.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            131072});
-            // 
             // groupBox1
             // 
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(5, 33);
+            this.groupBox1.Location = new System.Drawing.Point(5, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 164);
+            this.groupBox1.Size = new System.Drawing.Size(315, 205);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
@@ -370,366 +309,68 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelDistanceStep, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxTwoTheta, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxDistance, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelTwoThetaStep, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelDistanceRange, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelTwoThetaRange, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxFootY, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelFootPointYStep, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelFootPointYRange, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxFootX, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelFootPointXStep, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxPhi, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel11, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelFootPointXRange, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel12, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointXStep, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxFootY, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointYStep, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointYRange, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointXRange, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxPhiRange, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxTauRange, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxDistanceRange, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxDistanceStep, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxTauStep, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxPhiStep, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxWaveLength, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxWaveLengthStep, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxWaveLengthRange, 2, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(309, 142);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(309, 183);
             this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // flowLayoutPanelDistanceStep
-            // 
-            this.flowLayoutPanelDistanceStep.AutoSize = true;
-            this.flowLayoutPanelDistanceStep.Controls.Add(this.numericUpDownDistanceStep);
-            this.flowLayoutPanelDistanceStep.Controls.Add(this.label12);
-            this.flowLayoutPanelDistanceStep.Location = new System.Drawing.Point(94, 15);
-            this.flowLayoutPanelDistanceStep.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutPanelDistanceStep.Name = "flowLayoutPanelDistanceStep";
-            this.flowLayoutPanelDistanceStep.Size = new System.Drawing.Size(86, 23);
-            this.flowLayoutPanelDistanceStep.TabIndex = 10;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(54, 3);
-            this.label12.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 15);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "mm";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 0);
+            this.label3.Location = new System.Drawing.Point(98, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 15);
+            this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Initial step";
-            // 
-            // flowLayoutPanelTwoThetaStep
-            // 
-            this.flowLayoutPanelTwoThetaStep.AutoSize = true;
-            this.flowLayoutPanelTwoThetaStep.Controls.Add(this.numericUpDownTauStep);
-            this.flowLayoutPanelTwoThetaStep.Controls.Add(this.label13);
-            this.flowLayoutPanelTwoThetaStep.Location = new System.Drawing.Point(94, 40);
-            this.flowLayoutPanelTwoThetaStep.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutPanelTwoThetaStep.Name = "flowLayoutPanelTwoThetaStep";
-            this.flowLayoutPanelTwoThetaStep.Size = new System.Drawing.Size(69, 23);
-            this.flowLayoutPanelTwoThetaStep.TabIndex = 10;
-            // 
-            // numericUpDownTauStep
-            // 
-            this.numericUpDownTauStep.DecimalPlaces = 3;
-            this.numericUpDownTauStep.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            196608});
-            this.numericUpDownTauStep.Location = new System.Drawing.Point(0, 0);
-            this.numericUpDownTauStep.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownTauStep.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownTauStep.Name = "numericUpDownTauStep";
-            this.numericUpDownTauStep.Size = new System.Drawing.Size(54, 23);
-            this.numericUpDownTauStep.TabIndex = 5;
-            this.numericUpDownTauStep.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(54, 3);
-            this.label13.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(12, 15);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "°";
             // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 0);
+            this.label4.Location = new System.Drawing.Point(188, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 15);
+            this.label4.Size = new System.Drawing.Size(118, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Search range";
-            // 
-            // flowLayoutPanelDistanceRange
-            // 
-            this.flowLayoutPanelDistanceRange.AutoSize = true;
-            this.flowLayoutPanelDistanceRange.Controls.Add(this.label11);
-            this.flowLayoutPanelDistanceRange.Controls.Add(this.numericUpDownDistanceRange);
-            this.flowLayoutPanelDistanceRange.Controls.Add(this.label10);
-            this.flowLayoutPanelDistanceRange.Location = new System.Drawing.Point(183, 15);
-            this.flowLayoutPanelDistanceRange.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanelDistanceRange.Name = "flowLayoutPanelDistanceRange";
-            this.flowLayoutPanelDistanceRange.Size = new System.Drawing.Size(87, 23);
-            this.flowLayoutPanelDistanceRange.TabIndex = 10;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label11.Size = new System.Drawing.Size(15, 18);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "±";
-            // 
-            // numericUpDownDistanceRange
-            // 
-            this.numericUpDownDistanceRange.Location = new System.Drawing.Point(18, 0);
-            this.numericUpDownDistanceRange.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownDistanceRange.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownDistanceRange.Name = "numericUpDownDistanceRange";
-            this.numericUpDownDistanceRange.Size = new System.Drawing.Size(32, 23);
-            this.numericUpDownDistanceRange.TabIndex = 5;
-            this.numericUpDownDistanceRange.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(50, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label10.Size = new System.Drawing.Size(34, 18);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "steps";
-            // 
-            // flowLayoutPanelTwoThetaRange
-            // 
-            this.flowLayoutPanelTwoThetaRange.AutoSize = true;
-            this.flowLayoutPanelTwoThetaRange.Controls.Add(this.label16);
-            this.flowLayoutPanelTwoThetaRange.Controls.Add(this.numericUpDownTauRange);
-            this.flowLayoutPanelTwoThetaRange.Controls.Add(this.label17);
-            this.flowLayoutPanelTwoThetaRange.Location = new System.Drawing.Point(183, 40);
-            this.flowLayoutPanelTwoThetaRange.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanelTwoThetaRange.Name = "flowLayoutPanelTwoThetaRange";
-            this.flowLayoutPanelTwoThetaRange.Size = new System.Drawing.Size(87, 23);
-            this.flowLayoutPanelTwoThetaRange.TabIndex = 10;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 0);
-            this.label16.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label16.Size = new System.Drawing.Size(15, 18);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "±";
-            // 
-            // numericUpDownTauRange
-            // 
-            this.numericUpDownTauRange.Location = new System.Drawing.Point(18, 0);
-            this.numericUpDownTauRange.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownTauRange.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownTauRange.Name = "numericUpDownTauRange";
-            this.numericUpDownTauRange.Size = new System.Drawing.Size(32, 23);
-            this.numericUpDownTauRange.TabIndex = 5;
-            this.numericUpDownTauRange.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(50, 0);
-            this.label17.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label17.Size = new System.Drawing.Size(34, 18);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "steps";
-            // 
-            // flowLayoutPanelFootPointYStep
-            // 
-            this.flowLayoutPanelFootPointYStep.AutoSize = true;
-            this.flowLayoutPanelFootPointYStep.Controls.Add(this.numericUpDownFootPointYStep);
-            this.flowLayoutPanelFootPointYStep.Controls.Add(this.label15);
-            this.flowLayoutPanelFootPointYStep.Location = new System.Drawing.Point(94, 115);
-            this.flowLayoutPanelFootPointYStep.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutPanelFootPointYStep.Name = "flowLayoutPanelFootPointYStep";
-            this.flowLayoutPanelFootPointYStep.Size = new System.Drawing.Size(79, 23);
-            this.flowLayoutPanelFootPointYStep.TabIndex = 10;
-            // 
-            // numericUpDownFootPointYStep
-            // 
-            this.numericUpDownFootPointYStep.DecimalPlaces = 1;
-            this.numericUpDownFootPointYStep.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownFootPointYStep.Location = new System.Drawing.Point(0, 0);
-            this.numericUpDownFootPointYStep.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownFootPointYStep.Name = "numericUpDownFootPointYStep";
-            this.numericUpDownFootPointYStep.Size = new System.Drawing.Size(54, 23);
-            this.numericUpDownFootPointYStep.TabIndex = 5;
-            this.numericUpDownFootPointYStep.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(54, 3);
-            this.label15.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(22, 15);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "pix";
-            // 
-            // flowLayoutPanelFootPointYRange
-            // 
-            this.flowLayoutPanelFootPointYRange.AutoSize = true;
-            this.flowLayoutPanelFootPointYRange.Controls.Add(this.label20);
-            this.flowLayoutPanelFootPointYRange.Controls.Add(this.numericUpDownFootPointYRange);
-            this.flowLayoutPanelFootPointYRange.Controls.Add(this.label21);
-            this.flowLayoutPanelFootPointYRange.Location = new System.Drawing.Point(183, 115);
-            this.flowLayoutPanelFootPointYRange.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanelFootPointYRange.Name = "flowLayoutPanelFootPointYRange";
-            this.flowLayoutPanelFootPointYRange.Size = new System.Drawing.Size(87, 23);
-            this.flowLayoutPanelFootPointYRange.TabIndex = 10;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 0);
-            this.label20.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label20.Name = "label20";
-            this.label20.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label20.Size = new System.Drawing.Size(15, 18);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "±";
-            // 
-            // numericUpDownFootPointYRange
-            // 
-            this.numericUpDownFootPointYRange.Location = new System.Drawing.Point(18, 0);
-            this.numericUpDownFootPointYRange.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownFootPointYRange.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownFootPointYRange.Name = "numericUpDownFootPointYRange";
-            this.numericUpDownFootPointYRange.Size = new System.Drawing.Size(32, 23);
-            this.numericUpDownFootPointYRange.TabIndex = 5;
-            this.numericUpDownFootPointYRange.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(50, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label21.Name = "label21";
-            this.label21.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label21.Size = new System.Drawing.Size(34, 18);
-            this.label21.TabIndex = 6;
-            this.label21.Text = "steps";
-            // 
-            // flowLayoutPanelFootPointXStep
-            // 
-            this.flowLayoutPanelFootPointXStep.AutoSize = true;
-            this.flowLayoutPanelFootPointXStep.Controls.Add(this.numericUpDownFootPointXStep);
-            this.flowLayoutPanelFootPointXStep.Controls.Add(this.label14);
-            this.flowLayoutPanelFootPointXStep.Location = new System.Drawing.Point(94, 90);
-            this.flowLayoutPanelFootPointXStep.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutPanelFootPointXStep.Name = "flowLayoutPanelFootPointXStep";
-            this.flowLayoutPanelFootPointXStep.Size = new System.Drawing.Size(79, 23);
-            this.flowLayoutPanelFootPointXStep.TabIndex = 10;
-            // 
-            // numericUpDownFootPointXStep
-            // 
-            this.numericUpDownFootPointXStep.DecimalPlaces = 1;
-            this.numericUpDownFootPointXStep.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownFootPointXStep.Location = new System.Drawing.Point(0, 0);
-            this.numericUpDownFootPointXStep.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownFootPointXStep.Name = "numericUpDownFootPointXStep";
-            this.numericUpDownFootPointXStep.Size = new System.Drawing.Size(54, 23);
-            this.numericUpDownFootPointXStep.TabIndex = 5;
-            this.numericUpDownFootPointXStep.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(54, 3);
-            this.label14.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(22, 15);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "pix";
             // 
             // checkBoxPhi
             // 
             this.checkBoxPhi.AutoSize = true;
             this.checkBoxPhi.Checked = true;
             this.checkBoxPhi.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPhi.Location = new System.Drawing.Point(0, 68);
+            this.checkBoxPhi.Location = new System.Drawing.Point(0, 72);
             this.checkBoxPhi.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxPhi.Name = "checkBoxPhi";
             this.checkBoxPhi.Size = new System.Drawing.Size(43, 19);
@@ -738,165 +379,297 @@
             this.checkBoxPhi.UseVisualStyleBackColor = true;
             this.checkBoxPhi.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
-            // flowLayoutPanel11
+            // numericBoxFootPointXStep
             // 
-            this.flowLayoutPanel11.AutoSize = true;
-            this.flowLayoutPanel11.Controls.Add(this.numericUpDownPhiStep);
-            this.flowLayoutPanel11.Controls.Add(this.label36);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(94, 65);
-            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(69, 23);
-            this.flowLayoutPanel11.TabIndex = 10;
+            this.numericBoxFootPointXStep.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxFootPointXStep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxFootPointXStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointXStep.FooterText = "pix";
+            this.numericBoxFootPointXStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointXStep.Location = new System.Drawing.Point(95, 96);
+            this.numericBoxFootPointXStep.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxFootPointXStep.Maximum = 1D;
+            this.numericBoxFootPointXStep.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxFootPointXStep.Minimum = 0D;
+            this.numericBoxFootPointXStep.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxFootPointXStep.Name = "numericBoxFootPointXStep";
+            this.numericBoxFootPointXStep.RadianValue = 0.0034906585039886592D;
+            this.numericBoxFootPointXStep.ShowUpDown = true;
+            this.numericBoxFootPointXStep.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxFootPointXStep.SmartIncrement = true;
+            this.numericBoxFootPointXStep.TabIndex = 15;
+            this.numericBoxFootPointXStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointXStep.Value = 0.2D;
             // 
-            // numericUpDownPhiStep
+            // numericBoxFootPointYStep
             // 
-            this.numericUpDownPhiStep.DecimalPlaces = 3;
-            this.numericUpDownPhiStep.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            196608});
-            this.numericUpDownPhiStep.Location = new System.Drawing.Point(0, 0);
-            this.numericUpDownPhiStep.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownPhiStep.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownPhiStep.Name = "numericUpDownPhiStep";
-            this.numericUpDownPhiStep.Size = new System.Drawing.Size(54, 23);
-            this.numericUpDownPhiStep.TabIndex = 5;
-            this.numericUpDownPhiStep.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
+            this.numericBoxFootPointYStep.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxFootPointYStep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxFootPointYStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointYStep.FooterText = "pix";
+            this.numericBoxFootPointYStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointYStep.Location = new System.Drawing.Point(95, 123);
+            this.numericBoxFootPointYStep.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxFootPointYStep.Maximum = 1D;
+            this.numericBoxFootPointYStep.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxFootPointYStep.Minimum = 0D;
+            this.numericBoxFootPointYStep.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxFootPointYStep.Name = "numericBoxFootPointYStep";
+            this.numericBoxFootPointYStep.RadianValue = 0.0034906585039886592D;
+            this.numericBoxFootPointYStep.ShowUpDown = true;
+            this.numericBoxFootPointYStep.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxFootPointYStep.SmartIncrement = true;
+            this.numericBoxFootPointYStep.TabIndex = 15;
+            this.numericBoxFootPointYStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointYStep.Value = 0.2D;
             // 
-            // label36
+            // numericBoxFootPointYRange
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(54, 3);
-            this.label36.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(12, 15);
-            this.label36.TabIndex = 6;
-            this.label36.Text = "°";
+            this.numericBoxFootPointYRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxFootPointYRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxFootPointYRange.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointYRange.FooterText = "steps";
+            this.numericBoxFootPointYRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointYRange.HeaderText = "±";
+            this.numericBoxFootPointYRange.Location = new System.Drawing.Point(185, 123);
+            this.numericBoxFootPointYRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxFootPointYRange.Maximum = 10D;
+            this.numericBoxFootPointYRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxFootPointYRange.Minimum = 0D;
+            this.numericBoxFootPointYRange.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxFootPointYRange.Name = "numericBoxFootPointYRange";
+            this.numericBoxFootPointYRange.RadianValue = 0.017453292519943295D;
+            this.numericBoxFootPointYRange.ShowUpDown = true;
+            this.numericBoxFootPointYRange.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxFootPointYRange.TabIndex = 15;
+            this.numericBoxFootPointYRange.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointYRange.Value = 1D;
+            this.numericBoxFootPointYRange.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxFootPointYRange_ValueChanged);
             // 
-            // flowLayoutPanelFootPointXRange
+            // numericBoxFootPointXRange
             // 
-            this.flowLayoutPanelFootPointXRange.AutoSize = true;
-            this.flowLayoutPanelFootPointXRange.Controls.Add(this.label18);
-            this.flowLayoutPanelFootPointXRange.Controls.Add(this.numericUpDownFootPointXRange);
-            this.flowLayoutPanelFootPointXRange.Controls.Add(this.label19);
-            this.flowLayoutPanelFootPointXRange.Location = new System.Drawing.Point(183, 90);
-            this.flowLayoutPanelFootPointXRange.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanelFootPointXRange.Name = "flowLayoutPanelFootPointXRange";
-            this.flowLayoutPanelFootPointXRange.Size = new System.Drawing.Size(87, 23);
-            this.flowLayoutPanelFootPointXRange.TabIndex = 10;
+            this.numericBoxFootPointXRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxFootPointXRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxFootPointXRange.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointXRange.FooterText = "steps";
+            this.numericBoxFootPointXRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointXRange.HeaderText = "±";
+            this.numericBoxFootPointXRange.Location = new System.Drawing.Point(185, 96);
+            this.numericBoxFootPointXRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxFootPointXRange.Maximum = 10D;
+            this.numericBoxFootPointXRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxFootPointXRange.Minimum = 0D;
+            this.numericBoxFootPointXRange.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxFootPointXRange.Name = "numericBoxFootPointXRange";
+            this.numericBoxFootPointXRange.RadianValue = 0.017453292519943295D;
+            this.numericBoxFootPointXRange.ShowUpDown = true;
+            this.numericBoxFootPointXRange.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxFootPointXRange.TabIndex = 15;
+            this.numericBoxFootPointXRange.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxFootPointXRange.Value = 1D;
             // 
-            // label18
+            // numericBoxPhiRange
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 0);
-            this.label18.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label18.Size = new System.Drawing.Size(15, 18);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "±";
+            this.numericBoxPhiRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxPhiRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxPhiRange.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxPhiRange.FooterText = "steps";
+            this.numericBoxPhiRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxPhiRange.HeaderText = "±";
+            this.numericBoxPhiRange.Location = new System.Drawing.Point(185, 69);
+            this.numericBoxPhiRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxPhiRange.Maximum = 10D;
+            this.numericBoxPhiRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxPhiRange.Minimum = 0D;
+            this.numericBoxPhiRange.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxPhiRange.Name = "numericBoxPhiRange";
+            this.numericBoxPhiRange.RadianValue = 0.017453292519943295D;
+            this.numericBoxPhiRange.ShowUpDown = true;
+            this.numericBoxPhiRange.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxPhiRange.TabIndex = 15;
+            this.numericBoxPhiRange.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxPhiRange.Value = 1D;
             // 
-            // numericUpDownFootPointXRange
+            // numericBoxTauRange
             // 
-            this.numericUpDownFootPointXRange.Location = new System.Drawing.Point(18, 0);
-            this.numericUpDownFootPointXRange.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownFootPointXRange.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownFootPointXRange.Name = "numericUpDownFootPointXRange";
-            this.numericUpDownFootPointXRange.Size = new System.Drawing.Size(32, 23);
-            this.numericUpDownFootPointXRange.TabIndex = 5;
-            this.numericUpDownFootPointXRange.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.numericBoxTauRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxTauRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxTauRange.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxTauRange.FooterText = "steps";
+            this.numericBoxTauRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxTauRange.HeaderText = "±";
+            this.numericBoxTauRange.Location = new System.Drawing.Point(185, 42);
+            this.numericBoxTauRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxTauRange.Maximum = 10D;
+            this.numericBoxTauRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxTauRange.Minimum = 0D;
+            this.numericBoxTauRange.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxTauRange.Name = "numericBoxTauRange";
+            this.numericBoxTauRange.RadianValue = 0.017453292519943295D;
+            this.numericBoxTauRange.ShowUpDown = true;
+            this.numericBoxTauRange.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxTauRange.TabIndex = 15;
+            this.numericBoxTauRange.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxTauRange.Value = 1D;
             // 
-            // label19
+            // numericBoxDistanceRange
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(50, 0);
-            this.label19.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label19.Name = "label19";
-            this.label19.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label19.Size = new System.Drawing.Size(34, 18);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "steps";
+            this.numericBoxDistanceRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxDistanceRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxDistanceRange.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxDistanceRange.FooterText = "steps";
+            this.numericBoxDistanceRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxDistanceRange.HeaderText = "±";
+            this.numericBoxDistanceRange.Location = new System.Drawing.Point(185, 15);
+            this.numericBoxDistanceRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxDistanceRange.Maximum = 10D;
+            this.numericBoxDistanceRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxDistanceRange.Minimum = 0D;
+            this.numericBoxDistanceRange.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxDistanceRange.Name = "numericBoxDistanceRange";
+            this.numericBoxDistanceRange.RadianValue = 0.017453292519943295D;
+            this.numericBoxDistanceRange.ShowUpDown = true;
+            this.numericBoxDistanceRange.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxDistanceRange.TabIndex = 15;
+            this.numericBoxDistanceRange.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxDistanceRange.Value = 1D;
             // 
-            // flowLayoutPanel12
+            // numericBoxDistanceStep
             // 
-            this.flowLayoutPanel12.AutoSize = true;
-            this.flowLayoutPanel12.Controls.Add(this.label37);
-            this.flowLayoutPanel12.Controls.Add(this.numericUpDownPhiRange);
-            this.flowLayoutPanel12.Controls.Add(this.label38);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(183, 65);
-            this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(87, 23);
-            this.flowLayoutPanel12.TabIndex = 10;
+            this.numericBoxDistanceStep.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxDistanceStep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxDistanceStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxDistanceStep.FooterText = "mm";
+            this.numericBoxDistanceStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxDistanceStep.Location = new System.Drawing.Point(95, 15);
+            this.numericBoxDistanceStep.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxDistanceStep.Maximum = 1D;
+            this.numericBoxDistanceStep.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxDistanceStep.Minimum = 0D;
+            this.numericBoxDistanceStep.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxDistanceStep.Name = "numericBoxDistanceStep";
+            this.numericBoxDistanceStep.RadianValue = 0.0008726646259971648D;
+            this.numericBoxDistanceStep.ShowUpDown = true;
+            this.numericBoxDistanceStep.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxDistanceStep.SmartIncrement = true;
+            this.numericBoxDistanceStep.TabIndex = 15;
+            this.numericBoxDistanceStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxDistanceStep.Value = 0.05D;
             // 
-            // label37
+            // numericBoxTauStep
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(3, 0);
-            this.label37.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label37.Name = "label37";
-            this.label37.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label37.Size = new System.Drawing.Size(15, 18);
-            this.label37.TabIndex = 6;
-            this.label37.Text = "±";
+            this.numericBoxTauStep.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxTauStep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxTauStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxTauStep.FooterText = "°";
+            this.numericBoxTauStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxTauStep.Location = new System.Drawing.Point(95, 42);
+            this.numericBoxTauStep.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxTauStep.Maximum = 5D;
+            this.numericBoxTauStep.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxTauStep.Minimum = 0D;
+            this.numericBoxTauStep.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxTauStep.Name = "numericBoxTauStep";
+            this.numericBoxTauStep.RadianValue = 0.00017453292519943296D;
+            this.numericBoxTauStep.ShowUpDown = true;
+            this.numericBoxTauStep.Size = new System.Drawing.Size(79, 25);
+            this.numericBoxTauStep.SmartIncrement = true;
+            this.numericBoxTauStep.TabIndex = 15;
+            this.numericBoxTauStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxTauStep.Value = 0.01D;
             // 
-            // numericUpDownPhiRange
+            // numericBoxPhiStep
             // 
-            this.numericUpDownPhiRange.Location = new System.Drawing.Point(18, 0);
-            this.numericUpDownPhiRange.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDownPhiRange.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownPhiRange.Name = "numericUpDownPhiRange";
-            this.numericUpDownPhiRange.Size = new System.Drawing.Size(32, 23);
-            this.numericUpDownPhiRange.TabIndex = 5;
-            this.numericUpDownPhiRange.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.numericBoxPhiStep.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxPhiStep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxPhiStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxPhiStep.FooterText = "°";
+            this.numericBoxPhiStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxPhiStep.Location = new System.Drawing.Point(95, 69);
+            this.numericBoxPhiStep.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxPhiStep.Maximum = 20D;
+            this.numericBoxPhiStep.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxPhiStep.Minimum = 0D;
+            this.numericBoxPhiStep.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxPhiStep.Name = "numericBoxPhiStep";
+            this.numericBoxPhiStep.RadianValue = 0.00017453292519943296D;
+            this.numericBoxPhiStep.ShowUpDown = true;
+            this.numericBoxPhiStep.Size = new System.Drawing.Size(78, 25);
+            this.numericBoxPhiStep.SmartIncrement = true;
+            this.numericBoxPhiStep.TabIndex = 15;
+            this.numericBoxPhiStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxPhiStep.Value = 0.01D;
             // 
-            // label38
+            // checkBoxWaveLength
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(50, 0);
-            this.label38.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label38.Name = "label38";
-            this.label38.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label38.Size = new System.Drawing.Size(34, 18);
-            this.label38.TabIndex = 6;
-            this.label38.Text = "steps";
+            this.checkBoxWaveLength.AutoSize = true;
+            this.checkBoxWaveLength.Location = new System.Drawing.Point(0, 153);
+            this.checkBoxWaveLength.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.checkBoxWaveLength.Name = "checkBoxWaveLength";
+            this.checkBoxWaveLength.Size = new System.Drawing.Size(95, 19);
+            this.checkBoxWaveLength.TabIndex = 7;
+            this.checkBoxWaveLength.Text = "Wave Length";
+            this.checkBoxWaveLength.UseVisualStyleBackColor = true;
+            this.checkBoxWaveLength.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
+            // 
+            // numericBoxWaveLengthStep
+            // 
+            this.numericBoxWaveLengthStep.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxWaveLengthStep.DecimalPlaces = 6;
+            this.numericBoxWaveLengthStep.Enabled = false;
+            this.numericBoxWaveLengthStep.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxWaveLengthStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxWaveLengthStep.FooterText = "Å";
+            this.numericBoxWaveLengthStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxWaveLengthStep.Location = new System.Drawing.Point(95, 150);
+            this.numericBoxWaveLengthStep.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxWaveLengthStep.Maximum = 1D;
+            this.numericBoxWaveLengthStep.MaximumSize = new System.Drawing.Size(1000, 23);
+            this.numericBoxWaveLengthStep.Minimum = 0D;
+            this.numericBoxWaveLengthStep.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxWaveLengthStep.Name = "numericBoxWaveLengthStep";
+            this.numericBoxWaveLengthStep.RadianValue = 8.7266462599716491E-07D;
+            this.numericBoxWaveLengthStep.ShowUpDown = true;
+            this.numericBoxWaveLengthStep.Size = new System.Drawing.Size(90, 23);
+            this.numericBoxWaveLengthStep.SmartIncrement = true;
+            this.numericBoxWaveLengthStep.TabIndex = 15;
+            this.numericBoxWaveLengthStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxWaveLengthStep.Value = 5E-05D;
+            // 
+            // numericBoxWaveLengthRange
+            // 
+            this.numericBoxWaveLengthRange.BackColor = System.Drawing.Color.Transparent;
+            this.numericBoxWaveLengthRange.Enabled = false;
+            this.numericBoxWaveLengthRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBoxWaveLengthRange.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxWaveLengthRange.FooterText = "steps";
+            this.numericBoxWaveLengthRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxWaveLengthRange.HeaderText = "±";
+            this.numericBoxWaveLengthRange.Location = new System.Drawing.Point(185, 150);
+            this.numericBoxWaveLengthRange.Margin = new System.Windows.Forms.Padding(0);
+            this.numericBoxWaveLengthRange.Maximum = 10D;
+            this.numericBoxWaveLengthRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxWaveLengthRange.Minimum = 0D;
+            this.numericBoxWaveLengthRange.MinimumSize = new System.Drawing.Size(1, 23);
+            this.numericBoxWaveLengthRange.Name = "numericBoxWaveLengthRange";
+            this.numericBoxWaveLengthRange.RadianValue = 0.034906585039886591D;
+            this.numericBoxWaveLengthRange.ShowUpDown = true;
+            this.numericBoxWaveLengthRange.Size = new System.Drawing.Size(88, 25);
+            this.numericBoxWaveLengthRange.TabIndex = 15;
+            this.numericBoxWaveLengthRange.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.numericBoxWaveLengthRange.Value = 2D;
+            this.numericBoxWaveLengthRange.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxFootPointYRange_ValueChanged);
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
-            this.textBox1.Location = new System.Drawing.Point(816, 21);
+            this.textBox1.Location = new System.Drawing.Point(812, 21);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(325, 293);
+            this.textBox1.Size = new System.Drawing.Size(325, 375);
             this.textBox1.TabIndex = 9;
             // 
             // groupBox2
@@ -1512,7 +1285,7 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(792, 383);
+            this.tabControl1.Location = new System.Drawing.Point(788, 465);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(361, 271);
@@ -1654,7 +1427,7 @@
             this.graphControl1.MousePositionVisible = true;
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControl1.Size = new System.Drawing.Size(810, 316);
+            this.graphControl1.Size = new System.Drawing.Size(806, 398);
             this.graphControl1.Smoothing = false;
             this.graphControl1.TabIndex = 10;
             this.graphControl1.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1681,11 +1454,11 @@
             this.crystalControl1.CellConstants = ((System.ValueTuple<double, double, double, double, double, double>)(resources.GetObject("crystalControl1.CellConstants")));
             this.crystalControl1.Crystal = ((Crystallography.Crystal)(resources.GetObject("crystalControl1.Crystal")));
             this.crystalControl1.DefaultTabNumber = 0;
-            this.crystalControl1.Location = new System.Drawing.Point(0, 349);
+            this.crystalControl1.Location = new System.Drawing.Point(0, 431);
             this.crystalControl1.Margin = new System.Windows.Forms.Padding(0);
             this.crystalControl1.Name = "crystalControl1";
             this.crystalControl1.ScatteringFactorVisible = false;
-            this.crystalControl1.Size = new System.Drawing.Size(789, 306);
+            this.crystalControl1.Size = new System.Drawing.Size(785, 306);
             this.crystalControl1.SkipEvent = false;
             this.crystalControl1.SymmetryInformationVisible = false;
             this.crystalControl1.SymmetrySeriesNumber = 0;
@@ -1707,7 +1480,7 @@
             this.numericBoxFittingRange.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxFittingRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
             this.numericBoxFittingRange.HeaderText = "Fitting Range";
-            this.numericBoxFittingRange.Location = new System.Drawing.Point(1005, 349);
+            this.numericBoxFittingRange.Location = new System.Drawing.Point(1005, 456);
             this.numericBoxFittingRange.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxFittingRange.MaximumSize = new System.Drawing.Size(1000, 25);
             this.numericBoxFittingRange.MinimumSize = new System.Drawing.Size(1, 25);
@@ -1722,7 +1495,7 @@
             this.numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxWeight.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
             this.numericBoxWeight.HeaderText = "Height : Dspacing";
-            this.numericBoxWeight.Location = new System.Drawing.Point(987, 318);
+            this.numericBoxWeight.Location = new System.Drawing.Point(987, 425);
             this.numericBoxWeight.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxWeight.MaximumSize = new System.Drawing.Size(1000, 25);
             this.numericBoxWeight.MinimumSize = new System.Drawing.Size(1, 25);
@@ -1735,9 +1508,10 @@
             // 
             // radioButtonStandardAu
             // 
+            this.radioButtonStandardAu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardAu.AutoSize = true;
             this.radioButtonStandardAu.Checked = true;
-            this.radioButtonStandardAu.Location = new System.Drawing.Point(12, 318);
+            this.radioButtonStandardAu.Location = new System.Drawing.Point(4, 402);
             this.radioButtonStandardAu.Name = "radioButtonStandardAu";
             this.radioButtonStandardAu.Size = new System.Drawing.Size(40, 19);
             this.radioButtonStandardAu.TabIndex = 14;
@@ -1748,8 +1522,9 @@
             // 
             // radioButtonStandardCeO2
             // 
+            this.radioButtonStandardCeO2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardCeO2.AutoSize = true;
-            this.radioButtonStandardCeO2.Location = new System.Drawing.Point(67, 318);
+            this.radioButtonStandardCeO2.Location = new System.Drawing.Point(59, 402);
             this.radioButtonStandardCeO2.Name = "radioButtonStandardCeO2";
             this.radioButtonStandardCeO2.Size = new System.Drawing.Size(54, 19);
             this.radioButtonStandardCeO2.TabIndex = 14;
@@ -1759,8 +1534,9 @@
             // 
             // radioButtonStandardLaB6
             // 
+            this.radioButtonStandardLaB6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardLaB6.AutoSize = true;
-            this.radioButtonStandardLaB6.Location = new System.Drawing.Point(130, 318);
+            this.radioButtonStandardLaB6.Location = new System.Drawing.Point(122, 402);
             this.radioButtonStandardLaB6.Name = "radioButtonStandardLaB6";
             this.radioButtonStandardLaB6.Size = new System.Drawing.Size(50, 19);
             this.radioButtonStandardLaB6.TabIndex = 14;
@@ -1770,8 +1546,9 @@
             // 
             // radioButtonStandardAl2O3
             // 
+            this.radioButtonStandardAl2O3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardAl2O3.AutoSize = true;
-            this.radioButtonStandardAl2O3.Location = new System.Drawing.Point(189, 318);
+            this.radioButtonStandardAl2O3.Location = new System.Drawing.Point(181, 402);
             this.radioButtonStandardAl2O3.Name = "radioButtonStandardAl2O3";
             this.radioButtonStandardAl2O3.Size = new System.Drawing.Size(57, 19);
             this.radioButtonStandardAl2O3.TabIndex = 14;
@@ -1781,8 +1558,9 @@
             // 
             // radioButtonStandardOther
             // 
+            this.radioButtonStandardOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardOther.AutoSize = true;
-            this.radioButtonStandardOther.Location = new System.Drawing.Point(253, 318);
+            this.radioButtonStandardOther.Location = new System.Drawing.Point(245, 402);
             this.radioButtonStandardOther.Name = "radioButtonStandardOther";
             this.radioButtonStandardOther.Size = new System.Drawing.Size(55, 19);
             this.radioButtonStandardOther.TabIndex = 14;
@@ -1796,14 +1574,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1153, 679);
+            this.ClientSize = new System.Drawing.Size(1149, 761);
+            this.Controls.Add(this.numericBoxWeight);
+            this.Controls.Add(this.numericBoxFittingRange);
             this.Controls.Add(this.radioButtonStandardOther);
             this.Controls.Add(this.radioButtonStandardAl2O3);
             this.Controls.Add(this.radioButtonStandardLaB6);
             this.Controls.Add(this.radioButtonStandardCeO2);
             this.Controls.Add(this.radioButtonStandardAu);
-            this.Controls.Add(this.numericBoxWeight);
-            this.Controls.Add(this.numericBoxFittingRange);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.graphControl1);
             this.Controls.Add(this.textBox1);
@@ -1819,40 +1597,10 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIteration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistanceStep)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanelDistanceStep.ResumeLayout(false);
-            this.flowLayoutPanelDistanceStep.PerformLayout();
-            this.flowLayoutPanelTwoThetaStep.ResumeLayout(false);
-            this.flowLayoutPanelTwoThetaStep.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTauStep)).EndInit();
-            this.flowLayoutPanelDistanceRange.ResumeLayout(false);
-            this.flowLayoutPanelDistanceRange.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistanceRange)).EndInit();
-            this.flowLayoutPanelTwoThetaRange.ResumeLayout(false);
-            this.flowLayoutPanelTwoThetaRange.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTauRange)).EndInit();
-            this.flowLayoutPanelFootPointYStep.ResumeLayout(false);
-            this.flowLayoutPanelFootPointYStep.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointYStep)).EndInit();
-            this.flowLayoutPanelFootPointYRange.ResumeLayout(false);
-            this.flowLayoutPanelFootPointYRange.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointYRange)).EndInit();
-            this.flowLayoutPanelFootPointXStep.ResumeLayout(false);
-            this.flowLayoutPanelFootPointXStep.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointXStep)).EndInit();
-            this.flowLayoutPanel11.ResumeLayout(false);
-            this.flowLayoutPanel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPhiStep)).EndInit();
-            this.flowLayoutPanelFootPointXRange.ResumeLayout(false);
-            this.flowLayoutPanelFootPointXRange.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFootPointXRange)).EndInit();
-            this.flowLayoutPanel12.ResumeLayout(false);
-            this.flowLayoutPanel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPhiRange)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1913,38 +1661,10 @@
         private System.Windows.Forms.CheckBox checkBoxTwoTheta;
         private System.Windows.Forms.CheckBox checkBoxFootX;
         private System.Windows.Forms.CheckBox checkBoxFootY;
-        private System.Windows.Forms.NumericUpDown numericUpDownDistanceStep;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDistanceStep;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTwoThetaStep;
-        private System.Windows.Forms.NumericUpDown numericUpDownTauStep;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFootPointXStep;
-        private System.Windows.Forms.NumericUpDown numericUpDownFootPointXStep;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFootPointYStep;
-        private System.Windows.Forms.NumericUpDown numericUpDownFootPointYStep;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDistanceRange;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericUpDownDistanceRange;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTwoThetaRange;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown numericUpDownTauRange;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFootPointXRange;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numericUpDownFootPointXRange;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFootPointYRange;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.NumericUpDown numericUpDownFootPointYRange;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolTip toolTip1;
         private Crystallography.Controls.GraphControl graphControl1;
@@ -2001,13 +1721,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownIterationGandolfi;
         private System.Windows.Forms.NumericUpDown numericUpDownFittingRangeForGandolfi;
         private System.Windows.Forms.CheckBox checkBoxPhi;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
-        private System.Windows.Forms.NumericUpDown numericUpDownPhiStep;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.NumericUpDown numericUpDownPhiRange;
-        private System.Windows.Forms.Label label38;
         private Crystallography.Controls.NumericBox numericBoxFittingRange;
         private Crystallography.Controls.NumericBox numericBoxWeight;
         private System.Windows.Forms.RadioButton radioButtonStandardAu;
@@ -2015,5 +1728,18 @@
         private System.Windows.Forms.RadioButton radioButtonStandardLaB6;
         private System.Windows.Forms.RadioButton radioButtonStandardAl2O3;
         private System.Windows.Forms.RadioButton radioButtonStandardOther;
+        private Crystallography.Controls.NumericBox numericBoxFootPointXStep;
+        private Crystallography.Controls.NumericBox numericBoxFootPointYStep;
+        private Crystallography.Controls.NumericBox numericBoxFootPointYRange;
+        private Crystallography.Controls.NumericBox numericBoxFootPointXRange;
+        private Crystallography.Controls.NumericBox numericBoxPhiRange;
+        private Crystallography.Controls.NumericBox numericBoxTauRange;
+        private Crystallography.Controls.NumericBox numericBoxDistanceRange;
+        private Crystallography.Controls.NumericBox numericBoxDistanceStep;
+        private Crystallography.Controls.NumericBox numericBoxTauStep;
+        private Crystallography.Controls.NumericBox numericBoxPhiStep;
+        private System.Windows.Forms.CheckBox checkBoxWaveLength;
+        private Crystallography.Controls.NumericBox numericBoxWaveLengthStep;
+        private Crystallography.Controls.NumericBox numericBoxWaveLengthRange;
     }
 }
