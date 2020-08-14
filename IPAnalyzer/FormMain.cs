@@ -29,7 +29,9 @@ namespace IPAnalyzer
     /// </summary>
     public partial class FormMain : System.Windows.Forms.Form
     {
-        public bool IsFlatPanelMode { get { return FormProperty.radioButtonFlatPanel.Checked; } }
+        #region プロパティ、フィールド
+
+        public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
         public PseudoBitmap pseudoBitmap = new PseudoBitmap();
         public bool IsDrawing = true;
@@ -79,23 +81,10 @@ namespace IPAnalyzer
         public int CurrentRotation = 0;
 
         //private string fileName = "";
-        public string FileName
-        {
-            set;get;
-        }
-        private string fileNameSub = "";
-        public string FileNameSub
-        {
-            set { fileNameSub = value; }
-            get { return fileNameSub; }
-        }
+        public string FileName        {            set; get;        }
+        public string FileNameSub { set; get; } = "";
 
-        private string filePath = "";
-        public string FilePath
-        {
-            set { filePath = value; }
-            get { return filePath; }
-        }
+        public string FilePath { set; get; } = "";
 
         public bool SequentialImageMode
         {
@@ -118,7 +107,7 @@ namespace IPAnalyzer
         public Point TableCenterPt;
         public IntegralProperty IP;
 
-        public PointD selectedSpot = new PointD(double.NaN,double.NaN);
+        public PointD selectedSpot = new PointD(double.NaN, double.NaN);
 
         private IProgress<(long, long, long, string)> ip;//IReport
 
@@ -126,76 +115,8 @@ namespace IPAnalyzer
         //        + "|*.img;*.stl;*.ccd;*.ipf;*.ipa;*.0???;*.gel;*.osc;*.mar*;*.mccd; *.his; *.h5; *.raw; *.bmp;*.jpg;*.tif";
 
 
-        private IntPtr NextHandle;
-        private const int WM_DRAWCLIPBOARD = 0x0308;
+        #endregion
 
-        private const int WM_CHANGECBCHAIN = 0x030D;
-        [DllImport("user32")]
-        public static extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
-        [DllImport("user32")]
-        public static extern bool ChangeClipboardChain(IntPtr hWndRemove, IntPtr hWndNewNext);
-        [DllImport("user32", CharSet = CharSet.Auto)]
-        public extern static int SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-        //クリップボード監視スレッド
-        protected override void WndProc(ref Message msg)
-        {
-            switch (msg.Msg)
-            {
-                case WM_DRAWCLIPBOARD:
-                    using (Mutex clipboard = new Mutex(false, "ClipboardOperation"))
-                    {
-                        if (clipboard.WaitOne(10000, false))
-                        {
-                            if (((IDataObject)Clipboard.GetDataObject()).GetDataPresent(typeof(ImageIO.IPAImage)))
-                            {
-                                /*
-                                try
-                                {
-                                    IDataObject data = Clipboard.GetDataObject();
-                                    ImageIO.IPAImage ipa = (ImageIO.IPAImage)data.GetData(typeof(ImageIO.IPAImage));
-
-                                    ImageIO.IPAImageReader(ipa);
-
-                                    FormProperty.waveLengthControl.Property = ipa.WaveProperty;
-                                    FormProperty.CameraLength = ipa.CameraLength;
-                                    FormProperty.numericalTextBoxPixelSizeX.Value = FormProperty.numericalTextBoxPixelSizeY.Value = ipa.Resolution;
-                                    FormProperty.ImageCenter = ipa.Center;
-                                    FormProperty.numericalTextBoxTiltCorrectionPhi.Value = FormProperty.numericalTextBoxTiltCorrectionTau.Value = FormProperty.numericalTextBoxPixelKsi.Value = 0;
-
-                                    ReadImage("ClipBoard.ipa");
-                                }
-                                catch
-                                {
-                                }
-                                 */
-                            }
-                            else if (((IDataObject)Clipboard.GetDataObject()).GetDataPresent(typeof(Crystal2)))
-                            {
-                                if (FormFindParameter != null && FormFindParameter.Visible && FormFindParameter.formCrystal.Visible)
-                                {
-                                    IDataObject data = Clipboard.GetDataObject();
-                                    var c2 = (Crystal2)data.GetData(typeof(Crystal2));
-                                    FormFindParameter.formCrystal.CrystalChanged(Crystal2.GetCrystal(c2));
-                                }
-                            }
-                            clipboard.ReleaseMutex();
-                            if ((int)NextHandle != 0)
-                                SendMessage(NextHandle, msg.Msg, msg.WParam, msg.LParam);
-                            
-                        }
-                        clipboard.Close();
-                    }
-                    break;
-                case WM_CHANGECBCHAIN:
-                    if (msg.WParam == NextHandle)
-                        NextHandle = (IntPtr)msg.LParam;
-                    else if ((int)NextHandle != 0)
-                        SendMessage(NextHandle, msg.Msg, msg.WParam, msg.LParam);
-                    break;
-            }
-            base.WndProc(ref msg);
-
-        }
 
         public FormMain()
         {
@@ -913,7 +834,7 @@ namespace IPAnalyzer
                 else if (fileName.EndsWith("prm"))
                     ReadParameter(fileName);
                 else if (fileName.EndsWith("mas"))
-                    readMaskFile(fileName);
+                    ReadMask(fileName);
             }
 
             InitialDialog.Text = "Now Loading...Checking Click Once.";
@@ -923,7 +844,6 @@ namespace IPAnalyzer
                 this.Text += "   Caution! ClickOnce vesion will be not maintained in the future.";
             }
 
-            NextHandle = SetClipboardViewer(this.Handle);
             Clipboard.SetDataObject("IPAnalyzer");
 
             SetText();
@@ -946,7 +866,6 @@ namespace IPAnalyzer
         {
             FormProperty.SaveParameterForEachImageType(Ring.ImageType);
             SaveRegistry();
-            ChangeClipboardChain(this.Handle, NextHandle);
             graphControlProfile.AddProfile(new Profile());
         }
 
@@ -1816,7 +1735,7 @@ namespace IPAnalyzer
                 else if (fileName[0].EndsWith("prm"))
                     ReadParameter(fileName[0], (e.KeyState & 8) != 8);//8はCTRLキーを表す
                 else if (fileName[0].EndsWith("mas"))
-                    readMaskFile(fileName[0]);
+                    ReadMask(fileName[0]);
                 else if (Directory.Exists(fileName[0]))
                 {
                     var files = Directory.GetFiles(fileName[0]);
@@ -2075,6 +1994,8 @@ namespace IPAnalyzer
 
         private void saveImageAsTiff(string filename = "")
         {
+
+
             if (SrcImgSize.Width == 0) return;
 
             if (filename == "")
@@ -2938,8 +2859,7 @@ namespace IPAnalyzer
 
         private void toolStripMenuItemReadParameter_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "*.prm[Parameter File]|*.prm";
+            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
             if (initialParameterDirectory != "")
                 dialog.InitialDirectory = initialParameterDirectory;
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -2951,8 +2871,7 @@ namespace IPAnalyzer
 
         private void toolStripMenuItemSaveParameter_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "*.prm[Parameter File]|*.prm";
+            var dialog = new SaveFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 SaveParameter(dialog.FileName, ((ToolStripMenuItem)sender).Name.Contains("Fully"));
@@ -2964,6 +2883,18 @@ namespace IPAnalyzer
         public string initialParameterDirectory;
         public void SaveParameter(string filename, bool fullySave = true)
         {
+            if (filename == "")
+            {
+                var dlg = new OpenFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    filename = dlg.FileName;
+                else
+                    return;
+            }
+            if (!filename.EndsWith("prm"))
+                filename += ".prm";
+
+
             fullySave = false;
             try
             {
@@ -3060,6 +2991,16 @@ namespace IPAnalyzer
 
         public void ReadParameter(string filename, bool fullyRead = true)
         {
+            if (filename == "")
+            {
+                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    filename = dlg.FileName;
+                else
+                    return;
+            }
+
+
             fullyRead = false;
             //イベントをスキップ
             skipSelectedAreaChangedEvent = true;
@@ -3419,23 +3360,31 @@ namespace IPAnalyzer
         public string initialMaskDirectory;
         private void toolStripMenuItemReadMask_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Mask file; *.mas|*.mas";
+            var dlg = new OpenFileDialog() { Filter = "Mask file; *.mas|*.mas" };
             if (initialMaskDirectory != "")
                 dlg.InitialDirectory = initialMaskDirectory;
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                readMaskFile(dlg.FileName);
+                ReadMask(dlg.FileName);
                 initialMaskDirectory = Path.GetDirectoryName(dlg.FileName);
             }
         }
 
-        private void readMaskFile(string filename)
+        public void ReadMask(string filename)
         {
+            if (filename == "")
+            {
+                var dlg = new SaveFileDialog { Filter = "*.mas|*.mas" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    filename = dlg.FileName;
+                else
+                    return;
+            }
+
             try
             {
-                BinaryReader br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.ReadWrite));
-                bool[] mask = new bool[br.ReadInt32()];
+                var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.ReadWrite));
+                var mask = new bool[br.ReadInt32()];
                 int n = 0;
                 for (int i = 0; i < mask.Length / 8; i++)
                 {
@@ -3451,7 +3400,6 @@ namespace IPAnalyzer
                 {
                     for (int i = 0; i < mask.Length; i++)
                         Ring.IsSpots[i] = mask[i];
-
 
                     SetMask();
                     Draw();
@@ -3471,7 +3419,18 @@ namespace IPAnalyzer
 
         public void SaveMask(string fileName)
         {
-            BinaryWriter br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite));
+            if (fileName == "")
+            {
+                var dlg = new OpenFileDialog { Filter = "*.mas|*.mas" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    fileName = dlg.FileName;
+                else
+                    return;
+                if (!fileName.EndsWith("mas"))
+                    fileName += ".mas";
+            }
+
+            var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite));
             br.Write(Ring.IsSpots.Count);
             int n = 0;
             for (int i = 0; i < Ring.IsSpots.Count / 8; i++)
@@ -3622,13 +3581,8 @@ namespace IPAnalyzer
         }
 
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Close();
 
-
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         /// <summary>
         /// UnrolledImageの作成
         /// </summary>
@@ -3645,12 +3599,12 @@ namespace IPAnalyzer
 
                 if (MessageBox.Show("Check parameters!　This process will take few minutes if the resolution of the unrolled image is high. ", "", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    double sectorStep = Math.PI * (double)FormProperty.numericUpDownUnrollSectorStep.Value / 180.0;
-                    double xStart = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstart.Value / 180.0;
-                    double xEnd = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXend.Value / 180.0;
-                    double xStep = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstep.Value / 180.0;
+                    var sectorStep = Math.PI * (double)FormProperty.numericUpDownUnrollSectorStep.Value / 180.0;
+                    var xStart = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstart.Value / 180.0;
+                    var xEnd = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXend.Value / 180.0;
+                    var xStep = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstep.Value / 180.0;
 
-                    System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+                    var sw = new Stopwatch();
                     sw.Start();
 
                     double[] imageArray = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
@@ -4123,83 +4077,80 @@ namespace IPAnalyzer
         #endregion
 
         #region 偏光補正
-/*
-        public void correctPolarization(bool correct)
-        {
-
-            if (Ring.Intensity.Count != 0)
-            {
-                if (correct)
+        /*
+                public void correctPolarization(bool correct)
                 {
-                    sw.Restart();
-                    double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
-                    double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi), sinPhi2 = SinPhi * SinPhi, cosPhi2 = CosPhi * CosPhi, cosPhiSinPhi = CosPhi * SinPhi;
-                    double tanKsi = Math.Tan(IP.ksi);
-                    double sinPhiSinTau = SinPhi * SinTau, cosPhiSinTau = CosPhi * SinTau;
-                    double temp1 = (cosPhiSinPhi - CosPhi * CosTau * SinPhi);
-                    double temp2 = (cosPhi2 + CosTau * sinPhi2);
-                    double temp3 = (cosPhi2 * CosTau + sinPhi2);
-                    double fd = IP.FilmDistance, fd2 = fd * fd;
-                    double sizeX = IP.PixSizeX, sizeY = IP.PixSizeY;
-                    double centX = IP.CenterX, centY = IP.CenterY;
-                    Func<double, double, double> coeff;
-                    if (FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked)
-                        coeff = new Func<double, double, double>((x2, y2) => (1 - x2 / (x2 + y2 + fd2)));
-                    else
-                        coeff = new Func<double, double, double>((x2, y2) => (1 - y2 / (x2 + y2 + fd2)));
 
-                    //Parallel.Forを使わないほうが早い
-                    int i = 0;
-                    for (int pixY = 0; pixY < Ring.SrcImgSize.Height; pixY++)
+                    if (Ring.Intensity.Count != 0)
                     {
-                        double tempY = (pixY - centY) * sizeY;
-                        double temp4 = tempY * cosPhiSinTau + fd;
-                        double temp5 = tempY * temp1;
-                        double temp6 = tempY * temp3;
-                        double temp7 = tempY * tanKsi;
-
-                        for (int pixX = 0; pixX < Ring.SrcImgSize.Width; pixX++)
+                        if (correct)
                         {
-                            double tempX = (pixX - centX) * sizeX + temp7;
-                            //double x = (tempY * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + tempX * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
-                            //    * IP.FilmDistance / (tempY * CosPhi * SinTau + IP.FilmDistance - tempX * SinPhi * SinTau);
-                            //double y = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + tempY * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
-                            //    * IP.FilmDistance / (tempY * CosPhi * SinTau + IP.FilmDistance - tempX * SinPhi * SinTau);
-                            double temp8 = fd / (temp4 - tempX * sinPhiSinTau);
-                            double x = (temp5 + tempX * temp2) * temp8;
-                            double y = (tempX * temp1 + temp6) * temp8;
-                            //double chi = convChi(Math.Atan2(y, x));
-                            //double twoTheta = Math.Atan2(Math.Sqrt(x * x + y * y), fd);
-                            //Ring.Intensity[i] = Ring.IntensityOriginal[i] / (1 - Math.Cos(chi) * Math.Cos(chi) * Math.Sin(twoTheta) * Math.Sin(twoTheta));
-                            double x2 = x * x, y2 = y * y;
-                            Ring.Intensity[i] = Ring.IntensityOriginal[i] / coeff(x2, y2);
-                            i++;
+                            sw.Restart();
+                            double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
+                            double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi), sinPhi2 = SinPhi * SinPhi, cosPhi2 = CosPhi * CosPhi, cosPhiSinPhi = CosPhi * SinPhi;
+                            double tanKsi = Math.Tan(IP.ksi);
+                            double sinPhiSinTau = SinPhi * SinTau, cosPhiSinTau = CosPhi * SinTau;
+                            double temp1 = (cosPhiSinPhi - CosPhi * CosTau * SinPhi);
+                            double temp2 = (cosPhi2 + CosTau * sinPhi2);
+                            double temp3 = (cosPhi2 * CosTau + sinPhi2);
+                            double fd = IP.FilmDistance, fd2 = fd * fd;
+                            double sizeX = IP.PixSizeX, sizeY = IP.PixSizeY;
+                            double centX = IP.CenterX, centY = IP.CenterY;
+                            Func<double, double, double> coeff;
+                            if (FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked)
+                                coeff = new Func<double, double, double>((x2, y2) => (1 - x2 / (x2 + y2 + fd2)));
+                            else
+                                coeff = new Func<double, double, double>((x2, y2) => (1 - y2 / (x2 + y2 + fd2)));
+
+                            //Parallel.Forを使わないほうが早い
+                            int i = 0;
+                            for (int pixY = 0; pixY < Ring.SrcImgSize.Height; pixY++)
+                            {
+                                double tempY = (pixY - centY) * sizeY;
+                                double temp4 = tempY * cosPhiSinTau + fd;
+                                double temp5 = tempY * temp1;
+                                double temp6 = tempY * temp3;
+                                double temp7 = tempY * tanKsi;
+
+                                for (int pixX = 0; pixX < Ring.SrcImgSize.Width; pixX++)
+                                {
+                                    double tempX = (pixX - centX) * sizeX + temp7;
+                                    //double x = (tempY * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + tempX * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
+                                    //    * IP.FilmDistance / (tempY * CosPhi * SinTau + IP.FilmDistance - tempX * SinPhi * SinTau);
+                                    //double y = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + tempY * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
+                                    //    * IP.FilmDistance / (tempY * CosPhi * SinTau + IP.FilmDistance - tempX * SinPhi * SinTau);
+                                    double temp8 = fd / (temp4 - tempX * sinPhiSinTau);
+                                    double x = (temp5 + tempX * temp2) * temp8;
+                                    double y = (tempX * temp1 + temp6) * temp8;
+                                    //double chi = convChi(Math.Atan2(y, x));
+                                    //double twoTheta = Math.Atan2(Math.Sqrt(x * x + y * y), fd);
+                                    //Ring.Intensity[i] = Ring.IntensityOriginal[i] / (1 - Math.Cos(chi) * Math.Cos(chi) * Math.Sin(twoTheta) * Math.Sin(twoTheta));
+                                    double x2 = x * x, y2 = y * y;
+                                    Ring.Intensity[i] = Ring.IntensityOriginal[i] / coeff(x2, y2);
+                                    i++;
+                                }
+                            }
+                            this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
                         }
+                        else
+                        {
+                            for (int i = 0; i < Ring.Intensity.Count; i++)
+                                Ring.Intensity[i] = Ring.IntensityOriginal[i];
+                        }
+                        pseudoBitmap.SrcValuesGray = Ring.Intensity.ToArray();
+                        scalablePictureBox.drawPictureBox();
+
+                        Ring.CalcFreq();
+                        SetFrequencyProfile();//強度頻度グラフを作成
                     }
-                    this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
-                }
-                else
-                {
-                    for (int i = 0; i < Ring.Intensity.Count; i++)
-                        Ring.Intensity[i] = Ring.IntensityOriginal[i];
-                }
-                pseudoBitmap.SrcValuesGray = Ring.Intensity.ToArray();
-                scalablePictureBox.drawPictureBox();
 
-                Ring.CalcFreq();
-                SetFrequencyProfile();//強度頻度グラフを作成
-            }
-
-        }
-        */
+                }
+                */
         #endregion
 
+        #region 画像の統計情報
 
-
-
-
-
-        public void SetStasticalInformation(bool renewArea=true)
+        public void SetStasticalInformation(bool renewArea = true)
         {
             //矩形の大きさ情報
             int left = Math.Max((int)(scalablePictureBox.AreaRectangle.X + 1), 0);
@@ -4219,7 +4170,7 @@ namespace IPAnalyzer
                 textBoxStatisticsSelectedArea.Text = textBoxStatisticsSelectedAreaSequential.Text = "";
                 return;
             }
-            
+
             sb.AppendLine("Area:\t" + data.Count.ToString() + " pixels");
 
             double sumValue = data.Sum();
@@ -4233,10 +4184,10 @@ namespace IPAnalyzer
 
             Point maxValuePoint = new Point(maxIndex % (right - left + 1) + left, maxIndex / (right - left + 1) + top);
             sb.AppendLine("Max.:\t" + maxValue.ToString("g9") + " @ (" + maxValuePoint.X + ", " + maxValuePoint.Y + ")");
-            
+
             double minValue = data.Min();
             int minIndex = data.FindIndex(d1 => d1 == minValue);
-            Point minValuePoint = new Point(minIndex % (right - left + 1)+left, minIndex / (right - left + 1)+top);
+            Point minValuePoint = new Point(minIndex % (right - left + 1) + left, minIndex / (right - left + 1) + top);
             sb.AppendLine("Min.:\t" + minValue.ToString("g9") + " @ (" + minValuePoint.X + ", " + minValuePoint.Y + ")");
 
             double variance = data.Average(d => d * d) - sumValue * sumValue / data.Count / data.Count;
@@ -4274,7 +4225,8 @@ namespace IPAnalyzer
                 textBoxStatisticsSelectedAreaSequential.Text = sb.ToString();
             }
         }
-        
+
+        #endregion
 
         bool skipSelectedAreaChangedEvent = false;
         private void numericUpDownSelectedArea_ValueChanged(object sender, EventArgs e)
@@ -4366,10 +4318,12 @@ namespace IPAnalyzer
                 
             }
 
-            public class PDIClass:MacroSub
+            #region PDIClass
+
+            public class PDIClass : MacroSub
             {
                 Macro p;
-                public PDIClass(Macro _p):base(_p.main)
+                public PDIClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.PDI.RunMacro() # Execute a macro code in PDIndexer.");
@@ -4400,12 +4354,15 @@ namespace IPAnalyzer
                     }
                     catch { }
                 }
-            }
+            } 
+            #endregion
 
-            public class ImageClass: MacroSub
+            #region ImageClass
+
+            public class ImageClass : MacroSub
             {
                 Macro p;
-                public ImageClass(Macro _p):base(_p.main)
+                public ImageClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.Image.NegativeGradient  # True/False. \r\n If true, an image is drawn with negative gradient. \r\n This parameter is a counterpart of 'IPA.Image.PositiveGradient'");
@@ -4420,112 +4377,103 @@ namespace IPAnalyzer
                     p.help.Add("IPA.Image.SetCanvasSize(int Width, int Height)  # Set canvas size (width and height) of picture box in pixel unit.");
                 }
 
-                public bool NegativeGradient { 
-                    set { Execute(new Action(() => p.main.comboBoxGradient.SelectedIndex = value ? 1 : 0)); }
-                    get { return Execute(new Func<bool>(() => p.main.comboBoxGradient.SelectedIndex == 1)); }
+                public bool NegativeGradient
+                {
+                    set => Execute(new Action(() => p.main.comboBoxGradient.SelectedIndex = value ? 1 : 0));
+                    get => Execute(() => p.main.comboBoxGradient.SelectedIndex == 1);
                 }
-                public bool PositiveGradient { set {
-                    Execute(new Action(()=> p.main.comboBoxGradient.SelectedIndex = value ? 0 : 1)); }
-                    get { return Execute(new Func<bool>(() => p.main.comboBoxGradient.SelectedIndex == 0)); }
+                public bool PositiveGradient
+                {
+                    set => Execute(new Action(() => p.main.comboBoxGradient.SelectedIndex = value ? 0 : 1));
+                    get => Execute(() => p.main.comboBoxGradient.SelectedIndex == 0);
                 }
 
                 public bool LinearScale
                 {
-                    set { Execute(new Action(() => p.main.comboBoxScale1.SelectedIndex = value ? 1 : 0)); }
-                    get { return Execute(new Func<bool>(() => p.main.comboBoxScale1.SelectedIndex == 1)); }
+                    set => Execute(new Action(() => p.main.comboBoxScale1.SelectedIndex = value ? 1 : 0));
+                    get => Execute(() => p.main.comboBoxScale1.SelectedIndex == 1);
                 }
                 public bool LogScale
                 {
-                    set { Execute(new Action(() => p.main.comboBoxScale1.SelectedIndex = value ? 0 : 1)); }
-                    get { return Execute(new Func<bool>(() => p.main.comboBoxScale1.SelectedIndex == 0)); }
+                    set => Execute(new Action(() => p.main.comboBoxScale1.SelectedIndex = value ? 0 : 1));
+                    get => Execute(() => p.main.comboBoxScale1.SelectedIndex == 0);
                 }
 
                 public bool GrayScale
                 {
-                    set { Execute(new Action(() => p.main.comboBoxScale2.SelectedIndex = value ? 1 : 0)); }
-                    get { return Execute(new Func<bool>(() => p.main.comboBoxScale2.SelectedIndex == 1)); }
+                    set => Execute(new Action(() => p.main.comboBoxScale2.SelectedIndex = value ? 1 : 0));
+                    get => Execute(() => p.main.comboBoxScale2.SelectedIndex == 1);
                 }
                 public bool ColorScale
                 {
-                    set { Execute(new Action(() => p.main.comboBoxScale2.SelectedIndex = value ? 0 : 1)); }
-                    get { return Execute(new Func<bool>(() => p.main.comboBoxScale2.SelectedIndex == 0)); }
+                    set => Execute(new Action(() => p.main.comboBoxScale2.SelectedIndex = value ? 0 : 1));
+                    get => Execute(() => p.main.comboBoxScale2.SelectedIndex == 0);
                 }
 
                 public double Maximum
                 {
-                    set
-                    {
-                        Execute(new Action(() =>
-                            p.main.trackBarAdvancedMaxInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMaxInt.Maximum, value), p.main.trackBarAdvancedMaxInt.Minimum)
+                    set => Execute(new Action(() =>
+                             p.main.trackBarAdvancedMaxInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMaxInt.Maximum, value), p.main.trackBarAdvancedMaxInt.Minimum)
                             ));
-                    }
-                    get { return Execute(new Func<double>(() => (double)p.main.trackBarAdvancedMaxInt.Value)); }
+                    get => Execute(() => p.main.trackBarAdvancedMaxInt.Value);
                 }
                 public double Minimum
                 {
-                    set
-                    {
-                        Execute(new Action(() =>
-                            p.main.trackBarAdvancedMinInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMinInt.Maximum, value), p.main.trackBarAdvancedMinInt.Minimum)
+                    set => Execute(new Action(() =>
+                             p.main.trackBarAdvancedMinInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMinInt.Maximum, value), p.main.trackBarAdvancedMinInt.Minimum)
                             ));
-                    }
-                    get { return Execute(new Func<double>(() => (double)p.main.trackBarAdvancedMinInt.Value)); }
+                    get => Execute(() => p.main.trackBarAdvancedMinInt.Value);
                 }
 
-                public double CanvasMagnification {
-                    set { Execute(new Action(() => p.main.scalablePictureBox.Zoom = value)); } 
-                    get { return Execute(new Func<double>(() =>p.main.scalablePictureBox.Zoom)); } }
-
-
-
-                public void SetCanvasCenter(double x, double y) { Execute(() => setCanvasCenter(x, y)); }
-                private void setCanvasCenter(double x, double y)
+                public double CanvasMagnification
                 {
-                    p.main.scalablePictureBox.Center = new PointD(x, y);    
+                    set => Execute(new Action(() => p.main.scalablePictureBox.Zoom = value));
+                    get => Execute(() => p.main.scalablePictureBox.Zoom);
                 }
 
-                public void SetCanvasSize(int width, int height) { Execute(() => setCanvasSize(width, height)); }
-                private void setCanvasSize(int width, int height)
+                public void SetCanvasCenter(double x, double y) => Execute(new Action(() => p.main.scalablePictureBox.Center = new PointD(x, y)));
+
+                public void SetCanvasSize(int width, int height) => Execute(new Action(() =>
                 {
                     if (width < 1 || height < 1) return;
                     p.main.splitContainer1.FixedPanel = FixedPanel.Panel2;
-                    Size clientSize = p.main.scalablePictureBox.ClientSize;
-                    Size mainSize = p.main.Size;
-                    Size destSize = new Size(mainSize.Width + width - clientSize.Width, mainSize.Height + height - clientSize.Height);
+                    var clientSize = p.main.scalablePictureBox.ClientSize;
+                    var mainSize = p.main.Size;
+                    var destSize = new Size(mainSize.Width + width - clientSize.Width, mainSize.Height + height - clientSize.Height);
                     p.main.Size = destSize;
                     p.main.splitContainer1.FixedPanel = FixedPanel.None;
-                }
+                }));
 
-                public void SetArea(double top, double bottom, double left, double right) { Execute(() => setArea(top, bottom, left, right)); }
-                private void setArea(double top, double bottom, double left, double right)
+                public void SetArea(double top, double bottom, double left, double right) => Execute(new Action(() =>
                 {
                     int width = (int)(CanvasMagnification * (right - left) + 0.5);
                     int height = (int)(CanvasMagnification * (bottom - top) + 0.5);
-                    
+
                     if (width < 1 || height < 1) return;
 
                     SetCanvasSize(width, height);
                     SetCanvasCenter((left + right) / 2.0, (bottom + top) / 2.0);
-                }
+                }));
 
-                public void SetFullArea() { Execute(() => setFullArea()); }
-                private void setFullArea()
+                public void SetFullArea() => Execute(new Action(() =>
                 {
-                    int width = (int)(CanvasMagnification * p.main.IP.SrcWidth + 0.5);
-                    int height = (int)(CanvasMagnification * p.main.IP.SrcHeight + 0.5);
+                    var width = (int)(CanvasMagnification * p.main.IP.SrcWidth + 0.5);
+                    var height = (int)(CanvasMagnification * p.main.IP.SrcHeight + 0.5);
 
                     if (width < 1 || height < 1) return;
 
                     SetCanvasSize(width, height);
-                    SetCanvasCenter((double)p.main.IP.SrcWidth / 2.0, (double)p.main.IP.SrcHeight / 2.0);
-                }
+                    SetCanvasCenter(p.main.IP.SrcWidth / 2.0, p.main.IP.SrcHeight / 2.0);
+                }));
 
             }
+            #endregion
 
-            public class ProfileClass :MacroSub
+            #region ProfileClass
+            public class ProfileClass : MacroSub
             {
                 Macro p;
-                public ProfileClass(Macro _p):base(_p.main)
+                public ProfileClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.Profile.GetProfile() # Get profile.");
@@ -4544,51 +4492,50 @@ namespace IPAnalyzer
                 public bool ConcentricIntegration
                 {
                     set => Execute(new Action(() => p.main.toolStripMenuItemConcenctricIntegration.Checked = value));
-                    get => Execute(new Func<bool>(() => p.main.toolStripMenuItemConcenctricIntegration.Checked));
+                    get => Execute(() => p.main.toolStripMenuItemConcenctricIntegration.Checked);
                 }
                 public bool RadialIntegration
                 {
                     set => Execute(new Action(() => p.main.toolStripMenuItemRadialIntegration.Checked = value));
-                    get => Execute(new Func<bool>(() => p.main.toolStripMenuItemRadialIntegration.Checked));
+                    get => Execute(() => p.main.toolStripMenuItemRadialIntegration.Checked);
                 }
                 public bool FindCenterBeforeGetProfile
                 {
                     set => Execute(new Action(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked = value));
-                    get => Execute(new Func<bool>(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked));
+                    get => Execute(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked);
                 }
                 public bool FindSpotsBeforeGetProfile
                 {
-                    set { Execute(new Action(()=>p.main.findSpotsBeforeGetProfileToolStripMenuItem.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.findSpotsBeforeGetProfileToolStripMenuItem.Checked)); }
+                    set => Execute(new Action(() => p.main.findSpotsBeforeGetProfileToolStripMenuItem.Checked = value));
+                    get => Execute(() => p.main.findSpotsBeforeGetProfileToolStripMenuItem.Checked);
                 }
                 public bool SendProfileViaClipboard
                 {
-                    set {Execute(new Action(()=> p.main.toolStripMenuItemSendProfileToPDIndexer.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.toolStripMenuItemSendProfileToPDIndexer.Checked)); }
+                    set => Execute(new Action(() => p.main.toolStripMenuItemSendProfileToPDIndexer.Checked = value));
+                    get => Execute(() => p.main.toolStripMenuItemSendProfileToPDIndexer.Checked);
                 }
                 public bool SaveProfileAfterGetProfile
                 {
-                    set { Execute(new Action(()=>p.main.FormProperty.checkBoxSaveFile.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.FormProperty.checkBoxSaveFile.Checked)); }
+                    set => Execute(new Action(() => p.main.FormProperty.checkBoxSaveFile.Checked = value));
+                    get => Execute(() => p.main.FormProperty.checkBoxSaveFile.Checked);
                 }
                 public bool SaveProfileAsPDI
                 {
-                    set { Execute(new Action(()=>p.main.FormProperty.radioButtonAsPDIformat.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.FormProperty.radioButtonAsPDIformat.Checked)); }
+                    set => Execute(new Action(() => p.main.FormProperty.radioButtonAsPDIformat.Checked = value));
+                    get => Execute(() => p.main.FormProperty.radioButtonAsPDIformat.Checked);
                 }
                 public bool SaveProfileAsCSV
                 {
-                    set { Execute(new Action(()=>p.main.FormProperty.radioButtonAsCSVformat.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.FormProperty.radioButtonAsCSVformat.Checked)); }
+                    set => Execute(new Action(() => p.main.FormProperty.radioButtonAsCSVformat.Checked = value));
+                    get => Execute(() => p.main.FormProperty.radioButtonAsCSVformat.Checked);
                 }
                 public bool SaveProfileAsTSV
                 {
                     set => Execute(new Action(() => p.main.FormProperty.radioButtonAsTSVformat.Checked = value));
-                    get => Execute(new Func<bool>(() => p.main.FormProperty.radioButtonAsTSVformat.Checked));
+                    get => Execute(() => p.main.FormProperty.radioButtonAsTSVformat.Checked);
                 }
 
-                public void GetProfile(string filename = "") { Execute(() => getProfile(filename)); }
-                private void getProfile(string filename = "")
+                public void GetProfile(string filename = "") => Execute(new Action(() =>
                 {
                     if (filename != "")
                         SaveProfileAfterGetProfile = true;
@@ -4599,8 +4546,11 @@ namespace IPAnalyzer
                         clipboard.ReleaseMutex();
                         clipboard.Close();
                     }
-                }
+                }));
             }
+            #endregion
+
+            #region IntegralPropertyClass
 
             public class IntegralPropertyClass : MacroSub
             {
@@ -4623,28 +4573,28 @@ namespace IPAnalyzer
 
                 public bool ConcentricIntegration
                 {
-                    set { Execute(new Action(() => p.main.toolStripMenuItemConcenctricIntegration.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.toolStripMenuItemConcenctricIntegration.Checked)); }
+                    set => Execute(new Action(() => p.main.toolStripMenuItemConcenctricIntegration.Checked = value));
+                    get => Execute(() => p.main.toolStripMenuItemConcenctricIntegration.Checked);
                 }
                 public bool RadialIntegration
                 {
-                    set { Execute(new Action(() => p.main.toolStripMenuItemRadialIntegration.Checked = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.toolStripMenuItemRadialIntegration.Checked)); }
+                    set => Execute(new Action(() => p.main.toolStripMenuItemRadialIntegration.Checked = value));
+                    get => Execute(() => p.main.toolStripMenuItemRadialIntegration.Checked);
                 }
                 public double ConcentricStart
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxConcentricStart.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxConcentricStart.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxConcentricStart.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxConcentricStart.Value);
                 }
                 public double ConcentricEnd
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxConcentricEnd.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxConcentricEnd.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxConcentricEnd.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxConcentricEnd.Value);
                 }
                 public double ConcentricStep
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxConcentricStep.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxConcentricStep.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxConcentricStep.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxConcentricStep.Value);
                 }
 
                 public int ConcentricUnit
@@ -4663,7 +4613,7 @@ namespace IPAnalyzer
                     }
                     get
                     {
-                        return Execute(new Func<int>(() =>
+                        return Execute<int>(new Func<int>(() =>
                          {
                              int i = 0;
                              if (p.main.FormProperty.radioButtonConcentricDspacing.Checked) i = 1;
@@ -4674,49 +4624,47 @@ namespace IPAnalyzer
                 }
                 public double RadialRadius
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxRadialRadius.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxRadialRadius.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxRadialRadius.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxRadialRadius.Value);
                 }
                 public double RadialWidgh
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxRadialRange.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxRadialRange.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxRadialRange.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxRadialRange.Value);
                 }
                 public double RadialStep
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxRadialStep.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxRadialStep.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxRadialStep.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxRadialStep.Value);
                 }
 
                 public int RadialUnit
                 {
-                    set
+                    set => Execute(new Action(() =>
                     {
-                        Execute(new Action(() =>
+                        switch (value)
                         {
-                            switch (value)
-                            {
-                                case 1: p.main.FormProperty.radioButtonRadialDspacing.Checked = true; break;
-                                default: p.main.FormProperty.radioButtonRadialAngle.Checked = true; break;
-                            }
-                        }));
-                    }
-                    get
+                            case 1: p.main.FormProperty.radioButtonRadialDspacing.Checked = true; break;
+                            default: p.main.FormProperty.radioButtonRadialAngle.Checked = true; break;
+                        }
+                    }));
+                    get => Execute<int>(new Func<int>(() =>
                     {
-                        return Execute(new Func<int>(() =>
-                         {
-                             int i = 0;
-                             if (p.main.FormProperty.radioButtonRadialDspacing.Checked) i = 1;
-                             return i;
-                         }));
-                    }
+                        int i = 0;
+                        if (p.main.FormProperty.radioButtonRadialDspacing.Checked) i = 1;
+                        return i;
+                    }));
                 }
             }
 
-            public class WaveClass:MacroSub
+            #endregion
+
+            #region WaveClass
+
+            public class WaveClass : MacroSub
             {
                 Macro p;
-                public WaveClass(Macro _p):base(_p.main)
+                public WaveClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.Wave.SetWaveLength(float wavelength) # Set wavelength (float value) of incident beam in nm unit.");
@@ -4724,45 +4672,35 @@ namespace IPAnalyzer
 
                 }
 
-                public void SetWaveLength(double x) { Execute(() => setWaveLength(x)); }
-                private void setWaveLength(double x)
-                {
-                    p.main.FormProperty.WaveLength = x;
-                }
+                public void SetWaveLength(double x) => Execute(new Action(() => p.main.FormProperty.WaveLength = x));
                 public double WaveLength
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.WaveLength = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.WaveLength)); }
+                    set => Execute(new Action(() => p.main.FormProperty.WaveLength = value));
+                    get => Execute(() => p.main.FormProperty.WaveLength);
                 }
 
                 public int WaveSource
                 {
-                    set
+                    set => Execute(new Action(() =>
                     {
-                        Execute(new Action(() =>
+                        p.main.FormProperty.waveLengthControl.WaveSource = value switch
                         {
-                            p.main.FormProperty.waveLengthControl.WaveSource = value switch
-                            {
-                                1 => Crystallography.WaveSource.Xray,
-                                2 => Crystallography.WaveSource.Electron,
-                                3 => Crystallography.WaveSource.Neutron,
-                                _ => Crystallography.WaveSource.None,
-                            };
-                        }));
-                    }
-                    get
-                    {
-                        return Execute(new Func<int>(() =>
+                            1 => Crystallography.WaveSource.Xray,
+                            2 => Crystallography.WaveSource.Electron,
+                            3 => Crystallography.WaveSource.Neutron,
+                            _ => Crystallography.WaveSource.None,
+                        };
+                    }));
+
+                    get => Execute<int>(new Func<int>(() =>
+                        p.main.FormProperty.waveLengthControl.WaveSource switch
                         {
-                            return p.main.FormProperty.waveLengthControl.WaveSource switch
-                            {
-                                Crystallography.WaveSource.Xray => 1,
-                                Crystallography.WaveSource.Electron => 2,
-                                Crystallography.WaveSource.Neutron => 3,
-                                _ => 0,
-                            };
-                        }));
-                    }
+                            Crystallography.WaveSource.Xray => 1,
+                            Crystallography.WaveSource.Electron => 2,
+                            Crystallography.WaveSource.Neutron => 3,
+                            _ => 0,
+                        }
+                    ));
                 }
 
                 public int XrayLine
@@ -4774,15 +4712,19 @@ namespace IPAnalyzer
                             case 0: p.main.FormProperty.waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka; break;
                             case 1: p.main.FormProperty.waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka1; break;
                             case 2: p.main.FormProperty.waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka2; break;
+                            default: break;
                         }
                     }
                 }
             }
+            #endregion
 
-            public class FileClass:MacroSub
+            #region FileClass
+
+            public class FileClass : MacroSub
             {
                 Macro p;
-                public FileClass(Macro _p):base(_p.main)
+                public FileClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.File.GetFileName() # Get a file name. \r\n Returned string is a full path of the selected file.");
@@ -4801,147 +4743,71 @@ namespace IPAnalyzer
                     p.help.Add("IPA.File.SaveMask(string filename)           # Save mask file. \r\n If filename is omitted or invalid, selection dialog will open.");
                 }
 
-                public string GetDirectoryPath(string filename = "") { return Execute(new Func<string>(() => getDirectoryPath(filename))); }
-                private string getDirectoryPath(string filename = "")
+                public string GetDirectoryPath(string filename = "") => Execute<string>(new Func<string>(() =>
                 {
-                    string path = "";
+                    var path = "";
                     if (filename == "")
                     {
                         var dlg = new FolderBrowserDialog();
                         path = dlg.ShowDialog() == DialogResult.OK ? dlg.SelectedPath : "";
                     }
                     else
-                        path = System.IO.Path.GetDirectoryName(filename);
+                        path = Path.GetDirectoryName(filename);
                     return path + "\\";
-                }
+                }));
 
 
-                public string GetFileName() { return Execute(new Func<string>(() => getFileName())); }
-                private string getFileName()
+                public string GetFileName() => Execute<string>(new Func<string>(() =>
                 {
                     var dlg = new OpenFileDialog();
                     return dlg.ShowDialog() == DialogResult.OK ? dlg.FileName : "";
-                }
+                }));
 
 
-                public string[] GetFileNames() { return Execute(new Func<string[]>(() => getFileNames())); }
-                private string[] getFileNames()
+                public string[] GetFileNames() => Execute<string[]>(new Func<string[]>(() =>
                 {
-                    var dlg = new OpenFileDialog();
-                    dlg.Multiselect = true;
+                    var dlg = new OpenFileDialog { Multiselect = true };
                     return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : new string[0];
-                }
+                }));
 
-
-                public void SaveImageAsTIFF(string fileName="")
-                {
-                    Execute(() =>
-                        p.main.saveImageAsTiff(fileName)
-                    );
-                }
-                public void SaveImageAsPNG(string fileName = "")
-                {
-                    Execute(() =>
-                        p.main.saveImageAsPng(fileName)
-                    );
-                }
-
-                public void SaveImageAsIPA(string fileName = "")
-                {
-                    Execute(() =>
-                        p.main.FormSaveImage.SaveImageAsIPA(fileName)
-                    );
-                }
-
-
-                public void ReadImageHDF(string _fileName, bool? flag)
-                {
-                    Execute(() =>
-                        p.main.ReadImage(_fileName, flag)
-                        );
-                }
+                public void SaveImageAsTIFF(string fileName = "") => Execute(() => p.main.saveImageAsTiff(fileName));
+                public void SaveImageAsPNG(string fileName = "") => Execute(() => p.main.saveImageAsPng(fileName));
+                public void SaveImageAsIPA(string fileName = "") => Execute(() => p.main.FormSaveImage.SaveImageAsIPA(fileName));
+                public void ReadImageHDF(string _fileName, bool? flag) => Execute(() => p.main.ReadImage(_fileName, flag));
 
                 /// <summary>
                 /// Read image file. if filename is omitted, dialog will open.
                 /// </summary>
                 /// <param name="_fileName"></param>
-                public void ReadImage(string _fileName = "", bool? flag = null) { Execute(() => readImage(_fileName, flag)); }
-                private void readImage(string _fileName = "", bool? flag=null)
+                public void ReadImage(string _fileName = "", bool? flag = null) => Execute(new Action(() =>
                 {
                     if (!System.IO.File.Exists(_fileName))
                         p.main.readImageToolStripMenuItem_Click(new object(), new EventArgs());
                     else
                         p.main.ReadImage(_fileName, flag);
-                }
+                }));
 
-
-                public void SaveImage(string _fileName = "") { Execute(() => saveImage(_fileName)); }
-                private void saveImage(string _fileName="")
-                {
-                    string fileName = _fileName;
-                    if (_fileName == "")
-                    {
-                        SaveFileDialog dlg = new SaveFileDialog();
-                        dlg.Filter = "*.tif|";
-                        if (dlg.ShowDialog() == DialogResult.OK)
-                            fileName = dlg.FileName;
-                    }
-                }
+                public void SaveImage(string fileName = "") => Execute(new Action(() => p.main.saveImageAsTiff(fileName)));
 
                 /// <summary>
                 /// Read parameter file.
                 /// </summary>
                 /// <param name="_fileName"></param>
-                public void ReadParameter(string _fileName = "") { Execute(() => readParameter(_fileName)); }
-                private void readParameter(string _fileName = "")
-                {
-                    string fileName = _fileName;
-                    if (_fileName == "")
-                    {
-                        OpenFileDialog dlg = new OpenFileDialog();
-                        if (dlg.ShowDialog() == DialogResult.OK)
-                            fileName = dlg.FileName;
-                    }
-                    p.main.ReadParameter(fileName);
-                }
+                public void ReadParameter(string fileName = "") => Execute(new Action(() => p.main.ReadParameter(fileName)));
 
-                public void SaveParameter(string _fileName = "") { Execute(() => saveParameter(_fileName)); }
-                private void saveParameter(string _fileName = "")
-                {
-                    string fileName = _fileName;
-                    if (_fileName == "")
-                    {
-                        OpenFileDialog dlg = new OpenFileDialog();
-                        if (dlg.ShowDialog() == DialogResult.OK)
-                            fileName = dlg.FileName;
-                    }
-                    if (!fileName.EndsWith("prm"))
-                        fileName += ".prm";
-                    p.main.SaveParameter(fileName);
-                }
+                public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName)));
 
-
-                public void SaveMask(string _fileName = "") { Execute(() => saveMask(_fileName)); }
-                private void saveMask(string _fileName = "")
-                {
-                    string fileName = _fileName;
-                    if (_fileName == "")
-                    {
-                        OpenFileDialog dlg = new OpenFileDialog();
-                        if (dlg.ShowDialog() == DialogResult.OK)
-                            fileName = dlg.FileName;
-                    }
-                    if (!fileName.EndsWith("mas"))
-                        fileName += ".mas";
-                    p.main.SaveMask(fileName);
-                }
+                public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
+                public void SaveMask(string fileName = "") => Execute(new Action(() => p.main.SaveMask(fileName)));
 
             }
+            #endregion
 
-            public class SequentialClass:MacroSub
+            #region SequentialClass
+            public class SequentialClass : MacroSub
             {
                 Macro p;
-                public SequentialClass(Macro _p):base(_p.main)
+                public SequentialClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.Sequential.SequentialImageMode # True/False. Get whether the current file is sequential image or not.");
@@ -4960,49 +4826,48 @@ namespace IPAnalyzer
 
                 }
 
-                public bool SequentialImageMode => Execute(new Func<bool>(() => p.main.SequentialImageMode));
+                public bool SequentialImageMode => Execute(() => p.main.SequentialImageMode);
                 public int SelectedIndex
                 {
                     set => Execute(new Action(() => p.main.FormSequentialImage.SelectedIndex = value));
-                    get => Execute(new Func<int>(() => p.main.FormSequentialImage.SelectedIndex));
+                    get => Execute(() => p.main.FormSequentialImage.SelectedIndex);
                 }
 
-                public int Count => Execute(new Func<int>(() => p.main.FormSequentialImage.MaximumNumber));
+                public int Count => Execute(() => p.main.FormSequentialImage.MaximumNumber);
 
                 public int[] SelectedIndices
                 {
-                    set {Execute(new Action(() =>  p.main.FormSequentialImage.SelectedIndices = value)); }
-                    get { return Execute(new Func<int[]>(() => p.main.FormSequentialImage.SelectedIndices)); }
+                    set { Execute(new Action(() => p.main.FormSequentialImage.SelectedIndices = value)); }
+                    get => Execute(() => p.main.FormSequentialImage.SelectedIndices);
                 }
 
                 public bool MultiSelection
                 {
-                    set { Execute(new Action(() => p.main.FormSequentialImage.MultiSelection = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.FormSequentialImage.MultiSelection)); }
+                    set => Execute(new Action(() => p.main.FormSequentialImage.MultiSelection = value));
+                    get => Execute(() => p.main.FormSequentialImage.MultiSelection);
                 }
                 public bool Averaging
                 {
-                    set { Execute(new Action(() => p.main.FormSequentialImage.AverageMode = value)); }
-                    get { return Execute(new Func<bool>(() => p.main.FormSequentialImage.AverageMode)); }
+                    set => Execute(new Action(() => p.main.FormSequentialImage.AverageMode = value));
+                    get => Execute(() => p.main.FormSequentialImage.AverageMode);
                 }
 
                 /// <summary>
                 /// 選択する
                 /// </summary>
                 /// <param name="n"></param>
-                public void SelectIndex(int n) { Execute(() => selectIndex(n)); }
-                private void selectIndex(int n)
-                {
-                    if (!SequentialImageMode) return;
-                    MultiSelection = false;
-                    p.main.FormSequentialImage.SelectedIndex = n;
-                }
+                public void SelectIndex(int n) => Execute(new Action(() =>
+               {
+                   if (!SequentialImageMode) return;
+                   MultiSelection = false;
+                   p.main.FormSequentialImage.SelectedIndex = n;
+               }));
+
                 /// <summary>
                 /// 選択を追加する
                 /// </summary>
                 /// <param name="n"></param>
-                public void AppendIndex(int n) { Execute(() => appendIndex(n)); }
-                private void appendIndex(int n)
+                public void AppendIndex(int n) => Execute(new Action(() =>
                 {
                     if (!SequentialImageMode) return;
                     if (n >= 0 && n < p.main.FormSequentialImage.MaximumNumber)
@@ -5010,14 +4875,13 @@ namespace IPAnalyzer
                         MultiSelection = true;
                         p.main.FormSequentialImage.SelectedIndex = n;
                     }
-                }
+                }));
                 /// <summary>
                 /// 範囲を選択する
                 /// </summary>
                 /// <param name="start"></param>
                 /// <param name="end"></param>
-                public void SelectIndices(int start, int end) { Execute(() => selectIndices(start,end)); }
-                private void selectIndices(int start, int end)
+                public void SelectIndices(int start, int end) => Execute(new Action(() =>
                 {
                     if (!SequentialImageMode) return;
                     if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
@@ -5028,16 +4892,15 @@ namespace IPAnalyzer
                             if (!list.Contains(i))
                                 list.Add(i);
                         p.main.FormSequentialImage.SelectedIndices = list.ToArray();
-                    //    SelectedIndex = end;
+                        //    SelectedIndex = end;
                     }
-                }
+                }));
                 /// <summary>
                 /// 範囲を追加する
                 /// </summary>
                 /// <param name="start"></param>
                 /// <param name="end"></param>
-                public void AppendIndices(int start, int end) { Execute(() => appendIndices(start, end)); }
-                private void appendIndices(int start, int end)
+                public void AppendIndices(int start, int end) => Execute(new Action(() =>
                 {
                     if (!SequentialImageMode) return;
                     if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
@@ -5050,15 +4913,18 @@ namespace IPAnalyzer
                         p.main.FormSequentialImage.SelectedIndices = list.ToArray();
                         SelectedIndex = end;
                     }
-                }
+                }));
 
             }
 
+            #endregion
 
-            public class DetectorClass:MacroSub
+            #region DetectorClass
+
+            public class DetectorClass : MacroSub
             {
                 Macro p;
-                public DetectorClass(Macro _p):base(_p.main)
+                public DetectorClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
                     p.help.Add("IPA.Detector.SetCenter(float X, float Y) # Set center (direct spot) position in pixel unit.");
@@ -5073,66 +4939,57 @@ namespace IPAnalyzer
                 }
 
 
-                public void SetCenter(double x, double y) { Execute(() => setCenter(x, y)); }
-                private void setCenter(double x, double y)
-                {
-                    p.main.FormProperty.ImageCenter = new PointD(x, y);
-                }
+                public void SetCenter(double x, double y) => Execute(new Action(() => p.main.FormProperty.ImageCenter = new PointD(x, y)));
 
-                public void SetCameraLength(double x) { Execute(() => setCameraLength(x)); }
-                private void setCameraLength(double x)
-                {
-                    p.main.FormProperty.CameraLength = x;
-                }
+                public void SetCameraLength(double x) => Execute(new Action(() => p.main.FormProperty.CameraLength = x));
 
                 public double CenterX
                 {
-                    set {Execute(new Action(() =>  p.main.FormProperty.ImageCenter = new PointD(value, p.main.FormProperty.ImageCenter.Y))); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.ImageCenter.X)); }
+                    set => Execute(new Action(() => p.main.FormProperty.ImageCenter = new PointD(value, p.main.FormProperty.ImageCenter.Y)));
+                    get => Execute(() => p.main.FormProperty.ImageCenter.X);
                 }
                 public double CenterY
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.ImageCenter = new PointD(p.main.FormProperty.ImageCenter.X, value))); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.ImageCenter.Y)); }
+                    set => Execute(new Action(() => p.main.FormProperty.ImageCenter = new PointD(p.main.FormProperty.ImageCenter.X, value)));
+                    get => Execute(() => p.main.FormProperty.ImageCenter.Y);
                 }
                 public double CameraLength
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.CameraLength = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.CameraLength)); }
+                    set => Execute(new Action(() => p.main.FormProperty.CameraLength = value));
+                    get => Execute(() => p.main.FormProperty.CameraLength);
                 }
                 public double PixelSizeX
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeX.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxPixelSizeX.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeX.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxPixelSizeX.Value);
                 }
                 public double PixelSizeY
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeY.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxPixelSizeY.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeY.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxPixelSizeY.Value);
                 }
                 public double PixelKsi
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericalTextBoxPixelKsi.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericalTextBoxPixelKsi.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericalTextBoxPixelKsi.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericalTextBoxPixelKsi.Value);
                 }
                 public double TiltPhi
                 {
-                    set {Execute(new Action(() =>  p.main.FormProperty.numericBoxTiltCorrectionPhi.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxTiltCorrectionPhi.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxTiltCorrectionPhi.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxTiltCorrectionPhi.Value);
                 }
                 public double TiltTau
                 {
-                    set { Execute(new Action(() => p.main.FormProperty.numericBoxTiltCorrectionTau.Value = value)); }
-                    get { return Execute(new Func<double>(() => p.main.FormProperty.numericBoxTiltCorrectionTau.Value)); }
+                    set => Execute(new Action(() => p.main.FormProperty.numericBoxTiltCorrectionTau.Value = value));
+                    get => Execute(() => p.main.FormProperty.numericBoxTiltCorrectionTau.Value);
                 }
-
-
 
             }
 
         }
 
-     
+
+        #endregion
 
         private void process1_Exited(object sender, EventArgs e)
         {
@@ -5146,7 +5003,7 @@ namespace IPAnalyzer
 
 
 
-      
+
 
 
     }
