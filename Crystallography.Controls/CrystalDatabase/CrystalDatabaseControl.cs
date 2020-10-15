@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region using
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,11 +8,12 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Diagnostics;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.ComponentModel;
 using System.Drawing;
 using MessagePack;
 using MessagePack.Resolvers;
+
+#endregion
 
 namespace Crystallography.Controls
 {
@@ -120,6 +122,7 @@ namespace Crystallography.Controls
                         {
                             deserialize<Crystal2[]>(b, out var byteRead).AsParallel().Select(c2 => dataTable.CreateRow(c2))
                                         .ToList().ForEach(r => dataTable.Rows.Add(r));
+
                             ReadDatabaseWorker.ReportProgress(0, report(dataTable.Rows.Count, total, sw.ElapsedMilliseconds, "Loading database..."));
                             b = b.Slice(byteRead);
                         }
@@ -148,9 +151,9 @@ namespace Crystallography.Controls
                 else
                     return;
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Failed to load database. Sorry.");
+                MessageBox.Show(ex.ToString()+"\r\nFailed to load database. Sorry.");
             }
             bindingSource.Position = 0;
         }
@@ -319,8 +322,8 @@ namespace Crystallography.Controls
         {
             if (!File.Exists(path))
                 return null;
-            using (var fs = new FileStream(path, FileMode.Open))
-                return MD5.Create().ComputeHash(fs);
+            using var fs = new FileStream(path, FileMode.Open);
+            return MD5.Create().ComputeHash(fs);
         }
 
         /// <summary>

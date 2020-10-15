@@ -300,13 +300,14 @@ namespace IPAnalyzer
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             this.helpProvider.SetShowHelp(this.toolStripContainer1.TopToolStripPanel, ((bool)(resources.GetObject("toolStripContainer1.TopToolStripPanel.ShowHelp"))));
             // 
             // statusStrip1
             // 
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar,
             this.toolStripStatusLabel});
@@ -676,7 +677,7 @@ namespace IPAnalyzer
             // trackBarAdvancedMinInt
             // 
             resources.ApplyResources(this.trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
-            this.trackBarAdvancedMinInt.ControlHeight = 27;
+            this.trackBarAdvancedMinInt.ControlHeight = 34;
             this.trackBarAdvancedMinInt.DecimalPlaces = 0;
             this.trackBarAdvancedMinInt.LogScrollBar = false;
             this.trackBarAdvancedMinInt.Maximum = 65535D;
@@ -694,7 +695,7 @@ namespace IPAnalyzer
             // trackBarAdvancedMaxInt
             // 
             resources.ApplyResources(this.trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
-            this.trackBarAdvancedMaxInt.ControlHeight = 27;
+            this.trackBarAdvancedMaxInt.ControlHeight = 34;
             this.trackBarAdvancedMaxInt.DecimalPlaces = 0;
             this.trackBarAdvancedMaxInt.LogScrollBar = false;
             this.trackBarAdvancedMaxInt.Maximum = 65535D;
@@ -975,6 +976,7 @@ namespace IPAnalyzer
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonIntensityTable,
             this.toolStripSeparator16,
@@ -1094,6 +1096,7 @@ namespace IPAnalyzer
             this.toolStrip2.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.toolStrip2, "toolStrip2");
             this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButtonBackground,
             this.toolStripSeparator8,
@@ -1148,6 +1151,7 @@ namespace IPAnalyzer
             // 
             // toolStripComboBoxBackgroundLower
             // 
+            resources.ApplyResources(this.toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
             this.toolStripComboBoxBackgroundLower.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxBackgroundLower.Items"),
             resources.GetString("toolStripComboBoxBackgroundLower.Items1"),
@@ -1156,7 +1160,6 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxBackgroundLower.Items4"),
             resources.GetString("toolStripComboBoxBackgroundLower.Items5")});
             this.toolStripComboBoxBackgroundLower.Name = "toolStripComboBoxBackgroundLower";
-            resources.ApplyResources(this.toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
             // 
             // toolStripMenuItem7
             // 
@@ -1165,6 +1168,7 @@ namespace IPAnalyzer
             // 
             // toolStripComboBoxBackgroundUpper
             // 
+            resources.ApplyResources(this.toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
             this.toolStripComboBoxBackgroundUpper.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxBackgroundUpper.Items"),
             resources.GetString("toolStripComboBoxBackgroundUpper.Items1"),
@@ -1172,7 +1176,6 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxBackgroundUpper.Items3"),
             resources.GetString("toolStripComboBoxBackgroundUpper.Items4")});
             this.toolStripComboBoxBackgroundUpper.Name = "toolStripComboBoxBackgroundUpper";
-            resources.ApplyResources(this.toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
             // 
             // fourierToolStripMenuItem
             // 
@@ -1477,6 +1480,7 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolToolStripMenuItem,
@@ -1758,13 +1762,13 @@ namespace IPAnalyzer
             // toolStripComboBoxRotate
             // 
             this.toolStripComboBoxRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.toolStripComboBoxRotate, "toolStripComboBoxRotate");
             this.toolStripComboBoxRotate.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxRotate.Items"),
             resources.GetString("toolStripComboBoxRotate.Items1"),
             resources.GetString("toolStripComboBoxRotate.Items2"),
             resources.GetString("toolStripComboBoxRotate.Items3")});
             this.toolStripComboBoxRotate.Name = "toolStripComboBoxRotate";
-            resources.ApplyResources(this.toolStripComboBoxRotate, "toolStripComboBoxRotate");
             this.toolStripComboBoxRotate.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxRotate_SelectedIndexChanged);
             // 
             // toolStripSeparator28

@@ -14,6 +14,7 @@ namespace IPAnalyzer
 
         static public string History =
             "History" +
+            "\r\n ver3.896(2020/10/15) Fixed minor bugs (Find Center, Correction of polarization, etc.)." +
             "\r\n ver3.895(2020/08/13) Fixed bugs on Macro functions." +
             "\r\n ver3.894(2020/08/08) Improved SACLA EH5 mode." +
             "\r\n ver3.893(2020/07/28) Improved SACLA EH5 mode." +

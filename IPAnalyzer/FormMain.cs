@@ -2284,12 +2284,12 @@ namespace IPAnalyzer
                 FormProperty.numericBoxConcentricStart.Value = FormDrawRing.TwoTheta / Math.PI * 180 - fittingRange*5;
                 FormProperty.numericBoxConcentricEnd.Value = FormDrawRing.TwoTheta / Math.PI * 180 + fittingRange*5;
 
-                PeakFunction pf = new PeakFunction(FormDrawRing.TwoTheta / Math.PI * 180, fittingRange/2, fittingRange, PeakFunctionForm.PseudoVoigt);
+                var pf = new PeakFunction(FormDrawRing.TwoTheta / Math.PI * 180, fittingRange/2, fittingRange, PeakFunctionForm.PseudoVoigt);
                 FormProperty.radioButtonSector.Checked = true;
                 for (int n = 0; n < 3; n++)
                 {
-                    List<PointD> pts = new List<PointD>();
-                    var angleStep = 15;
+                    var pts = new List<PointD>();
+                    var angleStep = 20;
                     for (int i = 0; i < 360 / angleStep; i++)
                     {
                         Skip = true;
@@ -2303,7 +2303,9 @@ namespace IPAnalyzer
                         graphControlProfile.Profile = profile;
                         graphControlProfile.Peaks = new PeakFunction[] { pf };
                         if (!double.IsNaN(pf.X) && pf.X != 0)
-                            pts.Add(new PointD(IP.FilmDistance * Math.Tan(Math.PI / 180.0 * pf.X) * Math.Cos(Math.PI / 180.0 * angleStep * i), IP.FilmDistance * Math.Tan(Math.PI / 180.0 * pf.X) * Math.Sin(Math.PI / 180.0 * angleStep * i)));
+                            pts.Add(new PointD(
+                                IP.FilmDistance * Math.Tan(Math.PI / 180 * pf.X) * Math.Sin(Math.PI / 180 * angleStep * i),
+                                -IP.FilmDistance * Math.Tan(Math.PI / 180 * pf.X) * Math.Cos(Math.PI / 180 * angleStep * i)));
                         Application.DoEvents();
                     }
 
@@ -3915,7 +3917,8 @@ namespace IPAnalyzer
                 */
                 #endregion
 
-                Ring.Intensity = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex);
+                int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ?                    0 : 1;
+                Ring.Intensity = Ring.CorrectPolarization(index);
                 this.toolStripStatusLabel.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
             }
             //偏光補正ここまで

@@ -184,35 +184,9 @@ namespace Crystallography.Controls
                 symmetryControl.CellConstants, symmetryControl.CellConstantsErr,
                 SymmetrySeriesNumber, textBoxName.Text, colorControl.Color, rot, atomControl.GetAll(),
                 (textBoxMemo.Text, textBoxAuthor.Text, textBoxJournal.Text, textBoxTitle.Text),
-                bondControl.GetAll(), boundControl.GetAll(), latticePlaneControl.GetAll());
+                bondControl.GetAll(), boundControl.GetAll(), latticePlaneControl.GetAll(), eosControl.EOScondition);
 
             crystal.ElasticStiffness = elasticityControl1.Stiffness.ToArray();
-
-            #region EOS関連データ （Crystalのコンストラクタに入れた方がいいかも）
-            crystal.EOSCondition.A = numericBoxEOS_A.Value;
-            crystal.EOSCondition.B = numericBoxEOS_B.Value;
-            crystal.EOSCondition.C = numericBoxEOS_C.Value;
-            crystal.EOSCondition.CellVolume0 = numericBoxEOS_V0perCell.Value;
-            crystal.EOSCondition.Gamma0 = numericBoxEOS_Gamma0.Value;
-            crystal.EOSCondition.K0 = numericBoxEOS_KT0.Value;
-            crystal.EOSCondition.KperT = numericBoxEOS_KperT.Value;
-            crystal.EOSCondition.Kprime0 = numericBoxEOS_KprimeT0.Value;
-            crystal.EOSCondition.Q = numericBoxEOS_Q.Value;
-            crystal.EOSCondition.T0 = numericBoxEOS_T0.Value;
-            crystal.EOSCondition.ThermalPressureApproach = radioButtonMieGruneisen.Checked ? ThermalPressure.MieGruneisen : ThermalPressure.T_dependence_BM;
-            crystal.EOSCondition.IsothermalPressureApproach = radioButtonBirchMurnaghan.Checked ? IsothermalPressure.Birch_Murnaghan : IsothermalPressure.Vinet;
-
-            crystal.EOSCondition.Theta0 = numericBoxEOS_Theta0.Value;
-            int n = 0;
-            for (int i = 0; i < crystal.Atoms.Length; i++)
-                n += crystal.Atoms[i].Atom.Count;
-            crystal.EOSCondition.Z = crystal.ChemicalFormulaZ;
-            if (crystal.ChemicalFormulaZ > 0)
-                crystal.EOSCondition.N = n / crystal.ChemicalFormulaZ;
-            crystal.DoesUseEOS = checkBoxUseEOS.Checked;
-            crystal.EOSCondition.Note = textBoxEOS_Note.Text;
-            crystal.EOSCondition.Temperature = numericBoxTemperature.Value;
-            #endregion
 
 
             #region PolyCrystallineProperty
@@ -274,32 +248,14 @@ namespace Crystallography.Controls
             boundControl.Crystal = crystal;
 
             //LatticePlaneコントロール
-            latticePlaneControl.Crystal = Crystal;
+            latticePlaneControl.Crystal = crystal;
             //latticePlaneControl.Clear();
             //latticePlaneControl.AddRange(crystal.LatticePlanes);
 
             //EOS関連
-            numericBoxPressure.Value = 0;
-            numericBoxEOS_A.Value = crystal.EOSCondition.A;
-            numericBoxEOS_B.Value = crystal.EOSCondition.B;
-            numericBoxEOS_C.Value = crystal.EOSCondition.C;
-            numericBoxEOS_V0perCell.Value = crystal.EOSCondition.CellVolume0;
-            numericBoxEOS_Gamma0.Value = crystal.EOSCondition.Gamma0;
-            numericBoxEOS_KT0.Value = crystal.EOSCondition.K0;
-            numericBoxEOS_KperT.Value = crystal.EOSCondition.KperT;
-            numericBoxEOS_KprimeT0.Value = crystal.EOSCondition.Kprime0;
-            numericBoxEOS_Q.Value = crystal.EOSCondition.Q;
-            numericBoxEOS_T0.Value = crystal.EOSCondition.T0;
-            numericBoxEOS_Theta0.Value = crystal.EOSCondition.Theta0;
-            checkBoxUseEOS.Checked = crystal.DoesUseEOS;
-            radioButtonMieGruneisen.Checked = crystal.EOSCondition.ThermalPressureApproach == ThermalPressure.MieGruneisen;
-            radioButtonTdependenceK0andV0.Checked = crystal.EOSCondition.ThermalPressureApproach == ThermalPressure.T_dependence_BM;
-            radioButtonBirchMurnaghan.Checked = crystal.EOSCondition.IsothermalPressureApproach == IsothermalPressure.Birch_Murnaghan;
-            radioButtonVinet.Checked = crystal.EOSCondition.IsothermalPressureApproach == IsothermalPressure.Vinet;
-            textBoxEOS_Note.Text = crystal.EOSCondition.Note;
-            numericBoxTemperature.Value = crystal.EOSCondition.Temperature;
-            numericBoxEOS_State_ValueChanged(new object(), new EventArgs());
+            eosControl.Crystal = crystal;
 
+            
             //弾性定数関連
             elasticityControl1.Stiffness = DenseMatrix.OfArray(crystal.ElasticStiffness);
 
@@ -341,8 +297,7 @@ namespace Crystallography.Controls
 
         #endregion ドラッグドロップイベント
 
-        private void buttonReset_Click(object sender, EventArgs e) => Crystal = new Crystal();
-
+   
         #region 右クリックメニュー
 
         private void importCrystalFromCIFAMCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -365,8 +320,8 @@ namespace Crystallography.Controls
                 var dlg = new SaveFileDialog { Filter = " *.cif| *.cif" };
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    StreamWriter sw = new StreamWriter(dlg.FileName, false);
-                    string str = ConvertCrystalData.ConvertToCIF(Crystal);
+                    var sw = new StreamWriter(dlg.FileName, false);
+                    var str = ConvertCrystalData.ConvertToCIF(Crystal);
                     sw.Write(str);
                     sw.Close();
                 }
@@ -400,48 +355,57 @@ namespace Crystallography.Controls
                 crystal.Reserved = !crystal.Reserved;
         }
 
-        #region EOSタブの入力設定
-        private void numericBoxEOS_State_ValueChanged(object sender, EventArgs e)
-        {
-            if (SkipEvent) return;
-            SkipEvent = true;
-            if (numericBoxEOS_V0perMol.ReadOnly && !double.IsNaN(numericBoxEOS_V0perCell.Value))
-                numericBoxEOS_V0perMol.Value = numericBoxEOS_V0perCell.Value * 6.0221367 / crystal.ChemicalFormulaZ / 10;
-            SkipEvent = false;
-            GenerateFromInterface();
+        #region EOS関連
 
-            SkipEvent = false;
-            if (checkBoxUseEOS.Checked)
-                numericBoxPressure.Value = crystal.EOSCondition.GetPressure(crystal.Volume * 1000);
-            SkipEvent = false;
+        /// <summary>
+        /// 外部から呼び出されることを想定.
+        /// </summary>
+        public void CalculateEOS()
+        {
+            eosControl.CalculatePressure();
         }
 
-        private void numericBoxEOS_V0perCell_Click2(object sender, EventArgs e)
-        {
-            if (SkipEvent) return;
-            SkipEvent = true;
-            numericBoxEOS_V0perCell.ReadOnly = false;
-            numericBoxEOS_V0perMol.ReadOnly = true;
-            SkipEvent = false;
-        }
+        //private void numericBoxEOS_State_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (SkipEvent) return;
+        //    SkipEvent = true;
+        //    if (numericBoxEOS_V0perMol.ReadOnly && !double.IsNaN(numericBoxEOS_V0perCell.Value))
+        //        numericBoxEOS_V0perMol.Value = numericBoxEOS_V0perCell.Value * 6.0221367 / crystal.ChemicalFormulaZ / 10;
+        //    SkipEvent = false;
+        //    GenerateFromInterface();
 
-        private void numericBoxEOS_V0perMol_Click2(object sender, EventArgs e)
-        {
-            if (SkipEvent) return;
-            SkipEvent = true;
-            numericBoxEOS_V0perCell.ReadOnly = true;
-            numericBoxEOS_V0perMol.ReadOnly = false;
-            SkipEvent = false;
-        }
+        //    SkipEvent = false;
+        //    if (checkBoxUseEOS.Checked)
+        //        numericBoxPressure.Value = crystal.EOSCondition.GetPressure(crystal.Volume * 1000);
+        //    SkipEvent = false;
+        //}
 
-        private void numericBoxEOS_V0perMol_ValueChanged(object sender, EventArgs e)
-        {
-            if (SkipEvent) return;
-            SkipEvent = true;
-            if (numericBoxEOS_V0perMol.ReadOnly == false)
-                numericBoxEOS_V0perCell.Value = numericBoxEOS_V0perMol.Value / 6.0221367 * 10 * crystal.ChemicalFormulaZ;
-            SkipEvent = false;
-        }
+        //private void numericBoxEOS_V0perCell_Click2(object sender, EventArgs e)
+        //{
+        //    if (SkipEvent) return;
+        //    SkipEvent = true;
+        //    numericBoxEOS_V0perCell.ReadOnly = false;
+        //    numericBoxEOS_V0perMol.ReadOnly = true;
+        //    SkipEvent = false;
+        //}
+
+        //private void numericBoxEOS_V0perMol_Click2(object sender, EventArgs e)
+        //{
+        //    if (SkipEvent) return;
+        //    SkipEvent = true;
+        //    numericBoxEOS_V0perCell.ReadOnly = true;
+        //    numericBoxEOS_V0perMol.ReadOnly = false;
+        //    SkipEvent = false;
+        //}
+
+        //private void numericBoxEOS_V0perMol_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (SkipEvent) return;
+        //    SkipEvent = true;
+        //    if (numericBoxEOS_V0perMol.ReadOnly == false)
+        //        numericBoxEOS_V0perCell.Value = numericBoxEOS_V0perMol.Value / 6.0221367 * 10 * crystal.ChemicalFormulaZ;
+        //    SkipEvent = false;
+        //}
 
         #endregion EOSタブの入力設定
 
@@ -714,11 +678,6 @@ namespace Crystallography.Controls
 
         private void buttonScatteringFactor_Click(object sender, EventArgs e) => formScatteringFactor.Visible = !formScatteringFactor.Visible;
 
-        private void flowLayoutPanel4_VisibleChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         #region リサイズイベント中は描画を停止する
         bool registResizeEvent = false;
@@ -738,5 +697,10 @@ namespace Crystallography.Controls
             }
         }
         #endregion
+
+        private void flowLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
