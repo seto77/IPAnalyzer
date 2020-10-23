@@ -30,7 +30,6 @@ namespace IPAnalyzer
     public partial class FormMain : System.Windows.Forms.Form
     {
         #region プロパティ、フィールド
-
         public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
         public PseudoBitmap pseudoBitmap = new PseudoBitmap();
@@ -116,7 +115,6 @@ namespace IPAnalyzer
 
 
         #endregion
-
 
         public FormMain()
         {
@@ -1692,8 +1690,9 @@ namespace IPAnalyzer
         {
             if (variance != 0)
             {
-                trackBarAdvancedMaxInt.Value = Math.Min((sumOfIntensity / Ring.Intensity.Count + 2 * variance), trackBarAdvancedMaxInt.Maximum);
-                trackBarAdvancedMinInt.Value = Math.Max((sumOfIntensity / Ring.Intensity.Count - 2 * variance), trackBarAdvancedMinInt.Minimum);
+                pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value = Math.Min((sumOfIntensity / Ring.Intensity.Count + 2 * variance), trackBarAdvancedMaxInt.Maximum);
+                pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value = Math.Max((sumOfIntensity / Ring.Intensity.Count - 2 * variance), trackBarAdvancedMinInt.Minimum);
+                Draw();
             }
 
         }
