@@ -33,7 +33,7 @@ namespace IPAnalyzer
         public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
         public PseudoBitmap pseudoBitmap = new PseudoBitmap();
-        public bool IsDrawing = true;
+        public bool SkipDrawing { get; set; } = false;
 
         public Size SrcImgSize;
         public int ThreadTotal = 16;
@@ -901,7 +901,7 @@ namespace IPAnalyzer
         public void Draw()
         {
 
-            if (!IsDrawing) return;
+            if (SkipDrawing) return;
             if (!IsImageReady) return;
             if (!toolStripButtonUnroll.Checked)
             {

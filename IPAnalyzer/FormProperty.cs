@@ -767,11 +767,13 @@ namespace IPAnalyzer
                 saclaControl.PhiDegree = numericBoxTiltCorrectionPhi.Value;
                 saclaControl.PixelSize= numericBoxPixelSizeX.Value;
 
+                saclaControl.CameraLength2 = numericalTextBoxCameraLength.Value * Math.Cos(saclaControl.TauRadian);
+
                 saclaControl.Foot = new PointD(
                     numericBoxCenterPositionX.Value + saclaControl.CameraLength2 * Math.Sin(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize,
                     numericBoxCenterPositionY.Value - saclaControl.CameraLength2 * Math.Cos(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize);
 
-                saclaControl.CameraLength2 = numericalTextBoxCameraLength.Value * Math.Cos(saclaControl.TauRadian);
+                
 
                 SkipEvent = false;
             }  

@@ -6,6 +6,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra.Complex;
 
 namespace IPAnalyzer
 {
@@ -300,15 +303,15 @@ namespace IPAnalyzer
             
             for (int i = 0; i < crystal.Plane.Count; i++)
             {
-                FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - numericBoxFittingRange.Value * 4;
-                FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[i].XCalc + numericBoxFittingRange.Value * 4;
+                FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - numericBoxFittingRange.Value * 2;
+                FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[i].XCalc + numericBoxFittingRange.Value * 2;
                 for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
                     if (Ring.IsOutsideOfIntegralProperty[j] == false)
                         area[j] = false;
             }
            
-            FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[0].XCalc - numericBoxFittingRange.Value * 4;
-            FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[crystal.Plane.Count - 1].XCalc + numericBoxFittingRange.Value * 4;
+            FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[0].XCalc - numericBoxFittingRange.Value * 2;
+            FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[crystal.Plane.Count - 1].XCalc + numericBoxFittingRange.Value * 2;
             for (int i = 0; i < Ring.IsSpots.Count; i++)
                 Ring.IsSpots[i] = area[i] || originalSpots[i];
             
@@ -328,45 +331,21 @@ namespace IPAnalyzer
             var footYRange = checkBoxFootY.Checked ? (int)numericBoxFootPointYRange.Value : 0;
             var waveLengthRange = checkBoxWaveLength.Checked ? (int)numericBoxWaveLengthRange.Value : 0;
 
-            int cycle = (int)numericUpDownIteration.Value;
-            
-
-            Stopwatch sw = new Stopwatch();
+            var sw = new Stopwatch();
             sw.Start();
             long beforeTime = 0;
             int count = 0;
             var results = new SortedList<double, saclaValues>();
 
             var renewalTime = 7;
-            void report(Profile profile, int n)
-            {
-                //int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
 
-                var total = (2 * phiRange + 1) * (2 * footXRange + 1) * (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1) * (2 * waveLengthRange + 1);
-                double progress = (double)count / cycle / total;
-                toolStripStatusLabel1.Text = "  " + ((sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime).ToString("f1") + " ms / step.  "
-                    + (progress * 100).ToString("f2") + " % completed.  "
-                    + "Elappsed Time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.  "
-                    + "Wait about " + (sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress).ToString("f0") + " sec.";
-                textBox1.Text = "Cycle: " + n.ToString() + "\r\n";
-                textBox1.Text += "Current best values\r\n     Distance:\t" + results.Values[0].Distance + "\r\n     Phi:\t\t" + results.Values[0].Phi + "\r\n     Tau:\t\t" + results.Values[0].Tau
-                     + "\r\n     Foot X:\t" + results.Values[0].FootX + "\r\n     Foot Y:\t" + results.Values[0].FootY + "\r\n     Wave length:\t" + results.Values[0].WaveLength + "\r\n"
-                     + "Current steps: \r\n     Distance:\t" + distanceStep + "\r\n     Phi:\t\t" + phiStep + "\r\n     Tau:\t\t" + tauStep
-                     + "\r\n     Foot X:\t" + footXStep + "\r\n     Foot Y:\t" + footYStep + "\r\n     Wave length:\t" + waveLengthStep + "\r\n";
-                if (results.Count > 4)
-                    textBox1.Text += "\r\n No.1: " + results.Keys[0].ToString() + "\r\n No.2: " + results.Keys[1].ToString()
-                        + "\r\n No.3: " + results.Keys[2].ToString() + "\r\n No.4: " + results.Keys[3].ToString();
+            saclaValues initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY, WaveLength);
+            FormMain.SkipDrawing = true;
 
-                beforeTime = sw.ElapsedMilliseconds;
-                toolStripProgressBar1.Value = (int)(progress * toolStripProgressBar1.Maximum);
-                drawGraph(profile, crystal.Plane);
-                Application.DoEvents();
-            }
-
-            for (int n = 0; n < cycle; n++)
+            for (int n = 0; n < (int)numericUpDownIteration.Value; n++)
             {
                 
-                var initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY, WaveLength);
+                initialValue = new saclaValues(Distance, Phi, Tau, FootX, FootY, WaveLength);
                 results = new SortedList<double, saclaValues>();
 
                 //次にDistance, Tau, FootY
@@ -376,6 +355,7 @@ namespace IPAnalyzer
                             for (int paramTau = -tauRange; paramTau <= tauRange; paramTau++)
                                 for (int paramFootY = -footYRange; paramFootY <= footYRange; paramFootY++)
                                 {
+                                    
                                     FormMain.FormProperty.SkipEvent = true;
                                     Distance = initialValue.Distance + paramDistance * distanceStep;
                                     Tau = initialValue.Tau + paramTau * tauStep;
@@ -385,6 +365,7 @@ namespace IPAnalyzer
                                     FormMain.FormProperty.SkipEvent = false;
                                     FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
                                     FormMain.SetIntegralProperty();
+
 
                                     var profile = Ring.GetProfile(Ring.IP);
 
@@ -421,6 +402,45 @@ namespace IPAnalyzer
                     waveLengthStep = nextStep(waveLengthStep);
                 }
             }
+            FormMain.SkipDrawing = false;
+            void report(Profile profile, int n)
+            {
+                //int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
+
+                var total = (2 * phiRange + 1) * (2 * footXRange + 1) * (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1) * (2 * waveLengthRange + 1);
+                double progress = (double)count / (int)numericUpDownIteration.Value / total;
+                toolStripStatusLabel1.Text = 
+                    $"  {(sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime:f1} ms / step." +
+                    $"  {progress * 100:f2} % completed.  Elappsed Time: {sw.ElapsedMilliseconds / 1000.0:f0} sec." +
+                    $"  Wait about {sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress:f0} sec.";
+
+                textBox1.Text = $"Cycle: {n}\r\n";
+                var best = results.Values[0];
+                textBox1.Text +=
+                    $"Current best values\r\n" +
+                    $"     Distance:\t{best.Distance}{(best.Distance!=initialValue.Distance? " *" : "")}\r\n" +
+                    $"     Phi:\t\t{best.Phi}{(best.Phi != initialValue.Phi ? " *" : "")}\r\n" +
+                    $"     Tau:\t\t{best.Tau}{(best.Tau != initialValue.Tau ? " *" : "")}\r\n" +
+                    $"     Foot X:\t{best.FootX}{(best.FootX != initialValue.FootX ? " *" : "")}\r\n" +
+                    $"     Foot Y:\t{best.FootY}{(best.FootY != initialValue.FootY ? " *" : "")}\r\n" +
+                    $"     Wave length:\t{best.WaveLength}{(best.WaveLength != initialValue.WaveLength ? " *" : "")}\r\n" +
+                    $"Current steps: \r\n" +
+                    $"     Distance:\t{distanceStep}\r\n" +
+                    $"     Phi:\t\t{phiStep}\r\n" +
+                    $"     Tau:\t\t{tauStep}\r\n" +
+                    $"     Foot X:\t{footXStep}\r\n" +
+                    $"     Foot Y:\t{footYStep}\r\n" +
+                    $"     Wave length:\t{waveLengthStep}\r\n";
+                if (results.Count > 4)
+                    textBox1.Text += $"\r\n No.1: {results.Keys[0]}\r\n No.2: {results.Keys[1]}\r\n No.3: {results.Keys[2]}\r\n No.4: {results.Keys[3]}";
+
+                beforeTime = sw.ElapsedMilliseconds;
+                toolStripProgressBar1.Value = (int)(progress * toolStripProgressBar1.Maximum);
+                drawGraph(profile, crystal.Plane);
+                Application.DoEvents();
+            }
+
+
             toolStripStatusLabel1.Text = "Complete! Total time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.";
             FormMain.SetIntegralProperty();
             var finalProfile = Ring.GetProfile(Ring.IP);

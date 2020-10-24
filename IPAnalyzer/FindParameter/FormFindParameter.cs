@@ -1285,7 +1285,7 @@
             int num = isPrimary ? numPrimary : numSecondary;
 
             //読み込む前に現在のSpots情報を保存しておく
-            if (formMain.FileName != "")
+            if (formMain.FileName !=null && formMain.FileName != "")
             {
                 if (fileNamePrimary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
                 {
@@ -1881,7 +1881,7 @@
 
             setHorizontalMode();
 
-            if (!checkBoxRefleshMainform.Checked) formMain.IsDrawing = false;
+            if (!checkBoxRefleshMainform.Checked) formMain.SkipDrawing = false;
             IsSkipTextChangeEvent = true;
             CheckForIllegalCrossThreadCalls = false;
             buttonStopRefinements.Enabled = true;
@@ -1931,7 +1931,7 @@
             pictureBoxMain.Enabled = true;
             flowLayoutPanel1.Visible = !checkBoxUseStandardCrystal.Checked;
             
-            formMain.IsDrawing = true;
+            formMain.SkipDrawing = false;
             formMain.FormProperty.radioButtonRectangle.Checked = true;
             formMain.FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
             resetHorizontalMode();
