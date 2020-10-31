@@ -1378,13 +1378,13 @@ namespace IPAnalyzer
             // toolStripComboBoxRotate
             // 
             this.toolStripComboBoxRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.toolStripComboBoxRotate, "toolStripComboBoxRotate");
             this.toolStripComboBoxRotate.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxRotate.Items"),
             resources.GetString("toolStripComboBoxRotate.Items1"),
             resources.GetString("toolStripComboBoxRotate.Items2"),
             resources.GetString("toolStripComboBoxRotate.Items3")});
             this.toolStripComboBoxRotate.Name = "toolStripComboBoxRotate";
+            resources.ApplyResources(this.toolStripComboBoxRotate, "toolStripComboBoxRotate");
             this.toolStripComboBoxRotate.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxRotate_SelectedIndexChanged);
             // 
             // toolStripSeparator28
@@ -1556,7 +1556,6 @@ namespace IPAnalyzer
             // 
             // toolStripComboBoxBackgroundLower
             // 
-            resources.ApplyResources(this.toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
             this.toolStripComboBoxBackgroundLower.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxBackgroundLower.Items"),
             resources.GetString("toolStripComboBoxBackgroundLower.Items1"),
@@ -1565,6 +1564,7 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxBackgroundLower.Items4"),
             resources.GetString("toolStripComboBoxBackgroundLower.Items5")});
             this.toolStripComboBoxBackgroundLower.Name = "toolStripComboBoxBackgroundLower";
+            resources.ApplyResources(this.toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
             // 
             // toolStripMenuItem7
             // 
@@ -1573,7 +1573,6 @@ namespace IPAnalyzer
             // 
             // toolStripComboBoxBackgroundUpper
             // 
-            resources.ApplyResources(this.toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
             this.toolStripComboBoxBackgroundUpper.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxBackgroundUpper.Items"),
             resources.GetString("toolStripComboBoxBackgroundUpper.Items1"),
@@ -1581,6 +1580,7 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxBackgroundUpper.Items3"),
             resources.GetString("toolStripComboBoxBackgroundUpper.Items4")});
             this.toolStripComboBoxBackgroundUpper.Name = "toolStripComboBoxBackgroundUpper";
+            resources.ApplyResources(this.toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
             // 
             // fourierToolStripMenuItem
             // 

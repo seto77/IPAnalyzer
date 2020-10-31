@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Crystallography
@@ -80,7 +81,7 @@ namespace Crystallography
         [XmlIgnore]
         public List<Vector3D> VectorOfG = new List<Vector3D>();
 
-        /// <summary>
+         /// <summary>
         /// 菊池線ベクトル
         /// </summary>
         [NonSerialized]
@@ -579,8 +580,6 @@ namespace Crystallography
             }
             #endregion
 
-
-
             double SinAlfa = Math.Sin(Alpha); double SinBeta = Math.Sin(Beta); double SinGamma = Math.Sin(Gamma);
             double CosAlfa = Math.Cos(Alpha); double CosBeta = Math.Cos(Beta); double CosGamma = Math.Cos(Gamma);
             double a2 = A * A; double b2 = B * B; var c2 = C * C;
@@ -728,14 +727,12 @@ namespace Crystallography
         /// <param name="b"></param>
         /// <param name="c"></param>
         /// <returns></returns>
-        public static Vector3D CalcHklVector(int h, int k, int l, Vector3D a, Vector3D b, Vector3D c)
-        {
-            return new Vector3D(
+        public static Vector3D CalcHklVector(int h, int k, int l, Vector3D a, Vector3D b, Vector3D c) 
+            => new Vector3D(
                 -h * (b.Z * c.Y - b.Y * c.Z) - k * (c.Z * a.Y - c.Y * a.Z) - l * (a.Z * b.Y - a.Y * b.Z),
                 -h * (b.X * c.Z - b.Z * c.X) - k * (c.X * a.Z - c.Z * a.X) - l * (a.X * b.Z - a.Z * b.X),
                 -h * (b.Y * c.X - b.X * c.Y) - k * (c.Y * a.X - c.X * a.Y) - l * (a.Y * b.X - a.X * b.Y)
                 );
-        }
 
         /// <summary>
         /// hkl面の方向ベクトル計算
@@ -744,14 +741,12 @@ namespace Crystallography
         /// <param name="k"></param>
         /// <param name="l"></param>
         /// <returns></returns>
-        public Vector3D CalcHklVector(int h, int k, int l)
-        {
-            return new Vector3D(
+        public Vector3D CalcHklVector(int h, int k, int l) 
+            => new Vector3D(
                 -h * (B_Axis.Z * C_Axis.Y - B_Axis.Y * C_Axis.Z) - k * (C_Axis.Z * A_Axis.Y - C_Axis.Y * A_Axis.Z) - l * (A_Axis.Z * B_Axis.Y - A_Axis.Y * B_Axis.Z),
                 -h * (B_Axis.X * C_Axis.Z - B_Axis.Z * C_Axis.X) - k * (C_Axis.X * A_Axis.Z - C_Axis.Z * A_Axis.X) - l * (A_Axis.X * B_Axis.Z - A_Axis.Z * B_Axis.X),
                 -h * (B_Axis.Y * C_Axis.X - B_Axis.X * C_Axis.Y) - k * (C_Axis.Y * A_Axis.X - C_Axis.X * A_Axis.Y) - l * (A_Axis.Y * B_Axis.X - A_Axis.X * B_Axis.Y)
                 );
-        }
 
         /// <summary>
         /// 既約かどうか判定
@@ -919,8 +914,7 @@ namespace Crystallography
                         for (int l = -lMax; l <= lMax; l++)
                             if ((d = GetLengthPlane(h, k, l)) > dMin)
                             {
-                                Plane temp = new Plane();
-                                temp.IsRootIndex = SymmetryStatic.IsRootIndex(h, k, l, Symmetry, ref multi);
+                                var temp = new Plane { IsRootIndex = SymmetryStatic.IsRootIndex(h, k, l, Symmetry, ref multi) };
                                 if (!excludeForbiddenPlane | (temp.strCondition = Symmetry.CheckExtinctionRule(h, k, l)).Length == 0)
                                 {
                                     temp.Multi[0] = multi;
@@ -1087,110 +1081,88 @@ namespace Crystallography
             if (A_Star == null) SetAxis();
 
             double dMin2 = dMin * dMin, gMax2 = 1 / dMin2, gMax = Math.Sqrt(gMax2);
-            var g = new List<Vector3D>();
-            var maxGnum = 500000;
 
-            var direction = new List<(int h, int k, int l)>();
-
+            var directions = new List<(int h, int k, int l)>();
             #region directionを初期化
             if (excludeLatticeCondition)
             {
                 if (Symmetry.LatticeTypeStr == "F")
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 1, 1), (1, 1, -1), (1, -1, 1), (1, -1, -1), (-1, 1, 1), (-1, 1, -1), (-1, -1, 1), (-1, -1, -1) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 1, 1), (1, 1, -1), (1, -1, 1), (1, -1, -1), (-1, 1, 1), (-1, 1, -1), (-1, -1, 1), (-1, -1, -1) });
                 else if (Symmetry.LatticeTypeStr == "A")
-                    direction.AddRange(new (int h, int k, int l)[] { (0, 1, 1), (0, 1, -1), (0, -1, 1), (0, -1, -1), (1, 0, 0), (-1, 0, 0) });
+                    directions.AddRange(new (int h, int k, int l)[] { (0, 1, 1), (0, 1, -1), (0, -1, 1), (0, -1, -1), (1, 0, 0), (-1, 0, 0) });
                 else if (Symmetry.LatticeTypeStr == "B")
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 0, 1), (1, 0, -1), (-1, 0, 1), (-1, 0, -1), (0, 1, 0), (0, -1, 0) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 0, 1), (1, 0, -1), (-1, 0, 1), (-1, 0, -1), (0, 1, 0), (0, -1, 0) });
                 else if (Symmetry.LatticeTypeStr == "C")
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 1, 0), (1, -1, 0), (-1, 1, 0), (-1, -1, 0), (0, 0, 1), (0, 0, -1) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 1, 0), (1, -1, 0), (-1, 1, 0), (-1, -1, 0), (0, 0, 1), (0, 0, -1) });
                 else if (Symmetry.LatticeTypeStr == "I")
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 1, 0), (1, -1, 0), (-1, 1, 0), (-1, -1, 0), (0, 1, 1), (0, 1, -1), (0, -1, 1), (0, -1, -1), (1, 0, 1), (1, 0, -1), (-1, 0, 1), (-1, 0, -1) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 1, 0), (1, -1, 0), (-1, 1, 0), (-1, -1, 0), (0, 1, 1), (0, 1, -1), (0, -1, 1), (0, -1, -1), (1, 0, 1), (1, 0, -1), (-1, 0, 1), (-1, 0, -1) });
                 else if (Symmetry.LatticeTypeStr == "R" && Symmetry.SpaceGroupHMsubStr == "H")
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 0, 1), (0, -1, 1), (-1, 1, 1), (-1, 0, -1), (0, 1, -1), (1, -1, -1) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 0, 1), (0, -1, 1), (-1, 1, 1), (-1, 0, -1), (0, 1, -1), (1, -1, -1) });
                 else if (Symmetry.CrystalSystemStr == "trigonal" || Symmetry.CrystalSystemStr == "hexagonal")
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (1, -1, 0), (-1, 1, 0), (0, 0, 1), (0, 0, -1) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (1, -1, 0), (-1, 1, 0), (0, 0, 1), (0, 0, -1) });
                 else
-                    direction.AddRange(new (int h, int k, int l)[] { (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1) });
+                    directions.AddRange(new (int h, int k, int l)[] { (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1) });
             }
             else
-                direction.AddRange(new (int h, int k, int l)[] { (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1) });
+                directions.AddRange(new (int h, int k, int l)[] { (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1) });
 
             #endregion
 
-            var shift = direction.Select(dir => (MatrixInverse * dir).Length).Max();
+            var shift = directions.Select(dir => (MatrixInverse * dir).Length).Max();
 
             var outer = new Dictionary<(int h, int k, int l), double> { { (0, 0, 0), 0 } };
-            var outerP = outer.AsParallel();
-
-            var list = new List<(int h, int k, int l, int i)>();
-            var listP = list.AsParallel();
 
             var whole = new HashSet<int> { 0 };
-            const int n = 1024;
             var minG = 0.0;
-            while (g.Count < maxGnum && minG < gMax)
+
+            double aX = A_Star.X, aY = A_Star.Y, aZ = A_Star.Z;
+            double bX = B_Star.X, bY = B_Star.Y, bZ = B_Star.Z;
+            double cX = C_Star.X, cY = C_Star.Y, cZ = C_Star.Z;
+
+            var maxGnum = 250000;
+            var gList = new List<(int h, int k, int l, double x, double y, double z, double len)>();
+
+            while (gList.Count < maxGnum && (minG = outer.Values.Min()) < gMax)
             {
-                minG = outer.Min(o => o.Value);
-                var outerList = outer.Where(o => o.Value - minG < shift * 4).Select(o => o.Key).ToList();
-                list.Clear();
-                var i = 0;
-                foreach ((int h2, int k2, int l2) in direction)
-                    foreach ((int h1, int k1, int l1) in outerList)
+                foreach ((int h1, int k1, int l1) in outer.Where(o => o.Value - minG < shift * 4).Select(o => o.Key).ToArray())
+                {
+                    outer.Remove((h1, k1, l1));
+                    foreach ((int h2, int k2, int l2) in directions)
                     {
-                        int h = h1 + h2, k = k1 + k2, l = l1 + l2, key = h * n * n + k * n + l;
-                        if (key > 0 && !whole.Contains(key))
+                        int h = h1 + h2, k = k1 + k2, l = l1 + l2, key = h * 1024 * 1024 + k * 1024 + l;
+                        if (key > 0 && whole.Add(key))
                         {
-                            whole.Add(key);
-                            list.Add((h, k, l, i++));
+                            double x = h * aX + k * bX + l * cX, y = h * aY + k * bY + l * cY, z = h * aZ + k * bZ + l * cZ;
+                            var len = Math.Sqrt(x * x + y * y + z * z);
+                            gList.Add((h, k, l, x, y, z, len));
+                            outer.Add((h, k, l), len);
                         }
                     }
-                var gTemp = new Vector3D[list.Count * 2];
-                var outerTemp = new (int h, int k, int l, double glen)[list.Count];
-                listP.ForAll(index =>
-                {
-                    (int h, int k, int l, int i) = index;
-
-                    var vec1 = h * A_Star + k * B_Star + l * C_Star;
-                    var glen = vec1.Length;
-                    vec1.h = (short)h;
-                    vec1.k = (short)k;
-                    vec1.l = (short)l;
-                    vec1.d = 1 / glen;
-                    vec1.Extinction = Symmetry.CheckExtinctionRule(h, k, l);
-                    vec1.Index = $"{h} {k} {l}";
-
-                    var vec2 = -vec1;
-                    vec2.h = (short)-h;
-                    vec2.k = (short)-k;
-                    vec2.l = (short)-l;
-                    vec2.d = vec1.d;
-                    vec2.Extinction = vec1.Extinction;
-                    vec2.Index = $"{-h} {-k} {-l}";
-
-                    gTemp[i * 2] = vec1;
-                    gTemp[i * 2 + 1] = vec2;
-                    outerTemp[i] = (h, k, l, glen);
-                });
-                g.AddRange(gTemp);
-                outerList.ForEach(target => outer.Remove(target));
-                foreach (var (h, k, l, glen) in outerTemp)
-                    outer.Add((h, k, l), glen);
+                }
             }
-            g = g.OrderByDescending(v => v.d).ToList();
+            gList = gList.OrderBy(g => g.len).ToList();
+
+            var gArray = new Vector3D[gList.Count * 2];
+            Parallel.For(0, gList.Count, i =>
+            {
+                (int h, int k, int l, double x, double y, double z, double glen) = gList[i];
+                var extinction = Symmetry.CheckExtinctionRule(h, k, l);
+                gArray[i * 2] = new Vector3D(x, y, z, false) { h = (short)h, k = (short)k, l = (short)l, d = 1 / glen, Extinction = extinction, Index = $"{h} {k} {l}" };
+                gArray[i * 2 + 1] = new Vector3D(-x, -y, -z, false) { h = (short)-h, k = (short)-k, l = (short)-l, d = 1 / glen, Extinction = extinction, Index = $"{-h} {-k} {-l}" };
+            });
 
             if (wavesource != WaveSource.None)//強度計算する場合 250msくらい
             {
-                foreach (var _g in g)
+                Parallel.ForEach(gArray, _g =>
                 {
-                    _g.F = _g.Extinction.Length == 0 ? GetStructureFactor(wavesource, Atoms, _g.h, _g.k, _g.l, _g.Length2/ 4.0) : 0;
-                    _g.RawIntensity = _g.F.Magnitude2();
-                }
+                     _g.F = _g.Extinction.Length == 0 ? GetStructureFactor(wavesource, Atoms, _g.h, _g.k, _g.l, _g.Length2 / 4.0) : 0;
+                     _g.RawIntensity = _g.F.Magnitude2();
+                });
 
-                var maxIntensity = g.Max(v => v.RawIntensity);
-                for (int i = 0; i < g.Count; i++)
-                    g[i].RelativeIntensity = g[i].RawIntensity / maxIntensity;
+                var maxIntensity = gArray.Max(v => v.RawIntensity);
+                Parallel.ForEach(gArray, _g => _g.RelativeIntensity = _g.RawIntensity / maxIntensity);
             }
-            VectorOfG = g; //最後に値を代入
+            VectorOfG = gArray.ToList(); //最後に値を代入
         }
 
         #endregion

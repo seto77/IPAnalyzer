@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics;
 using MathNet.Numerics.LinearAlgebra.Complex;
+using System.Threading.Tasks;
 
 namespace IPAnalyzer
 {
@@ -220,20 +221,24 @@ namespace IPAnalyzer
             {
                 PointD[] pt = profile.Pt.ToArray();
                 //いったん初期化
-                for (int j = 0; j < planes.Count; j++)
-                {
-                    planes[j].XCalc = Math.Asin (WaveLength / 2 / planes[j].d) /Math.PI*360;
 
-                    //planes[j].XCalc = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / planes[j].d) / Math.PI * 180;
-                    planes[j].peakFunction = new PeakFunction();
-                    planes[j].peakFunction.Option = PeakFunctionForm.PseudoVoigt;
-                    double twoTheta = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / planes[j].d);
-                    planes[j].peakFunction.range = /*(double)numericUpDownSearchRange.Value*/ numericBoxFittingRange.Value / Math.Cos(twoTheta / 2);
-                    planes[j].peakFunction.Hk = planes[j].peakFunction.range / 2;
-                    planes[j].peakFunction.X = planes[j].XCalc;
-                    PeakFunction[] pf = new[] { planes[j].peakFunction };
+                Parallel.ForEach(planes, p =>
+
+
+                //for (int j = 0; j < planes.Count; j++)
+                {
+                    p.XCalc = Math.Asin(WaveLength / 2 / p.d) / Math.PI * 360;
+
+                    p.peakFunction = new PeakFunction();
+                    p.peakFunction.Option = PeakFunctionForm.PseudoVoigt;
+                    var twoTheta = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / p.d);
+                    p.peakFunction.range = /*(double)numericUpDownSearchRange.Value*/ numericBoxFittingRange.Value / Math.Cos(twoTheta / 2);
+                    p.peakFunction.Hk = p.peakFunction.range / 2;
+                    p.peakFunction.X = p.XCalc;
+                    var pf = new[] { p.peakFunction };
                     double r = FittingPeak.FitMultiPeaksThread(pt, true, 0, ref pf);
                 }
+                );
             }
 
             else

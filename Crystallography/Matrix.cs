@@ -146,100 +146,84 @@ namespace Crystallography
 
         #region  演算子のオーバーロード
 
-        public static Matrix3D operator *(Matrix3D m1, Matrix3D m2)
+        public static Matrix3D operator *(Matrix3D m1, Matrix3D m2) => new Matrix3D
         {
-            Matrix3D m = new Matrix3D();
-            m.E11 = m1.E11 * m2.E11 + m1.E12 * m2.E21 + m1.E13 * m2.E31;
-            m.E12 = m1.E11 * m2.E12 + m1.E12 * m2.E22 + m1.E13 * m2.E32;
-            m.E13 = m1.E11 * m2.E13 + m1.E12 * m2.E23 + m1.E13 * m2.E33;
+            E11 = m1.E11 * m2.E11 + m1.E12 * m2.E21 + m1.E13 * m2.E31,
+            E12 = m1.E11 * m2.E12 + m1.E12 * m2.E22 + m1.E13 * m2.E32,
+            E13 = m1.E11 * m2.E13 + m1.E12 * m2.E23 + m1.E13 * m2.E33,
 
-            m.E21 = m1.E21 * m2.E11 + m1.E22 * m2.E21 + m1.E23 * m2.E31;
-            m.E22 = m1.E21 * m2.E12 + m1.E22 * m2.E22 + m1.E23 * m2.E32;
-            m.E23 = m1.E21 * m2.E13 + m1.E22 * m2.E23 + m1.E23 * m2.E33;
+            E21 = m1.E21 * m2.E11 + m1.E22 * m2.E21 + m1.E23 * m2.E31,
+            E22 = m1.E21 * m2.E12 + m1.E22 * m2.E22 + m1.E23 * m2.E32,
+            E23 = m1.E21 * m2.E13 + m1.E22 * m2.E23 + m1.E23 * m2.E33,
 
-            m.E31 = m1.E31 * m2.E11 + m1.E32 * m2.E21 + m1.E33 * m2.E31;
-            m.E32 = m1.E31 * m2.E12 + m1.E32 * m2.E22 + m1.E33 * m2.E32;
-            m.E33 = m1.E31 * m2.E13 + m1.E32 * m2.E23 + m1.E33 * m2.E33;
+            E31 = m1.E31 * m2.E11 + m1.E32 * m2.E21 + m1.E33 * m2.E31,
+            E32 = m1.E31 * m2.E12 + m1.E32 * m2.E22 + m1.E33 * m2.E32,
+            E33 = m1.E31 * m2.E13 + m1.E32 * m2.E23 + m1.E33 * m2.E33
+        };
 
-            return m;
-        }
-
-        public static Matrix3D operator *(double d, Matrix3D m2)
+        public static Matrix3D operator *(double d, Matrix3D m2) => new Matrix3D
         {
-            Matrix3D m = new Matrix3D();
-            m.E11 = d * m2.E11;
-            m.E12 = d * m2.E12;
-            m.E13 = d * m2.E13;
+            E11 = d * m2.E11,
+            E12 = d * m2.E12,
+            E13 = d * m2.E13,
 
-            m.E21 = d * m2.E21;
-            m.E22 = d * m2.E22;
-            m.E23 = d * m2.E23;
+            E21 = d * m2.E21,
+            E22 = d * m2.E22,
+            E23 = d * m2.E23,
 
-            m.E31 = d * m2.E31;
-            m.E32 = d * m2.E32;
-            m.E33 = d * m2.E33;
+            E31 = d * m2.E31,
+            E32 = d * m2.E32,
+            E33 = d * m2.E33
+        };
 
-            return m;
-        }
-
-        public static Matrix3D operator +(Matrix3D m1, Matrix3D m2)
+        public static Matrix3D operator +(Matrix3D m1, Matrix3D m2) => new Matrix3D
         {
-            Matrix3D m = new Matrix3D();
-            m.E11 = m1.E11 + m2.E11;
-            m.E12 = m1.E12 + m2.E12;
-            m.E13 = m1.E13 + m2.E13;
+            E11 = m1.E11 + m2.E11,
+            E12 = m1.E12 + m2.E12,
+            E13 = m1.E13 + m2.E13,
 
-            m.E21 = m1.E21 + m2.E21;
-            m.E22 = m1.E22 + m2.E22;
-            m.E23 = m1.E23 + m2.E23;
+            E21 = m1.E21 + m2.E21,
+            E22 = m1.E22 + m2.E22,
+            E23 = m1.E23 + m2.E23,
 
-            m.E31 = m1.E31 + m2.E31;
-            m.E32 = m1.E32 + m2.E32;
-            m.E33 = m1.E33 + m2.E33;
-            return m;
-        }
+            E31 = m1.E31 + m2.E31,
+            E32 = m1.E32 + m2.E32,
+            E33 = m1.E33 + m2.E33
+        };
 
-        public static Matrix3D operator -(Matrix3D m1, Matrix3D m2)
+        public static Matrix3D operator -(Matrix3D m1, Matrix3D m2) => new Matrix3D
         {
-            Matrix3D m = new Matrix3D();
-            m.E11 = m1.E11 - m2.E11;
-            m.E12 = m1.E12 - m2.E12;
-            m.E13 = m1.E13 - m2.E13;
+            E11 = m1.E11 - m2.E11,
+            E12 = m1.E12 - m2.E12,
+            E13 = m1.E13 - m2.E13,
 
-            m.E21 = m1.E21 - m2.E21;
-            m.E22 = m1.E22 - m2.E22;
-            m.E23 = m1.E23 - m2.E23;
+            E21 = m1.E21 - m2.E21,
+            E22 = m1.E22 - m2.E22,
+            E23 = m1.E23 - m2.E23,
 
-            m.E31 = m1.E31 - m2.E31;
-            m.E32 = m1.E32 - m2.E32;
-            m.E33 = m1.E33 - m2.E33;
-            return m;
-        }
+            E31 = m1.E31 - m2.E31,
+            E32 = m1.E32 - m2.E32,
+            E33 = m1.E33 - m2.E33
+        };
 
-        public static Matrix3D operator -(Matrix3D m1)
+        public static Matrix3D operator -(Matrix3D m1) => new Matrix3D
         {
-            Matrix3D m = new Matrix3D();
-            m.E11 = -m1.E11;
-            m.E12 = -m1.E12;
-            m.E13 = -m1.E13;
+            E11 = -m1.E11,
+            E12 = -m1.E12,
+            E13 = -m1.E13,
 
-            m.E21 = -m1.E21;
-            m.E22 = -m1.E22;
-            m.E23 = -m1.E23;
+            E21 = -m1.E21,
+            E22 = -m1.E22,
+            E23 = -m1.E23,
 
-            m.E31 = -m1.E31;
-            m.E32 = -m1.E32;
-            m.E33 = -m1.E33;
-            return m;
-        }
+            E31 = -m1.E31,
+            E32 = -m1.E32,
+            E33 = -m1.E33
+        };
 
-        public static Vector3D operator *(Matrix3D m, Vector3D v)
-        {
-            if (m == null || v == null)
-                return null;
-            else
-                return new Vector3D(m.E11 * v.X + m.E12 * v.Y + m.E13 * v.Z, m.E21 * v.X + m.E22 * v.Y + m.E23 * v.Z, m.E31 * v.X + m.E32 * v.Y + m.E33 * v.Z);
-        }
+        public static Vector3D operator *(Matrix3D m, Vector3D v) => m == null || v == null
+                ? null
+                : new Vector3D(m.E11 * v.X + m.E12 * v.Y + m.E13 * v.Z, m.E21 * v.X + m.E22 * v.Y + m.E23 * v.Z, m.E31 * v.X + m.E32 * v.Y + m.E33 * v.Z);
 
         public static Vector3DBase operator *(Matrix3D m, Vector3DBase v)
             => new Vector3DBase(m.E11 * v.X + m.E12 * v.Y + m.E13 * v.Z, m.E21 * v.X + m.E22 * v.Y + m.E23 * v.Z, m.E31 * v.X + m.E32 * v.Y + m.E33 * v.Z);
@@ -263,19 +247,20 @@ namespace Crystallography
         public static Matrix3D Inverse(Matrix3D m)
         {
             double det = -m.E13 * m.E22 * m.E31 + m.E12 * m.E23 * m.E31 + m.E13 * m.E21 * m.E32 - m.E11 * m.E23 * m.E32 - m.E12 * m.E21 * m.E33 + m.E11 * m.E22 * m.E33;
-            if (det == 0)
-                return new Matrix3D();
-            Matrix3D mInv = new Matrix3D();
-            mInv.E11 = (-m.E23 * m.E32 + m.E22 * m.E33) / det;
-            mInv.E12 = (m.E13 * m.E32 - m.E12 * m.E33) / det;
-            mInv.E13 = (-m.E13 * m.E22 + m.E12 * m.E23) / det;
-            mInv.E21 = (m.E23 * m.E31 - m.E21 * m.E33) / det;
-            mInv.E22 = (-m.E13 * m.E31 + m.E11 * m.E33) / det;
-            mInv.E23 = (m.E13 * m.E21 - m.E11 * m.E23) / det;
-            mInv.E31 = (-m.E22 * m.E31 + m.E21 * m.E32) / det;
-            mInv.E32 = (m.E12 * m.E31 - m.E11 * m.E32) / det;
-            mInv.E33 = (-m.E12 * m.E21 + m.E11 * m.E22) / det;
-            return mInv;
+            return det == 0
+                ? new Matrix3D()
+                : new Matrix3D
+                {
+                    E11 = (-m.E23 * m.E32 + m.E22 * m.E33) / det,
+                    E12 = (m.E13 * m.E32 - m.E12 * m.E33) / det,
+                    E13 = (-m.E13 * m.E22 + m.E12 * m.E23) / det,
+                    E21 = (m.E23 * m.E31 - m.E21 * m.E33) / det,
+                    E22 = (-m.E13 * m.E31 + m.E11 * m.E33) / det,
+                    E23 = (m.E13 * m.E21 - m.E11 * m.E23) / det,
+                    E31 = (-m.E22 * m.E31 + m.E21 * m.E32) / det,
+                    E32 = (m.E12 * m.E31 - m.E11 * m.E32) / det,
+                    E33 = (-m.E12 * m.E21 + m.E11 * m.E22) / det
+                };
         }
 
 
@@ -328,7 +313,7 @@ namespace Crystallography
                 return new Matrix3D();
             v = Vector3DBase.Normarize(v);
             double X = v.X, Y = v.Y, Z = v.Z;
-            var m = new Matrix3D();
+            
             var cos = Math.Cos(theta);
             var oneMinusCos = 1 - cos;
             var sin = Math.Sin(theta);
@@ -339,25 +324,22 @@ namespace Crystallography
             var nxs = X * sin;
             var nys = Y * sin;
             var nzs = Z * sin;
+            return new Matrix3D
+            {
+                E11 = oneMinusCos * X * X + cos,
+                E12 = nxyc - nzs,
+                E13 = nzxc + nys,
 
-            m.E11 = oneMinusCos * X * X + cos;
-            m.E12 = nxyc - nzs;
-            m.E13 = nzxc + nys;
+                E21 = nxyc + nzs,
+                E22 = oneMinusCos * Y * Y + cos,
+                E23 = nyzc - nxs,
 
-            m.E21 = nxyc + nzs;
-            m.E22 = oneMinusCos * Y * Y + cos;
-            m.E23 = nyzc - nxs;
-
-            m.E31 = nzxc - nys;
-            m.E32 = nyzc + nxs;
-            m.E33 = oneMinusCos * Z * Z + cos;
-
-            return m;
+                E31 = nzxc - nys,
+                E32 = nyzc + nxs,
+                E33 = oneMinusCos * Z * Z + cos
+            };
         }
-        public static Matrix3D Rot(Vector3d v, double theta)
-        {
-            return Rot(new Vector3DBase(v.X, v.Y, v.Z), theta);
-        }
+        public static Matrix3D Rot(Vector3d v, double theta) => Rot(new Vector3DBase(v.X, v.Y, v.Z), theta);
 
         public static Matrix3D RotX(double theta)
         {
@@ -703,8 +685,17 @@ namespace Crystallography
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
-
         public static Vector3DBase VectorProduct(Vector3DBase v1, Vector3DBase v2) 
+            => new Vector3DBase(v1.Y * v2.Z - v1.Z * v2.Y, v1.Z * v2.X - v1.X * v2.Z, v1.X * v2.Y - v1.Y * v2.X);
+
+
+        /// <summary>
+        /// 2つのベクトルの外積を返す
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
+        public static Vector3DBase VectorProduct((double X, double Y, double Z) v1, (double X, double Y, double Z) v2)
             => new Vector3DBase(v1.Y * v2.Z - v1.Z * v2.Y, v1.Z * v2.X - v1.X * v2.Z, v1.X * v2.Y - v1.Y * v2.X);
 
         /// <summary>

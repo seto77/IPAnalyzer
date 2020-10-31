@@ -672,18 +672,6 @@
   <data name="numericBoxPrimaryImageNum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
-  <data name="numericBoxPrimaryImageNum.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericBoxPrimaryImageNum.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericBoxPrimaryImageNum.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericBoxPrimaryImageNum.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericBoxPrimaryImageNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 99</value>
   </data>
@@ -691,7 +679,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxPrimaryImageNum.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 25</value>
+    <value>1000, 27</value>
   </data>
   <data name="numericBoxPrimaryImageNum.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
@@ -700,13 +688,10 @@
     <value>0, 0, 1, 0</value>
   </data>
   <data name="numericBoxPrimaryImageNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 25</value>
+    <value>23, 27</value>
   </data>
   <data name="numericBoxPrimaryImageNum.TabIndex" type="System.Int32, mscorlib">
     <value>99</value>
-  </data>
-  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="numericBoxPrimaryImageNum.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -715,7 +700,7 @@
     <value>numericBoxPrimaryImageNum</value>
   </data>
   <data name="&gt;&gt;numericBoxPrimaryImageNum.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxPrimaryImageNum.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -729,18 +714,6 @@
   <data name="numericTextBoxPrimaryCenterPositionY.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericTextBoxPrimaryCenterPositionY.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxPrimaryCenterPositionY.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxPrimaryCenterPositionY.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxPrimaryCenterPositionY.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxPrimaryCenterPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 81</value>
   </data>
@@ -748,7 +721,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericTextBoxPrimaryCenterPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericTextBoxPrimaryCenterPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -757,7 +730,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericTextBoxPrimaryCenterPositionY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
+    <value>68, 24</value>
   </data>
   <data name="numericTextBoxPrimaryCenterPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -776,7 +749,7 @@
     <value>numericTextBoxPrimaryCenterPositionY</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -790,18 +763,6 @@
   <data name="numericTextBoxPrimaryFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericTextBoxPrimaryFilmDistance.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxPrimaryFilmDistance.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxPrimaryFilmDistance.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxPrimaryFilmDistance.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxPrimaryFilmDistance.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 57</value>
   </data>
@@ -809,7 +770,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -818,7 +779,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 22</value>
+    <value>59, 24</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -835,7 +796,7 @@
     <value>numericTextBoxPrimaryFilmDistance</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -849,18 +810,6 @@
   <data name="numericalTextBoxPrimaryCenterPositionX.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionX.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionX.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionX.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionX.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 59</value>
   </data>
@@ -868,7 +817,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -877,7 +826,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
+    <value>68, 24</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -896,7 +845,7 @@
     <value>numericalTextBoxPrimaryCenterPositionX</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1237,18 +1186,6 @@
   <data name="numericalTextBoxPrimaryCenterPositionYDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericalTextBoxPrimaryCenterPositionYDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>95, 82</value>
   </data>
@@ -1256,7 +1193,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionYDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionYDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -1265,19 +1202,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionYDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 22</value>
+    <value>44, 24</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionYDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Name" xml:space="preserve">
     <value>numericalTextBoxPrimaryCenterPositionYDev</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1291,18 +1225,6 @@
   <data name="numericalTextBoxPrimaryCenterPositionXDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericalTextBoxPrimaryCenterPositionXDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>95, 60</value>
   </data>
@@ -1310,7 +1232,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionXDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionXDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -1319,19 +1241,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionXDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 22</value>
+    <value>44, 24</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionXDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Name" xml:space="preserve">
     <value>numericalTextBoxPrimaryCenterPositionXDev</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1471,18 +1390,6 @@
   <data name="numericBoxSecondaryImageNum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
-  <data name="numericBoxSecondaryImageNum.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericBoxSecondaryImageNum.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericBoxSecondaryImageNum.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericBoxSecondaryImageNum.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericBoxSecondaryImageNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 94</value>
   </data>
@@ -1490,7 +1397,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxSecondaryImageNum.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 25</value>
+    <value>1000, 27</value>
   </data>
   <data name="numericBoxSecondaryImageNum.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
@@ -1499,13 +1406,10 @@
     <value>0, 0, 1, 0</value>
   </data>
   <data name="numericBoxSecondaryImageNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 25</value>
+    <value>23, 27</value>
   </data>
   <data name="numericBoxSecondaryImageNum.TabIndex" type="System.Int32, mscorlib">
     <value>99</value>
-  </data>
-  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="numericBoxSecondaryImageNum.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1514,7 +1418,7 @@
     <value>numericBoxSecondaryImageNum</value>
   </data>
   <data name="&gt;&gt;numericBoxSecondaryImageNum.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxSecondaryImageNum.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1528,18 +1432,6 @@
   <data name="numericTextBoxSecondaryCenterPositionY.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionY.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionY.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionY.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionY.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxSecondaryCenterPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 82</value>
   </data>
@@ -1547,7 +1439,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -1556,7 +1448,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
+    <value>68, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -1575,7 +1467,7 @@
     <value>numericTextBoxSecondaryCenterPositionY</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1625,18 +1517,6 @@
   <data name="numericTextBoxSecondaryCenterPositionX.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionX.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionX.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionX.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionX.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxSecondaryCenterPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 58</value>
   </data>
@@ -1644,7 +1524,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -1653,7 +1533,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
+    <value>68, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -1672,7 +1552,7 @@
     <value>numericTextBoxSecondaryCenterPositionX</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1713,18 +1593,6 @@
   <data name="textBoxFilmDistanceDiscrepancy.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
-  <data name="textBoxFilmDistanceDiscrepancy.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxFilmDistanceDiscrepancy.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxFilmDistanceDiscrepancy.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxFilmDistanceDiscrepancy.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxFilmDistanceDiscrepancy.Location" type="System.Drawing.Point, System.Drawing">
     <value>207, 60</value>
   </data>
@@ -1732,7 +1600,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -1741,7 +1609,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 22</value>
+    <value>40, 24</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1758,7 +1626,7 @@
     <value>textBoxFilmDistanceDiscrepancy</value>
   </data>
   <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1772,18 +1640,6 @@
   <data name="textBoxPrimaryFilmDistanceCopy.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPrimaryFilmDistanceCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 60</value>
   </data>
@@ -1791,7 +1647,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -1800,19 +1656,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 22</value>
+    <value>45, 24</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Name" xml:space="preserve">
     <value>textBoxPrimaryFilmDistanceCopy</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2054,18 +1907,6 @@
   <data name="numericTextBoxSecondaryCenterPositionYDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 84</value>
   </data>
@@ -2073,7 +1914,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -2082,19 +1923,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 22</value>
+    <value>45, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Name" xml:space="preserve">
     <value>numericTextBoxSecondaryCenterPositionYDev</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2108,18 +1946,6 @@
   <data name="numericTextBoxSecondaryCenterPositionXDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxSecondaryCenterPositionXDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 59</value>
   </data>
@@ -2127,7 +1953,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionXDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionXDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -2136,19 +1962,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionXDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 22</value>
+    <value>45, 24</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionXDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Name" xml:space="preserve">
     <value>numericTextBoxSecondaryCenterPositionXDev</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -3444,18 +3267,6 @@
   <data name="textBoxPixelKsi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPixelKsi.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelKsi.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelKsi.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelKsi.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPixelKsi.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 113</value>
   </data>
@@ -3463,7 +3274,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPixelKsi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPixelKsi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3472,7 +3283,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPixelKsi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxPixelKsi.TabIndex" type="System.Int32, mscorlib">
     <value>101</value>
@@ -3487,7 +3298,7 @@
     <value>textBoxPixelKsi</value>
   </data>
   <data name="&gt;&gt;textBoxPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelKsi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3501,18 +3312,6 @@
   <data name="textBoxTiltCorrectionSecondaryTau.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxTiltCorrectionSecondaryTau.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 204</value>
   </data>
@@ -3520,7 +3319,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3529,19 +3328,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Name" xml:space="preserve">
     <value>textBoxTiltCorrectionSecondaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3555,18 +3351,6 @@
   <data name="textBoxTiltCorrectionPrimaryTau.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxTiltCorrectionPrimaryTau.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryTau.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryTau.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryTau.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxTiltCorrectionPrimaryTau.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 160</value>
   </data>
@@ -3574,7 +3358,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3583,7 +3367,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -3598,7 +3382,7 @@
     <value>textBoxTiltCorrectionPrimaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3612,18 +3396,6 @@
   <data name="numericalTextBoxSphericalRadius.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxSphericalRadius.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxSphericalRadius.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxSphericalRadius.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxSphericalRadius.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericalTextBoxSphericalRadius.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 230</value>
   </data>
@@ -3631,7 +3403,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3640,19 +3412,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericalTextBoxSphericalRadius.Name" xml:space="preserve">
     <value>numericalTextBoxSphericalRadius</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxSphericalRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxSphericalRadius.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3666,18 +3435,6 @@
   <data name="textBoxTiltCorrectionSecondaryPhi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 184</value>
   </data>
@@ -3685,7 +3442,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3694,19 +3451,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Name" xml:space="preserve">
     <value>textBoxTiltCorrectionSecondaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3720,18 +3474,6 @@
   <data name="textBoxTiltCorrectionPrimaryPhi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxTiltCorrectionPrimaryPhi.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryPhi.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryPhi.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryPhi.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 140</value>
   </data>
@@ -3739,7 +3481,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3748,7 +3490,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -3763,7 +3505,7 @@
     <value>textBoxTiltCorrectionPrimaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3777,18 +3519,6 @@
   <data name="textBoxRefinedPixelKsiDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPixelKsiDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelKsiDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelKsiDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelKsiDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPixelKsiDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 113</value>
   </data>
@@ -3796,7 +3526,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPixelKsiDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPixelKsiDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3805,19 +3535,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPixelKsiDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxRefinedPixelKsiDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPixelKsiDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Name" xml:space="preserve">
     <value>textBoxRefinedPixelKsiDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3921,18 +3648,6 @@
   <data name="textBoxWaveLengthDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxWaveLengthDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxWaveLengthDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxWaveLengthDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxWaveLengthDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxWaveLengthDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 21</value>
   </data>
@@ -3940,7 +3655,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxWaveLengthDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxWaveLengthDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -3949,19 +3664,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxWaveLengthDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxWaveLengthDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxWaveLengthDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxWaveLengthDev.Name" xml:space="preserve">
     <value>textBoxWaveLengthDev</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLengthDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLengthDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3975,18 +3687,6 @@
   <data name="textBoxRefinedPixelKsi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPixelKsi.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelKsi.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelKsi.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelKsi.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPixelKsi.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 113</value>
   </data>
@@ -3994,7 +3694,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPixelKsi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPixelKsi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4003,19 +3703,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPixelKsi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedPixelKsi.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsi.Name" xml:space="preserve">
     <value>textBoxRefinedPixelKsi</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4119,18 +3816,6 @@
   <data name="textBoxPrimaryFilmDistanceCopy2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 47</value>
   </data>
@@ -4138,7 +3823,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4147,19 +3832,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 22</value>
+    <value>88, 24</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Name" xml:space="preserve">
     <value>textBoxPrimaryFilmDistanceCopy2</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4173,18 +3855,6 @@
   <data name="numericalTextBoxRadiusInverseDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxRadiusInverseDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxRadiusInverseDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxRadiusInverseDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxRadiusInverseDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericalTextBoxRadiusInverseDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 230</value>
   </data>
@@ -4192,7 +3862,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericalTextBoxRadiusInverseDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericalTextBoxRadiusInverseDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4201,19 +3871,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericalTextBoxRadiusInverseDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="numericalTextBoxRadiusInverseDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="numericalTextBoxRadiusInverseDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Name" xml:space="preserve">
     <value>numericalTextBoxRadiusInverseDev</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4227,18 +3894,6 @@
   <data name="textBoxRefinedSecondaryTauDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedSecondaryTauDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryTauDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryTauDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryTauDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedSecondaryTauDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 204</value>
   </data>
@@ -4246,7 +3901,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedSecondaryTauDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryTauDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4255,19 +3910,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedSecondaryTauDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryTauDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedSecondaryTauDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Name" xml:space="preserve">
     <value>textBoxRefinedSecondaryTauDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4281,18 +3933,6 @@
   <data name="textBoxPixelSizeYDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPixelSizeYDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeYDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelSizeYDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeYDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPixelSizeYDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 93</value>
   </data>
@@ -4300,7 +3940,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPixelSizeYDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPixelSizeYDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4309,19 +3949,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPixelSizeYDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxPixelSizeYDev.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
-  </data>
-  <data name="textBoxPixelSizeYDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxPixelSizeYDev.Name" xml:space="preserve">
     <value>textBoxPixelSizeYDev</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeYDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4335,18 +3972,6 @@
   <data name="textBoxWaveLength.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxWaveLength.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxWaveLength.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxWaveLength.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxWaveLength.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxWaveLength.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Off</value>
   </data>
@@ -4357,7 +3982,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxWaveLength.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxWaveLength.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4366,7 +3991,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxWaveLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxWaveLength.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
@@ -4381,7 +4006,7 @@
     <value>textBoxWaveLength</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLength.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLength.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4395,18 +4020,6 @@
   <data name="textBoxRefinedPixelSizeY.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPixelSizeY.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeY.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelSizeY.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeY.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPixelSizeY.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 93</value>
   </data>
@@ -4414,7 +4027,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPixelSizeY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPixelSizeY.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4423,19 +4036,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPixelSizeY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedPixelSizeY.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeY.Name" xml:space="preserve">
     <value>textBoxRefinedPixelSizeY</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeY.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4449,18 +4059,6 @@
   <data name="textBoxRefinedPrimaryTauDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPrimaryTauDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryTauDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryTauDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryTauDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPrimaryTauDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 160</value>
   </data>
@@ -4468,7 +4066,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPrimaryTauDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryTauDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4477,19 +4075,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPrimaryTauDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryTauDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPrimaryTauDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryTauDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4503,18 +4098,6 @@
   <data name="textBoxPixelSizeY.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPixelSizeY.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeY.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelSizeY.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeY.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPixelSizeY.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 93</value>
   </data>
@@ -4522,7 +4105,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPixelSizeY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPixelSizeY.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4531,7 +4114,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPixelSizeY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxPixelSizeY.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -4546,7 +4129,7 @@
     <value>textBoxPixelSizeY</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeY.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4560,18 +4143,6 @@
   <data name="textBoxRefinedSecondaryPhiDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedSecondaryPhiDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryPhiDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryPhiDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryPhiDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedSecondaryPhiDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 184</value>
   </data>
@@ -4579,7 +4150,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedSecondaryPhiDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryPhiDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4588,19 +4159,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedSecondaryPhiDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryPhiDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedSecondaryPhiDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Name" xml:space="preserve">
     <value>textBoxRefinedSecondaryPhiDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4644,18 +4212,6 @@
   <data name="textBoxRefinedPrimaryFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPrimaryFilmDistance.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 47</value>
   </data>
@@ -4663,7 +4219,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4672,19 +4228,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryFilmDistance</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4731,18 +4284,6 @@
   <data name="textBoxRefinedPrimaryPhiDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPrimaryPhiDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryPhiDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryPhiDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryPhiDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPrimaryPhiDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 140</value>
   </data>
@@ -4750,7 +4291,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4759,19 +4300,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPrimaryPhiDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryPhiDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4785,18 +4323,6 @@
   <data name="textBoxPixelSizeX.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPixelSizeX.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeX.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelSizeX.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeX.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPixelSizeX.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 73</value>
   </data>
@@ -4804,7 +4330,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPixelSizeX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPixelSizeX.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4813,7 +4339,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPixelSizeX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
+    <value>89, 24</value>
   </data>
   <data name="textBoxPixelSizeX.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -4830,7 +4356,7 @@
     <value>textBoxPixelSizeX</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeX.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4844,18 +4370,6 @@
   <data name="textBoxRefinedWaveLength.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedWaveLength.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedWaveLength.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedWaveLength.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedWaveLength.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedWaveLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>207, 22</value>
   </data>
@@ -4863,7 +4377,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedWaveLength.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedWaveLength.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4872,19 +4386,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedWaveLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedWaveLength.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedWaveLength.Name" xml:space="preserve">
     <value>textBoxRefinedWaveLength</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedWaveLength.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedWaveLength.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4898,18 +4409,6 @@
   <data name="textBoxRefinedPixelSizeX.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPixelSizeX.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeX.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelSizeX.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeX.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPixelSizeX.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 73</value>
   </data>
@@ -4917,7 +4416,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPixelSizeX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPixelSizeX.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4926,19 +4425,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPixelSizeX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedPixelSizeX.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeX.Name" xml:space="preserve">
     <value>textBoxRefinedPixelSizeX</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeX.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4952,18 +4448,6 @@
   <data name="numericalTextBoxRefinedSphericalRadius.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericalTextBoxRefinedSphericalRadius.Location" type="System.Drawing.Point, System.Drawing">
     <value>207, 230</value>
   </data>
@@ -4971,7 +4455,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -4980,19 +4464,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Name" xml:space="preserve">
     <value>numericalTextBoxRefinedSphericalRadius</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5006,18 +4487,6 @@
   <data name="textBoxRefinedSecondaryTau.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedSecondaryTau.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryTau.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryTau.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryTau.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedSecondaryTau.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 204</value>
   </data>
@@ -5025,7 +4494,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedSecondaryTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -5034,19 +4503,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedSecondaryTau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryTau.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedSecondaryTau.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTau.Name" xml:space="preserve">
     <value>textBoxRefinedSecondaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5090,18 +4556,6 @@
   <data name="textBoxPixelSizeXDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPixelSizeXDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeXDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelSizeXDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxPixelSizeXDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPixelSizeXDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 73</value>
   </data>
@@ -5109,7 +4563,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxPixelSizeXDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxPixelSizeXDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -5118,19 +4572,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxPixelSizeXDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxPixelSizeXDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxPixelSizeXDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxPixelSizeXDev.Name" xml:space="preserve">
     <value>textBoxPixelSizeXDev</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeXDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5144,18 +4595,6 @@
   <data name="textBoxRefinedPrimaryTau.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPrimaryTau.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryTau.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryTau.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryTau.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPrimaryTau.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 160</value>
   </data>
@@ -5163,7 +4602,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPrimaryTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -5172,19 +4611,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPrimaryTau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryTau.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPrimaryTau.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTau.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5450,18 +4886,6 @@
   <data name="textBoxCameraLengthDev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxCameraLengthDev.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxCameraLengthDev.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxCameraLengthDev.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxCameraLengthDev.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxCameraLengthDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 47</value>
   </data>
@@ -5469,7 +4893,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxCameraLengthDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxCameraLengthDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -5478,19 +4902,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxCameraLengthDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>64, 24</value>
   </data>
   <data name="textBoxCameraLengthDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxCameraLengthDev.Name" xml:space="preserve">
     <value>textBoxCameraLengthDev</value>
   </data>
   <data name="&gt;&gt;textBoxCameraLengthDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxCameraLengthDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5537,18 +4958,6 @@
   <data name="textBoxRefinedSecondaryPhi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedSecondaryPhi.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryPhi.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryPhi.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedSecondaryPhi.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedSecondaryPhi.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 184</value>
   </data>
@@ -5556,7 +4965,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedSecondaryPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -5565,19 +4974,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedSecondaryPhi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedSecondaryPhi.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedSecondaryPhi.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Name" xml:space="preserve">
     <value>textBoxRefinedSecondaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5621,18 +5027,6 @@
   <data name="textBoxRefinedPrimaryPhi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxRefinedPrimaryPhi.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryPhi.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryPhi.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9.75pt</value>
-  </data>
-  <data name="textBoxRefinedPrimaryPhi.HeaderText" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedPrimaryPhi.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 140</value>
   </data>
@@ -5640,7 +5034,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 22</value>
+    <value>1000, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 22</value>
@@ -5649,19 +5043,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>75, 24</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -7184,7 +6575,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericBoxAwayFrom.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 21</value>
+    <value>1000, 23</value>
   </data>
   <data name="numericBoxAwayFrom.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 21</value>
@@ -7193,19 +6584,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericBoxAwayFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 21</value>
+    <value>227, 23</value>
   </data>
   <data name="numericBoxAwayFrom.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
-  </data>
-  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericBoxAwayFrom.Name" xml:space="preserve">
     <value>numericBoxAwayFrom</value>
   </data>
   <data name="&gt;&gt;numericBoxAwayFrom.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxAwayFrom.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -7241,7 +6629,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericBoxLowerThan.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 21</value>
+    <value>1000, 23</value>
   </data>
   <data name="numericBoxLowerThan.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 21</value>
@@ -7250,19 +6638,16 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericBoxLowerThan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 21</value>
+    <value>116, 23</value>
   </data>
   <data name="numericBoxLowerThan.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
-  </data>
-  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numericBoxLowerThan.Name" xml:space="preserve">
     <value>numericBoxLowerThan</value>
   </data>
   <data name="&gt;&gt;numericBoxLowerThan.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2019.11.7.755, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxLowerThan.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -7387,6 +6772,9 @@
   <data name="&gt;&gt;checkBoxShowEachPeaks.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

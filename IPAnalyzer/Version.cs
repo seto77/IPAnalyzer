@@ -14,6 +14,7 @@ namespace IPAnalyzer
 
         static public string History =
             "History" +
+            "\r\n ver3.899(2020/10/31) Improved: Speeding up 'Get Profile'." +
             "\r\n ver3.898(2020/10/25) Fixed a bug on loading ITEX image." +
             "\r\n ver3.897(2020/10/25) Improved SACLA EH5 mode." +
             "\r\n ver3.896(2020/10/15) Fixed minor bugs (Find Center, Correction of polarization, etc.)." +

@@ -62,6 +62,20 @@
     </DocumentationFile>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -520,7 +534,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>move /Y "$(TargetDir)*.dll" "$(TargetDir)dll"
+    <PostBuildEvent>if "$(ConfigurationName)" =="Release" move /Y "$(TargetDir)*.dll" "$(TargetDir)dll"
 if "$(ConfigurationName)" =="Release"  "$(ProjectDir)"Updater.exe /v $(ProjectName)  "$(ProjectDir)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>

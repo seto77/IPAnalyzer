@@ -80,6 +80,10 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBoxPrimaryImage = new System.Windows.Forms.GroupBox();
+            this.numericBoxPrimaryImageNum = new Crystallography.Controls.NumericBox();
+            this.numericTextBoxPrimaryCenterPositionY = new Crystallography.Controls.NumericBox();
+            this.numericTextBoxPrimaryFilmDistance = new Crystallography.Controls.NumericBox();
+            this.numericalTextBoxPrimaryCenterPositionX = new Crystallography.Controls.NumericBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBoxPattern1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,12 +94,19 @@
             this.buttonPrimaryGetProfile = new System.Windows.Forms.Button();
             this.buttonClearPrimaryImage = new System.Windows.Forms.Button();
             this.buttonOpenPrimaryImage = new System.Windows.Forms.Button();
+            this.numericalTextBoxPrimaryCenterPositionYDev = new Crystallography.Controls.NumericBox();
+            this.numericalTextBoxPrimaryCenterPositionXDev = new Crystallography.Controls.NumericBox();
             this.textBoxPrimaryFileName = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.groupBoxSecondaryImage = new System.Windows.Forms.GroupBox();
+            this.numericBoxSecondaryImageNum = new Crystallography.Controls.NumericBox();
+            this.numericTextBoxSecondaryCenterPositionY = new Crystallography.Controls.NumericBox();
             this.buttonOpenSecondaryImage = new System.Windows.Forms.Button();
+            this.numericTextBoxSecondaryCenterPositionX = new Crystallography.Controls.NumericBox();
             this.textBoxSecondaryFileName = new System.Windows.Forms.TextBox();
+            this.textBoxFilmDistanceDiscrepancy = new Crystallography.Controls.NumericBox();
+            this.textBoxPrimaryFilmDistanceCopy = new Crystallography.Controls.NumericBox();
             this.pictureBoxPattern2 = new System.Windows.Forms.PictureBox();
             this.label54 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -103,6 +114,8 @@
             this.buttonGetCenterPositionFromMainForm2 = new System.Windows.Forms.Button();
             this.buttonClearSecondaryImage = new System.Windows.Forms.Button();
             this.buttonSecondaryGetProfile = new System.Windows.Forms.Button();
+            this.numericTextBoxSecondaryCenterPositionYDev = new Crystallography.Controls.NumericBox();
+            this.numericTextBoxSecondaryCenterPositionXDev = new Crystallography.Controls.NumericBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -142,15 +155,42 @@
             this.buttonSetInitioalParam = new System.Windows.Forms.Button();
             this.buttonSendMainForm = new System.Windows.Forms.Button();
             this.groupBoxParameter = new System.Windows.Forms.GroupBox();
+            this.textBoxPixelKsi = new Crystallography.Controls.NumericBox();
+            this.textBoxTiltCorrectionSecondaryTau = new Crystallography.Controls.NumericBox();
+            this.textBoxTiltCorrectionPrimaryTau = new Crystallography.Controls.NumericBox();
+            this.numericalTextBoxSphericalRadius = new Crystallography.Controls.NumericBox();
+            this.textBoxTiltCorrectionSecondaryPhi = new Crystallography.Controls.NumericBox();
+            this.textBoxTiltCorrectionPrimaryPhi = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedPixelKsiDev = new Crystallography.Controls.NumericBox();
             this.label68 = new System.Windows.Forms.Label();
             this.buttonCopyToClipboard = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
+            this.textBoxWaveLengthDev = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedPixelKsi = new Crystallography.Controls.NumericBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
+            this.textBoxPrimaryFilmDistanceCopy2 = new Crystallography.Controls.NumericBox();
+            this.numericalTextBoxRadiusInverseDev = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedSecondaryTauDev = new Crystallography.Controls.NumericBox();
+            this.textBoxPixelSizeYDev = new Crystallography.Controls.NumericBox();
+            this.textBoxWaveLength = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedPixelSizeY = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedPrimaryTauDev = new Crystallography.Controls.NumericBox();
+            this.textBoxPixelSizeY = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedSecondaryPhiDev = new Crystallography.Controls.NumericBox();
             this.label41 = new System.Windows.Forms.Label();
+            this.textBoxRefinedPrimaryFilmDistance = new Crystallography.Controls.NumericBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.textBoxRefinedPrimaryPhiDev = new Crystallography.Controls.NumericBox();
+            this.textBoxPixelSizeX = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedWaveLength = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedPixelSizeX = new Crystallography.Controls.NumericBox();
+            this.numericalTextBoxRefinedSphericalRadius = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedSecondaryTau = new Crystallography.Controls.NumericBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.textBoxPixelSizeXDev = new Crystallography.Controls.NumericBox();
+            this.textBoxRefinedPrimaryTau = new Crystallography.Controls.NumericBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
@@ -159,8 +199,11 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
+            this.textBoxCameraLengthDev = new Crystallography.Controls.NumericBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.textBoxRefinedSecondaryPhi = new Crystallography.Controls.NumericBox();
             this.label42 = new System.Windows.Forms.Label();
+            this.textBoxRefinedPrimaryPhi = new Crystallography.Controls.NumericBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -219,54 +262,11 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBoxPeakList = new System.Windows.Forms.GroupBox();
             this.buttonCheckPeaks = new System.Windows.Forms.Button();
+            this.numericBoxAwayFrom = new Crystallography.Controls.NumericBox();
+            this.numericBoxLowerThan = new Crystallography.Controls.NumericBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelEachPeaks = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxShowEachPeaks = new System.Windows.Forms.CheckBox();
-            this.numericBoxPrimaryImageNum = new Crystallography.Controls.NumericBox();
-            this.numericTextBoxPrimaryCenterPositionY = new Crystallography.Controls.NumericBox();
-            this.numericTextBoxPrimaryFilmDistance = new Crystallography.Controls.NumericBox();
-            this.numericalTextBoxPrimaryCenterPositionX = new Crystallography.Controls.NumericBox();
-            this.numericalTextBoxPrimaryCenterPositionYDev = new Crystallography.Controls.NumericBox();
-            this.numericalTextBoxPrimaryCenterPositionXDev = new Crystallography.Controls.NumericBox();
-            this.numericBoxSecondaryImageNum = new Crystallography.Controls.NumericBox();
-            this.numericTextBoxSecondaryCenterPositionY = new Crystallography.Controls.NumericBox();
-            this.numericTextBoxSecondaryCenterPositionX = new Crystallography.Controls.NumericBox();
-            this.textBoxFilmDistanceDiscrepancy = new Crystallography.Controls.NumericBox();
-            this.textBoxPrimaryFilmDistanceCopy = new Crystallography.Controls.NumericBox();
-            this.numericTextBoxSecondaryCenterPositionYDev = new Crystallography.Controls.NumericBox();
-            this.numericTextBoxSecondaryCenterPositionXDev = new Crystallography.Controls.NumericBox();
-            this.numericBoxAwayFrom = new Crystallography.Controls.NumericBox();
-            this.numericBoxLowerThan = new Crystallography.Controls.NumericBox();
-            this.textBoxPixelKsi = new Crystallography.Controls.NumericBox();
-            this.textBoxTiltCorrectionSecondaryTau = new Crystallography.Controls.NumericBox();
-            this.textBoxTiltCorrectionPrimaryTau = new Crystallography.Controls.NumericBox();
-            this.numericalTextBoxSphericalRadius = new Crystallography.Controls.NumericBox();
-            this.textBoxTiltCorrectionSecondaryPhi = new Crystallography.Controls.NumericBox();
-            this.textBoxTiltCorrectionPrimaryPhi = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPixelKsiDev = new Crystallography.Controls.NumericBox();
-            this.textBoxWaveLengthDev = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPixelKsi = new Crystallography.Controls.NumericBox();
-            this.textBoxPrimaryFilmDistanceCopy2 = new Crystallography.Controls.NumericBox();
-            this.numericalTextBoxRadiusInverseDev = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedSecondaryTauDev = new Crystallography.Controls.NumericBox();
-            this.textBoxPixelSizeYDev = new Crystallography.Controls.NumericBox();
-            this.textBoxWaveLength = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPixelSizeY = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPrimaryTauDev = new Crystallography.Controls.NumericBox();
-            this.textBoxPixelSizeY = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedSecondaryPhiDev = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPrimaryFilmDistance = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPrimaryPhiDev = new Crystallography.Controls.NumericBox();
-            this.textBoxPixelSizeX = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedWaveLength = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPixelSizeX = new Crystallography.Controls.NumericBox();
-            this.numericalTextBoxRefinedSphericalRadius = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedSecondaryTau = new Crystallography.Controls.NumericBox();
-            this.textBoxPixelSizeXDev = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPrimaryTau = new Crystallography.Controls.NumericBox();
-            this.textBoxCameraLengthDev = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedSecondaryPhi = new Crystallography.Controls.NumericBox();
-            this.textBoxRefinedPrimaryPhi = new Crystallography.Controls.NumericBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBandWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearchRange)).BeginInit();
             this.groupBoxPrimaryImage.SuspendLayout();
@@ -447,6 +447,61 @@
             this.groupBoxPrimaryImage.DragDrop += new System.Windows.Forms.DragEventHandler(this.groupBoxPrimaryImage_DragDrop);
             this.groupBoxPrimaryImage.DragEnter += new System.Windows.Forms.DragEventHandler(this.groupBoxPrimaryImage_DragEnter);
             // 
+            // numericBoxPrimaryImageNum
+            // 
+            resources.ApplyResources(this.numericBoxPrimaryImageNum, "numericBoxPrimaryImageNum");
+            this.numericBoxPrimaryImageNum.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxPrimaryImageNum.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxPrimaryImageNum.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxPrimaryImageNum.Name = "numericBoxPrimaryImageNum";
+            this.numericBoxPrimaryImageNum.SkipEventDuringInput = false;
+            this.numericBoxPrimaryImageNum.SmartIncrement = true;
+            this.numericBoxPrimaryImageNum.ThonsandsSeparator = true;
+            // 
+            // numericTextBoxPrimaryCenterPositionY
+            // 
+            resources.ApplyResources(this.numericTextBoxPrimaryCenterPositionY, "numericTextBoxPrimaryCenterPositionY");
+            this.numericTextBoxPrimaryCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxPrimaryCenterPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxPrimaryCenterPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxPrimaryCenterPositionY.Name = "numericTextBoxPrimaryCenterPositionY";
+            this.numericTextBoxPrimaryCenterPositionY.SkipEventDuringInput = false;
+            this.numericTextBoxPrimaryCenterPositionY.SmartIncrement = true;
+            this.numericTextBoxPrimaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxPrimaryCenterPositionY.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.numericTextBoxPrimaryCenterPositionY, resources.GetString("numericTextBoxPrimaryCenterPositionY.ToolTip"));
+            this.numericTextBoxPrimaryCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.numericTextBoxPrimaryCenterPositionY.DoubleClick += new System.EventHandler(this.textBoxPrimaryCenterPositionX_DoubleClick);
+            // 
+            // numericTextBoxPrimaryFilmDistance
+            // 
+            resources.ApplyResources(this.numericTextBoxPrimaryFilmDistance, "numericTextBoxPrimaryFilmDistance");
+            this.numericTextBoxPrimaryFilmDistance.BackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxPrimaryFilmDistance.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxPrimaryFilmDistance.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxPrimaryFilmDistance.Name = "numericTextBoxPrimaryFilmDistance";
+            this.numericTextBoxPrimaryFilmDistance.SkipEventDuringInput = false;
+            this.numericTextBoxPrimaryFilmDistance.SmartIncrement = true;
+            this.numericTextBoxPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxPrimaryFilmDistance.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.numericTextBoxPrimaryFilmDistance, resources.GetString("numericTextBoxPrimaryFilmDistance.ToolTip"));
+            this.numericTextBoxPrimaryFilmDistance.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericTextBoxPrimaryFilmDistance_TextChanged);
+            // 
+            // numericalTextBoxPrimaryCenterPositionX
+            // 
+            resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionX, "numericalTextBoxPrimaryCenterPositionX");
+            this.numericalTextBoxPrimaryCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionX.Name = "numericalTextBoxPrimaryCenterPositionX";
+            this.numericalTextBoxPrimaryCenterPositionX.SkipEventDuringInput = false;
+            this.numericalTextBoxPrimaryCenterPositionX.SmartIncrement = true;
+            this.numericalTextBoxPrimaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxPrimaryCenterPositionX.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.numericalTextBoxPrimaryCenterPositionX, resources.GetString("numericalTextBoxPrimaryCenterPositionX.ToolTip"));
+            this.numericalTextBoxPrimaryCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.numericalTextBoxPrimaryCenterPositionX.DoubleClick += new System.EventHandler(this.textBoxPrimaryCenterPositionX_DoubleClick);
+            // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
@@ -511,6 +566,38 @@
             this.buttonOpenPrimaryImage.UseVisualStyleBackColor = true;
             this.buttonOpenPrimaryImage.Click += new System.EventHandler(this.buttonOpenPrimaryImage_Click);
             // 
+            // numericalTextBoxPrimaryCenterPositionYDev
+            // 
+            resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionYDev, "numericalTextBoxPrimaryCenterPositionYDev");
+            this.numericalTextBoxPrimaryCenterPositionYDev.BackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionYDev.DecimalPlaces = 10;
+            this.numericalTextBoxPrimaryCenterPositionYDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionYDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionYDev.Name = "numericalTextBoxPrimaryCenterPositionYDev";
+            this.numericalTextBoxPrimaryCenterPositionYDev.ReadOnly = true;
+            this.numericalTextBoxPrimaryCenterPositionYDev.SkipEventDuringInput = false;
+            this.numericalTextBoxPrimaryCenterPositionYDev.SmartIncrement = true;
+            this.numericalTextBoxPrimaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxPrimaryCenterPositionYDev.ThonsandsSeparator = true;
+            this.numericalTextBoxPrimaryCenterPositionYDev.WordWrap = false;
+            // 
+            // numericalTextBoxPrimaryCenterPositionXDev
+            // 
+            resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionXDev, "numericalTextBoxPrimaryCenterPositionXDev");
+            this.numericalTextBoxPrimaryCenterPositionXDev.BackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionXDev.DecimalPlaces = 10;
+            this.numericalTextBoxPrimaryCenterPositionXDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionXDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionXDev.Name = "numericalTextBoxPrimaryCenterPositionXDev";
+            this.numericalTextBoxPrimaryCenterPositionXDev.ReadOnly = true;
+            this.numericalTextBoxPrimaryCenterPositionXDev.SkipEventDuringInput = false;
+            this.numericalTextBoxPrimaryCenterPositionXDev.SmartIncrement = true;
+            this.numericalTextBoxPrimaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxPrimaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxPrimaryCenterPositionXDev.ThonsandsSeparator = true;
+            this.numericalTextBoxPrimaryCenterPositionXDev.WordWrap = false;
+            // 
             // textBoxPrimaryFileName
             // 
             resources.ApplyResources(this.textBoxPrimaryFileName, "textBoxPrimaryFileName");
@@ -559,6 +646,32 @@
             this.groupBoxSecondaryImage.DragDrop += new System.Windows.Forms.DragEventHandler(this.groupBoxSecondaryImage_DragDrop);
             this.groupBoxSecondaryImage.DragEnter += new System.Windows.Forms.DragEventHandler(this.groupBoxSecondaryImage_DragEnter);
             // 
+            // numericBoxSecondaryImageNum
+            // 
+            resources.ApplyResources(this.numericBoxSecondaryImageNum, "numericBoxSecondaryImageNum");
+            this.numericBoxSecondaryImageNum.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxSecondaryImageNum.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxSecondaryImageNum.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxSecondaryImageNum.Name = "numericBoxSecondaryImageNum";
+            this.numericBoxSecondaryImageNum.SkipEventDuringInput = false;
+            this.numericBoxSecondaryImageNum.SmartIncrement = true;
+            this.numericBoxSecondaryImageNum.ThonsandsSeparator = true;
+            // 
+            // numericTextBoxSecondaryCenterPositionY
+            // 
+            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionY, "numericTextBoxSecondaryCenterPositionY");
+            this.numericTextBoxSecondaryCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionY.Name = "numericTextBoxSecondaryCenterPositionY";
+            this.numericTextBoxSecondaryCenterPositionY.SkipEventDuringInput = false;
+            this.numericTextBoxSecondaryCenterPositionY.SmartIncrement = true;
+            this.numericTextBoxSecondaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionY.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.numericTextBoxSecondaryCenterPositionY, resources.GetString("numericTextBoxSecondaryCenterPositionY.ToolTip"));
+            this.numericTextBoxSecondaryCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.numericTextBoxSecondaryCenterPositionY.DoubleClick += new System.EventHandler(this.textBoxSecondaryCenterPositionX_DoubleClick);
+            // 
             // buttonOpenSecondaryImage
             // 
             resources.ApplyResources(this.buttonOpenSecondaryImage, "buttonOpenSecondaryImage");
@@ -567,12 +680,62 @@
             this.buttonOpenSecondaryImage.UseVisualStyleBackColor = true;
             this.buttonOpenSecondaryImage.Click += new System.EventHandler(this.buttonOpenSecondaryImage_Click);
             // 
+            // numericTextBoxSecondaryCenterPositionX
+            // 
+            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionX, "numericTextBoxSecondaryCenterPositionX");
+            this.numericTextBoxSecondaryCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionX.Name = "numericTextBoxSecondaryCenterPositionX";
+            this.numericTextBoxSecondaryCenterPositionX.SkipEventDuringInput = false;
+            this.numericTextBoxSecondaryCenterPositionX.SmartIncrement = true;
+            this.numericTextBoxSecondaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionX.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.numericTextBoxSecondaryCenterPositionX, resources.GetString("numericTextBoxSecondaryCenterPositionX.ToolTip"));
+            this.numericTextBoxSecondaryCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.numericTextBoxSecondaryCenterPositionX.DoubleClick += new System.EventHandler(this.textBoxSecondaryCenterPositionX_DoubleClick);
+            // 
             // textBoxSecondaryFileName
             // 
             resources.ApplyResources(this.textBoxSecondaryFileName, "textBoxSecondaryFileName");
             this.textBoxSecondaryFileName.Name = "textBoxSecondaryFileName";
             this.textBoxSecondaryFileName.ReadOnly = true;
             this.textBoxSecondaryFileName.TextChanged += new System.EventHandler(this.textBoxSecondaryFileName_TextChanged);
+            // 
+            // textBoxFilmDistanceDiscrepancy
+            // 
+            resources.ApplyResources(this.textBoxFilmDistanceDiscrepancy, "textBoxFilmDistanceDiscrepancy");
+            this.textBoxFilmDistanceDiscrepancy.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFilmDistanceDiscrepancy.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFilmDistanceDiscrepancy.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFilmDistanceDiscrepancy.Name = "textBoxFilmDistanceDiscrepancy";
+            this.textBoxFilmDistanceDiscrepancy.RadianValue = 1.7453292519943295D;
+            this.textBoxFilmDistanceDiscrepancy.SkipEventDuringInput = false;
+            this.textBoxFilmDistanceDiscrepancy.SmartIncrement = true;
+            this.textBoxFilmDistanceDiscrepancy.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxFilmDistanceDiscrepancy.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxFilmDistanceDiscrepancy, resources.GetString("textBoxFilmDistanceDiscrepancy.ToolTip"));
+            this.textBoxFilmDistanceDiscrepancy.Value = 100D;
+            this.textBoxFilmDistanceDiscrepancy.WordWrap = false;
+            this.textBoxFilmDistanceDiscrepancy.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBoxFilmDistanceDiscrepancy_TextChanged);
+            this.textBoxFilmDistanceDiscrepancy.TextChanged += new System.EventHandler(this.textBoxFilmDistanceDiscrepancy_TextChanged);
+            // 
+            // textBoxPrimaryFilmDistanceCopy
+            // 
+            resources.ApplyResources(this.textBoxPrimaryFilmDistanceCopy, "textBoxPrimaryFilmDistanceCopy");
+            this.textBoxPrimaryFilmDistanceCopy.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy.Name = "textBoxPrimaryFilmDistanceCopy";
+            this.textBoxPrimaryFilmDistanceCopy.RadianValue = 7.7667151713747664D;
+            this.textBoxPrimaryFilmDistanceCopy.ReadOnly = true;
+            this.textBoxPrimaryFilmDistanceCopy.SkipEventDuringInput = false;
+            this.textBoxPrimaryFilmDistanceCopy.SmartIncrement = true;
+            this.textBoxPrimaryFilmDistanceCopy.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPrimaryFilmDistanceCopy.ThonsandsSeparator = true;
+            this.textBoxPrimaryFilmDistanceCopy.Value = 445D;
+            this.textBoxPrimaryFilmDistanceCopy.WordWrap = false;
             // 
             // pictureBoxPattern2
             // 
@@ -619,6 +782,38 @@
             this.toolTipJapanese.SetToolTip(this.buttonSecondaryGetProfile, resources.GetString("buttonSecondaryGetProfile.ToolTip"));
             this.buttonSecondaryGetProfile.UseVisualStyleBackColor = true;
             this.buttonSecondaryGetProfile.Click += new System.EventHandler(this.buttonSecondaryGetProfile_Click);
+            // 
+            // numericTextBoxSecondaryCenterPositionYDev
+            // 
+            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionYDev, "numericTextBoxSecondaryCenterPositionYDev");
+            this.numericTextBoxSecondaryCenterPositionYDev.BackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionYDev.DecimalPlaces = 10;
+            this.numericTextBoxSecondaryCenterPositionYDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionYDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionYDev.Name = "numericTextBoxSecondaryCenterPositionYDev";
+            this.numericTextBoxSecondaryCenterPositionYDev.ReadOnly = true;
+            this.numericTextBoxSecondaryCenterPositionYDev.SkipEventDuringInput = false;
+            this.numericTextBoxSecondaryCenterPositionYDev.SmartIncrement = true;
+            this.numericTextBoxSecondaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionYDev.ThonsandsSeparator = true;
+            this.numericTextBoxSecondaryCenterPositionYDev.WordWrap = false;
+            // 
+            // numericTextBoxSecondaryCenterPositionXDev
+            // 
+            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionXDev, "numericTextBoxSecondaryCenterPositionXDev");
+            this.numericTextBoxSecondaryCenterPositionXDev.BackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionXDev.DecimalPlaces = 10;
+            this.numericTextBoxSecondaryCenterPositionXDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionXDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionXDev.Name = "numericTextBoxSecondaryCenterPositionXDev";
+            this.numericTextBoxSecondaryCenterPositionXDev.ReadOnly = true;
+            this.numericTextBoxSecondaryCenterPositionXDev.SkipEventDuringInput = false;
+            this.numericTextBoxSecondaryCenterPositionXDev.SmartIncrement = true;
+            this.numericTextBoxSecondaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.numericTextBoxSecondaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionXDev.ThonsandsSeparator = true;
+            this.numericTextBoxSecondaryCenterPositionXDev.WordWrap = false;
             // 
             // label4
             // 
@@ -1013,6 +1208,116 @@
             this.groupBoxParameter.DragDrop += new System.Windows.Forms.DragEventHandler(this.groupBoxParameter_DragDrop);
             this.groupBoxParameter.DragEnter += new System.Windows.Forms.DragEventHandler(this.groupBoxParameter_DragEnter);
             // 
+            // textBoxPixelKsi
+            // 
+            resources.ApplyResources(this.textBoxPixelKsi, "textBoxPixelKsi");
+            this.textBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelKsi.Name = "textBoxPixelKsi";
+            this.textBoxPixelKsi.SkipEventDuringInput = false;
+            this.textBoxPixelKsi.SmartIncrement = true;
+            this.textBoxPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelKsi.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxPixelKsi, resources.GetString("textBoxPixelKsi.ToolTip"));
+            this.textBoxPixelKsi.WordWrap = false;
+            this.textBoxPixelKsi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxPixelKsi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxTiltCorrectionSecondaryTau
+            // 
+            resources.ApplyResources(this.textBoxTiltCorrectionSecondaryTau, "textBoxTiltCorrectionSecondaryTau");
+            this.textBoxTiltCorrectionSecondaryTau.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionSecondaryTau.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionSecondaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionSecondaryTau.Name = "textBoxTiltCorrectionSecondaryTau";
+            this.textBoxTiltCorrectionSecondaryTau.SkipEventDuringInput = false;
+            this.textBoxTiltCorrectionSecondaryTau.SmartIncrement = true;
+            this.textBoxTiltCorrectionSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionSecondaryTau.ThonsandsSeparator = true;
+            this.textBoxTiltCorrectionSecondaryTau.WordWrap = false;
+            this.textBoxTiltCorrectionSecondaryTau.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxTiltCorrectionSecondaryTau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxTiltCorrectionPrimaryTau
+            // 
+            resources.ApplyResources(this.textBoxTiltCorrectionPrimaryTau, "textBoxTiltCorrectionPrimaryTau");
+            this.textBoxTiltCorrectionPrimaryTau.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionPrimaryTau.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionPrimaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionPrimaryTau.Name = "textBoxTiltCorrectionPrimaryTau";
+            this.textBoxTiltCorrectionPrimaryTau.SkipEventDuringInput = false;
+            this.textBoxTiltCorrectionPrimaryTau.SmartIncrement = true;
+            this.textBoxTiltCorrectionPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionPrimaryTau.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxTiltCorrectionPrimaryTau, resources.GetString("textBoxTiltCorrectionPrimaryTau.ToolTip"));
+            this.textBoxTiltCorrectionPrimaryTau.WordWrap = false;
+            this.textBoxTiltCorrectionPrimaryTau.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxTiltCorrectionPrimaryTau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // numericalTextBoxSphericalRadius
+            // 
+            resources.ApplyResources(this.numericalTextBoxSphericalRadius, "numericalTextBoxSphericalRadius");
+            this.numericalTextBoxSphericalRadius.BackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxSphericalRadius.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxSphericalRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxSphericalRadius.Name = "numericalTextBoxSphericalRadius";
+            this.numericalTextBoxSphericalRadius.SkipEventDuringInput = false;
+            this.numericalTextBoxSphericalRadius.SmartIncrement = true;
+            this.numericalTextBoxSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxSphericalRadius.ThonsandsSeparator = true;
+            this.numericalTextBoxSphericalRadius.WordWrap = false;
+            this.numericalTextBoxSphericalRadius.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.numericalTextBoxSphericalRadius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxTiltCorrectionSecondaryPhi
+            // 
+            resources.ApplyResources(this.textBoxTiltCorrectionSecondaryPhi, "textBoxTiltCorrectionSecondaryPhi");
+            this.textBoxTiltCorrectionSecondaryPhi.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionSecondaryPhi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionSecondaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionSecondaryPhi.Name = "textBoxTiltCorrectionSecondaryPhi";
+            this.textBoxTiltCorrectionSecondaryPhi.SkipEventDuringInput = false;
+            this.textBoxTiltCorrectionSecondaryPhi.SmartIncrement = true;
+            this.textBoxTiltCorrectionSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionSecondaryPhi.ThonsandsSeparator = true;
+            this.textBoxTiltCorrectionSecondaryPhi.WordWrap = false;
+            this.textBoxTiltCorrectionSecondaryPhi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxTiltCorrectionSecondaryPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxTiltCorrectionPrimaryPhi
+            // 
+            resources.ApplyResources(this.textBoxTiltCorrectionPrimaryPhi, "textBoxTiltCorrectionPrimaryPhi");
+            this.textBoxTiltCorrectionPrimaryPhi.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionPrimaryPhi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionPrimaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTiltCorrectionPrimaryPhi.Name = "textBoxTiltCorrectionPrimaryPhi";
+            this.textBoxTiltCorrectionPrimaryPhi.SkipEventDuringInput = false;
+            this.textBoxTiltCorrectionPrimaryPhi.SmartIncrement = true;
+            this.textBoxTiltCorrectionPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionPrimaryPhi.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxTiltCorrectionPrimaryPhi, resources.GetString("textBoxTiltCorrectionPrimaryPhi.ToolTip"));
+            this.textBoxTiltCorrectionPrimaryPhi.WordWrap = false;
+            this.textBoxTiltCorrectionPrimaryPhi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxTiltCorrectionPrimaryPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxRefinedPixelKsiDev
+            // 
+            resources.ApplyResources(this.textBoxRefinedPixelKsiDev, "textBoxRefinedPixelKsiDev");
+            this.textBoxRefinedPixelKsiDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsiDev.DecimalPlaces = 10;
+            this.textBoxRefinedPixelKsiDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsiDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsiDev.Name = "textBoxRefinedPixelKsiDev";
+            this.textBoxRefinedPixelKsiDev.ReadOnly = true;
+            this.textBoxRefinedPixelKsiDev.SkipEventDuringInput = false;
+            this.textBoxRefinedPixelKsiDev.SmartIncrement = true;
+            this.textBoxRefinedPixelKsiDev.TabStop = false;
+            this.textBoxRefinedPixelKsiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelKsiDev.ThonsandsSeparator = true;
+            this.textBoxRefinedPixelKsiDev.WordWrap = false;
+            // 
             // label68
             // 
             resources.ApplyResources(this.label68, "label68");
@@ -1029,6 +1334,39 @@
             resources.ApplyResources(this.label34, "label34");
             this.label34.Name = "label34";
             // 
+            // textBoxWaveLengthDev
+            // 
+            resources.ApplyResources(this.textBoxWaveLengthDev, "textBoxWaveLengthDev");
+            this.textBoxWaveLengthDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLengthDev.DecimalPlaces = 10;
+            this.textBoxWaveLengthDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLengthDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLengthDev.Name = "textBoxWaveLengthDev";
+            this.textBoxWaveLengthDev.ReadOnly = true;
+            this.textBoxWaveLengthDev.SkipEventDuringInput = false;
+            this.textBoxWaveLengthDev.SmartIncrement = true;
+            this.textBoxWaveLengthDev.TabStop = false;
+            this.textBoxWaveLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxWaveLengthDev.ThonsandsSeparator = true;
+            this.textBoxWaveLengthDev.WordWrap = false;
+            // 
+            // textBoxRefinedPixelKsi
+            // 
+            resources.ApplyResources(this.textBoxRefinedPixelKsi, "textBoxRefinedPixelKsi");
+            this.textBoxRefinedPixelKsi.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsi.Name = "textBoxRefinedPixelKsi";
+            this.textBoxRefinedPixelKsi.ReadOnly = true;
+            this.textBoxRefinedPixelKsi.SkipEventDuringInput = false;
+            this.textBoxRefinedPixelKsi.SmartIncrement = true;
+            this.textBoxRefinedPixelKsi.TabStop = false;
+            this.textBoxRefinedPixelKsi.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelKsi.ThonsandsSeparator = true;
+            this.textBoxRefinedPixelKsi.WordWrap = false;
+            // 
             // label15
             // 
             resources.ApplyResources(this.label15, "label15");
@@ -1044,20 +1382,329 @@
             resources.ApplyResources(this.label70, "label70");
             this.label70.Name = "label70";
             // 
+            // textBoxPrimaryFilmDistanceCopy2
+            // 
+            resources.ApplyResources(this.textBoxPrimaryFilmDistanceCopy2, "textBoxPrimaryFilmDistanceCopy2");
+            this.textBoxPrimaryFilmDistanceCopy2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy2.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy2.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy2.Name = "textBoxPrimaryFilmDistanceCopy2";
+            this.textBoxPrimaryFilmDistanceCopy2.RadianValue = 7.7667151713747664D;
+            this.textBoxPrimaryFilmDistanceCopy2.ReadOnly = true;
+            this.textBoxPrimaryFilmDistanceCopy2.SkipEventDuringInput = false;
+            this.textBoxPrimaryFilmDistanceCopy2.SmartIncrement = true;
+            this.textBoxPrimaryFilmDistanceCopy2.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPrimaryFilmDistanceCopy2.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPrimaryFilmDistanceCopy2.ThonsandsSeparator = true;
+            this.textBoxPrimaryFilmDistanceCopy2.Value = 445D;
+            this.textBoxPrimaryFilmDistanceCopy2.WordWrap = false;
+            // 
+            // numericalTextBoxRadiusInverseDev
+            // 
+            resources.ApplyResources(this.numericalTextBoxRadiusInverseDev, "numericalTextBoxRadiusInverseDev");
+            this.numericalTextBoxRadiusInverseDev.BackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRadiusInverseDev.DecimalPlaces = 10;
+            this.numericalTextBoxRadiusInverseDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRadiusInverseDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRadiusInverseDev.Name = "numericalTextBoxRadiusInverseDev";
+            this.numericalTextBoxRadiusInverseDev.ReadOnly = true;
+            this.numericalTextBoxRadiusInverseDev.SkipEventDuringInput = false;
+            this.numericalTextBoxRadiusInverseDev.SmartIncrement = true;
+            this.numericalTextBoxRadiusInverseDev.TabStop = false;
+            this.numericalTextBoxRadiusInverseDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRadiusInverseDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxRadiusInverseDev.ThonsandsSeparator = true;
+            this.numericalTextBoxRadiusInverseDev.WordWrap = false;
+            // 
+            // textBoxRefinedSecondaryTauDev
+            // 
+            resources.ApplyResources(this.textBoxRefinedSecondaryTauDev, "textBoxRefinedSecondaryTauDev");
+            this.textBoxRefinedSecondaryTauDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTauDev.DecimalPlaces = 10;
+            this.textBoxRefinedSecondaryTauDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTauDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTauDev.Name = "textBoxRefinedSecondaryTauDev";
+            this.textBoxRefinedSecondaryTauDev.ReadOnly = true;
+            this.textBoxRefinedSecondaryTauDev.SkipEventDuringInput = false;
+            this.textBoxRefinedSecondaryTauDev.SmartIncrement = true;
+            this.textBoxRefinedSecondaryTauDev.TabStop = false;
+            this.textBoxRefinedSecondaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryTauDev.ThonsandsSeparator = true;
+            this.textBoxRefinedSecondaryTauDev.WordWrap = false;
+            // 
+            // textBoxPixelSizeYDev
+            // 
+            resources.ApplyResources(this.textBoxPixelSizeYDev, "textBoxPixelSizeYDev");
+            this.textBoxPixelSizeYDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeYDev.DecimalPlaces = 10;
+            this.textBoxPixelSizeYDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeYDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeYDev.Name = "textBoxPixelSizeYDev";
+            this.textBoxPixelSizeYDev.ReadOnly = true;
+            this.textBoxPixelSizeYDev.SkipEventDuringInput = false;
+            this.textBoxPixelSizeYDev.SmartIncrement = true;
+            this.textBoxPixelSizeYDev.TabStop = false;
+            this.textBoxPixelSizeYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeYDev.ThonsandsSeparator = true;
+            this.textBoxPixelSizeYDev.WordWrap = false;
+            // 
+            // textBoxWaveLength
+            // 
+            resources.ApplyResources(this.textBoxWaveLength, "textBoxWaveLength");
+            this.textBoxWaveLength.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLength.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLength.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxWaveLength.Name = "textBoxWaveLength";
+            this.textBoxWaveLength.RadianValue = 0.0069813170079773184D;
+            this.textBoxWaveLength.SkipEventDuringInput = false;
+            this.textBoxWaveLength.SmartIncrement = true;
+            this.textBoxWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxWaveLength.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxWaveLength, resources.GetString("textBoxWaveLength.ToolTip"));
+            this.textBoxWaveLength.Value = 0.4D;
+            this.textBoxWaveLength.WordWrap = false;
+            this.textBoxWaveLength.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.textBoxWaveLength.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxWaveLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxRefinedPixelSizeY
+            // 
+            resources.ApplyResources(this.textBoxRefinedPixelSizeY, "textBoxRefinedPixelSizeY");
+            this.textBoxRefinedPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeY.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeY.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeY.Name = "textBoxRefinedPixelSizeY";
+            this.textBoxRefinedPixelSizeY.RadianValue = 0.0017453292519943296D;
+            this.textBoxRefinedPixelSizeY.ReadOnly = true;
+            this.textBoxRefinedPixelSizeY.SkipEventDuringInput = false;
+            this.textBoxRefinedPixelSizeY.SmartIncrement = true;
+            this.textBoxRefinedPixelSizeY.TabStop = false;
+            this.textBoxRefinedPixelSizeY.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelSizeY.ThonsandsSeparator = true;
+            this.textBoxRefinedPixelSizeY.Value = 0.1D;
+            this.textBoxRefinedPixelSizeY.WordWrap = false;
+            // 
+            // textBoxRefinedPrimaryTauDev
+            // 
+            resources.ApplyResources(this.textBoxRefinedPrimaryTauDev, "textBoxRefinedPrimaryTauDev");
+            this.textBoxRefinedPrimaryTauDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTauDev.DecimalPlaces = 10;
+            this.textBoxRefinedPrimaryTauDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTauDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTauDev.Name = "textBoxRefinedPrimaryTauDev";
+            this.textBoxRefinedPrimaryTauDev.ReadOnly = true;
+            this.textBoxRefinedPrimaryTauDev.SkipEventDuringInput = false;
+            this.textBoxRefinedPrimaryTauDev.SmartIncrement = true;
+            this.textBoxRefinedPrimaryTauDev.TabStop = false;
+            this.textBoxRefinedPrimaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryTauDev.ThonsandsSeparator = true;
+            this.textBoxRefinedPrimaryTauDev.WordWrap = false;
+            // 
+            // textBoxPixelSizeY
+            // 
+            resources.ApplyResources(this.textBoxPixelSizeY, "textBoxPixelSizeY");
+            this.textBoxPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeY.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeY.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeY.Name = "textBoxPixelSizeY";
+            this.textBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
+            this.textBoxPixelSizeY.SkipEventDuringInput = false;
+            this.textBoxPixelSizeY.SmartIncrement = true;
+            this.textBoxPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeY.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxPixelSizeY, resources.GetString("textBoxPixelSizeY.ToolTip"));
+            this.textBoxPixelSizeY.Value = 0.1D;
+            this.textBoxPixelSizeY.WordWrap = false;
+            this.textBoxPixelSizeY.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textBoxPixelSizeY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
+            // 
+            // textBoxRefinedSecondaryPhiDev
+            // 
+            resources.ApplyResources(this.textBoxRefinedSecondaryPhiDev, "textBoxRefinedSecondaryPhiDev");
+            this.textBoxRefinedSecondaryPhiDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhiDev.DecimalPlaces = 10;
+            this.textBoxRefinedSecondaryPhiDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhiDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhiDev.Name = "textBoxRefinedSecondaryPhiDev";
+            this.textBoxRefinedSecondaryPhiDev.ReadOnly = true;
+            this.textBoxRefinedSecondaryPhiDev.SkipEventDuringInput = false;
+            this.textBoxRefinedSecondaryPhiDev.SmartIncrement = true;
+            this.textBoxRefinedSecondaryPhiDev.TabStop = false;
+            this.textBoxRefinedSecondaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryPhiDev.ThonsandsSeparator = true;
+            this.textBoxRefinedSecondaryPhiDev.WordWrap = false;
+            // 
             // label41
             // 
             resources.ApplyResources(this.label41, "label41");
             this.label41.Name = "label41";
+            // 
+            // textBoxRefinedPrimaryFilmDistance
+            // 
+            resources.ApplyResources(this.textBoxRefinedPrimaryFilmDistance, "textBoxRefinedPrimaryFilmDistance");
+            this.textBoxRefinedPrimaryFilmDistance.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryFilmDistance.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryFilmDistance.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryFilmDistance.Name = "textBoxRefinedPrimaryFilmDistance";
+            this.textBoxRefinedPrimaryFilmDistance.RadianValue = 6.9813170079773181D;
+            this.textBoxRefinedPrimaryFilmDistance.ReadOnly = true;
+            this.textBoxRefinedPrimaryFilmDistance.SkipEventDuringInput = false;
+            this.textBoxRefinedPrimaryFilmDistance.SmartIncrement = true;
+            this.textBoxRefinedPrimaryFilmDistance.TabStop = false;
+            this.textBoxRefinedPrimaryFilmDistance.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryFilmDistance.ThonsandsSeparator = true;
+            this.textBoxRefinedPrimaryFilmDistance.Value = 400D;
+            this.textBoxRefinedPrimaryFilmDistance.WordWrap = false;
             // 
             // label13
             // 
             resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
             // 
+            // textBoxRefinedPrimaryPhiDev
+            // 
+            resources.ApplyResources(this.textBoxRefinedPrimaryPhiDev, "textBoxRefinedPrimaryPhiDev");
+            this.textBoxRefinedPrimaryPhiDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhiDev.DecimalPlaces = 10;
+            this.textBoxRefinedPrimaryPhiDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhiDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhiDev.Name = "textBoxRefinedPrimaryPhiDev";
+            this.textBoxRefinedPrimaryPhiDev.ReadOnly = true;
+            this.textBoxRefinedPrimaryPhiDev.SkipEventDuringInput = false;
+            this.textBoxRefinedPrimaryPhiDev.SmartIncrement = true;
+            this.textBoxRefinedPrimaryPhiDev.TabStop = false;
+            this.textBoxRefinedPrimaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryPhiDev.ThonsandsSeparator = true;
+            this.textBoxRefinedPrimaryPhiDev.WordWrap = false;
+            // 
+            // textBoxPixelSizeX
+            // 
+            resources.ApplyResources(this.textBoxPixelSizeX, "textBoxPixelSizeX");
+            this.textBoxPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeX.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeX.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeX.Name = "textBoxPixelSizeX";
+            this.textBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
+            this.textBoxPixelSizeX.SkipEventDuringInput = false;
+            this.textBoxPixelSizeX.SmartIncrement = true;
+            this.textBoxPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeX.ThonsandsSeparator = true;
+            this.toolTipJapanese.SetToolTip(this.textBoxPixelSizeX, resources.GetString("textBoxPixelSizeX.ToolTip"));
+            this.textBoxPixelSizeX.Value = 0.1D;
+            this.textBoxPixelSizeX.WordWrap = false;
+            // 
+            // textBoxRefinedWaveLength
+            // 
+            resources.ApplyResources(this.textBoxRefinedWaveLength, "textBoxRefinedWaveLength");
+            this.textBoxRefinedWaveLength.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedWaveLength.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedWaveLength.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedWaveLength.Name = "textBoxRefinedWaveLength";
+            this.textBoxRefinedWaveLength.RadianValue = 0.0069813170079773184D;
+            this.textBoxRefinedWaveLength.ReadOnly = true;
+            this.textBoxRefinedWaveLength.SkipEventDuringInput = false;
+            this.textBoxRefinedWaveLength.SmartIncrement = true;
+            this.textBoxRefinedWaveLength.TabStop = false;
+            this.textBoxRefinedWaveLength.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedWaveLength.ThonsandsSeparator = true;
+            this.textBoxRefinedWaveLength.Value = 0.4D;
+            this.textBoxRefinedWaveLength.WordWrap = false;
+            // 
+            // textBoxRefinedPixelSizeX
+            // 
+            resources.ApplyResources(this.textBoxRefinedPixelSizeX, "textBoxRefinedPixelSizeX");
+            this.textBoxRefinedPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeX.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeX.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeX.Name = "textBoxRefinedPixelSizeX";
+            this.textBoxRefinedPixelSizeX.RadianValue = 0.0017453292519943296D;
+            this.textBoxRefinedPixelSizeX.ReadOnly = true;
+            this.textBoxRefinedPixelSizeX.SkipEventDuringInput = false;
+            this.textBoxRefinedPixelSizeX.SmartIncrement = true;
+            this.textBoxRefinedPixelSizeX.TabStop = false;
+            this.textBoxRefinedPixelSizeX.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelSizeX.ThonsandsSeparator = true;
+            this.textBoxRefinedPixelSizeX.Value = 0.1D;
+            this.textBoxRefinedPixelSizeX.WordWrap = false;
+            // 
+            // numericalTextBoxRefinedSphericalRadius
+            // 
+            resources.ApplyResources(this.numericalTextBoxRefinedSphericalRadius, "numericalTextBoxRefinedSphericalRadius");
+            this.numericalTextBoxRefinedSphericalRadius.BackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRefinedSphericalRadius.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRefinedSphericalRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRefinedSphericalRadius.Name = "numericalTextBoxRefinedSphericalRadius";
+            this.numericalTextBoxRefinedSphericalRadius.ReadOnly = true;
+            this.numericalTextBoxRefinedSphericalRadius.SkipEventDuringInput = false;
+            this.numericalTextBoxRefinedSphericalRadius.SmartIncrement = true;
+            this.numericalTextBoxRefinedSphericalRadius.TabStop = false;
+            this.numericalTextBoxRefinedSphericalRadius.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.numericalTextBoxRefinedSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxRefinedSphericalRadius.ThonsandsSeparator = true;
+            this.numericalTextBoxRefinedSphericalRadius.WordWrap = false;
+            // 
+            // textBoxRefinedSecondaryTau
+            // 
+            resources.ApplyResources(this.textBoxRefinedSecondaryTau, "textBoxRefinedSecondaryTau");
+            this.textBoxRefinedSecondaryTau.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTau.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTau.Name = "textBoxRefinedSecondaryTau";
+            this.textBoxRefinedSecondaryTau.ReadOnly = true;
+            this.textBoxRefinedSecondaryTau.SkipEventDuringInput = false;
+            this.textBoxRefinedSecondaryTau.SmartIncrement = true;
+            this.textBoxRefinedSecondaryTau.TabStop = false;
+            this.textBoxRefinedSecondaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryTau.ThonsandsSeparator = true;
+            this.textBoxRefinedSecondaryTau.WordWrap = false;
+            // 
             // label20
             // 
             resources.ApplyResources(this.label20, "label20");
             this.label20.Name = "label20";
+            // 
+            // textBoxPixelSizeXDev
+            // 
+            resources.ApplyResources(this.textBoxPixelSizeXDev, "textBoxPixelSizeXDev");
+            this.textBoxPixelSizeXDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeXDev.DecimalPlaces = 10;
+            this.textBoxPixelSizeXDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeXDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeXDev.Name = "textBoxPixelSizeXDev";
+            this.textBoxPixelSizeXDev.ReadOnly = true;
+            this.textBoxPixelSizeXDev.SkipEventDuringInput = false;
+            this.textBoxPixelSizeXDev.SmartIncrement = true;
+            this.textBoxPixelSizeXDev.TabStop = false;
+            this.textBoxPixelSizeXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxPixelSizeXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeXDev.ThonsandsSeparator = true;
+            this.textBoxPixelSizeXDev.WordWrap = false;
+            // 
+            // textBoxRefinedPrimaryTau
+            // 
+            resources.ApplyResources(this.textBoxRefinedPrimaryTau, "textBoxRefinedPrimaryTau");
+            this.textBoxRefinedPrimaryTau.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTau.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTau.Name = "textBoxRefinedPrimaryTau";
+            this.textBoxRefinedPrimaryTau.ReadOnly = true;
+            this.textBoxRefinedPrimaryTau.SkipEventDuringInput = false;
+            this.textBoxRefinedPrimaryTau.SmartIncrement = true;
+            this.textBoxRefinedPrimaryTau.TabStop = false;
+            this.textBoxRefinedPrimaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryTau.ThonsandsSeparator = true;
+            this.textBoxRefinedPrimaryTau.WordWrap = false;
             // 
             // label44
             // 
@@ -1099,15 +1746,64 @@
             resources.ApplyResources(this.label62, "label62");
             this.label62.Name = "label62";
             // 
+            // textBoxCameraLengthDev
+            // 
+            resources.ApplyResources(this.textBoxCameraLengthDev, "textBoxCameraLengthDev");
+            this.textBoxCameraLengthDev.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCameraLengthDev.DecimalPlaces = 10;
+            this.textBoxCameraLengthDev.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCameraLengthDev.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCameraLengthDev.Name = "textBoxCameraLengthDev";
+            this.textBoxCameraLengthDev.ReadOnly = true;
+            this.textBoxCameraLengthDev.SkipEventDuringInput = false;
+            this.textBoxCameraLengthDev.SmartIncrement = true;
+            this.textBoxCameraLengthDev.TabStop = false;
+            this.textBoxCameraLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCameraLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxCameraLengthDev.ThonsandsSeparator = true;
+            this.textBoxCameraLengthDev.WordWrap = false;
+            // 
             // label22
             // 
             resources.ApplyResources(this.label22, "label22");
             this.label22.Name = "label22";
             // 
+            // textBoxRefinedSecondaryPhi
+            // 
+            resources.ApplyResources(this.textBoxRefinedSecondaryPhi, "textBoxRefinedSecondaryPhi");
+            this.textBoxRefinedSecondaryPhi.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhi.Name = "textBoxRefinedSecondaryPhi";
+            this.textBoxRefinedSecondaryPhi.ReadOnly = true;
+            this.textBoxRefinedSecondaryPhi.SkipEventDuringInput = false;
+            this.textBoxRefinedSecondaryPhi.SmartIncrement = true;
+            this.textBoxRefinedSecondaryPhi.TabStop = false;
+            this.textBoxRefinedSecondaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryPhi.ThonsandsSeparator = true;
+            this.textBoxRefinedSecondaryPhi.WordWrap = false;
+            // 
             // label42
             // 
             resources.ApplyResources(this.label42, "label42");
             this.label42.Name = "label42";
+            // 
+            // textBoxRefinedPrimaryPhi
+            // 
+            resources.ApplyResources(this.textBoxRefinedPrimaryPhi, "textBoxRefinedPrimaryPhi");
+            this.textBoxRefinedPrimaryPhi.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhi.Name = "textBoxRefinedPrimaryPhi";
+            this.textBoxRefinedPrimaryPhi.ReadOnly = true;
+            this.textBoxRefinedPrimaryPhi.SkipEventDuringInput = false;
+            this.textBoxRefinedPrimaryPhi.SmartIncrement = true;
+            this.textBoxRefinedPrimaryPhi.TabStop = false;
+            this.textBoxRefinedPrimaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRefinedPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryPhi.ThonsandsSeparator = true;
+            this.textBoxRefinedPrimaryPhi.WordWrap = false;
             // 
             // label61
             // 
@@ -1276,6 +1972,7 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkUncheckToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -1519,6 +2216,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1});
@@ -1556,6 +2254,42 @@
             this.buttonCheckPeaks.Name = "buttonCheckPeaks";
             this.buttonCheckPeaks.UseVisualStyleBackColor = true;
             this.buttonCheckPeaks.Click += new System.EventHandler(this.buttonCheckPeaks_Click);
+            // 
+            // numericBoxAwayFrom
+            // 
+            resources.ApplyResources(this.numericBoxAwayFrom, "numericBoxAwayFrom");
+            this.numericBoxAwayFrom.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxAwayFrom.DecimalPlaces = 2;
+            this.numericBoxAwayFrom.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxAwayFrom.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxAwayFrom.Minimum = 0D;
+            this.numericBoxAwayFrom.Name = "numericBoxAwayFrom";
+            this.numericBoxAwayFrom.RadianValue = 0.017453292519943295D;
+            this.numericBoxAwayFrom.SkipEventDuringInput = false;
+            this.numericBoxAwayFrom.SmartIncrement = true;
+            this.numericBoxAwayFrom.TextFont = new System.Drawing.Font("Tahoma", 8.25F);
+            this.numericBoxAwayFrom.ThonsandsSeparator = true;
+            this.numericBoxAwayFrom.Value = 1D;
+            this.numericBoxAwayFrom.WordWrap = false;
+            this.numericBoxAwayFrom.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
+            // numericBoxLowerThan
+            // 
+            resources.ApplyResources(this.numericBoxLowerThan, "numericBoxLowerThan");
+            this.numericBoxLowerThan.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxLowerThan.DecimalPlaces = 2;
+            this.numericBoxLowerThan.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxLowerThan.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxLowerThan.Minimum = 0D;
+            this.numericBoxLowerThan.Name = "numericBoxLowerThan";
+            this.numericBoxLowerThan.RadianValue = 2.6179938779914944D;
+            this.numericBoxLowerThan.SkipEventDuringInput = false;
+            this.numericBoxLowerThan.SmartIncrement = true;
+            this.numericBoxLowerThan.TextFont = new System.Drawing.Font("Tahoma", 8.25F);
+            this.numericBoxLowerThan.ThonsandsSeparator = true;
+            this.numericBoxLowerThan.Value = 150D;
+            this.numericBoxLowerThan.WordWrap = false;
+            this.numericBoxLowerThan.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // panel1
             // 
@@ -1610,1193 +2344,6 @@
             this.checkBoxShowEachPeaks.Name = "checkBoxShowEachPeaks";
             this.checkBoxShowEachPeaks.UseVisualStyleBackColor = true;
             this.checkBoxShowEachPeaks.CheckedChanged += new System.EventHandler(this.checkBoxShowEachPeaks_CheckedChanged);
-            // 
-            // numericBoxPrimaryImageNum
-            // 
-            resources.ApplyResources(this.numericBoxPrimaryImageNum, "numericBoxPrimaryImageNum");
-            this.numericBoxPrimaryImageNum.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxPrimaryImageNum.DecimalPlaces = -2;
-            this.numericBoxPrimaryImageNum.Maximum = double.PositiveInfinity;
-            this.numericBoxPrimaryImageNum.Minimum = double.NegativeInfinity;
-            this.numericBoxPrimaryImageNum.Multiline = false;
-            this.numericBoxPrimaryImageNum.Name = "numericBoxPrimaryImageNum";
-            this.numericBoxPrimaryImageNum.RadianValue = 0D;
-            this.numericBoxPrimaryImageNum.ReadOnly = false;
-            this.numericBoxPrimaryImageNum.RestrictLimitValue = true;
-            this.numericBoxPrimaryImageNum.ShowFraction = false;
-            this.numericBoxPrimaryImageNum.ShowPositiveSign = false;
-            this.numericBoxPrimaryImageNum.ShowUpDown = false;
-            this.numericBoxPrimaryImageNum.SkipEventDuringInput = false;
-            this.numericBoxPrimaryImageNum.SmartIncrement = true;
-            this.numericBoxPrimaryImageNum.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericBoxPrimaryImageNum.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericBoxPrimaryImageNum.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.numericBoxPrimaryImageNum.ThonsandsSeparator = true;
-            this.numericBoxPrimaryImageNum.UpDown_Increment = 1D;
-            this.numericBoxPrimaryImageNum.Value = 0D;
-            this.numericBoxPrimaryImageNum.WordWrap = true;
-            // 
-            // numericTextBoxPrimaryCenterPositionY
-            // 
-            resources.ApplyResources(this.numericTextBoxPrimaryCenterPositionY, "numericTextBoxPrimaryCenterPositionY");
-            this.numericTextBoxPrimaryCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxPrimaryCenterPositionY.DecimalPlaces = -1;
-            this.numericTextBoxPrimaryCenterPositionY.Maximum = double.PositiveInfinity;
-            this.numericTextBoxPrimaryCenterPositionY.Minimum = double.NegativeInfinity;
-            this.numericTextBoxPrimaryCenterPositionY.Multiline = false;
-            this.numericTextBoxPrimaryCenterPositionY.Name = "numericTextBoxPrimaryCenterPositionY";
-            this.numericTextBoxPrimaryCenterPositionY.RadianValue = 0D;
-            this.numericTextBoxPrimaryCenterPositionY.ReadOnly = false;
-            this.numericTextBoxPrimaryCenterPositionY.RestrictLimitValue = true;
-            this.numericTextBoxPrimaryCenterPositionY.ShowFraction = false;
-            this.numericTextBoxPrimaryCenterPositionY.ShowPositiveSign = false;
-            this.numericTextBoxPrimaryCenterPositionY.ShowUpDown = false;
-            this.numericTextBoxPrimaryCenterPositionY.SkipEventDuringInput = false;
-            this.numericTextBoxPrimaryCenterPositionY.SmartIncrement = true;
-            this.numericTextBoxPrimaryCenterPositionY.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericTextBoxPrimaryCenterPositionY.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericTextBoxPrimaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericTextBoxPrimaryCenterPositionY.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.numericTextBoxPrimaryCenterPositionY, resources.GetString("numericTextBoxPrimaryCenterPositionY.ToolTip"));
-            this.numericTextBoxPrimaryCenterPositionY.UpDown_Increment = 1D;
-            this.numericTextBoxPrimaryCenterPositionY.Value = 0D;
-            this.numericTextBoxPrimaryCenterPositionY.WordWrap = true;
-            this.numericTextBoxPrimaryCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            this.numericTextBoxPrimaryCenterPositionY.DoubleClick += new System.EventHandler(this.textBoxPrimaryCenterPositionX_DoubleClick);
-            // 
-            // numericTextBoxPrimaryFilmDistance
-            // 
-            resources.ApplyResources(this.numericTextBoxPrimaryFilmDistance, "numericTextBoxPrimaryFilmDistance");
-            this.numericTextBoxPrimaryFilmDistance.BackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxPrimaryFilmDistance.DecimalPlaces = -1;
-            this.numericTextBoxPrimaryFilmDistance.Maximum = double.PositiveInfinity;
-            this.numericTextBoxPrimaryFilmDistance.Minimum = double.NegativeInfinity;
-            this.numericTextBoxPrimaryFilmDistance.Multiline = false;
-            this.numericTextBoxPrimaryFilmDistance.Name = "numericTextBoxPrimaryFilmDistance";
-            this.numericTextBoxPrimaryFilmDistance.RadianValue = 0D;
-            this.numericTextBoxPrimaryFilmDistance.ReadOnly = false;
-            this.numericTextBoxPrimaryFilmDistance.RestrictLimitValue = true;
-            this.numericTextBoxPrimaryFilmDistance.ShowFraction = false;
-            this.numericTextBoxPrimaryFilmDistance.ShowPositiveSign = false;
-            this.numericTextBoxPrimaryFilmDistance.ShowUpDown = false;
-            this.numericTextBoxPrimaryFilmDistance.SkipEventDuringInput = false;
-            this.numericTextBoxPrimaryFilmDistance.SmartIncrement = true;
-            this.numericTextBoxPrimaryFilmDistance.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericTextBoxPrimaryFilmDistance.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericTextBoxPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericTextBoxPrimaryFilmDistance.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.numericTextBoxPrimaryFilmDistance, resources.GetString("numericTextBoxPrimaryFilmDistance.ToolTip"));
-            this.numericTextBoxPrimaryFilmDistance.UpDown_Increment = 1D;
-            this.numericTextBoxPrimaryFilmDistance.Value = 0D;
-            this.numericTextBoxPrimaryFilmDistance.WordWrap = true;
-            this.numericTextBoxPrimaryFilmDistance.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericTextBoxPrimaryFilmDistance_TextChanged);
-            // 
-            // numericalTextBoxPrimaryCenterPositionX
-            // 
-            resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionX, "numericalTextBoxPrimaryCenterPositionX");
-            this.numericalTextBoxPrimaryCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionX.DecimalPlaces = -1;
-            this.numericalTextBoxPrimaryCenterPositionX.Maximum = double.PositiveInfinity;
-            this.numericalTextBoxPrimaryCenterPositionX.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPrimaryCenterPositionX.Multiline = false;
-            this.numericalTextBoxPrimaryCenterPositionX.Name = "numericalTextBoxPrimaryCenterPositionX";
-            this.numericalTextBoxPrimaryCenterPositionX.RadianValue = 0D;
-            this.numericalTextBoxPrimaryCenterPositionX.ReadOnly = false;
-            this.numericalTextBoxPrimaryCenterPositionX.RestrictLimitValue = true;
-            this.numericalTextBoxPrimaryCenterPositionX.ShowFraction = false;
-            this.numericalTextBoxPrimaryCenterPositionX.ShowPositiveSign = false;
-            this.numericalTextBoxPrimaryCenterPositionX.ShowUpDown = false;
-            this.numericalTextBoxPrimaryCenterPositionX.SkipEventDuringInput = false;
-            this.numericalTextBoxPrimaryCenterPositionX.SmartIncrement = true;
-            this.numericalTextBoxPrimaryCenterPositionX.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericalTextBoxPrimaryCenterPositionX.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericalTextBoxPrimaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericalTextBoxPrimaryCenterPositionX.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.numericalTextBoxPrimaryCenterPositionX, resources.GetString("numericalTextBoxPrimaryCenterPositionX.ToolTip"));
-            this.numericalTextBoxPrimaryCenterPositionX.UpDown_Increment = 1D;
-            this.numericalTextBoxPrimaryCenterPositionX.Value = 0D;
-            this.numericalTextBoxPrimaryCenterPositionX.WordWrap = true;
-            this.numericalTextBoxPrimaryCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            this.numericalTextBoxPrimaryCenterPositionX.DoubleClick += new System.EventHandler(this.textBoxPrimaryCenterPositionX_DoubleClick);
-            // 
-            // numericalTextBoxPrimaryCenterPositionYDev
-            // 
-            resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionYDev, "numericalTextBoxPrimaryCenterPositionYDev");
-            this.numericalTextBoxPrimaryCenterPositionYDev.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionYDev.DecimalPlaces = 10;
-            this.numericalTextBoxPrimaryCenterPositionYDev.Maximum = double.PositiveInfinity;
-            this.numericalTextBoxPrimaryCenterPositionYDev.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPrimaryCenterPositionYDev.Multiline = false;
-            this.numericalTextBoxPrimaryCenterPositionYDev.Name = "numericalTextBoxPrimaryCenterPositionYDev";
-            this.numericalTextBoxPrimaryCenterPositionYDev.RadianValue = 0D;
-            this.numericalTextBoxPrimaryCenterPositionYDev.ReadOnly = true;
-            this.numericalTextBoxPrimaryCenterPositionYDev.RestrictLimitValue = true;
-            this.numericalTextBoxPrimaryCenterPositionYDev.ShowFraction = false;
-            this.numericalTextBoxPrimaryCenterPositionYDev.ShowPositiveSign = false;
-            this.numericalTextBoxPrimaryCenterPositionYDev.ShowUpDown = false;
-            this.numericalTextBoxPrimaryCenterPositionYDev.SkipEventDuringInput = false;
-            this.numericalTextBoxPrimaryCenterPositionYDev.SmartIncrement = true;
-            this.numericalTextBoxPrimaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionYDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericalTextBoxPrimaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericalTextBoxPrimaryCenterPositionYDev.ThonsandsSeparator = true;
-            this.numericalTextBoxPrimaryCenterPositionYDev.UpDown_Increment = 1D;
-            this.numericalTextBoxPrimaryCenterPositionYDev.Value = 0D;
-            this.numericalTextBoxPrimaryCenterPositionYDev.WordWrap = false;
-            // 
-            // numericalTextBoxPrimaryCenterPositionXDev
-            // 
-            resources.ApplyResources(this.numericalTextBoxPrimaryCenterPositionXDev, "numericalTextBoxPrimaryCenterPositionXDev");
-            this.numericalTextBoxPrimaryCenterPositionXDev.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionXDev.DecimalPlaces = 10;
-            this.numericalTextBoxPrimaryCenterPositionXDev.Maximum = double.PositiveInfinity;
-            this.numericalTextBoxPrimaryCenterPositionXDev.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxPrimaryCenterPositionXDev.Multiline = false;
-            this.numericalTextBoxPrimaryCenterPositionXDev.Name = "numericalTextBoxPrimaryCenterPositionXDev";
-            this.numericalTextBoxPrimaryCenterPositionXDev.RadianValue = 0D;
-            this.numericalTextBoxPrimaryCenterPositionXDev.ReadOnly = true;
-            this.numericalTextBoxPrimaryCenterPositionXDev.RestrictLimitValue = true;
-            this.numericalTextBoxPrimaryCenterPositionXDev.ShowFraction = false;
-            this.numericalTextBoxPrimaryCenterPositionXDev.ShowPositiveSign = false;
-            this.numericalTextBoxPrimaryCenterPositionXDev.ShowUpDown = false;
-            this.numericalTextBoxPrimaryCenterPositionXDev.SkipEventDuringInput = false;
-            this.numericalTextBoxPrimaryCenterPositionXDev.SmartIncrement = true;
-            this.numericalTextBoxPrimaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionXDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericalTextBoxPrimaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericalTextBoxPrimaryCenterPositionXDev.ThonsandsSeparator = true;
-            this.numericalTextBoxPrimaryCenterPositionXDev.UpDown_Increment = 1D;
-            this.numericalTextBoxPrimaryCenterPositionXDev.Value = 0D;
-            this.numericalTextBoxPrimaryCenterPositionXDev.WordWrap = false;
-            // 
-            // numericBoxSecondaryImageNum
-            // 
-            resources.ApplyResources(this.numericBoxSecondaryImageNum, "numericBoxSecondaryImageNum");
-            this.numericBoxSecondaryImageNum.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxSecondaryImageNum.DecimalPlaces = -2;
-            this.numericBoxSecondaryImageNum.Maximum = double.PositiveInfinity;
-            this.numericBoxSecondaryImageNum.Minimum = double.NegativeInfinity;
-            this.numericBoxSecondaryImageNum.Multiline = false;
-            this.numericBoxSecondaryImageNum.Name = "numericBoxSecondaryImageNum";
-            this.numericBoxSecondaryImageNum.RadianValue = 0D;
-            this.numericBoxSecondaryImageNum.ReadOnly = false;
-            this.numericBoxSecondaryImageNum.RestrictLimitValue = true;
-            this.numericBoxSecondaryImageNum.ShowFraction = false;
-            this.numericBoxSecondaryImageNum.ShowPositiveSign = false;
-            this.numericBoxSecondaryImageNum.ShowUpDown = false;
-            this.numericBoxSecondaryImageNum.SkipEventDuringInput = false;
-            this.numericBoxSecondaryImageNum.SmartIncrement = true;
-            this.numericBoxSecondaryImageNum.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericBoxSecondaryImageNum.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericBoxSecondaryImageNum.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.numericBoxSecondaryImageNum.ThonsandsSeparator = true;
-            this.numericBoxSecondaryImageNum.UpDown_Increment = 1D;
-            this.numericBoxSecondaryImageNum.Value = 0D;
-            this.numericBoxSecondaryImageNum.WordWrap = true;
-            // 
-            // numericTextBoxSecondaryCenterPositionY
-            // 
-            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionY, "numericTextBoxSecondaryCenterPositionY");
-            this.numericTextBoxSecondaryCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionY.DecimalPlaces = -1;
-            this.numericTextBoxSecondaryCenterPositionY.Maximum = double.PositiveInfinity;
-            this.numericTextBoxSecondaryCenterPositionY.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionY.Multiline = false;
-            this.numericTextBoxSecondaryCenterPositionY.Name = "numericTextBoxSecondaryCenterPositionY";
-            this.numericTextBoxSecondaryCenterPositionY.RadianValue = 0D;
-            this.numericTextBoxSecondaryCenterPositionY.ReadOnly = false;
-            this.numericTextBoxSecondaryCenterPositionY.RestrictLimitValue = true;
-            this.numericTextBoxSecondaryCenterPositionY.ShowFraction = false;
-            this.numericTextBoxSecondaryCenterPositionY.ShowPositiveSign = false;
-            this.numericTextBoxSecondaryCenterPositionY.ShowUpDown = false;
-            this.numericTextBoxSecondaryCenterPositionY.SkipEventDuringInput = false;
-            this.numericTextBoxSecondaryCenterPositionY.SmartIncrement = true;
-            this.numericTextBoxSecondaryCenterPositionY.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericTextBoxSecondaryCenterPositionY.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericTextBoxSecondaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericTextBoxSecondaryCenterPositionY.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.numericTextBoxSecondaryCenterPositionY, resources.GetString("numericTextBoxSecondaryCenterPositionY.ToolTip"));
-            this.numericTextBoxSecondaryCenterPositionY.UpDown_Increment = 1D;
-            this.numericTextBoxSecondaryCenterPositionY.Value = 0D;
-            this.numericTextBoxSecondaryCenterPositionY.WordWrap = true;
-            this.numericTextBoxSecondaryCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            this.numericTextBoxSecondaryCenterPositionY.DoubleClick += new System.EventHandler(this.textBoxSecondaryCenterPositionX_DoubleClick);
-            // 
-            // numericTextBoxSecondaryCenterPositionX
-            // 
-            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionX, "numericTextBoxSecondaryCenterPositionX");
-            this.numericTextBoxSecondaryCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionX.DecimalPlaces = -1;
-            this.numericTextBoxSecondaryCenterPositionX.Maximum = double.PositiveInfinity;
-            this.numericTextBoxSecondaryCenterPositionX.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionX.Multiline = false;
-            this.numericTextBoxSecondaryCenterPositionX.Name = "numericTextBoxSecondaryCenterPositionX";
-            this.numericTextBoxSecondaryCenterPositionX.RadianValue = 0D;
-            this.numericTextBoxSecondaryCenterPositionX.ReadOnly = false;
-            this.numericTextBoxSecondaryCenterPositionX.RestrictLimitValue = true;
-            this.numericTextBoxSecondaryCenterPositionX.ShowFraction = false;
-            this.numericTextBoxSecondaryCenterPositionX.ShowPositiveSign = false;
-            this.numericTextBoxSecondaryCenterPositionX.ShowUpDown = false;
-            this.numericTextBoxSecondaryCenterPositionX.SkipEventDuringInput = false;
-            this.numericTextBoxSecondaryCenterPositionX.SmartIncrement = true;
-            this.numericTextBoxSecondaryCenterPositionX.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericTextBoxSecondaryCenterPositionX.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericTextBoxSecondaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericTextBoxSecondaryCenterPositionX.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.numericTextBoxSecondaryCenterPositionX, resources.GetString("numericTextBoxSecondaryCenterPositionX.ToolTip"));
-            this.numericTextBoxSecondaryCenterPositionX.UpDown_Increment = 1D;
-            this.numericTextBoxSecondaryCenterPositionX.Value = 0D;
-            this.numericTextBoxSecondaryCenterPositionX.WordWrap = true;
-            this.numericTextBoxSecondaryCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            this.numericTextBoxSecondaryCenterPositionX.DoubleClick += new System.EventHandler(this.textBoxSecondaryCenterPositionX_DoubleClick);
-            // 
-            // textBoxFilmDistanceDiscrepancy
-            // 
-            resources.ApplyResources(this.textBoxFilmDistanceDiscrepancy, "textBoxFilmDistanceDiscrepancy");
-            this.textBoxFilmDistanceDiscrepancy.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxFilmDistanceDiscrepancy.DecimalPlaces = -1;
-            this.textBoxFilmDistanceDiscrepancy.Maximum = double.PositiveInfinity;
-            this.textBoxFilmDistanceDiscrepancy.Minimum = double.NegativeInfinity;
-            this.textBoxFilmDistanceDiscrepancy.Multiline = false;
-            this.textBoxFilmDistanceDiscrepancy.Name = "textBoxFilmDistanceDiscrepancy";
-            this.textBoxFilmDistanceDiscrepancy.RadianValue = 1.7453292519943295D;
-            this.textBoxFilmDistanceDiscrepancy.ReadOnly = false;
-            this.textBoxFilmDistanceDiscrepancy.RestrictLimitValue = true;
-            this.textBoxFilmDistanceDiscrepancy.ShowFraction = false;
-            this.textBoxFilmDistanceDiscrepancy.ShowPositiveSign = false;
-            this.textBoxFilmDistanceDiscrepancy.ShowUpDown = false;
-            this.textBoxFilmDistanceDiscrepancy.SkipEventDuringInput = false;
-            this.textBoxFilmDistanceDiscrepancy.SmartIncrement = true;
-            this.textBoxFilmDistanceDiscrepancy.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxFilmDistanceDiscrepancy.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxFilmDistanceDiscrepancy.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxFilmDistanceDiscrepancy.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxFilmDistanceDiscrepancy, resources.GetString("textBoxFilmDistanceDiscrepancy.ToolTip"));
-            this.textBoxFilmDistanceDiscrepancy.UpDown_Increment = 1D;
-            this.textBoxFilmDistanceDiscrepancy.Value = 100D;
-            this.textBoxFilmDistanceDiscrepancy.WordWrap = false;
-            this.textBoxFilmDistanceDiscrepancy.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBoxFilmDistanceDiscrepancy_TextChanged);
-            this.textBoxFilmDistanceDiscrepancy.TextChanged += new System.EventHandler(this.textBoxFilmDistanceDiscrepancy_TextChanged);
-            // 
-            // textBoxPrimaryFilmDistanceCopy
-            // 
-            resources.ApplyResources(this.textBoxPrimaryFilmDistanceCopy, "textBoxPrimaryFilmDistanceCopy");
-            this.textBoxPrimaryFilmDistanceCopy.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPrimaryFilmDistanceCopy.DecimalPlaces = -1;
-            this.textBoxPrimaryFilmDistanceCopy.Maximum = double.PositiveInfinity;
-            this.textBoxPrimaryFilmDistanceCopy.Minimum = double.NegativeInfinity;
-            this.textBoxPrimaryFilmDistanceCopy.Multiline = false;
-            this.textBoxPrimaryFilmDistanceCopy.Name = "textBoxPrimaryFilmDistanceCopy";
-            this.textBoxPrimaryFilmDistanceCopy.RadianValue = 7.7667151713747664D;
-            this.textBoxPrimaryFilmDistanceCopy.ReadOnly = true;
-            this.textBoxPrimaryFilmDistanceCopy.RestrictLimitValue = true;
-            this.textBoxPrimaryFilmDistanceCopy.ShowFraction = false;
-            this.textBoxPrimaryFilmDistanceCopy.ShowPositiveSign = false;
-            this.textBoxPrimaryFilmDistanceCopy.ShowUpDown = false;
-            this.textBoxPrimaryFilmDistanceCopy.SkipEventDuringInput = false;
-            this.textBoxPrimaryFilmDistanceCopy.SmartIncrement = true;
-            this.textBoxPrimaryFilmDistanceCopy.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPrimaryFilmDistanceCopy.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPrimaryFilmDistanceCopy.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPrimaryFilmDistanceCopy.ThonsandsSeparator = true;
-            this.textBoxPrimaryFilmDistanceCopy.UpDown_Increment = 1D;
-            this.textBoxPrimaryFilmDistanceCopy.Value = 445D;
-            this.textBoxPrimaryFilmDistanceCopy.WordWrap = false;
-            // 
-            // numericTextBoxSecondaryCenterPositionYDev
-            // 
-            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionYDev, "numericTextBoxSecondaryCenterPositionYDev");
-            this.numericTextBoxSecondaryCenterPositionYDev.BackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionYDev.DecimalPlaces = 10;
-            this.numericTextBoxSecondaryCenterPositionYDev.Maximum = double.PositiveInfinity;
-            this.numericTextBoxSecondaryCenterPositionYDev.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionYDev.Multiline = false;
-            this.numericTextBoxSecondaryCenterPositionYDev.Name = "numericTextBoxSecondaryCenterPositionYDev";
-            this.numericTextBoxSecondaryCenterPositionYDev.RadianValue = 0D;
-            this.numericTextBoxSecondaryCenterPositionYDev.ReadOnly = true;
-            this.numericTextBoxSecondaryCenterPositionYDev.RestrictLimitValue = true;
-            this.numericTextBoxSecondaryCenterPositionYDev.ShowFraction = false;
-            this.numericTextBoxSecondaryCenterPositionYDev.ShowPositiveSign = false;
-            this.numericTextBoxSecondaryCenterPositionYDev.ShowUpDown = false;
-            this.numericTextBoxSecondaryCenterPositionYDev.SkipEventDuringInput = false;
-            this.numericTextBoxSecondaryCenterPositionYDev.SmartIncrement = true;
-            this.numericTextBoxSecondaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionYDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericTextBoxSecondaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericTextBoxSecondaryCenterPositionYDev.ThonsandsSeparator = true;
-            this.numericTextBoxSecondaryCenterPositionYDev.UpDown_Increment = 1D;
-            this.numericTextBoxSecondaryCenterPositionYDev.Value = 0D;
-            this.numericTextBoxSecondaryCenterPositionYDev.WordWrap = false;
-            // 
-            // numericTextBoxSecondaryCenterPositionXDev
-            // 
-            resources.ApplyResources(this.numericTextBoxSecondaryCenterPositionXDev, "numericTextBoxSecondaryCenterPositionXDev");
-            this.numericTextBoxSecondaryCenterPositionXDev.BackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionXDev.DecimalPlaces = 10;
-            this.numericTextBoxSecondaryCenterPositionXDev.Maximum = double.PositiveInfinity;
-            this.numericTextBoxSecondaryCenterPositionXDev.Minimum = double.NegativeInfinity;
-            this.numericTextBoxSecondaryCenterPositionXDev.Multiline = false;
-            this.numericTextBoxSecondaryCenterPositionXDev.Name = "numericTextBoxSecondaryCenterPositionXDev";
-            this.numericTextBoxSecondaryCenterPositionXDev.RadianValue = 0D;
-            this.numericTextBoxSecondaryCenterPositionXDev.ReadOnly = true;
-            this.numericTextBoxSecondaryCenterPositionXDev.RestrictLimitValue = true;
-            this.numericTextBoxSecondaryCenterPositionXDev.ShowFraction = false;
-            this.numericTextBoxSecondaryCenterPositionXDev.ShowPositiveSign = false;
-            this.numericTextBoxSecondaryCenterPositionXDev.ShowUpDown = false;
-            this.numericTextBoxSecondaryCenterPositionXDev.SkipEventDuringInput = false;
-            this.numericTextBoxSecondaryCenterPositionXDev.SmartIncrement = true;
-            this.numericTextBoxSecondaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionXDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericTextBoxSecondaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericTextBoxSecondaryCenterPositionXDev.ThonsandsSeparator = true;
-            this.numericTextBoxSecondaryCenterPositionXDev.UpDown_Increment = 1D;
-            this.numericTextBoxSecondaryCenterPositionXDev.Value = 0D;
-            this.numericTextBoxSecondaryCenterPositionXDev.WordWrap = false;
-            // 
-            // numericBoxAwayFrom
-            // 
-            resources.ApplyResources(this.numericBoxAwayFrom, "numericBoxAwayFrom");
-            this.numericBoxAwayFrom.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxAwayFrom.DecimalPlaces = 2;
-            this.numericBoxAwayFrom.Maximum = double.PositiveInfinity;
-            this.numericBoxAwayFrom.Minimum = 0D;
-            this.numericBoxAwayFrom.Multiline = false;
-            this.numericBoxAwayFrom.Name = "numericBoxAwayFrom";
-            this.numericBoxAwayFrom.RadianValue = 0.017453292519943295D;
-            this.numericBoxAwayFrom.ReadOnly = false;
-            this.numericBoxAwayFrom.RestrictLimitValue = true;
-            this.numericBoxAwayFrom.ShowFraction = false;
-            this.numericBoxAwayFrom.ShowPositiveSign = false;
-            this.numericBoxAwayFrom.ShowUpDown = false;
-            this.numericBoxAwayFrom.SkipEventDuringInput = false;
-            this.numericBoxAwayFrom.SmartIncrement = true;
-            this.numericBoxAwayFrom.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericBoxAwayFrom.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericBoxAwayFrom.TextFont = new System.Drawing.Font("Tahoma", 8.25F);
-            this.numericBoxAwayFrom.ThonsandsSeparator = true;
-            this.numericBoxAwayFrom.UpDown_Increment = 1D;
-            this.numericBoxAwayFrom.Value = 1D;
-            this.numericBoxAwayFrom.WordWrap = false;
-            this.numericBoxAwayFrom.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            // 
-            // numericBoxLowerThan
-            // 
-            resources.ApplyResources(this.numericBoxLowerThan, "numericBoxLowerThan");
-            this.numericBoxLowerThan.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxLowerThan.DecimalPlaces = 2;
-            this.numericBoxLowerThan.Maximum = double.PositiveInfinity;
-            this.numericBoxLowerThan.Minimum = 0D;
-            this.numericBoxLowerThan.Multiline = false;
-            this.numericBoxLowerThan.Name = "numericBoxLowerThan";
-            this.numericBoxLowerThan.RadianValue = 2.6179938779914944D;
-            this.numericBoxLowerThan.ReadOnly = false;
-            this.numericBoxLowerThan.RestrictLimitValue = true;
-            this.numericBoxLowerThan.ShowFraction = false;
-            this.numericBoxLowerThan.ShowPositiveSign = false;
-            this.numericBoxLowerThan.ShowUpDown = false;
-            this.numericBoxLowerThan.SkipEventDuringInput = false;
-            this.numericBoxLowerThan.SmartIncrement = true;
-            this.numericBoxLowerThan.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericBoxLowerThan.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericBoxLowerThan.TextFont = new System.Drawing.Font("Tahoma", 8.25F);
-            this.numericBoxLowerThan.ThonsandsSeparator = true;
-            this.numericBoxLowerThan.UpDown_Increment = 1D;
-            this.numericBoxLowerThan.Value = 150D;
-            this.numericBoxLowerThan.WordWrap = false;
-            this.numericBoxLowerThan.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            // 
-            // textBoxPixelKsi
-            // 
-            resources.ApplyResources(this.textBoxPixelKsi, "textBoxPixelKsi");
-            this.textBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelKsi.DecimalPlaces = -1;
-            this.textBoxPixelKsi.Maximum = double.PositiveInfinity;
-            this.textBoxPixelKsi.Minimum = double.NegativeInfinity;
-            this.textBoxPixelKsi.Multiline = false;
-            this.textBoxPixelKsi.Name = "textBoxPixelKsi";
-            this.textBoxPixelKsi.RadianValue = 0D;
-            this.textBoxPixelKsi.ReadOnly = false;
-            this.textBoxPixelKsi.RestrictLimitValue = true;
-            this.textBoxPixelKsi.ShowFraction = false;
-            this.textBoxPixelKsi.ShowPositiveSign = false;
-            this.textBoxPixelKsi.ShowUpDown = false;
-            this.textBoxPixelKsi.SkipEventDuringInput = false;
-            this.textBoxPixelKsi.SmartIncrement = true;
-            this.textBoxPixelKsi.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxPixelKsi.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPixelKsi.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxPixelKsi, resources.GetString("textBoxPixelKsi.ToolTip"));
-            this.textBoxPixelKsi.UpDown_Increment = 1D;
-            this.textBoxPixelKsi.Value = 0D;
-            this.textBoxPixelKsi.WordWrap = false;
-            this.textBoxPixelKsi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxPixelKsi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxTiltCorrectionSecondaryTau
-            // 
-            resources.ApplyResources(this.textBoxTiltCorrectionSecondaryTau, "textBoxTiltCorrectionSecondaryTau");
-            this.textBoxTiltCorrectionSecondaryTau.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxTiltCorrectionSecondaryTau.DecimalPlaces = -1;
-            this.textBoxTiltCorrectionSecondaryTau.Maximum = double.PositiveInfinity;
-            this.textBoxTiltCorrectionSecondaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionSecondaryTau.Multiline = false;
-            this.textBoxTiltCorrectionSecondaryTau.Name = "textBoxTiltCorrectionSecondaryTau";
-            this.textBoxTiltCorrectionSecondaryTau.RadianValue = 0D;
-            this.textBoxTiltCorrectionSecondaryTau.ReadOnly = false;
-            this.textBoxTiltCorrectionSecondaryTau.RestrictLimitValue = true;
-            this.textBoxTiltCorrectionSecondaryTau.ShowFraction = false;
-            this.textBoxTiltCorrectionSecondaryTau.ShowPositiveSign = false;
-            this.textBoxTiltCorrectionSecondaryTau.ShowUpDown = false;
-            this.textBoxTiltCorrectionSecondaryTau.SkipEventDuringInput = false;
-            this.textBoxTiltCorrectionSecondaryTau.SmartIncrement = true;
-            this.textBoxTiltCorrectionSecondaryTau.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxTiltCorrectionSecondaryTau.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTiltCorrectionSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxTiltCorrectionSecondaryTau.ThonsandsSeparator = true;
-            this.textBoxTiltCorrectionSecondaryTau.UpDown_Increment = 1D;
-            this.textBoxTiltCorrectionSecondaryTau.Value = 0D;
-            this.textBoxTiltCorrectionSecondaryTau.WordWrap = false;
-            this.textBoxTiltCorrectionSecondaryTau.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxTiltCorrectionSecondaryTau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxTiltCorrectionPrimaryTau
-            // 
-            resources.ApplyResources(this.textBoxTiltCorrectionPrimaryTau, "textBoxTiltCorrectionPrimaryTau");
-            this.textBoxTiltCorrectionPrimaryTau.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxTiltCorrectionPrimaryTau.DecimalPlaces = -1;
-            this.textBoxTiltCorrectionPrimaryTau.Maximum = double.PositiveInfinity;
-            this.textBoxTiltCorrectionPrimaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionPrimaryTau.Multiline = false;
-            this.textBoxTiltCorrectionPrimaryTau.Name = "textBoxTiltCorrectionPrimaryTau";
-            this.textBoxTiltCorrectionPrimaryTau.RadianValue = 0D;
-            this.textBoxTiltCorrectionPrimaryTau.ReadOnly = false;
-            this.textBoxTiltCorrectionPrimaryTau.RestrictLimitValue = true;
-            this.textBoxTiltCorrectionPrimaryTau.ShowFraction = false;
-            this.textBoxTiltCorrectionPrimaryTau.ShowPositiveSign = false;
-            this.textBoxTiltCorrectionPrimaryTau.ShowUpDown = false;
-            this.textBoxTiltCorrectionPrimaryTau.SkipEventDuringInput = false;
-            this.textBoxTiltCorrectionPrimaryTau.SmartIncrement = true;
-            this.textBoxTiltCorrectionPrimaryTau.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxTiltCorrectionPrimaryTau.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTiltCorrectionPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxTiltCorrectionPrimaryTau.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxTiltCorrectionPrimaryTau, resources.GetString("textBoxTiltCorrectionPrimaryTau.ToolTip"));
-            this.textBoxTiltCorrectionPrimaryTau.UpDown_Increment = 1D;
-            this.textBoxTiltCorrectionPrimaryTau.Value = 0D;
-            this.textBoxTiltCorrectionPrimaryTau.WordWrap = false;
-            this.textBoxTiltCorrectionPrimaryTau.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxTiltCorrectionPrimaryTau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // numericalTextBoxSphericalRadius
-            // 
-            resources.ApplyResources(this.numericalTextBoxSphericalRadius, "numericalTextBoxSphericalRadius");
-            this.numericalTextBoxSphericalRadius.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxSphericalRadius.DecimalPlaces = -1;
-            this.numericalTextBoxSphericalRadius.Maximum = double.PositiveInfinity;
-            this.numericalTextBoxSphericalRadius.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxSphericalRadius.Multiline = false;
-            this.numericalTextBoxSphericalRadius.Name = "numericalTextBoxSphericalRadius";
-            this.numericalTextBoxSphericalRadius.RadianValue = 0D;
-            this.numericalTextBoxSphericalRadius.ReadOnly = false;
-            this.numericalTextBoxSphericalRadius.RestrictLimitValue = true;
-            this.numericalTextBoxSphericalRadius.ShowFraction = false;
-            this.numericalTextBoxSphericalRadius.ShowPositiveSign = false;
-            this.numericalTextBoxSphericalRadius.ShowUpDown = false;
-            this.numericalTextBoxSphericalRadius.SkipEventDuringInput = false;
-            this.numericalTextBoxSphericalRadius.SmartIncrement = true;
-            this.numericalTextBoxSphericalRadius.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericalTextBoxSphericalRadius.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericalTextBoxSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericalTextBoxSphericalRadius.ThonsandsSeparator = true;
-            this.numericalTextBoxSphericalRadius.UpDown_Increment = 1D;
-            this.numericalTextBoxSphericalRadius.Value = 0D;
-            this.numericalTextBoxSphericalRadius.WordWrap = false;
-            this.numericalTextBoxSphericalRadius.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.numericalTextBoxSphericalRadius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxTiltCorrectionSecondaryPhi
-            // 
-            resources.ApplyResources(this.textBoxTiltCorrectionSecondaryPhi, "textBoxTiltCorrectionSecondaryPhi");
-            this.textBoxTiltCorrectionSecondaryPhi.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxTiltCorrectionSecondaryPhi.DecimalPlaces = -1;
-            this.textBoxTiltCorrectionSecondaryPhi.Maximum = double.PositiveInfinity;
-            this.textBoxTiltCorrectionSecondaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionSecondaryPhi.Multiline = false;
-            this.textBoxTiltCorrectionSecondaryPhi.Name = "textBoxTiltCorrectionSecondaryPhi";
-            this.textBoxTiltCorrectionSecondaryPhi.RadianValue = 0D;
-            this.textBoxTiltCorrectionSecondaryPhi.ReadOnly = false;
-            this.textBoxTiltCorrectionSecondaryPhi.RestrictLimitValue = true;
-            this.textBoxTiltCorrectionSecondaryPhi.ShowFraction = false;
-            this.textBoxTiltCorrectionSecondaryPhi.ShowPositiveSign = false;
-            this.textBoxTiltCorrectionSecondaryPhi.ShowUpDown = false;
-            this.textBoxTiltCorrectionSecondaryPhi.SkipEventDuringInput = false;
-            this.textBoxTiltCorrectionSecondaryPhi.SmartIncrement = true;
-            this.textBoxTiltCorrectionSecondaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxTiltCorrectionSecondaryPhi.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTiltCorrectionSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxTiltCorrectionSecondaryPhi.ThonsandsSeparator = true;
-            this.textBoxTiltCorrectionSecondaryPhi.UpDown_Increment = 1D;
-            this.textBoxTiltCorrectionSecondaryPhi.Value = 0D;
-            this.textBoxTiltCorrectionSecondaryPhi.WordWrap = false;
-            this.textBoxTiltCorrectionSecondaryPhi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxTiltCorrectionSecondaryPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxTiltCorrectionPrimaryPhi
-            // 
-            resources.ApplyResources(this.textBoxTiltCorrectionPrimaryPhi, "textBoxTiltCorrectionPrimaryPhi");
-            this.textBoxTiltCorrectionPrimaryPhi.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxTiltCorrectionPrimaryPhi.DecimalPlaces = -1;
-            this.textBoxTiltCorrectionPrimaryPhi.Maximum = double.PositiveInfinity;
-            this.textBoxTiltCorrectionPrimaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxTiltCorrectionPrimaryPhi.Multiline = false;
-            this.textBoxTiltCorrectionPrimaryPhi.Name = "textBoxTiltCorrectionPrimaryPhi";
-            this.textBoxTiltCorrectionPrimaryPhi.RadianValue = 0D;
-            this.textBoxTiltCorrectionPrimaryPhi.ReadOnly = false;
-            this.textBoxTiltCorrectionPrimaryPhi.RestrictLimitValue = true;
-            this.textBoxTiltCorrectionPrimaryPhi.ShowFraction = false;
-            this.textBoxTiltCorrectionPrimaryPhi.ShowPositiveSign = false;
-            this.textBoxTiltCorrectionPrimaryPhi.ShowUpDown = false;
-            this.textBoxTiltCorrectionPrimaryPhi.SkipEventDuringInput = false;
-            this.textBoxTiltCorrectionPrimaryPhi.SmartIncrement = true;
-            this.textBoxTiltCorrectionPrimaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxTiltCorrectionPrimaryPhi.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTiltCorrectionPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxTiltCorrectionPrimaryPhi.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxTiltCorrectionPrimaryPhi, resources.GetString("textBoxTiltCorrectionPrimaryPhi.ToolTip"));
-            this.textBoxTiltCorrectionPrimaryPhi.UpDown_Increment = 1D;
-            this.textBoxTiltCorrectionPrimaryPhi.Value = 0D;
-            this.textBoxTiltCorrectionPrimaryPhi.WordWrap = false;
-            this.textBoxTiltCorrectionPrimaryPhi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxTiltCorrectionPrimaryPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxRefinedPixelKsiDev
-            // 
-            resources.ApplyResources(this.textBoxRefinedPixelKsiDev, "textBoxRefinedPixelKsiDev");
-            this.textBoxRefinedPixelKsiDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelKsiDev.DecimalPlaces = 10;
-            this.textBoxRefinedPixelKsiDev.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPixelKsiDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelKsiDev.Multiline = false;
-            this.textBoxRefinedPixelKsiDev.Name = "textBoxRefinedPixelKsiDev";
-            this.textBoxRefinedPixelKsiDev.RadianValue = 0D;
-            this.textBoxRefinedPixelKsiDev.ReadOnly = true;
-            this.textBoxRefinedPixelKsiDev.RestrictLimitValue = true;
-            this.textBoxRefinedPixelKsiDev.ShowFraction = false;
-            this.textBoxRefinedPixelKsiDev.ShowPositiveSign = false;
-            this.textBoxRefinedPixelKsiDev.ShowUpDown = false;
-            this.textBoxRefinedPixelKsiDev.SkipEventDuringInput = false;
-            this.textBoxRefinedPixelKsiDev.SmartIncrement = true;
-            this.textBoxRefinedPixelKsiDev.TabStop = false;
-            this.textBoxRefinedPixelKsiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelKsiDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPixelKsiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPixelKsiDev.ThonsandsSeparator = true;
-            this.textBoxRefinedPixelKsiDev.UpDown_Increment = 1D;
-            this.textBoxRefinedPixelKsiDev.Value = 0D;
-            this.textBoxRefinedPixelKsiDev.WordWrap = false;
-            // 
-            // textBoxWaveLengthDev
-            // 
-            resources.ApplyResources(this.textBoxWaveLengthDev, "textBoxWaveLengthDev");
-            this.textBoxWaveLengthDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxWaveLengthDev.DecimalPlaces = 10;
-            this.textBoxWaveLengthDev.Maximum = double.PositiveInfinity;
-            this.textBoxWaveLengthDev.Minimum = double.NegativeInfinity;
-            this.textBoxWaveLengthDev.Multiline = false;
-            this.textBoxWaveLengthDev.Name = "textBoxWaveLengthDev";
-            this.textBoxWaveLengthDev.RadianValue = 0D;
-            this.textBoxWaveLengthDev.ReadOnly = true;
-            this.textBoxWaveLengthDev.RestrictLimitValue = true;
-            this.textBoxWaveLengthDev.ShowFraction = false;
-            this.textBoxWaveLengthDev.ShowPositiveSign = false;
-            this.textBoxWaveLengthDev.ShowUpDown = false;
-            this.textBoxWaveLengthDev.SkipEventDuringInput = false;
-            this.textBoxWaveLengthDev.SmartIncrement = true;
-            this.textBoxWaveLengthDev.TabStop = false;
-            this.textBoxWaveLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxWaveLengthDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxWaveLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxWaveLengthDev.ThonsandsSeparator = true;
-            this.textBoxWaveLengthDev.UpDown_Increment = 1D;
-            this.textBoxWaveLengthDev.Value = 0D;
-            this.textBoxWaveLengthDev.WordWrap = false;
-            // 
-            // textBoxRefinedPixelKsi
-            // 
-            resources.ApplyResources(this.textBoxRefinedPixelKsi, "textBoxRefinedPixelKsi");
-            this.textBoxRefinedPixelKsi.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelKsi.DecimalPlaces = -1;
-            this.textBoxRefinedPixelKsi.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPixelKsi.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelKsi.Multiline = false;
-            this.textBoxRefinedPixelKsi.Name = "textBoxRefinedPixelKsi";
-            this.textBoxRefinedPixelKsi.RadianValue = 0D;
-            this.textBoxRefinedPixelKsi.ReadOnly = true;
-            this.textBoxRefinedPixelKsi.RestrictLimitValue = true;
-            this.textBoxRefinedPixelKsi.ShowFraction = false;
-            this.textBoxRefinedPixelKsi.ShowPositiveSign = false;
-            this.textBoxRefinedPixelKsi.ShowUpDown = false;
-            this.textBoxRefinedPixelKsi.SkipEventDuringInput = false;
-            this.textBoxRefinedPixelKsi.SmartIncrement = true;
-            this.textBoxRefinedPixelKsi.TabStop = false;
-            this.textBoxRefinedPixelKsi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelKsi.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPixelKsi.ThonsandsSeparator = true;
-            this.textBoxRefinedPixelKsi.UpDown_Increment = 1D;
-            this.textBoxRefinedPixelKsi.Value = 0D;
-            this.textBoxRefinedPixelKsi.WordWrap = false;
-            // 
-            // textBoxPrimaryFilmDistanceCopy2
-            // 
-            resources.ApplyResources(this.textBoxPrimaryFilmDistanceCopy2, "textBoxPrimaryFilmDistanceCopy2");
-            this.textBoxPrimaryFilmDistanceCopy2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPrimaryFilmDistanceCopy2.DecimalPlaces = -1;
-            this.textBoxPrimaryFilmDistanceCopy2.Maximum = double.PositiveInfinity;
-            this.textBoxPrimaryFilmDistanceCopy2.Minimum = double.NegativeInfinity;
-            this.textBoxPrimaryFilmDistanceCopy2.Multiline = false;
-            this.textBoxPrimaryFilmDistanceCopy2.Name = "textBoxPrimaryFilmDistanceCopy2";
-            this.textBoxPrimaryFilmDistanceCopy2.RadianValue = 7.7667151713747664D;
-            this.textBoxPrimaryFilmDistanceCopy2.ReadOnly = true;
-            this.textBoxPrimaryFilmDistanceCopy2.RestrictLimitValue = true;
-            this.textBoxPrimaryFilmDistanceCopy2.ShowFraction = false;
-            this.textBoxPrimaryFilmDistanceCopy2.ShowPositiveSign = false;
-            this.textBoxPrimaryFilmDistanceCopy2.ShowUpDown = false;
-            this.textBoxPrimaryFilmDistanceCopy2.SkipEventDuringInput = false;
-            this.textBoxPrimaryFilmDistanceCopy2.SmartIncrement = true;
-            this.textBoxPrimaryFilmDistanceCopy2.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPrimaryFilmDistanceCopy2.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPrimaryFilmDistanceCopy2.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPrimaryFilmDistanceCopy2.ThonsandsSeparator = true;
-            this.textBoxPrimaryFilmDistanceCopy2.UpDown_Increment = 1D;
-            this.textBoxPrimaryFilmDistanceCopy2.Value = 445D;
-            this.textBoxPrimaryFilmDistanceCopy2.WordWrap = false;
-            // 
-            // numericalTextBoxRadiusInverseDev
-            // 
-            resources.ApplyResources(this.numericalTextBoxRadiusInverseDev, "numericalTextBoxRadiusInverseDev");
-            this.numericalTextBoxRadiusInverseDev.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxRadiusInverseDev.DecimalPlaces = 10;
-            this.numericalTextBoxRadiusInverseDev.Maximum = double.PositiveInfinity;
-            this.numericalTextBoxRadiusInverseDev.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxRadiusInverseDev.Multiline = false;
-            this.numericalTextBoxRadiusInverseDev.Name = "numericalTextBoxRadiusInverseDev";
-            this.numericalTextBoxRadiusInverseDev.RadianValue = 0D;
-            this.numericalTextBoxRadiusInverseDev.ReadOnly = true;
-            this.numericalTextBoxRadiusInverseDev.RestrictLimitValue = true;
-            this.numericalTextBoxRadiusInverseDev.ShowFraction = false;
-            this.numericalTextBoxRadiusInverseDev.ShowPositiveSign = false;
-            this.numericalTextBoxRadiusInverseDev.ShowUpDown = false;
-            this.numericalTextBoxRadiusInverseDev.SkipEventDuringInput = false;
-            this.numericalTextBoxRadiusInverseDev.SmartIncrement = true;
-            this.numericalTextBoxRadiusInverseDev.TabStop = false;
-            this.numericalTextBoxRadiusInverseDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxRadiusInverseDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericalTextBoxRadiusInverseDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericalTextBoxRadiusInverseDev.ThonsandsSeparator = true;
-            this.numericalTextBoxRadiusInverseDev.UpDown_Increment = 1D;
-            this.numericalTextBoxRadiusInverseDev.Value = 0D;
-            this.numericalTextBoxRadiusInverseDev.WordWrap = false;
-            // 
-            // textBoxRefinedSecondaryTauDev
-            // 
-            resources.ApplyResources(this.textBoxRefinedSecondaryTauDev, "textBoxRefinedSecondaryTauDev");
-            this.textBoxRefinedSecondaryTauDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryTauDev.DecimalPlaces = 10;
-            this.textBoxRefinedSecondaryTauDev.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedSecondaryTauDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryTauDev.Multiline = false;
-            this.textBoxRefinedSecondaryTauDev.Name = "textBoxRefinedSecondaryTauDev";
-            this.textBoxRefinedSecondaryTauDev.RadianValue = 0D;
-            this.textBoxRefinedSecondaryTauDev.ReadOnly = true;
-            this.textBoxRefinedSecondaryTauDev.RestrictLimitValue = true;
-            this.textBoxRefinedSecondaryTauDev.ShowFraction = false;
-            this.textBoxRefinedSecondaryTauDev.ShowPositiveSign = false;
-            this.textBoxRefinedSecondaryTauDev.ShowUpDown = false;
-            this.textBoxRefinedSecondaryTauDev.SkipEventDuringInput = false;
-            this.textBoxRefinedSecondaryTauDev.SmartIncrement = true;
-            this.textBoxRefinedSecondaryTauDev.TabStop = false;
-            this.textBoxRefinedSecondaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryTauDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedSecondaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedSecondaryTauDev.ThonsandsSeparator = true;
-            this.textBoxRefinedSecondaryTauDev.UpDown_Increment = 1D;
-            this.textBoxRefinedSecondaryTauDev.Value = 0D;
-            this.textBoxRefinedSecondaryTauDev.WordWrap = false;
-            // 
-            // textBoxPixelSizeYDev
-            // 
-            resources.ApplyResources(this.textBoxPixelSizeYDev, "textBoxPixelSizeYDev");
-            this.textBoxPixelSizeYDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeYDev.DecimalPlaces = 10;
-            this.textBoxPixelSizeYDev.Maximum = double.PositiveInfinity;
-            this.textBoxPixelSizeYDev.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeYDev.Multiline = false;
-            this.textBoxPixelSizeYDev.Name = "textBoxPixelSizeYDev";
-            this.textBoxPixelSizeYDev.RadianValue = 0D;
-            this.textBoxPixelSizeYDev.ReadOnly = true;
-            this.textBoxPixelSizeYDev.RestrictLimitValue = true;
-            this.textBoxPixelSizeYDev.ShowFraction = false;
-            this.textBoxPixelSizeYDev.ShowPositiveSign = false;
-            this.textBoxPixelSizeYDev.ShowUpDown = false;
-            this.textBoxPixelSizeYDev.SkipEventDuringInput = false;
-            this.textBoxPixelSizeYDev.SmartIncrement = true;
-            this.textBoxPixelSizeYDev.TabStop = false;
-            this.textBoxPixelSizeYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeYDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPixelSizeYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPixelSizeYDev.ThonsandsSeparator = true;
-            this.textBoxPixelSizeYDev.UpDown_Increment = 1D;
-            this.textBoxPixelSizeYDev.Value = 0D;
-            this.textBoxPixelSizeYDev.WordWrap = false;
-            // 
-            // textBoxWaveLength
-            // 
-            resources.ApplyResources(this.textBoxWaveLength, "textBoxWaveLength");
-            this.textBoxWaveLength.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxWaveLength.DecimalPlaces = -1;
-            this.textBoxWaveLength.Maximum = double.PositiveInfinity;
-            this.textBoxWaveLength.Minimum = double.NegativeInfinity;
-            this.textBoxWaveLength.Multiline = false;
-            this.textBoxWaveLength.Name = "textBoxWaveLength";
-            this.textBoxWaveLength.RadianValue = 0.0069813170079773184D;
-            this.textBoxWaveLength.ReadOnly = false;
-            this.textBoxWaveLength.RestrictLimitValue = true;
-            this.textBoxWaveLength.ShowFraction = false;
-            this.textBoxWaveLength.ShowPositiveSign = false;
-            this.textBoxWaveLength.ShowUpDown = false;
-            this.textBoxWaveLength.SkipEventDuringInput = false;
-            this.textBoxWaveLength.SmartIncrement = true;
-            this.textBoxWaveLength.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxWaveLength.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxWaveLength.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxWaveLength, resources.GetString("textBoxWaveLength.ToolTip"));
-            this.textBoxWaveLength.UpDown_Increment = 1D;
-            this.textBoxWaveLength.Value = 0.4D;
-            this.textBoxWaveLength.WordWrap = false;
-            this.textBoxWaveLength.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            this.textBoxWaveLength.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxWaveLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxRefinedPixelSizeY
-            // 
-            resources.ApplyResources(this.textBoxRefinedPixelSizeY, "textBoxRefinedPixelSizeY");
-            this.textBoxRefinedPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelSizeY.DecimalPlaces = -1;
-            this.textBoxRefinedPixelSizeY.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPixelSizeY.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelSizeY.Multiline = false;
-            this.textBoxRefinedPixelSizeY.Name = "textBoxRefinedPixelSizeY";
-            this.textBoxRefinedPixelSizeY.RadianValue = 0.0017453292519943296D;
-            this.textBoxRefinedPixelSizeY.ReadOnly = true;
-            this.textBoxRefinedPixelSizeY.RestrictLimitValue = true;
-            this.textBoxRefinedPixelSizeY.ShowFraction = false;
-            this.textBoxRefinedPixelSizeY.ShowPositiveSign = false;
-            this.textBoxRefinedPixelSizeY.ShowUpDown = false;
-            this.textBoxRefinedPixelSizeY.SkipEventDuringInput = false;
-            this.textBoxRefinedPixelSizeY.SmartIncrement = true;
-            this.textBoxRefinedPixelSizeY.TabStop = false;
-            this.textBoxRefinedPixelSizeY.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelSizeY.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPixelSizeY.ThonsandsSeparator = true;
-            this.textBoxRefinedPixelSizeY.UpDown_Increment = 1D;
-            this.textBoxRefinedPixelSizeY.Value = 0.1D;
-            this.textBoxRefinedPixelSizeY.WordWrap = false;
-            // 
-            // textBoxRefinedPrimaryTauDev
-            // 
-            resources.ApplyResources(this.textBoxRefinedPrimaryTauDev, "textBoxRefinedPrimaryTauDev");
-            this.textBoxRefinedPrimaryTauDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryTauDev.DecimalPlaces = 10;
-            this.textBoxRefinedPrimaryTauDev.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPrimaryTauDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryTauDev.Multiline = false;
-            this.textBoxRefinedPrimaryTauDev.Name = "textBoxRefinedPrimaryTauDev";
-            this.textBoxRefinedPrimaryTauDev.RadianValue = 0D;
-            this.textBoxRefinedPrimaryTauDev.ReadOnly = true;
-            this.textBoxRefinedPrimaryTauDev.RestrictLimitValue = true;
-            this.textBoxRefinedPrimaryTauDev.ShowFraction = false;
-            this.textBoxRefinedPrimaryTauDev.ShowPositiveSign = false;
-            this.textBoxRefinedPrimaryTauDev.ShowUpDown = false;
-            this.textBoxRefinedPrimaryTauDev.SkipEventDuringInput = false;
-            this.textBoxRefinedPrimaryTauDev.SmartIncrement = true;
-            this.textBoxRefinedPrimaryTauDev.TabStop = false;
-            this.textBoxRefinedPrimaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryTauDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPrimaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPrimaryTauDev.ThonsandsSeparator = true;
-            this.textBoxRefinedPrimaryTauDev.UpDown_Increment = 1D;
-            this.textBoxRefinedPrimaryTauDev.Value = 0D;
-            this.textBoxRefinedPrimaryTauDev.WordWrap = false;
-            // 
-            // textBoxPixelSizeY
-            // 
-            resources.ApplyResources(this.textBoxPixelSizeY, "textBoxPixelSizeY");
-            this.textBoxPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeY.DecimalPlaces = -1;
-            this.textBoxPixelSizeY.Maximum = double.PositiveInfinity;
-            this.textBoxPixelSizeY.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeY.Multiline = false;
-            this.textBoxPixelSizeY.Name = "textBoxPixelSizeY";
-            this.textBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
-            this.textBoxPixelSizeY.ReadOnly = false;
-            this.textBoxPixelSizeY.RestrictLimitValue = true;
-            this.textBoxPixelSizeY.ShowFraction = false;
-            this.textBoxPixelSizeY.ShowPositiveSign = false;
-            this.textBoxPixelSizeY.ShowUpDown = false;
-            this.textBoxPixelSizeY.SkipEventDuringInput = false;
-            this.textBoxPixelSizeY.SmartIncrement = true;
-            this.textBoxPixelSizeY.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxPixelSizeY.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPixelSizeY.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxPixelSizeY, resources.GetString("textBoxPixelSizeY.ToolTip"));
-            this.textBoxPixelSizeY.UpDown_Increment = 1D;
-            this.textBoxPixelSizeY.Value = 0.1D;
-            this.textBoxPixelSizeY.WordWrap = false;
-            this.textBoxPixelSizeY.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBoxPixelSizeY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumOnly_KeyPress);
-            // 
-            // textBoxRefinedSecondaryPhiDev
-            // 
-            resources.ApplyResources(this.textBoxRefinedSecondaryPhiDev, "textBoxRefinedSecondaryPhiDev");
-            this.textBoxRefinedSecondaryPhiDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryPhiDev.DecimalPlaces = 10;
-            this.textBoxRefinedSecondaryPhiDev.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedSecondaryPhiDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryPhiDev.Multiline = false;
-            this.textBoxRefinedSecondaryPhiDev.Name = "textBoxRefinedSecondaryPhiDev";
-            this.textBoxRefinedSecondaryPhiDev.RadianValue = 0D;
-            this.textBoxRefinedSecondaryPhiDev.ReadOnly = true;
-            this.textBoxRefinedSecondaryPhiDev.RestrictLimitValue = true;
-            this.textBoxRefinedSecondaryPhiDev.ShowFraction = false;
-            this.textBoxRefinedSecondaryPhiDev.ShowPositiveSign = false;
-            this.textBoxRefinedSecondaryPhiDev.ShowUpDown = false;
-            this.textBoxRefinedSecondaryPhiDev.SkipEventDuringInput = false;
-            this.textBoxRefinedSecondaryPhiDev.SmartIncrement = true;
-            this.textBoxRefinedSecondaryPhiDev.TabStop = false;
-            this.textBoxRefinedSecondaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryPhiDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedSecondaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedSecondaryPhiDev.ThonsandsSeparator = true;
-            this.textBoxRefinedSecondaryPhiDev.UpDown_Increment = 1D;
-            this.textBoxRefinedSecondaryPhiDev.Value = 0D;
-            this.textBoxRefinedSecondaryPhiDev.WordWrap = false;
-            // 
-            // textBoxRefinedPrimaryFilmDistance
-            // 
-            resources.ApplyResources(this.textBoxRefinedPrimaryFilmDistance, "textBoxRefinedPrimaryFilmDistance");
-            this.textBoxRefinedPrimaryFilmDistance.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryFilmDistance.DecimalPlaces = -1;
-            this.textBoxRefinedPrimaryFilmDistance.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPrimaryFilmDistance.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryFilmDistance.Multiline = false;
-            this.textBoxRefinedPrimaryFilmDistance.Name = "textBoxRefinedPrimaryFilmDistance";
-            this.textBoxRefinedPrimaryFilmDistance.RadianValue = 6.9813170079773181D;
-            this.textBoxRefinedPrimaryFilmDistance.ReadOnly = true;
-            this.textBoxRefinedPrimaryFilmDistance.RestrictLimitValue = true;
-            this.textBoxRefinedPrimaryFilmDistance.ShowFraction = false;
-            this.textBoxRefinedPrimaryFilmDistance.ShowPositiveSign = false;
-            this.textBoxRefinedPrimaryFilmDistance.ShowUpDown = false;
-            this.textBoxRefinedPrimaryFilmDistance.SkipEventDuringInput = false;
-            this.textBoxRefinedPrimaryFilmDistance.SmartIncrement = true;
-            this.textBoxRefinedPrimaryFilmDistance.TabStop = false;
-            this.textBoxRefinedPrimaryFilmDistance.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryFilmDistance.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPrimaryFilmDistance.ThonsandsSeparator = true;
-            this.textBoxRefinedPrimaryFilmDistance.UpDown_Increment = 1D;
-            this.textBoxRefinedPrimaryFilmDistance.Value = 400D;
-            this.textBoxRefinedPrimaryFilmDistance.WordWrap = false;
-            // 
-            // textBoxRefinedPrimaryPhiDev
-            // 
-            resources.ApplyResources(this.textBoxRefinedPrimaryPhiDev, "textBoxRefinedPrimaryPhiDev");
-            this.textBoxRefinedPrimaryPhiDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryPhiDev.DecimalPlaces = 10;
-            this.textBoxRefinedPrimaryPhiDev.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPrimaryPhiDev.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryPhiDev.Multiline = false;
-            this.textBoxRefinedPrimaryPhiDev.Name = "textBoxRefinedPrimaryPhiDev";
-            this.textBoxRefinedPrimaryPhiDev.RadianValue = 0D;
-            this.textBoxRefinedPrimaryPhiDev.ReadOnly = true;
-            this.textBoxRefinedPrimaryPhiDev.RestrictLimitValue = true;
-            this.textBoxRefinedPrimaryPhiDev.ShowFraction = false;
-            this.textBoxRefinedPrimaryPhiDev.ShowPositiveSign = false;
-            this.textBoxRefinedPrimaryPhiDev.ShowUpDown = false;
-            this.textBoxRefinedPrimaryPhiDev.SkipEventDuringInput = false;
-            this.textBoxRefinedPrimaryPhiDev.SmartIncrement = true;
-            this.textBoxRefinedPrimaryPhiDev.TabStop = false;
-            this.textBoxRefinedPrimaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryPhiDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPrimaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPrimaryPhiDev.ThonsandsSeparator = true;
-            this.textBoxRefinedPrimaryPhiDev.UpDown_Increment = 1D;
-            this.textBoxRefinedPrimaryPhiDev.Value = 0D;
-            this.textBoxRefinedPrimaryPhiDev.WordWrap = false;
-            // 
-            // textBoxPixelSizeX
-            // 
-            resources.ApplyResources(this.textBoxPixelSizeX, "textBoxPixelSizeX");
-            this.textBoxPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeX.DecimalPlaces = -1;
-            this.textBoxPixelSizeX.Maximum = double.PositiveInfinity;
-            this.textBoxPixelSizeX.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeX.Multiline = false;
-            this.textBoxPixelSizeX.Name = "textBoxPixelSizeX";
-            this.textBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
-            this.textBoxPixelSizeX.ReadOnly = false;
-            this.textBoxPixelSizeX.RestrictLimitValue = true;
-            this.textBoxPixelSizeX.ShowFraction = false;
-            this.textBoxPixelSizeX.ShowPositiveSign = false;
-            this.textBoxPixelSizeX.ShowUpDown = false;
-            this.textBoxPixelSizeX.SkipEventDuringInput = false;
-            this.textBoxPixelSizeX.SmartIncrement = true;
-            this.textBoxPixelSizeX.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxPixelSizeX.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPixelSizeX.ThonsandsSeparator = true;
-            this.toolTipJapanese.SetToolTip(this.textBoxPixelSizeX, resources.GetString("textBoxPixelSizeX.ToolTip"));
-            this.textBoxPixelSizeX.UpDown_Increment = 1D;
-            this.textBoxPixelSizeX.Value = 0.1D;
-            this.textBoxPixelSizeX.WordWrap = false;
-            // 
-            // textBoxRefinedWaveLength
-            // 
-            resources.ApplyResources(this.textBoxRefinedWaveLength, "textBoxRefinedWaveLength");
-            this.textBoxRefinedWaveLength.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedWaveLength.DecimalPlaces = -1;
-            this.textBoxRefinedWaveLength.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedWaveLength.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedWaveLength.Multiline = false;
-            this.textBoxRefinedWaveLength.Name = "textBoxRefinedWaveLength";
-            this.textBoxRefinedWaveLength.RadianValue = 0.0069813170079773184D;
-            this.textBoxRefinedWaveLength.ReadOnly = true;
-            this.textBoxRefinedWaveLength.RestrictLimitValue = true;
-            this.textBoxRefinedWaveLength.ShowFraction = false;
-            this.textBoxRefinedWaveLength.ShowPositiveSign = false;
-            this.textBoxRefinedWaveLength.ShowUpDown = false;
-            this.textBoxRefinedWaveLength.SkipEventDuringInput = false;
-            this.textBoxRefinedWaveLength.SmartIncrement = true;
-            this.textBoxRefinedWaveLength.TabStop = false;
-            this.textBoxRefinedWaveLength.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedWaveLength.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedWaveLength.ThonsandsSeparator = true;
-            this.textBoxRefinedWaveLength.UpDown_Increment = 1D;
-            this.textBoxRefinedWaveLength.Value = 0.4D;
-            this.textBoxRefinedWaveLength.WordWrap = false;
-            // 
-            // textBoxRefinedPixelSizeX
-            // 
-            resources.ApplyResources(this.textBoxRefinedPixelSizeX, "textBoxRefinedPixelSizeX");
-            this.textBoxRefinedPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelSizeX.DecimalPlaces = -1;
-            this.textBoxRefinedPixelSizeX.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPixelSizeX.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPixelSizeX.Multiline = false;
-            this.textBoxRefinedPixelSizeX.Name = "textBoxRefinedPixelSizeX";
-            this.textBoxRefinedPixelSizeX.RadianValue = 0.0017453292519943296D;
-            this.textBoxRefinedPixelSizeX.ReadOnly = true;
-            this.textBoxRefinedPixelSizeX.RestrictLimitValue = true;
-            this.textBoxRefinedPixelSizeX.ShowFraction = false;
-            this.textBoxRefinedPixelSizeX.ShowPositiveSign = false;
-            this.textBoxRefinedPixelSizeX.ShowUpDown = false;
-            this.textBoxRefinedPixelSizeX.SkipEventDuringInput = false;
-            this.textBoxRefinedPixelSizeX.SmartIncrement = true;
-            this.textBoxRefinedPixelSizeX.TabStop = false;
-            this.textBoxRefinedPixelSizeX.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelSizeX.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPixelSizeX.ThonsandsSeparator = true;
-            this.textBoxRefinedPixelSizeX.UpDown_Increment = 1D;
-            this.textBoxRefinedPixelSizeX.Value = 0.1D;
-            this.textBoxRefinedPixelSizeX.WordWrap = false;
-            // 
-            // numericalTextBoxRefinedSphericalRadius
-            // 
-            resources.ApplyResources(this.numericalTextBoxRefinedSphericalRadius, "numericalTextBoxRefinedSphericalRadius");
-            this.numericalTextBoxRefinedSphericalRadius.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxRefinedSphericalRadius.DecimalPlaces = -1;
-            this.numericalTextBoxRefinedSphericalRadius.Maximum = double.PositiveInfinity;
-            this.numericalTextBoxRefinedSphericalRadius.Minimum = double.NegativeInfinity;
-            this.numericalTextBoxRefinedSphericalRadius.Multiline = false;
-            this.numericalTextBoxRefinedSphericalRadius.Name = "numericalTextBoxRefinedSphericalRadius";
-            this.numericalTextBoxRefinedSphericalRadius.RadianValue = 0D;
-            this.numericalTextBoxRefinedSphericalRadius.ReadOnly = true;
-            this.numericalTextBoxRefinedSphericalRadius.RestrictLimitValue = true;
-            this.numericalTextBoxRefinedSphericalRadius.ShowFraction = false;
-            this.numericalTextBoxRefinedSphericalRadius.ShowPositiveSign = false;
-            this.numericalTextBoxRefinedSphericalRadius.ShowUpDown = false;
-            this.numericalTextBoxRefinedSphericalRadius.SkipEventDuringInput = false;
-            this.numericalTextBoxRefinedSphericalRadius.SmartIncrement = true;
-            this.numericalTextBoxRefinedSphericalRadius.TabStop = false;
-            this.numericalTextBoxRefinedSphericalRadius.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxRefinedSphericalRadius.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericalTextBoxRefinedSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.numericalTextBoxRefinedSphericalRadius.ThonsandsSeparator = true;
-            this.numericalTextBoxRefinedSphericalRadius.UpDown_Increment = 1D;
-            this.numericalTextBoxRefinedSphericalRadius.Value = 0D;
-            this.numericalTextBoxRefinedSphericalRadius.WordWrap = false;
-            // 
-            // textBoxRefinedSecondaryTau
-            // 
-            resources.ApplyResources(this.textBoxRefinedSecondaryTau, "textBoxRefinedSecondaryTau");
-            this.textBoxRefinedSecondaryTau.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryTau.DecimalPlaces = -1;
-            this.textBoxRefinedSecondaryTau.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedSecondaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryTau.Multiline = false;
-            this.textBoxRefinedSecondaryTau.Name = "textBoxRefinedSecondaryTau";
-            this.textBoxRefinedSecondaryTau.RadianValue = 0D;
-            this.textBoxRefinedSecondaryTau.ReadOnly = true;
-            this.textBoxRefinedSecondaryTau.RestrictLimitValue = true;
-            this.textBoxRefinedSecondaryTau.ShowFraction = false;
-            this.textBoxRefinedSecondaryTau.ShowPositiveSign = false;
-            this.textBoxRefinedSecondaryTau.ShowUpDown = false;
-            this.textBoxRefinedSecondaryTau.SkipEventDuringInput = false;
-            this.textBoxRefinedSecondaryTau.SmartIncrement = true;
-            this.textBoxRefinedSecondaryTau.TabStop = false;
-            this.textBoxRefinedSecondaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryTau.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedSecondaryTau.ThonsandsSeparator = true;
-            this.textBoxRefinedSecondaryTau.UpDown_Increment = 1D;
-            this.textBoxRefinedSecondaryTau.Value = 0D;
-            this.textBoxRefinedSecondaryTau.WordWrap = false;
-            // 
-            // textBoxPixelSizeXDev
-            // 
-            resources.ApplyResources(this.textBoxPixelSizeXDev, "textBoxPixelSizeXDev");
-            this.textBoxPixelSizeXDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeXDev.DecimalPlaces = 10;
-            this.textBoxPixelSizeXDev.Maximum = double.PositiveInfinity;
-            this.textBoxPixelSizeXDev.Minimum = double.NegativeInfinity;
-            this.textBoxPixelSizeXDev.Multiline = false;
-            this.textBoxPixelSizeXDev.Name = "textBoxPixelSizeXDev";
-            this.textBoxPixelSizeXDev.RadianValue = 0D;
-            this.textBoxPixelSizeXDev.ReadOnly = true;
-            this.textBoxPixelSizeXDev.RestrictLimitValue = true;
-            this.textBoxPixelSizeXDev.ShowFraction = false;
-            this.textBoxPixelSizeXDev.ShowPositiveSign = false;
-            this.textBoxPixelSizeXDev.ShowUpDown = false;
-            this.textBoxPixelSizeXDev.SkipEventDuringInput = false;
-            this.textBoxPixelSizeXDev.SmartIncrement = true;
-            this.textBoxPixelSizeXDev.TabStop = false;
-            this.textBoxPixelSizeXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeXDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPixelSizeXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxPixelSizeXDev.ThonsandsSeparator = true;
-            this.textBoxPixelSizeXDev.UpDown_Increment = 1D;
-            this.textBoxPixelSizeXDev.Value = 0D;
-            this.textBoxPixelSizeXDev.WordWrap = false;
-            // 
-            // textBoxRefinedPrimaryTau
-            // 
-            resources.ApplyResources(this.textBoxRefinedPrimaryTau, "textBoxRefinedPrimaryTau");
-            this.textBoxRefinedPrimaryTau.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryTau.DecimalPlaces = -1;
-            this.textBoxRefinedPrimaryTau.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPrimaryTau.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryTau.Multiline = false;
-            this.textBoxRefinedPrimaryTau.Name = "textBoxRefinedPrimaryTau";
-            this.textBoxRefinedPrimaryTau.RadianValue = 0D;
-            this.textBoxRefinedPrimaryTau.ReadOnly = true;
-            this.textBoxRefinedPrimaryTau.RestrictLimitValue = true;
-            this.textBoxRefinedPrimaryTau.ShowFraction = false;
-            this.textBoxRefinedPrimaryTau.ShowPositiveSign = false;
-            this.textBoxRefinedPrimaryTau.ShowUpDown = false;
-            this.textBoxRefinedPrimaryTau.SkipEventDuringInput = false;
-            this.textBoxRefinedPrimaryTau.SmartIncrement = true;
-            this.textBoxRefinedPrimaryTau.TabStop = false;
-            this.textBoxRefinedPrimaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryTau.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPrimaryTau.ThonsandsSeparator = true;
-            this.textBoxRefinedPrimaryTau.UpDown_Increment = 1D;
-            this.textBoxRefinedPrimaryTau.Value = 0D;
-            this.textBoxRefinedPrimaryTau.WordWrap = false;
-            // 
-            // textBoxCameraLengthDev
-            // 
-            resources.ApplyResources(this.textBoxCameraLengthDev, "textBoxCameraLengthDev");
-            this.textBoxCameraLengthDev.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxCameraLengthDev.DecimalPlaces = 10;
-            this.textBoxCameraLengthDev.Maximum = double.PositiveInfinity;
-            this.textBoxCameraLengthDev.Minimum = double.NegativeInfinity;
-            this.textBoxCameraLengthDev.Multiline = false;
-            this.textBoxCameraLengthDev.Name = "textBoxCameraLengthDev";
-            this.textBoxCameraLengthDev.RadianValue = 0D;
-            this.textBoxCameraLengthDev.ReadOnly = true;
-            this.textBoxCameraLengthDev.RestrictLimitValue = true;
-            this.textBoxCameraLengthDev.ShowFraction = false;
-            this.textBoxCameraLengthDev.ShowPositiveSign = false;
-            this.textBoxCameraLengthDev.ShowUpDown = false;
-            this.textBoxCameraLengthDev.SkipEventDuringInput = false;
-            this.textBoxCameraLengthDev.SmartIncrement = true;
-            this.textBoxCameraLengthDev.TabStop = false;
-            this.textBoxCameraLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxCameraLengthDev.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxCameraLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxCameraLengthDev.ThonsandsSeparator = true;
-            this.textBoxCameraLengthDev.UpDown_Increment = 1D;
-            this.textBoxCameraLengthDev.Value = 0D;
-            this.textBoxCameraLengthDev.WordWrap = false;
-            // 
-            // textBoxRefinedSecondaryPhi
-            // 
-            resources.ApplyResources(this.textBoxRefinedSecondaryPhi, "textBoxRefinedSecondaryPhi");
-            this.textBoxRefinedSecondaryPhi.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryPhi.DecimalPlaces = -1;
-            this.textBoxRefinedSecondaryPhi.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedSecondaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedSecondaryPhi.Multiline = false;
-            this.textBoxRefinedSecondaryPhi.Name = "textBoxRefinedSecondaryPhi";
-            this.textBoxRefinedSecondaryPhi.RadianValue = 0D;
-            this.textBoxRefinedSecondaryPhi.ReadOnly = true;
-            this.textBoxRefinedSecondaryPhi.RestrictLimitValue = true;
-            this.textBoxRefinedSecondaryPhi.ShowFraction = false;
-            this.textBoxRefinedSecondaryPhi.ShowPositiveSign = false;
-            this.textBoxRefinedSecondaryPhi.ShowUpDown = false;
-            this.textBoxRefinedSecondaryPhi.SkipEventDuringInput = false;
-            this.textBoxRefinedSecondaryPhi.SmartIncrement = true;
-            this.textBoxRefinedSecondaryPhi.TabStop = false;
-            this.textBoxRefinedSecondaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryPhi.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedSecondaryPhi.ThonsandsSeparator = true;
-            this.textBoxRefinedSecondaryPhi.UpDown_Increment = 1D;
-            this.textBoxRefinedSecondaryPhi.Value = 0D;
-            this.textBoxRefinedSecondaryPhi.WordWrap = false;
-            // 
-            // textBoxRefinedPrimaryPhi
-            // 
-            resources.ApplyResources(this.textBoxRefinedPrimaryPhi, "textBoxRefinedPrimaryPhi");
-            this.textBoxRefinedPrimaryPhi.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryPhi.DecimalPlaces = -1;
-            this.textBoxRefinedPrimaryPhi.Maximum = double.PositiveInfinity;
-            this.textBoxRefinedPrimaryPhi.Minimum = double.NegativeInfinity;
-            this.textBoxRefinedPrimaryPhi.Multiline = false;
-            this.textBoxRefinedPrimaryPhi.Name = "textBoxRefinedPrimaryPhi";
-            this.textBoxRefinedPrimaryPhi.RadianValue = 0D;
-            this.textBoxRefinedPrimaryPhi.ReadOnly = true;
-            this.textBoxRefinedPrimaryPhi.RestrictLimitValue = true;
-            this.textBoxRefinedPrimaryPhi.ShowFraction = false;
-            this.textBoxRefinedPrimaryPhi.ShowPositiveSign = false;
-            this.textBoxRefinedPrimaryPhi.ShowUpDown = false;
-            this.textBoxRefinedPrimaryPhi.SkipEventDuringInput = false;
-            this.textBoxRefinedPrimaryPhi.SmartIncrement = true;
-            this.textBoxRefinedPrimaryPhi.TabStop = false;
-            this.textBoxRefinedPrimaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryPhi.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxRefinedPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
-            this.textBoxRefinedPrimaryPhi.ThonsandsSeparator = true;
-            this.textBoxRefinedPrimaryPhi.UpDown_Increment = 1D;
-            this.textBoxRefinedPrimaryPhi.Value = 0D;
-            this.textBoxRefinedPrimaryPhi.WordWrap = false;
             // 
             // FormFindParameter
             // 
