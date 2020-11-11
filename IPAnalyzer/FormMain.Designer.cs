@@ -678,7 +678,7 @@ namespace IPAnalyzer
             // trackBarAdvancedMinInt
             // 
             resources.ApplyResources(this.trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
-            this.trackBarAdvancedMinInt.ControlHeight = 27;
+            this.trackBarAdvancedMinInt.ControlHeight = 34;
             this.trackBarAdvancedMinInt.DecimalPlaces = 0;
             this.trackBarAdvancedMinInt.LogScrollBar = false;
             this.trackBarAdvancedMinInt.Maximum = 65535D;
@@ -696,7 +696,7 @@ namespace IPAnalyzer
             // trackBarAdvancedMaxInt
             // 
             resources.ApplyResources(this.trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
-            this.trackBarAdvancedMaxInt.ControlHeight = 27;
+            this.trackBarAdvancedMaxInt.ControlHeight = 34;
             this.trackBarAdvancedMaxInt.DecimalPlaces = 0;
             this.trackBarAdvancedMaxInt.LogScrollBar = false;
             this.trackBarAdvancedMaxInt.Maximum = 65535D;

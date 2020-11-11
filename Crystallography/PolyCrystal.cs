@@ -681,7 +681,7 @@ namespace Crystallography
             double maxMonochroHK2 = 2 * detector.MaxReciproZ * ewaldR * monochromaticity2;   //Z
             double reciprocalPointSize = 1 / GrainSize / 2, reciprocalPointSize2 = reciprocalPointSize * reciprocalPointSize;
 
-            int subDiv3 = SubDiv * SubDiv * SubDiv;
+            var subDiv3 = SubDiv * SubDiv * SubDiv;
 
             double maxConvergenceHK = Math.Sin(BaseCrystal.AngleResolution / 180.0 * Math.PI / 2) / detector.WaveLength;//逆空間での、収束による逆格子点のにじみ(X線軸垂直な方向)
             if (SubDiv == 1)
@@ -690,7 +690,7 @@ namespace Crystallography
             double maxExcitationError2 = reciprocalPointSize2 + maxMonochroHK2 + maxConvergenceHK2, maxExcitationError = Math.Sqrt(maxExcitationError2);
             double maxHk2square = reciprocalPointSize2 + maxConvergenceHK2; // (-y,x,0)方向の半値幅
 
-            double camPerRes = detector.CameraLength / detector.Resolution;
+            var camPerRes = detector.CameraLength / detector.Resolution;
             double cX = detector.Center.X, cY = detector.Center.Y;
             int imageWidth = detector.ImageWidth, imageHeight = detector.ImageHeight;
             uint imageLength = (uint)detector.ImageLength;
@@ -750,24 +750,26 @@ namespace Crystallography
                          (elasticity.GetStrainByHill(BaseCrystal.Symmetry, r, BaseCrystal.Stress, BaseCrystal.Strain, BaseCrystal.HillCoefficient) + new Matrix3D()).Inverse() * r).ToArray();
 
                 var result = new Dictionary<int, double>();
+                
+                var rotArray = rotations.Select(r => r.ToArrayRowMajorOrder()).ToArray();
 
-                foreach (var rot in rotations.Select(r => r.ToArrayRowMajorOrder()).ToArray())
+                foreach (int gNum in ValidIndex[num])
                 {
-                    foreach (int gNum in ValidIndex[num])
+                    (var gX, var gY, var gZ, var Hk1, var Hk2, var Hk3, var Intensity, var Intensity2) = G[gNum];
+                    foreach (var rot in rotArray)
                     {
-                        (var gX, var gY, var gZ, var Hk1, var Hk2, var Hk3, var Intensity, var Intensity2) = G[gNum];
                         var X = rot[0] * gX + rot[1] * gY + rot[2] * gZ;
                         var Y = rot[3] * gX + rot[4] * gY + rot[5] * gZ;
                         var Z = rot[6] * gX + rot[7] * gY + rot[8] * gZ;
                         double xyLength2 = X * X + Y * Y, xyLength = Math.Sqrt(xyLength2), rz = ewaldR - Z, rz2 = rz * rz;
                         //初期位置の計算
                         var XY = (Hk3 / Hk1 + (ewaldR * Math.Sqrt(1 + xyLength2 / rz2) - ewaldR + Z) / rz) / (Hk3 / Hk1 + xyLength2 / rz2) * xyLength;
-                        var d = camPerRes / Math.Sqrt(ewaldR2/ XY / XY - 1) / xyLength;
+                        var d = camPerRes / Math.Sqrt(ewaldR2 / XY / XY - 1) / xyLength;
                         int startPosition = (int)(-d * Y + cY + 0.5) * imageWidth + (int)(d * X + cX + 0.5);
                         var tempIntensity = Intensity2 / subDiv3 * SolidAngle[num];
 
                         int angle = (int)((Math.Atan2(Y, X) / Math.PI + 1.0) * SpotShapesAngleDivision / 2);
-                        foreach(var index in SpotShapesSortedIndex[gNum][angle]) //現在のピクセル位置から、周辺強度を計算していって、半値幅の2倍以上になったら終了
+                        foreach (var index in SpotShapesSortedIndex[gNum][angle]) //現在のピクセル位置から、周辺強度を計算していって、半値幅の2倍以上になったら終了
                         {
                             int pos = startPosition + index;
                             if ((uint)pos < imageLength)
@@ -869,9 +871,7 @@ namespace Crystallography
                             double intensity = (eta / (1 + dev2) + (1 - eta) * Math.Sqrt(Math.PI * Math.Log(2)) * Math.Pow(2, -dev2)) * G[n].Intensity2;
 
                             list.Add(new Vector3D(d * x + detector.Center.X, -d * y + detector.Center.Y, intensity));
-                            list[list.Count - 1].h = BaseCrystal.VectorOfG[n].h;
-                            list[list.Count - 1].k = BaseCrystal.VectorOfG[n].k;
-                            list[list.Count - 1].l = BaseCrystal.VectorOfG[n].l;
+                            list[list.Count - 1].Index = BaseCrystal.VectorOfG[n].Index;
                         }
                     }
                 }
