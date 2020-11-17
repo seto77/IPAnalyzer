@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Xml.Schema;
 using System.Numerics;
+using System.Collections.Concurrent;
 
 namespace Crystallography
 {
@@ -784,6 +785,7 @@ namespace Crystallography
                                 else if (dev2 < DeviationThreshold[gNum])
                                 {
                                     var temp = sqrtPiLog2 * Math.Exp(-log2 * dev2) * tempIntensity * area;
+
                                     if (result.ContainsKey(pos))
                                         result[pos] += temp;
                                     else

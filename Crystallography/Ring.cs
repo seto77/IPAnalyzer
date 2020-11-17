@@ -194,6 +194,11 @@ namespace Crystallography
 			/// </summary>
 			SMV,
 
+			/// <summary>
+			/// RadIcon社、PFで使用されている (references\ImageExsample\BL18c 柴咲さん )
+			/// </summary>
+			RadIconPF
+
 			#endregion 画像タイプ
 		}
 

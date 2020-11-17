@@ -3,6 +3,8 @@
 
 references/
 IPAnalyzerSetup/
+Eigen/
+Crystallography.Native/Eigen/
 *.exe
 
 # User-specific files

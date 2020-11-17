@@ -789,14 +789,12 @@ namespace IPAnalyzer
             FormSaclaParameter.Owner = this;
             FormSaclaParameter.Visible = false;
 
-            //FormProperty.Location = new Point(0, 0);
-            //FormProperty.Size = new Size(500, 599);
             FormProperty.Visible = true;
 
 
             InitialDialog.Text = "Now Loading...Initializing Macro function.";
 
-            FormMacro = new Crystallography.Controls.FormMacro(Python.CreateEngine(), new Macro(this));
+            FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this));
             FormMacro.Visible = false;
             Type t = typeof(Macro);
             MemberInfo[] members = t.GetMembers();
@@ -833,13 +831,6 @@ namespace IPAnalyzer
                     ReadParameter(fileName);
                 else if (fileName.EndsWith("mas"))
                     ReadMask(fileName);
-            }
-
-            InitialDialog.Text = "Now Loading...Checking Click Once.";
-            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-            {
-                programUpdatesToolStripMenuItem.Visible = false;//click onceの場合
-                this.Text += "   Caution! ClickOnce vesion will be not maintained in the future.";
             }
 
             Clipboard.SetDataObject("IPAnalyzer");
@@ -1020,32 +1011,32 @@ namespace IPAnalyzer
                     float pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
                     float TanKsi = (float)Math.Tan(FormProperty.numericalTextBoxPixelKsi.RadianValue);
                    
-                    m = m * new Matrix3D(1 / pixelSizeX, 0, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0, 0, 1);
+                    m *= new Matrix3D(1 / pixelSizeX, 0, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0, 0, 1);
 
                     //楕円の中心位置のずれをオフセット
                    
 
-                    m = m * new Matrix3D(1, 0, 0, 0, 1, 0, OffSet.X, OffSet.Y, 1);
+                    m *= new Matrix3D(1, 0, 0, 0, 1, 0, OffSet.X, OffSet.Y, 1);
 
                     //楕円の傾きをセット
                  
 
-                    m = m * new Matrix3D(Cos, Sin, 0, -Sin, Cos, 0, 0, 0, 1);
+                    m *= new Matrix3D(Cos, Sin, 0, -Sin, Cos, 0, 0, 0, 1);
 
                    
-                    g.MultiplyTransform(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, center.X, center.Y));
+                    g.MultiplyTransform(new Matrix(1, 0, 0, 1, center.X, center.Y));
 
-                    g.MultiplyTransform(new System.Drawing.Drawing2D.Matrix(1 / pixelSizeX, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0));
+                    g.MultiplyTransform(new Matrix(1 / pixelSizeX, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0));
 
-                    g.MultiplyTransform(new System.Drawing.Drawing2D.Matrix(1 / scale, 0, 0, 1 / scale, 0, 0));
+                    g.MultiplyTransform(new Matrix(1 / scale, 0, 0, 1 / scale, 0, 0));
 
 
 
-                    g.MultiplyTransform(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, (float)OffSet.X, (float)OffSet.Y));
+                    g.MultiplyTransform(new Matrix(1, 0, 0, 1, (float)OffSet.X, (float)OffSet.Y));
 
                   
 
-                    g.MultiplyTransform(new System.Drawing.Drawing2D.Matrix((float)Cos, (float)Sin, -(float)Sin, (float)Cos, 0, 0));
+                    g.MultiplyTransform(new Matrix((float)Cos, (float)Sin, -(float)Sin, (float)Cos, 0, 0));
 
 
                     //最後に楕円を描画
