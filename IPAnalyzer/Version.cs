@@ -12,7 +12,7 @@ namespace IPAnalyzer
             ;
         static public string VersionAndDate { get => History.Remove(0, 10).Remove(20); }
 
-        static public string History =
+        static public string History = 
             "History" +
             "\r\n ver3.901(2020/11/17) Added a new image format (*.raw file used in PF)" +
             "\r\n ver3.900(2020/11/16) Fixed a bug when loading Rad-icon file." +
