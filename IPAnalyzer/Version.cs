@@ -14,6 +14,7 @@ namespace IPAnalyzer
 
         static public string History = 
             "History" +
+            "\r\n ver3.902(2020/12/02) Fixed minor bus." +
             "\r\n ver3.901(2020/11/17) Added a new image format (*.raw file used in PF)" + 
             "\r\n ver3.900(2020/11/16) Fixed a bug when loading Rad-icon file." +
             "\r\n ver3.899(2020/10/31) Improved: Speeding up 'Get Profile'." +

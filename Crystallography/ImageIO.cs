@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks.Sources;
 using System.Windows.Forms;
 
 namespace Crystallography
@@ -32,6 +33,7 @@ namespace Crystallography
             "tif",
             "png",
             "smv",
+            "mrc",
         };
 
         public static string FilterString
@@ -211,6 +213,8 @@ namespace Crystallography
                 result = RadIcon(str);
             else if (str.ToLower().EndsWith("smv"))//Dexela
                 result = SMV(str);
+            else if (str.ToLower().EndsWith("mrc"))
+                result = MRC(str);
             else
                 return false;
 
@@ -505,8 +509,29 @@ namespace Crystallography
                 return false;
             }
             return true;
-        } 
+        }
         #endregion
+
+        private static bool MRC(string str)
+        {
+            try
+            {
+                var mrc = new MRC(str);
+                Ring.SrcImgSize = new Size(mrc.NX, mrc.NY);
+                Ring.Intensity = mrc.Images[0];
+                Ring.MRC = mrc;
+                Ring.ImageType = Ring.ImageTypeEnum.MRC;
+
+            return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+
 
         #region MAR
         public static bool MAR(string str)

@@ -1681,8 +1681,8 @@ namespace IPAnalyzer
         {
             if (variance != 0)
             {
-                pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value = Math.Min((sumOfIntensity / Ring.Intensity.Count + 2 * variance), trackBarAdvancedMaxInt.Maximum);
-                pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value = Math.Max((sumOfIntensity / Ring.Intensity.Count - 2 * variance), trackBarAdvancedMinInt.Minimum);
+                pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value = Math.Min(sumOfIntensity / Ring.Intensity.Count + 2 * variance, trackBarAdvancedMaxInt.Maximum);
+                pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value = Math.Max(sumOfIntensity / Ring.Intensity.Count - 2 * variance, trackBarAdvancedMinInt.Minimum);
                 Draw();
             }
 
