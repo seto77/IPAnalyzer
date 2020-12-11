@@ -498,9 +498,21 @@ namespace Crystallography
                                 break;
 
                             case 282:
-                                image.XResolution = (double)iFD[i].Data[0]; break;
+                                if(iFD[i].Data[0] is int)
+                                    image.XResolution = (int)iFD[i].Data[0];
+                                else if(iFD[i].Data[0] is float)
+                                    image.XResolution = (float)iFD[i].Data[0];
+                                else if (iFD[i].Data[0] is double)
+                                    image.XResolution = (double)iFD[i].Data[0];
+                                break;
                             case 283:
-                                image.YResolution = (double)iFD[i].Data[0]; break;
+                                if (iFD[i].Data[0] is int)
+                                    image.YResolution = (int)iFD[i].Data[0]; 
+                                else if (iFD[i].Data[0] is float)
+                                    image.YResolution = (float)iFD[i].Data[0];
+                                else if (iFD[i].Data[0] is double)
+                                    image.YResolution = (double)iFD[i].Data[0];
+                                break;
                             case 284:
                                 image.ResolutionUnit = (int)iFD[i].Data[0]; break;
                             case 320:
