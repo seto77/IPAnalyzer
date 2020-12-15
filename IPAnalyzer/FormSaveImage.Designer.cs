@@ -56,7 +56,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(209, 37);
+            this.label2.Location = new System.Drawing.Point(227, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 12;
@@ -90,7 +90,7 @@
             0,
             0,
             0});
-            this.numericUpDownHeight.Location = new System.Drawing.Point(261, 35);
+            this.numericUpDownHeight.Location = new System.Drawing.Point(279, 35);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -102,7 +102,7 @@
             0,
             0});
             this.numericUpDownHeight.Name = "numericUpDownHeight";
-            this.numericUpDownHeight.Size = new System.Drawing.Size(47, 25);
+            this.numericUpDownHeight.Size = new System.Drawing.Size(53, 25);
             this.numericUpDownHeight.TabIndex = 1;
             this.numericUpDownHeight.Value = new decimal(new int[] {
             1000,
@@ -131,7 +131,7 @@
             0,
             0});
             this.numericUpDownWidth.Name = "numericUpDownWidth";
-            this.numericUpDownWidth.Size = new System.Drawing.Size(47, 25);
+            this.numericUpDownWidth.Size = new System.Drawing.Size(53, 25);
             this.numericUpDownWidth.TabIndex = 0;
             this.numericUpDownWidth.Value = new decimal(new int[] {
             1000,
@@ -184,7 +184,7 @@
             0,
             0});
             this.numericUpDownResolution.Name = "numericUpDownResolution";
-            this.numericUpDownResolution.Size = new System.Drawing.Size(47, 25);
+            this.numericUpDownResolution.Size = new System.Drawing.Size(53, 25);
             this.numericUpDownResolution.TabIndex = 3;
             this.numericUpDownResolution.Value = new decimal(new int[] {
             100,
@@ -197,7 +197,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(209, 99);
+            this.label7.Location = new System.Drawing.Point(215, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 10;
@@ -209,7 +209,7 @@
             this.checkBoxKeepAspect.Checked = true;
             this.checkBoxKeepAspect.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxKeepAspect.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxKeepAspect.Location = new System.Drawing.Point(325, 39);
+            this.checkBoxKeepAspect.Location = new System.Drawing.Point(343, 39);
             this.checkBoxKeepAspect.Name = "checkBoxKeepAspect";
             this.checkBoxKeepAspect.Size = new System.Drawing.Size(134, 21);
             this.checkBoxKeepAspect.TabIndex = 2;
@@ -256,7 +256,7 @@
             0,
             -2147483648});
             this.numericUpDownCenterX.Name = "numericUpDownCenterX";
-            this.numericUpDownCenterX.Size = new System.Drawing.Size(47, 25);
+            this.numericUpDownCenterX.Size = new System.Drawing.Size(53, 25);
             this.numericUpDownCenterX.TabIndex = 0;
             this.numericUpDownCenterX.Value = new decimal(new int[] {
             500,
@@ -273,7 +273,7 @@
             0,
             0,
             0});
-            this.numericUpDownCenterY.Location = new System.Drawing.Point(261, 66);
+            this.numericUpDownCenterY.Location = new System.Drawing.Point(279, 66);
             this.numericUpDownCenterY.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -285,7 +285,7 @@
             0,
             -2147483648});
             this.numericUpDownCenterY.Name = "numericUpDownCenterY";
-            this.numericUpDownCenterY.Size = new System.Drawing.Size(47, 25);
+            this.numericUpDownCenterY.Size = new System.Drawing.Size(53, 25);
             this.numericUpDownCenterY.TabIndex = 0;
             this.numericUpDownCenterY.Value = new decimal(new int[] {
             500,
@@ -308,7 +308,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(239, 68);
+            this.label9.Location = new System.Drawing.Point(257, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 17);
             this.label9.TabIndex = 8;
@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 130);
+            this.ClientSize = new System.Drawing.Size(489, 126);
             this.ControlBox = false;
             this.Controls.Add(this.checkBoxKeepAspect);
             this.Controls.Add(this.label7);

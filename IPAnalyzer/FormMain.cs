@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
 using System.IO;
 using System.Text;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 using System.Threading;
 using Crystallography;
 using Crystallography.Controls;
@@ -17,7 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using IronPython.Hosting;
-using System.Threading.Tasks;
 using System.Numerics;
 using System.Diagnostics;
 using System.Net;
@@ -27,7 +22,7 @@ namespace IPAnalyzer
     /// <summary>
     /// Form1 の概要の説明です。
     /// </summary>
-    public partial class FormMain : System.Windows.Forms.Form
+    public partial class FormMain : Form
     {
         #region プロパティ、フィールド
         public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
@@ -113,9 +108,13 @@ namespace IPAnalyzer
         //public string ImageFilterString = "FujiBAS2000/2500; R-AXIS4/5; ITEX; Bruker CCD; IP Display; IPAimage; Fuji FDL; Rayonix; Marresearch; Perkin Elmer; ADSC; RadIcon; general image"
         //        + "|*.img;*.stl;*.ccd;*.ipf;*.ipa;*.0???;*.gel;*.osc;*.mar*;*.mccd; *.his; *.h5; *.raw; *.bmp;*.jpg;*.tif";
 
-
+        double maxIntensity = uint.MinValue;
+        double sumOfIntensity = 0;
+        double sumOfSquare = 0;
+        double variance = 0;
         #endregion
 
+        #region コンストラクタ、ロード、クローズ
         public FormMain()
         {
             ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
@@ -133,12 +132,11 @@ namespace IPAnalyzer
 
             InitializeComponent();
 
-            
+
 
             //splitContainer2.SplitterDistance = scalablePictureBoxThumbnail.Height + splitContainer2.SplitterDistance - scalablePictureBoxThumbnail.Width;
         }
 
-        #region フォームロード＆クローズ
 
         public void SaveRegistry()
         {
@@ -877,7 +875,6 @@ namespace IPAnalyzer
 
         #endregion
 
-
         #region 描画関数
         private void scalablePictureBox_Draw()
         {//scalablePictureBoxから描画要求が出されたとき
@@ -1104,8 +1101,6 @@ namespace IPAnalyzer
 
         #endregion
 
-
-        //ここよりピクチャーボックスのマウスイベント関係
         #region マウスイベント
         //マウスボタンダウン
 
@@ -1573,6 +1568,7 @@ namespace IPAnalyzer
 
         #endregion
 
+        #region リサイズ イベント
         public void FormMain_Resize(object sender, System.EventArgs e)
         {
             Draw();
@@ -1582,6 +1578,7 @@ namespace IPAnalyzer
         {
             FormMain_Resize(new object(), new EventArgs());
         }
+        #endregion
 
         #region 輝度調節関係
         public bool SkipMax = false;
@@ -1630,52 +1627,6 @@ namespace IPAnalyzer
             return true;
         }
 
-
- 
-        /*
-        //TrackBarpseudBitmap.MaxValueスクロール時
-        private void trackBarMaxInt_Scroll(object sender, System.EventArgs e)
-        {
-            if (!IsImageReady || SkipMax) return;
-            SkipMax = true;
-            numericUpDownMaxInt.Value = (int)Math.Pow((double)numericUpDownMaxInt.Maximum, (double)trackBarMaxInt.Value / (double)trackBarMaxInt.Maximum);
-            pseudoBitmap.MaxValue = (uint)numericUpDownMaxInt.Value;
-            if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
-                numericUpDownMinInt.Value = numericUpDownMaxInt.Value - 1;
-
-            if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
-            {
-                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 1 : 0].X = (double)numericUpDownMaxInt.Value;
-                graphControlFrequency.Draw();
-            }
-
-            SkipMax = false;
-
-            Draw();
-
-        }
-        //TrackBarpseudBitmap.MinValueスクロール時
-        private void trackBarMinInt_Scroll(object sender, System.EventArgs e)
-        {
-            if (!IsImageReady || SkipMin) return;
-            SkipMin = true;
-            numericUpDownMinInt.Value = (int)Math.Pow((double)numericUpDownMinInt.Maximum, (double)trackBarMinInt.Value / (double)trackBarMinInt.Maximum);
-            pseudoBitmap.MinValue = (uint)numericUpDownMinInt.Value;
-            if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
-                numericUpDownMaxInt.Value = numericUpDownMinInt.Value + 1;
-
-            if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
-            {
-                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 0 : 1].X = (double)numericUpDownMinInt.Value;
-                graphControlFrequency.Draw();
-            }
-
-            SkipMin = false;
-
-            Draw();
-        }
-        */
-
         //AutoAdjustボタンクリック時
         public void buttonAutoLevel_Click(object sender, System.EventArgs e)
         {
@@ -1701,6 +1652,7 @@ namespace IPAnalyzer
         }
         #endregion
 
+        #region ドラッグドロップ
         private void FormMain_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -1740,18 +1692,26 @@ namespace IPAnalyzer
             }
       
         }
+        #endregion
 
-        //ここよりメニューアイテム ファイル
+        #region File メニュー イメージの読み書き
 
         public int filterIndex;
         public string initialImageDirectory = "";
+      
+        /// <summary>
+        /// Read Image ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void readImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = ImageIO.FilterString;
+            var dlg = new OpenFileDialog { Filter = ImageIO.FilterString };
+            
+            dlg.FilterIndex = filterIndex;
+
             if (initialImageDirectory != "")
                 dlg.InitialDirectory = initialImageDirectory;
-            dlg.FilterIndex = filterIndex;
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -1762,6 +1722,11 @@ namespace IPAnalyzer
         }
 
         delegate void ReadImageCallBack(string str, bool? flag = null);
+        /// <summary>
+        /// 画像を読み込む
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="flag"></param>
         public void ReadImage(string str, bool? flag = null)
         {
             if (str != "ClipBoard.ipa" && !File.Exists(str)) return;  // ファイルの有無をチェック
@@ -2114,6 +2079,8 @@ namespace IPAnalyzer
             bmp.Save(filename, ImageFormat.Png);
         }
 
+
+
         private void ipaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SrcImgSize == null || SrcImgSize.Width == 0) return;
@@ -2121,7 +2088,709 @@ namespace IPAnalyzer
             FormSaveImage.Visible = true;
 
         }
+        #endregion
 
+        #region File メニュー パラメータの読み書き
+
+        private void toolStripMenuItemReadParameter_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
+            if (initialParameterDirectory != "")
+                dialog.InitialDirectory = initialParameterDirectory;
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ReadParameter(dialog.FileName, ((ToolStripMenuItem)sender).Name.Contains("Interactively"));
+                initialParameterDirectory = Path.GetDirectoryName(dialog.FileName);
+            }
+        }
+
+        private void toolStripMenuItemSaveParameter_Click(object sender, EventArgs e)
+        {
+            var dialog = new SaveFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveParameter(dialog.FileName, ((ToolStripMenuItem)sender).Name.Contains("Fully"));
+                initialParameterDirectory = Path.GetDirectoryName(dialog.FileName);
+            }
+        }
+
+
+        public string initialParameterDirectory;
+        public void SaveParameter(string filename, bool fullySave = true)
+        {
+            if (filename == "")
+            {
+                var dlg = new OpenFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    filename = dlg.FileName;
+                else
+                    return;
+            }
+            if (!filename.EndsWith("prm"))
+                filename += ".prm";
+
+
+            fullySave = false;
+            try
+            {
+                DiffractionOptics.Parameter prm = new DiffractionOptics.Parameter();
+
+                if (!fullySave)
+                {
+                    FormParameterOption.Text = "Save checked parameters";
+                    if (FormParameterOption.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                        return;
+                }
+                else
+                    FormParameterOption.AllCheck();
+
+                prm.SACLA_EH5 = (FormProperty.checkBoxSACLA.Checked) ? "True" : null;
+
+                if (FormProperty.checkBoxSACLA.Checked)
+                {
+                    prm.SACLA_EH5_CameraLength2 = FormProperty.saclaControl.CameraLength2.ToString();
+                    prm.SACLA_EH5_Phi = FormProperty.saclaControl.PhiDegree.ToString();
+                    prm.SACLA_EH5_Tau = FormProperty.saclaControl.TauDegree.ToString();
+                    prm.SACLA_EH5_PixelHeight = FormProperty.saclaControl.PixelHeight.ToString();
+                    prm.SACLA_EH5_PixelWidth = FormProperty.saclaControl.PixelWidth.ToString();
+                    prm.SACLA_EH5_PixleSize = FormProperty.saclaControl.PixelSize.ToString();
+                    prm.SACLA_EH5_FootX = FormProperty.saclaControl.Foot.X.ToString();
+                    prm.SACLA_EH5_FootY = FormProperty.saclaControl.Foot.Y.ToString();
+                }
+
+                prm.cameraMode = (FormParameterOption.CameraModeChecked) ? (FormProperty.radioButtonFlatPanel.Checked ? "FlatPanel" : "Gandolfi") : null;
+
+                prm.waveSource = (FormParameterOption.WaveLengthChecked) ? ((int)FormProperty.waveLengthControl.WaveSource).ToString() : null;
+                prm.waveLength = (FormParameterOption.WaveLengthChecked) ? FormProperty.WaveLengthText : null;
+
+                prm.xRayElement = (FormParameterOption.WaveLengthChecked) ? FormProperty.waveLengthControl.XrayWaveSourceElementNumber.ToString() : null;
+                prm.xRayLine = (FormParameterOption.WaveLengthChecked) ? ((int)FormProperty.waveLengthControl.XrayWaveSourceLine).ToString() : null;
+
+                prm.cameraLength = (FormParameterOption.CameraLengthChecked) ? FormProperty.CameraLengthText : null;
+
+                prm.pixSizeX = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericBoxPixelSizeX.Text : null;
+                prm.pixSizeY = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericBoxPixelSizeY.Text : null;
+                prm.pixKsi = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericalTextBoxPixelKsi.Text : null;
+
+                prm.tiltPhi = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericBoxTiltCorrectionPhi.Text : null;
+                prm.tiltTau = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericBoxTiltCorrectionTau.Text : null;
+
+                prm.centerX = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericBoxCenterPositionX.Text : null;
+                prm.centerY = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericBoxCenterPositionY.Text : null;
+
+                prm.sphericalRadiusInverse = (FormParameterOption.SphericalCorrectionChecked) ? FormProperty.numericalTextBoxSphericalCorections.Text : null;
+
+                prm.GandolfiRadius = (FormParameterOption.GandolfiRadiusChecked) ? FormProperty.numericBoxGandlfiRadius.Text : null;
+
+                //IntegralRegion
+                if (FormParameterOption.IntegralRegionChecked)
+                {
+                    prm.RegionMode = FormProperty.radioButtonRectangle.Checked ? "Rectangle" : "Sector";
+
+                    prm.RectangleDirection = FormProperty.comboBoxRectangleDirection.SelectedIndex.ToString();
+                    prm.RectangleBothSide = FormProperty.checkBoxRectangleIsBothSide.Checked ? "True" : "False";
+                    prm.RectangleBandWidth = FormProperty.numericUpDownRectangleBand.Value.ToString();
+                    prm.RectangleAngle = FormProperty.numericUpDownRectangleAngle.Value.ToString();
+
+                    prm.SectorStart = FormProperty.numericUpDownSectorStartAngle.Value.ToString();
+                    prm.SectorEnd = FormProperty.numericUpDownSectorEndAngle.Value.ToString();
+                }
+
+                //IntegralRegion
+                if (FormParameterOption.IntegralPropertyChecked)
+                {
+                    prm.IntegrationMode = FormProperty.radioButtonConcentric.Checked ? "Concentric" : "Radial";
+
+                    prm.ConcentricUnit = FormProperty.radioButtonConcentricAngle.Checked ? "Angle" : FormProperty.radioButtonConcentricLength.Checked ? "Length" : "d-spacing";
+                    prm.ConcentricStart = FormProperty.numericBoxConcentricStart.Text;
+                    prm.ConcentricEnd = FormProperty.numericBoxConcentricEnd.Text;
+                    prm.ConcentricStep = FormProperty.numericBoxConcentricStep.Text;
+
+                    prm.RadialUnit = FormProperty.radioButtonRadialAngle.Checked ? "Angle" : "d-spacing";
+                    prm.RadialRadius = FormProperty.numericBoxRadialRadius.Text;
+                    prm.RadialWidth = FormProperty.numericBoxRadialRange.Text;
+                    prm.RadialStep = FormProperty.numericBoxRadialStep.Text;
+                }
+
+                System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(DiffractionOptics.Parameter));
+                System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Create);
+                serializer.Serialize(fs, prm);
+                fs.Close();
+
+            }
+            catch { MessageBox.Show("Failed to save the file. Sorry."); }
+
+        }
+
+
+
+        public void ReadParameter(string filename, bool fullyRead = true)
+        {
+            if (filename == "")
+            {
+                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    filename = dlg.FileName;
+                else
+                    return;
+            }
+
+
+            fullyRead = false;
+            //イベントをスキップ
+            skipSelectedAreaChangedEvent = true;
+            Skip = true;
+
+            try
+            {
+                DiffractionOptics.Parameter prm = DiffractionOptics.Read(filename);
+
+                if (!fullyRead)
+                {
+                    FormParameterOption.Text = "Read checked parameters";
+                    FormParameterOption.Location = new Point(this.Location.X + 100, this.Location.Y + 100);
+                    if (FormParameterOption.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                        return;
+                }
+                else
+                    FormParameterOption.AllCheck();
+
+
+                FormProperty.checkBoxSACLA.Checked = prm.SACLA_EH5 == "True";
+                if (prm.SACLA_EH5 == "True")
+                {
+                    if (prm.SACLA_EH5_CameraLength2 != null)
+                        FormProperty.saclaControl.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_CameraLength2);
+                    else
+                        FormProperty.saclaControl.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_Distance);
+
+                    FormProperty.saclaControl.PixelHeight = Convert.ToDouble(prm.SACLA_EH5_PixelHeight);
+                    FormProperty.saclaControl.PixelWidth = Convert.ToDouble(prm.SACLA_EH5_PixelWidth);
+                    FormProperty.saclaControl.PixelSize = Convert.ToDouble(prm.SACLA_EH5_PixleSize);
+
+                    FormProperty.saclaControl.Foot = new PointD(Convert.ToDouble(prm.SACLA_EH5_FootX), Convert.ToDouble(prm.SACLA_EH5_FootY));
+
+                    if (prm.SACLA_EH5_Phi != null)
+                    {
+                        FormProperty.saclaControl.PhiDegree = Convert.ToDouble(prm.SACLA_EH5_Phi);
+                        FormProperty.saclaControl.TauDegree = Convert.ToDouble(prm.SACLA_EH5_Tau);
+                    }
+                    else
+                    {
+                        FormProperty.saclaControl.PhiDegree = 0;
+                        FormProperty.saclaControl.TauDegree = Convert.ToDouble(prm.SACLA_EH5_TwoTheta);
+                    }
+                }
+
+                //Camera Mode
+                if (FormParameterOption.CameraModeChecked)
+                {
+                    if (prm.cameraMode == null || prm.cameraMode == "FlatPanel")
+                    {
+                        FormProperty.radioButtonFlatPanel.Checked = true;
+                        FormProperty.radioButtonGandlfi.Checked = false;
+                    }
+                    else
+                    {
+                        FormProperty.radioButtonFlatPanel.Checked = false;
+                        FormProperty.radioButtonGandlfi.Checked = true;
+                    }
+                }
+
+                //WaveProperty
+                if (FormParameterOption.WaveLengthChecked)
+                {
+                    if (prm.waveSource != null)
+                        FormProperty.waveLengthControl.WaveSource = (WaveSource)Convert.ToInt32(prm.waveSource);
+
+                    if (prm.xRayElement != null)
+                        FormProperty.waveLengthControl.XrayWaveSourceElementNumber = Convert.ToInt32(prm.xRayElement);
+                    if (prm.xRayLine != null)
+                        FormProperty.waveLengthControl.XrayWaveSourceLine = (Crystallography.XrayLine)Convert.ToInt32(prm.xRayLine);
+
+                    if (prm.waveLength != null && (FormProperty.waveLengthControl.WaveSource == WaveSource.Electron || FormProperty.waveLengthControl.XrayWaveSourceElementNumber == 0))
+                        FormProperty.WaveLengthText = prm.waveLength;
+                }
+
+                if (FormParameterOption.CameraLengthChecked && prm.cameraLength != null)
+                    FormProperty.CameraLengthText = prm.cameraLength;
+
+                if (FormParameterOption.PixelShapeChecked)
+                {
+                    if (prm.pixSizeX != null)
+                    {
+                        FormProperty.numericBoxPixelSizeX.Text = prm.pixSizeX;
+                        FormProperty.numericBoxPixelSizeY.Text = prm.pixSizeY;
+                    }
+                    else if (prm.pixSize != null)
+                    {
+                        FormProperty.numericBoxPixelSizeX.Text = prm.pixSize;
+                        FormProperty.numericBoxPixelSizeY.Text = (Convert.ToDouble(prm.pixSize) * Convert.ToDouble(prm.aspectRatio)).ToString();
+                    }
+                    if (prm.pixKsi != null)
+                        FormProperty.numericalTextBoxPixelKsi.Text = prm.pixKsi;
+
+                }
+
+                //CenterPorition
+                if (FormParameterOption.CenterPositionChecked && prm.centerX != null)
+                {
+                    FormProperty.numericBoxCenterPositionX.Text = prm.centerX;
+                    FormProperty.numericBoxCenterPositionY.Text = prm.centerY;
+                }
+
+                //TiltCorrection
+                if (FormParameterOption.TiltCorrectionChecked && prm.tiltPhi != null)
+                {
+                    FormProperty.numericBoxTiltCorrectionPhi.Text = prm.tiltPhi;
+                    FormProperty.numericBoxTiltCorrectionTau.Text = prm.tiltTau;
+                }
+
+                //SphericalRadius
+                if (FormParameterOption.TiltCorrectionChecked && prm.sphericalRadiusInverse != null)
+                    FormProperty.numericalTextBoxSphericalCorections.Text = prm.sphericalRadiusInverse;
+
+                //GandolfiRadius
+                if (FormParameterOption.GandolfiRadiusChecked && prm.GandolfiRadius != null)
+                    FormProperty.numericBoxGandlfiRadius.Text = prm.GandolfiRadius;
+
+
+
+                //IntegralRegion
+                if (FormParameterOption.IntegralRegionChecked)
+                {
+                    if (prm.RegionMode != null)
+                    {
+                        FormProperty.radioButtonRectangle.Checked = prm.RegionMode == "Rectangle";
+                        FormProperty.radioButtonSector.Checked = prm.RegionMode == "Sector";
+                    }
+
+                    if (prm.RectangleDirection != null)
+                        FormProperty.comboBoxRectangleDirection.SelectedIndex = Convert.ToInt32(prm.RectangleDirection);
+                    if (prm.RectangleBothSide != null)
+                        FormProperty.checkBoxRectangleIsBothSide.Checked = prm.RectangleBothSide == "True";
+                    if (prm.RectangleBandWidth != null)
+                        FormProperty.numericUpDownRectangleBand.Value = Convert.ToDecimal(prm.RectangleBandWidth);
+                    if (prm.RectangleAngle != null)
+                        FormProperty.numericUpDownRectangleAngle.Value = Convert.ToDecimal(prm.RectangleAngle);
+
+                    if (prm.SectorStart != null)
+                        FormProperty.numericUpDownSectorStartAngle.Value = Convert.ToDecimal(prm.SectorStart);
+                    if (prm.SectorEnd != null)
+                        FormProperty.numericUpDownSectorEndAngle.Value = Convert.ToDecimal(prm.SectorEnd);
+                }
+
+                //IntegralProperty
+                if (FormParameterOption.IntegralPropertyChecked)
+                {
+                    if (prm.IntegrationMode != null)
+                    {
+                        FormProperty.radioButtonConcentric.Checked = prm.IntegrationMode == "Concentric";
+                        FormProperty.radioButtonRadial.Checked = prm.IntegrationMode == "Radial";
+                    }
+
+                    if (prm.ConcentricUnit != null)
+                    {
+                        FormProperty.radioButtonConcentricAngle.Checked = prm.ConcentricUnit == "Angle";
+                        FormProperty.radioButtonConcentricLength.Checked = prm.ConcentricUnit == "Length";
+                        FormProperty.radioButtonConcentricDspacing.Checked = prm.ConcentricUnit == "d-spacing";
+                    }
+                    if (prm.ConcentricStart != null)
+                        FormProperty.numericBoxConcentricStart.Text = prm.ConcentricStart;
+                    if (prm.ConcentricEnd != null)
+                        FormProperty.numericBoxConcentricEnd.Text = prm.ConcentricEnd;
+                    if (prm.ConcentricStep != null)
+                        FormProperty.numericBoxConcentricStep.Text = prm.ConcentricStep;
+
+                    if (prm.RadialUnit != null)
+                    {
+                        FormProperty.radioButtonRadialAngle.Checked = prm.RadialUnit == "Angle";
+                        FormProperty.radioButtonRadialDspacing.Checked = prm.RadialUnit == "d-spacing";
+                    }
+
+                    if (prm.RadialRadius != null)
+                        FormProperty.numericBoxRadialRadius.Text = prm.RadialRadius;
+                    if (prm.RadialWidth != null)
+                        FormProperty.numericBoxRadialRange.Text = prm.RadialWidth;
+                    if (prm.RadialStep != null)
+                        FormProperty.numericBoxRadialStep.Text = prm.RadialStep;
+                }
+
+
+            }
+            catch { MessageBox.Show("Failed to read the file. Sorry."); }
+            //イベントスキップを解除
+            skipSelectedAreaChangedEvent = false;
+            Skip = false;
+            IntegralArea_Changed(new object(), new EventArgs());
+
+            FormProperty.SaveParameterForEachImageType(Ring.ImageType);
+        }
+
+        /*
+        [Serializable()]
+        public class Parameter
+        {
+            /// <summary>
+            /// "FlatPanel" か "Gandolfi"
+            /// </summary>
+            public string cameraMode;
+
+            public string SACLA_EH5;
+            public string SACLA_EH5_PixelWidth;
+            public string SACLA_EH5_PixelHeight;
+            public string SACLA_EH5_PixleSize;
+            public string SACLA_EH5_TwoTheta;
+            public string SACLA_EH5_Distance;
+            public string SACLA_EH5_FootX;
+            public string SACLA_EH5_FootY;
+
+            public string waveSource;
+            public string electronEnergy;
+
+            public string xRayElement;
+            public string xRayLine;
+            public string waveLength;
+
+            public string cameraLength;
+            public string pixSize;
+            public string pixSizeX;
+            public string pixSizeY;
+            public string pixKsi;
+            public string aspectRatio;
+            public string tiltPhi;
+            public string tiltTau;
+            public string centerX;
+            public string centerY;
+            public string sphericalRadiusInverse;
+            public string GandolfiRadius;
+
+            /// <summary>
+            /// Concentric か Radial
+            /// </summary>
+            public string IntegrationMode;
+
+            public string ConcentricStart;
+            public string ConcentricEnd;
+            public string ConcentricStep;
+            /// <summary>
+            /// Angle, Length, d-spacing
+            /// </summary>
+            public string ConcentricUnit;
+
+            public string RadialRadius;
+            public string RadialWidth;
+            public string RadialStep;
+            /// <summary>
+            /// Angle, d-spacing
+            /// </summary>
+            public string RadialUnit;
+
+            //Rectangle or Sector
+            public string RegionMode;
+
+            public string RectangleDirection;
+            public string RectangleBandWidth;
+            public string RectangleBothSide;
+            public string RectangleAngle;
+
+            public string SectorStart;
+            public string SectorEnd;
+
+            public string ExceptMaskedSpots;
+            public string ExceptEdges;
+            public string ExceptOver;
+            public string ExceptUnder;
+
+
+
+
+        }
+        */
+
+        #endregion
+
+        #region File メニュー Maskファイルの読み書き
+        public string initialMaskDirectory;
+        private void toolStripMenuItemReadMask_Click(object sender, EventArgs e)
+        {
+            var dlg = new OpenFileDialog() { Filter = "Mask file; *.mas|*.mas" };
+            if (initialMaskDirectory != "")
+                dlg.InitialDirectory = initialMaskDirectory;
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                ReadMask(dlg.FileName);
+                initialMaskDirectory = Path.GetDirectoryName(dlg.FileName);
+            }
+        }
+
+        public void ReadMask(string filename)
+        {
+            if (filename == "")
+            {
+                var dlg = new SaveFileDialog { Filter = "*.mas|*.mas" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    filename = dlg.FileName;
+                else
+                    return;
+            }
+
+            try
+            {
+                var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.ReadWrite));
+                var mask = new bool[br.ReadInt32()];
+                int n = 0;
+                for (int i = 0; i < mask.Length / 8; i++)
+                {
+                    byte b = br.ReadByte();
+                    for (int j = 0; j < 8; j++)
+                    {
+                        mask[n++] = (b & 1) == 1;
+                        b >>= 1;
+                    }
+                }
+                br.Close();
+                if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Count)
+                {
+                    for (int i = 0; i < mask.Length; i++)
+                        Ring.IsSpots[i] = mask[i];
+
+                    SetMask();
+                    Draw();
+                }
+            }
+            catch { }
+        }
+
+
+
+        public void toolStripMenuItemSaveMask_Click(object sender, EventArgs e)
+        {
+            var dlg = new SaveFileDialog { Filter = "Mask file; *.mas|*.mas" };
+            if (dlg.ShowDialog() == DialogResult.OK)
+                SaveMask(dlg.FileName);
+        }
+
+        public void SaveMask(string fileName)
+        {
+            if (fileName == "")
+            {
+                var dlg = new OpenFileDialog { Filter = "*.mas|*.mas" };
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    fileName = dlg.FileName;
+                else
+                    return;
+                if (!fileName.EndsWith("mas"))
+                    fileName += ".mas";
+            }
+
+            var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite));
+            br.Write(Ring.IsSpots.Count);
+            int n = 0;
+            for (int i = 0; i < Ring.IsSpots.Count / 8; i++)
+            {
+                byte b = 0;
+                byte m = 1;
+                for (int j = 0; j < 8; j++)
+                {
+                    if (Ring.IsSpots[n++])
+                        b += m;
+                    m *= 2;
+                }
+                br.Write(b);
+
+            }
+            br.Close();
+
+        }
+
+        private void clearMaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearMask();
+        }
+
+        public void ClearMask()
+        {
+            if (!IsImageReady) return;
+            for (int i = 0; i < Ring.IsSpots.Count; i++)
+                Ring.IsSpots[i] = false;
+
+            Draw();
+        }
+
+        public void SetMask()
+        {
+            //ここを呼び出す時には
+            //インテグラルプロパティをセット
+            SetIntegralProperty();
+            Ring.SetMask(FormProperty.checkBoxOmitSpots.Checked, FormProperty.checkBoxThresholdMin.Checked, FormProperty.checkBoxThresholdMax.Checked);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Close();
+
+        #endregion
+
+        #region Tool メニュー
+        private void resetFrequencyProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetFrequencyProfile();
+        }
+
+        private void calibrateRaxisImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCalibrateIntensity.Show();
+        }
+
+        #endregion
+
+        #region Property メニュー
+        private void toolStripMenuItemProperty_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+        }
+
+        private void toolStripMenuItemWaveSource_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 0;
+        }
+
+        private void toolStripMenuItemIPCondition_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+
+            FormProperty.tabControl.SelectedIndex = 1;
+        }
+        private void toolStripMenuItemIntegralRegion_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 2;
+        }
+        private void toolStripMenuItemIntegralProperty_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 3;
+        }
+        private void toolStripMenuItemManualMaskMode_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 4;
+        }
+        private void toolStripMenuItemAfterGetProfile_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 5;
+        }
+        private void toolStripMenuItemUnrolledImage_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 6;
+        }
+        private void toolStripMenuItemAssociatedExtensions_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 7;
+        }
+        private void toolStripMenuItemMiscellaneous_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 8;
+        }
+
+        #endregion
+
+        #region Option メニュー
+        private void flipHorizontallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e) 
+            => FlipRotate_Pollalization_Background();
+
+        private void flipVerticallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+            => FlipRotate_Pollalization_Background();
+
+        private void toolStripComboBoxRotate_SelectedIndexChanged(object sender, EventArgs e)
+            => FlipRotate_Pollalization_Background();
+
+        private void ngenCompileToolStripMenuItem_Click(object sender, EventArgs e) => Ngen.Compile();
+        #endregion
+
+        #region Help メニュー 
+        private void hintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.Hint;
+            InitialDialog.Visible = true;
+        }
+
+        private void licenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.License;
+            InitialDialog.Visible = true;
+        }
+
+        private void versionHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.History;
+            InitialDialog.Visible = true;
+        }
+
+        private void webPageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Thread.CurrentThread.CurrentUICulture.ToString().Contains("ja"))
+                    System.Diagnostics.Process.Start("http://pmsl.planet.sci.kobe-u.ac.jp/~seto/software/IPAnalyzer/ja/IPAnalyzerHelp.html");
+                else
+                    System.Diagnostics.Process.Start("http://pmsl.planet.sci.kobe-u.ac.jp/~seto/software/IPAnalyzer/en/IPAnalyzerHelp.html");
+
+
+            }
+            catch { }
+        }
+        #endregion
+
+        #region Macro メニュー マクロ関連
+        public void SetMacroToMenu(string[] name)
+        {
+            if (macroToolStripMenuItem.DropDownItems.Count == 1)
+                macroToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
+            for (int i = macroToolStripMenuItem.DropDownItems.Count - 1; i > 1; i--)
+                macroToolStripMenuItem.DropDownItems.RemoveAt(i);
+
+
+            for (int i = 0; i < name.Length; i++)
+            {
+                var item = new ToolStripMenuItem(name[i]);
+                item.Name = name[i];
+                item.Click += macroMenuItem_Click;
+                macroToolStripMenuItem.DropDownItems.Add(item);
+            }
+        }
+
+        void macroMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMacro.RunMacroName(((ToolStripMenuItem)sender).Name, false);
+        }
+
+       
+
+        private void ToolStripMenuItemReferenceBackground_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 9;
+        }
+        private void editorToolStripMenuItem_Click(object sender, EventArgs e) => FormMacro.Visible = true;
+        #endregion
+
+        #region Language メニュー
+        private void languageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = ((ToolStripMenuItem)sender).Name.Contains("english");
+            japaneseToolStripMenuItem.Checked = !englishToolStripMenuItem.Checked;
+            Thread.CurrentThread.CurrentUICulture = englishToolStripMenuItem.Checked ? new System.Globalization.CultureInfo("en") : new System.Globalization.CultureInfo("ja");
+            Language.Change(this);
+        }
+
+        #endregion
+
+        #region SetIntegralProperty パラメータをフォームから読み取り、IPのフィールドにセットする
         public void SetIntegralProperty()
         {
             try
@@ -2221,8 +2890,57 @@ namespace IPAnalyzer
             Ring.IP = IP;
         }
 
-        #region 画像演算ボタン
-        //FindCenterボタン
+        #endregion
+
+
+        #region Backgroundボタン
+        private void resetBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Draw();
+        }
+
+        public void toolStripSplitButtonBackground_ButtonClick(object sender, EventArgs e)
+        {
+            if (!IsImageReady) return;
+            SetIntegralProperty();
+            try
+            {
+                double upper = Convert.ToDouble(toolStripComboBoxBackgroundUpper.Text) * 0.01;
+                double lower = Convert.ToDouble(toolStripComboBoxBackgroundLower.Text) * 0.01;
+                Draw();
+            }
+            catch
+            { return; }
+
+        }
+
+        private void fourierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            double[][] valueGray = new double[Ring.SrcImgSize.Height][];
+            int n = 0;
+            for (int y = 0; y < Ring.SrcImgSize.Height; y++)
+            {
+                valueGray[y] = new double[Ring.SrcImgSize.Width];
+                for (int x = 0; x < Ring.SrcImgSize.Width; x++)
+                    valueGray[y][x] = Ring.Intensity[n++];
+            }
+            Complex[][] reverse = Fourier.FFT(valueGray);
+            //return new PseudoBitmap(, scale, scale, scale, normarize, false);
+            byte[] scale = new byte[256];
+            for (int i = 0; i < 256; i++)
+                scale[i] = (byte)i;
+
+            pseudoBitmap = new PseudoBitmap(reverse, scale, scale, scale, false, false);
+            scalablePictureBox.PseudoBitmap = pseudoBitmap;
+            scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
+            Draw();
+        }
+
+        #endregion
+
+
+        #region FindCenterボタン関連
+        //
         public void toolStripSplitButtonFindCenter_ButtonClick(object sender, EventArgs e)
         {
             if (!IsImageReady) return;
@@ -2316,8 +3034,30 @@ namespace IPAnalyzer
             Draw();
         }
 
+        private void toolStripButtonFixCenter_Click(object sender, EventArgs e)
+        {
+            FormProperty.checkBoxFixCenter.Checked = !FormProperty.checkBoxFixCenter.Checked;
+        }
 
-        //FindSpotsボタン
+        private void toolStripButtonFixCenter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (toolStripButtonFixCenter.Checked)
+            {
+                toolStripButtonFixCenter.ForeColor = Color.Red;
+                toolStripSplitButtonFindCenter.Enabled = false;
+            }
+            else
+            {
+                toolStripButtonFixCenter.ForeColor = Color.Gray;
+                toolStripSplitButtonFindCenter.Enabled = true;
+
+            }
+        }
+
+
+        #endregion
+
+        #region FindSpotsボタン関連
         public void toolStripSplitButtonFindSpots_ButtonClick(object sender, EventArgs e)
         {
             if (!IsImageReady) return;
@@ -2332,19 +3072,13 @@ namespace IPAnalyzer
             toolStripSplitButtonFindSpots.Enabled = true;
             this.toolStripStatusLabel.Text = "Calculating Time (Find Spots):  " + (Environment.TickCount - d).ToString() + "ms";
         }
-
-
-
+        #endregion
 
         #region Maskボタン関連
         //ClearSpotsボタン
         public void toolStripMenuItemClearSpots_Click(object sender, EventArgs e)
         {
-            if (!IsImageReady) return;
-            for (int i = 0; i < Ring.IsSpots.Count; i++)
-                Ring.IsSpots[i] = false;
-
-            Draw();
+            ClearMask();
         }
 
         private void inverseMaskToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2362,10 +3096,68 @@ namespace IPAnalyzer
                 Ring.IsSpots[i] = true;
             Draw();
         }
+
+        //マニュアルモードボタンがクリックされた時の反応
+        private void toolStripButtonManualSpotMode_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = !toolStripButtonManualSpotMode.Checked;
+            toolStripButtonManualSpotMode.Checked = !toolStripButtonManualSpotMode.Checked;
+        }
+
+        //マニュアルモードボタンのチェック状態が変更したとき
+        private void toolStripButtonManualSpotMode_CheckedChanged(object sender, EventArgs e)
+        {
+            toolStripComboBoxManualSpotSize.Visible = toolStripButtonManualSpotMode.Checked && FormProperty.radioButtonManualSpot.Checked;
+
+            if (toolStripButtonManualSpotMode.Checked)
+            {
+                toolStripButtonManualSpotMode.ForeColor = Color.Red;
+                toolStripSplitButtonFindSpots.Enabled = false;
+                FormProperty.tabControl.SelectedIndex = 4;
+                FormProperty.checkBoxManualMaskMode.Checked = true;
+            }
+            else
+            {
+                toolStripButtonManualSpotMode.ForeColor = Color.Gray;
+                toolStripSplitButtonFindSpots.Enabled = true;
+                FormProperty.checkBoxManualMaskMode.Checked = false;
+            }
+        }
+
+        private void toolStripComboBoxManualSpotSize_TextChanged(object sender, EventArgs e)
+        {
+            if (FormProperty.textBoxManualSpotSize.Text != toolStripComboBoxManualSpotSize.Text)
+                FormProperty.textBoxManualSpotSize.Text = toolStripComboBoxManualSpotSize.Text;
+        }
+
         #endregion
 
+        #region GetI Profileボタン関連
+        private void toolStripMenuItemAngleSetting_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.tabControl.SelectedIndex = 3;
 
-        //GetIntensityボタン
+        }
+
+        private void toolStripMenuItemConcenctricIntegration_Click(object sender, EventArgs e)
+        {
+            FormProperty.Visible = true;
+            FormProperty.radioButtonConcentric.Checked = true;
+            FormProperty.tabControl.SelectedIndex = 3;
+            FormProperty.Visible = true;
+
+        }
+
+        private void toolStripMenuItemRadialIntegration_Click(object sender, EventArgs e)
+        {
+
+            FormProperty.radioButtonRadial.Checked = true;
+            FormProperty.tabControl.SelectedIndex = 3;
+            FormProperty.Visible = true;
+
+
+        }
         public void toolStripSplitButtonGetProfile_ButtonClick(object sender, EventArgs e)
         {
             GetProfile();
@@ -2615,61 +3407,14 @@ namespace IPAnalyzer
         }
 
 
-
-        private void toolStripMenuItemProperty_Click(object sender, EventArgs e)
+        private void toolStripMenuItemSendProfileToPDIndexer_Click(object sender, EventArgs e)
         {
-            FormProperty.Visible = true;
-        }
-
-        private void toolStripMenuItemWaveSource_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 0;
-        }
-
-        private void toolStripMenuItemIPCondition_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-
-            FormProperty.tabControl.SelectedIndex = 1;
-        }
-        private void toolStripMenuItemIntegralRegion_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 2;
-        }
-        private void toolStripMenuItemIntegralProperty_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 3;
-        }
-        private void toolStripMenuItemManualMaskMode_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 4;
-        }
-        private void toolStripMenuItemAfterGetProfile_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 5;
-        }
-        private void toolStripMenuItemUnrolledImage_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 6;
-        }
-        private void toolStripMenuItemAssociatedExtensions_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 7;
-        }
-        private void toolStripMenuItemMiscellaneous_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 8;
+            FormProperty.checkBoxSendProfileToPDIndexer.Checked = !FormProperty.checkBoxSendProfileToPDIndexer.Checked;
         }
 
         #endregion
+
+        #region SaveProfile
 
         private void SaveProfile(DiffractionProfile dp, string filename="")
         {
@@ -2712,18 +3457,10 @@ namespace IPAnalyzer
                 sw.Close();
             }
         }
+        #endregion
 
-      //  private void SaveProfile(string filename, DiffractionProfile dp)
-    
-        public void SetMask()
-        {
-            //ここを呼び出す時には
-            //インテグラルプロパティをセット
-            SetIntegralProperty();
-            Ring.SetMask(FormProperty.checkBoxOmitSpots.Checked, FormProperty.checkBoxThresholdMin.Checked, FormProperty.checkBoxThresholdMax.Checked);
-        }
 
-        //public bool Skip = false;
+        #region IntegralArea_Changed
         public void IntegralArea_Changed(object sender, EventArgs e)
         {
             if (!IsImageReady || Skip) return;
@@ -2743,38 +3480,110 @@ namespace IPAnalyzer
             SetMask();
             Draw();
         }
+        #endregion
+
+        #region UnrolledImage
+        private void toolStripMenuItemSendUnrolledImage_Click(object sender, EventArgs e)
+        {
+            FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked = !FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked;
+        }
+
+        private void toolStripButtonCircumferentialBlur_Click(object sender, EventArgs e)
+        {
+            var formBlurAngle = new FormBlurAngle();
+            if (formBlurAngle.ShowDialog() == DialogResult.OK)
+            {
+                Ring.CircumferentialBlur(formBlurAngle.BlurAngle);
+                initializeFilter();
+                Draw();
+            }
+        }
+        #endregion
+
 
         #region 子フォームの立ち上げ、終了
 
+        #region Intensity Table
         private void toolStripButtonIntensityTable_CheckedChanged(object sender, EventArgs e)
-        {
-            FormIntTable.Visible = toolStripButtonIntensityTable.Checked;
-        }
+            => FormIntTable.Visible = toolStripButtonIntensityTable.Checked;
+        #endregion
 
+        #region Auto Procedure
         private void toolStripButtonAutoProcedure_CheckedChanged(object sender, EventArgs e)
-        {
-            FormAutoProc.Visible = toolStripButtonAutoProcedure.Checked;
-        }
+            => FormAutoProc.Visible = toolStripButtonAutoProcedure.Checked;
+        #endregion
 
+        #region Draw Ring
         private void toolStripButtonRing_CheckedChanged(object sender, EventArgs e)
         {
-           var loc = FormDrawRing.Location;
+            var loc = FormDrawRing.Location;
 
             FormDrawRing.Visible = toolStripButtonRing.Checked;
 
             FormDrawRing.Location = loc;
-           
-        }
 
-        private void toolStripButtonFindParameter_CheckedChanged(object sender, EventArgs e)
-        {
-            FormFindParameter.Visible = toolStripButtonFindParameter.Checked;
         }
+        #endregion
+
+
+
+        private void toolStripButtonFindParameter_CheckedChanged(object sender, EventArgs e) 
+            => FormFindParameter.Visible = toolStripButtonFindParameter.Checked;
 
         private void toolStripButtonImageSequence_CheckedChanged(object sender, EventArgs e)
         {
             FormSequentialImage.Visible = toolStripButtonImageSequence.Checked;
             FormSequentialImage.Location = new Point(this.Location.X + 50, this.Location.Y + 50);
+        }
+
+
+        /// <summary>
+        /// UnrolledImageの作成
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripSplitButtonUnroll_CheckChanged(object sender, EventArgs e)
+        {
+            if (!IsImageReady) return;
+            if (toolStripButtonUnroll.Checked)
+            {
+                //formProperty.radioButtonRadial.Checked = true;
+                FormProperty.tabControl.SelectedIndex = 6;
+                FormProperty.Visible = true;
+
+                if (MessageBox.Show("Check parameters!　This process will take few minutes if the resolution of the unrolled image is high. ", "", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    var sectorStep = Math.PI * (double)FormProperty.numericUpDownUnrollSectorStep.Value / 180.0;
+                    var xStart = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstart.Value / 180.0;
+                    var xEnd = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXend.Value / 180.0;
+                    var xStep = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstep.Value / 180.0;
+
+                    var sw = new Stopwatch();
+                    sw.Start();
+
+                    double[] imageArray = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
+
+                    this.toolStripStatusLabel.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
+
+                    byte[] scale = new byte[256];
+                    for (int i = 0; i < 256; i++)
+                        scale[i] = (byte)i;
+                    pseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
+
+                    scalablePictureBox.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
+                    scalablePictureBoxThumbnail.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
+                    Draw();
+                }
+                else
+                {
+                    toolStripButtonUnroll.Checked = false;
+                }
+            }
+            else
+            {
+                initializeFilter();
+                Draw();
+            }
         }
 
         #endregion
@@ -2834,485 +3643,16 @@ namespace IPAnalyzer
 
         #endregion
 
-
-        private void textBoxNumOnly_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '.' || e.KeyChar > '9') && e.KeyChar != '\b')
-                e.Handled = true;
-        }
-
-        private void aboutMeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAboutMe formAboutMe = new FormAboutMe();
-            formAboutMe.ShowDialog();
-        }
-
-        #region パラメータの読み書き
-
-        private void toolStripMenuItemReadParameter_Click(object sender, EventArgs e)
-        {
-            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
-            if (initialParameterDirectory != "")
-                dialog.InitialDirectory = initialParameterDirectory;
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                ReadParameter(dialog.FileName, ((ToolStripMenuItem)sender).Name.Contains("Interactively"));
-                initialParameterDirectory = Path.GetDirectoryName(dialog.FileName);
-            }
-        }
-
-        private void toolStripMenuItemSaveParameter_Click(object sender, EventArgs e)
-        {
-            var dialog = new SaveFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                SaveParameter(dialog.FileName, ((ToolStripMenuItem)sender).Name.Contains("Fully"));
-                initialParameterDirectory = Path.GetDirectoryName(dialog.FileName);
-            }
-        }
-
-
-        public string initialParameterDirectory;
-        public void SaveParameter(string filename, bool fullySave = true)
-        {
-            if (filename == "")
-            {
-                var dlg = new OpenFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
-                if (dlg.ShowDialog() == DialogResult.OK)
-                    filename = dlg.FileName;
-                else
-                    return;
-            }
-            if (!filename.EndsWith("prm"))
-                filename += ".prm";
-
-
-            fullySave = false;
-            try
-            {
-                DiffractionOptics.Parameter prm = new DiffractionOptics.Parameter();
-               
-                if (!fullySave)
-                {
-                    FormParameterOption.Text = "Save checked parameters";
-                    if (FormParameterOption.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
-                        return;
-                }
-                else
-                    FormParameterOption.AllCheck();
-
-                prm.SACLA_EH5 = (FormProperty.checkBoxSACLA.Checked) ? "True" : null;
-
-                if (FormProperty.checkBoxSACLA.Checked)
-                {
-                    prm.SACLA_EH5_CameraLength2 = FormProperty.saclaControl.CameraLength2.ToString();
-                    prm.SACLA_EH5_Phi = FormProperty.saclaControl.PhiDegree.ToString();
-                    prm.SACLA_EH5_Tau = FormProperty.saclaControl.TauDegree.ToString();
-                    prm.SACLA_EH5_PixelHeight = FormProperty.saclaControl.PixelHeight.ToString();
-                    prm.SACLA_EH5_PixelWidth = FormProperty.saclaControl.PixelWidth.ToString();
-                    prm.SACLA_EH5_PixleSize = FormProperty.saclaControl.PixelSize.ToString();
-                    prm.SACLA_EH5_FootX = FormProperty.saclaControl.Foot.X.ToString();
-                    prm.SACLA_EH5_FootY = FormProperty.saclaControl.Foot.Y.ToString();
-                }
-
-                prm.cameraMode = (FormParameterOption.CameraModeChecked) ? (FormProperty.radioButtonFlatPanel.Checked ? "FlatPanel" : "Gandolfi") : null;
-
-                prm.waveSource = (FormParameterOption.WaveLengthChecked) ? ((int)FormProperty.waveLengthControl.WaveSource).ToString() : null;
-                prm.waveLength = (FormParameterOption.WaveLengthChecked) ? FormProperty.WaveLengthText : null;
-
-                prm.xRayElement = (FormParameterOption.WaveLengthChecked) ? FormProperty.waveLengthControl.XrayWaveSourceElementNumber.ToString() : null;
-                prm.xRayLine = (FormParameterOption.WaveLengthChecked) ? ((int)FormProperty.waveLengthControl.XrayWaveSourceLine).ToString() : null;
-
-                prm.cameraLength = (FormParameterOption.CameraLengthChecked) ? FormProperty.CameraLengthText : null;
-
-                prm.pixSizeX = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericBoxPixelSizeX.Text : null;
-                prm.pixSizeY = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericBoxPixelSizeY.Text : null;
-                prm.pixKsi = (FormParameterOption.PixelShapeChecked) ? FormProperty.numericalTextBoxPixelKsi.Text : null;
-
-                prm.tiltPhi = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericBoxTiltCorrectionPhi.Text : null;
-                prm.tiltTau = (FormParameterOption.TiltCorrectionChecked) ? FormProperty.numericBoxTiltCorrectionTau.Text : null;
-
-                prm.centerX = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericBoxCenterPositionX.Text : null;
-                prm.centerY = (FormParameterOption.CenterPositionChecked) ? FormProperty.numericBoxCenterPositionY.Text : null;
-
-                prm.sphericalRadiusInverse = (FormParameterOption.SphericalCorrectionChecked) ? FormProperty.numericalTextBoxSphericalCorections.Text : null;
-
-                prm.GandolfiRadius = (FormParameterOption.GandolfiRadiusChecked) ? FormProperty.numericBoxGandlfiRadius.Text : null;
-
-                //IntegralRegion
-                if (FormParameterOption.IntegralRegionChecked)
-                {
-                    prm.RegionMode = FormProperty.radioButtonRectangle.Checked ? "Rectangle" : "Sector";
-
-                    prm.RectangleDirection = FormProperty.comboBoxRectangleDirection.SelectedIndex.ToString();
-                    prm.RectangleBothSide = FormProperty.checkBoxRectangleIsBothSide.Checked ? "True" : "False";
-                    prm.RectangleBandWidth = FormProperty.numericUpDownRectangleBand.Value.ToString();
-                    prm.RectangleAngle = FormProperty.numericUpDownRectangleAngle.Value.ToString();
-
-                    prm.SectorStart = FormProperty.numericUpDownSectorStartAngle.Value.ToString();
-                    prm.SectorEnd = FormProperty.numericUpDownSectorEndAngle.Value.ToString();
-                }
-
-                //IntegralRegion
-                if (FormParameterOption.IntegralPropertyChecked)
-                {
-                    prm.IntegrationMode = FormProperty.radioButtonConcentric.Checked ? "Concentric" : "Radial";
-
-                    prm.ConcentricUnit = FormProperty.radioButtonConcentricAngle.Checked ? "Angle" : FormProperty.radioButtonConcentricLength.Checked ? "Length" : "d-spacing";
-                    prm.ConcentricStart = FormProperty.numericBoxConcentricStart.Text;
-                    prm.ConcentricEnd = FormProperty.numericBoxConcentricEnd.Text;
-                    prm.ConcentricStep = FormProperty.numericBoxConcentricStep.Text;
-
-                    prm.RadialUnit = FormProperty.radioButtonRadialAngle.Checked ? "Angle" : "d-spacing";
-                    prm.RadialRadius = FormProperty.numericBoxRadialRadius.Text;
-                    prm.RadialWidth = FormProperty.numericBoxRadialRange.Text;
-                    prm.RadialStep = FormProperty.numericBoxRadialStep.Text;
-                }
-
-                System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(DiffractionOptics.Parameter));
-                System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Create);
-                serializer.Serialize(fs, prm);
-                fs.Close();
-
-            }
-            catch { MessageBox.Show("Failed to save the file. Sorry."); }
-
-        }
-
-
-
-        public void ReadParameter(string filename, bool fullyRead = true)
-        {
-            if (filename == "")
-            {
-                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
-                if (dlg.ShowDialog() == DialogResult.OK)
-                    filename = dlg.FileName;
-                else
-                    return;
-            }
-
-
-            fullyRead = false;
-            //イベントをスキップ
-            skipSelectedAreaChangedEvent = true;
-            Skip = true;
-
-            try
-            {
-                DiffractionOptics.Parameter prm = DiffractionOptics.Read(filename);
-
-                if (!fullyRead)
-                {
-                    FormParameterOption.Text = "Read checked parameters";
-                    FormParameterOption.Location = new Point(this.Location.X+100,this.Location.Y+100);
-                    if (FormParameterOption.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
-                        return;
-                }
-                else
-                    FormParameterOption.AllCheck();
-
-
-                FormProperty.checkBoxSACLA.Checked = prm.SACLA_EH5 == "True";
-                if (prm.SACLA_EH5 == "True")
-                {
-                    if (prm.SACLA_EH5_CameraLength2 != null)
-                        FormProperty.saclaControl.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_CameraLength2);
-                    else
-                        FormProperty.saclaControl.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_Distance);
-
-                    FormProperty.saclaControl.PixelHeight = Convert.ToDouble(prm.SACLA_EH5_PixelHeight);
-                    FormProperty.saclaControl.PixelWidth = Convert.ToDouble(prm.SACLA_EH5_PixelWidth);
-                    FormProperty.saclaControl.PixelSize = Convert.ToDouble(prm.SACLA_EH5_PixleSize);
-
-                    FormProperty.saclaControl.Foot = new PointD(Convert.ToDouble(prm.SACLA_EH5_FootX), Convert.ToDouble(prm.SACLA_EH5_FootY));
-
-                    if (prm.SACLA_EH5_Phi != null)
-                    {
-                        FormProperty.saclaControl.PhiDegree = Convert.ToDouble(prm.SACLA_EH5_Phi);
-                        FormProperty.saclaControl.TauDegree = Convert.ToDouble(prm.SACLA_EH5_Tau);
-                    }
-                    else
-                    {
-                        FormProperty.saclaControl.PhiDegree = 0;
-                        FormProperty.saclaControl.TauDegree = Convert.ToDouble(prm.SACLA_EH5_TwoTheta);
-                    }
-                }
-
-                //Camera Mode
-                if (FormParameterOption.CameraModeChecked)
-                {
-                    if (prm.cameraMode == null || prm.cameraMode == "FlatPanel")
-                    {
-                        FormProperty.radioButtonFlatPanel.Checked = true;
-                        FormProperty.radioButtonGandlfi.Checked = false;
-                    }
-                    else
-                    {
-                        FormProperty.radioButtonFlatPanel.Checked = false;
-                        FormProperty.radioButtonGandlfi.Checked = true;
-                    }
-                }
-
-                //WaveProperty
-                if (FormParameterOption.WaveLengthChecked)
-                {
-                    if (prm.waveSource != null)
-                        FormProperty.waveLengthControl.WaveSource = (WaveSource)Convert.ToInt32(prm.waveSource);
-
-                    if (prm.xRayElement != null)
-                        FormProperty.waveLengthControl.XrayWaveSourceElementNumber = Convert.ToInt32(prm.xRayElement);
-                    if (prm.xRayLine != null)
-                        FormProperty.waveLengthControl.XrayWaveSourceLine = (Crystallography.XrayLine)Convert.ToInt32(prm.xRayLine);
-
-                    if (prm.waveLength != null && (FormProperty.waveLengthControl.WaveSource == WaveSource.Electron || FormProperty.waveLengthControl.XrayWaveSourceElementNumber == 0))
-                        FormProperty.WaveLengthText = prm.waveLength;
-                }
-
-                if (FormParameterOption.CameraLengthChecked && prm.cameraLength != null)
-                    FormProperty.CameraLengthText = prm.cameraLength;
-
-                if (FormParameterOption.PixelShapeChecked)
-                {
-                    if (prm.pixSizeX != null)
-                    {
-                        FormProperty.numericBoxPixelSizeX.Text = prm.pixSizeX;
-                        FormProperty.numericBoxPixelSizeY.Text = prm.pixSizeY;
-                    }
-                    else if (prm.pixSize != null)
-                    {
-                        FormProperty.numericBoxPixelSizeX.Text = prm.pixSize;
-                        FormProperty.numericBoxPixelSizeY.Text = (Convert.ToDouble(prm.pixSize) * Convert.ToDouble(prm.aspectRatio)).ToString();
-                    }
-                    if (prm.pixKsi != null)
-                        FormProperty.numericalTextBoxPixelKsi.Text = prm.pixKsi;
-
-                }
-
-                //CenterPorition
-                if (FormParameterOption.CenterPositionChecked && prm.centerX != null)
-                {
-                    FormProperty.numericBoxCenterPositionX.Text = prm.centerX;
-                    FormProperty.numericBoxCenterPositionY.Text = prm.centerY;
-                }
-
-                //TiltCorrection
-                if (FormParameterOption.TiltCorrectionChecked && prm.tiltPhi != null)
-                {
-                    FormProperty.numericBoxTiltCorrectionPhi.Text = prm.tiltPhi;
-                    FormProperty.numericBoxTiltCorrectionTau.Text = prm.tiltTau;
-                }
-
-                //SphericalRadius
-                if (FormParameterOption.TiltCorrectionChecked && prm.sphericalRadiusInverse != null)
-                    FormProperty.numericalTextBoxSphericalCorections.Text = prm.sphericalRadiusInverse;
-
-                //GandolfiRadius
-                if (FormParameterOption.GandolfiRadiusChecked && prm.GandolfiRadius != null)
-                    FormProperty.numericBoxGandlfiRadius.Text = prm.GandolfiRadius;
-
-
-
-                //IntegralRegion
-                if (FormParameterOption.IntegralRegionChecked)
-                {
-                    if (prm.RegionMode != null)
-                    {
-                        FormProperty.radioButtonRectangle.Checked = prm.RegionMode == "Rectangle";
-                        FormProperty.radioButtonSector.Checked = prm.RegionMode == "Sector";
-                    }
-
-                    if (prm.RectangleDirection != null)
-                        FormProperty.comboBoxRectangleDirection.SelectedIndex = Convert.ToInt32(prm.RectangleDirection);
-                    if (prm.RectangleBothSide != null)
-                        FormProperty.checkBoxRectangleIsBothSide.Checked = prm.RectangleBothSide == "True";
-                    if (prm.RectangleBandWidth != null)
-                        FormProperty.numericUpDownRectangleBand.Value = Convert.ToDecimal(prm.RectangleBandWidth);
-                    if (prm.RectangleAngle != null)
-                        FormProperty.numericUpDownRectangleAngle.Value = Convert.ToDecimal(prm.RectangleAngle);
-
-                    if (prm.SectorStart != null)
-                        FormProperty.numericUpDownSectorStartAngle.Value = Convert.ToDecimal(prm.SectorStart);
-                    if (prm.SectorEnd != null)
-                        FormProperty.numericUpDownSectorEndAngle.Value = Convert.ToDecimal(prm.SectorEnd);
-                }
-
-                //IntegralProperty
-                if (FormParameterOption.IntegralPropertyChecked)
-                {
-                    if (prm.IntegrationMode != null)
-                    {
-                        FormProperty.radioButtonConcentric.Checked = prm.IntegrationMode == "Concentric";
-                        FormProperty.radioButtonRadial.Checked = prm.IntegrationMode == "Radial";
-                    }
-
-                    if (prm.ConcentricUnit != null)
-                    {
-                        FormProperty.radioButtonConcentricAngle.Checked = prm.ConcentricUnit == "Angle";
-                        FormProperty.radioButtonConcentricLength.Checked = prm.ConcentricUnit == "Length";
-                        FormProperty.radioButtonConcentricDspacing.Checked = prm.ConcentricUnit == "d-spacing";
-                    }
-                    if (prm.ConcentricStart != null)
-                        FormProperty.numericBoxConcentricStart.Text = prm.ConcentricStart;
-                    if (prm.ConcentricEnd != null)
-                        FormProperty.numericBoxConcentricEnd.Text = prm.ConcentricEnd;
-                    if (prm.ConcentricStep != null)
-                        FormProperty.numericBoxConcentricStep.Text = prm.ConcentricStep;
-
-                    if (prm.RadialUnit != null)
-                    {
-                        FormProperty.radioButtonRadialAngle.Checked = prm.RadialUnit == "Angle";
-                        FormProperty.radioButtonRadialDspacing.Checked = prm.RadialUnit == "d-spacing";
-                    }
-
-                    if (prm.RadialRadius != null)
-                        FormProperty.numericBoxRadialRadius.Text = prm.RadialRadius;
-                    if (prm.RadialWidth != null)
-                        FormProperty.numericBoxRadialRange.Text = prm.RadialWidth;
-                    if (prm.RadialStep != null)
-                        FormProperty.numericBoxRadialStep.Text = prm.RadialStep;
-                }
-
-                
-            }
-            catch { MessageBox.Show("Failed to read the file. Sorry."); }
-            //イベントスキップを解除
-            skipSelectedAreaChangedEvent = false;
-            Skip = false;
-            IntegralArea_Changed(new object(),new EventArgs());
-
-            FormProperty.SaveParameterForEachImageType(Ring.ImageType);
-        }
-
-        /*
-        [Serializable()]
-        public class Parameter
-        {
-            /// <summary>
-            /// "FlatPanel" か "Gandolfi"
-            /// </summary>
-            public string cameraMode;
-
-            public string SACLA_EH5;
-            public string SACLA_EH5_PixelWidth;
-            public string SACLA_EH5_PixelHeight;
-            public string SACLA_EH5_PixleSize;
-            public string SACLA_EH5_TwoTheta;
-            public string SACLA_EH5_Distance;
-            public string SACLA_EH5_FootX;
-            public string SACLA_EH5_FootY;
-
-            public string waveSource;
-            public string electronEnergy;
-
-            public string xRayElement;
-            public string xRayLine;
-            public string waveLength;
-
-            public string cameraLength;
-            public string pixSize;
-            public string pixSizeX;
-            public string pixSizeY;
-            public string pixKsi;
-            public string aspectRatio;
-            public string tiltPhi;
-            public string tiltTau;
-            public string centerX;
-            public string centerY;
-            public string sphericalRadiusInverse;
-            public string GandolfiRadius;
-
-            /// <summary>
-            /// Concentric か Radial
-            /// </summary>
-            public string IntegrationMode;
-
-            public string ConcentricStart;
-            public string ConcentricEnd;
-            public string ConcentricStep;
-            /// <summary>
-            /// Angle, Length, d-spacing
-            /// </summary>
-            public string ConcentricUnit;
-
-            public string RadialRadius;
-            public string RadialWidth;
-            public string RadialStep;
-            /// <summary>
-            /// Angle, d-spacing
-            /// </summary>
-            public string RadialUnit;
-
-            //Rectangle or Sector
-            public string RegionMode;
-
-            public string RectangleDirection;
-            public string RectangleBandWidth;
-            public string RectangleBothSide;
-            public string RectangleAngle;
-
-            public string SectorStart;
-            public string SectorEnd;
-
-            public string ExceptMaskedSpots;
-            public string ExceptEdges;
-            public string ExceptOver;
-            public string ExceptUnder;
-
-
-
-
-        }
-        */
-
-        #endregion
-
-
-
-        private void webPageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Thread.CurrentThread.CurrentUICulture.ToString().Contains("ja"))
-                    System.Diagnostics.Process.Start("http://pmsl.planet.sci.kobe-u.ac.jp/~seto/software/IPAnalyzer/ja/IPAnalyzerHelp.html");
-                else
-                    System.Diagnostics.Process.Start("http://pmsl.planet.sci.kobe-u.ac.jp/~seto/software/IPAnalyzer/en/IPAnalyzerHelp.html");
-
-
-            }
-            catch { }
-        }
-
+        #region Whole image / Near centerの切り替え
         public bool thumbnailmode = false;
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             thumbnailmode = !thumbnailmode;
             Draw();
         }
+        #endregion
 
-
-        public void toolStripSplitButtonBackground_ButtonClick(object sender, EventArgs e)
-        {
-            if (!IsImageReady) return;
-            SetIntegralProperty();
-            try
-            {
-                double upper = Convert.ToDouble(toolStripComboBoxBackgroundUpper.Text) * 0.01;
-                double lower = Convert.ToDouble(toolStripComboBoxBackgroundLower.Text) * 0.01;
-                Draw();
-            }
-            catch
-            { return; }
-
-        }
-
-        private void resetToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Draw();
-        }
-
-
-
+        #region KeyDown, KeyUpイベント
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.Shift && e.KeyCode == Keys.C)
@@ -3348,127 +3688,11 @@ namespace IPAnalyzer
             }
         }
 
-        #region Maskファイルの読み書き
-        public string initialMaskDirectory;
-        private void toolStripMenuItemReadMask_Click(object sender, EventArgs e)
-        {
-            var dlg = new OpenFileDialog() { Filter = "Mask file; *.mas|*.mas" };
-            if (initialMaskDirectory != "")
-                dlg.InitialDirectory = initialMaskDirectory;
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                ReadMask(dlg.FileName);
-                initialMaskDirectory = Path.GetDirectoryName(dlg.FileName);
-            }
-        }
-
-        public void ReadMask(string filename)
-        {
-            if (filename == "")
-            {
-                var dlg = new SaveFileDialog { Filter = "*.mas|*.mas" };
-                if (dlg.ShowDialog() == DialogResult.OK)
-                    filename = dlg.FileName;
-                else
-                    return;
-            }
-
-            try
-            {
-                var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.ReadWrite));
-                var mask = new bool[br.ReadInt32()];
-                int n = 0;
-                for (int i = 0; i < mask.Length / 8; i++)
-                {
-                    byte b = br.ReadByte();
-                    for (int j = 0; j < 8; j++)
-                    {
-                        mask[n++] = (b & 1) == 1;
-                        b >>= 1;
-                    }
-                }
-                br.Close();
-                if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Count)
-                {
-                    for (int i = 0; i < mask.Length; i++)
-                        Ring.IsSpots[i] = mask[i];
-
-                    SetMask();
-                    Draw();
-                }
-            }
-            catch { }
-        }
-
-
-        public void toolStripMenuItemSaveMask_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "Mask file; *.mas|*.mas";
-            if (dlg.ShowDialog() == DialogResult.OK)
-                SaveMask(dlg.FileName);
-        }
-
-        public void SaveMask(string fileName)
-        {
-            if (fileName == "")
-            {
-                var dlg = new OpenFileDialog { Filter = "*.mas|*.mas" };
-                if (dlg.ShowDialog() == DialogResult.OK)
-                    fileName = dlg.FileName;
-                else
-                    return;
-                if (!fileName.EndsWith("mas"))
-                    fileName += ".mas";
-            }
-
-            var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite));
-            br.Write(Ring.IsSpots.Count);
-            int n = 0;
-            for (int i = 0; i < Ring.IsSpots.Count / 8; i++)
-            {
-                byte b = 0;
-                byte m = 1;
-                for (int j = 0; j < 8; j++)
-                {
-                    if (Ring.IsSpots[n++])
-                        b += m;
-                    m *= 2;
-                }
-                br.Write(b);
-
-            }
-            br.Close();
-
-        }
         #endregion
 
+        #region 強度ヒストグラム関連
 
-
-
-        private void hintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.Hint;
-            InitialDialog.Visible = true;
-        }
-
-        private void licenseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.License;
-            InitialDialog.Visible = true;
-        }
-
-        private void versionHistoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitialDialog.DialogMode = Crystallography.Controls.CommonDialog.DialogModeEnum.History;
-            InitialDialog.Visible = true;
-        }
-
-
-
-        double maxIntensity = uint.MinValue;
-        double sumOfIntensity = 0;
-        double variance = 0;
+      
         public void SetFrequencyProfile()
         {
             maxIntensity = uint.MinValue;
@@ -3489,8 +3713,6 @@ namespace IPAnalyzer
             graphControlFrequency.Profile = frequencyProfile;
             variance = Math.Sqrt((Ring.Intensity.Count * sumOfSquare - sumOfIntensity * sumOfIntensity) / Ring.Intensity.Count / (Ring.Intensity.Count - 1));
         }
-
-
 
         private void graphControlFrequency_LinePositionChanged()
         {
@@ -3514,212 +3736,9 @@ namespace IPAnalyzer
             }
         }
 
-        private void resetFrequencyProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetFrequencyProfile();
-        }
+        #endregion
 
-        private void calibrateRaxisImageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCalibrateIntensity.Show();
-        }
-
-        private void fourierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            double[][] valueGray = new double[Ring.SrcImgSize.Height][];
-            int n = 0;
-            for (int y = 0; y < Ring.SrcImgSize.Height; y++)
-            {
-                valueGray[y] = new double[Ring.SrcImgSize.Width];
-                for (int x = 0; x < Ring.SrcImgSize.Width; x++)
-                    valueGray[y][x] = Ring.Intensity[n++];
-            }
-            Complex[][] reverse = Fourier.FFT(valueGray);
-            //return new PseudoBitmap(, scale, scale, scale, normarize, false);
-            byte[] scale = new byte[256];
-            for (int i = 0; i < 256; i++)
-                scale[i] = (byte)i;
-
-            pseudoBitmap = new PseudoBitmap(reverse, scale, scale, scale, false, false);
-            scalablePictureBox.PseudoBitmap = pseudoBitmap;
-            scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
-            Draw();
-        }
-
-        private void toolStripMenuItemAngleSetting_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 3;
-
-        }
-
-        private void toolStripMenuItemConcenctricIntegration_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.radioButtonConcentric.Checked = true;
-            FormProperty.tabControl.SelectedIndex = 3;
-            FormProperty.Visible = true;
-
-        }
-
-        private void toolStripMenuItemRadialIntegration_Click(object sender, EventArgs e)
-        {
-
-            FormProperty.radioButtonRadial.Checked = true;
-            FormProperty.tabControl.SelectedIndex = 3;
-            FormProperty.Visible = true;
-
-
-        }
-
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Close();
-
-        /// <summary>
-        /// UnrolledImageの作成
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripSplitButtonUnroll_CheckChanged(object sender, EventArgs e)
-        {
-            if (!IsImageReady) return;
-            if (toolStripButtonUnroll.Checked)
-            {
-                //formProperty.radioButtonRadial.Checked = true;
-                FormProperty.tabControl.SelectedIndex = 6;
-                FormProperty.Visible = true;
-
-                if (MessageBox.Show("Check parameters!　This process will take few minutes if the resolution of the unrolled image is high. ", "", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    var sectorStep = Math.PI * (double)FormProperty.numericUpDownUnrollSectorStep.Value / 180.0;
-                    var xStart = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstart.Value / 180.0;
-                    var xEnd = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXend.Value / 180.0;
-                    var xStep = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstep.Value / 180.0;
-
-                    var sw = new Stopwatch();
-                    sw.Start();
-
-                    double[] imageArray = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
-
-                    this.toolStripStatusLabel.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
-
-                    byte[] scale = new byte[256];
-                    for (int i = 0; i < 256; i++)
-                        scale[i] = (byte)i;
-                    pseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
-
-                    scalablePictureBox.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
-                    scalablePictureBoxThumbnail.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
-                    //setScale();
-                    Draw();
-                }
-                else
-                {
-                    toolStripButtonUnroll.Checked = false;
-                }
-            }
-            else
-            {
-                initializeFilter();
-                //setScale();
-                Draw();
-            }
-        }
-
-        private void toolStripButtonFixCenter_Click(object sender, EventArgs e)
-        {
-            FormProperty.checkBoxFixCenter.Checked = !FormProperty.checkBoxFixCenter.Checked;
-        }
-
-        private void toolStripButtonFixCenter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (toolStripButtonFixCenter.Checked)
-            {
-                toolStripButtonFixCenter.ForeColor = Color.Red;
-                toolStripSplitButtonFindCenter.Enabled = false;
-            }
-            else
-            {
-                toolStripButtonFixCenter.ForeColor = Color.Gray;
-                toolStripSplitButtonFindCenter.Enabled = true;
-
-            }
-        }
-
-        //マニュアルモードボタンがクリックされた時の反応
-        private void toolStripButtonManualSpotMode_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = !toolStripButtonManualSpotMode.Checked;
-            toolStripButtonManualSpotMode.Checked = !toolStripButtonManualSpotMode.Checked;
-        }
-
-        //マニュアルモードボタンのチェック状態が変更したとき
-        private void toolStripButtonManualSpotMode_CheckedChanged(object sender, EventArgs e)
-        {
-            toolStripComboBoxManualSpotSize.Visible = toolStripButtonManualSpotMode.Checked && FormProperty.radioButtonManualSpot.Checked;
-
-            if (toolStripButtonManualSpotMode.Checked)
-            {
-                toolStripButtonManualSpotMode.ForeColor = Color.Red;
-                toolStripSplitButtonFindSpots.Enabled = false;
-                FormProperty.tabControl.SelectedIndex = 4;
-                FormProperty.checkBoxManualMaskMode.Checked = true;
-            }
-            else
-            {
-                toolStripButtonManualSpotMode.ForeColor = Color.Gray;
-                toolStripSplitButtonFindSpots.Enabled = true;
-                FormProperty.checkBoxManualMaskMode.Checked = false;
-            }
-        }
-
-        private void toolStripComboBoxManualSpotSize_TextChanged(object sender, EventArgs e)
-        {
-            if (FormProperty.textBoxManualSpotSize.Text != toolStripComboBoxManualSpotSize.Text)
-                FormProperty.textBoxManualSpotSize.Text = toolStripComboBoxManualSpotSize.Text;
-        }
-
-        private void toolStripMenuItemSendProfileToPDIndexer_Click(object sender, EventArgs e)
-        {
-            FormProperty.checkBoxSendProfileToPDIndexer.Checked = !FormProperty.checkBoxSendProfileToPDIndexer.Checked;
-        }
-
-        private void toolStripMenuItemSendUnrolledImage_Click(object sender, EventArgs e)
-        {
-            FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked = !FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked;
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-
-            FormCalibrateIntensity.Visible = true;
-        }
-
-        private void toolStripComboBoxManualSpotSize_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void toolStripButtonCircumferentialBlur_Click(object sender, EventArgs e)
-        {
-            FormBlurAngle formBlurAngle = new FormBlurAngle();
-            if (formBlurAngle.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                Ring.CircumferentialBlur(formBlurAngle.BlurAngle);
-                initializeFilter();
-                Draw();
-            }
-        }
-
-
-        private void languageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            englishToolStripMenuItem.Checked = ((ToolStripMenuItem)sender).Name.Contains("english");
-            japaneseToolStripMenuItem.Checked = !englishToolStripMenuItem.Checked;
-            Thread.CurrentThread.CurrentUICulture = englishToolStripMenuItem.Checked ? new System.Globalization.CultureInfo("en") : new System.Globalization.CultureInfo("ja");
-            Language.Change(this);
-        }
-
+        #region Program updates
         private void programUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toolStripProgressBar.Visible = true;
@@ -3804,14 +3823,15 @@ namespace IPAnalyzer
         private void reportProgress((long current, long total, long elapsedMilliseconds, string message) o)
             => reportProgress(o.current, o.total, o.elapsedMilliseconds, o.message);
 
+        #endregion
 
+        #region Sequential Image関連ｎ
         private void toolStripMenuItemAllSequentialImages_CheckedChanged(object sender, EventArgs e)
         {
             if (toolStripMenuItemAllSequentialImages.Checked)
                 toolStripMenuItemSelectedSequentialImages.Checked = false;
 
             FormSequentialImage.setRadio();
-
         }
 
         private void toolStripMenuItemSelectedSequentialImages_CheckedChanged(object sender, EventArgs e)
@@ -3820,9 +3840,9 @@ namespace IPAnalyzer
                 toolStripMenuItemAllSequentialImages.Checked = false;
             FormSequentialImage.setRadio();
         }
+        #endregion
 
-
-
+        #region Rotate, Pollalization処理
         public void FlipRotate_Pollalization_Background(bool zoomReset = true)
         {
             if (Skip) return;
@@ -3924,22 +3944,7 @@ namespace IPAnalyzer
                 scalablePictureBox.Zoom = 0;
         }
 
-
-        private void flipHorizontallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
-        {
-            FlipRotate_Pollalization_Background();
-        }
-
-        private void flipVerticallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
-        {
-            FlipRotate_Pollalization_Background();
-        }
-
-        private void toolStripComboBoxRotate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FlipRotate_Pollalization_Background();
-        }
-
+        #endregion
 
         #region
         /*
@@ -4219,15 +4224,13 @@ namespace IPAnalyzer
             }
         }
 
-        #endregion
-
         bool skipSelectedAreaChangedEvent = false;
         private void numericUpDownSelectedArea_ValueChanged(object sender, EventArgs e)
         {
             if (skipSelectedAreaChangedEvent)
                 return;
             double left = Math.Max((double)Math.Min(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value), 0);
-            double right =Math.Min( (double)Math.Max(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value),Ring.SrcImgSize.Width-1);
+            double right = Math.Min((double)Math.Max(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value), Ring.SrcImgSize.Width - 1);
             double top = Math.Max((double)Math.Min(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), 0);
             double bottom = Math.Min((double)Math.Max(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), Ring.SrcImgSize.Height - 1);
 
@@ -4235,53 +4238,13 @@ namespace IPAnalyzer
             scalablePictureBox.Refresh();
 
             SetStasticalInformation(true);
-
-
         }
-
-        #region マクロ関連
-
-
-        public void SetMacroToMenu(string[] name)
-        {
-            if (macroToolStripMenuItem.DropDownItems.Count == 1)
-                macroToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
-            for (int i = macroToolStripMenuItem.DropDownItems.Count-1; i > 1; i--)
-                macroToolStripMenuItem.DropDownItems.RemoveAt(i);
-
-
-            for (int i = 0; i < name.Length; i++) 
-            {
-                var item = new ToolStripMenuItem(name[i]);
-                item.Name = name[i];
-                item.Click += macroMenuItem_Click;
-                macroToolStripMenuItem.DropDownItems.Add(item);
-            }
-        }
-
-        void macroMenuItem_Click(object sender, EventArgs e)
-        {
-            FormMacro.RunMacroName(((ToolStripMenuItem)sender).Name, false);
-        }
-
-        private void ngenCompileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ngen.Compile();
-        }
-
-        private void ToolStripMenuItemReferenceBackground_Click(object sender, EventArgs e)
-        {
-            FormProperty.Visible = true;
-            FormProperty.tabControl.SelectedIndex = 9;
-        }
-
-  
-
 
         #endregion
 
+        #region IPAのマクロ操作を提供するサブクラス
         /// <summary>
-        /// IPAのマクロ操作を提供する
+        /// IPAのマクロ操作を提供するサブクラス
         /// </summary>
         public class Macro: MacroBase
         {
@@ -4793,6 +4756,8 @@ namespace IPAnalyzer
                 public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
                 public void SaveMask(string fileName = "") => Execute(new Action(() => p.main.SaveMask(fileName)));
 
+                public void ResetMask(string fileName = "") => Execute(new Action(() => p.main.ClearMask()));
+
             }
             #endregion
 
@@ -4984,19 +4949,7 @@ namespace IPAnalyzer
 
         #endregion
 
-        private void process1_Exited(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormMacro.Visible = true;
-        }
-
-
-
-
+        #endregion
 
 
     }

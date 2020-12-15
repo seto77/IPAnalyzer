@@ -188,6 +188,7 @@ namespace IPAnalyzer
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItemReadMask = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSaveMask = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearMaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -235,7 +236,6 @@ namespace IPAnalyzer
             this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.process1 = new System.Diagnostics.Process();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.RightToolStripPanel.SuspendLayout();
@@ -300,8 +300,8 @@ namespace IPAnalyzer
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             this.helpProvider.SetShowHelp(this.toolStripContainer1.TopToolStripPanel, ((bool)(resources.GetObject("toolStripContainer1.TopToolStripPanel.ShowHelp"))));
             // 
             // statusStrip1
@@ -1133,7 +1133,7 @@ namespace IPAnalyzer
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
             resources.ApplyResources(this.resetToolStripMenuItem, "resetToolStripMenuItem");
-            this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
+            this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetBackgroundToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -1314,7 +1314,6 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxManualSpotSize.Items7"),
             resources.GetString("toolStripComboBoxManualSpotSize.Items8")});
             this.toolStripComboBoxManualSpotSize.Name = "toolStripComboBoxManualSpotSize";
-            this.toolStripComboBoxManualSpotSize.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStripComboBoxManualSpotSize_Paint);
             this.toolStripComboBoxManualSpotSize.TextChanged += new System.EventHandler(this.toolStripComboBoxManualSpotSize_TextChanged);
             // 
             // toolStripSeparator2
@@ -1504,6 +1503,7 @@ namespace IPAnalyzer
             this.toolStripSeparator13,
             this.toolStripMenuItemReadMask,
             this.toolStripMenuItemSaveMask,
+            this.clearMaskToolStripMenuItem,
             this.toolStripSeparator4,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -1575,6 +1575,12 @@ namespace IPAnalyzer
             this.toolStripMenuItemSaveMask.Name = "toolStripMenuItemSaveMask";
             resources.ApplyResources(this.toolStripMenuItemSaveMask, "toolStripMenuItemSaveMask");
             this.toolStripMenuItemSaveMask.Click += new System.EventHandler(this.toolStripMenuItemSaveMask_Click);
+            // 
+            // clearMaskToolStripMenuItem
+            // 
+            this.clearMaskToolStripMenuItem.Name = "clearMaskToolStripMenuItem";
+            resources.ApplyResources(this.clearMaskToolStripMenuItem, "clearMaskToolStripMenuItem");
+            this.clearMaskToolStripMenuItem.Click += new System.EventHandler(this.clearMaskToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -1890,17 +1896,6 @@ namespace IPAnalyzer
             // 
             this.toolTip.IsBalloon = true;
             // 
-            // process1
-            // 
-            this.process1.StartInfo.Domain = "";
-            this.process1.StartInfo.LoadUserProfile = false;
-            this.process1.StartInfo.Password = null;
-            this.process1.StartInfo.StandardErrorEncoding = null;
-            this.process1.StartInfo.StandardOutputEncoding = null;
-            this.process1.StartInfo.UserName = "";
-            this.process1.SynchronizingObject = this;
-            this.process1.Exited += new System.EventHandler(this.process1_Exited);
-            // 
             // FormMain
             // 
             this.AllowDrop = true;
@@ -2142,7 +2137,6 @@ namespace IPAnalyzer
         private Label label21;
         private Label label15;
         private TextBox textBoxStatisticsSelectedAreaSequential;
-        private System.Diagnostics.Process process1;
         private ToolStripMenuItem macroToolStripMenuItem;
         private ToolStripMenuItem editorToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator27;
@@ -2164,6 +2158,7 @@ namespace IPAnalyzer
         private ToolStripSeparator toolStripSeparator29;
         private TrackBarAdvanced trackBarAdvancedMinInt;
         private TrackBarAdvanced trackBarAdvancedMaxInt;
+        private ToolStripMenuItem clearMaskToolStripMenuItem;
         //private ScalablePictureBox scalablePictureBox;
 
 
