@@ -14,6 +14,7 @@ namespace IPAnalyzer
 
         static public string History = 
             "History" +
+            "\r\n ver3.904(2020/12/18) Improved macro functions." +
             "\r\n ver3.903(2020/12/11) Fixed a bug when loading TIFF format." +
             "\r\n ver3.902(2020/12/02) Fixed minor bugs." +
             "\r\n ver3.901(2020/11/17) Added a new image format (*.raw file used in PF)" + 

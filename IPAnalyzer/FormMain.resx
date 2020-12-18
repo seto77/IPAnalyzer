@@ -328,7 +328,7 @@
     <value>scalablePictureBoxThumbnail</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.12.14.1152, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Parent" xml:space="preserve">
     <value>panel3</value>
@@ -754,7 +754,7 @@
     <value>scalablePictureBox</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.12.14.1152, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -1678,7 +1678,7 @@
     <value>trackBarAdvancedMinInt</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2020.12.14.1152, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -1726,7 +1726,7 @@
     <value>trackBarAdvancedMaxInt</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2020.12.14.1152, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -1873,7 +1873,7 @@
     <value>graphControlFrequency</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.12.14.1152, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -1936,7 +1936,7 @@
     <value>graphControlProfile</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.12.14.1152, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -2648,8 +2648,7 @@ Procedure</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonRing.ToolTipText" xml:space="preserve">
-    <value>Draw debye ring on image accoding to the current IP condition.
-</value>
+    <value>Draw debye ring on image accoding to the current IP condition.</value>
   </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 6</value>
@@ -2828,7 +2827,7 @@ blur </value>
     <value>207, 24</value>
   </data>
   <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Read Image</value>
+    <value>Read image</value>
   </data>
   <data name="tiffToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>467, 24</value>
@@ -2855,7 +2854,7 @@ blur </value>
     <value>207, 24</value>
   </data>
   <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
-    <value>Save Image</value>
+    <value>Save image</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 6</value>
@@ -2864,13 +2863,13 @@ blur </value>
     <value>207, 24</value>
   </data>
   <data name="toolStripMenuItemReadParameter.Text" xml:space="preserve">
-    <value>Read Parameter</value>
+    <value>Read parameter</value>
   </data>
   <data name="toolStripMenuItemSaveParameter.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 24</value>
   </data>
   <data name="toolStripMenuItemSaveParameter.Text" xml:space="preserve">
-    <value>Save Parameter</value>
+    <value>Save parameter</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 6</value>
@@ -2879,19 +2878,19 @@ blur </value>
     <value>207, 24</value>
   </data>
   <data name="toolStripMenuItemReadMask.Text" xml:space="preserve">
-    <value>Read Mask</value>
+    <value>Read mask</value>
   </data>
   <data name="toolStripMenuItemSaveMask.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 24</value>
   </data>
   <data name="toolStripMenuItemSaveMask.Text" xml:space="preserve">
-    <value>Save Mask</value>
+    <value>Save mask</value>
   </data>
   <data name="clearMaskToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 24</value>
   </data>
   <data name="clearMaskToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clear Mask</value>
+    <value>Clear mask</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 6</value>
@@ -3016,7 +3015,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Property</value>
   </data>
   <data name="toolTipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>180, 24</value>
   </data>
   <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
     <value>ToolTip</value>
@@ -3034,7 +3033,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Vertically</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>180, 24</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Flip</value>
@@ -3055,16 +3054,16 @@ X線の波長とカメラ長を設定します。</value>
     <value>121, 23</value>
   </data>
   <data name="rotateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>180, 24</value>
   </data>
   <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
     <value>Rotate</value>
   </data>
   <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 24</value>
+    <value>180, 24</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
     <value>Ngen Compile</value>
@@ -3114,13 +3113,13 @@ X線の波長とカメラ長を設定します。</value>
     <value>Language</value>
   </data>
   <data name="editorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 24</value>
+    <value>180, 24</value>
   </data>
   <data name="editorToolStripMenuItem.Text" xml:space="preserve">
     <value>Editor</value>
   </data>
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="macroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 24</value>
@@ -3204,7 +3203,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Arial, 9pt</value>
   </data>
   <data name="resetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="resetToolStripMenuItem.Text" xml:space="preserve">
     <value>Reset</value>
@@ -3273,7 +3272,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Detection Range</value>
@@ -3282,7 +3281,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="fourierToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="fourierToolStripMenuItem.Text" xml:space="preserve">
     <value>Fourier</value>
@@ -3291,7 +3290,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItemReferenceBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
     <value>Reference image</value>
@@ -3398,36 +3397,36 @@ Center</value>
     <value>6, 56</value>
   </data>
   <data name="toolStripMenuItemClearMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
-    <value>Clear All Mask</value>
+    <value>Clear mask</value>
   </data>
   <data name="toolStripMenuItemClearMask.ToolTipText" xml:space="preserve">
     <value>Clear All Mask
 マスクされた部分を全てクリアします。</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
-    <value>Mask All Area</value>
+    <value>Mask all area</value>
   </data>
   <data name="toolStripMenuItemMaskAll.ToolTipText" xml:space="preserve">
     <value>Mask All Area
 全てをマスクします</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
-    <value>Inverse Mask</value>
+    <value>Invert mask</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Text" xml:space="preserve">
     <value>Manual Mode</value>
@@ -3438,10 +3437,10 @@ Center</value>
 スポットの大きさは"Option"から変更できます。</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Text" xml:space="preserve">
     <value>Option</value>
@@ -3870,6 +3869,9 @@ Mode</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3971,276 +3973,6 @@ Mode</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator19.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonBackground.Name" xml:space="preserve">
-    <value>toolStripSplitButtonBackground</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonBackground.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;resetToolStripMenuItem.Name" xml:space="preserve">
-    <value>resetToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;resetToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
-    <value>toolStripMenuItem4</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
-    <value>toolStripMenuItem6</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxBackgroundLower.Name" xml:space="preserve">
-    <value>toolStripComboBoxBackgroundLower</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxBackgroundLower.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem7.Name" xml:space="preserve">
-    <value>toolStripMenuItem7</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxBackgroundUpper.Name" xml:space="preserve">
-    <value>toolStripComboBoxBackgroundUpper</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxBackgroundUpper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fourierToolStripMenuItem.Name" xml:space="preserve">
-    <value>fourierToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;fourierToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemReferenceBackground.Name" xml:space="preserve">
-    <value>toolStripMenuItemReferenceBackground</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemReferenceBackground.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
-    <value>toolStripSeparator8</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonFindCenter.Name" xml:space="preserve">
-    <value>toolStripSplitButtonFindCenter</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonFindCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFindCenterOption.Name" xml:space="preserve">
-    <value>toolStripMenuItemFindCenterOption</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFindCenterOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;findCenterBasedOnTheRingToolStripMenuItem.Name" xml:space="preserve">
-    <value>findCenterBasedOnTheRingToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;findCenterBasedOnTheRingToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonFixCenter.Name" xml:space="preserve">
-    <value>toolStripButtonFixCenter</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonFixCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
-    <value>toolStripSeparator6</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonFindSpots.Name" xml:space="preserve">
-    <value>toolStripSplitButtonFindSpots</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonFindSpots.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemClearMask.Name" xml:space="preserve">
-    <value>toolStripMenuItemClearMask</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemClearMask.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemMaskAll.Name" xml:space="preserve">
-    <value>toolStripMenuItemMaskAll</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemMaskAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;inverseMaskToolStripMenuItem.Name" xml:space="preserve">
-    <value>inverseMaskToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;inverseMaskToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFindSpotsManual.Name" xml:space="preserve">
-    <value>toolStripMenuItemFindSpotsManual</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFindSpotsManual.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
-    <value>toolStripSeparator10</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFindSpotsOption.Name" xml:space="preserve">
-    <value>toolStripMenuItemFindSpotsOption</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFindSpotsOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonManualSpotMode.Name" xml:space="preserve">
-    <value>toolStripButtonManualSpotMode</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonManualSpotMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxManualSpotSize.Name" xml:space="preserve">
-    <value>toolStripComboBoxManualSpotSize</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxManualSpotSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonGetProfile.Name" xml:space="preserve">
-    <value>toolStripSplitButtonGetProfile</value>
-  </data>
-  <data name="&gt;&gt;toolStripSplitButtonGetProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralProperty.Name" xml:space="preserve">
-    <value>toolStripMenuItemGetProfileIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralProperty.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemConcenctricIntegration.Name" xml:space="preserve">
-    <value>toolStripMenuItemConcenctricIntegration</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemConcenctricIntegration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemRadialIntegration.Name" xml:space="preserve">
-    <value>toolStripMenuItemRadialIntegration</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemRadialIntegration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
-    <value>toolStripSeparator7</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralRegion.Name" xml:space="preserve">
-    <value>toolStripMenuItemGetProfileIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
-    <value>toolStripSeparator11</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;findCenterBeforeGetProfileToolStripMenuItem.Name" xml:space="preserve">
-    <value>findCenterBeforeGetProfileToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;findCenterBeforeGetProfileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;findSpotsBeforeGetProfileToolStripMenuItem.Name" xml:space="preserve">
-    <value>findSpotsBeforeGetProfileToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;findSpotsBeforeGetProfileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
-    <value>toolStripSeparator21</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSendProfileToPDIndexer.Name" xml:space="preserve">
-    <value>toolStripMenuItemSendProfileToPDIndexer</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSendProfileToPDIndexer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSendUnrolledImage.Name" xml:space="preserve">
-    <value>toolStripMenuItemSendUnrolledImage</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSendUnrolledImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
-    <value>toolStripSeparator12</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemDividedByAngleStep.Name" xml:space="preserve">
-    <value>toolStripMenuItemDividedByAngleStep</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemDividedByAngleStep.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxAngleStep.Name" xml:space="preserve">
-    <value>toolStripComboBoxAngleStep</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxAngleStep.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator20.Name" xml:space="preserve">
-    <value>toolStripSeparator20</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAllSequentialImages.Name" xml:space="preserve">
-    <value>toolStripMenuItemAllSequentialImages</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAllSequentialImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSelectedSequentialImages.Name" xml:space="preserve">
-    <value>toolStripMenuItemSelectedSequentialImages</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSelectedSequentialImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>
@@ -4582,6 +4314,276 @@ Mode</value>
     <value>webPageToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;webPageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonBackground.Name" xml:space="preserve">
+    <value>toolStripSplitButtonBackground</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;resetToolStripMenuItem.Name" xml:space="preserve">
+    <value>resetToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;resetToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
+    <value>toolStripMenuItem6</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxBackgroundLower.Name" xml:space="preserve">
+    <value>toolStripComboBoxBackgroundLower</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxBackgroundLower.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem7.Name" xml:space="preserve">
+    <value>toolStripMenuItem7</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxBackgroundUpper.Name" xml:space="preserve">
+    <value>toolStripComboBoxBackgroundUpper</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxBackgroundUpper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fourierToolStripMenuItem.Name" xml:space="preserve">
+    <value>fourierToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fourierToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemReferenceBackground.Name" xml:space="preserve">
+    <value>toolStripMenuItemReferenceBackground</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemReferenceBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
+    <value>toolStripSeparator8</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonFindCenter.Name" xml:space="preserve">
+    <value>toolStripSplitButtonFindCenter</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonFindCenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFindCenterOption.Name" xml:space="preserve">
+    <value>toolStripMenuItemFindCenterOption</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFindCenterOption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;findCenterBasedOnTheRingToolStripMenuItem.Name" xml:space="preserve">
+    <value>findCenterBasedOnTheRingToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;findCenterBasedOnTheRingToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFixCenter.Name" xml:space="preserve">
+    <value>toolStripButtonFixCenter</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFixCenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonFindSpots.Name" xml:space="preserve">
+    <value>toolStripSplitButtonFindSpots</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonFindSpots.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearMask.Name" xml:space="preserve">
+    <value>toolStripMenuItemClearMask</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearMask.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemMaskAll.Name" xml:space="preserve">
+    <value>toolStripMenuItemMaskAll</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemMaskAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inverseMaskToolStripMenuItem.Name" xml:space="preserve">
+    <value>inverseMaskToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;inverseMaskToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFindSpotsManual.Name" xml:space="preserve">
+    <value>toolStripMenuItemFindSpotsManual</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFindSpotsManual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
+    <value>toolStripSeparator10</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFindSpotsOption.Name" xml:space="preserve">
+    <value>toolStripMenuItemFindSpotsOption</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFindSpotsOption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonManualSpotMode.Name" xml:space="preserve">
+    <value>toolStripButtonManualSpotMode</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonManualSpotMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxManualSpotSize.Name" xml:space="preserve">
+    <value>toolStripComboBoxManualSpotSize</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxManualSpotSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonGetProfile.Name" xml:space="preserve">
+    <value>toolStripSplitButtonGetProfile</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonGetProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralProperty.Name" xml:space="preserve">
+    <value>toolStripMenuItemGetProfileIntegralProperty</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralProperty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemConcenctricIntegration.Name" xml:space="preserve">
+    <value>toolStripMenuItemConcenctricIntegration</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemConcenctricIntegration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemRadialIntegration.Name" xml:space="preserve">
+    <value>toolStripMenuItemRadialIntegration</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemRadialIntegration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
+    <value>toolStripSeparator7</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralRegion.Name" xml:space="preserve">
+    <value>toolStripMenuItemGetProfileIntegralRegion</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGetProfileIntegralRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
+    <value>toolStripSeparator11</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;findCenterBeforeGetProfileToolStripMenuItem.Name" xml:space="preserve">
+    <value>findCenterBeforeGetProfileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;findCenterBeforeGetProfileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;findSpotsBeforeGetProfileToolStripMenuItem.Name" xml:space="preserve">
+    <value>findSpotsBeforeGetProfileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;findSpotsBeforeGetProfileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
+    <value>toolStripSeparator21</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSendProfileToPDIndexer.Name" xml:space="preserve">
+    <value>toolStripMenuItemSendProfileToPDIndexer</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSendProfileToPDIndexer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSendUnrolledImage.Name" xml:space="preserve">
+    <value>toolStripMenuItemSendUnrolledImage</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSendUnrolledImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
+    <value>toolStripSeparator12</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemDividedByAngleStep.Name" xml:space="preserve">
+    <value>toolStripMenuItemDividedByAngleStep</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemDividedByAngleStep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxAngleStep.Name" xml:space="preserve">
+    <value>toolStripComboBoxAngleStep</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxAngleStep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator20.Name" xml:space="preserve">
+    <value>toolStripSeparator20</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAllSequentialImages.Name" xml:space="preserve">
+    <value>toolStripMenuItemAllSequentialImages</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAllSequentialImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSelectedSequentialImages.Name" xml:space="preserve">
+    <value>toolStripMenuItemSelectedSequentialImages</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSelectedSequentialImages.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;helpProvider.Name" xml:space="preserve">

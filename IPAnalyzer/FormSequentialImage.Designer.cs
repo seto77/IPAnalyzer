@@ -114,9 +114,9 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileSelectedImages);
             this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileOnlyTopmost);
             this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileAllImages);
-            this.flowLayoutPanel1.Controls.Add(this.radioButtonGetProfileSelectedImages);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -126,13 +126,11 @@
             // radioButtonGetProfileOnlyTopmost
             // 
             this.radioButtonGetProfileOnlyTopmost.AutoSize = true;
-            this.radioButtonGetProfileOnlyTopmost.Checked = true;
-            this.radioButtonGetProfileOnlyTopmost.Location = new System.Drawing.Point(0, 0);
+            this.radioButtonGetProfileOnlyTopmost.Location = new System.Drawing.Point(0, 19);
             this.radioButtonGetProfileOnlyTopmost.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonGetProfileOnlyTopmost.Name = "radioButtonGetProfileOnlyTopmost";
             this.radioButtonGetProfileOnlyTopmost.Size = new System.Drawing.Size(154, 19);
             this.radioButtonGetProfileOnlyTopmost.TabIndex = 7;
-            this.radioButtonGetProfileOnlyTopmost.TabStop = true;
             this.radioButtonGetProfileOnlyTopmost.Text = "Only the topmost image";
             this.radioButtonGetProfileOnlyTopmost.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileOnlyTopmost.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
@@ -140,7 +138,7 @@
             // radioButtonGetProfileAllImages
             // 
             this.radioButtonGetProfileAllImages.AutoSize = true;
-            this.radioButtonGetProfileAllImages.Location = new System.Drawing.Point(0, 19);
+            this.radioButtonGetProfileAllImages.Location = new System.Drawing.Point(0, 38);
             this.radioButtonGetProfileAllImages.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonGetProfileAllImages.Name = "radioButtonGetProfileAllImages";
             this.radioButtonGetProfileAllImages.Size = new System.Drawing.Size(253, 19);
@@ -152,12 +150,14 @@
             // radioButtonGetProfileSelectedImages
             // 
             this.radioButtonGetProfileSelectedImages.AutoSize = true;
-            this.radioButtonGetProfileSelectedImages.Location = new System.Drawing.Point(0, 38);
+            this.radioButtonGetProfileSelectedImages.Checked = true;
+            this.radioButtonGetProfileSelectedImages.Location = new System.Drawing.Point(0, 0);
             this.radioButtonGetProfileSelectedImages.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonGetProfileSelectedImages.Name = "radioButtonGetProfileSelectedImages";
-            this.radioButtonGetProfileSelectedImages.Size = new System.Drawing.Size(132, 19);
+            this.radioButtonGetProfileSelectedImages.Size = new System.Drawing.Size(140, 19);
             this.radioButtonGetProfileSelectedImages.TabIndex = 7;
-            this.radioButtonGetProfileSelectedImages.Text = "The selected images";
+            this.radioButtonGetProfileSelectedImages.TabStop = true;
+            this.radioButtonGetProfileSelectedImages.Text = "The selected image(s)";
             this.radioButtonGetProfileSelectedImages.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileSelectedImages.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
             // 

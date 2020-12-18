@@ -753,8 +753,14 @@
   <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
     <value>マスク条件</value>
   </data>
+  <data name="numericBoxTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 4</value>
+  </data>
   <data name="checkBoxTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
+    <value>201, 22</value>
+  </data>
+  <data name="checkBoxTest.Text" xml:space="preserve">
+    <value>Kα2を除去 (線源が Kα1 の場合)</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -838,7 +844,7 @@
     <value>イメージファイルと同じ場所に保存する</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 40</value>
+    <value>246, 48</value>
   </data>
   <data name="groupBoxSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 51</value>

@@ -2609,14 +2609,7 @@ namespace IPAnalyzer
             ClearMask();
         }
 
-        public void ClearMask()
-        {
-            if (!IsImageReady) return;
-            for (int i = 0; i < Ring.IsSpots.Count; i++)
-                Ring.IsSpots[i] = false;
-
-            Draw();
-        }
+   
 
         public void SetMask()
         {
@@ -2892,8 +2885,7 @@ namespace IPAnalyzer
 
         #endregion
 
-
-        #region Backgroundボタン
+        #region Backgroundボタン 関連
         private void resetBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Draw();
@@ -2937,7 +2929,6 @@ namespace IPAnalyzer
         }
 
         #endregion
-
 
         #region FindCenterボタン関連
         //
@@ -3060,6 +3051,11 @@ namespace IPAnalyzer
         #region FindSpotsボタン関連
         public void toolStripSplitButtonFindSpots_ButtonClick(object sender, EventArgs e)
         {
+            MaskSpots();
+        }
+
+        public void MaskSpots()
+        {
             if (!IsImageReady) return;
 
             this.Cursor = Cursors.WaitCursor;
@@ -3071,7 +3067,10 @@ namespace IPAnalyzer
             this.Cursor = Cursors.Default;
             toolStripSplitButtonFindSpots.Enabled = true;
             this.toolStripStatusLabel.Text = "Calculating Time (Find Spots):  " + (Environment.TickCount - d).ToString() + "ms";
+
+
         }
+
         #endregion
 
         #region Maskボタン関連
@@ -3081,7 +3080,21 @@ namespace IPAnalyzer
             ClearMask();
         }
 
+        public void ClearMask()
+        {
+            if (!IsImageReady) return;
+            for (int i = 0; i < Ring.IsSpots.Count; i++)
+                Ring.IsSpots[i] = false;
+
+            Draw();
+        }
+
         private void inverseMaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InvertMask();
+        }
+
+        public void InvertMask()
         {
             if (!IsImageReady) return;
             for (int i = 0; i < Ring.IsSpots.Count; i++)
@@ -3090,6 +3103,11 @@ namespace IPAnalyzer
         }
 
         private void toolStripMenuItemMaskAll_Click(object sender, EventArgs e)
+        {
+            MaskAll();
+        }
+
+        public void MaskAll()
         {
             if (!IsImageReady) return;
             for (int i = 0; i < Ring.IsSpots.Count; i++)
@@ -3212,7 +3230,7 @@ namespace IPAnalyzer
                             targets = FormSequentialImage.SelectedIndices;
                     }
 
-                    List<DiffractionProfile> dpList = new List<DiffractionProfile>();
+                    var dpList = new List<DiffractionProfile>();
 
                     for (int i = 0; i < targets.Length; i++)
                     {
@@ -3237,20 +3255,25 @@ namespace IPAnalyzer
                         {
                             if (FormProperty.waveLengthControl.XrayWaveSourceElementNumber > 10 && FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka1)
                             {
-                                double alpha1 = AtomConstants.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, Crystallography.XrayLine.Ka1);
-                                double alpha2 = AtomConstants.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, Crystallography.XrayLine.Ka2);
-                                double ratio = FormProperty.numericBoxTest.Value;
+                                var alpha1 = AtomConstants.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1);
+                                var alpha2 = AtomConstants.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2);
+                                var ratio = FormProperty.numericBoxTest.Value;
                                 diffractionProfile.OriginalProfile= DiffractionProfile.RemoveKalpha2(diffractionProfile.OriginalProfile,alpha1,alpha2,ratio);
                             }
                         }
+
+                        //ファイル保存
+                        if (FormProperty.checkBoxSaveFile.Checked)
+                            SaveProfile(diffractionProfile, fileName);
+
                         //Unrolled Imageの作成
                         if (FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked)
                         {
-                            double sectorStep = Math.PI * 1.0 / 180.0;
-                            double xStart = IP.StartAngle;
-                            double xEnd = IP.EndAngle;
-                            double xStep = IP.StepAngle;
-                            double[] temp = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
+                            var sectorStep = Math.PI * 1.0 / 180.0;
+                            var xStart = IP.StartAngle;
+                            var xEnd = IP.EndAngle;
+                            var xStep = IP.StepAngle;
+                            var temp = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
                             diffractionProfile.ImageArray = new double[temp.Length];
                             for (int j = 0; j < temp.Length; j++)
                                 diffractionProfile.ImageArray[j] = temp[j];
@@ -3275,9 +3298,7 @@ namespace IPAnalyzer
                         }
                         clipboard.Close();
                     }
-                    //ファイル保存
-                    if (FormProperty.checkBoxSaveFile.Checked)
-                        SaveProfile(diffractionProfile,fileName);
+                    
 
                     graphControlProfile.Profile = diffractionProfile.OriginalProfile;
 
@@ -3429,8 +3450,13 @@ namespace IPAnalyzer
                 else return;
             }
             else if(filename=="")
-                filename = FilePath + dp.Name.Substring(0, dp.Name.LastIndexOf('.')) + extension;
-
+            {
+                //シーケンシャルモードの時の処理
+                if (toolStripButtonImageSequence.Enabled)
+                    filename = FilePath + dp.Name.Replace("  #", "#") + extension;
+                else
+                    filename = FilePath + dp.Name.Substring(0, dp.Name.LastIndexOf('.')) + extension;
+            }
 
             if (FormProperty.radioButtonAsPDIformat.Checked)
             {
@@ -3458,7 +3484,6 @@ namespace IPAnalyzer
             }
         }
         #endregion
-
 
         #region IntegralArea_Changed
         public void IntegralArea_Changed(object sender, EventArgs e)
@@ -3499,7 +3524,6 @@ namespace IPAnalyzer
             }
         }
         #endregion
-
 
         #region 子フォームの立ち上げ、終了
 
@@ -3946,207 +3970,7 @@ namespace IPAnalyzer
 
         #endregion
 
-        #region
-        /*
-        private void Rotate(int rotateDegree)
-        {
-            if (Ring.IntensityOriginal == null)
-                return;
-
-            double[] tempIntensity = new double[Ring.SrcImgSize.Width * Ring.SrcImgSize.Height];
-
-            Func<int, int, int> convertIndex;
-            if (rotateDegree == 90)
-                convertIndex = new Func<int, int, int>((w, h) => Ring.SrcImgSize.Height * w + Ring.SrcImgSize.Height - h - 1);
-            else if (rotateDegree == 180)
-                convertIndex = new Func<int, int, int>((w, h) => (Ring.SrcImgSize.Height - h - 1) * Ring.SrcImgSize.Width + (Ring.SrcImgSize.Width - w - 1));
-            else if (rotateDegree == 270)
-                convertIndex = new Func<int, int, int>((w, h) => Ring.SrcImgSize.Height * (Ring.SrcImgSize.Width - w - 1) + h);
-            else
-                return;
-
-            for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-                for (int w = 0; w < Ring.SrcImgSize.Width; w++)
-                    tempIntensity[convertIndex(w, h)] = Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + w];
-
-            for (int i = 0; i < Ring.IntensityOriginal.Count; i++)
-                pseudoBitmap.SrcValuesGray[i] = pseudoBitmap.SrcValuesGrayOriginal[i] = Ring.IntensityOriginal[i] = tempIntensity[i];
-
-            if (rotateDegree == 90 || rotateDegree == 270)
-            {
-                Ring.SrcImgSize = new Size(Ring.SrcImgSize.Height, Ring.SrcImgSize.Width);
-                Ring.IP.SrcHeight = Ring.SrcImgSize.Width;
-                Ring.IP.SrcWidth = Ring.SrcImgSize.Height;
-                pseudoBitmap.Width = Ring.SrcImgSize.Width;
-                pseudoBitmap.Height = Ring.SrcImgSize.Height;
-                SrcImgSize = Ring.SrcImgSize;
-                IntegralArea_Changed(new object(), new EventArgs());
-                scalablePictureBox.ResetMinimumZoomValue();
-                
-            }
-
-            
-
-            if (SequentialImageMode)
-            {
-                for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
-                {
-                    for (int w = 0; w < Ring.SrcImgSize.Width; w++)
-                        for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-                            tempIntensity[convertIndex(w, h)] = Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + w];
-                    for (int j = 0; j < Ring.IntensityOriginal.Count; j++)
-                        Ring.SequentialImageIntensities[i][j] = tempIntensity[j];
-                }
-            }
-
-            for (int i = 0; i < Ring.Intensity.Count; i++)
-                Ring.Intensity[i] =   Ring.IntensityOriginal[i];
-
-            Draw();
-
-        }
-
-
-        private void FlipHorizontally()
-        {
-            if (Ring.IntensityOriginal != null)
-            {
-                for (int w = 0; w < Ring.SrcImgSize.Width / 2; w++)
-                    for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-                    {
-                        double intensity = Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + w];
-                        Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + w] = Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + Ring.SrcImgSize.Width - w - 1];
-                        Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + Ring.SrcImgSize.Width - w - 1] = intensity;
-                    }
-                for (int i = 0; i < Ring.IntensityOriginal.Count; i++)
-                    pseudoBitmap.SrcValuesGray[i] = pseudoBitmap.SrcValuesGrayOriginal[i] = Ring.IntensityOriginal[i];
-               
-
-                if (SequentialImageMode)
-                {
-                    for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
-                        for (int w = 0; w < Ring.SrcImgSize.Width / 2; w++)
-                            for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-                            {
-                                double intensity = Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + w];
-                                Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + w] = Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + Ring.SrcImgSize.Width - w - 1];
-                                Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + Ring.SrcImgSize.Width - w - 1] = intensity;
-                            }
-
-                }
-                for (int i = 0; i < Ring.Intensity.Count; i++)
-                    Ring.Intensity[i] = Ring.IntensityOriginal[i];
-                Draw();
-            }
-        }
-
-        private void FlipVertically()
-        {
-            if (Ring.IntensityOriginal != null)
-            {
-                for (int h = 0; h < Ring.SrcImgSize.Height / 2; h++)
-                    for (int w = 0; w < Ring.SrcImgSize.Width; w++)
-                    {
-                        double intensity = Ring.IntensityOriginal[(Ring.SrcImgSize.Height - h - 1) * Ring.SrcImgSize.Width + w];
-                        Ring.IntensityOriginal[(Ring.SrcImgSize.Height - h - 1) * Ring.SrcImgSize.Width + w] = Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + w];
-                        Ring.IntensityOriginal[h * Ring.SrcImgSize.Width + w] = intensity;
-                    }
-                for (int i = 0; i < Ring.IntensityOriginal.Count; i++)
-                    pseudoBitmap.SrcValuesGray[i] = pseudoBitmap.SrcValuesGrayOriginal[i] = Ring.IntensityOriginal[i];
-                
-
-                if (SequentialImageMode)
-                {
-                    for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
-                        for (int w = 0; w < Ring.SrcImgSize.Width / 2; w++)
-                            for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-                            {
-                                double intensity = Ring.SequentialImageIntensities[i][(Ring.SrcImgSize.Height - h - 1) * Ring.SrcImgSize.Width + w];
-                                Ring.SequentialImageIntensities[i][(Ring.SrcImgSize.Height - h - 1) * Ring.SrcImgSize.Width + w] = Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + w];
-                                Ring.SequentialImageIntensities[i][h * Ring.SrcImgSize.Width + w] = intensity;
-                            }
-                }
-                for (int i = 0; i < Ring.Intensity.Count; i++)
-                    Ring.Intensity[i] = Ring.IntensityOriginal[i];
-
-                Draw();
-            }
-        }*/
-        #endregion
-
-        #region 偏光補正
-        /*
-                public void correctPolarization(bool correct)
-                {
-
-                    if (Ring.Intensity.Count != 0)
-                    {
-                        if (correct)
-                        {
-                            sw.Restart();
-                            double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
-                            double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi), sinPhi2 = SinPhi * SinPhi, cosPhi2 = CosPhi * CosPhi, cosPhiSinPhi = CosPhi * SinPhi;
-                            double tanKsi = Math.Tan(IP.ksi);
-                            double sinPhiSinTau = SinPhi * SinTau, cosPhiSinTau = CosPhi * SinTau;
-                            double temp1 = (cosPhiSinPhi - CosPhi * CosTau * SinPhi);
-                            double temp2 = (cosPhi2 + CosTau * sinPhi2);
-                            double temp3 = (cosPhi2 * CosTau + sinPhi2);
-                            double fd = IP.FilmDistance, fd2 = fd * fd;
-                            double sizeX = IP.PixSizeX, sizeY = IP.PixSizeY;
-                            double centX = IP.CenterX, centY = IP.CenterY;
-                            Func<double, double, double> coeff;
-                            if (FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked)
-                                coeff = new Func<double, double, double>((x2, y2) => (1 - x2 / (x2 + y2 + fd2)));
-                            else
-                                coeff = new Func<double, double, double>((x2, y2) => (1 - y2 / (x2 + y2 + fd2)));
-
-                            //Parallel.Forを使わないほうが早い
-                            int i = 0;
-                            for (int pixY = 0; pixY < Ring.SrcImgSize.Height; pixY++)
-                            {
-                                double tempY = (pixY - centY) * sizeY;
-                                double temp4 = tempY * cosPhiSinTau + fd;
-                                double temp5 = tempY * temp1;
-                                double temp6 = tempY * temp3;
-                                double temp7 = tempY * tanKsi;
-
-                                for (int pixX = 0; pixX < Ring.SrcImgSize.Width; pixX++)
-                                {
-                                    double tempX = (pixX - centX) * sizeX + temp7;
-                                    //double x = (tempY * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + tempX * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
-                                    //    * IP.FilmDistance / (tempY * CosPhi * SinTau + IP.FilmDistance - tempX * SinPhi * SinTau);
-                                    //double y = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + tempY * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
-                                    //    * IP.FilmDistance / (tempY * CosPhi * SinTau + IP.FilmDistance - tempX * SinPhi * SinTau);
-                                    double temp8 = fd / (temp4 - tempX * sinPhiSinTau);
-                                    double x = (temp5 + tempX * temp2) * temp8;
-                                    double y = (tempX * temp1 + temp6) * temp8;
-                                    //double chi = convChi(Math.Atan2(y, x));
-                                    //double twoTheta = Math.Atan2(Math.Sqrt(x * x + y * y), fd);
-                                    //Ring.Intensity[i] = Ring.IntensityOriginal[i] / (1 - Math.Cos(chi) * Math.Cos(chi) * Math.Sin(twoTheta) * Math.Sin(twoTheta));
-                                    double x2 = x * x, y2 = y * y;
-                                    Ring.Intensity[i] = Ring.IntensityOriginal[i] / coeff(x2, y2);
-                                    i++;
-                                }
-                            }
-                            this.toolStripStatusLabelComputationTime.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
-                        }
-                        else
-                        {
-                            for (int i = 0; i < Ring.Intensity.Count; i++)
-                                Ring.Intensity[i] = Ring.IntensityOriginal[i];
-                        }
-                        pseudoBitmap.SrcValuesGray = Ring.Intensity.ToArray();
-                        scalablePictureBox.drawPictureBox();
-
-                        Ring.CalcFreq();
-                        SetFrequencyProfile();//強度頻度グラフを作成
-                    }
-
-                }
-                */
-        #endregion
-
-        #region 画像の統計情報
+        #region 画像の統計情報関連
 
         public void SetStasticalInformation(bool renewArea = true)
         {
@@ -4255,6 +4079,7 @@ namespace IPAnalyzer
             public WaveClass Wave;
             public ProfileClass Profile;
             public ImageClass Image;
+            public MaskClass Mask;
             public PDIClass PDI;
             public IntegralPropertyClass IntegralProperty;
            
@@ -4269,6 +4094,7 @@ namespace IPAnalyzer
                 Wave = new WaveClass(this);
                 Profile = new ProfileClass(this);
                 Image = new ImageClass(this);
+                Mask = new MaskClass(this);
                 PDI = new PDIClass(this);
                 IntegralProperty = new IntegralPropertyClass(this);
                 
@@ -4422,6 +4248,28 @@ namespace IPAnalyzer
                     SetCanvasCenter(p.main.IP.SrcWidth / 2.0, p.main.IP.SrcHeight / 2.0);
                 }));
 
+            }
+            #endregion
+
+            #region MaskClass
+            public class MaskClass : MacroSub
+            {
+                Macro p;
+                public MaskClass(Macro _p) : base(_p.main)
+                {
+                    p = _p;
+                    p.help.Add("IPA.Mask.MaskSpots() # Mask spots.");
+                    p.help.Add("IPA.Mask.ClearMask() # Clear current masks.");
+                    p.help.Add("IPA.Mask.MaskAll() # Mask all area.");
+                    p.help.Add("IPA.Mask.InvertMask() # Invert mask state.");
+
+                }
+
+                public void MaskSpots() => Execute(new Action(() => p.main.MaskSpots()));
+
+                public void ClearMask() => Execute(new Action(() => p.main.ClearMask()));
+                public void InvertMask() => Execute(new Action(() => p.main.InvertMask()));
+                public void MaskAll() => Execute(new Action(() => p.main.MaskAll()));
             }
             #endregion
 
@@ -4756,7 +4604,7 @@ namespace IPAnalyzer
                 public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
                 public void SaveMask(string fileName = "") => Execute(new Action(() => p.main.SaveMask(fileName)));
 
-                public void ResetMask(string fileName = "") => Execute(new Action(() => p.main.ClearMask()));
+            
 
             }
             #endregion
@@ -4782,6 +4630,29 @@ namespace IPAnalyzer
                     p.help.Add("IPA.Sequential.MultiSelection # True/False. \r\n Set or get the state of multi-selection mode.");
                     p.help.Add("IPA.Sequential.Averaging # True/False. \r\n Set or get the state of averaging mode .");
 
+                    p.help.Add("IPA.Sequential.Target_SelectedImages # True/False. \r\n If set true, the selected images are targets for 'Get Profile'.");
+                    p.help.Add("IPA.Sequential.Target_AllImages # True/False. \r\n If set true, all images are targets for 'Get Profile'.");
+                    p.help.Add("IPA.Sequential.Target_TopmostImage # True/False. \r\n If set true, the topmost image will be target for 'Get Profile'.");
+                }
+
+
+
+                public bool Target_SelectedImages
+                {
+                    set => Execute(new Action(() => p.main.FormSequentialImage.radioButtonGetProfileSelectedImages.Checked = value));
+                    get => Execute(() => p.main.FormSequentialImage.radioButtonGetProfileSelectedImages.Checked);
+                }
+
+                public bool Target_AllImages
+                {
+                    set => Execute(new Action(() => p.main.FormSequentialImage.radioButtonGetProfileAllImages.Checked = value));
+                    get => Execute(() => p.main.FormSequentialImage.radioButtonGetProfileAllImages.Checked);
+                }
+
+                public bool Target_TopmostImage
+                {
+                    set => Execute(new Action(() => p.main.FormSequentialImage.radioButtonGetProfileOnlyTopmost.Checked = value));
+                    get => Execute(() => p.main.FormSequentialImage.radioButtonGetProfileOnlyTopmost.Checked);
                 }
 
                 public bool SequentialImageMode => Execute(() => p.main.SequentialImageMode);
