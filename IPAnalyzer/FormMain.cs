@@ -2094,7 +2094,7 @@ namespace IPAnalyzer
 
         private void toolStripMenuItemReadParameter_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
+            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title ="Read parameter file" };
             if (initialParameterDirectory != "")
                 dialog.InitialDirectory = initialParameterDirectory;
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -2106,7 +2106,7 @@ namespace IPAnalyzer
 
         private void toolStripMenuItemSaveParameter_Click(object sender, EventArgs e)
         {
-            var dialog = new SaveFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
+            var dialog = new SaveFileDialog() { Filter = "*.prm[Parameter File]|*.prm", Title = "Save parameter file" };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 SaveParameter(dialog.FileName, ((ToolStripMenuItem)sender).Name.Contains("Fully"));
@@ -2120,7 +2120,7 @@ namespace IPAnalyzer
         {
             if (filename == "")
             {
-                var dlg = new OpenFileDialog() { Filter = "*.prm[Parameter File]|*.prm" };
+                var dlg = new OpenFileDialog() { Filter = "*.prm[Parameter File]|*.prm", Title = "Save parameter file" };
                 if (dlg.ShowDialog() == DialogResult.OK)
                     filename = dlg.FileName;
                 else
@@ -2224,19 +2224,17 @@ namespace IPAnalyzer
 
 
 
-        public void ReadParameter(string filename, bool fullyRead = true)
+        public void ReadParameter(string filename, bool fullyRead = false)
         {
             if (filename == "")
             {
-                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" };
+                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" , Title = "Read parameter file"};
                 if (dlg.ShowDialog() == DialogResult.OK)
                     filename = dlg.FileName;
                 else
                     return;
             }
 
-
-            fullyRead = false;
             //イベントをスキップ
             skipSelectedAreaChangedEvent = true;
             Skip = true;
@@ -2514,7 +2512,7 @@ namespace IPAnalyzer
         public string initialMaskDirectory;
         private void toolStripMenuItemReadMask_Click(object sender, EventArgs e)
         {
-            var dlg = new OpenFileDialog() { Filter = "Mask file; *.mas|*.mas" };
+            var dlg = new OpenFileDialog() { Filter = "Mask file; *.mas|*.mas", Title = "Read mask file" };
             if (initialMaskDirectory != "")
                 dlg.InitialDirectory = initialMaskDirectory;
             if (dlg.ShowDialog() == DialogResult.OK)
@@ -2566,7 +2564,7 @@ namespace IPAnalyzer
 
         public void toolStripMenuItemSaveMask_Click(object sender, EventArgs e)
         {
-            var dlg = new SaveFileDialog { Filter = "Mask file; *.mas|*.mas" };
+            var dlg = new SaveFileDialog { Filter = "Mask file; *.mas|*.mas", Title = "Save mask file" };
             if (dlg.ShowDialog() == DialogResult.OK)
                 SaveMask(dlg.FileName);
         }
@@ -4531,8 +4529,8 @@ namespace IPAnalyzer
                 public FileClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
-                    p.help.Add("IPA.File.GetFileName() # Get a file name. \r\n Returned string is a full path of the selected file.");
-                    p.help.Add("IPA.File.GetFileNames() # Get file names. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
+                    p.help.Add("IPA.File.GetFileName(string message) # Get a file name. \r\n Returned string is a full path of the selected file.");
+                    p.help.Add("IPA.File.GetFileNames(string message) # Get file names. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
                     p.help.Add("IPA.File.GetDirectoryPath(string filename) # Get a directory path.\r\n Returned string is a full path to the filename.\r\n If filename is omitted, selection dialog will open.");
 
                     p.help.Add("IPA.File.ReadImage(string filename)          # Read image file. \r\n If filename is omitted, selection dialog will open.");
@@ -4561,16 +4559,16 @@ namespace IPAnalyzer
                 }));
 
 
-                public string GetFileName() => Execute<string>(new Func<string>(() =>
+                public string GetFileName(string message = "") => Execute<string>(new Func<string>(() =>
                 {
-                    var dlg = new OpenFileDialog();
+                    var dlg = new OpenFileDialog() { Title = message };
                     return dlg.ShowDialog() == DialogResult.OK ? dlg.FileName : "";
                 }));
 
 
-                public string[] GetFileNames() => Execute<string[]>(new Func<string[]>(() =>
+                public string[] GetFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
                 {
-                    var dlg = new OpenFileDialog { Multiselect = true };
+                    var dlg = new OpenFileDialog { Multiselect = true, Title = message };
                     return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : new string[0];
                 }));
 
@@ -4597,9 +4595,9 @@ namespace IPAnalyzer
                 /// Read parameter file.
                 /// </summary>
                 /// <param name="_fileName"></param>
-                public void ReadParameter(string fileName = "") => Execute(new Action(() => p.main.ReadParameter(fileName)));
+                public void ReadParameter(string fileName = "") => Execute(new Action(() => p.main.ReadParameter(fileName,true)));
 
-                public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName)));
+                public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName,true)));
 
                 public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
                 public void SaveMask(string fileName = "") => Execute(new Action(() => p.main.SaveMask(fileName)));
