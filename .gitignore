@@ -3,7 +3,6 @@
 
 references/
 IPAnalyzerSetup/
-Eigen/
 Crystallography.Native/Eigen/
 *.exe
 

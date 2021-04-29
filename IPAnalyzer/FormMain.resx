@@ -328,7 +328,7 @@
     <value>scalablePictureBoxThumbnail</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2021.4.29.752, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Parent" xml:space="preserve">
     <value>panel3</value>
@@ -754,7 +754,7 @@
     <value>scalablePictureBox</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2021.4.29.752, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -1678,7 +1678,7 @@
     <value>trackBarAdvancedMinInt</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2021.4.29.752, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -1726,7 +1726,7 @@
     <value>trackBarAdvancedMaxInt</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2021.4.29.752, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -1873,7 +1873,7 @@
     <value>graphControlFrequency</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2021.4.29.752, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -1936,7 +1936,7 @@
     <value>graphControlProfile</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2020.12.17.1017, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2021.4.29.752, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -3015,7 +3015,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Property</value>
   </data>
   <data name="toolTipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 24</value>
+    <value>174, 24</value>
   </data>
   <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
     <value>ToolTip</value>
@@ -3033,7 +3033,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Vertically</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 24</value>
+    <value>174, 24</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Flip</value>
@@ -3054,16 +3054,16 @@ X線の波長とカメラ長を設定します。</value>
     <value>121, 23</value>
   </data>
   <data name="rotateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 24</value>
+    <value>174, 24</value>
   </data>
   <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
     <value>Rotate</value>
   </data>
   <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>171, 6</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 24</value>
+    <value>174, 24</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
     <value>Ngen Compile</value>
@@ -3113,13 +3113,13 @@ X線の波長とカメラ長を設定します。</value>
     <value>Language</value>
   </data>
   <data name="editorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 24</value>
+    <value>118, 24</value>
   </data>
   <data name="editorToolStripMenuItem.Text" xml:space="preserve">
     <value>Editor</value>
   </data>
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>115, 6</value>
   </data>
   <data name="macroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 24</value>
@@ -3397,7 +3397,7 @@ Center</value>
     <value>6, 56</value>
   </data>
   <data name="toolStripMenuItemClearMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
     <value>Clear mask</value>
@@ -3407,7 +3407,7 @@ Center</value>
 マスクされた部分を全てクリアします。</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
     <value>Mask all area</value>
@@ -3417,16 +3417,16 @@ Center</value>
 全てをマスクします</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
     <value>Invert mask</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>155, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Text" xml:space="preserve">
     <value>Manual Mode</value>
@@ -3437,10 +3437,10 @@ Center</value>
 スポットの大きさは"Option"から変更できます。</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>155, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Text" xml:space="preserve">
     <value>Option</value>
@@ -3868,9 +3868,6 @@ Mode</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>

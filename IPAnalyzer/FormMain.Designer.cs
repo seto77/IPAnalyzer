@@ -58,6 +58,7 @@ namespace IPAnalyzer
             this.textBoxInformation = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.scalablePictureBoxThumbnail = new Crystallography.Controls.ScalablePictureBox();
             this.radioButtonNearCenter = new System.Windows.Forms.RadioButton();
             this.radioButtonWhole = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -67,6 +68,7 @@ namespace IPAnalyzer
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxGradient = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.scalablePictureBox = new Crystallography.Controls.ScalablePictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelResolution = new System.Windows.Forms.Label();
             this.labelMousePointChi = new System.Windows.Forms.Label();
@@ -88,11 +90,15 @@ namespace IPAnalyzer
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonAutoLevel = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.trackBarAdvancedMinInt = new Crystallography.Controls.TrackBarAdvanced();
+            this.trackBarAdvancedMaxInt = new Crystallography.Controls.TrackBarAdvanced();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMousePos = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.graphControlFrequency = new Crystallography.Controls.GraphControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.graphControlProfile = new Crystallography.Controls.GraphControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBoxStatisticsSelectedAreaSequential = new System.Windows.Forms.TextBox();
             this.textBoxStatisticsSelectedArea = new System.Windows.Forms.TextBox();
@@ -230,12 +236,6 @@ namespace IPAnalyzer
             this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.scalablePictureBoxThumbnail = new Crystallography.Controls.ScalablePictureBox();
-            this.scalablePictureBox = new Crystallography.Controls.ScalablePictureBox();
-            this.trackBarAdvancedMinInt = new Crystallography.Controls.TrackBarAdvanced();
-            this.trackBarAdvancedMaxInt = new Crystallography.Controls.TrackBarAdvanced();
-            this.graphControlFrequency = new Crystallography.Controls.GraphControl();
-            this.graphControlProfile = new Crystallography.Controls.GraphControl();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.RightToolStripPanel.SuspendLayout();
@@ -397,6 +397,26 @@ namespace IPAnalyzer
             this.panel3.Name = "panel3";
             this.helpProvider.SetShowHelp(this.panel3, ((bool)(resources.GetObject("panel3.ShowHelp"))));
             // 
+            // scalablePictureBoxThumbnail
+            // 
+            this.scalablePictureBoxThumbnail.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.scalablePictureBoxThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.scalablePictureBoxThumbnail, "scalablePictureBoxThumbnail");
+            this.scalablePictureBoxThumbnail.FixZoomAndCenter = false;
+            this.scalablePictureBoxThumbnail.FocusEventEnabled = false;
+            this.scalablePictureBoxThumbnail.HorizontalFlip = false;
+            this.scalablePictureBoxThumbnail.ManualSpotMode = false;
+            this.scalablePictureBoxThumbnail.MouseScaling = true;
+            this.scalablePictureBoxThumbnail.MouseTranslation = false;
+            this.scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
+            this.scalablePictureBoxThumbnail.ShowAreaRectangle = false;
+            this.helpProvider.SetShowHelp(this.scalablePictureBoxThumbnail, ((bool)(resources.GetObject("scalablePictureBoxThumbnail.ShowHelp"))));
+            this.scalablePictureBoxThumbnail.ShowRimRentangle = false;
+            this.scalablePictureBoxThumbnail.VerticalFlip = false;
+            this.scalablePictureBoxThumbnail.Zoom = 128D;
+            this.scalablePictureBoxThumbnail.MouseDown2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBoxThumbnail_MouseDown2);
+            this.scalablePictureBoxThumbnail.Draw += new Crystallography.Controls.ScalablePictureBox.DrawEvent(this.scalablePictureBoxThumbnail_Draw);
+            // 
             // radioButtonNearCenter
             // 
             resources.ApplyResources(this.radioButtonNearCenter, "radioButtonNearCenter");
@@ -481,6 +501,29 @@ namespace IPAnalyzer
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             this.helpProvider.SetShowHelp(this.label5, ((bool)(resources.GetObject("label5.ShowHelp"))));
+            // 
+            // scalablePictureBox
+            // 
+            this.scalablePictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.scalablePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.scalablePictureBox, "scalablePictureBox");
+            this.scalablePictureBox.FixZoomAndCenter = false;
+            this.scalablePictureBox.FocusEventEnabled = false;
+            this.scalablePictureBox.HorizontalFlip = false;
+            this.scalablePictureBox.ManualSpotMode = false;
+            this.scalablePictureBox.MouseScaling = true;
+            this.scalablePictureBox.MouseTranslation = true;
+            this.scalablePictureBox.Name = "scalablePictureBox";
+            this.scalablePictureBox.ShowAreaRectangle = false;
+            this.helpProvider.SetShowHelp(this.scalablePictureBox, ((bool)(resources.GetObject("scalablePictureBox.ShowHelp"))));
+            this.scalablePictureBox.ShowRimRentangle = false;
+            this.scalablePictureBox.VerticalFlip = false;
+            this.scalablePictureBox.Zoom = 128D;
+            this.scalablePictureBox.MouseMove2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseMove2);
+            this.scalablePictureBox.MouseUp2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseUp2);
+            this.scalablePictureBox.MouseDown2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseDown2);
+            this.scalablePictureBox.MouseWheel2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseWheel2);
+            this.scalablePictureBox.Draw += new Crystallography.Controls.ScalablePictureBox.DrawEvent(this.scalablePictureBox_Draw);
             // 
             // tableLayoutPanel1
             // 
@@ -632,6 +675,42 @@ namespace IPAnalyzer
             this.helpProvider.SetShowHelp(this.buttonReset, ((bool)(resources.GetObject("buttonReset.ShowHelp"))));
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // trackBarAdvancedMinInt
+            // 
+            resources.ApplyResources(this.trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
+            this.trackBarAdvancedMinInt.ControlHeight = 27;
+            this.trackBarAdvancedMinInt.DecimalPlaces = 0;
+            this.trackBarAdvancedMinInt.LogScrollBar = false;
+            this.trackBarAdvancedMinInt.Maximum = 65535D;
+            this.trackBarAdvancedMinInt.Minimum = 0D;
+            this.trackBarAdvancedMinInt.Name = "trackBarAdvancedMinInt";
+            this.trackBarAdvancedMinInt.NumericBoxSize = 120;
+            this.trackBarAdvancedMinInt.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.helpProvider.SetShowHelp(this.trackBarAdvancedMinInt, ((bool)(resources.GetObject("trackBarAdvancedMinInt.ShowHelp"))));
+            this.trackBarAdvancedMinInt.Smart_Increment = true;
+            this.trackBarAdvancedMinInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.trackBarAdvancedMinInt.UpDown_Increment = 1D;
+            this.trackBarAdvancedMinInt.Value = 0D;
+            this.trackBarAdvancedMinInt.ValueChanged += new Crystallography.Controls.TrackBarAdvanced.ValueChangedDelegate(this.trackBarAdvancedMinInt_ValueChanged);
+            // 
+            // trackBarAdvancedMaxInt
+            // 
+            resources.ApplyResources(this.trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
+            this.trackBarAdvancedMaxInt.ControlHeight = 27;
+            this.trackBarAdvancedMaxInt.DecimalPlaces = 0;
+            this.trackBarAdvancedMaxInt.LogScrollBar = false;
+            this.trackBarAdvancedMaxInt.Maximum = 65535D;
+            this.trackBarAdvancedMaxInt.Minimum = 0D;
+            this.trackBarAdvancedMaxInt.Name = "trackBarAdvancedMaxInt";
+            this.trackBarAdvancedMaxInt.NumericBoxSize = 120;
+            this.trackBarAdvancedMaxInt.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.helpProvider.SetShowHelp(this.trackBarAdvancedMaxInt, ((bool)(resources.GetObject("trackBarAdvancedMaxInt.ShowHelp"))));
+            this.trackBarAdvancedMaxInt.Smart_Increment = true;
+            this.trackBarAdvancedMaxInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.trackBarAdvancedMaxInt.UpDown_Increment = 1D;
+            this.trackBarAdvancedMaxInt.Value = 65535D;
+            this.trackBarAdvancedMaxInt.ValueChanged += new Crystallography.Controls.TrackBarAdvanced.ValueChangedDelegate(this.trackBarAdvancedMaxInt_ValueChanged);
+            // 
             // flowLayoutPanel1
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
@@ -662,6 +741,53 @@ namespace IPAnalyzer
             this.helpProvider.SetShowHelp(this.tabPage1, ((bool)(resources.GetObject("tabPage1.ShowHelp"))));
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // graphControlFrequency
+            // 
+            this.graphControlFrequency.AllowMouseOperation = true;
+            this.graphControlFrequency.BackgroundColor = System.Drawing.Color.White;
+            this.graphControlFrequency.BottomMargin = 0D;
+            this.graphControlFrequency.DivisionLineColor = System.Drawing.Color.Black;
+            this.graphControlFrequency.DivisionSubLineColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.graphControlFrequency, "graphControlFrequency");
+            this.graphControlFrequency.FixRangeHorizontal = false;
+            this.graphControlFrequency.FixRangeVertical = false;
+            this.graphControlFrequency.GraphName = "";
+            this.graphControlFrequency.HorizontalGradiationTextVisivle = true;
+            this.graphControlFrequency.Interpolation = false;
+            this.graphControlFrequency.IsIntegerX = true;
+            this.graphControlFrequency.IsIntegerY = true;
+            this.graphControlFrequency.LabelX = "Intensity:";
+            this.graphControlFrequency.LabelY = "Frequency:";
+            this.graphControlFrequency.LeftMargin = 0F;
+            this.graphControlFrequency.LineColor = System.Drawing.Color.Red;
+            this.graphControlFrequency.LineWidth = 1F;
+            this.graphControlFrequency.LowerX = 0D;
+            this.graphControlFrequency.LowerY = 0D;
+            this.graphControlFrequency.MaximalX = 1D;
+            this.graphControlFrequency.MaximalY = 1D;
+            this.graphControlFrequency.MinimalX = 0D;
+            this.graphControlFrequency.MinimalY = 0D;
+            this.graphControlFrequency.Mode = Crystallography.Controls.GraphControl.DrawingMode.Histogram;
+            this.graphControlFrequency.MousePositionVisible = true;
+            this.graphControlFrequency.Name = "graphControlFrequency";
+            this.graphControlFrequency.OriginPosition = new System.Drawing.Point(40, 20);
+            this.helpProvider.SetShowHelp(this.graphControlFrequency, ((bool)(resources.GetObject("graphControlFrequency.ShowHelp"))));
+            this.graphControlFrequency.Smoothing = false;
+            this.graphControlFrequency.TextFont = new System.Drawing.Font("Arial", 9F);
+            this.graphControlFrequency.UnitX = "";
+            this.graphControlFrequency.UnitY = "";
+            this.graphControlFrequency.UpperText = "";
+            this.graphControlFrequency.UpperTextVisible = true;
+            this.graphControlFrequency.UpperX = 1D;
+            this.graphControlFrequency.UpperY = 1D;
+            this.graphControlFrequency.UseLineWidth = true;
+            this.graphControlFrequency.VerticalGradiationTextVisivle = true;
+            this.graphControlFrequency.XLog = true;
+            this.graphControlFrequency.XScaleLineVisible = true;
+            this.graphControlFrequency.YLog = true;
+            this.graphControlFrequency.YScaleLineVisible = true;
+            this.graphControlFrequency.LinePositionChanged += new Crystallography.Controls.GraphControl.LinePositionChengedEventHandler(this.graphControlFrequency_LinePositionChanged);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.graphControlProfile);
@@ -669,6 +795,52 @@ namespace IPAnalyzer
             this.tabPage2.Name = "tabPage2";
             this.helpProvider.SetShowHelp(this.tabPage2, ((bool)(resources.GetObject("tabPage2.ShowHelp"))));
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // graphControlProfile
+            // 
+            this.graphControlProfile.AllowMouseOperation = true;
+            this.graphControlProfile.BackgroundColor = System.Drawing.Color.White;
+            this.graphControlProfile.BottomMargin = 0D;
+            this.graphControlProfile.DivisionLineColor = System.Drawing.Color.Black;
+            this.graphControlProfile.DivisionSubLineColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.graphControlProfile, "graphControlProfile");
+            this.graphControlProfile.FixRangeHorizontal = false;
+            this.graphControlProfile.FixRangeVertical = false;
+            this.graphControlProfile.GraphName = "";
+            this.graphControlProfile.HorizontalGradiationTextVisivle = true;
+            this.graphControlProfile.Interpolation = false;
+            this.graphControlProfile.IsIntegerX = false;
+            this.graphControlProfile.IsIntegerY = false;
+            this.graphControlProfile.LabelX = "Angle:";
+            this.graphControlProfile.LabelY = "Intensity:";
+            this.graphControlProfile.LeftMargin = 0F;
+            this.graphControlProfile.LineColor = System.Drawing.Color.Red;
+            this.graphControlProfile.LineWidth = 1F;
+            this.graphControlProfile.LowerX = 0D;
+            this.graphControlProfile.LowerY = 0D;
+            this.graphControlProfile.MaximalX = 1D;
+            this.graphControlProfile.MaximalY = 1D;
+            this.graphControlProfile.MinimalX = 0D;
+            this.graphControlProfile.MinimalY = 0D;
+            this.graphControlProfile.Mode = Crystallography.Controls.GraphControl.DrawingMode.Line;
+            this.graphControlProfile.MousePositionVisible = true;
+            this.graphControlProfile.Name = "graphControlProfile";
+            this.graphControlProfile.OriginPosition = new System.Drawing.Point(40, 20);
+            this.helpProvider.SetShowHelp(this.graphControlProfile, ((bool)(resources.GetObject("graphControlProfile.ShowHelp"))));
+            this.graphControlProfile.Smoothing = false;
+            this.graphControlProfile.TextFont = new System.Drawing.Font("Arial", 9F);
+            this.graphControlProfile.UnitX = "";
+            this.graphControlProfile.UnitY = "";
+            this.graphControlProfile.UpperText = "";
+            this.graphControlProfile.UpperTextVisible = true;
+            this.graphControlProfile.UpperX = 1D;
+            this.graphControlProfile.UpperY = 1D;
+            this.graphControlProfile.UseLineWidth = true;
+            this.graphControlProfile.VerticalGradiationTextVisivle = true;
+            this.graphControlProfile.XLog = false;
+            this.graphControlProfile.XScaleLineVisible = true;
+            this.graphControlProfile.YLog = false;
+            this.graphControlProfile.YScaleLineVisible = true;
             // 
             // tabPage3
             // 
@@ -1723,178 +1895,6 @@ namespace IPAnalyzer
             // toolTip
             // 
             this.toolTip.IsBalloon = true;
-            // 
-            // scalablePictureBoxThumbnail
-            // 
-            this.scalablePictureBoxThumbnail.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.scalablePictureBoxThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.scalablePictureBoxThumbnail, "scalablePictureBoxThumbnail");
-            this.scalablePictureBoxThumbnail.FixZoomAndCenter = false;
-            this.scalablePictureBoxThumbnail.FocusEventEnabled = false;
-            this.scalablePictureBoxThumbnail.HorizontalFlip = false;
-            this.scalablePictureBoxThumbnail.ManualSpotMode = false;
-            this.scalablePictureBoxThumbnail.MouseScaling = true;
-            this.scalablePictureBoxThumbnail.MouseTranslation = false;
-            this.scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
-            this.scalablePictureBoxThumbnail.ShowAreaRectangle = false;
-            this.helpProvider.SetShowHelp(this.scalablePictureBoxThumbnail, ((bool)(resources.GetObject("scalablePictureBoxThumbnail.ShowHelp"))));
-            this.scalablePictureBoxThumbnail.ShowRimRentangle = false;
-            this.scalablePictureBoxThumbnail.VerticalFlip = false;
-            this.scalablePictureBoxThumbnail.Zoom = 128D;
-            this.scalablePictureBoxThumbnail.MouseDown2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBoxThumbnail_MouseDown2);
-            this.scalablePictureBoxThumbnail.Draw += new Crystallography.Controls.ScalablePictureBox.DrawEvent(this.scalablePictureBoxThumbnail_Draw);
-            // 
-            // scalablePictureBox
-            // 
-            this.scalablePictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.scalablePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.scalablePictureBox, "scalablePictureBox");
-            this.scalablePictureBox.FixZoomAndCenter = false;
-            this.scalablePictureBox.FocusEventEnabled = false;
-            this.scalablePictureBox.HorizontalFlip = false;
-            this.scalablePictureBox.ManualSpotMode = false;
-            this.scalablePictureBox.MouseScaling = true;
-            this.scalablePictureBox.MouseTranslation = true;
-            this.scalablePictureBox.Name = "scalablePictureBox";
-            this.scalablePictureBox.ShowAreaRectangle = false;
-            this.helpProvider.SetShowHelp(this.scalablePictureBox, ((bool)(resources.GetObject("scalablePictureBox.ShowHelp"))));
-            this.scalablePictureBox.ShowRimRentangle = false;
-            this.scalablePictureBox.VerticalFlip = false;
-            this.scalablePictureBox.Zoom = 128D;
-            this.scalablePictureBox.MouseMove2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseMove2);
-            this.scalablePictureBox.MouseUp2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseUp2);
-            this.scalablePictureBox.MouseDown2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseDown2);
-            this.scalablePictureBox.MouseWheel2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseWheel2);
-            this.scalablePictureBox.Draw += new Crystallography.Controls.ScalablePictureBox.DrawEvent(this.scalablePictureBox_Draw);
-            // 
-            // trackBarAdvancedMinInt
-            // 
-            resources.ApplyResources(this.trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
-            this.trackBarAdvancedMinInt.ControlHeight = 27;
-            this.trackBarAdvancedMinInt.DecimalPlaces = 0;
-            this.trackBarAdvancedMinInt.LogScrollBar = false;
-            this.trackBarAdvancedMinInt.Maximum = 65535D;
-            this.trackBarAdvancedMinInt.Minimum = 0D;
-            this.trackBarAdvancedMinInt.Name = "trackBarAdvancedMinInt";
-            this.trackBarAdvancedMinInt.NumericBoxSize = 120;
-            this.trackBarAdvancedMinInt.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.helpProvider.SetShowHelp(this.trackBarAdvancedMinInt, ((bool)(resources.GetObject("trackBarAdvancedMinInt.ShowHelp"))));
-            this.trackBarAdvancedMinInt.Smart_Increment = true;
-            this.trackBarAdvancedMinInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-            this.trackBarAdvancedMinInt.UpDown_Increment = 1D;
-            this.trackBarAdvancedMinInt.Value = 0D;
-            this.trackBarAdvancedMinInt.ValueChanged += new Crystallography.Controls.TrackBarAdvanced.ValueChangedDelegate(this.trackBarAdvancedMinInt_ValueChanged);
-            // 
-            // trackBarAdvancedMaxInt
-            // 
-            resources.ApplyResources(this.trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
-            this.trackBarAdvancedMaxInt.ControlHeight = 27;
-            this.trackBarAdvancedMaxInt.DecimalPlaces = 0;
-            this.trackBarAdvancedMaxInt.LogScrollBar = false;
-            this.trackBarAdvancedMaxInt.Maximum = 65535D;
-            this.trackBarAdvancedMaxInt.Minimum = 0D;
-            this.trackBarAdvancedMaxInt.Name = "trackBarAdvancedMaxInt";
-            this.trackBarAdvancedMaxInt.NumericBoxSize = 120;
-            this.trackBarAdvancedMaxInt.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.helpProvider.SetShowHelp(this.trackBarAdvancedMaxInt, ((bool)(resources.GetObject("trackBarAdvancedMaxInt.ShowHelp"))));
-            this.trackBarAdvancedMaxInt.Smart_Increment = true;
-            this.trackBarAdvancedMaxInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-            this.trackBarAdvancedMaxInt.UpDown_Increment = 1D;
-            this.trackBarAdvancedMaxInt.Value = 65535D;
-            this.trackBarAdvancedMaxInt.ValueChanged += new Crystallography.Controls.TrackBarAdvanced.ValueChangedDelegate(this.trackBarAdvancedMaxInt_ValueChanged);
-            // 
-            // graphControlFrequency
-            // 
-            this.graphControlFrequency.AllowMouseOperation = true;
-            this.graphControlFrequency.BackgroundColor = System.Drawing.Color.White;
-            this.graphControlFrequency.BottomMargin = 0D;
-            this.graphControlFrequency.DivisionLineColor = System.Drawing.Color.Black;
-            this.graphControlFrequency.DivisionSubLineColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.graphControlFrequency, "graphControlFrequency");
-            this.graphControlFrequency.FixRangeHorizontal = false;
-            this.graphControlFrequency.FixRangeVertical = false;
-            this.graphControlFrequency.GraphName = "";
-            this.graphControlFrequency.HorizontalGradiationTextVisivle = true;
-            this.graphControlFrequency.Interpolation = false;
-            this.graphControlFrequency.IsIntegerX = true;
-            this.graphControlFrequency.IsIntegerY = true;
-            this.graphControlFrequency.LabelX = "Intensity:";
-            this.graphControlFrequency.LabelY = "Frequency:";
-            this.graphControlFrequency.LeftMargin = 0F;
-            this.graphControlFrequency.LineColor = System.Drawing.Color.Red;
-            this.graphControlFrequency.LineWidth = 1F;
-            this.graphControlFrequency.LowerX = 0D;
-            this.graphControlFrequency.LowerY = 0D;
-            this.graphControlFrequency.MaximalX = 1D;
-            this.graphControlFrequency.MaximalY = 1D;
-            this.graphControlFrequency.MinimalX = 0D;
-            this.graphControlFrequency.MinimalY = 0D;
-            this.graphControlFrequency.Mode = Crystallography.Controls.GraphControl.DrawingMode.Histogram;
-            this.graphControlFrequency.MousePositionVisible = true;
-            this.graphControlFrequency.Name = "graphControlFrequency";
-            this.graphControlFrequency.OriginPosition = new System.Drawing.Point(40, 20);
-            this.helpProvider.SetShowHelp(this.graphControlFrequency, ((bool)(resources.GetObject("graphControlFrequency.ShowHelp"))));
-            this.graphControlFrequency.Smoothing = false;
-            this.graphControlFrequency.TextFont = new System.Drawing.Font("Arial", 9F);
-            this.graphControlFrequency.UnitX = "";
-            this.graphControlFrequency.UnitY = "";
-            this.graphControlFrequency.UpperText = "";
-            this.graphControlFrequency.UpperTextVisible = true;
-            this.graphControlFrequency.UpperX = 1D;
-            this.graphControlFrequency.UpperY = 1D;
-            this.graphControlFrequency.UseLineWidth = true;
-            this.graphControlFrequency.VerticalGradiationTextVisivle = true;
-            this.graphControlFrequency.XLog = true;
-            this.graphControlFrequency.XScaleLineVisible = true;
-            this.graphControlFrequency.YLog = true;
-            this.graphControlFrequency.YScaleLineVisible = true;
-            this.graphControlFrequency.LinePositionChanged += new Crystallography.Controls.GraphControl.LinePositionChengedEventHandler(this.graphControlFrequency_LinePositionChanged);
-            // 
-            // graphControlProfile
-            // 
-            this.graphControlProfile.AllowMouseOperation = true;
-            this.graphControlProfile.BackgroundColor = System.Drawing.Color.White;
-            this.graphControlProfile.BottomMargin = 0D;
-            this.graphControlProfile.DivisionLineColor = System.Drawing.Color.Black;
-            this.graphControlProfile.DivisionSubLineColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.graphControlProfile, "graphControlProfile");
-            this.graphControlProfile.FixRangeHorizontal = false;
-            this.graphControlProfile.FixRangeVertical = false;
-            this.graphControlProfile.GraphName = "";
-            this.graphControlProfile.HorizontalGradiationTextVisivle = true;
-            this.graphControlProfile.Interpolation = false;
-            this.graphControlProfile.IsIntegerX = false;
-            this.graphControlProfile.IsIntegerY = false;
-            this.graphControlProfile.LabelX = "Angle:";
-            this.graphControlProfile.LabelY = "Intensity:";
-            this.graphControlProfile.LeftMargin = 0F;
-            this.graphControlProfile.LineColor = System.Drawing.Color.Red;
-            this.graphControlProfile.LineWidth = 1F;
-            this.graphControlProfile.LowerX = 0D;
-            this.graphControlProfile.LowerY = 0D;
-            this.graphControlProfile.MaximalX = 1D;
-            this.graphControlProfile.MaximalY = 1D;
-            this.graphControlProfile.MinimalX = 0D;
-            this.graphControlProfile.MinimalY = 0D;
-            this.graphControlProfile.Mode = Crystallography.Controls.GraphControl.DrawingMode.Line;
-            this.graphControlProfile.MousePositionVisible = true;
-            this.graphControlProfile.Name = "graphControlProfile";
-            this.graphControlProfile.OriginPosition = new System.Drawing.Point(40, 20);
-            this.helpProvider.SetShowHelp(this.graphControlProfile, ((bool)(resources.GetObject("graphControlProfile.ShowHelp"))));
-            this.graphControlProfile.Smoothing = false;
-            this.graphControlProfile.TextFont = new System.Drawing.Font("Arial", 9F);
-            this.graphControlProfile.UnitX = "";
-            this.graphControlProfile.UnitY = "";
-            this.graphControlProfile.UpperText = "";
-            this.graphControlProfile.UpperTextVisible = true;
-            this.graphControlProfile.UpperX = 1D;
-            this.graphControlProfile.UpperY = 1D;
-            this.graphControlProfile.UseLineWidth = true;
-            this.graphControlProfile.VerticalGradiationTextVisivle = true;
-            this.graphControlProfile.XLog = false;
-            this.graphControlProfile.XScaleLineVisible = true;
-            this.graphControlProfile.YLog = false;
-            this.graphControlProfile.YScaleLineVisible = true;
             // 
             // FormMain
             // 
