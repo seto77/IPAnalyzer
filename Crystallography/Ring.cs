@@ -2704,7 +2704,7 @@ namespace Crystallography
 							//(0,0,FD)から(X,Y,Z)のベクトルにcoeff_detector_palalleをかけた後、detector_normalの方向にslide_detector_normalだけ進める。
 							x = x * coeff_detector_palallel + detector_normal.X * slide_detector_normal;  
 							y = y * coeff_detector_palallel + detector_normal.Y * slide_detector_normal;
-							z = (z - fd) * coeff_detector_palallel + fd + detector_normal.Z * slide_detector_normal;
+							z = (z - fd) * coeff_detector_palallel + fd + detector_normal.Z * slide_detector_normal; 
 						}
 
 
