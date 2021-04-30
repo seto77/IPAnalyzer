@@ -156,8 +156,7 @@
             this.checkBoxSendUnrolledImageToPDIndexer = new System.Windows.Forms.CheckBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownUnrollSectorStep = new System.Windows.Forms.NumericUpDown();
-            this.label43 = new System.Windows.Forms.Label();
+            this.numericUpDownUnrollChiDivision = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numericUpDownUnrolledImageXend = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownUnrolledImageXstart = new System.Windows.Forms.NumericUpDown();
@@ -249,7 +248,7 @@
             this.groupBoxSendPDI.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrollSectorStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrollChiDivision)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstart)).BeginInit();
@@ -1443,36 +1442,29 @@
             // groupBox3
             // 
             resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Controls.Add(this.numericUpDownUnrollSectorStep);
-            this.groupBox3.Controls.Add(this.label43);
+            this.groupBox3.Controls.Add(this.numericUpDownUnrollChiDivision);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
-            // numericUpDownUnrollSectorStep
+            // numericUpDownUnrollChiDivision
             // 
-            resources.ApplyResources(this.numericUpDownUnrollSectorStep, "numericUpDownUnrollSectorStep");
-            this.numericUpDownUnrollSectorStep.DecimalPlaces = 3;
-            this.numericUpDownUnrollSectorStep.Increment = new decimal(new int[] {
+            resources.ApplyResources(this.numericUpDownUnrollChiDivision, "numericUpDownUnrollChiDivision");
+            this.numericUpDownUnrollChiDivision.Maximum = new decimal(new int[] {
+            2048,
+            0,
+            0,
+            0});
+            this.numericUpDownUnrollChiDivision.Minimum = new decimal(new int[] {
             1,
             0,
             0,
-            131072});
-            this.numericUpDownUnrollSectorStep.Minimum = new decimal(new int[] {
-            1,
+            0});
+            this.numericUpDownUnrollChiDivision.Name = "numericUpDownUnrollChiDivision";
+            this.numericUpDownUnrollChiDivision.Value = new decimal(new int[] {
+            720,
             0,
             0,
-            131072});
-            this.numericUpDownUnrollSectorStep.Name = "numericUpDownUnrollSectorStep";
-            this.numericUpDownUnrollSectorStep.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            // 
-            // label43
-            // 
-            resources.ApplyResources(this.label43, "label43");
-            this.label43.Name = "label43";
+            0});
             // 
             // groupBox1
             // 
@@ -1964,8 +1956,7 @@
             this.groupBoxSendPDI.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrollSectorStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrollChiDivision)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXend)).EndInit();
@@ -2092,9 +2083,8 @@
         public Crystallography.Controls.NumericBox numericBoxCenterPositionX;
         private System.Windows.Forms.TabPage tabPage1;
         public System.Windows.Forms.NumericUpDown numericUpDownUnrolledImageXstart;
-        public System.Windows.Forms.NumericUpDown numericUpDownUnrollSectorStep;
+        public System.Windows.Forms.NumericUpDown numericUpDownUnrollChiDivision;
         public System.Windows.Forms.NumericUpDown numericUpDownUnrolledImageXend;
-        public System.Windows.Forms.Label label43;
         public System.Windows.Forms.NumericUpDown numericUpDownUnrolledImageXstep;
         public System.Windows.Forms.RadioButton radioButton2;
         public System.Windows.Forms.RadioButton radioButton3;

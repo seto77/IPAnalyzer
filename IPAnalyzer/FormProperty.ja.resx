@@ -876,17 +876,32 @@
   <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
     <value>１次元化後の処理</value>
   </data>
-  <data name="numericUpDownUnrollSectorStep.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericUpDownUnrollChiDivision.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.Location" type="System.Drawing.Point, System.Drawing">
     <value>45, 33</value>
   </data>
-  <data name="label43.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 35</value>
+  <data name="numericUpDownUnrollChiDivision.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 67</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>画像垂直方向の角度ステップ</value>
+    <value>画像垂直方向のピクセル数</value>
   </data>
   <data name="label25.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>

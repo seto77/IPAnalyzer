@@ -3148,7 +3148,7 @@ namespace IPAnalyzer
 
         #endregion
 
-        #region GetI Profileボタン関連
+        #region Get Profileボタン関連
         private void toolStripMenuItemAngleSetting_Click(object sender, EventArgs e)
         {
             FormProperty.Visible = true;
@@ -3214,7 +3214,7 @@ namespace IPAnalyzer
                     diffractionProfile.Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial;
 
                     int[] targets = new int[1];
-                    //シーケンシャルモードの時の処理
+                    //シーケンシャルイメージモードの時の処理
                     if (toolStripButtonImageSequence.Enabled)
                     {
                         if (toolStripMenuItemAllSequentialImages.Checked)
@@ -3232,7 +3232,7 @@ namespace IPAnalyzer
 
                     for (int i = 0; i < targets.Length; i++)
                     {
-                        //シーケンシャルモードの時の処理
+                        //シーケンシャルイメージモードの時の処理
                         if (toolStripButtonImageSequence.Enabled && (toolStripMenuItemAllSequentialImages.Checked || toolStripMenuItemSelectedSequentialImages.Checked))
                         {
                             FormSequentialImage.SkipCalcFreq = i != targets.Length - 1;
@@ -3267,17 +3267,17 @@ namespace IPAnalyzer
                         //Unrolled Imageの作成
                         if (FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked)
                         {
-                            var sectorStep = Math.PI * 1.0 / 180.0;
+                            var chiDivision = 360;
                             var xStart = IP.StartAngle;
                             var xEnd = IP.EndAngle;
                             var xStep = IP.StepAngle;
-                            var temp = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
+                            var temp = Ring.GetUnrolledImageArray(IP, chiDivision, xStart, xEnd, xStep);
                             diffractionProfile.ImageArray = new double[temp.Length];
                             for (int j = 0; j < temp.Length; j++)
                                 diffractionProfile.ImageArray[j] = temp[j];
                             diffractionProfile.ImageScale = 1;
                             diffractionProfile.ImageWidth = (int)((xEnd - xStart) / xStep);
-                            diffractionProfile.ImageHeight = (int)(2 * Math.PI / sectorStep);
+                            diffractionProfile.ImageHeight = chiDivision;
                         }
                         else
                             diffractionProfile.ImageArray = null;
@@ -3307,7 +3307,7 @@ namespace IPAnalyzer
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    MessageBox.Show("正常にデータを送信できませんでした。");
+                    MessageBox.Show("Failed to processing. sorry.");
                     this.Cursor = Cursors.Default;
                     toolStripSplitButtonGetProfile.Enabled = true;
                     return;
@@ -3573,37 +3573,31 @@ namespace IPAnalyzer
                 FormProperty.tabControl.SelectedIndex = 6;
                 FormProperty.Visible = true;
 
-                if (MessageBox.Show("Check parameters!　This process will take few minutes if the resolution of the unrolled image is high. ", "", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    var sectorStep = Math.PI * (double)FormProperty.numericUpDownUnrollSectorStep.Value / 180.0;
-                    var xStart = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstart.Value / 180.0;
-                    var xEnd = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXend.Value / 180.0;
-                    var xStep = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstep.Value / 180.0;
+                var chiDivision = (int)FormProperty.numericUpDownUnrollChiDivision.Value;
+                var xStart = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstart.Value / 180.0;
+                var xEnd = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXend.Value / 180.0;
+                var xStep = Math.PI * (double)FormProperty.numericUpDownUnrolledImageXstep.Value / 180.0;
 
-                    var sw = new Stopwatch();
-                    sw.Start();
+                var sw = new Stopwatch();
+                sw.Start();
 
-                    double[] imageArray = Ring.GetUnrolledImageArray(IP, sectorStep, xStart, xEnd, xStep);
+                double[] imageArray = Ring.GetUnrolledImageArray(IP, chiDivision, xStart, xEnd, xStep);
 
-                    this.toolStripStatusLabel.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
+                this.toolStripStatusLabel.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
 
-                    byte[] scale = new byte[256];
-                    for (int i = 0; i < 256; i++)
-                        scale[i] = (byte)i;
-                    pseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
+                byte[] scale = new byte[256];
+                for (int i = 0; i < 256; i++)
+                    scale[i] = (byte)i;
+                pseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
 
-                    scalablePictureBox.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
-                    scalablePictureBoxThumbnail.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / (int)(2 * Math.PI / sectorStep), scale, scale, scale, false);
-                    Draw();
-                }
-                else
-                {
-                    toolStripButtonUnroll.Checked = false;
-                }
+                scalablePictureBox.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
+                scalablePictureBoxThumbnail.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
+                Draw();
             }
             else
             {
                 initializeFilter();
+                IntegralArea_Changed(new object(), new EventArgs());
                 Draw();
             }
         }
