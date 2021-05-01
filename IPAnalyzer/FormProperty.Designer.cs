@@ -118,6 +118,10 @@
             this.radioButtonDebyeScherrer = new System.Windows.Forms.RadioButton();
             this.tabPageSpotsAndCenter = new System.Windows.Forms.TabPage();
             this.checkBoxManualMaskMode = new System.Windows.Forms.CheckBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.radioButtonTakeOverMaskfile = new System.Windows.Forms.RadioButton();
+            this.radioButtonTakeoverMask = new System.Windows.Forms.RadioButton();
+            this.radioButtonTakoverNothing = new System.Windows.Forms.RadioButton();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.numericUpDownFindSpotsDeviation = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
@@ -134,11 +138,10 @@
             this.radioButtonCircle = new System.Windows.Forms.RadioButton();
             this.groupBoxSpline = new System.Windows.Forms.GroupBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.numericUpDownSplineWidth = new System.Windows.Forms.NumericUpDown();
             this.label49 = new System.Windows.Forms.Label();
+            this.numericUpDownSplineWidth = new System.Windows.Forms.NumericUpDown();
             this.buttonMaskAll = new System.Windows.Forms.Button();
             this.buttonUnmaskAll = new System.Windows.Forms.Button();
-            this.buttonSaveMask = new System.Windows.Forms.Button();
             this.tabPageAfterGetProfile = new System.Windows.Forms.TabPage();
             this.numericBoxTest = new Crystallography.Controls.NumericBox();
             this.checkBoxTest = new System.Windows.Forms.CheckBox();
@@ -234,6 +237,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPageSpotsAndCenter.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFindSpotsDeviation)).BeginInit();
             this.groupBoxManualMode.SuspendLayout();
@@ -1106,11 +1110,11 @@
             // 
             resources.ApplyResources(this.tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             this.tabPageSpotsAndCenter.Controls.Add(this.checkBoxManualMaskMode);
-            this.tabPageSpotsAndCenter.Controls.Add(this.groupBox12);
             this.tabPageSpotsAndCenter.Controls.Add(this.groupBoxManualMode);
+            this.tabPageSpotsAndCenter.Controls.Add(this.groupBox7);
+            this.tabPageSpotsAndCenter.Controls.Add(this.groupBox12);
             this.tabPageSpotsAndCenter.Controls.Add(this.buttonMaskAll);
             this.tabPageSpotsAndCenter.Controls.Add(this.buttonUnmaskAll);
-            this.tabPageSpotsAndCenter.Controls.Add(this.buttonSaveMask);
             this.tabPageSpotsAndCenter.Name = "tabPageSpotsAndCenter";
             this.tabPageSpotsAndCenter.UseVisualStyleBackColor = true;
             this.tabPageSpotsAndCenter.Click += new System.EventHandler(this.tabPageSpotsAndCenter_Click);
@@ -1121,6 +1125,35 @@
             this.checkBoxManualMaskMode.Name = "checkBoxManualMaskMode";
             this.checkBoxManualMaskMode.UseVisualStyleBackColor = true;
             this.checkBoxManualMaskMode.CheckedChanged += new System.EventHandler(this.checkBoxManualMaskMode_CheckedChanged);
+            // 
+            // groupBox7
+            // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.radioButtonTakeOverMaskfile);
+            this.groupBox7.Controls.Add(this.radioButtonTakeoverMask);
+            this.groupBox7.Controls.Add(this.radioButtonTakoverNothing);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            // 
+            // radioButtonTakeOverMaskfile
+            // 
+            resources.ApplyResources(this.radioButtonTakeOverMaskfile, "radioButtonTakeOverMaskfile");
+            this.radioButtonTakeOverMaskfile.Name = "radioButtonTakeOverMaskfile";
+            this.radioButtonTakeOverMaskfile.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTakeoverMask
+            // 
+            resources.ApplyResources(this.radioButtonTakeoverMask, "radioButtonTakeoverMask");
+            this.radioButtonTakeoverMask.Checked = true;
+            this.radioButtonTakeoverMask.Name = "radioButtonTakeoverMask";
+            this.radioButtonTakeoverMask.TabStop = true;
+            this.radioButtonTakeoverMask.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTakoverNothing
+            // 
+            resources.ApplyResources(this.radioButtonTakoverNothing, "radioButtonTakoverNothing");
+            this.radioButtonTakoverNothing.Name = "radioButtonTakoverNothing";
+            this.radioButtonTakoverNothing.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
@@ -1255,8 +1288,8 @@
             // 
             resources.ApplyResources(this.groupBoxSpline, "groupBoxSpline");
             this.groupBoxSpline.Controls.Add(this.label48);
-            this.groupBoxSpline.Controls.Add(this.numericUpDownSplineWidth);
             this.groupBoxSpline.Controls.Add(this.label49);
+            this.groupBoxSpline.Controls.Add(this.numericUpDownSplineWidth);
             this.groupBoxSpline.Name = "groupBoxSpline";
             this.groupBoxSpline.TabStop = false;
             // 
@@ -1264,6 +1297,11 @@
             // 
             resources.ApplyResources(this.label48, "label48");
             this.label48.Name = "label48";
+            // 
+            // label49
+            // 
+            resources.ApplyResources(this.label49, "label49");
+            this.label49.Name = "label49";
             // 
             // numericUpDownSplineWidth
             // 
@@ -1286,11 +1324,6 @@
             0});
             this.numericUpDownSplineWidth.ValueChanged += new System.EventHandler(this.numericUpDownSplineWidth_ValueChanged);
             // 
-            // label49
-            // 
-            resources.ApplyResources(this.label49, "label49");
-            this.label49.Name = "label49";
-            // 
             // buttonMaskAll
             // 
             resources.ApplyResources(this.buttonMaskAll, "buttonMaskAll");
@@ -1304,13 +1337,6 @@
             this.buttonUnmaskAll.Name = "buttonUnmaskAll";
             this.buttonUnmaskAll.UseVisualStyleBackColor = true;
             this.buttonUnmaskAll.Click += new System.EventHandler(this.buttonUnmaskAll_Click);
-            // 
-            // buttonSaveMask
-            // 
-            resources.ApplyResources(this.buttonSaveMask, "buttonSaveMask");
-            this.buttonSaveMask.Name = "buttonSaveMask";
-            this.buttonSaveMask.UseVisualStyleBackColor = true;
-            this.buttonSaveMask.Click += new System.EventHandler(this.buttonSaveMask_Click);
             // 
             // tabPageAfterGetProfile
             // 
@@ -1936,7 +1962,10 @@
             this.groupBox5.PerformLayout();
             this.tabPageSpotsAndCenter.ResumeLayout(false);
             this.tabPageSpotsAndCenter.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFindSpotsDeviation)).EndInit();
             this.groupBoxManualMode.ResumeLayout(false);
             this.groupBoxManualMode.PerformLayout();
@@ -2114,7 +2143,6 @@
         public System.Windows.Forms.GroupBox groupBoxManualSpot;
         private System.Windows.Forms.Button buttonMaskAll;
         private System.Windows.Forms.Button buttonUnmaskAll;
-        private System.Windows.Forms.Button buttonSaveMask;
         public System.Windows.Forms.RadioButton radioButtonManualCircle;
         public System.Windows.Forms.RadioButton radioButtonManualRectangle;
         public System.Windows.Forms.RadioButton radioButtonManualSpline;
@@ -2129,7 +2157,6 @@
         public System.Windows.Forms.RadioButton radioButtonChiBottom;
         public System.Windows.Forms.RadioButton radioButtonChiTop;
         public System.Windows.Forms.RadioButton radioButtonChiRight;
-        private System.Windows.Forms.GroupBox groupBoxSpline;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         public System.Windows.Forms.RadioButton radioButtonChiClockwise;
         public System.Windows.Forms.RadioButton radioButtonChiCounterclockwise;
@@ -2165,5 +2192,10 @@
         public Crystallography.Controls.NumericBox numericBoxBackgroundCoeff;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.RadioButton radioButtonAsTSVformat;
+        private System.Windows.Forms.GroupBox groupBoxSpline;
+        public System.Windows.Forms.GroupBox groupBox7;
+        public System.Windows.Forms.RadioButton radioButtonTakeOverMaskfile;
+        public System.Windows.Forms.RadioButton radioButtonTakeoverMask;
+        public System.Windows.Forms.RadioButton radioButtonTakoverNothing;
     }
 }

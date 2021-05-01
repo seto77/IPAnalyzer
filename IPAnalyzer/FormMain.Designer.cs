@@ -1865,7 +1865,12 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxAngleStep.Items9"),
             resources.GetString("toolStripComboBoxAngleStep.Items10"),
             resources.GetString("toolStripComboBoxAngleStep.Items11"),
-            resources.GetString("toolStripComboBoxAngleStep.Items12")});
+            resources.GetString("toolStripComboBoxAngleStep.Items12"),
+            resources.GetString("toolStripComboBoxAngleStep.Items13"),
+            resources.GetString("toolStripComboBoxAngleStep.Items14"),
+            resources.GetString("toolStripComboBoxAngleStep.Items15"),
+            resources.GetString("toolStripComboBoxAngleStep.Items16"),
+            resources.GetString("toolStripComboBoxAngleStep.Items17")});
             this.toolStripComboBoxAngleStep.Name = "toolStripComboBoxAngleStep";
             // 
             // toolStripSeparator20

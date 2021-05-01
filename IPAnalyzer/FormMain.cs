@@ -33,7 +33,7 @@ namespace IPAnalyzer
         public Size SrcImgSize;
         public int ThreadTotal = 16;
 
-        DiffractionProfile diffractionProfile = new DiffractionProfile();
+        //DiffractionProfile diffractionProfile = new DiffractionProfile();
 
         public bool IsImageReady = false;
 
@@ -1748,8 +1748,14 @@ namespace IPAnalyzer
             toolStripButtonImageSequence.Enabled = false;
             toolStripButtonImageSequence.Checked = false;
 
+            //直前のマスク情報を保存
+            var justBeforeImageSize = Ring.SrcImgSize;
+            var justBeforeMask = Ring.IsSpots.ToArray();
+                
             if (!ImageIO.ReadImage(str, flag))
                 return;
+
+           
 
             string ext = Path.GetExtension(str).TrimStart(new char[] { '.' }).ToLower();
             if (ext == "ipa")
@@ -1775,13 +1781,11 @@ namespace IPAnalyzer
 
             GC.Collect();
 
-            diffractionProfile = new DiffractionProfile();
-
             initializeFilter();
             setScale();
             FormProperty.checkBoxThreshold_CheckedChanged(new object(), new EventArgs());
             IsImageReady = true;
-            IntegralArea_Changed(new object(), new EventArgs());
+            //IntegralArea_Changed(new object(), new EventArgs());
             
             graphControlFrequency.LineList = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             Ring.CalcFreq();
@@ -1789,6 +1793,16 @@ namespace IPAnalyzer
             graphControlProfile.Profile = new Profile();//プロファイルは初期化
 
             SetInformation();
+
+            if (FormProperty.radioButtonTakeoverMask.Checked)
+            {
+                if (Ring.IsSpots.Count == justBeforeMask.Length)
+                    for (int i = 0; i < Ring.IsSpots.Count; i++)
+                        if (Ring.IsSpots[i] != justBeforeMask[i])
+                            Ring.IsSpots[i] = justBeforeMask[i];
+            }
+            else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile!="")
+                ReadMask(justBeforeMaskFile);
 
 
             FileName = str.Remove(0, str.LastIndexOf('\\') + 1);
@@ -1864,6 +1878,7 @@ namespace IPAnalyzer
                     FormProperty.CameraLength = length;
             }
 
+            
             
         }
 
@@ -2522,6 +2537,7 @@ namespace IPAnalyzer
             }
         }
 
+        string justBeforeMaskFile = "";
         public void ReadMask(string filename)
         {
             if (filename == "")
@@ -2555,6 +2571,7 @@ namespace IPAnalyzer
 
                     SetMask();
                     Draw();
+                    justBeforeMaskFile = filename;
                 }
             }
             catch { }
@@ -3019,8 +3036,8 @@ namespace IPAnalyzer
                 FormProperty.numericBoxConcentricEnd.Value = concentricEnd;
 
                 this.Enabled = true;
+                Draw();
             }
-            Draw();
         }
 
         private void toolStripButtonFixCenter_Click(object sender, EventArgs e)
@@ -3191,7 +3208,9 @@ namespace IPAnalyzer
 
             if (findCenterBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonFixCenter.Checked == false)
             {
+                FormProperty.SkipEvent = true;
                 toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
+                FormProperty.SkipEvent = false;
                 toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
             }
             if (findSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
@@ -3202,13 +3221,14 @@ namespace IPAnalyzer
             else
                 IP.Mode = HorizontalAxis.d;
 
+            
             //通常積分モード
             if (!toolStripMenuItemDividedByAngleStep.Checked)
             {
                 try
                 {
                     SetMask();
-
+                    var diffractionProfile = new DiffractionProfile();
                     diffractionProfile.SrcAxisMode = IP.Mode;
                     diffractionProfile.SrcWaveLength = IP.WaveLength;
                     diffractionProfile.Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial;
@@ -3318,27 +3338,22 @@ namespace IPAnalyzer
                 #region
                 try
                 {
-                    List<DiffractionProfile> dpList = new List<DiffractionProfile>();
+                    var dpList = new List<DiffractionProfile>();
 
                     toolStripSplitButtonGetProfile.Enabled = false;
-
-                    double anglestep;
-                    try { anglestep = Convert.ToDouble(toolStripComboBoxAngleStep.Text); }
-                    catch { return; }
 
                     FormProperty.radioButtonRectangle.Checked = true; ;
                     FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
 
-                    diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
-                    diffractionProfile.Name = FileName + " - whole";
-                    diffractionProfile.SrcAxisMode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.Length;
-                    diffractionProfile.SrcWaveLength = IP.WaveLength;
-                    diffractionProfile.IsLPOmain = true;
-                    diffractionProfile.IsLPOchild = false;
-
-                    this.toolStripStatusLabel.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
-
-                    dpList.Add((DiffractionProfile)diffractionProfile.Clone());
+                    dpList.Add(new DiffractionProfile
+                    {
+                        OriginalProfile = Ring.GetProfile(IP),
+                        Name = FileName + " - whole",
+                        SrcAxisMode = HorizontalAxis.Angle,
+                        SrcWaveLength = IP.WaveLength,
+                        IsLPOmain = true,
+                        IsLPOchild = false
+                    });
 
                     string tempFilename = "";
                     if (FormProperty.checkBoxSaveFile.Checked)
@@ -3346,50 +3361,45 @@ namespace IPAnalyzer
                         if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
                         {
                             string extension = FormProperty.radioButtonAsPDIformat.Checked ? ".pdi" : ".csv";
-                            SaveFileDialog dlg = new SaveFileDialog();
-                            dlg.FileName = FileName;
-                            dlg.Filter = extension + "|" + extension;
-
+                            var dlg = new SaveFileDialog { FileName = FileName, Filter = extension + "|" + extension };
                             if (dlg.ShowDialog() != DialogResult.OK)
                                 throw new Exception();
 
                             tempFilename = dlg.FileName;
                             tempFilename = tempFilename.Remove(tempFilename.LastIndexOf("."));
-                            SaveProfile(diffractionProfile,tempFilename + "-whole" + extension);
+                            SaveProfile(dpList[0], tempFilename + "-whole" + extension);
                         }
                         else
-                            SaveProfile(diffractionProfile,fileName);
+                            SaveProfile(dpList[0], fileName);
                     }
 
-                    graphControlProfile.Profile = diffractionProfile.Profile;
+                    graphControlProfile.Profile = dpList[0].Profile;
 
+                    if (!int.TryParse(toolStripComboBoxAngleStep.Text, out int chiDiv))
+                        return;
 
-                    FormProperty.radioButtonSector.Checked = true;
-                    for (int i = 0; i < 360 / anglestep; i++)
+                    var profiles = Ring.GetConcenrticProfilesBySector(IP, chiDiv);
+
+                    this.toolStripStatusLabel.Text = "Calculating Time (Get Profiles by Sector):  " + (Environment.TickCount - d).ToString() + "ms";
+
+                    for (int i = 0; i < profiles.Length; i++)
                     {
-                        Skip = true;
-                        FormProperty.numericUpDownSectorStartAngle.Value = (decimal)(anglestep * i - anglestep / 2);
-                        Skip = false;
-                        FormProperty.numericUpDownSectorEndAngle.Value = (decimal)(anglestep * i + anglestep / 2);
-                        Application.DoEvents();
-                        //SetMask();
-                        diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
-                        diffractionProfile.Name = FileName + " - " + (i * anglestep).ToString("000");
-                        diffractionProfile.SrcAxisMode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.Length;
-                        diffractionProfile.SrcTakeoffAngle = IP.WaveLength;
-                        diffractionProfile.IsLPOmain = false;
-                        diffractionProfile.IsLPOchild = true;
-
-                        this.toolStripStatusLabel.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
-                        //toolStripSplitButtonGetProfile.Enabled = true;
-
-                        dpList.Add((DiffractionProfile)diffractionProfile.Clone());
+                        dpList.Add(new DiffractionProfile()
+                        {
+                            OriginalProfile = profiles[i],
+                            Name = FileName + " - " + (i * 360/chiDiv).ToString("000"),
+                            SrcAxisMode = HorizontalAxis.Angle,
+                            SrcWaveLength = IP.WaveLength,
+                            IsLPOmain = false,
+                            IsLPOchild = true,
+                        });
+                        
                         if (FormProperty.checkBoxSaveFile.Checked)
                         {
                             if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
-                                SaveProfile( diffractionProfile,tempFilename + "-" + (i * anglestep).ToString("000"));
+                                SaveProfile(dpList[dpList.Count-1], tempFilename + "-" + (i * 360 / chiDiv).ToString("000"));
                             else
-                                SaveProfile(diffractionProfile);
+                                SaveProfile(dpList[dpList.Count - 1]);
                         }
 
                     }
@@ -3415,7 +3425,7 @@ namespace IPAnalyzer
                     FormProperty.radioButtonRectangle.Checked = true;
                     FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
 
-                    MessageBox.Show("正常にデータを送信できませんでした。");
+                    MessageBox.Show("Failed to save/send data. Sorry.");
                     this.Cursor = Cursors.Default;
                     return;
                 }

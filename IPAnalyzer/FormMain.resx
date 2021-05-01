@@ -328,7 +328,7 @@
     <value>scalablePictureBoxThumbnail</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2021.4.30.108, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2021.5.1.451, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Parent" xml:space="preserve">
     <value>panel3</value>
@@ -754,7 +754,7 @@
     <value>scalablePictureBox</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2021.4.30.108, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Version=2021.5.1.451, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -1678,7 +1678,7 @@
     <value>trackBarAdvancedMinInt</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2021.4.30.108, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2021.5.1.451, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -1726,7 +1726,7 @@
     <value>trackBarAdvancedMaxInt</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2021.4.30.108, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Version=2021.5.1.451, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -1873,7 +1873,7 @@
     <value>graphControlFrequency</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2021.4.30.108, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2021.5.1.451, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -1936,7 +1936,7 @@
     <value>graphControlProfile</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2021.4.30.108, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Version=2021.5.1.451, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -3634,58 +3634,73 @@ Mode</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>angle step (degree)</value>
+    <value>angle division</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items" xml:space="preserve">
-    <value>2</value>
+    <value>360</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items1" xml:space="preserve">
-    <value>3</value>
+    <value>180</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items2" xml:space="preserve">
-    <value>4</value>
+    <value>120</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items3" xml:space="preserve">
-    <value>5</value>
+    <value>90</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items4" xml:space="preserve">
-    <value>6</value>
+    <value>72</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items5" xml:space="preserve">
-    <value>9</value>
+    <value>60</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items6" xml:space="preserve">
-    <value>10</value>
+    <value>40</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items7" xml:space="preserve">
-    <value>12</value>
+    <value>36</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items8" xml:space="preserve">
-    <value>20</value>
+    <value>30</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items9" xml:space="preserve">
     <value>24</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items10" xml:space="preserve">
-    <value>36</value>
+    <value>20</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items11" xml:space="preserve">
-    <value>40</value>
+    <value>18</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Items12" xml:space="preserve">
-    <value>60</value>
+    <value>15</value>
+  </data>
+  <data name="toolStripComboBoxAngleStep.Items13" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="toolStripComboBoxAngleStep.Items14" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="toolStripComboBoxAngleStep.Items15" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="toolStripComboBoxAngleStep.Items16" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="toolStripComboBoxAngleStep.Items17" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="toolStripComboBoxAngleStep.Text" xml:space="preserve">
-    <value>6</value>
+    <value>60</value>
   </data>
   <data name="toolStripMenuItemDividedByAngleStep.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 22</value>

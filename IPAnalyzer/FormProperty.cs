@@ -456,16 +456,14 @@ namespace IPAnalyzer
                 waveLengthControl.WaveLength = p.WaveLength;
             }
 
-            formMain.Skip = false;
-            ImageCenter = new PointD(p.CenterPosX, p.CenterPosY);
-
             formMain.flipHorizontallyToolStripMenuItem.Checked = ImageTypeParameters[i].FlipHorizontally;
             formMain.flipVerticallyToolStripMenuItem.Checked = ImageTypeParameters[i].FlipVertically;
             formMain.toolStripComboBoxRotate.SelectedIndex = ImageTypeParameters[i].Rotation;
+            formMain.FlipRotate_Pollalization_Background();
+
 
             formMain.Skip = false;
-
-            formMain.FlipRotate_Pollalization_Background();
+            ImageCenter = new PointD(p.CenterPosX, p.CenterPosY);
         }
 
         /// <summary>
