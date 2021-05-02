@@ -1,11 +1,16 @@
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Complex;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Numerics;
-using OpenTK.Graphics.ES20;
-using System.Globalization;
+using System.Threading;
+using System.Threading.Tasks;
+using DMat = MathNet.Numerics.LinearAlgebra.Complex.DenseMatrix;
+using DVec = MathNet.Numerics.LinearAlgebra.Complex.DenseVector;
+using static System.Numerics.Complex;
 
 namespace Crystallography
 {
@@ -248,18 +253,31 @@ namespace Crystallography
 		public static ImageTypeEnum ImageType = ImageTypeEnum.Unknown;
 
 		public static List<bool> IsValid = new List<bool>();//有効な(マスクされていない点かどうか)
+		//public static ParallelQuery<bool> IsValidP;
+
 		public static List<bool> IsSpots = new List<bool>();//スポット状の点かどうか
-		public static List<bool> IsThresholdOver = new List<bool>(), IsThresholdUnder = new List<bool>();//飽和しているかどうか
+		//public static ParallelQuery<bool> IsSpotsP;
+
+		public static List<bool> IsThresholdOver = new List<bool>();
+		//public static ParallelQuery<bool> IsThresholdOverP;
+
+		public static List<bool> IsThresholdUnder = new List<bool>();//飽和しているかどうか
+		//public static ParallelQuery<bool> IsThresholdUnderP;
+
 
 		/// <summary>
 		/// 指定された積分領域(矩形、セクター)の範囲外の場合はtrue
 		/// </summary>
 		public static List<bool> IsOutsideOfIntegralRegion = new List<bool>();//積分エリアの外(或いは選択領域の外)
+		//public static ParallelQuery<bool> IsOutsideOfIntegralRegionP;
+
 
 		/// <summary>
 		/// 指定された積分対象角度の範囲外の場合はtrue
 		/// </summary>
 		public static List<bool> IsOutsideOfIntegralProperty = new List<bool>();//エリアの外(或いは選択領域の外)
+		//public static ParallelQuery<bool> IsOutsideOfIntegralPropertyP;
+
 
 		public static string Comments = "";
 
@@ -296,7 +314,21 @@ namespace Crystallography
 		public static int BitsPerPixels = 4;
 
 		private static double TanKsi, SinTau, CosTau, SinPhi, CosPhi, Numer1, Numer2, Numer3, Denom1, Denom2;
-        #endregion
+		#endregion
+
+
+		static Ring()
+		{
+			//IsValidP = IsValid.AsParallel();
+			//IsSpotsP = IsSpots.AsParallel();
+			//IsThresholdOverP = IsThresholdOver.AsParallel();
+			//IsThresholdUnderP = IsThresholdUnder.AsParallel();
+
+			//IsOutsideOfIntegralPropertyP = IsOutsideOfIntegralProperty.AsParallel();
+			//IsOutsideOfIntegralRegionP = IsOutsideOfIntegralRegion.AsParallel();
+
+		}
+
 
 		#region CalcFreq　Frequencyを計算
 		//Frequencyを計算
@@ -636,7 +668,6 @@ namespace Crystallography
 		{
 			if (IsValid.Count != IsOutsideOfIntegralRegion.Count)
 				return;
-			
 
 			if (tempArray.Length != IsValid.Count)
 				tempArray = Enumerable.Repeat(true, IsOutsideOfIntegralRegion.Count).ToArray();
@@ -644,11 +675,20 @@ namespace Crystallography
 			IsValid.Clear();
 			IsValid.AddRange(tempArray);
 
-			for (int i = 0; i < IsOutsideOfIntegralRegion.Count; i++)
-				if (IsOutsideOfIntegralRegion[i] || IsOutsideOfIntegralProperty[i] || (OmitSpots && IsSpots[i]))
-					IsValid[i] = false;
+			if (OmitSpots)
+			{
+				for (int i = 0; i < IsOutsideOfIntegralRegion.Count; i++)
+					if (IsOutsideOfIntegralRegion[i] || IsOutsideOfIntegralProperty[i] || IsSpots[i])
+						IsValid[i] = false;
+			}
+			else
+			{
+				for (int i = 0; i < IsOutsideOfIntegralRegion.Count; i++)
+					if (IsOutsideOfIntegralRegion[i] || IsOutsideOfIntegralProperty[i])
+						IsValid[i] = false;
+			}
 
-			if(OmitTheresholdMin)
+			if (OmitTheresholdMin)
 				for (int i = 0; i < IsOutsideOfIntegralRegion.Count; i++)
 					if (IsThresholdUnder[i])
 						IsValid[i] = false;
@@ -889,39 +929,34 @@ namespace Crystallography
 			}
 
 			if (calcEdge)
-
 			#region エッジを除去するとき
 
 			{
 				if (IP.DoesExcludeEdge)
-
 				{
 					int n = IP.Edge;
 					//上辺
 					for (int i = 0; i < Ring.IP.SrcHeight && i < n; i++)
 						for (int j = 0; j < Ring.IP.SrcWidth; j++)
-							Ring.IsOutsideOfIntegralRegion[i * Ring.IP.SrcWidth + j] = true;
+                            IsOutsideOfIntegralRegion[(i * Ring.IP.SrcWidth) + j] = true;
 					//下辺
 					for (int i = Math.Max(0, Ring.IP.SrcHeight - n); i < Ring.IP.SrcHeight; i++)
 						for (int j = 0; j < Ring.IP.SrcWidth; j++)
-							Ring.IsOutsideOfIntegralRegion[i * Ring.IP.SrcWidth + j] = true;
+                            IsOutsideOfIntegralRegion[(i * Ring.IP.SrcWidth) + j] = true;
 					//左辺
 					for (int j = 0; j < Ring.IP.SrcWidth && j < n; j++)
 						for (int i = 0; i < Ring.IP.SrcHeight; i++)
-							Ring.IsOutsideOfIntegralRegion[i * Ring.IP.SrcWidth + j] = true;
+                            IsOutsideOfIntegralRegion[(i * Ring.IP.SrcWidth) + j] = true;
 					//右辺
 					for (int j = Math.Max(0, Ring.IP.SrcWidth - n); j < Ring.IP.SrcWidth; j++)
 						for (int i = 0; i < Ring.IP.SrcHeight; i++)
-							Ring.IsOutsideOfIntegralRegion[i * Ring.IP.SrcWidth + j] = true;
+                            IsOutsideOfIntegralRegion[(i * Ring.IP.SrcWidth) + j] = true;
 				}
 			}
-
 			#endregion エッジを除去するとき
 
 			if (calcProperty)
-
 			#region 積分角度範囲を除去するとき
-
 			{
 				IsOutsideOfIntegralProperty.Clear();
 				IsOutsideOfIntegralProperty.AddRange(new bool[IP.SrcWidth * IP.SrcHeight]);
@@ -976,6 +1011,7 @@ namespace Crystallography
 						startAngle = IP.StartAngle, stepAngle = IP.StepAngle, fd = IP.FilmDistance;
 
 					int width = IP.SrcWidth, height = IP.SrcHeight;
+					
 					Parallel.For(0, height, j =>
 					{
 						var tempY = (j - centerY) * pixSizeY;//IP平面上の座標系におけるY位置
