@@ -543,10 +543,12 @@ namespace IPAnalyzer
                     //再計算が必要なパラメータかどうかを判断
                     if (name.Contains("Center") || name.Contains("CameraLength") || name.Contains("PixelSize")
                            || name.Contains("PixelSize") || name.Contains("TiltCorrection"))
+                    {
                         formMain.FlipRotate_Pollalization_Background();
+                    }
                 }
- 
-            formMain.Draw();
+            //formMain.IntegralArea_Changedの中でDrawされているので以下をコメントアウト
+            //formMain.Draw();
         }
 
 
