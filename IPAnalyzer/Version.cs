@@ -14,6 +14,7 @@ namespace IPAnalyzer
 
         static public string History = 
             "History" +
+            "\r\n ver3.907(2021/05/02) Improved: Image rendering speed and processing speed of 'Find center'" +
             "\r\n ver3.906(2021/05/01) Improved: Speeding up 'Get Profile' and GUI response. Added: mask options." +
             "\r\n ver3.904(2020/12/18) Improved macro functions." +
             "\r\n ver3.903(2020/12/11) Fixed a bug when loading TIFF format." +

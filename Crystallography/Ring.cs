@@ -316,7 +316,6 @@ namespace Crystallography
 		private static double TanKsi, SinTau, CosTau, SinPhi, CosPhi, Numer1, Numer2, Numer3, Denom1, Denom2;
 		#endregion
 
-
 		static Ring()
 		{
 			//IsValidP = IsValid.AsParallel();
