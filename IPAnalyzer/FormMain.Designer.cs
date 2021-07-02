@@ -1004,7 +1004,6 @@ namespace IPAnalyzer
             this.toolStripButtonIntensityTable.Image = global::IPAnalyzer.Properties.Resources.Table;
             this.toolStripButtonIntensityTable.Name = "toolStripButtonIntensityTable";
             this.toolStripButtonIntensityTable.Padding = new System.Windows.Forms.Padding(1);
-            this.toolStripButtonIntensityTable.CheckedChanged += new System.EventHandler(this.toolStripButtonIntensityTable_CheckedChanged);
             // 
             // toolStripSeparator16
             // 

@@ -38,7 +38,7 @@ namespace IPAnalyzer
         public bool IsImageReady = false;
 
         public Crystallography.Controls.CommonDialog InitialDialog;
-        public FormIntTable FormIntTable;
+        //public FormIntTable FormIntTable;
         public FormAutoProcedure FormAutoProc;
         public FormFindParameter FormFindParameter;
         public FormDrawRing FormDrawRing;
@@ -148,7 +148,7 @@ namespace IPAnalyzer
 
                 regKey.SetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
 
-                regKey.SetValue("initialDialog.AutomaricallyClose", InitialDialog.AutomaricallyClose);
+                regKey.SetValue("initialDialog.AutomaricallyClose", InitialDialog.AutomaticallyClose);
 
 
                 //Main関係
@@ -166,10 +166,10 @@ namespace IPAnalyzer
                 
 
                 //IntTable関係
-                regKey.SetValue("formIntTableWidth", FormIntTable.Width);
-                regKey.SetValue("formIntTableHeight", FormIntTable.Height);
-                regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
-                regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
+                //regKey.SetValue("formIntTableWidth", FormIntTable.Width);
+                //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
+                //regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
+                //regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
                 //DrawRingK関係
                 regKey.SetValue("formDrawRingWidth", FormDrawRing.Width);
                 regKey.SetValue("formDrawRingHeight", FormDrawRing.Height);
@@ -349,7 +349,7 @@ namespace IPAnalyzer
                 if (InitialDialog != null)
                 {
                     InitialDialog.Location = new Point(Location.X + Width / 2 - InitialDialog.Width / 2, Location.Y + Height / 2 - InitialDialog.Height / 2);
-                    InitialDialog.AutomaricallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "False") == "True";
+                    InitialDialog.AutomaticallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "False") == "True";
                 }
 
 
@@ -363,13 +363,13 @@ namespace IPAnalyzer
                 }
 
 
-                if (FormIntTable != null && (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
-                {
-                    FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
-                    FormIntTable.Height = (int)regKey.GetValue("formIntTableHeight", FormIntTable.Height);
-                    FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
-                    (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
-                }
+                //if (FormIntTable != null && (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
+                //{
+                    //FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
+                    //FormIntTable.Height = (int)regKey.GetValue("formIntTableHeight", FormIntTable.Height);
+                    //FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
+                    //(int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
+                //}
                 if (FormDrawRing != null && (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y) >= 0)
                 {
                     FormDrawRing.Width = (int)regKey.GetValue("formDrawRingWidth", FormDrawRing.Width);
@@ -626,7 +626,7 @@ namespace IPAnalyzer
                 //for (int i = 0; i < length; i++)
                 //    byteArray[i] = (byte[])regKey.GetValue("Macro" + i.ToString(), null);
                 if (FormMacro != null)
-                    FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", new byte[0]);
+                    FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", Array.Empty<byte>());
 
 
 
@@ -710,53 +710,39 @@ namespace IPAnalyzer
             InitialDialog.Text = "Now Loading...Initializing 'Intensity table' form";
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.3);
 
-            FormIntTable = new FormIntTable();
-            FormIntTable.formMain = this;
-            FormIntTable.Visible = false;
-            FormIntTable.Owner = this;
+            //FormIntTable = new FormIntTable();
+            //FormIntTable.formMain = this;
+            //FormIntTable.Visible = false;
+            //FormIntTable.Owner = this;
 
             InitialDialog.Text = "Now Loading...Initializing 'Auto procedure' form";
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.4);
 
-            FormAutoProc = new FormAutoProcedure();
-            FormAutoProc.formMain = this;
-            FormAutoProc.Visible = false;
-            FormAutoProc.Owner = this;
+            FormAutoProc = new FormAutoProcedure { formMain = this, Visible = false, Owner = this };
 
             InitialDialog.Text = "Now Loading...Initializing 'Find parameter' form";
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.5);
 
-            FormFindParameter = new FormFindParameter();
-            FormFindParameter.formMain = this;
-            FormFindParameter.Visible = false;
-            FormFindParameter.Owner = this; ;
+            FormFindParameter = new FormFindParameter { formMain = this, Visible = false, Owner = this };
+            ;
 
 
             InitialDialog.Text = "Now Loading...Initializing 'Draw ring' form";
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.6);
 
-            FormDrawRing = new FormDrawRing();
-            FormDrawRing.formMain = this;
-            FormDrawRing.Visible = false;
-            FormDrawRing.Owner = this;
+            FormDrawRing = new FormDrawRing { formMain = this, Visible = false, Owner = this };
 
             InitialDialog.Text = "Now Loading...Initializing 'Property' form";
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.7);
-            
 
-            FormProperty = new FormProperty();
-            FormProperty.formMain = this;
-            FormProperty.Visible = false;
-            FormProperty.Owner = this;
+
+            FormProperty = new FormProperty { formMain = this, Visible = false, Owner = this };
 
             InitialDialog.Text = "Now Loading...Initializing 'Calibrate Intensity' form";
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.8);
             Application.DoEvents();
 
-            FormCalibrateIntensity = new FormCalibrateIntensity();
-            FormCalibrateIntensity.formMain = this;
-            FormCalibrateIntensity.Visible = false;
-            FormCalibrateIntensity.Owner = this;
+            FormCalibrateIntensity = new FormCalibrateIntensity { formMain = this, Visible = false, Owner = this };
 
             InitialDialog.Text = "Now Loading...Initializing 'Save Image' form.";
 
@@ -767,25 +753,16 @@ namespace IPAnalyzer
 
             InitialDialog.Text = "Now Loading...Initializing 'Sequential' form.";
 
-            FormSequentialImage = new FormSequentialImage();
-            FormSequentialImage.formMain = this;
-            FormSequentialImage.Owner = this;
-            FormSequentialImage.Visible = false;
+            FormSequentialImage = new FormSequentialImage { formMain = this, Owner = this, Visible = false };
 
             InitialDialog.Text = "Now Loading...Initializing 'Parameter option' form.";
 
-            FormParameterOption = new FormParameterOption();
-            FormParameterOption.FormMain = this;
-            FormParameterOption.Owner = this;
-            FormParameterOption.Visible = false;
+            FormParameterOption = new FormParameterOption { FormMain = this, Owner = this, Visible = false };
 
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.9);
             InitialDialog.Text = "Now Loading...Initializing 'SACLA' form.";
 
-            FormSaclaParameter = new FormOptimizeSaclaEH5Parameter();
-            FormSaclaParameter.FormMain = this;
-            FormSaclaParameter.Owner = this;
-            FormSaclaParameter.Visible = false;
+            FormSaclaParameter = new FormOptimizeSaclaEH5Parameter { FormMain = this, Owner = this, Visible = false };
 
             FormProperty.Visible = true;
 
@@ -817,8 +794,8 @@ namespace IPAnalyzer
                 Version.History);
 
             InitialDialog.Text = "Now Loading...Checking command line options.";
-            String[] s = Environment.GetCommandLineArgs();
-            string fileName = "";
+            var s = Environment.GetCommandLineArgs();
+            var fileName = "";
             for (int i = 1; i < s.Length; i++)
                 fileName += (i == 1 ? "" : " ") + s[i];
             if (s.Length > 1)
@@ -838,14 +815,12 @@ namespace IPAnalyzer
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 1);
 
             InitialDialog.Text = "Initializing has been finished successfully. You can close this window.";
-            if (InitialDialog.AutomaricallyClose)
+            if (InitialDialog.AutomaticallyClose)
                 InitialDialog.Visible = false;
 
             Directory.Delete(Application.UserAppDataPath, true);
             if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
                 File.Delete(UserAppDataPath + "IPAnalyzerSetup.msi");
-
-           
         }
 
         //フォームクローズ時
@@ -869,7 +844,7 @@ namespace IPAnalyzer
             FormDrawRing.Close();
             FormFindParameter.Close();
             FormAutoProc.Close();
-            FormIntTable.Close();
+            //FormIntTable.Close();
             e.Cancel = false;
         }
 
@@ -904,29 +879,29 @@ namespace IPAnalyzer
             Graphics g = Graphics.FromImage(bmp);
             g.SmoothingMode = SmoothingMode.AntiAlias;
             //メイン中に水色の枠(Int.Tableの範囲)を表示
-            if (FormIntTable.Visible && TableCenterPt.X > 0)
-            {
-                int length = (int)FormIntTable.numericUpDownMatrixNum.Value;
+            //if (FormIntTable.Visible && TableCenterPt.X > 0)
+            //{
+            //    int length = (int)FormIntTable.numericUpDownMatrixNum.Value;
 
-                Pen pen = new Pen(Brushes.LightBlue);
-                RectangleF rect = scalablePictureBox.ConvertToClientRect(new RectangleD(TableCenterPt.X - length / 2.0, TableCenterPt.Y - length / 2.0, length, length)).ToRectangleF();
-                g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
-            }
+            //    Pen pen = new Pen(Brushes.LightBlue);
+            //    RectangleF rect = scalablePictureBox.ConvertToClientRect(new RectangleD(TableCenterPt.X - length / 2.0, TableCenterPt.Y - length / 2.0, length, length)).ToRectangleF();
+            //    g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
+            //}
 
             //メイン中に水色の枠(SaveImageの範囲)を表示
             if (FormSaveImage.Visible)
             {
-                Pen pen = new Pen(Brushes.LightBlue);
+                var pen = new Pen(Brushes.LightBlue);
                 //傾きを考慮していないので、正確ではないが、とりあえず。
-                PointD upperLeft = new PointD(
+                var upperLeft = new PointD(
                     FormProperty.ImageCenter.X - FormSaveImage.ImageCenter.X * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeX.Value,
                     FormProperty.ImageCenter.Y - FormSaveImage.ImageCenter.Y * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeY.Value);
 
-                PointD lowerRight = new PointD(
+                var lowerRight = new PointD(
                     FormProperty.ImageCenter.X + (FormSaveImage.ImageSize.Width - FormSaveImage.ImageCenter.X) * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeX.Value,
                     FormProperty.ImageCenter.Y + (FormSaveImage.ImageSize.Height - FormSaveImage.ImageCenter.Y) * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeY.Value);
 
-                RectangleF rect = scalablePictureBox.ConvertToClientRect(new RectangleD(upperLeft.X, upperLeft.Y, lowerRight.X - upperLeft.X, lowerRight.Y - upperLeft.Y)).ToRectangleF();
+                var rect = scalablePictureBox.ConvertToClientRect(new RectangleD(upperLeft.X, upperLeft.Y, lowerRight.X - upperLeft.X, lowerRight.Y - upperLeft.Y)).ToRectangleF();
 
                 g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
 
@@ -947,8 +922,8 @@ namespace IPAnalyzer
             {
                 if (!selectedSpot.IsNaN)
                 {
-                    PointD pt = scalablePictureBox.ConvertToClientPt(selectedSpot);
-                    Pen pen = new Pen(Brushes.Orange);
+                    var pt = scalablePictureBox.ConvertToClientPt(selectedSpot);
+                    var pen = new Pen(Brushes.Orange);
                     g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
                     g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
                 }
@@ -976,15 +951,15 @@ namespace IPAnalyzer
             {
                 try
                 {
-                    PointD OffSet = new PointD(0, 0);
-                    RectangleF Rect = new RectangleF(0, 0, 0, 0);
-                    double Filmdistance = FormProperty.CameraLength;
-                    double Phi = FormProperty.numericBoxTiltCorrectionPhi.RadianValue;
-                    double Tau = FormProperty.numericBoxTiltCorrectionTau.RadianValue;
-                    double EllipseWidth = 0;
-                    double EllipseHeight = 0;
-                    double Cos = 0;
-                    double Sin = 0;
+                    var OffSet = new PointD(0, 0);
+                    var Rect = new RectangleF(0, 0, 0, 0);
+                    var Filmdistance = FormProperty.CameraLength;
+                    var Phi = FormProperty.numericBoxTiltCorrectionPhi.RadianValue;
+                    var Tau = FormProperty.numericBoxTiltCorrectionTau.RadianValue;
+                    var EllipseWidth = 0.0;
+                    var EllipseHeight = 0.0;
+                    var Cos = 0.0;
+                    var Sin = 0.0;
 
                     Geometriy.GetEllipseRectangleAndRot(FormDrawRing.R, Filmdistance, Phi, Tau,
                     ref OffSet, ref EllipseWidth, ref EllipseHeight, ref Cos, ref Sin);
@@ -1074,22 +1049,22 @@ namespace IPAnalyzer
                 scalablePictureBoxThumbnail.Center = new PointD(FormProperty.numericBoxCenterPositionX.Value, FormProperty.numericBoxCenterPositionY.Value);
             }
 
-            Bitmap bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
-            Graphics g = Graphics.FromImage(bmp);
+            var bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
+            var g = Graphics.FromImage(bmp);
             g.SmoothingMode = SmoothingMode.AntiAlias;
             if (thumbnailmode)
             {
                 //サムネイル中に黄色い枠を表示
-                Pen pen = new Pen(Brushes.Yellow);
-                RectangleF rect = scalablePictureBoxThumbnail.ConvertToClientRect(scalablePictureBox.ConvertToSrcRect(scalablePictureBox.pictureBox.ClientRectangle)).ToRectangleF();
+                var pen = new Pen(Brushes.Yellow);
+                var rect = scalablePictureBoxThumbnail.ConvertToClientRect(scalablePictureBox.ConvertToSrcRect(scalablePictureBox.pictureBox.ClientRectangle)).ToRectangleF();
                 g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
             }
             else
             {
                 try
                 {
-                    PointF pt = scalablePictureBoxThumbnail.ConvertToClientPt(new PointD(FormProperty.numericBoxCenterPositionX.Value, FormProperty.numericBoxCenterPositionY.Value)).ToPointF();
-                    Pen pen = new Pen(Brushes.Fuchsia);
+                    var pt = scalablePictureBoxThumbnail.ConvertToClientPt(new PointD(FormProperty.numericBoxCenterPositionX.Value, FormProperty.numericBoxCenterPositionY.Value)).ToPointF();
+                    var pen = new Pen(Brushes.Fuchsia);
                     g.DrawLine(pen, new PointF(pt.X + 4, pt.Y + 3), new PointF(pt.X - 4, pt.Y - 4));
                     g.DrawLine(pen, new PointF(pt.X - 4, pt.Y + 3), new PointF(pt.X + 4, pt.Y - 4));
                 }
@@ -1119,8 +1094,8 @@ namespace IPAnalyzer
                 //クリックされた位置を中心にする。
                 FormProperty.ImageCenter = new PointD(pt.X, pt.Y);
                 TableCenterPt = new Point((int)(pt.X + 0.5), (int)(pt.Y + 0.5));
-                if (FormIntTable != null)
-                    FormIntTable.SetData((int)(pt.X + 0.5), (int)(pt.Y + 0.5));
+                //if (FormIntTable != null)
+                //    FormIntTable.SetData((int)(pt.X + 0.5), (int)(pt.Y + 0.5));
                 //さらに真ん中ボタンクリックであればFindCenterもする　
                 if (e.Button == MouseButtons.Middle)
                     toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
@@ -1130,10 +1105,10 @@ namespace IPAnalyzer
             return true;
         }
 
-        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        readonly Stopwatch sw = new();
 
-        public List<PointD> manualMaskPoints = new List<PointD>();
-        public List<bool> splineTemp = new List<bool>();
+        public List<PointD> manualMaskPoints = new();
+        public List<bool> splineTemp = new();
         Spline2nd sp;
 
         public void setSpline()
@@ -1277,7 +1252,7 @@ namespace IPAnalyzer
                     double devR = Math.Sqrt(newX * newX + newY * newY) - r;
 
                     //もし範囲内にリングがあれば。。。
-                    IsRingSelectMode = Math.Abs(FormDrawRing.R - r) < devR ? true : false;
+                    IsRingSelectMode = Math.Abs(FormDrawRing.R - r) < devR;
 
                     sw.Stop();
                     sw.Reset();
@@ -1292,8 +1267,8 @@ namespace IPAnalyzer
                     int x = (int)(pt.X + 0.5);
                     int y = (int)(pt.Y + 0.5);
                     TableCenterPt = new Point(x, y);
-                    if (FormIntTable != null)
-                        FormIntTable.SetData(x, y);
+                    //if (FormIntTable != null)
+                    //    FormIntTable.SetData(x, y);
 
                     if (e.Button == MouseButtons.Middle)
                         toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
@@ -2007,9 +1982,9 @@ namespace IPAnalyzer
                     }
                     if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                     {//各画像にエネルギー値があるとき(h5ファイルの時)
-                        List<Tiff.IFD> ifdEnergy = new List<Tiff.IFD>();
-                        List<Tiff.IFD> ifdName = new List<Tiff.IFD>();
-                        List<Tiff.IFD> ifdPulsePower = new List<Tiff.IFD>();
+                        var ifdEnergy = new List<Tiff.IFD>();
+                        var ifdName = new List<Tiff.IFD>();
+                        var ifdPulsePower = new List<Tiff.IFD>();
                         for (int i = 0; i < Ring.SequentialImageEnergy.Count; i++)
                         {
                             ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), new object[] { Ring.SequentialImageEnergy[i] }));
@@ -2054,26 +2029,26 @@ namespace IPAnalyzer
             else if (!filename.ToLower().EndsWith(".png"))
                 filename += ".png";
 
-            Bitmap bmp = pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
+            var bmp = pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
                 , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height));
 
             if (toolStripButtonUnroll.Checked) //UnrolledImageの目盛を付ける
             {
-                Bitmap bmpWithAxis = new Bitmap(bmp.Width + 40, bmp.Height + 40);
-                Graphics g = Graphics.FromImage(bmpWithAxis);
+                var bmpWithAxis = new Bitmap(bmp.Width + 40, bmp.Height + 40);
+                var g = Graphics.FromImage(bmpWithAxis);
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.Clear(Color.White);
-                double upper = (double)FormProperty.numericUpDownUnrolledImageXend.Value;
-                double lower = (double)FormProperty.numericUpDownUnrolledImageXstart.Value;
+                var upper = (double)FormProperty.numericUpDownUnrolledImageXend.Value;
+                var lower = (double)FormProperty.numericUpDownUnrolledImageXstart.Value;
 
                 float gradiation;//ここより角度目盛りの描画
-                double d = (upper - lower) / Math.Pow(10, (int)Math.Log10(upper - lower));
+                var d = (upper - lower) / Math.Pow(10, (int)Math.Log10(upper - lower));
                 if (d < 1.6) gradiation = (float)(Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
                 else if (d < 3.2) gradiation = (float)(2 * Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
                 else if (d < 8.0) gradiation = (float)(5 * Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
                 else gradiation = (float)(10 * Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
-                Pen pen = new Pen(Color.LightBlue, 1);
-                Font strFont = new Font(new FontFamily("tahoma"), 8);
+                var pen = new Pen(Color.LightBlue, 1);
+                var strFont = new Font(new FontFamily("tahoma"), 8);
                 for (int i = (int)(lower / gradiation) + 1; i <= upper / gradiation; i++)
                 {
                     g.DrawLine(pen, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height + 5);
@@ -2148,7 +2123,7 @@ namespace IPAnalyzer
             fullySave = false;
             try
             {
-                DiffractionOptics.Parameter prm = new DiffractionOptics.Parameter();
+                var prm = new DiffractionOptics.Parameter();
 
                 if (!fullySave)
                 {
@@ -3273,8 +3248,8 @@ namespace IPAnalyzer
                         {
                             if (FormProperty.waveLengthControl.XrayWaveSourceElementNumber > 10 && FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka1)
                             {
-                                var alpha1 = AtomConstants.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1);
-                                var alpha2 = AtomConstants.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2);
+                                var alpha1 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1);
+                                var alpha2 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2);
                                 var ratio = FormProperty.numericBoxTest.Value;
                                 diffractionProfile.OriginalProfile= DiffractionProfile.RemoveKalpha2(diffractionProfile.OriginalProfile,alpha1,alpha2,ratio);
                             }
@@ -3397,23 +3372,21 @@ namespace IPAnalyzer
                         if (FormProperty.checkBoxSaveFile.Checked)
                         {
                             if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
-                                SaveProfile(dpList[dpList.Count-1], tempFilename + "-" + (i * 360 / chiDiv).ToString("000"));
+                                SaveProfile(dpList[^1], tempFilename + "-" + (i * 360 / chiDiv).ToString("000"));
                             else
-                                SaveProfile(dpList[dpList.Count - 1]);
+                                SaveProfile(dpList[^1]);
                         }
 
                     }
                     if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
                     {
-                        using (Mutex clipboard = new Mutex(false, "ClipboardOperation"))
+                        using var clipboard = new Mutex(false, "ClipboardOperation");
+                        if (clipboard.WaitOne(5000, false))
                         {
-                            if (clipboard.WaitOne(5000, false))
-                            {
-                                Clipboard.SetDataObject(dpList.ToArray());
-                                clipboard.ReleaseMutex();
-                            }
-                            clipboard.Close();
+                            Clipboard.SetDataObject(dpList.ToArray());
+                            clipboard.ReleaseMutex();
                         }
+                        clipboard.Close();
                     }
                     FormProperty.radioButtonRectangle.Checked = true; ;
                     FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
@@ -3536,8 +3509,8 @@ namespace IPAnalyzer
         #region 子フォームの立ち上げ、終了
 
         #region Intensity Table
-        private void toolStripButtonIntensityTable_CheckedChanged(object sender, EventArgs e)
-            => FormIntTable.Visible = toolStripButtonIntensityTable.Checked;
+        //private void toolStripButtonIntensityTable_CheckedChanged(object sender, EventArgs e)
+        //    => FormIntTable.Visible = toolStripButtonIntensityTable.Checked;
         #endregion
 
         #region Auto Procedure
@@ -4573,7 +4546,7 @@ namespace IPAnalyzer
                 public string[] GetFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
                 {
                     var dlg = new OpenFileDialog { Multiselect = true, Title = message };
-                    return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : new string[0];
+                    return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : Array.Empty<string>();
                 }));
 
                 public void SaveImageAsTIFF(string fileName = "") => Execute(() => p.main.saveImageAsTiff(fileName));

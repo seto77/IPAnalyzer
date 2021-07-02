@@ -125,8 +125,8 @@ namespace IPAnalyzer
             List<double> wavelength = new List<double>();
             if (FormMain.FormProperty.waveLengthControl.WaveSource == WaveSource.Xray && FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber!=0 && FormMain.FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka)
             {
-                wavelength.Add(AtomConstants.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1) / 10.0);
-                wavelength.Add(AtomConstants.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2) / 10.0);
+                wavelength.Add(AtomStatic.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1) / 10.0);
+                wavelength.Add(AtomStatic.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2) / 10.0);
             }
             else
                 wavelength.Add(FormMain.FormProperty.waveLengthControl.WaveLength);
@@ -635,8 +635,8 @@ namespace IPAnalyzer
 
             long beforeTime = 0;
 
-            double alpha1 = AtomConstants.CharacteristicXrayWavelength(42, Crystallography.XrayLine.Ka1);
-            double alpha2 = AtomConstants.CharacteristicXrayWavelength(42, Crystallography.XrayLine.Ka2);
+            double alpha1 = AtomStatic.CharacteristicXrayWavelength(42, Crystallography.XrayLine.Ka1);
+            double alpha2 = AtomStatic.CharacteristicXrayWavelength(42, Crystallography.XrayLine.Ka2);
 
             Profile profile;
             for (int n = 0; n < cycle; n++)

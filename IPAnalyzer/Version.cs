@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace IPAnalyzer
+﻿namespace IPAnalyzer
 {
     static class Version
     {
@@ -14,6 +9,7 @@ namespace IPAnalyzer
 
         static public string History = 
             "History" +
+            "\r\n ver3.908(2021/##/##) Target framework has been changed to .Net 5.0" +
             "\r\n ver3.907(2021/05/02) Improved: Image rendering speed and processing speed of 'Find center'" +
             "\r\n ver3.906(2021/05/01) Improved: Speeding up 'Get Profile' and GUI response. Added: mask options." +
             "\r\n ver3.904(2020/12/18) Improved macro functions." +
