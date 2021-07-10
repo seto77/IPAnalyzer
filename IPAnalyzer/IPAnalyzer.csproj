@@ -4,13 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2021.7.2.0940</AssemblyVersion>
-    <FileVersion>2021.7.2.0940</FileVersion>
+    <AssemblyVersion>2021.7.2.1004</AssemblyVersion>
+    <FileVersion>2021.7.2.1004</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Crystallography.Control\Crystallography.Controls.csproj" />
+    <ProjectReference Include="..\Crystallography.Controls\Crystallography.Controls.csproj" />
     <ProjectReference Include="..\Crystallography\Crystallography.csproj" />
   </ItemGroup>
 
