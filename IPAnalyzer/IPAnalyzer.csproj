@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2021.7.2.1004</AssemblyVersion>
-    <FileVersion>2021.7.2.1004</FileVersion>
+    <AssemblyVersion>2021.7.10.0851</AssemblyVersion>
+    <FileVersion>2021.7.10.0851</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
 
