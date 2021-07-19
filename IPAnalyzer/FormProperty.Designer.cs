@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProperty));
+            IPAnalyzer.Properties.Settings settings1 = new IPAnalyzer.Properties.Settings();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageXRay = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -118,13 +119,6 @@
             this.radioButtonDebyeScherrer = new System.Windows.Forms.RadioButton();
             this.tabPageSpotsAndCenter = new System.Windows.Forms.TabPage();
             this.checkBoxManualMaskMode = new System.Windows.Forms.CheckBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButtonTakeOverMaskfile = new System.Windows.Forms.RadioButton();
-            this.radioButtonTakeoverMask = new System.Windows.Forms.RadioButton();
-            this.radioButtonTakoverNothing = new System.Windows.Forms.RadioButton();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownFindSpotsDeviation = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
             this.groupBoxManualMode = new System.Windows.Forms.GroupBox();
             this.radioButtonManualCircle = new System.Windows.Forms.RadioButton();
             this.radioButtonManualSpline = new System.Windows.Forms.RadioButton();
@@ -140,6 +134,13 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.numericUpDownSplineWidth = new System.Windows.Forms.NumericUpDown();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.radioButtonTakeOverMaskfile = new System.Windows.Forms.RadioButton();
+            this.radioButtonTakeoverMask = new System.Windows.Forms.RadioButton();
+            this.radioButtonTakoverNothing = new System.Windows.Forms.RadioButton();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownFindSpotsDeviation = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
             this.buttonMaskAll = new System.Windows.Forms.Button();
             this.buttonUnmaskAll = new System.Windows.Forms.Button();
             this.tabPageAfterGetProfile = new System.Windows.Forms.TabPage();
@@ -237,14 +238,14 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPageSpotsAndCenter.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFindSpotsDeviation)).BeginInit();
             this.groupBoxManualMode.SuspendLayout();
             this.groupBoxManualSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownManualSpotSize)).BeginInit();
             this.groupBoxSpline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSplineWidth)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFindSpotsDeviation)).BeginInit();
             this.tabPageAfterGetProfile.SuspendLayout();
             this.groupBoxSaveProfile.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -321,10 +322,10 @@
             // waveLengthControl
             // 
             resources.ApplyResources(this.waveLengthControl, "waveLengthControl");
-            this.waveLengthControl.Energy = 17.444196720128065D;
+            this.waveLengthControl.Energy = 17.4441967201D;
             this.waveLengthControl.Name = "waveLengthControl";
             this.waveLengthControl.ShowWaveSource = true;
-            this.waveLengthControl.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.waveLengthControl.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.waveLengthControl.WaveLength = 0.07107471D;
             this.waveLengthControl.WaveSource = Crystallography.WaveSource.Xray;
             this.waveLengthControl.XrayWaveSourceElementNumber = 42;
@@ -386,8 +387,10 @@
             this.numericalTextBoxCameraLength.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxCameraLength.Name = "numericalTextBoxCameraLength";
             this.numericalTextBoxCameraLength.RadianValue = 7.7667151713747664D;
+            this.numericalTextBoxCameraLength.RoundErrorAccuracy = 10;
             this.numericalTextBoxCameraLength.SkipEventDuringInput = false;
             this.numericalTextBoxCameraLength.SmartIncrement = true;
+            this.numericalTextBoxCameraLength.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxCameraLength.ThonsandsSeparator = true;
             this.numericalTextBoxCameraLength.Value = 445D;
             this.numericalTextBoxCameraLength.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -408,8 +411,10 @@
             this.numericBoxCenterPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxCenterPositionY.Name = "numericBoxCenterPositionY";
             this.numericBoxCenterPositionY.RadianValue = 26.179938779914945D;
+            this.numericBoxCenterPositionY.RoundErrorAccuracy = 10;
             this.numericBoxCenterPositionY.SkipEventDuringInput = false;
             this.numericBoxCenterPositionY.SmartIncrement = true;
+            this.numericBoxCenterPositionY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxCenterPositionY.ThonsandsSeparator = true;
             this.numericBoxCenterPositionY.Value = 1500D;
             this.numericBoxCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -422,8 +427,10 @@
             this.numericBoxCenterPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxCenterPositionX.Name = "numericBoxCenterPositionX";
             this.numericBoxCenterPositionX.RadianValue = 26.179938779914945D;
+            this.numericBoxCenterPositionX.RoundErrorAccuracy = 10;
             this.numericBoxCenterPositionX.SkipEventDuringInput = false;
             this.numericBoxCenterPositionX.SmartIncrement = true;
+            this.numericBoxCenterPositionX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxCenterPositionX.ThonsandsSeparator = true;
             this.numericBoxCenterPositionX.Value = 1500D;
             this.numericBoxCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -453,8 +460,10 @@
             this.numericalTextBoxPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPixelKsi.Name = "numericalTextBoxPixelKsi";
+            this.numericalTextBoxPixelKsi.RoundErrorAccuracy = 10;
             this.numericalTextBoxPixelKsi.SkipEventDuringInput = false;
             this.numericalTextBoxPixelKsi.SmartIncrement = true;
+            this.numericalTextBoxPixelKsi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxPixelKsi.ThonsandsSeparator = true;
             this.numericalTextBoxPixelKsi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
@@ -466,8 +475,10 @@
             this.numericBoxPixelSizeY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeY.Name = "numericBoxPixelSizeY";
             this.numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
+            this.numericBoxPixelSizeY.RoundErrorAccuracy = 10;
             this.numericBoxPixelSizeY.SkipEventDuringInput = false;
             this.numericBoxPixelSizeY.SmartIncrement = true;
+            this.numericBoxPixelSizeY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPixelSizeY.ThonsandsSeparator = true;
             this.numericBoxPixelSizeY.Value = 0.1D;
             this.numericBoxPixelSizeY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -481,8 +492,10 @@
             this.numericBoxPixelSizeX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeX.Name = "numericBoxPixelSizeX";
             this.numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
+            this.numericBoxPixelSizeX.RoundErrorAccuracy = 10;
             this.numericBoxPixelSizeX.SkipEventDuringInput = false;
             this.numericBoxPixelSizeX.SmartIncrement = true;
+            this.numericBoxPixelSizeX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPixelSizeX.ThonsandsSeparator = true;
             this.numericBoxPixelSizeX.Value = 0.1D;
             this.numericBoxPixelSizeX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -510,8 +523,10 @@
             this.numericBoxGandlfiRadius.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxGandlfiRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxGandlfiRadius.Name = "numericBoxGandlfiRadius";
+            this.numericBoxGandlfiRadius.RoundErrorAccuracy = 10;
             this.numericBoxGandlfiRadius.SkipEventDuringInput = false;
             this.numericBoxGandlfiRadius.SmartIncrement = true;
+            this.numericBoxGandlfiRadius.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxGandlfiRadius.ThonsandsSeparator = true;
             this.numericBoxGandlfiRadius.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
@@ -529,8 +544,10 @@
             this.numericalTextBoxSphericalCorections.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxSphericalCorections.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxSphericalCorections.Name = "numericalTextBoxSphericalCorections";
+            this.numericalTextBoxSphericalCorections.RoundErrorAccuracy = -1;
             this.numericalTextBoxSphericalCorections.SkipEventDuringInput = false;
             this.numericalTextBoxSphericalCorections.SmartIncrement = true;
+            this.numericalTextBoxSphericalCorections.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxSphericalCorections.ThonsandsSeparator = true;
             this.numericalTextBoxSphericalCorections.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
@@ -549,8 +566,10 @@
             this.numericBoxTiltCorrectionTau.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionTau.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionTau.Name = "numericBoxTiltCorrectionTau";
+            this.numericBoxTiltCorrectionTau.RoundErrorAccuracy = 10;
             this.numericBoxTiltCorrectionTau.SkipEventDuringInput = false;
             this.numericBoxTiltCorrectionTau.SmartIncrement = true;
+            this.numericBoxTiltCorrectionTau.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxTiltCorrectionTau.ThonsandsSeparator = true;
             this.numericBoxTiltCorrectionTau.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
@@ -561,8 +580,10 @@
             this.numericBoxTiltCorrectionPhi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltCorrectionPhi.Name = "numericBoxTiltCorrectionPhi";
+            this.numericBoxTiltCorrectionPhi.RoundErrorAccuracy = 10;
             this.numericBoxTiltCorrectionPhi.SkipEventDuringInput = false;
             this.numericBoxTiltCorrectionPhi.SmartIncrement = true;
+            this.numericBoxTiltCorrectionPhi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxTiltCorrectionPhi.ThonsandsSeparator = true;
             this.numericBoxTiltCorrectionPhi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
             // 
@@ -887,8 +908,10 @@
             this.numericBoxRadialRange.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxRadialRange.Name = "numericBoxRadialRange";
             this.numericBoxRadialRange.RadianValue = 0.0017453292519943296D;
+            this.numericBoxRadialRange.RoundErrorAccuracy = -1;
             this.numericBoxRadialRange.SkipEventDuringInput = false;
             this.numericBoxRadialRange.SmartIncrement = true;
+            this.numericBoxRadialRange.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxRadialRange.ThonsandsSeparator = true;
             this.numericBoxRadialRange.Value = 0.1D;
             this.numericBoxRadialRange.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxIntegralProperty_ValueChanged);
@@ -902,8 +925,10 @@
             this.numericBoxRadialRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxRadialRadius.Name = "numericBoxRadialRadius";
             this.numericBoxRadialRadius.RadianValue = 0.3490658503988659D;
+            this.numericBoxRadialRadius.RoundErrorAccuracy = -1;
             this.numericBoxRadialRadius.SkipEventDuringInput = false;
             this.numericBoxRadialRadius.SmartIncrement = true;
+            this.numericBoxRadialRadius.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxRadialRadius.ThonsandsSeparator = true;
             this.numericBoxRadialRadius.Value = 20D;
             this.numericBoxRadialRadius.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxIntegralProperty_ValueChanged);
@@ -917,8 +942,10 @@
             this.numericBoxRadialStep.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxRadialStep.Name = "numericBoxRadialStep";
             this.numericBoxRadialStep.RadianValue = 0.0008726646259971648D;
+            this.numericBoxRadialStep.RoundErrorAccuracy = -1;
             this.numericBoxRadialStep.SkipEventDuringInput = false;
             this.numericBoxRadialStep.SmartIncrement = true;
+            this.numericBoxRadialStep.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxRadialStep.ThonsandsSeparator = true;
             this.numericBoxRadialStep.Value = 0.05D;
             this.numericBoxRadialStep.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxIntegralProperty_ValueChanged);
@@ -1000,8 +1027,10 @@
             this.numericBoxConcentricStep.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxConcentricStep.Name = "numericBoxConcentricStep";
             this.numericBoxConcentricStep.RadianValue = 8.7266462599716482E-05D;
+            this.numericBoxConcentricStep.RoundErrorAccuracy = -1;
             this.numericBoxConcentricStep.ShowUpDown = true;
             this.numericBoxConcentricStep.SmartIncrement = true;
+            this.numericBoxConcentricStep.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxConcentricStep.ThonsandsSeparator = true;
             this.numericBoxConcentricStep.Value = 0.005D;
             this.numericBoxConcentricStep.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxIntegralProperty_ValueChanged);
@@ -1021,8 +1050,10 @@
             this.numericBoxConcentricEnd.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxConcentricEnd.Name = "numericBoxConcentricEnd";
             this.numericBoxConcentricEnd.RadianValue = 0.52359877559829882D;
+            this.numericBoxConcentricEnd.RoundErrorAccuracy = -1;
             this.numericBoxConcentricEnd.ShowUpDown = true;
             this.numericBoxConcentricEnd.SmartIncrement = true;
+            this.numericBoxConcentricEnd.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxConcentricEnd.ThonsandsSeparator = true;
             this.numericBoxConcentricEnd.Value = 30D;
             this.numericBoxConcentricEnd.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxIntegralProperty_ValueChanged);
@@ -1042,8 +1073,10 @@
             this.numericBoxConcentricStart.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxConcentricStart.Name = "numericBoxConcentricStart";
             this.numericBoxConcentricStart.RadianValue = 0.017453292519943295D;
+            this.numericBoxConcentricStart.RoundErrorAccuracy = -1;
             this.numericBoxConcentricStart.ShowUpDown = true;
             this.numericBoxConcentricStart.SmartIncrement = true;
+            this.numericBoxConcentricStart.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxConcentricStart.ThonsandsSeparator = true;
             this.numericBoxConcentricStart.Value = 1D;
             this.numericBoxConcentricStart.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxIntegralProperty_ValueChanged);
@@ -1125,69 +1158,6 @@
             this.checkBoxManualMaskMode.Name = "checkBoxManualMaskMode";
             this.checkBoxManualMaskMode.UseVisualStyleBackColor = true;
             this.checkBoxManualMaskMode.CheckedChanged += new System.EventHandler(this.checkBoxManualMaskMode_CheckedChanged);
-            // 
-            // groupBox7
-            // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
-            this.groupBox7.Controls.Add(this.radioButtonTakeOverMaskfile);
-            this.groupBox7.Controls.Add(this.radioButtonTakeoverMask);
-            this.groupBox7.Controls.Add(this.radioButtonTakoverNothing);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.TabStop = false;
-            // 
-            // radioButtonTakeOverMaskfile
-            // 
-            resources.ApplyResources(this.radioButtonTakeOverMaskfile, "radioButtonTakeOverMaskfile");
-            this.radioButtonTakeOverMaskfile.Name = "radioButtonTakeOverMaskfile";
-            this.radioButtonTakeOverMaskfile.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTakeoverMask
-            // 
-            resources.ApplyResources(this.radioButtonTakeoverMask, "radioButtonTakeoverMask");
-            this.radioButtonTakeoverMask.Checked = true;
-            this.radioButtonTakeoverMask.Name = "radioButtonTakeoverMask";
-            this.radioButtonTakeoverMask.TabStop = true;
-            this.radioButtonTakeoverMask.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTakoverNothing
-            // 
-            resources.ApplyResources(this.radioButtonTakoverNothing, "radioButtonTakoverNothing");
-            this.radioButtonTakoverNothing.Name = "radioButtonTakoverNothing";
-            this.radioButtonTakoverNothing.UseVisualStyleBackColor = true;
-            // 
-            // groupBox12
-            // 
-            resources.ApplyResources(this.groupBox12, "groupBox12");
-            this.groupBox12.Controls.Add(this.numericUpDownFindSpotsDeviation);
-            this.groupBox12.Controls.Add(this.label28);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.TabStop = false;
-            // 
-            // numericUpDownFindSpotsDeviation
-            // 
-            resources.ApplyResources(this.numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
-            this.numericUpDownFindSpotsDeviation.DecimalPlaces = 2;
-            this.numericUpDownFindSpotsDeviation.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownFindSpotsDeviation.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownFindSpotsDeviation.Name = "numericUpDownFindSpotsDeviation";
-            this.numericUpDownFindSpotsDeviation.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label28
-            // 
-            resources.ApplyResources(this.label28, "label28");
-            this.label28.Name = "label28";
             // 
             // groupBoxManualMode
             // 
@@ -1324,6 +1294,69 @@
             0});
             this.numericUpDownSplineWidth.ValueChanged += new System.EventHandler(this.numericUpDownSplineWidth_ValueChanged);
             // 
+            // groupBox7
+            // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.radioButtonTakeOverMaskfile);
+            this.groupBox7.Controls.Add(this.radioButtonTakeoverMask);
+            this.groupBox7.Controls.Add(this.radioButtonTakoverNothing);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            // 
+            // radioButtonTakeOverMaskfile
+            // 
+            resources.ApplyResources(this.radioButtonTakeOverMaskfile, "radioButtonTakeOverMaskfile");
+            this.radioButtonTakeOverMaskfile.Name = "radioButtonTakeOverMaskfile";
+            this.radioButtonTakeOverMaskfile.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTakeoverMask
+            // 
+            resources.ApplyResources(this.radioButtonTakeoverMask, "radioButtonTakeoverMask");
+            this.radioButtonTakeoverMask.Checked = true;
+            this.radioButtonTakeoverMask.Name = "radioButtonTakeoverMask";
+            this.radioButtonTakeoverMask.TabStop = true;
+            this.radioButtonTakeoverMask.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTakoverNothing
+            // 
+            resources.ApplyResources(this.radioButtonTakoverNothing, "radioButtonTakoverNothing");
+            this.radioButtonTakoverNothing.Name = "radioButtonTakoverNothing";
+            this.radioButtonTakoverNothing.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            resources.ApplyResources(this.groupBox12, "groupBox12");
+            this.groupBox12.Controls.Add(this.numericUpDownFindSpotsDeviation);
+            this.groupBox12.Controls.Add(this.label28);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.TabStop = false;
+            // 
+            // numericUpDownFindSpotsDeviation
+            // 
+            resources.ApplyResources(this.numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
+            this.numericUpDownFindSpotsDeviation.DecimalPlaces = 2;
+            this.numericUpDownFindSpotsDeviation.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownFindSpotsDeviation.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownFindSpotsDeviation.Name = "numericUpDownFindSpotsDeviation";
+            this.numericUpDownFindSpotsDeviation.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.Name = "label28";
+            // 
             // buttonMaskAll
             // 
             resources.ApplyResources(this.buttonMaskAll, "buttonMaskAll");
@@ -1360,8 +1393,10 @@
             this.numericBoxTest.Minimum = 0D;
             this.numericBoxTest.Name = "numericBoxTest";
             this.numericBoxTest.RadianValue = 0.0087266462599716477D;
+            this.numericBoxTest.RoundErrorAccuracy = -1;
             this.numericBoxTest.SkipEventDuringInput = false;
             this.numericBoxTest.SmartIncrement = true;
+            this.numericBoxTest.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxTest.ThonsandsSeparator = true;
             this.numericBoxTest.Value = 0.5D;
             // 
@@ -1776,8 +1811,10 @@
             this.numericBoxFindCenterPeakFittingRange.Minimum = 0D;
             this.numericBoxFindCenterPeakFittingRange.Name = "numericBoxFindCenterPeakFittingRange";
             this.numericBoxFindCenterPeakFittingRange.RadianValue = 0.0017453292519943296D;
+            this.numericBoxFindCenterPeakFittingRange.RoundErrorAccuracy = -1;
             this.numericBoxFindCenterPeakFittingRange.SkipEventDuringInput = false;
             this.numericBoxFindCenterPeakFittingRange.SmartIncrement = true;
+            this.numericBoxFindCenterPeakFittingRange.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFindCenterPeakFittingRange.ThonsandsSeparator = true;
             this.numericBoxFindCenterPeakFittingRange.Value = 0.1D;
             // 
@@ -1795,8 +1832,10 @@
             this.numericBoxFindCenterSearchArea.DecimalPlaces = 0;
             this.numericBoxFindCenterSearchArea.Name = "numericBoxFindCenterSearchArea";
             this.numericBoxFindCenterSearchArea.RadianValue = 0.13962634015954636D;
+            this.numericBoxFindCenterSearchArea.RoundErrorAccuracy = -1;
             this.numericBoxFindCenterSearchArea.SkipEventDuringInput = false;
             this.numericBoxFindCenterSearchArea.SmartIncrement = true;
+            this.numericBoxFindCenterSearchArea.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFindCenterSearchArea.ThonsandsSeparator = true;
             this.numericBoxFindCenterSearchArea.Value = 8D;
             // 
@@ -1868,7 +1907,9 @@
             this.numericBoxBackgroundCoeff.Minimum = 0D;
             this.numericBoxBackgroundCoeff.Name = "numericBoxBackgroundCoeff";
             this.numericBoxBackgroundCoeff.RadianValue = 0.017453292519943295D;
+            this.numericBoxBackgroundCoeff.RoundErrorAccuracy = -1;
             this.numericBoxBackgroundCoeff.SkipEventDuringInput = false;
+            this.numericBoxBackgroundCoeff.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxBackgroundCoeff.ThonsandsSeparator = true;
             this.numericBoxBackgroundCoeff.UpDown_Increment = 0.001D;
             this.numericBoxBackgroundCoeff.Value = 1D;
@@ -1919,9 +1960,9 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.tabControl);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::IPAnalyzer.Properties.Settings.Default, "LocationProperty", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            settings1.SettingsKey = "";
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", settings1, "LocationProperty", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Location = global::IPAnalyzer.Properties.Settings.Default.LocationProperty;
             this.Name = "FormProperty";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormProperty_FormClosing);
@@ -1962,11 +2003,6 @@
             this.groupBox5.PerformLayout();
             this.tabPageSpotsAndCenter.ResumeLayout(false);
             this.tabPageSpotsAndCenter.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFindSpotsDeviation)).EndInit();
             this.groupBoxManualMode.ResumeLayout(false);
             this.groupBoxManualMode.PerformLayout();
             this.groupBoxManualSpot.ResumeLayout(false);
@@ -1975,6 +2011,11 @@
             this.groupBoxSpline.ResumeLayout(false);
             this.groupBoxSpline.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSplineWidth)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFindSpotsDeviation)).EndInit();
             this.tabPageAfterGetProfile.ResumeLayout(false);
             this.tabPageAfterGetProfile.PerformLayout();
             this.groupBoxSaveProfile.ResumeLayout(false);

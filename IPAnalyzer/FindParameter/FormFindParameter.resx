@@ -1,64 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -125,7 +65,7 @@
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -145,7 +85,7 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -178,7 +118,7 @@
     <value>label7</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -212,7 +152,7 @@
     <value>label14</value>
   </data>
   <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label14.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -245,7 +185,7 @@
     <value>label19</value>
   </data>
   <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label19.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -275,7 +215,7 @@
     <value>label24</value>
   </data>
   <data name="&gt;&gt;label24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label24.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -305,7 +245,7 @@
     <value>label25</value>
   </data>
   <data name="&gt;&gt;label25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label25.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -335,7 +275,7 @@
     <value>label26</value>
   </data>
   <data name="&gt;&gt;label26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label26.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -365,7 +305,7 @@
     <value>numericUpDownBandWidth</value>
   </data>
   <data name="&gt;&gt;numericUpDownBandWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownBandWidth.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -398,7 +338,7 @@
     <value>label28</value>
   </data>
   <data name="&gt;&gt;label28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label28.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -429,7 +369,7 @@
     <value>numericUpDownSearchRange</value>
   </data>
   <data name="&gt;&gt;numericUpDownSearchRange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownSearchRange.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -463,7 +403,7 @@
     <value>label11</value>
   </data>
   <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label11.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -493,7 +433,7 @@
     <value>label27</value>
   </data>
   <data name="&gt;&gt;label27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label27.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -529,7 +469,7 @@
     <value>checkBoxUseStandardCrystal</value>
   </data>
   <data name="&gt;&gt;checkBoxUseStandardCrystal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxUseStandardCrystal.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -562,7 +502,7 @@
     <value>label38</value>
   </data>
   <data name="&gt;&gt;label38.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label38.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -595,7 +535,7 @@
     <value>label36</value>
   </data>
   <data name="&gt;&gt;label36.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label36.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -625,7 +565,7 @@
     <value>label46</value>
   </data>
   <data name="&gt;&gt;label46.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label46.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -658,7 +598,7 @@
     <value>label48</value>
   </data>
   <data name="&gt;&gt;label48.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label48.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -675,6 +615,7 @@
   <data name="numericBoxPrimaryImageNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 99</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="numericBoxPrimaryImageNum.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
@@ -700,7 +641,7 @@
     <value>numericBoxPrimaryImageNum</value>
   </data>
   <data name="&gt;&gt;numericBoxPrimaryImageNum.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxPrimaryImageNum.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -749,7 +690,7 @@
     <value>numericTextBoxPrimaryCenterPositionY</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -796,7 +737,7 @@
     <value>numericTextBoxPrimaryFilmDistance</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -845,7 +786,7 @@
     <value>numericalTextBoxPrimaryCenterPositionX</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -875,7 +816,7 @@
     <value>label9</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -899,7 +840,7 @@
     <value>pictureBoxPattern1</value>
   </data>
   <data name="&gt;&gt;pictureBoxPattern1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxPattern1.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -932,7 +873,7 @@
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -965,7 +906,7 @@
     <value>label43</value>
   </data>
   <data name="&gt;&gt;label43.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label43.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -995,7 +936,7 @@
     <value>label10</value>
   </data>
   <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label10.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1028,7 +969,7 @@
     <value>label51</value>
   </data>
   <data name="&gt;&gt;label51.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label51.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1064,7 +1005,7 @@
     <value>buttonGetCenterPositionFromMainForm</value>
   </data>
   <data name="&gt;&gt;buttonGetCenterPositionFromMainForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonGetCenterPositionFromMainForm.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1103,7 +1044,7 @@
     <value>buttonPrimaryGetProfile</value>
   </data>
   <data name="&gt;&gt;buttonPrimaryGetProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonPrimaryGetProfile.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1136,7 +1077,7 @@
     <value>buttonClearPrimaryImage</value>
   </data>
   <data name="&gt;&gt;buttonClearPrimaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonClearPrimaryImage.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1172,7 +1113,7 @@
     <value>buttonOpenPrimaryImage</value>
   </data>
   <data name="&gt;&gt;buttonOpenPrimaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonOpenPrimaryImage.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1211,7 +1152,7 @@
     <value>numericalTextBoxPrimaryCenterPositionYDev</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1250,7 +1191,7 @@
     <value>numericalTextBoxPrimaryCenterPositionXDev</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1280,7 +1221,7 @@
     <value>textBoxPrimaryFileName</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFileName.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1310,7 +1251,7 @@
     <value>label23</value>
   </data>
   <data name="&gt;&gt;label23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label23.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1343,7 +1284,7 @@
     <value>label53</value>
   </data>
   <data name="&gt;&gt;label53.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label53.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -1376,7 +1317,7 @@
     <value>groupBoxPrimaryImage</value>
   </data>
   <data name="&gt;&gt;groupBoxPrimaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxPrimaryImage.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1418,7 +1359,7 @@
     <value>numericBoxSecondaryImageNum</value>
   </data>
   <data name="&gt;&gt;numericBoxSecondaryImageNum.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxSecondaryImageNum.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1467,7 +1408,7 @@
     <value>numericTextBoxSecondaryCenterPositionY</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1503,7 +1444,7 @@
     <value>buttonOpenSecondaryImage</value>
   </data>
   <data name="&gt;&gt;buttonOpenSecondaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonOpenSecondaryImage.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1552,7 +1493,7 @@
     <value>numericTextBoxSecondaryCenterPositionX</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1579,7 +1520,7 @@
     <value>textBoxSecondaryFileName</value>
   </data>
   <data name="&gt;&gt;textBoxSecondaryFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBoxSecondaryFileName.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1626,7 +1567,7 @@
     <value>textBoxFilmDistanceDiscrepancy</value>
   </data>
   <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1665,7 +1606,7 @@
     <value>textBoxPrimaryFilmDistanceCopy</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1689,7 +1630,7 @@
     <value>pictureBoxPattern2</value>
   </data>
   <data name="&gt;&gt;pictureBoxPattern2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxPattern2.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1719,7 +1660,7 @@
     <value>label54</value>
   </data>
   <data name="&gt;&gt;label54.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label54.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1755,7 +1696,7 @@
     <value>label5</value>
   </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1785,7 +1726,7 @@
     <value>label55</value>
   </data>
   <data name="&gt;&gt;label55.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label55.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1821,7 +1762,7 @@
     <value>buttonGetCenterPositionFromMainForm2</value>
   </data>
   <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1854,7 +1795,7 @@
     <value>buttonClearSecondaryImage</value>
   </data>
   <data name="&gt;&gt;buttonClearSecondaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonClearSecondaryImage.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1893,7 +1834,7 @@
     <value>buttonSecondaryGetProfile</value>
   </data>
   <data name="&gt;&gt;buttonSecondaryGetProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonSecondaryGetProfile.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1932,7 +1873,7 @@
     <value>numericTextBoxSecondaryCenterPositionYDev</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -1971,7 +1912,7 @@
     <value>numericTextBoxSecondaryCenterPositionXDev</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2001,7 +1942,7 @@
     <value>label4</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2034,7 +1975,7 @@
     <value>label56</value>
   </data>
   <data name="&gt;&gt;label56.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label56.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2064,7 +2005,7 @@
     <value>label31</value>
   </data>
   <data name="&gt;&gt;label31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label31.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2097,7 +2038,7 @@
     <value>label3</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2130,7 +2071,7 @@
     <value>label58</value>
   </data>
   <data name="&gt;&gt;label58.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label58.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2160,7 +2101,7 @@
     <value>label29</value>
   </data>
   <data name="&gt;&gt;label29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label29.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
@@ -2196,7 +2137,7 @@
     <value>groupBoxSecondaryImage</value>
   </data>
   <data name="&gt;&gt;groupBoxSecondaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxSecondaryImage.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -2232,7 +2173,7 @@
     <value>checkBoxRefineTiltCorrection</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineTiltCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineTiltCorrection.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2268,7 +2209,7 @@
     <value>checkBoxRefinePixelSize</value>
   </data>
   <data name="&gt;&gt;checkBoxRefinePixelSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRefinePixelSize.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2304,7 +2245,7 @@
     <value>checkBoxRefineFilmDistance</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineFilmDistance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineFilmDistance.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2340,7 +2281,7 @@
     <value>checkBoxRefineWaveLength</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineWaveLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineWaveLength.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2373,7 +2314,7 @@
     <value>label18</value>
   </data>
   <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label18.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -2406,7 +2347,7 @@
     <value>label35</value>
   </data>
   <data name="&gt;&gt;label35.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label35.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -2436,7 +2377,7 @@
     <value>label40</value>
   </data>
   <data name="&gt;&gt;label40.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label40.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -2475,7 +2416,7 @@
     <value>buttonSchematicDiagram</value>
   </data>
   <data name="&gt;&gt;buttonSchematicDiagram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonSchematicDiagram.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2514,7 +2455,7 @@
     <value>buttonClearGraphs</value>
   </data>
   <data name="&gt;&gt;buttonClearGraphs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonClearGraphs.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2547,7 +2488,7 @@
     <value>buttonSetStandardCrystal</value>
   </data>
   <data name="&gt;&gt;buttonSetStandardCrystal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonSetStandardCrystal.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2583,7 +2524,7 @@
     <value>checkBoxRefinePixelDistortion</value>
   </data>
   <data name="&gt;&gt;checkBoxRefinePixelDistortion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRefinePixelDistortion.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2617,7 +2558,7 @@
     <value>buttonExecuteRefinements</value>
   </data>
   <data name="&gt;&gt;buttonExecuteRefinements.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonExecuteRefinements.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2653,7 +2594,7 @@
     <value>checkBoxSphericalCorrection</value>
   </data>
   <data name="&gt;&gt;checkBoxSphericalCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxSphericalCorrection.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2692,7 +2633,7 @@
     <value>checkBoxCenterPosition</value>
   </data>
   <data name="&gt;&gt;checkBoxCenterPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxCenterPosition.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2719,7 +2660,7 @@
     <value>numericUpDownRepitition</value>
   </data>
   <data name="&gt;&gt;numericUpDownRepitition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownRepitition.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2752,7 +2693,7 @@
     <value>checkBoxPeakDecomposition</value>
   </data>
   <data name="&gt;&gt;checkBoxPeakDecomposition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxPeakDecomposition.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2790,7 +2731,7 @@
     <value>checkBoxMouseOperation</value>
   </data>
   <data name="&gt;&gt;checkBoxMouseOperation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxMouseOperation.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2827,7 +2768,7 @@
     <value>checkBoxRefleshMainform</value>
   </data>
   <data name="&gt;&gt;checkBoxRefleshMainform.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRefleshMainform.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2856,7 +2797,7 @@
     <value>numericUpDownThresholdOfPeak</value>
   </data>
   <data name="&gt;&gt;numericUpDownThresholdOfPeak.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownThresholdOfPeak.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2880,7 +2821,7 @@
     <value>numericUpDownDivision</value>
   </data>
   <data name="&gt;&gt;numericUpDownDivision.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownDivision.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2913,7 +2854,7 @@
     <value>label45</value>
   </data>
   <data name="&gt;&gt;label45.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label45.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2946,7 +2887,7 @@
     <value>label21</value>
   </data>
   <data name="&gt;&gt;label21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label21.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2976,7 +2917,7 @@
     <value>label73</value>
   </data>
   <data name="&gt;&gt;label73.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label73.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3006,7 +2947,7 @@
     <value>label67</value>
   </data>
   <data name="&gt;&gt;label67.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label67.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3036,7 +2977,7 @@
     <value>label82</value>
   </data>
   <data name="&gt;&gt;label82.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label82.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3066,7 +3007,7 @@
     <value>label17</value>
   </data>
   <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label17.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3099,7 +3040,7 @@
     <value>radioButtonRectangle</value>
   </data>
   <data name="&gt;&gt;radioButtonRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButtonRectangle.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3132,7 +3073,7 @@
     <value>radioButtonSector</value>
   </data>
   <data name="&gt;&gt;radioButtonSector.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButtonSector.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3156,7 +3097,7 @@
     <value>groupBoxOption</value>
   </data>
   <data name="&gt;&gt;groupBoxOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxOption.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -3193,7 +3134,7 @@
     <value>buttonStopRefinements</value>
   </data>
   <data name="&gt;&gt;buttonStopRefinements.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonStopRefinements.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3214,7 +3155,7 @@
     <value>136, 36</value>
   </data>
   <data name="buttonSetInitioalParam.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>101</value>
   </data>
   <data name="buttonSetInitioalParam.Text" xml:space="preserve">
     <value>Main form parameters =&gt; Initial parameters </value>
@@ -3223,7 +3164,7 @@
     <value>buttonSetInitioalParam</value>
   </data>
   <data name="&gt;&gt;buttonSetInitioalParam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonSetInitioalParam.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3244,7 +3185,7 @@
     <value>121, 36</value>
   </data>
   <data name="buttonSendMainForm.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>102</value>
   </data>
   <data name="buttonSendMainForm.Text" xml:space="preserve">
     <value>Refined parameters =&gt; Main form</value>
@@ -3253,7 +3194,7 @@
     <value>buttonSendMainForm</value>
   </data>
   <data name="&gt;&gt;buttonSendMainForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonSendMainForm.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3286,7 +3227,7 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxPixelKsi.TabIndex" type="System.Int32, mscorlib">
-    <value>101</value>
+    <value>4</value>
   </data>
   <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>画像のPixelの歪み量の初期値を入力します。</value>
@@ -3298,7 +3239,7 @@
     <value>textBoxPixelKsi</value>
   </data>
   <data name="&gt;&gt;textBoxPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelKsi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3331,13 +3272,13 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Name" xml:space="preserve">
     <value>textBoxTiltCorrectionSecondaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3370,7 +3311,7 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>6</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
     <value>IPの傾き量の初期値を入力します。</value>
@@ -3382,7 +3323,7 @@
     <value>textBoxTiltCorrectionPrimaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3415,13 +3356,13 @@
     <value>89, 24</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxSphericalRadius.Name" xml:space="preserve">
     <value>numericalTextBoxSphericalRadius</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxSphericalRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxSphericalRadius.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3454,13 +3395,13 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Name" xml:space="preserve">
     <value>textBoxTiltCorrectionSecondaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3493,7 +3434,7 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>5</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
     <value>IPの傾き量の初期値を入力します。</value>
@@ -3505,7 +3446,7 @@
     <value>textBoxTiltCorrectionPrimaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3544,7 +3485,7 @@
     <value>textBoxRefinedPixelKsiDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3574,7 +3515,7 @@
     <value>label68</value>
   </data>
   <data name="&gt;&gt;label68.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label68.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3595,7 +3536,7 @@
     <value>123, 36</value>
   </data>
   <data name="buttonCopyToClipboard.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>103</value>
   </data>
   <data name="buttonCopyToClipboard.Text" xml:space="preserve">
     <value>Refined parameters =&gt; clipboard</value>
@@ -3604,7 +3545,7 @@
     <value>buttonCopyToClipboard</value>
   </data>
   <data name="&gt;&gt;buttonCopyToClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonCopyToClipboard.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3634,7 +3575,7 @@
     <value>label34</value>
   </data>
   <data name="&gt;&gt;label34.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label34.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3673,7 +3614,7 @@
     <value>textBoxWaveLengthDev</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLengthDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLengthDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3712,7 +3653,7 @@
     <value>textBoxRefinedPixelKsi</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelKsi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3742,7 +3683,7 @@
     <value>label15</value>
   </data>
   <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label15.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3772,7 +3713,7 @@
     <value>label32</value>
   </data>
   <data name="&gt;&gt;label32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label32.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3802,7 +3743,7 @@
     <value>label70</value>
   </data>
   <data name="&gt;&gt;label70.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label70.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3835,13 +3776,13 @@
     <value>88, 24</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Name" xml:space="preserve">
     <value>textBoxPrimaryFilmDistanceCopy2</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3880,7 +3821,7 @@
     <value>numericalTextBoxRadiusInverseDev</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3919,7 +3860,7 @@
     <value>textBoxRefinedSecondaryTauDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3958,7 +3899,7 @@
     <value>textBoxPixelSizeYDev</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeYDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -3994,7 +3935,7 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxWaveLength.TabIndex" type="System.Int32, mscorlib">
-    <value>103</value>
+    <value>0</value>
   </data>
   <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
     <value>波長の初期値を入力します。</value>
@@ -4006,7 +3947,7 @@
     <value>textBoxWaveLength</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLength.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxWaveLength.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4045,7 +3986,7 @@
     <value>textBoxRefinedPixelSizeY</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeY.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4084,7 +4025,7 @@
     <value>textBoxRefinedPrimaryTauDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4117,7 +4058,7 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxPixelSizeY.TabIndex" type="System.Int32, mscorlib">
-    <value>104</value>
+    <value>3</value>
   </data>
   <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
     <value>画像の1Pixelあたりの大きさ(Y方向)の初期値を入力します。</value>
@@ -4129,7 +4070,7 @@
     <value>textBoxPixelSizeY</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeY.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4168,7 +4109,7 @@
     <value>textBoxRefinedSecondaryPhiDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4198,7 +4139,7 @@
     <value>label41</value>
   </data>
   <data name="&gt;&gt;label41.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label41.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4237,7 +4178,7 @@
     <value>textBoxRefinedPrimaryFilmDistance</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4270,7 +4211,7 @@
     <value>label13</value>
   </data>
   <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label13.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4309,7 +4250,7 @@
     <value>textBoxRefinedPrimaryPhiDev</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4342,7 +4283,7 @@
     <value>89, 24</value>
   </data>
   <data name="textBoxPixelSizeX.TabIndex" type="System.Int32, mscorlib">
-    <value>104</value>
+    <value>2</value>
   </data>
   <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
     <value>画像の1Pixelあたりの大きさ(X方向)の初期値を入力します。
@@ -4356,7 +4297,7 @@
     <value>textBoxPixelSizeX</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeX.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4395,7 +4336,7 @@
     <value>textBoxRefinedWaveLength</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedWaveLength.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedWaveLength.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4434,7 +4375,7 @@
     <value>textBoxRefinedPixelSizeX</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPixelSizeX.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4473,7 +4414,7 @@
     <value>numericalTextBoxRefinedSphericalRadius</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4512,7 +4453,7 @@
     <value>textBoxRefinedSecondaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4542,7 +4483,7 @@
     <value>label20</value>
   </data>
   <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label20.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4581,7 +4522,7 @@
     <value>textBoxPixelSizeXDev</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeXDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4620,7 +4561,7 @@
     <value>textBoxRefinedPrimaryTau</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTau.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4653,7 +4594,7 @@
     <value>label44</value>
   </data>
   <data name="&gt;&gt;label44.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label44.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4683,7 +4624,7 @@
     <value>label6</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4716,7 +4657,7 @@
     <value>label69</value>
   </data>
   <data name="&gt;&gt;label69.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label69.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4746,7 +4687,7 @@
     <value>label33</value>
   </data>
   <data name="&gt;&gt;label33.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label33.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4776,7 +4717,7 @@
     <value>label63</value>
   </data>
   <data name="&gt;&gt;label63.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label63.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4806,7 +4747,7 @@
     <value>label39</value>
   </data>
   <data name="&gt;&gt;label39.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label39.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4839,7 +4780,7 @@
     <value>label81</value>
   </data>
   <data name="&gt;&gt;label81.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label81.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4872,7 +4813,7 @@
     <value>label62</value>
   </data>
   <data name="&gt;&gt;label62.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label62.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4911,7 +4852,7 @@
     <value>textBoxCameraLengthDev</value>
   </data>
   <data name="&gt;&gt;textBoxCameraLengthDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxCameraLengthDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4944,7 +4885,7 @@
     <value>label22</value>
   </data>
   <data name="&gt;&gt;label22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label22.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -4983,7 +4924,7 @@
     <value>textBoxRefinedSecondaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5013,7 +4954,7 @@
     <value>label42</value>
   </data>
   <data name="&gt;&gt;label42.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label42.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5052,7 +4993,7 @@
     <value>textBoxRefinedPrimaryPhi</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5082,7 +5023,7 @@
     <value>label61</value>
   </data>
   <data name="&gt;&gt;label61.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label61.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5115,7 +5056,7 @@
     <value>label49</value>
   </data>
   <data name="&gt;&gt;label49.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label49.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5145,7 +5086,7 @@
     <value>label30</value>
   </data>
   <data name="&gt;&gt;label30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label30.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5175,7 +5116,7 @@
     <value>label66</value>
   </data>
   <data name="&gt;&gt;label66.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label66.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5205,7 +5146,7 @@
     <value>label65</value>
   </data>
   <data name="&gt;&gt;label65.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label65.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5238,7 +5179,7 @@
     <value>label64</value>
   </data>
   <data name="&gt;&gt;label64.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label64.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5272,7 +5213,7 @@
     <value>label75</value>
   </data>
   <data name="&gt;&gt;label75.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label75.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5305,7 +5246,7 @@
     <value>label71</value>
   </data>
   <data name="&gt;&gt;label71.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label71.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
@@ -5329,7 +5270,7 @@
     <value>groupBoxParameter</value>
   </data>
   <data name="&gt;&gt;groupBoxParameter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxParameter.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5368,7 +5309,7 @@
     <value>radioButton1</value>
   </data>
   <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -5398,7 +5339,7 @@
     <value>radioButton2</value>
   </data>
   <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -5422,7 +5363,7 @@
     <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5455,7 +5396,7 @@
     <value>buttonGetWaveLengthFromWholePattern</value>
   </data>
   <data name="&gt;&gt;buttonGetWaveLengthFromWholePattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonGetWaveLengthFromWholePattern.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -5488,7 +5429,7 @@
     <value>buttonGetCameraLenghtFromWholePattern</value>
   </data>
   <data name="&gt;&gt;buttonGetCameraLenghtFromWholePattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonGetCameraLenghtFromWholePattern.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -5533,7 +5474,7 @@
     <value>contextMenuStrip1</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ColumnPrimary.HeaderText" xml:space="preserve">
     <value>Primary</value>
@@ -5569,7 +5510,7 @@
     <value>dataGridView</value>
   </data>
   <data name="&gt;&gt;dataGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridView.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -5601,7 +5542,7 @@
     <value>pictureBoxMain</value>
   </data>
   <data name="&gt;&gt;pictureBoxMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxMain.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5630,7 +5571,7 @@
     <value>pictureBoxPixelKsi</value>
   </data>
   <data name="&gt;&gt;pictureBoxPixelKsi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxPixelKsi.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5659,7 +5600,7 @@
     <value>pictureBoxPixelSizeY</value>
   </data>
   <data name="&gt;&gt;pictureBoxPixelSizeY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxPixelSizeY.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5688,7 +5629,7 @@
     <value>pictureBoxPixelSizeX</value>
   </data>
   <data name="&gt;&gt;pictureBoxPixelSizeX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxPixelSizeX.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5712,7 +5653,7 @@
     <value>pictureBoxTiltCorrectionTau2</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionTau2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionTau2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5741,7 +5682,7 @@
     <value>pictureBoxTiltCorrectionTau1</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionTau1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionTau1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5765,7 +5706,7 @@
     <value>pictureBoxTiltCorrectionPhi2</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionPhi2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionPhi2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5794,7 +5735,7 @@
     <value>pictureBoxTiltCorrectionPhi1</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionPhi1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionPhi1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5823,7 +5764,7 @@
     <value>pictureBoxCameraLength</value>
   </data>
   <data name="&gt;&gt;pictureBoxCameraLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxCameraLength.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5853,7 +5794,7 @@
     <value>pictureBoxResidual</value>
   </data>
   <data name="&gt;&gt;pictureBoxResidual.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxResidual.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5882,7 +5823,7 @@
     <value>pictureBoxWaveLength</value>
   </data>
   <data name="&gt;&gt;pictureBoxWaveLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxWaveLength.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5906,7 +5847,7 @@
     <value>pictureBoxTiltCorrection2</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrection2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrection2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5936,7 +5877,7 @@
     <value>pictureBoxTiltCorrection1</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrection1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrection1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5969,7 +5910,7 @@
     <value>label74</value>
   </data>
   <data name="&gt;&gt;label74.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label74.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6002,7 +5943,7 @@
     <value>label80</value>
   </data>
   <data name="&gt;&gt;label80.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label80.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6035,7 +5976,7 @@
     <value>label57</value>
   </data>
   <data name="&gt;&gt;label57.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label57.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6068,7 +6009,7 @@
     <value>label60</value>
   </data>
   <data name="&gt;&gt;label60.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label60.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6101,7 +6042,7 @@
     <value>label79</value>
   </data>
   <data name="&gt;&gt;label79.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label79.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6134,7 +6075,7 @@
     <value>label72</value>
   </data>
   <data name="&gt;&gt;label72.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label72.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6167,7 +6108,7 @@
     <value>label37</value>
   </data>
   <data name="&gt;&gt;label37.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label37.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6200,7 +6141,7 @@
     <value>label76</value>
   </data>
   <data name="&gt;&gt;label76.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label76.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6233,7 +6174,7 @@
     <value>label16</value>
   </data>
   <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label16.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6266,7 +6207,7 @@
     <value>label8</value>
   </data>
   <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6299,7 +6240,7 @@
     <value>label78</value>
   </data>
   <data name="&gt;&gt;label78.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label78.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6332,7 +6273,7 @@
     <value>label77</value>
   </data>
   <data name="&gt;&gt;label77.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label77.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6365,7 +6306,7 @@
     <value>label47</value>
   </data>
   <data name="&gt;&gt;label47.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label47.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6398,7 +6339,7 @@
     <value>label59</value>
   </data>
   <data name="&gt;&gt;label59.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label59.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6431,7 +6372,7 @@
     <value>label50</value>
   </data>
   <data name="&gt;&gt;label50.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label50.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6464,7 +6405,7 @@
     <value>label52</value>
   </data>
   <data name="&gt;&gt;label52.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label52.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6500,7 +6441,7 @@
     <value>statusStrip1</value>
   </data>
   <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -6539,7 +6480,7 @@
     <value>buttonCheckPeaks</value>
   </data>
   <data name="&gt;&gt;buttonCheckPeaks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonCheckPeaks.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -6593,7 +6534,7 @@
     <value>numericBoxAwayFrom</value>
   </data>
   <data name="&gt;&gt;numericBoxAwayFrom.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxAwayFrom.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -6647,7 +6588,7 @@
     <value>numericBoxLowerThan</value>
   </data>
   <data name="&gt;&gt;numericBoxLowerThan.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Version=2020.10.25.230, Culture=neutral, PublicKeyToken=null</value>
+    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;numericBoxLowerThan.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -6671,7 +6612,7 @@
     <value>groupBoxPeakList</value>
   </data>
   <data name="&gt;&gt;groupBoxPeakList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxPeakList.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -6698,7 +6639,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -6731,7 +6672,7 @@
     <value>flowLayoutPanelEachPeaks</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelEachPeaks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelEachPeaks.Parent" xml:space="preserve">
     <value>$this</value>
@@ -6764,7 +6705,7 @@
     <value>checkBoxShowEachPeaks</value>
   </data>
   <data name="&gt;&gt;checkBoxShowEachPeaks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxShowEachPeaks.Parent" xml:space="preserve">
     <value>$this</value>
@@ -6772,9 +6713,6 @@
   <data name="&gt;&gt;checkBoxShowEachPeaks.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -6868,72 +6806,72 @@
     <value>backgroundWorkerRefine</value>
   </data>
   <data name="&gt;&gt;backgroundWorkerRefine.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.ComponentModel.BackgroundWorker, System.ComponentModel.EventBasedAsync, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;ColumnNo.Name" xml:space="preserve">
     <value>ColumnNo</value>
   </data>
   <data name="&gt;&gt;ColumnNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnHKL.Name" xml:space="preserve">
     <value>ColumnHKL</value>
   </data>
   <data name="&gt;&gt;ColumnHKL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnPrimaryCheck.Name" xml:space="preserve">
     <value>ColumnPrimaryCheck</value>
   </data>
   <data name="&gt;&gt;ColumnPrimaryCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnPrimary.Name" xml:space="preserve">
     <value>ColumnPrimary</value>
   </data>
   <data name="&gt;&gt;ColumnPrimary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkUncheckToolStripMenuItem.Name" xml:space="preserve">
     <value>checkUncheckToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;checkUncheckToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnSecondaryCheck.Name" xml:space="preserve">
     <value>ColumnSecondaryCheck</value>
   </data>
   <data name="&gt;&gt;ColumnSecondaryCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnSecondary.Name" xml:space="preserve">
     <value>ColumnSecondary</value>
   </data>
   <data name="&gt;&gt;ColumnSecondary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolTipJapanese.Name" xml:space="preserve">
     <value>toolTipJapanese</value>
   </data>
   <data name="&gt;&gt;toolTipJapanese.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripProgressBar1.Name" xml:space="preserve">
     <value>toolStripProgressBar1</value>
   </data>
   <data name="&gt;&gt;toolStripProgressBar1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
     <value>toolStripStatusLabel1</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormFindParameter</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

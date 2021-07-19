@@ -454,8 +454,10 @@
             this.numericBoxPrimaryImageNum.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPrimaryImageNum.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPrimaryImageNum.Name = "numericBoxPrimaryImageNum";
+            this.numericBoxPrimaryImageNum.RoundErrorAccuracy = -1;
             this.numericBoxPrimaryImageNum.SkipEventDuringInput = false;
             this.numericBoxPrimaryImageNum.SmartIncrement = true;
+            this.numericBoxPrimaryImageNum.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPrimaryImageNum.ThonsandsSeparator = true;
             // 
             // numericTextBoxPrimaryCenterPositionY
@@ -465,9 +467,10 @@
             this.numericTextBoxPrimaryCenterPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxPrimaryCenterPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxPrimaryCenterPositionY.Name = "numericTextBoxPrimaryCenterPositionY";
+            this.numericTextBoxPrimaryCenterPositionY.RoundErrorAccuracy = -1;
             this.numericTextBoxPrimaryCenterPositionY.SkipEventDuringInput = false;
             this.numericTextBoxPrimaryCenterPositionY.SmartIncrement = true;
-            this.numericTextBoxPrimaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxPrimaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericTextBoxPrimaryCenterPositionY.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.numericTextBoxPrimaryCenterPositionY, resources.GetString("numericTextBoxPrimaryCenterPositionY.ToolTip"));
             this.numericTextBoxPrimaryCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -480,9 +483,10 @@
             this.numericTextBoxPrimaryFilmDistance.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxPrimaryFilmDistance.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxPrimaryFilmDistance.Name = "numericTextBoxPrimaryFilmDistance";
+            this.numericTextBoxPrimaryFilmDistance.RoundErrorAccuracy = -1;
             this.numericTextBoxPrimaryFilmDistance.SkipEventDuringInput = false;
             this.numericTextBoxPrimaryFilmDistance.SmartIncrement = true;
-            this.numericTextBoxPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericTextBoxPrimaryFilmDistance.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.numericTextBoxPrimaryFilmDistance, resources.GetString("numericTextBoxPrimaryFilmDistance.ToolTip"));
             this.numericTextBoxPrimaryFilmDistance.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericTextBoxPrimaryFilmDistance_TextChanged);
@@ -494,9 +498,10 @@
             this.numericalTextBoxPrimaryCenterPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionX.Name = "numericalTextBoxPrimaryCenterPositionX";
+            this.numericalTextBoxPrimaryCenterPositionX.RoundErrorAccuracy = -1;
             this.numericalTextBoxPrimaryCenterPositionX.SkipEventDuringInput = false;
             this.numericalTextBoxPrimaryCenterPositionX.SmartIncrement = true;
-            this.numericalTextBoxPrimaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxPrimaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxPrimaryCenterPositionX.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.numericalTextBoxPrimaryCenterPositionX, resources.GetString("numericalTextBoxPrimaryCenterPositionX.ToolTip"));
             this.numericalTextBoxPrimaryCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -575,10 +580,11 @@
             this.numericalTextBoxPrimaryCenterPositionYDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionYDev.Name = "numericalTextBoxPrimaryCenterPositionYDev";
             this.numericalTextBoxPrimaryCenterPositionYDev.ReadOnly = true;
+            this.numericalTextBoxPrimaryCenterPositionYDev.RoundErrorAccuracy = -1;
             this.numericalTextBoxPrimaryCenterPositionYDev.SkipEventDuringInput = false;
             this.numericalTextBoxPrimaryCenterPositionYDev.SmartIncrement = true;
             this.numericalTextBoxPrimaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxPrimaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxPrimaryCenterPositionYDev.ThonsandsSeparator = true;
             this.numericalTextBoxPrimaryCenterPositionYDev.WordWrap = false;
             // 
@@ -591,10 +597,11 @@
             this.numericalTextBoxPrimaryCenterPositionXDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxPrimaryCenterPositionXDev.Name = "numericalTextBoxPrimaryCenterPositionXDev";
             this.numericalTextBoxPrimaryCenterPositionXDev.ReadOnly = true;
+            this.numericalTextBoxPrimaryCenterPositionXDev.RoundErrorAccuracy = -1;
             this.numericalTextBoxPrimaryCenterPositionXDev.SkipEventDuringInput = false;
             this.numericalTextBoxPrimaryCenterPositionXDev.SmartIncrement = true;
             this.numericalTextBoxPrimaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPrimaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxPrimaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxPrimaryCenterPositionXDev.ThonsandsSeparator = true;
             this.numericalTextBoxPrimaryCenterPositionXDev.WordWrap = false;
             // 
@@ -653,8 +660,10 @@
             this.numericBoxSecondaryImageNum.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxSecondaryImageNum.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxSecondaryImageNum.Name = "numericBoxSecondaryImageNum";
+            this.numericBoxSecondaryImageNum.RoundErrorAccuracy = -1;
             this.numericBoxSecondaryImageNum.SkipEventDuringInput = false;
             this.numericBoxSecondaryImageNum.SmartIncrement = true;
+            this.numericBoxSecondaryImageNum.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxSecondaryImageNum.ThonsandsSeparator = true;
             // 
             // numericTextBoxSecondaryCenterPositionY
@@ -664,9 +673,10 @@
             this.numericTextBoxSecondaryCenterPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionY.Name = "numericTextBoxSecondaryCenterPositionY";
+            this.numericTextBoxSecondaryCenterPositionY.RoundErrorAccuracy = -1;
             this.numericTextBoxSecondaryCenterPositionY.SkipEventDuringInput = false;
             this.numericTextBoxSecondaryCenterPositionY.SmartIncrement = true;
-            this.numericTextBoxSecondaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionY.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericTextBoxSecondaryCenterPositionY.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.numericTextBoxSecondaryCenterPositionY, resources.GetString("numericTextBoxSecondaryCenterPositionY.ToolTip"));
             this.numericTextBoxSecondaryCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -687,9 +697,10 @@
             this.numericTextBoxSecondaryCenterPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionX.Name = "numericTextBoxSecondaryCenterPositionX";
+            this.numericTextBoxSecondaryCenterPositionX.RoundErrorAccuracy = -1;
             this.numericTextBoxSecondaryCenterPositionX.SkipEventDuringInput = false;
             this.numericTextBoxSecondaryCenterPositionX.SmartIncrement = true;
-            this.numericTextBoxSecondaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionX.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericTextBoxSecondaryCenterPositionX.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.numericTextBoxSecondaryCenterPositionX, resources.GetString("numericTextBoxSecondaryCenterPositionX.ToolTip"));
             this.numericTextBoxSecondaryCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
@@ -710,9 +721,10 @@
             this.textBoxFilmDistanceDiscrepancy.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxFilmDistanceDiscrepancy.Name = "textBoxFilmDistanceDiscrepancy";
             this.textBoxFilmDistanceDiscrepancy.RadianValue = 1.7453292519943295D;
+            this.textBoxFilmDistanceDiscrepancy.RoundErrorAccuracy = -1;
             this.textBoxFilmDistanceDiscrepancy.SkipEventDuringInput = false;
             this.textBoxFilmDistanceDiscrepancy.SmartIncrement = true;
-            this.textBoxFilmDistanceDiscrepancy.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxFilmDistanceDiscrepancy.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxFilmDistanceDiscrepancy.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxFilmDistanceDiscrepancy, resources.GetString("textBoxFilmDistanceDiscrepancy.ToolTip"));
             this.textBoxFilmDistanceDiscrepancy.Value = 100D;
@@ -729,10 +741,11 @@
             this.textBoxPrimaryFilmDistanceCopy.Name = "textBoxPrimaryFilmDistanceCopy";
             this.textBoxPrimaryFilmDistanceCopy.RadianValue = 7.7667151713747664D;
             this.textBoxPrimaryFilmDistanceCopy.ReadOnly = true;
+            this.textBoxPrimaryFilmDistanceCopy.RoundErrorAccuracy = -1;
             this.textBoxPrimaryFilmDistanceCopy.SkipEventDuringInput = false;
             this.textBoxPrimaryFilmDistanceCopy.SmartIncrement = true;
             this.textBoxPrimaryFilmDistanceCopy.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPrimaryFilmDistanceCopy.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPrimaryFilmDistanceCopy.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPrimaryFilmDistanceCopy.ThonsandsSeparator = true;
             this.textBoxPrimaryFilmDistanceCopy.Value = 445D;
             this.textBoxPrimaryFilmDistanceCopy.WordWrap = false;
@@ -792,10 +805,11 @@
             this.numericTextBoxSecondaryCenterPositionYDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionYDev.Name = "numericTextBoxSecondaryCenterPositionYDev";
             this.numericTextBoxSecondaryCenterPositionYDev.ReadOnly = true;
+            this.numericTextBoxSecondaryCenterPositionYDev.RoundErrorAccuracy = -1;
             this.numericTextBoxSecondaryCenterPositionYDev.SkipEventDuringInput = false;
             this.numericTextBoxSecondaryCenterPositionYDev.SmartIncrement = true;
             this.numericTextBoxSecondaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionYDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericTextBoxSecondaryCenterPositionYDev.ThonsandsSeparator = true;
             this.numericTextBoxSecondaryCenterPositionYDev.WordWrap = false;
             // 
@@ -808,10 +822,11 @@
             this.numericTextBoxSecondaryCenterPositionXDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericTextBoxSecondaryCenterPositionXDev.Name = "numericTextBoxSecondaryCenterPositionXDev";
             this.numericTextBoxSecondaryCenterPositionXDev.ReadOnly = true;
+            this.numericTextBoxSecondaryCenterPositionXDev.RoundErrorAccuracy = -1;
             this.numericTextBoxSecondaryCenterPositionXDev.SkipEventDuringInput = false;
             this.numericTextBoxSecondaryCenterPositionXDev.SmartIncrement = true;
             this.numericTextBoxSecondaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericTextBoxSecondaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericTextBoxSecondaryCenterPositionXDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericTextBoxSecondaryCenterPositionXDev.ThonsandsSeparator = true;
             this.numericTextBoxSecondaryCenterPositionXDev.WordWrap = false;
             // 
@@ -1215,9 +1230,10 @@
             this.textBoxPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelKsi.Name = "textBoxPixelKsi";
+            this.textBoxPixelKsi.RoundErrorAccuracy = -1;
             this.textBoxPixelKsi.SkipEventDuringInput = false;
             this.textBoxPixelKsi.SmartIncrement = true;
-            this.textBoxPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPixelKsi.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxPixelKsi, resources.GetString("textBoxPixelKsi.ToolTip"));
             this.textBoxPixelKsi.WordWrap = false;
@@ -1231,9 +1247,10 @@
             this.textBoxTiltCorrectionSecondaryTau.FooterBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionSecondaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionSecondaryTau.Name = "textBoxTiltCorrectionSecondaryTau";
+            this.textBoxTiltCorrectionSecondaryTau.RoundErrorAccuracy = -1;
             this.textBoxTiltCorrectionSecondaryTau.SkipEventDuringInput = false;
             this.textBoxTiltCorrectionSecondaryTau.SmartIncrement = true;
-            this.textBoxTiltCorrectionSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxTiltCorrectionSecondaryTau.ThonsandsSeparator = true;
             this.textBoxTiltCorrectionSecondaryTau.WordWrap = false;
             this.textBoxTiltCorrectionSecondaryTau.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -1246,9 +1263,10 @@
             this.textBoxTiltCorrectionPrimaryTau.FooterBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionPrimaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionPrimaryTau.Name = "textBoxTiltCorrectionPrimaryTau";
+            this.textBoxTiltCorrectionPrimaryTau.RoundErrorAccuracy = -1;
             this.textBoxTiltCorrectionPrimaryTau.SkipEventDuringInput = false;
             this.textBoxTiltCorrectionPrimaryTau.SmartIncrement = true;
-            this.textBoxTiltCorrectionPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxTiltCorrectionPrimaryTau.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxTiltCorrectionPrimaryTau, resources.GetString("textBoxTiltCorrectionPrimaryTau.ToolTip"));
             this.textBoxTiltCorrectionPrimaryTau.WordWrap = false;
@@ -1262,9 +1280,10 @@
             this.numericalTextBoxSphericalRadius.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxSphericalRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxSphericalRadius.Name = "numericalTextBoxSphericalRadius";
+            this.numericalTextBoxSphericalRadius.RoundErrorAccuracy = -1;
             this.numericalTextBoxSphericalRadius.SkipEventDuringInput = false;
             this.numericalTextBoxSphericalRadius.SmartIncrement = true;
-            this.numericalTextBoxSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxSphericalRadius.ThonsandsSeparator = true;
             this.numericalTextBoxSphericalRadius.WordWrap = false;
             this.numericalTextBoxSphericalRadius.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -1277,9 +1296,10 @@
             this.textBoxTiltCorrectionSecondaryPhi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionSecondaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionSecondaryPhi.Name = "textBoxTiltCorrectionSecondaryPhi";
+            this.textBoxTiltCorrectionSecondaryPhi.RoundErrorAccuracy = -1;
             this.textBoxTiltCorrectionSecondaryPhi.SkipEventDuringInput = false;
             this.textBoxTiltCorrectionSecondaryPhi.SmartIncrement = true;
-            this.textBoxTiltCorrectionSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxTiltCorrectionSecondaryPhi.ThonsandsSeparator = true;
             this.textBoxTiltCorrectionSecondaryPhi.WordWrap = false;
             this.textBoxTiltCorrectionSecondaryPhi.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -1292,9 +1312,10 @@
             this.textBoxTiltCorrectionPrimaryPhi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionPrimaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxTiltCorrectionPrimaryPhi.Name = "textBoxTiltCorrectionPrimaryPhi";
+            this.textBoxTiltCorrectionPrimaryPhi.RoundErrorAccuracy = -1;
             this.textBoxTiltCorrectionPrimaryPhi.SkipEventDuringInput = false;
             this.textBoxTiltCorrectionPrimaryPhi.SmartIncrement = true;
-            this.textBoxTiltCorrectionPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxTiltCorrectionPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxTiltCorrectionPrimaryPhi.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxTiltCorrectionPrimaryPhi, resources.GetString("textBoxTiltCorrectionPrimaryPhi.ToolTip"));
             this.textBoxTiltCorrectionPrimaryPhi.WordWrap = false;
@@ -1310,11 +1331,12 @@
             this.textBoxRefinedPixelKsiDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPixelKsiDev.Name = "textBoxRefinedPixelKsiDev";
             this.textBoxRefinedPixelKsiDev.ReadOnly = true;
+            this.textBoxRefinedPixelKsiDev.RoundErrorAccuracy = -1;
             this.textBoxRefinedPixelKsiDev.SkipEventDuringInput = false;
             this.textBoxRefinedPixelKsiDev.SmartIncrement = true;
             this.textBoxRefinedPixelKsiDev.TabStop = false;
             this.textBoxRefinedPixelKsiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelKsiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelKsiDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPixelKsiDev.ThonsandsSeparator = true;
             this.textBoxRefinedPixelKsiDev.WordWrap = false;
             // 
@@ -1343,11 +1365,12 @@
             this.textBoxWaveLengthDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxWaveLengthDev.Name = "textBoxWaveLengthDev";
             this.textBoxWaveLengthDev.ReadOnly = true;
+            this.textBoxWaveLengthDev.RoundErrorAccuracy = -1;
             this.textBoxWaveLengthDev.SkipEventDuringInput = false;
             this.textBoxWaveLengthDev.SmartIncrement = true;
             this.textBoxWaveLengthDev.TabStop = false;
             this.textBoxWaveLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxWaveLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxWaveLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxWaveLengthDev.ThonsandsSeparator = true;
             this.textBoxWaveLengthDev.WordWrap = false;
             // 
@@ -1359,11 +1382,12 @@
             this.textBoxRefinedPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPixelKsi.Name = "textBoxRefinedPixelKsi";
             this.textBoxRefinedPixelKsi.ReadOnly = true;
+            this.textBoxRefinedPixelKsi.RoundErrorAccuracy = -1;
             this.textBoxRefinedPixelKsi.SkipEventDuringInput = false;
             this.textBoxRefinedPixelKsi.SmartIncrement = true;
             this.textBoxRefinedPixelKsi.TabStop = false;
             this.textBoxRefinedPixelKsi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelKsi.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPixelKsi.ThonsandsSeparator = true;
             this.textBoxRefinedPixelKsi.WordWrap = false;
             // 
@@ -1391,10 +1415,12 @@
             this.textBoxPrimaryFilmDistanceCopy2.Name = "textBoxPrimaryFilmDistanceCopy2";
             this.textBoxPrimaryFilmDistanceCopy2.RadianValue = 7.7667151713747664D;
             this.textBoxPrimaryFilmDistanceCopy2.ReadOnly = true;
+            this.textBoxPrimaryFilmDistanceCopy2.RoundErrorAccuracy = -1;
             this.textBoxPrimaryFilmDistanceCopy2.SkipEventDuringInput = false;
             this.textBoxPrimaryFilmDistanceCopy2.SmartIncrement = true;
+            this.textBoxPrimaryFilmDistanceCopy2.TabStop = false;
             this.textBoxPrimaryFilmDistanceCopy2.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPrimaryFilmDistanceCopy2.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPrimaryFilmDistanceCopy2.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPrimaryFilmDistanceCopy2.ThonsandsSeparator = true;
             this.textBoxPrimaryFilmDistanceCopy2.Value = 445D;
             this.textBoxPrimaryFilmDistanceCopy2.WordWrap = false;
@@ -1408,11 +1434,12 @@
             this.numericalTextBoxRadiusInverseDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxRadiusInverseDev.Name = "numericalTextBoxRadiusInverseDev";
             this.numericalTextBoxRadiusInverseDev.ReadOnly = true;
+            this.numericalTextBoxRadiusInverseDev.RoundErrorAccuracy = -1;
             this.numericalTextBoxRadiusInverseDev.SkipEventDuringInput = false;
             this.numericalTextBoxRadiusInverseDev.SmartIncrement = true;
             this.numericalTextBoxRadiusInverseDev.TabStop = false;
             this.numericalTextBoxRadiusInverseDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxRadiusInverseDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxRadiusInverseDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxRadiusInverseDev.ThonsandsSeparator = true;
             this.numericalTextBoxRadiusInverseDev.WordWrap = false;
             // 
@@ -1425,11 +1452,12 @@
             this.textBoxRefinedSecondaryTauDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryTauDev.Name = "textBoxRefinedSecondaryTauDev";
             this.textBoxRefinedSecondaryTauDev.ReadOnly = true;
+            this.textBoxRefinedSecondaryTauDev.RoundErrorAccuracy = -1;
             this.textBoxRefinedSecondaryTauDev.SkipEventDuringInput = false;
             this.textBoxRefinedSecondaryTauDev.SmartIncrement = true;
             this.textBoxRefinedSecondaryTauDev.TabStop = false;
             this.textBoxRefinedSecondaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedSecondaryTauDev.ThonsandsSeparator = true;
             this.textBoxRefinedSecondaryTauDev.WordWrap = false;
             // 
@@ -1442,11 +1470,12 @@
             this.textBoxPixelSizeYDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeYDev.Name = "textBoxPixelSizeYDev";
             this.textBoxPixelSizeYDev.ReadOnly = true;
+            this.textBoxPixelSizeYDev.RoundErrorAccuracy = -1;
             this.textBoxPixelSizeYDev.SkipEventDuringInput = false;
             this.textBoxPixelSizeYDev.SmartIncrement = true;
             this.textBoxPixelSizeYDev.TabStop = false;
             this.textBoxPixelSizeYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeYDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeYDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPixelSizeYDev.ThonsandsSeparator = true;
             this.textBoxPixelSizeYDev.WordWrap = false;
             // 
@@ -1458,9 +1487,10 @@
             this.textBoxWaveLength.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxWaveLength.Name = "textBoxWaveLength";
             this.textBoxWaveLength.RadianValue = 0.0069813170079773184D;
+            this.textBoxWaveLength.RoundErrorAccuracy = -1;
             this.textBoxWaveLength.SkipEventDuringInput = false;
             this.textBoxWaveLength.SmartIncrement = true;
-            this.textBoxWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxWaveLength.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxWaveLength, resources.GetString("textBoxWaveLength.ToolTip"));
             this.textBoxWaveLength.Value = 0.4D;
@@ -1478,11 +1508,12 @@
             this.textBoxRefinedPixelSizeY.Name = "textBoxRefinedPixelSizeY";
             this.textBoxRefinedPixelSizeY.RadianValue = 0.0017453292519943296D;
             this.textBoxRefinedPixelSizeY.ReadOnly = true;
+            this.textBoxRefinedPixelSizeY.RoundErrorAccuracy = -1;
             this.textBoxRefinedPixelSizeY.SkipEventDuringInput = false;
             this.textBoxRefinedPixelSizeY.SmartIncrement = true;
             this.textBoxRefinedPixelSizeY.TabStop = false;
             this.textBoxRefinedPixelSizeY.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPixelSizeY.ThonsandsSeparator = true;
             this.textBoxRefinedPixelSizeY.Value = 0.1D;
             this.textBoxRefinedPixelSizeY.WordWrap = false;
@@ -1496,11 +1527,12 @@
             this.textBoxRefinedPrimaryTauDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryTauDev.Name = "textBoxRefinedPrimaryTauDev";
             this.textBoxRefinedPrimaryTauDev.ReadOnly = true;
+            this.textBoxRefinedPrimaryTauDev.RoundErrorAccuracy = -1;
             this.textBoxRefinedPrimaryTauDev.SkipEventDuringInput = false;
             this.textBoxRefinedPrimaryTauDev.SmartIncrement = true;
             this.textBoxRefinedPrimaryTauDev.TabStop = false;
             this.textBoxRefinedPrimaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryTauDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPrimaryTauDev.ThonsandsSeparator = true;
             this.textBoxRefinedPrimaryTauDev.WordWrap = false;
             // 
@@ -1512,9 +1544,10 @@
             this.textBoxPixelSizeY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeY.Name = "textBoxPixelSizeY";
             this.textBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
+            this.textBoxPixelSizeY.RoundErrorAccuracy = -1;
             this.textBoxPixelSizeY.SkipEventDuringInput = false;
             this.textBoxPixelSizeY.SmartIncrement = true;
-            this.textBoxPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeY.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPixelSizeY.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxPixelSizeY, resources.GetString("textBoxPixelSizeY.ToolTip"));
             this.textBoxPixelSizeY.Value = 0.1D;
@@ -1531,11 +1564,12 @@
             this.textBoxRefinedSecondaryPhiDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryPhiDev.Name = "textBoxRefinedSecondaryPhiDev";
             this.textBoxRefinedSecondaryPhiDev.ReadOnly = true;
+            this.textBoxRefinedSecondaryPhiDev.RoundErrorAccuracy = -1;
             this.textBoxRefinedSecondaryPhiDev.SkipEventDuringInput = false;
             this.textBoxRefinedSecondaryPhiDev.SmartIncrement = true;
             this.textBoxRefinedSecondaryPhiDev.TabStop = false;
             this.textBoxRefinedSecondaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedSecondaryPhiDev.ThonsandsSeparator = true;
             this.textBoxRefinedSecondaryPhiDev.WordWrap = false;
             // 
@@ -1553,11 +1587,12 @@
             this.textBoxRefinedPrimaryFilmDistance.Name = "textBoxRefinedPrimaryFilmDistance";
             this.textBoxRefinedPrimaryFilmDistance.RadianValue = 6.9813170079773181D;
             this.textBoxRefinedPrimaryFilmDistance.ReadOnly = true;
+            this.textBoxRefinedPrimaryFilmDistance.RoundErrorAccuracy = -1;
             this.textBoxRefinedPrimaryFilmDistance.SkipEventDuringInput = false;
             this.textBoxRefinedPrimaryFilmDistance.SmartIncrement = true;
             this.textBoxRefinedPrimaryFilmDistance.TabStop = false;
             this.textBoxRefinedPrimaryFilmDistance.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryFilmDistance.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPrimaryFilmDistance.ThonsandsSeparator = true;
             this.textBoxRefinedPrimaryFilmDistance.Value = 400D;
             this.textBoxRefinedPrimaryFilmDistance.WordWrap = false;
@@ -1576,11 +1611,12 @@
             this.textBoxRefinedPrimaryPhiDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryPhiDev.Name = "textBoxRefinedPrimaryPhiDev";
             this.textBoxRefinedPrimaryPhiDev.ReadOnly = true;
+            this.textBoxRefinedPrimaryPhiDev.RoundErrorAccuracy = -1;
             this.textBoxRefinedPrimaryPhiDev.SkipEventDuringInput = false;
             this.textBoxRefinedPrimaryPhiDev.SmartIncrement = true;
             this.textBoxRefinedPrimaryPhiDev.TabStop = false;
             this.textBoxRefinedPrimaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryPhiDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPrimaryPhiDev.ThonsandsSeparator = true;
             this.textBoxRefinedPrimaryPhiDev.WordWrap = false;
             // 
@@ -1592,9 +1628,10 @@
             this.textBoxPixelSizeX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeX.Name = "textBoxPixelSizeX";
             this.textBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
+            this.textBoxPixelSizeX.RoundErrorAccuracy = -1;
             this.textBoxPixelSizeX.SkipEventDuringInput = false;
             this.textBoxPixelSizeX.SmartIncrement = true;
-            this.textBoxPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPixelSizeX.ThonsandsSeparator = true;
             this.toolTipJapanese.SetToolTip(this.textBoxPixelSizeX, resources.GetString("textBoxPixelSizeX.ToolTip"));
             this.textBoxPixelSizeX.Value = 0.1D;
@@ -1609,11 +1646,12 @@
             this.textBoxRefinedWaveLength.Name = "textBoxRefinedWaveLength";
             this.textBoxRefinedWaveLength.RadianValue = 0.0069813170079773184D;
             this.textBoxRefinedWaveLength.ReadOnly = true;
+            this.textBoxRefinedWaveLength.RoundErrorAccuracy = -1;
             this.textBoxRefinedWaveLength.SkipEventDuringInput = false;
             this.textBoxRefinedWaveLength.SmartIncrement = true;
             this.textBoxRefinedWaveLength.TabStop = false;
             this.textBoxRefinedWaveLength.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedWaveLength.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedWaveLength.ThonsandsSeparator = true;
             this.textBoxRefinedWaveLength.Value = 0.4D;
             this.textBoxRefinedWaveLength.WordWrap = false;
@@ -1627,11 +1665,12 @@
             this.textBoxRefinedPixelSizeX.Name = "textBoxRefinedPixelSizeX";
             this.textBoxRefinedPixelSizeX.RadianValue = 0.0017453292519943296D;
             this.textBoxRefinedPixelSizeX.ReadOnly = true;
+            this.textBoxRefinedPixelSizeX.RoundErrorAccuracy = -1;
             this.textBoxRefinedPixelSizeX.SkipEventDuringInput = false;
             this.textBoxRefinedPixelSizeX.SmartIncrement = true;
             this.textBoxRefinedPixelSizeX.TabStop = false;
             this.textBoxRefinedPixelSizeX.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPixelSizeX.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPixelSizeX.ThonsandsSeparator = true;
             this.textBoxRefinedPixelSizeX.Value = 0.1D;
             this.textBoxRefinedPixelSizeX.WordWrap = false;
@@ -1644,11 +1683,12 @@
             this.numericalTextBoxRefinedSphericalRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericalTextBoxRefinedSphericalRadius.Name = "numericalTextBoxRefinedSphericalRadius";
             this.numericalTextBoxRefinedSphericalRadius.ReadOnly = true;
+            this.numericalTextBoxRefinedSphericalRadius.RoundErrorAccuracy = -1;
             this.numericalTextBoxRefinedSphericalRadius.SkipEventDuringInput = false;
             this.numericalTextBoxRefinedSphericalRadius.SmartIncrement = true;
             this.numericalTextBoxRefinedSphericalRadius.TabStop = false;
             this.numericalTextBoxRefinedSphericalRadius.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxRefinedSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.numericalTextBoxRefinedSphericalRadius.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericalTextBoxRefinedSphericalRadius.ThonsandsSeparator = true;
             this.numericalTextBoxRefinedSphericalRadius.WordWrap = false;
             // 
@@ -1660,11 +1700,12 @@
             this.textBoxRefinedSecondaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryTau.Name = "textBoxRefinedSecondaryTau";
             this.textBoxRefinedSecondaryTau.ReadOnly = true;
+            this.textBoxRefinedSecondaryTau.RoundErrorAccuracy = -1;
             this.textBoxRefinedSecondaryTau.SkipEventDuringInput = false;
             this.textBoxRefinedSecondaryTau.SmartIncrement = true;
             this.textBoxRefinedSecondaryTau.TabStop = false;
             this.textBoxRefinedSecondaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedSecondaryTau.ThonsandsSeparator = true;
             this.textBoxRefinedSecondaryTau.WordWrap = false;
             // 
@@ -1682,11 +1723,12 @@
             this.textBoxPixelSizeXDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxPixelSizeXDev.Name = "textBoxPixelSizeXDev";
             this.textBoxPixelSizeXDev.ReadOnly = true;
+            this.textBoxPixelSizeXDev.RoundErrorAccuracy = -1;
             this.textBoxPixelSizeXDev.SkipEventDuringInput = false;
             this.textBoxPixelSizeXDev.SmartIncrement = true;
             this.textBoxPixelSizeXDev.TabStop = false;
             this.textBoxPixelSizeXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPixelSizeXDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxPixelSizeXDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPixelSizeXDev.ThonsandsSeparator = true;
             this.textBoxPixelSizeXDev.WordWrap = false;
             // 
@@ -1698,11 +1740,12 @@
             this.textBoxRefinedPrimaryTau.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryTau.Name = "textBoxRefinedPrimaryTau";
             this.textBoxRefinedPrimaryTau.ReadOnly = true;
+            this.textBoxRefinedPrimaryTau.RoundErrorAccuracy = -1;
             this.textBoxRefinedPrimaryTau.SkipEventDuringInput = false;
             this.textBoxRefinedPrimaryTau.SmartIncrement = true;
             this.textBoxRefinedPrimaryTau.TabStop = false;
             this.textBoxRefinedPrimaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryTau.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPrimaryTau.ThonsandsSeparator = true;
             this.textBoxRefinedPrimaryTau.WordWrap = false;
             // 
@@ -1755,11 +1798,12 @@
             this.textBoxCameraLengthDev.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxCameraLengthDev.Name = "textBoxCameraLengthDev";
             this.textBoxCameraLengthDev.ReadOnly = true;
+            this.textBoxCameraLengthDev.RoundErrorAccuracy = -1;
             this.textBoxCameraLengthDev.SkipEventDuringInput = false;
             this.textBoxCameraLengthDev.SmartIncrement = true;
             this.textBoxCameraLengthDev.TabStop = false;
             this.textBoxCameraLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxCameraLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxCameraLengthDev.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxCameraLengthDev.ThonsandsSeparator = true;
             this.textBoxCameraLengthDev.WordWrap = false;
             // 
@@ -1776,11 +1820,12 @@
             this.textBoxRefinedSecondaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedSecondaryPhi.Name = "textBoxRefinedSecondaryPhi";
             this.textBoxRefinedSecondaryPhi.ReadOnly = true;
+            this.textBoxRefinedSecondaryPhi.RoundErrorAccuracy = -1;
             this.textBoxRefinedSecondaryPhi.SkipEventDuringInput = false;
             this.textBoxRefinedSecondaryPhi.SmartIncrement = true;
             this.textBoxRefinedSecondaryPhi.TabStop = false;
             this.textBoxRefinedSecondaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedSecondaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedSecondaryPhi.ThonsandsSeparator = true;
             this.textBoxRefinedSecondaryPhi.WordWrap = false;
             // 
@@ -1797,11 +1842,12 @@
             this.textBoxRefinedPrimaryPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.textBoxRefinedPrimaryPhi.Name = "textBoxRefinedPrimaryPhi";
             this.textBoxRefinedPrimaryPhi.ReadOnly = true;
+            this.textBoxRefinedPrimaryPhi.RoundErrorAccuracy = -1;
             this.textBoxRefinedPrimaryPhi.SkipEventDuringInput = false;
             this.textBoxRefinedPrimaryPhi.SmartIncrement = true;
             this.textBoxRefinedPrimaryPhi.TabStop = false;
             this.textBoxRefinedPrimaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRefinedPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F);
+            this.textBoxRefinedPrimaryPhi.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRefinedPrimaryPhi.ThonsandsSeparator = true;
             this.textBoxRefinedPrimaryPhi.WordWrap = false;
             // 
@@ -1892,7 +1938,7 @@
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1908,7 +1954,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView.RowTemplate.Height = 21;
             this.toolTipJapanese.SetToolTip(this.dataGridView, resources.GetString("dataGridView.ToolTip"));
@@ -1918,7 +1964,7 @@
             // 
             this.ColumnNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ColumnNo.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.ColumnNo, "ColumnNo");
             this.ColumnNo.Name = "ColumnNo";
@@ -1929,7 +1975,7 @@
             // ColumnHKL
             // 
             this.ColumnHKL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.NullValue = null;
             this.ColumnHKL.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.ColumnHKL, "ColumnHKL");
@@ -1943,7 +1989,7 @@
             this.ColumnPrimaryCheck.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.NullValue = false;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1958,7 +2004,7 @@
             this.ColumnPrimary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnPrimary.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.NullValue = null;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
@@ -2003,7 +2049,7 @@
             this.ColumnSecondary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnSecondary.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.NullValue = null;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -2265,9 +2311,10 @@
             this.numericBoxAwayFrom.Minimum = 0D;
             this.numericBoxAwayFrom.Name = "numericBoxAwayFrom";
             this.numericBoxAwayFrom.RadianValue = 0.017453292519943295D;
+            this.numericBoxAwayFrom.RoundErrorAccuracy = -1;
             this.numericBoxAwayFrom.SkipEventDuringInput = false;
             this.numericBoxAwayFrom.SmartIncrement = true;
-            this.numericBoxAwayFrom.TextFont = new System.Drawing.Font("Tahoma", 8.25F);
+            this.numericBoxAwayFrom.TextFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxAwayFrom.ThonsandsSeparator = true;
             this.numericBoxAwayFrom.Value = 1D;
             this.numericBoxAwayFrom.WordWrap = false;
@@ -2283,9 +2330,10 @@
             this.numericBoxLowerThan.Minimum = 0D;
             this.numericBoxLowerThan.Name = "numericBoxLowerThan";
             this.numericBoxLowerThan.RadianValue = 2.6179938779914944D;
+            this.numericBoxLowerThan.RoundErrorAccuracy = -1;
             this.numericBoxLowerThan.SkipEventDuringInput = false;
             this.numericBoxLowerThan.SmartIncrement = true;
-            this.numericBoxLowerThan.TextFont = new System.Drawing.Font("Tahoma", 8.25F);
+            this.numericBoxLowerThan.TextFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxLowerThan.ThonsandsSeparator = true;
             this.numericBoxLowerThan.Value = 150D;
             this.numericBoxLowerThan.WordWrap = false;
