@@ -2890,6 +2890,9 @@ namespace Crystallography
 		//FindTiltCorrection用の定数を先に決めておくメソッド
 		public static void SetFindTiltParameter(IntegralProperty iP, double[] peaks, double serchRange)
 		{
+			if (double.IsNaN(IP.EndLength))
+				return;
+
 			var thread = Environment.ProcessorCount;
 
 			IP = iP;
@@ -2961,6 +2964,9 @@ namespace Crystallography
 			SetTiltParameter();
 			
 			Parallel.For(0, thread, i => SetFindTiltParameterThread(xMin, xMax, yThreadMin[i], yThreadMax[i], peaksPlusRange2, peaksMinusRange2));
+
+			if (double.IsNaN(IP.EndLength))
+				return;
 
 			//配列Rを作成　各ステップごとの中心からの距離を格納する配列
 			R2 = new double[(int)((IP.EndLength - IP.StartLength) / IP.StepLength) + 1];

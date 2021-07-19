@@ -9,6 +9,7 @@
 
         static public string History = 
             "History" +
+            "\r\n ver3.910(2021/07/19) Fixed a minor bug on 'Fitting parameter' " +
             "\r\n ver3.909(2021/07/10) Fixed a minor bug on 'Fitting parameter' " +
             "\r\n ver3.908(2021/07/01) Target framework has been changed to .Net 5.0" +
             "\r\n ver3.907(2021/05/02) Improved: Image rendering speed and processing speed of 'Find center'" +

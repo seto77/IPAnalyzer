@@ -214,7 +214,7 @@
             this.numericBoxEnergy.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxEnergy.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxEnergy.Name = "numericBoxEnergy";
-            this.numericBoxEnergy.RoundErrorAccuracy = 10;
+            this.numericBoxEnergy.RoundErrorAccuracy = 12;
             this.numericBoxEnergy.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolTip.SetToolTip(this.numericBoxEnergy, resources.GetString("numericBoxEnergy.ToolTip"));
             this.numericBoxEnergy.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxEnergy_ValueChanged);
@@ -245,7 +245,7 @@
             this.numericBoxWaveLength.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxWaveLength.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxWaveLength.Name = "numericBoxWaveLength";
-            this.numericBoxWaveLength.RoundErrorAccuracy = 10;
+            this.numericBoxWaveLength.RoundErrorAccuracy = 12;
             this.numericBoxWaveLength.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolTip.SetToolTip(this.numericBoxWaveLength, resources.GetString("numericBoxWaveLength.ToolTip"));
             this.numericBoxWaveLength.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.numericBoxWaveLength_ValueChanged);
