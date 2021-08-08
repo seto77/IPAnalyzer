@@ -1,6 +1,6 @@
 ﻿namespace IPAnalyzer
 {
-    partial class FormFindParameter2
+    partial class FormFindParameterGeometry
     {
         /// <summary>
         /// 必要なデザイナ変数です。

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormFindParameter2 : Form
+    public partial class FormFindParameterGeometry : Form
     {
-        public FormFindParameter2()
+        public FormFindParameterGeometry()
         {
             InitializeComponent();
         }

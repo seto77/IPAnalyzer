@@ -1,6 +1,6 @@
 ﻿namespace IPAnalyzer
 {
-    partial class FormOptimizeSaclaEH5Parameter
+    partial class FormFindParameterBruteForce
     {
         /// <summary>
         /// Required designer variable.
@@ -172,7 +172,7 @@
             this.buttonGetProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGetProfile.AutoSize = true;
             this.buttonGetProfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonGetProfile.Location = new System.Drawing.Point(788, 431);
+            this.buttonGetProfile.Location = new System.Drawing.Point(680, 397);
             this.buttonGetProfile.Name = "buttonGetProfile";
             this.buttonGetProfile.Size = new System.Drawing.Size(72, 25);
             this.buttonGetProfile.TabIndex = 3;
@@ -185,9 +185,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 739);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 695);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1149, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1013, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -251,7 +251,7 @@
             this.checkBoxTwoTheta.AutoSize = true;
             this.checkBoxTwoTheta.Checked = true;
             this.checkBoxTwoTheta.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTwoTheta.Location = new System.Drawing.Point(0, 45);
+            this.checkBoxTwoTheta.Location = new System.Drawing.Point(0, 68);
             this.checkBoxTwoTheta.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxTwoTheta.Name = "checkBoxTwoTheta";
             this.checkBoxTwoTheta.Size = new System.Drawing.Size(90, 19);
@@ -265,7 +265,7 @@
             this.checkBoxFootX.AutoSize = true;
             this.checkBoxFootX.Checked = true;
             this.checkBoxFootX.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFootX.Location = new System.Drawing.Point(0, 99);
+            this.checkBoxFootX.Location = new System.Drawing.Point(0, 93);
             this.checkBoxFootX.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxFootX.Name = "checkBoxFootX";
             this.checkBoxFootX.Size = new System.Drawing.Size(91, 19);
@@ -279,7 +279,7 @@
             this.checkBoxFootY.AutoSize = true;
             this.checkBoxFootY.Checked = true;
             this.checkBoxFootY.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFootY.Location = new System.Drawing.Point(0, 126);
+            this.checkBoxFootY.Location = new System.Drawing.Point(0, 118);
             this.checkBoxFootY.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxFootY.Name = "checkBoxFootY";
             this.checkBoxFootY.Size = new System.Drawing.Size(91, 19);
@@ -290,11 +290,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(5, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 205);
+            this.groupBox1.Size = new System.Drawing.Size(321, 187);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
@@ -308,26 +311,26 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxTwoTheta, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxTwoTheta, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxDistance, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxFootX, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxPhi, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointXStep, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxFootY, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointYStep, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointYRange, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointXRange, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.numericBoxPhiRange, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericBoxTauRange, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxDistanceRange, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxTauRange, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxPhiStep, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxTauStep, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxDistanceStep, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.numericBoxTauStep, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.numericBoxPhiStep, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxWaveLength, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxWaveLengthStep, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxWaveLengthRange, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxPhi, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxPhiRange, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -339,7 +342,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(309, 183);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(315, 165);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // label3
@@ -360,7 +363,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(188, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 15);
+            this.label4.Size = new System.Drawing.Size(124, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Search range";
             // 
@@ -369,7 +372,7 @@
             this.checkBoxPhi.AutoSize = true;
             this.checkBoxPhi.Checked = true;
             this.checkBoxPhi.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPhi.Location = new System.Drawing.Point(0, 72);
+            this.checkBoxPhi.Location = new System.Drawing.Point(0, 43);
             this.checkBoxPhi.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxPhi.Name = "checkBoxPhi";
             this.checkBoxPhi.Size = new System.Drawing.Size(43, 19);
@@ -385,7 +388,7 @@
             this.numericBoxFootPointXStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFootPointXStep.FooterText = "pix";
             this.numericBoxFootPointXStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxFootPointXStep.Location = new System.Drawing.Point(95, 96);
+            this.numericBoxFootPointXStep.Location = new System.Drawing.Point(95, 90);
             this.numericBoxFootPointXStep.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxFootPointXStep.Maximum = 1D;
             this.numericBoxFootPointXStep.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -408,7 +411,7 @@
             this.numericBoxFootPointYStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFootPointYStep.FooterText = "pix";
             this.numericBoxFootPointYStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxFootPointYStep.Location = new System.Drawing.Point(95, 123);
+            this.numericBoxFootPointYStep.Location = new System.Drawing.Point(95, 115);
             this.numericBoxFootPointYStep.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxFootPointYStep.Maximum = 1D;
             this.numericBoxFootPointYStep.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -432,7 +435,7 @@
             this.numericBoxFootPointYRange.FooterText = "steps";
             this.numericBoxFootPointYRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFootPointYRange.HeaderText = "±";
-            this.numericBoxFootPointYRange.Location = new System.Drawing.Point(185, 123);
+            this.numericBoxFootPointYRange.Location = new System.Drawing.Point(185, 115);
             this.numericBoxFootPointYRange.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxFootPointYRange.Maximum = 10D;
             this.numericBoxFootPointYRange.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -456,7 +459,7 @@
             this.numericBoxFootPointXRange.FooterText = "steps";
             this.numericBoxFootPointXRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFootPointXRange.HeaderText = "±";
-            this.numericBoxFootPointXRange.Location = new System.Drawing.Point(185, 96);
+            this.numericBoxFootPointXRange.Location = new System.Drawing.Point(185, 90);
             this.numericBoxFootPointXRange.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxFootPointXRange.Maximum = 10D;
             this.numericBoxFootPointXRange.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -479,7 +482,7 @@
             this.numericBoxPhiRange.FooterText = "steps";
             this.numericBoxPhiRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPhiRange.HeaderText = "±";
-            this.numericBoxPhiRange.Location = new System.Drawing.Point(185, 69);
+            this.numericBoxPhiRange.Location = new System.Drawing.Point(185, 40);
             this.numericBoxPhiRange.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxPhiRange.Maximum = 10D;
             this.numericBoxPhiRange.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -502,7 +505,7 @@
             this.numericBoxTauRange.FooterText = "steps";
             this.numericBoxTauRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxTauRange.HeaderText = "±";
-            this.numericBoxTauRange.Location = new System.Drawing.Point(185, 42);
+            this.numericBoxTauRange.Location = new System.Drawing.Point(185, 65);
             this.numericBoxTauRange.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxTauRange.Maximum = 10D;
             this.numericBoxTauRange.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -570,7 +573,7 @@
             this.numericBoxTauStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxTauStep.FooterText = "°";
             this.numericBoxTauStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxTauStep.Location = new System.Drawing.Point(95, 42);
+            this.numericBoxTauStep.Location = new System.Drawing.Point(95, 65);
             this.numericBoxTauStep.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxTauStep.Maximum = 5D;
             this.numericBoxTauStep.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -593,7 +596,7 @@
             this.numericBoxPhiStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPhiStep.FooterText = "°";
             this.numericBoxPhiStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxPhiStep.Location = new System.Drawing.Point(95, 69);
+            this.numericBoxPhiStep.Location = new System.Drawing.Point(95, 40);
             this.numericBoxPhiStep.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxPhiStep.Maximum = 20D;
             this.numericBoxPhiStep.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -612,7 +615,7 @@
             // checkBoxWaveLength
             // 
             this.checkBoxWaveLength.AutoSize = true;
-            this.checkBoxWaveLength.Location = new System.Drawing.Point(0, 153);
+            this.checkBoxWaveLength.Location = new System.Drawing.Point(0, 143);
             this.checkBoxWaveLength.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxWaveLength.Name = "checkBoxWaveLength";
             this.checkBoxWaveLength.Size = new System.Drawing.Size(95, 19);
@@ -630,7 +633,7 @@
             this.numericBoxWaveLengthStep.FooterFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxWaveLengthStep.FooterText = "Å";
             this.numericBoxWaveLengthStep.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxWaveLengthStep.Location = new System.Drawing.Point(95, 150);
+            this.numericBoxWaveLengthStep.Location = new System.Drawing.Point(95, 140);
             this.numericBoxWaveLengthStep.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxWaveLengthStep.Maximum = 1D;
             this.numericBoxWaveLengthStep.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -655,7 +658,7 @@
             this.numericBoxWaveLengthRange.FooterText = "steps";
             this.numericBoxWaveLengthRange.HeaderFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxWaveLengthRange.HeaderText = "±";
-            this.numericBoxWaveLengthRange.Location = new System.Drawing.Point(185, 150);
+            this.numericBoxWaveLengthRange.Location = new System.Drawing.Point(185, 140);
             this.numericBoxWaveLengthRange.Margin = new System.Windows.Forms.Padding(0);
             this.numericBoxWaveLengthRange.Maximum = 10D;
             this.numericBoxWaveLengthRange.MaximumSize = new System.Drawing.Size(1000, 25);
@@ -676,20 +679,20 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(812, 21);
+            this.textBox1.Location = new System.Drawing.Point(676, 21);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(325, 375);
+            this.textBox1.Size = new System.Drawing.Size(337, 370);
             this.textBox1.TabIndex = 9;
             // 
             // groupBox2
             // 
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox2.Location = new System.Drawing.Point(9, 70);
+            this.groupBox2.Location = new System.Drawing.Point(10, 49);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(321, 164);
+            this.groupBox2.Size = new System.Drawing.Size(321, 181);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
@@ -731,7 +734,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(315, 142);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(315, 159);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
             // flowLayoutPanel1
@@ -779,7 +782,7 @@
             this.checkBoxCenterPosition.AutoSize = true;
             this.checkBoxCenterPosition.Checked = true;
             this.checkBoxCenterPosition.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCenterPosition.Location = new System.Drawing.Point(0, 68);
+            this.checkBoxCenterPosition.Location = new System.Drawing.Point(0, 76);
             this.checkBoxCenterPosition.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxCenterPosition.Name = "checkBoxCenterPosition";
             this.checkBoxCenterPosition.Size = new System.Drawing.Size(107, 19);
@@ -792,7 +795,7 @@
             this.checkBoxPixelSize.AutoSize = true;
             this.checkBoxPixelSize.Checked = true;
             this.checkBoxPixelSize.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPixelSize.Location = new System.Drawing.Point(0, 43);
+            this.checkBoxPixelSize.Location = new System.Drawing.Point(0, 47);
             this.checkBoxPixelSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxPixelSize.Name = "checkBoxPixelSize";
             this.checkBoxPixelSize.Size = new System.Drawing.Size(73, 19);
@@ -829,7 +832,7 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.Controls.Add(this.numericUpDownPixelSizeStep);
             this.flowLayoutPanel2.Controls.Add(this.label8);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(112, 40);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(112, 44);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(86, 23);
@@ -874,7 +877,7 @@
             this.flowLayoutPanel3.AutoSize = true;
             this.flowLayoutPanel3.Controls.Add(this.numericUpDownCenterPositionStep);
             this.flowLayoutPanel3.Controls.Add(this.label9);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(112, 65);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(112, 73);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(67, 23);
@@ -978,7 +981,7 @@
             this.flowLayoutPanel6.Controls.Add(this.label26);
             this.flowLayoutPanel6.Controls.Add(this.numericUpDownPixelSizeRange);
             this.flowLayoutPanel6.Controls.Add(this.label27);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(201, 40);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(201, 44);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(87, 23);
@@ -1030,7 +1033,7 @@
             this.flowLayoutPanel7.Controls.Add(this.label28);
             this.flowLayoutPanel7.Controls.Add(this.numericUpDownCenterPositionRange);
             this.flowLayoutPanel7.Controls.Add(this.label29);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(201, 65);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(201, 73);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(87, 23);
@@ -1081,7 +1084,7 @@
             this.checkBoxIPTilt.AutoSize = true;
             this.checkBoxIPTilt.Checked = true;
             this.checkBoxIPTilt.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxIPTilt.Location = new System.Drawing.Point(0, 93);
+            this.checkBoxIPTilt.Location = new System.Drawing.Point(0, 105);
             this.checkBoxIPTilt.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxIPTilt.Name = "checkBoxIPTilt";
             this.checkBoxIPTilt.Size = new System.Drawing.Size(56, 19);
@@ -1094,7 +1097,7 @@
             this.flowLayoutPanel4.AutoSize = true;
             this.flowLayoutPanel4.Controls.Add(this.numericUpDownIPTiltStep);
             this.flowLayoutPanel4.Controls.Add(this.label22);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(112, 90);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(112, 102);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(69, 23);
@@ -1134,7 +1137,7 @@
             this.checkBoxGandlfiRadius.AutoSize = true;
             this.checkBoxGandlfiRadius.Checked = true;
             this.checkBoxGandlfiRadius.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxGandlfiRadius.Location = new System.Drawing.Point(0, 120);
+            this.checkBoxGandlfiRadius.Location = new System.Drawing.Point(0, 132);
             this.checkBoxGandlfiRadius.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.checkBoxGandlfiRadius.Name = "checkBoxGandlfiRadius";
             this.checkBoxGandlfiRadius.Size = new System.Drawing.Size(109, 19);
@@ -1148,7 +1151,7 @@
             this.flowLayoutPanel8.Controls.Add(this.label30);
             this.flowLayoutPanel8.Controls.Add(this.numericUpDownTiltRange);
             this.flowLayoutPanel8.Controls.Add(this.label31);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(201, 90);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(201, 102);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(87, 23);
@@ -1199,7 +1202,7 @@
             this.flowLayoutPanel9.AutoSize = true;
             this.flowLayoutPanel9.Controls.Add(this.numericUpDownGandolfiRadiusStep);
             this.flowLayoutPanel9.Controls.Add(this.label33);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(112, 117);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(112, 129);
             this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
             this.flowLayoutPanel9.Size = new System.Drawing.Size(86, 23);
@@ -1245,7 +1248,7 @@
             this.flowLayoutPanel10.Controls.Add(this.label34);
             this.flowLayoutPanel10.Controls.Add(this.numericUpDownGandolfiRadiusRange);
             this.flowLayoutPanel10.Controls.Add(this.label35);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(201, 117);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(201, 129);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Size = new System.Drawing.Size(87, 23);
@@ -1296,10 +1299,10 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(788, 465);
+            this.tabControl1.Location = new System.Drawing.Point(676, 446);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(361, 271);
+            this.tabControl1.Size = new System.Drawing.Size(337, 248);
             this.tabControl1.TabIndex = 11;
             // 
             // tabPage1
@@ -1312,7 +1315,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(353, 243);
+            this.tabPage1.Size = new System.Drawing.Size(329, 220);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SaclaEH5";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1328,7 +1331,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(353, 243);
+            this.tabPage2.Size = new System.Drawing.Size(329, 220);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gandolfi";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1336,7 +1339,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 43);
+            this.label5.Location = new System.Drawing.Point(78, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 15);
             this.label5.TabIndex = 11;
@@ -1357,7 +1360,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(107, 43);
+            this.label32.Location = new System.Drawing.Point(179, 10);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(36, 15);
             this.label32.TabIndex = 12;
@@ -1394,7 +1397,7 @@
             // 
             // numericUpDownIterationGandolfi
             // 
-            this.numericUpDownIterationGandolfi.Location = new System.Drawing.Point(59, 41);
+            this.numericUpDownIterationGandolfi.Location = new System.Drawing.Point(131, 8);
             this.numericUpDownIterationGandolfi.Name = "numericUpDownIterationGandolfi";
             this.numericUpDownIterationGandolfi.Size = new System.Drawing.Size(42, 23);
             this.numericUpDownIterationGandolfi.TabIndex = 10;
@@ -1438,7 +1441,7 @@
             this.graphControl1.MousePositionVisible = true;
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControl1.Size = new System.Drawing.Size(806, 398);
+            this.graphControl1.Size = new System.Drawing.Size(670, 393);
             this.graphControl1.Smoothing = false;
             this.graphControl1.TabIndex = 10;
             this.graphControl1.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1469,11 +1472,11 @@
             this.crystalControl1.C = 0D;
             this.crystalControl1.DefaultTabNumber = 0;
             this.crystalControl1.Gamma = 0D;
-            this.crystalControl1.Location = new System.Drawing.Point(0, 431);
+            this.crystalControl1.Location = new System.Drawing.Point(0, 419);
             this.crystalControl1.Margin = new System.Windows.Forms.Padding(0);
             this.crystalControl1.Name = "crystalControl1";
             this.crystalControl1.ScatteringFactorVisible = false;
-            this.crystalControl1.Size = new System.Drawing.Size(785, 306);
+            this.crystalControl1.Size = new System.Drawing.Size(670, 276);
             this.crystalControl1.SkipEvent = false;
             this.crystalControl1.SymmetryInformationVisible = false;
             this.crystalControl1.SymmetrySeriesNumber = 0;
@@ -1495,14 +1498,14 @@
             this.numericBoxFittingRange.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxFittingRange.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFittingRange.HeaderText = "Fitting Range";
-            this.numericBoxFittingRange.Location = new System.Drawing.Point(1005, 456);
+            this.numericBoxFittingRange.Location = new System.Drawing.Point(873, 395);
             this.numericBoxFittingRange.Margin = new System.Windows.Forms.Padding(0);
-            this.numericBoxFittingRange.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxFittingRange.MaximumSize = new System.Drawing.Size(1000, 27);
             this.numericBoxFittingRange.MinimumSize = new System.Drawing.Size(1, 25);
             this.numericBoxFittingRange.Name = "numericBoxFittingRange";
             this.numericBoxFittingRange.RadianValue = 0.0069813170079773184D;
             this.numericBoxFittingRange.RoundErrorAccuracy = -1;
-            this.numericBoxFittingRange.Size = new System.Drawing.Size(136, 25);
+            this.numericBoxFittingRange.Size = new System.Drawing.Size(136, 27);
             this.numericBoxFittingRange.TabIndex = 13;
             this.numericBoxFittingRange.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxFittingRange.Value = 0.4D;
@@ -1512,14 +1515,14 @@
             this.numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxWeight.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxWeight.HeaderText = "Height : Dspacing";
-            this.numericBoxWeight.Location = new System.Drawing.Point(987, 425);
+            this.numericBoxWeight.Location = new System.Drawing.Point(855, 422);
             this.numericBoxWeight.Margin = new System.Windows.Forms.Padding(0);
-            this.numericBoxWeight.MaximumSize = new System.Drawing.Size(1000, 25);
+            this.numericBoxWeight.MaximumSize = new System.Drawing.Size(1000, 27);
             this.numericBoxWeight.MinimumSize = new System.Drawing.Size(1, 25);
             this.numericBoxWeight.Name = "numericBoxWeight";
             this.numericBoxWeight.RadianValue = 1.7453292519943295D;
             this.numericBoxWeight.RoundErrorAccuracy = -1;
-            this.numericBoxWeight.Size = new System.Drawing.Size(154, 25);
+            this.numericBoxWeight.Size = new System.Drawing.Size(154, 27);
             this.numericBoxWeight.TabIndex = 13;
             this.numericBoxWeight.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxWeight.Value = 100D;
@@ -1530,7 +1533,7 @@
             this.radioButtonStandardAu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardAu.AutoSize = true;
             this.radioButtonStandardAu.Checked = true;
-            this.radioButtonStandardAu.Location = new System.Drawing.Point(4, 402);
+            this.radioButtonStandardAu.Location = new System.Drawing.Point(0, 397);
             this.radioButtonStandardAu.Name = "radioButtonStandardAu";
             this.radioButtonStandardAu.Size = new System.Drawing.Size(40, 19);
             this.radioButtonStandardAu.TabIndex = 14;
@@ -1543,7 +1546,7 @@
             // 
             this.radioButtonStandardCeO2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardCeO2.AutoSize = true;
-            this.radioButtonStandardCeO2.Location = new System.Drawing.Point(59, 402);
+            this.radioButtonStandardCeO2.Location = new System.Drawing.Point(55, 397);
             this.radioButtonStandardCeO2.Name = "radioButtonStandardCeO2";
             this.radioButtonStandardCeO2.Size = new System.Drawing.Size(54, 19);
             this.radioButtonStandardCeO2.TabIndex = 14;
@@ -1555,7 +1558,7 @@
             // 
             this.radioButtonStandardLaB6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardLaB6.AutoSize = true;
-            this.radioButtonStandardLaB6.Location = new System.Drawing.Point(122, 402);
+            this.radioButtonStandardLaB6.Location = new System.Drawing.Point(118, 397);
             this.radioButtonStandardLaB6.Name = "radioButtonStandardLaB6";
             this.radioButtonStandardLaB6.Size = new System.Drawing.Size(50, 19);
             this.radioButtonStandardLaB6.TabIndex = 14;
@@ -1567,7 +1570,7 @@
             // 
             this.radioButtonStandardAl2O3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardAl2O3.AutoSize = true;
-            this.radioButtonStandardAl2O3.Location = new System.Drawing.Point(181, 402);
+            this.radioButtonStandardAl2O3.Location = new System.Drawing.Point(177, 397);
             this.radioButtonStandardAl2O3.Name = "radioButtonStandardAl2O3";
             this.radioButtonStandardAl2O3.Size = new System.Drawing.Size(57, 19);
             this.radioButtonStandardAl2O3.TabIndex = 14;
@@ -1579,7 +1582,7 @@
             // 
             this.radioButtonStandardOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonStandardOther.AutoSize = true;
-            this.radioButtonStandardOther.Location = new System.Drawing.Point(245, 402);
+            this.radioButtonStandardOther.Location = new System.Drawing.Point(241, 397);
             this.radioButtonStandardOther.Name = "radioButtonStandardOther";
             this.radioButtonStandardOther.Size = new System.Drawing.Size(55, 19);
             this.radioButtonStandardOther.TabIndex = 14;
@@ -1593,7 +1596,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1149, 761);
+            this.ClientSize = new System.Drawing.Size(1013, 717);
             this.Controls.Add(this.numericBoxWeight);
             this.Controls.Add(this.numericBoxFittingRange);
             this.Controls.Add(this.radioButtonStandardOther);

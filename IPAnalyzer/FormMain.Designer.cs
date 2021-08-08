@@ -48,6 +48,7 @@ namespace IPAnalyzer
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            IPAnalyzer.Properties.Settings settings1 = new IPAnalyzer.Properties.Settings();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
@@ -123,6 +124,8 @@ namespace IPAnalyzer
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonFindParameter = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonFindParameterBruteForce = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonUnroll = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCircumferentialBlur = new System.Windows.Forms.ToolStripButton();
@@ -773,7 +776,7 @@ namespace IPAnalyzer
             this.graphControlFrequency.OriginPosition = new System.Drawing.Point(40, 20);
             this.helpProvider.SetShowHelp(this.graphControlFrequency, ((bool)(resources.GetObject("graphControlFrequency.ShowHelp"))));
             this.graphControlFrequency.Smoothing = false;
-            this.graphControlFrequency.TextFont = new System.Drawing.Font("Arial", 9F);
+            this.graphControlFrequency.TextFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.graphControlFrequency.UnitX = "";
             this.graphControlFrequency.UnitY = "";
             this.graphControlFrequency.UpperText = "";
@@ -828,7 +831,7 @@ namespace IPAnalyzer
             this.graphControlProfile.OriginPosition = new System.Drawing.Point(40, 20);
             this.helpProvider.SetShowHelp(this.graphControlProfile, ((bool)(resources.GetObject("graphControlProfile.ShowHelp"))));
             this.graphControlProfile.Smoothing = false;
-            this.graphControlProfile.TextFont = new System.Drawing.Font("Arial", 9F);
+            this.graphControlProfile.TextFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.graphControlProfile.UnitX = "";
             this.graphControlProfile.UnitY = "";
             this.graphControlProfile.UpperText = "";
@@ -987,6 +990,8 @@ namespace IPAnalyzer
             this.toolStripSeparator14,
             this.toolStripButtonFindParameter,
             this.toolStripSeparator9,
+            this.toolStripButtonFindParameterBruteForce,
+            this.toolStripSeparator31,
             this.toolStripButtonUnroll,
             this.toolStripSeparator1,
             this.toolStripButtonCircumferentialBlur,
@@ -1051,6 +1056,20 @@ namespace IPAnalyzer
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            // 
+            // toolStripButtonFindParameterBruteForce
+            // 
+            this.toolStripButtonFindParameterBruteForce.CheckOnClick = true;
+            resources.ApplyResources(this.toolStripButtonFindParameterBruteForce, "toolStripButtonFindParameterBruteForce");
+            this.toolStripButtonFindParameterBruteForce.Image = global::IPAnalyzer.Properties.Resources.FindParameter;
+            this.toolStripButtonFindParameterBruteForce.Name = "toolStripButtonFindParameterBruteForce";
+            this.toolStripButtonFindParameterBruteForce.Padding = new System.Windows.Forms.Padding(1);
+            this.toolStripButtonFindParameterBruteForce.CheckedChanged += new System.EventHandler(this.toolStripButtonFindParameterBruteForce_CheckedChanged);
+            // 
+            // toolStripSeparator31
+            // 
+            this.toolStripSeparator31.Name = "toolStripSeparator31";
+            resources.ApplyResources(this.toolStripSeparator31, "toolStripSeparator31");
             // 
             // toolStripButtonUnroll
             // 
@@ -1906,9 +1925,9 @@ namespace IPAnalyzer
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.toolStripContainer1);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::IPAnalyzer.Properties.Settings.Default, "Location", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            settings1.SettingsKey = "";
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", settings1, "Location", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.KeyPreview = true;
-            this.Location = global::IPAnalyzer.Properties.Settings.Default.Location;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
             this.helpProvider.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
@@ -2163,6 +2182,8 @@ namespace IPAnalyzer
         private TrackBarAdvanced trackBarAdvancedMinInt;
         private TrackBarAdvanced trackBarAdvancedMaxInt;
         private ToolStripMenuItem clearMaskToolStripMenuItem;
+        public ToolStripButton toolStripButtonFindParameterBruteForce;
+        private ToolStripSeparator toolStripSeparator31;
         //private ScalablePictureBox scalablePictureBox;
 
 

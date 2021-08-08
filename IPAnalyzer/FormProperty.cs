@@ -1,71 +1,107 @@
-﻿using System;
-using System.Reflection;
+﻿using Crystallography;
+using IronPython.Modules;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Crystallography;
-using System.IO;
-using Microsoft.Win32;
 
 namespace IPAnalyzer
 {
     public partial class FormProperty : Form
     {
-        public double WaveLength
-        {
-            set => waveLengthControl.WaveLength = value;
-            get => waveLengthControl.WaveLength;
-        }
-        public string WaveLengthText
-        {
-            set => waveLengthControl.WaveLengthText = value;
-            get => waveLengthControl.WaveLengthText;
-        }
+        #region プロパティ、フィールド
+        public FormMain formMain;
 
-        public double CameraLength
-        {
-            set => numericalTextBoxCameraLength.Value = value;
-            get => numericalTextBoxCameraLength.Value;
-        }
+        public double WaveLength { set => waveLengthControl.WaveLength = value; get => waveLengthControl.WaveLength; }
+        public string WaveLengthText { set => waveLengthControl.WaveLengthText = value; get => waveLengthControl.WaveLengthText; }
+        public double CameraLength1 { set => numericBoxCameraLength1.Value = value; get => numericBoxCameraLength1.Value; }
         public string CameraLengthText
         {
             set
             {
-                try { numericalTextBoxCameraLength.Value = Convert.ToDouble(value); }
-                catch { }
+                try { numericBoxCameraLength1.Value = Convert.ToDouble(value); } catch { }
             }
-            get { return numericalTextBoxCameraLength.Value.ToString(); }
+            get => numericBoxCameraLength1.Value.ToString();
         }
+        public double CameraLength2 { set => numericBoxCameraLength2.Value = value; get => numericBoxCameraLength2.Value; }
 
-        public PointD ImageCenter
+        public PointD DirectSpotPosition
         {
             set
             {
                 if (SkipEvent)
                 {
-                    numericBoxCenterPositionX.Value = value.X;
-                    numericBoxCenterPositionY.Value = value.Y;
+                    numericBoxDirectSpotPositionX.Value = value.X;
+                    numericBoxDirectSpotPositionY.Value = value.Y;
                 }
                 else
                 {
                     SkipEvent = true;
-                    numericBoxCenterPositionX.Value = value.X;
-                    numericBoxCenterPositionY.Value = value.Y;
+                    numericBoxDirectSpotPositionX.Value = value.X;
+                    numericBoxDirectSpotPositionY.Value = value.Y;
                     SkipEvent = false;
-                    textBox_TextChanged(numericBoxCenterPositionX, new EventArgs());
+                    DetectorParameters_Changed(numericBoxDirectSpotPositionX, new EventArgs());
+                }
+            }
+            get => new(numericBoxDirectSpotPositionX.Value, numericBoxDirectSpotPositionY.Value);
+        }
+
+        public PointD FootPosition
+        {
+            set
+            {
+                if (SkipEvent)
+                {
+                    numericBoxFootPositionX.Value = value.X;
+                    numericBoxFootPositionY.Value = value.Y;
+                }
+                else
+                {
+                    SkipEvent = true;
+                    numericBoxFootPositionX.Value = value.X;
+                    numericBoxFootPositionY.Value = value.Y;
+                    SkipEvent = false;
+                    DetectorParameters_Changed(numericBoxFootPositionX, new EventArgs());
+                }
+            }
+            get => new(numericBoxFootPositionX.Value, numericBoxFootPositionY.Value);
+        }
+
+        public double DetectorPixelSizeX { set => numericBoxPixelSizeX.Value = value; get => numericBoxPixelSizeX.Value; }
+        public double DetectorPixelSizeY { set => numericBoxPixelSizeY.Value = value; get => numericBoxPixelSizeY.Value; }
+        public double DetectorPixelKsi { set => numericBoxPixelKsi.Value = value; get => numericBoxPixelKsi.Value; }
+        public double DetectorPixelKsiRadians { set => numericBoxPixelKsi.RadianValue = value; get => numericBoxPixelKsi.RadianValue; }
+
+        public double DetectorTiltTau { set => numericBoxTiltTau.Value = value; get => numericBoxTiltTau.Value; }
+        public double DetectorTiltTauRadian { set => numericBoxTiltTau.RadianValue = value; get => numericBoxTiltTau.RadianValue; }
+
+        public double DetectorTiltPhi { set => numericBoxTiltPhi.Value = value; get => numericBoxTiltPhi.Value; }
+        public double DetectorTiltPhiRadian { set => numericBoxTiltPhi.RadianValue = value; get => numericBoxTiltPhi.RadianValue; }
+
+        public enum DetectorCoordinatesEnum { DirectSpot, Foot}
+        public DetectorCoordinatesEnum DetectorCoordinates
+        {
+            set
+            {
+                if (value == DetectorCoordinatesEnum.DirectSpot)
+                {
+                    radioButtonDirectSpotMode.Checked = true;
+                    radioButtonFootMode.Checked = false;
+                }
+                else
+                {
+                    radioButtonDirectSpotMode.Checked = false;
+                    radioButtonFootMode.Checked = true;
                 }
             }
             get
             {
-                return new PointD(numericBoxCenterPositionX.Value, numericBoxCenterPositionY.Value);
+                if (radioButtonDirectSpotMode.Checked)
+                    return DetectorCoordinatesEnum.DirectSpot;
+                else
+                    return DetectorCoordinatesEnum.Foot;
             }
         }
-
-
-        public FormMain formMain;
 
         public double StartAngle { set; get; } = 1;
         public double EndAngle { set; get; } = 30;
@@ -82,6 +118,7 @@ namespace IPAnalyzer
         public double SectorRadiusThetaRange { set; get; } = 0.1;
         public double SectorAngle { set; get; } = 0.05;
 
+        #endregion
 
         public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues( typeof( Ring.ImageTypeEnum)).Length];
 
@@ -105,10 +142,6 @@ namespace IPAnalyzer
         }
 
 
-        private void FormProperty_Load(object sender, EventArgs e)
-        {
-           
-        }
 
         //TabControl1のDrawItemイベントハンドラ
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -150,9 +183,6 @@ namespace IPAnalyzer
             foreBrush.Dispose();
         }
 
-        private void FormProperty_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
 
         private void FormProperty_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -164,9 +194,9 @@ namespace IPAnalyzer
         private void checkBoxTiltCorrection_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxTiltCorrection.Checked)
-                numericBoxTiltCorrectionPhi.Enabled = numericBoxTiltCorrectionTau.Enabled = true;
+                numericBoxTiltPhi.Enabled = numericBoxTiltTau.Enabled = true;
             else
-                numericBoxTiltCorrectionPhi.Enabled = numericBoxTiltCorrectionTau.Enabled = false;
+                numericBoxTiltPhi.Enabled = numericBoxTiltTau.Enabled = false;
         }
 
         private void comboBoxRectangleDirection_SelectedIndexChanged(object sender, EventArgs e)
@@ -421,7 +451,7 @@ namespace IPAnalyzer
             }
         }
 
-
+        #region 読み込まれたイメージごとのPropertyの設定、保存
         /// <summary>
         /// 読み込まれたイメージタイプごとに中心位置、波長、フィルム距離などをPropertyに設定する. 
         /// renewEnergyは、入射X線波長を更新するかどうかを決めるフラグ. hdfのようにファイルにエネルギー値が埋め込まれている場合への対応。
@@ -440,12 +470,12 @@ namespace IPAnalyzer
 
             numericBoxGandlfiRadius.Value = p.GandolfiRadius;
 
-            CameraLength = p.CameraLength;
+            CameraLength1 = p.CameraLength;
             numericBoxPixelSizeX.Value = p.PixelSizeX;
             numericBoxPixelSizeY.Value = p.PixelSizeY;
-            numericalTextBoxPixelKsi.RadianValue = p.PixelKsi;
-            numericBoxTiltCorrectionPhi.RadianValue = p.Phi;
-            numericBoxTiltCorrectionTau.RadianValue = p.Tau;
+            numericBoxPixelKsi.RadianValue = p.PixelKsi;
+            numericBoxTiltPhi.RadianValue = p.Phi;
+            numericBoxTiltTau.RadianValue = p.Tau;
 
             waveLengthControl.WaveSource = p.WaveSource;
             waveLengthControl.XrayWaveSourceElementNumber = p.XrayWaveSourceElementNumber;
@@ -463,7 +493,7 @@ namespace IPAnalyzer
 
 
             formMain.Skip = false;
-            ImageCenter = new PointD(p.CenterPosX, p.CenterPosY);
+            DirectSpotPosition = new PointD(p.CenterPosX, p.CenterPosY);
         }
 
         /// <summary>
@@ -502,7 +532,8 @@ namespace IPAnalyzer
             ImageTypeParameters[i].GandolfiRadius = formMain.IP.GandolfiRadius;
 
         }
-
+        #endregion
+        
         private void numericUpDownRectangleAngle_ValueChanged(object sender, EventArgs e)
         {
             formMain.IntegralArea_Changed(new object(), new EventArgs());
@@ -527,24 +558,62 @@ namespace IPAnalyzer
             //formMain.scalablePictureBox.MouseScaling = !checkBoxManualMaskMode.Checked;
         }
 
-        //テキストボックスが変更されたときの措置　
+        　
         public bool SkipEvent = false;
-        private void textBox_TextChanged(object sender, EventArgs e)
+
+        /// <summary>
+        /// 検出器のパラメータが変更されたときのイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void DetectorParameters_Changed(object sender, EventArgs e)
         {
             if (SkipEvent) return;
+
+            #region 幾何学考察
+            //検出器の回転行列は以下の行列である.
+            // cosφ^2 (1-cosτ) + cosτ , cosφ sinφ (1-cosτ)     ,  sinφ sinτ
+            // cosφ sinφ (1-cosτ)     , sinφ^2 (1-cosτ) + cosτ , -cosφ sinτ
+            // -sinφ sinτ             , cosφ sinτ              , cosτ
+            //ダイレクトスポット (0,0,0), サンプル位置 (0,0, C1)として、
+            //検出器平面の方程式は
+            // sinφ * sinτ * X - cosφ * sinτ * Y + cosτ * Z = 0 となる。
+            //サンプルから検出器平面におろした垂線の足の空間座標をFとすれば
+            // F =(C1 * cosτ * sinτ * sinφ, -C1 * cosτ * sinτ * cosφ, -C1 + C1 * cosτ * cosτ)
+            //この垂線の足を逆回転して、傾いていないときの座標F'は、
+            // F' = (C1 * sinφ * sinτ, -C1 * cosφ * sinτ)
+            // これをdirect spotからのピクセル座標F''で考えれば、
+            // F'' = C1 *( (sinφ * sinτ + cosφ * sinτ * tanξ) / PixX, - cosφ * sinτ / PixY)
+            #endregion
+            SkipEvent = true;
+            double tau = numericBoxTiltTau.RadianValue, phi = numericBoxTiltPhi.RadianValue, ksi = numericBoxPixelKsi.RadianValue;
+            var c1 = radioButtonDirectSpotMode.Checked ? numericBoxCameraLength1.Value : numericBoxCameraLength2.Value / Math.Cos(tau);
+            double realX = c1 * Math.Sin(phi) * Math.Sin(tau), realY = -c1 * Math.Cos(phi) * Math.Sin(tau);
+            var fx = (realX - realY * Math.Tan(ksi)) / numericBoxPixelSizeX.Value;
+            var fy = realY / numericBoxPixelSizeY.Value;
+            if (radioButtonDirectSpotMode.Checked)
+            {
+                numericBoxCameraLength2.Value = c1 * Math.Cos(tau);
+                FootPosition = DirectSpotPosition + new PointD(fx, fy);
+            }
+            else
+            {
+                numericBoxCameraLength1.Value = c1;
+                DirectSpotPosition = FootPosition - new PointD(fx, fy);
+            }
+            SkipEvent = false;
 
             formMain.IntegralArea_Changed(new object(), new EventArgs());
 
             //偏光補正がチェックされており、再計算が必要な場合の対処
             if (checkBoxCorrectPolarization.Checked)
-                if (sender is Crystallography.Controls.NumericBox)
+                if (sender is Crystallography.Controls.NumericBox b)
                 {
-                    string name = ((Crystallography.Controls.NumericBox)sender).Name;
                     //再計算が必要なパラメータかどうかを判断
-                    if (name.Contains("Center") || name.Contains("CameraLength") || name.Contains("PixelSize")
-                           || name.Contains("PixelSize") || name.Contains("TiltCorrection"))
+                    if (b.Name.Contains("Center") || b.Name.Contains("CameraLength") || b.Name.Contains("PixelSize")
+                           || b.Name.Contains("PixelSize") || b.Name.Contains("TiltCorrection"))
                     {
-                        formMain.FlipRotate_Pollalization_Background();
+                        formMain.FlipRotate_Pollalization_Background(false);
                     }
                 }
             //formMain.IntegralArea_Changedの中でDrawされているので以下をコメントアウト
@@ -555,11 +624,6 @@ namespace IPAnalyzer
         private void numericUpDownSectorAngle_ValueChanged(object sender, EventArgs e)
         {
             formMain.IntegralArea_Changed(new object(), new EventArgs());
-        }
-
-        private void radioButtonSector_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBoxSaveFile_CheckedChanged(object sender, EventArgs e)
@@ -594,11 +658,6 @@ namespace IPAnalyzer
             }
             IsSkipNumetricUpDownInIntensity = false;
             formMain.IntegralArea_Changed(new object(), new EventArgs());
-
-        }
-
-        private void numericalTextBoxPixelSizeY_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -679,11 +738,6 @@ namespace IPAnalyzer
             formMain.Draw();
         }
 
-        private void groupBoxManualMode_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonMaskAll_Click(object sender, EventArgs e)
         {
             if (Ring.IsSpots.Count > 0)
@@ -744,89 +798,25 @@ namespace IPAnalyzer
             formMain.IntegralArea_Changed(new object(), new EventArgs());
         }
 
-        private void tabPageSpotsAndCenter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxSACLA_CheckedChanged(object sender, EventArgs e)
-        {
-            groupBoxCameaLength.Enabled = groupBoxDirectSpotPosition.Enabled = groupBoxPixelShape.Enabled =
-                groupBoxTiltCorrection.Enabled = groupBoxSphericalCorrection.Enabled = groupBoxGandlfiRadius.Enabled = !checkBoxSACLA.Checked;
-            saclaControl.Visible = buttonOptimizeSaclaEH5Parameter.Visible = checkBoxSACLA.Checked;
-            if (saclaControl.Visible && formMain.IsImageReady && Ring.IP!=null)
-            {
-                //現在の入力情報に応じて、画像をセッティング
-
-                SkipEvent = true;
-
-                saclaControl.PixelWidth = Ring.IP.SrcWidth;
-                saclaControl.PixelHeight = Ring.IP.SrcHeight;
-
-                saclaControl.TauDegree= numericBoxTiltCorrectionTau.Value;
-                saclaControl.PhiDegree = numericBoxTiltCorrectionPhi.Value;
-                saclaControl.PixelSize= numericBoxPixelSizeX.Value;
-
-                saclaControl.CameraLength2 = numericalTextBoxCameraLength.Value * Math.Cos(saclaControl.TauRadian);
-
-                saclaControl.Foot = new PointD(
-                    numericBoxCenterPositionX.Value + saclaControl.CameraLength2 * Math.Sin(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize,
-                    numericBoxCenterPositionY.Value - saclaControl.CameraLength2 * Math.Cos(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize);
-
-                
-
-                SkipEvent = false;
-            }  
-        }
-
-        public void saclaControl_ValueChanged(object sender, EventArgs e)
-        {
-            if (SkipEvent) return;
-            SkipEvent = true;
-
-            numericBoxTiltCorrectionTau.Value = saclaControl.TauDegree;
-            numericBoxTiltCorrectionPhi.Value = saclaControl.PhiDegree;
-            numericBoxPixelSizeX.Value = saclaControl.PixelSize;
-            numericBoxPixelSizeY.Value = saclaControl.PixelSize;
-
-            //numericalTextBoxCenterPositionX.Value = saclaControl.FootPoint.X;
-            //numericalTextBoxCenterPositionY.Value = saclaControl.Distance * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize + saclaControl.FootPoint.Y;
-
-            numericBoxCenterPositionX.Value = saclaControl.Foot.X - saclaControl.CameraLength2 * Math.Sin(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize;
-            numericBoxCenterPositionY.Value = saclaControl.Foot.Y + saclaControl.CameraLength2 * Math.Cos(saclaControl.PhiRadian) * Math.Tan(saclaControl.TauRadian) / saclaControl.PixelSize;
-
-            numericalTextBoxCameraLength.Value = saclaControl.CameraLength2 / Math.Cos(saclaControl.TauRadian);
-            SkipEvent = false;
-            textBox_TextChanged(sender, e);
-        }
-
-        private void buttonOptimizeSaclaEH5Parameter_Click(object sender, EventArgs e)
-        {
-            formMain.FormSaclaParameter.Visible = true;
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-         
-        }
-
         private void radioButtonFlatPanel_CheckedChanged(object sender, EventArgs e)
         {
             if(radioButtonFlatPanel.Checked)
             {
-                checkBoxSACLA.Visible = true;
                 groupBoxGandlfiRadius.Visible = false;
+                radioButtonFootMode.Enabled = true;
             }
             else
             {
-                checkBoxSACLA.Visible = false;
-                checkBoxSACLA.Checked = false;
-                buttonOptimizeSaclaEH5Parameter.Visible = true;
-
                 groupBoxGandlfiRadius.Visible = true;
+                radioButtonFootMode.Enabled = false;
+                if(radioButtonFootMode.Checked)
+                {
+                    radioButtonFootMode.Checked = false;
+                    radioButtonDirectSpotMode.Checked = true;
+                }
 
             }
-            textBox_TextChanged(SectorAngle, e);
+            DetectorParameters_Changed(SectorAngle, e);
 
 
         }
@@ -863,7 +853,11 @@ namespace IPAnalyzer
             formMain.FlipRotate_Pollalization_Background();
         }
 
-      
+        private void radioButtonDirectSpotMode_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanelDirectSpotMode.Enabled = radioButtonDirectSpotMode.Checked;
+            flowLayoutPanelFootMode.Enabled = radioButtonFootMode.Checked;
+        }
     }
 
 

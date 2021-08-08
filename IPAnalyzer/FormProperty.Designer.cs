@@ -37,29 +37,41 @@
             this.checkBoxCorrectPolarization = new System.Windows.Forms.CheckBox();
             this.waveLengthControl = new Crystallography.Controls.WaveLengthControl();
             this.tabPageIP = new System.Windows.Forms.TabPage();
-            this.radioButtonGandlfi = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.radioButtonDirectSpotMode = new System.Windows.Forms.RadioButton();
+            this.radioButtonFootMode = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label19 = new System.Windows.Forms.Label();
             this.radioButtonFlatPanel = new System.Windows.Forms.RadioButton();
-            this.buttonOptimizeSaclaEH5Parameter = new System.Windows.Forms.Button();
-            this.groupBoxCameaLength = new System.Windows.Forms.GroupBox();
-            this.numericalTextBoxCameraLength = new Crystallography.Controls.NumericBox();
+            this.radioButtonGandlfi = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanelFootMode = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.numericBoxFootPositionY = new Crystallography.Controls.NumericBox();
+            this.numericBoxFootPositionX = new Crystallography.Controls.NumericBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.numericBoxCameraLength2 = new Crystallography.Controls.NumericBox();
+            this.flowLayoutPanelDirectSpotMode = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxDirectSpotPosition = new System.Windows.Forms.GroupBox();
-            this.numericBoxCenterPositionY = new Crystallography.Controls.NumericBox();
-            this.numericBoxCenterPositionX = new Crystallography.Controls.NumericBox();
+            this.numericBoxDirectSpotPositionY = new Crystallography.Controls.NumericBox();
+            this.numericBoxDirectSpotPositionX = new Crystallography.Controls.NumericBox();
+            this.groupBoxCameaLength = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.numericBoxCameraLength1 = new Crystallography.Controls.NumericBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBoxPixelShape = new System.Windows.Forms.GroupBox();
-            this.numericalTextBoxPixelKsi = new Crystallography.Controls.NumericBox();
+            this.numericBoxPixelKsi = new Crystallography.Controls.NumericBox();
             this.numericBoxPixelSizeY = new Crystallography.Controls.NumericBox();
             this.numericBoxPixelSizeX = new Crystallography.Controls.NumericBox();
             this.checkBoxTiltCorrection = new System.Windows.Forms.CheckBox();
             this.groupBoxGandlfiRadius = new System.Windows.Forms.GroupBox();
             this.numericBoxGandlfiRadius = new Crystallography.Controls.NumericBox();
             this.groupBoxSphericalCorrection = new System.Windows.Forms.GroupBox();
-            this.numericalTextBoxSphericalCorections = new Crystallography.Controls.NumericBox();
+            this.numericBoxSphericalCorections = new Crystallography.Controls.NumericBox();
             this.groupBoxTiltCorrection = new System.Windows.Forms.GroupBox();
-            this.numericBoxTiltCorrectionTau = new Crystallography.Controls.NumericBox();
-            this.numericBoxTiltCorrectionPhi = new Crystallography.Controls.NumericBox();
-            this.saclaControl = new Crystallography.Controls.SaclaControl();
-            this.checkBoxSACLA = new System.Windows.Forms.CheckBox();
+            this.numericBoxTiltTau = new Crystallography.Controls.NumericBox();
+            this.numericBoxTiltPhi = new Crystallography.Controls.NumericBox();
             this.tabPageIntegralRegion = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.numericUpDownThresholdOfIntensityMax = new System.Windows.Forms.NumericUpDown();
@@ -215,8 +227,14 @@
             this.tabControl.SuspendLayout();
             this.tabPageXRay.SuspendLayout();
             this.tabPageIP.SuspendLayout();
-            this.groupBoxCameaLength.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanelFootMode.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.flowLayoutPanelDirectSpotMode.SuspendLayout();
             this.groupBoxDirectSpotPosition.SuspendLayout();
+            this.groupBoxCameaLength.SuspendLayout();
             this.groupBoxPixelShape.SuspendLayout();
             this.groupBoxGandlfiRadius.SuspendLayout();
             this.groupBoxSphericalCorrection.SuspendLayout();
@@ -294,12 +312,12 @@
             // 
             // tabPageXRay
             // 
-            resources.ApplyResources(this.tabPageXRay, "tabPageXRay");
             this.tabPageXRay.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageXRay.Controls.Add(this.label15);
             this.tabPageXRay.Controls.Add(this.label6);
             this.tabPageXRay.Controls.Add(this.checkBoxCorrectPolarization);
             this.tabPageXRay.Controls.Add(this.waveLengthControl);
+            resources.ApplyResources(this.tabPageXRay, "tabPageXRay");
             this.tabPageXRay.Name = "tabPageXRay";
             // 
             // label15
@@ -322,7 +340,7 @@
             // waveLengthControl
             // 
             resources.ApplyResources(this.waveLengthControl, "waveLengthControl");
-            this.waveLengthControl.Energy = 17.4441967201D;
+            this.waveLengthControl.Energy = 17.44419672D;
             this.waveLengthControl.Name = "waveLengthControl";
             this.waveLengthControl.ShowWaveSource = true;
             this.waveLengthControl.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -333,28 +351,60 @@
             // 
             // tabPageIP
             // 
-            resources.ApplyResources(this.tabPageIP, "tabPageIP");
             this.tabPageIP.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageIP.Controls.Add(this.radioButtonGandlfi);
-            this.tabPageIP.Controls.Add(this.radioButtonFlatPanel);
-            this.tabPageIP.Controls.Add(this.buttonOptimizeSaclaEH5Parameter);
-            this.tabPageIP.Controls.Add(this.groupBoxCameaLength);
-            this.tabPageIP.Controls.Add(this.groupBoxDirectSpotPosition);
+            this.tabPageIP.Controls.Add(this.flowLayoutPanel8);
+            this.tabPageIP.Controls.Add(this.flowLayoutPanel7);
+            this.tabPageIP.Controls.Add(this.flowLayoutPanelFootMode);
+            this.tabPageIP.Controls.Add(this.flowLayoutPanelDirectSpotMode);
             this.tabPageIP.Controls.Add(this.checkBox1);
             this.tabPageIP.Controls.Add(this.groupBoxPixelShape);
             this.tabPageIP.Controls.Add(this.checkBoxTiltCorrection);
             this.tabPageIP.Controls.Add(this.groupBoxGandlfiRadius);
             this.tabPageIP.Controls.Add(this.groupBoxSphericalCorrection);
             this.tabPageIP.Controls.Add(this.groupBoxTiltCorrection);
-            this.tabPageIP.Controls.Add(this.saclaControl);
-            this.tabPageIP.Controls.Add(this.checkBoxSACLA);
+            resources.ApplyResources(this.tabPageIP, "tabPageIP");
             this.tabPageIP.Name = "tabPageIP";
             // 
-            // radioButtonGandlfi
+            // flowLayoutPanel8
             // 
-            resources.ApplyResources(this.radioButtonGandlfi, "radioButtonGandlfi");
-            this.radioButtonGandlfi.Name = "radioButtonGandlfi";
-            this.radioButtonGandlfi.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.flowLayoutPanel8, "flowLayoutPanel8");
+            this.flowLayoutPanel8.Controls.Add(this.label22);
+            this.flowLayoutPanel8.Controls.Add(this.radioButtonDirectSpotMode);
+            this.flowLayoutPanel8.Controls.Add(this.radioButtonFootMode);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // radioButtonDirectSpotMode
+            // 
+            resources.ApplyResources(this.radioButtonDirectSpotMode, "radioButtonDirectSpotMode");
+            this.radioButtonDirectSpotMode.Checked = true;
+            this.radioButtonDirectSpotMode.Name = "radioButtonDirectSpotMode";
+            this.radioButtonDirectSpotMode.TabStop = true;
+            this.radioButtonDirectSpotMode.UseVisualStyleBackColor = true;
+            this.radioButtonDirectSpotMode.CheckedChanged += new System.EventHandler(this.radioButtonDirectSpotMode_CheckedChanged);
+            // 
+            // radioButtonFootMode
+            // 
+            resources.ApplyResources(this.radioButtonFootMode, "radioButtonFootMode");
+            this.radioButtonFootMode.Name = "radioButtonFootMode";
+            this.radioButtonFootMode.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel7
+            // 
+            resources.ApplyResources(this.flowLayoutPanel7, "flowLayoutPanel7");
+            this.flowLayoutPanel7.Controls.Add(this.label19);
+            this.flowLayoutPanel7.Controls.Add(this.radioButtonFlatPanel);
+            this.flowLayoutPanel7.Controls.Add(this.radioButtonGandlfi);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
             // 
             // radioButtonFlatPanel
             // 
@@ -365,75 +415,163 @@
             this.radioButtonFlatPanel.UseVisualStyleBackColor = true;
             this.radioButtonFlatPanel.CheckedChanged += new System.EventHandler(this.radioButtonFlatPanel_CheckedChanged);
             // 
-            // buttonOptimizeSaclaEH5Parameter
+            // radioButtonGandlfi
             // 
-            resources.ApplyResources(this.buttonOptimizeSaclaEH5Parameter, "buttonOptimizeSaclaEH5Parameter");
-            this.buttonOptimizeSaclaEH5Parameter.Name = "buttonOptimizeSaclaEH5Parameter";
-            this.buttonOptimizeSaclaEH5Parameter.UseVisualStyleBackColor = true;
-            this.buttonOptimizeSaclaEH5Parameter.Click += new System.EventHandler(this.buttonOptimizeSaclaEH5Parameter_Click);
+            resources.ApplyResources(this.radioButtonGandlfi, "radioButtonGandlfi");
+            this.radioButtonGandlfi.Name = "radioButtonGandlfi";
+            this.radioButtonGandlfi.UseVisualStyleBackColor = true;
             // 
-            // groupBoxCameaLength
+            // flowLayoutPanelFootMode
             // 
-            resources.ApplyResources(this.groupBoxCameaLength, "groupBoxCameaLength");
-            this.groupBoxCameaLength.Controls.Add(this.numericalTextBoxCameraLength);
-            this.groupBoxCameaLength.Name = "groupBoxCameaLength";
-            this.groupBoxCameaLength.TabStop = false;
+            resources.ApplyResources(this.flowLayoutPanelFootMode, "flowLayoutPanelFootMode");
+            this.flowLayoutPanelFootMode.Controls.Add(this.groupBox9);
+            this.flowLayoutPanelFootMode.Controls.Add(this.groupBox10);
+            this.flowLayoutPanelFootMode.Name = "flowLayoutPanelFootMode";
             // 
-            // numericalTextBoxCameraLength
+            // groupBox9
             // 
-            resources.ApplyResources(this.numericalTextBoxCameraLength, "numericalTextBoxCameraLength");
-            this.numericalTextBoxCameraLength.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxCameraLength.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxCameraLength.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxCameraLength.Name = "numericalTextBoxCameraLength";
-            this.numericalTextBoxCameraLength.RadianValue = 7.7667151713747664D;
-            this.numericalTextBoxCameraLength.RoundErrorAccuracy = 10;
-            this.numericalTextBoxCameraLength.SkipEventDuringInput = false;
-            this.numericalTextBoxCameraLength.SmartIncrement = true;
-            this.numericalTextBoxCameraLength.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericalTextBoxCameraLength.ThonsandsSeparator = true;
-            this.numericalTextBoxCameraLength.Value = 445D;
-            this.numericalTextBoxCameraLength.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.groupBox9.Controls.Add(this.numericBoxFootPositionY);
+            this.groupBox9.Controls.Add(this.numericBoxFootPositionX);
+            resources.ApplyResources(this.groupBox9, "groupBox9");
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.TabStop = false;
+            // 
+            // numericBoxFootY
+            // 
+            resources.ApplyResources(this.numericBoxFootPositionY, "numericBoxFootY");
+            this.numericBoxFootPositionY.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxFootPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxFootPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxFootPositionY.Name = "numericBoxFootY";
+            this.numericBoxFootPositionY.RadianValue = 26.179938779914945D;
+            this.numericBoxFootPositionY.RoundErrorAccuracy = 8;
+            this.numericBoxFootPositionY.SkipEventDuringInput = false;
+            this.numericBoxFootPositionY.SmartIncrement = true;
+            this.numericBoxFootPositionY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxFootPositionY.ThonsandsSeparator = true;
+            this.numericBoxFootPositionY.Value = 1500D;
+            this.numericBoxFootPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
+            // 
+            // numericBoxFootX
+            // 
+            resources.ApplyResources(this.numericBoxFootPositionX, "numericBoxFootX");
+            this.numericBoxFootPositionX.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxFootPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxFootPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxFootPositionX.Name = "numericBoxFootX";
+            this.numericBoxFootPositionX.RadianValue = 26.179938779914945D;
+            this.numericBoxFootPositionX.RoundErrorAccuracy = 8;
+            this.numericBoxFootPositionX.SkipEventDuringInput = false;
+            this.numericBoxFootPositionX.SmartIncrement = true;
+            this.numericBoxFootPositionX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxFootPositionX.ThonsandsSeparator = true;
+            this.numericBoxFootPositionX.Value = 1500D;
+            this.numericBoxFootPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label17);
+            this.groupBox10.Controls.Add(this.numericBoxCameraLength2);
+            resources.ApplyResources(this.groupBox10, "groupBox10");
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.TabStop = false;
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // numericBoxCameraLength2
+            // 
+            resources.ApplyResources(this.numericBoxCameraLength2, "numericBoxCameraLength2");
+            this.numericBoxCameraLength2.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxCameraLength2.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxCameraLength2.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxCameraLength2.Name = "numericBoxCameraLength2";
+            this.numericBoxCameraLength2.RadianValue = 7.7667151713747664D;
+            this.numericBoxCameraLength2.RoundErrorAccuracy = 8;
+            this.numericBoxCameraLength2.SkipEventDuringInput = false;
+            this.numericBoxCameraLength2.SmartIncrement = true;
+            this.numericBoxCameraLength2.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxCameraLength2.ThonsandsSeparator = true;
+            this.numericBoxCameraLength2.Value = 445D;
+            this.numericBoxCameraLength2.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
+            // 
+            // flowLayoutPanelDirectSpotMode
+            // 
+            resources.ApplyResources(this.flowLayoutPanelDirectSpotMode, "flowLayoutPanelDirectSpotMode");
+            this.flowLayoutPanelDirectSpotMode.Controls.Add(this.groupBoxDirectSpotPosition);
+            this.flowLayoutPanelDirectSpotMode.Controls.Add(this.groupBoxCameaLength);
+            this.flowLayoutPanelDirectSpotMode.Name = "flowLayoutPanelDirectSpotMode";
             // 
             // groupBoxDirectSpotPosition
             // 
+            this.groupBoxDirectSpotPosition.Controls.Add(this.numericBoxDirectSpotPositionY);
+            this.groupBoxDirectSpotPosition.Controls.Add(this.numericBoxDirectSpotPositionX);
             resources.ApplyResources(this.groupBoxDirectSpotPosition, "groupBoxDirectSpotPosition");
-            this.groupBoxDirectSpotPosition.Controls.Add(this.numericBoxCenterPositionY);
-            this.groupBoxDirectSpotPosition.Controls.Add(this.numericBoxCenterPositionX);
             this.groupBoxDirectSpotPosition.Name = "groupBoxDirectSpotPosition";
             this.groupBoxDirectSpotPosition.TabStop = false;
             // 
             // numericBoxCenterPositionY
             // 
-            resources.ApplyResources(this.numericBoxCenterPositionY, "numericBoxCenterPositionY");
-            this.numericBoxCenterPositionY.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxCenterPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxCenterPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxCenterPositionY.Name = "numericBoxCenterPositionY";
-            this.numericBoxCenterPositionY.RadianValue = 26.179938779914945D;
-            this.numericBoxCenterPositionY.RoundErrorAccuracy = 10;
-            this.numericBoxCenterPositionY.SkipEventDuringInput = false;
-            this.numericBoxCenterPositionY.SmartIncrement = true;
-            this.numericBoxCenterPositionY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxCenterPositionY.ThonsandsSeparator = true;
-            this.numericBoxCenterPositionY.Value = 1500D;
-            this.numericBoxCenterPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            resources.ApplyResources(this.numericBoxDirectSpotPositionY, "numericBoxCenterPositionY");
+            this.numericBoxDirectSpotPositionY.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxDirectSpotPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxDirectSpotPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxDirectSpotPositionY.Name = "numericBoxCenterPositionY";
+            this.numericBoxDirectSpotPositionY.RadianValue = 26.179938779914945D;
+            this.numericBoxDirectSpotPositionY.RoundErrorAccuracy = 8;
+            this.numericBoxDirectSpotPositionY.SkipEventDuringInput = false;
+            this.numericBoxDirectSpotPositionY.SmartIncrement = true;
+            this.numericBoxDirectSpotPositionY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxDirectSpotPositionY.ThonsandsSeparator = true;
+            this.numericBoxDirectSpotPositionY.Value = 1500D;
+            this.numericBoxDirectSpotPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // numericBoxCenterPositionX
             // 
-            resources.ApplyResources(this.numericBoxCenterPositionX, "numericBoxCenterPositionX");
-            this.numericBoxCenterPositionX.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxCenterPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxCenterPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxCenterPositionX.Name = "numericBoxCenterPositionX";
-            this.numericBoxCenterPositionX.RadianValue = 26.179938779914945D;
-            this.numericBoxCenterPositionX.RoundErrorAccuracy = 10;
-            this.numericBoxCenterPositionX.SkipEventDuringInput = false;
-            this.numericBoxCenterPositionX.SmartIncrement = true;
-            this.numericBoxCenterPositionX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxCenterPositionX.ThonsandsSeparator = true;
-            this.numericBoxCenterPositionX.Value = 1500D;
-            this.numericBoxCenterPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            resources.ApplyResources(this.numericBoxDirectSpotPositionX, "numericBoxCenterPositionX");
+            this.numericBoxDirectSpotPositionX.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxDirectSpotPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxDirectSpotPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxDirectSpotPositionX.Name = "numericBoxCenterPositionX";
+            this.numericBoxDirectSpotPositionX.RadianValue = 26.179938779914945D;
+            this.numericBoxDirectSpotPositionX.RoundErrorAccuracy = 8;
+            this.numericBoxDirectSpotPositionX.SkipEventDuringInput = false;
+            this.numericBoxDirectSpotPositionX.SmartIncrement = true;
+            this.numericBoxDirectSpotPositionX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxDirectSpotPositionX.ThonsandsSeparator = true;
+            this.numericBoxDirectSpotPositionX.Value = 1500D;
+            this.numericBoxDirectSpotPositionX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
+            // 
+            // groupBoxCameaLength
+            // 
+            this.groupBoxCameaLength.Controls.Add(this.label18);
+            this.groupBoxCameaLength.Controls.Add(this.numericBoxCameraLength1);
+            resources.ApplyResources(this.groupBoxCameaLength, "groupBoxCameaLength");
+            this.groupBoxCameaLength.Name = "groupBoxCameaLength";
+            this.groupBoxCameaLength.TabStop = false;
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // numericBoxCameraLength1
+            // 
+            resources.ApplyResources(this.numericBoxCameraLength1, "numericBoxCameraLength1");
+            this.numericBoxCameraLength1.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxCameraLength1.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxCameraLength1.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxCameraLength1.Name = "numericBoxCameraLength1";
+            this.numericBoxCameraLength1.RadianValue = 7.7667151713747664D;
+            this.numericBoxCameraLength1.RoundErrorAccuracy = 8;
+            this.numericBoxCameraLength1.SkipEventDuringInput = false;
+            this.numericBoxCameraLength1.SmartIncrement = true;
+            this.numericBoxCameraLength1.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxCameraLength1.ThonsandsSeparator = true;
+            this.numericBoxCameraLength1.Value = 445D;
+            this.numericBoxCameraLength1.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // checkBox1
             // 
@@ -446,26 +584,25 @@
             // 
             // groupBoxPixelShape
             // 
-            resources.ApplyResources(this.groupBoxPixelShape, "groupBoxPixelShape");
-            this.groupBoxPixelShape.Controls.Add(this.numericalTextBoxPixelKsi);
+            this.groupBoxPixelShape.Controls.Add(this.numericBoxPixelKsi);
             this.groupBoxPixelShape.Controls.Add(this.numericBoxPixelSizeY);
             this.groupBoxPixelShape.Controls.Add(this.numericBoxPixelSizeX);
+            resources.ApplyResources(this.groupBoxPixelShape, "groupBoxPixelShape");
             this.groupBoxPixelShape.Name = "groupBoxPixelShape";
             this.groupBoxPixelShape.TabStop = false;
             // 
             // numericalTextBoxPixelKsi
             // 
-            resources.ApplyResources(this.numericalTextBoxPixelKsi, "numericalTextBoxPixelKsi");
-            this.numericalTextBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxPixelKsi.Name = "numericalTextBoxPixelKsi";
-            this.numericalTextBoxPixelKsi.RoundErrorAccuracy = 10;
-            this.numericalTextBoxPixelKsi.SkipEventDuringInput = false;
-            this.numericalTextBoxPixelKsi.SmartIncrement = true;
-            this.numericalTextBoxPixelKsi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericalTextBoxPixelKsi.ThonsandsSeparator = true;
-            this.numericalTextBoxPixelKsi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            resources.ApplyResources(this.numericBoxPixelKsi, "numericalTextBoxPixelKsi");
+            this.numericBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxPixelKsi.Name = "numericalTextBoxPixelKsi";
+            this.numericBoxPixelKsi.RoundErrorAccuracy = 8;
+            this.numericBoxPixelKsi.SmartIncrement = true;
+            this.numericBoxPixelKsi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxPixelKsi.ThonsandsSeparator = true;
+            this.numericBoxPixelKsi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // numericBoxPixelSizeY
             // 
@@ -475,14 +612,12 @@
             this.numericBoxPixelSizeY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeY.Name = "numericBoxPixelSizeY";
             this.numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
-            this.numericBoxPixelSizeY.RoundErrorAccuracy = 10;
-            this.numericBoxPixelSizeY.SkipEventDuringInput = false;
+            this.numericBoxPixelSizeY.RoundErrorAccuracy = 8;
             this.numericBoxPixelSizeY.SmartIncrement = true;
             this.numericBoxPixelSizeY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPixelSizeY.ThonsandsSeparator = true;
             this.numericBoxPixelSizeY.Value = 0.1D;
-            this.numericBoxPixelSizeY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            this.numericBoxPixelSizeY.Load += new System.EventHandler(this.numericalTextBoxPixelSizeY_Load);
+            this.numericBoxPixelSizeY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // numericBoxPixelSizeX
             // 
@@ -492,13 +627,12 @@
             this.numericBoxPixelSizeX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeX.Name = "numericBoxPixelSizeX";
             this.numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
-            this.numericBoxPixelSizeX.RoundErrorAccuracy = 10;
-            this.numericBoxPixelSizeX.SkipEventDuringInput = false;
+            this.numericBoxPixelSizeX.RoundErrorAccuracy = 8;
             this.numericBoxPixelSizeX.SmartIncrement = true;
             this.numericBoxPixelSizeX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPixelSizeX.ThonsandsSeparator = true;
             this.numericBoxPixelSizeX.Value = 0.1D;
-            this.numericBoxPixelSizeX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.numericBoxPixelSizeX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // checkBoxTiltCorrection
             // 
@@ -511,8 +645,8 @@
             // 
             // groupBoxGandlfiRadius
             // 
-            resources.ApplyResources(this.groupBoxGandlfiRadius, "groupBoxGandlfiRadius");
             this.groupBoxGandlfiRadius.Controls.Add(this.numericBoxGandlfiRadius);
+            resources.ApplyResources(this.groupBoxGandlfiRadius, "groupBoxGandlfiRadius");
             this.groupBoxGandlfiRadius.Name = "groupBoxGandlfiRadius";
             this.groupBoxGandlfiRadius.TabStop = false;
             // 
@@ -523,106 +657,82 @@
             this.numericBoxGandlfiRadius.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxGandlfiRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxGandlfiRadius.Name = "numericBoxGandlfiRadius";
-            this.numericBoxGandlfiRadius.RoundErrorAccuracy = 10;
-            this.numericBoxGandlfiRadius.SkipEventDuringInput = false;
+            this.numericBoxGandlfiRadius.RoundErrorAccuracy = 8;
             this.numericBoxGandlfiRadius.SmartIncrement = true;
             this.numericBoxGandlfiRadius.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxGandlfiRadius.ThonsandsSeparator = true;
-            this.numericBoxGandlfiRadius.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            this.numericBoxGandlfiRadius.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // groupBoxSphericalCorrection
             // 
+            this.groupBoxSphericalCorrection.Controls.Add(this.numericBoxSphericalCorections);
             resources.ApplyResources(this.groupBoxSphericalCorrection, "groupBoxSphericalCorrection");
-            this.groupBoxSphericalCorrection.Controls.Add(this.numericalTextBoxSphericalCorections);
             this.groupBoxSphericalCorrection.Name = "groupBoxSphericalCorrection";
             this.groupBoxSphericalCorrection.TabStop = false;
             // 
-            // numericalTextBoxSphericalCorections
+            // numericBoxSphericalCorections
             // 
-            resources.ApplyResources(this.numericalTextBoxSphericalCorections, "numericalTextBoxSphericalCorections");
-            this.numericalTextBoxSphericalCorections.BackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxSphericalCorections.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxSphericalCorections.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericalTextBoxSphericalCorections.Name = "numericalTextBoxSphericalCorections";
-            this.numericalTextBoxSphericalCorections.RoundErrorAccuracy = -1;
-            this.numericalTextBoxSphericalCorections.SkipEventDuringInput = false;
-            this.numericalTextBoxSphericalCorections.SmartIncrement = true;
-            this.numericalTextBoxSphericalCorections.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericalTextBoxSphericalCorections.ThonsandsSeparator = true;
-            this.numericalTextBoxSphericalCorections.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            resources.ApplyResources(this.numericBoxSphericalCorections, "numericBoxSphericalCorections");
+            this.numericBoxSphericalCorections.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxSphericalCorections.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxSphericalCorections.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxSphericalCorections.Name = "numericBoxSphericalCorections";
+            this.numericBoxSphericalCorections.RoundErrorAccuracy = 8;
+            this.numericBoxSphericalCorections.SkipEventDuringInput = false;
+            this.numericBoxSphericalCorections.SmartIncrement = true;
+            this.numericBoxSphericalCorections.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxSphericalCorections.ThonsandsSeparator = true;
+            this.numericBoxSphericalCorections.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // groupBoxTiltCorrection
             // 
+            this.groupBoxTiltCorrection.Controls.Add(this.numericBoxTiltTau);
+            this.groupBoxTiltCorrection.Controls.Add(this.numericBoxTiltPhi);
             resources.ApplyResources(this.groupBoxTiltCorrection, "groupBoxTiltCorrection");
-            this.groupBoxTiltCorrection.Controls.Add(this.numericBoxTiltCorrectionTau);
-            this.groupBoxTiltCorrection.Controls.Add(this.numericBoxTiltCorrectionPhi);
             this.groupBoxTiltCorrection.Name = "groupBoxTiltCorrection";
             this.groupBoxTiltCorrection.TabStop = false;
             // 
             // numericBoxTiltCorrectionTau
             // 
-            resources.ApplyResources(this.numericBoxTiltCorrectionTau, "numericBoxTiltCorrectionTau");
-            this.numericBoxTiltCorrectionTau.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltCorrectionTau.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltCorrectionTau.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltCorrectionTau.Name = "numericBoxTiltCorrectionTau";
-            this.numericBoxTiltCorrectionTau.RoundErrorAccuracy = 10;
-            this.numericBoxTiltCorrectionTau.SkipEventDuringInput = false;
-            this.numericBoxTiltCorrectionTau.SmartIncrement = true;
-            this.numericBoxTiltCorrectionTau.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxTiltCorrectionTau.ThonsandsSeparator = true;
-            this.numericBoxTiltCorrectionTau.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
+            resources.ApplyResources(this.numericBoxTiltTau, "numericBoxTiltCorrectionTau");
+            this.numericBoxTiltTau.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxTiltTau.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxTiltTau.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxTiltTau.Name = "numericBoxTiltCorrectionTau";
+            this.numericBoxTiltTau.RoundErrorAccuracy = 8;
+            this.numericBoxTiltTau.SkipEventDuringInput = false;
+            this.numericBoxTiltTau.SmartIncrement = true;
+            this.numericBoxTiltTau.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxTiltTau.ThonsandsSeparator = true;
+            this.numericBoxTiltTau.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // numericBoxTiltCorrectionPhi
             // 
-            resources.ApplyResources(this.numericBoxTiltCorrectionPhi, "numericBoxTiltCorrectionPhi");
-            this.numericBoxTiltCorrectionPhi.BackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltCorrectionPhi.FooterBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltCorrectionPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltCorrectionPhi.Name = "numericBoxTiltCorrectionPhi";
-            this.numericBoxTiltCorrectionPhi.RoundErrorAccuracy = 10;
-            this.numericBoxTiltCorrectionPhi.SkipEventDuringInput = false;
-            this.numericBoxTiltCorrectionPhi.SmartIncrement = true;
-            this.numericBoxTiltCorrectionPhi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxTiltCorrectionPhi.ThonsandsSeparator = true;
-            this.numericBoxTiltCorrectionPhi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.textBox_TextChanged);
-            // 
-            // saclaControl
-            // 
-            resources.ApplyResources(this.saclaControl, "saclaControl");
-            this.saclaControl.CameraLength2 = 300D;
-            this.saclaControl.Foot = ((Crystallography.PointD)(resources.GetObject("saclaControl.Foot")));
-            this.saclaControl.Name = "saclaControl";
-            this.saclaControl.PhiDegree = 0D;
-            this.saclaControl.PhiRadian = 0D;
-            this.saclaControl.PixelHeight = 1024D;
-            this.saclaControl.PixelSize = 0.05D;
-            this.saclaControl.PixelWidth = 1024D;
-            this.saclaControl.TauDegree = 20.000000000000007D;
-            this.saclaControl.TauRadian = 0.349065850398866D;
-            this.saclaControl.ValueChanged += new Crystallography.Controls.SaclaControl.MyEventHandler(this.saclaControl_ValueChanged);
-            // 
-            // checkBoxSACLA
-            // 
-            resources.ApplyResources(this.checkBoxSACLA, "checkBoxSACLA");
-            this.checkBoxSACLA.Name = "checkBoxSACLA";
-            this.checkBoxSACLA.UseVisualStyleBackColor = true;
-            this.checkBoxSACLA.CheckedChanged += new System.EventHandler(this.checkBoxSACLA_CheckedChanged);
+            resources.ApplyResources(this.numericBoxTiltPhi, "numericBoxTiltCorrectionPhi");
+            this.numericBoxTiltPhi.BackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxTiltPhi.FooterBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxTiltPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
+            this.numericBoxTiltPhi.Name = "numericBoxTiltCorrectionPhi";
+            this.numericBoxTiltPhi.RoundErrorAccuracy = 8;
+            this.numericBoxTiltPhi.SkipEventDuringInput = false;
+            this.numericBoxTiltPhi.SmartIncrement = true;
+            this.numericBoxTiltPhi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxTiltPhi.ThonsandsSeparator = true;
+            this.numericBoxTiltPhi.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
             // tabPageIntegralRegion
             // 
-            resources.ApplyResources(this.tabPageIntegralRegion, "tabPageIntegralRegion");
             this.tabPageIntegralRegion.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageIntegralRegion.Controls.Add(this.groupBox8);
             this.tabPageIntegralRegion.Controls.Add(this.radioButtonRectangle);
             this.tabPageIntegralRegion.Controls.Add(this.groupBoxRectangle);
             this.tabPageIntegralRegion.Controls.Add(this.radioButtonSector);
             this.tabPageIntegralRegion.Controls.Add(this.groupBoxSector);
+            resources.ApplyResources(this.tabPageIntegralRegion, "tabPageIntegralRegion");
             this.tabPageIntegralRegion.Name = "tabPageIntegralRegion";
             // 
             // groupBox8
             // 
-            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Controls.Add(this.numericUpDownThresholdOfIntensityMax);
             this.groupBox8.Controls.Add(this.label2);
             this.groupBox8.Controls.Add(this.checkBoxThresholdMax);
@@ -631,6 +741,7 @@
             this.groupBox8.Controls.Add(this.numericUpDownEdge);
             this.groupBox8.Controls.Add(this.checkBoxOmitSpots);
             this.groupBox8.Controls.Add(this.checkBoxMaskEdge);
+            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.TabStop = false;
             // 
@@ -701,9 +812,9 @@
             // 
             // checkBoxOmitSpots
             // 
-            resources.ApplyResources(this.checkBoxOmitSpots, "checkBoxOmitSpots");
             this.checkBoxOmitSpots.Checked = true;
             this.checkBoxOmitSpots.CheckState = System.Windows.Forms.CheckState.Checked;
+            resources.ApplyResources(this.checkBoxOmitSpots, "checkBoxOmitSpots");
             this.checkBoxOmitSpots.Name = "checkBoxOmitSpots";
             // 
             // checkBoxMaskEdge
@@ -725,7 +836,6 @@
             // 
             // groupBoxRectangle
             // 
-            resources.ApplyResources(this.groupBoxRectangle, "groupBoxRectangle");
             this.groupBoxRectangle.Controls.Add(this.checkBoxRectangleIsBothSide);
             this.groupBoxRectangle.Controls.Add(this.comboBoxRectangleDirection);
             this.groupBoxRectangle.Controls.Add(this.label8);
@@ -733,6 +843,7 @@
             this.groupBoxRectangle.Controls.Add(this.numericUpDownRectangleBand);
             this.groupBoxRectangle.Controls.Add(this.numericUpDownRectangleAngle);
             this.groupBoxRectangle.Controls.Add(this.label9);
+            resources.ApplyResources(this.groupBoxRectangle, "groupBoxRectangle");
             this.groupBoxRectangle.Name = "groupBoxRectangle";
             this.groupBoxRectangle.TabStop = false;
             // 
@@ -786,8 +897,8 @@
             // 
             // numericUpDownRectangleAngle
             // 
-            resources.ApplyResources(this.numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
             this.numericUpDownRectangleAngle.DecimalPlaces = 3;
+            resources.ApplyResources(this.numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
             this.numericUpDownRectangleAngle.Maximum = new decimal(new int[] {
             360,
             0,
@@ -805,22 +916,21 @@
             // 
             resources.ApplyResources(this.radioButtonSector, "radioButtonSector");
             this.radioButtonSector.Name = "radioButtonSector";
-            this.radioButtonSector.CheckedChanged += new System.EventHandler(this.radioButtonSector_CheckedChanged);
             // 
             // groupBoxSector
             // 
-            resources.ApplyResources(this.groupBoxSector, "groupBoxSector");
             this.groupBoxSector.Controls.Add(this.numericUpDownSectorStartAngle);
             this.groupBoxSector.Controls.Add(this.numericUpDownSectorEndAngle);
             this.groupBoxSector.Controls.Add(this.label10);
             this.groupBoxSector.Controls.Add(this.label11);
+            resources.ApplyResources(this.groupBoxSector, "groupBoxSector");
             this.groupBoxSector.Name = "groupBoxSector";
             this.groupBoxSector.TabStop = false;
             // 
             // numericUpDownSectorStartAngle
             // 
-            resources.ApplyResources(this.numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
             this.numericUpDownSectorStartAngle.DecimalPlaces = 2;
+            resources.ApplyResources(this.numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
             this.numericUpDownSectorStartAngle.Maximum = new decimal(new int[] {
             720,
             0,
@@ -836,8 +946,8 @@
             // 
             // numericUpDownSectorEndAngle
             // 
-            resources.ApplyResources(this.numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
             this.numericUpDownSectorEndAngle.DecimalPlaces = 2;
+            resources.ApplyResources(this.numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
             this.numericUpDownSectorEndAngle.Maximum = new decimal(new int[] {
             720,
             0,
@@ -858,12 +968,12 @@
             // 
             // tabPageIntegralProperty
             // 
-            resources.ApplyResources(this.tabPageIntegralProperty, "tabPageIntegralProperty");
             this.tabPageIntegralProperty.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageIntegralProperty.Controls.Add(this.radioButtonRadial);
             this.tabPageIntegralProperty.Controls.Add(this.groupBoxRadial);
             this.tabPageIntegralProperty.Controls.Add(this.radioButtonConcentric);
             this.tabPageIntegralProperty.Controls.Add(this.groupBoxConcentric);
+            resources.ApplyResources(this.tabPageIntegralProperty, "tabPageIntegralProperty");
             this.tabPageIntegralProperty.Name = "tabPageIntegralProperty";
             // 
             // radioButtonRadial
@@ -874,7 +984,6 @@
             // 
             // groupBoxRadial
             // 
-            resources.ApplyResources(this.groupBoxRadial, "groupBoxRadial");
             this.groupBoxRadial.Controls.Add(this.label46);
             this.groupBoxRadial.Controls.Add(this.label40);
             this.groupBoxRadial.Controls.Add(this.numericBoxRadialRange);
@@ -886,6 +995,7 @@
             this.groupBoxRadial.Controls.Add(this.label37);
             this.groupBoxRadial.Controls.Add(this.label36);
             this.groupBoxRadial.Controls.Add(this.labelDimensionRadial1);
+            resources.ApplyResources(this.groupBoxRadial, "groupBoxRadial");
             this.groupBoxRadial.Name = "groupBoxRadial";
             this.groupBoxRadial.TabStop = false;
             // 
@@ -994,15 +1104,14 @@
             // 
             // groupBoxConcentric
             // 
-            resources.ApplyResources(this.groupBoxConcentric, "groupBoxConcentric");
             this.groupBoxConcentric.Controls.Add(this.groupBox4);
             this.groupBoxConcentric.Controls.Add(this.groupBox5);
+            resources.ApplyResources(this.groupBoxConcentric, "groupBoxConcentric");
             this.groupBoxConcentric.Name = "groupBoxConcentric";
             this.groupBoxConcentric.TabStop = false;
             // 
             // groupBox4
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.numericBoxConcentricStep);
             this.groupBox4.Controls.Add(this.radioButtonConcentricLength);
             this.groupBox4.Controls.Add(this.numericBoxConcentricEnd);
@@ -1015,6 +1124,7 @@
             this.groupBox4.Controls.Add(this.labelIntegralDimension1);
             this.groupBox4.Controls.Add(this.labelIntegralDimension2);
             this.groupBox4.Controls.Add(this.label12);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
@@ -1121,9 +1231,9 @@
             // 
             // groupBox5
             // 
-            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.radioButtonBraggBrentano);
             this.groupBox5.Controls.Add(this.radioButtonDebyeScherrer);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
@@ -1141,16 +1251,15 @@
             // 
             // tabPageSpotsAndCenter
             // 
-            resources.ApplyResources(this.tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             this.tabPageSpotsAndCenter.Controls.Add(this.checkBoxManualMaskMode);
             this.tabPageSpotsAndCenter.Controls.Add(this.groupBoxManualMode);
             this.tabPageSpotsAndCenter.Controls.Add(this.groupBox7);
             this.tabPageSpotsAndCenter.Controls.Add(this.groupBox12);
             this.tabPageSpotsAndCenter.Controls.Add(this.buttonMaskAll);
             this.tabPageSpotsAndCenter.Controls.Add(this.buttonUnmaskAll);
+            resources.ApplyResources(this.tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             this.tabPageSpotsAndCenter.Name = "tabPageSpotsAndCenter";
             this.tabPageSpotsAndCenter.UseVisualStyleBackColor = true;
-            this.tabPageSpotsAndCenter.Click += new System.EventHandler(this.tabPageSpotsAndCenter_Click);
             // 
             // checkBoxManualMaskMode
             // 
@@ -1161,16 +1270,15 @@
             // 
             // groupBoxManualMode
             // 
-            resources.ApplyResources(this.groupBoxManualMode, "groupBoxManualMode");
             this.groupBoxManualMode.Controls.Add(this.radioButtonManualCircle);
             this.groupBoxManualMode.Controls.Add(this.radioButtonManualSpline);
             this.groupBoxManualMode.Controls.Add(this.radioButtonManualRectangle);
             this.groupBoxManualMode.Controls.Add(this.radioButtonManualSpot);
             this.groupBoxManualMode.Controls.Add(this.groupBoxManualSpot);
             this.groupBoxManualMode.Controls.Add(this.groupBoxSpline);
+            resources.ApplyResources(this.groupBoxManualMode, "groupBoxManualMode");
             this.groupBoxManualMode.Name = "groupBoxManualMode";
             this.groupBoxManualMode.TabStop = false;
-            this.groupBoxManualMode.Enter += new System.EventHandler(this.groupBoxManualMode_Enter);
             // 
             // radioButtonManualCircle
             // 
@@ -1204,12 +1312,12 @@
             // 
             // groupBoxManualSpot
             // 
-            resources.ApplyResources(this.groupBoxManualSpot, "groupBoxManualSpot");
             this.groupBoxManualSpot.Controls.Add(this.textBoxManualSpotSize);
             this.groupBoxManualSpot.Controls.Add(this.radioButton1);
             this.groupBoxManualSpot.Controls.Add(this.numericUpDownManualSpotSize);
             this.groupBoxManualSpot.Controls.Add(this.label30);
             this.groupBoxManualSpot.Controls.Add(this.radioButtonCircle);
+            resources.ApplyResources(this.groupBoxManualSpot, "groupBoxManualSpot");
             this.groupBoxManualSpot.Name = "groupBoxManualSpot";
             this.groupBoxManualSpot.TabStop = false;
             // 
@@ -1256,10 +1364,10 @@
             // 
             // groupBoxSpline
             // 
-            resources.ApplyResources(this.groupBoxSpline, "groupBoxSpline");
             this.groupBoxSpline.Controls.Add(this.label48);
             this.groupBoxSpline.Controls.Add(this.label49);
             this.groupBoxSpline.Controls.Add(this.numericUpDownSplineWidth);
+            resources.ApplyResources(this.groupBoxSpline, "groupBoxSpline");
             this.groupBoxSpline.Name = "groupBoxSpline";
             this.groupBoxSpline.TabStop = false;
             // 
@@ -1296,10 +1404,10 @@
             // 
             // groupBox7
             // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Controls.Add(this.radioButtonTakeOverMaskfile);
             this.groupBox7.Controls.Add(this.radioButtonTakeoverMask);
             this.groupBox7.Controls.Add(this.radioButtonTakoverNothing);
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.TabStop = false;
             // 
@@ -1325,16 +1433,16 @@
             // 
             // groupBox12
             // 
-            resources.ApplyResources(this.groupBox12, "groupBox12");
             this.groupBox12.Controls.Add(this.numericUpDownFindSpotsDeviation);
             this.groupBox12.Controls.Add(this.label28);
+            resources.ApplyResources(this.groupBox12, "groupBox12");
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.TabStop = false;
             // 
             // numericUpDownFindSpotsDeviation
             // 
-            resources.ApplyResources(this.numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
             this.numericUpDownFindSpotsDeviation.DecimalPlaces = 2;
+            resources.ApplyResources(this.numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
             this.numericUpDownFindSpotsDeviation.Increment = new decimal(new int[] {
             1,
             0,
@@ -1373,13 +1481,13 @@
             // 
             // tabPageAfterGetProfile
             // 
-            resources.ApplyResources(this.tabPageAfterGetProfile, "tabPageAfterGetProfile");
             this.tabPageAfterGetProfile.Controls.Add(this.numericBoxTest);
             this.tabPageAfterGetProfile.Controls.Add(this.checkBoxTest);
             this.tabPageAfterGetProfile.Controls.Add(this.checkBoxSendProfileToPDIndexer);
             this.tabPageAfterGetProfile.Controls.Add(this.checkBoxSaveFile);
             this.tabPageAfterGetProfile.Controls.Add(this.groupBoxSaveProfile);
             this.tabPageAfterGetProfile.Controls.Add(this.groupBoxSendPDI);
+            resources.ApplyResources(this.tabPageAfterGetProfile, "tabPageAfterGetProfile");
             this.tabPageAfterGetProfile.Name = "tabPageAfterGetProfile";
             this.tabPageAfterGetProfile.UseVisualStyleBackColor = true;
             // 
@@ -1410,9 +1518,9 @@
             // 
             // checkBoxSendProfileToPDIndexer
             // 
-            resources.ApplyResources(this.checkBoxSendProfileToPDIndexer, "checkBoxSendProfileToPDIndexer");
             this.checkBoxSendProfileToPDIndexer.Checked = true;
             this.checkBoxSendProfileToPDIndexer.CheckState = System.Windows.Forms.CheckState.Checked;
+            resources.ApplyResources(this.checkBoxSendProfileToPDIndexer, "checkBoxSendProfileToPDIndexer");
             this.checkBoxSendProfileToPDIndexer.Name = "checkBoxSendProfileToPDIndexer";
             this.checkBoxSendProfileToPDIndexer.CheckedChanged += new System.EventHandler(this.checkBoxSendProfileToPDIndexer_CheckedChanged);
             // 
@@ -1424,18 +1532,18 @@
             // 
             // groupBoxSaveProfile
             // 
-            resources.ApplyResources(this.groupBoxSaveProfile, "groupBoxSaveProfile");
             this.groupBoxSaveProfile.Controls.Add(this.flowLayoutPanel2);
             this.groupBoxSaveProfile.Controls.Add(this.flowLayoutPanel1);
+            resources.ApplyResources(this.groupBoxSaveProfile, "groupBoxSaveProfile");
             this.groupBoxSaveProfile.Name = "groupBoxSaveProfile";
             this.groupBoxSaveProfile.TabStop = false;
             // 
             // flowLayoutPanel2
             // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsPDIformat);
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsCSVformat);
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsTSVformat);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // radioButtonAsPDIformat
@@ -1460,9 +1568,9 @@
             // 
             // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.radioButtonSetDirectoryEachTime);
             this.flowLayoutPanel1.Controls.Add(this.radioButtonSaveAtImageDirectory);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // radioButtonSetDirectoryEachTime
@@ -1481,8 +1589,8 @@
             // 
             // groupBoxSendPDI
             // 
-            resources.ApplyResources(this.groupBoxSendPDI, "groupBoxSendPDI");
             this.groupBoxSendPDI.Controls.Add(this.checkBoxSendUnrolledImageToPDIndexer);
+            resources.ApplyResources(this.groupBoxSendPDI, "groupBoxSendPDI");
             this.groupBoxSendPDI.Name = "groupBoxSendPDI";
             this.groupBoxSendPDI.TabStop = false;
             // 
@@ -1494,16 +1602,16 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.numericUpDownUnrollChiDivision);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -1529,7 +1637,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.numericUpDownUnrolledImageXend);
             this.groupBox1.Controls.Add(this.numericUpDownUnrolledImageXstart);
             this.groupBox1.Controls.Add(this.label38);
@@ -1542,13 +1649,14 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.radioButton3);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // numericUpDownUnrolledImageXend
             // 
-            resources.ApplyResources(this.numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
             this.numericUpDownUnrolledImageXend.DecimalPlaces = 3;
+            resources.ApplyResources(this.numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
             this.numericUpDownUnrolledImageXend.Maximum = new decimal(new int[] {
             180,
             0,
@@ -1563,8 +1671,8 @@
             // 
             // numericUpDownUnrolledImageXstart
             // 
-            resources.ApplyResources(this.numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
             this.numericUpDownUnrolledImageXstart.DecimalPlaces = 4;
+            resources.ApplyResources(this.numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
             this.numericUpDownUnrolledImageXstart.Increment = new decimal(new int[] {
             1,
             0,
@@ -1604,8 +1712,8 @@
             // 
             // numericUpDownUnrolledImageXstep
             // 
-            resources.ApplyResources(this.numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
             this.numericUpDownUnrolledImageXstep.DecimalPlaces = 4;
+            resources.ApplyResources(this.numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
             this.numericUpDownUnrolledImageXstep.Increment = new decimal(new int[] {
             1,
             0,
@@ -1652,12 +1760,12 @@
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.checkBoxExtensionIPA);
             this.tabPage2.Controls.Add(this.checkBoxExtensionIPF);
             this.tabPage2.Controls.Add(this.checkBoxExtensionIMG);
             this.tabPage2.Controls.Add(this.checkBoxExtensionCCD);
             this.tabPage2.Controls.Add(this.checkBoxExtensionSTL);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -1698,15 +1806,14 @@
             // 
             // tabPage5
             // 
-            resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Controls.Add(this.groupBox11);
             this.tabPage5.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
-            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Controls.Add(this.label50);
             this.groupBox11.Controls.Add(this.flowLayoutPanel3);
             this.groupBox11.Controls.Add(this.pictureBox1);
@@ -1714,6 +1821,7 @@
             this.groupBox11.Controls.Add(this.radioButtonChiBottom);
             this.groupBox11.Controls.Add(this.radioButtonChiTop);
             this.groupBox11.Controls.Add(this.radioButtonChiRight);
+            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.TabStop = false;
             // 
@@ -1747,8 +1855,8 @@
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::IPAnalyzer.Properties.Resources.chi;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -1784,10 +1892,10 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.flowLayoutPanel4);
             this.groupBox2.Controls.Add(this.flowLayoutPanelFindCenterOption);
             this.groupBox2.Controls.Add(this.checkBoxFixCenter);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -1855,19 +1963,19 @@
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.groupBox6);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
-            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.textBoxBackgroundImage);
             this.groupBox6.Controls.Add(this.buttonClearBackgroundImage);
             this.groupBox6.Controls.Add(this.buttonSetBackgroundImage);
             this.groupBox6.Controls.Add(this.numericBoxBackgroundCoeff);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
@@ -1966,21 +2074,28 @@
             this.Name = "FormProperty";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormProperty_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProperty_FormClosed);
-            this.Load += new System.EventHandler(this.FormProperty_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageXRay.ResumeLayout(false);
             this.tabPageXRay.PerformLayout();
             this.tabPageIP.ResumeLayout(false);
             this.tabPageIP.PerformLayout();
-            this.groupBoxCameaLength.ResumeLayout(false);
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
+            this.flowLayoutPanelFootMode.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.flowLayoutPanelDirectSpotMode.ResumeLayout(false);
             this.groupBoxDirectSpotPosition.ResumeLayout(false);
+            this.groupBoxCameaLength.ResumeLayout(false);
+            this.groupBoxCameaLength.PerformLayout();
             this.groupBoxPixelShape.ResumeLayout(false);
             this.groupBoxGandlfiRadius.ResumeLayout(false);
             this.groupBoxSphericalCorrection.ResumeLayout(false);
             this.groupBoxTiltCorrection.ResumeLayout(false);
             this.tabPageIntegralRegion.ResumeLayout(false);
-            this.tabPageIntegralRegion.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThresholdOfIntensityMax)).EndInit();
@@ -2116,7 +2231,7 @@
         private System.Windows.Forms.GroupBox groupBoxSaveProfile;
         public System.Windows.Forms.RadioButton radioButtonSaveAtImageDirectory;
         public System.Windows.Forms.RadioButton radioButtonSetDirectoryEachTime;
-        private Crystallography.Controls.NumericBox numericalTextBoxCameraLength;
+        private Crystallography.Controls.NumericBox numericBoxCameraLength1;
         public System.Windows.Forms.CheckBox checkBoxMaskEdge;
         public System.Windows.Forms.NumericUpDown numericUpDownEdge;
         public System.Windows.Forms.Label label2;
@@ -2146,11 +2261,11 @@
         public Crystallography.Controls.WaveLengthControl waveLengthControl;
         public Crystallography.Controls.NumericBox numericBoxPixelSizeX;
         public Crystallography.Controls.NumericBox numericBoxPixelSizeY;
-        public Crystallography.Controls.NumericBox numericalTextBoxPixelKsi;
-        public Crystallography.Controls.NumericBox numericBoxTiltCorrectionTau;
-        public Crystallography.Controls.NumericBox numericBoxTiltCorrectionPhi;
-        public Crystallography.Controls.NumericBox numericBoxCenterPositionY;
-        public Crystallography.Controls.NumericBox numericBoxCenterPositionX;
+        public Crystallography.Controls.NumericBox numericBoxPixelKsi;
+        public Crystallography.Controls.NumericBox numericBoxTiltTau;
+        public Crystallography.Controls.NumericBox numericBoxTiltPhi;
+        public Crystallography.Controls.NumericBox numericBoxDirectSpotPositionY;
+        public Crystallography.Controls.NumericBox numericBoxDirectSpotPositionX;
         private System.Windows.Forms.TabPage tabPage1;
         public System.Windows.Forms.NumericUpDown numericUpDownUnrolledImageXstart;
         public System.Windows.Forms.NumericUpDown numericUpDownUnrollChiDivision;
@@ -2178,7 +2293,7 @@
         private System.Windows.Forms.CheckBox checkBoxExtensionIPA;
         public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.GroupBox groupBoxSphericalCorrection;
-        public Crystallography.Controls.NumericBox numericalTextBoxSphericalCorections;
+        public Crystallography.Controls.NumericBox numericBoxSphericalCorections;
         public System.Windows.Forms.Label label46;
         private System.Windows.Forms.TabPage tabPage5;
         public System.Windows.Forms.GroupBox groupBoxManualSpot;
@@ -2201,9 +2316,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         public System.Windows.Forms.RadioButton radioButtonChiClockwise;
         public System.Windows.Forms.RadioButton radioButtonChiCounterclockwise;
-        public System.Windows.Forms.CheckBox checkBoxSACLA;
-        private System.Windows.Forms.Button buttonOptimizeSaclaEH5Parameter;
-        public Crystallography.Controls.SaclaControl saclaControl;
         public Crystallography.Controls.NumericBox numericBoxConcentricStep;
         public Crystallography.Controls.NumericBox numericBoxConcentricEnd;
         public Crystallography.Controls.NumericBox numericBoxConcentricStart;
@@ -2238,5 +2350,20 @@
         public System.Windows.Forms.RadioButton radioButtonTakeOverMaskfile;
         public System.Windows.Forms.RadioButton radioButtonTakeoverMask;
         public System.Windows.Forms.RadioButton radioButtonTakoverNothing;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private Crystallography.Controls.NumericBox numericBoxCameraLength2;
+        public System.Windows.Forms.GroupBox groupBox9;
+        public Crystallography.Controls.NumericBox numericBoxFootPositionY;
+        public Crystallography.Controls.NumericBox numericBoxFootPositionX;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFootMode;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDirectSpotMode;
+        public System.Windows.Forms.RadioButton radioButtonFootMode;
+        public System.Windows.Forms.RadioButton radioButtonDirectSpotMode;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.Label label22;
     }
 }

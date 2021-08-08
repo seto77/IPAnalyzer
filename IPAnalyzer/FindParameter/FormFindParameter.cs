@@ -89,13 +89,13 @@
             numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
             textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
             textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
-            textBoxPixelKsi.Value= formMain.FormProperty.numericalTextBoxPixelKsi.Value;
+            textBoxPixelKsi.Value= formMain.FormProperty.numericBoxPixelKsi.Value;
             textBoxWaveLength.Text = formMain.FormProperty.WaveLengthText;
             //numericTextBoxPrimaryFilmDistance.Text = formMain.formProperty.textBoxCameraLength.Text;
-            textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltCorrectionPhi.Value;
-            textBoxTiltCorrectionPrimaryTau.Value = formMain.FormProperty.numericBoxTiltCorrectionTau.Value;
-            numericalTextBoxPrimaryCenterPositionX.Value = numericTextBoxSecondaryCenterPositionX.Value = formMain.FormProperty.numericBoxCenterPositionX.Value;
-            numericTextBoxPrimaryCenterPositionY.Value = numericTextBoxSecondaryCenterPositionY.Value = formMain.FormProperty.numericBoxCenterPositionY.Value;
+            textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltPhi.Value;
+            textBoxTiltCorrectionPrimaryTau.Value = formMain.FormProperty.numericBoxTiltTau.Value;
+            numericalTextBoxPrimaryCenterPositionX.Value = numericTextBoxSecondaryCenterPositionX.Value = formMain.FormProperty.numericBoxDirectSpotPositionX.Value;
+            numericTextBoxPrimaryCenterPositionY.Value = numericTextBoxSecondaryCenterPositionY.Value = formMain.FormProperty.numericBoxDirectSpotPositionY.Value;
 
             FilmDistance[0] = numericTextBoxPrimaryFilmDistance.Value;
             WaveLength = textBoxWaveLength.Value / 10;
@@ -140,12 +140,12 @@
                 numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
                 textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
                 textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
-                textBoxPixelKsi.Value = formMain.FormProperty.numericalTextBoxPixelKsi.Value;
+                textBoxPixelKsi.Value = formMain.FormProperty.numericBoxPixelKsi.Value;
                 textBoxWaveLength.Text = formMain.FormProperty.WaveLengthText;
-                textBoxTiltCorrectionSecondaryPhi.Value = textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltCorrectionPhi.Value;
-                textBoxTiltCorrectionSecondaryTau.Value = textBoxTiltCorrectionPrimaryTau.Value = formMain.FormProperty.numericBoxTiltCorrectionTau.Value;
-                numericalTextBoxPrimaryCenterPositionX.Value = numericTextBoxSecondaryCenterPositionX.Value = formMain.FormProperty.numericBoxCenterPositionX.Value;
-                numericTextBoxPrimaryCenterPositionY.Value = numericTextBoxSecondaryCenterPositionY.Value = formMain.FormProperty.numericBoxCenterPositionY.Value;
+                textBoxTiltCorrectionSecondaryPhi.Value = textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltPhi.Value;
+                textBoxTiltCorrectionSecondaryTau.Value = textBoxTiltCorrectionPrimaryTau.Value = formMain.FormProperty.numericBoxTiltTau.Value;
+                numericalTextBoxPrimaryCenterPositionX.Value = numericTextBoxSecondaryCenterPositionX.Value = formMain.FormProperty.numericBoxDirectSpotPositionX.Value;
+                numericTextBoxPrimaryCenterPositionY.Value = numericTextBoxSecondaryCenterPositionY.Value = formMain.FormProperty.numericBoxDirectSpotPositionY.Value;
             }
         }
 
@@ -1207,14 +1207,14 @@
 
         private void textBoxPrimaryCenterPositionX_DoubleClick(object sender, EventArgs e)
         {
-            numericalTextBoxPrimaryCenterPositionX.Value = formMain.FormProperty.numericBoxCenterPositionX.Value;
-            numericTextBoxPrimaryCenterPositionY.Value = formMain.FormProperty.numericBoxCenterPositionY.Value;
+            numericalTextBoxPrimaryCenterPositionX.Value = formMain.FormProperty.numericBoxDirectSpotPositionX.Value;
+            numericTextBoxPrimaryCenterPositionY.Value = formMain.FormProperty.numericBoxDirectSpotPositionY.Value;
         }
 
         private void textBoxSecondaryCenterPositionX_DoubleClick(object sender, EventArgs e)
         {
-            numericTextBoxSecondaryCenterPositionX.Value = formMain.FormProperty.numericBoxCenterPositionX.Value;
-            numericTextBoxSecondaryCenterPositionY.Value = formMain.FormProperty.numericBoxCenterPositionY.Value;
+            numericTextBoxSecondaryCenterPositionX.Value = formMain.FormProperty.numericBoxDirectSpotPositionX.Value;
+            numericTextBoxSecondaryCenterPositionY.Value = formMain.FormProperty.numericBoxDirectSpotPositionY.Value;
         }
 
         //Primaryのプロファイルゲットボタン
@@ -1468,7 +1468,7 @@
                    // peak.Add(crystal[profileNumber].Plane[i].MillimeterCalc);
                     peak.Add(Math.Tan(2 * Math.Asin(WaveLength / 2 / crystal[profileNumber].Plane[i].d)) * FilmDistance[profileNumber]);
                 }
-            formMain.FormProperty.ImageCenter = new PointD(IP.CenterX, IP.CenterY);
+            formMain.FormProperty.DirectSpotPosition = new PointD(IP.CenterX, IP.CenterY);
 
             List<EllipseParameter> ellipseParameters = new List<EllipseParameter>();
 
@@ -2289,14 +2289,14 @@
             formMain.FormProperty.CameraLengthText = textBoxRefinedPrimaryFilmDistance.Text;
             formMain.FormProperty.numericBoxPixelSizeX.Value = textBoxRefinedPixelSizeX.Value;
             formMain.FormProperty.numericBoxPixelSizeY.Value = textBoxRefinedPixelSizeY.Value;
-            formMain.FormProperty.numericalTextBoxPixelKsi.Value = textBoxRefinedPixelKsi.Value;
-            formMain.FormProperty.numericBoxTiltCorrectionPhi.Value = textBoxRefinedPrimaryPhi.Value;
-            formMain.FormProperty.numericBoxTiltCorrectionTau.Value = textBoxRefinedPrimaryTau.Value;
+            formMain.FormProperty.numericBoxPixelKsi.Value = textBoxRefinedPixelKsi.Value;
+            formMain.FormProperty.numericBoxTiltPhi.Value = textBoxRefinedPrimaryPhi.Value;
+            formMain.FormProperty.numericBoxTiltTau.Value = textBoxRefinedPrimaryTau.Value;
             formMain.FormProperty.WaveLengthText = textBoxRefinedWaveLength.Text;
            
-            formMain.FormProperty.numericalTextBoxSphericalCorections.Value = numericalTextBoxRefinedSphericalRadius.Value;
+            formMain.FormProperty.numericBoxSphericalCorections.Value = numericalTextBoxRefinedSphericalRadius.Value;
             formMain.FormProperty.SkipEvent = false;
-            formMain.FormProperty.ImageCenter = new PointD(numericalTextBoxPrimaryCenterPositionX.Value, numericTextBoxPrimaryCenterPositionY.Value);
+            formMain.FormProperty.DirectSpotPosition = new PointD(numericalTextBoxPrimaryCenterPositionX.Value, numericTextBoxPrimaryCenterPositionY.Value);
         }
 
         private void buttonSetInitioalParam_Click(object sender, EventArgs e)
@@ -2304,11 +2304,11 @@
             numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
             textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
             textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
-            textBoxPixelKsi.Value = formMain.FormProperty.numericalTextBoxPixelKsi.Value;
-            textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltCorrectionPhi.Value;
-            textBoxTiltCorrectionPrimaryTau.Value = formMain.FormProperty.numericBoxTiltCorrectionTau.Value;
+            textBoxPixelKsi.Value = formMain.FormProperty.numericBoxPixelKsi.Value;
+            textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltPhi.Value;
+            textBoxTiltCorrectionPrimaryTau.Value = formMain.FormProperty.numericBoxTiltTau.Value;
             textBoxWaveLength.Text = formMain.FormProperty.WaveLengthText;
-            numericalTextBoxSphericalRadius.Value = formMain.FormProperty.numericalTextBoxSphericalCorections.Value;
+            numericalTextBoxSphericalRadius.Value = formMain.FormProperty.numericBoxSphericalCorections.Value;
 
         }
 
@@ -2769,7 +2769,7 @@
 
         private void buttonSchematicDiagram_Click(object sender, EventArgs e)
         {
-            FormFindParameter2 formFindParameter2 = new FormFindParameter2();
+            FormFindParameterGeometry formFindParameter2 = new FormFindParameterGeometry();
             formFindParameter2.ShowDialog();
         }
 

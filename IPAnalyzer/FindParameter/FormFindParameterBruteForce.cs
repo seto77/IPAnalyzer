@@ -13,15 +13,11 @@ using System.Threading.Tasks;
 
 namespace IPAnalyzer
 {
-    public partial class FormOptimizeSaclaEH5Parameter : Form
+    public partial class FormFindParameterBruteForce : Form
     {
         public FormMain FormMain;
 
-        public double CL
-        {
-            set { FormMain.FormProperty.CameraLength = value; }
-            get { return FormMain.FormProperty.CameraLength; }
-        }
+        public double CameraLength1        {            set => FormMain.FormProperty.CameraLength1 = value;            get => FormMain.FormProperty.CameraLength1;        }
 
         public double PixX
         {
@@ -33,33 +29,33 @@ namespace IPAnalyzer
             set { FormMain.FormProperty.numericBoxPixelSizeY.Value = value; }
             get { return FormMain.FormProperty.numericBoxPixelSizeY.Value; }
         }
-        public PointD Center
+        public PointD DirectSpotPosition
         {
-            set { FormMain.FormProperty.ImageCenter = value; }
-            get { return FormMain.FormProperty.ImageCenter; }
+            set { FormMain.FormProperty.DirectSpotPosition = value; }
+            get { return FormMain.FormProperty.DirectSpotPosition; }
         }
 
-        public double Phi { set => FormMain.FormProperty.saclaControl.PhiDegree = value; get => FormMain.FormProperty.saclaControl.PhiDegree; }
+        public double Phi { set => FormMain.FormProperty.DetectorTiltPhi = value; get => FormMain.FormProperty.DetectorTiltPhi; }
 
-        public double Tau { set => FormMain.FormProperty.saclaControl.TauDegree = value; get => FormMain.FormProperty.saclaControl.TauDegree; }
+        public double Tau { set => FormMain.FormProperty.DetectorTiltTau = value; get => FormMain.FormProperty.DetectorTiltTau; }
 
         public double Radius { set => FormMain.FormProperty.numericBoxGandlfiRadius.Value = value; get => FormMain.FormProperty.numericBoxGandlfiRadius.Value; }
 
         public double Distance
         {
-            set { FormMain.FormProperty.saclaControl.CameraLength2 = value; }
-            get { return FormMain.FormProperty.saclaControl.CameraLength2; }
+            set { FormMain.FormProperty.CameraLength2 = value; }
+            get { return FormMain.FormProperty.CameraLength2; }
         }
 
         public double FootX
         {
-            set { FormMain.FormProperty.saclaControl.Foot = new PointD(value, FormMain.FormProperty.saclaControl.Foot.Y); }
-            get { return FormMain.FormProperty.saclaControl.Foot.X; }
+            set { FormMain.FormProperty.FootPosition = new PointD(value, FormMain.FormProperty.FootPosition.Y); }
+            get { return FormMain.FormProperty.FootPosition.X; }
         }
         public double FootY
         {
-            set { FormMain.FormProperty.saclaControl.Foot = new PointD(FormMain.FormProperty.saclaControl.Foot.X, value); }
-            get { return FormMain.FormProperty.saclaControl.Foot.Y; }
+            set { FormMain.FormProperty.FootPosition = new PointD(FormMain.FormProperty.FootPosition.X, value); }
+            get { return FormMain.FormProperty.FootPosition.Y; }
         }
 
         public double WaveLength
@@ -68,7 +64,7 @@ namespace IPAnalyzer
             get { return FormMain.FormProperty.WaveLength; }
         }
 
-        public FormOptimizeSaclaEH5Parameter()
+        public FormFindParameterBruteForce()
         {
             InitializeComponent();
             crystalControl1.Crystal = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
@@ -368,9 +364,8 @@ namespace IPAnalyzer
                                     FootX = initialValue.FootX + paramFootX * footXStep;
                                     FootY = initialValue.FootY + paramFootY * footYStep;
                                     FormMain.FormProperty.SkipEvent = false;
-                                    FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
+                                    FormMain.FormProperty.DetectorParameters_Changed(sender, e);
                                     FormMain.SetIntegralProperty();
-
 
                                     var profile = Ring.GetProfile(Ring.IP);
 
@@ -643,7 +638,7 @@ namespace IPAnalyzer
             {
                 
 
-                var initialValue = new gandolfiValues(CL, PixX, PixY, Center.X, Center.Y, Tau, Phi, Radius);
+                var initialValue = new gandolfiValues(CameraLength1, PixX, PixY, DirectSpotPosition.X, DirectSpotPosition.Y, Tau, Phi, Radius);
                 var results = new SortedList<double, gandolfiValues>();
 
                 var parameters = new List<gandolfiValues>();
@@ -651,33 +646,33 @@ namespace IPAnalyzer
                 for (int p1 = -centerRange; p1 <= centerRange; p1++)
                     for (int p2 = -centerRange; p2 <= centerRange; p2++)
                         parameters.Add(new gandolfiValues
-                            (CL, PixX, PixY, Center.X + p1 * centerStep, Center.Y + p2 * centerStep, Tau, Phi, Radius));
+                            (CameraLength1, PixX, PixY, DirectSpotPosition.X + p1 * centerStep, DirectSpotPosition.Y + p2 * centerStep, Tau, Phi, Radius));
 
                 //pixelSize
                 for (int p1 = -pixSizeRange; p1 <= pixSizeRange; p1++)
                     for (int p2 = -pixSizeRange; p2 <= pixSizeRange; p2++)
                         parameters.Add(new gandolfiValues
-                            (CL, PixX + p1 * pixSizeStep, PixY + p2 * pixSizeStep, Center.X , Center.Y , Tau, Phi, Radius));
+                            (CameraLength1, PixX + p1 * pixSizeStep, PixY + p2 * pixSizeStep, DirectSpotPosition.X , DirectSpotPosition.Y , Tau, Phi, Radius));
 
                 //cameralength, GandolfiRadius
                 for (int p1 = -cameraLengthRange; p1 <= cameraLengthRange; p1++)
                     for (int p2 = -radiusRange; p2 <= radiusRange; p2++)
                         parameters.Add(new gandolfiValues
-                            (CL + p1 * cameraLengthStep, PixX , PixY , Center.X, Center.Y, Tau, Phi, Radius + p2 * radiusStep));
+                            (CameraLength1 + p1 * cameraLengthStep, PixX , PixY , DirectSpotPosition.X, DirectSpotPosition.Y, Tau, Phi, Radius + p2 * radiusStep));
 
                 //Tilt, Tau
                 for (int p1 = -tiltRange; p1 <= tiltRange; p1++)
                     for (int p2 = -tiltRange; p2 <= tiltRange; p2++)
                         parameters.Add(new gandolfiValues
-                            (CL, PixX , PixY , Center.X, Center.Y, Tau + p1 * tiltStep, Phi + p2 * tiltStep, Radius));
+                            (CameraLength1, PixX , PixY , DirectSpotPosition.X, DirectSpotPosition.Y, Tau + p1 * tiltStep, Phi + p2 * tiltStep, Radius));
 
                 int count = 0;
                 foreach (var v in parameters)
                 {
                     FormMain.FormProperty.SkipEvent = true;
 
-                    CL = v.CameraLength;
-                    Center = new PointD(v.CenterX, v.CenterY);
+                    CameraLength1 = v.CameraLength;
+                    DirectSpotPosition = new PointD(v.CenterX, v.CenterY);
                     PixX = v.PixelSizeX;
                     PixY = v.PixelSizeY;
                     Tau = v.Tau;
@@ -685,7 +680,7 @@ namespace IPAnalyzer
                     Radius = v.Radius;
                     FormMain.FormProperty.SkipEvent = false;
 
-                    FormMain.FormProperty.saclaControl_ValueChanged(sender, e);
+                    FormMain.FormProperty.DetectorParameters_Changed(sender, e);
 
                     FormMain.SetIntegralProperty();
                     profile = Ring.GetProfile(Ring.IP);
@@ -726,15 +721,15 @@ namespace IPAnalyzer
                 }
 
                 
-                CL = results.Values[0].CameraLength;
-                Center = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
+                CameraLength1 = results.Values[0].CameraLength;
+                DirectSpotPosition = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
                 PixX = results.Values[0].PixelSizeX;
                 PixY = results.Values[0].PixelSizeY;
                 Tau = results.Values[0].Tau;
                 Phi = results.Values[0].Phi;
                 Radius = results.Values[0].Radius;
-                if (CL == initialValue.CameraLength &&
-                    Center.X == initialValue.CenterX && Center.Y == initialValue.CenterY &&
+                if (CameraLength1 == initialValue.CameraLength &&
+                    DirectSpotPosition.X == initialValue.CenterX && DirectSpotPosition.Y == initialValue.CenterY &&
                     PixX == initialValue.PixelSizeX && PixY == initialValue.PixelSizeY &&
                     Tau == initialValue.Tau && Phi == initialValue.Phi &&
                     Radius == initialValue.Radius)
