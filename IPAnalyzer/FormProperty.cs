@@ -190,15 +190,6 @@ namespace IPAnalyzer
            // formMain.toolStripMenuItemProperty.Checked = false;
             this.Visible = false;
         }
-
-        private void checkBoxTiltCorrection_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxTiltCorrection.Checked)
-                numericBoxTiltPhi.Enabled = numericBoxTiltTau.Enabled = true;
-            else
-                numericBoxTiltPhi.Enabled = numericBoxTiltTau.Enabled = false;
-        }
-
         private void comboBoxRectangleDirection_SelectedIndexChanged(object sender, EventArgs e)
         {
             formMain.Skip = true;
@@ -855,8 +846,22 @@ namespace IPAnalyzer
 
         private void radioButtonDirectSpotMode_CheckedChanged(object sender, EventArgs e)
         {
-            flowLayoutPanelDirectSpotMode.Enabled = radioButtonDirectSpotMode.Checked;
-            flowLayoutPanelFootMode.Enabled = radioButtonFootMode.Checked;
+            if (radioButtonDirectSpotMode.Checked)
+            {
+                flowLayoutPanelDirectSpotMode.Enabled = true;
+                flowLayoutPanelFootMode.Enabled = false;
+            }
+            else
+            {
+                flowLayoutPanelDirectSpotMode.Enabled = false;
+                flowLayoutPanelFootMode.Enabled = true;
+            }
+            formMain.FormFindParameterBruteForce.DetectorCoordinates = DetectorCoordinates;
+        }
+
+        private void groupBoxSphericalCorrection_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 

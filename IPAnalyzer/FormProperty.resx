@@ -437,13 +437,13 @@
     <value>169, 3</value>
   </data>
   <data name="radioButtonGandlfi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 19</value>
+    <value>70, 19</value>
   </data>
   <data name="radioButtonGandlfi.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="radioButtonGandlfi.Text" xml:space="preserve">
-    <value>Gandlfi</value>
+    <value>Gandolfi</value>
   </data>
   <data name="&gt;&gt;radioButtonGandlfi.Name" xml:space="preserve">
     <value>radioButtonGandlfi</value>
@@ -461,7 +461,7 @@
     <value>0, 0</value>
   </data>
   <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 25</value>
+    <value>242, 25</value>
   </data>
   <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -484,94 +484,106 @@
   <data name="flowLayoutPanelFootMode.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxFootY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxFootPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxFootY.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFootPositionY.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericBoxFootY.FooterText" xml:space="preserve">
+  <data name="numericBoxFootPositionY.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericBoxFootPositionY.FooterText" xml:space="preserve">
     <value>Pix</value>
   </data>
-  <data name="numericBoxFootY.HeaderText" xml:space="preserve">
+  <data name="numericBoxFootPositionY.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericBoxFootPositionY.HeaderText" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="numericBoxFootY.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxFootPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
   </data>
-  <data name="numericBoxFootY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxFootPositionY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxFootY.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxFootPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericBoxFootY.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxFootPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericBoxFootY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxFootPositionY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericBoxFootY.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxFootPositionY.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 27</value>
   </data>
-  <data name="numericBoxFootY.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxFootPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootY.Name" xml:space="preserve">
-    <value>numericBoxFootY</value>
+  <data name="&gt;&gt;numericBoxFootPositionY.Name" xml:space="preserve">
+    <value>numericBoxFootPositionY</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootY.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxFootPositionY.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxFootPositionY.Parent" xml:space="preserve">
     <value>groupBox9</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootY.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxFootPositionY.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="numericBoxFootX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxFootPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxFootX.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFootPositionX.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericBoxFootX.FooterText" xml:space="preserve">
+  <data name="numericBoxFootPositionX.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericBoxFootPositionX.FooterText" xml:space="preserve">
     <value>Pix</value>
   </data>
-  <data name="numericBoxFootX.HeaderText" xml:space="preserve">
+  <data name="numericBoxFootPositionX.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericBoxFootPositionX.HeaderText" xml:space="preserve">
     <value>X</value>
   </data>
-  <data name="numericBoxFootX.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxFootPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="numericBoxFootX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxFootPositionX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxFootX.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxFootPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericBoxFootX.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxFootPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericBoxFootX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxFootPositionX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericBoxFootX.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxFootPositionX.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 27</value>
   </data>
-  <data name="numericBoxFootX.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxFootPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootX.Name" xml:space="preserve">
-    <value>numericBoxFootX</value>
+  <data name="&gt;&gt;numericBoxFootPositionX.Name" xml:space="preserve">
+    <value>numericBoxFootPositionX</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootX.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxFootPositionX.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootX.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxFootPositionX.Parent" xml:space="preserve">
     <value>groupBox9</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootX.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxFootPositionX.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="groupBox9.Font" type="System.Drawing.Font, System.Drawing">
@@ -587,7 +599,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 75</value>
+    <value>150, 75</value>
   </data>
   <data name="groupBox9.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -643,8 +655,14 @@
   <data name="numericBoxCameraLength2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
+  <data name="numericBoxCameraLength2.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
   <data name="numericBoxCameraLength2.FooterText" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="numericBoxCameraLength2.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="numericBoxCameraLength2.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 33</value>
@@ -692,7 +710,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 63</value>
+    <value>150, 63</value>
   </data>
   <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -719,10 +737,10 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanelFootMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 53</value>
+    <value>159, 53</value>
   </data>
   <data name="flowLayoutPanelFootMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 138</value>
+    <value>150, 138</value>
   </data>
   <data name="flowLayoutPanelFootMode.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -745,94 +763,94 @@
   <data name="flowLayoutPanelDirectSpotMode.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxCenterPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxDirectSpotPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxCenterPositionY.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxDirectSpotPositionY.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericBoxCenterPositionY.FooterText" xml:space="preserve">
+  <data name="numericBoxDirectSpotPositionY.FooterText" xml:space="preserve">
     <value>Pix</value>
   </data>
-  <data name="numericBoxCenterPositionY.HeaderText" xml:space="preserve">
+  <data name="numericBoxDirectSpotPositionY.HeaderText" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="numericBoxCenterPositionY.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxDirectSpotPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
   </data>
-  <data name="numericBoxCenterPositionY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxDirectSpotPositionY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxCenterPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxDirectSpotPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericBoxCenterPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxDirectSpotPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericBoxCenterPositionY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxDirectSpotPositionY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericBoxCenterPositionY.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxDirectSpotPositionY.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 27</value>
   </data>
-  <data name="numericBoxCenterPositionY.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxDirectSpotPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionY.Name" xml:space="preserve">
-    <value>numericBoxCenterPositionY</value>
+  <data name="&gt;&gt;numericBoxDirectSpotPositionY.Name" xml:space="preserve">
+    <value>numericBoxDirectSpotPositionY</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionY.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxDirectSpotPositionY.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxDirectSpotPositionY.Parent" xml:space="preserve">
     <value>groupBoxDirectSpotPosition</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionY.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxDirectSpotPositionY.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="numericBoxCenterPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxDirectSpotPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxCenterPositionX.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxDirectSpotPositionX.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericBoxCenterPositionX.FooterText" xml:space="preserve">
+  <data name="numericBoxDirectSpotPositionX.FooterText" xml:space="preserve">
     <value>Pix</value>
   </data>
-  <data name="numericBoxCenterPositionX.HeaderText" xml:space="preserve">
+  <data name="numericBoxDirectSpotPositionX.HeaderText" xml:space="preserve">
     <value>X</value>
   </data>
-  <data name="numericBoxCenterPositionX.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxDirectSpotPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="numericBoxCenterPositionX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxDirectSpotPositionX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxCenterPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxDirectSpotPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericBoxCenterPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxDirectSpotPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericBoxCenterPositionX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxDirectSpotPositionX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericBoxCenterPositionX.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxDirectSpotPositionX.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 27</value>
   </data>
-  <data name="numericBoxCenterPositionX.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxDirectSpotPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionX.Name" xml:space="preserve">
-    <value>numericBoxCenterPositionX</value>
+  <data name="&gt;&gt;numericBoxDirectSpotPositionX.Name" xml:space="preserve">
+    <value>numericBoxDirectSpotPositionX</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionX.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxDirectSpotPositionX.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionX.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxDirectSpotPositionX.Parent" xml:space="preserve">
     <value>groupBoxDirectSpotPosition</value>
   </data>
-  <data name="&gt;&gt;numericBoxCenterPositionX.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxDirectSpotPositionX.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Font" type="System.Drawing.Font, System.Drawing">
@@ -848,7 +866,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 75</value>
+    <value>150, 75</value>
   </data>
   <data name="groupBoxDirectSpotPosition.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -907,8 +925,14 @@
   <data name="numericBoxCameraLength1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
+  <data name="numericBoxCameraLength1.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
   <data name="numericBoxCameraLength1.FooterText" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="numericBoxCameraLength1.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="numericBoxCameraLength1.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 33</value>
@@ -956,7 +980,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="groupBoxCameaLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 63</value>
+    <value>150, 63</value>
   </data>
   <data name="groupBoxCameaLength.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -986,7 +1010,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 138</value>
+    <value>150, 138</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1003,85 +1027,49 @@
   <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9pt</value>
-  </data>
-  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 197</value>
-  </data>
-  <data name="checkBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Sperical Correction</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="numericalTextBoxPixelKsi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxPixelKsi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPixelKsi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.FooterText" xml:space="preserve">
+  <data name="numericBoxPixelKsi.FooterText" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.HeaderText" xml:space="preserve">
+  <data name="numericBoxPixelKsi.HeaderText" xml:space="preserve">
     <value>ξ</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxPixelKsi.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 70</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxPixelKsi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxPixelKsi.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxPixelKsi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxPixelKsi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxPixelKsi.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 27</value>
   </data>
-  <data name="numericalTextBoxPixelKsi.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxPixelKsi.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPixelKsi.Name" xml:space="preserve">
-    <value>numericalTextBoxPixelKsi</value>
+  <data name="&gt;&gt;numericBoxPixelKsi.Name" xml:space="preserve">
+    <value>numericBoxPixelKsi</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPixelKsi.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxPixelKsi.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPixelKsi.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxPixelKsi.Parent" xml:space="preserve">
     <value>groupBoxPixelShape</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPixelKsi.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxPixelKsi.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="numericBoxPixelSizeY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -1178,7 +1166,7 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxPixelShape.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 140</value>
+    <value>318, 139</value>
   </data>
   <data name="groupBoxPixelShape.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -1205,43 +1193,7 @@
     <value>tabPageIP</value>
   </data>
   <data name="&gt;&gt;groupBoxPixelShape.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="checkBoxTiltCorrection.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9pt</value>
-  </data>
-  <data name="checkBoxTiltCorrection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxTiltCorrection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 54</value>
-  </data>
-  <data name="checkBoxTiltCorrection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="checkBoxTiltCorrection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 19</value>
-  </data>
-  <data name="checkBoxTiltCorrection.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="checkBoxTiltCorrection.Text" xml:space="preserve">
-    <value>Tilt Correction</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTiltCorrection.Name" xml:space="preserve">
-    <value>checkBoxTiltCorrection</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTiltCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTiltCorrection.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTiltCorrection.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="numericBoxGandlfiRadius.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1253,7 +1205,7 @@
     <value>mm</value>
   </data>
   <data name="numericBoxGandlfiRadius.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 19</value>
+    <value>12, 23</value>
   </data>
   <data name="numericBoxGandlfiRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -1268,7 +1220,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericBoxGandlfiRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 27</value>
+    <value>82, 27</value>
   </data>
   <data name="numericBoxGandlfiRadius.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1289,7 +1241,7 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxGandlfiRadius.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 197</value>
+    <value>201, 195</value>
   </data>
   <data name="groupBoxGandlfiRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -1298,13 +1250,13 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="groupBoxGandlfiRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 53</value>
+    <value>107, 55</value>
   </data>
   <data name="groupBoxGandlfiRadius.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
-    <value>Gandlfi Radius</value>
+    <value>Gandolfi Radius</value>
   </data>
   <data name="groupBoxGandlfiRadius.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1319,7 +1271,7 @@
     <value>tabPageIP</value>
   </data>
   <data name="&gt;&gt;groupBoxGandlfiRadius.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="numericBoxSphericalCorections.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1327,26 +1279,35 @@
   <data name="numericBoxSphericalCorections.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
+  <data name="numericBoxSphericalCorections.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
   <data name="numericBoxSphericalCorections.FooterText" xml:space="preserve">
     <value>/m</value>
   </data>
+  <data name="numericBoxSphericalCorections.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
+    <value>Inverse of radius</value>
+  </data>
   <data name="numericBoxSphericalCorections.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
+    <value>5, 16</value>
   </data>
   <data name="numericBoxSphericalCorections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericBoxSphericalCorections.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 25</value>
   </data>
   <data name="numericBoxSphericalCorections.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 23</value>
   </data>
   <data name="numericBoxSphericalCorections.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="numericBoxSphericalCorections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 27</value>
+    <value>155, 25</value>
   </data>
   <data name="numericBoxSphericalCorections.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1363,11 +1324,44 @@
   <data name="&gt;&gt;numericBoxSphericalCorections.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label26.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 38</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="label26.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(normally zero)</value>
+  </data>
+  <data name="&gt;&gt;label26.Name" xml:space="preserve">
+    <value>label26</value>
+  </data>
+  <data name="&gt;&gt;label26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
+    <value>groupBoxSphericalCorrection</value>
+  </data>
+  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="groupBoxSphericalCorrection.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxSphericalCorrection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 198</value>
+    <value>6, 195</value>
   </data>
   <data name="groupBoxSphericalCorrection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -1376,10 +1370,13 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="groupBoxSphericalCorrection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 53</value>
+    <value>186, 55</value>
   </data>
   <data name="groupBoxSphericalCorrection.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>Spherical correction</value>
   </data>
   <data name="&gt;&gt;groupBoxSphericalCorrection.Name" xml:space="preserve">
     <value>groupBoxSphericalCorrection</value>
@@ -1391,103 +1388,103 @@
     <value>tabPageIP</value>
   </data>
   <data name="&gt;&gt;groupBoxSphericalCorrection.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxTiltTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTiltTau.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.FooterText" xml:space="preserve">
+  <data name="numericBoxTiltTau.FooterText" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.HeaderText" xml:space="preserve">
+  <data name="numericBoxTiltTau.HeaderText" xml:space="preserve">
     <value>τ</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxTiltTau.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 47</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxTiltTau.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxTiltTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxTiltTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxTiltTau.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxTiltTau.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 27</value>
   </data>
-  <data name="numericBoxTiltCorrectionTau.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxTiltTau.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionTau.Name" xml:space="preserve">
-    <value>numericBoxTiltCorrectionTau</value>
+  <data name="&gt;&gt;numericBoxTiltTau.Name" xml:space="preserve">
+    <value>numericBoxTiltTau</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionTau.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxTiltTau.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionTau.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxTiltTau.Parent" xml:space="preserve">
     <value>groupBoxTiltCorrection</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionTau.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxTiltTau.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="numericBoxTiltPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTiltPhi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.FooterText" xml:space="preserve">
+  <data name="numericBoxTiltPhi.FooterText" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.HeaderText" xml:space="preserve">
+  <data name="numericBoxTiltPhi.HeaderText" xml:space="preserve">
     <value>φ</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numericBoxTiltPhi.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 20</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxTiltPhi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxTiltPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxTiltPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 25</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="numericBoxTiltPhi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numericBoxTiltPhi.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 27</value>
   </data>
-  <data name="numericBoxTiltCorrectionPhi.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericBoxTiltPhi.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionPhi.Name" xml:space="preserve">
-    <value>numericBoxTiltCorrectionPhi</value>
+  <data name="&gt;&gt;numericBoxTiltPhi.Name" xml:space="preserve">
+    <value>numericBoxTiltPhi</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionPhi.Type" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxTiltPhi.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionPhi.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxTiltPhi.Parent" xml:space="preserve">
     <value>groupBoxTiltCorrection</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltCorrectionPhi.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numericBoxTiltPhi.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="groupBoxTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBoxTiltCorrection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 54</value>
+    <value>318, 53</value>
   </data>
   <data name="groupBoxTiltCorrection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -1501,6 +1498,9 @@
   <data name="groupBoxTiltCorrection.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
+    <value>Tilt</value>
+  </data>
   <data name="&gt;&gt;groupBoxTiltCorrection.Name" xml:space="preserve">
     <value>groupBoxTiltCorrection</value>
   </data>
@@ -1511,7 +1511,7 @@
     <value>tabPageIP</value>
   </data>
   <data name="&gt;&gt;groupBoxTiltCorrection.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="tabPageIP.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>

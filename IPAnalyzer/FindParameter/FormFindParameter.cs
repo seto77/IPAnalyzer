@@ -89,7 +89,7 @@
             numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
             textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
             textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
-            textBoxPixelKsi.Value= formMain.FormProperty.numericBoxPixelKsi.Value;
+            textBoxPixelKsi.Value = formMain.FormProperty.numericBoxPixelKsi.Value;
             textBoxWaveLength.Text = formMain.FormProperty.WaveLengthText;
             //numericTextBoxPrimaryFilmDistance.Text = formMain.formProperty.textBoxCameraLength.Text;
             textBoxTiltCorrectionPrimaryPhi.Value = formMain.FormProperty.numericBoxTiltPhi.Value;
@@ -100,19 +100,15 @@
             FilmDistance[0] = numericTextBoxPrimaryFilmDistance.Value;
             WaveLength = textBoxWaveLength.Value / 10;
 
-            dp[0] = new DiffractionProfile();
-            dp[0].ColorARGB = pictureBoxPattern1.BackColor.ToArgb();
-            dp[0].OriginalProfile = null;
-            dp[1] = new DiffractionProfile();
-            dp[1].ColorARGB = pictureBoxPattern2.BackColor.ToArgb();
-            dp[1].OriginalProfile = null;
+            dp[0] = new DiffractionProfile { ColorARGB = pictureBoxPattern1.BackColor.ToArgb(), OriginalProfile = null };
+            dp[1] = new DiffractionProfile { ColorARGB = pictureBoxPattern2.BackColor.ToArgb(), OriginalProfile = null };
 
             formCrystal = new FormCrystal();
 
-            crystal[0] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2",  Color.Violet);
-            crystal[1] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2",  Color.Violet);
-            flexibleCrystal[0] = new Crystal((0, 0, 0, 0, 0, 0), 0,  "", Color.Violet);
-            flexibleCrystal[1] = new Crystal((0, 0, 0, 0, 0, 0), 0,  "", Color.Violet);
+            crystal[0] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
+            crystal[1] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
+            flexibleCrystal[0] = new Crystal((0, 0, 0, 0, 0, 0), 0, "", Color.Violet);
+            flexibleCrystal[1] = new Crystal((0, 0, 0, 0, 0, 0), 0, "", Color.Violet);
             flexibleCrystal[0].Plane = new List<Plane>();
             flexibleCrystal[1].Plane = new List<Plane>();
 
@@ -122,7 +118,7 @@
             groupBoxSecondaryImage.AllowDrop = true;
             groupBoxPrimaryImage.AllowDrop = true;
             groupBoxParameter.AllowDrop = true;
-           
+
         }
         //クローズされたとき
         private void FormFindParameter_FormClosing(object sender, FormClosingEventArgs e)
@@ -235,8 +231,7 @@
                 if (e.Button == MouseButtons.Left & e.Clicks == 2)//何もないところでダブルクリックした場合
                 {
                     int index = radioButton1.Checked ? 0 : 1;
-                    Plane p = new Plane();
-                    p.MillimeterCalc = pt.X;
+                    var p = new Plane { MillimeterCalc = pt.X };
                     PointD tempPt = ConvToDspacing(pt, FilmDistance[index]);
                     p.d = tempPt.X;
                     p.SerchOption = PeakFunctionForm.PseudoVoigt;
@@ -816,8 +811,8 @@
             for (int n = 0; n < dp.Length; n++)
                 if (dp[n].OriginalProfile != null && dp[n].OriginalProfile.Pt.Count > 0)
                 {
-                    if (MaximalX < dp[n].OriginalProfile.Pt[dp[n].OriginalProfile.Pt.Count - 1].X)
-                        MaximalX = dp[n].OriginalProfile.Pt[dp[n].OriginalProfile.Pt.Count - 1].X;
+                    if (MaximalX < dp[n].OriginalProfile.Pt[^1].X)
+                        MaximalX = dp[n].OriginalProfile.Pt[^1].X;
                     for (int i = 0; i < dp[n].OriginalProfile.Pt.Count; i++)
                     {
                         if (MaximalY < dp[n].OriginalProfile.Pt[i].Y)
@@ -1073,12 +1068,14 @@
         {
             if (dp[0] != null && crystal != null)
             {
-                ColorDialog colorDialog = new ColorDialog();
-                colorDialog.Color = pictureBoxPattern1.BackColor;
-                colorDialog.AllowFullOpen = true;
-                colorDialog.AnyColor = true;
-                colorDialog.SolidColorOnly = false;
-                colorDialog.ShowHelp = true;
+                var colorDialog = new ColorDialog
+                {
+                    Color = pictureBoxPattern1.BackColor,
+                    AllowFullOpen = true,
+                    AnyColor = true,
+                    SolidColorOnly = false,
+                    ShowHelp = true
+                };
                 colorDialog.ShowDialog();
                 pictureBoxPattern1.BackColor = colorDialog.Color;
                 dp[0].ColorARGB = colorDialog.Color.ToArgb();
@@ -1090,12 +1087,14 @@
         {
             if (dp[1] != null && crystal != null)
             {
-                ColorDialog colorDialog = new ColorDialog();
-                colorDialog.Color = pictureBoxPattern2.BackColor;
-                colorDialog.AllowFullOpen = true;
-                colorDialog.AnyColor = true;
-                colorDialog.SolidColorOnly = false;
-                colorDialog.ShowHelp = true;
+                var colorDialog = new ColorDialog
+                {
+                    Color = pictureBoxPattern2.BackColor,
+                    AllowFullOpen = true,
+                    AnyColor = true,
+                    SolidColorOnly = false,
+                    ShowHelp = true
+                };
                 colorDialog.ShowDialog();
                 pictureBoxPattern2.BackColor = colorDialog.Color;
                 dp[1].ColorARGB = colorDialog.Color.ToArgb();
@@ -1476,9 +1475,9 @@
                 if (crystal[profileNumber].Plane[i].IsFittingChecked)
                 {
                     ellipseParameters.Add(new EllipseParameter());
-                    ellipseParameters[ellipseParameters.Count - 1].millimeterCalc = crystal[profileNumber].Plane[i].MillimeterCalc;
-                    ellipseParameters[ellipseParameters.Count - 1].strHKL = crystal[profileNumber].Plane[i].strHKL;
-                    ellipseParameters[ellipseParameters.Count - 1].d = crystal[profileNumber].Plane[i].d;
+                    ellipseParameters[^1].millimeterCalc = crystal[profileNumber].Plane[i].MillimeterCalc;
+                    ellipseParameters[^1].strHKL = crystal[profileNumber].Plane[i].strHKL;
+                    ellipseParameters[^1].d = crystal[profileNumber].Plane[i].d;
                 }
 
             double startProgress = (double)toolStripProgressBar1.Value / toolStripProgressBar1.Maximum;
@@ -2416,14 +2415,14 @@
             double max = double.NegativeInfinity;
             for (int i = 0; i < EllipseCenter.Count; i++)
             {
-                if (DirectSpots[i].X != double.NaN)
+                if (!double.IsNaN(DirectSpots[i].X))
                 {
                     max = Math.Max(max, Math.Abs(DirectSpots[i].X));
                     max = Math.Max(max, Math.Abs(DirectSpots[i].Y));
                 }
                 for (int j = 0; j < EllipseCenter[i].Count; j++)
                 {
-                    if (EllipseCenter[i][j].X != double.NaN)
+                    if (!double.IsNaN(EllipseCenter[i][j].X))
                     {
                         max = Math.Max(max, Math.Abs(EllipseCenter[i][j].X));
                         max = Math.Max(max, Math.Abs(EllipseCenter[i][j].Y));

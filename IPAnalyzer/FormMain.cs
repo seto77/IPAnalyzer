@@ -81,17 +81,12 @@ namespace IPAnalyzer
         public int CurrentRotation = 0;
 
         //private string fileName = "";
-        public string FileName        {            set; get;        }
+        public string FileName { set; get; }
         public string FileNameSub { set; get; } = "";
 
         public string FilePath { set; get; } = "";
 
-        public bool SequentialImageMode
-        {
-            set { toolStripButtonImageSequence.Enabled = value; }
-            get { return toolStripButtonImageSequence.Enabled; }
-
-        }
+        public bool SequentialImageMode { set => toolStripButtonImageSequence.Enabled = value; get => toolStripButtonImageSequence.Enabled; }
 
         public float SpotsSize = 64;
 
@@ -107,7 +102,7 @@ namespace IPAnalyzer
         public Point TableCenterPt;
         public IntegralProperty IP;
 
-        public PointD selectedSpot = new PointD(double.NaN, double.NaN);
+        public PointD selectedSpot = new(double.NaN, double.NaN);
 
         private IProgress<(long, long, long, string)> ip;//IReport
 
@@ -116,7 +111,6 @@ namespace IPAnalyzer
 
         double maxIntensity = uint.MinValue;
         double sumOfIntensity = 0;
-        double sumOfSquare = 0;
         double variance = 0;
         #endregion
 
@@ -125,16 +119,16 @@ namespace IPAnalyzer
         {
             ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
 
-            RegistryKey regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer");
-            try
+            using (var regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer"))
             {
-                string culture = (string)regKey.GetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
-                if (culture.ToLower().StartsWith("ja"))
-                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ja");
-                else
-                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                try
+                {
+                    string culture = (string)regKey.GetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
+                    Thread.CurrentThread.CurrentUICulture = culture.ToLower().StartsWith("ja") ?
+                            new System.Globalization.CultureInfo("ja") : new System.Globalization.CultureInfo("en");
+                }
+                catch { }
             }
-            catch { }
 
             InitializeComponent();
 
@@ -151,11 +145,8 @@ namespace IPAnalyzer
 
             try
             {
-
                 regKey.SetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
-
                 regKey.SetValue("initialDialog.AutomaricallyClose", InitialDialog.AutomaticallyClose);
-
 
                 //Main関係
                 regKey.SetValue("formMainWidth", Width);
@@ -168,9 +159,7 @@ namespace IPAnalyzer
                 regKey.SetValue("formFindParameterHeight", FormFindParameter.Height);
                 regKey.SetValue("formFindParameterLocationX", FormFindParameter.Location.X);
                 regKey.SetValue("formFindParameterLocationY", FormFindParameter.Location.Y);
-
                 
-
                 //IntTable関係
                 //regKey.SetValue("formIntTableWidth", FormIntTable.Width);
                 //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
@@ -232,7 +221,6 @@ namespace IPAnalyzer
                 regKey.SetValue("formProperty.radioButtonChiTop.Checked", FormProperty.radioButtonChiTop.Checked);
                 regKey.SetValue("formProperty.radioButtonChiBottom.Checked", FormProperty.radioButtonChiBottom.Checked);
 
-                regKey.SetValue("checkBoxTiltCorrectionChecked", FormProperty.checkBoxTiltCorrection.Checked);
                 regKey.SetValue("textBoxTiltCorrectionPhiText", FormProperty.numericBoxTiltPhi.Text);
                 regKey.SetValue("textBoxTiltCorrectionPsiText", FormProperty.numericBoxTiltTau.Text);
 
@@ -452,7 +440,6 @@ namespace IPAnalyzer
 
 
                     //ここからTilt Correction
-                    FormProperty.checkBoxTiltCorrection.Checked = (string)regKey.GetValue("checkBoxTiltCorrectionChecked", "True") == "True";
                     FormProperty.numericBoxTiltPhi.Text = (string)regKey.GetValue("textBoxTiltCorrectionPhiText", FormProperty.numericBoxTiltPhi.Text);
                     FormProperty.numericBoxTiltTau.Text = (string)regKey.GetValue("textBoxTiltCorrectionPsiText", FormProperty.numericBoxTiltTau.Text);
 
@@ -2079,7 +2066,7 @@ namespace IPAnalyzer
 
         private void ipaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SrcImgSize == null || SrcImgSize.Width == 0) return;
+            if (SrcImgSize.Width == 0) return;
 
             FormSaveImage.Visible = true;
 
@@ -2874,8 +2861,6 @@ namespace IPAnalyzer
                 //Sectorモードのとき
                 IP.SectorStartAngle = (double)FormProperty.numericUpDownSectorStartAngle.Value * Math.PI / 180.0; //開始角度
                 IP.SectorEndAngle = (double)FormProperty.numericUpDownSectorEndAngle.Value * Math.PI / 180.0; ;//終了角度
-
-                IP.IsTiltCorrection = FormProperty.checkBoxTiltCorrection.Checked;
 
                 IP.IsBraggBrentanoMode = FormProperty.radioButtonBraggBrentano.Checked;
             }

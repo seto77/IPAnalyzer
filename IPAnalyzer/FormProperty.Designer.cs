@@ -59,16 +59,15 @@
             this.groupBoxCameaLength = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.numericBoxCameraLength1 = new Crystallography.Controls.NumericBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBoxPixelShape = new System.Windows.Forms.GroupBox();
             this.numericBoxPixelKsi = new Crystallography.Controls.NumericBox();
             this.numericBoxPixelSizeY = new Crystallography.Controls.NumericBox();
             this.numericBoxPixelSizeX = new Crystallography.Controls.NumericBox();
-            this.checkBoxTiltCorrection = new System.Windows.Forms.CheckBox();
             this.groupBoxGandlfiRadius = new System.Windows.Forms.GroupBox();
             this.numericBoxGandlfiRadius = new Crystallography.Controls.NumericBox();
             this.groupBoxSphericalCorrection = new System.Windows.Forms.GroupBox();
             this.numericBoxSphericalCorections = new Crystallography.Controls.NumericBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBoxTiltCorrection = new System.Windows.Forms.GroupBox();
             this.numericBoxTiltTau = new Crystallography.Controls.NumericBox();
             this.numericBoxTiltPhi = new Crystallography.Controls.NumericBox();
@@ -356,9 +355,7 @@
             this.tabPageIP.Controls.Add(this.flowLayoutPanel7);
             this.tabPageIP.Controls.Add(this.flowLayoutPanelFootMode);
             this.tabPageIP.Controls.Add(this.flowLayoutPanelDirectSpotMode);
-            this.tabPageIP.Controls.Add(this.checkBox1);
             this.tabPageIP.Controls.Add(this.groupBoxPixelShape);
-            this.tabPageIP.Controls.Add(this.checkBoxTiltCorrection);
             this.tabPageIP.Controls.Add(this.groupBoxGandlfiRadius);
             this.tabPageIP.Controls.Add(this.groupBoxSphericalCorrection);
             this.tabPageIP.Controls.Add(this.groupBoxTiltCorrection);
@@ -436,13 +433,13 @@
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.TabStop = false;
             // 
-            // numericBoxFootY
+            // numericBoxFootPositionY
             // 
-            resources.ApplyResources(this.numericBoxFootPositionY, "numericBoxFootY");
+            resources.ApplyResources(this.numericBoxFootPositionY, "numericBoxFootPositionY");
             this.numericBoxFootPositionY.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxFootPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxFootPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxFootPositionY.Name = "numericBoxFootY";
+            this.numericBoxFootPositionY.Name = "numericBoxFootPositionY";
             this.numericBoxFootPositionY.RadianValue = 26.179938779914945D;
             this.numericBoxFootPositionY.RoundErrorAccuracy = 8;
             this.numericBoxFootPositionY.SkipEventDuringInput = false;
@@ -452,13 +449,13 @@
             this.numericBoxFootPositionY.Value = 1500D;
             this.numericBoxFootPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
-            // numericBoxFootX
+            // numericBoxFootPositionX
             // 
-            resources.ApplyResources(this.numericBoxFootPositionX, "numericBoxFootX");
+            resources.ApplyResources(this.numericBoxFootPositionX, "numericBoxFootPositionX");
             this.numericBoxFootPositionX.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxFootPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxFootPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxFootPositionX.Name = "numericBoxFootX";
+            this.numericBoxFootPositionX.Name = "numericBoxFootPositionX";
             this.numericBoxFootPositionX.RadianValue = 26.179938779914945D;
             this.numericBoxFootPositionX.RoundErrorAccuracy = 8;
             this.numericBoxFootPositionX.SkipEventDuringInput = false;
@@ -512,13 +509,13 @@
             this.groupBoxDirectSpotPosition.Name = "groupBoxDirectSpotPosition";
             this.groupBoxDirectSpotPosition.TabStop = false;
             // 
-            // numericBoxCenterPositionY
+            // numericBoxDirectSpotPositionY
             // 
-            resources.ApplyResources(this.numericBoxDirectSpotPositionY, "numericBoxCenterPositionY");
+            resources.ApplyResources(this.numericBoxDirectSpotPositionY, "numericBoxDirectSpotPositionY");
             this.numericBoxDirectSpotPositionY.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxDirectSpotPositionY.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxDirectSpotPositionY.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxDirectSpotPositionY.Name = "numericBoxCenterPositionY";
+            this.numericBoxDirectSpotPositionY.Name = "numericBoxDirectSpotPositionY";
             this.numericBoxDirectSpotPositionY.RadianValue = 26.179938779914945D;
             this.numericBoxDirectSpotPositionY.RoundErrorAccuracy = 8;
             this.numericBoxDirectSpotPositionY.SkipEventDuringInput = false;
@@ -528,13 +525,13 @@
             this.numericBoxDirectSpotPositionY.Value = 1500D;
             this.numericBoxDirectSpotPositionY.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
-            // numericBoxCenterPositionX
+            // numericBoxDirectSpotPositionX
             // 
-            resources.ApplyResources(this.numericBoxDirectSpotPositionX, "numericBoxCenterPositionX");
+            resources.ApplyResources(this.numericBoxDirectSpotPositionX, "numericBoxDirectSpotPositionX");
             this.numericBoxDirectSpotPositionX.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxDirectSpotPositionX.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxDirectSpotPositionX.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxDirectSpotPositionX.Name = "numericBoxCenterPositionX";
+            this.numericBoxDirectSpotPositionX.Name = "numericBoxDirectSpotPositionX";
             this.numericBoxDirectSpotPositionX.RadianValue = 26.179938779914945D;
             this.numericBoxDirectSpotPositionX.RoundErrorAccuracy = 8;
             this.numericBoxDirectSpotPositionX.SkipEventDuringInput = false;
@@ -573,15 +570,6 @@
             this.numericBoxCameraLength1.Value = 445D;
             this.numericBoxCameraLength1.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
-            // checkBox1
-            // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBoxTiltCorrection_CheckedChanged);
-            // 
             // groupBoxPixelShape
             // 
             this.groupBoxPixelShape.Controls.Add(this.numericBoxPixelKsi);
@@ -591,13 +579,13 @@
             this.groupBoxPixelShape.Name = "groupBoxPixelShape";
             this.groupBoxPixelShape.TabStop = false;
             // 
-            // numericalTextBoxPixelKsi
+            // numericBoxPixelKsi
             // 
-            resources.ApplyResources(this.numericBoxPixelKsi, "numericalTextBoxPixelKsi");
+            resources.ApplyResources(this.numericBoxPixelKsi, "numericBoxPixelKsi");
             this.numericBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelKsi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelKsi.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxPixelKsi.Name = "numericalTextBoxPixelKsi";
+            this.numericBoxPixelKsi.Name = "numericBoxPixelKsi";
             this.numericBoxPixelKsi.RoundErrorAccuracy = 8;
             this.numericBoxPixelKsi.SmartIncrement = true;
             this.numericBoxPixelKsi.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -634,15 +622,6 @@
             this.numericBoxPixelSizeX.Value = 0.1D;
             this.numericBoxPixelSizeX.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
-            // checkBoxTiltCorrection
-            // 
-            resources.ApplyResources(this.checkBoxTiltCorrection, "checkBoxTiltCorrection");
-            this.checkBoxTiltCorrection.Checked = true;
-            this.checkBoxTiltCorrection.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTiltCorrection.Name = "checkBoxTiltCorrection";
-            this.checkBoxTiltCorrection.UseVisualStyleBackColor = true;
-            this.checkBoxTiltCorrection.CheckedChanged += new System.EventHandler(this.checkBoxTiltCorrection_CheckedChanged);
-            // 
             // groupBoxGandlfiRadius
             // 
             this.groupBoxGandlfiRadius.Controls.Add(this.numericBoxGandlfiRadius);
@@ -666,9 +645,11 @@
             // groupBoxSphericalCorrection
             // 
             this.groupBoxSphericalCorrection.Controls.Add(this.numericBoxSphericalCorections);
+            this.groupBoxSphericalCorrection.Controls.Add(this.label26);
             resources.ApplyResources(this.groupBoxSphericalCorrection, "groupBoxSphericalCorrection");
             this.groupBoxSphericalCorrection.Name = "groupBoxSphericalCorrection";
             this.groupBoxSphericalCorrection.TabStop = false;
+            this.groupBoxSphericalCorrection.Enter += new System.EventHandler(this.groupBoxSphericalCorrection_Enter);
             // 
             // numericBoxSphericalCorections
             // 
@@ -680,9 +661,15 @@
             this.numericBoxSphericalCorections.RoundErrorAccuracy = 8;
             this.numericBoxSphericalCorections.SkipEventDuringInput = false;
             this.numericBoxSphericalCorections.SmartIncrement = true;
-            this.numericBoxSphericalCorections.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxSphericalCorections.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxSphericalCorections.ThonsandsSeparator = true;
             this.numericBoxSphericalCorections.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Name = "label26";
             // 
             // groupBoxTiltCorrection
             // 
@@ -692,13 +679,13 @@
             this.groupBoxTiltCorrection.Name = "groupBoxTiltCorrection";
             this.groupBoxTiltCorrection.TabStop = false;
             // 
-            // numericBoxTiltCorrectionTau
+            // numericBoxTiltTau
             // 
-            resources.ApplyResources(this.numericBoxTiltTau, "numericBoxTiltCorrectionTau");
+            resources.ApplyResources(this.numericBoxTiltTau, "numericBoxTiltTau");
             this.numericBoxTiltTau.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltTau.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltTau.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltTau.Name = "numericBoxTiltCorrectionTau";
+            this.numericBoxTiltTau.Name = "numericBoxTiltTau";
             this.numericBoxTiltTau.RoundErrorAccuracy = 8;
             this.numericBoxTiltTau.SkipEventDuringInput = false;
             this.numericBoxTiltTau.SmartIncrement = true;
@@ -706,13 +693,13 @@
             this.numericBoxTiltTau.ThonsandsSeparator = true;
             this.numericBoxTiltTau.ValueChanged += new Crystallography.Controls.NumericBox.MyEventHandler(this.DetectorParameters_Changed);
             // 
-            // numericBoxTiltCorrectionPhi
+            // numericBoxTiltPhi
             // 
-            resources.ApplyResources(this.numericBoxTiltPhi, "numericBoxTiltCorrectionPhi");
+            resources.ApplyResources(this.numericBoxTiltPhi, "numericBoxTiltPhi");
             this.numericBoxTiltPhi.BackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltPhi.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltPhi.HeaderBackColor = System.Drawing.SystemColors.Control;
-            this.numericBoxTiltPhi.Name = "numericBoxTiltCorrectionPhi";
+            this.numericBoxTiltPhi.Name = "numericBoxTiltPhi";
             this.numericBoxTiltPhi.RoundErrorAccuracy = 8;
             this.numericBoxTiltPhi.SkipEventDuringInput = false;
             this.numericBoxTiltPhi.SmartIncrement = true;
@@ -2094,6 +2081,7 @@
             this.groupBoxPixelShape.ResumeLayout(false);
             this.groupBoxGandlfiRadius.ResumeLayout(false);
             this.groupBoxSphericalCorrection.ResumeLayout(false);
+            this.groupBoxSphericalCorrection.PerformLayout();
             this.groupBoxTiltCorrection.ResumeLayout(false);
             this.tabPageIntegralRegion.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
@@ -2175,7 +2163,6 @@
         public System.Windows.Forms.TabPage tabPageIP;
         public System.Windows.Forms.TabPage tabPageXRay;
         public System.Windows.Forms.GroupBox groupBoxTiltCorrection;
-        public System.Windows.Forms.CheckBox checkBoxTiltCorrection;
         public System.Windows.Forms.GroupBox groupBoxPixelShape;
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.Label label3;
@@ -2291,7 +2278,6 @@
         private System.Windows.Forms.GroupBox groupBoxSendPDI;
         public System.Windows.Forms.CheckBox checkBoxSendUnrolledImageToPDIndexer;
         private System.Windows.Forms.CheckBox checkBoxExtensionIPA;
-        public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.GroupBox groupBoxSphericalCorrection;
         public Crystallography.Controls.NumericBox numericBoxSphericalCorections;
         public System.Windows.Forms.Label label46;
@@ -2365,5 +2351,6 @@
         public System.Windows.Forms.RadioButton radioButtonDirectSpotMode;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label26;
     }
 }
