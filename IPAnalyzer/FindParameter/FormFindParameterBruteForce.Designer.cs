@@ -37,15 +37,15 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.checkBoxCameraLength = new System.Windows.Forms.CheckBox();
             this.checkBoxTau = new System.Windows.Forms.CheckBox();
-            this.checkBoxCenterX = new System.Windows.Forms.CheckBox();
-            this.checkBoxCenterY = new System.Windows.Forms.CheckBox();
+            this.checkBoxPointX = new System.Windows.Forms.CheckBox();
+            this.checkBoxPointY = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numericBoxCameraLengthRange = new Crystallography.Controls.NumericBox();
             this.numericBoxCameraLengthStep = new Crystallography.Controls.NumericBox();
-            this.numericBoxCenterXStep = new Crystallography.Controls.NumericBox();
-            this.numericBoxCenterYStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxPointXStep = new Crystallography.Controls.NumericBox();
+            this.numericBoxPointYStep = new Crystallography.Controls.NumericBox();
             this.numericBoxFootPointXRange = new Crystallography.Controls.NumericBox();
             this.numericBoxFootPointYRange = new Crystallography.Controls.NumericBox();
             this.checkBoxWaveLength = new System.Windows.Forms.CheckBox();
@@ -224,21 +224,21 @@
             // 
             // checkBoxCenterX
             // 
-            resources.ApplyResources(this.checkBoxCenterX, "checkBoxCenterX");
-            this.checkBoxCenterX.Checked = true;
-            this.checkBoxCenterX.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCenterX.Name = "checkBoxCenterX";
-            this.checkBoxCenterX.UseVisualStyleBackColor = true;
-            this.checkBoxCenterX.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
+            resources.ApplyResources(this.checkBoxPointX, "checkBoxCenterX");
+            this.checkBoxPointX.Checked = true;
+            this.checkBoxPointX.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPointX.Name = "checkBoxCenterX";
+            this.checkBoxPointX.UseVisualStyleBackColor = true;
+            this.checkBoxPointX.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
             // checkBoxCenterY
             // 
-            resources.ApplyResources(this.checkBoxCenterY, "checkBoxCenterY");
-            this.checkBoxCenterY.Checked = true;
-            this.checkBoxCenterY.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCenterY.Name = "checkBoxCenterY";
-            this.checkBoxCenterY.UseVisualStyleBackColor = true;
-            this.checkBoxCenterY.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
+            resources.ApplyResources(this.checkBoxPointY, "checkBoxCenterY");
+            this.checkBoxPointY.Checked = true;
+            this.checkBoxPointY.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPointY.Name = "checkBoxCenterY";
+            this.checkBoxPointY.UseVisualStyleBackColor = true;
+            this.checkBoxPointY.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -248,10 +248,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxCameraLengthRange, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxCameraLengthStep, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxCenterX, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxCenterY, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.numericBoxCenterXStep, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericBoxCenterYStep, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxPointX, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxPointY, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxPointXStep, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.numericBoxPointYStep, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointXRange, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.numericBoxFootPointYRange, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxWaveLength, 0, 13);
@@ -313,31 +313,31 @@
             // 
             // numericBoxCenterXStep
             // 
-            this.numericBoxCenterXStep.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.numericBoxCenterXStep, "numericBoxCenterXStep");
-            this.numericBoxCenterXStep.Maximum = 1D;
-            this.numericBoxCenterXStep.Minimum = 0D;
-            this.numericBoxCenterXStep.Name = "numericBoxCenterXStep";
-            this.numericBoxCenterXStep.RadianValue = 0.0034906585039886592D;
-            this.numericBoxCenterXStep.RoundErrorAccuracy = 10;
-            this.numericBoxCenterXStep.ShowUpDown = true;
-            this.numericBoxCenterXStep.SmartIncrement = true;
-            this.numericBoxCenterXStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxCenterXStep.Value = 0.2D;
+            this.numericBoxPointXStep.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.numericBoxPointXStep, "numericBoxCenterXStep");
+            this.numericBoxPointXStep.Maximum = 1D;
+            this.numericBoxPointXStep.Minimum = 0D;
+            this.numericBoxPointXStep.Name = "numericBoxCenterXStep";
+            this.numericBoxPointXStep.RadianValue = 0.0034906585039886592D;
+            this.numericBoxPointXStep.RoundErrorAccuracy = 10;
+            this.numericBoxPointXStep.ShowUpDown = true;
+            this.numericBoxPointXStep.SmartIncrement = true;
+            this.numericBoxPointXStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxPointXStep.Value = 0.2D;
             // 
             // numericBoxCenterYStep
             // 
-            this.numericBoxCenterYStep.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.numericBoxCenterYStep, "numericBoxCenterYStep");
-            this.numericBoxCenterYStep.Maximum = 1D;
-            this.numericBoxCenterYStep.Minimum = 0D;
-            this.numericBoxCenterYStep.Name = "numericBoxCenterYStep";
-            this.numericBoxCenterYStep.RadianValue = 0.0034906585039886592D;
-            this.numericBoxCenterYStep.RoundErrorAccuracy = 10;
-            this.numericBoxCenterYStep.ShowUpDown = true;
-            this.numericBoxCenterYStep.SmartIncrement = true;
-            this.numericBoxCenterYStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericBoxCenterYStep.Value = 0.2D;
+            this.numericBoxPointYStep.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.numericBoxPointYStep, "numericBoxCenterYStep");
+            this.numericBoxPointYStep.Maximum = 1D;
+            this.numericBoxPointYStep.Minimum = 0D;
+            this.numericBoxPointYStep.Name = "numericBoxCenterYStep";
+            this.numericBoxPointYStep.RadianValue = 0.0034906585039886592D;
+            this.numericBoxPointYStep.RoundErrorAccuracy = 10;
+            this.numericBoxPointYStep.ShowUpDown = true;
+            this.numericBoxPointYStep.SmartIncrement = true;
+            this.numericBoxPointYStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericBoxPointYStep.Value = 0.2D;
             // 
             // numericBoxFootPointXRange
             // 
@@ -1325,8 +1325,8 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.CheckBox checkBoxCameraLength;
         private System.Windows.Forms.CheckBox checkBoxTau;
-        private System.Windows.Forms.CheckBox checkBoxCenterX;
-        private System.Windows.Forms.CheckBox checkBoxCenterY;
+        private System.Windows.Forms.CheckBox checkBoxPointX;
+        private System.Windows.Forms.CheckBox checkBoxPointY;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -1393,8 +1393,8 @@
         private System.Windows.Forms.RadioButton radioButtonStandardLaB6;
         private System.Windows.Forms.RadioButton radioButtonStandardAl2O3;
         private System.Windows.Forms.RadioButton radioButtonStandardOther;
-        private Crystallography.Controls.NumericBox numericBoxCenterXStep;
-        private Crystallography.Controls.NumericBox numericBoxCenterYStep;
+        private Crystallography.Controls.NumericBox numericBoxPointXStep;
+        private Crystallography.Controls.NumericBox numericBoxPointYStep;
         private Crystallography.Controls.NumericBox numericBoxFootPointYRange;
         private Crystallography.Controls.NumericBox numericBoxFootPointXRange;
         private Crystallography.Controls.NumericBox numericBoxPhiRange;

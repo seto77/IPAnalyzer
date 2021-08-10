@@ -46,12 +46,12 @@ namespace IPAnalyzer
             get => FormMain.FormProperty.FootPosition.Y;
         }
 
-        public double DirectSpotX
+        public double DirectX
         {
             set => FormMain.FormProperty.DirectSpotPosition = new PointD(value, FormMain.FormProperty.DirectSpotPosition.Y);
             get => FormMain.FormProperty.DirectSpotPosition.X;
         }
-        public double DirectSpotY
+        public double DirectY
         {
             set => FormMain.FormProperty.DirectSpotPosition = new PointD(FormMain.FormProperty.DirectSpotPosition.X, value);
             get => FormMain.FormProperty.DirectSpotPosition.Y;
@@ -347,16 +347,24 @@ namespace IPAnalyzer
             var cameraLengthStep = numericBoxCameraLengthStep.Value;
             var tauStep = numericBoxTauStep.Value;
             var phiStep = numericBoxPhiStep.Value;
-            var centerXStep = numericBoxCenterXStep.Value;
-            var centerYStep = numericBoxCenterYStep.Value;
+            var pointXStep = numericBoxPointXStep.Value;
+            var pointYStep = numericBoxPointYStep.Value;
             var waveLengthStep = numericBoxWaveLengthStep.Value;
 
-            var cameraLengthRange = checkBoxCameraLength.Checked ? (int)numericBoxCameraLengthRange.Value : 0;
-            var tauRange = checkBoxTau.Checked ? (int)numericBoxTauRange.Value : 0;
-            var phiRange = checkBoxPhi.Checked ? (int)numericBoxPhiRange.Value : 0;
-            var centerXRange = checkBoxCenterX.Checked ? (int)numericBoxFootPointXRange.Value : 0;
-            var centerYRange = checkBoxCenterY.Checked ? (int)numericBoxFootPointYRange.Value : 0;
-            var waveLengthRange = checkBoxWaveLength.Checked ? (int)numericBoxWaveLengthRange.Value : 0;
+            //「3」と入力したら、 0,-1,1,-2,2,-3,3 の数列を返す関数
+            List<int> genArray(int n)
+            {
+                var result = Enumerable.Range(-n, 2*n + 1).ToList();
+                result.Sort((n1, n2) => Math.Abs(n1).CompareTo(Math.Abs(n2)));
+               return result;
+            }
+
+            var cameraLengthRange = genArray(checkBoxCameraLength.Checked ? numericBoxCameraLengthRange.ValueInteger : 0);
+            var tauRange = genArray(checkBoxTau.Checked ? numericBoxTauRange.ValueInteger : 0);
+            var phiRange = genArray(checkBoxPhi.Checked ? numericBoxPhiRange.ValueInteger : 0);
+            var pointXRange = genArray(checkBoxPointX.Checked ? numericBoxFootPointXRange.ValueInteger : 0);
+            var pointYRange = genArray(checkBoxPointY.Checked ? numericBoxFootPointYRange.ValueInteger : 0);
+            var waveLengthRange = genArray(checkBoxWaveLength.Checked ? numericBoxWaveLengthRange.ValueInteger : 0);
 
             var sw = new Stopwatch();
             sw.Start();
@@ -364,7 +372,7 @@ namespace IPAnalyzer
             int count = 0;
             var results = new SortedList<double, flatPanelValues>();
 
-            var renewalTime = 7;
+            var renewalTime = 6;
             
             FormMain.SkipDrawing = true;
 
@@ -374,65 +382,66 @@ namespace IPAnalyzer
             for (int n = 0; n < (int)numericBoxIteration.Value; n++)
             {
                 initialValue = DetectorCoordinates == FormProperty.DetectorCoordinatesEnum.DirectSpot ?
-                    new flatPanelValues(CameraLength1, Phi, Tau, DirectSpotX, DirectSpotY, WaveLength) :
+                    new flatPanelValues(CameraLength1, Phi, Tau, DirectX, DirectY, WaveLength) :
                     new flatPanelValues(CameraLength2, Phi, Tau, FootX, FootY, WaveLength);
 
-                results.Clear();
-                for (int paramCameraLength = -cameraLengthRange; paramCameraLength <= cameraLengthRange; paramCameraLength++)
-                    for (int paramCenterX = -centerXRange; paramCenterX <= centerXRange; paramCenterX++)
-                        for (int paramCenterY = -centerYRange; paramCenterY <= centerYRange; paramCenterY++)
-                            for (int paramPhi = -phiRange; paramPhi <= phiRange; paramPhi++)
-                                for (int paramTau = -tauRange; paramTau <= tauRange; paramTau++)
+                foreach (int paramCameraLength in cameraLengthRange)
+                    foreach (int paramPointX in pointXRange)
+                        foreach (int paramPointY in pointYRange)
+                            foreach (int paramPhi in phiRange)
+                                foreach (int paramTau in tauRange)
                                 {
-                                    
-
-                                    //各パラメータの値を変更
-                                    var cameraLength = initialValue.CameraLength + paramCameraLength * cameraLengthStep;
-                                    var centerX = initialValue.CenterX + paramCenterX * centerXStep;
-                                    var centerY = initialValue.CenterY + paramCenterY * centerYStep;
-                                    var phi = initialValue.Phi + paramPhi * phiStep;
-                                    var tau = initialValue.Tau + paramTau * tauStep;
-
-                                    FormMain.FormProperty.SkipEvent = true;
-                                    if (directMode)
+                                    if (n < (int)numericBoxIteration.Value)
                                     {
-                                        CameraLength1 = cameraLength;
-                                        DirectSpotX = centerX;
-                                        DirectSpotY = centerY;
-                                    }
-                                    else
-                                    {
-                                        CameraLength2 = cameraLength;
-                                        FootX = centerX;
-                                        FootY = centerY;
-                                    }
-                                    Tau = tau;
-                                    Phi = phi;
-                                    FormMain.FormProperty.SkipEvent = false;
+                                        //各パラメータの値を変更
+                                        var cameraLength = initialValue.CameraLength + paramCameraLength * cameraLengthStep;
+                                        var centerX = initialValue.PointX + paramPointX * pointXStep;
+                                        var centerY = initialValue.PointY + paramPointY * pointYStep;
+                                        var phi = initialValue.Phi + paramPhi * phiStep;
+                                        var tau = initialValue.Tau + paramTau * tauStep;
 
-                                    FormMain.FormProperty.DetectorParameters_Changed(sender, e);
-                                    FormMain.SetIntegralProperty();
-
-                                    var profile = Ring.GetProfile(Ring.IP);
-
-                                    for (int paramWaveLength = -waveLengthRange; paramWaveLength <= waveLengthRange; paramWaveLength++)
-                                    {
-                                        WaveLength = initialValue.WaveLength + paramWaveLength * waveLengthStep * 0.1;
-
-                                        count++;
-                                        Fitting(profile, crystal.Plane);
-                                        var r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
-                                        if (!results.ContainsKey(r) && !double.IsNaN(r))
-                                            results.Add(r, new flatPanelValues(cameraLength, phi, tau, centerX, centerY, WaveLength));
-
-                                        if (count % renewalTime == 0)
-                                            report(profile, n);
-
-                                        if (stopFlag)//終了フラグが立っているときは、初期値に戻して終了
+                                        FormMain.FormProperty.SkipEvent = true;
+                                        if (directMode)
                                         {
-                                            results.Clear();
-                                            results.Add(0, new flatPanelValues(initialValue.CameraLength, initialValue.Phi, initialValue.Tau, initialValue.CenterX, initialValue.CenterY, initialValue.WaveLength));
-                                            paramCameraLength = paramCenterX = paramCenterY = paramPhi = paramTau = paramWaveLength = n = int.MaxValue - 1;
+                                            CameraLength1 = cameraLength;
+                                            DirectX = centerX;
+                                            DirectY = centerY;
+                                        }
+                                        else
+                                        {
+                                            CameraLength2 = cameraLength;
+                                            FootX = centerX;
+                                            FootY = centerY;
+                                        }
+                                        Tau = tau;
+                                        Phi = phi;
+                                        FormMain.FormProperty.SkipEvent = false;
+
+                                        FormMain.FormProperty.DetectorParameters_Changed(sender, e);
+                                        FormMain.SetIntegralProperty();
+
+                                        var profile = Ring.GetProfile(Ring.IP);
+
+                                        foreach (int paramWaveLength in waveLengthRange)
+                                        {
+                                            WaveLength = initialValue.WaveLength + paramWaveLength * waveLengthStep * 0.1;
+
+                                            count++;
+                                            Fitting(profile, crystal.Plane);
+                                            var r = evaluatePeakHeightAndTwoTheta(profile, crystal.Plane);
+                                            if (!results.ContainsKey(r) && !double.IsNaN(r))
+                                                results.Add(r, new flatPanelValues(cameraLength, phi, tau, centerX, centerY, WaveLength));
+
+                                            if (count % renewalTime == 0)
+                                                report(profile, n);
+
+                                            if (stopFlag)//終了フラグが立っているときは、初期値に戻して終了
+                                            {
+                                                results.Clear();
+                                                results.Add(0, new flatPanelValues(initialValue.CameraLength, initialValue.Phi, initialValue.Tau, initialValue.PointX, initialValue.PointY, initialValue.WaveLength));
+                                                n = int.MaxValue - 1;
+                                                break;
+                                            }
                                         }
                                     }
                                 }
@@ -441,14 +450,14 @@ namespace IPAnalyzer
                 if (directMode)
                 {
                     CameraLength1 = results.Values[0].CameraLength;
-                    DirectSpotX = results.Values[0].CenterX;
-                    DirectSpotY = results.Values[0].CenterY;
+                    DirectX = results.Values[0].PointX;
+                    DirectY = results.Values[0].PointY;
                 }
                 else
                 {
                     CameraLength2 = results.Values[0].CameraLength;
-                    FootX = results.Values[0].CenterX;
-                    FootY = results.Values[0].CenterY;
+                    FootX = results.Values[0].PointX;
+                    FootY = results.Values[0].PointY;
                 }
                 Phi = results.Values[0].Phi;
                 Tau = results.Values[0].Tau;
@@ -457,16 +466,17 @@ namespace IPAnalyzer
                 FormMain.FormProperty.DetectorParameters_Changed(sender, e);
 
                 //改善が無かった場合は、ステップを小さくする
-                if (CameraLength2 == initialValue.CameraLength && Tau == initialValue.Tau && Phi == initialValue.Phi
-                 && WaveLength == initialValue.WaveLength && FootX == initialValue.CenterX && FootY == initialValue.CenterY)
-                {
-                    cameraLengthStep = nextStep(cameraLengthStep);
-                    tauStep = nextStep(tauStep);
-                    phiStep = nextStep(phiStep);
-                    centerXStep = nextStep(centerXStep);
-                    centerYStep = nextStep(centerYStep);
-                    waveLengthStep = nextStep(waveLengthStep);
-                }
+                if ((directMode && CameraLength1 == initialValue.CameraLength && DirectX == initialValue.PointX && DirectY == initialValue.PointY) ||
+                    (!directMode && CameraLength2 == initialValue.CameraLength && FootX == initialValue.PointX && FootY == initialValue.PointY))
+                    if (Tau == initialValue.Tau && Phi == initialValue.Phi && WaveLength == initialValue.WaveLength)
+                    {
+                        cameraLengthStep = nextStep(cameraLengthStep);
+                        tauStep = nextStep(tauStep);
+                        phiStep = nextStep(phiStep);
+                        pointXStep = nextStep(pointXStep);
+                        pointYStep = nextStep(pointYStep);
+                        waveLengthStep = nextStep(waveLengthStep);
+                    }
             }
             FormMain.SkipDrawing = false;
 
@@ -475,7 +485,7 @@ namespace IPAnalyzer
             {
                 //int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
 
-                var total = (2 * phiRange + 1) * (2 * centerXRange + 1) * (2 * cameraLengthRange + 1) * (2 * tauRange + 1) * (2 * centerYRange + 1) * (2 * waveLengthRange + 1);
+                var total = phiRange.Count() * pointXRange.Count() * cameraLengthRange.Count() * tauRange.Count() * pointYRange.Count() * waveLengthRange.Count();
                 double progress = (double)count / (int)numericBoxIteration.Value / total;
                 toolStripStatusLabel1.Text = 
                     $"  {(sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime:f1} ms / step." +
@@ -488,19 +498,19 @@ namespace IPAnalyzer
 
                 textBox1.Text +=
                     $"Current best values\r\n" +
-                    $"     CL : {best.CameraLength:g10}{(best.CameraLength!=initialValue.CameraLength? " (Changed)" : " (Unchanged)")}\r\n" +
-                    $"     Phi: {best.Phi:g10}{(best.Phi != initialValue.Phi ? " (Changed)" : " (Unchanged)")}\r\n" +
-                    $"     Tau: {best.Tau:g10}{(best.Tau != initialValue.Tau ? " (Changed)" : " (Unchanged)")}\r\n" +
-                    $"     X  : {best.CenterX:g10}{(best.CenterX != initialValue.CenterX ? " (Changed)" : " (Unchanged)")}\r\n" +
-                    $"     Y  : {best.CenterY:g10}{(best.CenterY != initialValue.CenterY ? " (Changed)" : " (Unchanged)")}\r\n" +
-                    $"     Wave length:\t{best.WaveLength}{(best.WaveLength != initialValue.WaveLength ? " (Changed)" : " (Unchanged)")}\r\n" +
+                    $"    CL  : {best.CameraLength:g10}{(best.CameraLength!=initialValue.CameraLength? " (Changed)" : " (Unchanged)")}\r\n" +
+                    $"    X   : {best.PointX:g10}{(best.PointX != initialValue.PointX ? " (Changed)" : " (Unchanged)")}\r\n" +
+                    $"    Y   : {best.PointY:g10}{(best.PointY != initialValue.PointY ? " (Changed)" : " (Unchanged)")}\r\n" +
+                    $"    Phi : {best.Phi:g10}{(best.Phi != initialValue.Phi ? " (Changed)" : " (Unchanged)")}\r\n" +
+                    $"    Tau : {best.Tau:g10}{(best.Tau != initialValue.Tau ? " (Changed)" : " (Unchanged)")}\r\n" +
+                    $"    Wave:\t{best.WaveLength}{(best.WaveLength != initialValue.WaveLength ? " (Changed)" : " (Unchanged)")}\r\n" +
                     $"Current steps: \r\n" +
-                    $"     CL : {cameraLengthStep:g10}\r\n" +
-                    $"     Phi: {phiStep:g10}\r\n" +
-                    $"     Tau: {tauStep:g10}\r\n" +
-                    $"     X  : {centerXStep:g10}\r\n" +
-                    $"     Y  : {centerYStep:g10}\r\n" +
-                    $"     Wave length:\t{waveLengthStep:g10}\r\n";
+                    $"    CL  : {cameraLengthStep:g10}\r\n" +
+                    $"    X   : {pointXStep:g10}\r\n" +
+                    $"    Y   : {pointYStep:g10}\r\n" +
+                    $"    Phi : {phiStep:g10}\r\n" +
+                    $"    Tau : {tauStep:g10}\r\n" +
+                    $"    Wave:\t{waveLengthStep:g10}\r\n";
                 if (results.Count > 4)
                     textBox1.Text += $"\r\n No.1: {results.Keys[0]}\r\n No.2: {results.Keys[1]}\r\n No.3: {results.Keys[2]}\r\n No.4: {results.Keys[3]}";
 
@@ -521,14 +531,14 @@ namespace IPAnalyzer
 
         struct flatPanelValues
         {
-            public double CameraLength, Tau, Phi, CenterX, CenterY, WaveLength;
+            public double CameraLength, Tau, Phi, PointX, PointY, WaveLength;
             public flatPanelValues(double cameraLength,double phi, double tau, double centerX, double centerY, double waveLength)
             {
                 CameraLength = cameraLength;
                 Phi = phi;
                 Tau = tau;
-                CenterX = centerX;
-                CenterY = centerY;
+                PointX = centerX;
+                PointY = centerY;
                 WaveLength = waveLength;
             }
 
@@ -642,8 +652,8 @@ namespace IPAnalyzer
             numericBoxWaveLengthRange.Enabled = numericBoxWaveLengthStep.Enabled = checkBoxWaveLength.Checked;
             numericBoxTauRange.Enabled = numericBoxTauStep.Enabled = checkBoxTau.Checked;
             numericBoxPhiRange.Enabled = numericBoxPhiStep.Enabled = checkBoxPhi.Checked;
-            numericBoxFootPointXRange.Enabled = numericBoxCenterXStep.Enabled = checkBoxCenterX.Checked;
-            numericBoxFootPointYRange.Enabled = numericBoxCenterYStep.Enabled = checkBoxCenterY.Checked;
+            numericBoxFootPointXRange.Enabled = numericBoxPointXStep.Enabled = checkBoxPointX.Checked;
+            numericBoxFootPointYRange.Enabled = numericBoxPointYStep.Enabled = checkBoxPointY.Checked;
 
         }
 
@@ -913,14 +923,14 @@ namespace IPAnalyzer
                 if(jp)
                 {
                     checkBoxCameraLength.Text = "カメラ長1";
-                    checkBoxCenterX.Text = "ダイレクトスポット X";
-                    checkBoxCenterY.Text = "ダイレクトスポット Y";
+                    checkBoxPointX.Text = "ダイレクトスポット X";
+                    checkBoxPointY.Text = "ダイレクトスポット Y";
                 }
                 else
                 {
                     checkBoxCameraLength.Text = "Camera length 1";
-                    checkBoxCenterX.Text = "Direct spot X";
-                    checkBoxCenterY.Text = "Direct spot Y";
+                    checkBoxPointX.Text = "Direct spot X";
+                    checkBoxPointY.Text = "Direct spot Y";
                 }
             }
             else
@@ -928,14 +938,14 @@ namespace IPAnalyzer
                 if (jp)
                 {
                     checkBoxCameraLength.Text = "カメラ長2";
-                    checkBoxCenterX.Text = "垂線の足 X";
-                    checkBoxCenterY.Text = "垂線の足 Y";
+                    checkBoxPointX.Text = "垂線の足 X";
+                    checkBoxPointY.Text = "垂線の足 Y";
                 }
                 else
                 {
                     checkBoxCameraLength.Text = "Camera length 2";
-                    checkBoxCenterX.Text = "Foot X";
-                    checkBoxCenterY.Text = "Foot Y";
+                    checkBoxPointX.Text = "Foot X";
+                    checkBoxPointY.Text = "Foot Y";
                 }
 
             }
