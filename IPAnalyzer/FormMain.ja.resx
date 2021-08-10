@@ -57,65 +57,100 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="Microsoft.DotNet.DesignTools.Server" name="Microsoft.DotNet.DesignTools.Server, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-  <data name="statusStrip1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="statusStrip1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="statusStrip1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>881, 27</value>
   </data>
-  <data name="statusStrip1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 163</value>
   </data>
-  <data name="toolStripContainer1.BottomToolStripPanel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 314</value>
   </data>
-  <data name="toolStripContainer1.BottomToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 163</value>
   </data>
-  <data name="toolStripContainer1.BottomToolStripPanel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 477</value>
   </data>
-  <data name="toolStripContainer1.BottomToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 133</value>
   </data>
-  <data name="splitContainer1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>656, 568</value>
   </data>
-  <data name="splitContainer1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>656, 21</value>
   </data>
-  <data name="splitContainer1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>656, 21</value>
   </data>
-  <data name="splitContainer2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 610</value>
   </data>
-  <data name="splitContainer2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
+    <value>118</value>
   </data>
-  <data name="splitContainer2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 610</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 54</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 0</value>
+  </data>
+  <data name="panelMousePos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 0</value>
+  </data>
+  <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 200</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 868</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>664</value>
+  </data>
+  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 868</value>
+  </data>
+  <data name="toolStrip1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9.75pt</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 667</value>
+  </data>
+  <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 995</value>
+  </data>
+  <data name="toolStrip2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 72</value>
+  </data>
+  <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9.75pt</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 72</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 28</value>
   </data>
   <data name="textBoxInformation.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
-  </data>
-  <data name="textBoxInformation.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="textBoxInformation.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="textBoxInformation.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="textBoxInformation.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 18</value>
@@ -127,24 +162,11 @@
   <data name="textBoxInformation.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 296</value>
   </data>
-  <data name="textBoxInformation.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBoxInformation.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label11.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label11.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label11.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 18</value>
@@ -152,56 +174,14 @@
   <data name="label11.Text" xml:space="preserve">
     <value>画像情報</value>
   </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel4.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panel4.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="panel4.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 163</value>
-  </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 314</value>
-  </data>
-  <data name="panel4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="scalablePictureBoxThumbnail.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="scalablePictureBoxThumbnail.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="scalablePictureBoxThumbnail.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="scalablePictureBoxThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 44</value>
   </data>
   <data name="scalablePictureBoxThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 119</value>
   </data>
-  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="radioButtonNearCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="radioButtonNearCenter.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="radioButtonNearCenter.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="radioButtonNearCenter.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="radioButtonNearCenter.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 22</value>
@@ -215,20 +195,8 @@
   <data name="radioButtonNearCenter.Text" xml:space="preserve">
     <value>中心付近</value>
   </data>
-  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="radioButtonWhole.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="radioButtonWhole.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="radioButtonWhole.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="radioButtonWhole.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="radioButtonWhole.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -239,53 +207,14 @@
   <data name="radioButtonWhole.Text" xml:space="preserve">
     <value>全体表示</value>
   </data>
-  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel3.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panel3.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="panel3.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 163</value>
-  </data>
-  <data name="panel3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBoxScale2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="comboBoxScale2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="comboBoxScale2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="comboBoxScale2.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 106</value>
   </data>
   <data name="comboBoxScale2.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 25</value>
   </data>
-  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label9.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label9.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label9.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 88</value>
@@ -295,18 +224,6 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>グレー/カラー</value>
-  </data>
-  <data name="label9.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBoxScale1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="comboBoxScale1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="comboBoxScale1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="comboBoxScale1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 63</value>
@@ -320,15 +237,6 @@
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="label7.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label7.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label7.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 45</value>
   </data>
@@ -337,18 +245,6 @@
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>強度スケール</value>
-  </data>
-  <data name="label7.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBoxGradient.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="comboBoxGradient.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="comboBoxGradient.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="comboBoxGradient.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 20</value>
@@ -362,452 +258,20 @@
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="label5.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label5.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label5.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 18</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>ポジ/ネガ</value>
   </data>
-  <data name="label5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="panel2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 477</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 133</value>
-  </data>
-  <data name="panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer2.Panel1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer2.Panel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="splitContainer2.Panel1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer2.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="scalablePictureBox.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="scalablePictureBox.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="scalablePictureBox.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 568</value>
-  </data>
-  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelResolution.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelResolution.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelResolution.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelResolution.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointChi.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointChi.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointChi.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointD.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointD.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointD.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointD.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointTheta.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointTheta.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointTheta.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointR.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointR.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointR.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointR.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointIntensity.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointIntensity.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointIntensity.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label6.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label6.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label6.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label8.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label8.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label8.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label8.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label10.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label10.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label10.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label10.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label12.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label12.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label12.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label12.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label13.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label13.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label13.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label13.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label14.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label14.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label14.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label14.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tableLayoutPanel1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tableLayoutPanel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tableLayoutPanel1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 21</value>
-  </data>
-  <data name="tableLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointReal.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointReal.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointReal.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label3.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label3.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label3.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label4.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label4.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label4.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelMousePointPixel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointPixel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="labelMousePointPixel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tableLayoutPanel3.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tableLayoutPanel3.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tableLayoutPanel3.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 21</value>
-  </data>
-  <data name="tableLayoutPanel3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer2.Panel2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer2.Panel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="splitContainer2.Panel2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer2.Panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 610</value>
-  </data>
-  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>118</value>
-  </data>
-  <data name="splitContainer2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonAutoLevel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="buttonAutoLevel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="buttonAutoLevel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonReset.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="buttonReset.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="buttonReset.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="buttonReset.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="trackBarAdvancedMinInt.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="trackBarAdvancedMinInt.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="trackBarAdvancedMinInt.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="trackBarAdvancedMinInt.Size" type="System.Drawing.Size, System.Drawing">
     <value>668, 27</value>
-  </data>
-  <data name="trackBarAdvancedMinInt.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="trackBarAdvancedMaxInt.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="trackBarAdvancedMaxInt.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="trackBarAdvancedMaxInt.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="trackBarAdvancedMaxInt.Size" type="System.Drawing.Size, System.Drawing">
     <value>668, 27</value>
   </data>
-  <data name="trackBarAdvancedMaxInt.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tableLayoutPanel2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tableLayoutPanel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tableLayoutPanel2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 610</value>
-  </data>
-  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 54</value>
-  </data>
-  <data name="tableLayoutPanel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="flowLayoutPanel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="flowLayoutPanel1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 0</value>
-  </data>
-  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panelMousePos.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panelMousePos.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="panelMousePos.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="panelMousePos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 0</value>
-  </data>
-  <data name="panelMousePos.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="splitContainer1.Panel1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="graphControlFrequency.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="graphControlFrequency.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="graphControlFrequency.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
-    <value>770, 169</value>
-  </data>
-  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="tabPage1.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="tabPage1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tabPage1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tabPage1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 27</value>
@@ -818,98 +282,41 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>強度頻度グラフ</value>
   </data>
-  <data name="tabPage1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="graphControlProfile.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="graphControlProfile.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="graphControlProfile.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>829, 169</value>
-  </data>
-  <data name="graphControlProfile.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPage2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tabPage2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tabPage2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 169</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 27</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>829, 169</value>
+    <value>770, 169</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>1次元化プロファイル</value>
   </data>
-  <data name="tabPage2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 169</value>
   </data>
-  <data name="textBoxStatisticsSelectedAreaSequential.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
   </data>
-  <data name="textBoxStatisticsSelectedAreaSequential.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 169</value>
   </data>
-  <data name="textBoxStatisticsSelectedAreaSequential.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>統計情報</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 86</value>
-  </data>
-  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxStatisticsSelectedArea.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="textBoxStatisticsSelectedArea.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="textBoxStatisticsSelectedArea.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+    <value>340, 86</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.Size" type="System.Drawing.Size, System.Drawing">
     <value>366, 86</value>
   </data>
-  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label17.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label17.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label17.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>679, 31</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 18</value>
-  </data>
-  <data name="label17.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaX1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaX1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="numericUpDownSelectedAreaX1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="numericUpDownSelectedAreaX1.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 3</value>
@@ -917,35 +324,11 @@
   <data name="numericUpDownSelectedAreaX1.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 25</value>
   </data>
-  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label18.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label18.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label18.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
     <value>227, 5</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 18</value>
-  </data>
-  <data name="label18.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaY1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaY1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="numericUpDownSelectedAreaY1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="numericUpDownSelectedAreaY1.Location" type="System.Drawing.Point, System.Drawing">
     <value>239, 3</value>
@@ -953,35 +336,11 @@
   <data name="numericUpDownSelectedAreaY1.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 25</value>
   </data>
-  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label19.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label19.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label19.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
     <value>364, 5</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 18</value>
-  </data>
-  <data name="label19.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaX2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaX2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="numericUpDownSelectedAreaX2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="numericUpDownSelectedAreaX2.Location" type="System.Drawing.Point, System.Drawing">
     <value>400, 3</value>
@@ -989,35 +348,11 @@
   <data name="numericUpDownSelectedAreaX2.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 25</value>
   </data>
-  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label20.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label20.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label20.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
     <value>525, 5</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 18</value>
-  </data>
-  <data name="label20.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaY2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="numericUpDownSelectedAreaY2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="numericUpDownSelectedAreaY2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="numericUpDownSelectedAreaY2.Location" type="System.Drawing.Point, System.Drawing">
     <value>537, 3</value>
@@ -1025,179 +360,17 @@
   <data name="numericUpDownSelectedAreaY2.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 25</value>
   </data>
-  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label21.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label21.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label21.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
     <value>662, 5</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 18</value>
   </data>
-  <data name="label21.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="flowLayoutPanel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="flowLayoutPanel2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 31</value>
-  </data>
-  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label15.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label15.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label15.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 18</value>
   </data>
-  <data name="label15.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label16.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="label16.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="label16.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 18</value>
-  </data>
-  <data name="label16.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPage3.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tabPage3.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tabPage3.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 27</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>829, 169</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>統計情報</value>
-  </data>
-  <data name="tabPage3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="tabControl1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tabControl1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="tabControl1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 200</value>
-  </data>
-  <data name="tabControl1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="splitContainer1.Panel2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 868</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>664</value>
-  </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.ContentPanel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.ContentPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStripContainer1.ContentPanel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 868</value>
-  </data>
-  <data name="toolStripContainer1.ContentPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStripContainer1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.LeftToolStripPanel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.LeftToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStripContainer1.LeftToolStripPanel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.LeftToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStrip1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9.75pt</value>
-  </data>
-  <data name="toolStrip1.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStrip1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStrip1.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="toolStripButtonIntensityTable.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9.75pt</value>
@@ -1302,51 +475,6 @@
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 6</value>
   </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 22</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 667</value>
-  </data>
-  <data name="toolStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.RightToolStripPanel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.RightToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStripContainer1.RightToolStripPanel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.RightToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 995</value>
-  </data>
-  <data name="toolStripContainer1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStrip2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="toolStrip2.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStrip2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStrip2.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="toolStripSplitButtonBackground.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1357,14 +485,14 @@
     <value>バックグラ
 ウンド補正</value>
   </data>
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 72</value>
-  </data>
-  <data name="toolStripMenuItemFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
-  <data name="findCenterBasedOnTheRingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="toolStripSplitButtonFindCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1374,6 +502,12 @@
   </data>
   <data name="toolStripSplitButtonFindCenter.Text" xml:space="preserve">
     <value>中心位置</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 22</value>
+  </data>
+  <data name="findCenterBasedOnTheRingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 22</value>
   </data>
   <data name="toolStripButtonFixCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt, style=Italic</value>
@@ -1402,6 +536,16 @@
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 72</value>
+  </data>
+  <data name="toolStripSplitButtonFindSpots.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="toolStripSplitButtonFindSpots.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 72</value>
+  </data>
+  <data name="toolStripSplitButtonFindSpots.Text" xml:space="preserve">
+    <value>スポット
+検出</value>
   </data>
   <data name="toolStripMenuItemClearMask.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
@@ -1439,16 +583,6 @@
   <data name="toolStripMenuItemFindSpotsOption.Text" xml:space="preserve">
     <value>オプション</value>
   </data>
-  <data name="toolStripSplitButtonFindSpots.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="toolStripSplitButtonFindSpots.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 72</value>
-  </data>
-  <data name="toolStripSplitButtonFindSpots.Text" xml:space="preserve">
-    <value>スポット
-検出</value>
-  </data>
   <data name="toolStripButtonManualSpotMode.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt, style=Italic</value>
   </data>
@@ -1476,6 +610,15 @@
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 72</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 69</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
+    <value>1次元化</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralProperty.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
@@ -1555,41 +698,23 @@
   <data name="toolStripMenuItemSelectedSequentialImages.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
   </data>
-  <data name="toolStripSplitButtonGetProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 24</value>
   </data>
-  <data name="toolStripSplitButtonGetProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 69</value>
-  </data>
-  <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
-    <value>1次元化</value>
-  </data>
-  <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 72</value>
-  </data>
-  <data name="toolStrip2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9.75pt</value>
-  </data>
-  <data name="menuStrip.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="menuStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="menuStrip.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>ファイル</value>
   </data>
   <data name="readImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 24</value>
   </data>
   <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
     <value>画像を読込</value>
+  </data>
+  <data name="toolStripMenuItemSaveImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 24</value>
+  </data>
+  <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
+    <value>画像を保存</value>
   </data>
   <data name="tiffToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>461, 24</value>
@@ -1599,12 +724,6 @@
   </data>
   <data name="ipaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>461, 24</value>
-  </data>
-  <data name="toolStripMenuItemSaveImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 24</value>
-  </data>
-  <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
-    <value>画像を保存</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 6</value>
@@ -1648,11 +767,11 @@
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 24</value>
+  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 24</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>ファイル</value>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>ツール</value>
   </data>
   <data name="resetFrequencyProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 24</value>
@@ -1660,11 +779,11 @@
   <data name="calibrateRaxisImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 24</value>
   </data>
-  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 24</value>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 24</value>
   </data>
-  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
-    <value>ツール</value>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>プロパティ</value>
   </data>
   <data name="toolStripMenuItemPropertyWaveSource.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 24</value>
@@ -1738,13 +857,13 @@
   <data name="misToolStripMenuItem.Text" xml:space="preserve">
     <value>その他</value>
   </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 24</value>
-  </data>
-  <data name="toolStripMenuItem5.Text" xml:space="preserve">
-    <value>プロパティ</value>
+  <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 24</value>
   </data>
   <data name="toolTipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 24</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 24</value>
   </data>
   <data name="flipHorizontallyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -1752,9 +871,6 @@
   </data>
   <data name="flipVerticallyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 24</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 24</value>
   </data>
   <data name="rotateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 24</value>
@@ -1765,13 +881,13 @@
   <data name="ngenCompileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 24</value>
   </data>
-  <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 24</value>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 24</value>
   </data>
   <data name="englishToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        wAAAAMABMHffXgAAAUpJREFUOE9jYAhq+Y8Lg8A1Bk04BgFs6uAYpMCmeiFWSf+OVf+fxlcSZRhYDkxC
+        vwAAAL8BYqQFcwAAAUpJREFUOE9jYAhq+Y8Lg8A1Bk04BgFs6uAYpMCmeiFWSf+OVf+fxlcSZRhYDkxC
         AboCYgwDOeT7+WtgeQaYIhjQzp8JV0jIMBCAyf39+u0/w00RKzDn/fx1YEkYwGeYf/uq/z/vPUYRBwGG
         ltWH///79w9DAgSSpmzGMAwEYPxfD59CRSAAHpsgcFvBBazoTddcMB8E0A0Dsxm1wGwYUMmaCvE6lI8T
         YHMZLgCOAGph6hr2af2e//jwA8cEuGJs8sgYJTshg+vs+v8f2MfhjU0QQMk9IAIkAAN/v/9AUYwrAp5E
@@ -1789,7 +905,7 @@
   <data name="japaneseToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        wAAAAMABMHffXgAAAG5JREFUOE/tjLsNwCAMRFNQMAyDMQMjMDSOIxHJsc9YSOmSJ11zv4Ne5D/bZ32W
+        vwAAAL8BYqQFcwAAAG5JREFUOE/tjLsNwCAMRFNQMAyDMQMjMDSOIxHJsc9YSOmSJ11zv4Ne5D/bZ32W
         Eje4IrXAT/WJlANOarUHWgDHVUMkgOOqIRLAcdUQCYDdMexYqvdZfMKJQ2v25FLOs2DhNKCU8OQmPtvg
         E2dEJ41V0r+pZPOtAAAAAElFTkSuQmCC
 </value>
@@ -1800,8 +916,8 @@
   <data name="japaneseToolStripMenuItem.Text" xml:space="preserve">
     <value>日本語</value>
   </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 24</value>
+  <data name="macroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 24</value>
   </data>
   <data name="editorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 24</value>
@@ -1809,8 +925,11 @@
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 6</value>
   </data>
-  <data name="macroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 24</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>ヘルプ</value>
   </data>
   <data name="programUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 24</value>
@@ -1833,44 +952,8 @@
   <data name="webPageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 24</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 24</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>ヘルプ</value>
-  </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 72</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 28</value>
-  </data>
-  <data name="menuStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.TopToolStripPanel.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.TopToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="toolStripContainer1.TopToolStripPanel.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="toolStripContainer1.TopToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>881, 995</value>
-  </data>
-  <data name="$this.HelpKeyword" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
-  </data>
-  <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
-    <value>AssociateIndex</value>
-  </data>
-  <data name="$this.HelpString" type="Microsoft.DotNet.DesignTools.Utilities.Resources.ResXNullRef, Microsoft.DotNet.DesignTools.Server">
-    <value />
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1936,8 +1019,5 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>
