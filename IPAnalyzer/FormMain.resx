@@ -80,16 +80,10 @@
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <metadata name="helpProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>356, 21</value>
-  </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="statusStrip1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>734, 27</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -107,9 +101,6 @@
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="toolStripContainer1.BottomToolStripPanel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.BottomToolStripPanel</value>
@@ -156,9 +147,6 @@
   <data name="textBoxInformation.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
   </data>
-  <data name="textBoxInformation.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="textBoxInformation.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 127</value>
   </data>
@@ -192,9 +180,6 @@
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="label11.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 17</value>
   </data>
@@ -226,9 +211,6 @@
   <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="panel4.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 144</value>
   </data>
@@ -255,9 +237,6 @@
   </data>
   <data name="scalablePictureBoxThumbnail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="scalablePictureBoxThumbnail.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="scalablePictureBoxThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 133</value>
@@ -291,9 +270,6 @@
   </data>
   <data name="radioButtonNearCenter.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 21</value>
-  </data>
-  <data name="radioButtonNearCenter.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="radioButtonNearCenter.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 21</value>
@@ -331,9 +307,6 @@
   <data name="radioButtonWhole.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="radioButtonWhole.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="radioButtonWhole.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 21</value>
   </data>
@@ -363,9 +336,6 @@
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel3.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 175</value>
@@ -406,9 +376,6 @@
   <data name="comboBoxScale2.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 103</value>
   </data>
-  <data name="comboBoxScale2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="comboBoxScale2.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 25</value>
   </data>
@@ -441,9 +408,6 @@
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 86</value>
-  </data>
-  <data name="label9.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 17</value>
@@ -480,9 +444,6 @@
   </data>
   <data name="comboBoxScale1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 61</value>
-  </data>
-  <data name="comboBoxScale1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="comboBoxScale1.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 25</value>
@@ -523,9 +484,6 @@
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 44</value>
   </data>
-  <data name="label7.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 17</value>
   </data>
@@ -561,9 +519,6 @@
   </data>
   <data name="comboBoxGradient.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 19</value>
-  </data>
-  <data name="comboBoxGradient.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="comboBoxGradient.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 25</value>
@@ -601,9 +556,6 @@
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
   </data>
-  <data name="label5.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 17</value>
   </data>
@@ -637,9 +589,6 @@
   <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="panel2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 130</value>
   </data>
@@ -657,9 +606,6 @@
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="splitContainer2.Panel1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -681,9 +627,6 @@
   </data>
   <data name="scalablePictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="scalablePictureBox.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>488, 407</value>
@@ -724,9 +667,6 @@
   <data name="labelResolution.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelResolution.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelResolution.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 18</value>
   </data>
@@ -765,9 +705,6 @@
   </data>
   <data name="labelMousePointChi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="labelMousePointChi.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelMousePointChi.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 17</value>
@@ -808,9 +745,6 @@
   <data name="labelMousePointD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelMousePointD.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelMousePointD.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 17</value>
   </data>
@@ -849,9 +783,6 @@
   </data>
   <data name="labelMousePointTheta.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="labelMousePointTheta.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelMousePointTheta.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 17</value>
@@ -892,9 +823,6 @@
   <data name="labelMousePointR.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelMousePointR.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelMousePointR.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 17</value>
   </data>
@@ -933,9 +861,6 @@
   </data>
   <data name="labelMousePointIntensity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="labelMousePointIntensity.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelMousePointIntensity.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 17</value>
@@ -976,9 +901,6 @@
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="label6.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 17</value>
   </data>
@@ -1017,9 +939,6 @@
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label8.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 17</value>
@@ -1060,9 +979,6 @@
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="label10.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 17</value>
   </data>
@@ -1101,9 +1017,6 @@
   </data>
   <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label12.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 17</value>
@@ -1144,9 +1057,6 @@
   <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="label13.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 16</value>
   </data>
@@ -1186,9 +1096,6 @@
   <data name="label14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="label14.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 18</value>
   </data>
@@ -1224,9 +1131,6 @@
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>488, 21</value>
@@ -1270,9 +1174,6 @@
   <data name="labelMousePointReal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelMousePointReal.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelMousePointReal.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 18</value>
   </data>
@@ -1311,9 +1212,6 @@
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label3.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 18</value>
@@ -1354,9 +1252,6 @@
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="label4.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 18</value>
   </data>
@@ -1396,9 +1291,6 @@
   <data name="labelMousePointPixel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelMousePointPixel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelMousePointPixel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 18</value>
   </data>
@@ -1435,9 +1327,6 @@
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tableLayoutPanel3.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>488, 21</value>
   </data>
@@ -1459,9 +1348,6 @@
   <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelMousePointReal" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointPixel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,120,AutoSize,0,Absolute,361" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="splitContainer2.Panel2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
   </data>
@@ -1473,9 +1359,6 @@
   </data>
   <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="splitContainer2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 449</value>
@@ -1519,9 +1402,6 @@
   <data name="buttonAutoLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 0, 0</value>
   </data>
-  <data name="buttonAutoLevel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="buttonAutoLevel.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 24</value>
   </data>
@@ -1554,9 +1434,6 @@
   </data>
   <data name="buttonReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 0, 0</value>
-  </data>
-  <data name="buttonReset.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="buttonReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 24</value>
@@ -1606,9 +1483,6 @@
   <data name="trackBarAdvancedMinInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="trackBarAdvancedMinInt.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="trackBarAdvancedMinInt.Size" type="System.Drawing.Size, System.Drawing">
     <value>516, 27</value>
   </data>
@@ -1654,9 +1528,6 @@
   <data name="trackBarAdvancedMaxInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="trackBarAdvancedMaxInt.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="trackBarAdvancedMaxInt.Size" type="System.Drawing.Size, System.Drawing">
     <value>516, 27</value>
   </data>
@@ -1686,9 +1557,6 @@
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="tableLayoutPanel2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 54</value>
@@ -1720,9 +1588,6 @@
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="flowLayoutPanel1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 0</value>
   </data>
@@ -1753,9 +1618,6 @@
   <data name="panelMousePos.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panelMousePos.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="panelMousePos.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 0</value>
   </data>
@@ -1773,9 +1635,6 @@
   </data>
   <data name="&gt;&gt;panelMousePos.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="splitContainer1.Panel1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -1801,9 +1660,6 @@
   <data name="graphControlFrequency.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="graphControlFrequency.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 169</value>
   </data>
@@ -1827,9 +1683,6 @@
   </data>
   <data name="tabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tabPage1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 169</value>
@@ -1864,9 +1717,6 @@
   <data name="graphControlProfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="graphControlProfile.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 169</value>
   </data>
@@ -1890,9 +1740,6 @@
   </data>
   <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tabPage2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 169</value>
@@ -1927,9 +1774,6 @@
   <data name="textBoxStatisticsSelectedAreaSequential.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
   </data>
-  <data name="textBoxStatisticsSelectedAreaSequential.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Size" type="System.Drawing.Size, System.Drawing">
     <value>327, 107</value>
   </data>
@@ -1959,9 +1803,6 @@
   </data>
   <data name="textBoxStatisticsSelectedArea.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
-  </data>
-  <data name="textBoxStatisticsSelectedArea.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 107</value>
@@ -1999,9 +1840,6 @@
   <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 5, 0, 0</value>
   </data>
-  <data name="label17.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
   </data>
@@ -2028,9 +1866,6 @@
   </data>
   <data name="numericUpDownSelectedAreaX1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
-  </data>
-  <data name="numericUpDownSelectedAreaX1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaX1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -2062,9 +1897,6 @@
   <data name="label18.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 5, 0, 0</value>
   </data>
-  <data name="label18.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 17</value>
   </data>
@@ -2091,9 +1923,6 @@
   </data>
   <data name="numericUpDownSelectedAreaY1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
-  </data>
-  <data name="numericUpDownSelectedAreaY1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaY1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -2125,9 +1954,6 @@
   <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 5, 0, 0</value>
   </data>
-  <data name="label19.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 17</value>
   </data>
@@ -2154,9 +1980,6 @@
   </data>
   <data name="numericUpDownSelectedAreaX2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
-  </data>
-  <data name="numericUpDownSelectedAreaX2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaX2.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -2188,9 +2011,6 @@
   <data name="label20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 5, 0, 0</value>
   </data>
-  <data name="label20.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 17</value>
   </data>
@@ -2217,9 +2037,6 @@
   </data>
   <data name="numericUpDownSelectedAreaY2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
-  </data>
-  <data name="numericUpDownSelectedAreaY2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="numericUpDownSelectedAreaY2.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -2251,9 +2068,6 @@
   <data name="label21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 5, 0, 0</value>
   </data>
-  <data name="label21.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
   </data>
@@ -2277,9 +2091,6 @@
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="flowLayoutPanel2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>569, 31</value>
@@ -2307,9 +2118,6 @@
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 34</value>
-  </data>
-  <data name="label15.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 17</value>
@@ -2341,9 +2149,6 @@
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 34</value>
   </data>
-  <data name="label16.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
   </data>
@@ -2370,9 +2175,6 @@
   </data>
   <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage3.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 169</value>
@@ -2407,9 +2209,6 @@
   <data name="tabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="tabControl1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 199</value>
   </data>
@@ -2428,9 +2227,6 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="splitContainer1.Panel2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
   </data>
@@ -2442,9 +2238,6 @@
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="splitContainer1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 706</value>
@@ -2467,9 +2260,6 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="toolStripContainer1.ContentPanel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>626, 706</value>
   </data>
@@ -2487,9 +2277,6 @@
   </data>
   <data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="toolStripContainer1.LeftToolStripPanel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.LeftToolStripPanel</value>
@@ -2728,9 +2515,6 @@ image</value>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 3</value>
   </data>
-  <data name="toolStrip1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 619</value>
   </data>
@@ -2752,9 +2536,6 @@ image</value>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="toolStripContainer1.RightToolStripPanel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.RightToolStripPanel</value>
   </data>
@@ -2766,9 +2547,6 @@ image</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="toolStripContainer1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>734, 817</value>
@@ -3140,9 +2918,6 @@ X線の波長とカメラ長を設定します。</value>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="menuStrip.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>734, 28</value>
   </data>
@@ -3365,7 +3140,7 @@ Center</value>
     <value>6, 56</value>
   </data>
   <data name="toolStripMenuItemClearMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
     <value>Clear mask</value>
@@ -3375,7 +3150,7 @@ Center</value>
 マスクされた部分を全てクリアします。</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
     <value>Mask all area</value>
@@ -3385,16 +3160,16 @@ Center</value>
 全てをマスクします</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
     <value>Invert mask</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemFindSpotsManual.Text" xml:space="preserve">
     <value>Manual Mode</value>
@@ -3405,10 +3180,10 @@ Center</value>
 スポットの大きさは"Option"から変更できます。</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemFindSpotsOption.Text" xml:space="preserve">
     <value>Option</value>
@@ -3718,9 +3493,6 @@ Mode</value>
   <data name="toolStrip2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="toolStrip2.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
     <value>734, 56</value>
   </data>
@@ -3741,9 +3513,6 @@ Mode</value>
   </data>
   <data name="&gt;&gt;toolStrip2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="toolStripContainer1.TopToolStripPanel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.TopToolStripPanel</value>
@@ -3851,9 +3620,6 @@ Mode</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>IPAnalyzer</value>
@@ -4577,12 +4343,6 @@ Mode</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItemSelectedSequentialImages.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;helpProvider.Name" xml:space="preserve">
-    <value>helpProvider</value>
-  </data>
-  <data name="&gt;&gt;helpProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
     <value>toolStripButton1</value>

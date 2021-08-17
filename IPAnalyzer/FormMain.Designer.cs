@@ -236,7 +236,6 @@ namespace IPAnalyzer
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItemAllSequentialImages = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSelectedSequentialImages = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
@@ -279,33 +278,24 @@ namespace IPAnalyzer
             // toolStripContainer1.BottomToolStripPanel
             // 
             this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip1);
-            this.helpProvider.SetShowHelp(this.toolStripContainer1.BottomToolStripPanel, ((bool)(resources.GetObject("toolStripContainer1.BottomToolStripPanel.ShowHelp"))));
             // 
             // toolStripContainer1.ContentPanel
             // 
             resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.helpProvider.SetShowHelp(this.toolStripContainer1.ContentPanel, ((bool)(resources.GetObject("toolStripContainer1.ContentPanel.ShowHelp"))));
             resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            // 
-            // toolStripContainer1.LeftToolStripPanel
-            // 
-            this.helpProvider.SetShowHelp(this.toolStripContainer1.LeftToolStripPanel, ((bool)(resources.GetObject("toolStripContainer1.LeftToolStripPanel.ShowHelp"))));
             this.toolStripContainer1.Name = "toolStripContainer1";
             // 
             // toolStripContainer1.RightToolStripPanel
             // 
             this.toolStripContainer1.RightToolStripPanel.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripContainer1.RightToolStripPanel.Controls.Add(this.toolStrip1);
-            this.helpProvider.SetShowHelp(this.toolStripContainer1.RightToolStripPanel, ((bool)(resources.GetObject("toolStripContainer1.RightToolStripPanel.ShowHelp"))));
-            this.helpProvider.SetShowHelp(this.toolStripContainer1, ((bool)(resources.GetObject("toolStripContainer1.ShowHelp"))));
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
-            this.helpProvider.SetShowHelp(this.toolStripContainer1.TopToolStripPanel, ((bool)(resources.GetObject("toolStripContainer1.TopToolStripPanel.ShowHelp"))));
             // 
             // statusStrip1
             // 
@@ -315,7 +305,6 @@ namespace IPAnalyzer
             this.toolStripProgressBar,
             this.toolStripStatusLabel});
             this.statusStrip1.Name = "statusStrip1";
-            this.helpProvider.SetShowHelp(this.statusStrip1, ((bool)(resources.GetObject("statusStrip1.ShowHelp"))));
             // 
             // toolStripProgressBar
             // 
@@ -339,13 +328,10 @@ namespace IPAnalyzer
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer1.Panel1.Controls.Add(this.panelMousePos);
-            this.helpProvider.SetShowHelp(this.splitContainer1.Panel1, ((bool)(resources.GetObject("splitContainer1.Panel1.ShowHelp"))));
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.helpProvider.SetShowHelp(this.splitContainer1.Panel2, ((bool)(resources.GetObject("splitContainer1.Panel2.ShowHelp"))));
-            this.helpProvider.SetShowHelp(this.splitContainer1, ((bool)(resources.GetObject("splitContainer1.ShowHelp"))));
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             this.splitContainer1.Resize += new System.EventHandler(this.FormMain_Resize);
             // 
@@ -360,15 +346,12 @@ namespace IPAnalyzer
             this.splitContainer2.Panel1.Controls.Add(this.panel4);
             this.splitContainer2.Panel1.Controls.Add(this.panel3);
             this.splitContainer2.Panel1.Controls.Add(this.panel2);
-            this.helpProvider.SetShowHelp(this.splitContainer2.Panel1, ((bool)(resources.GetObject("splitContainer2.Panel1.ShowHelp"))));
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.scalablePictureBox);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel3);
-            this.helpProvider.SetShowHelp(this.splitContainer2.Panel2, ((bool)(resources.GetObject("splitContainer2.Panel2.ShowHelp"))));
-            this.helpProvider.SetShowHelp(this.splitContainer2, ((bool)(resources.GetObject("splitContainer2.ShowHelp"))));
             // 
             // panel4
             // 
@@ -376,20 +359,17 @@ namespace IPAnalyzer
             this.panel4.Controls.Add(this.label11);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            this.helpProvider.SetShowHelp(this.panel4, ((bool)(resources.GetObject("panel4.ShowHelp"))));
             // 
             // textBoxInformation
             // 
             resources.ApplyResources(this.textBoxInformation, "textBoxInformation");
             this.textBoxInformation.Name = "textBoxInformation";
             this.textBoxInformation.ReadOnly = true;
-            this.helpProvider.SetShowHelp(this.textBoxInformation, ((bool)(resources.GetObject("textBoxInformation.ShowHelp"))));
             // 
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.helpProvider.SetShowHelp(this.label11, ((bool)(resources.GetObject("label11.ShowHelp"))));
             // 
             // panel3
             // 
@@ -398,7 +378,6 @@ namespace IPAnalyzer
             this.panel3.Controls.Add(this.radioButtonWhole);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.helpProvider.SetShowHelp(this.panel3, ((bool)(resources.GetObject("panel3.ShowHelp"))));
             // 
             // scalablePictureBoxThumbnail
             // 
@@ -413,7 +392,6 @@ namespace IPAnalyzer
             this.scalablePictureBoxThumbnail.MouseTranslation = false;
             this.scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
             this.scalablePictureBoxThumbnail.ShowAreaRectangle = false;
-            this.helpProvider.SetShowHelp(this.scalablePictureBoxThumbnail, ((bool)(resources.GetObject("scalablePictureBoxThumbnail.ShowHelp"))));
             this.scalablePictureBoxThumbnail.ShowRimRentangle = false;
             this.scalablePictureBoxThumbnail.VerticalFlip = false;
             this.scalablePictureBoxThumbnail.Zoom = 128D;
@@ -425,7 +403,6 @@ namespace IPAnalyzer
             resources.ApplyResources(this.radioButtonNearCenter, "radioButtonNearCenter");
             this.radioButtonNearCenter.Checked = true;
             this.radioButtonNearCenter.Name = "radioButtonNearCenter";
-            this.helpProvider.SetShowHelp(this.radioButtonNearCenter, ((bool)(resources.GetObject("radioButtonNearCenter.ShowHelp"))));
             this.radioButtonNearCenter.TabStop = true;
             this.radioButtonNearCenter.UseVisualStyleBackColor = true;
             // 
@@ -433,7 +410,6 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.radioButtonWhole, "radioButtonWhole");
             this.radioButtonWhole.Name = "radioButtonWhole";
-            this.helpProvider.SetShowHelp(this.radioButtonWhole, ((bool)(resources.GetObject("radioButtonWhole.ShowHelp"))));
             this.radioButtonWhole.UseVisualStyleBackColor = true;
             this.radioButtonWhole.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -447,7 +423,6 @@ namespace IPAnalyzer
             this.panel2.Controls.Add(this.comboBoxGradient);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Name = "panel2";
-            this.helpProvider.SetShowHelp(this.panel2, ((bool)(resources.GetObject("panel2.ShowHelp"))));
             // 
             // comboBoxScale2
             // 
@@ -458,14 +433,12 @@ namespace IPAnalyzer
             resources.GetString("comboBoxScale2.Items"),
             resources.GetString("comboBoxScale2.Items1")});
             this.comboBoxScale2.Name = "comboBoxScale2";
-            this.helpProvider.SetShowHelp(this.comboBoxScale2, ((bool)(resources.GetObject("comboBoxScale2.ShowHelp"))));
             this.comboBoxScale2.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxScale2_SelectedIndexChanged);
             // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.helpProvider.SetShowHelp(this.label9, ((bool)(resources.GetObject("label9.ShowHelp"))));
             // 
             // comboBoxScale1
             // 
@@ -476,7 +449,6 @@ namespace IPAnalyzer
             resources.GetString("comboBoxScale1.Items"),
             resources.GetString("comboBoxScale1.Items1")});
             this.comboBoxScale1.Name = "comboBoxScale1";
-            this.helpProvider.SetShowHelp(this.comboBoxScale1, ((bool)(resources.GetObject("comboBoxScale1.ShowHelp"))));
             this.toolTip.SetToolTip(this.comboBoxScale1, resources.GetString("comboBoxScale1.ToolTip"));
             this.comboBoxScale1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxScale_SelectedIndexChanged);
             // 
@@ -484,7 +456,6 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.helpProvider.SetShowHelp(this.label7, ((bool)(resources.GetObject("label7.ShowHelp"))));
             // 
             // comboBoxGradient
             // 
@@ -495,7 +466,6 @@ namespace IPAnalyzer
             resources.GetString("comboBoxGradient.Items"),
             resources.GetString("comboBoxGradient.Items1")});
             this.comboBoxGradient.Name = "comboBoxGradient";
-            this.helpProvider.SetShowHelp(this.comboBoxGradient, ((bool)(resources.GetObject("comboBoxGradient.ShowHelp"))));
             this.toolTip.SetToolTip(this.comboBoxGradient, resources.GetString("comboBoxGradient.ToolTip"));
             this.comboBoxGradient.SelectedIndexChanged += new System.EventHandler(this.comboBoxGradient_SelectedIndexChanged_1);
             // 
@@ -503,7 +473,6 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.helpProvider.SetShowHelp(this.label5, ((bool)(resources.GetObject("label5.ShowHelp"))));
             // 
             // scalablePictureBox
             // 
@@ -518,7 +487,6 @@ namespace IPAnalyzer
             this.scalablePictureBox.MouseTranslation = true;
             this.scalablePictureBox.Name = "scalablePictureBox";
             this.scalablePictureBox.ShowAreaRectangle = false;
-            this.helpProvider.SetShowHelp(this.scalablePictureBox, ((bool)(resources.GetObject("scalablePictureBox.ShowHelp"))));
             this.scalablePictureBox.ShowRimRentangle = false;
             this.scalablePictureBox.VerticalFlip = false;
             this.scalablePictureBox.Zoom = 128D;
@@ -544,81 +512,68 @@ namespace IPAnalyzer
             this.tableLayoutPanel1.Controls.Add(this.label13, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.label14, 10, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.helpProvider.SetShowHelp(this.tableLayoutPanel1, ((bool)(resources.GetObject("tableLayoutPanel1.ShowHelp"))));
             // 
             // labelResolution
             // 
             resources.ApplyResources(this.labelResolution, "labelResolution");
             this.labelResolution.Name = "labelResolution";
-            this.helpProvider.SetShowHelp(this.labelResolution, ((bool)(resources.GetObject("labelResolution.ShowHelp"))));
             // 
             // labelMousePointChi
             // 
             resources.ApplyResources(this.labelMousePointChi, "labelMousePointChi");
             this.labelMousePointChi.Name = "labelMousePointChi";
-            this.helpProvider.SetShowHelp(this.labelMousePointChi, ((bool)(resources.GetObject("labelMousePointChi.ShowHelp"))));
             this.labelMousePointChi.Click += new System.EventHandler(this.toolStripMenuItemMiscellaneous_Click);
             // 
             // labelMousePointD
             // 
             resources.ApplyResources(this.labelMousePointD, "labelMousePointD");
             this.labelMousePointD.Name = "labelMousePointD";
-            this.helpProvider.SetShowHelp(this.labelMousePointD, ((bool)(resources.GetObject("labelMousePointD.ShowHelp"))));
             // 
             // labelMousePointTheta
             // 
             resources.ApplyResources(this.labelMousePointTheta, "labelMousePointTheta");
             this.labelMousePointTheta.Name = "labelMousePointTheta";
-            this.helpProvider.SetShowHelp(this.labelMousePointTheta, ((bool)(resources.GetObject("labelMousePointTheta.ShowHelp"))));
             // 
             // labelMousePointR
             // 
             resources.ApplyResources(this.labelMousePointR, "labelMousePointR");
             this.labelMousePointR.Name = "labelMousePointR";
-            this.helpProvider.SetShowHelp(this.labelMousePointR, ((bool)(resources.GetObject("labelMousePointR.ShowHelp"))));
             // 
             // labelMousePointIntensity
             // 
             resources.ApplyResources(this.labelMousePointIntensity, "labelMousePointIntensity");
             this.labelMousePointIntensity.Name = "labelMousePointIntensity";
-            this.helpProvider.SetShowHelp(this.labelMousePointIntensity, ((bool)(resources.GetObject("labelMousePointIntensity.ShowHelp"))));
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.helpProvider.SetShowHelp(this.label6, ((bool)(resources.GetObject("label6.ShowHelp"))));
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.helpProvider.SetShowHelp(this.label8, ((bool)(resources.GetObject("label8.ShowHelp"))));
             // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.helpProvider.SetShowHelp(this.label10, ((bool)(resources.GetObject("label10.ShowHelp"))));
             // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.helpProvider.SetShowHelp(this.label12, ((bool)(resources.GetObject("label12.ShowHelp"))));
             // 
             // label13
             // 
             resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
-            this.helpProvider.SetShowHelp(this.label13, ((bool)(resources.GetObject("label13.ShowHelp"))));
             this.label13.Click += new System.EventHandler(this.toolStripMenuItemMiscellaneous_Click);
             // 
             // label14
             // 
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.helpProvider.SetShowHelp(this.label14, ((bool)(resources.GetObject("label14.ShowHelp"))));
             // 
             // tableLayoutPanel3
             // 
@@ -628,31 +583,26 @@ namespace IPAnalyzer
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelMousePointPixel, 1, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.helpProvider.SetShowHelp(this.tableLayoutPanel3, ((bool)(resources.GetObject("tableLayoutPanel3.ShowHelp"))));
             // 
             // labelMousePointReal
             // 
             resources.ApplyResources(this.labelMousePointReal, "labelMousePointReal");
             this.labelMousePointReal.Name = "labelMousePointReal";
-            this.helpProvider.SetShowHelp(this.labelMousePointReal, ((bool)(resources.GetObject("labelMousePointReal.ShowHelp"))));
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.helpProvider.SetShowHelp(this.label3, ((bool)(resources.GetObject("label3.ShowHelp"))));
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.helpProvider.SetShowHelp(this.label4, ((bool)(resources.GetObject("label4.ShowHelp"))));
             // 
             // labelMousePointPixel
             // 
             resources.ApplyResources(this.labelMousePointPixel, "labelMousePointPixel");
             this.labelMousePointPixel.Name = "labelMousePointPixel";
-            this.helpProvider.SetShowHelp(this.labelMousePointPixel, ((bool)(resources.GetObject("labelMousePointPixel.ShowHelp"))));
             // 
             // tableLayoutPanel2
             // 
@@ -662,20 +612,17 @@ namespace IPAnalyzer
             this.tableLayoutPanel2.Controls.Add(this.trackBarAdvancedMinInt, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.trackBarAdvancedMaxInt, 1, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.helpProvider.SetShowHelp(this.tableLayoutPanel2, ((bool)(resources.GetObject("tableLayoutPanel2.ShowHelp"))));
             // 
             // buttonAutoLevel
             // 
             resources.ApplyResources(this.buttonAutoLevel, "buttonAutoLevel");
             this.buttonAutoLevel.Name = "buttonAutoLevel";
-            this.helpProvider.SetShowHelp(this.buttonAutoLevel, ((bool)(resources.GetObject("buttonAutoLevel.ShowHelp"))));
             this.buttonAutoLevel.Click += new System.EventHandler(this.buttonAutoLevel_Click);
             // 
             // buttonReset
             // 
             resources.ApplyResources(this.buttonReset, "buttonReset");
             this.buttonReset.Name = "buttonReset";
-            this.helpProvider.SetShowHelp(this.buttonReset, ((bool)(resources.GetObject("buttonReset.ShowHelp"))));
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // trackBarAdvancedMinInt
@@ -689,7 +636,6 @@ namespace IPAnalyzer
             this.trackBarAdvancedMinInt.Name = "trackBarAdvancedMinInt";
             this.trackBarAdvancedMinInt.NumericBoxSize = 120;
             this.trackBarAdvancedMinInt.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.helpProvider.SetShowHelp(this.trackBarAdvancedMinInt, ((bool)(resources.GetObject("trackBarAdvancedMinInt.ShowHelp"))));
             this.trackBarAdvancedMinInt.Smart_Increment = true;
             this.trackBarAdvancedMinInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
             this.trackBarAdvancedMinInt.UpDown_Increment = 1D;
@@ -707,7 +653,6 @@ namespace IPAnalyzer
             this.trackBarAdvancedMaxInt.Name = "trackBarAdvancedMaxInt";
             this.trackBarAdvancedMaxInt.NumericBoxSize = 120;
             this.trackBarAdvancedMaxInt.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.helpProvider.SetShowHelp(this.trackBarAdvancedMaxInt, ((bool)(resources.GetObject("trackBarAdvancedMaxInt.ShowHelp"))));
             this.trackBarAdvancedMaxInt.Smart_Increment = true;
             this.trackBarAdvancedMaxInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
             this.trackBarAdvancedMaxInt.UpDown_Increment = 1D;
@@ -718,13 +663,11 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.helpProvider.SetShowHelp(this.flowLayoutPanel1, ((bool)(resources.GetObject("flowLayoutPanel1.ShowHelp"))));
             // 
             // panelMousePos
             // 
             resources.ApplyResources(this.panelMousePos, "panelMousePos");
             this.panelMousePos.Name = "panelMousePos";
-            this.helpProvider.SetShowHelp(this.panelMousePos, ((bool)(resources.GetObject("panelMousePos.ShowHelp"))));
             // 
             // tabControl1
             // 
@@ -734,14 +677,12 @@ namespace IPAnalyzer
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.helpProvider.SetShowHelp(this.tabControl1, ((bool)(resources.GetObject("tabControl1.ShowHelp"))));
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.graphControlFrequency);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.helpProvider.SetShowHelp(this.tabPage1, ((bool)(resources.GetObject("tabPage1.ShowHelp"))));
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // graphControlFrequency
@@ -774,7 +715,6 @@ namespace IPAnalyzer
             this.graphControlFrequency.MousePositionVisible = true;
             this.graphControlFrequency.Name = "graphControlFrequency";
             this.graphControlFrequency.OriginPosition = new System.Drawing.Point(40, 20);
-            this.helpProvider.SetShowHelp(this.graphControlFrequency, ((bool)(resources.GetObject("graphControlFrequency.ShowHelp"))));
             this.graphControlFrequency.Smoothing = false;
             this.graphControlFrequency.TextFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.graphControlFrequency.UnitX = "";
@@ -796,7 +736,6 @@ namespace IPAnalyzer
             this.tabPage2.Controls.Add(this.graphControlProfile);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.helpProvider.SetShowHelp(this.tabPage2, ((bool)(resources.GetObject("tabPage2.ShowHelp"))));
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // graphControlProfile
@@ -829,7 +768,6 @@ namespace IPAnalyzer
             this.graphControlProfile.MousePositionVisible = true;
             this.graphControlProfile.Name = "graphControlProfile";
             this.graphControlProfile.OriginPosition = new System.Drawing.Point(40, 20);
-            this.helpProvider.SetShowHelp(this.graphControlProfile, ((bool)(resources.GetObject("graphControlProfile.ShowHelp"))));
             this.graphControlProfile.Smoothing = false;
             this.graphControlProfile.TextFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.graphControlProfile.UnitX = "";
@@ -854,7 +792,6 @@ namespace IPAnalyzer
             this.tabPage3.Controls.Add(this.label16);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
-            this.helpProvider.SetShowHelp(this.tabPage3, ((bool)(resources.GetObject("tabPage3.ShowHelp"))));
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBoxStatisticsSelectedAreaSequential
@@ -862,14 +799,12 @@ namespace IPAnalyzer
             resources.ApplyResources(this.textBoxStatisticsSelectedAreaSequential, "textBoxStatisticsSelectedAreaSequential");
             this.textBoxStatisticsSelectedAreaSequential.Name = "textBoxStatisticsSelectedAreaSequential";
             this.textBoxStatisticsSelectedAreaSequential.ReadOnly = true;
-            this.helpProvider.SetShowHelp(this.textBoxStatisticsSelectedAreaSequential, ((bool)(resources.GetObject("textBoxStatisticsSelectedAreaSequential.ShowHelp"))));
             // 
             // textBoxStatisticsSelectedArea
             // 
             resources.ApplyResources(this.textBoxStatisticsSelectedArea, "textBoxStatisticsSelectedArea");
             this.textBoxStatisticsSelectedArea.Name = "textBoxStatisticsSelectedArea";
             this.textBoxStatisticsSelectedArea.ReadOnly = true;
-            this.helpProvider.SetShowHelp(this.textBoxStatisticsSelectedArea, ((bool)(resources.GetObject("textBoxStatisticsSelectedArea.ShowHelp"))));
             // 
             // flowLayoutPanel2
             // 
@@ -884,13 +819,11 @@ namespace IPAnalyzer
             this.flowLayoutPanel2.Controls.Add(this.numericUpDownSelectedAreaY2);
             this.flowLayoutPanel2.Controls.Add(this.label21);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.helpProvider.SetShowHelp(this.flowLayoutPanel2, ((bool)(resources.GetObject("flowLayoutPanel2.ShowHelp"))));
             // 
             // label17
             // 
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.helpProvider.SetShowHelp(this.label17, ((bool)(resources.GetObject("label17.ShowHelp"))));
             // 
             // numericUpDownSelectedAreaX1
             // 
@@ -901,14 +834,12 @@ namespace IPAnalyzer
             0,
             0});
             this.numericUpDownSelectedAreaX1.Name = "numericUpDownSelectedAreaX1";
-            this.helpProvider.SetShowHelp(this.numericUpDownSelectedAreaX1, ((bool)(resources.GetObject("numericUpDownSelectedAreaX1.ShowHelp"))));
             this.numericUpDownSelectedAreaX1.ValueChanged += new System.EventHandler(this.numericUpDownSelectedArea_ValueChanged);
             // 
             // label18
             // 
             resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
-            this.helpProvider.SetShowHelp(this.label18, ((bool)(resources.GetObject("label18.ShowHelp"))));
             // 
             // numericUpDownSelectedAreaY1
             // 
@@ -919,14 +850,12 @@ namespace IPAnalyzer
             0,
             0});
             this.numericUpDownSelectedAreaY1.Name = "numericUpDownSelectedAreaY1";
-            this.helpProvider.SetShowHelp(this.numericUpDownSelectedAreaY1, ((bool)(resources.GetObject("numericUpDownSelectedAreaY1.ShowHelp"))));
             this.numericUpDownSelectedAreaY1.ValueChanged += new System.EventHandler(this.numericUpDownSelectedArea_ValueChanged);
             // 
             // label19
             // 
             resources.ApplyResources(this.label19, "label19");
             this.label19.Name = "label19";
-            this.helpProvider.SetShowHelp(this.label19, ((bool)(resources.GetObject("label19.ShowHelp"))));
             // 
             // numericUpDownSelectedAreaX2
             // 
@@ -937,14 +866,12 @@ namespace IPAnalyzer
             0,
             0});
             this.numericUpDownSelectedAreaX2.Name = "numericUpDownSelectedAreaX2";
-            this.helpProvider.SetShowHelp(this.numericUpDownSelectedAreaX2, ((bool)(resources.GetObject("numericUpDownSelectedAreaX2.ShowHelp"))));
             this.numericUpDownSelectedAreaX2.ValueChanged += new System.EventHandler(this.numericUpDownSelectedArea_ValueChanged);
             // 
             // label20
             // 
             resources.ApplyResources(this.label20, "label20");
             this.label20.Name = "label20";
-            this.helpProvider.SetShowHelp(this.label20, ((bool)(resources.GetObject("label20.ShowHelp"))));
             // 
             // numericUpDownSelectedAreaY2
             // 
@@ -955,26 +882,22 @@ namespace IPAnalyzer
             0,
             0});
             this.numericUpDownSelectedAreaY2.Name = "numericUpDownSelectedAreaY2";
-            this.helpProvider.SetShowHelp(this.numericUpDownSelectedAreaY2, ((bool)(resources.GetObject("numericUpDownSelectedAreaY2.ShowHelp"))));
             this.numericUpDownSelectedAreaY2.ValueChanged += new System.EventHandler(this.numericUpDownSelectedArea_ValueChanged);
             // 
             // label21
             // 
             resources.ApplyResources(this.label21, "label21");
             this.label21.Name = "label21";
-            this.helpProvider.SetShowHelp(this.label21, ((bool)(resources.GetObject("label21.ShowHelp"))));
             // 
             // label15
             // 
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.helpProvider.SetShowHelp(this.label15, ((bool)(resources.GetObject("label15.ShowHelp"))));
             // 
             // label16
             // 
             resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.helpProvider.SetShowHelp(this.label16, ((bool)(resources.GetObject("label16.ShowHelp"))));
             // 
             // toolStrip1
             // 
@@ -1000,7 +923,6 @@ namespace IPAnalyzer
             this.toolStripSeparator19});
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.helpProvider.SetShowHelp(this.toolStrip1, ((bool)(resources.GetObject("toolStrip1.ShowHelp"))));
             // 
             // toolStripButtonIntensityTable
             // 
@@ -1124,7 +1046,6 @@ namespace IPAnalyzer
             this.macroToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip.Name = "menuStrip";
-            this.helpProvider.SetShowHelp(this.menuStrip, ((bool)(resources.GetObject("menuStrip.ShowHelp"))));
             // 
             // fileToolStripMenuItem
             // 
@@ -1539,7 +1460,6 @@ namespace IPAnalyzer
             this.toolStripSeparator2,
             this.toolStripSplitButtonGetProfile});
             this.toolStrip2.Name = "toolStrip2";
-            this.helpProvider.SetShowHelp(this.toolStrip2, ((bool)(resources.GetObject("toolStrip2.ShowHelp"))));
             this.toolStrip2.Stretch = true;
             // 
             // toolStripSplitButtonBackground
@@ -1930,7 +1850,6 @@ namespace IPAnalyzer
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
-            this.helpProvider.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1992,8 +1911,6 @@ namespace IPAnalyzer
 
         }
         #endregion
-
-        private HelpProvider helpProvider;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem toolStripMenuItemSaveImage;
         private ToolStripMenuItem toolStripMenuItemSaveParameter;

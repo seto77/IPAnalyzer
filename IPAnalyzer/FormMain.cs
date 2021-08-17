@@ -717,7 +717,6 @@ namespace IPAnalyzer
             InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.5);
 
             FormFindParameter = new FormFindParameter { formMain = this, Visible = false, Owner = this };
-            ;
 
 
             InitialDialog.Text = "Now Loading...Initializing 'Draw ring' form";

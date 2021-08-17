@@ -222,21 +222,21 @@
             this.checkBoxTau.UseVisualStyleBackColor = true;
             this.checkBoxTau.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
-            // checkBoxCenterX
+            // checkBoxPointX
             // 
-            resources.ApplyResources(this.checkBoxPointX, "checkBoxCenterX");
+            resources.ApplyResources(this.checkBoxPointX, "checkBoxPointX");
             this.checkBoxPointX.Checked = true;
             this.checkBoxPointX.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPointX.Name = "checkBoxCenterX";
+            this.checkBoxPointX.Name = "checkBoxPointX";
             this.checkBoxPointX.UseVisualStyleBackColor = true;
             this.checkBoxPointX.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
-            // checkBoxCenterY
+            // checkBoxPointY
             // 
-            resources.ApplyResources(this.checkBoxPointY, "checkBoxCenterY");
+            resources.ApplyResources(this.checkBoxPointY, "checkBoxPointY");
             this.checkBoxPointY.Checked = true;
             this.checkBoxPointY.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPointY.Name = "checkBoxCenterY";
+            this.checkBoxPointY.Name = "checkBoxPointY";
             this.checkBoxPointY.UseVisualStyleBackColor = true;
             this.checkBoxPointY.CheckedChanged += new System.EventHandler(this.checkBoxDistance_CheckedChanged);
             // 
@@ -311,13 +311,13 @@
             this.numericBoxCameraLengthStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxCameraLengthStep.Value = 0.05D;
             // 
-            // numericBoxCenterXStep
+            // numericBoxPointXStep
             // 
             this.numericBoxPointXStep.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.numericBoxPointXStep, "numericBoxCenterXStep");
+            resources.ApplyResources(this.numericBoxPointXStep, "numericBoxPointXStep");
             this.numericBoxPointXStep.Maximum = 1D;
             this.numericBoxPointXStep.Minimum = 0D;
-            this.numericBoxPointXStep.Name = "numericBoxCenterXStep";
+            this.numericBoxPointXStep.Name = "numericBoxPointXStep";
             this.numericBoxPointXStep.RadianValue = 0.0034906585039886592D;
             this.numericBoxPointXStep.RoundErrorAccuracy = 10;
             this.numericBoxPointXStep.ShowUpDown = true;
@@ -325,13 +325,13 @@
             this.numericBoxPointXStep.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPointXStep.Value = 0.2D;
             // 
-            // numericBoxCenterYStep
+            // numericBoxPointYStep
             // 
             this.numericBoxPointYStep.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.numericBoxPointYStep, "numericBoxCenterYStep");
+            resources.ApplyResources(this.numericBoxPointYStep, "numericBoxPointYStep");
             this.numericBoxPointYStep.Maximum = 1D;
             this.numericBoxPointYStep.Minimum = 0D;
-            this.numericBoxPointYStep.Name = "numericBoxCenterYStep";
+            this.numericBoxPointYStep.Name = "numericBoxPointYStep";
             this.numericBoxPointYStep.RadianValue = 0.0034906585039886592D;
             this.numericBoxPointYStep.RoundErrorAccuracy = 10;
             this.numericBoxPointYStep.ShowUpDown = true;
@@ -1188,8 +1188,8 @@
             // 
             // numericBoxFittingRange
             // 
-            this.numericBoxFittingRange.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.numericBoxFittingRange, "numericBoxFittingRange");
+            this.numericBoxFittingRange.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxFittingRange.Name = "numericBoxFittingRange";
             this.numericBoxFittingRange.RadianValue = 0.0069813170079773184D;
             this.numericBoxFittingRange.RoundErrorAccuracy = -1;
@@ -1198,8 +1198,8 @@
             // 
             // numericBoxWeight
             // 
-            this.numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.numericBoxWeight, "numericBoxWeight");
+            this.numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
             this.numericBoxWeight.Name = "numericBoxWeight";
             this.numericBoxWeight.RadianValue = 1.7453292519943295D;
             this.numericBoxWeight.RoundErrorAccuracy = -1;
