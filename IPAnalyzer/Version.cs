@@ -9,6 +9,7 @@
 
         static public string History = 
             "History" +
+            "\r\n ver3.912(2021/08/17) Improved compatibility when importing HDF5 files." +
             "\r\n ver3.911(2021/08/10) Renewed 'Find parameter (brute force)'." +
             "\r\n ver3.910(2021/07/19) Fixed a minor bug on 'Fitting parameter' " +
             "\r\n ver3.909(2021/07/10) Fixed a minor bug on 'Fitting parameter' " +
