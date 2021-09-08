@@ -223,6 +223,18 @@
   <data name="numericBoxBiso.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxBisoerr.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
@@ -253,6 +265,15 @@
   <data name="numericBoxBisoerr.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -791,7 +812,7 @@
     <value>1</value>
   </data>
   <data name="comboBoxAtom.ToolTip" xml:space="preserve">
-    <value>Element</value>
+    <value>Select an element</value>
   </data>
   <data name="&gt;&gt;comboBoxAtom.Name" xml:space="preserve">
     <value>comboBoxAtom</value>
@@ -1755,7 +1776,7 @@
     <value>4</value>
   </data>
   <data name="numericBoxZ.ToolTip" xml:space="preserve">
-    <value>Fractional coordinates of c-axis (fractional format (e.g. 3/4) is also acceptable) </value>
+    <value>Fractional coordinates of c-axis. Fractional format (e.g. 3/4) is acceptable.</value>
   </data>
 
 
@@ -1875,7 +1896,7 @@
     <value>3</value>
   </data>
   <data name="numericBoxY.ToolTip" xml:space="preserve">
-    <value>Fractional coordinates of b-axis (fractional format (e.g. 3/4) is also acceptable) </value>
+    <value>Fractional coordinates of b-axis. Fractional format (e.g. 3/4) is acceptable.</value>
   </data>
 
 
@@ -1923,7 +1944,7 @@
     <value>2</value>
   </data>
   <data name="numericBoxX.ToolTip" xml:space="preserve">
-    <value>Fractional coordinates of a-axis (fractional format (e.g. 3/4) is also acceptable)</value>
+    <value>Fractional coordinates of a-axis. Fractional format (e.g. 3/4) is acceptable.</value>
   </data>
 
 
@@ -3233,6 +3254,9 @@
   <data name="radioButtonDebyeWallerTypeU.Text" xml:space="preserve">
     <value>U</value>
   </data>
+  <data name="radioButtonDebyeWallerTypeU.ToolTip" xml:space="preserve">
+    <value>U,  the average atomic displacement parameter</value>
+  </data>
 
 
 
@@ -3268,6 +3292,10 @@
   </data>
   <data name="radioButtonDebyeWallerTypeB.Text" xml:space="preserve">
     <value>B</value>
+  </data>
+  <data name="radioButtonDebyeWallerTypeB.ToolTip" xml:space="preserve">
+    <value>B, another form of the displacement parameter.
+B = 8 pi^2 * U.</value>
   </data>
 
 
@@ -4374,6 +4402,9 @@
   <data name="comboBoxScatteringFactorElectron.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="comboBoxScatteringFactorElectron.ToolTip" xml:space="preserve">
+    <value>Select the number of valences</value>
+  </data>
 
 
 
@@ -4445,6 +4476,9 @@
   </data>
   <data name="comboBoxScatteringFactorXray.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="comboBoxScatteringFactorXray.ToolTip" xml:space="preserve">
+    <value>Select the number of valences</value>
   </data>
 
 
@@ -5274,6 +5308,9 @@
   <data name="numericBoxAtomRadius.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="numericBoxAtomRadius.ToolTip" xml:space="preserve">
+    <value>Radius of the sphere to be drawn</value>
+  </data>
 
 
 
@@ -5377,7 +5414,7 @@
     <value>Apply to same elements</value>
   </data>
   <data name="buttonApplyToSameElement.ToolTip" xml:space="preserve">
-    <value>Apply to atoms of the same element</value>
+    <value>Apply the appearance properties to atoms of the same element</value>
   </data>
   <data name="buttonApplyToSameElement.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5428,7 +5465,7 @@
     <value>Add </value>
   </data>
   <data name="buttonAddAtom.ToolTip" xml:space="preserve">
-    <value>Add the below atom</value>
+    <value>Add the below atom to above list</value>
   </data>
   <data name="&gt;&gt;buttonAddAtom.Name" xml:space="preserve">
     <value>buttonAddAtom</value>
@@ -5515,7 +5552,7 @@
     <value>Apply to all elements</value>
   </data>
   <data name="buttonApplyToAllElements.ToolTip" xml:space="preserve">
-    <value>Apply the appearance properties to atoms of the same element</value>
+    <value>Apply to all elements</value>
   </data>
   <data name="buttonApplyToAllElements.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5565,6 +5602,9 @@
   <data name="buttonAtomUp.Text" xml:space="preserve">
     <value>Up</value>
   </data>
+  <data name="buttonAtomUp.ToolTip" xml:space="preserve">
+    <value>Move the selected atom upward</value>
+  </data>
   <data name="&gt;&gt;buttonAtomUp.Name" xml:space="preserve">
     <value>buttonAtomUp</value>
   </data>
@@ -5610,6 +5650,9 @@
   <data name="buttonAtomDown.Text" xml:space="preserve">
     <value>Down</value>
   </data>
+  <data name="buttonAtomDown.ToolTip" xml:space="preserve">
+    <value>Move the selected atom downward</value>
+  </data>
   <data name="&gt;&gt;buttonAtomDown.Name" xml:space="preserve">
     <value>buttonAtomDown</value>
   </data>
@@ -5654,6 +5697,9 @@
   </data>
   <data name="buttonDeleteAtom.Text" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="buttonDeleteAtom.ToolTip" xml:space="preserve">
+    <value>Delete the selected atom</value>
   </data>
   <data name="&gt;&gt;buttonDeleteAtom.Name" xml:space="preserve">
     <value>buttonDeleteAtom</value>

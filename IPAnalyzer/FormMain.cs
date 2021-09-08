@@ -3864,7 +3864,7 @@ namespace IPAnalyzer
         {
             if (Skip) return;
 
-            if (Ring.IntensityOriginal == null || Ring.Intensity.Count == 0)
+            if (Ring.IntensityOriginal == null || Ring.Intensity.Count == 0 || pseudoBitmap.SrcValuesGray==null)
                 return;
 
             int originalWidth = Ring.SrcImgSizeOriginal.Width;
@@ -4254,17 +4254,23 @@ namespace IPAnalyzer
                 {
                     p = _p;
                     p.help.Add("IPA.Mask.MaskSpots() # Mask spots.");
-                    p.help.Add("IPA.Mask.ClearMask() # Clear current masks.");
+                    p.help.Add("IPA.Mask.ClearMask() # Clear the current masks.");
                     p.help.Add("IPA.Mask.MaskAll() # Mask all area.");
-                    p.help.Add("IPA.Mask.InvertMask() # Invert mask state.");
-
+                    p.help.Add("IPA.Mask.InvertMask() # Invert the current mask state.");
+                    p.help.Add("IPA.Mask.InvertTop() # Mask the top half area.");
+                    p.help.Add("IPA.Mask.InvertBottom() # Mask the bottom half area.");
+                    p.help.Add("IPA.Mask.InvertRight() # Mask the right half area.");
+                    p.help.Add("IPA.Mask.InvertLeft() # Mask the left half area.");
                 }
 
                 public void MaskSpots() => Execute(new Action(() => p.main.MaskSpots()));
-
                 public void ClearMask() => Execute(new Action(() => p.main.ClearMask()));
                 public void InvertMask() => Execute(new Action(() => p.main.InvertMask()));
                 public void MaskAll() => Execute(new Action(() => p.main.MaskAll()));
+                public void MaskTop() => Execute(new Action(() => p.main.FormProperty.MaskTop()));
+                public void MaskBottom() => Execute(new Action(() => p.main.FormProperty.MaskBottom()));
+                public void MaskLeft() => Execute(new Action(() => p.main.FormProperty.MaskLeft()));
+                public void MaskRight() => Execute(new Action(() => p.main.FormProperty.MaskRight()));
             }
             #endregion
 

@@ -129,6 +129,11 @@
             this.radioButtonBraggBrentano = new System.Windows.Forms.RadioButton();
             this.radioButtonDebyeScherrer = new System.Windows.Forms.RadioButton();
             this.tabPageSpotsAndCenter = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.buttonMaskLeft = new System.Windows.Forms.Button();
+            this.buttonMaskTop = new System.Windows.Forms.Button();
+            this.buttonMaskBottom = new System.Windows.Forms.Button();
+            this.buttonMaskRight = new System.Windows.Forms.Button();
             this.checkBoxManualMaskMode = new System.Windows.Forms.CheckBox();
             this.groupBoxManualMode = new System.Windows.Forms.GroupBox();
             this.radioButtonManualCircle = new System.Windows.Forms.RadioButton();
@@ -255,6 +260,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPageSpotsAndCenter.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBoxManualMode.SuspendLayout();
             this.groupBoxManualSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownManualSpotSize)).BeginInit();
@@ -339,6 +345,7 @@
             // waveLengthControl
             // 
             resources.ApplyResources(this.waveLengthControl, "waveLengthControl");
+            this.waveLengthControl.Direction = System.Windows.Forms.FlowDirection.TopDown;
             this.waveLengthControl.Energy = 17.44419672D;
             this.waveLengthControl.Name = "waveLengthControl";
             this.waveLengthControl.ShowWaveSource = true;
@@ -1238,6 +1245,7 @@
             // 
             // tabPageSpotsAndCenter
             // 
+            this.tabPageSpotsAndCenter.Controls.Add(this.groupBox13);
             this.tabPageSpotsAndCenter.Controls.Add(this.checkBoxManualMaskMode);
             this.tabPageSpotsAndCenter.Controls.Add(this.groupBoxManualMode);
             this.tabPageSpotsAndCenter.Controls.Add(this.groupBox7);
@@ -1247,6 +1255,44 @@
             resources.ApplyResources(this.tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             this.tabPageSpotsAndCenter.Name = "tabPageSpotsAndCenter";
             this.tabPageSpotsAndCenter.UseVisualStyleBackColor = true;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.buttonMaskLeft);
+            this.groupBox13.Controls.Add(this.buttonMaskTop);
+            this.groupBox13.Controls.Add(this.buttonMaskBottom);
+            this.groupBox13.Controls.Add(this.buttonMaskRight);
+            resources.ApplyResources(this.groupBox13, "groupBox13");
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.TabStop = false;
+            // 
+            // buttonMaskLeft
+            // 
+            resources.ApplyResources(this.buttonMaskLeft, "buttonMaskLeft");
+            this.buttonMaskLeft.Name = "buttonMaskLeft";
+            this.buttonMaskLeft.UseVisualStyleBackColor = true;
+            this.buttonMaskLeft.Click += new System.EventHandler(this.buttonMaskAll_Click);
+            // 
+            // buttonMaskTop
+            // 
+            resources.ApplyResources(this.buttonMaskTop, "buttonMaskTop");
+            this.buttonMaskTop.Name = "buttonMaskTop";
+            this.buttonMaskTop.UseVisualStyleBackColor = true;
+            this.buttonMaskTop.Click += new System.EventHandler(this.buttonMaskAll_Click);
+            // 
+            // buttonMaskBottom
+            // 
+            resources.ApplyResources(this.buttonMaskBottom, "buttonMaskBottom");
+            this.buttonMaskBottom.Name = "buttonMaskBottom";
+            this.buttonMaskBottom.UseVisualStyleBackColor = true;
+            this.buttonMaskBottom.Click += new System.EventHandler(this.buttonMaskAll_Click);
+            // 
+            // buttonMaskRight
+            // 
+            resources.ApplyResources(this.buttonMaskRight, "buttonMaskRight");
+            this.buttonMaskRight.Name = "buttonMaskRight";
+            this.buttonMaskRight.UseVisualStyleBackColor = true;
+            this.buttonMaskRight.Click += new System.EventHandler(this.buttonMaskAll_Click);
             // 
             // checkBoxManualMaskMode
             // 
@@ -2106,6 +2152,7 @@
             this.groupBox5.PerformLayout();
             this.tabPageSpotsAndCenter.ResumeLayout(false);
             this.tabPageSpotsAndCenter.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
             this.groupBoxManualMode.ResumeLayout(false);
             this.groupBoxManualMode.PerformLayout();
             this.groupBoxManualSpot.ResumeLayout(false);
@@ -2352,5 +2399,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button buttonMaskTop;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Button buttonMaskLeft;
+        private System.Windows.Forms.Button buttonMaskBottom;
+        private System.Windows.Forms.Button buttonMaskRight;
     }
 }

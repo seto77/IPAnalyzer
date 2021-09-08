@@ -731,11 +731,56 @@ namespace IPAnalyzer
 
         private void buttonMaskAll_Click(object sender, EventArgs e)
         {
-            if (Ring.IsSpots.Count > 0)
+            if (Ring.IsSpots.Count == 0) return;
+         
+            var text = (sender as Button).Text;
+
+            if (text.Contains("All"))
                 for (int i = 0; i < Ring.IsSpots.Count; i++)
                     Ring.IsSpots[i] = true;
-            formMain.Draw();
+
+            else if (text.Contains("Top"))
+                MaskTop();
+
+            else if (text.Contains("Bottom"))
+                MaskBottom();
+
+            else if (text.Contains("Left"))
+                MaskLeft();
+
+            else if (text.Contains("Right"))
+                MaskRight();
+
+                formMain.Draw();
         }
+
+        public void MaskTop()
+        {
+            if (Ring.IsSpots.Count == 0) return;
+            for (int i = 0; i < Ring.IsSpots.Count / 2; i++)
+                Ring.IsSpots[i] = true;
+        }
+        public void MaskBottom()
+        {
+            if (Ring.IsSpots.Count == 0) return;
+            for (int i = Ring.IsSpots.Count / 2; i < Ring.IsSpots.Count; i++)
+                Ring.IsSpots[i] = true;
+        }
+        public void MaskLeft()
+        {
+            if (Ring.IsSpots.Count == 0) return;
+            for (int h = 0; h < Ring.SrcImgSize.Height; h++)
+                for (int w = 0; w < Ring.SrcImgSize.Width / 2; w++)
+                    Ring.IsSpots[h * Ring.SrcImgSize.Width + w] = true;
+        }
+        public void MaskRight()
+        {
+            if (Ring.IsSpots.Count == 0) return;
+            for (int h = 0; h<Ring.SrcImgSize.Height; h++)
+                    for (int w = Ring.SrcImgSize.Width / 2; w<Ring.SrcImgSize.Width; w++)
+                        Ring.IsSpots[h * Ring.SrcImgSize.Width + w] = true;
+        }
+
 
         private void buttonUnmaskAll_Click(object sender, EventArgs e)
         {
