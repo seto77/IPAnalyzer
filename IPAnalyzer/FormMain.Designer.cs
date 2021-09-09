@@ -318,6 +318,7 @@ namespace IPAnalyzer
             // 
             // splitContainer1
             // 
+            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.HSplit;
             resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer1.Name = "splitContainer1";
@@ -328,10 +329,12 @@ namespace IPAnalyzer
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer1.Panel1.Controls.Add(this.panelMousePos);
+            this.splitContainer1.Panel1.Cursor = System.Windows.Forms.Cursors.Default;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             this.splitContainer1.Resize += new System.EventHandler(this.FormMain_Resize);
             // 
@@ -352,6 +355,7 @@ namespace IPAnalyzer
             this.splitContainer2.Panel2.Controls.Add(this.scalablePictureBox);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel3);
+            this.splitContainer2.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             // 
             // panel4
             // 
@@ -628,7 +632,7 @@ namespace IPAnalyzer
             // trackBarAdvancedMinInt
             // 
             resources.ApplyResources(this.trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
-            this.trackBarAdvancedMinInt.ControlHeight = 40;
+            this.trackBarAdvancedMinInt.ControlHeight = 27;
             this.trackBarAdvancedMinInt.DecimalPlaces = 0;
             this.trackBarAdvancedMinInt.LogScrollBar = false;
             this.trackBarAdvancedMinInt.Maximum = 65535D;
@@ -645,7 +649,7 @@ namespace IPAnalyzer
             // trackBarAdvancedMaxInt
             // 
             resources.ApplyResources(this.trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
-            this.trackBarAdvancedMaxInt.ControlHeight = 40;
+            this.trackBarAdvancedMaxInt.ControlHeight = 27;
             this.trackBarAdvancedMaxInt.DecimalPlaces = 0;
             this.trackBarAdvancedMaxInt.LogScrollBar = false;
             this.trackBarAdvancedMaxInt.Maximum = 65535D;
@@ -674,6 +678,7 @@ namespace IPAnalyzer
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -681,6 +686,7 @@ namespace IPAnalyzer
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.graphControlFrequency);
+            this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1091,7 +1097,6 @@ namespace IPAnalyzer
             // 
             // toolStripComboBoxBackgroundLower
             // 
-            resources.ApplyResources(this.toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
             this.toolStripComboBoxBackgroundLower.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxBackgroundLower.Items"),
             resources.GetString("toolStripComboBoxBackgroundLower.Items1"),
@@ -1100,6 +1105,7 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxBackgroundLower.Items4"),
             resources.GetString("toolStripComboBoxBackgroundLower.Items5")});
             this.toolStripComboBoxBackgroundLower.Name = "toolStripComboBoxBackgroundLower";
+            resources.ApplyResources(this.toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
             // 
             // toolStripMenuItem7
             // 
@@ -1108,7 +1114,6 @@ namespace IPAnalyzer
             // 
             // toolStripComboBoxBackgroundUpper
             // 
-            resources.ApplyResources(this.toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
             this.toolStripComboBoxBackgroundUpper.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxBackgroundUpper.Items"),
             resources.GetString("toolStripComboBoxBackgroundUpper.Items1"),
@@ -1116,6 +1121,7 @@ namespace IPAnalyzer
             resources.GetString("toolStripComboBoxBackgroundUpper.Items3"),
             resources.GetString("toolStripComboBoxBackgroundUpper.Items4")});
             this.toolStripComboBoxBackgroundUpper.Name = "toolStripComboBoxBackgroundUpper";
+            resources.ApplyResources(this.toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
             // 
             // fourierToolStripMenuItem
             // 
@@ -1712,13 +1718,13 @@ namespace IPAnalyzer
             // toolStripComboBoxRotate
             // 
             this.toolStripComboBoxRotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.toolStripComboBoxRotate, "toolStripComboBoxRotate");
             this.toolStripComboBoxRotate.Items.AddRange(new object[] {
             resources.GetString("toolStripComboBoxRotate.Items"),
             resources.GetString("toolStripComboBoxRotate.Items1"),
             resources.GetString("toolStripComboBoxRotate.Items2"),
             resources.GetString("toolStripComboBoxRotate.Items3")});
             this.toolStripComboBoxRotate.Name = "toolStripComboBoxRotate";
+            resources.ApplyResources(this.toolStripComboBoxRotate, "toolStripComboBoxRotate");
             this.toolStripComboBoxRotate.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxRotate_SelectedIndexChanged);
             // 
             // toolStripSeparator28
