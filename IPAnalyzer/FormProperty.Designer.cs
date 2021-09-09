@@ -2098,8 +2098,8 @@
             // 
             // FormProperty
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.tabControl);
             settings1.SettingsKey = "";
             this.DataBindings.Add(new System.Windows.Forms.Binding("Location", settings1, "LocationProperty", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));

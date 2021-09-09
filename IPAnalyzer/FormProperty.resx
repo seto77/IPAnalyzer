@@ -73,10 +73,14 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 208</value>
+    <value>141, 312</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 15</value>
+    <value>446, 25</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -103,10 +107,13 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 181</value>
+    <value>44, 272</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 15</value>
+    <value>648, 25</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -133,10 +140,13 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="checkBoxCorrectPolarization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 159</value>
+    <value>24, 238</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxCorrectPolarization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 19</value>
+    <value>524, 29</value>
   </data>
   <data name="checkBoxCorrectPolarization.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -166,20 +176,19 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="waveLengthControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 18</value>
+    <value>24, 27</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="waveLengthControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="waveLengthControl.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 500</value>
+    <value>750, 750</value>
   </data>
   <data name="waveLengthControl.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>190, 0</value>
+    <value>285, 0</value>
   </data>
   <data name="waveLengthControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 104</value>
+    <value>285, 140</value>
   </data>
   <data name="waveLengthControl.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -203,13 +212,13 @@
     <value>144, 4</value>
   </data>
   <data name="tabPageXRay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageXRay.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageXRay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPageXRay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -245,13 +254,13 @@
     <value>NoControl</value>
   </data>
   <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>4, 6</value>
   </data>
   <data name="label22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 0</value>
+    <value>4, 6, 4, 0</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 15</value>
+    <value>108, 25</value>
   </data>
   <data name="label22.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -281,10 +290,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonDirectSpotMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 3</value>
+    <value>120, 4</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonDirectSpotMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 19</value>
+    <value>124, 29</value>
   </data>
   <data name="radioButtonDirectSpotMode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -314,10 +326,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonFootMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 3</value>
+    <value>252, 4</value>
+  </data>
+  <data name="radioButtonFootMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonFootMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 19</value>
+    <value>74, 29</value>
   </data>
   <data name="radioButtonFootMode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -338,10 +353,13 @@
     <value>2</value>
   </data>
   <data name="flowLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 26</value>
+    <value>0, 39</value>
+  </data>
+  <data name="flowLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 25</value>
+    <value>330, 37</value>
   </data>
   <data name="flowLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -371,13 +389,13 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>4, 6</value>
   </data>
   <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 0</value>
+    <value>4, 6, 4, 0</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 15</value>
+    <value>120, 25</value>
   </data>
   <data name="label19.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -404,10 +422,13 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="radioButtonFlatPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 3</value>
+    <value>132, 4</value>
+  </data>
+  <data name="radioButtonFlatPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonFlatPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 19</value>
+    <value>113, 29</value>
   </data>
   <data name="radioButtonFlatPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -437,10 +458,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonGandlfi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 3</value>
+    <value>253, 4</value>
+  </data>
+  <data name="radioButtonGandlfi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonGandlfi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
+    <value>104, 29</value>
   </data>
   <data name="radioButtonGandlfi.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -463,8 +487,11 @@
   <data name="flowLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="flowLayoutPanel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 25</value>
+    <value>361, 37</value>
   </data>
   <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -506,22 +533,22 @@
     <value>Y</value>
   </data>
   <data name="numericBoxFootPositionY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 45</value>
+    <value>9, 68</value>
   </data>
   <data name="numericBoxFootPositionY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxFootPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxFootPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxFootPositionY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxFootPositionY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 27</value>
+    <value>172, 34</value>
   </data>
   <data name="numericBoxFootPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -557,22 +584,22 @@
     <value>X</value>
   </data>
   <data name="numericBoxFootPositionX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>9, 28</value>
   </data>
   <data name="numericBoxFootPositionX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxFootPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxFootPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxFootPositionX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxFootPositionX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 27</value>
+    <value>172, 34</value>
   </data>
   <data name="numericBoxFootPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -599,10 +626,10 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="groupBox9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 75</value>
+    <value>225, 112</value>
   </data>
   <data name="groupBox9.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -629,10 +656,13 @@
     <value>Segoe UI Symbol, 8pt</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 16</value>
+    <value>14, 24</value>
+  </data>
+  <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
+    <value>120, 21</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -668,22 +698,22 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="numericBoxCameraLength2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 33</value>
+    <value>26, 50</value>
   </data>
   <data name="numericBoxCameraLength2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxCameraLength2.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxCameraLength2.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxCameraLength2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxCameraLength2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 27</value>
+    <value>156, 34</value>
   </data>
   <data name="numericBoxCameraLength2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -707,13 +737,16 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 75</value>
+    <value>0, 112</value>
   </data>
   <data name="groupBox10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
+  <data name="groupBox10.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 63</value>
+    <value>225, 94</value>
   </data>
   <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -740,10 +773,13 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanelFootMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 53</value>
+    <value>238, 80</value>
+  </data>
+  <data name="flowLayoutPanelFootMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanelFootMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 138</value>
+    <value>225, 206</value>
   </data>
   <data name="flowLayoutPanelFootMode.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -779,22 +815,22 @@
     <value>Y</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 45</value>
+    <value>9, 68</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 27</value>
+    <value>172, 34</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -824,22 +860,22 @@
     <value>X</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>9, 28</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 27</value>
+    <value>172, 34</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -866,10 +902,10 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 75</value>
+    <value>225, 112</value>
   </data>
   <data name="groupBoxDirectSpotPosition.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -899,10 +935,13 @@
     <value>NoControl</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>4, 24</value>
+  </data>
+  <data name="label18.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
+    <value>165, 21</value>
   </data>
   <data name="label18.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -938,22 +977,22 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="numericBoxCameraLength1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 33</value>
+    <value>26, 50</value>
   </data>
   <data name="numericBoxCameraLength1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxCameraLength1.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxCameraLength1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxCameraLength1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxCameraLength1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 27</value>
+    <value>156, 34</value>
   </data>
   <data name="numericBoxCameraLength1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -977,13 +1016,16 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxCameaLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 75</value>
+    <value>0, 112</value>
   </data>
   <data name="groupBoxCameaLength.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
+  <data name="groupBoxCameaLength.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="groupBoxCameaLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 63</value>
+    <value>225, 94</value>
   </data>
   <data name="groupBoxCameaLength.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1007,13 +1049,13 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 53</value>
+    <value>9, 80</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 138</value>
+    <value>225, 206</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1043,22 +1085,22 @@
     <value>ξ</value>
   </data>
   <data name="numericBoxPixelKsi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 70</value>
+    <value>9, 105</value>
   </data>
   <data name="numericBoxPixelKsi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxPixelKsi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxPixelKsi.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxPixelKsi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxPixelKsi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 27</value>
+    <value>154, 34</value>
   </data>
   <data name="numericBoxPixelKsi.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1088,22 +1130,22 @@
     <value>Y</value>
   </data>
   <data name="numericBoxPixelSizeY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 42</value>
+    <value>4, 63</value>
   </data>
   <data name="numericBoxPixelSizeY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxPixelSizeY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxPixelSizeY.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxPixelSizeY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxPixelSizeY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 27</value>
+    <value>184, 34</value>
   </data>
   <data name="numericBoxPixelSizeY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1133,22 +1175,22 @@
     <value>X</value>
   </data>
   <data name="numericBoxPixelSizeX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>4, 24</value>
   </data>
   <data name="numericBoxPixelSizeX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxPixelSizeX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxPixelSizeX.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxPixelSizeX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxPixelSizeX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 27</value>
+    <value>184, 34</value>
   </data>
   <data name="numericBoxPixelSizeX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1169,16 +1211,16 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxPixelShape.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 139</value>
+    <value>477, 208</value>
   </data>
   <data name="groupBoxPixelShape.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxPixelShape.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxPixelShape.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 105</value>
+    <value>192, 158</value>
   </data>
   <data name="groupBoxPixelShape.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1208,22 +1250,22 @@
     <value>mm</value>
   </data>
   <data name="numericBoxGandlfiRadius.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 23</value>
+    <value>18, 34</value>
   </data>
   <data name="numericBoxGandlfiRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxGandlfiRadius.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxGandlfiRadius.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxGandlfiRadius.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxGandlfiRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 27</value>
+    <value>123, 34</value>
   </data>
   <data name="numericBoxGandlfiRadius.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1244,16 +1286,16 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxGandlfiRadius.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 195</value>
+    <value>302, 292</value>
   </data>
   <data name="groupBoxGandlfiRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxGandlfiRadius.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxGandlfiRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 55</value>
+    <value>160, 82</value>
   </data>
   <data name="groupBoxGandlfiRadius.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1295,22 +1337,22 @@
     <value>Inverse of radius</value>
   </data>
   <data name="numericBoxSphericalCorections.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
+    <value>8, 24</value>
   </data>
   <data name="numericBoxSphericalCorections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxSphericalCorections.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 25</value>
+    <value>1000, 31</value>
   </data>
   <data name="numericBoxSphericalCorections.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 23</value>
+    <value>1, 31</value>
   </data>
   <data name="numericBoxSphericalCorections.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxSphericalCorections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 25</value>
+    <value>232, 31</value>
   </data>
   <data name="numericBoxSphericalCorections.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1337,10 +1379,13 @@
     <value>NoControl</value>
   </data>
   <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 38</value>
+    <value>136, 57</value>
+  </data>
+  <data name="label26.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
+    <value>116, 21</value>
   </data>
   <data name="label26.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1364,16 +1409,16 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxSphericalCorrection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 195</value>
+    <value>9, 292</value>
   </data>
   <data name="groupBoxSphericalCorrection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxSphericalCorrection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxSphericalCorrection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 55</value>
+    <value>279, 82</value>
   </data>
   <data name="groupBoxSphericalCorrection.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1406,22 +1451,22 @@
     <value>τ</value>
   </data>
   <data name="numericBoxTiltTau.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
+    <value>9, 70</value>
   </data>
   <data name="numericBoxTiltTau.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxTiltTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxTiltTau.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxTiltTau.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxTiltTau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 27</value>
+    <value>164, 34</value>
   </data>
   <data name="numericBoxTiltTau.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1451,22 +1496,22 @@
     <value>φ</value>
   </data>
   <data name="numericBoxTiltPhi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
+    <value>9, 30</value>
   </data>
   <data name="numericBoxTiltPhi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericBoxTiltPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxTiltPhi.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxTiltPhi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="numericBoxTiltPhi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 27</value>
+    <value>164, 34</value>
   </data>
   <data name="numericBoxTiltPhi.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1487,16 +1532,16 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBoxTiltCorrection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 53</value>
+    <value>477, 80</value>
   </data>
   <data name="groupBoxTiltCorrection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxTiltCorrection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxTiltCorrection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 78</value>
+    <value>192, 117</value>
   </data>
   <data name="groupBoxTiltCorrection.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1523,13 +1568,13 @@
     <value>144, 4</value>
   </data>
   <data name="tabPageIP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageIP.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageIP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPageIP.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1556,13 +1601,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 44</value>
+    <value>489, 66</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>112, 28</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1592,10 +1637,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 46</value>
+    <value>116, 69</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 15</value>
+    <value>150, 22</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1625,13 +1673,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxThresholdMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 44</value>
+    <value>297, 66</value>
   </data>
   <data name="checkBoxThresholdMax.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxThresholdMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
+    <value>166, 26</value>
   </data>
   <data name="checkBoxThresholdMax.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1661,13 +1709,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxThresholdMin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 21</value>
+    <value>297, 32</value>
   </data>
   <data name="checkBoxThresholdMin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxThresholdMin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 19</value>
+    <value>176, 26</value>
   </data>
   <data name="checkBoxThresholdMin.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1694,13 +1742,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 20</value>
+    <value>489, 30</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
+    <value>111, 28</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1724,13 +1772,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownEdge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 42</value>
+    <value>34, 63</value>
   </data>
   <data name="numericUpDownEdge.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownEdge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 21</value>
+    <value>72, 28</value>
   </data>
   <data name="numericUpDownEdge.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1757,13 +1805,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxOmitSpots.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 17</value>
+    <value>6, 26</value>
   </data>
   <data name="checkBoxOmitSpots.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxOmitSpots.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 26</value>
+    <value>160, 39</value>
   </data>
   <data name="checkBoxOmitSpots.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1793,13 +1841,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxMaskEdge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 47</value>
+    <value>6, 70</value>
   </data>
   <data name="checkBoxMaskEdge.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxMaskEdge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
+    <value>22, 21</value>
   </data>
   <data name="checkBoxMaskEdge.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1820,16 +1868,16 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 137</value>
+    <value>21, 206</value>
   </data>
   <data name="groupBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 75</value>
+    <value>626, 112</value>
   </data>
   <data name="groupBox8.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1859,13 +1907,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 1</value>
+    <value>27, 2</value>
   </data>
   <data name="radioButtonRectangle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 21</value>
+    <value>160, 32</value>
   </data>
   <data name="radioButtonRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1892,13 +1940,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxRectangleIsBothSide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 22</value>
+    <value>249, 33</value>
   </data>
   <data name="checkBoxRectangleIsBothSide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxRectangleIsBothSide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 21</value>
+    <value>124, 32</value>
   </data>
   <data name="checkBoxRectangleIsBothSide.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1952,13 +2000,13 @@
     <value>Free</value>
   </data>
   <data name="comboBoxRectangleDirection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 21</value>
+    <value>108, 32</value>
   </data>
   <data name="comboBoxRectangleDirection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="comboBoxRectangleDirection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
+    <value>130, 30</value>
   </data>
   <data name="comboBoxRectangleDirection.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1985,10 +2033,13 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 49</value>
+    <value>250, 74</value>
+  </data>
+  <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 21</value>
+    <value>63, 32</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2015,10 +2066,13 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 49</value>
+    <value>8, 74</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>112, 32</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2042,13 +2096,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownRectangleBand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 47</value>
+    <value>147, 70</value>
   </data>
   <data name="numericUpDownRectangleBand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownRectangleBand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 21</value>
+    <value>92, 28</value>
   </data>
   <data name="numericUpDownRectangleBand.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2069,13 +2123,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownRectangleAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 47</value>
+    <value>328, 70</value>
   </data>
   <data name="numericUpDownRectangleAngle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownRectangleAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 21</value>
+    <value>96, 28</value>
   </data>
   <data name="numericUpDownRectangleAngle.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2099,10 +2153,13 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 23</value>
+    <value>8, 34</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 21</value>
+    <value>92, 32</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2126,16 +2183,16 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBoxRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 6</value>
+    <value>21, 9</value>
   </data>
   <data name="groupBoxRectangle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxRectangle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 76</value>
+    <value>436, 114</value>
   </data>
   <data name="groupBoxRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2159,13 +2216,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonSector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 77</value>
+    <value>26, 116</value>
   </data>
   <data name="radioButtonSector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonSector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 26</value>
+    <value>105, 39</value>
   </data>
   <data name="radioButtonSector.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2189,13 +2246,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownSectorStartAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 22</value>
+    <value>114, 33</value>
   </data>
   <data name="numericUpDownSectorStartAngle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownSectorStartAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 21</value>
+    <value>84, 28</value>
   </data>
   <data name="numericUpDownSectorStartAngle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2216,13 +2273,13 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownSectorEndAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 22</value>
+    <value>336, 33</value>
   </data>
   <data name="numericUpDownSectorEndAngle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownSectorEndAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 21</value>
+    <value>84, 28</value>
   </data>
   <data name="numericUpDownSectorEndAngle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2246,10 +2303,13 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
+    <value>6, 34</value>
+  </data>
+  <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>112, 32</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2276,10 +2336,13 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 23</value>
+    <value>236, 34</value>
+  </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 21</value>
+    <value>98, 32</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2306,16 +2369,16 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBoxSector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 79</value>
+    <value>21, 118</value>
   </data>
   <data name="groupBoxSector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxSector.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxSector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 52</value>
+    <value>436, 78</value>
   </data>
   <data name="groupBoxSector.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2339,13 +2402,13 @@
     <value>144, 4</value>
   </data>
   <data name="tabPageIntegralRegion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageIntegralRegion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageIntegralRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPageIntegralRegion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2372,10 +2435,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonRadial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 134</value>
+    <value>4, 201</value>
+  </data>
+  <data name="radioButtonRadial.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonRadial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 23</value>
+    <value>318, 32</value>
   </data>
   <data name="radioButtonRadial.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2405,10 +2471,13 @@
     <value>NoControl</value>
   </data>
   <data name="label46.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 29</value>
+    <value>136, 44</value>
+  </data>
+  <data name="label46.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 17</value>
+    <value>125, 28</value>
   </data>
   <data name="label46.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2438,10 +2507,13 @@
     <value>NoControl</value>
   </data>
   <data name="label40.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 29</value>
+    <value>396, 44</value>
+  </data>
+  <data name="label40.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
+    <value>121, 28</value>
   </data>
   <data name="label40.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2468,22 +2540,22 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxRadialRange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 27</value>
+    <value>519, 40</value>
   </data>
   <data name="numericBoxRadialRange.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxRadialRange.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxRadialRange.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxRadialRange.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxRadialRange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 27</value>
+    <value>86, 34</value>
   </data>
   <data name="numericBoxRadialRange.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2507,22 +2579,22 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxRadialRadius.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 26</value>
+    <value>262, 39</value>
   </data>
   <data name="numericBoxRadialRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxRadialRadius.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxRadialRadius.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxRadialRadius.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxRadialRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 27</value>
+    <value>105, 34</value>
   </data>
   <data name="numericBoxRadialRadius.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2546,22 +2618,22 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxRadialStep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 55</value>
+    <value>426, 82</value>
   </data>
   <data name="numericBoxRadialStep.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxRadialStep.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxRadialStep.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxRadialStep.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxRadialStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 27</value>
+    <value>87, 34</value>
   </data>
   <data name="numericBoxRadialStep.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2588,13 +2660,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonRadialAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
+    <value>9, 30</value>
   </data>
   <data name="radioButtonRadialAngle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonRadialAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 21</value>
+    <value>88, 32</value>
   </data>
   <data name="radioButtonRadialAngle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2624,13 +2696,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonRadialDspacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
+    <value>9, 63</value>
   </data>
   <data name="radioButtonRadialDspacing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonRadialDspacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 21</value>
+    <value>124, 32</value>
   </data>
   <data name="radioButtonRadialDspacing.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2660,10 +2732,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelDimensionRadial2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>403, 30</value>
+    <value>604, 45</value>
+  </data>
+  <data name="labelDimensionRadial2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelDimensionRadial2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 15</value>
+    <value>17, 22</value>
   </data>
   <data name="labelDimensionRadial2.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2693,10 +2768,13 @@
     <value>NoControl</value>
   </data>
   <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 58</value>
+    <value>519, 87</value>
+  </data>
+  <data name="label37.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 17</value>
+    <value>20, 28</value>
   </data>
   <data name="label37.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2726,13 +2804,16 @@
     <value>NoControl</value>
   </data>
   <data name="label36.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 58</value>
+    <value>138, 87</value>
+  </data>
+  <data name="label36.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label36.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 17</value>
+    <value>279, 28</value>
   </data>
   <data name="label36.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2765,10 +2846,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelDimensionRadial1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 29</value>
+    <value>375, 44</value>
+  </data>
+  <data name="labelDimensionRadial1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelDimensionRadial1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 17</value>
+    <value>20, 28</value>
   </data>
   <data name="labelDimensionRadial1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2792,10 +2876,16 @@
     <value>False</value>
   </data>
   <data name="groupBoxRadial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 136</value>
+    <value>9, 204</value>
+  </data>
+  <data name="groupBoxRadial.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxRadial.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxRadial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 85</value>
+    <value>638, 128</value>
   </data>
   <data name="groupBoxRadial.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2819,10 +2909,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonConcentric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>4, 0</value>
+  </data>
+  <data name="radioButtonConcentric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonConcentric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 23</value>
+    <value>480, 32</value>
   </data>
   <data name="radioButtonConcentric.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2849,22 +2942,22 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxConcentricStep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 71</value>
+    <value>212, 106</value>
   </data>
   <data name="numericBoxConcentricStep.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxConcentricStep.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxConcentricStep.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxConcentricStep.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxConcentricStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
+    <value>108, 34</value>
   </data>
   <data name="numericBoxConcentricStep.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2891,13 +2984,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonConcentricLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 70</value>
+    <value>8, 105</value>
   </data>
   <data name="radioButtonConcentricLength.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonConcentricLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>97, 32</value>
   </data>
   <data name="radioButtonConcentricLength.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2927,22 +3020,22 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxConcentricEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 44</value>
+    <value>212, 66</value>
   </data>
   <data name="numericBoxConcentricEnd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxConcentricEnd.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxConcentricEnd.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxConcentricEnd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxConcentricEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
+    <value>108, 34</value>
   </data>
   <data name="numericBoxConcentricEnd.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2969,13 +3062,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonConcentricDspacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 44</value>
+    <value>8, 66</value>
   </data>
   <data name="radioButtonConcentricDspacing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonConcentricDspacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
+    <value>124, 32</value>
   </data>
   <data name="radioButtonConcentricDspacing.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3002,22 +3095,22 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxConcentricStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 17</value>
+    <value>212, 26</value>
   </data>
   <data name="numericBoxConcentricStart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxConcentricStart.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxConcentricStart.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxConcentricStart.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxConcentricStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
+    <value>108, 34</value>
   </data>
   <data name="numericBoxConcentricStart.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3044,13 +3137,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonConcentricAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 19</value>
+    <value>8, 28</value>
   </data>
   <data name="radioButtonConcentricAngle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonConcentricAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 23</value>
+    <value>88, 32</value>
   </data>
   <data name="radioButtonConcentricAngle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3077,10 +3170,13 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 46</value>
+    <value>154, 69</value>
+  </data>
+  <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 16</value>
+    <value>50, 24</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3110,13 +3206,16 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 73</value>
+    <value>154, 110</value>
+  </data>
+  <data name="label14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label14.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 19</value>
+    <value>52, 28</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3149,10 +3248,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelIntegralDimension3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 76</value>
+    <value>321, 114</value>
+  </data>
+  <data name="labelIntegralDimension3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelIntegralDimension3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 19</value>
+    <value>20, 28</value>
   </data>
   <data name="labelIntegralDimension3.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3182,10 +3284,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelIntegralDimension1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 22</value>
+    <value>321, 33</value>
+  </data>
+  <data name="labelIntegralDimension1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelIntegralDimension1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 19</value>
+    <value>20, 28</value>
   </data>
   <data name="labelIntegralDimension1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3215,10 +3320,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelIntegralDimension2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 49</value>
+    <value>321, 74</value>
+  </data>
+  <data name="labelIntegralDimension2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelIntegralDimension2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 19</value>
+    <value>20, 28</value>
   </data>
   <data name="labelIntegralDimension2.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3245,10 +3353,13 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 19</value>
+    <value>154, 28</value>
+  </data>
+  <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 16</value>
+    <value>63, 24</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3272,16 +3383,16 @@
     <value>Segoe UI Symbol, 10pt</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
+    <value>9, 26</value>
   </data>
   <data name="groupBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 101</value>
+    <value>369, 152</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -3311,13 +3422,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonBraggBrentano.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 19</value>
+    <value>15, 28</value>
   </data>
   <data name="radioButtonBraggBrentano.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonBraggBrentano.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 23</value>
+    <value>186, 32</value>
   </data>
   <data name="radioButtonBraggBrentano.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3350,13 +3461,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonDebyeScherrer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 42</value>
+    <value>15, 63</value>
   </data>
   <data name="radioButtonDebyeScherrer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonDebyeScherrer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
+    <value>183, 32</value>
   </data>
   <data name="radioButtonDebyeScherrer.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -3380,16 +3491,16 @@
     <value>Segoe UI Symbol, 10pt</value>
   </data>
   <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 17</value>
+    <value>387, 26</value>
   </data>
   <data name="groupBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 68</value>
+    <value>218, 102</value>
   </data>
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -3410,10 +3521,16 @@
     <value>1</value>
   </data>
   <data name="groupBoxConcentric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 3</value>
+    <value>9, 4</value>
+  </data>
+  <data name="groupBoxConcentric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxConcentric.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxConcentric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 122</value>
+    <value>624, 183</value>
   </data>
   <data name="groupBoxConcentric.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3437,13 +3554,13 @@
     <value>144, 4</value>
   </data>
   <data name="tabPageIntegralProperty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageIntegralProperty.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageIntegralProperty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPageIntegralProperty.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3470,13 +3587,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMaskLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 24</value>
+    <value>39, 36</value>
   </data>
   <data name="buttonMaskLeft.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="buttonMaskLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
+    <value>87, 36</value>
   </data>
   <data name="buttonMaskLeft.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3503,13 +3620,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMaskTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 12</value>
+    <value>128, 18</value>
   </data>
   <data name="buttonMaskTop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="buttonMaskTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
+    <value>87, 36</value>
   </data>
   <data name="buttonMaskTop.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3536,13 +3653,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMaskBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 36</value>
+    <value>128, 54</value>
   </data>
   <data name="buttonMaskBottom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="buttonMaskBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
+    <value>87, 36</value>
   </data>
   <data name="buttonMaskBottom.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3569,13 +3686,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMaskRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 24</value>
+    <value>216, 36</value>
   </data>
   <data name="buttonMaskRight.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="buttonMaskRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
+    <value>87, 36</value>
   </data>
   <data name="buttonMaskRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3599,10 +3716,16 @@
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBox13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 31</value>
+    <value>9, 46</value>
+  </data>
+  <data name="groupBox13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox13.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 64</value>
+    <value>310, 96</value>
   </data>
   <data name="groupBox13.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -3632,13 +3755,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxManualMaskMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 6</value>
+    <value>330, 9</value>
   </data>
   <data name="checkBoxManualMaskMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxManualMaskMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 19</value>
+    <value>195, 29</value>
   </data>
   <data name="checkBoxManualMaskMode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3668,10 +3791,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonManualCircle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
+    <value>9, 30</value>
+  </data>
+  <data name="radioButtonManualCircle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonManualCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 19</value>
+    <value>304, 29</value>
   </data>
   <data name="radioButtonManualCircle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3701,10 +3827,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonManualSpline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 61</value>
+    <value>9, 92</value>
+  </data>
+  <data name="radioButtonManualSpline.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonManualSpline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 49</value>
+    <value>244, 79</value>
   </data>
   <data name="radioButtonManualSpline.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3736,10 +3865,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonManualRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 40</value>
+    <value>9, 60</value>
+  </data>
+  <data name="radioButtonManualRectangle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonManualRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 19</value>
+    <value>338, 29</value>
   </data>
   <data name="radioButtonManualRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3769,10 +3901,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonManualSpot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 153</value>
+    <value>9, 230</value>
+  </data>
+  <data name="radioButtonManualSpot.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="radioButtonManualSpot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 34</value>
+    <value>251, 54</value>
   </data>
   <data name="radioButtonManualSpot.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3797,13 +3932,13 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="textBoxManualSpotSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 47</value>
+    <value>174, 70</value>
   </data>
   <data name="textBoxManualSpotSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="textBoxManualSpotSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 21</value>
+    <value>66, 28</value>
   </data>
   <data name="textBoxManualSpotSize.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3833,13 +3968,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 57</value>
+    <value>20, 86</value>
   </data>
   <data name="radioButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 19</value>
+    <value>114, 29</value>
   </data>
   <data name="radioButton1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3863,13 +3998,13 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownManualSpotSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 47</value>
+    <value>242, 70</value>
   </data>
   <data name="numericUpDownManualSpotSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownManualSpotSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 21</value>
+    <value>28, 28</value>
   </data>
   <data name="numericUpDownManualSpotSize.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3896,10 +4031,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 49</value>
+    <value>279, 74</value>
+  </data>
+  <data name="label30.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 21</value>
+    <value>34, 32</value>
   </data>
   <data name="label30.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3929,13 +4067,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonCircle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 40</value>
+    <value>18, 60</value>
   </data>
   <data name="radioButtonCircle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 19</value>
+    <value>142, 29</value>
   </data>
   <data name="radioButtonCircle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3959,16 +4097,16 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxManualSpot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 152</value>
+    <value>16, 228</value>
   </data>
   <data name="groupBoxManualSpot.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="groupBoxManualSpot.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="groupBoxManualSpot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 82</value>
+    <value>332, 123</value>
   </data>
   <data name="groupBoxManualSpot.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3995,10 +4133,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label48.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 56</value>
+    <value>88, 84</value>
+  </data>
+  <data name="label48.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 15</value>
+    <value>91, 22</value>
   </data>
   <data name="label48.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -4025,10 +4166,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label49.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 55</value>
+    <value>260, 82</value>
+  </data>
+  <data name="label49.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 21</value>
+    <value>34, 32</value>
   </data>
   <data name="label49.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -4052,10 +4196,13 @@ selected shape and size)</value>
     <value>False</value>
   </data>
   <data name="numericUpDownSplineWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 53</value>
+    <value>192, 80</value>
+  </data>
+  <data name="numericUpDownSplineWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="numericUpDownSplineWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 23</value>
+    <value>63, 31</value>
   </data>
   <data name="numericUpDownSplineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -4079,10 +4226,16 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxSpline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 66</value>
+    <value>16, 99</value>
+  </data>
+  <data name="groupBoxSpline.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxSpline.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxSpline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 85</value>
+    <value>332, 128</value>
   </data>
   <data name="groupBoxSpline.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4103,16 +4256,16 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBoxManualMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 7</value>
+    <value>328, 10</value>
   </data>
   <data name="groupBoxManualMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxManualMode.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxManualMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 240</value>
+    <value>360, 360</value>
   </data>
   <data name="groupBoxManualMode.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -4139,13 +4292,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonTakeOverMaskfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 65</value>
+    <value>15, 98</value>
   </data>
   <data name="radioButtonTakeOverMaskfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonTakeOverMaskfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 19</value>
+    <value>218, 29</value>
   </data>
   <data name="radioButtonTakeOverMaskfile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4175,13 +4328,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonTakeoverMask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 42</value>
+    <value>15, 63</value>
   </data>
   <data name="radioButtonTakeoverMask.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonTakeoverMask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 19</value>
+    <value>293, 29</value>
   </data>
   <data name="radioButtonTakeoverMask.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4211,13 +4364,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonTakoverNothing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 19</value>
+    <value>15, 28</value>
   </data>
   <data name="radioButtonTakoverNothing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButtonTakoverNothing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 19</value>
+    <value>80, 29</value>
   </data>
   <data name="radioButtonTakoverNothing.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4241,16 +4394,16 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 158</value>
+    <value>9, 237</value>
   </data>
   <data name="groupBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 88</value>
+    <value>310, 132</value>
   </data>
   <data name="groupBox7.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -4274,13 +4427,13 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownFindSpotsDeviation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 27</value>
+    <value>188, 40</value>
   </data>
   <data name="numericUpDownFindSpotsDeviation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownFindSpotsDeviation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 21</value>
+    <value>92, 28</value>
   </data>
   <data name="numericUpDownFindSpotsDeviation.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4310,10 +4463,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 19</value>
+    <value>27, 28</value>
+  </data>
+  <data name="label28.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 30</value>
+    <value>149, 44</value>
   </data>
   <data name="label28.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -4338,16 +4494,16 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="groupBox12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 97</value>
+    <value>9, 146</value>
   </data>
   <data name="groupBox12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox12.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 58</value>
+    <value>310, 87</value>
   </data>
   <data name="groupBox12.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -4374,13 +4530,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="buttonMaskAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 1</value>
+    <value>132, 2</value>
   </data>
   <data name="buttonMaskAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="buttonMaskAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 24</value>
+    <value>116, 36</value>
   </data>
   <data name="buttonMaskAll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4413,13 +4569,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="buttonUnmaskAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 1</value>
+    <value>8, 2</value>
   </data>
   <data name="buttonUnmaskAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
+    <value>4, 8, 4, 8</value>
   </data>
   <data name="buttonUnmaskAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 25</value>
+    <value>111, 35</value>
   </data>
   <data name="buttonUnmaskAll.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4446,13 +4602,13 @@ selected shape and size)</value>
     <value>144, 4</value>
   </data>
   <data name="tabPageSpotsAndCenter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageSpotsAndCenter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageSpotsAndCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPageSpotsAndCenter.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4482,22 +4638,22 @@ selected shape and size)</value>
     <value>Kα2/Kα1</value>
   </data>
   <data name="numericBoxTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 5</value>
+    <value>372, 8</value>
   </data>
   <data name="numericBoxTest.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxTest.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxTest.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxTest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 27</value>
+    <value>152, 34</value>
   </data>
   <data name="numericBoxTest.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4521,10 +4677,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 8</value>
+    <value>22, 12</value>
+  </data>
+  <data name="checkBoxTest.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 19</value>
+    <value>325, 26</value>
   </data>
   <data name="checkBoxTest.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4551,13 +4710,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 184</value>
+    <value>33, 276</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 19</value>
+    <value>447, 28</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4584,13 +4743,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxSaveFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 39</value>
+    <value>33, 58</value>
   </data>
   <data name="checkBoxSaveFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxSaveFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 21</value>
+    <value>162, 32</value>
   </data>
   <data name="checkBoxSaveFile.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4626,7 +4785,7 @@ selected shape and size)</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonAsPDIformat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 19</value>
+    <value>143, 26</value>
   </data>
   <data name="radioButtonAsPDIformat.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4656,13 +4815,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonAsCSVformat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 19</value>
+    <value>0, 26</value>
   </data>
   <data name="radioButtonAsCSVformat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonAsCSVformat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 19</value>
+    <value>151, 26</value>
   </data>
   <data name="radioButtonAsCSVformat.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4692,13 +4851,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonAsTSVformat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 38</value>
+    <value>0, 52</value>
   </data>
   <data name="radioButtonAsTSVformat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonAsTSVformat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 19</value>
+    <value>151, 26</value>
   </data>
   <data name="radioButtonAsTSVformat.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4719,10 +4878,13 @@ selected shape and size)</value>
     <value>2</value>
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 70</value>
+    <value>10, 105</value>
+  </data>
+  <data name="flowLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 60</value>
+    <value>178, 90</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4755,7 +4917,7 @@ selected shape and size)</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonSetDirectoryEachTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 19</value>
+    <value>299, 26</value>
   </data>
   <data name="radioButtonSetDirectoryEachTime.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4785,13 +4947,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonSaveAtImageDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 19</value>
+    <value>0, 26</value>
   </data>
   <data name="radioButtonSaveAtImageDirectory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonSaveAtImageDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 19</value>
+    <value>305, 26</value>
   </data>
   <data name="radioButtonSaveAtImageDirectory.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4812,10 +4974,13 @@ selected shape and size)</value>
     <value>1</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 24</value>
+    <value>10, 36</value>
+  </data>
+  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 40</value>
+    <value>320, 60</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4839,16 +5004,16 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBoxSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 39</value>
+    <value>22, 58</value>
   </data>
   <data name="groupBoxSaveProfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxSaveProfile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBoxSaveProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 137</value>
+    <value>440, 206</value>
   </data>
   <data name="groupBoxSaveProfile.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4872,13 +5037,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 24</value>
+    <value>38, 36</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 19</value>
+    <value>267, 28</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4902,10 +5067,16 @@ selected shape and size)</value>
     <value>False</value>
   </data>
   <data name="groupBoxSendPDI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 184</value>
+    <value>22, 276</value>
+  </data>
+  <data name="groupBoxSendPDI.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxSendPDI.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxSendPDI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 50</value>
+    <value>477, 75</value>
   </data>
   <data name="groupBoxSendPDI.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -4929,13 +5100,13 @@ selected shape and size)</value>
     <value>144, 4</value>
   </data>
   <data name="tabPageAfterGetProfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageAfterGetProfile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabPageAfterGetProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPageAfterGetProfile.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -4956,10 +5127,13 @@ selected shape and size)</value>
     <value>5</value>
   </data>
   <data name="numericUpDownUnrollChiDivision.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 33</value>
+    <value>68, 50</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="numericUpDownUnrollChiDivision.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 25</value>
+    <value>180, 34</value>
   </data>
   <data name="numericUpDownUnrollChiDivision.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4977,10 +5151,16 @@ selected shape and size)</value>
     <value>0</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 133</value>
+    <value>9, 200</value>
+  </data>
+  <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 69</value>
+    <value>288, 104</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5004,13 +5184,13 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownUnrolledImageXend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 66</value>
+    <value>234, 99</value>
   </data>
   <data name="numericUpDownUnrolledImageXend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownUnrolledImageXend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 21</value>
+    <value>99, 28</value>
   </data>
   <data name="numericUpDownUnrolledImageXend.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -5034,13 +5214,13 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownUnrolledImageXstart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 39</value>
+    <value>234, 58</value>
   </data>
   <data name="numericUpDownUnrolledImageXstart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownUnrolledImageXstart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 21</value>
+    <value>99, 28</value>
   </data>
   <data name="numericUpDownUnrolledImageXstart.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -5070,10 +5250,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label38.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 95</value>
+    <value>334, 142</value>
+  </data>
+  <data name="label38.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 15</value>
+    <value>17, 22</value>
   </data>
   <data name="label38.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5103,10 +5286,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label39.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 41</value>
+    <value>334, 62</value>
+  </data>
+  <data name="label39.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 15</value>
+    <value>17, 22</value>
   </data>
   <data name="label39.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5136,13 +5322,16 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 95</value>
+    <value>183, 142</value>
+  </data>
+  <data name="label25.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label25.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 15</value>
+    <value>47, 22</value>
   </data>
   <data name="label25.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5175,10 +5364,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label41.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 68</value>
+    <value>334, 102</value>
+  </data>
+  <data name="label41.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 15</value>
+    <value>17, 22</value>
   </data>
   <data name="label41.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5202,13 +5394,13 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="numericUpDownUnrolledImageXstep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 93</value>
+    <value>234, 140</value>
   </data>
   <data name="numericUpDownUnrolledImageXstep.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="numericUpDownUnrolledImageXstep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 21</value>
+    <value>99, 28</value>
   </data>
   <data name="numericUpDownUnrolledImageXstep.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5238,10 +5430,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 68</value>
+    <value>183, 102</value>
+  </data>
+  <data name="label24.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 16</value>
+    <value>50, 24</value>
   </data>
   <data name="label24.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5268,10 +5463,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label42.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 41</value>
+    <value>183, 62</value>
+  </data>
+  <data name="label42.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 16</value>
+    <value>63, 24</value>
   </data>
   <data name="label42.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5301,13 +5499,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 66</value>
+    <value>21, 99</value>
   </data>
   <data name="radioButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 19</value>
+    <value>90, 26</value>
   </data>
   <data name="radioButton2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5337,13 +5535,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButton4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 41</value>
+    <value>21, 62</value>
   </data>
   <data name="radioButton4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 19</value>
+    <value>81, 26</value>
   </data>
   <data name="radioButton4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5373,13 +5571,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 91</value>
+    <value>21, 136</value>
   </data>
   <data name="radioButton3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 19</value>
+    <value>113, 26</value>
   </data>
   <data name="radioButton3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5400,10 +5598,16 @@ selected shape and size)</value>
     <value>11</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 3</value>
+    <value>8, 4</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 124</value>
+    <value>358, 186</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -5426,11 +5630,14 @@ selected shape and size)</value>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 4</value>
   </data>
+  <data name="tabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -5457,10 +5664,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxExtensionIPA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 116</value>
+    <value>12, 174</value>
+  </data>
+  <data name="checkBoxExtensionIPA.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxExtensionIPA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 23</value>
+    <value>175, 32</value>
   </data>
   <data name="checkBoxExtensionIPA.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -5487,10 +5697,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxExtensionIPF.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 90</value>
+    <value>12, 135</value>
+  </data>
+  <data name="checkBoxExtensionIPF.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxExtensionIPF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 23</value>
+    <value>175, 32</value>
   </data>
   <data name="checkBoxExtensionIPF.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -5517,10 +5730,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxExtensionIMG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 66</value>
+    <value>12, 99</value>
+  </data>
+  <data name="checkBoxExtensionIMG.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxExtensionIMG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 23</value>
+    <value>563, 32</value>
   </data>
   <data name="checkBoxExtensionIMG.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5547,10 +5763,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxExtensionCCD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 14</value>
+    <value>12, 21</value>
+  </data>
+  <data name="checkBoxExtensionCCD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxExtensionCCD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 23</value>
+    <value>205, 32</value>
   </data>
   <data name="checkBoxExtensionCCD.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5577,10 +5796,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxExtensionSTL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>12, 60</value>
+  </data>
+  <data name="checkBoxExtensionSTL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxExtensionSTL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
+    <value>221, 32</value>
   </data>
   <data name="checkBoxExtensionSTL.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5603,11 +5825,14 @@ selected shape and size)</value>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 4</value>
   </data>
+  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -5637,10 +5862,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="label50.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 23</value>
+    <value>3, 34</value>
+  </data>
+  <data name="label50.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 15</value>
+    <value>82, 22</value>
   </data>
   <data name="label50.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5679,7 +5907,7 @@ selected shape and size)</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonChiClockwise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 19</value>
+    <value>116, 26</value>
   </data>
   <data name="radioButtonChiClockwise.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5706,13 +5934,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonChiCounterclockwise.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 19</value>
+    <value>0, 26</value>
   </data>
   <data name="radioButtonChiCounterclockwise.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonChiCounterclockwise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 19</value>
+    <value>176, 26</value>
   </data>
   <data name="radioButtonChiCounterclockwise.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5736,10 +5964,13 @@ selected shape and size)</value>
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 24</value>
+    <value>98, 36</value>
+  </data>
+  <data name="flowLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 38</value>
+    <value>176, 52</value>
   </data>
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -5760,7 +5991,10 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 31</value>
+    <value>378, 46</value>
+  </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 41</value>
@@ -5790,7 +6024,7 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonChiLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 41</value>
+    <value>306, 62</value>
   </data>
   <data name="radioButtonChiLeft.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -5799,7 +6033,7 @@ selected shape and size)</value>
     <value>Yes</value>
   </data>
   <data name="radioButtonChiLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 19</value>
+    <value>65, 26</value>
   </data>
   <data name="radioButtonChiLeft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5826,13 +6060,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonChiBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 71</value>
+    <value>399, 106</value>
   </data>
   <data name="radioButtonChiBottom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonChiBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 19</value>
+    <value>91, 26</value>
   </data>
   <data name="radioButtonChiBottom.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5859,13 +6093,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonChiTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 12</value>
+    <value>399, 18</value>
   </data>
   <data name="radioButtonChiTop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonChiTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 19</value>
+    <value>67, 26</value>
   </data>
   <data name="radioButtonChiTop.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -5892,13 +6126,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="radioButtonChiRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 41</value>
+    <value>444, 62</value>
   </data>
   <data name="radioButtonChiRight.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radioButtonChiRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 19</value>
+    <value>77, 26</value>
   </data>
   <data name="radioButtonChiRight.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5922,16 +6156,16 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 134</value>
+    <value>9, 201</value>
   </data>
   <data name="groupBox11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox11.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 96</value>
+    <value>544, 144</value>
   </data>
   <data name="groupBox11.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -5961,10 +6195,13 @@ selected shape and size)</value>
     <value>True</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>4, 0</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 15</value>
+    <value>433, 22</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -5997,22 +6234,22 @@ selected shape and size)</value>
     <value>Peak fitting range (2θ)</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 15</value>
+    <value>30, 22</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 0, 0, 0</value>
+    <value>30, 0, 0, 0</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 27</value>
+    <value>338, 34</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6033,10 +6270,13 @@ selected shape and size)</value>
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 71</value>
+    <value>8, 106</value>
+  </data>
+  <data name="flowLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 42</value>
+    <value>441, 56</value>
   </data>
   <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -6078,16 +6318,16 @@ selected shape and size)</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 27</value>
+    <value>273, 34</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6114,13 +6354,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 4</value>
+    <value>277, 6</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 19</value>
+    <value>218, 26</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6141,10 +6381,13 @@ selected shape and size)</value>
     <value>1</value>
   </data>
   <data name="flowLayoutPanelFindCenterOption.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
+    <value>9, 56</value>
+  </data>
+  <data name="flowLayoutPanelFindCenterOption.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanelFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 27</value>
+    <value>499, 38</value>
   </data>
   <data name="flowLayoutPanelFindCenterOption.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -6171,13 +6414,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxFixCenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 16</value>
+    <value>14, 24</value>
   </data>
   <data name="checkBoxFixCenter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="checkBoxFixCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 19</value>
+    <value>119, 26</value>
   </data>
   <data name="checkBoxFixCenter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6201,16 +6444,16 @@ selected shape and size)</value>
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 4</value>
+    <value>9, 6</value>
   </data>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 122</value>
+    <value>597, 183</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -6233,11 +6476,14 @@ selected shape and size)</value>
   <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 4</value>
   </data>
+  <data name="tabPage5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="tabPage5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -6261,10 +6507,13 @@ selected shape and size)</value>
     <value>True</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 61</value>
+    <value>440, 92</value>
+  </data>
+  <data name="label16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 19</value>
+    <value>105, 28</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -6285,10 +6534,13 @@ selected shape and size)</value>
     <value>0</value>
   </data>
   <data name="textBoxBackgroundImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 27</value>
+    <value>28, 40</value>
+  </data>
+  <data name="textBoxBackgroundImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="textBoxBackgroundImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 25</value>
+    <value>631, 34</value>
   </data>
   <data name="textBoxBackgroundImage.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -6318,10 +6570,13 @@ selected shape and size)</value>
     <value>NoControl</value>
   </data>
   <data name="buttonClearBackgroundImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 58</value>
+    <value>354, 87</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="buttonClearBackgroundImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 25</value>
+    <value>61, 35</value>
   </data>
   <data name="buttonClearBackgroundImage.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -6351,10 +6606,13 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="buttonSetBackgroundImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 58</value>
+    <value>28, 87</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="buttonSetBackgroundImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 25</value>
+    <value>314, 35</value>
   </data>
   <data name="buttonSetBackgroundImage.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -6381,22 +6639,22 @@ selected shape and size)</value>
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="numericBoxBackgroundCoeff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 58</value>
+    <value>554, 87</value>
   </data>
   <data name="numericBoxBackgroundCoeff.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numericBoxBackgroundCoeff.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
+    <value>1000, 34</value>
   </data>
   <data name="numericBoxBackgroundCoeff.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
+    <value>1, 34</value>
   </data>
   <data name="numericBoxBackgroundCoeff.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 1, 0</value>
+    <value>0, 0, 2, 0</value>
   </data>
   <data name="numericBoxBackgroundCoeff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
+    <value>108, 34</value>
   </data>
   <data name="numericBoxBackgroundCoeff.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -6414,10 +6672,16 @@ selected shape and size)</value>
     <value>4</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 8</value>
+    <value>9, 12</value>
+  </data>
+  <data name="groupBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 98</value>
+    <value>674, 147</value>
   </data>
   <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -6440,11 +6704,14 @@ selected shape and size)</value>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 4</value>
   </data>
+  <data name="tabPage3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 250</value>
+    <value>768, 379</value>
   </data>
   <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -6477,10 +6744,10 @@ selected shape and size)</value>
     <value>0, 0</value>
   </data>
   <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 258</value>
+    <value>916, 387</value>
   </data>
   <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6603,7 +6870,7 @@ selected shape and size)</value>
     <value>3, 4, 3, 4</value>
   </data>
   <data name="numericUpDownMaskEdge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 21</value>
+    <value>61, 28</value>
   </data>
   <data name="numericUpDownMaskEdge.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -6644,14 +6911,11 @@ selected shape and size)</value>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
-  </data>
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>611, 258</value>
+    <value>916, 387</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -6722,7 +6986,7 @@ selected shape and size)</value>
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
