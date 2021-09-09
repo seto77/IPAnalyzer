@@ -259,7 +259,7 @@ namespace IPAnalyzer
             IsSkipNumetricUpDownInIntensity = true;
             if (radioButtonConcentricAngle.Checked)
             {
-                labelIntegralDimension1.Text = labelIntegralDimension2.Text = labelIntegralDimension3.Text = "°";
+                numericBoxConcentricStart.FooterText = numericBoxConcentricEnd.FooterText = numericBoxConcentricStep.FooterText = "°";
                 numericBoxConcentricStart.Maximum = 360;
                 numericBoxConcentricStart.DecimalPlaces = 3;
                 //numericBoxConcentricStart.Increment = (decimal)1;
@@ -276,7 +276,7 @@ namespace IPAnalyzer
             }
             else if(radioButtonConcentricLength.Checked)
             {
-                labelIntegralDimension1.Text = labelIntegralDimension2.Text = labelIntegralDimension3.Text = "mm";
+                numericBoxConcentricStart.FooterText = numericBoxConcentricEnd.FooterText = numericBoxConcentricStep.FooterText = "mm";
                 numericBoxConcentricStart.Maximum = 10000;
                 numericBoxConcentricStart.DecimalPlaces = 2;
                 //numericBoxConcentricStart.Increment = (decimal)1;
@@ -294,7 +294,7 @@ namespace IPAnalyzer
             }
             else if (radioButtonConcentricDspacing.Checked)
             {
-                labelIntegralDimension1.Text = labelIntegralDimension2.Text = labelIntegralDimension3.Text = "Å";
+                numericBoxConcentricStart.FooterText = numericBoxConcentricEnd.FooterText = numericBoxConcentricStep.FooterText = "Å";
 
                 numericBoxConcentricStart.Maximum = 10000;
                 numericBoxConcentricStart.DecimalPlaces = 4;
@@ -905,6 +905,16 @@ namespace IPAnalyzer
         }
 
         private void groupBoxSphericalCorrection_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxPixelShape_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
