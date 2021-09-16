@@ -74,7 +74,7 @@ namespace Crystallography
 
         public bool Move(string path)
         {
-            if (path == "")
+            if (path.Length == 0)
                 return false;
 
             if (path == "/")
@@ -150,7 +150,7 @@ namespace Crystallography
             pinnedArray.Free();
             H5D.close(dsetID);
 
-            var dims = new int[0];
+            var dims = Array.Empty<int>();
             if (spacePoints > 1)
             {
                 var spaceDim = H5S.get_simple_extent_ndims(spaceID);
