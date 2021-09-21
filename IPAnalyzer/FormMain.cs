@@ -4257,10 +4257,10 @@ namespace IPAnalyzer
                     p.help.Add("IPA.Mask.ClearMask() # Clear the current masks.");
                     p.help.Add("IPA.Mask.MaskAll() # Mask all area.");
                     p.help.Add("IPA.Mask.InvertMask() # Invert the current mask state.");
-                    p.help.Add("IPA.Mask.InvertTop() # Mask the top half area.");
-                    p.help.Add("IPA.Mask.InvertBottom() # Mask the bottom half area.");
-                    p.help.Add("IPA.Mask.InvertRight() # Mask the right half area.");
-                    p.help.Add("IPA.Mask.InvertLeft() # Mask the left half area.");
+                    p.help.Add("IPA.Mask.MaskTop() # Mask the top half area.");
+                    p.help.Add("IPA.Mask.MaskBottom() # Mask the bottom half area.");
+                    p.help.Add("IPA.Mask.MaskRight() # Mask the right half area.");
+                    p.help.Add("IPA.Mask.MaskLeft() # Mask the left half area.");
                 }
 
                 public void MaskSpots() => Execute(new Action(() => p.main.MaskSpots()));
