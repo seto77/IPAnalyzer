@@ -9,6 +9,7 @@
 
         static public string History = 
             "History" +
+            "\r\n ver3.914(2021/09/21) Fixed minor bugs about the sequential image mode." +
             "\r\n ver3.913(2021/09/08) Improved mask options. Fixed a bug on 'd-spacing mode'. Improved compatibility of HDF5." +
             "\r\n ver3.912(2021/08/17) Improved compatibility when importing HDF5 files." +
             "\r\n ver3.911(2021/08/10) Renewed 'Find parameter (brute force)'." +

@@ -123,7 +123,7 @@ namespace IPAnalyzer
                     double energy = 0;
                     for (int j = 0; j < selectedIndices.Length; j++)
                     {
-                        if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
+                        if (Ring.ImageType == Ring.ImageTypeEnum.HDF5 && Ring.SequentialImageEnergy != null )
                             energy += Ring.SequentialImageEnergy[selectedIndices[j]] / selectedIndices.Length;
                         for (int i = 0; i < Ring.Intensity.Count; i++)
                             if (j == 0)
@@ -268,8 +268,8 @@ namespace IPAnalyzer
 
                 //文字列の描画
 
-                Font numFont = new System.Drawing.Font(listBox.Font.FontFamily, listBox.Font.Size, FontStyle.Italic);
-                float numWidth = e.Graphics.MeasureString(num, numFont).Width;
+                var numFont = new Font(listBox.Font.FontFamily, listBox.Font.Size, FontStyle.Italic);
+                var numWidth = e.Graphics.MeasureString(num, numFont).Width;
 
                 Color c = ((e.State & DrawItemState.Selected) != DrawItemState.Selected) ? Color.Blue : Color.LightGreen ;
 
