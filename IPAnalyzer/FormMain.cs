@@ -3418,7 +3418,12 @@ namespace IPAnalyzer
 
         private void SaveProfile(DiffractionProfile dp, string filename="")
         {
-            string extension = FormProperty.radioButtonAsPDIformat.Checked ? ".pdi" : ".csv";
+            string extension = "";
+            if (FormProperty.radioButtonAsPDIformat.Checked) extension = ".pdi";
+            else if (FormProperty.radioButtonAsCSVformat.Checked) extension = ".csv";
+            else if (FormProperty.radioButtonAsTSVformat.Checked) extension = ".tsv";
+            else if (FormProperty.radioButtonAsGSASformat.Checked) extension = ".gsa";
+
             if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
             {
                 var dialog = new SaveFileDialog();
@@ -3447,20 +3452,28 @@ namespace IPAnalyzer
             {
                 if (!filename.EndsWith(".csv"))
                     filename += ".csv";
-                StreamWriter sw = new StreamWriter(filename);
+                using var sw = new StreamWriter(filename);
                 for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
                     sw.WriteLine($"{dp.OriginalProfile.Pt[i].X},{dp.OriginalProfile.Pt[i].Y},{dp.OriginalProfile.Err[i].Y}");
-                sw.Close();
             }
             else if (FormProperty.radioButtonAsTSVformat.Checked)
             {
                 if (!filename.EndsWith(".tsv"))
                     filename += ".tsv";
-                StreamWriter sw = new StreamWriter(filename);
+                using var sw = new StreamWriter(filename);
                 for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
                     sw.WriteLine($"{dp.OriginalProfile.Pt[i].X}\t{dp.OriginalProfile.Pt[i].Y}\t{dp.OriginalProfile.Err[i].Y}");
-                sw.Close();
             }
+            else if (FormProperty.radioButtonAsGSASformat.Checked)
+            {
+                if (!filename.EndsWith(".gsa"))
+                    filename += ".gsa";
+                var lines = Profile.ToGSAS(filename, dp.OriginalProfile, HorizontalAxis.Angle);
+                using var sw = new StreamWriter(filename);
+                for (int i = 0; i < lines.Length; i++)
+                    sw.WriteLine(lines[i]);
+            }
+
         }
         #endregion
 
@@ -4292,6 +4305,7 @@ namespace IPAnalyzer
                     p.help.Add("IPA.Profile.SaveProfileAsPDI   # True/False. \r\n If true, the profile will be saved as PDI format");
                     p.help.Add("IPA.Profile.SaveProfileAsCSV  # True/False. \r\n If true, the profile will be saved as CSV format");
                     p.help.Add("IPA.Profile.SaveProfileAsTSV  # True/False. \r\n If true, the profile will be saved as TSV format");
+                    p.help.Add("IPA.Profile.SaveProfileAsGSAS  # True/False. \r\n If true, the profile will be saved as GSAS format");
                 }
 
                 public bool ConcentricIntegration
@@ -4338,6 +4352,12 @@ namespace IPAnalyzer
                 {
                     set => Execute(new Action(() => p.main.FormProperty.radioButtonAsTSVformat.Checked = value));
                     get => Execute(() => p.main.FormProperty.radioButtonAsTSVformat.Checked);
+                }
+
+                public bool SaveProfileAsGSAS
+                {
+                    set => Execute(new Action(() => p.main.FormProperty.radioButtonAsGSASformat.Checked = value));
+                    get => Execute(() => p.main.FormProperty.radioButtonAsGSASformat.Checked);
                 }
 
                 public void GetProfile(string filename = "") => Execute(new Action(() =>

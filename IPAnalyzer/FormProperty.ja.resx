@@ -163,17 +163,11 @@
   <data name="numericBoxFootPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 45</value>
   </data>
-  <data name="numericBoxFootPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxFootPositionY.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 27</value>
   </data>
   <data name="numericBoxFootPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 19</value>
-  </data>
-  <data name="numericBoxFootPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
   </data>
   <data name="numericBoxFootPositionX.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 27</value>
@@ -202,9 +196,6 @@
   <data name="numericBoxCameraLength2.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 33</value>
   </data>
-  <data name="numericBoxCameraLength2.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxCameraLength2.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 27</value>
   </data>
@@ -229,17 +220,11 @@
   <data name="numericBoxDirectSpotPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 45</value>
   </data>
-  <data name="numericBoxDirectSpotPositionY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxDirectSpotPositionY.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 27</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 19</value>
-  </data>
-  <data name="numericBoxDirectSpotPositionX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 27</value>
@@ -268,9 +253,6 @@
   <data name="numericBoxCameraLength1.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 33</value>
   </data>
-  <data name="numericBoxCameraLength1.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxCameraLength1.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 27</value>
   </data>
@@ -295,26 +277,17 @@
   <data name="numericBoxPixelKsi.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 71</value>
   </data>
-  <data name="numericBoxPixelKsi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxPixelKsi.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 27</value>
   </data>
   <data name="numericBoxPixelSizeY.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 43</value>
   </data>
-  <data name="numericBoxPixelSizeY.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxPixelSizeY.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 27</value>
   </data>
   <data name="numericBoxPixelSizeX.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 18</value>
-  </data>
-  <data name="numericBoxPixelSizeX.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
   </data>
   <data name="numericBoxPixelSizeX.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 27</value>
@@ -333,9 +306,6 @@
   </data>
   <data name="numericBoxGandlfiRadius.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 20</value>
-  </data>
-  <data name="numericBoxGandlfiRadius.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
   </data>
   <data name="numericBoxGandlfiRadius.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 27</value>
@@ -363,9 +333,6 @@
   </data>
   <data name="numericBoxSphericalCorections.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 15</value>
-  </data>
-  <data name="numericBoxSphericalCorections.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 25</value>
   </data>
   <data name="numericBoxSphericalCorections.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 25</value>
@@ -397,17 +364,11 @@
   <data name="numericBoxTiltTau.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 43</value>
   </data>
-  <data name="numericBoxTiltTau.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
   <data name="numericBoxTiltTau.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 27</value>
   </data>
   <data name="numericBoxTiltPhi.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 16</value>
-  </data>
-  <data name="numericBoxTiltPhi.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
   </data>
   <data name="numericBoxTiltPhi.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 27</value>
@@ -629,29 +590,11 @@
   <data name="numericBoxRadialRange.Location" type="System.Drawing.Point, System.Drawing">
     <value>313, 21</value>
   </data>
-  <data name="numericBoxRadialRange.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
-  <data name="numericBoxRadialRange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 27</value>
-  </data>
   <data name="numericBoxRadialRadius.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 21</value>
   </data>
-  <data name="numericBoxRadialRadius.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
-  <data name="numericBoxRadialRadius.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 27</value>
-  </data>
   <data name="numericBoxRadialStep.Location" type="System.Drawing.Point, System.Drawing">
     <value>225, 55</value>
-  </data>
-  <data name="numericBoxRadialStep.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
-  <data name="numericBoxRadialStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 27</value>
   </data>
   <data name="radioButtonRadialAngle.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1096,11 +1039,8 @@
   <data name="numericBoxTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>219, 4</value>
   </data>
-  <data name="numericBoxTest.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
-  <data name="numericBoxTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 27</value>
+  <data name="checkBoxTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 6</value>
   </data>
   <data name="checkBoxTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -1112,16 +1052,19 @@
     <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 191</value>
+    <value>16, 177</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 22</value>
+    <value>340, 22</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
     <value>クリップボードを介してプロファイルをPDIndexerに送信</value>
   </data>
   <data name="checkBoxSaveFile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxSaveFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 38</value>
   </data>
   <data name="checkBoxSaveFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 22</value>
@@ -1151,7 +1094,7 @@
     <value>CSV形式</value>
   </data>
   <data name="radioButtonAsTSVformat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 44</value>
+    <value>74, 0</value>
   </data>
   <data name="radioButtonAsTSVformat.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 19</value>
@@ -1159,11 +1102,23 @@
   <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
     <value>TSV形式</value>
   </data>
+  <data name="radioButtonAsGSASformat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 19</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 22</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
+    <value>GSAS 形式</value>
+  </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 60</value>
+    <value>32, 63</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 63</value>
+    <value>167, 48</value>
   </data>
   <data name="radioButtonSetDirectoryEachTime.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1187,31 +1142,34 @@
     <value>イメージファイルと同じ場所に保存する</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 13</value>
+    <value>11, 15</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 44</value>
   </data>
   <data name="groupBoxSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 51</value>
+    <value>9, 46</value>
   </data>
   <data name="groupBoxSaveProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 132</value>
+    <value>410, 118</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 25</value>
+    <value>16, 22</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 22</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
     <value>切り開き画像も一緒に送る</value>
   </data>
   <data name="groupBoxSendPDI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 191</value>
+    <value>9, 180</value>
   </data>
   <data name="groupBoxSendPDI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 52</value>
+    <value>410, 49</value>
   </data>
   <data name="tabPageAfterGetProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1312,9 +1270,6 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>切り開き画像の設定</value>
   </data>
-  <data name="checkBoxExtensionCCD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
   <data name="checkBoxExtensionSTL.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 4</value>
   </data>
@@ -1330,14 +1285,8 @@
   <data name="flowLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="flowLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
   <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
     <value>476, 243</value>
-  </data>
-  <data name="flowLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
     <value>484, 251</value>
@@ -1424,13 +1373,13 @@
     <value>30, 18</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 25</value>
+    <value>223, 27</value>
   </data>
   <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 81</value>
   </data>
   <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 43</value>
+    <value>328, 45</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.HeaderFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1439,7 +1388,7 @@
     <value>検索範囲 　±</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 25</value>
+    <value>150, 27</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1488,12 +1437,6 @@
   </data>
   <data name="numericBoxBackgroundCoeff.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 86</value>
-  </data>
-  <data name="numericBoxBackgroundCoeff.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
-  <data name="numericBoxBackgroundCoeff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 27</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>484, 251</value>

@@ -167,6 +167,7 @@
             this.radioButtonAsPDIformat = new System.Windows.Forms.RadioButton();
             this.radioButtonAsCSVformat = new System.Windows.Forms.RadioButton();
             this.radioButtonAsTSVformat = new System.Windows.Forms.RadioButton();
+            this.radioButtonAsGSASformat = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButtonSetDirectoryEachTime = new System.Windows.Forms.RadioButton();
             this.radioButtonSaveAtImageDirectory = new System.Windows.Forms.RadioButton();
@@ -189,11 +190,12 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.checkBoxExtensionIPA = new System.Windows.Forms.CheckBox();
-            this.checkBoxExtensionIPF = new System.Windows.Forms.CheckBox();
-            this.checkBoxExtensionIMG = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxExtensionCCD = new System.Windows.Forms.CheckBox();
             this.checkBoxExtensionSTL = new System.Windows.Forms.CheckBox();
+            this.checkBoxExtensionIPF = new System.Windows.Forms.CheckBox();
+            this.checkBoxExtensionIPA = new System.Windows.Forms.CheckBox();
+            this.checkBoxExtensionIMG = new System.Windows.Forms.CheckBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.label50 = new System.Windows.Forms.Label();
@@ -226,7 +228,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.numericUpDownMaskEdge = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl.SuspendLayout();
             this.tabPageXRay.SuspendLayout();
             this.tabPageIP.SuspendLayout();
@@ -282,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstep)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -292,7 +294,6 @@
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaskEdge)).BeginInit();
-            this.flowLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1567,6 +1568,7 @@
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsPDIformat);
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsCSVformat);
             this.flowLayoutPanel2.Controls.Add(this.radioButtonAsTSVformat);
+            this.flowLayoutPanel2.Controls.Add(this.radioButtonAsGSASformat);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // radioButtonAsPDIformat
@@ -1588,6 +1590,12 @@
             resources.ApplyResources(this.radioButtonAsTSVformat, "radioButtonAsTSVformat");
             this.radioButtonAsTSVformat.Name = "radioButtonAsTSVformat";
             this.radioButtonAsTSVformat.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAsGSASformat
+            // 
+            resources.ApplyResources(this.radioButtonAsGSASformat, "radioButtonAsGSASformat");
+            this.radioButtonAsGSASformat.Name = "radioButtonAsGSASformat";
+            this.radioButtonAsGSASformat.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -1789,26 +1797,15 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // checkBoxExtensionIPA
+            // flowLayoutPanel6
             // 
-            resources.ApplyResources(this.checkBoxExtensionIPA, "checkBoxExtensionIPA");
-            this.checkBoxExtensionIPA.Name = "checkBoxExtensionIPA";
-            this.checkBoxExtensionIPA.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionIPA.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIPA_CheckedChanged);
-            // 
-            // checkBoxExtensionIPF
-            // 
-            resources.ApplyResources(this.checkBoxExtensionIPF, "checkBoxExtensionIPF");
-            this.checkBoxExtensionIPF.Name = "checkBoxExtensionIPF";
-            this.checkBoxExtensionIPF.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionIPF.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIPF_CheckedChanged);
-            // 
-            // checkBoxExtensionIMG
-            // 
-            resources.ApplyResources(this.checkBoxExtensionIMG, "checkBoxExtensionIMG");
-            this.checkBoxExtensionIMG.Name = "checkBoxExtensionIMG";
-            this.checkBoxExtensionIMG.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionIMG.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIMG_CheckedChanged);
+            resources.ApplyResources(this.flowLayoutPanel6, "flowLayoutPanel6");
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionCCD);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionSTL);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIPF);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIPA);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIMG);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             // 
             // checkBoxExtensionCCD
             // 
@@ -1823,6 +1820,27 @@
             this.checkBoxExtensionSTL.Name = "checkBoxExtensionSTL";
             this.checkBoxExtensionSTL.UseVisualStyleBackColor = true;
             this.checkBoxExtensionSTL.CheckedChanged += new System.EventHandler(this.checkBoxExtensionSTL_CheckedChanged);
+            // 
+            // checkBoxExtensionIPF
+            // 
+            resources.ApplyResources(this.checkBoxExtensionIPF, "checkBoxExtensionIPF");
+            this.checkBoxExtensionIPF.Name = "checkBoxExtensionIPF";
+            this.checkBoxExtensionIPF.UseVisualStyleBackColor = true;
+            this.checkBoxExtensionIPF.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIPF_CheckedChanged);
+            // 
+            // checkBoxExtensionIPA
+            // 
+            resources.ApplyResources(this.checkBoxExtensionIPA, "checkBoxExtensionIPA");
+            this.checkBoxExtensionIPA.Name = "checkBoxExtensionIPA";
+            this.checkBoxExtensionIPA.UseVisualStyleBackColor = true;
+            this.checkBoxExtensionIPA.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIPA_CheckedChanged);
+            // 
+            // checkBoxExtensionIMG
+            // 
+            resources.ApplyResources(this.checkBoxExtensionIMG, "checkBoxExtensionIMG");
+            this.checkBoxExtensionIMG.Name = "checkBoxExtensionIMG";
+            this.checkBoxExtensionIMG.UseVisualStyleBackColor = true;
+            this.checkBoxExtensionIMG.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIMG_CheckedChanged);
             // 
             // tabPage5
             // 
@@ -2083,16 +2101,6 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // flowLayoutPanel6
-            // 
-            resources.ApplyResources(this.flowLayoutPanel6, "flowLayoutPanel6");
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionCCD);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionSTL);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIPF);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIPA);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIMG);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            // 
             // FormProperty
             // 
             resources.ApplyResources(this, "$this");
@@ -2176,6 +2184,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.groupBoxSendPDI.ResumeLayout(false);
+            this.groupBoxSendPDI.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrollChiDivision)).EndInit();
@@ -2185,6 +2194,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstep)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -2201,8 +2212,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaskEdge)).EndInit();
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2322,8 +2331,6 @@
         private System.Windows.Forms.CheckBox checkBoxExtensionIMG;
         private System.Windows.Forms.CheckBox checkBoxExtensionCCD;
         private System.Windows.Forms.CheckBox checkBoxExtensionSTL;
-        private System.Windows.Forms.GroupBox groupBoxSendPDI;
-        public System.Windows.Forms.CheckBox checkBoxSendUnrolledImageToPDIndexer;
         private System.Windows.Forms.CheckBox checkBoxExtensionIPA;
         public System.Windows.Forms.GroupBox groupBoxSphericalCorrection;
         public Crystallography.Controls.NumericBox numericBoxSphericalCorections;
@@ -2406,5 +2413,8 @@
         private System.Windows.Forms.Button buttonMaskRight;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        public System.Windows.Forms.RadioButton radioButtonAsGSASformat;
+        private System.Windows.Forms.GroupBox groupBoxSendPDI;
+        public System.Windows.Forms.CheckBox checkBoxSendUnrolledImageToPDIndexer;
     }
 }
