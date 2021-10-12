@@ -38,7 +38,7 @@
             // checkedListBoxAuto
             // 
             this.checkedListBoxAuto.CheckOnClick = true;
-            this.checkedListBoxAuto.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxAuto.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkedListBoxAuto.HorizontalScrollbar = true;
             this.checkedListBoxAuto.Items.AddRange(new object[] {
             "Adjust Contrast",
@@ -46,37 +46,41 @@
             "Find Center",
             "Mask Spots",
             "Get Profile"});
-            this.checkedListBoxAuto.Location = new System.Drawing.Point(4, 66);
+            this.checkedListBoxAuto.Location = new System.Drawing.Point(5, 82);
+            this.checkedListBoxAuto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkedListBoxAuto.Name = "checkedListBoxAuto";
-            this.checkedListBoxAuto.Size = new System.Drawing.Size(173, 84);
+            this.checkedListBoxAuto.Size = new System.Drawing.Size(201, 100);
             this.checkedListBoxAuto.TabIndex = 26;
             // 
             // buttonAuto
             // 
-            this.buttonAuto.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAuto.Location = new System.Drawing.Point(4, 152);
+            this.buttonAuto.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAuto.Location = new System.Drawing.Point(5, 190);
+            this.buttonAuto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAuto.Name = "buttonAuto";
-            this.buttonAuto.Size = new System.Drawing.Size(173, 24);
+            this.buttonAuto.Size = new System.Drawing.Size(202, 30);
             this.buttonAuto.TabIndex = 23;
             this.buttonAuto.Text = "Auto";
             this.buttonAuto.Click += new System.EventHandler(this.buttonAuto_Click);
             // 
             // checkBoxIsWatchAndLoad
             // 
-            this.checkBoxIsWatchAndLoad.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxIsWatchAndLoad.Location = new System.Drawing.Point(3, 2);
+            this.checkBoxIsWatchAndLoad.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxIsWatchAndLoad.Location = new System.Drawing.Point(4, 2);
+            this.checkBoxIsWatchAndLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxIsWatchAndLoad.Name = "checkBoxIsWatchAndLoad";
-            this.checkBoxIsWatchAndLoad.Size = new System.Drawing.Size(174, 32);
+            this.checkBoxIsWatchAndLoad.Size = new System.Drawing.Size(203, 40);
             this.checkBoxIsWatchAndLoad.TabIndex = 25;
             this.checkBoxIsWatchAndLoad.Text = "Watch && load a new image from the current directory";
             this.checkBoxIsWatchAndLoad.CheckedChanged += new System.EventHandler(this.checkBoxIsWatchAndLoad_CheckedChanged);
             // 
             // checkBoxAutoAfterLoad
             // 
-            this.checkBoxAutoAfterLoad.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxAutoAfterLoad.Location = new System.Drawing.Point(3, 34);
+            this.checkBoxAutoAfterLoad.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxAutoAfterLoad.Location = new System.Drawing.Point(4, 42);
+            this.checkBoxAutoAfterLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxAutoAfterLoad.Name = "checkBoxAutoAfterLoad";
-            this.checkBoxAutoAfterLoad.Size = new System.Drawing.Size(174, 32);
+            this.checkBoxAutoAfterLoad.Size = new System.Drawing.Size(203, 40);
             this.checkBoxAutoAfterLoad.TabIndex = 24;
             this.checkBoxAutoAfterLoad.Text = "After loading an image, Execute \"Auto\"";
             // 
@@ -87,14 +91,15 @@
             // 
             // FormAutoProcedure
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(177, 176);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(206, 220);
             this.Controls.Add(this.checkedListBoxAuto);
             this.Controls.Add(this.buttonAuto);
             this.Controls.Add(this.checkBoxIsWatchAndLoad);
             this.Controls.Add(this.checkBoxAutoAfterLoad);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormAutoProcedure";
             this.Text = "Auto Procedure";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAutoProcedure_FormClosing);

@@ -117,8 +117,6 @@ namespace IPAnalyzer
         #region コンストラクタ、ロード、クローズ
         public FormMain()
         {
-            ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
-
             using (var regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer"))
             {
                 try
@@ -131,12 +129,14 @@ namespace IPAnalyzer
             }
 
             InitializeComponent();
+            ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
 
-
-
-            //splitContainer2.SplitterDistance = scalablePictureBoxThumbnail.Height + splitContainer2.SplitterDistance - scalablePictureBoxThumbnail.Width;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            // ダブルバッファリング
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
         }
-
 
         public void SaveRegistry()
         {
@@ -654,7 +654,7 @@ namespace IPAnalyzer
         }
 
         //ファームロード時
-        private void Form1_Load(object sender, System.EventArgs e)
+        private void FormMain_Load(object sender, System.EventArgs e)
         {
             //UserAppDataPathに空フォルダがあったら削除
             foreach (var dir in Directory.GetDirectories(UserAppDataPath))
@@ -813,6 +813,7 @@ namespace IPAnalyzer
             Directory.Delete(Application.UserAppDataPath, true);
             if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
                 File.Delete(UserAppDataPath + "IPAnalyzerSetup.msi");
+
         }
 
         //フォームクローズ時

@@ -32,31 +32,41 @@
             // 
             // crystalControl
             // 
+            this.crystalControl.A = 0D;
             this.crystalControl.AllowDrop = true;
+            this.crystalControl.Alpha = 0D;
             this.crystalControl.AutoSize = true;
             this.crystalControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.crystalControl.Crystal = null;
+            this.crystalControl.B = 0D;
+            this.crystalControl.Beta = 0D;
+            this.crystalControl.C = 0D;
             this.crystalControl.DefaultTabNumber = 0;
             this.crystalControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalControl.Gamma = 0D;
             this.crystalControl.Location = new System.Drawing.Point(0, 0);
             this.crystalControl.Margin = new System.Windows.Forms.Padding(0);
             this.crystalControl.Name = "crystalControl";
             this.crystalControl.ScatteringFactorVisible = false;
             this.crystalControl.Size = new System.Drawing.Size(752, 417);
+            this.crystalControl.SkipEvent = false;
             this.crystalControl.SymmetryInformationVisible = false;
+            this.crystalControl.SymmetrySeriesNumber = 0;
             this.crystalControl.TabIndex = 0;
             this.crystalControl.VisibleAtomTab = true;
             this.crystalControl.VisibleBasicInfoTab = true;
             this.crystalControl.VisibleBondsPolyhedraTab = false;
+            this.crystalControl.VisibleBoundTab = false;
             this.crystalControl.VisibleElasticityTab = true;
             this.crystalControl.VisibleEOSTab = false;
+            this.crystalControl.VisibleLatticePlaneTab = false;
             this.crystalControl.VisiblePolycrystallineTab = false;
             this.crystalControl.VisibleReferenceTab = true;
             this.crystalControl.VisibleStressStrainTab = false;
             // 
             // FormCrystal
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(7, 15);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(752, 417);
             this.Controls.Add(this.crystalControl);

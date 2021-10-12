@@ -94,7 +94,7 @@
             0,
             0});
             this.numericUpDownHeight.Location = new System.Drawing.Point(284, 40);
-            this.numericUpDownHeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownHeight.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -124,7 +124,7 @@
             0,
             0});
             this.numericUpDownWidth.Location = new System.Drawing.Point(152, 40);
-            this.numericUpDownWidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownWidth.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownWidth.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -150,7 +150,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCancel.Location = new System.Drawing.Point(412, 118);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(76, 31);
             this.buttonCancel.TabIndex = 5;
@@ -163,7 +163,7 @@
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonOK.Location = new System.Drawing.Point(329, 118);
-            this.buttonOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(76, 31);
             this.buttonOK.TabIndex = 4;
@@ -180,7 +180,7 @@
             0,
             0});
             this.numericUpDownResolution.Location = new System.Drawing.Point(152, 117);
-            this.numericUpDownResolution.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownResolution.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownResolution.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -219,7 +219,7 @@
             this.checkBoxKeepAspect.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxKeepAspect.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxKeepAspect.Location = new System.Drawing.Point(354, 42);
-            this.checkBoxKeepAspect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxKeepAspect.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxKeepAspect.Name = "checkBoxKeepAspect";
             this.checkBoxKeepAspect.Size = new System.Drawing.Size(134, 21);
             this.checkBoxKeepAspect.TabIndex = 2;
@@ -257,7 +257,7 @@
             0,
             0});
             this.numericUpDownCenterX.Location = new System.Drawing.Point(152, 78);
-            this.numericUpDownCenterX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownCenterX.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownCenterX.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -287,7 +287,7 @@
             0,
             0});
             this.numericUpDownCenterY.Location = new System.Drawing.Point(250, 79);
-            this.numericUpDownCenterY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownCenterY.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownCenterY.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -343,9 +343,9 @@
             // 
             // FormSaveImage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 152);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(490, 148);
             this.ControlBox = false;
             this.Controls.Add(this.checkBoxKeepAspect);
             this.Controls.Add(this.label7);
@@ -365,7 +365,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSaveImage";

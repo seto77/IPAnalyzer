@@ -119,34 +119,54 @@
             // 
             // graphControl1
             // 
-            this.graphControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.graphControl1.AllowMouseOperation = true;
+            this.graphControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.graphControl1.BackgroundColor = System.Drawing.Color.White;
-            this.graphControl1.BottomMargin = 0F;
+            this.graphControl1.BottomMargin = 0D;
             this.graphControl1.DivisionLineColor = System.Drawing.Color.Gray;
             this.graphControl1.DivisionSubLineColor = System.Drawing.Color.LightGray;
             this.graphControl1.FixRangeHorizontal = false;
             this.graphControl1.FixRangeVertical = false;
+            this.graphControl1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.graphControl1.GraphName = "";
+            this.graphControl1.HorizontalGradiationTextVisivle = true;
+            this.graphControl1.Interpolation = false;
             this.graphControl1.IsIntegerX = false;
             this.graphControl1.IsIntegerY = false;
             this.graphControl1.LabelX = "X:";
             this.graphControl1.LabelY = "Y:";
             this.graphControl1.LeftMargin = 0F;
             this.graphControl1.LineColor = System.Drawing.Color.Red;
-            this.graphControl1.LineList = new Crystallography.PointD[0];
             this.graphControl1.LineWidth = 1F;
             this.graphControl1.Location = new System.Drawing.Point(10, 102);
+            this.graphControl1.LowerX = 0D;
+            this.graphControl1.LowerY = 0D;
+            this.graphControl1.MaximalX = 1D;
+            this.graphControl1.MaximalY = 1D;
+            this.graphControl1.MinimalX = 0D;
+            this.graphControl1.MinimalY = 0D;
             this.graphControl1.Mode = Crystallography.Controls.GraphControl.DrawingMode.Line;
+            this.graphControl1.MousePositionVisible = true;
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControl1.Profile = null;
             this.graphControl1.Size = new System.Drawing.Size(799, 486);
             this.graphControl1.Smoothing = false;
             this.graphControl1.TabIndex = 4;
+            this.graphControl1.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.graphControl1.UnitX = "";
+            this.graphControl1.UnitY = "";
+            this.graphControl1.UpperText = "";
             this.graphControl1.UpperTextVisible = true;
+            this.graphControl1.UpperX = 1D;
+            this.graphControl1.UpperY = 1D;
+            this.graphControl1.UseLineWidth = true;
+            this.graphControl1.VerticalGradiationTextVisivle = true;
             this.graphControl1.XLog = false;
+            this.graphControl1.XScaleLineVisible = true;
             this.graphControl1.YLog = false;
+            this.graphControl1.YScaleLineVisible = true;
             // 
             // button4
             // 
@@ -159,8 +179,8 @@
             // 
             // FormCalibrateRAxisImage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(821, 600);
             this.Controls.Add(this.graphControl1);
             this.Controls.Add(this.label3);
@@ -173,7 +193,7 @@
             this.Controls.Add(this.textBoxFile3);
             this.Controls.Add(this.textBoxFile2);
             this.Controls.Add(this.textBoxFile1);
-            this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "FormCalibrateRAxisImage";
             this.Text = "FormCalibrateRAxisImage";
             this.ResumeLayout(false);

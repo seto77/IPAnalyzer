@@ -125,7 +125,12 @@ namespace IPAnalyzer
 
         public FormProperty()
         {
+            PerformAutoScale();
+
             InitializeComponent();
+
+            PerformAutoScale();
+
 
             for (int i = 0; i < ImageTypeParameters.Length; i++)
                 ImageTypeParameters[i] = new ImageTypeParameter();
