@@ -9,6 +9,7 @@
 
         static public string History = 
             "History" +
+            "\r\n ver3.917(2021/10/15) Fixed the problem on the Macro function." +
             "\r\n ver3.916(2021/10/12) Fixed the problem of broken design at high DPI." +
             "\r\n ver3.915(2021/10/11) Added the exporting function as GSAS format." +
             "\r\n ver3.914(2021/09/21) Fixed minor bugs about the sequential image mode." +

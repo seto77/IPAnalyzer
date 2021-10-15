@@ -121,7 +121,7 @@ namespace IPAnalyzer
             {
                 try
                 {
-                    string culture = (string)regKey.GetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
+                    var culture = (string)regKey.GetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
                     Thread.CurrentThread.CurrentUICulture = culture.ToLower().StartsWith("ja") ?
                             new System.Globalization.CultureInfo("ja") : new System.Globalization.CultureInfo("en");
                 }
@@ -2750,7 +2750,7 @@ namespace IPAnalyzer
 
         void macroMenuItem_Click(object sender, EventArgs e)
         {
-            FormMacro.RunMacroName(((ToolStripMenuItem)sender).Name, false);
+            FormMacro.RunMacroName(((ToolStripMenuItem)sender).Name);
         }
 
        

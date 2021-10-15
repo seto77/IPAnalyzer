@@ -40,7 +40,6 @@ namespace Crystallography
 
         #region フィールド、プロパティ
 
-        private ReaderWriterLockSlim rwLock = new ReaderWriterLockSlim();
         private double AccVoltage { get; set; }
         private Crystal Crystal { get;} 
         private Matrix3D BaseRotation { get; set; } = null;
