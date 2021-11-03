@@ -2233,7 +2233,7 @@ namespace IPAnalyzer
                 {
                     FormParameterOption.Text = "Read checked parameters";
                     FormParameterOption.Location = new Point(this.Location.X + 100, this.Location.Y + 100);
-                    if (FormParameterOption.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                    if (FormParameterOption.ShowDialog() == DialogResult.Cancel)
                         return;
                 }
                 else

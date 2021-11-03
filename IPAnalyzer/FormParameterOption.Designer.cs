@@ -48,7 +48,6 @@
             // 
             this.checkBoxWaveLength.AutoSize = true;
             this.checkBoxWaveLength.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxWaveLength.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::IPAnalyzer.Properties.Settings.Default, "FormParameterOptionWaveLength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxWaveLength.Location = new System.Drawing.Point(18, 12);
             this.checkBoxWaveLength.Name = "checkBoxWaveLength";
             this.checkBoxWaveLength.Size = new System.Drawing.Size(269, 21);
@@ -60,7 +59,6 @@
             // 
             this.checkBoxCameraLength.AutoSize = true;
             this.checkBoxCameraLength.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCameraLength.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::IPAnalyzer.Properties.Settings.Default, "FormParameterOptionCameraLength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxCameraLength.Location = new System.Drawing.Point(6, 52);
             this.checkBoxCameraLength.Name = "checkBoxCameraLength";
             this.checkBoxCameraLength.Size = new System.Drawing.Size(112, 21);
@@ -72,7 +70,6 @@
             // 
             this.checkBoxPixelShape.AutoSize = true;
             this.checkBoxPixelShape.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPixelShape.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::IPAnalyzer.Properties.Settings.Default, "FormParameterOptionPixelShape", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxPixelShape.Location = new System.Drawing.Point(6, 106);
             this.checkBoxPixelShape.Name = "checkBoxPixelShape";
             this.checkBoxPixelShape.Size = new System.Drawing.Size(92, 21);
@@ -84,7 +81,6 @@
             // 
             this.checkBoxCenterPosition.AutoSize = true;
             this.checkBoxCenterPosition.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCenterPosition.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::IPAnalyzer.Properties.Settings.Default, "CenterPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxCenterPosition.Location = new System.Drawing.Point(136, 106);
             this.checkBoxCenterPosition.Name = "checkBoxCenterPosition";
             this.checkBoxCenterPosition.Size = new System.Drawing.Size(116, 21);
@@ -96,7 +92,6 @@
             // 
             this.checkBoxTiltCorrection.AutoSize = true;
             this.checkBoxTiltCorrection.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTiltCorrection.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::IPAnalyzer.Properties.Settings.Default, "FormParameterOptionTiltCorrection", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxTiltCorrection.Location = new System.Drawing.Point(6, 79);
             this.checkBoxTiltCorrection.Name = "checkBoxTiltCorrection";
             this.checkBoxTiltCorrection.Size = new System.Drawing.Size(107, 21);
@@ -108,7 +103,6 @@
             // 
             this.checkBoxSphericalCorrection.AutoSize = true;
             this.checkBoxSphericalCorrection.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSphericalCorrection.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::IPAnalyzer.Properties.Settings.Default, "FormParameterOptionSphericalCorrection", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxSphericalCorrection.Location = new System.Drawing.Point(136, 79);
             this.checkBoxSphericalCorrection.Name = "checkBoxSphericalCorrection";
             this.checkBoxSphericalCorrection.Size = new System.Drawing.Size(143, 21);
@@ -214,7 +208,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::IPAnalyzer.Properties.Settings.Default, "LocationParameterOption", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
