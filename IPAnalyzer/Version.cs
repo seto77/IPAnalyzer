@@ -9,7 +9,7 @@ static class Version
 
     static public string History =
         "History" +
-        "\r\n ver3.921(2021/11/18) Fixed bugs on loading a parameter file (*.prm)." +
+        "\r\n ver3.922(2021/11/18) Fixed bugs on loading a parameter file (*.prm)." +
         "\r\n ver3.920(2021/11/12) Target framework has been changed to .Net 6.0." +
         "\r\n ver3.918(2021/11/03) Fixed a minor bug on reading parameter files." +
         "\r\n ver3.917(2021/10/15) Fixed the problem on the Macro function." +
