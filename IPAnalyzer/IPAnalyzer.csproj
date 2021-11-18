@@ -4,11 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2021.11.3.0700</AssemblyVersion>
-    <FileVersion>2021.11.3.0700</FileVersion>
+    <AssemblyVersion>2021.11.18.0700</AssemblyVersion>
+    <FileVersion>2021.11.18.0700</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
+    <Version>1.1.1.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
