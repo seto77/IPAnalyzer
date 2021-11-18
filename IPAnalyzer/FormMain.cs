@@ -17,6 +17,7 @@ using System.Numerics;
 using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Xml;
 
 namespace IPAnalyzer
 {
@@ -159,7 +160,7 @@ namespace IPAnalyzer
                 regKey.SetValue("formFindParameterHeight", FormFindParameter.Height);
                 regKey.SetValue("formFindParameterLocationX", FormFindParameter.Location.X);
                 regKey.SetValue("formFindParameterLocationY", FormFindParameter.Location.Y);
-                
+
                 //IntTable関係
                 //regKey.SetValue("formIntTableWidth", FormIntTable.Width);
                 //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
@@ -179,7 +180,7 @@ namespace IPAnalyzer
                 regKey.SetValue("textBoxPixelSizeYText", FormProperty.numericBoxPixelSizeY.Text);
                 regKey.SetValue("textBoxPixelKsiText", FormProperty.numericBoxPixelKsi.Text);
 
-                regKey.SetValue("textBoxFilmDistanceText", FormProperty.CameraLengthText);
+                regKey.SetValue("textBoxFilmDistanceText", FormProperty.CameraLength1Text);
                 regKey.SetValue("textBoxCenterPositionXText", FormProperty.numericBoxDirectSpotPositionX.Text);
                 regKey.SetValue("textBoxCenterPositionYText", FormProperty.numericBoxDirectSpotPositionY.Text);
 
@@ -359,10 +360,10 @@ namespace IPAnalyzer
 
                 //if (FormIntTable != null && (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
                 //{
-                    //FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
-                    //FormIntTable.Height = (int)regKey.GetValue("formIntTableHeight", FormIntTable.Height);
-                    //FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
-                    //(int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
+                //FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
+                //FormIntTable.Height = (int)regKey.GetValue("formIntTableHeight", FormIntTable.Height);
+                //FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
+                //(int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
                 //}
                 if (FormDrawRing != null && (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y) >= 0)
                 {
@@ -384,7 +385,7 @@ namespace IPAnalyzer
                     FormProperty.numericBoxPixelSizeY.Text = (string)regKey.GetValue("textBoxPixelSizeYText", "0.1");
                     FormProperty.numericBoxPixelKsi.Text = (string)regKey.GetValue("textBoxPixelKsiText", "0");
 
-                    FormProperty.CameraLengthText = (string)regKey.GetValue("textBoxFilmDistanceText", "445");
+                    FormProperty.CameraLength1Text = (string)regKey.GetValue("textBoxFilmDistanceText", "445");
                     FormProperty.numericBoxDirectSpotPositionX.Text = (string)regKey.GetValue("textBoxCenterPositionXText", "1500");
                     FormProperty.numericBoxDirectSpotPositionY.Text = (string)regKey.GetValue("textBoxCenterPositionYText", "1500");
 
@@ -831,7 +832,7 @@ namespace IPAnalyzer
         /// <param name="e"></param>
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
             Properties.Settings.Default.Save();
             FormProperty.Close();
             FormDrawRing.Close();
@@ -961,34 +962,34 @@ namespace IPAnalyzer
                     g.SmoothingMode = SmoothingMode.AntiAlias;
 
                     //まずビーム中心を原点に持ってくる
-                    
+
                     PointF center = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition).ToPointF();
                     PointD centerD = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition);
-                    
+
                     Matrix3D m = new Matrix3D(1, 0, 0, 0, 1, 0, centerD.X, centerD.Y, 1);
 
                     //次にディスプレイ上のピクセルと画像のピクセルを同じにする
                     float scale = (float)(1 / scalablePictureBox.Zoom); //SrcRectF.Width / ClientRect.Width;
-                    
+
                     m = m * new Matrix3D(1 / scale, 0, 0, 0, 1 / scale, 0, 0, 0, 1);
                     //次に画像ピクセル空間を実空間にする
                     float pixelSizeX = (float)FormProperty.numericBoxPixelSizeX.Value;
                     float pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
                     float TanKsi = (float)Math.Tan(FormProperty.numericBoxPixelKsi.RadianValue);
-                   
+
                     m *= new Matrix3D(1 / pixelSizeX, 0, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0, 0, 1);
 
                     //楕円の中心位置のずれをオフセット
-                   
+
 
                     m *= new Matrix3D(1, 0, 0, 0, 1, 0, OffSet.X, OffSet.Y, 1);
 
                     //楕円の傾きをセット
-                 
+
 
                     m *= new Matrix3D(Cos, Sin, 0, -Sin, Cos, 0, 0, 0, 1);
 
-                   
+
                     g.MultiplyTransform(new Matrix(1, 0, 0, 1, center.X, center.Y));
 
                     g.MultiplyTransform(new Matrix(1 / pixelSizeX, 0, -TanKsi / pixelSizeX, 1 / pixelSizeY, 0, 0));
@@ -999,7 +1000,7 @@ namespace IPAnalyzer
 
                     g.MultiplyTransform(new Matrix(1, 0, 0, 1, (float)OffSet.X, (float)OffSet.Y));
 
-                  
+
 
                     g.MultiplyTransform(new Matrix((float)Cos, (float)Sin, -(float)Sin, (float)Cos, 0, 0));
 
@@ -1344,7 +1345,8 @@ namespace IPAnalyzer
             }
             //マウス位置のピクセル情報　ここまで
 
-            if (IsRingSelectMode){
+            if (IsRingSelectMode)
+            {
                 FormDrawRing.SetR(r);
                 return true;//マウス左ボタンによる平行移動をキャンセル
             }
@@ -1411,48 +1413,48 @@ namespace IPAnalyzer
                 IsRingSelectMode = false;
 
             //一秒以上左クリック長押し
-        /*    if (e.Button == MouseButtons.Left && sw.ElapsedMilliseconds > 1000 && !FormProperty.checkBoxManualMaskMode.Checked)
-            {
-                SetIntegralProperty();
-                int pixel = (int)FormProperty.numericUpDownFindCenterSearchRange.Value;
-                double[,] tempIntensity = new double[pixel * 2 + 1, pixel * 2 + 1];
-                int i, j;
-                for (i = 0; i < pixel * 2 + 1; i++)
-                    for (j = 0; j < pixel * 2 + 1; j++)
-                        tempIntensity[i, j] = Ring.Intensity[((int)(pt.Y - pixel) + j) * IP.SrcWidth + (int)((pt.X - pixel) + i)];
-                PointD offset = FittingPeak.FitPeakAsPseudoVoigtByMarcal2D(tempIntensity);
+            /*    if (e.Button == MouseButtons.Left && sw.ElapsedMilliseconds > 1000 && !FormProperty.checkBoxManualMaskMode.Checked)
+                {
+                    SetIntegralProperty();
+                    int pixel = (int)FormProperty.numericUpDownFindCenterSearchRange.Value;
+                    double[,] tempIntensity = new double[pixel * 2 + 1, pixel * 2 + 1];
+                    int i, j;
+                    for (i = 0; i < pixel * 2 + 1; i++)
+                        for (j = 0; j < pixel * 2 + 1; j++)
+                            tempIntensity[i, j] = Ring.Intensity[((int)(pt.Y - pixel) + j) * IP.SrcWidth + (int)((pt.X - pixel) + i)];
+                    PointD offset = FittingPeak.FitPeakAsPseudoVoigtByMarcal2D(tempIntensity);
 
-                if (double.IsInfinity(offset.X)) return false;
-                selectedSpot = new PointD(offset.X + (int)(pt.X - pixel), offset.Y + (int)(pt.Y - pixel));
+                    if (double.IsInfinity(offset.X)) return false;
+                    selectedSpot = new PointD(offset.X + (int)(pt.X - pixel), offset.Y + (int)(pt.Y - pixel));
 
-                double x = (selectedSpot.X - IP.CenterX) * IP.PixSizeX + (selectedSpot.Y - IP.CenterY) * IP.PixSizeY * Math.Tan(IP.ksi);
-                double y = (selectedSpot.Y - IP.CenterY) * IP.PixSizeY;
-                double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
-                double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi);
-                double newX = (y * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + x * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
-                    * IP.FilmDistance / (y * CosPhi * SinTau + IP.FilmDistance - x * SinPhi * SinTau);
-                double newY = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + y * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
-                    * IP.FilmDistance / (y * CosPhi * SinTau + IP.FilmDistance - x * SinPhi * SinTau);
+                    double x = (selectedSpot.X - IP.CenterX) * IP.PixSizeX + (selectedSpot.Y - IP.CenterY) * IP.PixSizeY * Math.Tan(IP.ksi);
+                    double y = (selectedSpot.Y - IP.CenterY) * IP.PixSizeY;
+                    double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
+                    double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi);
+                    double newX = (y * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + x * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
+                        * IP.FilmDistance / (y * CosPhi * SinTau + IP.FilmDistance - x * SinPhi * SinTau);
+                    double newY = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + y * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
+                        * IP.FilmDistance / (y * CosPhi * SinTau + IP.FilmDistance - x * SinPhi * SinTau);
 
-                double r = Math.Sqrt(newX * newX + newY * newY);
-                string rStr = "R: " + r.ToString("f3") + "mm";
-                double chi = Math.Atan2(newY, newX);
-                double theta = Math.Atan2(r, IP.FilmDistance);
-                string thetaStr = "2θ: " + (theta / Math.PI * 180.0).ToString("f3") + "°";
-                string dStr = "d:" + (IP.WaveLength / 2 * 10 / Math.Sin(theta / 2)).ToString("f3") + "Å";
-                string chiStr = "chi: " + (180.0 / Math.PI * chi).ToString("f3") + "°";
-                Draw();
-                MessageBox.Show("Image　Coord. X: " + selectedSpot.X.ToString("f3") + ", Y: " + selectedSpot.Y.ToString("f3") +
-                    "\r\nReal Coord. X: " + newX.ToString("f3") + "mm, Y: " + newY.ToString("f3") + "mm" +
-                    "\r\n" + rStr + "\r\n" + thetaStr + "\r\n" + dStr + "\r\n" + chiStr);
-                selectedSpot = null;
-                Draw();
-                sw.Stop();
-                sw.Reset();
-                return true;
-            }
+                    double r = Math.Sqrt(newX * newX + newY * newY);
+                    string rStr = "R: " + r.ToString("f3") + "mm";
+                    double chi = Math.Atan2(newY, newX);
+                    double theta = Math.Atan2(r, IP.FilmDistance);
+                    string thetaStr = "2θ: " + (theta / Math.PI * 180.0).ToString("f3") + "°";
+                    string dStr = "d:" + (IP.WaveLength / 2 * 10 / Math.Sin(theta / 2)).ToString("f3") + "Å";
+                    string chiStr = "chi: " + (180.0 / Math.PI * chi).ToString("f3") + "°";
+                    Draw();
+                    MessageBox.Show("Image　Coord. X: " + selectedSpot.X.ToString("f3") + ", Y: " + selectedSpot.Y.ToString("f3") +
+                        "\r\nReal Coord. X: " + newX.ToString("f3") + "mm, Y: " + newY.ToString("f3") + "mm" +
+                        "\r\n" + rStr + "\r\n" + thetaStr + "\r\n" + dStr + "\r\n" + chiStr);
+                    selectedSpot = null;
+                    Draw();
+                    sw.Stop();
+                    sw.Reset();
+                    return true;
+                }
 
-            else */
+                else */
             if (FormProperty.checkBoxManualMaskMode.Checked)//マスクモード時
             {
                 if (FormProperty.radioButtonManualCircle.Checked)
@@ -1649,7 +1651,7 @@ namespace IPAnalyzer
                 else if (Directory.Exists(fileName[0]))
                 {
                     var files = Directory.GetFiles(fileName[0]);
-                    if(files !=null && files.Length>0)
+                    if (files != null && files.Length > 0)
                     {
                         Array.Sort(files);
                         ext = Path.GetExtension(files[0]).TrimStart(new char[] { '.' });
@@ -1658,7 +1660,7 @@ namespace IPAnalyzer
                     }
                 }
             }
-      
+
         }
         #endregion
 
@@ -1666,7 +1668,7 @@ namespace IPAnalyzer
 
         public int filterIndex;
         public string initialImageDirectory = "";
-      
+
         /// <summary>
         /// Read Image ボタン
         /// </summary>
@@ -1675,7 +1677,7 @@ namespace IPAnalyzer
         private void readImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var dlg = new OpenFileDialog { Filter = ImageIO.FilterString };
-            
+
             dlg.FilterIndex = filterIndex;
 
             if (initialImageDirectory != "")
@@ -1719,11 +1721,11 @@ namespace IPAnalyzer
             //直前のマスク情報を保存
             var justBeforeImageSize = Ring.SrcImgSize;
             var justBeforeMask = Ring.IsSpots.ToArray();
-                
+
             if (!ImageIO.ReadImage(str, flag))
                 return;
 
-           
+
 
             string ext = Path.GetExtension(str).TrimStart(new char[] { '.' }).ToLower();
             if (ext == "ipa")
@@ -1745,7 +1747,7 @@ namespace IPAnalyzer
 
             SrcImgSize = Ring.SrcImgSize;
 
-          
+
 
             GC.Collect();
 
@@ -1754,7 +1756,7 @@ namespace IPAnalyzer
             FormProperty.checkBoxThreshold_CheckedChanged(new object(), new EventArgs());
             IsImageReady = true;
             //IntegralArea_Changed(new object(), new EventArgs());
-            
+
             graphControlFrequency.LineList = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             Ring.CalcFreq();
             SetFrequencyProfile();//強度頻度グラフを作成
@@ -1769,7 +1771,7 @@ namespace IPAnalyzer
                         if (Ring.IsSpots[i] != justBeforeMask[i])
                             Ring.IsSpots[i] = justBeforeMask[i];
             }
-            else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile!="")
+            else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile != "")
                 ReadMask(justBeforeMaskFile);
 
 
@@ -1832,7 +1834,7 @@ namespace IPAnalyzer
                 var size = Ring.DigitalMicrographProperty.PixelSizeInMicron / 1000;
                 var scale = Ring.DigitalMicrographProperty.PixelScale;
 
-                if (Math.Abs(FormProperty.waveLengthControl.Energy*1000 - acc )/acc > 0.2)
+                if (Math.Abs(FormProperty.waveLengthControl.Energy * 1000 - acc) / acc > 0.2)
                     FormProperty.waveLengthControl.Energy = acc / 1000;
 
                 if (Math.Abs((FormProperty.numericBoxPixelSizeX.Value - size) / size) > 0.2)
@@ -1846,25 +1848,25 @@ namespace IPAnalyzer
                     FormProperty.CameraLength1 = length;
             }
 
-            
-            
+
+
         }
 
         public void SetInformation()
         {
             textBoxInformation.Text =
-                $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n"+
-                $"Dynamic range:\r\n {Ring.Intensity.Min()} - {Ring.Intensity.Max():#,#}\r\n"+
-                $"Max Intensity:\r\n {maxIntensity:#,#}\r\n"+
-                $"Sum Intensity:\r\n {sumOfIntensity:#,#}\r\n"+
-                $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Count:#,#.####}\r\n\r\n"+
+                $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n" +
+                $"Dynamic range:\r\n {Ring.Intensity.Min()} - {Ring.Intensity.Max():#,#}\r\n" +
+                $"Max Intensity:\r\n {maxIntensity:#,#}\r\n" +
+                $"Sum Intensity:\r\n {sumOfIntensity:#,#}\r\n" +
+                $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Count:#,#.####}\r\n\r\n" +
                 $"{Ring.Comments}";
 
             if (Ring.SequentialImagePulsePower != null && Ring.SequentialImagePulsePower.Count == Ring.SequentialImageIntensities.Count)//イメージごとにエネルギーが設定されているとき
             {
                 if (Ring.SequentialImageIntensities.Count == 1)
                     textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[0]}";
-                else if(FormSequentialImage.SelectedIndex>-1)
+                else if (FormSequentialImage.SelectedIndex > -1)
                     textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[FormSequentialImage.SelectedIndex]}";
             }
         }
@@ -1982,7 +1984,7 @@ namespace IPAnalyzer
                         {
                             ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), new object[] { Ring.SequentialImageEnergy[i] }));
                             ifdName.Add(new Tiff.IFD(60001, typeof(string), new object[] { Ring.SequentialImageNames[i] }));
-                            if(Ring.PulsePowerNormarized)
+                            if (Ring.PulsePowerNormarized)
                                 ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), new object[] { -1.0 }));
                             else
                                 ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), new object[] { Ring.SequentialImagePulsePower[i] }));
@@ -2077,7 +2079,7 @@ namespace IPAnalyzer
 
         private void toolStripMenuItemReadParameter_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title ="Read parameter file" };
+            var dialog = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title = "Read parameter file" };
             if (initialParameterDirectory != "")
                 dialog.InitialDirectory = initialParameterDirectory;
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -2127,24 +2129,17 @@ namespace IPAnalyzer
                 else
                     FormParameterOption.AllCheck();
 
-
-
-                if (FormProperty.DetectorCoordinates == FormProperty.DetectorCoordinatesEnum.Foot)
-                {
-                    prm.SACLA_EH5_CameraLength2 = FormProperty.CameraLength2.ToString();
-                    prm.SACLA_EH5_Phi = FormProperty.DetectorTiltPhi.ToString();
-                    prm.SACLA_EH5_Tau = FormProperty.DetectorTiltTau.ToString();
-                    //prm.SACLA_EH5_PixelHeight = FormProperty..PixelHeight.ToString();
-                    //prm.SACLA_EH5_PixelWidth = FormProperty.saclaControl.PixelWidth.ToString();
-                    prm.SACLA_EH5_PixleSize = FormProperty.DetectorPixelSizeX.ToString();
-                    prm.SACLA_EH5_FootX = FormProperty.FootPosition.X.ToString();
-                    prm.SACLA_EH5_FootY = FormProperty.FootPosition.Y.ToString();
-                    prm.SACLA_EH5 = "True";
-                }
-                else
-                    prm.SACLA_EH5 = null;
-
                 prm.cameraMode = FormParameterOption.CameraModeChecked ? (FormProperty.radioButtonFlatPanel.Checked ? "FlatPanel" : "Gandolfi") : null;
+
+                prm.FootMode = FormProperty.DetectorCoordinates == FormProperty.DetectorCoordinatesEnum.Foot ? "True" : "False";
+
+                prm.CameraLength1 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength1Text : null;
+                prm.DirectSpotX = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionX.Text : null;
+                prm.DirectSpotY = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionY.Text : null;
+
+                prm.CameraLength2 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength2.ToString() : null;
+                prm.FootX = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.X.ToString() : null;
+                prm.FootY = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.Y.ToString() : null;
 
                 prm.waveSource = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.WaveSource).ToString() : null;
                 prm.waveLength = FormParameterOption.WaveLengthChecked ? FormProperty.WaveLengthText : null;
@@ -2152,17 +2147,12 @@ namespace IPAnalyzer
                 prm.xRayElement = FormParameterOption.WaveLengthChecked ? FormProperty.waveLengthControl.XrayWaveSourceElementNumber.ToString() : null;
                 prm.xRayLine = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.XrayWaveSourceLine).ToString() : null;
 
-                prm.cameraLength = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLengthText : null;
-
                 prm.pixSizeX = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeX.Text : null;
                 prm.pixSizeY = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeY.Text : null;
                 prm.pixKsi = !FormParameterOption.PixelShapeChecked ? null : FormProperty.numericBoxPixelKsi.Text;
 
                 prm.tiltPhi = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltPhi.Text : null;
                 prm.tiltTau = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltTau.Text : null;
-
-                prm.centerX = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionX.Text : null;
-                prm.centerY = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionY.Text : null;
 
                 prm.sphericalRadiusInverse = FormParameterOption.SphericalCorrectionChecked ? FormProperty.numericBoxSphericalCorections.Text : null;
 
@@ -2198,10 +2188,12 @@ namespace IPAnalyzer
                     prm.RadialStep = FormProperty.numericBoxRadialStep.Text;
                 }
 
-                System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(DiffractionOptics.Parameter));
-                System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Create);
-                serializer.Serialize(fs, prm);
-                fs.Close();
+                System.Xml.Serialization.XmlSerializer serializer = new(typeof(DiffractionOptics.Parameter));
+
+                var sw = new StreamWriter(filename, false, new UTF8Encoding());
+                var writer = XmlWriter.Create(sw, new XmlWriterSettings { Indent = true });
+                serializer.Serialize(writer, prm);
+                sw.Close();
 
             }
             catch { MessageBox.Show("Failed to save the file. Sorry."); }
@@ -2210,11 +2202,12 @@ namespace IPAnalyzer
 
 
 
+
         public void ReadParameter(string filename, bool fullyRead = false)
         {
             if (filename == "")
             {
-                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm" , Title = "Read parameter file"};
+                var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title = "Read parameter file" };
                 if (dlg.ShowDialog() == DialogResult.OK)
                     filename = dlg.FileName;
                 else
@@ -2239,36 +2232,29 @@ namespace IPAnalyzer
                 else
                     FormParameterOption.AllCheck();
 
-                //旧式のSACLA_EH5形式で保存されたファイルに対する対処
-                if (prm.SACLA_EH5 == "True")
+                if (prm.FootMode != null && prm.FootMode == "False")
+                {
+                    FormProperty.DetectorCoordinates = FormProperty.DetectorCoordinatesEnum.DirectSpot;
+
+                    //カメラ長1
+                    if (FormParameterOption.CameraLengthChecked && prm.CameraLength1 != null)
+                        FormProperty.CameraLength1Text = prm.CameraLength1;
+
+                    //Direct Spot Position
+                    if (FormParameterOption.CenterPositionChecked && prm.DirectSpotX != null)
+                        FormProperty.DirectSpotPosition = new PointD(Convert.ToDouble(prm.DirectSpotX), Convert.ToDouble(prm.DirectSpotY));
+                }
+                else
                 {
                     FormProperty.DetectorCoordinates = FormProperty.DetectorCoordinatesEnum.Foot;
-                    if (prm.SACLA_EH5 == "True")
-                    {
-                        if (prm.SACLA_EH5_CameraLength2 != null)
-                            FormProperty.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_CameraLength2);
-                        else
-                            FormProperty.CameraLength2 = Convert.ToDouble(prm.SACLA_EH5_Distance);
 
-                        //FormProperty.saclaControl.PixelHeight = Convert.ToDouble(prm.SACLA_EH5_PixelHeight);
-                        //FormProperty.saclaControl.PixelWidth = Convert.ToDouble(prm.SACLA_EH5_PixelWidth);
-                        FormProperty.DetectorPixelSizeX = Convert.ToDouble(prm.SACLA_EH5_PixleSize);
-                        FormProperty.DetectorPixelSizeY = FormProperty.DetectorPixelSizeX;
-                        FormProperty.DetectorPixelKsi = 0;
+                    //カメラ長2
+                    if (FormParameterOption.CameraLengthChecked && prm.CameraLength2 != null)
+                        FormProperty.CameraLength2 = Convert.ToDouble(prm.CameraLength2);
 
-                        FormProperty.FootPosition = new PointD(Convert.ToDouble(prm.SACLA_EH5_FootX), Convert.ToDouble(prm.SACLA_EH5_FootY));
-
-                        if (prm.SACLA_EH5_Phi != null)
-                        {
-                            FormProperty.DetectorTiltPhi = Convert.ToDouble(prm.SACLA_EH5_Phi);
-                            FormProperty.DetectorTiltTau = Convert.ToDouble(prm.SACLA_EH5_Tau);
-                        }
-                        else
-                        {
-                            FormProperty.DetectorTiltPhi = 0;
-                            FormProperty.DetectorTiltTau = Convert.ToDouble(prm.SACLA_EH5_TwoTheta);
-                        }
-                    }
+                    //Foot Position
+                    if (FormParameterOption.CenterPositionChecked && prm.FootX != null)
+                        FormProperty.FootPosition = new PointD(Convert.ToDouble(prm.FootX), Convert.ToDouble(prm.FootY));
                 }
 
                 //Camera Mode
@@ -2301,9 +2287,7 @@ namespace IPAnalyzer
                         FormProperty.WaveLengthText = prm.waveLength;
                 }
 
-                if (FormParameterOption.CameraLengthChecked && prm.cameraLength != null)
-                    FormProperty.CameraLengthText = prm.cameraLength;
-
+                //PixelShape
                 if (FormParameterOption.PixelShapeChecked)
                 {
                     if (prm.pixSizeX != null)
@@ -2318,14 +2302,6 @@ namespace IPAnalyzer
                     }
                     if (prm.pixKsi != null)
                         FormProperty.numericBoxPixelKsi.Text = prm.pixKsi;
-
-                }
-
-                //CenterPorition
-                if (FormParameterOption.CenterPositionChecked && prm.centerX != null)
-                {
-                    FormProperty.numericBoxDirectSpotPositionX.Text = prm.centerX;
-                    FormProperty.numericBoxDirectSpotPositionY.Text = prm.centerY;
                 }
 
                 //TiltCorrection
@@ -2342,8 +2318,6 @@ namespace IPAnalyzer
                 //GandolfiRadius
                 if (FormParameterOption.GandolfiRadiusChecked && prm.GandolfiRadius != null)
                     FormProperty.numericBoxGandlfiRadius.Text = prm.GandolfiRadius;
-
-
 
                 //IntegralRegion
                 if (FormParameterOption.IntegralRegionChecked)
@@ -2600,7 +2574,7 @@ namespace IPAnalyzer
             ClearMask();
         }
 
-   
+
 
         public void SetMask()
         {
@@ -2684,7 +2658,7 @@ namespace IPAnalyzer
         #endregion
 
         #region Option メニュー
-        private void flipHorizontallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e) 
+        private void flipHorizontallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
             => FlipRotate_Pollalization_Background();
 
         private void flipVerticallyToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
@@ -2753,7 +2727,7 @@ namespace IPAnalyzer
             FormMacro.RunMacroName(((ToolStripMenuItem)sender).Name);
         }
 
-       
+
 
         private void ToolStripMenuItemReferenceBackground_Click(object sender, EventArgs e)
         {
@@ -2824,7 +2798,7 @@ namespace IPAnalyzer
                     {
                         IP.StartDspacing = FormProperty.numericBoxConcentricStart.Value / 10.0;
                         IP.EndDspacing = FormProperty.numericBoxConcentricEnd.Value / 10.0;//角度もしくはピクセルの上限値、下限値
-                        IP.StepDspacing =FormProperty.numericBoxConcentricStep.Value / 10.0;//角度もしくはピクセルのステップ
+                        IP.StepDspacing = FormProperty.numericBoxConcentricStep.Value / 10.0;//角度もしくはピクセルのステップ
                         IP.Mode = HorizontalAxis.d;
                     }
                 }
@@ -2924,7 +2898,7 @@ namespace IPAnalyzer
         public void toolStripSplitButtonFindCenter_ButtonClick(object sender, EventArgs e)
         {
             if (!IsImageReady) return;
-            
+
             sw.Restart();
             if (!FormDrawRing.Visible)//通常モードの時
             {
@@ -2946,8 +2920,8 @@ namespace IPAnalyzer
 
                 if (FormFindParameter.Visible)
                 {
-                    
-                    if (FormFindParameter.textBoxPrimaryFileName.Text.EndsWith(FileName) && (!SequentialImageMode||FormSequentialImage.SelectedIndex == FormFindParameter.numericBoxPrimaryImageNum.ValueInteger ))
+
+                    if (FormFindParameter.textBoxPrimaryFileName.Text.EndsWith(FileName) && (!SequentialImageMode || FormSequentialImage.SelectedIndex == FormFindParameter.numericBoxPrimaryImageNum.ValueInteger))
                     {
                         FormFindParameter.numericalTextBoxPrimaryCenterPositionX.Text = FormProperty.DirectSpotPosition.X.ToString("f8");
                         FormFindParameter.numericTextBoxPrimaryCenterPositionY.Text = FormProperty.DirectSpotPosition.Y.ToString("f8");
@@ -2959,7 +2933,7 @@ namespace IPAnalyzer
                     }
                 }
             }
-            else if (FormDrawRing.Visible && FormDrawRing.R>0)//デバイリングから、中心位置を検索する時
+            else if (FormDrawRing.Visible && FormDrawRing.R > 0)//デバイリングから、中心位置を検索する時
             {
                 this.Enabled = false;
                 tabControl1.SelectedIndex = 1;
@@ -2969,10 +2943,10 @@ namespace IPAnalyzer
                 var concentricEnd = FormProperty.numericBoxConcentricEnd.Value;
 
                 var fittingRange = FormProperty.numericBoxFindCenterPeakFittingRange.Value;
-                FormProperty.numericBoxConcentricStart.Value = FormDrawRing.TwoTheta / Math.PI * 180 - fittingRange*5;
-                FormProperty.numericBoxConcentricEnd.Value = FormDrawRing.TwoTheta / Math.PI * 180 + fittingRange*5;
+                FormProperty.numericBoxConcentricStart.Value = FormDrawRing.TwoTheta / Math.PI * 180 - fittingRange * 5;
+                FormProperty.numericBoxConcentricEnd.Value = FormDrawRing.TwoTheta / Math.PI * 180 + fittingRange * 5;
 
-                var pf = new PeakFunction(FormDrawRing.TwoTheta / Math.PI * 180, fittingRange/2, fittingRange, PeakFunctionForm.PseudoVoigt);
+                var pf = new PeakFunction(FormDrawRing.TwoTheta / Math.PI * 180, fittingRange / 2, fittingRange, PeakFunctionForm.PseudoVoigt);
                 FormProperty.radioButtonSector.Checked = true;
                 for (int n = 0; n < 3; n++)
                 {
@@ -3195,7 +3169,7 @@ namespace IPAnalyzer
             else
                 IP.Mode = HorizontalAxis.d;
 
-            
+
             //通常積分モード
             if (!toolStripMenuItemDividedByAngleStep.Checked)
             {
@@ -3243,14 +3217,14 @@ namespace IPAnalyzer
                         diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
 
                         //必要であればKalpha2を除去
-                        if(FormProperty.checkBoxTest.Checked)
+                        if (FormProperty.checkBoxTest.Checked)
                         {
                             if (FormProperty.waveLengthControl.XrayWaveSourceElementNumber > 10 && FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka1)
                             {
                                 var alpha1 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1);
                                 var alpha2 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2);
                                 var ratio = FormProperty.numericBoxTest.Value;
-                                diffractionProfile.OriginalProfile= DiffractionProfile.RemoveKalpha2(diffractionProfile.OriginalProfile,alpha1,alpha2,ratio);
+                                diffractionProfile.OriginalProfile = DiffractionProfile.RemoveKalpha2(diffractionProfile.OriginalProfile, alpha1, alpha2, ratio);
                             }
                         }
 
@@ -3290,7 +3264,7 @@ namespace IPAnalyzer
                         }
                         clipboard.Close();
                     }
-                    
+
 
                     graphControlProfile.Profile = diffractionProfile.OriginalProfile;
 
@@ -3361,13 +3335,13 @@ namespace IPAnalyzer
                         dpList.Add(new DiffractionProfile()
                         {
                             OriginalProfile = profiles[i],
-                            Name = FileName + " - " + (i * 360/chiDiv).ToString("000"),
+                            Name = FileName + " - " + (i * 360 / chiDiv).ToString("000"),
                             SrcAxisMode = HorizontalAxis.Angle,
                             SrcWaveLength = IP.WaveLength,
                             IsLPOmain = false,
                             IsLPOchild = true,
                         });
-                        
+
                         if (FormProperty.checkBoxSaveFile.Checked)
                         {
                             if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
@@ -3417,7 +3391,7 @@ namespace IPAnalyzer
 
         #region SaveProfile
 
-        private void SaveProfile(DiffractionProfile dp, string filename="")
+        private void SaveProfile(DiffractionProfile dp, string filename = "")
         {
             string extension = "";
             if (FormProperty.radioButtonAsPDIformat.Checked) extension = ".pdi";
@@ -3434,7 +3408,7 @@ namespace IPAnalyzer
                     filename = dialog.FileName;
                 else return;
             }
-            else if(filename=="")
+            else if (filename == "")
             {
                 //シーケンシャルモードの時の処理
                 if (toolStripButtonImageSequence.Enabled)
@@ -3547,7 +3521,7 @@ namespace IPAnalyzer
             FormFindParameterBruteForce.Visible = toolStripButtonFindParameterBruteForce.Checked;
         }
 
-        private void toolStripButtonFindParameter_CheckedChanged(object sender, EventArgs e) 
+        private void toolStripButtonFindParameter_CheckedChanged(object sender, EventArgs e)
             => FormFindParameter.Visible = toolStripButtonFindParameter.Checked;
 
         private void toolStripButtonImageSequence_CheckedChanged(object sender, EventArgs e)
@@ -3640,19 +3614,19 @@ namespace IPAnalyzer
                 }
             else//リニア
                 if (comboBoxScale2.SelectedIndex == 0)//グレー
-                {
-                    pseudoBitmap.ScaleR = pseudoBitmap.ScaleG = pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLiner;
-                    pseudoBitmap.GrayScale = true;
-                }
-                else//color
-                {
-                    pseudoBitmap.ScaleR = PseudoBitmap.BrightnessScaleLinerColorR;
-                    pseudoBitmap.ScaleG = PseudoBitmap.BrightnessScaleLinerColorG;
-                    pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLinerColorB;
-                    pseudoBitmap.GrayScale = false;
-                }
+            {
+                pseudoBitmap.ScaleR = pseudoBitmap.ScaleG = pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLiner;
+                pseudoBitmap.GrayScale = true;
+            }
+            else//color
+            {
+                pseudoBitmap.ScaleR = PseudoBitmap.BrightnessScaleLinerColorR;
+                pseudoBitmap.ScaleG = PseudoBitmap.BrightnessScaleLinerColorG;
+                pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLinerColorB;
+                pseudoBitmap.GrayScale = false;
+            }
             trackBarAdvancedMaxInt_ValueChanged(new object(), 0);
-            trackBarAdvancedMinInt_ValueChanged(new object(),0);
+            trackBarAdvancedMinInt_ValueChanged(new object(), 0);
         }
 
         #endregion
@@ -3694,8 +3668,8 @@ namespace IPAnalyzer
                 //if (formStructureViewer.panelMain.Focused || formStructureViewer.panelAxes.Focused
                 //    || formStereonet.panel.Focused || formElectronDiffraction.panel.Focused)
                 {
-                    bool left = GetAsyncKeyState(37) != 0,up = GetAsyncKeyState(38) != 0,right = GetAsyncKeyState(39) != 0,down = GetAsyncKeyState(40) != 0;
-                    var shift = 1/scalablePictureBox.Zoom;
+                    bool left = GetAsyncKeyState(37) != 0, up = GetAsyncKeyState(38) != 0, right = GetAsyncKeyState(39) != 0, down = GetAsyncKeyState(40) != 0;
+                    var shift = 1 / scalablePictureBox.Zoom;
                     if (up)
                         FormProperty.DirectSpotPosition += new PointD(0, -shift);
                     else if (down)
@@ -3723,7 +3697,7 @@ namespace IPAnalyzer
 
         #region 強度ヒストグラム関連
 
-      
+
         public void SetFrequencyProfile()
         {
             maxIntensity = uint.MinValue;
@@ -3878,7 +3852,7 @@ namespace IPAnalyzer
         {
             if (Skip) return;
 
-            if (Ring.IntensityOriginal == null || Ring.Intensity.Count == 0 || pseudoBitmap.SrcValuesGray==null)
+            if (Ring.IntensityOriginal == null || Ring.Intensity.Count == 0 || pseudoBitmap.SrcValuesGray == null)
                 return;
 
             int originalWidth = Ring.SrcImgSizeOriginal.Width;
@@ -3910,7 +3884,7 @@ namespace IPAnalyzer
 
             if (Ring.Background != null && Ring.Background.Count == Ring.Intensity.Count)
                 Ring.Intensity = Ring.SubtractBackground(Ring.Intensity, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
-                //Background補正ここまで
+            //Background補正ここまで
 
             //偏光補正ここから
             if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
@@ -3958,7 +3932,7 @@ namespace IPAnalyzer
                 */
                 #endregion
 
-                int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ?                    0 : 1;
+                int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1;
                 Ring.Intensity = Ring.CorrectPolarization(index);
                 this.toolStripStatusLabel.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
             }
@@ -4055,7 +4029,7 @@ namespace IPAnalyzer
             }
         }
 
-  
+
 
         bool skipSelectedAreaChangedEvent = false;
         private void numericUpDownSelectedArea_ValueChanged(object sender, EventArgs e)
@@ -4079,7 +4053,7 @@ namespace IPAnalyzer
         /// <summary>
         /// IPAのマクロ操作を提供するサブクラス
         /// </summary>
-        public class Macro: MacroBase
+        public class Macro : MacroBase
         {
             private FormMain main;
             public SequentialClass Sequential;
@@ -4091,12 +4065,12 @@ namespace IPAnalyzer
             public MaskClass Mask;
             public PDIClass PDI;
             public IntegralPropertyClass IntegralProperty;
-           
 
-            public Macro(FormMain _main):base(_main,"IPA")
+
+            public Macro(FormMain _main) : base(_main, "IPA")
             {
                 main = _main;
-           
+
                 Sequential = new SequentialClass(this);
                 Detector = new DetectorClass(this);
                 File = new FileClass(this);
@@ -4106,7 +4080,7 @@ namespace IPAnalyzer
                 Mask = new MaskClass(this);
                 PDI = new PDIClass(this);
                 IntegralProperty = new IntegralPropertyClass(this);
-                
+
             }
 
             #region PDIClass
@@ -4145,7 +4119,7 @@ namespace IPAnalyzer
                     }
                     catch { }
                 }
-            } 
+            }
             #endregion
 
             #region ImageClass
@@ -4440,12 +4414,12 @@ namespace IPAnalyzer
                     get
                     {
                         return Execute<int>(new Func<int>(() =>
-                         {
-                             int i = 0;
-                             if (p.main.FormProperty.radioButtonConcentricDspacing.Checked) i = 1;
-                             if (p.main.FormProperty.radioButtonConcentricLength.Checked) i = 2;
-                             return i;
-                         }));
+                        {
+                            int i = 0;
+                            if (p.main.FormProperty.radioButtonConcentricDspacing.Checked) i = 1;
+                            if (p.main.FormProperty.radioButtonConcentricLength.Checked) i = 2;
+                            return i;
+                        }));
                     }
                 }
                 public double RadialRadius
@@ -4619,14 +4593,14 @@ namespace IPAnalyzer
                 /// Read parameter file.
                 /// </summary>
                 /// <param name="_fileName"></param>
-                public void ReadParameter(string fileName = "") => Execute(new Action(() => p.main.ReadParameter(fileName,true)));
+                public void ReadParameter(string fileName = "") => Execute(new Action(() => p.main.ReadParameter(fileName, true)));
 
-                public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName,true)));
+                public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName, true)));
 
                 public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
                 public void SaveMask(string fileName = "") => Execute(new Action(() => p.main.SaveMask(fileName)));
 
-            
+
 
             }
             #endregion
@@ -4708,11 +4682,11 @@ namespace IPAnalyzer
                 /// </summary>
                 /// <param name="n"></param>
                 public void SelectIndex(int n) => Execute(new Action(() =>
-               {
-                   if (!SequentialImageMode) return;
-                   MultiSelection = false;
-                   p.main.FormSequentialImage.SelectedIndex = n;
-               }));
+                {
+                    if (!SequentialImageMode) return;
+                    MultiSelection = false;
+                    p.main.FormSequentialImage.SelectedIndex = n;
+                }));
 
                 /// <summary>
                 /// 選択を追加する

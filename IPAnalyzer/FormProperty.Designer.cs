@@ -609,7 +609,7 @@
             this.numericBoxPixelSizeY.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeY.Name = "numericBoxPixelSizeY";
             this.numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
-            this.numericBoxPixelSizeY.RoundErrorAccuracy = 8;
+            this.numericBoxPixelSizeY.RoundErrorAccuracy = 10;
             this.numericBoxPixelSizeY.SmartIncrement = true;
             this.numericBoxPixelSizeY.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPixelSizeY.ThonsandsSeparator = true;
@@ -624,7 +624,7 @@
             this.numericBoxPixelSizeX.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxPixelSizeX.Name = "numericBoxPixelSizeX";
             this.numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
-            this.numericBoxPixelSizeX.RoundErrorAccuracy = 8;
+            this.numericBoxPixelSizeX.RoundErrorAccuracy = 10;
             this.numericBoxPixelSizeX.SmartIncrement = true;
             this.numericBoxPixelSizeX.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericBoxPixelSizeX.ThonsandsSeparator = true;
@@ -695,7 +695,7 @@
             this.numericBoxTiltTau.FooterBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltTau.HeaderBackColor = System.Drawing.SystemColors.Control;
             this.numericBoxTiltTau.Name = "numericBoxTiltTau";
-            this.numericBoxTiltTau.RoundErrorAccuracy = 8;
+            this.numericBoxTiltTau.RoundErrorAccuracy = 9;
             this.numericBoxTiltTau.SkipEventDuringInput = false;
             this.numericBoxTiltTau.SmartIncrement = true;
             this.numericBoxTiltTau.TextFont = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

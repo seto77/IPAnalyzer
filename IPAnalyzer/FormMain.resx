@@ -242,7 +242,7 @@
     <value>134, 133</value>
   </data>
   <data name="scalablePictureBoxThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;scalablePictureBoxThumbnail.Name" xml:space="preserve">
     <value>scalablePictureBoxThumbnail</value>
@@ -632,7 +632,7 @@
     <value>488, 399</value>
   </data>
   <data name="scalablePictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;scalablePictureBox.Name" xml:space="preserve">
     <value>scalablePictureBox</value>
@@ -1475,7 +1475,7 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="trackBarAdvancedMinInt.HeaderText" xml:space="preserve">
-    <value>Min.Int.</value>
+    <value />
   </data>
   <data name="trackBarAdvancedMinInt.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 0</value>
@@ -1487,7 +1487,7 @@
     <value>516, 27</value>
   </data>
   <data name="trackBarAdvancedMinInt.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMinInt.Name" xml:space="preserve">
     <value>trackBarAdvancedMinInt</value>
@@ -1520,7 +1520,7 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="trackBarAdvancedMaxInt.HeaderText" xml:space="preserve">
-    <value>Max.Int.</value>
+    <value />
   </data>
   <data name="trackBarAdvancedMaxInt.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 27</value>
@@ -1532,7 +1532,7 @@
     <value>516, 27</value>
   </data>
   <data name="trackBarAdvancedMaxInt.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;trackBarAdvancedMaxInt.Name" xml:space="preserve">
     <value>trackBarAdvancedMaxInt</value>
@@ -1652,13 +1652,10 @@
     <value>Fill</value>
   </data>
   <data name="graphControlFrequency.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
+    <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="graphControlFrequency.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="graphControlFrequency.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
   </data>
   <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 181</value>
@@ -1709,19 +1706,16 @@
     <value>Fill</value>
   </data>
   <data name="graphControlProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
+    <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="graphControlProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="graphControlProfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
   </data>
   <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>618, 181</value>
   </data>
   <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Name" xml:space="preserve">
     <value>graphControlProfile</value>
@@ -1775,7 +1769,7 @@
     <value>Vertical</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 107</value>
+    <value>303, 107</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

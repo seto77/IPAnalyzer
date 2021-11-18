@@ -86,7 +86,7 @@
         private void FormCLandWL_Load(object sender, System.EventArgs e)
         {
             //まずメインウィンドウのパラメータに置き換える。
-            numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
+            numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLength1Text;
             textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
             textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
             textBoxPixelKsi.Value = formMain.FormProperty.numericBoxPixelKsi.Value;
@@ -133,7 +133,7 @@
             if (this.Visible)
             {
                 //まずメインウィンドウのパラメータに置き換える。
-                numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
+                numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLength1Text;
                 textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
                 textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
                 textBoxPixelKsi.Value = formMain.FormProperty.numericBoxPixelKsi.Value;
@@ -2285,7 +2285,7 @@
         private void buttonSendMainForm_Click(object sender, EventArgs e)
         {
             formMain.FormProperty.SkipEvent = true;
-            formMain.FormProperty.CameraLengthText = textBoxRefinedPrimaryFilmDistance.Text;
+            formMain.FormProperty.CameraLength1Text = textBoxRefinedPrimaryFilmDistance.Text;
             formMain.FormProperty.numericBoxPixelSizeX.Value = textBoxRefinedPixelSizeX.Value;
             formMain.FormProperty.numericBoxPixelSizeY.Value = textBoxRefinedPixelSizeY.Value;
             formMain.FormProperty.numericBoxPixelKsi.Value = textBoxRefinedPixelKsi.Value;
@@ -2300,7 +2300,7 @@
 
         private void buttonSetInitioalParam_Click(object sender, EventArgs e)
         {
-            numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLengthText;
+            numericTextBoxPrimaryFilmDistance.Text = formMain.FormProperty.CameraLength1Text;
             textBoxPixelSizeX.Value = formMain.FormProperty.numericBoxPixelSizeX.Value;
             textBoxPixelSizeY.Value = formMain.FormProperty.numericBoxPixelSizeY.Value;
             textBoxPixelKsi.Value = formMain.FormProperty.numericBoxPixelKsi.Value;

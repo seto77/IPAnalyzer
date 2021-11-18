@@ -659,7 +659,7 @@ namespace IPAnalyzer
             this.trackBarAdvancedMaxInt.Smart_Increment = true;
             this.trackBarAdvancedMaxInt.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
             this.trackBarAdvancedMaxInt.UpDown_Increment = 1D;
-            this.trackBarAdvancedMaxInt.Value = 65535D;
+            this.trackBarAdvancedMaxInt.Value = 65534D;
             this.trackBarAdvancedMaxInt.ValueChanged += new Crystallography.Controls.TrackBarAdvanced.ValueChangedDelegate(this.trackBarAdvancedMaxInt_ValueChanged);
             // 
             // flowLayoutPanel1

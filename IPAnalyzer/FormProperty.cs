@@ -15,7 +15,7 @@ namespace IPAnalyzer
         public double WaveLength { set => waveLengthControl.WaveLength = value; get => waveLengthControl.WaveLength; }
         public string WaveLengthText { set => waveLengthControl.WaveLengthText = value; get => waveLengthControl.WaveLengthText; }
         public double CameraLength1 { set => numericBoxCameraLength1.Value = value; get => numericBoxCameraLength1.Value; }
-        public string CameraLengthText
+        public string CameraLength1Text
         {
             set
             {
