@@ -22,8 +22,10 @@ namespace IPAnalyzer
         }
         private void FormAutoProcedure_Load(object sender, EventArgs e)
         {
-            watcher = new System.IO.FileSystemWatcher();
-            watcher.IncludeSubdirectories = true;
+            watcher = new System.IO.FileSystemWatcher
+            {
+                IncludeSubdirectories = true
+            };
             watcher.Created += new System.IO.FileSystemEventHandler(watcher_Created);
 
             checkBoxIsWatchAndLoad.Checked = true;
@@ -85,7 +87,7 @@ namespace IPAnalyzer
                     //watcher.Path = formMain.FilePath;
                     //watcher.EnableRaisingEvents = true;
                     FileList.Clear();
-                    FileList.AddRange(Directory.GetFiles(formMain.FilePath));
+                    FileList.AddRange(Directory.GetFiles(formMain.FilePath,"*", SearchOption.AllDirectories));
                     backgroundWorker.RunWorkerAsync();
                 }
             }
@@ -134,11 +136,12 @@ namespace IPAnalyzer
             {
                 try
                 {
-                    List<string> temp = new List<string>( Directory.GetFiles(formMain.FilePath));
+                    List<string> temp = new List<string>( Directory.GetFiles(formMain.FilePath,"*",SearchOption.AllDirectories));
                     if (temp.Count != FileList.Count)
                     {
                       for(int i= 0 ; i<temp.Count ; i++)
-                          if (FileList.Contains(temp[i]) == false && (temp[i].EndsWith("img") || temp[i].EndsWith("stl") || temp[i].EndsWith("ccd") || temp[i].EndsWith("ipf")))
+                          if (FileList.Contains(temp[i]) == false && 
+                                (temp[i].EndsWith("img") || temp[i].EndsWith("tif") || temp[i].EndsWith("stl") || temp[i].EndsWith("ccd") || temp[i].EndsWith("ipf")))
                           {
                               FileList = temp;
                               formMain.ReadImage(temp[i]);

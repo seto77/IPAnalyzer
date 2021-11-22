@@ -148,7 +148,7 @@
     <value>Both</value>
   </data>
   <data name="textBoxInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 121</value>
+    <value>134, 119</value>
   </data>
   <data name="textBoxInformation.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -212,7 +212,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 138</value>
+    <value>134, 136</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -227,6 +227,33 @@
     <value>splitContainer2.Panel1</value>
   </data>
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 133</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBoxThumbnail.Name" xml:space="preserve">
+    <value>scalablePictureBoxThumbnail</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBoxThumbnail.Type" xml:space="preserve">
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBoxThumbnail.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBoxThumbnail.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="radioButtonNearCenter.AutoSize" type="System.Boolean, mscorlib">
@@ -263,7 +290,7 @@
     <value>panel3</value>
   </data>
   <data name="&gt;&gt;radioButtonNearCenter.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="radioButtonWhole.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -299,7 +326,7 @@
     <value>panel3</value>
   </data>
   <data name="&gt;&gt;radioButtonWhole.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -554,7 +581,7 @@
     <value>Bottom</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 313</value>
+    <value>0, 311</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -590,6 +617,33 @@
     <value>splitContainer2</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scalablePictureBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scalablePictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="scalablePictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 399</value>
+  </data>
+  <data name="scalablePictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBox.Name" xml:space="preserve">
+    <value>scalablePictureBox</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBox.Type" xml:space="preserve">
+    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBox.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scalablePictureBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -1094,7 +1148,7 @@
     <value>splitContainer2.Panel2</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelResolution" Row="0" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointChi" Row="0" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointD" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointTheta" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointR" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointIntensity" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="0" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,60,AutoSize,0,Absolute,235" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -1289,7 +1343,7 @@
     <value>splitContainer2.Panel2</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelMousePointReal" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelMousePointPixel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,120,AutoSize,0,Absolute,361" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -1307,7 +1361,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>626, 443</value>
+    <value>626, 441</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
     <value>134</value>
@@ -1376,7 +1430,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 28</value>
+    <value>3, 29</value>
   </data>
   <data name="buttonReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 0, 0</value>
@@ -1402,11 +1456,95 @@
   <data name="&gt;&gt;buttonReset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="trackBarAdvancedMinInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trackBarAdvancedMinInt.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trackBarAdvancedMinInt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 0</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 27</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMinInt.Name" xml:space="preserve">
+    <value>trackBarAdvancedMinInt</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMinInt.Type" xml:space="preserve">
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMinInt.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMinInt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trackBarAdvancedMaxInt.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trackBarAdvancedMaxInt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 27</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 27</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMaxInt.Name" xml:space="preserve">
+    <value>trackBarAdvancedMaxInt</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMaxInt.Type" xml:space="preserve">
+    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMaxInt.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;trackBarAdvancedMaxInt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 443</value>
+    <value>0, 441</value>
   </data>
   <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1415,7 +1553,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>626, 52</value>
+    <value>626, 54</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1433,7 +1571,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonAutoLevel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonReset" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,Absolute,20" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonAutoLevel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonReset" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="trackBarAdvancedMinInt" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="trackBarAdvancedMaxInt" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,Absolute,20" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1504,6 +1642,33 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="graphControlFrequency.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="graphControlFrequency.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="graphControlFrequency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 181</value>
+  </data>
+  <data name="graphControlFrequency.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;graphControlFrequency.Name" xml:space="preserve">
+    <value>graphControlFrequency</value>
+  </data>
+  <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;graphControlFrequency.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 26</value>
   </data>
@@ -1529,6 +1694,33 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="graphControlProfile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="graphControlProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="graphControlProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 181</value>
+  </data>
+  <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;graphControlProfile.Name" xml:space="preserve">
+    <value>graphControlProfile</value>
+  </data>
+  <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
+    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;graphControlProfile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
