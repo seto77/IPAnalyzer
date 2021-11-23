@@ -13,8 +13,8 @@ namespace IPAnalyzer
     {
 
         public FormMain formMain;
-        public System.IO.FileSystemWatcher watcher;
 
+        private string targetFolder="";
 
         public FormAutoProcedure()
         {
@@ -22,13 +22,7 @@ namespace IPAnalyzer
         }
         private void FormAutoProcedure_Load(object sender, EventArgs e)
         {
-            watcher = new System.IO.FileSystemWatcher
-            {
-                IncludeSubdirectories = true
-            };
-            watcher.Created += new System.IO.FileSystemEventHandler(watcher_Created);
 
-            checkBoxIsWatchAndLoad.Checked = true;
             checkBoxAutoAfterLoad.Checked = true;
 
             checkedListBoxAuto.SetItemChecked(0, false);
@@ -47,8 +41,6 @@ namespace IPAnalyzer
         public void buttonAuto_Click(object sender, EventArgs e)
         {
             if (formMain.FormFindParameter.Visible) return;
-
-           // watcher.EnableRaisingEvents = false;
 
             //自動輝度調整
             if (checkedListBoxAuto.GetItemChecked(0))
@@ -78,55 +70,9 @@ namespace IPAnalyzer
             //watcher.EnableRaisingEvents = true;
         }
 
-        public void checkBoxIsWatchAndLoad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxIsWatchAndLoad.Checked)
-            {
-                if (System.IO.Directory.Exists(formMain.FilePath))
-                {
-                    //watcher.Path = formMain.FilePath;
-                    //watcher.EnableRaisingEvents = true;
-                    FileList.Clear();
-                    FileList.AddRange(Directory.GetFiles(formMain.FilePath,"*", SearchOption.AllDirectories));
-                    backgroundWorker.RunWorkerAsync();
-                }
-            }
-            else
-            {
-                //watcher.EnableRaisingEvents = false;
-                backgroundWorker.CancelAsync();
-            }
-        }
-
-        void watcher_Created(object sender, System.IO.FileSystemEventArgs e)
-        {
-            watcher.EnableRaisingEvents = false;
-            do
-            {
-                try
-                {
-                    System.IO.FileStream fs = System.IO.File.Open(e.FullPath, System.IO.FileMode.Open);
-                    fs.Close();
-                    break;
-                }
-                catch { System.Threading.Thread.Sleep(100); }
-            }
-            while (true);
-
-            formMain.ReadImage(e.FullPath);
-
-            watcher.EnableRaisingEvents = true;
-        }
 
         private void FormAutoProcedure_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.Visible == false)
-            {
-                //watcher.EnableRaisingEvents = false;
-                backgroundWorker.CancelAsync();
-            }
-            else
-                checkBoxIsWatchAndLoad_CheckedChanged(new object(), new EventArgs());
         }
 
         public List<string> FileList=new List<string>();
@@ -136,32 +82,50 @@ namespace IPAnalyzer
             {
                 try
                 {
-                    List<string> temp = new List<string>( Directory.GetFiles(formMain.FilePath,"*",SearchOption.AllDirectories));
+                    var temp = new List<string>(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
                     if (temp.Count != FileList.Count)
                     {
-                      for(int i= 0 ; i<temp.Count ; i++)
-                          if (FileList.Contains(temp[i]) == false && 
-                                (temp[i].EndsWith("img") || temp[i].EndsWith("tif") || temp[i].EndsWith("stl") || temp[i].EndsWith("ccd") || temp[i].EndsWith("ipf")))
-                          {
-                              FileList = temp;
-                              formMain.ReadImage(temp[i]);
-                              break;
-                          }
+                        for (int i = 0; i < temp.Count; i++)
+                            if (!FileList.Contains(temp[i]) &&
+                                  (temp[i].EndsWith("img") || temp[i].EndsWith("tif") || temp[i].EndsWith("stl") || temp[i].EndsWith("ccd") || temp[i].EndsWith("ipf")))
+                            {
+
+                                formMain.ReadImage(temp[i]);
+                                break;
+                            }
+                        FileList = temp;
                     }
                 }
-            
+
                 catch { System.Threading.Thread.Sleep(1000); }
                 System.Threading.Thread.Sleep(200);
             }
             while (!backgroundWorker.CancellationPending);
+        }
 
+        private void buttonStartWatching_Click(object sender, EventArgs e)
+        {
+            targetFolder = textBoxDiectory.Text;
+            if (Directory.Exists(targetFolder))
+            {
+                FileList.Clear();
+                FileList.AddRange(Directory.GetFiles(textBoxDiectory.Text, "*", SearchOption.AllDirectories));
+                backgroundWorker.RunWorkerAsync();
+                buttonWatch.Visible = false;
+            }
+        }
+
+        private void buttonStopWatching_Click(object sender, EventArgs e)
+        {
+            backgroundWorker.CancelAsync();
+            buttonWatch.Visible = true;
 
         }
 
-
-
-
-
-
+        private void buttonSetDirectory_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                textBoxDiectory.Text = folderBrowserDialog1.SelectedPath;
+        }
     }
 }

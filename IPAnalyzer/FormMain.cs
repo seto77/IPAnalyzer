@@ -1781,12 +1781,6 @@ namespace IPAnalyzer
 
             SetText(FileName);
 
-            if (FormAutoProc != null && FormAutoProc.Visible && FormAutoProc.checkBoxIsWatchAndLoad.Checked && FilePath != oldFilePath)
-                FormAutoProc.FileList = new List<string>(Directory.GetFiles(FilePath));
-
-            if (FormAutoProc != null && FormAutoProc.Visible && FormAutoProc.checkBoxAutoAfterLoad.Checked)
-                FormAutoProc.buttonAuto_Click(new object(), new EventArgs());
-
             //SP8-BL43LXUのような32bit signed tiffの場合は、負の値をマスク
             if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0)
             {
@@ -1795,10 +1789,8 @@ namespace IPAnalyzer
                         Ring.IsSpots[i] = true;
             }
 
-
             trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
             trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = Ring.Intensity.Min();
-
 
             //SequentialImageを読み込んだ時の処理
             if (Ring.SequentialImageIntensities != null)

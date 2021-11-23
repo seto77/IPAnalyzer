@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.928(2021/11/23) Fixed a minor bug." +
         "\r\n ver3.927(2021/11/22) Fixed bugs on a GUI design." +
         "\r\n ver3.926(2021/11/18) Fixed bugs on loading a parameter file (*.prm)." +
         "\r\n ver3.920(2021/11/12) Target framework has been changed to .Net 6.0." +
