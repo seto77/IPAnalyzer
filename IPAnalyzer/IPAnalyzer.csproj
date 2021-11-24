@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2021.11.22.0700</AssemblyVersion>
-    <FileVersion>2021.11.22.0700</FileVersion>
+    <AssemblyVersion>2021.11.23.0700</AssemblyVersion>
+    <FileVersion>2021.11.23.0700</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>

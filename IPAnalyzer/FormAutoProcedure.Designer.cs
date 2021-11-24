@@ -159,7 +159,6 @@
             this.Text = "Auto Procedure";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAutoProcedure_FormClosing);
             this.Load += new System.EventHandler(this.FormAutoProcedure_Load);
-            this.VisibleChanged += new System.EventHandler(this.FormAutoProcedure_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

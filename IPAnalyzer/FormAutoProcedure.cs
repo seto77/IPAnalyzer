@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 
 namespace IPAnalyzer
 {
@@ -67,13 +68,8 @@ namespace IPAnalyzer
                 formMain.toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());
             Application.DoEvents();
 
-            //watcher.EnableRaisingEvents = true;
         }
 
-
-        private void FormAutoProcedure_VisibleChanged(object sender, EventArgs e)
-        {
-        }
 
         public List<string> FileList=new List<string>();
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -85,12 +81,11 @@ namespace IPAnalyzer
                     var temp = new List<string>(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
                     if (temp.Count != FileList.Count)
                     {
-                        for (int i = 0; i < temp.Count; i++)
-                            if (!FileList.Contains(temp[i]) &&
-                                  (temp[i].EndsWith("img") || temp[i].EndsWith("tif") || temp[i].EndsWith("stl") || temp[i].EndsWith("ccd") || temp[i].EndsWith("ipf")))
+                        foreach (var f in temp.Where(e => !FileList.Contains(e)))
+                            if (f.EndsWith("img") || f.EndsWith("tif") || f.EndsWith("stl") || f.EndsWith("ccd") || f.EndsWith("ipf"))
                             {
 
-                                formMain.ReadImage(temp[i]);
+                                formMain.ReadImage(f);
                                 break;
                             }
                         FileList = temp;
@@ -109,7 +104,7 @@ namespace IPAnalyzer
             if (Directory.Exists(targetFolder))
             {
                 FileList.Clear();
-                FileList.AddRange(Directory.GetFiles(textBoxDiectory.Text, "*", SearchOption.AllDirectories));
+                FileList.AddRange(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
                 backgroundWorker.RunWorkerAsync();
                 buttonWatch.Visible = false;
             }
