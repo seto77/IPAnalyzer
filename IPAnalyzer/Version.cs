@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.929(2021/11/30) Added color scales and scale line drawing." +
         "\r\n ver3.928(2021/11/23) Fixed a minor bug." +
         "\r\n ver3.927(2021/11/22) Fixed bugs on a GUI design." +
         "\r\n ver3.926(2021/11/18) Fixed bugs on loading a parameter file (*.prm)." +

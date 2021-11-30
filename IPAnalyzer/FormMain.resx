@@ -148,7 +148,7 @@
     <value>Both</value>
   </data>
   <data name="textBoxInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 119</value>
+    <value>134, 137</value>
   </data>
   <data name="textBoxInformation.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -212,7 +212,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 136</value>
+    <value>134, 154</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -361,6 +361,81 @@
   <data name="panel2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="comboBoxScaleLine.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="comboBoxScaleLine.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="comboBoxScaleLine.Items" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="comboBoxScaleLine.Items1" xml:space="preserve">
+    <value>Coarse</value>
+  </data>
+  <data name="comboBoxScaleLine.Items2" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="comboBoxScaleLine.Items3" xml:space="preserve">
+    <value>Fine</value>
+  </data>
+  <data name="comboBoxScaleLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 145</value>
+  </data>
+  <data name="comboBoxScaleLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 25</value>
+  </data>
+  <data name="comboBoxScaleLine.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;comboBoxScaleLine.Name" xml:space="preserve">
+    <value>comboBoxScaleLine</value>
+  </data>
+  <data name="&gt;&gt;comboBoxScaleLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxScaleLine.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxScaleLine.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 128</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Scale line</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="comboBoxScale2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -368,10 +443,16 @@
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="comboBoxScale2.Items" xml:space="preserve">
-    <value>Gray scale</value>
+    <value>Gray</value>
   </data>
   <data name="comboBoxScale2.Items1" xml:space="preserve">
-    <value>Cold-Warm scale</value>
+    <value>Cold-Warm</value>
+  </data>
+  <data name="comboBoxScale2.Items2" xml:space="preserve">
+    <value>Spectrum</value>
+  </data>
+  <data name="comboBoxScale2.Items3" xml:space="preserve">
+    <value>Fire</value>
   </data>
   <data name="comboBoxScale2.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 103</value>
@@ -392,7 +473,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;comboBoxScale2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -410,13 +491,13 @@
     <value>2, 86</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
+    <value>73, 17</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Scale 2</value>
+    <value>Color scale</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
@@ -428,7 +509,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="comboBoxScale1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -467,7 +548,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;comboBoxScale1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -485,13 +566,13 @@
     <value>2, 44</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
+    <value>101, 17</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Scale 1</value>
+    <value>Brightness scale</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -503,7 +584,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="comboBoxGradient.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -539,7 +620,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;comboBoxGradient.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -575,13 +656,13 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 311</value>
+    <value>0, 329</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -590,7 +671,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 130</value>
+    <value>134, 172</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -629,7 +710,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 399</value>
+    <value>488, 459</value>
   </data>
   <data name="scalablePictureBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1361,7 +1442,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>626, 441</value>
+    <value>626, 501</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
     <value>134</value>
@@ -1459,6 +1540,9 @@
   <data name="trackBarAdvancedMinInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="trackBarAdvancedMinInt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="trackBarAdvancedMinInt.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1481,7 +1565,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="trackBarAdvancedMinInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 27</value>
+    <value>516, 27</value>
   </data>
   <data name="trackBarAdvancedMinInt.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1500,6 +1584,9 @@
   </data>
   <data name="trackBarAdvancedMaxInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="trackBarAdvancedMaxInt.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1523,7 +1610,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="trackBarAdvancedMaxInt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 27</value>
+    <value>516, 27</value>
   </data>
   <data name="trackBarAdvancedMaxInt.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1544,7 +1631,7 @@
     <value>Bottom</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 441</value>
+    <value>0, 501</value>
   </data>
   <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1652,7 +1739,7 @@
     <value>0, 0</value>
   </data>
   <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 181</value>
+    <value>618, 165</value>
   </data>
   <data name="graphControlFrequency.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1676,7 +1763,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 181</value>
+    <value>618, 165</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1706,7 +1793,7 @@
     <value>0, 0</value>
   </data>
   <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 181</value>
+    <value>618, 165</value>
   </data>
   <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1730,7 +1817,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 181</value>
+    <value>618, 165</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1763,7 +1850,7 @@
     <value>Vertical</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 107</value>
+    <value>303, 91</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1793,7 +1880,7 @@
     <value>Vertical</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 107</value>
+    <value>294, 91</value>
   </data>
   <data name="textBoxStatisticsSelectedArea.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2165,7 +2252,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 181</value>
+    <value>618, 165</value>
   </data>
   <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2198,7 +2285,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>626, 211</value>
+    <value>626, 195</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2228,10 +2315,10 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>626, 710</value>
+    <value>626, 754</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>495</value>
+    <value>555</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -2249,7 +2336,7 @@
     <value>0</value>
   </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>626, 710</value>
+    <value>626, 754</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -2537,7 +2624,7 @@ image</value>
     <value>2</value>
   </data>
   <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>734, 817</value>
+    <value>734, 861</value>
   </data>
   <data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -3539,7 +3626,7 @@ Mode</value>
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>734, 817</value>
+    <value>734, 861</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 11.25pt</value>

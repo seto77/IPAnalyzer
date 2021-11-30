@@ -34,7 +34,7 @@ namespace IPAnalyzer
         #region プロパティ、フィールド
         public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
-        public PseudoBitmap pseudoBitmap = new PseudoBitmap();
+        public PseudoBitmap pseudoBitmap=new PseudoBitmap();
         public bool SkipDrawing { get; set; } = false;
 
         public Size SrcImgSize;
@@ -245,7 +245,7 @@ namespace IPAnalyzer
                 regKey.SetValue("toolStripComboBoxGradient.SelectedIndex", comboBoxGradient.SelectedIndex);
                 regKey.SetValue("toolStripComboBoxScale1.SelectedIndex", comboBoxScale1.SelectedIndex);
                 regKey.SetValue("toolStripComboBoxScale2.SelectedIndex", comboBoxScale2.SelectedIndex);
-
+                regKey.SetValue("toolStripComboBoxScaleLine.SelectedIndex", comboBoxScaleLine.SelectedIndex);
 
                 regKey.SetValue("initialImageDirectory", initialImageDirectory);
                 regKey.SetValue("initialParameterDirectory", initialParameterDirectory);
@@ -334,6 +334,7 @@ namespace IPAnalyzer
                     comboBoxGradient.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxGradient.SelectedIndex", 0);
                     comboBoxScale1.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScale1.SelectedIndex", 0);
                     comboBoxScale2.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScale2.SelectedIndex", 0);
+                    comboBoxScaleLine.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScaleLine.SelectedIndex", 0);
 
 
                     initialImageDirectory = (string)regKey.GetValue("initialImageDirectory", "");
@@ -901,16 +902,6 @@ namespace IPAnalyzer
 
             }
 
-            //中心点にペケ
-            try
-            {
-                PointD pt = scalablePictureBox.ConvertToClientPt(new PointD(FormProperty.numericBoxDirectSpotPositionX.Value, FormProperty.numericBoxDirectSpotPositionY.Value));
-                Pen pen = new Pen(Brushes.Fuchsia);
-                g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
-                g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
-            }
-            catch { }
-
             //マウスで一秒以上長押しした点にペケ
             try
             {
@@ -931,8 +922,8 @@ namespace IPAnalyzer
                 {
                     foreach (PointD p in manualMaskPoints)
                     {
-                        PointD pt = scalablePictureBox.ConvertToClientPt(p);
-                        Pen pen = new Pen(Brushes.HotPink);
+                        var pt = scalablePictureBox.ConvertToClientPt(p);
+                       var pen = new Pen(Brushes.HotPink);
                         g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
                         g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
                     }
@@ -940,23 +931,17 @@ namespace IPAnalyzer
             }
             catch { }
 
-            #region リングをかく
+            #region リングを描く
             if (FormDrawRing.Visible && FormDrawRing.R > 0)
             {
                 try
                 {
-                    var OffSet = new PointD(0, 0);
                     var Rect = new RectangleF(0, 0, 0, 0);
-                    var Filmdistance = FormProperty.CameraLength1;
+                    var cameraLength1 = FormProperty.CameraLength1;
                     var Phi = FormProperty.numericBoxTiltPhi.RadianValue;
                     var Tau = FormProperty.numericBoxTiltTau.RadianValue;
-                    var EllipseWidth = 0.0;
-                    var EllipseHeight = 0.0;
-                    var Cos = 0.0;
-                    var Sin = 0.0;
 
-                    Geometriy.GetEllipseRectangleAndRot(FormDrawRing.R, Filmdistance, Phi, Tau,
-                    ref OffSet, ref EllipseWidth, ref EllipseHeight, ref Cos, ref Sin);
+                    (var OffSet, var EllipseWidth, var EllipseHeight, var Cos, var Sin) = Geometriy.GetEllipseRectangleAndRot(FormDrawRing.R, cameraLength1, Phi, Tau);
 
                     g = Graphics.FromImage(bmp);
                     g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -971,7 +956,7 @@ namespace IPAnalyzer
                     //次にディスプレイ上のピクセルと画像のピクセルを同じにする
                     float scale = (float)(1 / scalablePictureBox.Zoom); //SrcRectF.Width / ClientRect.Width;
 
-                    m = m * new Matrix3D(1 / scale, 0, 0, 0, 1 / scale, 0, 0, 0, 1);
+                    m *= new Matrix3D(1 / scale, 0, 0, 0, 1 / scale, 0, 0, 0, 1);
                     //次に画像ピクセル空間を実空間にする
                     float pixelSizeX = (float)FormProperty.numericBoxPixelSizeX.Value;
                     float pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
@@ -981,14 +966,11 @@ namespace IPAnalyzer
 
                     //楕円の中心位置のずれをオフセット
 
-
                     m *= new Matrix3D(1, 0, 0, 0, 1, 0, OffSet.X, OffSet.Y, 1);
 
                     //楕円の傾きをセット
 
-
                     m *= new Matrix3D(Cos, Sin, 0, -Sin, Cos, 0, 0, 0, 1);
-
 
                     g.MultiplyTransform(new Matrix(1, 0, 0, 1, center.X, center.Y));
 
@@ -996,30 +978,38 @@ namespace IPAnalyzer
 
                     g.MultiplyTransform(new Matrix(1 / scale, 0, 0, 1 / scale, 0, 0));
 
-
-
                     g.MultiplyTransform(new Matrix(1, 0, 0, 1, (float)OffSet.X, (float)OffSet.Y));
 
-
-
                     g.MultiplyTransform(new Matrix((float)Cos, (float)Sin, -(float)Sin, (float)Cos, 0, 0));
-
 
                     //最後に楕円を描画
                     RectangleF RectangleOfEllipse = new RectangleF(-(float)EllipseWidth, -(float)EllipseHeight,
                        (float)EllipseWidth * 2, (float)EllipseHeight * 2);
 
-                    g.Transform = new System.Drawing.Drawing2D.Matrix((float)m.E11, (float)m.E21, (float)m.E12, (float)m.E22, (float)m.E13, (float)m.E23);
+                    g.Transform = new Matrix((float)m.E11, (float)m.E21, (float)m.E12, (float)m.E22, (float)m.E13, (float)m.E23);
 
                     g.DrawEllipse(new Pen(Brushes.Yellow, 0.01f), RectangleOfEllipse);
 
-                    g.Transform = new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0);
+                    g.Transform = new Matrix(1, 0, 0, 1, 0, 0);
                 }
                 catch { }
 
             }
-
             #endregion
+
+            //Scale Line
+            if (comboBoxScaleLine.SelectedIndex != 0)
+                DrawScale(g);
+
+            //中心点にペケ
+            try
+            {
+                PointD pt = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition);
+                Pen pen = new Pen(Brushes.Fuchsia);
+                g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
+                g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
+            }
+            catch { }
 
             scalablePictureBox.pictureBox.Image = bmp;
             scalablePictureBox.Refresh();
@@ -1027,6 +1017,228 @@ namespace IPAnalyzer
             //サムネイルに画像転送
             DrawThumnail();
         }
+
+        #region DrawScale
+
+        
+        private void DrawScale(Graphics g)
+        {
+            int width = scalablePictureBox.pictureBox.ClientSize.Width, height = scalablePictureBox.pictureBox.ClientSize.Height;
+            if (width == 0 || height == 0) return;
+
+            var zoom = scalablePictureBox.Zoom; //SrcRectF.Width / ClientRect.Width;
+            var clientCenter = scalablePictureBox.Center;
+            var pixelSizeX = (float)FormProperty.numericBoxPixelSizeX.Value;
+            var pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
+            var TanKsi = (float)Math.Tan(FormProperty.numericBoxPixelKsi.RadianValue);
+            g.Transform = new Matrix(
+                (float)(1 / pixelSizeX *zoom), 0, (float)(-TanKsi / pixelSizeX * zoom), (float)(1 / pixelSizeY * zoom),
+                (float)(FormProperty.FootPosition.X * zoom + width/2.0-clientCenter.X * zoom),
+                (float)(FormProperty.FootPosition.Y * zoom + height / 2.0 - clientCenter.Y * zoom));
+
+            //検出器の隅っこ4点の座標(検出器座標系 mm単位)
+            var cornerDetector = new[] { convertScreenToDetector(0, 0), convertScreenToDetector(width, 0), convertScreenToDetector(width, height), convertScreenToDetector(0, height) };
+            var cornerReals = new[] { convertScreenToReal(0, 0), convertScreenToReal(width, 0), convertScreenToReal(width, height), convertScreenToReal(0, height) };
+            var originSrc = convertReciprocalToDetector(new Vector3DBase(0, 0, 0));
+
+            var p = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition);
+            var originInside = p.X > 0 && p.Y > 0 && p.X < width && p.Y < height;
+
+            //Azimuthのスケールライン ここから
+            int azimuthStep = comboBoxScaleLine.SelectedIndex switch { 1 => 30, 2 => 15, 3 => 5, _ => 30 };
+            var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom / 20f)); 
+            var  font = new Font("Tahoma", (float)(1.5 / zoom ));
+
+            var length = new[] { (cornerReals[0]- cornerReals[1]).Length, (cornerReals[1] - cornerReals[2]).Length,
+                (cornerReals[2] - cornerReals[3]).Length, (cornerReals[3] - cornerReals[0]).Length };
+
+            for (double n = 0; n < 180; n += azimuthStep)
+            {
+                pen.DashStyle = n % 10 == 0 ? DashStyle.Dash : DashStyle.Dot;
+
+                var crossPts = new List<(PointD pt, int index)>();
+                double cos = Math.Cos(n / 180.0 * Math.PI), sin = Math.Sin(n / 180.0 * Math.PI);
+                //n度傾いた平面と、画像のエッジの交点を求める
+                for (int i = 0; i < 4; i++)
+                {
+                    //  0 - 1
+                    //  |   |
+                    //  3 - 2 
+                    var j = i < 3 ? i + 1 : 0;
+                    var cross = Geometriy.GetCrossPoint(sin, -cos, 0, 0, cornerReals[i], cornerReals[j]);
+                    double length1 = (cornerReals[i] - cross).Length, length2 = (cornerReals[j] - cross).Length;
+                    if (length1 + length2 < length[i] * 1.001)
+                        crossPts.Add((length1 / length[i] * cornerDetector[j] + length2 / length[i] * cornerDetector[i], i));
+                    if (crossPts.Count == 2)
+                    {
+                        //直線描画
+                        g.DrawLine(pen, crossPts[0].pt.ToPointF(), crossPts[1].pt.ToPointF());
+                        
+                        if (FormProperty.checkBoxScaleLabel.Checked)//ラベル描画
+                        {
+                            //インデックス 0 が、n°に相当するかどうかを判定
+                            var atan = Math.Atan2(crossPts[0].pt.Y - originSrc.Y, crossPts[0].pt.X - originSrc.X) / Math.PI * 180;
+                            if (atan < -135) atan += 360;
+
+                            var str = new string[2];
+                            if (Math.Min(Math.Abs(atan - n), Math.Abs(atan - n + 360)) < Math.Min(Math.Abs(atan - n + 180), Math.Abs(atan - n - 180)))
+                                str = originInside ? new[] { n.ToString("g12"), (n - 180).ToString("g12") } : new[] { n.ToString("g12"), n.ToString("g12") };
+                            else
+                                str = originInside ? new[] { (n - 180).ToString("g12"), n.ToString("g12") } : new[] { (n - 180).ToString("g12"), (n - 180).ToString("g12") };
+
+                            var skip = -1;
+                             if (!originInside)//ダイレクトスポットが描画範囲内に含まれていないときは 中心に近い点は削除
+                                 skip = (crossPts[0].pt - originSrc).Length > (crossPts[1].pt - originSrc).Length ? 1 : 0;
+
+                            for (int k = 0; k < 2; k++)
+                            {
+                                var shift = new PointD(crossPts[k].index == 1 ? -3 : 0, crossPts[k].index == 2 ? -2 : 0) * font.Size;
+                                if (skip != k)
+                                    g.DrawString(str[k] + "°", font, new SolidBrush(FormProperty.colorControlScaleAzimuth.Color), (crossPts[k].pt + shift).ToPointF());
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            //Azimuthのスケールライン ここまで
+
+            //ここから2θのスケールラインの描画
+
+            //2θの最大/最小値
+            double max2Theta = 0, min2Theta = 0.0;
+            var edges = new List<Vector3DBase>();
+            edges.AddRange(Enumerable.Range(0, width).Select(w => convertScreenToReal(w, 0)));
+            edges.AddRange(Enumerable.Range(0, width).Select(w => convertScreenToReal(w, height)));
+            edges.AddRange(Enumerable.Range(0, height).Select(h => convertScreenToReal(0, h)));
+            edges.AddRange(Enumerable.Range(0, height).Select(h => convertScreenToReal(width, h)));
+            if (!originInside)
+                min2Theta = edges.Select(p => Math.Atan2(Math.Sqrt(p.X2Y2), p.Z)).Min() / Math.PI * 180.0;
+            max2Theta = edges.Select(p => Math.Atan2(Math.Sqrt(p.X2Y2), p.Z)).Max() / Math.PI * 180.0;
+            //2θの最大/最小値　ここまで
+
+            //分割幅をきめる　ここから
+            //fineのときは20分割以上、mediumは10分割以上、coarseは5分割以上になるように調節
+            double dev = max2Theta - min2Theta;
+            int thereshold = comboBoxScaleLine.SelectedIndex switch { 1 => 5, 2 => 15, 3 => 30, _ => 30 };
+            int stepInteger = 5, stepPow = 0;
+            for (stepPow = (int)Math.Log10(dev) + 1; stepPow > -7; stepPow--)
+            {
+                if (dev / (stepInteger = 5) / Math.Pow(10, stepPow) > thereshold) break;
+                if (dev / (stepInteger = 2) / Math.Pow(10, stepPow) > thereshold) break;
+                if (dev / (stepInteger = 1) / Math.Pow(10, stepPow) > thereshold) break;
+            }
+            //分割幅をきめる　ここまで
+
+            int startN = (int)(min2Theta / stepInteger / Math.Pow(10, stepPow));
+            int endN = (int)(max2Theta / stepInteger / Math.Pow(10, stepPow)) + 1;
+
+            pen.Brush = new SolidBrush(FormProperty.colorControlScale2Theta.Color);
+
+
+            for (double n = Math.Max(1, startN); n < endN; n++)
+            {
+                if(stepInteger == 1)
+                    pen.DashStyle = (n * stepInteger) % 5 == 0 ? DashStyle.Dash : DashStyle.Dot;
+                else
+                    pen.DashStyle = (n * stepInteger) % 10 == 0 ? DashStyle.Dash : DashStyle.Dot;
+
+                var twoTheta = n * stepInteger * Math.Pow(10, stepPow);
+                var ptsArray = Geometriy.ConicSection(twoTheta / 180 * Math.PI, FormProperty.DetectorTiltPhi.ToRadians(), FormProperty.DetectorTiltTau.ToRadians(), FormProperty.CameraLength2, cornerDetector[0], cornerDetector[2]);
+                foreach (var pts in ptsArray)
+                    g.DrawLines(pen, pts.ToArray());
+
+                var labelPosition = getLabelPosition(ptsArray.SelectMany(p => p).Where(e =>
+                {
+                    var p = scalablePictureBox.ConvertToClientPt(e);
+                    return p.X > 20 && p.Y > 20 && p.X < width-20 && p.Y < height-20; 
+                }), originSrc,0);
+               // if (FormProperty.checkBoxScaleLabel.Checked && !double.IsNaN(labelPosition.X))
+               if(ptsArray.Count!=0 && ptsArray[0].Count!=0)
+                    g.DrawString(twoTheta.ToString("g12") + "°", font, new SolidBrush(FormProperty.colorControlScale2Theta.Color), ptsArray[0][0].ToPointF());// labelPosition.ToPointF());
+            }
+
+
+            g.Transform = new Matrix(1, 0, 0, 1, 0, 0);
+        }
+
+        /// <summary>
+        /// 与えられた点集合 pts の中から、もっとも指定した方向に近い点を返す. deg 0 : 右, deg 90: 下, deg 180: 左, deg -90:上
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="origin"></param>
+        /// <returns></returns>
+        private static PointD getLabelPosition(IEnumerable<PointD> list, PointD origin, double deg)
+        {
+            var residual = double.PositiveInfinity;
+            var result = new PointD(float.NaN, float.NaN);
+            foreach (var p in list)
+            {
+                var dev = Math.Abs((deg / 180) * Math.PI - Math.Atan2(p.Y - origin.Y, p.X - origin.X));
+                if (residual > dev)
+                {
+                    residual = dev;
+                    result = p;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 座標変換 画面(Screen)上の点(pixel)を検出器(Detector)上の座標 (mm, Foot原点)に変換
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        private PointD convertScreenToDetector(in int x, in int y)
+        {
+            var pt = scalablePictureBox.ConvertToSrcPt(new Point(x, y));
+            return new PointD(
+                  (pt.X - FormProperty.FootPosition.X) * IP.PixSizeX + (pt.Y - FormProperty.FootPosition.Y) * IP.PixSizeY * Math.Tan(IP.ksi),
+                  (pt.Y - FormProperty.FootPosition.Y) * IP.PixSizeY);
+        }
+
+        /// <summary>
+        /// 座標変換 画面(Screen)上の点(pixel) を 実空間座標(mm, ３次元座標)に変換
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        private Vector3DBase convertScreenToReal(in int x, in int y)
+        {
+            var p = convertScreenToDetector(x, y);//まずフィルム上の位置を取得
+            return convertDetectorToReal(p.X,p.Y);//実空間の座標に変換
+        }
+
+        /// <summary>
+        /// 座標変換 
+        /// 検出器(Detector)上の点(Foot中心, mm単位) を 実空間座標(mm単位, ３次元座標)に変換
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        private Vector3DBase convertDetectorToReal(in double x, in double y) => FormProperty.DetectorRotation * new Vector3DBase(x, y, FormProperty.CameraLength2);
+        #region 座標変換の計算式
+        // (CosPhi, SinPhi, 0) の周りに Tau回転する行列は、
+        //   Cos2Phi * (1 - CosTau) + CosTau | CosPhi * SinPhi * (1 - CosTau)  |  SinPhi * SinTau
+        //   CosPhi * SinPhi * (1 - CosTau)  | Sin2Phi * (1 - CosTau) + CosTau | -CosPhi * SinTau
+        //  -SinPhi * SinTau                 | cosPhi  * sinTau                |  CosTau  
+        //この行列を(x,y,CameraLength2)に作用させればよい
+        #endregion
+
+        /// <summary>
+        /// 逆空間座標を検出器座標に変換。逆空間座標のy,zの符号を反転することに注意
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns></returns>
+        private PointD convertReciprocalToDetector(Vector3DBase g)
+        {
+            var v = FormProperty.DetectorRotationInv * new Vector3DBase(g.X, -g.Y, 1/FormProperty.WaveLength - g.Z);
+            var coeff = FormProperty.CameraLength2 / v.Z;
+            return new PointD(v.X * coeff, v.Y * coeff);
+        }
+        #endregion
+
 
 
         //画像読み込み後にサムネイルを描く関数
@@ -1133,7 +1345,6 @@ namespace IPAnalyzer
 
         private bool scalablePictureBox_MouseDown2(object sender, MouseEventArgs e, PointD pt)
         {
-
             if (!IsImageReady) return true; ;
 
             //マニュアルスポットモード時
@@ -1893,7 +2104,7 @@ namespace IPAnalyzer
                     Ring.IsThresholdUnder[i] = false;
                 }
             }
-            pseudoBitmap = new PseudoBitmap(Ring.Intensity.ToArray(), SrcImgSize.Width, PseudoBitmap.BrightnessScaleLiner, PseudoBitmap.BrightnessScaleLiner, PseudoBitmap.BrightnessScaleLiner);
+            pseudoBitmap = new PseudoBitmap(Ring.Intensity.ToArray(), SrcImgSize.Width);
 
             pseudoBitmap.Filter1 = Ring.IsThresholdOver;
             pseudoBitmap.Filter2 = Ring.IsThresholdUnder;
@@ -2861,28 +3072,6 @@ namespace IPAnalyzer
 
         }
 
-        private void fourierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            double[][] valueGray = new double[Ring.SrcImgSize.Height][];
-            int n = 0;
-            for (int y = 0; y < Ring.SrcImgSize.Height; y++)
-            {
-                valueGray[y] = new double[Ring.SrcImgSize.Width];
-                for (int x = 0; x < Ring.SrcImgSize.Width; x++)
-                    valueGray[y][x] = Ring.Intensity[n++];
-            }
-            Complex[][] reverse = Fourier.FFT(valueGray);
-            //return new PseudoBitmap(, scale, scale, scale, normarize, false);
-            byte[] scale = new byte[256];
-            for (int i = 0; i < 256; i++)
-                scale[i] = (byte)i;
-
-            pseudoBitmap = new PseudoBitmap(reverse, scale, scale, scale, false, false);
-            scalablePictureBox.PseudoBitmap = pseudoBitmap;
-            scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
-            Draw();
-        }
-
         #endregion
 
         #region FindCenterボタン関連
@@ -3586,37 +3775,32 @@ namespace IPAnalyzer
             setScale();
             Draw();
         }
+
+        private void comboBoxScaleLine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FormProperty != null)
+            {
+                FormProperty.SkipEvent = true;
+                FormProperty.comboBoxScaleLineDivisions.SelectedIndex = comboBoxScaleLine.SelectedIndex;
+                FormProperty.SkipEvent = false;
+            }
+            Draw();
+        }
         private void setScale()
         {
             pseudoBitmap.IsNegative = comboBoxGradient.SelectedIndex == 1;
 
+            var linear = comboBoxScale1.SelectedIndex == 1;
+
             //スケールをセット
-            if (comboBoxScale1.SelectedIndex == 0)//ログスケール
-                if (comboBoxScale2.SelectedIndex == 0)//グレー
-                {
-                    pseudoBitmap.ScaleR = pseudoBitmap.ScaleG = pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLog;
-                    pseudoBitmap.GrayScale = true;
-                }
-                else
-                {
-                    pseudoBitmap.ScaleR = PseudoBitmap.BrightnessScaleLogColorR;
-                    pseudoBitmap.ScaleG = PseudoBitmap.BrightnessScaleLogColorG;
-                    pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLogColorB;
-                    pseudoBitmap.GrayScale = false;
-                }
-            else//リニア
-                if (comboBoxScale2.SelectedIndex == 0)//グレー
+            switch (comboBoxScale2.SelectedIndex)
             {
-                pseudoBitmap.ScaleR = pseudoBitmap.ScaleG = pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLiner;
-                pseudoBitmap.GrayScale = true;
+                case 0: pseudoBitmap.SetScaleGray(linear); break;//グレー
+                case 1: pseudoBitmap.SetScaleColdWarm(linear); break;//Cold-Warm
+                case 2: pseudoBitmap.SetScaleSpectrum(linear); break;//Cold-Warm
+                case 3: pseudoBitmap.SetScaleFire(linear); break;//Cold-Warm
             }
-            else//color
-            {
-                pseudoBitmap.ScaleR = PseudoBitmap.BrightnessScaleLinerColorR;
-                pseudoBitmap.ScaleG = PseudoBitmap.BrightnessScaleLinerColorG;
-                pseudoBitmap.ScaleB = PseudoBitmap.BrightnessScaleLinerColorB;
-                pseudoBitmap.GrayScale = false;
-            }
+
             trackBarAdvancedMaxInt_ValueChanged(new object(), 0);
             trackBarAdvancedMinInt_ValueChanged(new object(), 0);
         }
@@ -4021,7 +4205,7 @@ namespace IPAnalyzer
             }
         }
 
-
+      
 
         bool skipSelectedAreaChangedEvent = false;
         private void numericUpDownSelectedArea_ValueChanged(object sender, EventArgs e)

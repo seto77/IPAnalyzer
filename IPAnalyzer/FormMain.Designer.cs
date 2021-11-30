@@ -62,6 +62,8 @@ namespace IPAnalyzer
             this.radioButtonNearCenter = new System.Windows.Forms.RadioButton();
             this.radioButtonWhole = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBoxScaleLine = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxScale2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxScale1 = new System.Windows.Forms.ComboBox();
@@ -419,6 +421,8 @@ namespace IPAnalyzer
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Controls.Add(this.comboBoxScaleLine);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.comboBoxScale2);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.comboBoxScale1);
@@ -427,6 +431,24 @@ namespace IPAnalyzer
             this.panel2.Controls.Add(this.label5);
             this.panel2.Name = "panel2";
             // 
+            // comboBoxScaleLine
+            // 
+            resources.ApplyResources(this.comboBoxScaleLine, "comboBoxScaleLine");
+            this.comboBoxScaleLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxScaleLine.FormattingEnabled = true;
+            this.comboBoxScaleLine.Items.AddRange(new object[] {
+            resources.GetString("comboBoxScaleLine.Items"),
+            resources.GetString("comboBoxScaleLine.Items1"),
+            resources.GetString("comboBoxScaleLine.Items2"),
+            resources.GetString("comboBoxScaleLine.Items3")});
+            this.comboBoxScaleLine.Name = "comboBoxScaleLine";
+            this.comboBoxScaleLine.SelectedIndexChanged += new System.EventHandler(this.comboBoxScaleLine_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // comboBoxScale2
             // 
             resources.ApplyResources(this.comboBoxScale2, "comboBoxScale2");
@@ -434,7 +456,9 @@ namespace IPAnalyzer
             this.comboBoxScale2.FormattingEnabled = true;
             this.comboBoxScale2.Items.AddRange(new object[] {
             resources.GetString("comboBoxScale2.Items"),
-            resources.GetString("comboBoxScale2.Items1")});
+            resources.GetString("comboBoxScale2.Items1"),
+            resources.GetString("comboBoxScale2.Items2"),
+            resources.GetString("comboBoxScale2.Items3")});
             this.comboBoxScale2.Name = "comboBoxScale2";
             this.comboBoxScale2.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxScale2_SelectedIndexChanged);
             // 
@@ -1536,7 +1560,6 @@ namespace IPAnalyzer
             // 
             this.fourierToolStripMenuItem.Name = "fourierToolStripMenuItem";
             resources.ApplyResources(this.fourierToolStripMenuItem, "fourierToolStripMenuItem");
-            this.fourierToolStripMenuItem.Click += new System.EventHandler(this.fourierToolStripMenuItem_Click);
             // 
             // toolStripMenuItemReferenceBackground
             // 
@@ -2104,6 +2127,8 @@ namespace IPAnalyzer
         private ToolStripMenuItem clearMaskToolStripMenuItem;
         public ToolStripButton toolStripButtonFindParameterBruteForce;
         private ToolStripSeparator toolStripSeparator31;
+        public ComboBox comboBoxScaleLine;
+        private Label label1;
         //private ScalablePictureBox scalablePictureBox;
 
 

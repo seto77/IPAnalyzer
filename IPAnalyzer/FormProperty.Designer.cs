@@ -188,14 +188,15 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBoxExtensionCCD = new System.Windows.Forms.CheckBox();
-            this.checkBoxExtensionSTL = new System.Windows.Forms.CheckBox();
-            this.checkBoxExtensionIPF = new System.Windows.Forms.CheckBox();
-            this.checkBoxExtensionIPA = new System.Windows.Forms.CheckBox();
-            this.checkBoxExtensionIMG = new System.Windows.Forms.CheckBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.comboBoxScaleLineDivisions = new System.Windows.Forms.ComboBox();
+            this.checkBoxScaleLabel = new System.Windows.Forms.CheckBox();
+            this.trackBarScaleLineWidth = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.colorControlScaleAzimuth = new Crystallography.Controls.ColorControl();
+            this.colorControlScale2Theta = new Crystallography.Controls.ColorControl();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.label50 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -203,12 +204,10 @@
             this.radioButtonChiCounterclockwise = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.radioButtonChiLeft = new System.Windows.Forms.RadioButton();
+            this.radioButtonChiRight = new System.Windows.Forms.RadioButton();
             this.radioButtonChiBottom = new System.Windows.Forms.RadioButton();
             this.radioButtonChiTop = new System.Windows.Forms.RadioButton();
-            this.radioButtonChiRight = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.numericBoxFindCenterPeakFittingRange = new Crystallography.Controls.NumericBox();
             this.flowLayoutPanelFindCenterOption = new System.Windows.Forms.FlowLayoutPanel();
             this.numericBoxFindCenterSearchArea = new Crystallography.Controls.NumericBox();
@@ -281,14 +280,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstep)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScaleLineWidth)).BeginInit();
             this.groupBox11.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanelFindCenterOption.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -305,7 +303,6 @@
             this.tabControl.Controls.Add(this.tabPageSpotsAndCenter);
             this.tabControl.Controls.Add(this.tabPageAfterGetProfile);
             this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage5);
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
@@ -1788,66 +1785,100 @@
             resources.ApplyResources(this.radioButton3, "radioButton3");
             this.radioButton3.Name = "radioButton3";
             // 
-            // tabPage2
-            // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Controls.Add(this.flowLayoutPanel6);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // flowLayoutPanel6
-            // 
-            resources.ApplyResources(this.flowLayoutPanel6, "flowLayoutPanel6");
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionCCD);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionSTL);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIPF);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIPA);
-            this.flowLayoutPanel6.Controls.Add(this.checkBoxExtensionIMG);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            // 
-            // checkBoxExtensionCCD
-            // 
-            resources.ApplyResources(this.checkBoxExtensionCCD, "checkBoxExtensionCCD");
-            this.checkBoxExtensionCCD.Name = "checkBoxExtensionCCD";
-            this.checkBoxExtensionCCD.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionCCD.CheckedChanged += new System.EventHandler(this.checkBoxExtensionCCD_CheckedChanged);
-            // 
-            // checkBoxExtensionSTL
-            // 
-            resources.ApplyResources(this.checkBoxExtensionSTL, "checkBoxExtensionSTL");
-            this.checkBoxExtensionSTL.Name = "checkBoxExtensionSTL";
-            this.checkBoxExtensionSTL.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionSTL.CheckedChanged += new System.EventHandler(this.checkBoxExtensionSTL_CheckedChanged);
-            // 
-            // checkBoxExtensionIPF
-            // 
-            resources.ApplyResources(this.checkBoxExtensionIPF, "checkBoxExtensionIPF");
-            this.checkBoxExtensionIPF.Name = "checkBoxExtensionIPF";
-            this.checkBoxExtensionIPF.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionIPF.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIPF_CheckedChanged);
-            // 
-            // checkBoxExtensionIPA
-            // 
-            resources.ApplyResources(this.checkBoxExtensionIPA, "checkBoxExtensionIPA");
-            this.checkBoxExtensionIPA.Name = "checkBoxExtensionIPA";
-            this.checkBoxExtensionIPA.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionIPA.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIPA_CheckedChanged);
-            // 
-            // checkBoxExtensionIMG
-            // 
-            resources.ApplyResources(this.checkBoxExtensionIMG, "checkBoxExtensionIMG");
-            this.checkBoxExtensionIMG.Name = "checkBoxExtensionIMG";
-            this.checkBoxExtensionIMG.UseVisualStyleBackColor = true;
-            this.checkBoxExtensionIMG.CheckedChanged += new System.EventHandler(this.checkBoxExtensionIMG_CheckedChanged);
-            // 
             // tabPage5
             // 
             resources.ApplyResources(this.tabPage5, "tabPage5");
+            this.tabPage5.Controls.Add(this.groupBox14);
             this.tabPage5.Controls.Add(this.groupBox11);
             this.tabPage5.Controls.Add(this.groupBox2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox14
+            // 
+            resources.ApplyResources(this.groupBox14, "groupBox14");
+            this.groupBox14.Controls.Add(this.comboBoxScaleLineDivisions);
+            this.groupBox14.Controls.Add(this.checkBoxScaleLabel);
+            this.groupBox14.Controls.Add(this.trackBarScaleLineWidth);
+            this.groupBox14.Controls.Add(this.label5);
+            this.groupBox14.Controls.Add(this.label23);
+            this.groupBox14.Controls.Add(this.colorControlScaleAzimuth);
+            this.groupBox14.Controls.Add(this.colorControlScale2Theta);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.TabStop = false;
+            // 
+            // comboBoxScaleLineDivisions
+            // 
+            resources.ApplyResources(this.comboBoxScaleLineDivisions, "comboBoxScaleLineDivisions");
+            this.comboBoxScaleLineDivisions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxScaleLineDivisions.FormattingEnabled = true;
+            this.comboBoxScaleLineDivisions.Items.AddRange(new object[] {
+            resources.GetString("comboBoxScaleLineDivisions.Items"),
+            resources.GetString("comboBoxScaleLineDivisions.Items1"),
+            resources.GetString("comboBoxScaleLineDivisions.Items2"),
+            resources.GetString("comboBoxScaleLineDivisions.Items3")});
+            this.comboBoxScaleLineDivisions.Name = "comboBoxScaleLineDivisions";
+            this.comboBoxScaleLineDivisions.SelectedIndexChanged += new System.EventHandler(this.comboBoxScaleLineDivisions_SelectedIndexChanged);
+            // 
+            // checkBoxScaleLabel
+            // 
+            resources.ApplyResources(this.checkBoxScaleLabel, "checkBoxScaleLabel");
+            this.checkBoxScaleLabel.Checked = true;
+            this.checkBoxScaleLabel.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxScaleLabel.Name = "checkBoxScaleLabel";
+            this.checkBoxScaleLabel.UseVisualStyleBackColor = true;
+            this.checkBoxScaleLabel.CheckedChanged += new System.EventHandler(this.checkBoxScaleLabel_CheckedChanged);
+            // 
+            // trackBarScaleLineWidth
+            // 
+            resources.ApplyResources(this.trackBarScaleLineWidth, "trackBarScaleLineWidth");
+            this.trackBarScaleLineWidth.Minimum = 1;
+            this.trackBarScaleLineWidth.Name = "trackBarScaleLineWidth";
+            this.trackBarScaleLineWidth.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarScaleLineWidth.Value = 3;
+            this.trackBarScaleLineWidth.Scroll += new System.EventHandler(this.trackBarScaleLineWidth_Scroll);
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // colorControlScaleAzimuth
+            // 
+            resources.ApplyResources(this.colorControlScaleAzimuth, "colorControlScaleAzimuth");
+            this.colorControlScaleAzimuth.Argb = -8960954;
+            this.colorControlScaleAzimuth.Blue = 70;
+            this.colorControlScaleAzimuth.BlueF = 0.2745098F;
+            this.colorControlScaleAzimuth.BoxSize = new System.Drawing.Size(20, 20);
+            this.colorControlScaleAzimuth.Color = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(70)))));
+            this.colorControlScaleAzimuth.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
+            this.colorControlScaleAzimuth.Green = 68;
+            this.colorControlScaleAzimuth.GreenF = 0.2666667F;
+            this.colorControlScaleAzimuth.Name = "colorControlScaleAzimuth";
+            this.colorControlScaleAzimuth.Red = 119;
+            this.colorControlScaleAzimuth.RedF = 0.4666667F;
+            this.colorControlScaleAzimuth.Load += new System.EventHandler(this.colorControlScale2Theta_Load);
+            // 
+            // colorControlScale2Theta
+            // 
+            resources.ApplyResources(this.colorControlScale2Theta, "colorControlScale2Theta");
+            this.colorControlScale2Theta.Argb = -12303240;
+            this.colorControlScale2Theta.Blue = 120;
+            this.colorControlScale2Theta.BlueF = 0.4705882F;
+            this.colorControlScale2Theta.BoxSize = new System.Drawing.Size(20, 20);
+            this.colorControlScale2Theta.Color = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(120)))));
+            this.colorControlScale2Theta.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
+            this.colorControlScale2Theta.Green = 68;
+            this.colorControlScale2Theta.GreenF = 0.2666667F;
+            this.colorControlScale2Theta.Name = "colorControlScale2Theta";
+            this.colorControlScale2Theta.Red = 68;
+            this.colorControlScale2Theta.RedF = 0.2666667F;
+            this.colorControlScale2Theta.Load += new System.EventHandler(this.colorControlScale2Theta_Load);
             // 
             // groupBox11
             // 
@@ -1856,9 +1887,9 @@
             this.groupBox11.Controls.Add(this.flowLayoutPanel3);
             this.groupBox11.Controls.Add(this.pictureBox1);
             this.groupBox11.Controls.Add(this.radioButtonChiLeft);
+            this.groupBox11.Controls.Add(this.radioButtonChiRight);
             this.groupBox11.Controls.Add(this.radioButtonChiBottom);
             this.groupBox11.Controls.Add(this.radioButtonChiTop);
-            this.groupBox11.Controls.Add(this.radioButtonChiRight);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.TabStop = false;
             // 
@@ -1904,6 +1935,15 @@
             this.radioButtonChiLeft.UseVisualStyleBackColor = true;
             this.radioButtonChiLeft.CheckedChanged += new System.EventHandler(this.radioButtonChi_CheckedChanged);
             // 
+            // radioButtonChiRight
+            // 
+            resources.ApplyResources(this.radioButtonChiRight, "radioButtonChiRight");
+            this.radioButtonChiRight.Checked = true;
+            this.radioButtonChiRight.Name = "radioButtonChiRight";
+            this.radioButtonChiRight.TabStop = true;
+            this.radioButtonChiRight.UseVisualStyleBackColor = true;
+            this.radioButtonChiRight.CheckedChanged += new System.EventHandler(this.radioButtonChi_CheckedChanged);
+            // 
             // radioButtonChiBottom
             // 
             resources.ApplyResources(this.radioButtonChiBottom, "radioButtonChiBottom");
@@ -1918,35 +1958,14 @@
             this.radioButtonChiTop.UseVisualStyleBackColor = true;
             this.radioButtonChiTop.CheckedChanged += new System.EventHandler(this.radioButtonChi_CheckedChanged);
             // 
-            // radioButtonChiRight
-            // 
-            resources.ApplyResources(this.radioButtonChiRight, "radioButtonChiRight");
-            this.radioButtonChiRight.Checked = true;
-            this.radioButtonChiRight.Name = "radioButtonChiRight";
-            this.radioButtonChiRight.TabStop = true;
-            this.radioButtonChiRight.UseVisualStyleBackColor = true;
-            this.radioButtonChiRight.CheckedChanged += new System.EventHandler(this.radioButtonChi_CheckedChanged);
-            // 
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.flowLayoutPanel4);
+            this.groupBox2.Controls.Add(this.numericBoxFindCenterPeakFittingRange);
             this.groupBox2.Controls.Add(this.flowLayoutPanelFindCenterOption);
             this.groupBox2.Controls.Add(this.checkBoxFixCenter);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            // 
-            // flowLayoutPanel4
-            // 
-            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
-            this.flowLayoutPanel4.Controls.Add(this.label5);
-            this.flowLayoutPanel4.Controls.Add(this.numericBoxFindCenterPeakFittingRange);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
             // 
             // numericBoxFindCenterPeakFittingRange
             // 
@@ -2190,10 +2209,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnrolledImageXstep)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScaleLineWidth)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -2201,8 +2220,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanelFindCenterOption.ResumeLayout(false);
             this.flowLayoutPanelFindCenterOption.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -2323,12 +2340,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.CheckBox checkBoxFixCenter;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox checkBoxExtensionIPF;
-        private System.Windows.Forms.CheckBox checkBoxExtensionIMG;
-        private System.Windows.Forms.CheckBox checkBoxExtensionCCD;
-        private System.Windows.Forms.CheckBox checkBoxExtensionSTL;
-        private System.Windows.Forms.CheckBox checkBoxExtensionIPA;
         public System.Windows.Forms.GroupBox groupBoxSphericalCorrection;
         public Crystallography.Controls.NumericBox numericBoxSphericalCorections;
         public System.Windows.Forms.Label label46;
@@ -2362,8 +2373,6 @@
         public Crystallography.Controls.NumericBox numericBoxFindCenterSearchArea;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFindCenterOption;
         public System.Windows.Forms.CheckBox checkBoxExcludeMaskedPixels;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Label label5;
         public Crystallography.Controls.NumericBox numericBoxFindCenterPeakFittingRange;
         public System.Windows.Forms.GroupBox groupBoxGandlfiRadius;
         public Crystallography.Controls.NumericBox numericBoxGandlfiRadius;
@@ -2409,9 +2418,16 @@
         private System.Windows.Forms.Button buttonMaskBottom;
         private System.Windows.Forms.Button buttonMaskRight;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         public System.Windows.Forms.RadioButton radioButtonAsGSASformat;
         private System.Windows.Forms.GroupBox groupBoxSendPDI;
         public System.Windows.Forms.CheckBox checkBoxSendUnrolledImageToPDIndexer;
+        public System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.ComboBox comboBoxScaleLineDivisions;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.CheckBox checkBoxScaleLabel;
+        public System.Windows.Forms.TrackBar trackBarScaleLineWidth;
+        public Crystallography.Controls.ColorControl colorControlScaleAzimuth;
+        public Crystallography.Controls.ColorControl colorControlScale2Theta;
     }
 }

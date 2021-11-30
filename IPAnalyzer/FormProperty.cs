@@ -78,6 +78,9 @@ namespace IPAnalyzer
         public double DetectorTiltPhi { set => numericBoxTiltPhi.Value = value; get => numericBoxTiltPhi.Value; }
         public double DetectorTiltPhiRadian { set => numericBoxTiltPhi.RadianValue = value; get => numericBoxTiltPhi.RadianValue; }
 
+        public Matrix3D DetectorRotation { get; set; }
+        public Matrix3D DetectorRotationInv { get; set; }
+
         public enum DetectorCoordinatesEnum { DirectSpot, Foot}
         public DetectorCoordinatesEnum DetectorCoordinates
         {
@@ -566,6 +569,8 @@ namespace IPAnalyzer
         {
             if (SkipEvent) return;
 
+
+
             #region 幾何学考察
             //検出器の回転行列は以下の行列である.
             // cosφ^2 (1-cosτ) + cosτ , cosφ sinφ (1-cosτ)     ,  sinφ sinτ
@@ -583,13 +588,27 @@ namespace IPAnalyzer
             #endregion
             SkipEvent = true;
             double tau = numericBoxTiltTau.RadianValue, phi = numericBoxTiltPhi.RadianValue, ksi = numericBoxPixelKsi.RadianValue;
-            var c1 = radioButtonDirectSpotMode.Checked ? numericBoxCameraLength1.Value : numericBoxCameraLength2.Value / Math.Cos(tau);
-            double realX = c1 * Math.Sin(phi) * Math.Sin(tau), realY = -c1 * Math.Cos(phi) * Math.Sin(tau);
+
+            double CosTau = Math.Cos(tau), CosTauSquare = CosTau * CosTau;
+            double SinTau = Math.Sin(tau), SinTauSquare = SinTau * SinTau;
+            double CosPhi = Math.Cos(phi), CosPhiSquare = CosPhi * CosPhi;
+            double SinPhi = Math.Sin(phi), SinPhiSquare = SinPhi * SinPhi;
+
+            DetectorRotation = new Matrix3D(
+             CosPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinPhi * (1 - CosTau), -SinPhi * SinTau,
+             CosPhi * SinPhi * (1 - CosTau), SinPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinTau,
+             SinPhi * SinTau, -CosPhi * SinTau, CosTau
+             );
+
+            DetectorRotationInv = DetectorRotation.Inverse();
+
+            var c1 = radioButtonDirectSpotMode.Checked ? numericBoxCameraLength1.Value : numericBoxCameraLength2.Value / CosTau;
+            double realX = c1 * SinPhi * SinTau, realY = -c1 * CosPhi * SinTau;
             var fx = (realX - realY * Math.Tan(ksi)) / numericBoxPixelSizeX.Value;
             var fy = realY / numericBoxPixelSizeY.Value;
             if (radioButtonDirectSpotMode.Checked)
             {
-                numericBoxCameraLength2.Value = c1 * Math.Cos(tau);
+                numericBoxCameraLength2.Value = c1 * CosTau;
                 FootPosition = DirectSpotPosition + new PointD(fx, fy);
             }
             else
@@ -614,6 +633,8 @@ namespace IPAnalyzer
                 }
             //formMain.IntegralArea_Changedの中でDrawされているので以下をコメントアウト
             //formMain.Draw();
+
+         
         }
 
 
@@ -661,45 +682,6 @@ namespace IPAnalyzer
         {
            formMain.toolStripButtonFixCenter.Checked=  checkBoxFixCenter.Checked;
            flowLayoutPanelFindCenterOption.Enabled = !checkBoxFixCenter.Checked;
-        }
-
-        private void checkBoxExtensionCCD_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxExtensionCCD.Checked)
-                AssociatedExtension.Add(".ccd", Application.ExecutablePath, "IPAnalyzer");
-            else
-                AssociatedExtension.Delete(".ccd", Application.ExecutablePath, "IPAnalyzer");
-        }
-
-        private void checkBoxExtensionSTL_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxExtensionSTL.Checked)
-                AssociatedExtension.Add(".stl", Application.ExecutablePath, "IPAnalyzer");
-            else
-                AssociatedExtension.Delete(".stl", Application.ExecutablePath, "IPAnalyzer");
-        }
-
-        private void checkBoxExtensionIMG_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxExtensionIMG.Checked)
-                AssociatedExtension.Add(".img", Application.ExecutablePath, "IPAnalyzer");
-            else
-                AssociatedExtension.Delete(".img", Application.ExecutablePath, "IPAnalyzer");
-        }
-
-        private void checkBoxExtensionIPF_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxExtensionIPF.Checked)
-                AssociatedExtension.Add(".ipf", Application.ExecutablePath, "IPAnalyzer");
-            else
-                AssociatedExtension.Delete(".ipf", Application.ExecutablePath, "IPAnalyzer");
-        }
-        private void checkBoxExtensionIPA_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxExtensionIPF.Checked)
-                AssociatedExtension.Add(".ipa", Application.ExecutablePath, "IPAnalyzer");
-            else
-                AssociatedExtension.Delete(".ipa", Application.ExecutablePath, "IPAnalyzer");
         }
 
         private void checkBoxSendProfileToPDIndexer_CheckedChanged(object sender, EventArgs e)
@@ -919,9 +901,25 @@ namespace IPAnalyzer
 
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
+        private void comboBoxScaleLineDivisions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (SkipEvent) return;
+            formMain.comboBoxScaleLine.SelectedIndex = comboBoxScaleLineDivisions.SelectedIndex;
+        }
 
+        private void colorControlScale2Theta_Load(object sender, EventArgs e)
+        {
+            formMain.Draw();
+        }
+
+        private void trackBarScaleLineWidth_Scroll(object sender, EventArgs e)
+        {
+            formMain.Draw();
+        }
+
+        private void checkBoxScaleLabel_CheckedChanged(object sender, EventArgs e)
+        {
+            formMain.Draw();
         }
     }
 

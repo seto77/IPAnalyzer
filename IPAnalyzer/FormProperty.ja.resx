@@ -1273,26 +1273,26 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>切り開き画像の設定</value>
   </data>
-  <data name="checkBoxExtensionIPF.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 4</value>
+  <data name="comboBoxScaleLineDivisions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 37</value>
   </data>
-  <data name="checkBoxExtensionIPA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 31</value>
+  <data name="checkBoxScaleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 11</value>
   </data>
-  <data name="checkBoxExtensionIMG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 31</value>
+  <data name="trackBarScaleLineWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 16</value>
   </data>
-  <data name="flowLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 40</value>
   </data>
-  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 243</value>
+  <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 13</value>
   </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 251</value>
+  <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 179</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>拡張子関連付け</value>
+  <data name="groupBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>476, 68</value>
   </data>
   <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1330,23 +1330,14 @@
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 44</value>
   </data>
+  <data name="radioButtonChiLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 38</value>
+  </data>
   <data name="radioButtonChiLeft.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 22</value>
   </data>
   <data name="radioButtonChiLeft.Text" xml:space="preserve">
     <value>左</value>
-  </data>
-  <data name="radioButtonChiBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 22</value>
-  </data>
-  <data name="radioButtonChiBottom.Text" xml:space="preserve">
-    <value>下</value>
-  </data>
-  <data name="radioButtonChiTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 22</value>
-  </data>
-  <data name="radioButtonChiTop.Text" xml:space="preserve">
-    <value>上</value>
   </data>
   <data name="radioButtonChiRight.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 22</value>
@@ -1354,32 +1345,47 @@
   <data name="radioButtonChiRight.Text" xml:space="preserve">
     <value>右</value>
   </data>
+  <data name="radioButtonChiBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 65</value>
+  </data>
+  <data name="radioButtonChiBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 22</value>
+  </data>
+  <data name="radioButtonChiBottom.Text" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="radioButtonChiTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 9</value>
+  </data>
+  <data name="radioButtonChiTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 22</value>
+  </data>
+  <data name="radioButtonChiTop.Text" xml:space="preserve">
+    <value>上</value>
+  </data>
   <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 149</value>
+    <value>4, 93</value>
   </data>
   <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 98</value>
+    <value>476, 86</value>
   </data>
   <data name="groupBox11.Text" xml:space="preserve">
     <value>カイ (χ) 設定</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 18</value>
-  </data>
   <data name="numericBoxFindCenterPeakFittingRange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 18</value>
+    <value>4, 63</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 11</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 25</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 27</value>
-  </data>
-  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 81</value>
-  </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 45</value>
+    <value>460, 25</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.HeaderFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1387,14 +1393,20 @@
   <data name="numericBoxFindCenterSearchArea.HeaderText" xml:space="preserve">
     <value>検索範囲 　±</value>
   </data>
+  <data name="numericBoxFindCenterSearchArea.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 25</value>
+  </data>
   <data name="numericBoxFindCenterSearchArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 27</value>
+    <value>150, 25</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 6</value>
+    <value>154, 2</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 0</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
@@ -1402,11 +1414,20 @@
   <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
     <value>マスクされている領域は除外</value>
   </data>
+  <data name="flowLayoutPanelFindCenterOption.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 37</value>
+  </data>
+  <data name="flowLayoutPanelFindCenterOption.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="flowLayoutPanelFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 34</value>
+    <value>341, 25</value>
   </data>
   <data name="checkBoxFixCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxFixCenter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 17</value>
   </data>
   <data name="checkBoxFixCenter.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 22</value>
@@ -1418,7 +1439,7 @@
     <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 136</value>
+    <value>476, 93</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>中心位置</value>
