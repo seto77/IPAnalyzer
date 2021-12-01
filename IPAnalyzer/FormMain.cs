@@ -1032,7 +1032,7 @@ namespace IPAnalyzer
             var pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
             var TanKsi = (float)Math.Tan(FormProperty.numericBoxPixelKsi.RadianValue);
             g.Transform = new Matrix(
-                (float)(1 / pixelSizeX *zoom), 0, (float)(-TanKsi / pixelSizeX * zoom), (float)(1 / pixelSizeY * zoom),
+                (float)(1 * zoom / pixelSizeX ), 0, (float)(-TanKsi * zoom / pixelSizeX ), (float)( zoom / pixelSizeY ),
                 (float)(FormProperty.FootPosition.X * zoom + width/2.0-clientCenter.X * zoom),
                 (float)(FormProperty.FootPosition.Y * zoom + height / 2.0 - clientCenter.Y * zoom));
 
@@ -1046,8 +1046,8 @@ namespace IPAnalyzer
 
             //Azimuthのスケールライン ここから
             int azimuthStep = comboBoxScaleLine.SelectedIndex switch { 1 => 30, 2 => 15, 3 => 5, _ => 30 };
-            var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom / 20f)); 
-            var  font = new Font("Tahoma", (float)(1.5 / zoom ));
+            var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom * (pixelSizeX+pixelSizeY) / 2 )); 
+            var  font = new Font("Tahoma", (float)(15 / zoom * (pixelSizeX + pixelSizeY) / 2));
 
             var length = new[] { (cornerReals[0]- cornerReals[1]).Length, (cornerReals[1] - cornerReals[2]).Length,
                 (cornerReals[2] - cornerReals[3]).Length, (cornerReals[3] - cornerReals[0]).Length };
@@ -1153,9 +1153,8 @@ namespace IPAnalyzer
                     var p = scalablePictureBox.ConvertToClientPt(e);
                     return p.X > 20 && p.Y > 20 && p.X < width-20 && p.Y < height-20; 
                 }), originSrc,0);
-               // if (FormProperty.checkBoxScaleLabel.Checked && !double.IsNaN(labelPosition.X))
-               if(ptsArray.Count!=0 && ptsArray[0].Count!=0)
-                    g.DrawString(twoTheta.ToString("g12") + "°", font, new SolidBrush(FormProperty.colorControlScale2Theta.Color), ptsArray[0][0].ToPointF());// labelPosition.ToPointF());
+               if(FormProperty.checkBoxScaleLabel.Checked && ptsArray.Count!=0 && ptsArray[0].Count!=0)
+                    g.DrawString(twoTheta.ToString("g12") + "°", font, new SolidBrush(FormProperty.colorControlScale2Theta.Color), ptsArray[0][ptsArray[0].Count/4].ToPointF());// labelPosition.ToPointF());
             }
 
 
@@ -3425,7 +3424,7 @@ namespace IPAnalyzer
                             for (int j = 0; j < temp.Length; j++)
                                 diffractionProfile.ImageArray[j] = temp[j];
                             diffractionProfile.ImageScale = 1;
-                            diffractionProfile.ImageWidth = (int)((xEnd - xStart) / xStep);
+                            diffractionProfile.ImageWidth = temp.Length/chiDivision;
                             diffractionProfile.ImageHeight = chiDivision;
                         }
                         else
