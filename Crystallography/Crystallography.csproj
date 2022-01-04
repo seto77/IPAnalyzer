@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2021.12.01.2257</AssemblyVersion>
-    <FileVersion>2021.12.01.2257</FileVersion>
+    <AssemblyVersion>2022.01.04.1400</AssemblyVersion>
+    <FileVersion>2022.01.04.1400</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,7 +27,7 @@
     <PackageReference Include="MessagePack" Version="2.3.85" />
     <PackageReference Include="MessagePack.Annotations" Version="2.3.85" />
     <PackageReference Include="OpenTK" Version="3.3.2" />
-    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.14" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.15" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,5 +53,9 @@
   <ItemGroup>
     <None Remove="C:\Users\seto\.nuget\packages\mathnet.numerics.mkl.win-x64\2.5.0\build\x64\MathNet.Numerics.MKL.dll" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="AssemblyVersionUpdate" />
+  </Target>
 
 </Project>
