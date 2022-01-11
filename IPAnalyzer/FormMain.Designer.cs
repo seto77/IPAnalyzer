@@ -1371,7 +1371,6 @@ namespace IPAnalyzer
             // 
             this.ngenCompileToolStripMenuItem.Name = "ngenCompileToolStripMenuItem";
             resources.ApplyResources(this.ngenCompileToolStripMenuItem, "ngenCompileToolStripMenuItem");
-            this.ngenCompileToolStripMenuItem.Click += new System.EventHandler(this.ngenCompileToolStripMenuItem_Click);
             // 
             // languageToolStripMenuItem
             // 

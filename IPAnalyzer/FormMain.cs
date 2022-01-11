@@ -1846,8 +1846,7 @@ namespace IPAnalyzer
         {
             //コントロール内にドロップされたとき実行される
             //ドロップされたすべてのファイル名を取得する
-            string[] fileName =
-                (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            string[] fileName = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             //ListBoxに追加する
             if (fileName.Length == 1)
             {
@@ -1863,10 +1862,10 @@ namespace IPAnalyzer
                     var files = Directory.GetFiles(fileName[0]);
                     if (files != null && files.Length > 0)
                     {
-                        Array.Sort(files);
                         ext = Path.GetExtension(files[0]).TrimStart(new char[] { '.' });
                         if (ImageIO.IsReadable(ext))
                             ReadImage(files[0]);
+                        initialImageDirectory = Path.GetDirectoryName(files[0]);
                     }
                 }
             }
@@ -1959,7 +1958,7 @@ namespace IPAnalyzer
 
 
 
-            GC.Collect();
+            //GC.Collect();
 
             initializeFilter();
             setScale();
@@ -2011,7 +2010,9 @@ namespace IPAnalyzer
                     toolStripButtonImageSequence.Checked = true;
                 }
                 FormSequentialImage.MaximumNumber = Ring.SequentialImageIntensities.Count;
-                FormSequentialImage.SelectedIndex = 0;
+                
+                if (Ring.SequentialImageIntensities.Count >= 2)
+                    FormSequentialImage.SelectedIndex = 0;
 
                 trackBarAdvancedMaxInt.Maximum = Ring.SequentialImageIntensities.Max(i => i.Max());
                 trackBarAdvancedMinInt.Maximum = trackBarAdvancedMaxInt.Maximum - 1;
@@ -2868,8 +2869,6 @@ namespace IPAnalyzer
 
         private void toolStripComboBoxRotate_SelectedIndexChanged(object sender, EventArgs e)
             => FlipRotate_Pollalization_Background();
-
-        private void ngenCompileToolStripMenuItem_Click(object sender, EventArgs e) => Ngen.Compile();
         #endregion
 
         #region Help メニュー 
@@ -3818,44 +3817,73 @@ namespace IPAnalyzer
         #region KeyDown, KeyUpイベント
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Control && e.Shift && e.KeyCode == Keys.C)
-                toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
-            else if (e.Control && e.Shift && e.KeyCode == Keys.S)
-                toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
-            else if (e.Control && e.Shift && e.KeyCode == Keys.G)
-                toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());
-            else if (e.Control && e.Shift && e.KeyCode == Keys.B)
-                toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());
-            else if (e.Control && e.Shift && e.KeyCode == Keys.M)
-                FormProperty.checkBoxManualMaskMode.Checked = !FormProperty.checkBoxManualMaskMode.Checked;
-            else if (e.Control && scalablePictureBox.Focused)
-            {
-                IsManualSpotMode = true;
-                FormProperty.checkBoxManualMaskMode.Checked = true;
-                Draw();
-            }
-            else if (e.Control && e.KeyCode == Keys.Left && toolStripButtonImageSequence.Enabled && FormSequentialImage.SelectedIndex > 0)
-                FormSequentialImage.SelectedIndex--;
-            else if (e.Control && e.KeyCode == Keys.Right && toolStripButtonImageSequence.Enabled && FormSequentialImage.SelectedIndex < FormSequentialImage.MaximumNumber)
-                FormSequentialImage.SelectedIndex++;
-            if (e.Control && e.Shift)
-            {
-                //if (formStructureViewer.panelMain.Focused || formStructureViewer.panelAxes.Focused
-                //    || formStereonet.panel.Focused || formElectronDiffraction.panel.Focused)
-                {
-                    bool left = GetAsyncKeyState(37) != 0, up = GetAsyncKeyState(38) != 0, right = GetAsyncKeyState(39) != 0, down = GetAsyncKeyState(40) != 0;
-                    var shift = 1 / scalablePictureBox.Zoom;
-                    if (up)
-                        FormProperty.DirectSpotPosition += new PointD(0, -shift);
-                    else if (down)
-                        FormProperty.DirectSpotPosition += new PointD(0, shift);
-                    else if (right)
-                        FormProperty.DirectSpotPosition += new PointD(shift, 0);
-                    else if (left)
-                        FormProperty.DirectSpotPosition += new PointD(-shift, 0);
-                }
-            }
+            bool left = GetAsyncKeyState(37) != 0, up = GetAsyncKeyState(38) != 0, right = GetAsyncKeyState(39) != 0, down = GetAsyncKeyState(40) != 0;
 
+            if (e.Control)//コントロールが押されているとき
+            {
+                if (e.Shift)//シフトキーが押されているとき
+                {
+                    if (e.KeyCode == Keys.C)
+                        toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                    else if (e.KeyCode == Keys.S)
+                        toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                    else if (e.KeyCode == Keys.G)
+                        toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                    else if (e.KeyCode == Keys.B)
+                        toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                    else if (e.KeyCode == Keys.M)
+                        FormProperty.checkBoxManualMaskMode.Checked = !FormProperty.checkBoxManualMaskMode.Checked;
+                    else
+                    {
+                        var shift = 1 / scalablePictureBox.Zoom;
+                        if (up)
+                            FormProperty.DirectSpotPosition += new PointD(0, -shift);//CTRL + SHIFT + ↑
+                        else if (down)
+                            FormProperty.DirectSpotPosition += new PointD(0, shift);//CTRL + SHIFT + ↓
+                        else if (right)
+                            FormProperty.DirectSpotPosition += new PointD(shift, 0);//CTRL + SHIFT + →
+                        else if (left)
+                            FormProperty.DirectSpotPosition += new PointD(-shift, 0);//CTRL + SHIFT + ←
+                    }
+                }
+                else //シフトキーが押されていないとき
+                {
+                    if (up || down || left || right)
+                    {
+                        if (toolStripButtonImageSequence.Enabled) //シーケンシャルイメージモードの時
+                        {
+                            if ((left || up) && FormSequentialImage.SelectedIndex > 0)
+                                FormSequentialImage.SelectedIndex--;// ←あるいは↑で イメージのインデックスを戻す
+                            else if ((right || down) && FormSequentialImage.SelectedIndex < FormSequentialImage.MaximumNumber)
+                                FormSequentialImage.SelectedIndex++;// →あるいは↓で イメージのインデックスを進める
+                        }
+                        else //現在読み込んでいる画像が存在するフォルダで、ファイル名順に画像を移動する
+                        {
+                            var files = Directory.GetFiles(FilePath).ToList();//まずフォルダ中の同じ拡張子のファイルを全部取得
+                            if (files.Count > 0)
+                            {
+                                files.Sort();
+                                var i = files.IndexOf(FilePath + FileName);
+                                if (i != -1)
+                                {
+                                    if (i < files.Count - 1 && (right || down))
+                                        ReadImage(files[i + 1]);
+                                    else if (i > 0 && (left || up))
+                                        ReadImage(files[i - 1]);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //else if (e.Control && scalablePictureBox.Focused)
+                //{
+                //    IsManualSpotMode = true;
+                //    FormProperty.checkBoxManualMaskMode.Checked = true;
+                //    Draw();
+                //}
+
+            }
         }
 
         private void FormMain_KeyUp(object sender, KeyEventArgs e)
@@ -4005,7 +4033,7 @@ namespace IPAnalyzer
 
         #endregion
 
-        #region Sequential Image関連ｎ
+        #region Sequential Image関連
         private void toolStripMenuItemAllSequentialImages_CheckedChanged(object sender, EventArgs e)
         {
             if (toolStripMenuItemAllSequentialImages.Checked)
