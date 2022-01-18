@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2022.01.11.1234</AssemblyVersion>
-    <FileVersion>2022.01.11.1234</FileVersion>
+    <AssemblyVersion>2022.01.18.1957</AssemblyVersion>
+    <FileVersion>2022.01.18.1957</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
@@ -19,6 +19,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="doc\IPAnalyzerManual%28ja%29.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="doc\IPAnalyzerManual(ja).pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Crystallography.Controls\Crystallography.Controls.csproj" />
@@ -46,6 +56,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="doc\IPAnalyzer%28ja%29.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="doc\IPAnalyzerAlgorithm.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

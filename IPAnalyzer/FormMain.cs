@@ -1778,7 +1778,7 @@ namespace IPAnalyzer
 
             if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
             {
-                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 1 : 0].X = trackBarAdvancedMaxInt.Value;
+                graphControlFrequency.LineList =new[]{new PointD(trackBarAdvancedMinInt.Value, double.NaN),new PointD(trackBarAdvancedMaxInt.Value, double.NaN)};
                 graphControlFrequency.Draw();
             }
 
@@ -1798,7 +1798,7 @@ namespace IPAnalyzer
 
             if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
             {
-                graphControlFrequency.LineList[graphControlFrequency.LineList[0].X < graphControlFrequency.LineList[1].X ? 0 : 1].X = trackBarAdvancedMinInt.Value;
+                graphControlFrequency.LineList = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
                 graphControlFrequency.Draw();
             }
 
@@ -1908,6 +1908,8 @@ namespace IPAnalyzer
         /// <param name="flag"></param>
         public void ReadImage(string str, bool? flag = null)
         {
+            SkipDrawing = true;
+
             if (str != "ClipBoard.ipa" && !File.Exists(str)) return;  // ファイルの有無をチェック
 
             //改行文字が含まれている場合は、それを削除
@@ -1934,8 +1936,6 @@ namespace IPAnalyzer
             if (!ImageIO.ReadImage(str, flag))
                 return;
 
-
-
             string ext = Path.GetExtension(str).TrimStart(new char[] { '.' }).ToLower();
             if (ext == "ipa")
             {
@@ -1956,10 +1956,6 @@ namespace IPAnalyzer
 
             SrcImgSize = Ring.SrcImgSize;
 
-
-
-            //GC.Collect();
-
             initializeFilter();
             setScale();
             FormProperty.checkBoxThreshold_CheckedChanged(new object(), new EventArgs());
@@ -1971,7 +1967,7 @@ namespace IPAnalyzer
             SetFrequencyProfile();//強度頻度グラフを作成
             graphControlProfile.Profile = new Profile();//プロファイルは初期化
 
-            SetInformation();
+            
 
             if (FormProperty.radioButtonTakeoverMask.Checked)
             {
@@ -1990,6 +1986,8 @@ namespace IPAnalyzer
 
             SetText(FileName);
 
+            SetInformation();
+
             //SP8-BL43LXUのような32bit signed tiffの場合は、負の値をマスク
             if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0)
             {
@@ -1998,7 +1996,7 @@ namespace IPAnalyzer
                         Ring.IsSpots[i] = true;
             }
 
-            trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
+           trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
             trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = Ring.Intensity.Min();
 
             //SequentialImageを読み込んだ時の処理
@@ -2050,14 +2048,15 @@ namespace IPAnalyzer
                 if (Math.Abs((FormProperty.CameraLength1 - length) / length) > 0.2)
                     FormProperty.CameraLength1 = length;
             }
-
-
-
+         
+            SkipDrawing = false;
+            Draw();
         }
 
         public void SetInformation()
         {
             textBoxInformation.Text =
+                $"Fine name:\r\n {FileName}\r\n" +
                 $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n" +
                 $"Dynamic range:\r\n {Ring.Intensity.Min()} - {Ring.Intensity.Max():#,#}\r\n" +
                 $"Max Intensity:\r\n {maxIntensity:#,#}\r\n" +
@@ -2894,11 +2893,10 @@ namespace IPAnalyzer
         {
             try
             {
-                if (Thread.CurrentThread.CurrentUICulture.ToString().Contains("ja"))
-                    System.Diagnostics.Process.Start("http://pmsl.planet.sci.kobe-u.ac.jp/~seto/software/IPAnalyzer/ja/IPAnalyzerHelp.html");
-                else
-                    System.Diagnostics.Process.Start("http://pmsl.planet.sci.kobe-u.ac.jp/~seto/software/IPAnalyzer/en/IPAnalyzerHelp.html");
-
+                var fn = "\\doc\\IPAnalyzerManual(" + (japaneseToolStripMenuItem.Checked ? "ja" : "en") + ").pdf";
+                var appPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                var f = new FormPDF(appPath + fn) { Text = "IPAnalyzer manual" };
+                f.Show();
 
             }
             catch { }
@@ -3823,16 +3821,34 @@ namespace IPAnalyzer
             {
                 if (e.Shift)//シフトキーが押されているとき
                 {
-                    if (e.KeyCode == Keys.C)
-                        toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                    if (e.KeyCode == Keys.F)
+                        toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + F
                     else if (e.KeyCode == Keys.S)
-                        toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                        toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + S
                     else if (e.KeyCode == Keys.G)
-                        toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                        toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + G
                     else if (e.KeyCode == Keys.B)
-                        toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + C
+                        toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + B
                     else if (e.KeyCode == Keys.M)
-                        FormProperty.checkBoxManualMaskMode.Checked = !FormProperty.checkBoxManualMaskMode.Checked;
+                        FormProperty.checkBoxManualMaskMode.Checked = !FormProperty.checkBoxManualMaskMode.Checked;//CTRL + SHIFT + M
+                    else if (e.KeyCode == Keys.C)
+                    {
+                        //StasticalInformationタブが開かれていて選択領域が有効な場合は、その領域をクリップボードにコピー
+                        if(tabControl1.SelectedIndex == 2)
+                        {
+                            double _left = Math.Max((double)Math.Min(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value), 0);
+                            double _right = Math.Min((double)Math.Max(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value), Ring.SrcImgSize.Width - 1);
+                            double _top = Math.Max((double)Math.Min(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), 0);
+                            double _bottom = Math.Min((double)Math.Max(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), Ring.SrcImgSize.Height - 1);
+                            //scalablePictureBox.AreaRectangle
+                            var rec = new RectangleD(_left, _top, _right -  _left + 1, _bottom - _top + 1);
+                            Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize()), true);
+                        }
+                        else
+                        {
+                            Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(), true);
+                        }
+                    }
                     else
                     {
                         var shift = 1 / scalablePictureBox.Zoom;
@@ -4232,7 +4248,24 @@ namespace IPAnalyzer
             }
         }
 
-      
+        private void buttonMag_Click(object sender, EventArgs e)
+        {
+            var name = (sender as Button).Name;
+            if (name.Contains("Mag1"))
+                scalablePictureBox.Zoom = 1;
+            else if (name.Contains("Mag2"))
+                scalablePictureBox.Zoom = 2;
+            else if (name.Contains("Mag4"))
+                scalablePictureBox.Zoom = 4;
+            else if (name.Contains("Mag_2"))
+                scalablePictureBox.Zoom = 0.5;
+            else if (name.Contains("Mag_4"))
+                scalablePictureBox.Zoom = 0.25;
+            else if (name.Contains("Mag_8"))
+                scalablePictureBox.Zoom = 0.125;
+            else if (name.Contains("Mag_16"))
+                scalablePictureBox.Zoom = 0.0625;
+        }
 
         bool skipSelectedAreaChangedEvent = false;
         private void numericUpDownSelectedArea_ValueChanged(object sender, EventArgs e)

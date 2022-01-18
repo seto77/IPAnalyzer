@@ -78,8 +78,8 @@ namespace IPAnalyzer
         public double DetectorTiltPhi { set => numericBoxTiltPhi.Value = value; get => numericBoxTiltPhi.Value; }
         public double DetectorTiltPhiRadian { set => numericBoxTiltPhi.RadianValue = value; get => numericBoxTiltPhi.RadianValue; }
 
-        public Matrix3D DetectorRotation { get; set; }
-        public Matrix3D DetectorRotationInv { get; set; }
+        public Matrix3D DetectorRotation { get; set; } = Matrix3D.IdentityMatrix;
+        public Matrix3D DetectorRotationInv { get; set; } = Matrix3D.IdentityMatrix;
 
         public enum DetectorCoordinatesEnum { DirectSpot, Foot}
         public DetectorCoordinatesEnum DetectorCoordinates
@@ -568,8 +568,6 @@ namespace IPAnalyzer
         public void DetectorParameters_Changed(object sender, EventArgs e)
         {
             if (SkipEvent) return;
-
-
 
             #region 幾何学考察
             //検出器の回転行列は以下の行列である.

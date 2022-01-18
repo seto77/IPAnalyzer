@@ -1835,7 +1835,7 @@
             this.trackBarScaleLineWidth.Minimum = 1;
             this.trackBarScaleLineWidth.Name = "trackBarScaleLineWidth";
             this.trackBarScaleLineWidth.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBarScaleLineWidth.Value = 3;
+            this.trackBarScaleLineWidth.Value = 1;
             this.trackBarScaleLineWidth.Scroll += new System.EventHandler(this.trackBarScaleLineWidth_Scroll);
             // 
             // label5
