@@ -4809,10 +4809,10 @@ namespace IPAnalyzer
 
                 public string[] GetAllFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
                 {
-                    var dlg = new OpenFileDialog { FileName = "SelectFolder",  CheckFileExists = false, Title = message };
+                    var dlg = new FolderBrowserDialog() { Description=message};
                     if (dlg.ShowDialog() == DialogResult.OK)
                     {
-                        var dir = Path.GetDirectoryName(dlg.FileName);
+                        var dir = Path.GetDirectoryName(dlg.SelectedPath);
                         return Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
                     }
                     else
