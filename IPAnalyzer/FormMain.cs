@@ -4763,9 +4763,10 @@ namespace IPAnalyzer
                 public FileClass(Macro _p) : base(_p.main)
                 {
                     p = _p;
-                    p.help.Add("IPA.File.GetFileName(string message) # Get a file name. \r\n Returned string is a full path of the selected file.");
-                    p.help.Add("IPA.File.GetFileNames(string message) # Get file names. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
-                    p.help.Add("IPA.File.GetDirectoryPath(string filename) # Get a directory path.\r\n Returned string is a full path to the filename.\r\n If filename is omitted, selection dialog will open.");
+                    p.help.Add("IPA.File.GetFileName() # Get a fil name. \r\n Returned string is a full path of the selected file.");
+                    p.help.Add("IPA.File.GetFileNames() # Get filenames. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
+                    p.help.Add("IPA.File.GetAllFileNames() # Get all file names in the directory. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
+                    p.help.Add("IPA.File.GetDirectoryPath() # Get a directory path.\r\n Returned string is a full path to the filename.\r\n If filename is omitted, selection dialog will open.");
 
                     p.help.Add("IPA.File.ReadImage(string filename)          # Read image file. \r\n If filename is omitted, selection dialog will open.");
                     p.help.Add("IPA.File.ReadImageHDF(string filename, bool Normarize) # Read HDF5 image file. \r\n If filename is omitted, selection dialog will open.");
@@ -4804,6 +4805,18 @@ namespace IPAnalyzer
                 {
                     var dlg = new OpenFileDialog { Multiselect = true, Title = message };
                     return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : Array.Empty<string>();
+                }));
+
+                public string[] GetAllFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
+                {
+                    var dlg = new OpenFileDialog { FileName = "SelectFolder",  CheckFileExists = false, Title = message };
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        var dir = Path.GetDirectoryName(dlg.FileName);
+                        return Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
+                    }
+                    else
+                        return Array.Empty<string>();
                 }));
 
                 public void SaveImageAsTIFF(string fileName = "") => Execute(() => p.main.saveImageAsTiff(fileName));

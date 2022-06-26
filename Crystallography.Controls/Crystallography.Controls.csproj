@@ -4,8 +4,8 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2022.01.18.2001</AssemblyVersion>
-    <FileVersion>2022.01.18.2001</FileVersion>
+    <AssemblyVersion>2022.06.26.1508</AssemblyVersion>
+    <FileVersion>2022.06.26.1508</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IronPython" Version="2.7.11" />
+    <PackageReference Include="IronPython" Version="2.7.12" />
   </ItemGroup>
 
   <ItemGroup>
