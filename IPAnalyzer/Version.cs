@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.932(2022/06/29) Improved a sequential image loading. " +
         "\r\n ver3.931(2022/06/26) Improved macro function and top form design. " +
         "\r\n ver3.930(2021/12/01) Fixed a bug on generating unrolled images." +
         "\r\n ver3.929(2021/11/30) Added color scales and scale line drawing." +

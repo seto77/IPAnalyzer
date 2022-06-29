@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            IPAnalyzer.Properties.Settings settings1 = new IPAnalyzer.Properties.Settings();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSequentialImage));
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.listBox = new System.Windows.Forms.ListBox();
@@ -201,8 +200,6 @@
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.groupBox1);
-            settings1.SettingsKey = "";
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", settings1, "FormSequentialImageLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);

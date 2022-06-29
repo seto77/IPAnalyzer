@@ -994,13 +994,16 @@ public static class ImageIO
             Ring.SequentialImageIntensities = new List<List<double>>();
             Ring.SequentialImageNames = new List<string>();
 
-            while (readHeader() && n < 500)
+            while (readHeader() && n < 10000)
             {
                 Ring.SequentialImageIntensities.Add(new List<double>());
                 for (int i = 0; i < length; i++)
                     Ring.SequentialImageIntensities[n].Add(readData());
                 Ring.SequentialImageNames.Add(n.ToString("000"));
                 n++;
+
+                if ((long)Ring.SequentialImageIntensities.Count * (long)Ring.SequentialImageIntensities[0].Count * 8 < 100000000000)
+                    break;
             }
 
 

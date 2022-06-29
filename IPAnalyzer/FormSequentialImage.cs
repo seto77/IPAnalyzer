@@ -66,10 +66,10 @@ namespace IPAnalyzer
                         listBox.SelectedIndex = selectedIndex;
                     skipEvent = false;
                     
-                    for (int i = 0; i < Ring.Intensity.Count; i++)
-                            Ring.IntensityOriginal[i] = Ring.SequentialImageIntensities[selectedIndex][i];
-                    
-                    formMain.FlipRotate_Pollalization_Background(false);
+                    Ring.IntensityOriginal.Clear();
+                    Ring.IntensityOriginal.AddRange(Ring.SequentialImageIntensities[selectedIndex]);
+
+                     formMain.FlipRotate_Pollalization_Background(false);
 
 
                     if (!SkipCalcFreq)
@@ -107,11 +107,15 @@ namespace IPAnalyzer
             {
                 skipEvent = true;
                 int selectedIndex = listBox.SelectedIndex;
-                for (int i = 0; i < listBox.Items.Count; i++)
-                    listBox.SetSelected(i, value.Contains(i));
+                //valueに含まれているものだけを選択状態にする
+                foreach (var i in Enumerable.Range(0, listBox.Items.Count).Where(n => !value.Contains(n) && listBox.GetSelected(n)))
+                    listBox.SetSelected(i, false);
+                foreach (var i in value.Where(n => !listBox.GetSelected(n)))
+                    listBox.SetSelected(i, true);
                 if (value.Contains(selectedIndex))
                     listBox.SelectedIndex = selectedIndex;
                 skipEvent = false;
+
                 for (int i = 0; i < value.Length; i++)
                     if (Ring.SequentialImageIntensities == null || value[i] < 0 || value[i] >= Ring.Intensity.Count)
                         return;

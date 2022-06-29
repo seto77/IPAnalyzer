@@ -4158,10 +4158,10 @@ namespace IPAnalyzer
             //偏光補正ここまで
 
             Ring.CalcFreq();
-            SetFrequencyProfile();//強度頻度グラフを作成
+            SetFrequencyProfile();//
 
-            for (int i = 0; i < Ring.Intensity.Count; i++)
-                pseudoBitmap.SrcValuesGray[i] = pseudoBitmap.SrcValuesGrayOriginal[i] = Ring.Intensity[i];
+            Ring.Intensity.CopyTo(pseudoBitmap.SrcValuesGray);
+            Ring.Intensity.CopyTo(pseudoBitmap.SrcValuesGrayOriginal);
 
             IntegralArea_Changed(new object(), new EventArgs());
             if (zoomReset)
