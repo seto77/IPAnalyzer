@@ -823,15 +823,13 @@ namespace Crystallography
 
 								if (cos > 0)//‰E‚ÉL‚Ñ‚½”¼’¼ü‚Ì‚Æ‚«‚Í
 								{
-									startI = (int)(CenterX - Band * Math.Abs(sin) + 0.5);
+									startI = Math.Max(0,(int)(CenterX - Band * Math.Abs(sin) + 0.5));
 									midI = (int)(CenterX + Band * Math.Abs(sin) + 0.5);
 									for (int i = startI; i < Width; i++)
 									{
 										cy = tan * i + CenterYMinusTanCenterX;
-										startJ = (int)(cy - wy + 0.5);
-										if (startJ < 0) startJ = 0;
-										endJ = (int)(cy + wy + 1.5);
-										if (endJ > Height) endJ = Height;
+										startJ = Math.Max(0,(int)(cy - wy + 0.5));
+										endJ = Math.Min( Height, (int)(cy + wy + 1.5));
 										if (i > midI)
 											for (int j = startJ; j < endJ; j++)//ƒoƒ“ƒh‚Ì“à‘¤‚Ì‚Æ‚«
 												IsOutsideOfIntegralRegion[i + j * Width] = false;
@@ -844,7 +842,7 @@ namespace Crystallography
 								else//¶‚ÉL‚Ñ‚½”¼’¼ü‚Ì‚Æ‚«‚Í
 								{
 									midI = (int)(CenterX - Band * Math.Abs(sin) + 0.5);
-									endI = (int)(CenterX + Band * Math.Abs(sin) + 0.5);
+									endI = Math.Max(Width,(int)(CenterX + Band * Math.Abs(sin) + 0.5));
 									for (int i = 0; i < endI; i++)
 									{
 										cy = tan * i + CenterYMinusTanCenterX;

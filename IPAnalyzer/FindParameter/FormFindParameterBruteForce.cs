@@ -310,7 +310,21 @@ namespace IPAnalyzer
         {
             stopFlag = true;
             buttonStop.Visible = false;
+
+            if (originalSpots != null)
+            {
+                Ring.IsSpots.Clear();
+                Ring.IsSpots.AddRange(originalSpots);
+            }
+            FormMain.FormProperty.numericBoxConcentricStart.Value = initialStart;
+            FormMain.FormProperty.numericBoxConcentricEnd.Value = initialEnd;
+            FormMain.SkipDrawing = false;
+            FormMain.Draw();
         }
+
+        bool[] originalSpots;
+        double initialStart=0;
+        double initialEnd=0;
         private void buttonOptimizeSacla_Click(object sender, EventArgs e)
         {
             buttonStop.Visible = true;
@@ -321,9 +335,11 @@ namespace IPAnalyzer
 
             if (crystal.Plane.Count == 0) return;
 
+            //スポットと、積分角度範囲の初期値を記憶
+            originalSpots = Ring.IsSpots.ToArray();
+            initialStart = FormMain.FormProperty.numericBoxConcentricStart.Value;
+            initialEnd = FormMain.FormProperty.numericBoxConcentricEnd.Value;
             //積分範囲を設定
-            bool[] originalSpots = Ring.IsSpots.ToArray();
-
             bool[] area = new bool[Ring.IsOutsideOfIntegralProperty.Count];
             for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
                 area[j] = true;
@@ -527,6 +543,15 @@ namespace IPAnalyzer
             var finalProfile = Ring.GetProfile(Ring.IP);
             Fitting(finalProfile, crystal.Plane);
             drawGraph(finalProfile, crystal.Plane);
+
+            if (originalSpots != null)
+            {
+                Ring.IsSpots.Clear();
+                Ring.IsSpots.AddRange(originalSpots);
+            }
+            FormMain.FormProperty.numericBoxConcentricStart.Value = initialStart;
+            FormMain.FormProperty.numericBoxConcentricEnd.Value = initialEnd;
+            FormMain.Draw();
         }
 
         struct flatPanelValues
