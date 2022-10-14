@@ -58,7 +58,6 @@ namespace IPAnalyzer
             this.textBoxInformation = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.scalablePictureBoxThumbnail = new Crystallography.Controls.ScalablePictureBox();
             this.radioButtonNearCenter = new System.Windows.Forms.RadioButton();
             this.radioButtonWhole = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,7 +69,6 @@ namespace IPAnalyzer
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxGradient = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.scalablePictureBox = new Crystallography.Controls.ScalablePictureBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.labelResolution = new System.Windows.Forms.Label();
@@ -106,9 +104,7 @@ namespace IPAnalyzer
             this.panelMousePos = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.graphControlFrequency = new Crystallography.Controls.GraphControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.graphControlProfile = new Crystallography.Controls.GraphControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBoxStatisticsSelectedAreaSequential = new System.Windows.Forms.TextBox();
             this.textBoxStatisticsSelectedArea = new System.Windows.Forms.TextBox();
@@ -269,8 +265,6 @@ namespace IPAnalyzer
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSelectedAreaX1)).BeginInit();
@@ -384,11 +378,9 @@ namespace IPAnalyzer
             // splitContainer2.Panel2
             // 
             resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
-            this.splitContainer2.Panel2.Controls.Add(this.scalablePictureBox);
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel3);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel3);
-            this.splitContainer2.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.toolTip.SetToolTip(this.splitContainer2.Panel2, resources.GetString("splitContainer2.Panel2.ToolTip"));
             this.toolTip.SetToolTip(this.splitContainer2, resources.GetString("splitContainer2.ToolTip"));
             // 
@@ -416,31 +408,10 @@ namespace IPAnalyzer
             // panel3
             // 
             resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Controls.Add(this.scalablePictureBoxThumbnail);
             this.panel3.Controls.Add(this.radioButtonNearCenter);
             this.panel3.Controls.Add(this.radioButtonWhole);
             this.panel3.Name = "panel3";
             this.toolTip.SetToolTip(this.panel3, resources.GetString("panel3.ToolTip"));
-            // 
-            // scalablePictureBoxThumbnail
-            // 
-            resources.ApplyResources(this.scalablePictureBoxThumbnail, "scalablePictureBoxThumbnail");
-            this.scalablePictureBoxThumbnail.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.scalablePictureBoxThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.scalablePictureBoxThumbnail.FixZoomAndCenter = false;
-            this.scalablePictureBoxThumbnail.FocusEventEnabled = false;
-            this.scalablePictureBoxThumbnail.HorizontalFlip = false;
-            this.scalablePictureBoxThumbnail.ManualSpotMode = false;
-            this.scalablePictureBoxThumbnail.MouseScaling = true;
-            this.scalablePictureBoxThumbnail.MouseTranslation = false;
-            this.scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
-            this.scalablePictureBoxThumbnail.ShowAreaRectangle = false;
-            this.scalablePictureBoxThumbnail.ShowRimRentangle = false;
-            this.toolTip.SetToolTip(this.scalablePictureBoxThumbnail, resources.GetString("scalablePictureBoxThumbnail.ToolTip"));
-            this.scalablePictureBoxThumbnail.VerticalFlip = false;
-            this.scalablePictureBoxThumbnail.Zoom = 128D;
-            this.scalablePictureBoxThumbnail.MouseDown2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBoxThumbnail_MouseDown2);
-            this.scalablePictureBoxThumbnail.Draw += new Crystallography.Controls.ScalablePictureBox.DrawEvent(this.scalablePictureBoxThumbnail_Draw);
             // 
             // radioButtonNearCenter
             // 
@@ -548,29 +519,6 @@ namespace IPAnalyzer
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             this.toolTip.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
-            // 
-            // scalablePictureBox
-            // 
-            resources.ApplyResources(this.scalablePictureBox, "scalablePictureBox");
-            this.scalablePictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.scalablePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.scalablePictureBox.FixZoomAndCenter = false;
-            this.scalablePictureBox.FocusEventEnabled = false;
-            this.scalablePictureBox.HorizontalFlip = false;
-            this.scalablePictureBox.ManualSpotMode = false;
-            this.scalablePictureBox.MouseScaling = true;
-            this.scalablePictureBox.MouseTranslation = true;
-            this.scalablePictureBox.Name = "scalablePictureBox";
-            this.scalablePictureBox.ShowAreaRectangle = false;
-            this.scalablePictureBox.ShowRimRentangle = false;
-            this.toolTip.SetToolTip(this.scalablePictureBox, resources.GetString("scalablePictureBox.ToolTip"));
-            this.scalablePictureBox.VerticalFlip = false;
-            this.scalablePictureBox.Zoom = 128D;
-            this.scalablePictureBox.MouseMove2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseMove2);
-            this.scalablePictureBox.MouseUp2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseUp2);
-            this.scalablePictureBox.MouseDown2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseDown2);
-            this.scalablePictureBox.MouseWheel2 += new Crystallography.Controls.ScalablePictureBox.MouseEvent(this.scalablePictureBox_MouseWheel2);
-            this.scalablePictureBox.Draw += new Crystallography.Controls.ScalablePictureBox.DrawEvent(this.scalablePictureBox_Draw);
             // 
             // flowLayoutPanel3
             // 
@@ -845,7 +793,6 @@ namespace IPAnalyzer
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.toolTip.SetToolTip(this.tabControl1, resources.GetString("tabControl1.ToolTip"));
@@ -853,112 +800,16 @@ namespace IPAnalyzer
             // tabPage1
             // 
             resources.ApplyResources(this.tabPage1, "tabPage1");
-            this.tabPage1.Controls.Add(this.graphControlFrequency);
-            this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage1.Name = "tabPage1";
             this.toolTip.SetToolTip(this.tabPage1, resources.GetString("tabPage1.ToolTip"));
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // graphControlFrequency
-            // 
-            resources.ApplyResources(this.graphControlFrequency, "graphControlFrequency");
-            this.graphControlFrequency.AllowMouseOperation = true;
-            this.graphControlFrequency.BackgroundColor = System.Drawing.Color.White;
-            this.graphControlFrequency.BottomMargin = 0D;
-            this.graphControlFrequency.DivisionLineColor = System.Drawing.Color.Black;
-            this.graphControlFrequency.DivisionSubLineColor = System.Drawing.Color.LightGray;
-            this.graphControlFrequency.FixRangeHorizontal = false;
-            this.graphControlFrequency.FixRangeVertical = false;
-            this.graphControlFrequency.GraphName = "";
-            this.graphControlFrequency.HorizontalGradiationTextVisivle = true;
-            this.graphControlFrequency.Interpolation = false;
-            this.graphControlFrequency.IsIntegerX = true;
-            this.graphControlFrequency.IsIntegerY = true;
-            this.graphControlFrequency.LabelX = "Intensity:";
-            this.graphControlFrequency.LabelY = "Frequency:";
-            this.graphControlFrequency.LeftMargin = 0F;
-            this.graphControlFrequency.LineColor = System.Drawing.Color.Red;
-            this.graphControlFrequency.LineWidth = 1F;
-            this.graphControlFrequency.LowerX = 0D;
-            this.graphControlFrequency.LowerY = 0D;
-            this.graphControlFrequency.MaximalX = 1D;
-            this.graphControlFrequency.MaximalY = 1D;
-            this.graphControlFrequency.MinimalX = 0D;
-            this.graphControlFrequency.MinimalY = 0D;
-            this.graphControlFrequency.Mode = Crystallography.Controls.GraphControl.DrawingMode.Histogram;
-            this.graphControlFrequency.MousePositionVisible = true;
-            this.graphControlFrequency.Name = "graphControlFrequency";
-            this.graphControlFrequency.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControlFrequency.Smoothing = false;
-            this.graphControlFrequency.TextFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolTip.SetToolTip(this.graphControlFrequency, resources.GetString("graphControlFrequency.ToolTip"));
-            this.graphControlFrequency.UnitX = "";
-            this.graphControlFrequency.UnitY = "";
-            this.graphControlFrequency.UpperText = "";
-            this.graphControlFrequency.UpperTextVisible = true;
-            this.graphControlFrequency.UpperX = 1D;
-            this.graphControlFrequency.UpperY = 1D;
-            this.graphControlFrequency.UseLineWidth = true;
-            this.graphControlFrequency.VerticalGradiationTextVisivle = true;
-            this.graphControlFrequency.XLog = true;
-            this.graphControlFrequency.XScaleLineVisible = true;
-            this.graphControlFrequency.YLog = true;
-            this.graphControlFrequency.YScaleLineVisible = true;
-            this.graphControlFrequency.LinePositionChanged += new Crystallography.Controls.GraphControl.LinePositionChengedEventHandler(this.graphControlFrequency_LinePositionChanged);
-            // 
             // tabPage2
             // 
             resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Controls.Add(this.graphControlProfile);
             this.tabPage2.Name = "tabPage2";
             this.toolTip.SetToolTip(this.tabPage2, resources.GetString("tabPage2.ToolTip"));
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // graphControlProfile
-            // 
-            resources.ApplyResources(this.graphControlProfile, "graphControlProfile");
-            this.graphControlProfile.AllowMouseOperation = true;
-            this.graphControlProfile.BackgroundColor = System.Drawing.Color.White;
-            this.graphControlProfile.BottomMargin = 0D;
-            this.graphControlProfile.DivisionLineColor = System.Drawing.Color.Black;
-            this.graphControlProfile.DivisionSubLineColor = System.Drawing.Color.LightGray;
-            this.graphControlProfile.FixRangeHorizontal = false;
-            this.graphControlProfile.FixRangeVertical = false;
-            this.graphControlProfile.GraphName = "";
-            this.graphControlProfile.HorizontalGradiationTextVisivle = true;
-            this.graphControlProfile.Interpolation = false;
-            this.graphControlProfile.IsIntegerX = false;
-            this.graphControlProfile.IsIntegerY = false;
-            this.graphControlProfile.LabelX = "Angle:";
-            this.graphControlProfile.LabelY = "Intensity:";
-            this.graphControlProfile.LeftMargin = 0F;
-            this.graphControlProfile.LineColor = System.Drawing.Color.Red;
-            this.graphControlProfile.LineWidth = 1F;
-            this.graphControlProfile.LowerX = 0D;
-            this.graphControlProfile.LowerY = 0D;
-            this.graphControlProfile.MaximalX = 1D;
-            this.graphControlProfile.MaximalY = 1D;
-            this.graphControlProfile.MinimalX = 0D;
-            this.graphControlProfile.MinimalY = 0D;
-            this.graphControlProfile.Mode = Crystallography.Controls.GraphControl.DrawingMode.Line;
-            this.graphControlProfile.MousePositionVisible = true;
-            this.graphControlProfile.Name = "graphControlProfile";
-            this.graphControlProfile.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControlProfile.Smoothing = false;
-            this.graphControlProfile.TextFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolTip.SetToolTip(this.graphControlProfile, resources.GetString("graphControlProfile.ToolTip"));
-            this.graphControlProfile.UnitX = "";
-            this.graphControlProfile.UnitY = "";
-            this.graphControlProfile.UpperText = "";
-            this.graphControlProfile.UpperTextVisible = true;
-            this.graphControlProfile.UpperX = 1D;
-            this.graphControlProfile.UpperY = 1D;
-            this.graphControlProfile.UseLineWidth = true;
-            this.graphControlProfile.VerticalGradiationTextVisivle = true;
-            this.graphControlProfile.XLog = false;
-            this.graphControlProfile.XScaleLineVisible = true;
-            this.graphControlProfile.YLog = false;
-            this.graphControlProfile.YScaleLineVisible = true;
             // 
             // tabPage3
             // 
@@ -2106,8 +1957,6 @@ namespace IPAnalyzer
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);

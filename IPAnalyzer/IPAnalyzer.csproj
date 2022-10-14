@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2022.01.18.1957</AssemblyVersion>
-    <FileVersion>2022.01.18.1957</FileVersion>
+    <AssemblyVersion>2022.10.14.1513</AssemblyVersion>
+    <FileVersion>2022.10.14.1513</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
@@ -28,6 +28,10 @@
     <Content Include="doc\IPAnalyzerManual(ja).pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HDF.PInvoke.1.10" Version="1.10.612" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,9 +71,4 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="AssemblyVersionUpdate" />
-  </Target>
-
 </Project>

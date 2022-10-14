@@ -4,8 +4,8 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2022.07.20.1905</AssemblyVersion>
-    <FileVersion>2022.07.20.1905</FileVersion>
+    <AssemblyVersion>2022.10.14.1513</AssemblyVersion>
+    <FileVersion>2022.10.14.1513</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,9 +33,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Crystallography\Crystallography.csproj" />
   </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="AssemblyVersionUpdate" />
-  </Target>
 
 </Project>

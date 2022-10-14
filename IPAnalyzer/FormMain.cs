@@ -2136,8 +2136,6 @@ namespace IPAnalyzer
 
         private void saveImageAsTiff(string filename = "")
         {
-
-
             if (SrcImgSize.Width == 0) return;
 
             if (filename == "")
@@ -2175,7 +2173,7 @@ namespace IPAnalyzer
 
                         //偏光補正
                         if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                            d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex).ToArray();
+                            d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex,new List<double>(d[i])).ToArray();
                     }
                     if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                     {//各画像にエネルギー値があるとき(h5ファイルの時)
