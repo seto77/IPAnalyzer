@@ -2136,6 +2136,8 @@ namespace IPAnalyzer
 
         private void saveImageAsTiff(string filename = "")
         {
+
+
             if (SrcImgSize.Width == 0) return;
 
             if (filename == "")

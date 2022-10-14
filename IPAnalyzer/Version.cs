@@ -9,7 +9,7 @@ static class Version
 
     static public string History =
         "History" + 
-        "\r\n ver3.934(2022/10/15) Fixed a bug when saving Tiff file that contains multiple images." +
+        "\r\n ver3.935(2022/10/15) Fixed a bug when saving Tiff file that contains multiple images." +
         "\r\n ver3.933(2022/07/20) Fixed a bug on Find Parameter (brute force)." +
         "\r\n ver3.932(2022/06/29) Improved a sequential image loading. " +
         "\r\n ver3.931(2022/06/26) Improved macro function and top form design. " +

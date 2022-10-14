@@ -93,6 +93,12 @@
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 276</value>
   </data>
+  <data name="scalablePictureBoxThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 44</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 119</value>
+  </data>
   <data name="radioButtonNearCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -195,6 +201,9 @@
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 175</value>
   </data>
+  <data name="scalablePictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>656, 547</value>
+  </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>656, 25</value>
   </data>
@@ -228,6 +237,9 @@
   <data name="panelMousePos.Size" type="System.Drawing.Size, System.Drawing">
     <value>778, 0</value>
   </data>
+  <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 169</value>
+  </data>
   <data name="tabPage1.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -239,6 +251,9 @@
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>強度頻度グラフ</value>
+  </data>
+  <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 169</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 27</value>
@@ -643,7 +658,7 @@
   <data name="englishToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        swAAALMBudOKBAAAAUpJREFUOE9jYAhq+Y8Lg8A1Bk04BgFs6uAYpMCmeiFWSf+OVf+fxlcSZRhYDkxC
+        uAAAALgBMOCjDAAAAUpJREFUOE9jYAhq+Y8Lg8A1Bk04BgFs6uAYpMCmeiFWSf+OVf+fxlcSZRhYDkxC
         AboCYgwDOeT7+WtgeQaYIhjQzp8JV0jIMBCAyf39+u0/w00RKzDn/fx1YEkYwGeYf/uq/z/vPUYRBwGG
         ltWH///79w9DAgSSpmzGMAwEYPxfD59CRSAAHpsgcFvBBazoTddcMB8E0A0Dsxm1wGwYUMmaCvE6lI8T
         YHMZLgCOAGph6hr2af2e//jwA8cEuGJs8sgYJTshg+vs+v8f2MfhjU0QQMk9IAIkAAN/v/9AUYwrAp5E
@@ -661,7 +676,7 @@
   <data name="japaneseToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        swAAALMBudOKBAAAAG5JREFUOE/tjLsNwCAMRFNQMAyDMQMjMDSOIxHJsc9YSOmSJ11zv4Ne5D/bZ32W
+        uAAAALgBMOCjDAAAAG5JREFUOE/tjLsNwCAMRFNQMAyDMQMjMDSOIxHJsc9YSOmSJ11zv4Ne5D/bZ32W
         Eje4IrXAT/WJlANOarUHWgDHVUMkgOOqIRLAcdUQCYDdMexYqvdZfMKJQ2v25FLOs2DhNKCU8OQmPtvg
         E2dEJ41V0r+pZPOtAAAAAElFTkSuQmCC
 </value>
