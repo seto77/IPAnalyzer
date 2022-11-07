@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Runtime.InteropServices;
@@ -1229,6 +1228,7 @@ public class Crystal : IEquatable<Crystal>, ICloneable, IComparable<Crystal>
 
         //強度の順にソート
         Plane.Sort((p1, p2) => -p1.Intensity.CompareTo(p2.Intensity));
+
         return Plane.Take(Math.Min(8, Plane.Count)).Select(p => (float)p.d).ToArray();
     }
     #endregion

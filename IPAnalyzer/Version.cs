@@ -8,7 +8,8 @@ static class Version
     static public string VersionAndDate { get => History.Remove(0, 10).Remove(20); }
 
     static public string History =
-        "History" + 
+        "History" +
+        "\r\n ver3.936(2022/11/07) Supported reading '*.img' files output from ADXV." +
         "\r\n ver3.935(2022/10/15) Fixed a bug when saving Tiff file that contains multiple images." +
         "\r\n ver3.933(2022/07/20) Fixed a bug on Find Parameter (brute force)." +
         "\r\n ver3.932(2022/06/29) Improved a sequential image loading. " +
