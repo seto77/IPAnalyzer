@@ -2,10 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2022.11.7.0253</AssemblyVersion>
-    <FileVersion>2022.11.7.0253</FileVersion>
+    <AssemblyVersion>2022.11.16.0348</AssemblyVersion>
+    <FileVersion>2022.11.16.0348</FileVersion>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationUseCompatibleTextRendering>true</ApplicationUseCompatibleTextRendering>
+    <ApplicationVisualStyles>true</ApplicationVisualStyles>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
