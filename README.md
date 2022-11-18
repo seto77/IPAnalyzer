@@ -1,6 +1,6 @@
 # IPAnalyzer
 * The software *IPAnalyzer* processes Debye-ring patterns collected by flat panel detectors.
-  * Runs on Windows with .Net Dedsktop Runtime 6.0.
+  * Runs on Windows OS with .Net Desktop Runtime 7.0 (not .Net Runtime 7.0), which can be installed from [here](https://dotnet.microsoft.com/download/dotnet/7.0).
 
 ## Install
 * Access https://github.com/seto77/IPAnalyzer/releases/latest, download *IPAnalyzerSetup.msi*, and execute it.
