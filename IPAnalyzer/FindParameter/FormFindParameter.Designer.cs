@@ -383,7 +383,6 @@
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label27
             // 
@@ -2069,7 +2068,6 @@
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.TabStop = false;
             this.toolTipJapanese.SetToolTip(this.pictureBoxMain, resources.GetString("pictureBoxMain.ToolTip"));
-            this.pictureBoxMain.Click += new System.EventHandler(this.pictureBoxMain_Click);
             this.pictureBoxMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxMain_Paint);
             this.pictureBoxMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxMain_MouseDown);
             this.pictureBoxMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxMain_MouseMove);
@@ -2379,7 +2377,6 @@
             this.panel1.Controls.Add(this.label80);
             this.panel1.Controls.Add(this.label79);
             this.panel1.Name = "panel1";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // flowLayoutPanelEachPeaks
             // 

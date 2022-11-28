@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2022.11.11.0830</AssemblyVersion>
-    <FileVersion>2022.11.11.0830</FileVersion>
+    <AssemblyVersion>2022.11.28.0800</AssemblyVersion>
+    <FileVersion>2022.11.28.0800</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="App.ico" />
     <Content Include="doc\IPAnalyzerManual(ja).pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

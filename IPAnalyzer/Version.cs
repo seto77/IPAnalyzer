@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.938(2022/11/28) Fixed a minor bug on 'Find Parameter'." +
         "\r\n ver3.937(2022/11/16) Target framework has been changed to .Net Desktop Runtime 7.0." +
         "\r\n ver3.936(2022/11/07) Supported reading '*.img' files output from ADXV." +
         "\r\n ver3.935(2022/10/15) Fixed a bug when saving Tiff file that contains multiple images." +

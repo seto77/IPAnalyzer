@@ -2772,15 +2772,9 @@
             formFindParameter2.ShowDialog();
         }
 
-        private void checkBoxBackground_CheckedChanged(object sender, EventArgs e)
-        {
-            Fitting();
-        }
+        private void checkBoxBackground_CheckedChanged(object sender, EventArgs e) => Fitting();
 
-        private void numericUpDownSearchRange_ValueChanged(object sender, EventArgs e)
-        {
-            Fitting();
-        }
+        private void numericUpDownSearchRange_ValueChanged(object sender, EventArgs e) => Fitting();
 
         private void checkBoxRefineTiltCorrection_CheckedChanged(object sender, EventArgs e)
         {
@@ -2790,9 +2784,7 @@
                 checkBoxCenterPosition.Enabled = false;
             }
             else
-            {
                 checkBoxCenterPosition.Enabled = true;
-            }
         }
 
         /// <summary>
@@ -2832,17 +2824,7 @@
                     }
 
                 }
-
-
-
-
-
             }
-
-         
-        
-        
-        
         }
 
         private void checkBoxRefinePixelSize_CheckedChanged(object sender, EventArgs e)
@@ -2997,24 +2979,9 @@
             Draw();
         }
 
-        private void pictureBoxMain_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBoxShowEachPeaks_CheckedChanged(object sender, EventArgs e)
         {
             flowLayoutPanelEachPeaks.Visible = checkBoxShowEachPeaks.Checked;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
 
@@ -3033,7 +3000,7 @@
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int crystalNo = 0;
+            int crystalNo;
             if (e.ColumnIndex == 3) crystalNo = 0;
             else if (e.ColumnIndex == 5) crystalNo = 1;
             else return;
