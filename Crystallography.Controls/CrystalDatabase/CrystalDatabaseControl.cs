@@ -12,10 +12,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 #endregion
 
@@ -24,8 +21,18 @@ namespace Crystallography.Controls;
 public partial class CrystalDatabaseControl : UserControl
 {
     #region フィールド、メソッド、イベント
-    public void Supend() => bindingSource.DataMember = "";
-    public void Resume() => bindingSource.DataMember = "DataTableCrystalDatabase";
+    public void Suspend()
+    {
+        bindingSource.RaiseListChangedEvents = false;
+        bindingSource.SuspendBinding();
+    }
+
+    public void Resume()
+    {
+        bindingSource.RaiseListChangedEvents = true;
+        bindingSource.ResumeBinding();
+        bindingSource.ResetBindings(false);
+    }
 
     public string Filter { get => bindingSource.Filter; set => bindingSource.Filter = value; }
 
@@ -65,10 +72,10 @@ public partial class CrystalDatabaseControl : UserControl
             return MemoryPackSerializer.Deserialize<Crystal2[]>(decompressor.Decompress(buffer2.AsSpan()[0..length]));
         }
         finally { ArrayPool<byte>.Shared.Return(buffer2); }
-    } 
-    
+    }
+
     public Crystal Crystal => Crystal2.GetCrystal(Crystal2);
-  
+
     public Crystal2 Crystal2 => dataSet.DataTableCrystalDatabase.Get(bindingSource.Current);
 
     public readonly DataSet.DataTableCrystalDatabaseDataTable Table;
@@ -87,9 +94,6 @@ public partial class CrystalDatabaseControl : UserControl
         Table = dataSet.DataTableCrystalDatabase;
 
         typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(dataGridView, true, null);
-
-        
-
     }
     #endregion
 
@@ -118,8 +122,8 @@ public partial class CrystalDatabaseControl : UserControl
     public void ReadDatabase(string filename)
     {
         if (ReadDatabaseWorker.IsBusy) return;
-        
-        bindingSource.DataMember = "";
+
+        Suspend();
         this.Enabled = false;
         ReadDatabaseWorker.RunWorkerAsync(filename);
     }
@@ -167,7 +171,7 @@ public partial class CrystalDatabaseControl : UserControl
             else
                 return;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             MessageBox.Show($"{ex}\r\nFailed to load database. Sorry.");
         }
@@ -184,7 +188,7 @@ public partial class CrystalDatabaseControl : UserControl
     private void ReadDatabaseWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
     {
         this.Enabled = true;
-        bindingSource.DataMember = "DataTableCrystalDatabase";
+        Resume();
         ProgressChanged?.Invoke(sender, 1, $"Total loading time: {sw.ElapsedMilliseconds / 1E3:f1} sec.");
     }
 
@@ -222,13 +226,13 @@ public partial class CrystalDatabaseControl : UserControl
             var crystal2List = new List<Crystal2>();
             for (int j = i; j < total && j < i + division; j++)
                 crystal2List.Add((Crystal2)(((DataRowView)bindingSource[j]).Row[0]));
-            
+
             byteList.AddRange(serialize(crystal2List.ToArray()));
 
             //最後まで来ている時で、かつ閾値以下の容量で、かつこれまで一度も分割もしていない場合
             if (i + division >= total && byteList.Count <= thresholdBytes && filecounter == 0)
                 fs.Write(byteList.ToArray(), 0, byteList.Count);//最初のファイルに書き込んで終了
-            
+
             //最後まで来ている時か、閾値以上の容量の場合
             else if (i + division >= total || byteList.Count > thresholdBytes)
             {
@@ -432,7 +436,7 @@ public partial class CrystalDatabaseControl : UserControl
     {
         var sw = new Stopwatch();
         sw.Restart();
-        for(int i= 0; i<dataSet.DataTableCrystalDatabase.Count; i++)
+        for (int i = 0; i < dataSet.DataTableCrystalDatabase.Count; i++)
         {
             var c = dataSet.DataTableCrystalDatabase.Get(i).ToCrystal();
             //c.GetFormulaAndDensity();
@@ -441,7 +445,7 @@ public partial class CrystalDatabaseControl : UserControl
 
             if (i % 200 == 0)
             {
-                (double progress, string message)= report(i, dataSet.DataTableCrystalDatabase.Count, sw.ElapsedMilliseconds, "Now recalculating Density and Formula. ");
+                (double progress, string message) = report(i, dataSet.DataTableCrystalDatabase.Count, sw.ElapsedMilliseconds, "Now recalculating Density and Formula. ");
 
                 ProgressChanged?.Invoke(this, progress, message);
                 Application.DoEvents();

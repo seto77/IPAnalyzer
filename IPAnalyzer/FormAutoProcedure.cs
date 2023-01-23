@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
@@ -23,15 +21,11 @@ namespace IPAnalyzer
         }
         private void FormAutoProcedure_Load(object sender, EventArgs e)
         {
-
-            checkBoxAutoAfterLoad.Checked = true;
-
             checkedListBoxAuto.SetItemChecked(0, false);
             checkedListBoxAuto.SetItemChecked(1, false);
             checkedListBoxAuto.SetItemChecked(2, true);
             checkedListBoxAuto.SetItemChecked(3, false);
             checkedListBoxAuto.SetItemChecked(4, true);
-
         }
 
         private void FormAutoProcedure_FormClosing(object sender, FormClosingEventArgs e)
@@ -98,29 +92,37 @@ namespace IPAnalyzer
             while (!backgroundWorker.CancellationPending);
         }
 
-        private void buttonStartWatching_Click(object sender, EventArgs e)
-        {
-            targetFolder = textBoxDiectory.Text;
-            if (Directory.Exists(targetFolder))
-            {
-                FileList.Clear();
-                FileList.AddRange(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
-                backgroundWorker.RunWorkerAsync();
-                buttonWatch.Visible = false;
-            }
-        }
-
-        private void buttonStopWatching_Click(object sender, EventArgs e)
-        {
-            backgroundWorker.CancelAsync();
-            buttonWatch.Visible = true;
-
-        }
-
         private void buttonSetDirectory_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 textBoxDiectory.Text = folderBrowserDialog1.SelectedPath;
+        }
+
+        private void checkBoxAutoLoad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAutoLoad.Checked)
+            {
+                targetFolder = textBoxDiectory.Text;
+                if (targetFolder.Length == 0 || !Directory.Exists(targetFolder))
+                {
+                    MessageBox.Show("Set the appropriate directories to be monitored.");
+                    checkBoxAutoLoad.Checked = false;
+                    return;
+                }
+                FileList.Clear();
+                FileList.AddRange(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
+
+                while (backgroundWorker.IsBusy)
+                {
+                    backgroundWorker.CancelAsync();
+                    System.Threading.Thread.Sleep(200);
+                }
+                backgroundWorker.RunWorkerAsync();
+            }
+            else
+            {
+                backgroundWorker.CancelAsync();
+            }
         }
     }
 }

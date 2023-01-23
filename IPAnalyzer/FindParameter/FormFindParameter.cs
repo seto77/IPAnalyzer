@@ -911,7 +911,7 @@
 
                 if (dp[i].OriginalProfile != null)
                 {
-                   PointD[] pt = dp[i].OriginalProfile.Pt.ToArray();
+                   var pt = dp[i].OriginalProfile.Pt;
                     //いったん初期化
                    for (j = 0; j < cry[i].Plane.Count; j++)
                    {

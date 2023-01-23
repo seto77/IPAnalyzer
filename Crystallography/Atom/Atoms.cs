@@ -38,7 +38,7 @@ public class Atoms : System.IEquatable<Atoms>, ICloneable
 
     public double X, Y, Z;
     public double X_err, Y_err, Z_err;
-   
+
 
     public double Occ, Occ_err;
     public int AtomicNumber;
@@ -49,7 +49,6 @@ public class Atoms : System.IEquatable<Atoms>, ICloneable
 
     public string Label;
 
-    [XmlIgnore]
     public string ElementName;
 
     [XmlIgnore]
@@ -77,13 +76,13 @@ public class Atoms : System.IEquatable<Atoms>, ICloneable
     public float Emission = Material.DefaultTexture.Emission;//自己証明
     public float Shininess = Material.DefaultTexture.SpecularPow;//反射光の強度
     public float Specular = Material.DefaultTexture.Specular;//反射光
-    
+
     [XmlIgnore]
     public Vector3DBase PositionError => new(X_err, Y_err, Z_err);
-    [XmlIgnore] 
+    [XmlIgnore]
     public Vector3DBase Position => new(X, Y, Z);
 
-    
+
 
 
     [XmlIgnore]
@@ -100,7 +99,7 @@ public class Atoms : System.IEquatable<Atoms>, ICloneable
         }
     }
 
-    public Material Material => new(Argb,(Ambient,Diffusion,Specular,Shininess,Emission));
+    public Material Material => new(Argb, (Ambient, Diffusion, Specular, Shininess, Emission));
 
     /// <summary>
     /// OpenGL描画時に、ラベルを表示するか
@@ -180,7 +179,7 @@ public class Atoms : System.IEquatable<Atoms>, ICloneable
         Y = pos.Y;
         Z = pos.Z;
 
-        var temp = WyckoffPosition.GetEquivalentAtomsPosition((X,Y,Z), symmetrySeriesNumber);
+        var temp = WyckoffPosition.GetEquivalentAtomsPosition((X, Y, Z), symmetrySeriesNumber);
         WyckoffLeter = temp.WyckoffLeter;
         SiteSymmetry = temp.SiteSymmetry;
         Multiplicity = temp.Multiplicity;

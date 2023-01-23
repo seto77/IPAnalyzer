@@ -388,7 +388,6 @@ namespace IPAnalyzer
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel3);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel3);
-            this.splitContainer2.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.toolTip.SetToolTip(this.splitContainer2.Panel2, resources.GetString("splitContainer2.Panel2.ToolTip"));
             this.toolTip.SetToolTip(this.splitContainer2, resources.GetString("splitContainer2.ToolTip"));
             // 
@@ -436,6 +435,8 @@ namespace IPAnalyzer
             this.scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
             this.scalablePictureBoxThumbnail.ShowAreaRectangle = false;
             this.scalablePictureBoxThumbnail.ShowRimRentangle = false;
+            this.scalablePictureBoxThumbnail.Title = ((System.ValueTuple<string, System.Drawing.Font, System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("scalablePictureBoxThumbnail.Title")));
+            this.scalablePictureBoxThumbnail.TitleVisible = false;
             this.toolTip.SetToolTip(this.scalablePictureBoxThumbnail, resources.GetString("scalablePictureBoxThumbnail.ToolTip"));
             this.scalablePictureBoxThumbnail.VerticalFlip = false;
             this.scalablePictureBoxThumbnail.Zoom = 128D;
@@ -563,6 +564,8 @@ namespace IPAnalyzer
             this.scalablePictureBox.Name = "scalablePictureBox";
             this.scalablePictureBox.ShowAreaRectangle = false;
             this.scalablePictureBox.ShowRimRentangle = false;
+            this.scalablePictureBox.Title = ((System.ValueTuple<string, System.Drawing.Font, System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("scalablePictureBox.Title")));
+            this.scalablePictureBox.TitleVisible = false;
             this.toolTip.SetToolTip(this.scalablePictureBox, resources.GetString("scalablePictureBox.ToolTip"));
             this.scalablePictureBox.VerticalFlip = false;
             this.scalablePictureBox.Zoom = 128D;
@@ -845,7 +848,6 @@ namespace IPAnalyzer
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.toolTip.SetToolTip(this.tabControl1, resources.GetString("tabControl1.ToolTip"));
@@ -854,7 +856,6 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.graphControlFrequency);
-            this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage1.Name = "tabPage1";
             this.toolTip.SetToolTip(this.tabPage1, resources.GetString("tabPage1.ToolTip"));
             this.tabPage1.UseVisualStyleBackColor = true;

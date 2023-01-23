@@ -236,7 +236,7 @@ namespace IPAnalyzer
         {
             if (FormMain.IsFlatPanelMode)
             {
-                PointD[] pt = profile.Pt.ToArray();
+                var pt = profile.Pt;
                 //いったん初期化
 
                 Parallel.ForEach(planes, p =>
@@ -258,7 +258,7 @@ namespace IPAnalyzer
 
             else
             {
-                PointD[] pt = profile.Pt.ToArray();
+                var pt = profile.Pt;
 
                 for (int j = 0; j < planes.Count; j++)
                 {
