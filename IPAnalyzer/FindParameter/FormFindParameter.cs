@@ -938,7 +938,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                        cry[i].Plane[j].peakFunction.Hk = Math.Tan(hk_theta[i]) * cry[i].Plane[j].MillimeterCalc - hk_a[i] / Math.Cos(hk_theta[i]);
 
                    cry[i].Plane[j].peakFunction.X = cry[i].Plane[j].MillimeterCalc;
-                   cry[i].Plane[j].peakFunction.SerchPeakTop = false;
+                   cry[i].Plane[j].peakFunction.SearchPeakTop = false;
 
                }
 

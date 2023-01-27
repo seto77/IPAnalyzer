@@ -583,7 +583,6 @@
             this.groupBoxPixelShape.Controls.Add(this.numericBoxPixelSizeX);
             this.groupBoxPixelShape.Name = "groupBoxPixelShape";
             this.groupBoxPixelShape.TabStop = false;
-            this.groupBoxPixelShape.Enter += new System.EventHandler(this.groupBoxPixelShape_Enter);
             // 
             // numericBoxPixelKsi
             // 
@@ -655,7 +654,6 @@
             this.groupBoxSphericalCorrection.Controls.Add(this.label26);
             this.groupBoxSphericalCorrection.Name = "groupBoxSphericalCorrection";
             this.groupBoxSphericalCorrection.TabStop = false;
-            this.groupBoxSphericalCorrection.Enter += new System.EventHandler(this.groupBoxSphericalCorrection_Enter);
             // 
             // numericBoxSphericalCorections
             // 
@@ -1361,7 +1359,7 @@
             0,
             0,
             0});
-            this.numericUpDownManualSpotSize.ValueChanged += new System.EventHandler(this.numetricUpDownManualSpotSize_ValueChanged);
+            this.numericUpDownManualSpotSize.ValueChanged += new System.EventHandler(this.numericUpDownManualSpotSize_ValueChanged);
             // 
             // label30
             // 

@@ -36,7 +36,7 @@ public partial class FormMain : Form
     #region プロパティ、フィールド
     public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
-    public PseudoBitmap pseudoBitmap=new PseudoBitmap();
+    public PseudoBitmap pseudoBitmap = new PseudoBitmap();
     public bool SkipDrawing { get; set; } = false;
 
     public Size SrcImgSize;
@@ -925,7 +925,7 @@ public partial class FormMain : Form
                 foreach (PointD p in manualMaskPoints)
                 {
                     var pt = scalablePictureBox.ConvertToClientPt(p);
-                   var pen = new Pen(Brushes.HotPink);
+                    var pen = new Pen(Brushes.HotPink);
                     g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
                     g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
                 }
@@ -1022,7 +1022,7 @@ public partial class FormMain : Form
 
     #region DrawScale
 
-    
+
     private void DrawScale(Graphics g)
     {
         int width = scalablePictureBox.pictureBox.ClientSize.Width, height = scalablePictureBox.pictureBox.ClientSize.Height;
@@ -1034,8 +1034,8 @@ public partial class FormMain : Form
         var pixelSizeY = (float)FormProperty.numericBoxPixelSizeY.Value;
         var TanKsi = (float)Math.Tan(FormProperty.numericBoxPixelKsi.RadianValue);
         g.Transform = new Matrix(
-            (float)(1 * zoom / pixelSizeX ), 0, (float)(-TanKsi * zoom / pixelSizeX ), (float)( zoom / pixelSizeY ),
-            (float)(FormProperty.FootPosition.X * zoom + width/2.0-clientCenter.X * zoom),
+            (float)(1 * zoom / pixelSizeX), 0, (float)(-TanKsi * zoom / pixelSizeX), (float)(zoom / pixelSizeY),
+            (float)(FormProperty.FootPosition.X * zoom + width / 2.0 - clientCenter.X * zoom),
             (float)(FormProperty.FootPosition.Y * zoom + height / 2.0 - clientCenter.Y * zoom));
 
         //検出器の隅っこ4点の座標(検出器座標系 mm単位)
@@ -1048,8 +1048,8 @@ public partial class FormMain : Form
 
         //Azimuthのスケールライン ここから
         int azimuthStep = comboBoxScaleLine.SelectedIndex switch { 1 => 30, 2 => 15, 3 => 5, _ => 30 };
-        var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom * (pixelSizeX+pixelSizeY) / 2 )); 
-        var  font = new Font("Tahoma", (float)(15 / zoom * (pixelSizeX + pixelSizeY) / 2));
+        var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom * (pixelSizeX + pixelSizeY) / 2));
+        var font = new Font("Tahoma", (float)(15 / zoom * (pixelSizeX + pixelSizeY) / 2));
 
         var length = new[] { (cornerReals[0]- cornerReals[1]).Length, (cornerReals[1] - cornerReals[2]).Length,
             (cornerReals[2] - cornerReals[3]).Length, (cornerReals[3] - cornerReals[0]).Length };
@@ -1075,7 +1075,7 @@ public partial class FormMain : Form
                 {
                     //直線描画
                     g.DrawLine(pen, crossPts[0].pt.ToPointF(), crossPts[1].pt.ToPointF());
-                    
+
                     if (FormProperty.checkBoxScaleLabel.Checked)//ラベル描画
                     {
                         //インデックス 0 が、n°に相当するかどうかを判定
@@ -1089,8 +1089,8 @@ public partial class FormMain : Form
                             str = originInside ? new[] { (n - 180).ToString("g12"), n.ToString("g12") } : new[] { (n - 180).ToString("g12"), (n - 180).ToString("g12") };
 
                         var skip = -1;
-                         if (!originInside)//ダイレクトスポットが描画範囲内に含まれていないときは 中心に近い点は削除
-                             skip = (crossPts[0].pt - originSrc).Length > (crossPts[1].pt - originSrc).Length ? 1 : 0;
+                        if (!originInside)//ダイレクトスポットが描画範囲内に含まれていないときは 中心に近い点は削除
+                            skip = (crossPts[0].pt - originSrc).Length > (crossPts[1].pt - originSrc).Length ? 1 : 0;
 
                         for (int k = 0; k < 2; k++)
                         {
@@ -1140,7 +1140,7 @@ public partial class FormMain : Form
 
         for (double n = Math.Max(1, startN); n < endN; n++)
         {
-            if(stepInteger == 1)
+            if (stepInteger == 1)
                 pen.DashStyle = (n * stepInteger) % 5 == 0 ? DashStyle.Dash : DashStyle.Dot;
             else
                 pen.DashStyle = (n * stepInteger) % 10 == 0 ? DashStyle.Dash : DashStyle.Dot;
@@ -1153,10 +1153,10 @@ public partial class FormMain : Form
             var labelPosition = getLabelPosition(ptsArray.SelectMany(p => p).Where(e =>
             {
                 var p = scalablePictureBox.ConvertToClientPt(e);
-                return p.X > 20 && p.Y > 20 && p.X < width-20 && p.Y < height-20; 
-            }), originSrc,0);
-           if(FormProperty.checkBoxScaleLabel.Checked && ptsArray.Count!=0 && ptsArray[0].Count!=0)
-                g.DrawString(twoTheta.ToString("g12") + "°", font, new SolidBrush(FormProperty.colorControlScale2Theta.Color), ptsArray[0][ptsArray[0].Count/4].ToPointF());// labelPosition.ToPointF());
+                return p.X > 20 && p.Y > 20 && p.X < width - 20 && p.Y < height - 20;
+            }), originSrc, 0);
+            if (FormProperty.checkBoxScaleLabel.Checked && ptsArray.Count != 0 && ptsArray[0].Count != 0)
+                g.DrawString(twoTheta.ToString("g12") + "°", font, new SolidBrush(FormProperty.colorControlScale2Theta.Color), ptsArray[0][ptsArray[0].Count / 4].ToPointF());// labelPosition.ToPointF());
         }
 
 
@@ -1208,7 +1208,7 @@ public partial class FormMain : Form
     private Vector3DBase convertScreenToReal(in int x, in int y)
     {
         var p = convertScreenToDetector(x, y);//まずフィルム上の位置を取得
-        return convertDetectorToReal(p.X,p.Y);//実空間の座標に変換
+        return convertDetectorToReal(p.X, p.Y);//実空間の座標に変換
     }
 
     /// <summary>
@@ -1234,7 +1234,7 @@ public partial class FormMain : Form
     /// <returns></returns>
     private PointD convertReciprocalToDetector(Vector3DBase g)
     {
-        var v = FormProperty.DetectorRotationInv * new Vector3DBase(g.X, -g.Y, 1/FormProperty.WaveLength - g.Z);
+        var v = FormProperty.DetectorRotationInv * new Vector3DBase(g.X, -g.Y, 1 / FormProperty.WaveLength - g.Z);
         var coeff = FormProperty.CameraLength2 / v.Z;
         return new PointD(v.X * coeff, v.Y * coeff);
     }
@@ -1773,7 +1773,7 @@ public partial class FormMain : Form
 
         if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
         {
-            graphControlFrequency.LineList =new[]{new PointD(trackBarAdvancedMinInt.Value, double.NaN),new PointD(trackBarAdvancedMaxInt.Value, double.NaN)};
+            graphControlFrequency.LineList = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             graphControlFrequency.Draw();
         }
 
@@ -1962,7 +1962,7 @@ public partial class FormMain : Form
         SetFrequencyProfile();//強度頻度グラフを作成
         graphControlProfile.Profile = new Profile();//プロファイルは初期化
 
-        
+
 
         if (FormProperty.radioButtonTakeoverMask.Checked)
         {
@@ -1991,7 +1991,7 @@ public partial class FormMain : Form
                     Ring.IsSpots[i] = true;
         }
 
-       trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
+        trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
         trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = Ring.Intensity.Min();
 
         //SequentialImageを読み込んだ時の処理
@@ -2003,7 +2003,7 @@ public partial class FormMain : Form
                 toolStripButtonImageSequence.Checked = true;
             }
             FormSequentialImage.MaximumNumber = Ring.SequentialImageIntensities.Count;
-            
+
             if (Ring.SequentialImageIntensities.Count >= 2)
                 FormSequentialImage.SelectedIndex = 0;
 
@@ -2043,11 +2043,11 @@ public partial class FormMain : Form
             if (Math.Abs((FormProperty.CameraLength1 - length) / length) > 0.2)
                 FormProperty.CameraLength1 = length;
         }
-     
+
         SkipDrawing = false;
         Draw();
 
-        if(FormAutoProc.checkBoxAutoAfterLoad.Checked)
+        if (FormAutoProc.checkBoxAutoAfterLoad.Checked)
         {
             FormAutoProc.buttonAuto_Click(null, null);
         }
@@ -2175,7 +2175,7 @@ public partial class FormMain : Form
 
                     //偏光補正
                     if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                        d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex,new List<double>(d[i])).ToArray();
+                        d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, new List<double>(d[i])).ToArray();
                 }
                 if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                 {//各画像にエネルギー値があるとき(h5ファイルの時)
@@ -3339,7 +3339,7 @@ public partial class FormMain : Form
 
 
         //通常積分モード
-        if (!toolStripMenuItemDividedByAngleStep.Checked)
+        if (!toolStripMenuItemAzimuthalDivisionAnalysis.Checked)
         {
             try
             {
@@ -3412,7 +3412,7 @@ public partial class FormMain : Form
                         for (int j = 0; j < temp.Length; j++)
                             diffractionProfile.ImageArray[j] = temp[j];
                         diffractionProfile.ImageScale = 1;
-                        diffractionProfile.ImageWidth = temp.Length/chiDivision;
+                        diffractionProfile.ImageWidth = temp.Length / chiDivision;
                         diffractionProfile.ImageHeight = chiDivision;
                     }
                     else
@@ -3825,14 +3825,14 @@ public partial class FormMain : Form
                 else if (e.KeyCode == Keys.C)
                 {
                     //StasticalInformationタブが開かれていて選択領域が有効な場合は、その領域をクリップボードにコピー
-                    if(tabControl1.SelectedIndex == 2)
+                    if (tabControl1.SelectedIndex == 2)
                     {
                         double _left = Math.Max((double)Math.Min(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value), 0);
                         double _right = Math.Min((double)Math.Max(numericUpDownSelectedAreaX1.Value, numericUpDownSelectedAreaX2.Value), Ring.SrcImgSize.Width - 1);
                         double _top = Math.Max((double)Math.Min(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), 0);
                         double _bottom = Math.Min((double)Math.Max(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), Ring.SrcImgSize.Height - 1);
                         //scalablePictureBox.AreaRectangle
-                        var rec = new RectangleD(_left, _top, _right -  _left + 1, _bottom - _top + 1);
+                        var rec = new RectangleD(_left, _top, _right - _left + 1, _bottom - _top + 1);
                         Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize()), true);
                     }
                     else
@@ -4800,7 +4800,7 @@ public partial class FormMain : Form
 
             public string[] GetAllFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
             {
-                var dlg = new FolderBrowserDialog() { Description=message};
+                var dlg = new FolderBrowserDialog() { Description = message };
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     var dir = Path.GetDirectoryName(dlg.SelectedPath);

@@ -5,6 +5,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
+using Crystallography;
 
 namespace IPAnalyzer;
 
@@ -65,20 +66,19 @@ public partial class FormAutoProcedure : Form
     }
 
 
-    public List<string> FileList=new List<string>();
+    string[] FileList = Array.Empty<string>();
     private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
     {
-        do
+        while (!backgroundWorker.CancellationPending)
         {
             try
             {
-                var temp = new List<string>(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
-                if (temp.Count != FileList.Count)
+                var temp = Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories);
+                if (temp.Length != FileList.Length)
                 {
                     foreach (var f in temp.Where(e => !FileList.Contains(e)))
-                        if (f.EndsWith("img") || f.EndsWith("tif") || f.EndsWith("stl") || f.EndsWith("ccd") || f.EndsWith("ipf"))
+                        if (ImageIO.IsReadable(Path.GetExtension(f)))
                         {
-
                             formMain.ReadImage(f);
                             break;
                         }
@@ -89,7 +89,6 @@ public partial class FormAutoProcedure : Form
             catch { System.Threading.Thread.Sleep(1000); }
             System.Threading.Thread.Sleep(200);
         }
-        while (!backgroundWorker.CancellationPending);
     }
 
     private void buttonSetDirectory_Click(object sender, EventArgs e)
@@ -109,8 +108,7 @@ public partial class FormAutoProcedure : Form
                 checkBoxAutoLoad.Checked = false;
                 return;
             }
-            FileList.Clear();
-            FileList.AddRange(Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories));
+            FileList = Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories);
 
             while (backgroundWorker.IsBusy)
             {
@@ -120,8 +118,6 @@ public partial class FormAutoProcedure : Form
             backgroundWorker.RunWorkerAsync();
         }
         else
-        {
             backgroundWorker.CancelAsync();
-        }
     }
 }
