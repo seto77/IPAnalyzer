@@ -1623,7 +1623,7 @@ namespace IPAnalyzer
             toolStripSplitButtonGetProfile.ForeColor = SystemColors.ControlText;
             toolStripSplitButtonGetProfile.Image = Properties.Resources.Profile;
             toolStripSplitButtonGetProfile.Name = "toolStripSplitButtonGetProfile";
-            toolStripSplitButtonGetProfile.ButtonClick += toolStripSplitButtonGetProfile_ButtonClick;
+            toolStripSplitButtonGetProfile.ButtonClick += toolStripSplitButtonGetProfileButtonClick;
             // 
             // toolStripMenuItemGetProfileIntegralProperty
             // 

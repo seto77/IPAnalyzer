@@ -60,7 +60,7 @@ public partial class FormAutoProcedure : Form
 
         //PixelIntensity
         if (checkedListBoxAuto.GetItemChecked(4))
-            formMain.toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());
+            formMain.toolStripSplitButtonGetProfileButtonClick(new object(), new EventArgs());
         Application.DoEvents();
 
     }

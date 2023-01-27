@@ -19,6 +19,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Xml;
+using System.Runtime.Intrinsics.Arm;
 #endregion
 
 namespace IPAnalyzer;
@@ -3286,7 +3287,6 @@ public partial class FormMain : Form
     {
         FormProperty.Visible = true;
         FormProperty.tabControl.SelectedIndex = 3;
-
     }
 
     private void toolStripMenuItemConcenctricIntegration_Click(object sender, EventArgs e)
@@ -3295,29 +3295,23 @@ public partial class FormMain : Form
         FormProperty.radioButtonConcentric.Checked = true;
         FormProperty.tabControl.SelectedIndex = 3;
         FormProperty.Visible = true;
-
     }
 
     private void toolStripMenuItemRadialIntegration_Click(object sender, EventArgs e)
     {
-
         FormProperty.radioButtonRadial.Checked = true;
         FormProperty.tabControl.SelectedIndex = 3;
         FormProperty.Visible = true;
-
-
     }
-    public void toolStripSplitButtonGetProfile_ButtonClick(object sender, EventArgs e)
-    {
-        GetProfile();
-    }
+    public void toolStripSplitButtonGetProfileButtonClick(object sender, EventArgs e) => GetProfile();
     public void GetProfile(string fileName = "")
     {
         if (!IsImageReady) return;
-        this.Cursor = Cursors.WaitCursor;
+        Cursor = Cursors.WaitCursor;
         toolStripSplitButtonGetProfile.Enabled = false;
-        int d = Environment.TickCount;
         SetIntegralProperty();
+
+        sw.Restart();
 
         //パラメータをイメージ種ごとに保存
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
@@ -3332,44 +3326,38 @@ public partial class FormMain : Form
         if (findSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
             toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
 
-        if (FormProperty.radioButtonConcentricAngle.Checked)
-            IP.Mode = HorizontalAxis.Angle;
-        else
-            IP.Mode = HorizontalAxis.d;
-
-
-        //通常積分モード
-        if (!toolStripMenuItemAzimuthalDivisionAnalysis.Checked)
+        IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d;
+        try
         {
-            try
+            var dpList = new List<DiffractionProfile>();
+            var azimuthalDivMode = toolStripMenuItemAzimuthalDivisionAnalysis.Checked;
+
+            //通常積分モード
+            if (!azimuthalDivMode)
             {
                 SetMask();
-                var diffractionProfile = new DiffractionProfile();
-                diffractionProfile.SrcAxisMode = IP.Mode;
-                diffractionProfile.SrcWaveLength = IP.WaveLength;
-                diffractionProfile.Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial;
+                var diffractionProfile = new DiffractionProfile
+                {
+                    SrcAxisMode = IP.Mode,
+                    SrcWaveLength = IP.WaveLength,
+                    Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial,
+                    Name = FileName
+                };
 
-                int[] targets = new int[1];
+                var targets = new int[] { -1 };
                 //シーケンシャルイメージモードの時の処理
                 if (toolStripButtonImageSequence.Enabled)
                 {
                     if (toolStripMenuItemAllSequentialImages.Checked)
-                    {
-                        targets = new int[FormSequentialImage.MaximumNumber];
-
-                        for (int n = 0; n < FormSequentialImage.MaximumNumber; n++)
-                            targets[n] = n;
-                    }
+                        targets = Enumerable.Range(0, FormSequentialImage.MaximumNumber).ToArray();
                     else if (toolStripMenuItemSelectedSequentialImages.Checked)
                         targets = FormSequentialImage.SelectedIndices;
                 }
 
-                var dpList = new List<DiffractionProfile>();
-
                 for (int i = 0; i < targets.Length; i++)
                 {
                     //シーケンシャルイメージモードの時の処理
-                    if (toolStripButtonImageSequence.Enabled && (toolStripMenuItemAllSequentialImages.Checked || toolStripMenuItemSelectedSequentialImages.Checked))
+                    if (targets[0] != -1)
                     {
                         FormSequentialImage.SkipCalcFreq = i != targets.Length - 1;
                         FormSequentialImage.AverageMode = false;
@@ -3377,14 +3365,14 @@ public partial class FormMain : Form
                         if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
                             diffractionProfile.SrcWaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
                     }
-
-                    diffractionProfile.Name = FileName;
                     if (toolStripButtonImageSequence.Enabled)
                         diffractionProfile.Name += "  " + FileNameSub;
 
+                    //プロファイルを作成
                     diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
 
-                    //必要であればKalpha2を除去
+                    //必要であればKα2を除去
+                    #region
                     if (FormProperty.checkBoxTest.Checked)
                     {
                         if (FormProperty.waveLengthControl.XrayWaveSourceElementNumber > 10 && FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka1)
@@ -3395,67 +3383,30 @@ public partial class FormMain : Form
                             diffractionProfile.OriginalProfile = DiffractionProfile.RemoveKalpha2(diffractionProfile.OriginalProfile, alpha1, alpha2, ratio);
                         }
                     }
+                    #endregion
 
-                    //ファイル保存
-                    if (FormProperty.checkBoxSaveFile.Checked)
-                        SaveProfile(diffractionProfile, fileName);
-
-                    //Unrolled Imageの作成
+                    //必要であればUnrolledImageを作成
+                    #region
                     if (FormProperty.checkBoxSendUnrolledImageToPDIndexer.Checked)
                     {
                         var chiDivision = 360;
-                        var xStart = IP.StartAngle;
-                        var xEnd = IP.EndAngle;
-                        var xStep = IP.StepAngle;
-                        var temp = Ring.GetUnrolledImageArray(IP, chiDivision, xStart, xEnd, xStep);
-                        diffractionProfile.ImageArray = new double[temp.Length];
-                        for (int j = 0; j < temp.Length; j++)
-                            diffractionProfile.ImageArray[j] = temp[j];
+                        diffractionProfile.ImageArray = Ring.GetUnrolledImageArray(IP, chiDivision, IP.StartAngle, IP.EndAngle, IP.StepAngle);
                         diffractionProfile.ImageScale = 1;
-                        diffractionProfile.ImageWidth = temp.Length / chiDivision;
+                        diffractionProfile.ImageWidth = diffractionProfile.ImageArray.Length / chiDivision;
                         diffractionProfile.ImageHeight = chiDivision;
                     }
                     else
                         diffractionProfile.ImageArray = null;
+                    #endregion
 
                     dpList.Add((DiffractionProfile)diffractionProfile.Clone());
                 }
-
-                //PDIndexerへの送信
-                if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
-                {
-                    using Mutex clipboard = new Mutex(false, "ClipboardOperation");
-                    if (clipboard.WaitOne(500, false))
-                    {
-                        Clipboard.SetDataObject(dpList.ToArray());
-                        clipboard.ReleaseMutex();
-                    }
-                    clipboard.Close();
-                }
-
-
                 graphControlProfile.Profile = diffractionProfile.OriginalProfile;
-
-                toolStripSplitButtonGetProfile.Enabled = true;
-                this.toolStripStatusLabel.Text = "Calculating Time (Get Profile):  " + (Environment.TickCount - d).ToString() + "ms";
+                toolStripStatusLabel.Text = $"Calculating Time (Get Profile):  {sw.ElapsedMilliseconds} ms.";
             }
-
-            catch (Exception ex)
+            else //LPOモードのとき
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("Failed to processing. sorry.");
-                this.Cursor = Cursors.Default;
-                toolStripSplitButtonGetProfile.Enabled = true;
-                return;
-            }
-        }
-        else //LPOモードのとき
-        {
-            #region
-            try
-            {
-                var dpList = new List<DiffractionProfile>();
-
+                #region
                 toolStripSplitButtonGetProfile.Enabled = false;
 
                 FormProperty.radioButtonRectangle.Checked = true; ;
@@ -3464,90 +3415,70 @@ public partial class FormMain : Form
                 dpList.Add(new DiffractionProfile
                 {
                     OriginalProfile = Ring.GetProfile(IP),
-                    Name = FileName + " - whole",
+                    Name = FileName + " -whole",
                     SrcAxisMode = HorizontalAxis.Angle,
                     SrcWaveLength = IP.WaveLength,
-                    IsLPOmain = true,
-                    IsLPOchild = false
+                    IsLPOmain = true, IsLPOchild = false
                 });
-
-                string tempFilename = "";
-                if (FormProperty.checkBoxSaveFile.Checked)
-                {
-                    if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
-                    {
-                        string extension = FormProperty.radioButtonAsPDIformat.Checked ? ".pdi" : ".csv";
-                        var dlg = new SaveFileDialog { FileName = FileName, Filter = extension + "|" + extension };
-                        if (dlg.ShowDialog() != DialogResult.OK)
-                            throw new Exception();
-
-                        tempFilename = dlg.FileName;
-                        tempFilename = tempFilename.Remove(tempFilename.LastIndexOf("."));
-                        SaveProfile(dpList[0], tempFilename + "-whole" + extension);
-                    }
-                    else
-                        SaveProfile(dpList[0], fileName);
-                }
 
                 graphControlProfile.Profile = dpList[0].Profile;
 
                 if (!int.TryParse(toolStripComboBoxAngleStep.Text, out int chiDiv))
                     return;
 
+                //アジマス方向に角度分割したプロファイル行列を一括で計算
                 var profiles = Ring.GetConcenrticProfilesBySector(IP, chiDiv);
-
-                this.toolStripStatusLabel.Text = "Calculating Time (Get Profiles by Sector):  " + (Environment.TickCount - d).ToString() + "ms";
 
                 for (int i = 0; i < profiles.Length; i++)
                 {
                     dpList.Add(new DiffractionProfile()
                     {
                         OriginalProfile = profiles[i],
-                        Name = FileName + " - " + (i * 360 / chiDiv).ToString("000"),
+                        Name = $"{FileName} -{i * 360 / chiDiv:000}",
                         SrcAxisMode = HorizontalAxis.Angle,
                         SrcWaveLength = IP.WaveLength,
                         IsLPOmain = false,
                         IsLPOchild = true,
                     });
-
-                    if (FormProperty.checkBoxSaveFile.Checked)
-                    {
-                        if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
-                            SaveProfile(dpList[^1], tempFilename + "-" + (i * 360 / chiDiv).ToString("000"));
-                        else
-                            SaveProfile(dpList[^1]);
-                    }
-
                 }
-                if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
-                {
-                    using var clipboard = new Mutex(false, "ClipboardOperation");
-                    if (clipboard.WaitOne(5000, false))
-                    {
-                        Clipboard.SetDataObject(dpList.ToArray());
-                        clipboard.ReleaseMutex();
-                    }
-                    clipboard.Close();
-                }
-                FormProperty.radioButtonRectangle.Checked = true; ;
-                FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
-                toolStripSplitButtonGetProfile.Enabled = true;
+                toolStripStatusLabel.Text = $"Calculating Time (Get Profiles by Sector):  {sw.ElapsedMilliseconds} ms.";
+                #endregion
             }
-            catch
+
+            //ファイル保存
+            if (FormProperty.checkBoxSaveFile.Checked)
+                SaveProfile(dpList, fileName);
+
+            //PDindexerへの送信
+            if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
             {
-                toolStripSplitButtonGetProfile.Enabled = true;
+                using var clipboard = new Mutex(false, "ClipboardOperation");
+                if (clipboard.WaitOne(azimuthalDivMode ? 5000 : 500, false))
+                {
+                    Clipboard.SetDataObject(dpList.ToArray());
+                    clipboard.ReleaseMutex();
+                }
+                clipboard.Close();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+            MessageBox.Show("Failed to processing. sorry.");
+        }
+        finally
+        {
+            Cursor = Cursors.Default;
+            toolStripSplitButtonGetProfile.Enabled = true;
+
+            if (toolStripMenuItemAzimuthalDivisionAnalysis.Checked)
+            {
                 FormProperty.radioButtonRectangle.Checked = true;
                 FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
-
-                MessageBox.Show("Failed to save/send data. Sorry.");
-                this.Cursor = Cursors.Default;
-                return;
             }
-            #endregion
         }
-
-        this.Cursor = Cursors.Default;
     }
+
 
 
     private void toolStripMenuItemSendProfileToPDIndexer_Click(object sender, EventArgs e)
@@ -3559,64 +3490,98 @@ public partial class FormMain : Form
 
     #region SaveProfile
 
-    private void SaveProfile(DiffractionProfile dp, string filename = "")
+    private void SaveProfile(List<DiffractionProfile> dpList, string filename = "")
     {
-        string extension = "";
+        if (dpList == null || dpList.Count == 0) return;
+
+        string extension;
+        #region 拡張子を設定
         if (FormProperty.radioButtonAsPDIformat.Checked) extension = ".pdi";
         else if (FormProperty.radioButtonAsCSVformat.Checked) extension = ".csv";
         else if (FormProperty.radioButtonAsTSVformat.Checked) extension = ".tsv";
-        else if (FormProperty.radioButtonAsGSASformat.Checked) extension = ".gsa";
+        else extension = ".gsa";
+        #endregion
 
+        //ファイル名を決定する
         if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
         {
-            var dialog = new SaveFileDialog();
-            dialog.Filter = extension + "|" + extension;
-            dialog.FileName = dp.Name.Substring(0, dp.Name.LastIndexOf('.'));
+            var dialog = new SaveFileDialog { Filter = extension + "|" + extension, FileName = FileName[..FileName.LastIndexOf('.')] };
             if (dialog.ShowDialog() == DialogResult.OK)
                 filename = dialog.FileName;
             else return;
         }
         else if (filename == "")
         {
-            //シーケンシャルモードの時の処理
-            if (toolStripButtonImageSequence.Enabled)
-                filename = FilePath + dp.Name.Replace("  #", "#") + extension;
+            if (Path.GetExtension(FileName)[1..].StartsWith("0"))
+                filename = FilePath + FileName;
             else
-                filename = FilePath + dp.Name.Substring(0, dp.Name.LastIndexOf('.')) + extension;
+                filename = FilePath + FileName[..FileName.LastIndexOf('.')];
         }
+        if (dpList.Count > 1 && FormProperty.radioButtonSaveInOneFile.Checked)
+        {//一つのファイルにまとめて保存
+            //PDI形式の場合
+            if (FormProperty.radioButtonAsPDIformat.Checked)
+                XYFile.SavePdiFile(dpList.ToArray(), filename + extension);
+            //CSVかTSVの場合
+            else if (!FormProperty.radioButtonAsGSASformat.Checked)
+            {
+                using var sw = new StreamWriter(filename + extension);
+                var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
 
-        if (FormProperty.radioButtonAsPDIformat.Checked)
-        {
-            if (!filename.EndsWith(".pdi"))
-                filename += ".pdi";
-            XYFile.SavePdiFile(new DiffractionProfile[] { dp }, filename);
+                //1行目
+                for (int j = 0; j < dpList.Count; j++)
+                    sw.Write(dpList[j].Name + (j == dpList.Count - 1 ? "\r\n" : s + s + s));
+                //2行目
+                for (int j = 0; j < dpList.Count; j++)
+                    sw.Write($"x{s}y{s}" + (j == dpList.Count - 1 ? "\r\n" : s));
+                //3行目以降
+                var length = dpList.Max(d => d.OriginalProfile.Pt.Count);
+                for (int i = 0; i < length; i++)
+                    for (int j = 0; j < dpList.Count; j++)
+                    {
+                        if (i < dpList[j].OriginalProfile.Pt.Count)
+                            sw.Write($"{dpList[j].OriginalProfile.Pt[i].X}{s}{dpList[j].OriginalProfile.Pt[i].Y}{s}");
+                        else
+                            sw.Write($"{s}{s}");
+                        sw.Write(j == dpList.Count - 1 ? "\r\n" : s);
+                    }
+            }
         }
-        else if (FormProperty.radioButtonAsCSVformat.Checked)
-        {
-            if (!filename.EndsWith(".csv"))
-                filename += ".csv";
-            using var sw = new StreamWriter(filename);
-            for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
-                sw.WriteLine($"{dp.OriginalProfile.Pt[i].X},{dp.OriginalProfile.Pt[i].Y},{dp.OriginalProfile.Err[i].Y}");
+        else
+        {//個別のファイルに分けて保存
+            foreach (var dp in dpList)
+            {
+                var fn = filename;
+                if (toolStripButtonImageSequence.Enabled)
+                {
+                    if (dp.Name.Contains('#'))
+                        fn += dp.Name[dp.Name.LastIndexOf('#')..].Replace(" ", "");
+                }
+                else if (dpList[0].Name.EndsWith("- whole"))
+                {
+                    if (dp.Name.Contains('-'))
+                        fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
+                }
+                if (FormProperty.radioButtonAsPDIformat.Checked)
+                    XYFile.SavePdiFile(new DiffractionProfile[] { dp }, fn + extension);
+                else
+                {
+                    using var sw = new StreamWriter(fn + extension);
+                    if (FormProperty.radioButtonAsGSASformat.Checked)
+                    {
+                        var lines = Profile.ToGSAS(fn, dp.OriginalProfile, HorizontalAxis.Angle);
+                        for (int i = 0; i < lines.Length; i++)
+                            sw.WriteLine(lines[i]);
+                    }
+                    else
+                    {
+                        var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
+                        for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
+                            sw.WriteLine($"{dp.OriginalProfile.Pt[i].X}{s}{dp.OriginalProfile.Pt[i].Y}{s}{dp.OriginalProfile.Err[i].Y}");
+                    }
+                }
+            }
         }
-        else if (FormProperty.radioButtonAsTSVformat.Checked)
-        {
-            if (!filename.EndsWith(".tsv"))
-                filename += ".tsv";
-            using var sw = new StreamWriter(filename);
-            for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
-                sw.WriteLine($"{dp.OriginalProfile.Pt[i].X}\t{dp.OriginalProfile.Pt[i].Y}\t{dp.OriginalProfile.Err[i].Y}");
-        }
-        else if (FormProperty.radioButtonAsGSASformat.Checked)
-        {
-            if (!filename.EndsWith(".gsa"))
-                filename += ".gsa";
-            var lines = Profile.ToGSAS(filename, dp.OriginalProfile, HorizontalAxis.Angle);
-            using var sw = new StreamWriter(filename);
-            for (int i = 0; i < lines.Length; i++)
-                sw.WriteLine(lines[i]);
-        }
-
     }
     #endregion
 
@@ -3817,7 +3782,7 @@ public partial class FormMain : Form
                 else if (e.KeyCode == Keys.S)
                     toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + S
                 else if (e.KeyCode == Keys.G)
-                    toolStripSplitButtonGetProfile_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + G
+                    toolStripSplitButtonGetProfileButtonClick(new object(), new EventArgs());//CTRL + SHIFT + G
                 else if (e.KeyCode == Keys.B)
                     toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + B
                 else if (e.KeyCode == Keys.M)

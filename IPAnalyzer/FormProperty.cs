@@ -510,7 +510,7 @@ public partial class FormProperty : Form
     }
     #endregion
 
-    private void numericUpDownRectangleAngle_ValueChanged(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender,e);
+    private void numericUpDownRectangleAngle_ValueChanged(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender, e);
 
     private void numericUpDownRectangleBand_ValueChanged(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender, e);
 
@@ -601,7 +601,7 @@ public partial class FormProperty : Form
 
     private void numericUpDownSectorAngle_ValueChanged(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender, e);
 
-    private void checkBoxSaveFile_CheckedChanged(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender, e);
+    private void checkBoxSaveFile_CheckedChanged(object sender, EventArgs e) => groupBoxSaveProfile.Enabled= checkBoxSaveFile.Checked;
 
     private void radioButtonRadial_CheckedChanged(object sender, EventArgs e)
     {
@@ -688,7 +688,7 @@ public partial class FormProperty : Form
             MaskLeft();
         else if (text.Contains("Right"))
             MaskRight();
-        
+
         formMain.Draw();
     }
 
