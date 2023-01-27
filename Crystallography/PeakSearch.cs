@@ -3,6 +3,7 @@ using MathNet.Numerics.LinearAlgebra.Double;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Crystallography
 {
@@ -34,7 +35,7 @@ namespace Crystallography
         public double m;
         public double range;
         public double Residual;
-
+        public bool Success = true;
         public int GroupIndex;
         public Color Color;
 
@@ -87,8 +88,8 @@ namespace Crystallography
         {
             return Option switch
             {
-                PeakFunctionForm.PseudoVoigt or PeakFunctionForm.Peason => 6,
-                PeakFunctionForm.SplitPseudoVoigt or PeakFunctionForm.SplitPearson => 4,
+                PeakFunctionForm.PseudoVoigt or PeakFunctionForm.Peason => 4,
+                PeakFunctionForm.SplitPseudoVoigt or PeakFunctionForm.SplitPearson => 6,
                 _ => int.MinValue
             };
         }
@@ -414,10 +415,25 @@ namespace Crystallography
 
             MathNet.Numerics.Control.TryUseNativeMKL();
 
+            var _prms = prms;
+            double Failed()//失敗した時に呼び出すローカル関数. パラメータにNaNを代入してから無限大を返す。　
+            {
+                foreach(var p in _prms)
+                {
+                    p.X = double.NaN;
+                    p.intensity = double.NaN;
+                    p.Hk = double.NaN;
+                }
+                return double.PositiveInfinity;
+            }
+
+            foreach (var p in prms)//一旦、全てSuccessをfalseにする。最後まで行ったらTrueにする。
+                p.Success = false;
+
             if (prms.Length == 0)
-                return double.PositiveInfinity;
+                return Failed();
             if (_pt == null || _pt.Count < 3)
-                return double.PositiveInfinity;
+                return Failed();
 
             //まずここからプロファイルをとる領域や強度ななどの情報を集める
             var pt = new List<(double X, double Y)>();
@@ -465,7 +481,7 @@ namespace Crystallography
             {
                 for (int i = 0; i < prms.Length; i++)
                     prms[i].X = prms[i].Int = double.NaN;
-                return double.PositiveInfinity;
+                return Failed();
             }
             int length = pt.Count;
 
@@ -480,7 +496,7 @@ namespace Crystallography
                     prms[i].X = double.NaN;
                     prms[i].Int = double.NaN;
                 }
-                return double.PositiveInfinity;
+                return Failed();
             }
 
             var diff = new double[ParamNum + 2, length];
@@ -632,7 +648,7 @@ namespace Crystallography
                     {
                         for (int i = 0; i < prms.Length; i++)
                             prms[i].X = prms[i].Int = double.NaN;
-                        return double.PositiveInfinity;
+                        return Failed();
                     }
 
                     var delta = alphaInv.Multiply(Beta);
@@ -771,7 +787,7 @@ namespace Crystallography
                     {
                         for (int i = 0; i < prms.Length; i++)
                             prms[i].X = prms[i].Int = double.NaN;
-                        return double.PositiveInfinity;
+                        return Failed();
                     }
                     //一番ましな初期値でやり直す
                     startInitial = bestInitial - 1;
@@ -844,6 +860,9 @@ namespace Crystallography
                 return true;
             else
                 return false;*/
+            foreach (var p in prms)//ここまで来れたら、全てSuccessをtrueにする。
+                p.Success = true;
+
             return bestResidual;
         }
 

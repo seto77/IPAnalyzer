@@ -601,7 +601,7 @@ public partial class FormProperty : Form
 
     private void numericUpDownSectorAngle_ValueChanged(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender, e);
 
-    private void checkBoxSaveFile_CheckedChanged(object sender, EventArgs e) => groupBoxSaveProfile.Enabled= checkBoxSaveFile.Checked;
+    private void checkBoxSaveFile_CheckedChanged(object sender, EventArgs e) => groupBoxSaveProfile.Enabled = checkBoxSaveFile.Checked;
 
     private void radioButtonRadial_CheckedChanged(object sender, EventArgs e)
     {
@@ -611,7 +611,6 @@ public partial class FormProperty : Form
         formMain.toolStripMenuItemConcenctricIntegration.Checked = radioButtonConcentric.Checked;
         formMain.toolStripMenuItemRadialIntegration.Checked = radioButtonRadial.Checked;
     }
-
     public void radioButtonRadialAngle_CheckedChanged(object sender, EventArgs e)
     {
         IsSkipNumericUpDownInIntensity = true;
@@ -630,7 +629,6 @@ public partial class FormProperty : Form
         }
         IsSkipNumericUpDownInIntensity = false;
         formMain.IntegralArea_Changed(new object(), new EventArgs());
-
     }
 
     private void checkBoxFixCenter_CheckedChanged(object sender, EventArgs e)
@@ -675,7 +673,7 @@ public partial class FormProperty : Form
     {
         if (Ring.IsSpots.Count == 0) return;
 
-        var text = (sender as Button).Text;
+        var text = (sender as Button).Name;
 
         if (text.Contains("All"))
             for (int i = 0; i < Ring.IsSpots.Count; i++)

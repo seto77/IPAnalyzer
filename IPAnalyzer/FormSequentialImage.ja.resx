@@ -1,0 +1,212 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="trackBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 292</value>
+  </data>
+  <data name="listBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 268</value>
+  </data>
+  <data name="checkBoxMultiSelection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxMultiSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="checkBoxMultiSelection.Text" xml:space="preserve">
+    <value>複数選択</value>
+  </data>
+  <data name="checkBoxAverage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxAverage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 3</value>
+  </data>
+  <data name="checkBoxAverage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 22</value>
+  </data>
+  <data name="checkBoxAverage.Text" xml:space="preserve">
+    <value>平均</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 320</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 46</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>一次元化の対象</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>LeftToRight</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 20</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 24</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Text" xml:space="preserve">
+    <value>選択した画像</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 0</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Text" xml:space="preserve">
+    <value>最初の画像のみ</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 0</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
+    <value>全画像</value>
+  </data>
+  <data name="checkBoxSummation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxSummation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 3</value>
+  </data>
+  <data name="checkBoxSummation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 22</value>
+  </data>
+  <data name="checkBoxSummation.Text" xml:space="preserve">
+    <value>積算</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAGACoDAAAFgAAACgAAAAgAAAAQAAAAAEAGAAAAAAAgAwAAAAAAAAAAAAAAAAAAAAA
+        AAD/////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////s7Ozp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp
+        6enp6enp6en29vb///////////////////////////////////////////////////////////8gICAA
+        AAAAAAAAAAAAAAAAAAAeHh5VVVVra2s9PT0LCwsAAAAAAAAAAAAAAAAAAACQkJD/////////////////
+        //////////////////////////////////////////8gICAAAAAAAAAAAABVVVXS0tKrq6t1dXVaWlqM
+        jIzCwsK1tbUdHR0AAAAAAAAAAACQkJD/////////////////////////////////////////////////
+        //////////8gICAAAAAICAirq6ulpaUSEhICAgIlJSU7OzsREREAAABGRkbU1NRbW1sAAAAAAACQkJD/
+        //////////////////////////////////////////////////////////8gICAAAACPj49zc3MBAQFr
+        a2vV1dWlpaWKioq8vLy/v78nJycODg7Pz88vLy8AAACQkJD/////////////////////////////////
+        //////////////////////////8gICBDQ0O7u7sAAACjo6OKiooHBwcAAAAAAAAAAAAtLS3ExMQ7Ozsx
+        MTHLy8sEBASQkJD////////////////////////////////z8/Pz8/Pz8/Pz8/Pz8/Pz8/P///8eHh68
+        vLwgICBYWFilpaUAAAAAAAAAAAAAAAAAAAAAAAAaGhrQ0NALCwuZmZlNTU2QkJD/////////////////
+        //////////////+ysrIwMDAwMDAwMDAwMDA8PDz///8YGBjW1tYAAADHx8cVFRUAAAAPDw99fX2Hh4do
+        aGgBAQEAAACOjo5YWFhYWFiEhISQkJD///////////////////////////////+goKAAAAAAAAAAAAAA
+        AABaWlr///82Njatra0DAwPS0tIAAAAAAABHR0ft7e36+vr6+vorKysAAABTU1OIiIgjIyO4uLiFhYX/
+        //////////////////////////////+goKAAAAAAAAASEhKlpaWlpaX///85OTmqqqoEBATR0dEAAAAA
+        AAAoKCidnZ36+vqdnZ0UFBQAAABJSUmNjY0ZGRm8vLyEhIT///////////////////////////////+g
+        oKAAAAAFBQXIyMhLS0sRERH///8ZGRnU1NQAAADKysoQEBAAAAAAAACCgoKHh4dxcXEAAAAAAACDg4Nb
+        W1tQUFCHh4eQkJD///////////////////////////////+goKAAAACDg4N0dHQKCgrDw8P///8eHh7B
+        wcEaGhpkZGSgoKAAAAAAAAAAAAAAAAAAAAAAAAAYGBjU1NQPDw+Ojo5SUlKQkJD/////////////////
+        //////////////+goKAjIyPExMQAAACSkpJtbW3///8gICBNTU2ysrIAAACxsbGFhYUFBQUAAAAAAAAA
+        AAAlJSXFxcVFRUUpKSnQ0NAHBweQkJD///////+YmJiAgICAgICAgICAgIC/v7+goKBiYmJ2dnYkJCS7
+        u7sQEBD///8gICAAAACamppjY2MEBAR7e3vT09OVlZV7e3usrKzLy8szMzMICAjJyck3NzcAAACQkJD/
+        //////8wMDAAAAAAAAAAAAAAAACampqgoKCYmJg/Pz9iYmJvb28QEBD///8gICAAAAAMDAywsLCVlZUL
+        CwsJCQk1NTVOTk4hISEAAAA4ODjMzMxfX18AAAAAAACQkJD///////8wMDAAAAAAAAARERGnp6fR0dGa
+        mpq1tbUaGhqEhIRPT08QEBD///8gICAAAAAAAAAAAABjY2PV1dWbm5tlZWVLS0t8fHy0tLS/v78hISEA
+        AAAAAAAAAACQkJD///////8wMDAAAAAhISHKyspKSkqAgICgoKCIiIhQUFBRUVGAgIAQEBD///8gICAA
+        AAAAAAAAAAAAAAAEBAQvLy9lZWV+fn5OTk4YGBgAAAAAAAAAAAAAAAAAAACQkJD///////8wMDABAQG7
+        u7svLy8bGxvY2NigoKBVVVWHh4cRERHMzMwXFxf////MzMzGxsbFxcXAwMDAwMDDw8PHx8fAwMDJycnA
+        wMDLy8vLy8vLy8vLy8vLy8vLy8vo6Oj///////8wMDBnZ2eFhYUHBwfJycmbm5ugoKATExPU1NQRERFc
+        XFygoKBpaWlgYGBgYGBgYGBgYGBzc3Pe3t5sbGybm5u6urppaWn/////////////////////////////
+        //////8qKirAwMAJCQl/f39qamqAgICgoKAAAABSUlKrq6sAAAB0dHTIyMhfX18tLS0/Pz9/f3/ExMQt
+        LS0iIiLS0tILCwsQEBD///////////////////////////////////8iIiLPz88AAADFxcUCAgKAgICg
+        oKAAAAAAAACZmZmYmJgKCgokJCRtbW2dnZ2Li4tXV1cFBQU3NzfS0tI+Pj4AAAAQEBD/////////////
+        //////////////////////85OTmurq4AAADT09MAAACAgICgoKAAAAAAAAAAAABeXl7Hx8dbW1soKCgD
+        AwMNDQ09PT2Hh4e/v78kJCQAAAAAAAAQEBD///////////////////////////////////8nJyfHx8cA
+        AADPz88AAACAgICgoKAAAAAAAAAAAAAAAAAXFxdlZWWamprGxsa6urqHh4dNTU0CAgIAAAAAAAAAAAAQ
+        EBD///////////////////////////////////8mJibMzMwAAACioqIvLy+AgIDKyspwcHBwcHBwcHBw
+        cHBwcHBwcHBubm5bW1tjY2NwcHBwcHBwcHBwcHBwcHBwcHB5eXn/////////////////////////////
+        //////8vLy+WlpZISEghISHHx8dbW1uwsLCwsLCwsLCwsLCwsLC/v7/h4eGwsLDe3t7AwMDS0tL19fX1
+        9fX19fX19fX19fX19fX6+vr///////////////////////////////8wMDAVFRXMzMwLCwtZWVnExMQw
+        MDAAAAAAAAAEBARmZmbIyMgcHBxMTEyqqqoAAACAgID/////////////////////////////////////
+        //////////////////////8wMDAAAABVVVWpqakLCwshISGenp7ExMTGxsa7u7t7e3sGBgYvLy/KysoR
+        EREAAACAgID///////////////////////////////////////////////////////////8wMDAAAAAA
+        AABQUFDHx8dDQ0MAAAAAAAAAAAAAAAAJCQmAgIC6urohISEAAAAAAACAgID/////////////////////
+        //////////////////////////////////////8wMDAAAAAAAAAAAAATExORkZHCwsK+vr6oqKjExMS3
+        t7dnZ2cAAAAAAAAAAAAAAACAgID/////////////////////////////////////////////////////
+        //////9KSkogICAgICAgICAgICAgICAaGhobGxstLS0WFhYdHR0gICAgICAgICAgICAgICCQkJD/////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>シーケンシャル画像 オプション</value>
+  </data>
+</root>

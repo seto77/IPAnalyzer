@@ -3329,6 +3329,7 @@ public partial class FormMain : Form
         IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d;
         try
         {
+            toolStripSplitButtonGetProfile.Enabled = false;
             var dpList = new List<DiffractionProfile>();
             var azimuthalDivMode = toolStripMenuItemAzimuthalDivisionAnalysis.Checked;
 
@@ -3407,15 +3408,18 @@ public partial class FormMain : Form
             else //LPOモードのとき
             {
                 #region
-                toolStripSplitButtonGetProfile.Enabled = false;
-
+                SetMask();
                 FormProperty.radioButtonRectangle.Checked = true; ;
                 FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
+
+                var fn = FileName;
+                if (toolStripButtonImageSequence.Enabled)
+                    fn += "  " + FileNameSub;
 
                 dpList.Add(new DiffractionProfile
                 {
                     OriginalProfile = Ring.GetProfile(IP),
-                    Name = FileName + " -whole",
+                    Name = fn + " -whole",
                     SrcAxisMode = HorizontalAxis.Angle,
                     SrcWaveLength = IP.WaveLength,
                     IsLPOmain = true, IsLPOchild = false
@@ -3434,7 +3438,7 @@ public partial class FormMain : Form
                     dpList.Add(new DiffractionProfile()
                     {
                         OriginalProfile = profiles[i],
-                        Name = $"{FileName} -{i * 360 / chiDiv:000}",
+                        Name = $"{fn} -{i * 360 / chiDiv:000}",
                         SrcAxisMode = HorizontalAxis.Angle,
                         SrcWaveLength = IP.WaveLength,
                         IsLPOmain = false,
@@ -3512,13 +3516,17 @@ public partial class FormMain : Form
         }
         else if (filename == "")
         {
-            if (Path.GetExtension(FileName)[1..].StartsWith("0"))
+            if (Path.GetExtension(FileName)[1..].StartsWith("0"))//Ryonixデータ(0###のような拡張子)に対応
                 filename = FilePath + FileName;
             else
                 filename = FilePath + FileName[..FileName.LastIndexOf('.')];
         }
+        if (toolStripButtonImageSequence.Enabled)
+            filename += FileNameSub;
+
+        //一つのファイルにまとめて保存する場合
         if (dpList.Count > 1 && FormProperty.radioButtonSaveInOneFile.Checked)
-        {//一つのファイルにまとめて保存
+        {
             //PDI形式の場合
             if (FormProperty.radioButtonAsPDIformat.Checked)
                 XYFile.SavePdiFile(dpList.ToArray(), filename + extension);
@@ -3547,21 +3555,17 @@ public partial class FormMain : Form
                     }
             }
         }
+        //個別のファイルに分けて保存する場合
         else
-        {//個別のファイルに分けて保存
+        {
             foreach (var dp in dpList)
             {
                 var fn = filename;
-                if (toolStripButtonImageSequence.Enabled)
-                {
-                    if (dp.Name.Contains('#'))
+                if (toolStripButtonImageSequence.Enabled&& dp.Name.Contains('#'))
                         fn += dp.Name[dp.Name.LastIndexOf('#')..].Replace(" ", "");
-                }
-                else if (dpList[0].Name.EndsWith("- whole"))
-                {
-                    if (dp.Name.Contains('-'))
+                else if (dpList[0].Name.EndsWith("- whole")&& dp.Name.Contains('-'))
                         fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
-                }
+                
                 if (FormProperty.radioButtonAsPDIformat.Checked)
                     XYFile.SavePdiFile(new DiffractionProfile[] { dp }, fn + extension);
                 else
@@ -3576,8 +3580,8 @@ public partial class FormMain : Form
                     else
                     {
                         var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
-                        for (int i = 0; i < dp.OriginalProfile.Pt.Count; i++)
-                            sw.WriteLine($"{dp.OriginalProfile.Pt[i].X}{s}{dp.OriginalProfile.Pt[i].Y}{s}{dp.OriginalProfile.Err[i].Y}");
+                        foreach (var p in dp.OriginalProfile.Pt)
+                            sw.WriteLine($"{p.X}{s}{p.Y}{s}{p.Y}");
                     }
                 }
             }

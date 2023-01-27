@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace Crystallography;
-
 public static class ImageIO
 {
     public static string[] ListOfExtension =
