@@ -20,6 +20,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Xml;
 using System.Runtime.Intrinsics.Arm;
+using Microsoft.Scripting.Utils;
 #endregion
 
 namespace IPAnalyzer;
@@ -861,9 +862,7 @@ public partial class FormMain : Form
 
     public void Draw()
     {
-
-        if (SkipDrawing) return;
-        if (!IsImageReady) return;
+        if (SkipDrawing || !IsImageReady) return;
         if (!toolStripButtonUnroll.Checked)
         {
             pseudoBitmap.Filter1 = Ring.IsThresholdOver;
@@ -872,19 +871,10 @@ public partial class FormMain : Form
             pseudoBitmap.Filter4 = Ring.IsOutsideOfIntegralRegion;
         }
 
-        Bitmap bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
+        var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
         if (bmp == null) return;
-        Graphics g = Graphics.FromImage(bmp);
+        var g = Graphics.FromImage(bmp);
         g.SmoothingMode = SmoothingMode.AntiAlias;
-        //メイン中に水色の枠(Int.Tableの範囲)を表示
-        //if (FormIntTable.Visible && TableCenterPt.X > 0)
-        //{
-        //    int length = (int)FormIntTable.numericUpDownMatrixNum.Value;
-
-        //    Pen pen = new Pen(Brushes.LightBlue);
-        //    RectangleF rect = scalablePictureBox.ConvertToClientRect(new RectangleD(TableCenterPt.X - length / 2.0, TableCenterPt.Y - length / 2.0, length, length)).ToRectangleF();
-        //    g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
-        //}
 
         //メイン中に水色の枠(SaveImageの範囲)を表示
         if (FormSaveImage.Visible)
@@ -902,7 +892,6 @@ public partial class FormMain : Form
             var rect = scalablePictureBox.ConvertToClientRect(new RectangleD(upperLeft.X, upperLeft.Y, lowerRight.X - upperLeft.X, lowerRight.Y - upperLeft.Y)).ToRectangleF();
 
             g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
-
         }
 
         //マウスで一秒以上長押しした点にペケ
@@ -1022,8 +1011,6 @@ public partial class FormMain : Form
     }
 
     #region DrawScale
-
-
     private void DrawScale(Graphics g)
     {
         int width = scalablePictureBox.pictureBox.ClientSize.Width, height = scalablePictureBox.pictureBox.ClientSize.Height;
@@ -1241,8 +1228,6 @@ public partial class FormMain : Form
     }
     #endregion
 
-
-
     //画像読み込み後にサムネイルを描く関数
     private void DrawThumnail()
     {
@@ -1333,16 +1318,14 @@ public partial class FormMain : Form
                         pseudoBitmap.FilterTemporary[y * SrcImgSize.Width + x] = true;
                 }
             }
-            splineTemp = Convolution.BlurPixels(pseudoBitmap.FilterTemporary, SrcImgSize.Width, (int)FormProperty.numericUpDownSplineWidth.Value);
+            splineTemp = Convolution.BlurPixels(pseudoBitmap.FilterTemporary, SrcImgSize.Width, FormProperty.numericBoxSplineWidth.ValueInteger);
         }
         else
         {
             splineTemp.Clear();
             splineTemp.AddRange(new bool[pseudoBitmap.FilterTemporary.Count]);
         }
-
     }
-
 
     private bool scalablePictureBox_MouseDown2(object sender, MouseEventArgs e, PointD pt)
     {
@@ -1364,9 +1347,35 @@ public partial class FormMain : Form
                 manualMaskPoints.Add(pt);
                 return true;//マウスイベント終了
             }
-            else if (FormProperty.radioButtonManualSpline.Checked)//スプラインモード
+            else if(FormProperty.radioButtonManualPolygon.Checked)//ポリゴンモード
             {
-                if (e.Clicks == 1 && e.Button == System.Windows.Forms.MouseButtons.Left)//追加
+                if (e.Clicks == 1)//追加
+                {
+                    manualMaskPoints.Add(pt);
+                }
+                else if (e.Clicks == 2)
+                {
+                    //ダブルクリックした点は加えないので最後を削除
+                    manualMaskPoints.RemoveAt(manualMaskPoints.Count - 1);
+
+                    if (manualMaskPoints.Count >= 3)//三点以上の場合のみ
+                    {
+                        var (xMax, xMin) = ((int)(manualMaskPoints.Max(p => p.X) + 0.5), (int)(manualMaskPoints.Min(p => p.X) + 0.5));
+                        var (yMax, yMin) = ((int)(manualMaskPoints.Max(p => p.Y) + 0.5), (int)(manualMaskPoints.Min(p => p.Y) + 0.5));
+                        for (int j = Math.Max(yMin, 0); j <= Math.Min(yMax, SrcImgSize.Height - 1); j++)
+                            for (int i = Math.Max(xMin, 0); i <= Math.Min(xMax, SrcImgSize.Width - 1); i++)
+                                if (Geometriy.InsidePolygonalArea(manualMaskPoints, new PointD(i, j)))
+                                    Ring.IsSpots[j * SrcImgSize.Width + i] = e.Button == MouseButtons.Left;
+                    }
+                    manualMaskPoints.Clear();
+                }
+                Draw();
+                return true;//マウスイベント終了
+            }
+            
+            else if ( FormProperty.radioButtonManualSpline.Checked)//スプラインモード
+            {
+                if (e.Clicks == 1 && e.Button == MouseButtons.Left)//追加
                 {
                     bool flag = true;
                     foreach (PointD p in manualMaskPoints)
@@ -1374,12 +1383,10 @@ public partial class FormMain : Form
                             flag = false;
                     if (flag)
                         manualMaskPoints.Add(pt);
-                    setSpline();
-
                     Draw();
                     return true;//マウスイベント終了
                 }
-                else if (e.Clicks == 1 && e.Button == System.Windows.Forms.MouseButtons.Right)//削除
+                else if (e.Clicks == 1 && e.Button == MouseButtons.Right)//削除
                 {
                     double minDistance = double.MaxValue;
                     int index = 0;
@@ -1405,7 +1412,7 @@ public partial class FormMain : Form
 
                 else if (e.Clicks == 2)
                 {
-                    if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                    if (e.Button == MouseButtons.Left)
                     {
                         manualMaskPoints.RemoveAt(manualMaskPoints.Count - 1);
                         setSpline();
@@ -1420,7 +1427,6 @@ public partial class FormMain : Form
                     manualMaskPoints.Clear();
                     setSpline();
                     Draw();
-
                 }
             }
 
@@ -1497,9 +1503,7 @@ public partial class FormMain : Form
         //マウス位置のピクセル情報　ここから
         int X = (int)(pt.X + 0.5);
         int Y = (int)(pt.Y + 0.5);
-        double r = 0;
-        double chi = 0;
-        double newX = 0, newY = 0;
+        double r = 0, chi = 0, newX = 0, newY = 0;
         try
         {
             //まず現在のマウス位置のR値を求める
@@ -1514,7 +1518,7 @@ public partial class FormMain : Form
 
             r = Math.Sqrt(newX * newX + newY * newY);
             chi = Math.Atan2(newY, newX);
-
+            #region chi角の設定
             if (FormProperty.radioButtonChiClockwise.Checked)
             {
                 if (FormProperty.radioButtonChiBottom.Checked)
@@ -1538,24 +1542,25 @@ public partial class FormMain : Form
                 chi += 2 * Math.PI;
             if (chi > Math.PI)
                 chi -= 2 * Math.PI;
-
+            #endregion
         }
         catch { r = 0; }
-        //画面にマウス座標を表示
+
+        # region 画面にマウス座標を表示
         if (X >= 0 && Ring.Intensity != null && X + Y * SrcImgSize.Width > -1 && X + Y * SrcImgSize.Width < Ring.Intensity.Count)
         {
             labelMousePointPixel.Text = X.ToString().PadLeft(5) + "," + Y.ToString().PadLeft(5);
-            labelMousePointReal.Text = newX.ToString("f3").PadLeft(7) + ", " + newY.ToString("f3").PadLeft(7);
+            labelMousePointReal.Text = $"{newX.ToString("f3").PadLeft(7)}, {newY.ToString("f3").PadLeft(7)}";
             labelMousePointIntensity.Text = (Ring.Intensity[X + Y * SrcImgSize.Width]).ToString();
             labelMousePointR.Text = r.ToString("f2");
-            double theta = Math.Atan2(r, IP.FilmDistance);
-            labelMousePointTheta.Text = (180.0 / Math.PI * theta).ToString("f3") + "°";
-            labelMousePointD.Text = (IP.WaveLength / 2 * 10 / Math.Sin(theta / 2)).ToString("f3") + "Å";
-            labelMousePointChi.Text = (180.0 / Math.PI * chi).ToString("f2") + "°";
+            var theta = Math.Atan2(r, IP.FilmDistance);
+            labelMousePointTheta.Text = $"{(180.0 / Math.PI * theta).ToString("f3")}°";
+            labelMousePointD.Text = $"{(IP.WaveLength / 2 * 10 / Math.Sin(theta / 2)).ToString("f3")}Å";
+            labelMousePointChi.Text = $"{(180.0 / Math.PI * chi).ToString("f2")}°";
             if (pseudoBitmap != null)
-                labelResolution.Text = "Mag: " + scalablePictureBox.Zoom.ToString("f2");
+                labelResolution.Text = $"Mag: {scalablePictureBox.Zoom.ToString("f2")}";
         }
-        //マウス位置のピクセル情報　ここまで
+        #endregion
 
         if (IsRingSelectMode)
         {
@@ -1565,28 +1570,32 @@ public partial class FormMain : Form
         //スポット選択モードのとき
         else if (FormProperty.checkBoxManualMaskMode.Checked)
         {
-            if (FormProperty.radioButtonManualCircle.Checked)
+            if (FormProperty.radioButtonManualCircle.Checked && manualMaskPoints.Count == 1)//サークルモードの時
             {
-                if (manualMaskPoints.Count == 1)
-                {
-                    double radius = (manualMaskPoints[0] - pt).Length;
-
-                    for (int j = Math.Max((int)Math.Round(manualMaskPoints[0].Y - radius), 0); j <= Math.Min((int)Math.Round(manualMaskPoints[0].Y + radius), SrcImgSize.Height - 1); j++)
-                        for (int i = Math.Max((int)Math.Round(manualMaskPoints[0].X - radius), 0); i <= Math.Min((int)Math.Round(manualMaskPoints[0].X + radius), SrcImgSize.Width - 1); i++)
-                            if ((i - manualMaskPoints[0].X) * (i - manualMaskPoints[0].X) + (j - manualMaskPoints[0].Y) * (j - manualMaskPoints[0].Y) <= radius * radius)
-                                pseudoBitmap.FilterTemporary[j * SrcImgSize.Width + i] = true;
-                }
-            }
-            else if (FormProperty.radioButtonManualRectangle.Checked)
-            {
-                if (manualMaskPoints.Count == 1)
-                {
-                    for (int j = Math.Max(0, (int)(Math.Min(manualMaskPoints[0].Y, pt.Y) + 0.5)); j <= Math.Min(SrcImgSize.Height - 1, (int)(Math.Max(manualMaskPoints[0].Y, pt.Y) + 0.5)); j++)
-                        for (int i = Math.Max(0, (int)(Math.Min(manualMaskPoints[0].X, pt.X) + 0.5)); i <= Math.Min(SrcImgSize.Width - 1, (int)(Math.Max(manualMaskPoints[0].X, pt.X) + 0.5)); i++)
+                double radius = (manualMaskPoints[0] - pt).Length;
+                for (int j = Math.Max((int)Math.Round(manualMaskPoints[0].Y - radius), 0); j <= Math.Min((int)Math.Round(manualMaskPoints[0].Y + radius), SrcImgSize.Height - 1); j++)
+                    for (int i = Math.Max((int)Math.Round(manualMaskPoints[0].X - radius), 0); i <= Math.Min((int)Math.Round(manualMaskPoints[0].X + radius), SrcImgSize.Width - 1); i++)
+                        if ((i - manualMaskPoints[0].X) * (i - manualMaskPoints[0].X) + (j - manualMaskPoints[0].Y) * (j - manualMaskPoints[0].Y) <= radius * radius)
                             pseudoBitmap.FilterTemporary[j * SrcImgSize.Width + i] = true;
-                }
             }
-            else if (FormProperty.radioButtonManualSpline.Checked)
+            else if (FormProperty.radioButtonManualRectangle.Checked && manualMaskPoints.Count == 1)//矩形モードの時
+            {
+                for (int j = Math.Max(0, (int)(Math.Min(manualMaskPoints[0].Y, pt.Y) + 0.5)); j <= Math.Min(SrcImgSize.Height - 1, (int)(Math.Max(manualMaskPoints[0].Y, pt.Y) + 0.5)); j++)
+                    for (int i = Math.Max(0, (int)(Math.Min(manualMaskPoints[0].X, pt.X) + 0.5)); i <= Math.Min(SrcImgSize.Width - 1, (int)(Math.Max(manualMaskPoints[0].X, pt.X) + 0.5)); i++)
+                        pseudoBitmap.FilterTemporary[j * SrcImgSize.Width + i] = true;
+            }
+            else if (FormProperty.radioButtonManualPolygon.Checked && manualMaskPoints.Count >= 2)//ポリゴンモードの時
+            {
+                var pts = new List<PointD>(manualMaskPoints) { pt };
+                var (xMax, xMin) = ((int)(pts.Max(p => p.X) + 0.5), (int)(pts.Min(p => p.X) + 0.5));
+                var (yMax, yMin) = ((int)(pts.Max(p => p.Y) + 0.5), (int)(pts.Min(p => p.Y) + 0.5));
+
+                for (int j = Math.Max(yMin, 0); j <= Math.Min(yMax, SrcImgSize.Height - 1); j++)
+                    for (int i = Math.Max(xMin, 0); i <= Math.Min(xMax, SrcImgSize.Width - 1); i++)
+                        if (Geometriy.InsidePolygonalArea(pts, new PointD(i, j)))
+                            pseudoBitmap.FilterTemporary[j * SrcImgSize.Width + i] = true;
+            }
+            else if (FormProperty.radioButtonManualSpline.Checked)//スプラインモードの時
             {
                 if (splineTemp.Count == pseudoBitmap.FilterTemporary.Count)
                 {
@@ -1597,8 +1606,7 @@ public partial class FormMain : Form
                 }
                 return false;//イベント続行
             }
-
-            else if (FormProperty.radioButtonManualSpot.Checked)
+            else if (FormProperty.radioButtonManualSpot.Checked)//スポットモードの時
             {
                 for (int j = Math.Max((int)Math.Round(pt.Y - SpotsSize), 0); j <= Math.Min((int)Math.Round(pt.Y + SpotsSize), SrcImgSize.Height - 1); j++)
                     for (int i = Math.Max((int)Math.Round(pt.X - SpotsSize), 0); i <= Math.Min((int)Math.Round(pt.X + SpotsSize), SrcImgSize.Width - 1); i++)
@@ -1608,7 +1616,6 @@ public partial class FormMain : Form
                             else if (e.Button == MouseButtons.None)
                                 pseudoBitmap.FilterTemporary[j * SrcImgSize.Width + i] = true;
             }
-
 
             Draw();
             return true;
@@ -1624,6 +1631,7 @@ public partial class FormMain : Form
         if (IsRingSelectMode)
             IsRingSelectMode = false;
 
+        #region お蔵入り
         //一秒以上左クリック長押し
         /*    if (e.Button == MouseButtons.Left && sw.ElapsedMilliseconds > 1000 && !FormProperty.checkBoxManualMaskMode.Checked)
             {
@@ -1667,9 +1675,12 @@ public partial class FormMain : Form
             }
 
             else */
+
+        #endregion
+
         if (FormProperty.checkBoxManualMaskMode.Checked)//マスクモード時
         {
-            if (FormProperty.radioButtonManualCircle.Checked)
+            if (FormProperty.radioButtonManualCircle.Checked)//サークルモードの時
             {
                 if (manualMaskPoints.Count == 1)
                 {
@@ -1684,7 +1695,7 @@ public partial class FormMain : Form
                 manualMaskPoints.Clear();
                 Draw();
             }
-            else if (FormProperty.radioButtonManualRectangle.Checked)
+            else if (FormProperty.radioButtonManualRectangle.Checked)//矩形モードの時
             {
                 if (manualMaskPoints.Count == 1)
                 {
@@ -1695,11 +1706,6 @@ public partial class FormMain : Form
                 manualMaskPoints.Clear();
                 Draw();
             }
-            else if (FormProperty.radioButtonManualSpline.Checked && e.Clicks == 2)
-            {
-
-            }
-
             else if (FormProperty.radioButtonManualSpot.Checked)
             {
                 for (int j = Math.Max((int)Math.Round(pt.Y - SpotsSize), 0); j <= Math.Min((int)Math.Round(pt.Y + SpotsSize), SrcImgSize.Height - 1); j++)
@@ -3316,6 +3322,7 @@ public partial class FormMain : Form
         //パラメータをイメージ種ごとに保存
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
 
+        //中心位置検索の必要があれば
         if (findCenterBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonFixCenter.Checked == false)
         {
             FormProperty.SkipEvent = true;
@@ -3323,6 +3330,7 @@ public partial class FormMain : Form
             FormProperty.SkipEvent = false;
             toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
         }
+        //スポット検出の必要があれば
         if (findSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
             toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
 
@@ -3409,7 +3417,7 @@ public partial class FormMain : Form
             {
                 #region
                 SetMask();
-                FormProperty.radioButtonRectangle.Checked = true; ;
+                FormProperty.radioButtonRectangle.Checked = true;
                 FormProperty.comboBoxRectangleDirection.SelectedIndex = 0;
 
                 var fn = FileName;

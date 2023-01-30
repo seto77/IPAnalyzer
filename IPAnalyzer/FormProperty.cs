@@ -654,7 +654,7 @@ public partial class FormProperty : Form
     {
         groupBoxManualSpot.Enabled = radioButtonManualSpot.Checked;
         groupBoxSpline.Enabled = radioButtonManualSpline.Checked;
-        numericUpDownSplineWidth.Enabled = radioButtonManualSpline.Checked;
+        numericBoxSplineWidth.Enabled = radioButtonManualSpline.Checked;
         formMain.toolStripComboBoxManualSpotSize.Visible = radioButtonManualSpot.Checked;
         formMain.manualMaskPoints.Clear();
         formMain.Draw();
