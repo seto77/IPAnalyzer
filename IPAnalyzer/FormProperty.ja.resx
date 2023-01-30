@@ -59,19 +59,29 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 138</value>
+    <value>240, 201</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 15</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>2θは散乱角.  χ は方位角 (その他タブを参照).</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 123</value>
+    <value>36, 181</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxCorrectPolarization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 100</value>
+    <value>19, 137</value>
   </data>
   <data name="checkBoxCorrectPolarization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 19</value>
+    <value>456, 40</value>
   </data>
   <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
-    <value>偏光補正を行う (i.e., linear polarized → unpolarized)</value>
+    <value>偏光補正を行う (チェックすると、以下の式に従って無偏光の入射光を仮定した
+強度分布が計算されます)</value>
   </data>
   <data name="waveLengthControl.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>220, 0</value>
@@ -395,10 +405,13 @@
     <value>検出器の設定</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 42</value>
+    <value>326, 51</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 55</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 18</value>
@@ -407,13 +420,19 @@
     <value>ピクセル分の画像端</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 17</value>
+    <value>326, 26</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>60, 21</value>
+  </data>
+  <data name="numericUpDownEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 53</value>
   </data>
   <data name="checkBoxOmitSpots.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxOmitSpots.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 27</value>
   </data>
   <data name="checkBoxOmitSpots.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 22</value>
@@ -421,8 +440,14 @@
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>マスクされたピクセル</value>
   </data>
+  <data name="checkBoxMaskEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 58</value>
+  </data>
   <data name="checkBoxThresholdMax.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxThresholdMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 52</value>
   </data>
   <data name="checkBoxThresholdMax.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 22</value>
@@ -432,6 +457,9 @@
   </data>
   <data name="checkBoxThresholdMin.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxThresholdMin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 26</value>
   </data>
   <data name="checkBoxThresholdMin.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 22</value>
@@ -913,12 +941,6 @@
   <data name="numericBoxSplineWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 34</value>
   </data>
-  <data name="numericBoxSplineWidth.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 27</value>
-  </data>
-  <data name="numericBoxSplineWidth.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 25</value>
-  </data>
   <data name="numericBoxSplineWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 27</value>
   </data>
@@ -1362,25 +1384,97 @@
     <value>切り開き画像の設定</value>
   </data>
   <data name="comboBoxScaleLineDivisions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 37</value>
+    <value>267, 37</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 25</value>
   </data>
   <data name="checkBoxScaleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 11</value>
+    <value>377, 27</value>
+  </data>
+  <data name="checkBoxScaleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 22</value>
+  </data>
+  <data name="checkBoxScaleLabel.Text" xml:space="preserve">
+    <value>数値の表示</value>
   </data>
   <data name="trackBarScaleLineWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 16</value>
+    <value>267, 16</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 40</value>
+    <value>169, 41</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 18</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>目盛線の細かさ</value>
+  </data>
+  <data name="label23.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
   </data>
   <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 13</value>
+    <value>181, 16</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 18</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>目盛線の太さ</value>
+  </data>
+  <data name="colorControlScaleAzimuth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="colorControlScaleAzimuth.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="colorControlScaleAzimuth.FooterText" xml:space="preserve">
+    <value>方位角目盛線の色</value>
+  </data>
+  <data name="colorControlScaleAzimuth.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="colorControlScaleAzimuth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 45</value>
+  </data>
+  <data name="colorControlScaleAzimuth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 20</value>
+  </data>
+  <data name="colorControlScale2Theta.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="colorControlScale2Theta.FooterFont" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="colorControlScale2Theta.FooterText" xml:space="preserve">
+    <value>散乱角(2θ)目盛線の色</value>
+  </data>
+  <data name="colorControlScale2Theta.HeaderFont" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="colorControlScale2Theta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 22</value>
+  </data>
+  <data name="colorControlScale2Theta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 20</value>
+  </data>
+  <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
+    <value>2θ scale lines</value>
+  </data>
+  <data name="groupBox14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 179</value>
   </data>
   <data name="groupBox14.Size" type="System.Drawing.Size, System.Drawing">
     <value>476, 68</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>目盛線のオプション</value>
   </data>
   <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
