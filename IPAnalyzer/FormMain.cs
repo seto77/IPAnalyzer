@@ -31,8 +31,8 @@ namespace IPAnalyzer;
 public partial class FormMain : Form
 {
     #region DllImport
-    [DllImport("user32")]
-    private static extern short GetAsyncKeyState(int nVirtKey);
+    [LibraryImport("user32")]
+    private static partial short GetAsyncKeyState(int nVirtKey);
     #endregion
 
     #region プロパティ、フィールド
