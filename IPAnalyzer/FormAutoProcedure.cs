@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region using
+using System;
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
 using Crystallography;
+#endregion
 
 namespace IPAnalyzer;
 
 public partial class FormAutoProcedure : Form
 {
-
+    #region フィールド、プロパティ
     public FormMain formMain;
 
     private string targetFolder="";
@@ -26,6 +27,7 @@ public partial class FormAutoProcedure : Form
                     comboBoxMacro.Items.Add(item);
         }
     }
+    #endregion
 
     #region コンストラクト、ロード、クローズ
     public FormAutoProcedure()
@@ -47,13 +49,17 @@ public partial class FormAutoProcedure : Form
         formMain.toolStripButtonAutoProcedure.Checked = false;
     }
     #endregion
+
+    #region その他イベント
     private void checkedListBoxAuto_ItemCheck(object sender, ItemCheckEventArgs e)
     {
         if (e.Index == 4)
             comboBoxMacro.Enabled = e.NewValue == CheckState.Checked;
     }
+    #endregion
 
-    public void buttonAuto_Click(object sender, EventArgs e)
+    #region 一連の操作を実行する. FormMainから呼ばれる
+    public void ExecuteAutoProcedure()
     {
         if (formMain.FormFindParameter.Visible) return;
 
@@ -85,8 +91,10 @@ public partial class FormAutoProcedure : Form
         }
         Application.DoEvents();
     }
+    #endregion
 
 
+    #region ファイル更新監視
     string[] FileList = Array.Empty<string>();
     private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
     {
@@ -141,6 +149,7 @@ public partial class FormAutoProcedure : Form
         else
             backgroundWorker.CancelAsync();
     }
+    #endregion
 
-   
+
 }

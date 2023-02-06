@@ -2057,9 +2057,7 @@ public partial class FormMain : Form
         Draw();
 
         if (FormAutoProc.checkBoxAutoAfterLoad.Checked)
-        {
-            FormAutoProc.buttonAuto_Click(null, null);
-        }
+            FormAutoProc.ExecuteAutoProcedure(null, null);
     }
 
     public void SetInformation()
