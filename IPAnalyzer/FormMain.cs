@@ -1998,8 +1998,10 @@ public partial class FormMain : Form
                     Ring.IsSpots[i] = true;
         }
 
-        trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = Ring.Intensity.Max();
-        trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = Ring.Intensity.Min();
+        var (min, max) = Ring.Intensity.MinMax();
+
+        trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
+        trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
         //SequentialImageを読み込んだ時の処理
         if (Ring.SequentialImageIntensities != null)
@@ -2062,10 +2064,11 @@ public partial class FormMain : Form
 
     public void SetInformation()
     {
+        var (min, max) = Ring.Intensity.MinMax();
         textBoxInformation.Text =
             $"Fine name:\r\n {FileName}\r\n" +
             $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n" +
-            $"Dynamic range:\r\n {Ring.Intensity.Min()} - {Ring.Intensity.Max():#,#}\r\n" +
+            $"Dynamic range:\r\n {min} - {max:#,#}\r\n" +
             $"Max Intensity:\r\n {maxIntensity:#,#}\r\n" +
             $"Sum Intensity:\r\n {sumOfIntensity:#,#}\r\n" +
             $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Count:#,#.####}\r\n\r\n" +
@@ -2902,6 +2905,10 @@ public partial class FormMain : Form
     #endregion
 
     #region Macro メニュー マクロ関連
+    /// <summary>
+    /// FormMacroから呼ばれてマクロをメニューアイテムに追加する。 (dynamicで呼ばれるので、参照はゼロに見える。)
+    /// </summary>
+    /// <param name="name"></param>
     public void SetMacroToMenu(string[] name)
     {
         if (macroToolStripMenuItem.DropDownItems.Count == 1)
@@ -2917,6 +2924,8 @@ public partial class FormMain : Form
             item.Click += macroMenuItem_Click;
             macroToolStripMenuItem.DropDownItems.Add(item);
         }
+
+        FormAutoProc.Macros = name;
     }
 
     void macroMenuItem_Click(object sender, EventArgs e)

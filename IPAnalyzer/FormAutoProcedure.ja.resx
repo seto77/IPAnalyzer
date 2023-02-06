@@ -58,6 +58,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkedListBoxAuto.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkedListBoxAuto.Items" xml:space="preserve">
+    <value>自動コントラスト</value>
+  </data>
+  <data name="checkedListBoxAuto.Items1" xml:space="preserve">
+    <value>中心位置検索</value>
+  </data>
+  <data name="checkedListBoxAuto.Items2" xml:space="preserve">
+    <value>スポット検出</value>
+  </data>
+  <data name="checkedListBoxAuto.Items3" xml:space="preserve">
+    <value>一次元化</value>
+  </data>
+  <data name="checkedListBoxAuto.Items4" xml:space="preserve">
+    <value>マクロ実行</value>
+  </data>
+  <data name="checkedListBoxAuto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 104</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 91</value>
+  </data>
   <data name="checkBoxAutoAfterLoad.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 40</value>
   </data>
@@ -65,10 +92,67 @@
     <value>新しい画像が読み込まれたら
 以下の一連の操作を実行</value>
   </data>
+  <data name="textBoxDiectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 18</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>監視するディレクトリ</value>
+  </data>
+  <data name="buttonSetDirectory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="buttonSetDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 41</value>
+  </data>
+  <data name="buttonSetDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 28</value>
+  </data>
+  <data name="buttonSetDirectory.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="checkBoxAutoLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 3</value>
+  </data>
+  <data name="checkBoxAutoLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>新しい画像を自動で読み込む</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 81</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 174</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 145</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 18</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>マクロ</value>
+  </data>
+  <data name="comboBoxMacro.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="comboBoxMacro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 142</value>
+  </data>
+  <data name="comboBoxMacro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 26</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>259, 276</value>
   </data>
 </root>

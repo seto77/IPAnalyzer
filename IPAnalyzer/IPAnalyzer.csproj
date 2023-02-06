@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2023.1.30.0434</AssemblyVersion>
-    <FileVersion>2023.1.30.0434</FileVersion>
+    <AssemblyVersion>2023.2.6.0442</AssemblyVersion>
+    <FileVersion>2023.2.6.0442</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <PackageReference Include="HDF.PInvoke.1.10" Version="1.10.612" />
+    <PackageReference Include="SimdLinq" Version="1.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -72,4 +73,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="SimdLinq" />
+  </ItemGroup>
+  
 </Project>

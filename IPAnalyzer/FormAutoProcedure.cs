@@ -16,6 +16,18 @@ public partial class FormAutoProcedure : Form
 
     private string targetFolder="";
 
+    public string[] Macros
+    {
+        set
+        {
+            comboBoxMacro.Items.Clear();
+            if (value != null)
+                foreach (var item in value)
+                    comboBoxMacro.Items.Add(item);
+        }
+    }
+
+    #region コンストラクト、ロード、クローズ
     public FormAutoProcedure()
     {
         InitializeComponent();
@@ -24,9 +36,9 @@ public partial class FormAutoProcedure : Form
     {
         checkedListBoxAuto.SetItemChecked(0, false);
         checkedListBoxAuto.SetItemChecked(1, false);
-        checkedListBoxAuto.SetItemChecked(2, true);
-        checkedListBoxAuto.SetItemChecked(3, false);
-        checkedListBoxAuto.SetItemChecked(4, true);
+        checkedListBoxAuto.SetItemChecked(2, false);
+        checkedListBoxAuto.SetItemChecked(3, true);
+        checkedListBoxAuto.SetItemChecked(4, false);
     }
 
     private void FormAutoProcedure_FormClosing(object sender, FormClosingEventArgs e)
@@ -34,6 +46,13 @@ public partial class FormAutoProcedure : Form
         e.Cancel = true;
         formMain.toolStripButtonAutoProcedure.Checked = false;
     }
+    #endregion
+    private void checkedListBoxAuto_ItemCheck(object sender, ItemCheckEventArgs e)
+    {
+        if (e.Index == 4)
+            comboBoxMacro.Enabled = e.NewValue == CheckState.Checked;
+    }
+
     public void buttonAuto_Click(object sender, EventArgs e)
     {
         if (formMain.FormFindParameter.Visible) return;
@@ -43,26 +62,28 @@ public partial class FormAutoProcedure : Form
             formMain.buttonAutoLevel_Click(new object(), new EventArgs());
         Application.DoEvents();
 
-        if (checkedListBoxAuto.GetItemChecked(1))
-            formMain.toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());
-        Application.DoEvents();
-
         //FindCenter
-        if (checkedListBoxAuto.GetItemChecked(2))
+        if (checkedListBoxAuto.GetItemChecked(1))
             for (int i = 0; i < 2; i++)
                 formMain.toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
         Application.DoEvents();
 
         //MaskSpots
-        if (checkedListBoxAuto.GetItemChecked(3))
+        if (checkedListBoxAuto.GetItemChecked(2))
             formMain.toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
         Application.DoEvents();
 
-        //PixelIntensity
-        if (checkedListBoxAuto.GetItemChecked(4))
+        //GetProfile
+        if (checkedListBoxAuto.GetItemChecked(3))
             formMain.toolStripSplitButtonGetProfileButtonClick(new object(), new EventArgs());
-        Application.DoEvents();
 
+        //Execute Macro
+        if (checkedListBoxAuto.GetItemChecked(4))
+        {
+            if (comboBoxMacro.Text != "")
+                formMain.FormMacro.RunMacroName(comboBoxMacro.Text);
+        }
+        Application.DoEvents();
     }
 
 
@@ -120,4 +141,6 @@ public partial class FormAutoProcedure : Form
         else
             backgroundWorker.CancelAsync();
     }
+
+   
 }
