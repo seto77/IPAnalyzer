@@ -93,7 +93,6 @@ public partial class FormAutoProcedure : Form
     }
     #endregion
 
-
     #region ファイル更新監視
     string[] FileList = Array.Empty<string>();
     private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -150,6 +149,5 @@ public partial class FormAutoProcedure : Form
             backgroundWorker.CancelAsync();
     }
     #endregion
-
 
 }

@@ -1442,10 +1442,8 @@ public partial class FormMain : Form
                 //まず現在のマウス位置のR値を求める
                 double x = (pt.X - IP.CenterX) * IP.PixSizeX + (pt.Y - IP.CenterY) * IP.PixSizeY * Math.Tan(IP.ksi);
                 double y = (pt.Y - IP.CenterY) * IP.PixSizeY;
-                double SinTau = Math.Sin(IP.tau);
-                double CosTau = Math.Cos(IP.tau);
-                double SinPhi = Math.Sin(IP.phi);
-                double CosPhi = Math.Cos(IP.phi);
+                double SinTau = Math.Sin(IP.tau),CosTau = Math.Cos(IP.tau);
+                double SinPhi = Math.Sin(IP.phi),CosPhi = Math.Cos(IP.phi);
                 double newX = (y * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + x * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
                     * IP.FilmDistance / (y * CosPhi * SinTau + IP.FilmDistance - x * SinPhi * SinTau);
                 double newY = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + y * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
@@ -2057,7 +2055,7 @@ public partial class FormMain : Form
         Draw();
 
         if (FormAutoProc.checkBoxAutoAfterLoad.Checked)
-            FormAutoProc.ExecuteAutoProcedure(null, null);
+            FormAutoProc.ExecuteAutoProcedure();
     }
 
     public void SetInformation()
@@ -2144,15 +2142,12 @@ public partial class FormMain : Form
 
     private void saveImageAsTiff(string filename = "")
     {
-
-
         if (SrcImgSize.Width == 0) return;
 
         if (filename == "")
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "*.tif|*.tif";
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var dlg = new SaveFileDialog() { Filter = "*.tif|*.tif" };
+            if (dlg.ShowDialog() == DialogResult.OK)
                 filename = dlg.FileName;
             else
                 return;
@@ -2224,8 +2219,7 @@ public partial class FormMain : Form
         if (SrcImgSize.Width == 0) return;
         if (filename == "")
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "*.png|*.png";
+            var dlg = new SaveFileDialog { Filter = "*.png|*.png" };
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 filename = dlg.FileName;
             else
@@ -2273,8 +2267,6 @@ public partial class FormMain : Form
 
         bmp.Save(filename, ImageFormat.Png);
     }
-
-
 
     private void ipaToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -2817,7 +2809,6 @@ public partial class FormMain : Form
     private void toolStripMenuItemIPCondition_Click(object sender, EventArgs e)
     {
         FormProperty.Visible = true;
-
         FormProperty.tabControl.SelectedIndex = 1;
     }
     private void toolStripMenuItemIntegralRegion_Click(object sender, EventArgs e)
