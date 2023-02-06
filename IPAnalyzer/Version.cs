@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.942(2023/02/06) Improved 'Auto Procedure'" +
         "\r\n ver3.941(2023/01/30) Added: Polygon mask mode for the mask option." +
         "\r\n ver3.940(2023/01/27) Improved azimuthal division analysis functionality." +
         "\r\n ver3.939(2023/01/23) Fixed minor bugs on 'Auto Procedure'. " +
