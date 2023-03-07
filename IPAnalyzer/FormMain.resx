@@ -3274,13 +3274,13 @@ X線の波長とカメラ長を設定します。</value>
     <value>Language</value>
   </data>
   <data name="editorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 24</value>
+    <value>118, 24</value>
   </data>
   <data name="editorToolStripMenuItem.Text" xml:space="preserve">
     <value>Editor</value>
   </data>
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>115, 6</value>
   </data>
   <data name="macroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 24</value>
@@ -3792,72 +3792,72 @@ Mode</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
+    <value>194, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Angle division</value>
+    <value>Number of divisions</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items" xml:space="preserve">
     <value>360</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items1" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items1" xml:space="preserve">
     <value>180</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items2" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items2" xml:space="preserve">
     <value>120</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items3" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items3" xml:space="preserve">
     <value>90</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items4" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items4" xml:space="preserve">
     <value>72</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items5" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items5" xml:space="preserve">
     <value>60</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items6" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items6" xml:space="preserve">
     <value>40</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items7" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items7" xml:space="preserve">
     <value>36</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items8" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items8" xml:space="preserve">
     <value>30</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items9" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items9" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items10" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items10" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items11" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items11" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items12" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items12" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items13" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items13" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items14" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items14" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items15" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items15" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items16" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items16" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Items17" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Items17" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
-  <data name="toolStripComboBoxAngleStep.Text" xml:space="preserve">
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.Text" xml:space="preserve">
     <value>60</value>
   </data>
   <data name="toolStripMenuItemAzimuthalDivisionAnalysis.Size" type="System.Drawing.Size, System.Drawing">
@@ -4405,6 +4405,12 @@ Mode</value>
   <data name="&gt;&gt;ngenCompileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;clearRegistrycheckAndRestartToolStripMenuItem.Name" xml:space="preserve">
+    <value>clearRegistrycheckAndRestartToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;clearRegistrycheckAndRestartToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
     <value>languageToolStripMenuItem</value>
   </data>
@@ -4735,10 +4741,10 @@ Mode</value>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripComboBoxAngleStep.Name" xml:space="preserve">
-    <value>toolStripComboBoxAngleStep</value>
+  <data name="&gt;&gt;toolStripComboBoxAzimuthalDivisionNumber.Name" xml:space="preserve">
+    <value>toolStripComboBoxAzimuthalDivisionNumber</value>
   </data>
-  <data name="&gt;&gt;toolStripComboBoxAngleStep.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripComboBoxAzimuthalDivisionNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator20.Name" xml:space="preserve">
@@ -4770,12 +4776,6 @@ Mode</value>
   </data>
   <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clearRegistrycheckAndRestartToolStripMenuItem.Name" xml:space="preserve">
-    <value>clearRegistrycheckAndRestartToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;clearRegistrycheckAndRestartToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>

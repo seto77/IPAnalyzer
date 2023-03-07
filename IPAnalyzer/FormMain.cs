@@ -14,20 +14,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using IronPython.Hosting;
-using System.Numerics;
 using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Xml;
-using System.Runtime.Intrinsics.Arm;
 using Microsoft.Scripting.Utils;
 #endregion
 
 namespace IPAnalyzer;
 
-/// <summary>
-/// Form1 の概要の説明です。
-/// </summary>
 public partial class FormMain : Form
 {
     #region DllImport
@@ -149,6 +144,8 @@ public partial class FormMain : Form
         try { Registry.CurrentUser.DeleteSubKey("Software\\Crystallography\\IPAnalyzer"); }
         catch { }
     }
+
+    #region レジストリをセーブ
     public void SaveRegistry()
     {
         RegistryKey regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer");
@@ -319,7 +316,9 @@ public partial class FormMain : Form
             Registry.CurrentUser.DeleteSubKey("Software\\Crystallography\\IPAnalyzer", false);
         }
     }
+    #endregion
 
+    #region レジストリをロード
     public void LoadRegistry()
     {
 
@@ -640,6 +639,7 @@ public partial class FormMain : Form
 
         catch { }
     }
+    #endregion
 
     public void SetText(string filename = "", string filenameSub = "")
     {
@@ -3446,7 +3446,7 @@ public partial class FormMain : Form
 
                 graphControlProfile.Profile = dpList[0].Profile;
 
-                if (!int.TryParse(toolStripComboBoxAngleStep.Text, out int chiDiv))
+                if (!int.TryParse(toolStripComboBoxAzimuthalDivisionNumber.Text, out int chiDiv))
                     return;
 
                 //アジマス方向に角度分割したプロファイル行列を一括で計算
@@ -3475,13 +3475,21 @@ public partial class FormMain : Form
             //PDindexerへの送信
             if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
             {
-                using var clipboard = new Mutex(false, "ClipboardOperation");
-                if (clipboard.WaitOne(azimuthalDivMode ? 5000 : 500, false))
+                using var mutex = new Mutex(false, "PDIndexer");
+                bool result = false;
+                try
                 {
-                    Clipboard.SetDataObject(dpList.ToArray());
-                    clipboard.ReleaseMutex();
+                    if (result = mutex.WaitOne(azimuthalDivMode ? 5000 : 500, true))
+                    {
+                        mutex.ReleaseMutex();
+                        Clipboard.SetDataObject(dpList.ToArray());
+                    }
+                    Thread.Sleep(500);
+
+                    if (mutex.WaitOne(azimuthalDivMode ? 5000 : 500, false))
+                        mutex.ReleaseMutex();
                 }
-                clipboard.Close();
+                finally { mutex.Close(); }
             }
         }
         catch (Exception ex)
@@ -4266,8 +4274,6 @@ public partial class FormMain : Form
 
     #endregion
 
-
-
     #region IPAのマクロ操作を提供するサブクラス
     /// <summary>
     /// IPAのマクロ操作を提供するサブクラス
@@ -4314,29 +4320,35 @@ public partial class FormMain : Form
                 p.help.Add("IPA.PDI.RunMacroName(string name) # Execute a macro code in PDIndexer. \r\n Name is macro name on PDI.");
                 p.help.Add("IPA.PDI.RunMacro(obj1, obj2, ...)# Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2,) can be readable \r\n on PDI as 'Obj[1]', 'Obj[2]', ... ");
                 p.help.Add("IPA.PDI.RunMacroName(string name, obj1, obj2, ...) # Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2,) can be readable \r\n on PDI as 'Obj[1]', 'Obj[2]', ... \r\n Name is macro name on PDI.");
+                p.help.Add("IPA.PDI.Timeout # Set/get timeout second for macro operation. Default value is 30 sec.");
                 p.help.Add("IPA.PDI.Debug #True/False. \r\n If true, macro on PDI will be executed with step-by-step.");
-                p.help.Add("IPA.PDI.WaitSeconds #Integer. \r\n Set/get tolerance time for a macro running on PDIndexer.");
             }
             public bool Debug = false;
-            public int WaitSeconds = 120;
+            public int Timeout { get; set; }
+
             public void RunMacro(params object[] obj)
             {
                 RunMacro("", obj);
             }
             public void RunMacroName(string name, params object[] obj)
             {
+                //Mutexを作成
+                using Mutex mutex = new Mutex(false, "PDIndexer");
                 try
                 {
-                    using Mutex clipboard = new Mutex(false, "ClipboardOperation");
-                    bool result = clipboard.WaitOne(10000, false);
-                    if (result)
+                    //Mutexを取得 最大WaitSeconds秒待つ
+                    if (mutex.WaitOne(Timeout * 1000, true))
                     {
+                        mutex.ReleaseMutex();
                         Clipboard.SetDataObject(new MacroTriger("PDI", Debug, obj, name));
-                        clipboard.ReleaseMutex();
+                        Thread.Sleep(500);
                     }
-                    clipboard.Close();
+
+                    //再びMutexを取得できるまで最大WaitSeconds秒待つ
+                    if (mutex.WaitOne(Timeout * 1000, true))
+                        mutex.ReleaseMutex();
                 }
-                catch { }
+                finally { mutex.Close(); }
             }
         }
         #endregion
@@ -4468,6 +4480,8 @@ public partial class FormMain : Form
                 p.help.Add("IPA.Mask.MaskBottom() # Mask the bottom half area.");
                 p.help.Add("IPA.Mask.MaskRight() # Mask the right half area.");
                 p.help.Add("IPA.Mask.MaskLeft() # Mask the left half area.");
+
+                p.help.Add("IPA.Mask.TakeOver # Integer. Set/get the take over mask setting. 0: None, 1: Take over the current mask state. 2: Take over the mask file.");
             }
 
             public void MaskSpots() => Execute(new Action(() => p.main.MaskSpots()));
@@ -4478,6 +4492,31 @@ public partial class FormMain : Form
             public void MaskBottom() => Execute(new Action(() => p.main.FormProperty.MaskBottom()));
             public void MaskLeft() => Execute(new Action(() => p.main.FormProperty.MaskLeft()));
             public void MaskRight() => Execute(new Action(() => p.main.FormProperty.MaskRight()));
+
+            public int TakeOver
+            {
+                get
+                {
+                    if (p.main.FormProperty.radioButtonTakeoverNothing.Checked)
+                        return 0;
+                    else if (p.main.FormProperty.radioButtonTakeoverMask.Checked)
+                        return 1;
+                    else
+                        return 2;
+                }
+                set
+                {
+
+                    if (value == 0)
+                        Execute(new Action(() => p.main.FormProperty.radioButtonTakeoverNothing.Checked = true));
+                    else if (value == 1)
+                        Execute(new Action(() => p.main.FormProperty.radioButtonTakeoverMask.Checked = true));
+                    else if (value == 2)
+                        Execute(new Action(() => p.main.FormProperty.radioButtonTakeOverMaskfile.Checked = true));
+
+                }
+            }
+
         }
         #endregion
 
@@ -4500,6 +4539,22 @@ public partial class FormMain : Form
                 p.help.Add("IPA.Profile.SaveProfileAsCSV  # True/False. \r\n If true, the profile will be saved as CSV format");
                 p.help.Add("IPA.Profile.SaveProfileAsTSV  # True/False. \r\n If true, the profile will be saved as TSV format");
                 p.help.Add("IPA.Profile.SaveProfileAsGSAS  # True/False. \r\n If true, the profile will be saved as GSAS format");
+                p.help.Add("IPA.Profile.SaveProfileInOneFile   # True/False. \r\n If true, the profiles of sequential image or azimuthal division data will be saved in one file.");
+                p.help.Add("IPA.Profile.SaveProfileAtImageDirectory   # True/False. \r\n If true, the profiles will be saved in the same directory of the image.");
+                p.help.Add("IPA.Profile.AzimuthalDivision  # True/False. \r\n If true, the profile will be processed azimuthal division mode.");
+                p.help.Add("IPA.Profile.AzimuthalDivisionNumber  # Integer. \r\n Sets the number of Debye ring to be divided.");
+            }
+
+            public int AzimuthalDivisionNumber
+            {
+                set => Execute(new Action(() => p.main.toolStripComboBoxAzimuthalDivisionNumber.Text = value.ToString()));
+                get => Execute(() => p.main.toolStripComboBoxAzimuthalDivisionNumber.Text.ToInt());
+            }
+
+            public bool AzimuthalDivision
+            {
+                set => Execute(new Action(() => p.main.toolStripMenuItemAzimuthalDivisionAnalysis.Checked = value));
+                get => Execute(() => p.main.toolStripMenuItemAzimuthalDivisionAnalysis.Checked);
             }
 
             public bool ConcentricIntegration
@@ -4554,17 +4609,27 @@ public partial class FormMain : Form
                 get => Execute(() => p.main.FormProperty.radioButtonAsGSASformat.Checked);
             }
 
+            public bool SaveProfileInOneFile
+            {
+                set => Execute(new Action(() => p.main.FormProperty.radioButtonSaveInOneFile.Checked = value));
+                get => Execute(() => p.main.FormProperty.radioButtonSaveInOneFile.Checked);
+            }
+
+            public bool SaveProfileAtImageDirectory
+            {
+                set => Execute(new Action(() => p.main.FormProperty.radioButtonSaveAtImageDirectory.Checked = value));
+                get => Execute(() => p.main.FormProperty.radioButtonSaveAtImageDirectory.Checked);
+            }
+
             public void GetProfile(string filename = "") => Execute(new Action(() =>
             {
                 if (filename != "")
                     SaveProfileAfterGetProfile = true;
                 p.main.GetProfile(filename);
-                using Mutex clipboard = new Mutex(false, "ClipboardOperation");
-                if (clipboard.WaitOne(10000, false))
-                {
-                    clipboard.ReleaseMutex();
-                    clipboard.Close();
-                }
+
+                using var mutex = new Mutex(false, "PDIndexer");
+                try { mutex.WaitOne(10000, false); mutex.ReleaseMutex(); }
+                finally { mutex.Close(); }
             }));
         }
         #endregion
@@ -5049,6 +5114,4 @@ public partial class FormMain : Form
     #endregion
 
     #endregion
-
-
 }

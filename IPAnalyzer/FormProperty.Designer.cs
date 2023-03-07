@@ -150,7 +150,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButtonTakoverNothing = new System.Windows.Forms.RadioButton();
+            this.radioButtonTakeoverNothing = new System.Windows.Forms.RadioButton();
             this.radioButtonTakeoverMask = new System.Windows.Forms.RadioButton();
             this.radioButtonTakeOverMaskfile = new System.Windows.Forms.RadioButton();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -1442,16 +1442,16 @@
             // flowLayoutPanel5
             // 
             resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
-            this.flowLayoutPanel5.Controls.Add(this.radioButtonTakoverNothing);
+            this.flowLayoutPanel5.Controls.Add(this.radioButtonTakeoverNothing);
             this.flowLayoutPanel5.Controls.Add(this.radioButtonTakeoverMask);
             this.flowLayoutPanel5.Controls.Add(this.radioButtonTakeOverMaskfile);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             // 
             // radioButtonTakoverNothing
             // 
-            resources.ApplyResources(this.radioButtonTakoverNothing, "radioButtonTakoverNothing");
-            this.radioButtonTakoverNothing.Name = "radioButtonTakoverNothing";
-            this.radioButtonTakoverNothing.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.radioButtonTakeoverNothing, "radioButtonTakoverNothing");
+            this.radioButtonTakeoverNothing.Name = "radioButtonTakoverNothing";
+            this.radioButtonTakeoverNothing.UseVisualStyleBackColor = true;
             // 
             // radioButtonTakeoverMask
             // 
@@ -2458,7 +2458,7 @@
         public System.Windows.Forms.GroupBox groupBox7;
         public System.Windows.Forms.RadioButton radioButtonTakeOverMaskfile;
         public System.Windows.Forms.RadioButton radioButtonTakeoverMask;
-        public System.Windows.Forms.RadioButton radioButtonTakoverNothing;
+        public System.Windows.Forms.RadioButton radioButtonTakeoverNothing;
         private System.Windows.Forms.GroupBox groupBox10;
         private Crystallography.Controls.NumericBox numericBoxCameraLength2;
         public System.Windows.Forms.GroupBox groupBox9;

@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
-using System.IO;
-using System.Text;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
-using System.Threading;
-using Crystallography;
 using Crystallography.Controls;
 
 namespace IPAnalyzer
@@ -185,6 +176,7 @@ namespace IPAnalyzer
             toolStripComboBoxRotate = new ToolStripComboBox();
             toolStripSeparator28 = new ToolStripSeparator();
             ngenCompileToolStripMenuItem = new ToolStripMenuItem();
+            clearRegistrycheckAndRestartToolStripMenuItem = new ToolStripMenuItem();
             languageToolStripMenuItem = new ToolStripMenuItem();
             englishToolStripMenuItem = new ToolStripMenuItem();
             japaneseToolStripMenuItem = new ToolStripMenuItem();
@@ -241,13 +233,12 @@ namespace IPAnalyzer
             toolStripSeparator12 = new ToolStripSeparator();
             toolStripMenuItemAzimuthalDivisionAnalysis = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripComboBoxAngleStep = new ToolStripComboBox();
+            toolStripComboBoxAzimuthalDivisionNumber = new ToolStripComboBox();
             toolStripSeparator20 = new ToolStripSeparator();
             toolStripMenuItemAllSequentialImages = new ToolStripMenuItem();
             toolStripMenuItemSelectedSequentialImages = new ToolStripMenuItem();
             toolStripButton1 = new ToolStripButton();
             toolTip = new ToolTip(components);
-            clearRegistrycheckAndRestartToolStripMenuItem = new ToolStripMenuItem();
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             toolStripContainer1.ContentPanel.SuspendLayout();
             toolStripContainer1.RightToolStripPanel.SuspendLayout();
@@ -1349,6 +1340,12 @@ namespace IPAnalyzer
             ngenCompileToolStripMenuItem.Name = "ngenCompileToolStripMenuItem";
             resources.ApplyResources(ngenCompileToolStripMenuItem, "ngenCompileToolStripMenuItem");
             // 
+            // clearRegistrycheckAndRestartToolStripMenuItem
+            // 
+            clearRegistrycheckAndRestartToolStripMenuItem.CheckOnClick = true;
+            clearRegistrycheckAndRestartToolStripMenuItem.Name = "clearRegistrycheckAndRestartToolStripMenuItem";
+            resources.ApplyResources(clearRegistrycheckAndRestartToolStripMenuItem, "clearRegistrycheckAndRestartToolStripMenuItem");
+            // 
             // languageToolStripMenuItem
             // 
             languageToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
@@ -1706,7 +1703,7 @@ namespace IPAnalyzer
             // toolStripMenuItemAzimuthalDivisionAnalysis
             // 
             toolStripMenuItemAzimuthalDivisionAnalysis.CheckOnClick = true;
-            toolStripMenuItemAzimuthalDivisionAnalysis.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripComboBoxAngleStep });
+            toolStripMenuItemAzimuthalDivisionAnalysis.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripComboBoxAzimuthalDivisionNumber });
             toolStripMenuItemAzimuthalDivisionAnalysis.Name = "toolStripMenuItemAzimuthalDivisionAnalysis";
             resources.ApplyResources(toolStripMenuItemAzimuthalDivisionAnalysis, "toolStripMenuItemAzimuthalDivisionAnalysis");
             // 
@@ -1715,11 +1712,11 @@ namespace IPAnalyzer
             resources.ApplyResources(toolStripMenuItem1, "toolStripMenuItem1");
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             // 
-            // toolStripComboBoxAngleStep
+            // toolStripComboBoxAzimuthalDivisionNumber
             // 
-            resources.ApplyResources(toolStripComboBoxAngleStep, "toolStripComboBoxAngleStep");
-            toolStripComboBoxAngleStep.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxAngleStep.Items"), resources.GetString("toolStripComboBoxAngleStep.Items1"), resources.GetString("toolStripComboBoxAngleStep.Items2"), resources.GetString("toolStripComboBoxAngleStep.Items3"), resources.GetString("toolStripComboBoxAngleStep.Items4"), resources.GetString("toolStripComboBoxAngleStep.Items5"), resources.GetString("toolStripComboBoxAngleStep.Items6"), resources.GetString("toolStripComboBoxAngleStep.Items7"), resources.GetString("toolStripComboBoxAngleStep.Items8"), resources.GetString("toolStripComboBoxAngleStep.Items9"), resources.GetString("toolStripComboBoxAngleStep.Items10"), resources.GetString("toolStripComboBoxAngleStep.Items11"), resources.GetString("toolStripComboBoxAngleStep.Items12"), resources.GetString("toolStripComboBoxAngleStep.Items13"), resources.GetString("toolStripComboBoxAngleStep.Items14"), resources.GetString("toolStripComboBoxAngleStep.Items15"), resources.GetString("toolStripComboBoxAngleStep.Items16"), resources.GetString("toolStripComboBoxAngleStep.Items17") });
-            toolStripComboBoxAngleStep.Name = "toolStripComboBoxAngleStep";
+            resources.ApplyResources(toolStripComboBoxAzimuthalDivisionNumber, "toolStripComboBoxAzimuthalDivisionNumber");
+            toolStripComboBoxAzimuthalDivisionNumber.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items1"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items2"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items3"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items4"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items5"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items6"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items7"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items8"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items9"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items10"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items11"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items12"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items13"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items14"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items15"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items16"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items17") });
+            toolStripComboBoxAzimuthalDivisionNumber.Name = "toolStripComboBoxAzimuthalDivisionNumber";
             // 
             // toolStripSeparator20
             // 
@@ -1748,12 +1745,6 @@ namespace IPAnalyzer
             // toolTip
             // 
             toolTip.IsBalloon = true;
-            // 
-            // clearRegistrycheckAndRestartToolStripMenuItem
-            // 
-            clearRegistrycheckAndRestartToolStripMenuItem.CheckOnClick = true;
-            clearRegistrycheckAndRestartToolStripMenuItem.Name = "clearRegistrycheckAndRestartToolStripMenuItem";
-            resources.ApplyResources(clearRegistrycheckAndRestartToolStripMenuItem, "clearRegistrycheckAndRestartToolStripMenuItem");
             // 
             // FormMain
             // 
@@ -1879,7 +1870,6 @@ namespace IPAnalyzer
         public ToolStripMenuItem toolTipToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator12;
         private ToolStripMenuItem toolStripMenuItemAzimuthalDivisionAnalysis;
-        private ToolStripComboBox toolStripComboBoxAngleStep;
         private MenuStrip menuStrip;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem readImageToolStripMenuItem;
@@ -2033,6 +2023,7 @@ namespace IPAnalyzer
         private Button buttonMag_16;
         private Button buttonMag4;
         private ToolStripMenuItem clearRegistrycheckAndRestartToolStripMenuItem;
+        public ToolStripComboBox toolStripComboBoxAzimuthalDivisionNumber;
         //private ScalablePictureBox scalablePictureBox;
 
 
