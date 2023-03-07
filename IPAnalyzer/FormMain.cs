@@ -36,6 +36,7 @@ public partial class FormMain : Form
     #endregion
 
     #region プロパティ、フィールド
+
     public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
     public PseudoBitmap pseudoBitmap = new PseudoBitmap();
@@ -143,6 +144,11 @@ public partial class FormMain : Form
         this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
     }
 
+    public void ResetRegistry()
+    {
+        try { Registry.CurrentUser.DeleteSubKey("Software\\Crystallography\\IPAnalyzer"); }
+        catch { }
+    }
     public void SaveRegistry()
     {
         RegistryKey regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer");
@@ -826,7 +832,12 @@ public partial class FormMain : Form
     private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
     {
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
-        SaveRegistry();
+        
+        if (!resetRegistryafterRestartToolStripMenuItem.Checked)
+            SaveRegistry();
+        else
+            ResetRegistry();
+
         graphControlProfile.AddProfile(new Profile());
     }
 
@@ -2858,6 +2869,7 @@ public partial class FormMain : Form
 
     private void toolStripComboBoxRotate_SelectedIndexChanged(object sender, EventArgs e)
         => FlipRotate_Pollalization_Background();
+
     #endregion
 
     #region Help メニュー 
@@ -4233,6 +4245,8 @@ public partial class FormMain : Form
             scalablePictureBox.Zoom = 0.0625;
     }
 
+
+
     bool skipSelectedAreaChangedEvent = false;
     private void numericUpDownSelectedArea_ValueChanged(object sender, EventArgs e)
     {
@@ -4250,6 +4264,8 @@ public partial class FormMain : Form
     }
 
     #endregion
+
+ 
 
     #region IPAのマクロ操作を提供するサブクラス
     /// <summary>
