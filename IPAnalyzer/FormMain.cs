@@ -833,10 +833,10 @@ public partial class FormMain : Form
     {
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
 
-        //if (!resetRegistryafterRestartToolStripMenuItem.Checked)
-        //    SaveRegistry();
-        //else
-        //    ResetRegistry();
+        if (!clearRegistrycheckAndRestartToolStripMenuItem.Checked)
+            SaveRegistry();
+        else
+            ResetRegistry();
 
         graphControlProfile.AddProfile(new Profile());
     }

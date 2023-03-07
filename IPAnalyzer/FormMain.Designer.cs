@@ -247,6 +247,7 @@ namespace IPAnalyzer
             toolStripMenuItemSelectedSequentialImages = new ToolStripMenuItem();
             toolStripButton1 = new ToolStripButton();
             toolTip = new ToolTip(components);
+            clearRegistrycheckAndRestartToolStripMenuItem = new ToolStripMenuItem();
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             toolStripContainer1.ContentPanel.SuspendLayout();
             toolStripContainer1.RightToolStripPanel.SuspendLayout();
@@ -1292,7 +1293,7 @@ namespace IPAnalyzer
             // 
             // optionToolStripMenuItem
             // 
-            optionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolTipToolStripMenuItem, toolStripMenuItem2, rotateToolStripMenuItem, toolStripSeparator28, ngenCompileToolStripMenuItem });
+            optionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolTipToolStripMenuItem, toolStripMenuItem2, rotateToolStripMenuItem, toolStripSeparator28, ngenCompileToolStripMenuItem, clearRegistrycheckAndRestartToolStripMenuItem });
             optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             resources.ApplyResources(optionToolStripMenuItem, "optionToolStripMenuItem");
             // 
@@ -1748,6 +1749,12 @@ namespace IPAnalyzer
             // 
             toolTip.IsBalloon = true;
             // 
+            // clearRegistrycheckAndRestartToolStripMenuItem
+            // 
+            clearRegistrycheckAndRestartToolStripMenuItem.CheckOnClick = true;
+            clearRegistrycheckAndRestartToolStripMenuItem.Name = "clearRegistrycheckAndRestartToolStripMenuItem";
+            resources.ApplyResources(clearRegistrycheckAndRestartToolStripMenuItem, "clearRegistrycheckAndRestartToolStripMenuItem");
+            // 
             // FormMain
             // 
             AllowDrop = true;
@@ -2025,6 +2032,7 @@ namespace IPAnalyzer
         private Button buttonMag_8;
         private Button buttonMag_16;
         private Button buttonMag4;
+        private ToolStripMenuItem clearRegistrycheckAndRestartToolStripMenuItem;
         //private ScalablePictureBox scalablePictureBox;
 
 
