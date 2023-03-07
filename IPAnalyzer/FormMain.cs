@@ -832,11 +832,11 @@ public partial class FormMain : Form
     private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
     {
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
-        
-        if (!resetRegistryafterRestartToolStripMenuItem.Checked)
-            SaveRegistry();
-        else
-            ResetRegistry();
+
+        //if (!resetRegistryafterRestartToolStripMenuItem.Checked)
+        //    SaveRegistry();
+        //else
+        //    ResetRegistry();
 
         graphControlProfile.AddProfile(new Profile());
     }
@@ -1358,7 +1358,7 @@ public partial class FormMain : Form
                 manualMaskPoints.Add(pt);
                 return true;//マウスイベント終了
             }
-            else if(FormProperty.radioButtonManualPolygon.Checked)//ポリゴンモード
+            else if (FormProperty.radioButtonManualPolygon.Checked)//ポリゴンモード
             {
                 if (e.Clicks == 1)//追加
                 {
@@ -1383,8 +1383,8 @@ public partial class FormMain : Form
                 Draw();
                 return true;//マウスイベント終了
             }
-            
-            else if ( FormProperty.radioButtonManualSpline.Checked)//スプラインモード
+
+            else if (FormProperty.radioButtonManualSpline.Checked)//スプラインモード
             {
                 if (e.Clicks == 1 && e.Button == MouseButtons.Left)//追加
                 {
@@ -1453,8 +1453,8 @@ public partial class FormMain : Form
                 //まず現在のマウス位置のR値を求める
                 double x = (pt.X - IP.CenterX) * IP.PixSizeX + (pt.Y - IP.CenterY) * IP.PixSizeY * Math.Tan(IP.ksi);
                 double y = (pt.Y - IP.CenterY) * IP.PixSizeY;
-                double SinTau = Math.Sin(IP.tau),CosTau = Math.Cos(IP.tau);
-                double SinPhi = Math.Sin(IP.phi),CosPhi = Math.Cos(IP.phi);
+                double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
+                double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi);
                 double newX = (y * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + x * (CosPhi * CosPhi + CosTau * SinPhi * SinPhi))
                     * IP.FilmDistance / (y * CosPhi * SinTau + IP.FilmDistance - x * SinPhi * SinTau);
                 double newY = (x * (CosPhi * SinPhi - CosPhi * CosTau * SinPhi) + y * (CosPhi * CosPhi * CosTau + SinPhi * SinPhi))
@@ -3440,7 +3440,8 @@ public partial class FormMain : Form
                     Name = fn + " -whole",
                     SrcAxisMode = HorizontalAxis.Angle,
                     SrcWaveLength = IP.WaveLength,
-                    IsLPOmain = true, IsLPOchild = false
+                    IsLPOmain = true,
+                    IsLPOchild = false
                 });
 
                 graphControlProfile.Profile = dpList[0].Profile;
@@ -3579,11 +3580,11 @@ public partial class FormMain : Form
             foreach (var dp in dpList)
             {
                 var fn = filename;
-                if (toolStripButtonImageSequence.Enabled&& dp.Name.Contains('#'))
-                        fn += dp.Name[dp.Name.LastIndexOf('#')..].Replace(" ", "");
-                else if (dpList[0].Name.EndsWith("- whole")&& dp.Name.Contains('-'))
-                        fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
-                
+                if (toolStripButtonImageSequence.Enabled && dp.Name.Contains('#'))
+                    fn += dp.Name[dp.Name.LastIndexOf('#')..].Replace(" ", "");
+                else if (dpList[0].Name.EndsWith("- whole") && dp.Name.Contains('-'))
+                    fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
+
                 if (FormProperty.radioButtonAsPDIformat.Checked)
                     XYFile.SavePdiFile(new DiffractionProfile[] { dp }, fn + extension);
                 else
@@ -4265,7 +4266,7 @@ public partial class FormMain : Form
 
     #endregion
 
- 
+
 
     #region IPAのマクロ操作を提供するサブクラス
     /// <summary>

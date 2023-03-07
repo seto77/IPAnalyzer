@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2023.2.7.0254</AssemblyVersion>
-    <FileVersion>2023.2.7.0254</FileVersion>
+    <AssemblyVersion>2023.3.7.0352</AssemblyVersion>
+    <FileVersion>2023.3.7.0352</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
@@ -33,7 +33,7 @@
 
   <ItemGroup>
     <PackageReference Include="HDF.PInvoke.1.10" Version="1.10.612" />
-    <PackageReference Include="SimdLinq" Version="1.3.0" />
+    <PackageReference Include="SimdLinq" Version="1.3.2" />
   </ItemGroup>
 
   <ItemGroup>
