@@ -3360,7 +3360,6 @@ public partial class FormMain : Form
                     SrcAxisMode = IP.Mode,
                     SrcWaveLength = IP.WaveLength,
                     Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial,
-                    Name = FileName
                 };
 
                 var targets = new int[] { -1 };
@@ -3385,7 +3384,7 @@ public partial class FormMain : Form
                             diffractionProfile.SrcWaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
                     }
                     if (toolStripButtonImageSequence.Enabled)
-                        diffractionProfile.Name += "  " + FileNameSub;
+                        diffractionProfile.Name = FileName + "  " + FileNameSub;
 
                     //プロファイルを作成
                     diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
@@ -3588,9 +3587,9 @@ public partial class FormMain : Form
             foreach (var dp in dpList)
             {
                 var fn = filename;
-                if (toolStripButtonImageSequence.Enabled && dp.Name.Contains('#'))
+                if (toolStripButtonImageSequence.Enabled && dp.Name.Contains('#'))//シーケンシャルイメージモードの時
                     fn += dp.Name[dp.Name.LastIndexOf('#')..].Replace(" ", "");
-                else if (dpList[0].Name.EndsWith("- whole") && dp.Name.Contains('-'))
+                else if (dpList[0].Name.EndsWith("-whole") && dp.Name.Contains('-'))//Azimuthal divison モードの時
                     fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
 
                 if (FormProperty.radioButtonAsPDIformat.Checked)
