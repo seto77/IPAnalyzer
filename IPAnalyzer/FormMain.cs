@@ -3363,9 +3363,9 @@ public partial class FormMain : Form
                 };
 
                 var targets = new int[] { -1 };
-                //シーケンシャルイメージモードの時の処理
+                
                 if (toolStripButtonImageSequence.Enabled)
-                {
+                {//シーケンシャルイメージモードの時の処理
                     if (toolStripMenuItemAllSequentialImages.Checked)
                         targets = Enumerable.Range(0, FormSequentialImage.MaximumNumber).ToArray();
                     else if (toolStripMenuItemSelectedSequentialImages.Checked)
@@ -3374,17 +3374,20 @@ public partial class FormMain : Form
 
                 for (int i = 0; i < targets.Length; i++)
                 {
-                    //シーケンシャルイメージモードの時の処理
+                    
                     if (targets[0] != -1)
-                    {
+                    {//シーケンシャルイメージモードの時の処理
                         FormSequentialImage.SkipCalcFreq = i != targets.Length - 1;
                         FormSequentialImage.AverageMode = false;
                         FormSequentialImage.SelectedIndex = targets[i];
                         if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
                             diffractionProfile.SrcWaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
                     }
+
                     if (toolStripButtonImageSequence.Enabled)
                         diffractionProfile.Name = FileName + "  " + FileNameSub;
+                    else
+                        diffractionProfile.Name = FileName;
 
                     //プロファイルを作成
                     diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
