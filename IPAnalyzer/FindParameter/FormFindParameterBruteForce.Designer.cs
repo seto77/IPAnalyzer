@@ -994,7 +994,7 @@
             graphControl1.AxisYTextVisible = true;
             graphControl1.BackgroundColor = System.Drawing.Color.White;
             graphControl1.BottomMargin = 0D;
-            graphControl1.DivisionLineColor = System.Drawing.Color.Gray;
+            graphControl1.DivisionLineColor = System.Drawing.Color.LightGray;
             graphControl1.DivisionLineXVisible = true;
             graphControl1.DivisionLineYVisible = true;
             graphControl1.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControl1.DrawingRange");

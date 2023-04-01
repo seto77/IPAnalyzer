@@ -1011,25 +1011,6 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="graphControlFrequency.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="Crystallography" name="Crystallography, Culture=neutral, PublicKeyToken=null" />
-  <data name="graphControlFrequency.DrawingRange" type="Crystallography.RectangleD, Crystallography">
-    <value>0, 0, 1, 1</value>
-  </data>
-  <data name="graphControlFrequency.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9pt</value>
-  </data>
-  <data name="graphControlFrequency.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
-    <value>743, 165</value>
-  </data>
-  <data name="graphControlFrequency.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;graphControlFrequency.Name" xml:space="preserve">
     <value>graphControlFrequency</value>
   </data>
@@ -1067,6 +1048,25 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="graphControlProfile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="Crystallography" name="Crystallography, Culture=neutral, PublicKeyToken=null" />
+  <data name="graphControlProfile.DrawingRange" type="Crystallography.RectangleD, Crystallography">
+    <value>0, 0, 1, 1</value>
+  </data>
+  <data name="graphControlProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="graphControlProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 165</value>
+  </data>
+  <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Name" xml:space="preserve">
@@ -2970,34 +2970,34 @@
   <data name="&gt;&gt;trackBarAdvancedMaxInt.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="graphControlProfile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="graphControlFrequency.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="graphControlProfile.DrawingRange" type="Crystallography.RectangleD, Crystallography">
+  <data name="graphControlFrequency.DrawingRange" type="Crystallography.RectangleD, Crystallography">
     <value>0, 0, 1, 1</value>
   </data>
-  <data name="graphControlProfile.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="graphControlFrequency.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
-  <data name="graphControlProfile.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="graphControlFrequency.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="graphControlProfile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="graphControlFrequency.Size" type="System.Drawing.Size, System.Drawing">
     <value>743, 165</value>
   </data>
-  <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
+  <data name="graphControlFrequency.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;graphControlProfile.Name" xml:space="preserve">
-    <value>graphControlProfile</value>
+  <data name="&gt;&gt;graphControlFrequency.Name" xml:space="preserve">
+    <value>graphControlFrequency</value>
   </data>
-  <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
+  <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
     <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;graphControlProfile.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;graphControlFrequency.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="textBoxStatisticsSelectedAreaSequential.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

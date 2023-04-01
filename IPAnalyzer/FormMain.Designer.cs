@@ -832,7 +832,7 @@ namespace IPAnalyzer
             graphControlProfile.AxisYTextVisible = true;
             graphControlProfile.BackgroundColor = Color.White;
             graphControlProfile.BottomMargin = 0D;
-            graphControlProfile.DivisionLineColor = Color.Black;
+            graphControlProfile.DivisionLineColor = Color.LightGray;
             graphControlProfile.DivisionLineXVisible = true;
             graphControlProfile.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlProfile, "graphControlProfile");

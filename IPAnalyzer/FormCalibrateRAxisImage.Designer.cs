@@ -28,168 +28,180 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxFile1 = new System.Windows.Forms.TextBox();
-            this.textBoxFile2 = new System.Windows.Forms.TextBox();
-            this.textBoxFile3 = new System.Windows.Forms.TextBox();
-            this.buttonReadFile1 = new System.Windows.Forms.Button();
-            this.buttonReadFile2 = new System.Windows.Forms.Button();
-            this.buttonReadFile3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.graphControl1 = new Crystallography.Controls.GraphControl();
-            this.button4 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalibrateRAxisImage));
+            textBoxFile1 = new System.Windows.Forms.TextBox();
+            textBoxFile2 = new System.Windows.Forms.TextBox();
+            textBoxFile3 = new System.Windows.Forms.TextBox();
+            buttonReadFile1 = new System.Windows.Forms.Button();
+            buttonReadFile2 = new System.Windows.Forms.Button();
+            buttonReadFile3 = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            graphControl1 = new Crystallography.Controls.GraphControl();
+            button4 = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // textBoxFile1
             // 
-            this.textBoxFile1.Location = new System.Drawing.Point(66, 14);
-            this.textBoxFile1.Name = "textBoxFile1";
-            this.textBoxFile1.Size = new System.Drawing.Size(257, 22);
-            this.textBoxFile1.TabIndex = 0;
+            textBoxFile1.Location = new System.Drawing.Point(66, 14);
+            textBoxFile1.Name = "textBoxFile1";
+            textBoxFile1.Size = new System.Drawing.Size(257, 22);
+            textBoxFile1.TabIndex = 0;
             // 
             // textBoxFile2
             // 
-            this.textBoxFile2.Location = new System.Drawing.Point(66, 41);
-            this.textBoxFile2.Name = "textBoxFile2";
-            this.textBoxFile2.Size = new System.Drawing.Size(257, 22);
-            this.textBoxFile2.TabIndex = 0;
+            textBoxFile2.Location = new System.Drawing.Point(66, 41);
+            textBoxFile2.Name = "textBoxFile2";
+            textBoxFile2.Size = new System.Drawing.Size(257, 22);
+            textBoxFile2.TabIndex = 0;
             // 
             // textBoxFile3
             // 
-            this.textBoxFile3.Location = new System.Drawing.Point(66, 70);
-            this.textBoxFile3.Name = "textBoxFile3";
-            this.textBoxFile3.Size = new System.Drawing.Size(257, 22);
-            this.textBoxFile3.TabIndex = 0;
+            textBoxFile3.Location = new System.Drawing.Point(66, 70);
+            textBoxFile3.Name = "textBoxFile3";
+            textBoxFile3.Size = new System.Drawing.Size(257, 22);
+            textBoxFile3.TabIndex = 0;
             // 
             // buttonReadFile1
             // 
-            this.buttonReadFile1.Location = new System.Drawing.Point(329, 11);
-            this.buttonReadFile1.Name = "buttonReadFile1";
-            this.buttonReadFile1.Size = new System.Drawing.Size(75, 27);
-            this.buttonReadFile1.TabIndex = 1;
-            this.buttonReadFile1.Text = "Open";
-            this.buttonReadFile1.UseVisualStyleBackColor = true;
-            this.buttonReadFile1.Click += new System.EventHandler(this.buttonReadFile1_Click);
+            buttonReadFile1.Location = new System.Drawing.Point(329, 11);
+            buttonReadFile1.Name = "buttonReadFile1";
+            buttonReadFile1.Size = new System.Drawing.Size(75, 27);
+            buttonReadFile1.TabIndex = 1;
+            buttonReadFile1.Text = "Open";
+            buttonReadFile1.UseVisualStyleBackColor = true;
+            buttonReadFile1.Click += buttonReadFile1_Click;
             // 
             // buttonReadFile2
             // 
-            this.buttonReadFile2.Location = new System.Drawing.Point(329, 39);
-            this.buttonReadFile2.Name = "buttonReadFile2";
-            this.buttonReadFile2.Size = new System.Drawing.Size(75, 27);
-            this.buttonReadFile2.TabIndex = 1;
-            this.buttonReadFile2.Text = "Open";
-            this.buttonReadFile2.UseVisualStyleBackColor = true;
+            buttonReadFile2.Location = new System.Drawing.Point(329, 39);
+            buttonReadFile2.Name = "buttonReadFile2";
+            buttonReadFile2.Size = new System.Drawing.Size(75, 27);
+            buttonReadFile2.TabIndex = 1;
+            buttonReadFile2.Text = "Open";
+            buttonReadFile2.UseVisualStyleBackColor = true;
             // 
             // buttonReadFile3
             // 
-            this.buttonReadFile3.Location = new System.Drawing.Point(329, 67);
-            this.buttonReadFile3.Name = "buttonReadFile3";
-            this.buttonReadFile3.Size = new System.Drawing.Size(75, 27);
-            this.buttonReadFile3.TabIndex = 1;
-            this.buttonReadFile3.Text = "Open";
-            this.buttonReadFile3.UseVisualStyleBackColor = true;
+            buttonReadFile3.Location = new System.Drawing.Point(329, 67);
+            buttonReadFile3.Name = "buttonReadFile3";
+            buttonReadFile3.Size = new System.Drawing.Size(75, 27);
+            buttonReadFile3.TabIndex = 1;
+            buttonReadFile3.Text = "Open";
+            buttonReadFile3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 14);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Image 2";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(10, 45);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(50, 14);
+            label1.TabIndex = 3;
+            label1.Text = "Image 2";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 14);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Image 1";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(10, 17);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(50, 14);
+            label2.TabIndex = 3;
+            label2.Text = "Image 1";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 14);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Image 3";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(10, 73);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(50, 14);
+            label3.TabIndex = 3;
+            label3.Text = "Image 3";
             // 
             // graphControl1
             // 
-            this.graphControl1.AllowMouseOperation = true;
-            this.graphControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.graphControl1.BackgroundColor = System.Drawing.Color.White;
-            this.graphControl1.BottomMargin = 0D;
-            this.graphControl1.DivisionLineColor = System.Drawing.Color.Gray;
-            this.graphControl1.FixRangeHorizontal = false;
-            this.graphControl1.FixRangeVertical = false;
-            this.graphControl1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.graphControl1.Interpolation = false;
-            this.graphControl1.IsIntegerX = false;
-            this.graphControl1.IsIntegerY = false;
-            this.graphControl1.LabelX = "X:";
-            this.graphControl1.LabelY = "Y:";
-            this.graphControl1.LeftMargin = 0F;
-            this.graphControl1.VerticalLineColor = System.Drawing.Color.Red;
-            this.graphControl1.LineWidth = 1F;
-            this.graphControl1.Location = new System.Drawing.Point(10, 102);
-            this.graphControl1.LowerX = 0D;
-            this.graphControl1.LowerY = 0D;
-            this.graphControl1.MaximalX = 1D;
-            this.graphControl1.MaximalY = 1D;
-            this.graphControl1.MinimalX = 0D;
-            this.graphControl1.MinimalY = 0D;
-            this.graphControl1.Mode = Crystallography.Controls.GraphControl.DrawingMode.Line;
-            this.graphControl1.MousePositionVisible = true;
-            this.graphControl1.Name = "graphControl1";
-            this.graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
-            this.graphControl1.Size = new System.Drawing.Size(799, 486);
-            this.graphControl1.Smoothing = false;
-            this.graphControl1.TabIndex = 4;
-            this.graphControl1.UnitX = "";
-            this.graphControl1.UnitY = "";
-            this.graphControl1.UpperX = 1D;
-            this.graphControl1.UpperY = 1D;
-            this.graphControl1.UseLineWidth = true;
-            this.graphControl1.XLog = false;
-            this.graphControl1.YLog = false;
+            graphControl1.AllowMouseOperation = true;
+            graphControl1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            graphControl1.AxisLineColor = System.Drawing.Color.Gray;
+            graphControl1.AxisTextColor = System.Drawing.Color.Black;
+            graphControl1.AxisTextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            graphControl1.AxisXTextVisible = true;
+            graphControl1.AxisYTextVisible = true;
+            graphControl1.BackgroundColor = System.Drawing.Color.White;
+            graphControl1.BottomMargin = 0D;
+            graphControl1.DivisionLineColor = System.Drawing.Color.LightGray;
+            graphControl1.DivisionLineXVisible = true;
+            graphControl1.DivisionLineYVisible = true;
+            graphControl1.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControl1.DrawingRange");
+            graphControl1.FixRangeHorizontal = false;
+            graphControl1.FixRangeVertical = false;
+            graphControl1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            graphControl1.GraphTitle = "";
+            graphControl1.Interpolation = false;
+            graphControl1.IsIntegerX = false;
+            graphControl1.IsIntegerY = false;
+            graphControl1.LabelX = "X:";
+            graphControl1.LabelY = "Y:";
+            graphControl1.LeftMargin = 0F;
+            graphControl1.LineWidth = 1F;
+            graphControl1.Location = new System.Drawing.Point(10, 102);
+            graphControl1.LowerX = 0D;
+            graphControl1.LowerY = 0D;
+            graphControl1.MaximalX = 1D;
+            graphControl1.MaximalY = 1D;
+            graphControl1.MinimalX = 0D;
+            graphControl1.MinimalY = 0D;
+            graphControl1.Mode = Crystallography.Controls.GraphControl.DrawingMode.Line;
+            graphControl1.MousePositionVisible = true;
+            graphControl1.MousePositionXDigit = -1;
+            graphControl1.MousePositionYDigit = -1;
+            graphControl1.Name = "graphControl1";
+            graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
+            graphControl1.Profile = null;
+            graphControl1.Size = new System.Drawing.Size(799, 486);
+            graphControl1.Smoothing = false;
+            graphControl1.TabIndex = 4;
+            graphControl1.UnitX = "";
+            graphControl1.UnitY = "";
+            graphControl1.UpperPanelFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            graphControl1.UpperPanelVisible = true;
+            graphControl1.UpperX = 1D;
+            graphControl1.UpperY = 1D;
+            graphControl1.UseLineWidth = true;
+            graphControl1.VerticalLineColor = System.Drawing.Color.Red;
+            graphControl1.XLog = false;
+            graphControl1.YLog = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(623, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 27);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Calc !";
-            this.button4.UseVisualStyleBackColor = true;
+            button4.Location = new System.Drawing.Point(623, 34);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(75, 27);
+            button4.TabIndex = 1;
+            button4.Text = "Calc !";
+            button4.UseVisualStyleBackColor = true;
             // 
             // FormCalibrateRAxisImage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(821, 600);
-            this.Controls.Add(this.graphControl1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonReadFile3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.buttonReadFile2);
-            this.Controls.Add(this.buttonReadFile1);
-            this.Controls.Add(this.textBoxFile3);
-            this.Controls.Add(this.textBoxFile2);
-            this.Controls.Add(this.textBoxFile1);
-            this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "FormCalibrateRAxisImage";
-            this.Text = "FormCalibrateRAxisImage";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            ClientSize = new System.Drawing.Size(821, 600);
+            Controls.Add(graphControl1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(buttonReadFile3);
+            Controls.Add(button4);
+            Controls.Add(buttonReadFile2);
+            Controls.Add(buttonReadFile1);
+            Controls.Add(textBoxFile3);
+            Controls.Add(textBoxFile2);
+            Controls.Add(textBoxFile1);
+            Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Name = "FormCalibrateRAxisImage";
+            Text = "FormCalibrateRAxisImage";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

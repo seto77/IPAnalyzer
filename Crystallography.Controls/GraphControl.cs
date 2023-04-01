@@ -1001,12 +1001,12 @@ public partial class GraphControl : UserControl
             else if (d / unit / 5 < maxDiv) step = unit * 5;
             else if (d / unit / 10 < maxDiv) step = unit * 10;
 
-            for (int i = (int)(min / step) + 1; i < max / step; i++)
+            var startI = min > 0 ? (int)(min / step) + 1 : (int)(min / step);
+            for (int i = startI; i < max / step; i++)
             {
-                if (max > 1000 || max < 0.001)
-                    //  str = ((i * step) / Math.Pow(10, (int)Math.Log10(max) - 1)).ToString("#,#.###############") + "E" + ((int)Math.Log10(max) - 1).ToString();
+                if (min >= 0 && (max > 1000 || max < 0.001))//対数表示する場合
                     str = ((i * step) / Math.Pow(10, (int)Math.Log10(i * step))).ToString("#,#.###############") + "E" + ((int)Math.Log10(i * step)).ToString();
-                else
+                else//実数表示する場合
                     str = Math.Round(i * step, 5).ToString("#,#.###############");
                 results.Add(i * step, str);
             }
