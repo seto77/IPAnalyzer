@@ -67,9 +67,9 @@ public partial class FormFindParameterBruteForce : Form
         }
         set
         {
-            if(value != DetectorCoordinates)
+            if (value != DetectorCoordinates)
             {
-                if(value== FormProperty.DetectorCoordinatesEnum.DirectSpot)
+                if (value == FormProperty.DetectorCoordinatesEnum.DirectSpot)
                 {
                     radioButtonDirectSpotMode.Checked = true;
                     radioButtonFootMode.Checked = false;
@@ -100,7 +100,7 @@ public partial class FormFindParameterBruteForce : Form
     {
         e.Cancel = true;
         FormMain.toolStripButtonFindParameterBruteForce.Checked = false;
-    
+
     }
     #endregion
 
@@ -126,7 +126,7 @@ public partial class FormFindParameterBruteForce : Form
         return Math.Atan2(r, Ring.IP.FilmDistance);
 
     }
-    
+
     private void InitializeCrystalPlane()
     {
         FormMain.SetIntegralProperty();
@@ -134,14 +134,14 @@ public partial class FormFindParameterBruteForce : Form
         //if (FormMain.IsFlatPanelMode)
         //    twoTheta = new double[] { getTwoTheta(0, 0), getTwoTheta(0, Ring.IP.SrcHeight - 1), getTwoTheta(Ring.IP.SrcWidth - 1, 0), getTwoTheta(Ring.IP.SrcWidth - 1, Ring.IP.SrcHeight - 1) };
         //else
-            twoTheta = new double[] { Ring.IP.StartAngle, Ring.IP.EndAngle };
+        twoTheta = new double[] { Ring.IP.StartAngle, Ring.IP.EndAngle };
 
         Crystal crystal = crystalControl1.Crystal;
         double d_min = Ring.IP.WaveLength / 2 / Math.Sin(twoTheta.Max() / 2);
         double d_max = Ring.IP.WaveLength / 2 / Math.Sin(twoTheta.Min() / 2);
 
         List<double> wavelength = new List<double>();
-        if (FormMain.FormProperty.waveLengthControl.WaveSource == WaveSource.Xray && FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber!=0 && FormMain.FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka)
+        if (FormMain.FormProperty.waveLengthControl.WaveSource == WaveSource.Xray && FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber != 0 && FormMain.FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka)
         {
             wavelength.Add(AtomStatic.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1) / 10.0);
             wavelength.Add(AtomStatic.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2) / 10.0);
@@ -292,7 +292,7 @@ public partial class FormFindParameterBruteForce : Form
     private void numericUpDownFittingRangeForGandolfi_ValueChanged(object sender, EventArgs e)
     {
         Profile profile = graphControl1.Profile;
-        
+
         if (profile != null && profile.Pt != null && profile.Pt.Count > 0)
         {
             Crystal crystal = crystalControl1.Crystal;
@@ -320,8 +320,8 @@ public partial class FormFindParameterBruteForce : Form
     }
 
     bool[] originalSpots;
-    double initialStart=0;
-    double initialEnd=0;
+    double initialStart = 0;
+    double initialEnd = 0;
     private void buttonOptimizeSacla_Click(object sender, EventArgs e)
     {
         buttonStop.Visible = true;
@@ -340,7 +340,7 @@ public partial class FormFindParameterBruteForce : Form
         bool[] area = new bool[Ring.IsOutsideOfIntegralProperty.Count];
         for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
             area[j] = true;
-        
+
         for (int i = 0; i < crystal.Plane.Count; i++)
         {
             FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - numericBoxFittingRange.Value * 2;
@@ -349,12 +349,12 @@ public partial class FormFindParameterBruteForce : Form
                 if (Ring.IsOutsideOfIntegralProperty[j] == false)
                     area[j] = false;
         }
-       
+
         FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[0].XCalc - numericBoxFittingRange.Value * 2;
         FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[^1].XCalc + numericBoxFittingRange.Value * 2;
         for (int i = 0; i < Ring.IsSpots.Count; i++)
             Ring.IsSpots[i] = area[i] || originalSpots[i];
-        
+
         FormMain.Draw();
         Ring.SetMask(true, true, true);
         var cameraLengthStep = numericBoxCameraLengthStep.Value;
@@ -367,9 +367,9 @@ public partial class FormFindParameterBruteForce : Form
         //「3」と入力したら、 0,-1,1,-2,2,-3,3 の数列を返す関数
         List<int> genArray(int n)
         {
-            var result = Enumerable.Range(-n, 2*n + 1).ToList();
+            var result = Enumerable.Range(-n, 2 * n + 1).ToList();
             result.Sort((n1, n2) => Math.Abs(n1).CompareTo(Math.Abs(n2)));
-           return result;
+            return result;
         }
 
         var cameraLengthRange = genArray(checkBoxCameraLength.Checked ? numericBoxCameraLengthRange.ValueInteger : 0);
@@ -386,7 +386,7 @@ public partial class FormFindParameterBruteForce : Form
         var results = new SortedList<double, flatPanelValues>();
 
         var renewalTime = 6;
-        
+
         FormMain.SkipDrawing = true;
 
         var directMode = DetectorCoordinates == FormProperty.DetectorCoordinatesEnum.DirectSpot;
@@ -500,7 +500,7 @@ public partial class FormFindParameterBruteForce : Form
 
             var total = phiRange.Count() * pointXRange.Count() * cameraLengthRange.Count() * tauRange.Count() * pointYRange.Count() * waveLengthRange.Count();
             double progress = (double)count / (int)numericBoxIteration.Value / total;
-            toolStripStatusLabel1.Text = 
+            toolStripStatusLabel1.Text =
                 $"  {(sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime:f1} ms / step." +
                 $"  {progress * 100:f2} % completed.  Elappsed Time: {sw.ElapsedMilliseconds / 1000.0:f0} sec." +
                 $"  Wait about {sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress:f0} sec.";
@@ -511,7 +511,7 @@ public partial class FormFindParameterBruteForce : Form
 
             textBox1.Text +=
                 $"Current best values\r\n" +
-                $"    CL  : {best.CameraLength:g10}{(best.CameraLength!=initialValue.CameraLength? " (Changed)" : " (Unchanged)")}\r\n" +
+                $"    CL  : {best.CameraLength:g10}{(best.CameraLength != initialValue.CameraLength ? " (Changed)" : " (Unchanged)")}\r\n" +
                 $"    X   : {best.PointX:g10}{(best.PointX != initialValue.PointX ? " (Changed)" : " (Unchanged)")}\r\n" +
                 $"    Y   : {best.PointY:g10}{(best.PointY != initialValue.PointY ? " (Changed)" : " (Unchanged)")}\r\n" +
                 $"    Phi : {best.Phi:g10}{(best.Phi != initialValue.Phi ? " (Changed)" : " (Unchanged)")}\r\n" +
@@ -554,7 +554,7 @@ public partial class FormFindParameterBruteForce : Form
     struct flatPanelValues
     {
         public double CameraLength, Tau, Phi, PointX, PointY, WaveLength;
-        public flatPanelValues(double cameraLength,double phi, double tau, double centerX, double centerY, double waveLength)
+        public flatPanelValues(double cameraLength, double phi, double tau, double centerX, double centerY, double waveLength)
         {
             CameraLength = cameraLength;
             Phi = phi;
@@ -626,7 +626,7 @@ public partial class FormFindParameterBruteForce : Form
 
                     planes[i].peakFunction.GetValue(planes[i].XCalc, true);
 
-                    
+
                     twoThetaDeviation += (planes[i].XCalc - planes[i].peakFunction.X) * (planes[i].XCalc - planes[i].peakFunction.X);
                 }
             }
@@ -683,14 +683,14 @@ public partial class FormFindParameterBruteForce : Form
     {
         if (FormMain.IsFlatPanelMode)
         {
-            Crystal c = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au",  Color.Violet);
+            Crystal c = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
             c.AddAtoms(new Atoms("Au", 79, 0, 0, new double[] { 1 }, 523, new Vector3D(0, 0, 0), 1, new DiffuseScatteringFactor()));
             crystalControl1.Crystal = c;
             tabControl1.SelectedIndex = 0;
         }
         else
         {
-            crystalControl1.Crystal = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2",  Color.Violet);
+            crystalControl1.Crystal = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
             tabControl1.SelectedIndex = 1;
         }
 
@@ -730,7 +730,7 @@ public partial class FormFindParameterBruteForce : Form
         Profile profile;
         for (int n = 0; n < cycle; n++)
         {
-            
+
 
             var initialValue = new gandolfiValues(CameraLength1, PixX, PixY, DirectSpotPosition.X, DirectSpotPosition.Y, Tau, Phi, Radius);
             var results = new SortedList<double, gandolfiValues>();
@@ -746,19 +746,19 @@ public partial class FormFindParameterBruteForce : Form
             for (int p1 = -pixSizeRange; p1 <= pixSizeRange; p1++)
                 for (int p2 = -pixSizeRange; p2 <= pixSizeRange; p2++)
                     parameters.Add(new gandolfiValues
-                        (CameraLength1, PixX + p1 * pixSizeStep, PixY + p2 * pixSizeStep, DirectSpotPosition.X , DirectSpotPosition.Y , Tau, Phi, Radius));
+                        (CameraLength1, PixX + p1 * pixSizeStep, PixY + p2 * pixSizeStep, DirectSpotPosition.X, DirectSpotPosition.Y, Tau, Phi, Radius));
 
             //cameralength, GandolfiRadius
             for (int p1 = -cameraLengthRange; p1 <= cameraLengthRange; p1++)
                 for (int p2 = -radiusRange; p2 <= radiusRange; p2++)
                     parameters.Add(new gandolfiValues
-                        (CameraLength1 + p1 * cameraLengthStep, PixX , PixY , DirectSpotPosition.X, DirectSpotPosition.Y, Tau, Phi, Radius + p2 * radiusStep));
+                        (CameraLength1 + p1 * cameraLengthStep, PixX, PixY, DirectSpotPosition.X, DirectSpotPosition.Y, Tau, Phi, Radius + p2 * radiusStep));
 
             //Tilt, Tau
             for (int p1 = -tiltRange; p1 <= tiltRange; p1++)
                 for (int p2 = -tiltRange; p2 <= tiltRange; p2++)
                     parameters.Add(new gandolfiValues
-                        (CameraLength1, PixX , PixY , DirectSpotPosition.X, DirectSpotPosition.Y, Tau + p1 * tiltStep, Phi + p2 * tiltStep, Radius));
+                        (CameraLength1, PixX, PixY, DirectSpotPosition.X, DirectSpotPosition.Y, Tau + p1 * tiltStep, Phi + p2 * tiltStep, Radius));
 
             int count = 0;
             foreach (var v in parameters)
@@ -790,7 +790,7 @@ public partial class FormFindParameterBruteForce : Form
 
                 #region 進捗状況を更新
                 count++;
-                double progress = ((double)n + (double)count  / parameters.Count)/ cycle ;
+                double progress = ((double)n + (double)count / parameters.Count) / cycle;
                 toolStripStatusLabel1.Text = "  " + ((sw.ElapsedMilliseconds - beforeTime) / 1000.0).ToString("f2") + " sec / step.  "
                     + (progress * 100).ToString("f2") + " % completed.  "
                     + "Elappsed Time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f0") + " sec.  "
@@ -814,7 +814,7 @@ public partial class FormFindParameterBruteForce : Form
                 Application.DoEvents();
             }
 
-            
+
             CameraLength1 = results.Values[0].CameraLength;
             DirectSpotPosition = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
             PixX = results.Values[0].PixelSizeX;
@@ -857,7 +857,7 @@ public partial class FormFindParameterBruteForce : Form
         {
             double twoTheta = Math.Asin(FormMain.FormProperty.waveLengthControl.WaveLength / 2.0 / crystal.Plane[i].d) * 360 / Math.PI;
 
-            if(dev>Math.Abs(twoTheta-pt.X))
+            if (dev > Math.Abs(twoTheta - pt.X))
             {
                 index = i;
                 dev = Math.Abs(twoTheta - pt.X);
@@ -865,11 +865,11 @@ public partial class FormFindParameterBruteForce : Form
             }
         }
 
-        if(index!=-1 && dev < (graphControl1.UpperX-graphControl1.LowerX)/graphControl1.Width*3.0)
+        if (index != -1 && dev < (graphControl1.UpperX - graphControl1.LowerX) / graphControl1.Width * 3.0)
         {
             crystal.Plane.RemoveAt(index);
 
-            double upperX= graphControl1.UpperX;
+            double upperX = graphControl1.UpperX;
             double lowerX = graphControl1.LowerX;
             double upperY = graphControl1.UpperY;
             double lowerY = graphControl1.LowerY;
@@ -896,14 +896,14 @@ public partial class FormFindParameterBruteForce : Form
             return;
         var name = (sender as RadioButton).Name;
         Crystal crystal;
-       
+
         if (name.Contains("Au"))
         {
             crystal = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
             crystal.AddAtoms("Au", 79, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
 
         }
-        else if(name.Contains("CeO2"))
+        else if (name.Contains("CeO2"))
         {
             crystal = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
             crystal.AddAtoms("Ce", 58, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
@@ -918,9 +918,9 @@ public partial class FormFindParameterBruteForce : Form
             crystal.AddAtoms("La", 57, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
             crystal.AddAtoms("B", 5, 0, 0, null, 0.1975, 0.5, 0.5, 1, new DiffuseScatteringFactor());
         }
-        else if (name .Contains("Al2O3"))
+        else if (name.Contains("Al2O3"))
         {
-            crystal = new Crystal((0.47657, 0.47657, 1.301, Math.PI / 2, Math.PI / 2, Math.PI *2/ 3), 460, "Al2O3", Color.Violet);
+            crystal = new Crystal((0.47657, 0.47657, 1.301, Math.PI / 2, Math.PI / 2, Math.PI * 2 / 3), 460, "Al2O3", Color.Violet);
 
             crystal.AddAtoms("Al", 13, 0, 0, null, 0, 0, 0.352, 1, new DiffuseScatteringFactor());
             crystal.AddAtoms("O", 8, 0, 0, null, 0.306, 0, 0.25, 1, new DiffuseScatteringFactor());
@@ -940,9 +940,9 @@ public partial class FormFindParameterBruteForce : Form
         FormMain.FormProperty.DetectorCoordinates = DetectorCoordinates;
 
         var jp = Thread.CurrentThread.CurrentUICulture.ToString().Contains("ja");
-        if (DetectorCoordinates== FormProperty.DetectorCoordinatesEnum.DirectSpot)
+        if (DetectorCoordinates == FormProperty.DetectorCoordinatesEnum.DirectSpot)
         {
-            if(jp)
+            if (jp)
             {
                 checkBoxCameraLength.Text = "カメラ長1";
                 checkBoxPointX.Text = "ダイレクトスポット X";
@@ -975,5 +975,5 @@ public partial class FormFindParameterBruteForce : Form
 
     }
 
-   
+
 }
