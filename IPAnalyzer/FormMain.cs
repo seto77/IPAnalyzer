@@ -1787,9 +1787,9 @@ public partial class FormMain : Form
         if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
             trackBarAdvancedMinInt.Value = trackBarAdvancedMaxInt.Value - 1;
 
-        if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
+        if (graphControlFrequency.VerticalLines != null && graphControlFrequency.VerticalLines.Length == 2)
         {
-            graphControlFrequency.LineList = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+            graphControlFrequency.VerticalLines = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             graphControlFrequency.Draw();
         }
 
@@ -1807,9 +1807,9 @@ public partial class FormMain : Form
         if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
             trackBarAdvancedMaxInt.Value = trackBarAdvancedMinInt.Value + 1;
 
-        if (graphControlFrequency.LineList != null && graphControlFrequency.LineList.Length == 2)
+        if (graphControlFrequency.VerticalLines != null && graphControlFrequency.VerticalLines.Length == 2)
         {
-            graphControlFrequency.LineList = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+            graphControlFrequency.VerticalLines = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             graphControlFrequency.Draw();
         }
 
@@ -1973,7 +1973,7 @@ public partial class FormMain : Form
         IsImageReady = true;
         //IntegralArea_Changed(new object(), new EventArgs());
 
-        graphControlFrequency.LineList = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+        graphControlFrequency.VerticalLines = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
         Ring.CalcFreq();
         SetFrequencyProfile();//強度頻度グラフを作成
         graphControlProfile.Profile = new Profile();//プロファイルは初期化
@@ -3363,7 +3363,7 @@ public partial class FormMain : Form
                 };
 
                 var targets = new int[] { -1 };
-                
+
                 if (toolStripButtonImageSequence.Enabled)
                 {//シーケンシャルイメージモードの時の処理
                     if (toolStripMenuItemAllSequentialImages.Checked)
@@ -3374,7 +3374,7 @@ public partial class FormMain : Form
 
                 for (int i = 0; i < targets.Length; i++)
                 {
-                    
+
                     if (targets[0] != -1)
                     {//シーケンシャルイメージモードの時の処理
                         FormSequentialImage.SkipCalcFreq = i != targets.Length - 1;
@@ -3929,9 +3929,9 @@ public partial class FormMain : Form
 
     private void graphControlFrequency_LinePositionChanged()
     {
-        if (graphControlFrequency.LineList.Length == 2)
+        if (graphControlFrequency.VerticalLines.Length == 2)
         {
-            var max = Math.Max(graphControlFrequency.LineList[0].X, graphControlFrequency.LineList[1].X);
+            var max = Math.Max(graphControlFrequency.VerticalLines[0].X, graphControlFrequency.VerticalLines[1].X);
             if (trackBarAdvancedMaxInt.Maximum < max)
                 trackBarAdvancedMaxInt.Value = trackBarAdvancedMaxInt.Maximum;
             else if (trackBarAdvancedMinInt.Minimum > max)
@@ -3939,7 +3939,7 @@ public partial class FormMain : Form
             else
                 trackBarAdvancedMaxInt.Value = max;
 
-            var min = Math.Min(graphControlFrequency.LineList[0].X, graphControlFrequency.LineList[1].X);
+            var min = Math.Min(graphControlFrequency.VerticalLines[0].X, graphControlFrequency.VerticalLines[1].X);
             if (trackBarAdvancedMinInt.Maximum < min)
                 trackBarAdvancedMinInt.Value = trackBarAdvancedMinInt.Maximum;
             else if (trackBarAdvancedMinInt.Minimum > min)

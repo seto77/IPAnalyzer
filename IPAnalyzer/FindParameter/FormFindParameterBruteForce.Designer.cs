@@ -1119,18 +1119,14 @@
             this.graphControl1.BackgroundColor = System.Drawing.Color.White;
             this.graphControl1.BottomMargin = 0D;
             this.graphControl1.DivisionLineColor = System.Drawing.Color.Gray;
-            this.graphControl1.DivisionSubLineColor = System.Drawing.Color.LightGray;
             this.graphControl1.FixRangeHorizontal = false;
             this.graphControl1.FixRangeVertical = false;
-            this.graphControl1.GraphName = "";
-            this.graphControl1.HorizontalGradiationTextVisivle = true;
             this.graphControl1.Interpolation = false;
             this.graphControl1.IsIntegerX = false;
             this.graphControl1.IsIntegerY = false;
             this.graphControl1.LabelX = "X:";
             this.graphControl1.LabelY = "Y:";
             this.graphControl1.LeftMargin = 0F;
-            this.graphControl1.LineColor = System.Drawing.Color.Red;
             this.graphControl1.LineWidth = 1F;
             this.graphControl1.LowerX = 0D;
             this.graphControl1.LowerY = 0D;
@@ -1143,19 +1139,13 @@
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
             this.graphControl1.Smoothing = false;
-            this.graphControl1.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.graphControl1.UnitX = "";
             this.graphControl1.UnitY = "";
-            this.graphControl1.UpperText = "";
-            this.graphControl1.UpperTextVisible = true;
             this.graphControl1.UpperX = 1D;
             this.graphControl1.UpperY = 1D;
             this.graphControl1.UseLineWidth = true;
-            this.graphControl1.VerticalGradiationTextVisivle = true;
             this.graphControl1.XLog = false;
-            this.graphControl1.XScaleLineVisible = true;
             this.graphControl1.YLog = false;
-            this.graphControl1.YScaleLineVisible = true;
             this.graphControl1.MouseDoubleClick2 += new Crystallography.Controls.GraphControl.MouseEventHandler2(this.graphControl1_MouseDoubleClick2);
             // 
             // crystalControl1

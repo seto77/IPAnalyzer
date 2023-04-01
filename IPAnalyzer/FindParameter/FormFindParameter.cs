@@ -542,13 +542,14 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             GraphControl g = new GraphControl();
             graph.Add(g);
             g.AllowMouseOperation = checkBoxMouseOperation.Checked;
-            g.GraphName = "";
-            g.LineColor = System.Drawing.Color.Red;
-            g.MousePositionVisible = false;
-            g.Size = new System.Drawing.Size(240, 120);
+            g.GraphTitle = "";
+            g.VerticalLineColor = Color.Red;
+            g.UpperPanelVisible = false;
+            g.Size = new Size(240, 120);
             g.OriginPosition = new Point(0, 20);
             g.UseLineWidth = false;
-            g.VerticalGradiationTextVisivle = false;
+            g.AxisXTextVisible = false;
+            g.AxisYTextVisible = false;
             flowLayoutPanelEachPeaks.Controls.Add(g);
         }
         Color s = Color.FromArgb(dp[n].ColorARGB.Value);
@@ -598,10 +599,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         for (int i = 0; i < drawPeakList.Count; i++)
         {
             graph[i].Visible = true;
-            graph[i].GraphName = "(" + cry[n].Plane[drawPeakList[i]].h.ToString() + " " + cry[n].Plane[drawPeakList[i]].k.ToString() + " " + cry[n].Plane[drawPeakList[i]].l.ToString() + ")";
-            graph[i].LineList = new PointD[] { centerLine[i] };
+            graph[i].GraphTitle = "(" + cry[n].Plane[drawPeakList[i]].h.ToString() + " " + cry[n].Plane[drawPeakList[i]].k.ToString() + " " + cry[n].Plane[drawPeakList[i]].l.ToString() + ")";
+            graph[i].VerticalLines = new PointD[] { centerLine[i] };
             graph[i].LineWidth = 2f;
-            graph[i].LineColor = c;
+            graph[i].VerticalLineColor = c;
             graph[i].DrawingRange = new RectangleD(sourceProfile[i].MinX, sourceProfile[i].MinY, sourceProfile[i].MaxX - sourceProfile[i].MinX, sourceProfile[i].MaxY - sourceProfile[i].MinY);
 
             graph[i].AddProfiles(new Profile[] { sourceProfile[i], fittigProfile[i], backgroundProfile[i] }, graph[i].DrawingRange);

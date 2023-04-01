@@ -195,7 +195,7 @@ public partial class FormFindParameterBruteForce : Form
             profiles[i].Color = Color.Red;
             profiles[i].LineWidth = 2;
         }
-        graphControl1.LineList = lineList.ToArray();
+        graphControl1.VerticalLines = lineList.ToArray();
         profiles.Insert(0, profile);
         graphControl1.AddProfiles(profiles.ToArray());
     }

@@ -767,22 +767,27 @@ namespace IPAnalyzer
             // graphControlFrequency
             // 
             graphControlFrequency.AllowMouseOperation = true;
+            graphControlFrequency.AxisLineColor = Color.Gray;
+            graphControlFrequency.AxisTextColor = Color.Black;
+            graphControlFrequency.AxisTextFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            graphControlFrequency.AxisXTextVisible = true;
+            graphControlFrequency.AxisYTextVisible = true;
             graphControlFrequency.BackgroundColor = Color.White;
             graphControlFrequency.BottomMargin = 0D;
-            graphControlFrequency.DivisionLineColor = Color.Black;
-            graphControlFrequency.DivisionSubLineColor = Color.LightGray;
+            graphControlFrequency.DivisionLineColor = Color.LightGray;
+            graphControlFrequency.DivisionLineXVisible = true;
+            graphControlFrequency.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlFrequency, "graphControlFrequency");
+            graphControlFrequency.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControlFrequency.DrawingRange");
             graphControlFrequency.FixRangeHorizontal = false;
             graphControlFrequency.FixRangeVertical = false;
-            graphControlFrequency.GraphName = "";
-            graphControlFrequency.HorizontalGradiationTextVisivle = true;
+            graphControlFrequency.GraphTitle = "";
             graphControlFrequency.Interpolation = false;
             graphControlFrequency.IsIntegerX = true;
             graphControlFrequency.IsIntegerY = true;
             graphControlFrequency.LabelX = "Intensity:";
             graphControlFrequency.LabelY = "Frequency:";
             graphControlFrequency.LeftMargin = 0F;
-            graphControlFrequency.LineColor = Color.Red;
             graphControlFrequency.LineWidth = 1F;
             graphControlFrequency.LowerX = 0D;
             graphControlFrequency.LowerY = 0D;
@@ -792,22 +797,22 @@ namespace IPAnalyzer
             graphControlFrequency.MinimalY = 0D;
             graphControlFrequency.Mode = GraphControl.DrawingMode.Histogram;
             graphControlFrequency.MousePositionVisible = true;
+            graphControlFrequency.MousePositionXDigit = -1;
+            graphControlFrequency.MousePositionYDigit = -1;
             graphControlFrequency.Name = "graphControlFrequency";
             graphControlFrequency.OriginPosition = new Point(40, 20);
+            graphControlFrequency.Profile = null;
             graphControlFrequency.Smoothing = false;
-            graphControlFrequency.TextFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             graphControlFrequency.UnitX = "";
             graphControlFrequency.UnitY = "";
-            graphControlFrequency.UpperText = "";
-            graphControlFrequency.UpperTextVisible = true;
+            graphControlFrequency.UpperPanelFont = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            graphControlFrequency.UpperPanelVisible = true;
             graphControlFrequency.UpperX = 1D;
             graphControlFrequency.UpperY = 1D;
             graphControlFrequency.UseLineWidth = true;
-            graphControlFrequency.VerticalGradiationTextVisivle = true;
+            graphControlFrequency.VerticalLineColor = Color.Red;
             graphControlFrequency.XLog = true;
-            graphControlFrequency.XScaleLineVisible = true;
             graphControlFrequency.YLog = true;
-            graphControlFrequency.YScaleLineVisible = true;
             graphControlFrequency.LinePositionChanged += graphControlFrequency_LinePositionChanged;
             // 
             // tabPage2
@@ -820,22 +825,27 @@ namespace IPAnalyzer
             // graphControlProfile
             // 
             graphControlProfile.AllowMouseOperation = true;
+            graphControlProfile.AxisLineColor = Color.Gray;
+            graphControlProfile.AxisTextColor = Color.Black;
+            graphControlProfile.AxisTextFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            graphControlProfile.AxisXTextVisible = true;
+            graphControlProfile.AxisYTextVisible = true;
             graphControlProfile.BackgroundColor = Color.White;
             graphControlProfile.BottomMargin = 0D;
             graphControlProfile.DivisionLineColor = Color.Black;
-            graphControlProfile.DivisionSubLineColor = Color.LightGray;
+            graphControlProfile.DivisionLineXVisible = true;
+            graphControlProfile.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlProfile, "graphControlProfile");
+            graphControlProfile.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControlProfile.DrawingRange");
             graphControlProfile.FixRangeHorizontal = false;
             graphControlProfile.FixRangeVertical = false;
-            graphControlProfile.GraphName = "";
-            graphControlProfile.HorizontalGradiationTextVisivle = true;
+            graphControlProfile.GraphTitle = "aaa";
             graphControlProfile.Interpolation = false;
             graphControlProfile.IsIntegerX = false;
             graphControlProfile.IsIntegerY = false;
             graphControlProfile.LabelX = "Angle:";
             graphControlProfile.LabelY = "Intensity:";
             graphControlProfile.LeftMargin = 0F;
-            graphControlProfile.LineColor = Color.Red;
             graphControlProfile.LineWidth = 1F;
             graphControlProfile.LowerX = 0D;
             graphControlProfile.LowerY = 0D;
@@ -844,23 +854,23 @@ namespace IPAnalyzer
             graphControlProfile.MinimalX = 0D;
             graphControlProfile.MinimalY = 0D;
             graphControlProfile.Mode = GraphControl.DrawingMode.Line;
-            graphControlProfile.MousePositionVisible = true;
+            graphControlProfile.MousePositionVisible = false;
+            graphControlProfile.MousePositionXDigit = -1;
+            graphControlProfile.MousePositionYDigit = -1;
             graphControlProfile.Name = "graphControlProfile";
             graphControlProfile.OriginPosition = new Point(40, 20);
+            graphControlProfile.Profile = null;
             graphControlProfile.Smoothing = false;
-            graphControlProfile.TextFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             graphControlProfile.UnitX = "";
             graphControlProfile.UnitY = "";
-            graphControlProfile.UpperText = "";
-            graphControlProfile.UpperTextVisible = true;
+            graphControlProfile.UpperPanelFont = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            graphControlProfile.UpperPanelVisible = false;
             graphControlProfile.UpperX = 1D;
             graphControlProfile.UpperY = 1D;
             graphControlProfile.UseLineWidth = true;
-            graphControlProfile.VerticalGradiationTextVisivle = true;
+            graphControlProfile.VerticalLineColor = Color.Red;
             graphControlProfile.XLog = false;
-            graphControlProfile.XScaleLineVisible = true;
             graphControlProfile.YLog = false;
-            graphControlProfile.YScaleLineVisible = true;
             // 
             // tabPage3
             // 
