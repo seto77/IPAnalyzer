@@ -95,8 +95,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         FilmDistance[0] = numericTextBoxPrimaryFilmDistance.Value;
         WaveLength = textBoxWaveLength.Value / 10;
 
-        dp[0] = new DiffractionProfile { ColorARGB = pictureBoxPattern1.BackColor.ToArgb(), OriginalProfile = null };
-        dp[1] = new DiffractionProfile { ColorARGB = pictureBoxPattern2.BackColor.ToArgb(), OriginalProfile = null };
+        dp[0] = new DiffractionProfile { ColorARGB = pictureBoxPattern1.BackColor.ToArgb(), SourceProfile = null };
+        dp[1] = new DiffractionProfile { ColorARGB = pictureBoxPattern2.BackColor.ToArgb(), SourceProfile = null };
 
         formCrystal = new FormCrystal();
 
@@ -520,7 +520,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             n = numericBoxPrimaryImageNum.ValueInteger == formMain.FormSequentialImage.SelectedIndex ? 0 : 1;
             
 
-        if (dp[n].OriginalProfile == null) return;
+        if (dp[n].SourceProfile == null) return;
         //次に必要なgraph数をカウント
         Crystal[] cry = checkBoxUseStandardCrystal.Checked ? crystal: flexibleCrystal;
         if (cry[0] == null || (cry[0].Plane == null && cry[1].Plane == null)) return;
@@ -557,7 +557,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
 
         //dp[0].OriginalProfileから、描画範囲のProfileを切り取る+フィッティングカーブを生成
-        PointD[] pt = dp[n].OriginalProfile.Pt.ToArray();
+        PointD[] pt = dp[n].SourceProfile.Pt.ToArray();
         Profile[] sourceProfile = new Profile[drawPeakList.Count];
         Profile[] fittigProfile = new Profile[drawPeakList.Count];
         PointD[] centerLine = new PointD[drawPeakList.Count];
@@ -616,18 +616,18 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         Pen pen;
         PointD[] pt;
 
-        if (dp[0].OriginalProfile != null)
+        if (dp[0].SourceProfile != null)
         {
             pen = new Pen(Color.FromArgb(dp[0].ColorARGB.Value), 1);
-            pt = dp[0].OriginalProfile.Pt.ToArray();
+            pt = dp[0].SourceProfile.Pt.ToArray();
             for (int i = 0; i < pt.Length - 1; i++)
                 gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
         }
 
-        if (dp[1].OriginalProfile != null)
+        if (dp[1].SourceProfile != null)
         {
             pen = new Pen(Color.FromArgb(dp[1].ColorARGB.Value), 1);
-            pt = dp[1].OriginalProfile.Pt.ToArray();
+            pt = dp[1].SourceProfile.Pt.ToArray();
             for (int i = 0; i < pt.Length - 1; i++)
                 gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
         }
@@ -648,7 +648,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         PointF pt;
 
         for (int i = 0; i < 2; i++)
-            if (dp[i].OriginalProfile != null)
+            if (dp[i].SourceProfile != null)
             {
                 //字の部分
                 float JustBeforeX = -10;
@@ -693,7 +693,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         double step = (ConvToRealCoord(1, 0).X - ConvToRealCoord(0, 0).X)/3;
 
         for (int n = 0; n < 2; n++)
-            if (dp[n].OriginalProfile != null)
+            if (dp[n].SourceProfile != null)
             {
                 Color s = Color.FromArgb(dp[n].ColorARGB.Value);
                 Color c = Color.FromArgb((int)(s.R * 0.5), (int)(s.G * 0.5), (int)(s.B * 0.5));
@@ -805,14 +805,14 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         MaximalY = double.NegativeInfinity;
 
         for (int n = 0; n < dp.Length; n++)
-            if (dp[n].OriginalProfile != null && dp[n].OriginalProfile.Pt.Count > 0)
+            if (dp[n].SourceProfile != null && dp[n].SourceProfile.Pt.Count > 0)
             {
-                if (MaximalX < dp[n].OriginalProfile.Pt[^1].X)
-                    MaximalX = dp[n].OriginalProfile.Pt[^1].X;
-                for (int i = 0; i < dp[n].OriginalProfile.Pt.Count; i++)
+                if (MaximalX < dp[n].SourceProfile.Pt[^1].X)
+                    MaximalX = dp[n].SourceProfile.Pt[^1].X;
+                for (int i = 0; i < dp[n].SourceProfile.Pt.Count; i++)
                 {
-                    if (MaximalY < dp[n].OriginalProfile.Pt[i].Y)
-                        MaximalY = dp[n].OriginalProfile.Pt[i].Y;
+                    if (MaximalY < dp[n].SourceProfile.Pt[i].Y)
+                        MaximalY = dp[n].SourceProfile.Pt[i].Y;
                 }
             }
         MaximalY *= 1.1;
@@ -839,7 +839,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         double theta;
 
         for (int j = 0; j < 2; j++)
-            if (dp[j].OriginalProfile != null)
+            if (dp[j].SourceProfile != null)
             {
                 double dev = Math.Atan((ConvToRealCoord(MousePointX, 0).X - ConvToRealCoord(MousePointX - 5, 0).X) / FilmDistance[j]);
                 double x = Math.Atan(ConvToRealCoord(MousePointX, 0).X / FilmDistance[j]);
@@ -905,9 +905,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
         for (i = 0; i < 2; i++)
 
-            if (dp[i].OriginalProfile != null)
+            if (dp[i].SourceProfile != null)
             {
-               var pt = dp[i].OriginalProfile.Pt;
+               var pt = dp[i].SourceProfile.Pt;
                 //いったん初期化
                for (j = 0; j < cry[i].Plane.Count; j++)
                {
@@ -1156,12 +1156,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             numericBoxPrimaryImageNum.Value = formMain.FormSequentialImage.SelectedIndex;
         }
         if (dlg.FileName == "")
-            dp[0].OriginalProfile = null;
+            dp[0].SourceProfile = null;
     }
     private void buttonClearPrimaryImage_Click(object sender, EventArgs e)
     {
         textBoxPrimaryFileName.Text = "";
-        dp[0].OriginalProfile = null;
+        dp[0].SourceProfile = null;
     }
 
     private void buttonOpenSecondaryImage_Click(object sender, EventArgs e)
@@ -1181,12 +1181,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         }
 
         if (dlg.FileName == "")
-            dp[1].OriginalProfile = null;
+            dp[1].SourceProfile = null;
     }
     private void buttonClearSecondaryImage_Click(object sender, EventArgs e)
     {
         textBoxSecondaryFileName.Text = "";
-        dp[1].OriginalProfile = null;
+        dp[1].SourceProfile = null;
     }
 
     private void selectSequentialImageNumber()
@@ -1222,7 +1222,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         SetImage(true);
         SetInitialIntegralProperty(true, false);
         //設定したIPにしたがってプロファイルをげっと
-        dp[0].OriginalProfile = Ring.GetProfile(IP);
+        dp[0].SourceProfile = Ring.GetProfile(IP);
         //dp[0].SetSmoothingAndBackGround();
         numericTextBoxPrimaryFilmDistance_TextChanged(new object(), new EventArgs());
         SetDrawRange(true);
@@ -1246,7 +1246,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         SetInitialIntegralProperty(false, false);
 
         //設定したIPにしたがってプロファイルをげっと
-        dp[1].OriginalProfile = Ring.GetProfile(IP);
+        dp[1].SourceProfile = Ring.GetProfile(IP);
         //dp[1].SetSmoothingAndBackGround();
         numericTextBoxPrimaryFilmDistance_TextChanged(new object(), new EventArgs());
         SetDrawRange(true);
@@ -1444,7 +1444,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         }
 
         int profileNumber = IsPrimary ? 0 : 1;
-        dp[profileNumber == 1 ? 0 : 1].OriginalProfile = null;
+        dp[profileNumber == 1 ? 0 : 1].SourceProfile = null;
         if (IsRenewIP)
             SetRefinedIntegralProperty(IsPrimary);
         formMain.FormProperty.comboBoxRectangleDirection.SelectedIndex = 7;
@@ -1501,7 +1501,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             }
 
             Ring.SetFindTiltParameter(IP, peak.ToArray(), (double)numericUpDownSearchRange.Value);//GetIntensityのときのパラメータを設定
-            dp[profileNumber].OriginalProfile = Ring.GetProfileForFindTiltCorrection(IP);//Profileをゲット
+            dp[profileNumber].SourceProfile = Ring.GetProfileForFindTiltCorrection(IP);//Profileをゲット
             SetDrawRange(false);
             Fitting();
 
@@ -3010,10 +3010,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 UpperX = crystal[crystalNo].Plane[e.RowIndex].MillimeterCalc + (double)numericUpDownSearchRange.Value * 4;
 
                 LowerY = 0;UpperY=0;
-                for (int i = 0; i < dp[crystalNo].OriginalProfile.Pt.Count; i++)
+                for (int i = 0; i < dp[crystalNo].SourceProfile.Pt.Count; i++)
                 {
-                    double y = dp[crystalNo].OriginalProfile.Pt[i].Y * 1.1;
-                    double x = dp[crystalNo].OriginalProfile.Pt[i].X;
+                    double y = dp[crystalNo].SourceProfile.Pt[i].Y * 1.1;
+                    double x = dp[crystalNo].SourceProfile.Pt[i].X;
                     if (UpperY < y && x > LowerX && x < UpperX)
                         UpperY = y;
                 }

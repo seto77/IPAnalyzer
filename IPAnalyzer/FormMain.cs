@@ -3390,7 +3390,7 @@ public partial class FormMain : Form
                         diffractionProfile.Name = FileName;
 
                     //プロファイルを作成
-                    diffractionProfile.OriginalProfile = Ring.GetProfile(IP);
+                    diffractionProfile.SourceProfile = Ring.GetProfile(IP);
 
                     //必要であればKα2を除去
                     #region
@@ -3401,7 +3401,7 @@ public partial class FormMain : Form
                             var alpha1 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1);
                             var alpha2 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2);
                             var ratio = FormProperty.numericBoxTest.Value;
-                            diffractionProfile.OriginalProfile = DiffractionProfile.RemoveKalpha2(diffractionProfile.OriginalProfile, alpha1, alpha2, ratio);
+                            diffractionProfile.SourceProfile = DiffractionProfile.RemoveKalpha2(diffractionProfile.SourceProfile, alpha1, alpha2, ratio);
                         }
                     }
                     #endregion
@@ -3422,7 +3422,7 @@ public partial class FormMain : Form
 
                     dpList.Add((DiffractionProfile)diffractionProfile.Clone());
                 }
-                graphControlProfile.Profile = diffractionProfile.OriginalProfile;
+                graphControlProfile.Profile = diffractionProfile.SourceProfile;
                 toolStripStatusLabel.Text = $"Calculating Time (Get Profile):  {sw.ElapsedMilliseconds} ms.";
             }
             else //LPOモードのとき
@@ -3438,7 +3438,7 @@ public partial class FormMain : Form
 
                 dpList.Add(new DiffractionProfile
                 {
-                    OriginalProfile = Ring.GetProfile(IP),
+                    SourceProfile = Ring.GetProfile(IP),
                     Name = fn + " -whole",
                     SrcAxisMode = HorizontalAxis.Angle,
                     SrcWaveLength = IP.WaveLength,
@@ -3458,7 +3458,7 @@ public partial class FormMain : Form
                 {
                     dpList.Add(new DiffractionProfile()
                     {
-                        OriginalProfile = profiles[i],
+                        SourceProfile = profiles[i],
                         Name = $"{fn} -{i * 360 / chiDiv:000}",
                         SrcAxisMode = HorizontalAxis.Angle,
                         SrcWaveLength = IP.WaveLength,
@@ -3572,12 +3572,12 @@ public partial class FormMain : Form
                 for (int j = 0; j < dpList.Count; j++)
                     sw.Write($"x{s}y{s}" + (j == dpList.Count - 1 ? "\r\n" : s));
                 //3行目以降
-                var length = dpList.Max(d => d.OriginalProfile.Pt.Count);
+                var length = dpList.Max(d => d.SourceProfile.Pt.Count);
                 for (int i = 0; i < length; i++)
                     for (int j = 0; j < dpList.Count; j++)
                     {
-                        if (i < dpList[j].OriginalProfile.Pt.Count)
-                            sw.Write($"{dpList[j].OriginalProfile.Pt[i].X}{s}{dpList[j].OriginalProfile.Pt[i].Y}{s}");
+                        if (i < dpList[j].SourceProfile.Pt.Count)
+                            sw.Write($"{dpList[j].SourceProfile.Pt[i].X}{s}{dpList[j].SourceProfile.Pt[i].Y}{s}");
                         else
                             sw.Write($"{s}{s}");
                         sw.Write(j == dpList.Count - 1 ? "\r\n" : s);
@@ -3602,14 +3602,14 @@ public partial class FormMain : Form
                     using var sw = new StreamWriter(fn + extension);
                     if (FormProperty.radioButtonAsGSASformat.Checked)
                     {
-                        var lines = Profile.ToGSAS(fn, dp.OriginalProfile, HorizontalAxis.Angle);
+                        var lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle);
                         for (int i = 0; i < lines.Length; i++)
                             sw.WriteLine(lines[i]);
                     }
                     else
                     {
                         var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
-                        foreach (var p in dp.OriginalProfile.Pt)
+                        foreach (var p in dp.SourceProfile.Pt)
                             sw.WriteLine($"{p.X}{s}{p.Y}{s}{p.Y}");
                     }
                 }

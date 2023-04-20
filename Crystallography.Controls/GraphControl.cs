@@ -12,18 +12,13 @@ namespace Crystallography.Controls;
 
 public partial class GraphControl : UserControl
 {
+
+    #region コンストラクタ、ロード
     public GraphControl()
     {
         InitializeComponent();
     }
-
-    private Bitmap Bmp;
-    private Graphics G;
-
-    /// <summary>
-    /// グラフの描き方の列挙体
-    /// </summary>
-    public enum DrawingMode { Line, Histogram, Point }
+    #endregion
 
     #region イベント
 
@@ -44,7 +39,15 @@ public partial class GraphControl : UserControl
 
     #endregion イベント
 
-    #region プロパティ
+    #region プロパティ、フィールド
+    
+    /// <summary>
+    /// グラフの描き方の列挙体
+    /// </summary>
+    public enum DrawingMode { Line, Histogram, Point }
+    
+    private Bitmap Bmp;
+    private Graphics G;
 
     #region 描画囲プロパティ
     [Category(" 描画範囲")]
@@ -259,8 +262,7 @@ public partial class GraphControl : UserControl
     {
         set
         {
-            srcProfileList = new List<Profile>();
-            srcProfileList.Add(value);
+            srcProfileList = new List<Profile> { value };
             InitializeAxis();
             resetDrawRange();
             Draw();
@@ -451,7 +453,7 @@ public partial class GraphControl : UserControl
     [Category(" グラフ位置")]
     [Description("原点の位置(左下からのピクセル単位)")]
     public Point OriginPosition { set { originPosition = value; Draw(); } get => originPosition; }
-    private Point originPosition = new Point(40, 20);
+    private Point originPosition = new(40, 20);
 
     /// <summary>
     /// 下側の余白(ピクセル単位)
@@ -990,7 +992,7 @@ public partial class GraphControl : UserControl
         if (double.IsInfinity(min) || double.IsInfinity(max)) return new SortedList<double, string>();
         var results = new SortedList<double, string>();
         double d = max - min;
-        string str = "";
+        string str;
 
         if (!log)
         {
@@ -1007,7 +1009,7 @@ public partial class GraphControl : UserControl
                 if (min >= 0 && (max > 1000 || max < 0.001))//対数表示する場合
                     str = ((i * step) / Math.Pow(10, (int)Math.Log10(i * step))).ToString("#,#.###############") + "E" + ((int)Math.Log10(i * step)).ToString();
                 else//実数表示する場合
-                    str = Math.Round(i * step, 5).ToString("#,#.###############");
+                    str = i * step == 0 ? "0" : Math.Round(i * step, 5).ToString("#,#.###############");
                 results.Add(i * step, str);
             }
         }
@@ -1031,8 +1033,7 @@ public partial class GraphControl : UserControl
 
             if (d < 0.5)
             {
-                double max2 = Math.Pow(10, max);
-                double min2 = Math.Pow(10, min);
+                double max2 = Math.Pow(10, max), min2 = Math.Pow(10, min);
                 double step = 1;
                 double unit = Math.Pow(10, Math.Floor(Math.Log10((max2 - min2) / maxDiv)));
                 if ((max2 - min2) / unit < maxDiv) step = unit;
@@ -1216,16 +1217,20 @@ public partial class GraphControl : UserControl
 
         //マウスが動いたとき
         PointD pt = ConvToRealCoord(e.X, e.Y);
-        double x = pt.X;
-        x = XLog ? Math.Pow(10, x) : x;
-        x = IsIntegerX ? (int)(Math.Round(x)) : x;
 
-        double y = pt.Y;
-        y = XLog ? Math.Pow(10, y) : y;
-        y = IsIntegerY ? (int)(Math.Round(y)) : y;
+        if (UpperPanelVisible)
+        {
+            double x = pt.X;
+            x = XLog ? Math.Pow(10, x) : x;
+            x = IsIntegerX ? (int)(Math.Round(x)) : x;
 
-        labelXValue.Text = x.ToString((XLog ? "E" : "g") + (MousePositionXDigit == -1 ? "" : MousePositionXDigit.ToString()));
-        labelYValue.Text = x.ToString((YLog ? "E" : "g") + (MousePositionYDigit == -1 ? "" : MousePositionXDigit.ToString()));
+            double y = pt.Y;
+            y = XLog ? Math.Pow(10, y) : y;
+            y = IsIntegerY ? (int)(Math.Round(y)) : y;
+
+            labelXValue.Text = x.ToString((XLog ? "E" : "g") + (MousePositionXDigit == -1 ? "" : MousePositionXDigit.ToString()));
+            labelYValue.Text = y.ToString((YLog ? "E" : "g") + (MousePositionYDigit == -1 ? "" : MousePositionXDigit.ToString()));
+        }
 
         if (MouseMovingMode)
         {
@@ -1266,7 +1271,7 @@ public partial class GraphControl : UserControl
                 if (verticalLineList.Count > selectedVerticalLineIndex && selectedVerticalLineIndex >= 0)
                 {
                     //lineList[selectedLineIndex].X = x;
-                    verticalLineList[selectedVerticalLineIndex] = new PointD(x, verticalLineList[selectedVerticalLineIndex].Y);
+                    verticalLineList[selectedVerticalLineIndex] = new PointD(pt.X, verticalLineList[selectedVerticalLineIndex].Y);
 
                     Draw();
                     LinePositionChanged?.Invoke();
