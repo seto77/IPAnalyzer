@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.946(2023/04/22) Changed profile format to '*.pdi2'." +
         "\r\n ver3.945(2023/03/18) Fixed a minor bug." +
         "\r\n ver3.944(2023/03/07) Fixed a minor bug." +
         "\r\n ver3.943(2023/03/07) Fixed bugs on the 'Macro function'." +
