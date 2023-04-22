@@ -3348,19 +3348,19 @@ public partial class FormMain : Form
         try
         {
             toolStripSplitButtonGetProfile.Enabled = false;
-            var dpList = new List<DiffractionProfile>();
+            var dpList = new List<DiffractionProfile2>();
             var azimuthalDivMode = toolStripMenuItemAzimuthalDivisionAnalysis.Checked;
 
             //通常積分モード
             if (!azimuthalDivMode)
             {
                 SetMask();
-                var diffractionProfile = new DiffractionProfile
+                var diffractionProfile = new DiffractionProfile2
                 {
-                    SrcAxisMode = IP.Mode,
-                    SrcWaveLength = IP.WaveLength,
                     Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial,
                 };
+                diffractionProfile.SrcProperty.AxisMode = IP.Mode;
+                diffractionProfile.SrcProperty.WaveLength = IP.WaveLength;
 
                 var targets = new int[] { -1 };
 
@@ -3381,7 +3381,7 @@ public partial class FormMain : Form
                         FormSequentialImage.AverageMode = false;
                         FormSequentialImage.SelectedIndex = targets[i];
                         if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
-                            diffractionProfile.SrcWaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
+                            diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
                     }
 
                     if (toolStripButtonImageSequence.Enabled)
@@ -3401,7 +3401,7 @@ public partial class FormMain : Form
                             var alpha1 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1);
                             var alpha2 = AtomStatic.CharacteristicXrayWavelength(FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka2);
                             var ratio = FormProperty.numericBoxTest.Value;
-                            diffractionProfile.SourceProfile = DiffractionProfile.RemoveKalpha2(diffractionProfile.SourceProfile, alpha1, alpha2, ratio);
+                            diffractionProfile.SourceProfile = DiffractionProfile2.RemoveKalpha2(diffractionProfile.SourceProfile, alpha1, alpha2, ratio);
                         }
                     }
                     #endregion
@@ -3420,7 +3420,7 @@ public partial class FormMain : Form
                         diffractionProfile.ImageArray = null;
                     #endregion
 
-                    dpList.Add((DiffractionProfile)diffractionProfile.Clone());
+                    dpList.Add((DiffractionProfile2)diffractionProfile.Clone());
                 }
                 graphControlProfile.Profile = diffractionProfile.SourceProfile;
                 toolStripStatusLabel.Text = $"Calculating Time (Get Profile):  {sw.ElapsedMilliseconds} ms.";
@@ -3436,12 +3436,11 @@ public partial class FormMain : Form
                 if (toolStripButtonImageSequence.Enabled)
                     fn += "  " + FileNameSub;
 
-                dpList.Add(new DiffractionProfile
+                dpList.Add(new DiffractionProfile2
                 {
                     SourceProfile = Ring.GetProfile(IP),
                     Name = fn + " -whole",
-                    SrcAxisMode = HorizontalAxis.Angle,
-                    SrcWaveLength = IP.WaveLength,
+                    SrcProperty = new HorizontalAxisProperty(FormProperty.waveLengthControl.WaveSource, IP.WaveLength, AngleUnitEnum.Degree),
                     IsLPOmain = true,
                     IsLPOchild = false
                 });
@@ -3456,12 +3455,11 @@ public partial class FormMain : Form
 
                 for (int i = 0; i < profiles.Length; i++)
                 {
-                    dpList.Add(new DiffractionProfile()
+                    dpList.Add(new DiffractionProfile2()
                     {
                         SourceProfile = profiles[i],
                         Name = $"{fn} -{i * 360 / chiDiv:000}",
-                        SrcAxisMode = HorizontalAxis.Angle,
-                        SrcWaveLength = IP.WaveLength,
+                        SrcProperty = new HorizontalAxisProperty(FormProperty.waveLengthControl.WaveSource, IP.WaveLength, AngleUnitEnum.Degree),
                         IsLPOmain = false,
                         IsLPOchild = true,
                     });
@@ -3523,13 +3521,13 @@ public partial class FormMain : Form
 
     #region SaveProfile
 
-    private void SaveProfile(List<DiffractionProfile> dpList, string filename = "")
+    private void SaveProfile(List<DiffractionProfile2> dpList, string filename = "")
     {
         if (dpList == null || dpList.Count == 0) return;
 
         string extension;
         #region 拡張子を設定
-        if (FormProperty.radioButtonAsPDIformat.Checked) extension = ".pdi";
+        if (FormProperty.radioButtonAsPDIformat.Checked) extension = ".pdi2";
         else if (FormProperty.radioButtonAsCSVformat.Checked) extension = ".csv";
         else if (FormProperty.radioButtonAsTSVformat.Checked) extension = ".tsv";
         else extension = ".gsa";
@@ -3558,7 +3556,7 @@ public partial class FormMain : Form
         {
             //PDI形式の場合
             if (FormProperty.radioButtonAsPDIformat.Checked)
-                XYFile.SavePdiFile(dpList.ToArray(), filename + extension);
+                XYFile.SavePdi2File(dpList.ToArray(), filename + extension);
             //CSVかTSVの場合
             else if (!FormProperty.radioButtonAsGSASformat.Checked)
             {
@@ -3596,7 +3594,7 @@ public partial class FormMain : Form
                     fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
 
                 if (FormProperty.radioButtonAsPDIformat.Checked)
-                    XYFile.SavePdiFile(new DiffractionProfile[] { dp }, fn + extension);
+                    XYFile.SavePdi2File(new DiffractionProfile2[] { dp }, fn + extension);
                 else
                 {
                     using var sw = new StreamWriter(fn + extension);

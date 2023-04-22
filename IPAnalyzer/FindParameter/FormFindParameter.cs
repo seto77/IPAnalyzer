@@ -48,7 +48,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     public int numSG;
 
     public Plane[] plane1, plane2;
-    DiffractionProfile[] dp = new DiffractionProfile[2];
+    DiffractionProfile2[] dp = new DiffractionProfile2[2];
     public PeakFunction[] pf = new PeakFunction[2];
     public FormMain formMain;
     public static Crystal[] crystal = new Crystal[2];
@@ -95,8 +95,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         FilmDistance[0] = numericTextBoxPrimaryFilmDistance.Value;
         WaveLength = textBoxWaveLength.Value / 10;
 
-        dp[0] = new DiffractionProfile { ColorARGB = pictureBoxPattern1.BackColor.ToArgb(), SourceProfile = null };
-        dp[1] = new DiffractionProfile { ColorARGB = pictureBoxPattern2.BackColor.ToArgb(), SourceProfile = null };
+        dp[0] = new DiffractionProfile2 { ColorARGB = pictureBoxPattern1.BackColor.ToArgb(), SourceProfile = null };
+        dp[1] = new DiffractionProfile2 { ColorARGB = pictureBoxPattern2.BackColor.ToArgb(), SourceProfile = null };
 
         formCrystal = new FormCrystal();
 
