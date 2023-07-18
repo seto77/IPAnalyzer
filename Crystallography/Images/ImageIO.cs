@@ -993,7 +993,7 @@ public static class ImageIO
                     for (int i = 0; i < length; i++)
                     {
                         var val = br.ReadUInt32();
-                        if (val == uint.MaxValue)
+                        if (val > uint.MaxValue/2)
                             val= 0;
                         Ring.Intensity.Add(val);
                      }

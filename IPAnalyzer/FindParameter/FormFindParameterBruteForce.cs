@@ -622,7 +622,10 @@ public partial class FormFindParameterBruteForce : Form
                     //double topHeight = targetRange.Max(p => p.Y);
                     //double topHeight = planes[i].peakFunction.GetValue(planes[i].XCalc, true);
                     double topHeight = planes[i].peakFunction.GetValue(planes[i].peakFunction.X, true);
-                    height += topHeight;
+                    if (topHeight > 0)
+                        height += topHeight;
+                    else
+                        height = double.PositiveInfinity;
 
                     planes[i].peakFunction.GetValue(planes[i].XCalc, true);
 
@@ -630,7 +633,7 @@ public partial class FormFindParameterBruteForce : Form
                     twoThetaDeviation += (planes[i].XCalc - planes[i].peakFunction.X) * (planes[i].XCalc - planes[i].peakFunction.X);
                 }
             }
-            return (twoThetaDeviation + numericBoxWeight.Value / height) * 1000;// + 1 / hkWidth;
+            return (twoThetaDeviation + numericBoxWeight.Value / height) * 1000; ;
         }
         else
         {
