@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Linq;
 using Crystallography;
+using System.Text;
+using System.Collections.Generic;
 #endregion
 
 namespace IPAnalyzer;
@@ -15,7 +17,7 @@ public partial class FormAutoProcedure : Form
     #region フィールド、プロパティ
     public FormMain formMain;
 
-    private string targetFolder="";
+    private string targetFolder = "";
 
     public string[] Macros
     {
@@ -107,8 +109,34 @@ public partial class FormAutoProcedure : Form
                     foreach (var f in temp.Where(e => !FileList.Contains(e)))
                         if (ImageIO.IsReadable(Path.GetExtension(f)))
                         {
-                            formMain.ReadImage(f);
-                            break;
+                            if (!checkBoxPatternMatching.Checked)
+                            {
+                                formMain.ReadImage(f);
+                                break;
+                            }
+                            else//パターンマッチングの場合
+                            {
+                                var filename = Path.GetFileNameWithoutExtension(f);
+                                var numStr = new List<char>();
+                                for (int i = filename.Length - 1; i >= 0; i--)
+                                {
+                                    if (filename[i] >= '0' && filename[i] <= '9')
+                                        numStr.Add(filename[i]);
+                                    else
+                                        break;
+                                }
+                                numStr.Reverse();
+                                if (int.TryParse(new string(numStr.ToArray()), out int num))
+                                {
+                                    if (num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger)
+                                    {
+                                        formMain.ReadImage(f);
+                                        break;
+                                    }
+                                }
+                            }
+
+
                         }
                     FileList = temp;
                 }

@@ -28,120 +28,156 @@ partial class FormAutoProcedure
     /// </summary>
     private void InitializeComponent()
     {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAutoProcedure));
-            this.checkedListBoxAuto = new System.Windows.Forms.CheckedListBox();
-            this.checkBoxAutoAfterLoad = new System.Windows.Forms.CheckBox();
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.textBoxDiectory = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.buttonSetDirectory = new System.Windows.Forms.Button();
-            this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxMacro = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // checkedListBoxAuto
-            // 
-            this.checkedListBoxAuto.CheckOnClick = true;
-            resources.ApplyResources(this.checkedListBoxAuto, "checkedListBoxAuto");
-            this.checkedListBoxAuto.Items.AddRange(new object[] {
-            resources.GetString("checkedListBoxAuto.Items"),
-            resources.GetString("checkedListBoxAuto.Items1"),
-            resources.GetString("checkedListBoxAuto.Items2"),
-            resources.GetString("checkedListBoxAuto.Items3"),
-            resources.GetString("checkedListBoxAuto.Items4")});
-            this.checkedListBoxAuto.MultiColumn = true;
-            this.checkedListBoxAuto.Name = "checkedListBoxAuto";
-            this.checkedListBoxAuto.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxAuto_ItemCheck);
-            // 
-            // checkBoxAutoAfterLoad
-            // 
-            resources.ApplyResources(this.checkBoxAutoAfterLoad, "checkBoxAutoAfterLoad");
-            this.checkBoxAutoAfterLoad.Name = "checkBoxAutoAfterLoad";
-            // 
-            // backgroundWorker
-            // 
-            this.backgroundWorker.WorkerSupportsCancellation = true;
-            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            // 
-            // textBoxDiectory
-            // 
-            resources.ApplyResources(this.textBoxDiectory, "textBoxDiectory");
-            this.textBoxDiectory.Name = "textBoxDiectory";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // buttonSetDirectory
-            // 
-            resources.ApplyResources(this.buttonSetDirectory, "buttonSetDirectory");
-            this.buttonSetDirectory.Name = "buttonSetDirectory";
-            this.buttonSetDirectory.UseVisualStyleBackColor = true;
-            this.buttonSetDirectory.Click += new System.EventHandler(this.buttonSetDirectory_Click);
-            // 
-            // checkBoxAutoLoad
-            // 
-            resources.ApplyResources(this.checkBoxAutoLoad, "checkBoxAutoLoad");
-            this.checkBoxAutoLoad.Name = "checkBoxAutoLoad";
-            this.checkBoxAutoLoad.UseVisualStyleBackColor = true;
-            this.checkBoxAutoLoad.CheckedChanged += new System.EventHandler(this.checkBoxAutoLoad_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxDiectory);
-            this.groupBox1.Controls.Add(this.buttonSetDirectory);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBoxMacro);
-            this.groupBox2.Controls.Add(this.checkedListBoxAuto);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // comboBoxMacro
-            // 
-            this.comboBoxMacro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.comboBoxMacro, "comboBoxMacro");
-            this.comboBoxMacro.FormattingEnabled = true;
-            this.comboBoxMacro.Name = "comboBoxMacro";
-            // 
-            // FormAutoProcedure
-            // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.checkBoxAutoLoad);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.checkBoxAutoAfterLoad);
-            this.Controls.Add(this.groupBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormAutoProcedure";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAutoProcedure_FormClosing);
-            this.Load += new System.EventHandler(this.FormAutoProcedure_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAutoProcedure));
+        checkedListBoxAuto = new System.Windows.Forms.CheckedListBox();
+        checkBoxAutoAfterLoad = new System.Windows.Forms.CheckBox();
+        backgroundWorker = new System.ComponentModel.BackgroundWorker();
+        textBoxDiectory = new System.Windows.Forms.TextBox();
+        label1 = new System.Windows.Forms.Label();
+        folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+        buttonSetDirectory = new System.Windows.Forms.Button();
+        checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
+        groupBox1 = new System.Windows.Forms.GroupBox();
+        checkBoxPatternMatching = new System.Windows.Forms.CheckBox();
+        flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+        numericBoxDivisor = new Crystallography.Controls.NumericBox();
+        numericBoxRemainder = new Crystallography.Controls.NumericBox();
+        groupBox2 = new System.Windows.Forms.GroupBox();
+        label2 = new System.Windows.Forms.Label();
+        comboBoxMacro = new System.Windows.Forms.ComboBox();
+        groupBox1.SuspendLayout();
+        flowLayoutPanel1.SuspendLayout();
+        groupBox2.SuspendLayout();
+        SuspendLayout();
+        // 
+        // checkedListBoxAuto
+        // 
+        resources.ApplyResources(checkedListBoxAuto, "checkedListBoxAuto");
+        checkedListBoxAuto.CheckOnClick = true;
+        checkedListBoxAuto.Items.AddRange(new object[] { resources.GetString("checkedListBoxAuto.Items"), resources.GetString("checkedListBoxAuto.Items1"), resources.GetString("checkedListBoxAuto.Items2"), resources.GetString("checkedListBoxAuto.Items3"), resources.GetString("checkedListBoxAuto.Items4") });
+        checkedListBoxAuto.MultiColumn = true;
+        checkedListBoxAuto.Name = "checkedListBoxAuto";
+        checkedListBoxAuto.ItemCheck += checkedListBoxAuto_ItemCheck;
+        // 
+        // checkBoxAutoAfterLoad
+        // 
+        resources.ApplyResources(checkBoxAutoAfterLoad, "checkBoxAutoAfterLoad");
+        checkBoxAutoAfterLoad.Name = "checkBoxAutoAfterLoad";
+        // 
+        // backgroundWorker
+        // 
+        backgroundWorker.WorkerSupportsCancellation = true;
+        backgroundWorker.DoWork += backgroundWorker_DoWork;
+        // 
+        // textBoxDiectory
+        // 
+        resources.ApplyResources(textBoxDiectory, "textBoxDiectory");
+        textBoxDiectory.Name = "textBoxDiectory";
+        // 
+        // label1
+        // 
+        resources.ApplyResources(label1, "label1");
+        label1.Name = "label1";
+        // 
+        // folderBrowserDialog1
+        // 
+        resources.ApplyResources(folderBrowserDialog1, "folderBrowserDialog1");
+        // 
+        // buttonSetDirectory
+        // 
+        resources.ApplyResources(buttonSetDirectory, "buttonSetDirectory");
+        buttonSetDirectory.Name = "buttonSetDirectory";
+        buttonSetDirectory.UseVisualStyleBackColor = true;
+        buttonSetDirectory.Click += buttonSetDirectory_Click;
+        // 
+        // checkBoxAutoLoad
+        // 
+        resources.ApplyResources(checkBoxAutoLoad, "checkBoxAutoLoad");
+        checkBoxAutoLoad.Name = "checkBoxAutoLoad";
+        checkBoxAutoLoad.UseVisualStyleBackColor = true;
+        checkBoxAutoLoad.CheckedChanged += checkBoxAutoLoad_CheckedChanged;
+        // 
+        // groupBox1
+        // 
+        resources.ApplyResources(groupBox1, "groupBox1");
+        groupBox1.Controls.Add(checkBoxPatternMatching);
+        groupBox1.Controls.Add(flowLayoutPanel1);
+        groupBox1.Controls.Add(label1);
+        groupBox1.Controls.Add(textBoxDiectory);
+        groupBox1.Controls.Add(buttonSetDirectory);
+        groupBox1.Name = "groupBox1";
+        groupBox1.TabStop = false;
+        // 
+        // checkBoxPatternMatching
+        // 
+        resources.ApplyResources(checkBoxPatternMatching, "checkBoxPatternMatching");
+        checkBoxPatternMatching.Name = "checkBoxPatternMatching";
+        // 
+        // flowLayoutPanel1
+        // 
+        resources.ApplyResources(flowLayoutPanel1, "flowLayoutPanel1");
+        flowLayoutPanel1.Controls.Add(numericBoxDivisor);
+        flowLayoutPanel1.Controls.Add(numericBoxRemainder);
+        flowLayoutPanel1.Name = "flowLayoutPanel1";
+        // 
+        // numericBoxDivisor
+        // 
+        resources.ApplyResources(numericBoxDivisor, "numericBoxDivisor");
+        numericBoxDivisor.BackColor = System.Drawing.Color.Transparent;
+        numericBoxDivisor.Name = "numericBoxDivisor";
+        numericBoxDivisor.RadianValue = 0.052359877559829883D;
+        numericBoxDivisor.RoundErrorAccuracy = -1;
+        numericBoxDivisor.Value = 3D;
+        // 
+        // numericBoxRemainder
+        // 
+        resources.ApplyResources(numericBoxRemainder, "numericBoxRemainder");
+        numericBoxRemainder.BackColor = System.Drawing.Color.Transparent;
+        numericBoxRemainder.Name = "numericBoxRemainder";
+        numericBoxRemainder.RadianValue = 0.034906585039886591D;
+        numericBoxRemainder.RoundErrorAccuracy = -1;
+        numericBoxRemainder.Value = 2D;
+        // 
+        // groupBox2
+        // 
+        resources.ApplyResources(groupBox2, "groupBox2");
+        groupBox2.Controls.Add(label2);
+        groupBox2.Controls.Add(comboBoxMacro);
+        groupBox2.Controls.Add(checkedListBoxAuto);
+        groupBox2.Name = "groupBox2";
+        groupBox2.TabStop = false;
+        // 
+        // label2
+        // 
+        resources.ApplyResources(label2, "label2");
+        label2.Name = "label2";
+        // 
+        // comboBoxMacro
+        // 
+        resources.ApplyResources(comboBoxMacro, "comboBoxMacro");
+        comboBoxMacro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        comboBoxMacro.FormattingEnabled = true;
+        comboBoxMacro.Name = "comboBoxMacro";
+        // 
+        // FormAutoProcedure
+        // 
+        resources.ApplyResources(this, "$this");
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+        Controls.Add(checkBoxAutoLoad);
+        Controls.Add(groupBox1);
+        Controls.Add(checkBoxAutoAfterLoad);
+        Controls.Add(groupBox2);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+        Name = "FormAutoProcedure";
+        FormClosing += FormAutoProcedure_FormClosing;
+        Load += FormAutoProcedure_Load;
+        groupBox1.ResumeLayout(false);
+        groupBox1.PerformLayout();
+        flowLayoutPanel1.ResumeLayout(false);
+        groupBox2.ResumeLayout(false);
+        groupBox2.PerformLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -158,4 +194,8 @@ partial class FormAutoProcedure
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.ComboBox comboBoxMacro;
     private System.Windows.Forms.Label label2;
+    private Crystallography.Controls.NumericBox numericBoxDivisor;
+    private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+    private Crystallography.Controls.NumericBox numericBoxRemainder;
+    public System.Windows.Forms.CheckBox checkBoxPatternMatching;
 }

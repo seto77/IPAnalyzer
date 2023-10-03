@@ -841,10 +841,11 @@ public static class ImageIO
 
                 (float[][] dataImageRight, _) = hdf.GetValue2<float>($"{groupID2name}/detector_2d_{rightDetector}/{tag[i]}/detector_data");
 
-                Ring.SequentialImageIntensities.Add(new List<double>());
+                
 
                 if (dataImageLeft != null && dataImageRight != null)
                 {
+                    Ring.SequentialImageIntensities.Add(new List<double>(imageHeight * imageWidth));
                     for (int h = 0; h < imageHeight; h++)
                     {
                         for (int w = 0; w < imageWidth / 2; w++)
@@ -856,11 +857,15 @@ public static class ImageIO
                 else if (dataImageLeft != null)
                 {
                     imageWidth = 512;
+                    Ring.SequentialImageIntensities.Add(new List<double>(imageHeight * imageWidth));
+
                     for (int h = 0; h < imageHeight; h++)
                         for (int w = 0; w < imageWidth; w++)
                             Ring.SequentialImageIntensities[i].Add(dataImageLeft[h][w]);
-
                 }
+                else
+                    Ring.SequentialImageIntensities.Add(new List<double>());
+
                 //強度をノーマライズする場合
                 if (normarize == null)
                     normarize = MessageBox.Show("Normarize intensities by pulse power?", "HDF file option", MessageBoxButtons.YesNo) == DialogResult.Yes;
@@ -870,9 +875,12 @@ public static class ImageIO
 
                 Ring.PulsePowerNormarized = normarize == true;
 
-                Ring.Intensity.Clear();
-                for (int j = 0; j < imageHeight * imageWidth; j++)
-                    Ring.Intensity.Add(Ring.SequentialImageIntensities[0][j]);
+                if (i == 0)
+                {
+                    Ring.Intensity.Clear();
+                    for (int j = 0; j < imageHeight * imageWidth; j++)
+                        Ring.Intensity.Add(Ring.SequentialImageIntensities[0][j]);
+                }
 
                 Ring.SequentialImageNames.Add(tag[i].Replace("tag_", ""));
             }

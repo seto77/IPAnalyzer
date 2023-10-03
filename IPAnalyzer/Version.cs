@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.949(2023/10/03) Improved 'Auto Procedure'." +
         "\r\n ver3.948(2023/07/18) Fixed a minor bug." +
         "\r\n ver3.947(2023/06/28) Improved compatibility for *.img file output from ADXV" +
         "\r\n ver3.946(2023/04/22) Changed profile format to '*.pdi2'." +
