@@ -690,6 +690,11 @@ public partial class FormProperty : Form
         formMain.Draw();
     }
 
+    private void buttonInvertMask_Click(object sender, EventArgs e)
+    {
+        formMain.InvertMask();
+    }
+
     public void MaskTop()
     {
         if (Ring.IsSpots.Count == 0) return;
@@ -840,6 +845,21 @@ public partial class FormProperty : Form
     private void trackBarScaleLineWidth_Scroll(object sender, EventArgs e) => formMain.Draw();
 
     private void checkBoxScaleLabel_CheckedChanged(object sender, EventArgs e) => formMain.Draw();
+
+    private void groupBoxGandlfiRadius_Enter(object sender, EventArgs e)
+    {
+
+    }
+
+    private void groupBoxSaveProfile_Enter(object sender, EventArgs e)
+    {
+
+    }
+
+    private void groupBoxManualMode_Enter(object sender, EventArgs e)
+    {
+
+    }
 }
 
 #region ImageTypeParameterクラス
