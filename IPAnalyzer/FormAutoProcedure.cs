@@ -112,7 +112,7 @@ public partial class FormAutoProcedure : Form
                             if (!checkBoxPatternMatching.Checked)
                             {
                                 formMain.ReadImage(f);
-                                break;
+                              //  break;
                             }
                             else//パターンマッチングの場合
                             {
@@ -128,10 +128,11 @@ public partial class FormAutoProcedure : Form
                                 numStr.Reverse();
                                 if (int.TryParse(new string(numStr.ToArray()), out int num))
                                 {
-                                    if (num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger)
+                                    if ((radioButtonEqual.Checked && num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger) ||
+                                        (radioButtonNotEqual.Checked && num % numericBoxDivisor.ValueInteger != numericBoxRemainder.ValueInteger))
                                     {
                                         formMain.ReadImage(f);
-                                        break;
+                                        //  break;
                                     }
                                 }
                             }
