@@ -1935,7 +1935,7 @@ public partial class FormMain : Form
         //直前に読み込まれている画像が存在するかどうか
         var lastImageExist = scalablePictureBox.PseudoBitmap.Height != 0;
 
-        //ファイルを読み込む前に現在のイメージタイプの情報を保存
+        //ファイルを読み込む前に直前のイメージタイプの情報を保存
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
         IsImageReady = false;
         toolStripButtonImageSequence.Enabled = false;
@@ -1991,7 +1991,7 @@ public partial class FormMain : Form
         trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
         trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
-        //直前に画像が読み込まれていた場合
+        //直前に画像が読み込まれていた場合、マスク、描画強度、描画範囲の引継ぎ
         if (lastImageExist)
         {
             //マスクの引継ぎ処理
@@ -2005,9 +2005,11 @@ public partial class FormMain : Form
             else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile != "")
                 ReadMask(justBeforeMaskFile);
 
+            //描画範囲の引継ぎ
             if (FormProperty.MaintainImageRange)
                 scalablePictureBox.ZoomAndCenter = justBeforeZoomAndCenter;
 
+            //描画強度の引継ぎ
             trackBarAdvancedMinInt.Value = FormProperty.MaintainImageContrast ? justBeforeMin : min;
             trackBarAdvancedMaxInt.Value = FormProperty.MaintainImageContrast ? justBeforeMax : max;
         }

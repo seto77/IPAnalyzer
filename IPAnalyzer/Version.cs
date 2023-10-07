@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.951(2023/10/07) The drawing range of the previous image can be inherited." +
         "\r\n ver3.950(2023/10/05) Improved 'Auto Procedure'." +
         "\r\n ver3.948(2023/07/18) Fixed a minor bug." +
         "\r\n ver3.947(2023/06/28) Improved compatibility for *.img file output from ADXV" +
