@@ -163,8 +163,6 @@ namespace IPAnalyzer
             toolStripMenuItem13 = new ToolStripMenuItem();
             toolStripSeparator25 = new ToolStripSeparator();
             toolStripMenuItem14 = new ToolStripMenuItem();
-            toolStripSeparator26 = new ToolStripSeparator();
-            toolStripMenuItem15 = new ToolStripMenuItem();
             toolStripSeparator18 = new ToolStripSeparator();
             misToolStripMenuItem = new ToolStripMenuItem();
             optionToolStripMenuItem = new ToolStripMenuItem();
@@ -1299,7 +1297,7 @@ namespace IPAnalyzer
             // toolStripMenuItem5
             // 
             resources.ApplyResources(toolStripMenuItem5, "toolStripMenuItem5");
-            toolStripMenuItem5.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItemPropertyWaveSource, toolStripMenuItem9, toolStripSeparator22, toolStripMenuItem10, toolStripMenuItem11, toolStripSeparator23, toolStripMenuItem12, toolStripSeparator24, toolStripMenuItem13, toolStripSeparator25, toolStripMenuItem14, toolStripSeparator26, toolStripMenuItem15, toolStripSeparator18, misToolStripMenuItem });
+            toolStripMenuItem5.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItemPropertyWaveSource, toolStripMenuItem9, toolStripSeparator22, toolStripMenuItem10, toolStripMenuItem11, toolStripSeparator23, toolStripMenuItem12, toolStripSeparator24, toolStripMenuItem13, toolStripSeparator25, toolStripMenuItem14, toolStripSeparator18, misToolStripMenuItem });
             toolStripMenuItem5.Name = "toolStripMenuItem5";
             // 
             // toolStripMenuItemPropertyWaveSource
@@ -1363,17 +1361,6 @@ namespace IPAnalyzer
             resources.ApplyResources(toolStripMenuItem14, "toolStripMenuItem14");
             toolStripMenuItem14.Name = "toolStripMenuItem14";
             toolStripMenuItem14.Click += toolStripMenuItemUnrolledImage_Click;
-            // 
-            // toolStripSeparator26
-            // 
-            resources.ApplyResources(toolStripSeparator26, "toolStripSeparator26");
-            toolStripSeparator26.Name = "toolStripSeparator26";
-            // 
-            // toolStripMenuItem15
-            // 
-            resources.ApplyResources(toolStripMenuItem15, "toolStripMenuItem15");
-            toolStripMenuItem15.Name = "toolStripMenuItem15";
-            toolStripMenuItem15.Click += toolStripMenuItemAssociatedExtensions_Click;
             // 
             // toolStripSeparator18
             // 
@@ -2045,8 +2032,6 @@ namespace IPAnalyzer
         private ToolStripMenuItem toolStripMenuItem13;
         private ToolStripSeparator toolStripSeparator25;
         private ToolStripMenuItem toolStripMenuItem14;
-        private ToolStripSeparator toolStripSeparator26;
-        private ToolStripMenuItem toolStripMenuItem15;
         private StatusStrip statusStrip1;
         public ToolStripStatusLabel toolStripStatusLabel;
         private ToolStripMenuItem tiffToolStripMenuItem;

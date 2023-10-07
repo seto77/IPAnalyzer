@@ -1896,9 +1896,7 @@ public partial class FormMain : Form
     /// <param name="e"></param>
     private void readImageToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        var dlg = new OpenFileDialog { Filter = ImageIO.FilterString };
-
-        dlg.FilterIndex = filterIndex;
+        var dlg = new OpenFileDialog { Filter = ImageIO.FilterString, FilterIndex = filterIndex };
 
         if (initialImageDirectory != "")
             dlg.InitialDirectory = initialImageDirectory;
@@ -1934,6 +1932,9 @@ public partial class FormMain : Form
             return;
         }
 
+        //直前に読み込まれている画像が存在するかどうか
+        var lastImageExist = scalablePictureBox.PseudoBitmap.Height != 0;
+
         //ファイルを読み込む前に現在のイメージタイプの情報を保存
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
         IsImageReady = false;
@@ -1943,6 +1944,14 @@ public partial class FormMain : Form
         //直前のマスク情報を保存
         var justBeforeImageSize = Ring.SrcImgSize;
         var justBeforeMask = Ring.IsSpots.ToArray();
+
+        //直前の描画範囲を保存
+        var justBeforeZoomAndCenter = scalablePictureBox.ZoomAndCenter;
+
+        //直前の最小・最大強度を保存
+        var justBeforeMin = trackBarAdvancedMinInt.Value;
+        var justBeforeMax = trackBarAdvancedMaxInt.Value;
+
 
         if (!ImageIO.ReadImage(str, flag))
             return;
@@ -1973,22 +1982,37 @@ public partial class FormMain : Form
         IsImageReady = true;
         //IntegralArea_Changed(new object(), new EventArgs());
 
-        graphControlFrequency.VerticalLines = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+
         Ring.CalcFreq();
         SetFrequencyProfile();//強度頻度グラフを作成
         graphControlProfile.Profile = new Profile();//プロファイルは初期化
 
+        var (min, max) = Ring.Intensity.MinMax();
+        trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
+        trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
-
-        if (FormProperty.radioButtonTakeoverMask.Checked)
+        //直前に画像が読み込まれていた場合
+        if (lastImageExist)
         {
-            if (Ring.IsSpots.Count == justBeforeMask.Length)
-                for (int i = 0; i < Ring.IsSpots.Count; i++)
-                    if (Ring.IsSpots[i] != justBeforeMask[i])
-                        Ring.IsSpots[i] = justBeforeMask[i];
+            //マスクの引継ぎ処理
+            if (FormProperty.radioButtonTakeoverMask.Checked)
+            {
+                if (Ring.IsSpots.Count == justBeforeMask.Length)
+                    for (int i = 0; i < Ring.IsSpots.Count; i++)
+                        if (Ring.IsSpots[i] != justBeforeMask[i])
+                            Ring.IsSpots[i] = justBeforeMask[i];
+            }
+            else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile != "")
+                ReadMask(justBeforeMaskFile);
+
+            if (FormProperty.MaintainImageRange)
+                scalablePictureBox.ZoomAndCenter = justBeforeZoomAndCenter;
+
+            trackBarAdvancedMinInt.Value = FormProperty.MaintainImageContrast ? justBeforeMin : min;
+            trackBarAdvancedMaxInt.Value = FormProperty.MaintainImageContrast ? justBeforeMax : max;
         }
-        else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile != "")
-            ReadMask(justBeforeMaskFile);
+
+        graphControlFrequency.VerticalLines = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
 
 
         FileName = str.Remove(0, str.LastIndexOf('\\') + 1);
@@ -2006,11 +2030,6 @@ public partial class FormMain : Form
                 if (Ring.Intensity[i] < 0)
                     Ring.IsSpots[i] = true;
         }
-
-        var (min, max) = Ring.Intensity.MinMax();
-
-        trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
-        trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
         //SequentialImageを読み込んだ時の処理
         if (Ring.SequentialImageIntensities != null)
@@ -2847,15 +2866,10 @@ public partial class FormMain : Form
         FormProperty.Visible = true;
         FormProperty.tabControl.SelectedIndex = 6;
     }
-    private void toolStripMenuItemAssociatedExtensions_Click(object sender, EventArgs e)
-    {
-        FormProperty.Visible = true;
-        FormProperty.tabControl.SelectedIndex = 7;
-    }
     private void toolStripMenuItemMiscellaneous_Click(object sender, EventArgs e)
     {
         FormProperty.Visible = true;
-        FormProperty.tabControl.SelectedIndex = 8;
+        FormProperty.tabControl.SelectedIndex = 7;
     }
 
     #endregion

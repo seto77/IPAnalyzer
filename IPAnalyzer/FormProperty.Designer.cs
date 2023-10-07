@@ -206,6 +206,7 @@
             label23 = new System.Windows.Forms.Label();
             colorControlScaleAzimuth = new Crystallography.Controls.ColorControl();
             colorControlScale2Theta = new Crystallography.Controls.ColorControl();
+            groupBox18 = new System.Windows.Forms.GroupBox();
             groupBox11 = new System.Windows.Forms.GroupBox();
             label50 = new System.Windows.Forms.Label();
             flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -235,6 +236,8 @@
             label21 = new System.Windows.Forms.Label();
             numericUpDownMaskEdge = new System.Windows.Forms.NumericUpDown();
             label1 = new System.Windows.Forms.Label();
+            checkBoxMaintainImageRange = new System.Windows.Forms.CheckBox();
+            checkBoxMaintainImageContrast = new System.Windows.Forms.CheckBox();
             tabControl.SuspendLayout();
             tabPageXRay.SuspendLayout();
             tabPageIP.SuspendLayout();
@@ -295,6 +298,7 @@
             tabPage5.SuspendLayout();
             groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarScaleLineWidth).BeginInit();
+            groupBox18.SuspendLayout();
             groupBox11.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -1718,6 +1722,7 @@
             // tabPage5
             // 
             tabPage5.Controls.Add(groupBox14);
+            tabPage5.Controls.Add(groupBox18);
             tabPage5.Controls.Add(groupBox11);
             tabPage5.Controls.Add(groupBox2);
             resources.ApplyResources(tabPage5, "tabPage5");
@@ -1805,6 +1810,14 @@
             colorControlScale2Theta.Red = 68;
             colorControlScale2Theta.RedF = 0.266666681F;
             colorControlScale2Theta.Load += colorControlScale2Theta_Load;
+            // 
+            // groupBox18
+            // 
+            groupBox18.Controls.Add(checkBoxMaintainImageContrast);
+            groupBox18.Controls.Add(checkBoxMaintainImageRange);
+            resources.ApplyResources(groupBox18, "groupBox18");
+            groupBox18.Name = "groupBox18";
+            groupBox18.TabStop = false;
             // 
             // groupBox11
             // 
@@ -2034,6 +2047,24 @@
             resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
             // 
+            // checkBoxMaintainDisplayRange
+            // 
+            resources.ApplyResources(checkBoxMaintainImageRange, "checkBoxMaintainDisplayRange");
+            checkBoxMaintainImageRange.Checked = true;
+            checkBoxMaintainImageRange.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBoxMaintainImageRange.Name = "checkBoxMaintainDisplayRange";
+            checkBoxMaintainImageRange.UseVisualStyleBackColor = true;
+            checkBoxMaintainImageRange.CheckedChanged += checkBoxFixCenter_CheckedChanged;
+            // 
+            // checkBoxMaintainImageContrast
+            // 
+            resources.ApplyResources(checkBoxMaintainImageContrast, "checkBoxMaintainImageContrast");
+            checkBoxMaintainImageContrast.Checked = true;
+            checkBoxMaintainImageContrast.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBoxMaintainImageContrast.Name = "checkBoxMaintainImageContrast";
+            checkBoxMaintainImageContrast.UseVisualStyleBackColor = true;
+            checkBoxMaintainImageContrast.CheckedChanged += checkBoxFixCenter_CheckedChanged;
+            // 
             // FormProperty
             // 
             resources.ApplyResources(this, "$this");
@@ -2135,6 +2166,8 @@
             groupBox14.ResumeLayout(false);
             groupBox14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarScaleLineWidth).EndInit();
+            groupBox18.ResumeLayout(false);
+            groupBox18.PerformLayout();
             groupBox11.ResumeLayout(false);
             groupBox11.PerformLayout();
             flowLayoutPanel3.ResumeLayout(false);
@@ -2359,5 +2392,8 @@
         private System.Windows.Forms.Label label27;
         public Crystallography.Controls.NumericBox numericBoxSplineWidth;
         private System.Windows.Forms.Button buttonInvertMask;
+        public System.Windows.Forms.GroupBox groupBox18;
+        public System.Windows.Forms.CheckBox checkBoxMaintainImageRange;
+        public System.Windows.Forms.CheckBox checkBoxMaintainImageContrast;
     }
 }

@@ -120,6 +120,9 @@ public partial class FormProperty : Form
     public double SectorRadiusThetaRange { set; get; } = 0.1;
     public double SectorAngle { set; get; } = 0.05;
 
+    public bool MaintainImageRange { set => checkBoxMaintainImageRange.Checked = value; get => checkBoxMaintainImageRange.Checked; }
+    public bool MaintainImageContrast { set => checkBoxMaintainImageContrast.Checked = value; get => checkBoxMaintainImageContrast.Checked; }
+
 
     public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length];
     #endregion

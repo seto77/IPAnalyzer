@@ -142,6 +142,9 @@
   <data name="checkBoxAutoAfterLoad.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
+  <data name="checkBoxAutoAfterLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 128</value>
+  </data>
   <data name="checkBoxAutoAfterLoad.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 40</value>
   </data>
@@ -173,32 +176,26 @@
   <data name="buttonSetDirectory.Text" xml:space="preserve">
     <value>設定</value>
   </data>
+  <data name="checkBoxAutoLoad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
   <data name="checkBoxAutoLoad.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 3</value>
   </data>
   <data name="checkBoxAutoLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 21</value>
+    <value>183, 22</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>新しい画像を自動で読み込む</value>
   </data>
+  <data name="checkBoxPatternMatching.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 70</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 90</value>
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 118</value>
-  </data>
-  <data name="numericBoxDivisor.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 28</value>
-  </data>
-  <data name="numericBoxDivisor.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 18</value>
-  </data>
-  <data name="numericBoxRemainder.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 28</value>
-  </data>
-  <data name="numericBoxRemainder.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 18</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 174</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -220,6 +217,12 @@
   </data>
   <data name="comboBoxMacro.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 26</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 140</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 174</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>259, 323</value>

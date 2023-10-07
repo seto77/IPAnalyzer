@@ -99,6 +99,7 @@ public partial class FormAutoProcedure : Form
     string[] FileList = Array.Empty<string>();
     private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
     {
+        FileList = Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories);
         while (!backgroundWorker.CancellationPending)
         {
             try
@@ -112,7 +113,7 @@ public partial class FormAutoProcedure : Form
                             if (!checkBoxPatternMatching.Checked)
                             {
                                 formMain.ReadImage(f);
-                              //  break;
+                                //  break;
                             }
                             else//パターンマッチングの場合
                             {
