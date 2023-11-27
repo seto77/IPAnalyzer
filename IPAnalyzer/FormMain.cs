@@ -3376,6 +3376,8 @@ public partial class FormMain : Form
                     Mode = FormProperty.radioButtonConcentric.Checked ? DiffractionProfileMode.Concentric : DiffractionProfileMode.Radial,
                 };
                 diffractionProfile.SrcProperty.AxisMode = IP.Mode;
+                if (diffractionProfile.SrcProperty.AxisMode == HorizontalAxis.d)
+                    diffractionProfile.SrcProperty.DspacingUnit = LengthUnitEnum.Angstrom;
                 diffractionProfile.SrcProperty.WaveLength = IP.WaveLength;
 
                 var targets = new int[] { -1 };
