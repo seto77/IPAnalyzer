@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.952(2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san)." +
         "\r\n ver3.951(2023/10/07) The drawing range of the previous image can be inherited." +
         "\r\n ver3.950(2023/10/05) Improved 'Auto Procedure'." +
         "\r\n ver3.948(2023/07/18) Fixed a minor bug." +
