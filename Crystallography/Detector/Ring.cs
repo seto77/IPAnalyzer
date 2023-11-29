@@ -2736,17 +2736,11 @@ public static class Ring
                         {
                             (double X, double Y) p1 = pt0[m], p2 = m == n0 - 1 ? pt0[0] : pt0[m + 1];
                             if (p1.X < c)
-                            {
                                 pt1[n1++] = p1;
-                                if (c <= p2.X)
-                                    pt1[n1++] = pt2[n2++] = (c, (c * p2.Y - c * p1.Y - p1.X * p2.Y + p2.X * p1.Y) / (p2.X - p1.X));
-                            }
                             else
-                            {
                                 pt2[n2++] = p1;
-                                if (c > p2.X)
-                                    pt1[n1++] = pt2[n2++] = (c, (c * p2.Y - c * p1.Y - p1.X * p2.Y + p2.X * p1.Y) / (p2.X - p1.X));
-                            }
+                            if( (p1.X < c && c <= p2.X) || (p1.X >= c && c > p2.X))
+                                pt1[n1++] = pt2[n2++] = (c, (c * p2.Y - c * p1.Y - p1.X * p2.Y + p2.X * p1.Y) / (p2.X - p1.X));
                         }
 
                         if (chiDivision == 1)//セクター分割をしない場合
@@ -2766,17 +2760,11 @@ public static class Ring
                                 {
                                     (double X, double Y) p1 = pt1[m], p2 = m == n1 - 1 ? pt1[0] : pt1[m + 1];
                                     if (p1.Y < d)
-                                    {
                                         pt3[n3++] = p1;
-                                        if (d <= p2.Y)
-                                            pt3[n3++] = pt4[n4++] = ((d * p2.X - d * p1.X - p1.Y * p2.X + p2.Y * p1.X) / (p2.Y - p1.Y), d);
-                                    }
                                     else
-                                    {
                                         pt4[n4++] = p1;
-                                        if (d > p2.Y)
-                                            pt3[n3++] = pt4[n4++] = ((d * p2.X - d * p1.X - p1.Y * p2.X + p2.Y * p1.X) / (p2.Y - p1.Y), d);
-                                    }
+                                    if((p1.Y < d && d <= p2.Y)||(p1.Y >= d && d > p2.Y))
+                                        pt3[n3++] = pt4[n4++] = ((d * p2.X - d * p1.X - p1.Y * p2.X + p2.Y * p1.X) / (p2.Y - p1.Y), d);
                                 }
                                 var area = getArea(n3, pt3);
                                 pixels[k2][k1] += area;
