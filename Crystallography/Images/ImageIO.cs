@@ -320,7 +320,7 @@ public static class ImageIO
     #region  rawファイル (RadIcon など)
     public static bool RadIcon(string str)
     {
-       // try
+        try
         {
             #region 2064*1548のサイズを持つ検出器 (SACLA EH5の場合)
             if (new FileInfo(str).Length == 6390144)
@@ -336,9 +336,8 @@ public static class ImageIO
                 }
                 else
                 {
-                    for (int y = 0, n = 0; y < imageHeight; y++)
-                        for (int x = 0; x < imageWidth; x++, n++)
-                            Ring.Intensity[n++] = 256 * br.ReadByte() + br.ReadByte();
+                    for (int n = 0; n<length; n++)
+                            Ring.Intensity[n] = 256 * br.ReadByte() + br.ReadByte();
                 }
                 br.Close();
 
@@ -447,11 +446,11 @@ public static class ImageIO
 
 
         }
-        //catch (Exception e)
-        //{
-        //    MessageBox.Show(e.Message);
-        //    return false;
-        //}
+        catch (Exception e)
+        {
+            MessageBox.Show(e.Message);
+            return false;
+        }
     }
     #endregion
 
