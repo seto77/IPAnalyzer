@@ -12,7 +12,7 @@ namespace Crystallography;
 public static class ImageIO
 {
     public static string[] ListOfExtension =
-    {
+    [
             "img",
             "stl",
             "ccd",
@@ -34,7 +34,7 @@ public static class ImageIO
             "png",
             "smv",
             "mrc",
-        };
+        ];
 
     public static string FilterString
     {
