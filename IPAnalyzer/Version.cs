@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.954(2023/12/13) Fixed bugs on loading Rad-icon1520 files (*.raw)." +
         "\r\n ver3.953(2023/11/29) Fixed bugs on 'Azimuthal Division Analysis' mode." +
         "\r\n ver3.952(2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san)." +
         "\r\n ver3.951(2023/10/07) The drawing range of the previous image can be inherited." +
@@ -374,7 +375,7 @@ static class Version
         + "　プログラムの不具合、改善要望などがありましたらメールにてご連絡ください。"
         + "また詳しい使い方についてはホームページでも解説しています。"
         + "\r\n mail: seto@crystal.kobe-u.ac.jp"
-        + "\r\n Home Page: http://pmsl.planet.sci.kobe-u.ac.jp/~seto/"
+        + "\r\n Home Page: http://yseto.net/"
         + "\r\nできるだけご要望にお応えしたいと思います。"
         ;
 

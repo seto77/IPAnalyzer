@@ -317,7 +317,7 @@ public static class ImageIO
     }
     #endregion
 
-    #region RadIcon rawファイル
+    #region  rawファイル (RadIcon など)
     public static bool RadIcon(string str)
     {
        // try
