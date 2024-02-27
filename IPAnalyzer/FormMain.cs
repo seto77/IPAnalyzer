@@ -2013,6 +2013,11 @@ public partial class FormMain : Form
             trackBarAdvancedMinInt.Value = FormProperty.MaintainImageContrast ? justBeforeMin : min;
             trackBarAdvancedMaxInt.Value = FormProperty.MaintainImageContrast ? justBeforeMax : max;
         }
+        else
+        {
+            trackBarAdvancedMinInt.Value = min;
+            trackBarAdvancedMaxInt.Value = max;
+        }
 
         graphControlFrequency.VerticalLines = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
 

@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.956(2024/02/27) Minor change: The data of Rad-icon1520 (*.raw) is treated as 16-bit signed integer." +
         "\r\n ver3.955(2023/12/13) Fixed bugs on loading Rad-icon1520 files (*.raw)." +
         "\r\n ver3.953(2023/11/29) Fixed bugs on 'Azimuthal Division Analysis' mode." +
         "\r\n ver3.952(2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san)." +
