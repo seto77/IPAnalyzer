@@ -12,7 +12,9 @@
 * Calibration of optics using diffraction images of standard material.
   
 ## Screenshots
-<img src="Screenshots/Main.png" width="600px">  <img src="Screenshots/Property1.png" width="320px">  <img src="Screenshots/Property2.png" width="320px">
+![image](https://github.com/seto77/IPAnalyzer/assets/44538886/7b438dd1-d47c-418c-8ffe-35e05d6938ae)
+
+<img src="Screenshots/Property1.png" width="320px">  <img src="Screenshots/Property2.png" width="320px">
 <img src="Screenshots/Property3.png" width="320px">  <img src="Screenshots/Property4.png" width="320px">
 <img src="Screenshots/Property5.png" width="320px">  <img src="Screenshots/Property6.png" width="320px">
 <img src="Screenshots/Property7.png" width="320px">  <img src="Screenshots/Property8.png" width="320px">
