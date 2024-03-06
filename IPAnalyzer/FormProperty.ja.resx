@@ -143,11 +143,18 @@
     <value>偏光補正を行う (チェックすると、以下の式に従って無偏光の
 入射光を仮定した強度分布が計算されます)</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="waveLengthControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="waveLengthControl.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>176, 0</value>
   </data>
   <data name="waveLengthControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 81</value>
+    <value>282, 81</value>
+  </data>
+  <data name="waveLengthControl.TextFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
   </data>
   <data name="tabPageXRay.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1511,7 +1518,6 @@
   <data name="numericUpDownUnrollChiDivision.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="numericUpDownUnrollChiDivision.ThousandsSeparator" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

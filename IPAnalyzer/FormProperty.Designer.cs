@@ -361,9 +361,9 @@
             resources.ApplyResources(waveLengthControl, "waveLengthControl");
             waveLengthControl.Direction = System.Windows.Forms.FlowDirection.LeftToRight;
             waveLengthControl.Energy = 17.44419672D;
+            waveLengthControl.Monochrome = true;
             waveLengthControl.Name = "waveLengthControl";
             waveLengthControl.ShowWaveSource = true;
-            waveLengthControl.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             waveLengthControl.WaveLength = 0.07107471D;
             waveLengthControl.WaveSource = Crystallography.WaveSource.Xray;
             waveLengthControl.XrayWaveSourceElementNumber = 42;
