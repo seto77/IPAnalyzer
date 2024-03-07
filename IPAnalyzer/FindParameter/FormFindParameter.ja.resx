@@ -121,14 +121,8 @@
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 56</value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 32</value>
-  </data>
-  <data name="label7.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -143,23 +137,8 @@
     <value>カメラ長
  (primary)</value>
   </data>
-  <data name="label14.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label19.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label24.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 54</value>
-  </data>
-  <data name="label25.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label26.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="numericUpDownBandWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 121</value>
@@ -176,9 +155,6 @@
   <data name="label28.Text" xml:space="preserve">
     <value>バンド幅</value>
   </data>
-  <data name="label28.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericUpDownSearchRange.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 152</value>
   </data>
@@ -194,32 +170,20 @@
   <data name="label11.Text" xml:space="preserve">
     <value>フィッティング範囲</value>
   </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 154</value>
   </data>
-  <data name="label27.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="checkBoxUseStandardCrystal.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 225</value>
   </data>
   <data name="checkBoxUseStandardCrystal.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 21</value>
   </data>
   <data name="checkBoxUseStandardCrystal.Text" xml:space="preserve">
     <value>標準試料を使っている</value>
-  </data>
-  <data name="label38.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label36.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label46.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -233,29 +197,14 @@
   <data name="label48.Text" xml:space="preserve">
     <value>波長</value>
   </data>
-  <data name="label48.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericBoxPrimaryImageNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 14</value>
   </data>
   <data name="numericBoxPrimaryImageNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 25</value>
   </data>
-  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericTextBoxPrimaryFilmDistance.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 24</value>
-  </data>
-  <data name="label9.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label43.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -269,12 +218,6 @@
   <data name="label43.Text" xml:space="preserve">
     <value>カメラ長</value>
   </data>
-  <data name="label43.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label10.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label51.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -287,12 +230,6 @@
   <data name="label51.Text" xml:space="preserve">
     <value>中心ピクセル</value>
   </data>
-  <data name="label51.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonPrimaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -301,9 +238,6 @@
   </data>
   <data name="buttonClearPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
-  </data>
-  <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonOpenPrimaryImage.AutoSize" type="System.Boolean, mscorlib">
@@ -318,20 +252,11 @@
   <data name="buttonOpenPrimaryImage.Text" xml:space="preserve">
     <value>開く</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxPrimaryFileName.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 20</value>
   </data>
   <data name="textBoxPrimaryFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 21</value>
-  </data>
-  <data name="label23.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label53.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -342,9 +267,6 @@
   <data name="label53.Text" xml:space="preserve">
     <value>ファイル名</value>
   </data>
-  <data name="label53.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBoxPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -354,17 +276,11 @@
   <data name="groupBoxPrimaryImage.Text" xml:space="preserve">
     <value>プライマリ(Primary)画像</value>
   </data>
-  <data name="groupBoxPrimaryImage.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericBoxSecondaryImageNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>141, 14</value>
   </data>
   <data name="numericBoxSecondaryImageNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 25</value>
-  </data>
-  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="buttonOpenSecondaryImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -384,41 +300,17 @@
   <data name="textBoxSecondaryFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 21</value>
   </data>
-  <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxFilmDistanceDiscrepancy.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 60</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 60</value>
   </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label54.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 64</value>
   </data>
-  <data name="label5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label55.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonClearSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
-  </data>
-  <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="buttonSecondaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -426,17 +318,8 @@
   <data name="buttonSecondaryGetProfile.Text" xml:space="preserve">
     <value>一次元化</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>198, 64</value>
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label56.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -446,12 +329,6 @@
   </data>
   <data name="label56.Text" xml:space="preserve">
     <value>ファイル名</value>
-  </data>
-  <data name="label56.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label31.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -465,9 +342,6 @@
   <data name="label3.Text" xml:space="preserve">
     <value>カメラ長</value>
   </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label58.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -480,12 +354,6 @@
   <data name="label58.Text" xml:space="preserve">
     <value>中心ピクセル</value>
   </data>
-  <data name="label58.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label29.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBoxSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -497,9 +365,6 @@
   </data>
   <data name="groupBoxSecondaryImage.Text" xml:space="preserve">
     <value>セカンダリ(sencondary)画像</value>
-  </data>
-  <data name="groupBoxSecondaryImage.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="checkBoxRefineTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -558,9 +423,6 @@
   <data name="label18.Text" xml:space="preserve">
     <value>(primary)</value>
   </data>
-  <data name="label18.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label35.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -570,12 +432,6 @@
   <data name="label35.Text" xml:space="preserve">
     <value>ピクセルサイズ</value>
   </data>
-  <data name="label35.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label40.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBoxOption.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -584,7 +440,7 @@
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonSchematicDiagram.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 385</value>
+    <value>3, 357</value>
   </data>
   <data name="buttonSchematicDiagram.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 27</value>
@@ -596,7 +452,7 @@
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonClearGraphs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 385</value>
+    <value>88, 357</value>
   </data>
   <data name="buttonClearGraphs.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 27</value>
@@ -608,16 +464,13 @@
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonSetStandardCrystal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 242</value>
+    <value>137, 220</value>
   </data>
   <data name="buttonSetStandardCrystal.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 31</value>
   </data>
   <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
     <value>設定</value>
-  </data>
-  <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="checkBoxRefinePixelDistortion.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -635,7 +488,7 @@
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonExecuteRefinements.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 278</value>
+    <value>3, 257</value>
   </data>
   <data name="buttonExecuteRefinements.Text" xml:space="preserve">
     <value>実行!</value>
@@ -660,13 +513,13 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="numericUpDownRepitition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 315</value>
+    <value>59, 290</value>
   </data>
   <data name="checkBoxPeakDecomposition.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxPeakDecomposition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 216</value>
+    <value>4, 202</value>
   </data>
   <data name="checkBoxPeakDecomposition.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 21</value>
@@ -674,14 +527,11 @@
   <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
     <value>ピーク分離を行う</value>
   </data>
-  <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="checkBoxMouseOperation.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxMouseOperation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 342</value>
+    <value>11, 314</value>
   </data>
   <data name="checkBoxMouseOperation.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 21</value>
@@ -693,7 +543,7 @@
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxRefleshMainform.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 362</value>
+    <value>11, 334</value>
   </data>
   <data name="checkBoxRefleshMainform.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 21</value>
@@ -707,9 +557,6 @@
   <data name="numericUpDownDivision.Location" type="System.Drawing.Point, System.Drawing">
     <value>55, 121</value>
   </data>
-  <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label45.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -721,9 +568,6 @@
   </data>
   <data name="label45.Text" xml:space="preserve">
     <value>ピーク閾値</value>
-  </data>
-  <data name="label45.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label21.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -737,32 +581,23 @@
   <data name="label21.Text" xml:space="preserve">
     <value>分割数</value>
   </data>
-  <data name="label21.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label73.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label73.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 316</value>
+    <value>97, 291</value>
   </data>
   <data name="label73.Text" xml:space="preserve">
     <value>回</value>
-  </data>
-  <data name="label73.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label67.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label67.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 316</value>
+    <value>9, 291</value>
   </data>
   <data name="label67.Text" xml:space="preserve">
     <value>繰り返し</value>
-  </data>
-  <data name="label67.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label82.Location" type="System.Drawing.Point, System.Drawing">
     <value>183, 156</value>
@@ -770,14 +605,8 @@
   <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 16</value>
   </data>
-  <data name="label82.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 127</value>
-  </data>
-  <data name="label17.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="radioButtonRectangle.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -791,9 +620,6 @@
   <data name="radioButtonRectangle.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
-  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="radioButtonSector.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -806,9 +632,6 @@
   <data name="radioButtonSector.Text" xml:space="preserve">
     <value>セクター</value>
   </data>
-  <data name="radioButtonSector.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBoxOption.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -818,14 +641,11 @@
   <data name="groupBoxOption.Text" xml:space="preserve">
     <value>オプション</value>
   </data>
-  <data name="groupBoxOption.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonStopRefinements.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonStopRefinements.Location" type="System.Drawing.Point, System.Drawing">
-    <value>403, 595</value>
+    <value>403, 572</value>
   </data>
   <data name="buttonStopRefinements.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 31</value>
@@ -848,9 +668,6 @@
   <data name="buttonSetInitioalParam.Text" xml:space="preserve">
     <value>初期パラメータをメインフォームから取得</value>
   </data>
-  <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonSendMainForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -862,24 +679,6 @@
   </data>
   <data name="buttonSendMainForm.Text" xml:space="preserve">
     <value>校正パラメータをメインフォームに送信</value>
-  </data>
-  <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelKsiDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label68.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="buttonCopyToClipboard.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -893,32 +692,11 @@
   <data name="buttonCopyToClipboard.Text" xml:space="preserve">
     <value>クリップボードにコピー</value>
   </data>
-  <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label34.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxWaveLengthDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 25</value>
   </data>
-  <data name="textBoxWaveLengthDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label15.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 31</value>
-  </data>
-  <data name="label32.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label70.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 50</value>
@@ -926,59 +704,14 @@
   <data name="textBoxPrimaryFilmDistanceCopy2.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 24</value>
   </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxRadiusInverseDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryTauDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelSizeYDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxWaveLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 26</value>
-  </data>
-  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryTauDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryPhiDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label41.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.Location" type="System.Drawing.Point, System.Drawing">
     <value>206, 50</value>
   </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label13.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryPhiDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxRefinedWaveLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>206, 26</value>
-  </data>
-  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryTau.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -989,15 +722,6 @@
   <data name="label20.Text" xml:space="preserve">
     <value>校正後</value>
   </data>
-  <data name="label20.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxPixelSizeXDev.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryTau.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label44.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1006,9 +730,6 @@
   </data>
   <data name="label44.Text" xml:space="preserve">
     <value>ピクセル歪み</value>
-  </data>
-  <data name="label44.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1019,32 +740,8 @@
   <data name="label6.Text" xml:space="preserve">
     <value>初期</value>
   </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label69.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label33.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label63.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label39.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label81.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label62.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxCameraLengthDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 50</value>
-  </data>
-  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1055,12 +752,6 @@
   <data name="label22.Text" xml:space="preserve">
     <value>傾き補正項</value>
   </data>
-  <data name="label22.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedSecondaryPhi.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1069,27 +760,6 @@
   </data>
   <data name="label42.Text" xml:space="preserve">
     <value>誤差</value>
-  </data>
-  <data name="label42.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label61.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label49.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label30.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label66.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label65.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label64.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1100,12 +770,6 @@
   <data name="label64.Text" xml:space="preserve">
     <value>(secondary)</value>
   </data>
-  <data name="label64.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label75.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label71.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1114,9 +778,6 @@
   </data>
   <data name="label71.Text" xml:space="preserve">
     <value>傾き補正項</value>
-  </data>
-  <data name="label71.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBoxParameter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1127,9 +788,6 @@
   <data name="groupBoxParameter.Text" xml:space="preserve">
     <value>パラメータ</value>
   </data>
-  <data name="groupBoxParameter.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="radioButton1.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1138,9 +796,6 @@
   </data>
   <data name="radioButton1.Text" xml:space="preserve">
     <value>プライマリ</value>
-  </data>
-  <data name="radioButton1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1154,32 +809,17 @@
   <data name="radioButton2.Text" xml:space="preserve">
     <value>セカンダリ</value>
   </data>
-  <data name="radioButton2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>503, 317</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 28</value>
   </data>
-  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonGetWaveLengthFromWholePattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 400</value>
   </data>
-  <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonGetCameraLenghtFromWholePattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 400</value>
-  </data>
-  <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="contextMenuStrip1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="ColumnPrimary.ToolTipText" xml:space="preserve">
     <value>Double click: focus the peak. Right click: the check/unchek selected peaks.</value>
@@ -1205,17 +845,11 @@
   <data name="pictureBoxTiltCorrectionTau2.Location" type="System.Drawing.Point, System.Drawing">
     <value>838, 272</value>
   </data>
-  <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="pictureBoxTiltCorrectionTau1.Location" type="System.Drawing.Point, System.Drawing">
     <value>836, 103</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi2.Location" type="System.Drawing.Point, System.Drawing">
     <value>836, 190</value>
-  </data>
-  <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="pictureBoxTiltCorrectionPhi1.Location" type="System.Drawing.Point, System.Drawing">
     <value>836, 17</value>
@@ -1232,9 +866,6 @@
   <data name="pictureBoxTiltCorrection2.Location" type="System.Drawing.Point, System.Drawing">
     <value>679, 189</value>
   </data>
-  <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="pictureBoxTiltCorrection1.Location" type="System.Drawing.Point, System.Drawing">
     <value>679, 15</value>
   </data>
@@ -1250,9 +881,6 @@
   <data name="label74.Text" xml:space="preserve">
     <value>ピクセル歪み (ξ)</value>
   </data>
-  <data name="label74.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1264,9 +892,6 @@
   </data>
   <data name="label80.Text" xml:space="preserve">
     <value>傾き補正項</value>
-  </data>
-  <data name="label80.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label57.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1280,9 +905,6 @@
   <data name="label57.Text" xml:space="preserve">
     <value>カメラ長 (メイン画像)</value>
   </data>
-  <data name="label57.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label60.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1294,9 +916,6 @@
   </data>
   <data name="label60.Text" xml:space="preserve">
     <value>傾き補正項</value>
-  </data>
-  <data name="label60.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label79.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1310,9 +929,6 @@
   <data name="label79.Text" xml:space="preserve">
     <value>傾き補正項</value>
   </data>
-  <data name="label79.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label72.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1324,9 +940,6 @@
   </data>
   <data name="label72.Text" xml:space="preserve">
     <value>残差二乗和</value>
-  </data>
-  <data name="label72.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label37.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1340,9 +953,6 @@
   <data name="label37.Text" xml:space="preserve">
     <value>傾き補正項</value>
   </data>
-  <data name="label37.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label76.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1354,9 +964,6 @@
   </data>
   <data name="label76.Text" xml:space="preserve">
     <value>リング中心 (サブ画像)</value>
-  </data>
-  <data name="label76.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1370,9 +977,6 @@
   <data name="label16.Text" xml:space="preserve">
     <value>波長</value>
   </data>
-  <data name="label16.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1385,32 +989,17 @@
   <data name="label8.Text" xml:space="preserve">
     <value>リング中心 (メイン画像)</value>
   </data>
-  <data name="label8.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label78.Location" type="System.Drawing.Point, System.Drawing">
     <value>928, 174</value>
-  </data>
-  <data name="label78.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
     <value>928, 90</value>
   </data>
-  <data name="label77.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label47.Location" type="System.Drawing.Point, System.Drawing">
     <value>928, 1</value>
   </data>
-  <data name="label47.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label59.Location" type="System.Drawing.Point, System.Drawing">
     <value>936, 258</value>
-  </data>
-  <data name="label59.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1424,9 +1013,6 @@
   <data name="label50.Text" xml:space="preserve">
     <value>ピクセルサイズ (X)</value>
   </data>
-  <data name="label50.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label52.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
@@ -1439,29 +1025,14 @@
   <data name="label52.Text" xml:space="preserve">
     <value>ピクセルサイズ (Y)</value>
   </data>
-  <data name="label52.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 699</value>
-  </data>
-  <data name="statusStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="numericBoxAwayFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 23</value>
   </data>
-  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="numericBoxLowerThan.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 23</value>
-  </data>
-  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBoxPeakList.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 261</value>
@@ -1469,23 +1040,14 @@
   <data name="groupBoxPeakList.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 434</value>
   </data>
-  <data name="groupBoxPeakList.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1264, 722</value>
-  </data>
-  <data name="panel1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="flowLayoutPanelEachPeaks.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 347</value>
   </data>
   <data name="flowLayoutPanelEachPeaks.Size" type="System.Drawing.Size, System.Drawing">
     <value>750, 350</value>
-  </data>
-  <data name="flowLayoutPanelEachPeaks.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="checkBoxShowEachPeaks.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1498,9 +1060,6 @@
   </data>
   <data name="checkBoxShowEachPeaks.Text" xml:space="preserve">
     <value>ピークを拡大</value>
-  </data>
-  <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1264, 722</value>
@@ -1572,8 +1131,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>パラメータ校正 (代数的)</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

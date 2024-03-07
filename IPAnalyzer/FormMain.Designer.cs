@@ -101,8 +101,11 @@ namespace IPAnalyzer
             tabPage2 = new TabPage();
             graphControlProfile = new GraphControl();
             tabPage3 = new TabPage();
-            textBoxStatisticsSelectedAreaSequential = new TextBox();
+            splitContainer3 = new SplitContainer();
             textBoxStatisticsSelectedArea = new TextBox();
+            label16 = new Label();
+            textBoxStatisticsSelectedAreaSequential = new TextBox();
+            label15 = new Label();
             flowLayoutPanel2 = new FlowLayoutPanel();
             label17 = new Label();
             numericUpDownSelectedAreaX1 = new NumericUpDown();
@@ -113,8 +116,7 @@ namespace IPAnalyzer
             label20 = new Label();
             numericUpDownSelectedAreaY2 = new NumericUpDown();
             label21 = new Label();
-            label15 = new Label();
-            label16 = new Label();
+            label2 = new Label();
             toolStrip1 = new ToolStrip();
             toolStripButtonIntensityTable = new ToolStripButton();
             toolStripSeparator16 = new ToolStripSeparator();
@@ -235,6 +237,7 @@ namespace IPAnalyzer
             toolStripSeparator20 = new ToolStripSeparator();
             toolStripMenuItemAllSequentialImages = new ToolStripMenuItem();
             toolStripMenuItemSelectedSequentialImages = new ToolStripMenuItem();
+            toolStripSeparator26 = new ToolStripSeparator();
             toolStripButton1 = new ToolStripButton();
             toolTip = new ToolTip(components);
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
@@ -262,6 +265,10 @@ namespace IPAnalyzer
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
+            ((ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel1.SuspendLayout();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             ((ISupportInitialize)numericUpDownSelectedAreaX1).BeginInit();
             ((ISupportInitialize)numericUpDownSelectedAreaY1).BeginInit();
@@ -794,7 +801,7 @@ namespace IPAnalyzer
             graphControlFrequency.MinimalX = 0D;
             graphControlFrequency.MinimalY = 0D;
             graphControlFrequency.Mode = GraphControl.DrawingMode.Histogram;
-            graphControlFrequency.MousePositionVisible = true;
+            graphControlFrequency.MousePositionVisible = false;
             graphControlFrequency.MousePositionXDigit = -1;
             graphControlFrequency.MousePositionYDigit = -1;
             graphControlFrequency.Name = "graphControlFrequency";
@@ -804,7 +811,7 @@ namespace IPAnalyzer
             graphControlFrequency.UnitX = "";
             graphControlFrequency.UnitY = "";
             graphControlFrequency.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlFrequency.UpperPanelVisible = true;
+            graphControlFrequency.UpperPanelVisible = false;
             graphControlFrequency.UpperX = 1D;
             graphControlFrequency.UpperY = 1D;
             graphControlFrequency.UseLineWidth = true;
@@ -872,14 +879,37 @@ namespace IPAnalyzer
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(textBoxStatisticsSelectedAreaSequential);
-            tabPage3.Controls.Add(textBoxStatisticsSelectedArea);
+            tabPage3.Controls.Add(splitContainer3);
             tabPage3.Controls.Add(flowLayoutPanel2);
-            tabPage3.Controls.Add(label15);
-            tabPage3.Controls.Add(label16);
             resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Name = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            resources.ApplyResources(splitContainer3, "splitContainer3");
+            splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            splitContainer3.Panel1.Controls.Add(textBoxStatisticsSelectedArea);
+            splitContainer3.Panel1.Controls.Add(label16);
+            // 
+            // splitContainer3.Panel2
+            // 
+            splitContainer3.Panel2.Controls.Add(textBoxStatisticsSelectedAreaSequential);
+            splitContainer3.Panel2.Controls.Add(label15);
+            // 
+            // textBoxStatisticsSelectedArea
+            // 
+            resources.ApplyResources(textBoxStatisticsSelectedArea, "textBoxStatisticsSelectedArea");
+            textBoxStatisticsSelectedArea.Name = "textBoxStatisticsSelectedArea";
+            textBoxStatisticsSelectedArea.ReadOnly = true;
+            // 
+            // label16
+            // 
+            resources.ApplyResources(label16, "label16");
+            label16.Name = "label16";
             // 
             // textBoxStatisticsSelectedAreaSequential
             // 
@@ -887,11 +917,10 @@ namespace IPAnalyzer
             textBoxStatisticsSelectedAreaSequential.Name = "textBoxStatisticsSelectedAreaSequential";
             textBoxStatisticsSelectedAreaSequential.ReadOnly = true;
             // 
-            // textBoxStatisticsSelectedArea
+            // label15
             // 
-            resources.ApplyResources(textBoxStatisticsSelectedArea, "textBoxStatisticsSelectedArea");
-            textBoxStatisticsSelectedArea.Name = "textBoxStatisticsSelectedArea";
-            textBoxStatisticsSelectedArea.ReadOnly = true;
+            resources.ApplyResources(label15, "label15");
+            label15.Name = "label15";
             // 
             // flowLayoutPanel2
             // 
@@ -905,6 +934,7 @@ namespace IPAnalyzer
             flowLayoutPanel2.Controls.Add(label20);
             flowLayoutPanel2.Controls.Add(numericUpDownSelectedAreaY2);
             flowLayoutPanel2.Controls.Add(label21);
+            flowLayoutPanel2.Controls.Add(label2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // label17
@@ -960,15 +990,10 @@ namespace IPAnalyzer
             resources.ApplyResources(label21, "label21");
             label21.Name = "label21";
             // 
-            // label15
+            // label2
             // 
-            resources.ApplyResources(label15, "label15");
-            label15.Name = "label15";
-            // 
-            // label16
-            // 
-            resources.ApplyResources(label16, "label16");
-            label16.Name = "label16";
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // toolStrip1
             // 
@@ -1436,7 +1461,7 @@ namespace IPAnalyzer
             resources.ApplyResources(toolStrip2, "toolStrip2");
             toolStrip2.GripMargin = new Padding(0);
             toolStrip2.ImageScalingSize = new Size(20, 20);
-            toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripSplitButtonBackground, toolStripSeparator8, toolStripSplitButtonFindCenter, toolStripButtonFixCenter, toolStripSeparator6, toolStripSplitButtonFindSpots, toolStripButtonManualSpotMode, toolStripComboBoxManualSpotSize, toolStripSeparator2, toolStripSplitButtonGetProfile });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripSplitButtonBackground, toolStripSeparator8, toolStripSplitButtonFindCenter, toolStripButtonFixCenter, toolStripSeparator6, toolStripSplitButtonFindSpots, toolStripButtonManualSpotMode, toolStripComboBoxManualSpotSize, toolStripSeparator2, toolStripSplitButtonGetProfile, toolStripSeparator26 });
             toolStrip2.Name = "toolStrip2";
             toolStrip2.Stretch = true;
             // 
@@ -1734,6 +1759,11 @@ namespace IPAnalyzer
             resources.ApplyResources(toolStripMenuItemSelectedSequentialImages, "toolStripMenuItemSelectedSequentialImages");
             toolStripMenuItemSelectedSequentialImages.CheckedChanged += toolStripMenuItemSelectedSequentialImages_CheckedChanged;
             // 
+            // toolStripSeparator26
+            // 
+            toolStripSeparator26.Name = "toolStripSeparator26";
+            resources.ApplyResources(toolStripSeparator26, "toolStripSeparator26");
+            // 
             // toolStripButton1
             // 
             toolStripButton1.Name = "toolStripButton1";
@@ -1800,6 +1830,12 @@ namespace IPAnalyzer
             tabPage2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
+            splitContainer3.Panel1.ResumeLayout(false);
+            splitContainer3.Panel1.PerformLayout();
+            splitContainer3.Panel2.ResumeLayout(false);
+            splitContainer3.Panel2.PerformLayout();
+            ((ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
             ((ISupportInitialize)numericUpDownSelectedAreaX1).EndInit();
@@ -2019,6 +2055,9 @@ namespace IPAnalyzer
         private Button buttonMag4;
         private ToolStripMenuItem clearRegistrycheckAndRestartToolStripMenuItem;
         public ToolStripComboBox toolStripComboBoxAzimuthalDivisionNumber;
+        private SplitContainer splitContainer3;
+        private Label label2;
+        private ToolStripSeparator toolStripSeparator26;
         //private ScalablePictureBox scalablePictureBox;
 
 

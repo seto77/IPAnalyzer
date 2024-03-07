@@ -643,8 +643,6 @@ public partial class FormMain : Form
 
     public void SetText(string filename = "", string filenameSub = "")
     {
-
-
         string text = "IPAnalyzer";
 #if DEBUG
         text += "(debug)";
@@ -687,6 +685,7 @@ public partial class FormMain : Form
             VersionAndDate = Version.VersionAndDate,
             History = Version.History,
             Hint = Version.Hint,
+            Width = 600,
 
         };
         LoadRegistry();
@@ -1789,8 +1788,9 @@ public partial class FormMain : Form
 
         if (graphControlFrequency.VerticalLines != null && graphControlFrequency.VerticalLines.Length == 2)
         {
-            graphControlFrequency.VerticalLines = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+            graphControlFrequency.VerticalLines = [new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
             graphControlFrequency.Draw();
+            graphControlFrequency.Refresh();
         }
 
         Draw();
@@ -1811,6 +1811,7 @@ public partial class FormMain : Form
         {
             graphControlFrequency.VerticalLines = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
             graphControlFrequency.Draw();
+            graphControlFrequency.Refresh();
         }
 
         Draw();
@@ -2019,7 +2020,7 @@ public partial class FormMain : Form
             trackBarAdvancedMaxInt.Value = max;
         }
 
-        graphControlFrequency.VerticalLines = new PointD[2] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+        graphControlFrequency.VerticalLines = [new(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
 
 
         FileName = str.Remove(0, str.LastIndexOf('\\') + 1);
@@ -3169,7 +3170,7 @@ public partial class FormMain : Form
                     FittingPeak.FitPeakThread(profile.Pt, true, 0, ref pf);
 
                     graphControlProfile.Profile = profile;
-                    graphControlProfile.Peaks = new PeakFunction[] { pf };
+                    graphControlProfile.Peaks = [pf];
                     if (!double.IsNaN(pf.X) && pf.X != 0)
                         pts.Add(new PointD(
                             IP.FilmDistance * Math.Tan(Math.PI / 180 * pf.X) * Math.Sin(Math.PI / 180 * angleStep * i),
