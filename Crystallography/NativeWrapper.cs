@@ -5,6 +5,7 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 namespace Crystallography;
 #endregion
@@ -82,19 +83,19 @@ public static partial class NativeWrapper
     private static unsafe partial void _MatrixExponential(int dim, double* mat, double* results);
 
     [LibraryImport("Crystallography.Cuda.dll")]
-    private static unsafe partial void MatrixExponential_Cuda(int dim, double[] mat, double[] results);
+    private static unsafe partial void MatrixExponential_Cuda(int dim, in double[] mat, double[] results);
     [LibraryImport("Crystallography.Cuda.dll")]
-    private static unsafe partial void _CBEDSolver_MtxExp_Cuda(int gDim, double[] potential, double[] phi0, int tDim, double tStart, double tStep, double[] result);
+    private static unsafe partial void _CBEDSolver_MtxExp_Cuda(int gDim, in double[] potential, in double[] phi0, int tDim, double tStart, double tStep, double[] result);
 
     [LibraryImport("Crystallography.Native.dll")]
-    private static unsafe partial void _CBEDSolver_Eigen(int gDim, double* potential, double* phi0, int tDim, double[] thickness, double* result);
+    private static unsafe partial void _CBEDSolver_Eigen(int gDim, double* potential, double* phi0, int tDim, in double[] thickness, double* result);
 
     [LibraryImport("Crystallography.Native.dll")]
     private static unsafe partial void _CBEDSolver_Eigen2(int gDim,
                                         double* potential,
                                         double* phi0,
                                         int tDim,
-                                        double[] thickness,
+                                        in double[] thickness,
                                         double* values,
                                         double* vectors,
                                         double* alphas,
@@ -113,10 +114,10 @@ public static partial class NativeWrapper
     private static unsafe partial void _HRTEMSolverQuasi(int gDim,
                                             int lDim,
                                             int rDim,
-                                            double[] gPsi,
-                                            double[] gVec,
-                                            double[] gLenz,
-                                            double[] rVec,
+                                            in double[] gPsi,
+                                            in double[] gVec,
+                                            in double[] gLenz,
+                                            in double[] rVec,
                                             double[] results);
 
     [LibraryImport("Crystallography.Native.dll")]
@@ -124,10 +125,10 @@ public static partial class NativeWrapper
                                             int gDim,
                                             int lDim,
                                             int rDim,
-                                            double[] gPsi,
-                                            double[] gVec,
-                                            double[] gLenz,
-                                            double[] rVec,
+                                            in double[] gPsi,
+                                            in double[] gVec,
+                                            in double[] gLenz,
+                                            in double[] rVec,
                                             double[] results);
 
 
@@ -139,11 +140,11 @@ public static partial class NativeWrapper
                                             double fd,
                                             double ksi, double tau, double phi,
                                             double SpericalRadiusInverse,
-                                            double[] Intensity, byte[] IsValid,
+                                            in double[] Intensity, in byte[] IsValid,
                                             int yMin, int yMax,
                                             double startAngle, double stepAngle,
-                                            double[] r2, int r2len,
-                                            double[] profile, double[] pixels
+                                            in double[] r2, int r2len,
+                                            in double* profile, double* pixels
     );
 
     [LibraryImport("Crystallography.Native.dll")]
@@ -774,7 +775,7 @@ public static partial class NativeWrapper
     #endregion
 
     #region Histogram
-    static public (double[] profile, double[] pixels) Histogram(
+    unsafe static public (double[] profile, double[] pixels) Histogram(
         int width, int height,
         double centerX, double centerY,
         double pixSizeX, double pixSizeY,
@@ -789,6 +790,7 @@ public static partial class NativeWrapper
     {
         var profile = new double[r2.Length];
         var pixels = new double[r2.Length];
+        fixed(double* _profile = profile, _pixels = pixels)
         _Histogram(
             width, height,
             centerX, centerY,
@@ -800,7 +802,7 @@ public static partial class NativeWrapper
             yMin, yMax,
             startAngle, stepAngle,
             r2, r2.Length,
-            profile, pixels);
+            _profile, _pixels);
 
         return (profile, pixels);
     }
