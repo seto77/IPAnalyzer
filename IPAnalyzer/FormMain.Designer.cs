@@ -49,7 +49,6 @@ namespace IPAnalyzer
             textBoxInformation = new TextBox();
             label11 = new Label();
             panel3 = new Panel();
-            scalablePictureBoxThumbnail = new ScalablePictureBox();
             radioButtonNearCenter = new RadioButton();
             radioButtonWhole = new RadioButton();
             panel2 = new Panel();
@@ -61,7 +60,6 @@ namespace IPAnalyzer
             label7 = new Label();
             comboBoxGradient = new ComboBox();
             label5 = new Label();
-            scalablePictureBox = new ScalablePictureBox();
             flowLayoutPanel3 = new FlowLayoutPanel();
             label14 = new Label();
             labelResolution = new Label();
@@ -91,15 +89,11 @@ namespace IPAnalyzer
             tableLayoutPanel2 = new TableLayoutPanel();
             buttonAutoLevel = new Button();
             buttonReset = new Button();
-            trackBarAdvancedMinInt = new TrackBarAdvanced();
-            trackBarAdvancedMaxInt = new TrackBarAdvanced();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panelMousePos = new Panel();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            graphControlFrequency = new GraphControl();
             tabPage2 = new TabPage();
-            graphControlProfile = new GraphControl();
             tabPage3 = new TabPage();
             splitContainer3 = new SplitContainer();
             textBoxStatisticsSelectedArea = new TextBox();
@@ -262,8 +256,6 @@ namespace IPAnalyzer
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((ISupportInitialize)splitContainer3).BeginInit();
             splitContainer3.Panel1.SuspendLayout();
@@ -357,7 +349,6 @@ namespace IPAnalyzer
             // 
             // splitContainer2.Panel2
             // 
-            splitContainer2.Panel2.Controls.Add(scalablePictureBox);
             splitContainer2.Panel2.Controls.Add(flowLayoutPanel3);
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel3);
@@ -382,32 +373,10 @@ namespace IPAnalyzer
             // 
             // panel3
             // 
-            panel3.Controls.Add(scalablePictureBoxThumbnail);
             panel3.Controls.Add(radioButtonNearCenter);
             panel3.Controls.Add(radioButtonWhole);
             resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
-            // 
-            // scalablePictureBoxThumbnail
-            // 
-            scalablePictureBoxThumbnail.BackColor = SystemColors.ActiveCaption;
-            scalablePictureBoxThumbnail.BorderStyle = BorderStyle.Fixed3D;
-            resources.ApplyResources(scalablePictureBoxThumbnail, "scalablePictureBoxThumbnail");
-            scalablePictureBoxThumbnail.FixZoomAndCenter = false;
-            scalablePictureBoxThumbnail.FocusEventEnabled = false;
-            scalablePictureBoxThumbnail.HorizontalFlip = false;
-            scalablePictureBoxThumbnail.ManualSpotMode = false;
-            scalablePictureBoxThumbnail.MouseScaling = true;
-            scalablePictureBoxThumbnail.MouseTranslation = false;
-            scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
-            scalablePictureBoxThumbnail.ShowAreaRectangle = false;
-            scalablePictureBoxThumbnail.ShowRimRentangle = false;
-            scalablePictureBoxThumbnail.Title = ((string, Font, Color, Color))resources.GetObject("scalablePictureBoxThumbnail.Title");
-            scalablePictureBoxThumbnail.TitleVisible = false;
-            scalablePictureBoxThumbnail.VerticalFlip = false;
-            scalablePictureBoxThumbnail.Zoom = 128D;
-            scalablePictureBoxThumbnail.MouseDown2 += scalablePictureBoxThumbnail_MouseDown2;
-            scalablePictureBoxThumbnail.Draw += scalablePictureBoxThumbnail_Draw;
             // 
             // radioButtonNearCenter
             // 
@@ -494,30 +463,6 @@ namespace IPAnalyzer
             // 
             resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            // 
-            // scalablePictureBox
-            // 
-            scalablePictureBox.BackColor = SystemColors.ActiveCaption;
-            scalablePictureBox.BorderStyle = BorderStyle.Fixed3D;
-            resources.ApplyResources(scalablePictureBox, "scalablePictureBox");
-            scalablePictureBox.FixZoomAndCenter = false;
-            scalablePictureBox.FocusEventEnabled = false;
-            scalablePictureBox.HorizontalFlip = false;
-            scalablePictureBox.ManualSpotMode = false;
-            scalablePictureBox.MouseScaling = true;
-            scalablePictureBox.MouseTranslation = true;
-            scalablePictureBox.Name = "scalablePictureBox";
-            scalablePictureBox.ShowAreaRectangle = false;
-            scalablePictureBox.ShowRimRentangle = false;
-            scalablePictureBox.Title = ((string, Font, Color, Color))resources.GetObject("scalablePictureBox.Title");
-            scalablePictureBox.TitleVisible = false;
-            scalablePictureBox.VerticalFlip = false;
-            scalablePictureBox.Zoom = 128D;
-            scalablePictureBox.MouseMove2 += scalablePictureBox_MouseMove2;
-            scalablePictureBox.MouseUp2 += scalablePictureBox_MouseUp2;
-            scalablePictureBox.MouseDown2 += scalablePictureBox_MouseDown2;
-            scalablePictureBox.MouseWheel2 += scalablePictureBox_MouseWheel2;
-            scalablePictureBox.Draw += scalablePictureBox_Draw;
             // 
             // flowLayoutPanel3
             // 
@@ -693,8 +638,6 @@ namespace IPAnalyzer
             resources.ApplyResources(tableLayoutPanel2, "tableLayoutPanel2");
             tableLayoutPanel2.Controls.Add(buttonAutoLevel, 0, 0);
             tableLayoutPanel2.Controls.Add(buttonReset, 0, 1);
-            tableLayoutPanel2.Controls.Add(trackBarAdvancedMinInt, 1, 0);
-            tableLayoutPanel2.Controls.Add(trackBarAdvancedMaxInt, 1, 1);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // buttonAutoLevel
@@ -708,40 +651,6 @@ namespace IPAnalyzer
             resources.ApplyResources(buttonReset, "buttonReset");
             buttonReset.Name = "buttonReset";
             buttonReset.Click += buttonReset_Click;
-            // 
-            // trackBarAdvancedMinInt
-            // 
-            resources.ApplyResources(trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
-            trackBarAdvancedMinInt.ControlHeight = 27;
-            trackBarAdvancedMinInt.DecimalPlaces = 0;
-            trackBarAdvancedMinInt.LogScrollBar = false;
-            trackBarAdvancedMinInt.Maximum = 65535D;
-            trackBarAdvancedMinInt.Minimum = 0D;
-            trackBarAdvancedMinInt.Name = "trackBarAdvancedMinInt";
-            trackBarAdvancedMinInt.NumericBoxSize = 120;
-            trackBarAdvancedMinInt.Orientation = Orientation.Vertical;
-            trackBarAdvancedMinInt.Smart_Increment = true;
-            trackBarAdvancedMinInt.TickStyle = TickStyle.BottomRight;
-            trackBarAdvancedMinInt.UpDown_Increment = 1D;
-            trackBarAdvancedMinInt.Value = 0D;
-            trackBarAdvancedMinInt.ValueChanged += trackBarAdvancedMinInt_ValueChanged;
-            // 
-            // trackBarAdvancedMaxInt
-            // 
-            resources.ApplyResources(trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
-            trackBarAdvancedMaxInt.ControlHeight = 27;
-            trackBarAdvancedMaxInt.DecimalPlaces = 0;
-            trackBarAdvancedMaxInt.LogScrollBar = false;
-            trackBarAdvancedMaxInt.Maximum = 65535D;
-            trackBarAdvancedMaxInt.Minimum = 0D;
-            trackBarAdvancedMaxInt.Name = "trackBarAdvancedMaxInt";
-            trackBarAdvancedMaxInt.NumericBoxSize = 120;
-            trackBarAdvancedMaxInt.Orientation = Orientation.Vertical;
-            trackBarAdvancedMaxInt.Smart_Increment = true;
-            trackBarAdvancedMaxInt.TickStyle = TickStyle.BottomRight;
-            trackBarAdvancedMaxInt.UpDown_Increment = 1D;
-            trackBarAdvancedMaxInt.Value = 65534D;
-            trackBarAdvancedMaxInt.ValueChanged += trackBarAdvancedMaxInt_ValueChanged;
             // 
             // flowLayoutPanel1
             // 
@@ -764,118 +673,15 @@ namespace IPAnalyzer
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(graphControlFrequency);
             resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Name = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // graphControlFrequency
-            // 
-            graphControlFrequency.AllowMouseOperation = true;
-            graphControlFrequency.AxisLineColor = Color.Gray;
-            graphControlFrequency.AxisTextColor = Color.Black;
-            graphControlFrequency.AxisTextFont = new Font("Segoe UI", 9F);
-            graphControlFrequency.AxisXTextVisible = true;
-            graphControlFrequency.AxisYTextVisible = true;
-            graphControlFrequency.BackgroundColor = Color.White;
-            graphControlFrequency.BottomMargin = 0D;
-            graphControlFrequency.DivisionLineColor = Color.LightGray;
-            graphControlFrequency.DivisionLineXVisible = true;
-            graphControlFrequency.DivisionLineYVisible = true;
-            resources.ApplyResources(graphControlFrequency, "graphControlFrequency");
-            graphControlFrequency.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControlFrequency.DrawingRange");
-            graphControlFrequency.FixRangeHorizontal = false;
-            graphControlFrequency.FixRangeVertical = false;
-            graphControlFrequency.GraphTitle = "";
-            graphControlFrequency.Interpolation = false;
-            graphControlFrequency.IsIntegerX = true;
-            graphControlFrequency.IsIntegerY = true;
-            graphControlFrequency.LabelX = "Intensity:";
-            graphControlFrequency.LabelY = "Frequency:";
-            graphControlFrequency.LeftMargin = 0F;
-            graphControlFrequency.LineWidth = 1F;
-            graphControlFrequency.LowerX = 0D;
-            graphControlFrequency.LowerY = 0D;
-            graphControlFrequency.MaximalX = 1D;
-            graphControlFrequency.MaximalY = 1D;
-            graphControlFrequency.MinimalX = 0D;
-            graphControlFrequency.MinimalY = 0D;
-            graphControlFrequency.Mode = GraphControl.DrawingMode.Histogram;
-            graphControlFrequency.MousePositionVisible = false;
-            graphControlFrequency.MousePositionXDigit = -1;
-            graphControlFrequency.MousePositionYDigit = -1;
-            graphControlFrequency.Name = "graphControlFrequency";
-            graphControlFrequency.OriginPosition = new Point(40, 20);
-            graphControlFrequency.Profile = null;
-            graphControlFrequency.Smoothing = false;
-            graphControlFrequency.UnitX = "";
-            graphControlFrequency.UnitY = "";
-            graphControlFrequency.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlFrequency.UpperPanelVisible = false;
-            graphControlFrequency.UpperX = 1D;
-            graphControlFrequency.UpperY = 1D;
-            graphControlFrequency.UseLineWidth = true;
-            graphControlFrequency.VerticalLineColor = Color.Red;
-            graphControlFrequency.XLog = true;
-            graphControlFrequency.YLog = true;
-            graphControlFrequency.LinePositionChanged += graphControlFrequency_LinePositionChanged;
-            // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(graphControlProfile);
             resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // graphControlProfile
-            // 
-            graphControlProfile.AllowMouseOperation = true;
-            graphControlProfile.AxisLineColor = Color.Gray;
-            graphControlProfile.AxisTextColor = Color.Black;
-            graphControlProfile.AxisTextFont = new Font("Segoe UI", 9F);
-            graphControlProfile.AxisXTextVisible = true;
-            graphControlProfile.AxisYTextVisible = true;
-            graphControlProfile.BackgroundColor = Color.White;
-            graphControlProfile.BottomMargin = 0D;
-            graphControlProfile.DivisionLineColor = Color.LightGray;
-            graphControlProfile.DivisionLineXVisible = true;
-            graphControlProfile.DivisionLineYVisible = true;
-            resources.ApplyResources(graphControlProfile, "graphControlProfile");
-            graphControlProfile.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControlProfile.DrawingRange");
-            graphControlProfile.FixRangeHorizontal = false;
-            graphControlProfile.FixRangeVertical = false;
-            graphControlProfile.GraphTitle = "aaa";
-            graphControlProfile.Interpolation = false;
-            graphControlProfile.IsIntegerX = false;
-            graphControlProfile.IsIntegerY = false;
-            graphControlProfile.LabelX = "Angle:";
-            graphControlProfile.LabelY = "Intensity:";
-            graphControlProfile.LeftMargin = 0F;
-            graphControlProfile.LineWidth = 1F;
-            graphControlProfile.LowerX = 0D;
-            graphControlProfile.LowerY = 0D;
-            graphControlProfile.MaximalX = 1D;
-            graphControlProfile.MaximalY = 1D;
-            graphControlProfile.MinimalX = 0D;
-            graphControlProfile.MinimalY = 0D;
-            graphControlProfile.Mode = GraphControl.DrawingMode.Line;
-            graphControlProfile.MousePositionVisible = false;
-            graphControlProfile.MousePositionXDigit = -1;
-            graphControlProfile.MousePositionYDigit = -1;
-            graphControlProfile.Name = "graphControlProfile";
-            graphControlProfile.OriginPosition = new Point(40, 20);
-            graphControlProfile.Profile = null;
-            graphControlProfile.Smoothing = false;
-            graphControlProfile.UnitX = "";
-            graphControlProfile.UnitY = "";
-            graphControlProfile.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlProfile.UpperPanelVisible = false;
-            graphControlProfile.UpperX = 1D;
-            graphControlProfile.UpperY = 1D;
-            graphControlProfile.UseLineWidth = true;
-            graphControlProfile.VerticalLineColor = Color.Red;
-            graphControlProfile.XLog = false;
-            graphControlProfile.YLog = false;
             // 
             // tabPage3
             // 
@@ -1826,8 +1632,6 @@ namespace IPAnalyzer
             tableLayoutPanel3.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             splitContainer3.Panel1.ResumeLayout(false);

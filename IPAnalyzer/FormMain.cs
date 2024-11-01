@@ -943,7 +943,7 @@ public partial class FormMain : Form
                 var Phi = FormProperty.numericBoxTiltPhi.RadianValue;
                 var Tau = FormProperty.numericBoxTiltTau.RadianValue;
 
-                (var OffSet, var EllipseWidth, var EllipseHeight, var Cos, var Sin) = Geometriy.GetEllipseRectangleAndRot(FormDrawRing.R, cameraLength1, Phi, Tau);
+                (var OffSet, var EllipseWidth, var EllipseHeight, var Cos, var Sin) = Geometry.GetEllipseRectangleAndRot(FormDrawRing.R, cameraLength1, Phi, Tau);
 
                 g = Graphics.FromImage(bmp);
                 g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -1065,7 +1065,7 @@ public partial class FormMain : Form
                 //  |   |
                 //  3 - 2 
                 var j = i < 3 ? i + 1 : 0;
-                var cross = Geometriy.GetCrossPoint(sin, -cos, 0, 0, cornerReals[i], cornerReals[j]);
+                var cross = Geometry.GetCrossPoint(sin, -cos, 0, 0, cornerReals[i], cornerReals[j]);
                 double length1 = (cornerReals[i] - cross).Length, length2 = (cornerReals[j] - cross).Length;
                 if (length1 + length2 < length[i] * 1.001)
                     crossPts.Add((length1 / length[i] * cornerDetector[j] + length2 / length[i] * cornerDetector[i], i));
@@ -1144,7 +1144,7 @@ public partial class FormMain : Form
                 pen.DashStyle = (n * stepInteger) % 10 == 0 ? DashStyle.Dash : DashStyle.Dot;
 
             var twoTheta = n * stepInteger * Math.Pow(10, stepPow);
-            var ptsArray = Geometriy.ConicSection(twoTheta / 180 * Math.PI, FormProperty.DetectorTiltPhi.ToRadians(), FormProperty.DetectorTiltTau.ToRadians(), FormProperty.CameraLength2, cornerDetector[0], cornerDetector[2]);
+            var ptsArray = Geometry.ConicSection(twoTheta / 180 * Math.PI, FormProperty.DetectorTiltPhi.ToRadians(), FormProperty.DetectorTiltTau.ToRadians(), FormProperty.CameraLength2, cornerDetector[0], cornerDetector[2]);
             foreach (var pts in ptsArray)
                 g.DrawLines(pen, pts.ToArray());
 
@@ -1374,7 +1374,7 @@ public partial class FormMain : Form
                         var (yMax, yMin) = ((int)(manualMaskPoints.Max(p => p.Y) + 0.5), (int)(manualMaskPoints.Min(p => p.Y) + 0.5));
                         for (int j = Math.Max(yMin, 0); j <= Math.Min(yMax, SrcImgSize.Height - 1); j++)
                             for (int i = Math.Max(xMin, 0); i <= Math.Min(xMax, SrcImgSize.Width - 1); i++)
-                                if (Geometriy.InsidePolygonalArea(manualMaskPoints, new PointD(i, j)))
+                                if (Geometry.InsidePolygonalArea(manualMaskPoints, new PointD(i, j)))
                                     Ring.IsSpots[j * SrcImgSize.Width + i] = e.Button == MouseButtons.Left;
                     }
                     manualMaskPoints.Clear();
@@ -1600,7 +1600,7 @@ public partial class FormMain : Form
 
                 for (int j = Math.Max(yMin, 0); j <= Math.Min(yMax, SrcImgSize.Height - 1); j++)
                     for (int i = Math.Max(xMin, 0); i <= Math.Min(xMax, SrcImgSize.Width - 1); i++)
-                        if (Geometriy.InsidePolygonalArea(pts, new PointD(i, j)))
+                        if (Geometry.InsidePolygonalArea(pts, new PointD(i, j)))
                             pseudoBitmap.FilterTemporary[j * SrcImgSize.Width + i] = true;
             }
             else if (FormProperty.radioButtonManualSpline.Checked)//スプラインモードの時
@@ -3178,7 +3178,7 @@ public partial class FormMain : Form
                     Application.DoEvents();
                 }
 
-                var centerOffset = Geometriy.GetEllipseCenter(pts.ToArray());
+                var centerOffset = Geometry.GetEllipseCenter(pts.ToArray());
                 if (double.IsNaN(centerOffset.X))
                     break;
                 double centerX = centerOffset.X / IP.PixSizeX + IP.CenterX;

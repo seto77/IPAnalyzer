@@ -1547,7 +1547,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     /// </summary>
     private void SetPixelShape(List<EllipseParameter> ellipses, bool distortion)
     {
-        Geometriy.GetPixelShape(ellipses.ToArray(), ref IP.PixSizeX, ref IP.PixSizeY, ref IP.ksi, ref PixSizeXDev, ref PixSizeYDev, ref KsiDev, distortion);
+        Geometry.GetPixelShape(ellipses.ToArray(), ref IP.PixSizeX, ref IP.PixSizeY, ref IP.ksi, ref PixSizeXDev, ref PixSizeYDev, ref KsiDev, distortion);
 
         textBoxRefinedPixelKsi.RadianValue = IP.ksi;
         textBoxRefinedPixelKsiDev.RadianValue = KsiDev;
@@ -1615,7 +1615,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 if (!double.IsNaN(ellipses[i].points[j].X))
                     pt.Add(ellipses[i].points[j]);
 
-            p = Geometriy.GetEllipseCenter(pt.ToArray());
+            p = Geometry.GetEllipseCenter(pt.ToArray());
 
             if (!double.IsNaN(p.X) && !double.IsNaN(p.Y))
                 EllipseCenter.Add(p);
@@ -1626,7 +1626,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
         double phiDev = 0, tauDev = 0;
         PointD centerOffsetDev = new PointD();
-        Geometriy.GetTiltAndOffset(EllipseCenter.ToArray(), Radius.ToArray(), FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
+        Geometry.GetTiltAndOffset(EllipseCenter.ToArray(), Radius.ToArray(), FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
 
         //center位置をPixel単位に変換
         p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
@@ -1700,7 +1700,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 if (!double.IsNaN(ellipses[i].points[j].X))
                     pt.Add(ellipses[i].points[j]);
 
-            p = Geometriy.GetEllipseCenter(pt.ToArray());
+            p = Geometry.GetEllipseCenter(pt.ToArray());
 
             if (!double.IsNaN(p.X) && !double.IsNaN(p.Y))
                 EllipseCenter.Add(p);
