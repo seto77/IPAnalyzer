@@ -8,6 +8,7 @@ using System.Linq;
 using Crystallography;
 using System.Text;
 using System.Collections.Generic;
+using System.Threading;
 #endregion
 
 namespace IPAnalyzer;
@@ -112,6 +113,9 @@ public partial class FormAutoProcedure : Form
                         {
                             if (!checkBoxPatternMatching.Checked)
                             {
+                                while (Miscellaneous.isFileExistsAndLocked(f))
+                                    Thread.Sleep(50);
+                                
                                 formMain.ReadImage(f);
                                 //  break;
                             }
@@ -132,6 +136,12 @@ public partial class FormAutoProcedure : Form
                                     if ((radioButtonEqual.Checked && num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger) ||
                                         (radioButtonNotEqual.Checked && num % numericBoxDivisor.ValueInteger != numericBoxRemainder.ValueInteger))
                                     {
+                                        long fileSize = 0;
+                                        while (fileSize != new FileInfo(f).Length)
+                                        {
+                                            Thread.Sleep(50);
+                                            fileSize = new FileInfo(f).Length;
+                                        }
                                         formMain.ReadImage(f);
                                         //  break;
                                     }
@@ -145,7 +155,7 @@ public partial class FormAutoProcedure : Form
             }
 
             catch { System.Threading.Thread.Sleep(1000); }
-            System.Threading.Thread.Sleep(200);
+            System.Threading.Thread.Sleep(100);
         }
     }
 

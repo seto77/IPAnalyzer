@@ -130,7 +130,6 @@ partial class FormAutoProcedure
         numericBoxDivisor.BackColor = System.Drawing.Color.Transparent;
         numericBoxDivisor.Name = "numericBoxDivisor";
         numericBoxDivisor.RadianValue = 0.052359877559829883D;
-        numericBoxDivisor.RoundErrorAccuracy = -1;
         numericBoxDivisor.Value = 3D;
         // 
         // radioButtonEqual
@@ -153,7 +152,6 @@ partial class FormAutoProcedure
         numericBoxRemainder.BackColor = System.Drawing.Color.Transparent;
         numericBoxRemainder.Name = "numericBoxRemainder";
         numericBoxRemainder.RadianValue = 0.034906585039886591D;
-        numericBoxRemainder.RoundErrorAccuracy = -1;
         numericBoxRemainder.Value = 2D;
         // 
         // groupBox2
