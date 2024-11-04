@@ -38,7 +38,7 @@ namespace IPAnalyzer
             if (str.EndsWith("stl"))
             {//Rigaku R-Axis4
                 BinaryReader br = new BinaryReader(new FileStream(str, FileMode.Open, FileAccess.Read));
-                formMain.SetBytePosition(str, ref br, 288);
+                FormMain.SetBytePosition(str, ref br, 288);
                 string target = new string(br.ReadChars(4));//Target  
                 float wl = ImageIO.convertToSingle(br);//Wavelength (A)
                 br.ReadBytes(48);
@@ -47,7 +47,7 @@ namespace IPAnalyzer
                 int num_x_pixs = ImageIO.convertToInt(br);//Number of pixel X
                 int num_y_pixs = ImageIO.convertToInt(br);//Number of pixel Y
                 int length = num_x_pixs * num_y_pixs;
-                formMain.SetBytePosition(str, ref br, num_x_pixs * 2);
+                FormMain.SetBytePosition(str, ref br, num_x_pixs * 2);
                 ushort[] intensity = new ushort[length];
                 for (int y = 0; y < num_y_pixs; y++)
                     for (int x = 0; x < num_x_pixs; x++)

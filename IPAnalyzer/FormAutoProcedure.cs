@@ -97,7 +97,7 @@ public partial class FormAutoProcedure : Form
     #endregion
 
     #region ファイル更新監視
-    string[] FileList = Array.Empty<string>();
+    string[] FileList = [];
     private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
     {
         FileList = Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories);
@@ -109,16 +109,14 @@ public partial class FormAutoProcedure : Form
                 if (temp.Length != FileList.Length)
                 {
                     foreach (var f in temp.Where(e => !FileList.Contains(e)))
-                        if (ImageIO.IsReadable(Path.GetExtension(f)))
+                    {
+                        for(int i=0; i<1000 && Miscellaneous.isFileExistsAndLocked(f) && !backgroundWorker.CancellationPending; i++)
+                            Thread.Sleep(50);
+
+                        if (!Miscellaneous.isFileExistsAndLocked(f) && !backgroundWorker.CancellationPending && ImageIO.IsReadable(Path.GetExtension(f)))
                         {
                             if (!checkBoxPatternMatching.Checked)
-                            {
-                                while (Miscellaneous.isFileExistsAndLocked(f))
-                                    Thread.Sleep(50);
-                                
                                 formMain.ReadImage(f);
-                                //  break;
-                            }
                             else//パターンマッチングの場合
                             {
                                 var filename = Path.GetFileNameWithoutExtension(f);
@@ -137,25 +135,27 @@ public partial class FormAutoProcedure : Form
                                         (radioButtonNotEqual.Checked && num % numericBoxDivisor.ValueInteger != numericBoxRemainder.ValueInteger))
                                     {
                                         long fileSize = 0;
-                                        while (fileSize != new FileInfo(f).Length)
+                                        while (fileSize != new FileInfo(f).Length && !backgroundWorker.CancellationPending)
                                         {
                                             Thread.Sleep(50);
                                             fileSize = new FileInfo(f).Length;
                                         }
                                         formMain.ReadImage(f);
-                                        //  break;
                                     }
                                 }
                             }
-
-
                         }
+                    }
+
+                    if (backgroundWorker.CancellationPending)
+                        return;
+
                     FileList = temp;
                 }
             }
 
-            catch { System.Threading.Thread.Sleep(1000); }
-            System.Threading.Thread.Sleep(100);
+            catch { Thread.Sleep(1000); }
+            Thread.Sleep(100);
         }
     }
 
@@ -181,7 +181,7 @@ public partial class FormAutoProcedure : Form
             while (backgroundWorker.IsBusy)
             {
                 backgroundWorker.CancelAsync();
-                System.Threading.Thread.Sleep(200);
+                Thread.Sleep(100);
             }
             backgroundWorker.RunWorkerAsync();
         }
@@ -190,4 +190,8 @@ public partial class FormAutoProcedure : Form
     }
     #endregion
 
+    private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
+        checkBoxAutoLoad.Checked = false;
+    }
 }

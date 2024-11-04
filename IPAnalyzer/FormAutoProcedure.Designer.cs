@@ -54,8 +54,8 @@ partial class FormAutoProcedure
         // 
         // checkedListBoxAuto
         // 
-        resources.ApplyResources(checkedListBoxAuto, "checkedListBoxAuto");
         checkedListBoxAuto.CheckOnClick = true;
+        resources.ApplyResources(checkedListBoxAuto, "checkedListBoxAuto");
         checkedListBoxAuto.Items.AddRange(new object[] { resources.GetString("checkedListBoxAuto.Items"), resources.GetString("checkedListBoxAuto.Items1"), resources.GetString("checkedListBoxAuto.Items2"), resources.GetString("checkedListBoxAuto.Items3"), resources.GetString("checkedListBoxAuto.Items4") });
         checkedListBoxAuto.MultiColumn = true;
         checkedListBoxAuto.Name = "checkedListBoxAuto";
@@ -70,6 +70,7 @@ partial class FormAutoProcedure
         // 
         backgroundWorker.WorkerSupportsCancellation = true;
         backgroundWorker.DoWork += backgroundWorker_DoWork;
+        backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
         // 
         // textBoxDiectory
         // 
@@ -80,10 +81,6 @@ partial class FormAutoProcedure
         // 
         resources.ApplyResources(label1, "label1");
         label1.Name = "label1";
-        // 
-        // folderBrowserDialog1
-        // 
-        resources.ApplyResources(folderBrowserDialog1, "folderBrowserDialog1");
         // 
         // buttonSetDirectory
         // 
@@ -101,12 +98,12 @@ partial class FormAutoProcedure
         // 
         // groupBox1
         // 
-        resources.ApplyResources(groupBox1, "groupBox1");
         groupBox1.Controls.Add(checkBoxPatternMatching);
         groupBox1.Controls.Add(flowLayoutPanel1);
         groupBox1.Controls.Add(label1);
         groupBox1.Controls.Add(textBoxDiectory);
         groupBox1.Controls.Add(buttonSetDirectory);
+        resources.ApplyResources(groupBox1, "groupBox1");
         groupBox1.Name = "groupBox1";
         groupBox1.TabStop = false;
         // 
@@ -126,8 +123,8 @@ partial class FormAutoProcedure
         // 
         // numericBoxDivisor
         // 
-        resources.ApplyResources(numericBoxDivisor, "numericBoxDivisor");
         numericBoxDivisor.BackColor = System.Drawing.Color.Transparent;
+        resources.ApplyResources(numericBoxDivisor, "numericBoxDivisor");
         numericBoxDivisor.Name = "numericBoxDivisor";
         numericBoxDivisor.RadianValue = 0.052359877559829883D;
         numericBoxDivisor.Value = 3D;
@@ -148,18 +145,18 @@ partial class FormAutoProcedure
         // 
         // numericBoxRemainder
         // 
-        resources.ApplyResources(numericBoxRemainder, "numericBoxRemainder");
         numericBoxRemainder.BackColor = System.Drawing.Color.Transparent;
+        resources.ApplyResources(numericBoxRemainder, "numericBoxRemainder");
         numericBoxRemainder.Name = "numericBoxRemainder";
         numericBoxRemainder.RadianValue = 0.034906585039886591D;
         numericBoxRemainder.Value = 2D;
         // 
         // groupBox2
         // 
-        resources.ApplyResources(groupBox2, "groupBox2");
         groupBox2.Controls.Add(label2);
         groupBox2.Controls.Add(comboBoxMacro);
         groupBox2.Controls.Add(checkedListBoxAuto);
+        resources.ApplyResources(groupBox2, "groupBox2");
         groupBox2.Name = "groupBox2";
         groupBox2.TabStop = false;
         // 
@@ -170,8 +167,8 @@ partial class FormAutoProcedure
         // 
         // comboBoxMacro
         // 
-        resources.ApplyResources(comboBoxMacro, "comboBoxMacro");
         comboBoxMacro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        resources.ApplyResources(comboBoxMacro, "comboBoxMacro");
         comboBoxMacro.FormattingEnabled = true;
         comboBoxMacro.Name = "comboBoxMacro";
         // 

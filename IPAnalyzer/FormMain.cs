@@ -2162,7 +2162,7 @@ public partial class FormMain : Form
         setScale();
     }
 
-    public void SetBytePosition(string str, ref BinaryReader br, int count)
+    public static void SetBytePosition(string str, ref BinaryReader br, int count)
     {
         br.Close();
         br = new BinaryReader(new FileStream(str, FileMode.Open, FileAccess.Read));

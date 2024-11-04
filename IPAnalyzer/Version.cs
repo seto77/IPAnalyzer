@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.958(2024/11/04) Improved the stability of the 'Auto Procedure' function." +
         "\r\n ver3.957(2024/11/01) Improved the stability of the 'Auto Procedure' function." +
         "\r\n ver3.956(2024/02/27) Minor change: The data of Rad-icon1520 (*.raw) is treated as 16-bit signed integer." +
         "\r\n ver3.955(2023/12/13) Fixed bugs on loading Rad-icon1520 files (*.raw)." +

@@ -55,11 +55,10 @@ namespace IPAnalyzer
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "*.ipa|*.ipa";
+            SaveFileDialog dlg = new() { Filter = "*.ipa|*.ipa" };
             if (dlg.ShowDialog() == DialogResult.OK)
                 SaveImageAsIPA(dlg.FileName, ImageResolution, ImageSize, ImageCenter);
-          
+
             this.Visible = false;
         }
 
@@ -72,8 +71,7 @@ namespace IPAnalyzer
         {
             if (filename == "")
             {
-                SaveFileDialog dlg = new SaveFileDialog();
-                dlg.Filter = "*.ipa|*.ipa";
+                SaveFileDialog dlg = new() { Filter = "*.ipa|*.ipa" };
                 if (dlg.ShowDialog() == DialogResult.OK)
                     filename = dlg.FileName;
                 else
@@ -83,7 +81,7 @@ namespace IPAnalyzer
                 filename += ".ipa";
 
             double[] imageArray = Ring.GetCorrectedImageArray(FormMain.IP, imageResolution, imageSize, imageCenter);
-            ImageIO.IPAImage ipaImage = new ImageIO.IPAImage();
+            ImageIO.IPAImage ipaImage = new();
 
             ImageIO.IPAImageWriter(filename, imageArray, ImageResolution, ImageSize, ImageCenter, FormMain.IP.FilmDistance, FormMain.FormProperty.waveLengthControl.Property);
 
