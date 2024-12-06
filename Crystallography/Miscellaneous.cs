@@ -100,7 +100,7 @@ public static class Miscellaneous
         {
             if (isDecimalPointCommaFlag)
             {
-                isDecimalPointComma = double.TryParse("1.000,01", out _);
+                isDecimalPointComma = (1.01).ToString().Contains(',');
                 isDecimalPointCommaFlag = false;
             }
             return isDecimalPointComma;
@@ -116,6 +116,7 @@ public static class Miscellaneous
     /// <returns></returns>
     public static bool isFileExistsAndLocked(string path)
     {
+       
         if (File.Exists(path))
         {
             FileStream stream = null;
@@ -145,10 +146,7 @@ public static class Miscellaneous
             }
             finally
             {
-                if (stream != null)
-                {
-                    stream.Close();
-                }
+                stream?.Close();
             }
 
             return false;
@@ -176,7 +174,7 @@ public class DefinitionOrderTypeConverter : TypeConverter
         foreach (PropertyInfo propertyInfo in type.GetProperties())
             list.Add(propertyInfo.Name);
         // リフレクションから取得した順でソート
-        return pdc.Sort(list.ToArray());
+        return pdc.Sort([.. list]);
     }
 
     /// <summary>
