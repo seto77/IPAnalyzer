@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.960(2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +
         "\r\n ver3.959(2024/11/04) Improved the stability of the 'Auto Procedure' function." +
         "\r\n ver3.957(2024/11/01) Improved the stability of the 'Auto Procedure' function." +
         "\r\n ver3.956(2024/02/27) Minor change: The data of Rad-icon1520 (*.raw) is treated as 16-bit signed integer." +
