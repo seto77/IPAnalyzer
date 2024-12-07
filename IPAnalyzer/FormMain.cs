@@ -3506,7 +3506,10 @@ public partial class FormMain : Form
                     if (result = mutex.WaitOne(azimuthalDivMode ? 5000 : 500, true))
                     {
                         mutex.ReleaseMutex();
+
                         Clipboard.SetDataObject(dpList.ToArray());
+
+
                     }
                     Thread.Sleep(500);
 
