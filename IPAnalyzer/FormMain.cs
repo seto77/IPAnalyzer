@@ -2371,8 +2371,6 @@ public partial class FormMain : Form
                     WriteIntensityToCSV(writer, pseudoBitmap.SrcValuesGray, pseudoBitmap.Width);
                 }
             }
-
-            MessageBox.Show("CSVファイルとして保存しました。");
         }
         catch (Exception ex)
         {
