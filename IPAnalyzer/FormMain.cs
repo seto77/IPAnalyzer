@@ -2306,6 +2306,90 @@ public partial class FormMain : Form
         bmp.Save(filename, ImageFormat.Png);
     }
 
+    private void csvToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (SrcImgSize.Width == 0) return;
+        saveImageAsCSV();
+    }
+
+    public void saveImageAsCSV(string filename = "")
+    {
+        if (filename == "")
+        {
+            var dlg = new SaveFileDialog { Filter = "*.csv|*.csv" };
+            if (dlg.ShowDialog() == DialogResult.OK)
+                filename = dlg.FileName;
+            else
+                return;
+        }
+        else if (!filename.ToLower().EndsWith(".csv"))
+            filename += ".csv";
+
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(filename, false, Encoding.UTF8))
+            {
+                // 通常 Imageのとき
+                if (!toolStripButtonUnroll.Checked)
+                {
+                    // 複数画像モードの時
+                    if (Ring.SequentialImageIntensities != null && Ring.SequentialImageIntensities.Count > 1)
+                    {
+                        var d = new double[Ring.SequentialImageIntensities.Count][];
+                        for (int i = 0; i < d.Length; i++)
+                        {
+                            var intensity = Ring.SequentialImageIntensities[i];
+
+                            // Flip and Rotate
+                            d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                                flipVerticallyToolStripMenuItem.Checked,
+                                flipHorizontallyToolStripMenuItem.Checked,
+                                toolStripComboBoxRotate.SelectedIndex).ToArray();
+
+                            // Background
+                            if (Ring.Background != null && Ring.Background.Count == d[i].Length)
+                                d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value).ToArray();
+
+                            // 偏光補正
+                            if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
+                                d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, new List<double>(d[i])).ToArray();
+
+                            // CSVに書き出し
+                            writer.WriteLine($"# Image {i + 1}");
+                            WriteIntensityToCSV(writer, d[i], Ring.IP.SrcWidth);
+                        }
+                    }
+                    // 単一画像モードの時
+                    else
+                    {
+                        WriteIntensityToCSV(writer, Ring.Intensity.ToArray(), Ring.IP.SrcWidth);
+                    }
+                }
+                // Unrolled Imageのとき
+                else
+                {
+                    WriteIntensityToCSV(writer, pseudoBitmap.SrcValuesGray, pseudoBitmap.Width);
+                }
+            }
+
+            MessageBox.Show("CSVファイルとして保存しました。");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"エラーが発生しました: {ex.Message}");
+        }
+    }
+
+    // 強度データをCSV形式で書き出すヘルパーメソッド
+    private void WriteIntensityToCSV(StreamWriter writer, double[] intensity, int width)
+    {
+        for (int i = 0; i < intensity.Length; i += width)
+        {
+            var row = intensity.Skip(i).Take(width).Select(value => value.ToString("G"));
+            writer.WriteLine(string.Join(",", row));
+        }
+    }
+
     private void ipaToolStripMenuItem_Click(object sender, EventArgs e)
     {
         if (SrcImgSize.Width == 0) return;
@@ -4897,6 +4981,7 @@ public partial class FormMain : Form
             public void SaveImageAsTIFF(string fileName = "") => Execute(() => p.main.saveImageAsTiff(fileName));
             public void SaveImageAsPNG(string fileName = "") => Execute(() => p.main.saveImageAsPng(fileName));
             public void SaveImageAsIPA(string fileName = "") => Execute(() => p.main.FormSaveImage.SaveImageAsIPA(fileName));
+            public void SaveImageAsCSV(string fileName = "") => Execute(() => p.main.saveImageAsCSV(fileName));
             public void ReadImageHDF(string _fileName, bool? flag) => Execute(() => p.main.ReadImage(_fileName, flag));
 
             /// <summary>
