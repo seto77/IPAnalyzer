@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -92,6 +93,14 @@ public static class ImageIO
         return temp == "R-AXIS" || temp == "ipdsc\0";
     }
 
+    public static bool IsRintRapid2UnrollImage(string fileName)
+    {
+        var br = new BinaryReader(new FileStream(fileName, FileMode.Open, FileAccess.Read));
+        br.BaseStream.Position = 0;
+        var temp = new string(br.ReadChars(46));
+        br.Close();
+        return temp == "{\nHEADER_BYTES=17408;\nBYTE_ORDER=little_endian";
+    }
     public static bool IsITEXImage(string fileName)
     {
         var br = new BinaryReader(new FileStream(fileName, FileMode.Open, FileAccess.Read));
@@ -185,6 +194,8 @@ public static class ImageIO
                 result = FujiFDL(str);
             else if (IsRAxisImage(str))//R-Axis5
                 result = Raxis4(str);
+            else if (IsRintRapid2UnrollImage(str))//Rigaku RINT-RAPID II
+                result = RintRapid2Unroll(str);
             else if (IsADXVImage(str))
                 result = ADXV(str);
             else if (IsITEXImage(str))
@@ -1276,6 +1287,50 @@ public static class ImageIO
                 Ring.ImageType = Ring.ImageTypeEnum.Rigaku_RAxis_IV;
 
             br.Close();
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show(e.Message);
+            return false;
+        }
+        return true;
+    }
+
+    #endregion
+
+    #region Unroll image from Rigaku RINT-RAPID II
+    public static bool RintRapid2Unroll(string str, uint[] convertTable = null)
+    {
+        try
+        {
+            var br = new BinaryReader(new FileStream(str, FileMode.Open, FileAccess.Read));
+
+            //ヘッダ部分読み込み
+            Ring.Comments = "";
+            br.BaseStream.Position = 0;
+            Ring.Comments += new string(br.ReadChars(10));//Device
+            br.BaseStream.Position = 0; // 初期位置にセット
+            string headerText = new string(br.ReadChars(17408)); // HEADER_BYTES 分読み取る
+                                                                 // 正規表現でSIZE1とSIZE2を検索
+            Match matchSize1 = Regex.Match(headerText, @"SIZE1=(\d+);");
+            Match matchSize2 = Regex.Match(headerText, @"SIZE2=(\d+);");
+
+            int num_x_pixs = int.Parse(matchSize1.Groups[1].Value); // Number of pixel X
+            int num_y_pixs = int.Parse(matchSize2.Groups[1].Value); // Number of pixel Y
+            Ring.SrcImgSize = new Size(num_x_pixs, num_y_pixs);
+            
+            convertTable = new uint[65536];
+            for (uint i = 0; i < 65536; i++)
+                convertTable[i] = i;
+
+            //イメージデータ読みこみ
+            br.BaseStream.Position = 17408; // HEADER_BYTES 分読み取った後の位置にセット
+            int length = num_x_pixs * num_y_pixs;
+
+            // 直観的な方法。検証が必要。
+            for (int i = 0; i < length; i++)
+                Ring.Intensity.Add(convertTable[br.ReadUInt16()]); // ヘッダ部分にData_type = unsigned short int;と書かれていた。
+
         }
         catch (Exception e)
         {
