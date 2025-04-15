@@ -3603,6 +3603,9 @@ Center</value>
   <data name="pngToolStripMenuItem.Text" xml:space="preserve">
     <value>as PNG format (preserve brightness, contrast, masked area)</value>
   </data>
+  <data name="csvToolStripMenuItem.Text" xml:space="preserve">
+    <value>as CSV format</value>
+  </data>
   <data name="toolStripSplitButtonFindSpots.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
   </data>
