@@ -2,16 +2,16 @@
 <root>
   <!--
     Microsoft ResX Schema 
-
+0
     Version 2.0
-
+0
     The primary goals of this format is to allow a simple XML format
     that is mostly human readable. The generation and parsing of the
     various data types are done through the TypeConverter classes
     associated with the data types.
-
+0
     Example:
-
+0
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,24 +26,24 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
+0
     There are any number of "resheader" rows that contain simple
     name/value pairs.
-
+0
     Each data row contains a name, and value. The row also contains a
     type or mimetype. Type corresponds to a .NET class that support
     text/value conversion through the TypeConverter architecture.
     Classes that don't support this are serialized and stored with the
     mimetype set.
-
+0
     The mimetype is used for serialized objects, and tells the
     ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-
+0
     Note - application/x-microsoft.net.object.binary.base64 is the format
     that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-
+0
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
@@ -53,7 +53,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
+0
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
@@ -961,18 +961,18 @@
   <data name="numericBoxPrimaryImageNum.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;numericBoxPrimaryImageNum.Name" xml:space="preserve">
-    <value>numericBoxPrimaryImageNum</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPrimaryImageNum.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPrimaryImageNum.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPrimaryImageNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericTextBoxPrimaryCenterPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1013,18 +1013,18 @@
 ダブルクリックするとメインウィンドウの中心座標がコピーされます。
 メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Name" xml:space="preserve">
-    <value>numericTextBoxPrimaryCenterPositionY</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericTextBoxPrimaryFilmDistance.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1063,18 +1063,18 @@
     <value>「Primary」のカメラ長を入力します。
 あらかじめ近い数値を入れておくと収束が速くなります</value>
   </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Name" xml:space="preserve">
-    <value>numericTextBoxPrimaryFilmDistance</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericalTextBoxPrimaryCenterPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1115,18 +1115,18 @@
 ダブルクリックするとメインウィンドウの中心座標がコピーされます。
 メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Name" xml:space="preserve">
-    <value>numericalTextBoxPrimaryCenterPositionX</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionX.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -1145,18 +1145,18 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="pictureBoxPattern1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1169,18 +1169,18 @@
   <data name="pictureBoxPattern1.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
   </data>
-  <data name="&gt;&gt;pictureBoxPattern1.Name" xml:space="preserve">
-    <value>pictureBoxPattern1</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPattern1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPattern1.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPattern1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1202,18 +1202,18 @@
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label43.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1235,18 +1235,18 @@
   <data name="label43.Text" xml:space="preserve">
     <value>Camera Length</value>
   </data>
-  <data name="&gt;&gt;label43.Name" xml:space="preserve">
-    <value>label43</value>
-  </data>
-  <data name="&gt;&gt;label43.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label43.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label43.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -1265,18 +1265,18 @@
   <data name="label10.Text" xml:space="preserve">
     <value>X</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label51.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1298,18 +1298,18 @@
   <data name="label51.Text" xml:space="preserve">
     <value>Center Position (pixel)</value>
   </data>
-  <data name="&gt;&gt;label51.Name" xml:space="preserve">
-    <value>label51</value>
-  </data>
-  <data name="&gt;&gt;label51.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label51.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label51.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonGetCenterPositionFromMainForm.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1334,18 +1334,18 @@
   <data name="buttonGetCenterPositionFromMainForm.Text" xml:space="preserve">
     <value>From Main form</value>
   </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm.Name" xml:space="preserve">
-    <value>buttonGetCenterPositionFromMainForm</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonPrimaryGetProfile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1373,18 +1373,18 @@
   <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
     <value>「Primary」の一次元積算プロファイルを取得します。</value>
   </data>
-  <data name="&gt;&gt;buttonPrimaryGetProfile.Name" xml:space="preserve">
-    <value>buttonPrimaryGetProfile</value>
-  </data>
-  <data name="&gt;&gt;buttonPrimaryGetProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonPrimaryGetProfile.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonPrimaryGetProfile.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonClearPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -1406,18 +1406,18 @@
   <data name="buttonClearPrimaryImage.Text" xml:space="preserve">
     <value>Clear</value>
   </data>
-  <data name="&gt;&gt;buttonClearPrimaryImage.Name" xml:space="preserve">
-    <value>buttonClearPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonClearPrimaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClearPrimaryImage.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonClearPrimaryImage.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonOpenPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -1442,18 +1442,18 @@
   <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
     <value>「Primary」のファイルを読み込みます。</value>
   </data>
-  <data name="&gt;&gt;buttonOpenPrimaryImage.Name" xml:space="preserve">
-    <value>buttonOpenPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenPrimaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenPrimaryImage.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenPrimaryImage.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericalTextBoxPrimaryCenterPositionYDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1484,18 +1484,18 @@
   <data name="numericalTextBoxPrimaryCenterPositionYDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Name" xml:space="preserve">
-    <value>numericalTextBoxPrimaryCenterPositionYDev</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericalTextBoxPrimaryCenterPositionXDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1526,18 +1526,18 @@
   <data name="numericalTextBoxPrimaryCenterPositionXDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Name" xml:space="preserve">
-    <value>numericalTextBoxPrimaryCenterPositionXDev</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionXDev.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPrimaryFileName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -1556,18 +1556,18 @@
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
     <value>ファイルネーム</value>
   </data>
-  <data name="&gt;&gt;textBoxPrimaryFileName.Name" xml:space="preserve">
-    <value>textBoxPrimaryFileName</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFileName.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFileName.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label23.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -1586,18 +1586,18 @@
   <data name="label23.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label23.Name" xml:space="preserve">
-    <value>label23</value>
-  </data>
-  <data name="&gt;&gt;label23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label53.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1619,18 +1619,18 @@
   <data name="label53.Text" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <data name="&gt;&gt;label53.Name" xml:space="preserve">
-    <value>label53</value>
-  </data>
-  <data name="&gt;&gt;label53.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label53.Parent" xml:space="preserve">
-    <value>groupBoxPrimaryImage</value>
-  </data>
-  <data name="&gt;&gt;label53.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxSecondaryImageNum.Name" xml:space="preserve">
     <value>numericBoxSecondaryImageNum</value>
   </data>
@@ -1964,18 +1964,18 @@
   <data name="numericBoxSecondaryImageNum.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;numericBoxSecondaryImageNum.Name" xml:space="preserve">
-    <value>numericBoxSecondaryImageNum</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSecondaryImageNum.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSecondaryImageNum.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSecondaryImageNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericTextBoxSecondaryCenterPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2016,18 +2016,18 @@
 ダブルクリックするとメインウィンドウの中心座標がコピーされます。
 メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Name" xml:space="preserve">
-    <value>numericTextBoxSecondaryCenterPositionY</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionY.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonOpenSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2052,18 +2052,18 @@
   <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
     <value>「Secondary」のファイルを読み込みます。</value>
   </data>
-  <data name="&gt;&gt;buttonOpenSecondaryImage.Name" xml:space="preserve">
-    <value>buttonOpenSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenSecondaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenSecondaryImage.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenSecondaryImage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericTextBoxSecondaryCenterPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2104,18 +2104,18 @@
 ダブルクリックするとメインウィンドウの中心座標がコピーされます。
 メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Name" xml:space="preserve">
-    <value>numericTextBoxSecondaryCenterPositionX</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxSecondaryFileName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2131,18 +2131,18 @@
   <data name="textBoxSecondaryFileName.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;textBoxSecondaryFileName.Name" xml:space="preserve">
-    <value>textBoxSecondaryFileName</value>
-  </data>
-  <data name="&gt;&gt;textBoxSecondaryFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSecondaryFileName.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;textBoxSecondaryFileName.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxFilmDistanceDiscrepancy.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2181,18 +2181,18 @@
     <value>「Primary」とのカメラ長の差を入力します。
 負の値を入力することもできます。</value>
   </data>
-  <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Name" xml:space="preserve">
-    <value>textBoxFilmDistanceDiscrepancy</value>
-  </data>
-  <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;textBoxFilmDistanceDiscrepancy.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPrimaryFilmDistanceCopy.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2223,18 +2223,18 @@
   <data name="textBoxPrimaryFilmDistanceCopy.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Name" xml:space="preserve">
-    <value>textBoxPrimaryFilmDistanceCopy</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="pictureBoxPattern2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2247,18 +2247,18 @@
   <data name="pictureBoxPattern2.TabIndex" type="System.Int32, mscorlib">
     <value>81</value>
   </data>
-  <data name="&gt;&gt;pictureBoxPattern2.Name" xml:space="preserve">
-    <value>pictureBoxPattern2</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPattern2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPattern2.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPattern2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label54.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2277,18 +2277,18 @@
   <data name="label54.Text" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="&gt;&gt;label54.Name" xml:space="preserve">
-    <value>label54</value>
-  </data>
-  <data name="&gt;&gt;label54.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label54.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2313,18 +2313,18 @@
   <data name="label5.Text" xml:space="preserve">
     <value>mm</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label55.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2343,18 +2343,18 @@
   <data name="label55.Text" xml:space="preserve">
     <value>X</value>
   </data>
-  <data name="&gt;&gt;label55.Name" xml:space="preserve">
-    <value>label55</value>
-  </data>
-  <data name="&gt;&gt;label55.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label55.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label55.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonGetCenterPositionFromMainForm2.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2379,18 +2379,18 @@
   <data name="buttonGetCenterPositionFromMainForm2.Text" xml:space="preserve">
     <value>From Main form</value>
   </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.Name" xml:space="preserve">
-    <value>buttonGetCenterPositionFromMainForm2</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonClearSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2412,18 +2412,18 @@
   <data name="buttonClearSecondaryImage.Text" xml:space="preserve">
     <value>Clear</value>
   </data>
-  <data name="&gt;&gt;buttonClearSecondaryImage.Name" xml:space="preserve">
-    <value>buttonClearSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonClearSecondaryImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClearSecondaryImage.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonClearSecondaryImage.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonSecondaryGetProfile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2451,18 +2451,18 @@
   <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
     <value>「Secondary」の一次元積算プロファイルを取得します。</value>
   </data>
-  <data name="&gt;&gt;buttonSecondaryGetProfile.Name" xml:space="preserve">
-    <value>buttonSecondaryGetProfile</value>
-  </data>
-  <data name="&gt;&gt;buttonSecondaryGetProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSecondaryGetProfile.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;buttonSecondaryGetProfile.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericTextBoxSecondaryCenterPositionYDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2493,18 +2493,18 @@
   <data name="numericTextBoxSecondaryCenterPositionYDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Name" xml:space="preserve">
-    <value>numericTextBoxSecondaryCenterPositionYDev</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionYDev.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericTextBoxSecondaryCenterPositionXDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2535,18 +2535,18 @@
   <data name="numericTextBoxSecondaryCenterPositionXDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Name" xml:space="preserve">
-    <value>numericTextBoxSecondaryCenterPositionXDev</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionXDev.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2565,18 +2565,18 @@
   <data name="label4.Text" xml:space="preserve">
     <value>+</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label56.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2598,18 +2598,18 @@
   <data name="label56.Text" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <data name="&gt;&gt;label56.Name" xml:space="preserve">
-    <value>label56</value>
-  </data>
-  <data name="&gt;&gt;label56.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label56.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label56.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label31.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2628,18 +2628,18 @@
   <data name="label31.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label31.Name" xml:space="preserve">
-    <value>label31</value>
-  </data>
-  <data name="&gt;&gt;label31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2661,18 +2661,18 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Camera Length</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label58.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2694,18 +2694,18 @@
   <data name="label58.Text" xml:space="preserve">
     <value>Center Position (pixel)</value>
   </data>
-  <data name="&gt;&gt;label58.Name" xml:space="preserve">
-    <value>label58</value>
-  </data>
-  <data name="&gt;&gt;label58.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label58.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label58.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -2724,18 +2724,18 @@
   <data name="label29.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label29.Name" xml:space="preserve">
-    <value>label29</value>
-  </data>
-  <data name="&gt;&gt;label29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label29.Parent" xml:space="preserve">
-    <value>groupBoxSecondaryImage</value>
-  </data>
-  <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxRefineTiltCorrection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3279,18 +3279,18 @@
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
     <value>各パラメータの模式図を表示します。</value>
   </data>
-  <data name="&gt;&gt;buttonSchematicDiagram.Name" xml:space="preserve">
-    <value>buttonSchematicDiagram</value>
-  </data>
-  <data name="&gt;&gt;buttonSchematicDiagram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSchematicDiagram.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;buttonSchematicDiagram.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonClearGraphs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3318,18 +3318,18 @@
   <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
     <value>現在の描画されているグラフを消去します。</value>
   </data>
-  <data name="&gt;&gt;buttonClearGraphs.Name" xml:space="preserve">
-    <value>buttonClearGraphs</value>
-  </data>
-  <data name="&gt;&gt;buttonClearGraphs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClearGraphs.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;buttonClearGraphs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonSetStandardCrystal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3351,18 +3351,18 @@
   <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
     <value>Set crystal</value>
   </data>
-  <data name="&gt;&gt;buttonSetStandardCrystal.Name" xml:space="preserve">
-    <value>buttonSetStandardCrystal</value>
-  </data>
-  <data name="&gt;&gt;buttonSetStandardCrystal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSetStandardCrystal.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;buttonSetStandardCrystal.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxRefinePixelDistortion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3387,18 +3387,18 @@
   <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
     <value>チェックされているとピクセルの歪みを最適化します</value>
   </data>
-  <data name="&gt;&gt;checkBoxRefinePixelDistortion.Name" xml:space="preserve">
-    <value>checkBoxRefinePixelDistortion</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRefinePixelDistortion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRefinePixelDistortion.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRefinePixelDistortion.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonExecuteRefinements.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11pt, style=Bold, Italic</value>
   </data>
@@ -3421,18 +3421,18 @@
     <value>上の設定にしたがって最適化を開始します。
 途中で終了するにはStopを押してください。</value>
   </data>
-  <data name="&gt;&gt;buttonExecuteRefinements.Name" xml:space="preserve">
-    <value>buttonExecuteRefinements</value>
-  </data>
-  <data name="&gt;&gt;buttonExecuteRefinements.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonExecuteRefinements.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;buttonExecuteRefinements.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxSphericalCorrection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3457,18 +3457,18 @@
   <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
     <value>チェックされているとIPの傾き補正を最適化します</value>
   </data>
-  <data name="&gt;&gt;checkBoxSphericalCorrection.Name" xml:space="preserve">
-    <value>checkBoxSphericalCorrection</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSphericalCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSphericalCorrection.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSphericalCorrection.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxCenterPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3496,18 +3496,18 @@
   <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
     <value>チェックされているとダイレクトスポットの位置を最適化します</value>
   </data>
-  <data name="&gt;&gt;checkBoxCenterPosition.Name" xml:space="preserve">
-    <value>checkBoxCenterPosition</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCenterPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCenterPosition.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCenterPosition.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownRepitition.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3523,18 +3523,18 @@
   <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
     <value>最適化を行う回数を設定します。</value>
   </data>
-  <data name="&gt;&gt;numericUpDownRepitition.Name" xml:space="preserve">
-    <value>numericUpDownRepitition</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRepitition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRepitition.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRepitition.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxPeakDecomposition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3556,18 +3556,18 @@
   <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
     <value>Peak Decomposition</value>
   </data>
-  <data name="&gt;&gt;checkBoxPeakDecomposition.Name" xml:space="preserve">
-    <value>checkBoxPeakDecomposition</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPeakDecomposition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPeakDecomposition.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPeakDecomposition.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxMouseOperation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3594,18 +3594,18 @@
     <value>最適化計算の間、メインウィンドウの画像描画を中止します。
 チェックすると若干計算速度が向上します。</value>
   </data>
-  <data name="&gt;&gt;checkBoxMouseOperation.Name" xml:space="preserve">
-    <value>checkBoxMouseOperation</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMouseOperation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMouseOperation.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMouseOperation.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxRefleshMainform.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3631,18 +3631,18 @@
     <value>最適化計算の間、メインウィンドウの画像描画を中止します。
 チェックすると若干計算速度が向上します。</value>
   </data>
-  <data name="&gt;&gt;checkBoxRefleshMainform.Name" xml:space="preserve">
-    <value>checkBoxRefleshMainform</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRefleshMainform.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRefleshMainform.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRefleshMainform.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownThresholdOfPeak.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3660,18 +3660,18 @@
 積分強度/（積分強度+バックグラウンド)がこの値を下回る場合、
 最適化の計算から除外します。</value>
   </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfPeak.Name" xml:space="preserve">
-    <value>numericUpDownThresholdOfPeak</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfPeak.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfPeak.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfPeak.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownDivision.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3684,18 +3684,18 @@
   <data name="numericUpDownDivision.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;numericUpDownDivision.Name" xml:space="preserve">
-    <value>numericUpDownDivision</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownDivision.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownDivision.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownDivision.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label45.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3717,18 +3717,18 @@
   <data name="label45.Text" xml:space="preserve">
     <value>Thereshold</value>
   </data>
-  <data name="&gt;&gt;label45.Name" xml:space="preserve">
-    <value>label45</value>
-  </data>
-  <data name="&gt;&gt;label45.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label45.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;label45.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label21.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3750,18 +3750,18 @@
   <data name="label21.Text" xml:space="preserve">
     <value>Division</value>
   </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
-  </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label73.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3780,18 +3780,18 @@
   <data name="label73.Text" xml:space="preserve">
     <value>times</value>
   </data>
-  <data name="&gt;&gt;label73.Name" xml:space="preserve">
-    <value>label73</value>
-  </data>
-  <data name="&gt;&gt;label73.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label73.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;label73.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label67.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3810,18 +3810,18 @@
   <data name="label67.Text" xml:space="preserve">
     <value>Repitition</value>
   </data>
-  <data name="&gt;&gt;label67.Name" xml:space="preserve">
-    <value>label67</value>
-  </data>
-  <data name="&gt;&gt;label67.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label67.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;label67.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label82.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3840,18 +3840,18 @@
   <data name="label82.Text" xml:space="preserve">
     <value>mm</value>
   </data>
-  <data name="&gt;&gt;label82.Name" xml:space="preserve">
-    <value>label82</value>
-  </data>
-  <data name="&gt;&gt;label82.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label82.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;label82.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -3870,18 +3870,18 @@
   <data name="label17.Text" xml:space="preserve">
     <value>% </value>
   </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonRectangle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3903,18 +3903,18 @@
   <data name="radioButtonRectangle.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
-  <data name="&gt;&gt;radioButtonRectangle.Name" xml:space="preserve">
-    <value>radioButtonRectangle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRectangle.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRectangle.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonSector.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3936,18 +3936,18 @@
   <data name="radioButtonSector.Text" xml:space="preserve">
     <value>Sector</value>
   </data>
-  <data name="&gt;&gt;radioButtonSector.Name" xml:space="preserve">
-    <value>radioButtonSector</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSector.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSector.Parent" xml:space="preserve">
-    <value>groupBoxOption</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSector.ZOrder" xml:space="preserve">
-    <value>30</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonStopRefinements.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -4789,18 +4789,18 @@
   <data name="textBoxPixelKsi.ToolTip1" xml:space="preserve">
     <value>画像のPixelの歪み量の初期値を入力します。</value>
   </data>
-  <data name="&gt;&gt;textBoxPixelKsi.Name" xml:space="preserve">
-    <value>textBoxPixelKsi</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelKsi.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelKsi.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxTiltCorrectionSecondaryTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4831,18 +4831,18 @@
   <data name="textBoxTiltCorrectionSecondaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Name" xml:space="preserve">
-    <value>textBoxTiltCorrectionSecondaryTau</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxTiltCorrectionPrimaryTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4879,18 +4879,18 @@
   <data name="textBoxTiltCorrectionPrimaryTau.ToolTip1" xml:space="preserve">
     <value>IPの傾き量の初期値を入力します。</value>
   </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Name" xml:space="preserve">
-    <value>textBoxTiltCorrectionPrimaryTau</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericalTextBoxSphericalRadius.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4921,18 +4921,18 @@
   <data name="numericalTextBoxSphericalRadius.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxSphericalRadius.Name" xml:space="preserve">
-    <value>numericalTextBoxSphericalRadius</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxSphericalRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxSphericalRadius.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxSphericalRadius.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxTiltCorrectionSecondaryPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4963,18 +4963,18 @@
   <data name="textBoxTiltCorrectionSecondaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Name" xml:space="preserve">
-    <value>textBoxTiltCorrectionSecondaryPhi</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionSecondaryPhi.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxTiltCorrectionPrimaryPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5011,18 +5011,18 @@
   <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip1" xml:space="preserve">
     <value>IPの傾き量の初期値を入力します。</value>
   </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Name" xml:space="preserve">
-    <value>textBoxTiltCorrectionPrimaryPhi</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxTiltCorrectionPrimaryPhi.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPixelKsiDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5053,18 +5053,18 @@
   <data name="textBoxRefinedPixelKsiDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Name" xml:space="preserve">
-    <value>textBoxRefinedPixelKsiDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsiDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsiDev.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label68.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -5083,18 +5083,18 @@
   <data name="label68.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label68.Name" xml:space="preserve">
-    <value>label68</value>
-  </data>
-  <data name="&gt;&gt;label68.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label68.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label68.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonCopyToClipboard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
@@ -5113,18 +5113,18 @@
   <data name="buttonCopyToClipboard.Text" xml:space="preserve">
     <value>Refined parameters =&gt; clipboard</value>
   </data>
-  <data name="&gt;&gt;buttonCopyToClipboard.Name" xml:space="preserve">
-    <value>buttonCopyToClipboard</value>
-  </data>
-  <data name="&gt;&gt;buttonCopyToClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCopyToClipboard.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;buttonCopyToClipboard.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label34.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -5143,18 +5143,18 @@
   <data name="label34.Text" xml:space="preserve">
     <value>τ</value>
   </data>
-  <data name="&gt;&gt;label34.Name" xml:space="preserve">
-    <value>label34</value>
-  </data>
-  <data name="&gt;&gt;label34.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label34.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label34.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxWaveLengthDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5185,18 +5185,18 @@
   <data name="textBoxWaveLengthDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxWaveLengthDev.Name" xml:space="preserve">
-    <value>textBoxWaveLengthDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxWaveLengthDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxWaveLengthDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxWaveLengthDev.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPixelKsi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5227,18 +5227,18 @@
   <data name="textBoxRefinedPixelKsi.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsi.Name" xml:space="preserve">
-    <value>textBoxRefinedPixelKsi</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsi.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelKsi.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -5257,18 +5257,18 @@
   <data name="label15.Text" xml:space="preserve">
     <value>φ</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label32.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -5287,18 +5287,18 @@
   <data name="label32.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label32.Name" xml:space="preserve">
-    <value>label32</value>
-  </data>
-  <data name="&gt;&gt;label32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label32.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label32.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label70.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -5317,18 +5317,18 @@
   <data name="label70.Text" xml:space="preserve">
     <value>ξ</value>
   </data>
-  <data name="&gt;&gt;label70.Name" xml:space="preserve">
-    <value>label70</value>
-  </data>
-  <data name="&gt;&gt;label70.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPrimaryFilmDistanceCopy2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5359,18 +5359,18 @@
   <data name="textBoxPrimaryFilmDistanceCopy2.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Name" xml:space="preserve">
-    <value>textBoxPrimaryFilmDistanceCopy2</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxPrimaryFilmDistanceCopy2.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericalTextBoxRadiusInverseDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5401,18 +5401,18 @@
   <data name="numericalTextBoxRadiusInverseDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Name" xml:space="preserve">
-    <value>numericalTextBoxRadiusInverseDev</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedSecondaryTauDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5443,18 +5443,18 @@
   <data name="textBoxRefinedSecondaryTauDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Name" xml:space="preserve">
-    <value>textBoxRefinedSecondaryTauDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPixelSizeYDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5485,18 +5485,18 @@
   <data name="textBoxPixelSizeYDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxPixelSizeYDev.Name" xml:space="preserve">
-    <value>textBoxPixelSizeYDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeYDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeYDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeYDev.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxWaveLength.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5536,18 +5536,18 @@
   <data name="textBoxWaveLength.ToolTip1" xml:space="preserve">
     <value>波長の初期値を入力します。</value>
   </data>
-  <data name="&gt;&gt;textBoxWaveLength.Name" xml:space="preserve">
-    <value>textBoxWaveLength</value>
-  </data>
-  <data name="&gt;&gt;textBoxWaveLength.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxWaveLength.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxWaveLength.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPixelSizeY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5578,18 +5578,18 @@
   <data name="textBoxRefinedPixelSizeY.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeY.Name" xml:space="preserve">
-    <value>textBoxRefinedPixelSizeY</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeY.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeY.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPrimaryTauDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5620,18 +5620,18 @@
   <data name="textBoxRefinedPrimaryTauDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Name" xml:space="preserve">
-    <value>textBoxRefinedPrimaryTauDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPixelSizeY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5668,18 +5668,18 @@
   <data name="textBoxPixelSizeY.ToolTip1" xml:space="preserve">
     <value>画像の1Pixelあたりの大きさ(Y方向)の初期値を入力します。</value>
   </data>
-  <data name="&gt;&gt;textBoxPixelSizeY.Name" xml:space="preserve">
-    <value>textBoxPixelSizeY</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeY.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeY.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedSecondaryPhiDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5710,18 +5710,18 @@
   <data name="textBoxRefinedSecondaryPhiDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Name" xml:space="preserve">
-    <value>textBoxRefinedSecondaryPhiDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhiDev.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label41.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -5740,18 +5740,18 @@
   <data name="label41.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label41.Name" xml:space="preserve">
-    <value>label41</value>
-  </data>
-  <data name="&gt;&gt;label41.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label41.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label41.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPrimaryFilmDistance.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5782,18 +5782,18 @@
   <data name="textBoxRefinedPrimaryFilmDistance.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Name" xml:space="preserve">
-    <value>textBoxRefinedPrimaryFilmDistance</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryFilmDistance.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5815,18 +5815,18 @@
   <data name="label13.Text" xml:space="preserve">
     <value>mm</value>
   </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>30</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPrimaryPhiDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5857,18 +5857,18 @@
   <data name="textBoxRefinedPrimaryPhiDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Name" xml:space="preserve">
-    <value>textBoxRefinedPrimaryPhiDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhiDev.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPixelSizeX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5907,18 +5907,18 @@
     <value>画像の1Pixelあたりの大きさ(X方向)の初期値を入力します。
 </value>
   </data>
-  <data name="&gt;&gt;textBoxPixelSizeX.Name" xml:space="preserve">
-    <value>textBoxPixelSizeX</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeX.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeX.ZOrder" xml:space="preserve">
-    <value>33</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedWaveLength.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5949,18 +5949,18 @@
   <data name="textBoxRefinedWaveLength.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedWaveLength.Name" xml:space="preserve">
-    <value>textBoxRefinedWaveLength</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedWaveLength.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedWaveLength.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedWaveLength.ZOrder" xml:space="preserve">
-    <value>35</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPixelSizeX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -5991,18 +5991,18 @@
   <data name="textBoxRefinedPixelSizeX.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeX.Name" xml:space="preserve">
-    <value>textBoxRefinedPixelSizeX</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeX.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPixelSizeX.ZOrder" xml:space="preserve">
-    <value>36</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericalTextBoxRefinedSphericalRadius.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6033,18 +6033,18 @@
   <data name="numericalTextBoxRefinedSphericalRadius.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Name" xml:space="preserve">
-    <value>numericalTextBoxRefinedSphericalRadius</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;numericalTextBoxRefinedSphericalRadius.ZOrder" xml:space="preserve">
-    <value>37</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedSecondaryTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6075,18 +6075,18 @@
   <data name="textBoxRefinedSecondaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTau.Name" xml:space="preserve">
-    <value>textBoxRefinedSecondaryTau</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTau.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryTau.ZOrder" xml:space="preserve">
-    <value>38</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6105,18 +6105,18 @@
   <data name="label20.Text" xml:space="preserve">
     <value>Refined</value>
   </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>40</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxPixelSizeXDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6147,18 +6147,18 @@
   <data name="textBoxPixelSizeXDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxPixelSizeXDev.Name" xml:space="preserve">
-    <value>textBoxPixelSizeXDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeXDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeXDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxPixelSizeXDev.ZOrder" xml:space="preserve">
-    <value>41</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPrimaryTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6189,18 +6189,18 @@
   <data name="textBoxRefinedPrimaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTau.Name" xml:space="preserve">
-    <value>textBoxRefinedPrimaryTau</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTau.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryTau.ZOrder" xml:space="preserve">
-    <value>42</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label44.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6222,18 +6222,18 @@
   <data name="label44.Text" xml:space="preserve">
     <value>Pixel distortion</value>
   </data>
-  <data name="&gt;&gt;label44.Name" xml:space="preserve">
-    <value>label44</value>
-  </data>
-  <data name="&gt;&gt;label44.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label44.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label44.ZOrder" xml:space="preserve">
-    <value>43</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6252,18 +6252,18 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Initial</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>45</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label69.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6285,18 +6285,18 @@
   <data name="label69.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label69.Name" xml:space="preserve">
-    <value>label69</value>
-  </data>
-  <data name="&gt;&gt;label69.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label69.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label69.ZOrder" xml:space="preserve">
-    <value>46</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label33.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6315,18 +6315,18 @@
   <data name="label33.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label33.Name" xml:space="preserve">
-    <value>label33</value>
-  </data>
-  <data name="&gt;&gt;label33.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label33.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label33.ZOrder" xml:space="preserve">
-    <value>47</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label63.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6345,18 +6345,18 @@
   <data name="label63.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label63.Name" xml:space="preserve">
-    <value>label63</value>
-  </data>
-  <data name="&gt;&gt;label63.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label63.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label63.ZOrder" xml:space="preserve">
-    <value>48</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label39.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6375,18 +6375,18 @@
   <data name="label39.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label39.Name" xml:space="preserve">
-    <value>label39</value>
-  </data>
-  <data name="&gt;&gt;label39.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label39.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label39.ZOrder" xml:space="preserve">
-    <value>50</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label81.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6408,18 +6408,18 @@
   <data name="label81.Text" xml:space="preserve">
     <value>/mm</value>
   </data>
-  <data name="&gt;&gt;label81.Name" xml:space="preserve">
-    <value>label81</value>
-  </data>
-  <data name="&gt;&gt;label81.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label81.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label81.ZOrder" xml:space="preserve">
-    <value>52</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label62.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6441,18 +6441,18 @@
   <data name="label62.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label62.Name" xml:space="preserve">
-    <value>label62</value>
-  </data>
-  <data name="&gt;&gt;label62.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label62.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label62.ZOrder" xml:space="preserve">
-    <value>53</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxCameraLengthDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6483,18 +6483,18 @@
   <data name="textBoxCameraLengthDev.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxCameraLengthDev.Name" xml:space="preserve">
-    <value>textBoxCameraLengthDev</value>
-  </data>
-  <data name="&gt;&gt;textBoxCameraLengthDev.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxCameraLengthDev.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxCameraLengthDev.ZOrder" xml:space="preserve">
-    <value>55</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6516,18 +6516,18 @@
   <data name="label22.Text" xml:space="preserve">
     <value>IP Tilt</value>
   </data>
-  <data name="&gt;&gt;label22.Name" xml:space="preserve">
-    <value>label22</value>
-  </data>
-  <data name="&gt;&gt;label22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>57</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedSecondaryPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6558,18 +6558,18 @@
   <data name="textBoxRefinedSecondaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Name" xml:space="preserve">
-    <value>textBoxRefinedSecondaryPhi</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhi.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedSecondaryPhi.ZOrder" xml:space="preserve">
-    <value>59</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6588,18 +6588,18 @@
   <data name="label42.Text" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="&gt;&gt;label42.Name" xml:space="preserve">
-    <value>label42</value>
-  </data>
-  <data name="&gt;&gt;label42.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label42.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label42.ZOrder" xml:space="preserve">
-    <value>60</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxRefinedPrimaryPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6630,18 +6630,18 @@
   <data name="textBoxRefinedPrimaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Name" xml:space="preserve">
-    <value>textBoxRefinedPrimaryPhi</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;textBoxRefinedPrimaryPhi.ZOrder" xml:space="preserve">
-    <value>61</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label61.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6660,18 +6660,18 @@
   <data name="label61.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label61.Name" xml:space="preserve">
-    <value>label61</value>
-  </data>
-  <data name="&gt;&gt;label61.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label61.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label61.ZOrder" xml:space="preserve">
-    <value>63</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label49.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6693,18 +6693,18 @@
   <data name="label49.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label49.Name" xml:space="preserve">
-    <value>label49</value>
-  </data>
-  <data name="&gt;&gt;label49.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label49.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label49.ZOrder" xml:space="preserve">
-    <value>64</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
@@ -6723,18 +6723,18 @@
   <data name="label30.Text" xml:space="preserve">
     <value>±</value>
   </data>
-  <data name="&gt;&gt;label30.Name" xml:space="preserve">
-    <value>label30</value>
-  </data>
-  <data name="&gt;&gt;label30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label30.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
-    <value>65</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label66.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -6753,18 +6753,18 @@
   <data name="label66.Text" xml:space="preserve">
     <value>τ</value>
   </data>
-  <data name="&gt;&gt;label66.Name" xml:space="preserve">
-    <value>label66</value>
-  </data>
-  <data name="&gt;&gt;label66.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label66.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label66.ZOrder" xml:space="preserve">
-    <value>66</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label65.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -6783,18 +6783,18 @@
   <data name="label65.Text" xml:space="preserve">
     <value>φ</value>
   </data>
-  <data name="&gt;&gt;label65.Name" xml:space="preserve">
-    <value>label65</value>
-  </data>
-  <data name="&gt;&gt;label65.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label65.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label65.ZOrder" xml:space="preserve">
-    <value>67</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label64.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6816,18 +6816,18 @@
   <data name="label64.Text" xml:space="preserve">
     <value>Secondary</value>
   </data>
-  <data name="&gt;&gt;label64.Name" xml:space="preserve">
-    <value>label64</value>
-  </data>
-  <data name="&gt;&gt;label64.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label64.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label64.ZOrder" xml:space="preserve">
-    <value>68</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label75.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6850,18 +6850,18 @@
     <value>Spherical radius 
 (1/R)</value>
   </data>
-  <data name="&gt;&gt;label75.Name" xml:space="preserve">
-    <value>label75</value>
-  </data>
-  <data name="&gt;&gt;label75.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label75.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label75.ZOrder" xml:space="preserve">
-    <value>69</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label71.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6883,18 +6883,18 @@
   <data name="label71.Text" xml:space="preserve">
     <value>IP Tilt</value>
   </data>
-  <data name="&gt;&gt;label71.Name" xml:space="preserve">
-    <value>label71</value>
-  </data>
-  <data name="&gt;&gt;label71.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label71.Parent" xml:space="preserve">
-    <value>groupBoxParameter</value>
-  </data>
-  <data name="&gt;&gt;label71.ZOrder" xml:space="preserve">
-    <value>70</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <metadata name="backgroundWorkerRefine.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>165, 17</value>
   </metadata>
@@ -6970,18 +6970,18 @@
   <data name="radioButton1.Text" xml:space="preserve">
     <value>Primary</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
-    <value>radioButton1</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7000,18 +7000,18 @@
   <data name="radioButton2.Text" xml:space="preserve">
     <value>Secondary</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
-    <value>radioButton2</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonGetWaveLengthFromWholePattern.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -8180,18 +8180,18 @@
   <data name="buttonCheckPeaks.Text" xml:space="preserve">
     <value>Check peaks meeting following condition</value>
   </data>
-  <data name="&gt;&gt;buttonCheckPeaks.Name" xml:space="preserve">
-    <value>buttonCheckPeaks</value>
-  </data>
-  <data name="&gt;&gt;buttonCheckPeaks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCheckPeaks.Parent" xml:space="preserve">
-    <value>groupBoxPeakList</value>
-  </data>
-  <data name="&gt;&gt;buttonCheckPeaks.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxAwayFrom.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -8237,18 +8237,18 @@
   <data name="numericBoxAwayFrom.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxAwayFrom.Name" xml:space="preserve">
-    <value>numericBoxAwayFrom</value>
-  </data>
-  <data name="&gt;&gt;numericBoxAwayFrom.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxAwayFrom.Parent" xml:space="preserve">
-    <value>groupBoxPeakList</value>
-  </data>
-  <data name="&gt;&gt;numericBoxAwayFrom.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxLowerThan.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -8294,18 +8294,18 @@
   <data name="numericBoxLowerThan.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxLowerThan.Name" xml:space="preserve">
-    <value>numericBoxLowerThan</value>
-  </data>
-  <data name="&gt;&gt;numericBoxLowerThan.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxLowerThan.Parent" xml:space="preserve">
-    <value>groupBoxPeakList</value>
-  </data>
-  <data name="&gt;&gt;numericBoxLowerThan.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
