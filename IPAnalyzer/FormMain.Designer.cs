@@ -140,6 +140,7 @@ namespace IPAnalyzer
             toolStripMenuItemSaveImage = new ToolStripMenuItem();
             tiffToolStripMenuItem = new ToolStripMenuItem();
             pngToolStripMenuItem = new ToolStripMenuItem();
+            csvToolStripMenuItem = new ToolStripMenuItem();
             ipaToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
             toolStripMenuItemReadParameter = new ToolStripMenuItem();
@@ -1235,7 +1236,7 @@ namespace IPAnalyzer
             // toolStripMenuItemSaveImage
             // 
             resources.ApplyResources(toolStripMenuItemSaveImage, "toolStripMenuItemSaveImage");
-            toolStripMenuItemSaveImage.DropDownItems.AddRange(new ToolStripItem[] { tiffToolStripMenuItem, pngToolStripMenuItem, ipaToolStripMenuItem });
+            toolStripMenuItemSaveImage.DropDownItems.AddRange(new ToolStripItem[] { tiffToolStripMenuItem, pngToolStripMenuItem, csvToolStripMenuItem, ipaToolStripMenuItem });
             toolStripMenuItemSaveImage.Name = "toolStripMenuItemSaveImage";
             // 
             // tiffToolStripMenuItem
@@ -1249,6 +1250,12 @@ namespace IPAnalyzer
             resources.ApplyResources(pngToolStripMenuItem, "pngToolStripMenuItem");
             pngToolStripMenuItem.Name = "pngToolStripMenuItem";
             pngToolStripMenuItem.Click += pngToolStripMenuItem_Click;
+            // 
+            // pngToolStripMenuItem
+            // 
+            resources.ApplyResources(csvToolStripMenuItem, "csvToolStripMenuItem");
+            csvToolStripMenuItem.Name = "csvToolStripMenuItem";
+            csvToolStripMenuItem.Click += csvToolStripMenuItem_Click;
             // 
             // ipaToolStripMenuItem
             // 
@@ -2079,6 +2086,7 @@ namespace IPAnalyzer
         private ToolStripMenuItem tiffToolStripMenuItem;
         private ToolStripMenuItem ipaToolStripMenuItem;
         private ToolStripMenuItem pngToolStripMenuItem;
+        private ToolStripMenuItem csvToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton toolStripButtonCircumferentialBlur;
         private Label labelResolution;
