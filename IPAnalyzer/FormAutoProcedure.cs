@@ -129,7 +129,7 @@ public partial class FormAutoProcedure : Form
                                         break;
                                 }
                                 numStr.Reverse();
-                                if (int.TryParse(new string(numStr.ToArray()), out int num))
+                                if (int.TryParse(new string([.. numStr]), out int num))
                                 {
                                     if ((radioButtonEqual.Checked && num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger) ||
                                         (radioButtonNotEqual.Checked && num % numericBoxDivisor.ValueInteger != numericBoxRemainder.ValueInteger))
