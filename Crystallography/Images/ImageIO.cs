@@ -1298,7 +1298,7 @@ public static class ImageIO
 
     #endregion
 
-    #region Unroll image from Rigaku RINT-RAPID II
+    #region Unrolled image from Rigaku RINT-RAPID II
     public static bool RintRapid2Unroll(string str, uint[] convertTable = null)
     {
         try
@@ -1327,9 +1327,9 @@ public static class ImageIO
             br.BaseStream.Position = 17408; // HEADER_BYTES 分読み取った後の位置にセット
             int length = num_x_pixs * num_y_pixs;
 
-            // 直観的な方法。検証が必要。
+            // ヘッダ部分にData_type = unsigned short int;と書かれていた。
             for (int i = 0; i < length; i++)
-                Ring.Intensity.Add(convertTable[br.ReadUInt16()]); // ヘッダ部分にData_type = unsigned short int;と書かれていた。
+                Ring.Intensity.Add(convertTable[br.ReadUInt16()]); 
 
         }
         catch (Exception e)
