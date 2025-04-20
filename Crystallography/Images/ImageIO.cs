@@ -1307,11 +1307,22 @@ public static class ImageIO
 
             //ヘッダ部分読み込み
             Ring.Comments = "";
-            br.BaseStream.Position = 0;
-            Ring.Comments += new string(br.ReadChars(10));//Device
             br.BaseStream.Position = 0; // 初期位置にセット
             string headerText = new string(br.ReadChars(17408)); // HEADER_BYTES 分読み取る
-                                                                 // 正規表現でSIZE1とSIZE2を検索
+                                                                 // 正規表現で検索
+            Match matchMemo = Regex.Match(headerText, @"MEMO=([^;]+);"); // Device
+            Ring.Comments += "\r\n" + matchMemo.Groups[1].Value;
+            Match matchVersion = Regex.Match(headerText, @"DTREK_VERSION=([^;]+);"); // Version
+            Ring.Comments += "\r\n" + matchVersion.Groups[1].Value;
+            Match matchSample = Regex.Match(headerText, @"SAMPLE_NAME=([^;]+);"); // Sample
+            Ring.Comments += "\r\n" + matchSample.Groups[1].Value;
+            Match matchDate = Regex.Match(headerText, @"RX_CREATE_DATE=([^;]+);"); // Date
+            Ring.Comments += "\r\n" + matchDate.Groups[1].Value;
+            Match matchOperator = Regex.Match(headerText, @"OPERATOR_NAME=([^;]+);"); // Operator
+            Ring.Comments += "\r\n" + matchOperator.Groups[1].Value;
+            Match matchTarget = Regex.Match(headerText, @"SOURCE_TARGET=([^;]+);"); // Target
+            Ring.Comments += "\r\n" + matchTarget.Groups[1].Value;
+
             Match matchSize1 = Regex.Match(headerText, @"SIZE1=(\d+);");
             Match matchSize2 = Regex.Match(headerText, @"SIZE2=(\d+);");
 
