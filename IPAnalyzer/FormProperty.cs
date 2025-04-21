@@ -320,8 +320,7 @@ public partial class FormProperty : Form
         else
         {
             numericUpDownThresholdOfIntensityMax.Enabled = false;
-            Ring.IsThresholdOver.Clear();
-            Ring.IsThresholdOver.AddRange(new bool[Ring.Intensity.Count]);
+            Ring.IsThresholdOver = new bool[Ring.Intensity.Length];
             formMain.Draw();
         }
 
@@ -333,8 +332,7 @@ public partial class FormProperty : Form
         else
         {
             numericUpDownThresholdOfIntensityMin.Enabled = false;
-            Ring.IsThresholdUnder.Clear();
-            Ring.IsThresholdUnder.AddRange(new bool[Ring.Intensity.Count]);
+            Ring.IsThresholdUnder  = new bool[Ring.Intensity.Length];
             formMain.Draw();
         }
     }
@@ -344,7 +342,7 @@ public partial class FormProperty : Form
     private void numericUpDownThresholdOfIntensityMin_ValueChanged(object sender, EventArgs e)
     {
         var n = (uint)numericUpDownThresholdOfIntensityMin.Value + 1;
-        for (int i = 0; i < Ring.IsValid.Count; i++)
+        for (int i = 0; i < Ring.IsValid.Length; i++)
             Ring.IsThresholdUnder[i] = n > Ring.Intensity[i];
 
         formMain.Draw();
@@ -354,7 +352,7 @@ public partial class FormProperty : Form
     {
         uint n = Math.Min(uint.MaxValue, (uint)numericUpDownThresholdOfIntensityMax.Value - 1);
 
-        for (int i = 0; i < Ring.IsValid.Count; i++)
+        for (int i = 0; i < Ring.IsValid.Length; i++)
             Ring.IsThresholdOver[i] = n < Ring.Intensity[i];
 
         formMain.Draw();
@@ -674,12 +672,12 @@ public partial class FormProperty : Form
     #region マスクボタン関連
     private void buttonMaskAll_Click(object sender, EventArgs e)
     {
-        if (Ring.IsSpots.Count == 0) return;
+        if (Ring.IsSpots.Length == 0) return;
 
         var text = (sender as Button).Name;
 
         if (text.Contains("All"))
-            for (int i = 0; i < Ring.IsSpots.Count; i++)
+            for (int i = 0; i < Ring.IsSpots.Length; i++)
                 Ring.IsSpots[i] = true;
         else if (text.Contains("Top"))
             MaskTop();
@@ -700,26 +698,26 @@ public partial class FormProperty : Form
 
     public void MaskTop()
     {
-        if (Ring.IsSpots.Count == 0) return;
-        for (int i = 0; i < Ring.IsSpots.Count / 2; i++)
+        if (Ring.IsSpots.Length == 0) return;
+        for (int i = 0; i < Ring.IsSpots.Length / 2; i++)
             Ring.IsSpots[i] = true;
     }
     public void MaskBottom()
     {
-        if (Ring.IsSpots.Count == 0) return;
-        for (int i = Ring.IsSpots.Count / 2; i < Ring.IsSpots.Count; i++)
+        if (Ring.IsSpots.Length == 0) return;
+        for (int i = Ring.IsSpots.Length / 2; i < Ring.IsSpots.Length; i++)
             Ring.IsSpots[i] = true;
     }
     public void MaskLeft()
     {
-        if (Ring.IsSpots.Count == 0) return;
+        if (Ring.IsSpots.Length == 0) return;
         for (int h = 0; h < Ring.SrcImgSize.Height; h++)
             for (int w = 0; w < Ring.SrcImgSize.Width / 2; w++)
                 Ring.IsSpots[h * Ring.SrcImgSize.Width + w] = true;
     }
     public void MaskRight()
     {
-        if (Ring.IsSpots.Count == 0) return;
+        if (Ring.IsSpots.Length == 0) return;
         for (int h = 0; h < Ring.SrcImgSize.Height; h++)
             for (int w = Ring.SrcImgSize.Width / 2; w < Ring.SrcImgSize.Width; w++)
                 Ring.IsSpots[h * Ring.SrcImgSize.Width + w] = true;
@@ -727,8 +725,8 @@ public partial class FormProperty : Form
 
     private void buttonUnmaskAll_Click(object sender, EventArgs e)
     {
-        if (Ring.IsSpots.Count > 0)
-            for (int i = 0; i < Ring.IsSpots.Count; i++)
+        if (Ring.IsSpots.Length > 0)
+            for (int i = 0; i < Ring.IsSpots.Length; i++)
                 Ring.IsSpots[i] = false;
         formMain.Draw();
     }
@@ -798,9 +796,9 @@ public partial class FormProperty : Form
     #region Background関連
     private void buttonSetBackgroundImage_Click(object sender, EventArgs e)
     {
-        if (Ring.Intensity != null && Ring.Intensity.Count > 0)
+        if (Ring.Intensity != null && Ring.Intensity.Length > 0)
         {
-            Ring.Background = new List<double>(Ring.IntensityOriginal.ToArray());
+            Ring.Background = [..Ring.IntensityOriginal];
             textBoxBackgroundImage.Text = formMain.FilePath + formMain.FileName;
         }
     }
@@ -808,7 +806,7 @@ public partial class FormProperty : Form
     private void buttonClearBackgroundImage_Click(object sender, EventArgs e)
     {
         textBoxBackgroundImage.Text = "";
-        Ring.Background.Clear();
+        Ring.Background=[];
         formMain.FlipRotate_Pollalization_Background();
     }
 

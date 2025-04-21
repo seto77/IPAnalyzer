@@ -34,7 +34,7 @@ public partial class FormMain : Form
 
     public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
-    public PseudoBitmap pseudoBitmap = new PseudoBitmap();
+    public PseudoBitmap pseudoBitmap = new();
     public bool SkipDrawing { get; set; } = false;
 
     public Size SrcImgSize;
@@ -139,7 +139,7 @@ public partial class FormMain : Form
         this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
     }
 
-    public void ResetRegistry()
+    public static void ResetRegistry()
     {
         try { Registry.CurrentUser.DeleteSubKey("Software\\Crystallography\\IPAnalyzer"); }
         catch { }
@@ -256,18 +256,14 @@ public partial class FormMain : Form
 
             regKey.SetValue("initialImageDirectory", initialImageDirectory);
             regKey.SetValue("initialParameterDirectory", initialParameterDirectory);
-            regKey.SetValue("initialMasdDirectory", initialMaskDirectory);
+            regKey.SetValue("initialMaskDirectory", initialMaskDirectory);
             regKey.SetValue("filterIndex", filterIndex);
-
-            regKey.SetValue("initialMasdDirectory", initialMaskDirectory);
-            regKey.SetValue("filterIndex", filterIndex);
-
 
             //ここからイメージタイプごとのパラメータ書き込み
             for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
             {
-                regKey.SetValue("ImageTypeParameters.CneterPosX" + i.ToString(), FormProperty.ImageTypeParameters[i].CenterPosX);
-                regKey.SetValue("ImageTypeParameters.CneterPosY" + i.ToString(), FormProperty.ImageTypeParameters[i].CenterPosY);
+                regKey.SetValue("ImageTypeParameters.CenterPosX" + i.ToString(), FormProperty.ImageTypeParameters[i].CenterPosX);
+                regKey.SetValue("ImageTypeParameters.CenterPosY" + i.ToString(), FormProperty.ImageTypeParameters[i].CenterPosY);
                 regKey.SetValue("ImageTypeParameters.CameraLength" + i.ToString(), FormProperty.ImageTypeParameters[i].CameraLength);
                 regKey.SetValue("ImageTypeParameters.PixelSizeX" + i.ToString(), FormProperty.ImageTypeParameters[i].PixelSizeX);
                 regKey.SetValue("ImageTypeParameters.PixelSizeY" + i.ToString(), FormProperty.ImageTypeParameters[i].PixelSizeY);
@@ -348,7 +344,7 @@ public partial class FormMain : Form
 
                 initialImageDirectory = (string)regKey.GetValue("initialImageDirectory", "");
                 initialParameterDirectory = (string)regKey.GetValue("initialParameterDirectory", "");
-                initialMaskDirectory = (string)regKey.GetValue("initialMasdDirectory", "");
+                initialMaskDirectory = (string)regKey.GetValue("initialMaskDirectory", "");
                 filterIndex = (int)regKey.GetValue("filterIndex", 0);
             }
             if (InitialDialog != null)
@@ -477,8 +473,8 @@ public partial class FormMain : Form
                 //ここからイメージタイプごとのパラメータ読み込み
                 for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
                 {
-                    FormProperty.ImageTypeParameters[i].CenterPosX = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CneterPosX" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].CenterPosY = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CneterPosY" + i.ToString(), "0"));
+                    FormProperty.ImageTypeParameters[i].CenterPosX = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CenterPosX" + i.ToString(), "0"));
+                    FormProperty.ImageTypeParameters[i].CenterPosY = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CenterPosY" + i.ToString(), "0"));
                     FormProperty.ImageTypeParameters[i].CameraLength = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CameraLength" + i.ToString(), "100"));
                     FormProperty.ImageTypeParameters[i].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.PixelSizeX" + i.ToString(), "0.1"));
                     FormProperty.ImageTypeParameters[i].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.PixelSizeY" + i.ToString(), "0.1"));
@@ -695,7 +691,7 @@ public partial class FormMain : Form
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.1);
 
-        InitialDialog.Text = "Now Loading...Checking laguage.";
+        InitialDialog.Text = "Now Loading...Checking language.";
 
         englishToolStripMenuItem.Checked = Thread.CurrentThread.CurrentUICulture.Name != "ja";
         japaneseToolStripMenuItem.Checked = Thread.CurrentThread.CurrentUICulture.Name == "ja";
@@ -749,10 +745,7 @@ public partial class FormMain : Form
 
         InitialDialog.Text = "Now Loading...Initializing 'Save Image' form.";
 
-        FormSaveImage = new FormSaveImage();
-        FormSaveImage.FormMain = this;
-        FormSaveImage.Owner = this;
-        FormSaveImage.Visible = false;
+        FormSaveImage = new FormSaveImage { FormMain = this, Owner = this, Visible = false };
 
         InitialDialog.Text = "Now Loading...Initializing 'Sequential' form.";
 
@@ -875,10 +868,10 @@ public partial class FormMain : Form
         if (SkipDrawing || !IsImageReady) return;
         if (!toolStripButtonUnroll.Checked)
         {
-            pseudoBitmap.Filter1 = Ring.IsThresholdOver;
-            pseudoBitmap.Filter2 = Ring.IsThresholdUnder;
-            pseudoBitmap.Filter3 = Ring.IsSpots;
-            pseudoBitmap.Filter4 = Ring.IsOutsideOfIntegralRegion;
+            pseudoBitmap.Filter1 = [.. Ring.IsThresholdOver];
+            pseudoBitmap.Filter2 = [.. Ring.IsThresholdUnder];
+            pseudoBitmap.Filter3 = [.. Ring.IsSpots];
+            pseudoBitmap.Filter4 = [.. Ring.IsOutsideOfIntegralRegion];
         }
 
         var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
@@ -953,7 +946,7 @@ public partial class FormMain : Form
                 PointF center = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition).ToPointF();
                 PointD centerD = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition);
 
-                Matrix3D m = new Matrix3D(1, 0, 0, 0, 1, 0, centerD.X, centerD.Y, 1);
+                Matrix3D m = new(1, 0, 0, 0, 1, 0, centerD.X, centerD.Y, 1);
 
                 //次にディスプレイ上のピクセルと画像のピクセルを同じにする
                 float scale = (float)(1 / scalablePictureBox.Zoom); //SrcRectF.Width / ClientRect.Width;
@@ -1082,9 +1075,9 @@ public partial class FormMain : Form
 
                         var str = new string[2];
                         if (Math.Min(Math.Abs(atan - n), Math.Abs(atan - n + 360)) < Math.Min(Math.Abs(atan - n + 180), Math.Abs(atan - n - 180)))
-                            str = originInside ? new[] { n.ToString("g12"), (n - 180).ToString("g12") } : new[] { n.ToString("g12"), n.ToString("g12") };
+                            str = originInside ? [n.ToString("g12"), (n - 180).ToString("g12")] : [n.ToString("g12"), n.ToString("g12")];
                         else
-                            str = originInside ? new[] { (n - 180).ToString("g12"), n.ToString("g12") } : new[] { (n - 180).ToString("g12"), (n - 180).ToString("g12") };
+                            str = originInside ? [(n - 180).ToString("g12"), n.ToString("g12")] : [(n - 180).ToString("g12"), (n - 180).ToString("g12")];
 
                         var skip = -1;
                         if (!originInside)//ダイレクトスポットが描画範囲内に含まれていないときは 中心に近い点は削除
@@ -1309,8 +1302,8 @@ public partial class FormMain : Form
 
     readonly Stopwatch sw = new();
 
-    public List<PointD> manualMaskPoints = new();
-    public List<bool> splineTemp = new();
+    public List<PointD> manualMaskPoints = [];
+    public List<bool> splineTemp = [];
     Spline2nd sp;
 
     public void setSpline()
@@ -1555,18 +1548,18 @@ public partial class FormMain : Form
         catch { r = 0; }
 
         # region 画面にマウス座標を表示
-        if (X >= 0 && Ring.Intensity != null && X + Y * SrcImgSize.Width > -1 && X + Y * SrcImgSize.Width < Ring.Intensity.Count)
+        if (X >= 0 && Ring.Intensity != null && X + Y * SrcImgSize.Width > -1 && X + Y * SrcImgSize.Width < Ring.Intensity.Length)
         {
-            labelMousePointPixel.Text = X.ToString().PadLeft(5) + "," + Y.ToString().PadLeft(5);
-            labelMousePointReal.Text = $"{newX.ToString("f3").PadLeft(7)}, {newY.ToString("f3").PadLeft(7)}";
-            labelMousePointIntensity.Text = (Ring.Intensity[X + Y * SrcImgSize.Width]).ToString();
+            labelMousePointPixel.Text = $"{X,5},{Y,5}";
+            labelMousePointReal.Text = $"{newX,7:f3}, {newY,7:f3}";
+            labelMousePointIntensity.Text = Ring.Intensity[X + Y * SrcImgSize.Width].ToString();
             labelMousePointR.Text = r.ToString("f2");
             var theta = Math.Atan2(r, IP.FilmDistance);
-            labelMousePointTheta.Text = $"{(180.0 / Math.PI * theta).ToString("f3")}°";
-            labelMousePointD.Text = $"{(IP.WaveLength / 2 * 10 / Math.Sin(theta / 2)).ToString("f3")}Å";
-            labelMousePointChi.Text = $"{(180.0 / Math.PI * chi).ToString("f2")}°";
+            labelMousePointTheta.Text = $"{180.0 / Math.PI * theta:f3}°";
+            labelMousePointD.Text = $"{IP.WaveLength / 2 * 10 / Math.Sin(theta / 2):f3}Å";
+            labelMousePointChi.Text = $"{180.0 / Math.PI * chi:f2}°";
             if (pseudoBitmap != null)
-                labelResolution.Text = $"Mag: {scalablePictureBox.Zoom.ToString("f2")}";
+                labelResolution.Text = $"Mag: {scalablePictureBox.Zoom:f2}";
         }
         #endregion
 
@@ -1608,7 +1601,7 @@ public partial class FormMain : Form
                 if (splineTemp.Count == pseudoBitmap.FilterTemporary.Count)
                 {
                     pseudoBitmap.FilterTemporary.Clear();
-                    pseudoBitmap.FilterTemporary.AddRange(splineTemp.ToArray());
+                    pseudoBitmap.FilterTemporary.AddRange([.. splineTemp]);
                     Draw();
 
                 }
@@ -1809,7 +1802,7 @@ public partial class FormMain : Form
 
         if (graphControlFrequency.VerticalLines != null && graphControlFrequency.VerticalLines.Length == 2)
         {
-            graphControlFrequency.VerticalLines = new[] { new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN) };
+            graphControlFrequency.VerticalLines = [new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
             graphControlFrequency.Draw();
             graphControlFrequency.Refresh();
         }
@@ -1824,8 +1817,8 @@ public partial class FormMain : Form
     {
         if (variance != 0)
         {
-            pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value = Math.Min(sumOfIntensity / Ring.Intensity.Count + 2 * variance, trackBarAdvancedMaxInt.Maximum);
-            pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value = Math.Max(sumOfIntensity / Ring.Intensity.Count - 2 * variance, trackBarAdvancedMinInt.Minimum);
+            pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value = Math.Min(sumOfIntensity / Ring.Intensity.Length + 2 * variance, trackBarAdvancedMaxInt.Maximum);
+            pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value = Math.Max(sumOfIntensity / Ring.Intensity.Length - 2 * variance, trackBarAdvancedMinInt.Minimum);
             Draw();
         }
 
@@ -1862,7 +1855,7 @@ public partial class FormMain : Form
         //ListBoxに追加する
         if (fileName.Length == 1)
         {
-            string ext = Path.GetExtension(fileName[0]).TrimStart(new char[] { '.' });
+            string ext = Path.GetExtension(fileName[0]).TrimStart(['.']);
             if (ImageIO.IsReadable(ext))
                 ReadImage(fileName[0]);
             else if (fileName[0].EndsWith("prm"))
@@ -1874,7 +1867,7 @@ public partial class FormMain : Form
                 var files = Directory.GetFiles(fileName[0]);
                 if (files != null && files.Length > 0)
                 {
-                    ext = Path.GetExtension(files[0]).TrimStart(new char[] { '.' });
+                    ext = Path.GetExtension(files[0]).TrimStart(['.']);
                     if (ImageIO.IsReadable(ext))
                         ReadImage(files[0]);
                     initialImageDirectory = Path.GetDirectoryName(files[0]);
@@ -1929,7 +1922,7 @@ public partial class FormMain : Form
         if (this.InvokeRequired)//別スレッド(ファイル更新監視スレッド)から呼び出されたとき
         {
             ReadImageCallBack d = new ReadImageCallBack(ReadImage);
-            this.Invoke(d, new object[] { str, flag });
+            this.Invoke(d, [str, flag]);
             return;
         }
 
@@ -1957,7 +1950,7 @@ public partial class FormMain : Form
         if (!ImageIO.ReadImage(str, flag))
             return;
 
-        string ext = Path.GetExtension(str).TrimStart(new char[] { '.' }).ToLower();
+        string ext = Path.GetExtension(str).TrimStart(['.']).ToLower();
         if (ext == "ipa")
         {
             FormProperty.waveLengthControl.Property = Ring.IP.WaveProperty;
@@ -1998,8 +1991,8 @@ public partial class FormMain : Form
             //マスクの引継ぎ処理
             if (FormProperty.radioButtonTakeoverMask.Checked)
             {
-                if (Ring.IsSpots.Count == justBeforeMask.Length)
-                    for (int i = 0; i < Ring.IsSpots.Count; i++)
+                if (Ring.IsSpots.Length == justBeforeMask.Length)
+                    for (int i = 0; i < Ring.IsSpots.Length; i++)
                         if (Ring.IsSpots[i] != justBeforeMask[i])
                             Ring.IsSpots[i] = justBeforeMask[i];
             }
@@ -2023,9 +2016,9 @@ public partial class FormMain : Form
         graphControlFrequency.VerticalLines = [new(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
 
 
-        FileName = str.Remove(0, str.LastIndexOf('\\') + 1);
+        FileName = str[(str.LastIndexOf('\\') + 1)..];
         string oldFilePath = FilePath;
-        FilePath = str.Remove(str.LastIndexOf('\\') + 1);
+        FilePath = str[..(str.LastIndexOf('\\') + 1)];
 
         SetText(FileName);
 
@@ -2034,7 +2027,7 @@ public partial class FormMain : Form
         //SP8-BL43LXUのような32bit signed tiffの場合は、負の値をマスク
         if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0)
         {
-            for (int i = 0; i < Ring.Intensity.Count; i++)
+            for (int i = 0; i < Ring.Intensity.Length; i++)
                 if (Ring.Intensity[i] < 0)
                     Ring.IsSpots[i] = true;
         }
@@ -2105,7 +2098,7 @@ public partial class FormMain : Form
             $"Dynamic range:\r\n {min} - {max:#,#}\r\n" +
             $"Max Intensity:\r\n {maxIntensity:#,#}\r\n" +
             $"Sum Intensity:\r\n {sumOfIntensity:#,#}\r\n" +
-            $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Count:#,#.####}\r\n\r\n" +
+            $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Length:#,#.####}\r\n\r\n" +
             $"{Ring.Comments}";
 
         if (Ring.SequentialImagePulsePower != null && Ring.SequentialImagePulsePower.Count == Ring.SequentialImageIntensities.Count)//イメージごとにエネルギーが設定されているとき
@@ -2119,25 +2112,19 @@ public partial class FormMain : Form
 
     public void initializeFilter()
     {
-        if (Ring.IsValid.Count != Ring.Intensity.Count)
+        if (Ring.IsValid.Length != Ring.Intensity.Length)
         {
-            Ring.IsValid.Clear();
-            Ring.IsOutsideOfIntegralRegion.Clear();
-            Ring.IsOutsideOfIntegralProperty.Clear();
-            Ring.IsSpots.Clear();
-            Ring.IsThresholdOver.Clear();
-            Ring.IsThresholdUnder.Clear();
-            Ring.IsValid.AddRange(new bool[Ring.Intensity.Count]);
-            Ring.IsOutsideOfIntegralRegion.AddRange(new bool[Ring.Intensity.Count]);
-            Ring.IsSpots.AddRange(new bool[Ring.Intensity.Count]);
-            Ring.IsThresholdOver.AddRange(new bool[Ring.Intensity.Count]);
-            Ring.IsThresholdUnder.AddRange(new bool[Ring.Intensity.Count]);
-            Ring.IsOutsideOfIntegralProperty.AddRange(new bool[Ring.Intensity.Count]);
+            Ring.IsValid = new bool[Ring.Intensity.Length];
+            Ring.IsOutsideOfIntegralRegion = new bool[Ring.Intensity.Length];
+            Ring.IsSpots=new bool[Ring.Intensity.Length];
+            Ring.IsThresholdOver=new bool[Ring.Intensity.Length];
+            Ring.IsThresholdUnder=new bool[Ring.Intensity.Length];
+            Ring.IsOutsideOfIntegralProperty=new bool[Ring.Intensity.Length];
             ;
         }
         else
         {
-            for (int i = 0; i < Ring.Intensity.Count; i++)
+            for (int i = 0; i < Ring.Intensity.Length; i++)
             {
                 Ring.IsValid[i] = false;
                 Ring.IsOutsideOfIntegralRegion[i] = false;
@@ -2147,13 +2134,14 @@ public partial class FormMain : Form
                 Ring.IsThresholdUnder[i] = false;
             }
         }
-        pseudoBitmap = new PseudoBitmap(Ring.Intensity.ToArray(), SrcImgSize.Width);
-
-        pseudoBitmap.Filter1 = Ring.IsThresholdOver;
-        pseudoBitmap.Filter2 = Ring.IsThresholdUnder;
-        pseudoBitmap.Filter3 = Ring.IsSpots;
-        pseudoBitmap.Filter4 = Ring.IsOutsideOfIntegralRegion;
-        pseudoBitmap.Filter5 = Ring.IsOutsideOfIntegralProperty;
+        pseudoBitmap = new PseudoBitmap(Ring.Intensity.ToArray(), SrcImgSize.Width)
+        {
+            Filter1 = [.. Ring.IsThresholdOver],
+            Filter2 = [.. Ring.IsThresholdUnder],
+            Filter3 = [.. Ring.IsSpots],
+            Filter4 = [.. Ring.IsOutsideOfIntegralRegion],
+            Filter5 = [.. Ring.IsOutsideOfIntegralProperty]
+        };
         pseudoBitmap.FilterTemporary.AddRange(new bool[SrcImgSize.Width * SrcImgSize.Height]);
         pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value;
         pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value;
@@ -2205,18 +2193,18 @@ public partial class FormMain : Form
                     //d[i] = Ring.SequentialImageIntensities[i].ToArray();
 
                     //Flip and Rotate
-                    d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                    d[i] = [.. Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
                             flipVerticallyToolStripMenuItem.Checked,
                             flipHorizontallyToolStripMenuItem.Checked,
-                            toolStripComboBoxRotate.SelectedIndex).ToArray();
+                            toolStripComboBoxRotate.SelectedIndex)];
 
                     //Background
-                    if (Ring.Background != null && Ring.Background.Count == d[i].Length)
-                        d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value).ToArray();
+                    if (Ring.Background != null && Ring.Background.Length == d[i].Length)
+                        d[i] = [.. Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value)];
 
                     //偏光補正
                     if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                        d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, new List<double>(d[i])).ToArray();
+                        d[i] = [.. Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i])];
                 }
                 if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                 {//各画像にエネルギー値があるとき(h5ファイルの時)
@@ -2225,25 +2213,25 @@ public partial class FormMain : Form
                     var ifdPulsePower = new List<Tiff.IFD>();
                     for (int i = 0; i < Ring.SequentialImageEnergy.Count; i++)
                     {
-                        ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), new object[] { Ring.SequentialImageEnergy[i] }));
-                        ifdName.Add(new Tiff.IFD(60001, typeof(string), new object[] { Ring.SequentialImageNames[i] }));
+                        ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), [Ring.SequentialImageEnergy[i]]));
+                        ifdName.Add(new Tiff.IFD(60001, typeof(string), [Ring.SequentialImageNames[i]]));
                         if (Ring.PulsePowerNormarized)
-                            ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), new object[] { -1.0 }));
+                            ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), [-1.0]));
                         else
-                            ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), new object[] { Ring.SequentialImagePulsePower[i] }));
+                            ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), [Ring.SequentialImagePulsePower[i]]));
                     }
-                    Tiff.Writer(filename, d, 0, Ring.SrcImgSize.Width, new Tiff.IFD[][] { /*ifdEnergy.ToArray(), ifdName.ToArray(), */ifdPulsePower.ToArray() });
+                    Tiff.Writer(filename, d, 0, Ring.SrcImgSize.Width, [/*ifdEnergy.ToArray(), ifdName.ToArray(), */[.. ifdPulsePower]]);
                 }
                 else//h5ファイルではないとき
                     Tiff.Writer(filename, d, 0, Ring.SrcImgSize.Width);
             }
             //単一画像モードの時
             else
-                Tiff.Writer(filename, new double[][] { Ring.Intensity.ToArray() }, 0, Ring.SrcImgSize.Width);
+                Tiff.Writer(filename, [[.. Ring.Intensity]], 0, Ring.SrcImgSize.Width);
         }
         //Unrolled Imageのとき
         else
-            Tiff.Writer(filename, new double[][] { pseudoBitmap.SrcValuesGray }, 3, pseudoBitmap.Width);
+            Tiff.Writer(filename, [pseudoBitmap.SrcValuesGray], 3, pseudoBitmap.Width);
     }
 
     private void pngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2754,7 +2742,7 @@ public partial class FormMain : Form
                 }
             }
             br.Close();
-            if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Count)
+            if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Length)
             {
                 for (int i = 0; i < mask.Length; i++)
                     Ring.IsSpots[i] = mask[i];
@@ -2776,7 +2764,7 @@ public partial class FormMain : Form
             SaveMask(dlg.FileName);
     }
 
-    public void SaveMask(string fileName)
+    public static void SaveMask(string fileName)
     {
         if (fileName == "")
         {
@@ -2790,9 +2778,9 @@ public partial class FormMain : Form
         }
 
         var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite));
-        br.Write(Ring.IsSpots.Count);
+        br.Write(Ring.IsSpots.Length);
         int n = 0;
-        for (int i = 0; i < Ring.IsSpots.Count / 8; i++)
+        for (int i = 0; i < Ring.IsSpots.Length / 8; i++)
         {
             byte b = 0;
             byte m = 1;
@@ -2942,8 +2930,7 @@ public partial class FormMain : Form
 
         for (int i = 0; i < name.Length; i++)
         {
-            var item = new ToolStripMenuItem(name[i]);
-            item.Name = name[i];
+            var item = new ToolStripMenuItem(name[i]) { Name = name[i] };
             item.Click += macroMenuItem_Click;
             macroToolStripMenuItem.DropDownItems.Add(item);
         }
@@ -3178,7 +3165,7 @@ public partial class FormMain : Form
                     Application.DoEvents();
                 }
 
-                var centerOffset = Geometry.GetEllipseCenter(pts.ToArray());
+                var centerOffset = Geometry.GetEllipseCenter([.. pts]);
                 if (double.IsNaN(centerOffset.X))
                     break;
                 double centerX = centerOffset.X / IP.PixSizeX + IP.CenterX;
@@ -3253,7 +3240,7 @@ public partial class FormMain : Form
     public void ClearMask()
     {
         if (!IsImageReady) return;
-        for (int i = 0; i < Ring.IsSpots.Count; i++)
+        for (int i = 0; i < Ring.IsSpots.Length; i++)
             Ring.IsSpots[i] = false;
 
         Draw();
@@ -3267,7 +3254,7 @@ public partial class FormMain : Form
     public void InvertMask()
     {
         if (!IsImageReady) return;
-        for (int i = 0; i < Ring.IsSpots.Count; i++)
+        for (int i = 0; i < Ring.IsSpots.Length; i++)
             Ring.IsSpots[i] = !Ring.IsSpots[i];
         Draw();
     }
@@ -3280,7 +3267,7 @@ public partial class FormMain : Form
     public void MaskAll()
     {
         if (!IsImageReady) return;
-        for (int i = 0; i < Ring.IsSpots.Count; i++)
+        for (int i = 0; i < Ring.IsSpots.Length; i++)
             Ring.IsSpots[i] = true;
         Draw();
     }
@@ -3391,7 +3378,7 @@ public partial class FormMain : Form
                 if (toolStripButtonImageSequence.Enabled)
                 {//シーケンシャルイメージモードの時の処理
                     if (toolStripMenuItemAllSequentialImages.Checked)
-                        targets = Enumerable.Range(0, FormSequentialImage.MaximumNumber).ToArray();
+                        targets = [.. Enumerable.Range(0, FormSequentialImage.MaximumNumber)];
                     else if (toolStripMenuItemSelectedSequentialImages.Checked)
                         targets = FormSequentialImage.SelectedIndices;
                 }
@@ -3583,7 +3570,7 @@ public partial class FormMain : Form
         {
             //PDI形式の場合
             if (FormProperty.radioButtonAsPDIformat.Checked)
-                XYFile.SavePdi2File(dpList.ToArray(), filename + extension);
+                XYFile.SavePdi2File([.. dpList], filename + extension);
             //CSVかTSVの場合
             else if (!FormProperty.radioButtonAsGSASformat.Checked)
             {
@@ -3621,7 +3608,7 @@ public partial class FormMain : Form
                     fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
 
                 if (FormProperty.radioButtonAsPDIformat.Checked)
-                    XYFile.SavePdi2File(new DiffractionProfile2[] { dp }, fn + extension);
+                    XYFile.SavePdi2File([dp], fn + extension);
                 else
                 {
                     using var sw = new StreamWriter(fn + extension);
@@ -3650,7 +3637,7 @@ public partial class FormMain : Form
 
         SetIntegralProperty();
 
-        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        Stopwatch sw = new();
         sw.Start();
 
         if (FormFindParameter.Visible && FormFindParameter.backgroundWorkerRefine.IsBusy)
@@ -3936,9 +3923,8 @@ public partial class FormMain : Form
         maxIntensity = uint.MinValue;
         sumOfIntensity = 0;
         double sumOfSquare = 0;
-        frequencyProfile = new Profile();
-        frequencyProfile.Pt = new List<PointD>();
-        for (int i = 0; i < Ring.Intensity.Count; i++)
+        frequencyProfile = new Profile { Pt = [] };
+        for (int i = 0; i < Ring.Intensity.Length; i++)
         {
             double intensity = Ring.Intensity[i];
             maxIntensity = Math.Max(maxIntensity, intensity);
@@ -3949,7 +3935,7 @@ public partial class FormMain : Form
         for (int i = 0; i < Ring.Frequency.Count; i++)
             frequencyProfile.Pt.Add(new PointD(Ring.Frequency.Keys[i], Ring.Frequency[Ring.Frequency.Keys[i]]));
         graphControlFrequency.Profile = frequencyProfile;
-        variance = Math.Sqrt((Ring.Intensity.Count * sumOfSquare - sumOfIntensity * sumOfIntensity) / Ring.Intensity.Count / (Ring.Intensity.Count - 1));
+        variance = Math.Sqrt((Ring.Intensity.Length * sumOfSquare - sumOfIntensity * sumOfIntensity) / Ring.Intensity.Length / (Ring.Intensity.Length - 1));
     }
 
     private void graphControlFrequency_LinePositionChanged()
@@ -4085,7 +4071,7 @@ public partial class FormMain : Form
     {
         if (Skip) return;
 
-        if (Ring.IntensityOriginal == null || Ring.Intensity.Count == 0 || pseudoBitmap.SrcValuesGray == null)
+        if (Ring.IntensityOriginal == null || Ring.Intensity.Length == 0 || pseudoBitmap.SrcValuesGray == null)
             return;
 
         int originalWidth = Ring.SrcImgSizeOriginal.Width;
@@ -4115,7 +4101,7 @@ public partial class FormMain : Form
 
         //Background補正ここから
 
-        if (Ring.Background != null && Ring.Background.Count == Ring.Intensity.Count)
+        if (Ring.Background != null && Ring.Background.Length == Ring.Intensity.Length)
             Ring.Intensity = Ring.SubtractBackground(Ring.Intensity, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
         //Background補正ここまで
 
@@ -4174,8 +4160,8 @@ public partial class FormMain : Form
         Ring.CalcFreq();
         SetFrequencyProfile();//
 
-        Ring.Intensity.CopyTo(pseudoBitmap.SrcValuesGray);
-        Ring.Intensity.CopyTo(pseudoBitmap.SrcValuesGrayOriginal);
+        pseudoBitmap.SrcValuesGray = [.. Ring.Intensity];
+        pseudoBitmap.SrcValuesGrayOriginal = [.. Ring.Intensity];
 
         IntegralArea_Changed(new object(), new EventArgs());
         if (zoomReset)
@@ -4218,12 +4204,12 @@ public partial class FormMain : Form
         double maxValue = data.Max();
         int maxIndex = data.FindIndex(d1 => d1 == maxValue);
 
-        Point maxValuePoint = new Point(maxIndex % (right - left + 1) + left, maxIndex / (right - left + 1) + top);
+        Point maxValuePoint = new(maxIndex % (right - left + 1) + left, maxIndex / (right - left + 1) + top);
         sb.AppendLine($"Max.:\t{maxValue.ToString("g9")} @ ({maxValuePoint.X}, {maxValuePoint.Y})");
 
         double minValue = data.Min();
         int minIndex = data.FindIndex(d1 => d1 == minValue);
-        Point minValuePoint = new Point(minIndex % (right - left + 1) + left, minIndex / (right - left + 1) + top);
+        Point minValuePoint = new(minIndex % (right - left + 1) + left, minIndex / (right - left + 1) + top);
         sb.AppendLine($"Min.:\t{minValue.ToString("g9")} @ ({minValuePoint.X}, {minValuePoint.Y})");
 
         double variance = data.Average(d => d * d) - sumValue * sumValue / data.Count / data.Count;
@@ -4237,7 +4223,7 @@ public partial class FormMain : Form
             sb.Clear();
             for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
             {
-                dataList.Add(new List<double>());
+                dataList.Add([]);
                 for (int y = top; y <= bottom; y++)
                     for (int x = left; x <= right; x++)
                         dataList[i].Add(Ring.SequentialImageIntensities[i][Ring.SrcImgSize.Width * y + x]);
@@ -4250,11 +4236,7 @@ public partial class FormMain : Form
                 variance = dataList[i].Average(d => d * d) - sumValue * sumValue / dataList[i].Count / dataList[i].Count;
                 maxValue = dataList[i].Max();
                 minValue = dataList[i].Min();
-                sb.AppendLine("#" + i.ToString("000") + "\t" +
-                    averageValue.ToString("g6") + "\t" +
-                    maxValue.ToString("g6") + "\t" +
-                    minValue.ToString("g6") + "\t" +
-                    variance.ToString("g6"));
+                sb.AppendLine($"#{i.ToString("000")}\t{averageValue.ToString("g6")}\t{maxValue.ToString("g6")}\t{minValue.ToString("g6")}\t{variance.ToString("g6")}");
 
 
             }
@@ -4360,7 +4342,7 @@ public partial class FormMain : Form
             public void RunMacroName(string name, params object[] obj)
             {
                 //Mutexを作成
-                using Mutex mutex = new Mutex(false, "PDIndexer");
+                using Mutex mutex = new(false, "PDIndexer");
                 try
                 {
                     //Mutexを取得 最大WaitSeconds秒待つ
@@ -4879,7 +4861,7 @@ public partial class FormMain : Form
             public string[] GetFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
             {
                 var dlg = new OpenFileDialog { Multiselect = true, Title = message };
-                return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : Array.Empty<string>();
+                return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : [];
             }));
 
             public string[] GetAllFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
@@ -4891,7 +4873,7 @@ public partial class FormMain : Form
                     return Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
                 }
                 else
-                    return Array.Empty<string>();
+                    return [];
             }));
 
             public void SaveImageAsTIFF(string fileName = "") => Execute(() => p.main.saveImageAsTiff(fileName));
@@ -4922,7 +4904,7 @@ public partial class FormMain : Form
             public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName, true)));
 
             public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
-            public void SaveMask(string fileName = "") => Execute(new Action(() => p.main.SaveMask(fileName)));
+            public void SaveMask(string fileName = "") => Execute(new Action(() => FormMain.SaveMask(fileName)));
 
 
 
@@ -5036,11 +5018,11 @@ public partial class FormMain : Form
                 if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
                 {
                     MultiSelection = true;
-                    List<int> list = new List<int>();
+                    List<int> list = [];
                     for (int i = start; i <= end; i++)
                         if (!list.Contains(i))
                             list.Add(i);
-                    p.main.FormSequentialImage.SelectedIndices = list.ToArray();
+                    p.main.FormSequentialImage.SelectedIndices = [.. list];
                     //    SelectedIndex = end;
                 }
             }));
@@ -5055,11 +5037,11 @@ public partial class FormMain : Form
                 if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
                 {
                     MultiSelection = true;
-                    List<int> list = new List<int>(p.main.FormSequentialImage.SelectedIndices);
+                    List<int> list = [.. p.main.FormSequentialImage.SelectedIndices];
                     for (int i = start; i <= end; i++)
                         if (!list.Contains(i))
                             list.Add(i);
-                    p.main.FormSequentialImage.SelectedIndices = list.ToArray();
+                    p.main.FormSequentialImage.SelectedIndices = [.. list];
                     SelectedIndex = end;
                 }
             }));

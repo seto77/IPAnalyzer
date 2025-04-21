@@ -134,13 +134,13 @@ public partial class FormFindParameterBruteForce : Form
         //if (FormMain.IsFlatPanelMode)
         //    twoTheta = new double[] { getTwoTheta(0, 0), getTwoTheta(0, Ring.IP.SrcHeight - 1), getTwoTheta(Ring.IP.SrcWidth - 1, 0), getTwoTheta(Ring.IP.SrcWidth - 1, Ring.IP.SrcHeight - 1) };
         //else
-        twoTheta = new double[] { Ring.IP.StartAngle, Ring.IP.EndAngle };
+        twoTheta = [Ring.IP.StartAngle, Ring.IP.EndAngle];
 
         Crystal crystal = crystalControl1.Crystal;
         double d_min = Ring.IP.WaveLength / 2 / Math.Sin(twoTheta.Max() / 2);
         double d_max = Ring.IP.WaveLength / 2 / Math.Sin(twoTheta.Min() / 2);
 
-        List<double> wavelength = new List<double>();
+        List<double> wavelength = [];
         if (FormMain.FormProperty.waveLengthControl.WaveSource == WaveSource.Xray && FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber != 0 && FormMain.FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka)
         {
             wavelength.Add(AtomStatic.CharacteristicXrayWavelength(FormMain.FormProperty.waveLengthControl.XrayWaveSourceElementNumber, XrayLine.Ka1) / 10.0);
@@ -195,9 +195,9 @@ public partial class FormFindParameterBruteForce : Form
             profiles[i].Color = Color.Red;
             profiles[i].LineWidth = 2;
         }
-        graphControl1.VerticalLines = lineList.ToArray();
+        graphControl1.VerticalLines = [.. lineList];
         profiles.Insert(0, profile);
-        graphControl1.AddProfiles(profiles.ToArray());
+        graphControl1.AddProfiles([.. profiles]);
     }
 
 
@@ -309,10 +309,7 @@ public partial class FormFindParameterBruteForce : Form
         buttonStop.Visible = false;
 
         if (originalSpots != null)
-        {
-            Ring.IsSpots.Clear();
-            Ring.IsSpots.AddRange(originalSpots);
-        }
+            Ring.IsSpots = [..originalSpots];
         FormMain.FormProperty.numericBoxConcentricStart.Value = initialStart;
         FormMain.FormProperty.numericBoxConcentricEnd.Value = initialEnd;
         FormMain.SkipDrawing = false;
@@ -333,26 +330,26 @@ public partial class FormFindParameterBruteForce : Form
         if (crystal.Plane.Count == 0) return;
 
         //スポットと、積分角度範囲の初期値を記憶
-        originalSpots = Ring.IsSpots.ToArray();
+        originalSpots = [.. Ring.IsSpots];
         initialStart = FormMain.FormProperty.numericBoxConcentricStart.Value;
         initialEnd = FormMain.FormProperty.numericBoxConcentricEnd.Value;
         //積分範囲を設定
-        bool[] area = new bool[Ring.IsOutsideOfIntegralProperty.Count];
-        for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
+        bool[] area = new bool[Ring.IsOutsideOfIntegralProperty.Length];
+        for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Length; j++)
             area[j] = true;
 
         for (int i = 0; i < crystal.Plane.Count; i++)
         {
             FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[i].XCalc - numericBoxFittingRange.Value * 2;
             FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[i].XCalc + numericBoxFittingRange.Value * 2;
-            for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Count; j++)
+            for (int j = 0; j < Ring.IsOutsideOfIntegralProperty.Length; j++)
                 if (Ring.IsOutsideOfIntegralProperty[j] == false)
                     area[j] = false;
         }
 
         FormMain.FormProperty.numericBoxConcentricStart.Value = crystal.Plane[0].XCalc - numericBoxFittingRange.Value * 2;
         FormMain.FormProperty.numericBoxConcentricEnd.Value = crystal.Plane[^1].XCalc + numericBoxFittingRange.Value * 2;
-        for (int i = 0; i < Ring.IsSpots.Count; i++)
+        for (int i = 0; i < Ring.IsSpots.Length; i++)
             Ring.IsSpots[i] = area[i] || originalSpots[i];
 
         FormMain.Draw();
@@ -498,11 +495,11 @@ public partial class FormFindParameterBruteForce : Form
         {
             //int total = (2 * phiRange + 1) * (2 * footXRange + 1) + (2 * distanceRange + 1) * (2 * tauRange + 1) * (2 * footYRange + 1)  ;
 
-            var total = phiRange.Count() * pointXRange.Count() * cameraLengthRange.Count() * tauRange.Count() * pointYRange.Count() * waveLengthRange.Count();
+            var total = phiRange.Count * pointXRange.Count * cameraLengthRange.Count * tauRange.Count * pointYRange.Count * waveLengthRange.Count;
             double progress = (double)count / (int)numericBoxIteration.Value / total;
             toolStripStatusLabel1.Text =
                 $"  {(sw.ElapsedMilliseconds - beforeTime) / (double)renewalTime:f1} ms / step." +
-                $"  {progress * 100:f2} % completed.  Elappsed Time: {sw.ElapsedMilliseconds / 1000.0:f0} sec." +
+                $"  {progress * 100:f2} % completed.  Elapsed Time: {sw.ElapsedMilliseconds / 1000.0:f0} sec." +
                 $"  Wait about {sw.ElapsedMilliseconds / 1000.0 * (1.0 - progress) / progress:f0} sec.";
 
             textBox1.Text = $"Cycle: {n}\r\n";
@@ -542,10 +539,8 @@ public partial class FormFindParameterBruteForce : Form
         drawGraph(finalProfile, crystal.Plane);
 
         if (originalSpots != null)
-        {
-            Ring.IsSpots.Clear();
-            Ring.IsSpots.AddRange(originalSpots);
-        }
+            Ring.IsSpots = [.. originalSpots];
+        
         FormMain.FormProperty.numericBoxConcentricStart.Value = initialStart;
         FormMain.FormProperty.numericBoxConcentricEnd.Value = initialEnd;
         FormMain.Draw();
@@ -658,7 +653,7 @@ public partial class FormFindParameterBruteForce : Form
             return twoThetaDeviation * ratio;// + 100 / height;// + 1 / hkWidth;
         }
     }
-    private double evaluatePeakHeight(Profile profile, List<Plane> planes)
+    private static double evaluatePeakHeight(Profile profile, List<Plane> planes)
     {
         double height = 0;
         for (int i = 0; i < planes.Count; i++)
@@ -687,7 +682,7 @@ public partial class FormFindParameterBruteForce : Form
         if (FormMain.IsFlatPanelMode)
         {
             Crystal c = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
-            c.AddAtoms(new Atoms("Au", 79, 0, 0, new double[] { 1 }, 523, new Vector3D(0, 0, 0), 1, new DiffuseScatteringFactor()));
+            c.AddAtoms(new Atoms("Au", 79, 0, 0, [1], 523, new Vector3D(0, 0, 0), 1, new DiffuseScatteringFactor()));
             crystalControl1.Crystal = c;
             tabControl1.SelectedIndex = 0;
         }

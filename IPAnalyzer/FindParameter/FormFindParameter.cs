@@ -104,8 +104,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         crystal[1] = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
         flexibleCrystal[0] = new Crystal((0, 0, 0, 0, 0, 0), 0, "", Color.Violet);
         flexibleCrystal[1] = new Crystal((0, 0, 0, 0, 0, 0), 0, "", Color.Violet);
-        flexibleCrystal[0].Plane = new List<Plane>();
-        flexibleCrystal[1].Plane = new List<Plane>();
+        flexibleCrystal[0].Plane = [];
+        flexibleCrystal[1].Plane = [];
 
         formCrystal.CrystalChanged(crystal[0]);
         formCrystal.Visible = false;
@@ -511,7 +511,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         }
     }
 
-    private List<GraphControl> graph= new List<GraphControl>();
+    private List<GraphControl> graph= [];
     private void DrawEachPeaks()
     {
         //まず現在がPrimary(0)かSecondary(1)かを調べる
@@ -525,7 +525,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         Crystal[] cry = checkBoxUseStandardCrystal.Checked ? crystal: flexibleCrystal;
         if (cry[0] == null || (cry[0].Plane == null && cry[1].Plane == null)) return;
         //描画対象の面をピックアップしリストをつくる
-        List<int> drawPeakList=new List<int>();
+        List<int> drawPeakList=[];
         for (int i = 0; i < cry[n].Plane.Count; i++)
             if (cry[n].Plane[i].IsFittingChecked)
                 drawPeakList.Add(i);
@@ -557,8 +557,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
 
         //dp[0].OriginalProfileから、描画範囲のProfileを切り取る+フィッティングカーブを生成
-        PointD[] pt = dp[n].SourceProfile.Pt.ToArray();
-        Profile[] sourceProfile = new Profile[drawPeakList.Count];
+        PointD[] pt = [.. dp[n].SourceProfile.Pt];
+        Profile[] profiles = new Profile[drawPeakList.Count];
+        Profile[] sourceProfile = profiles;
         Profile[] fittigProfile = new Profile[drawPeakList.Count];
         PointD[] centerLine = new PointD[drawPeakList.Count];
         Profile[] backgroundProfile = new Profile[drawPeakList.Count];
@@ -600,12 +601,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         {
             graph[i].Visible = true;
             graph[i].GraphTitle = "(" + cry[n].Plane[drawPeakList[i]].h.ToString() + " " + cry[n].Plane[drawPeakList[i]].k.ToString() + " " + cry[n].Plane[drawPeakList[i]].l.ToString() + ")";
-            graph[i].VerticalLines = new PointD[] { centerLine[i] };
+            graph[i].VerticalLines = [centerLine[i]];
             graph[i].LineWidth = 2f;
             graph[i].VerticalLineColor = c;
             graph[i].DrawingRange = new RectangleD(sourceProfile[i].MinX, sourceProfile[i].MinY, sourceProfile[i].MaxX - sourceProfile[i].MinX, sourceProfile[i].MaxY - sourceProfile[i].MinY);
 
-            graph[i].AddProfiles(new Profile[] { sourceProfile[i], fittigProfile[i], backgroundProfile[i] }, graph[i].DrawingRange);
+            graph[i].AddProfiles([sourceProfile[i], fittigProfile[i], backgroundProfile[i]], graph[i].DrawingRange);
         }
         
     }
@@ -619,7 +620,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (dp[0].SourceProfile != null)
         {
             pen = new Pen(Color.FromArgb(dp[0].ColorARGB.Value), 1);
-            pt = dp[0].SourceProfile.Pt.ToArray();
+            pt = [.. dp[0].SourceProfile.Pt];
             for (int i = 0; i < pt.Length - 1; i++)
                 gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
         }
@@ -627,7 +628,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (dp[1].SourceProfile != null)
         {
             pen = new Pen(Color.FromArgb(dp[1].ColorARGB.Value), 1);
-            pt = dp[1].SourceProfile.Pt.ToArray();
+            pt = [.. dp[1].SourceProfile.Pt];
             for (int i = 0; i < pt.Length - 1; i++)
                 gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
         }
@@ -944,8 +945,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                }
 
                 int LastDecompositionGroup = -1;
-                List<int> count = new List<int>();
-                List<PeakFunction> listPF = new List<PeakFunction>();
+                List<int> count = [];
+                List<PeakFunction> listPF = [];
                 int LastNumber = -1;
                 int n = 0;
                 for (j = 0; j < cry[i].Plane.Count; j++)
@@ -1003,9 +1004,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 for (j = 0; j < cry[i].Plane.Count; j++)
                     cry[i].Plane[j].MillimeterObs = cry[i].Plane[j].peakFunction.X;
 
-                List<PointD> hk= new List<PointD>();
-                List<double> x = new List<double>();
-                List<double> y = new List<double>();
+                List<PointD> hk= [];
+                List<double> x = [];
+                List<double> y = [];
                 for (int k = 0; k < listPfTemp.Length; k++)
                 {
                     if (residual[k] < 0.01)
@@ -1019,7 +1020,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                         }
                 }
                 
-                Statistics.LineFitting(hk.ToArray(), ref hk_theta[i], ref hk_a[i]);
+                Statistics.LineFitting([.. hk], ref hk_theta[i], ref hk_a[i]);
                 
             }
         //ピーク分離フィッティングモード終了
@@ -1260,7 +1261,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     }
 
 
-    public List<bool> IsSpotsPrimary = new List<bool>(), IsSpotsSecondary = new List<bool>();//画像のSpots情報
+    public bool[] IsSpotsPrimary = [], IsSpotsSecondary = [];//画像のSpots情報
 
     /// <summary>
     /// メインウィンドウにfilenameを読み込ませます。
@@ -1280,20 +1281,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         int num = isPrimary ? numPrimary : numSecondary;
 
         //読み込む前に現在のSpots情報を保存しておく
-        if (formMain.FileName !=null && formMain.FileName != "")
+        if (formMain.FileName != null && formMain.FileName != "")
         {
             if (fileNamePrimary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
-            {
-                IsSpotsPrimary.Clear();
-                for (int i = 0; i < Ring.IsSpots.Count; i++)
-                    IsSpotsPrimary.Add(Ring.IsSpots[i]);
-            }
+                IsSpotsPrimary = [.. Ring.IsSpots];
             else if (fileNameSecondary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
-            {
-                IsSpotsSecondary.Clear();
-                for (int i = 0; i < Ring.IsSpots.Count; i++)
-                    IsSpotsSecondary.Add(Ring.IsSpots[i]);
-            }
+                IsSpotsSecondary = [.. Ring.IsSpots];
         }
 
         if (formMain.FilePath + formMain.FileName != fileName)
@@ -1306,18 +1299,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         formMain.SetIntegralProperty();
 
         //IsSpotsが設定されたときだけ以下の処理をする
-        if (fileNamePrimary.EndsWith(formMain.FileNameSub) && IsSpotsPrimary != null && IsSpotsPrimary.Count == Ring.IsSpots.Count && formMain.FormSequentialImage.SelectedIndex == num)
-        {
-            Ring.IsSpots.Clear();
-            for (int i = 0; i < IsSpotsPrimary.Count; i++)
-                Ring.IsSpots.Add(IsSpotsPrimary[i]);
-        }
-        else if (fileNameSecondary.EndsWith(formMain.FileName) && IsSpotsSecondary != null && IsSpotsSecondary.Count == Ring.IsSpots.Count && formMain.FormSequentialImage.SelectedIndex == num)
-        {
-            Ring.IsSpots.Clear();
-            for (int i = 0; i < IsSpotsSecondary.Count; i++)
-                Ring.IsSpots.Add(IsSpotsSecondary[i]);
-        }
+        if (fileNamePrimary.EndsWith(formMain.FileNameSub) && IsSpotsPrimary != null && IsSpotsPrimary.Length == Ring.IsSpots.Length && formMain.FormSequentialImage.SelectedIndex == num)
+            Ring.IsSpots = [.. IsSpotsPrimary];
+        else if (fileNameSecondary.EndsWith(formMain.FileName) && IsSpotsSecondary != null && IsSpotsSecondary.Length == Ring.IsSpots.Length && formMain.FormSequentialImage.SelectedIndex == num)
+            Ring.IsSpots = [..IsSpotsSecondary];
         formMain.SetMask();
 
         IP.SrcWidth = formMain.IP.SrcWidth;
@@ -1429,7 +1414,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (this.InvokeRequired)//別スレッドから呼び出されたとき Invokeして呼びなおす
         {
             CollectEllipsesCallBack d = new CollectEllipsesCallBack(CollectEllipses);
-            return (List<EllipseParameter>)this.Invoke(d, new object[] { progress, IsPrimary, IsRenewIP });
+            return (List<EllipseParameter>)this.Invoke(d, [progress, IsPrimary, IsRenewIP]);
         }
         
         if (backgroundWorkerRefine.CancellationPending) return null;
@@ -1456,7 +1441,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         IP.EndLength = textBoxPixelSizeX.Value * Math.Sqrt(w * w + h * h);
         IP.IsTiltCorrection = true;
 
-        List<double> peak = new List<double>();
+        List<double> peak = [];
         for (int i = 0; i < crystal[profileNumber].Plane.Count; i++)
             if (crystal[profileNumber].Plane[i].IsFittingChecked)
             {
@@ -1465,7 +1450,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             }
         formMain.FormProperty.DirectSpotPosition = new PointD(IP.CenterX, IP.CenterY);
 
-        List<EllipseParameter> ellipseParameters = new List<EllipseParameter>();
+        List<EllipseParameter> ellipseParameters = [];
 
         for (int i = 0; i < crystal[profileNumber].Plane.Count; i++)
             if (crystal[profileNumber].Plane[i].IsFittingChecked)
@@ -1500,7 +1485,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 formMain.FormProperty.numericUpDownRectangleAngle.Value = (decimal)(j * 360.0 / NumberOfDirection);//方向を設定
             }
 
-            Ring.SetFindTiltParameter(IP, peak.ToArray(), (double)numericUpDownSearchRange.Value);//GetIntensityのときのパラメータを設定
+            Ring.SetFindTiltParameter(IP, [.. peak], (double)numericUpDownSearchRange.Value);//GetIntensityのときのパラメータを設定
             dp[profileNumber].SourceProfile = Ring.GetProfileForFindTiltCorrection(IP);//Profileをゲット
             SetDrawRange(false);
             Fitting();
@@ -1547,7 +1532,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     /// </summary>
     private void SetPixelShape(List<EllipseParameter> ellipses, bool distortion)
     {
-        Geometry.GetPixelShape(ellipses.ToArray(), ref IP.PixSizeX, ref IP.PixSizeY, ref IP.ksi, ref PixSizeXDev, ref PixSizeYDev, ref KsiDev, distortion);
+        Geometry.GetPixelShape([.. ellipses], ref IP.PixSizeX, ref IP.PixSizeY, ref IP.ksi, ref PixSizeXDev, ref PixSizeYDev, ref KsiDev, distortion);
 
         textBoxRefinedPixelKsi.RadianValue = IP.ksi;
         textBoxRefinedPixelKsiDev.RadianValue = KsiDev;
@@ -1595,8 +1580,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         //まず各楕円の中心位置および各楕円の平均半径を求める。
         if (ellipses == null) return;
-        List<PointD> EllipseCenter = new List<PointD>();
-        List<double> Radius = new List<double>();
+        List<PointD> EllipseCenter = [];
+        List<double> Radius = [];
         PointD p = new PointD();
         for (int i = 0; i < ellipses.Count; i++)
         {
@@ -1610,12 +1595,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 }
             Radius.Add(temp / n);
 
-            List<PointD> pt = new List<PointD>();
+            List<PointD> pt = [];
             for (int j = 0; j < ellipses[i].points.Count; j++)
                 if (!double.IsNaN(ellipses[i].points[j].X))
                     pt.Add(ellipses[i].points[j]);
 
-            p = Geometry.GetEllipseCenter(pt.ToArray());
+            p = Geometry.GetEllipseCenter([.. pt]);
 
             if (!double.IsNaN(p.X) && !double.IsNaN(p.Y))
                 EllipseCenter.Add(p);
@@ -1626,7 +1611,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
         double phiDev = 0, tauDev = 0;
         PointD centerOffsetDev = new PointD();
-        Geometry.GetTiltAndOffset(EllipseCenter.ToArray(), Radius.ToArray(), FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
+        Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
 
         //center位置をPixel単位に変換
         p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
@@ -1690,17 +1675,17 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         //まず各楕円の中心位置および各楕円の平均半径を求める。
         if (ellipses == null) return;
-        List<PointD> EllipseCenter = new List<PointD>();
-        List<double> Radius = new List<double>();
+        List<PointD> EllipseCenter = [];
+        List<double> Radius = [];
         PointD p = new PointD();
         for (int i = 0; i < ellipses.Count; i++)
         {
-            List<PointD> pt = new List<PointD>();
+            List<PointD> pt = [];
             for (int j = 0; j < ellipses[i].points.Count; j++)
                 if (!double.IsNaN(ellipses[i].points[j].X))
                     pt.Add(ellipses[i].points[j]);
 
-            p = Geometry.GetEllipseCenter(pt.ToArray());
+            p = Geometry.GetEllipseCenter([.. pt]);
 
             if (!double.IsNaN(p.X) && !double.IsNaN(p.Y))
                 EllipseCenter.Add(p);
@@ -1775,7 +1760,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         DrawResidual(residual);
     }
     //残差を見積もる (powerPlay用)
-    private double GetResidualForPowerPlay(List<EllipseParameter> ellipses)
+    private static double GetResidualForPowerPlay(List<EllipseParameter> ellipses)
     {
         if (ellipses == null) return 1;
         double residual = 0;
@@ -2006,8 +1991,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         sw.Start();
         toolStripProgressBar1.Value = 0;
 
-        List<EllipseParameter> ellipsesPrimary = new List<EllipseParameter>();
-        List<EllipseParameter> ellipsesSecondary = new List<EllipseParameter>();
+        List<EllipseParameter> ellipsesPrimary = [];
+        List<EllipseParameter> ellipsesSecondary = [];
 
         if (checkBoxRefineTiltCorrection.Checked)
             IP.IsTiltCorrection = true;
@@ -2310,26 +2295,26 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     #region グラフを描画する部分
 
 
-    List<List<PointD>> EllipseCenterPrimary = new List<List<PointD>>();
-    List<PointD> DirectSpotsPrimary = new List<PointD>();
-    List<List<PointD>> EllipseCenterSecondary = new List<List<PointD>>();
-    List<PointD> DirectSpotsSecondary = new List<PointD>();
+    List<List<PointD>> EllipseCenterPrimary = [];
+    List<PointD> DirectSpotsPrimary = [];
+    List<List<PointD>> EllipseCenterSecondary = [];
+    List<PointD> DirectSpotsSecondary = [];
     Brush[] BrushesForAnalysis =
-        new Brush[] { 
+        [
                 new SolidBrush(Color.MediumBlue),
                 new SolidBrush(Color.Green), 
                 new SolidBrush(Color.Red), 
                 new SolidBrush(Color.Pink), 
                 new SolidBrush(Color.Orange) 
-            };
+            ];
     Pen[] PensForAnalysis =
-        new Pen[] { 
+        [ 
                 new Pen(Color.MediumBlue),
                 new Pen(Color.Green), 
                 new Pen(Color.Red), 
                 new Pen(Color.Pink), 
                 new Pen(Color.Orange) 
-            };
+            ];
     //引数無しのときはただ書くだけ
     private void DrawTiltCorrection(bool IsPrimary)
     {//textBoxPrimaryFileName.Text.EndsWith(formMain.fileName)
@@ -2586,49 +2571,49 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         catch { }
         return bmp;
     }
-    private PointF ConvCoodForAnalysis(int x, double y, double max, double min, int width, int height)
+    private static PointF ConvCoodForAnalysis(int x, double y, double max, double min, int width, int height)
     {
         return new PointF((float)(48 + (width - 60) * x / 8.0), (float)(height * (max - y) / (max - min)));
     }
 
-    List<double> ResidualSeries = new List<double>();
+    List<double> ResidualSeries = [];
     private void DrawResidual(double residual)
     {
         if (ResidualSeries.Count >= 9)
             ResidualSeries.RemoveAt(0);
         ResidualSeries.Add(residual);
         pictureBoxResidual.Image =
-                DrawGraph(ResidualSeries.ToArray(),
+                DrawGraph([.. ResidualSeries],
                 pictureBoxResidual.Width, pictureBoxResidual.Height);
         Application.DoEvents();
     }
 
-    List<double> WaveLengthSeries = new List<double>();
+    List<double> WaveLengthSeries = [];
     private void DrawWaveLength()
     {
         if (WaveLengthSeries.Count >= 9)
             WaveLengthSeries.RemoveAt(0);
         WaveLengthSeries.Add(textBoxRefinedWaveLength.Value);
         pictureBoxWaveLength.Image =
-                DrawGraph(WaveLengthSeries.ToArray(),
+                DrawGraph([.. WaveLengthSeries],
                 pictureBoxWaveLength.Width, pictureBoxWaveLength.Height);
         Application.DoEvents();
     }
 
-    List<double> FilmDistanceSeries = new List<double>();
+    List<double> FilmDistanceSeries = [];
     private void DrawFilmDistance()
     {
         if (FilmDistanceSeries.Count >= 9)
             FilmDistanceSeries.RemoveAt(0);
         FilmDistanceSeries.Add(textBoxRefinedPrimaryFilmDistance.Value);
         pictureBoxCameraLength.Image =
-                DrawGraph(FilmDistanceSeries.ToArray(),
+                DrawGraph([.. FilmDistanceSeries],
                 pictureBoxCameraLength.Width, pictureBoxCameraLength.Height);
         Application.DoEvents();
     }
 
-    List<double> PhiSeriesPrimary = new List<double>();
-    List<double> PhiSeriesSecondary = new List<double>();
+    List<double> PhiSeriesPrimary = [];
+    List<double> PhiSeriesSecondary = [];
     private void DrawPhi(bool isNew, bool IsPrimary)
     {
         if (IsPrimary)
@@ -2640,7 +2625,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 PhiSeriesPrimary.Add(textBoxRefinedPrimaryPhi.Value);
             }
             pictureBoxTiltCorrectionPhi1.Image =
-                DrawGraph(PhiSeriesPrimary.ToArray(),
+                DrawGraph([.. PhiSeriesPrimary],
                 pictureBoxTiltCorrectionPhi1.Width, pictureBoxTiltCorrectionPhi1.Height);
         }
         else
@@ -2652,15 +2637,15 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 PhiSeriesSecondary.Add(textBoxRefinedSecondaryPhi.Value);
             }
             pictureBoxTiltCorrectionPhi2.Image =
-                DrawGraph(PhiSeriesSecondary.ToArray(),
+                DrawGraph([.. PhiSeriesSecondary],
                 pictureBoxTiltCorrectionPhi2.Width, pictureBoxTiltCorrectionPhi2.Height);
 
         }
         Application.DoEvents();
     }
 
-    List<double> TauSeriesPrimary = new List<double>();
-    List<double> TauSeriesSecondary = new List<double>();
+    List<double> TauSeriesPrimary = [];
+    List<double> TauSeriesSecondary = [];
     private void DrawTau(bool isNew, bool IsPrimary)
     {
 
@@ -2673,7 +2658,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 TauSeriesPrimary.Add(textBoxRefinedPrimaryTau.RadianValue);
             }
             pictureBoxTiltCorrectionTau1.Image =
-                DrawGraph(TauSeriesPrimary.ToArray(),
+                DrawGraph([.. TauSeriesPrimary],
                 pictureBoxTiltCorrectionTau1.Width, pictureBoxTiltCorrectionTau1.Height);
         }
         else
@@ -2685,64 +2670,66 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 TauSeriesSecondary.Add(textBoxRefinedSecondaryTau.RadianValue);
             }
             pictureBoxTiltCorrectionTau2.Image =
-                DrawGraph(TauSeriesSecondary.ToArray(),
+                DrawGraph([.. TauSeriesSecondary],
                 pictureBoxTiltCorrectionTau2.Width, pictureBoxTiltCorrectionTau2.Height);
         }
         Application.DoEvents();
     }
 
-    List<double> PixelKsiSeries = new List<double>();
+    List<double> PixelKsiSeries = [];
     private void DrawPixelKsi()
     {
         if (PixelKsiSeries.Count >= 9)
             PixelKsiSeries.RemoveAt(0);
         PixelKsiSeries.Add(textBoxRefinedPixelKsi.RadianValue);
         pictureBoxPixelKsi.Image =
-                DrawGraph(PixelKsiSeries.ToArray(),
+                DrawGraph([.. PixelKsiSeries],
                 pictureBoxPixelKsi.Width, pictureBoxPixelKsi.Height);
         Application.DoEvents();
     }
 
-    List<double> PixelSizeYSeries = new List<double>();
+    List<double> PixelSizeYSeries = [];
     private void DrawPixelSizeY()
     {
         if (PixelSizeYSeries.Count >= 9)
             PixelSizeYSeries.RemoveAt(0);
         PixelSizeYSeries.Add(textBoxRefinedPixelSizeY.Value);
         pictureBoxPixelSizeY.Image =
-                DrawGraph(PixelSizeYSeries.ToArray(),
+                DrawGraph([.. PixelSizeYSeries],
                 pictureBoxPixelSizeY.Width, pictureBoxPixelSizeY.Height);
         Application.DoEvents();
     }
 
-    List<double> PixelSizeXSeries = new List<double>();
+    List<double> PixelSizeXSeries = [];
+    private static readonly char[] trimChars = ['.'];
+
     private void DrawPixelSizeX()
     {
         if (PixelSizeXSeries.Count >= 9)
             PixelSizeXSeries.RemoveAt(0);
         PixelSizeXSeries.Add(textBoxRefinedPixelSizeX.Value);
         pictureBoxPixelSizeX.Image =
-                DrawGraph(PixelSizeXSeries.ToArray(),
+                DrawGraph([.. PixelSizeXSeries],
                 pictureBoxPixelSizeX.Width, pictureBoxPixelSizeX.Height);
         Application.DoEvents();
     }
 
     private void buttonClearGraphs_Click(object sender, EventArgs e)
     {
-        ResidualSeries = new List<double>();
-        PixelSizeXSeries = new List<double>();
-        PixelKsiSeries = new List<double>();
-        PixelSizeYSeries = new List<double>();
-        TauSeriesPrimary = new List<double>();
-        TauSeriesSecondary = new List<double>();
-        PhiSeriesPrimary = new List<double>();
-        PhiSeriesSecondary = new List<double>();
-        WaveLengthSeries = new List<double>();
-        FilmDistanceSeries = new List<double>();
-        EllipseCenterPrimary = new List<List<PointD>>();
-        DirectSpotsPrimary = new List<PointD>();
-        EllipseCenterSecondary = new List<List<PointD>>();
-        DirectSpotsSecondary = new List<PointD>();
+        ResidualSeries = [];
+        PixelSizeXSeries = [];
+        PixelKsiSeries = [];
+        PixelSizeYSeries = [];
+        TauSeriesPrimary = [];
+        TauSeriesSecondary = [];
+        PhiSeriesPrimary = [];
+        PhiSeriesSecondary = [];
+        WaveLengthSeries = [];
+        FilmDistanceSeries = [];
+        EllipseCenterPrimary = [];
+        DirectSpotsPrimary = [];
+        EllipseCenterSecondary = [];
+        DirectSpotsSecondary = [];
 
         Bitmap bmp = new Bitmap(pictureBoxPixelSizeY.Width, pictureBoxPixelSizeY.Height);
         pictureBoxResidual.Image = bmp;
@@ -2794,7 +2781,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         var away = numericBoxAwayFrom.Value;
         if (dataGridView.Rows.Count > 1)
         {
-            var pos = new List<double>[] { new List<double>(),new List<double>()};
+            var pos = new List<double>[] { [],[] };
 
             for (int i = 0; i < dataGridView.Rows.Count; i++)
                 for (int j = 0; j < 2; j++)
@@ -3032,17 +3019,17 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         string[] fileName = (string[])e.Data.GetData(DataFormats.FileDrop, false);
         if (fileName.Length == 1)
         {
-            string ext = Path.GetExtension(fileName[0]).TrimStart(new char[] { '.' });
+            string ext = Path.GetExtension(fileName[0]).TrimStart(['.']);
             if (ext == "img" || ext == "stl" || ext == "ccd" || ext == "ipf"
                 || ext == "png" || ext == "tif" || ext == "jpg" || ext == "bmp" || ext == "gel" || ext == "osc" || ext.StartsWith("mar")
-                || ext == "ipa" || ext.StartsWith("0") || ext == "mccd" || ext=="his")
+                || ext == "ipa" || ext.StartsWith('0') || ext == "mccd" || ext == "his")
                 formMain.ReadImage(fileName[0]);
             textBoxPrimaryFileName.Text = fileName[0];
 
             if (formMain.SequentialImageMode && Ring.SequentialImageIntensities.Count >= 2)
             {
                 selectSequentialImageNumber();
-                textBoxPrimaryFileName.Text += " " + formMain.FormSequentialImage.SelectedIndex.ToString();
+                textBoxPrimaryFileName.Text += $" {formMain.FormSequentialImage.SelectedIndex}";
             }
         }
     }
@@ -3053,17 +3040,17 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         string[] fileName =                (string[])e.Data.GetData(DataFormats.FileDrop, false);
         if (fileName.Length == 1)
         {
-            string ext = Path.GetExtension(fileName[0]).TrimStart(new char[] { '.' });
+            string ext = Path.GetExtension(fileName[0]).TrimStart(['.']);
             if (ext == "img" || ext == "stl" || ext == "ccd" || ext == "ipf"
                 || ext == "png" || ext == "tif" || ext == "jpg" || ext == "bmp" || ext == "gel" || ext == "osc" || ext.StartsWith("mar")
-                || ext == "ipa" || ext.StartsWith("0") || ext == "mccd" || ext == "his")
+                || ext == "ipa" || ext.StartsWith('0') || ext == "mccd" || ext == "his")
                 formMain.ReadImage(fileName[0]);
             textBoxSecondaryFileName.Text = fileName[0];
 
             if (formMain.SequentialImageMode && Ring.SequentialImageIntensities.Count >= 2)
             {
                 selectSequentialImageNumber();
-                textBoxSecondaryFileName.Text += " " + formMain.FormSequentialImage.SelectedIndex.ToString();
+                textBoxSecondaryFileName.Text += $" {formMain.FormSequentialImage.SelectedIndex}";
             }
         }
     }
@@ -3074,7 +3061,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         string[] fileName = (string[])e.Data.GetData(DataFormats.FileDrop, false);
         if (fileName.Length == 1)
         {
-            string ext = Path.GetExtension(fileName[0]).TrimStart(new char[] { '.' });
+            string ext = Path.GetExtension(fileName[0]).TrimStart(trimChars);
             if (fileName[0].EndsWith("prm"))
                 formMain.ReadParameter(fileName[0]);
             buttonSetInitioalParam_Click(sender, new EventArgs());
@@ -3086,7 +3073,6 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (e.Data.GetDataPresent(DataFormats.FileDrop))
             e.Effect = DragDropEffects.Copy; //ドラッグされたデータ形式を調べ、ファイルのときはコピーとする
         else
-
             e.Effect = DragDropEffects.None;//ファイル以外は受け付けない
     }
 
@@ -3097,7 +3083,6 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (e.Data.GetDataPresent(DataFormats.FileDrop))
             e.Effect = DragDropEffects.Copy; //ドラッグされたデータ形式を調べ、ファイルのときはコピーとする
         else
-
             e.Effect = DragDropEffects.None;//ファイル以外は受け付けない
     }
 
@@ -3108,7 +3093,6 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (e.Data.GetDataPresent(DataFormats.FileDrop))
             e.Effect = DragDropEffects.Copy; //ドラッグされたデータ形式を調べ、ファイルのときはコピーとする
         else
-
             e.Effect = DragDropEffects.None;//ファイル以外は受け付けない
     }
 

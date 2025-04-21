@@ -58,7 +58,7 @@ namespace IPAnalyzer
                 br.Close();
                 return intensity;
             }
-            else return new ushort[0];
+            else return [];
         }
 
         double total = 0;
@@ -128,7 +128,7 @@ namespace IPAnalyzer
                 }
 
             //駆動点を16個作る
-            List<PointD> controlPoints = new List<PointD>();
+            List<PointD> controlPoints = [];
             int step = maxRawIntensity / 16 + 1;
             for (int i = 0; i <= maxRawIntensity; i += step)
                 controlPoints.Add(new PointD(i, convertTableCurrent[i]));
@@ -139,8 +139,8 @@ namespace IPAnalyzer
 
             double bestY=0;
 
- List<double> residualRecorder = new List<double>();
- double[] convertTableNew;
+            List<double> residualRecorder = [];
+            double[] convertTableNew;
             for(int m = 0 ; m<300;m++){
                 for (int n = 0; n < controlPoints.Count; n++)
                 {
