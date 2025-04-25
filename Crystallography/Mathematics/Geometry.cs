@@ -557,7 +557,7 @@ public static class Geometry
     public static PointD[] GetPolygonDividedByLine(PointD[] pt, double a, double b, double c)
     {
         var results = GetPolygonDividedByLine(pt.Select(p => (p.X, p.Y)).ToArray(), a, b, c);
-        return results.Select(r => new PointD(r.X, r.Y)).ToArray();
+        return [.. results.Select(r => new PointD(r.X, r.Y))];
     }
 
     /// <summary>

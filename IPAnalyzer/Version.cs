@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/3) (thx to Tsuruoka-san!). " +
         "\r\n ver3.961(2025/04/16) Compatible with Rad-icon detectors with a resolution of 2080 x 2238." +
         "\r\n ver3.960(2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +
         "\r\n ver3.959(2024/11/04) Improved the stability of the 'Auto Procedure' function." +
@@ -16,7 +17,7 @@ static class Version
         "\r\n ver3.956(2024/02/27) Minor change: The data of Rad-icon1520 (*.raw) is treated as 16-bit signed integer." +
         "\r\n ver3.955(2023/12/13) Fixed bugs on loading Rad-icon1520 files (*.raw)." +
         "\r\n ver3.953(2023/11/29) Fixed bugs on 'Azimuthal Division Analysis' mode." +
-        "\r\n ver3.952(2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san)." +
+        "\r\n ver3.952(2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san!)." +
         "\r\n ver3.951(2023/10/07) The drawing range of the previous image can be inherited." +
         "\r\n ver3.950(2023/10/05) Improved 'Auto Procedure'." +
         "\r\n ver3.948(2023/07/18) Fixed a minor bug." +

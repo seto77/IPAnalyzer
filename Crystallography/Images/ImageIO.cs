@@ -1266,7 +1266,7 @@ public static class ImageIO
 
             // ヘッダ部分にData_type = unsigned short int;と書かれていた。
             for (int i = 0; i < length; i++)
-                Ring.Intensity.Add(convertTable[br.ReadUInt16()]); 
+                Ring.Intensity[i] = convertTable[br.ReadUInt16()]; 
 
         }
         catch (Exception e)

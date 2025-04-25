@@ -2335,12 +2335,12 @@ public partial class FormMain : Form
                                 toolStripComboBoxRotate.SelectedIndex).ToArray();
 
                             // Background
-                            if (Ring.Background != null && Ring.Background.Count == d[i].Length)
-                                d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value).ToArray();
+                            if (Ring.Background != null && Ring.Background.Length == d[i].Length)
+                                d[i] = [.. Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value)];
 
                             // 偏光補正
                             if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                                d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, new List<double>(d[i])).ToArray();
+                                d[i] = [.. Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i])];
 
                             // CSVに書き出し
                             writer.WriteLine($"# Image {i + 1}");
