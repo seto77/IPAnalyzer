@@ -62,8 +62,8 @@ public partial class FormMain : Form
 
     public FormMacro FormMacro;
 
-    public Profile oneDimensionalProfile = new Profile();
-    public Profile frequencyProfile = new Profile();
+    public Profile oneDimensionalProfile = new();
+    public Profile frequencyProfile = new();
 
     //static Mutex mutexClipboard = new Mutex(false, "ClipboardOperation");
 
@@ -765,8 +765,7 @@ public partial class FormMain : Form
 
         InitialDialog.Text = "Now Loading...Initializing Macro function.";
 
-        FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this));
-        FormMacro.Visible = false;
+        FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this))        {            Visible = false        };
         Type t = typeof(Macro);
         MemberInfo[] members = t.GetMembers();
         var methods = t.GetMethods();
@@ -2329,10 +2328,10 @@ public partial class FormMain : Form
                             var intensity = Ring.SequentialImageIntensities[i];
 
                             // Flip and Rotate
-                            d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                            d[i] = [.. Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
                                 flipVerticallyToolStripMenuItem.Checked,
                                 flipHorizontallyToolStripMenuItem.Checked,
-                                toolStripComboBoxRotate.SelectedIndex).ToArray();
+                                toolStripComboBoxRotate.SelectedIndex)];
 
                             // Background
                             if (Ring.Background != null && Ring.Background.Length == d[i].Length)
@@ -2350,7 +2349,7 @@ public partial class FormMain : Form
                     // 単一画像モードの時
                     else
                     {
-                        WriteIntensityToCSV(writer, Ring.Intensity.ToArray(), Ring.IP.SrcWidth);
+                        WriteIntensityToCSV(writer, [.. Ring.Intensity], Ring.IP.SrcWidth);
                     }
                 }
                 // Unrolled Imageのとき
@@ -4371,7 +4370,7 @@ public partial class FormMain : Form
     /// </summary>
     public class Macro : MacroBase
     {
-        private FormMain main;
+        public readonly FormMain main;
         public SequentialClass Sequential;
         public DetectorClass Detector;
         public FileClass File;

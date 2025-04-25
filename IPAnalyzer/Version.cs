@@ -9,7 +9,7 @@ static class Version
 
     static public string History =
         "History" +
-        "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/3) (thx to Tsuruoka-san!). " +
+        "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/3) (thx to Tsuruoka-san!)." +
         "\r\n ver3.961(2025/04/16) Compatible with Rad-icon detectors with a resolution of 2080 x 2238." +
         "\r\n ver3.960(2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +
         "\r\n ver3.959(2024/11/04) Improved the stability of the 'Auto Procedure' function." +

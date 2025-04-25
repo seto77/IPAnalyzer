@@ -804,7 +804,7 @@ public static class Geometry
                     results.Add(pts);
                 }
             }
-            return results.Select(r => r.ToArray()).ToArray();
+            return [.. results.Select(r => r.ToArray())];
         }
     }
 
@@ -1072,7 +1072,7 @@ public static class Geometry
             }
         }
 
-        return pts.Select(p => new double[] { p.X, p.Y, p.Z }).ToArray();
+        return [.. pts.Select(p => new double[] { p.X, p.Y, p.Z })];
     }
 
     /// <summary>
@@ -1168,9 +1168,9 @@ public static class Geometry
                         //pts1.Add(rot(new PointD(x, sign * y) + shift));
                         //pts2.Add(rot(new PointD(x, -y) + shift));
                     }
-                    tempResult.Add(pts1.Select(p => rot(p + shift)).ToList());
+                    tempResult.Add([.. pts1.Select(p => rot(p + shift))]);
                     if (bothCone)
-                        tempResult.Add(pts1.Select(p => rot(new PointD(p.X, -p.Y) + shift)).ToList());
+                        tempResult.Add([.. pts1.Select(p => rot(new PointD(p.X, -p.Y) + shift))]);
                 }
             }
         }
