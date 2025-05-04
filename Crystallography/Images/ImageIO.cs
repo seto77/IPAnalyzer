@@ -42,6 +42,7 @@ public static class ImageIO
         get
         {
             var filterString = "FujiBAS2000/2500; R-AXIS4/5; ITEX; Bruker CCD; IP Display; IPAimage; Fuji FDL; Rayonix; Marresearch; Perkin Elmer; ADSC; RadIcon; general image |";
+
             for (int i = 0; i < ListOfExtension.Length; i++)
                 if (i < ListOfExtension.Length - 1)
                     filterString += "*." + ListOfExtension[i] + ";";
@@ -151,7 +152,7 @@ public static class ImageIO
     #endregion
 
     /// <summary>
-    /// 指定されたfileを読み込み、読み込んだ内容はRing.***に保存される。失敗したときはfalseを返す。flagはノーマライズするかどうか。
+    /// 指定された file を読み込み、読み込んだ内容はRing.***に保存される。失敗したときは false を返す。flagはノーマライズするかどうか。
     /// </summary>
     /// <param name="str"></param>
     /// <returns></returns>
@@ -190,7 +191,7 @@ public static class ImageIO
                     return false;
                 }
             }
-            else if (File.Exists(str.Remove(str.Length - 3, 3) + "tem"))
+            else if (File.Exists(str[..^3] + "tem"))
                 result = FujiFDL(str);
             else if (IsRAxisImage(str))//R-Axis5
                 result = Raxis4(str);
@@ -482,7 +483,7 @@ public static class ImageIO
                 pixelSize = (float)value2.Tag["0"].Tag["Scale"].Values[0];
 
             var temp = t.Tag["ImageList"].Tag["1"].Tag["ImageData"].Tag["Calibrations"].Tag["Dimension"].Tag["0"].Tag["Units"].Values.Select(c => (ushort)c).ToArray();
-            var units = new string(temp.Select(c => (char)c).ToArray());
+            var units = new string([.. temp.Select(c => (char)c)]);
             var unit = LengthUnitEnum.None;
             if (units == "1/nm")
                 unit = LengthUnitEnum.NanoMeterInverse;
@@ -1055,7 +1056,7 @@ public static class ImageIO
                     break;
             }
 
-            Ring.Intensity = Ring.SequentialImageIntensities[0].ToArray();
+            Ring.Intensity = [.. Ring.SequentialImageIntensities[0]];
             Ring.ImageType = Ring.ImageTypeEnum.ITEX;
 
             br.Close();
@@ -1234,7 +1235,7 @@ public static class ImageIO
             //ヘッダ部分読み込み
             Ring.Comments = "";
             br.BaseStream.Position = 0; // 初期位置にセット
-            string headerText = new string(br.ReadChars(17408)); // HEADER_BYTES 分読み取る
+            string headerText = new(br.ReadChars(17408)); // HEADER_BYTES 分読み取る
                                                                  // 正規表現で検索
             Match matchMemo = Regex.Match(headerText, @"MEMO=([^;]+);"); // Device
             Ring.Comments += "\r\n" + matchMemo.Groups[1].Value;
@@ -1550,7 +1551,7 @@ public static class ImageIO
         try
         {
             //FujiFDL
-            var reader = new StreamReader(str.Remove(str.Length - 3, 3) + "tem");
+            var reader = new StreamReader(str[..^3] + "tem");
             var strList = new List<string>();
             string tempstr;
             while ((tempstr = reader.ReadLine()) != null)
@@ -1604,7 +1605,7 @@ public static class ImageIO
             {
                 t.IsGray = true;
                 for (int j = 0; j < t.NumberOfFrames; j++)
-                    t.Images[j].Value = t.Images[j].ValueRed.Select(intValue => (double)intValue).ToArray();
+                    t.Images[j].Value = [.. t.Images[j].ValueRed.Select(intValue => (double)intValue)];
             }
             Ring.Comments = "";
             Ring.SrcImgSize = new Size(t.ImageWidth, t.ImageLength);

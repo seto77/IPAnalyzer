@@ -2113,19 +2113,18 @@ public partial class FormMain : Form
     {
         if (Ring.IsValid.Length != Ring.Intensity.Length)
         {
-            Ring.IsValid = new bool[Ring.Intensity.Length];
+            Ring.IsValid = [.. Enumerable.Repeat(true, Ring.Intensity.Length)];
             Ring.IsOutsideOfIntegralRegion = new bool[Ring.Intensity.Length];
-            Ring.IsSpots=new bool[Ring.Intensity.Length];
-            Ring.IsThresholdOver=new bool[Ring.Intensity.Length];
-            Ring.IsThresholdUnder=new bool[Ring.Intensity.Length];
-            Ring.IsOutsideOfIntegralProperty=new bool[Ring.Intensity.Length];
-            ;
+            Ring.IsSpots = new bool[Ring.Intensity.Length];
+            Ring.IsThresholdOver = new bool[Ring.Intensity.Length];
+            Ring.IsThresholdUnder = new bool[Ring.Intensity.Length];
+            Ring.IsOutsideOfIntegralProperty = new bool[Ring.Intensity.Length];
         }
         else
         {
             for (int i = 0; i < Ring.Intensity.Length; i++)
             {
-                Ring.IsValid[i] = false;
+                Ring.IsValid[i] = true;
                 Ring.IsOutsideOfIntegralRegion[i] = false;
                 Ring.IsOutsideOfIntegralProperty[i] = false;
                 Ring.IsSpots[i] = false;

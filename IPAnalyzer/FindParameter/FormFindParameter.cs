@@ -75,8 +75,6 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
 
 
-
-
     //ロードされたとき
     private void FormCLandWL_Load(object sender, System.EventArgs e)
     {
@@ -543,13 +541,15 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             graph.Add(g);
             g.AllowMouseOperation = checkBoxMouseOperation.Checked;
             g.GraphTitle = "";
+            
+            g.UpperPanelVisible = true;
+            g.MousePositionVisible = false;
+            
             g.VerticalLineColor = Color.Red;
-            g.UpperPanelVisible = false;
             g.Size = new Size(240, 120);
             g.OriginPosition = new Point(0, 20);
             g.UseLineWidth = false;
-            g.AxisXTextVisible = false;
-            g.AxisYTextVisible = false;
+            
             flowLayoutPanelEachPeaks.Controls.Add(g);
         }
         Color s = Color.FromArgb(dp[n].ColorARGB.Value);
@@ -600,15 +600,17 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         for (int i = 0; i < drawPeakList.Count; i++)
         {
             graph[i].Visible = true;
-            graph[i].GraphTitle = "(" + cry[n].Plane[drawPeakList[i]].h.ToString() + " " + cry[n].Plane[drawPeakList[i]].k.ToString() + " " + cry[n].Plane[drawPeakList[i]].l.ToString() + ")";
+            graph[i].GraphTitle = $"{{{cry[n].Plane[drawPeakList[i]].h} {cry[n].Plane[drawPeakList[i]].k} {cry[n].Plane[drawPeakList[i]].l}}}";
             graph[i].VerticalLines = [centerLine[i]];
             graph[i].LineWidth = 2f;
             graph[i].VerticalLineColor = c;
             graph[i].DrawingRange = new RectangleD(sourceProfile[i].MinX, sourceProfile[i].MinY, sourceProfile[i].MaxX - sourceProfile[i].MinX, sourceProfile[i].MaxY - sourceProfile[i].MinY);
 
             graph[i].AddProfiles([sourceProfile[i], fittigProfile[i], backgroundProfile[i]], graph[i].DrawingRange);
+            
         }
-        
+        Application.DoEvents();
+
     }
 
     //オリジナルプロファイルの描画
@@ -1480,7 +1482,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             else
             {
                 formMain.FormProperty.radioButtonRectangle.Checked = true;
-                formMain.FormProperty.numericUpDownRectangleBand.Value = (decimal)(numericUpDownBandWidth.Value * IP.SrcWidth / 100);
+                formMain.FormProperty.numericUpDownRectangleBand.Value = numericUpDownBandWidth.Value * IP.SrcWidth / 100;
                 formMain.Skip = false;
                 formMain.FormProperty.numericUpDownRectangleAngle.Value = (decimal)(j * 360.0 / NumberOfDirection);//方向を設定
             }
@@ -1496,12 +1498,11 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                     ellipseParameters[n++].Add(crystal[profileNumber].Plane[i].MillimeterObs, (double)j / NumberOfDirection * Math.PI * 2.0);
 
             if (backgroundWorkerRefine.CancellationPending) return null;
+
             toolStripProgressBar1.Value = (int)((startProgress + (double)j / NumberOfDirection * (progress - startProgress)) * toolStripProgressBar1.Maximum);
-            toolStripStatusLabel1.Text = "Calculating ..."
-               + "Progress: " + (100.0 * toolStripProgressBar1.Value / toolStripProgressBar1.Maximum).ToString("f2") + "%" +
-               "   Elapsed time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f2") + "sec., " +
-               "   Estimated remaining time: " +
-               ((double)(toolStripProgressBar1.Maximum - toolStripProgressBar1.Value) / toolStripProgressBar1.Value * sw.ElapsedMilliseconds / 1000.0).ToString("f2") + " sec.";
+            toolStripStatusLabel1.Text = $"Calculating ...Progress: {100.0 * toolStripProgressBar1.Value / toolStripProgressBar1.Maximum:f2}%" +
+                $"   Elapsed time: {sw.ElapsedMilliseconds / 1000.0:f2}sec.," +
+                $"   Estimated remaining time: {(double)(toolStripProgressBar1.Maximum - toolStripProgressBar1.Value) / toolStripProgressBar1.Value * sw.ElapsedMilliseconds / 1000.0:f2} sec.";
 
             Application.DoEvents();
         }
@@ -1870,10 +1871,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         flowLayoutPanel1.Visible = false;
         buttonExecuteRefinements.Enabled = false;
 
-       
-
-
-            this.panel1.Enabled = false;
+        this.panel1.Enabled = false;
         if (!checkBoxMouseOperation.Checked)
             pictureBoxMain.Enabled = false;
 
