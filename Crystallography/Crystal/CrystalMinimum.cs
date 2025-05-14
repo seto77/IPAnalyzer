@@ -5,6 +5,7 @@ using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using ZLinq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -239,7 +240,7 @@ public partial class Crystal2
     /// <returns></returns>
     public static byte[] Serialize(Crystal2 c )
     {
-        using var compressor = new BrotliCompressor(System.IO.Compression.CompressionLevel.Optimal, 24);
+        using var compressor = new BrotliCompressor(System.IO.Compression.CompressionLevel.Optimal, 22);
         MemoryPackSerializer.Serialize(compressor, c);
         return compressor.ToArray();
     }

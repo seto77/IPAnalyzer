@@ -5,10 +5,11 @@ static class Version
     static public string Software =
         "IPAnalyzer"
         ;
-    static public string VersionAndDate { get => History.Remove(0, 10).Remove(20); }
+    static public string VersionAndDate { get => History[10..][..20]; }
 
     static public string History =
         "History" +
+        "\r\n ver3.963(2025/05/04) Fixed minor bugs (see https://github.com/seto77/IPAnalyzer/issues/6)" +
         "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/3) (thx to Tsuruoka-san!)." +
         "\r\n ver3.961(2025/04/16) Compatible with Rad-icon detectors with a resolution of 2080 x 2238." +
         "\r\n ver3.960(2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +

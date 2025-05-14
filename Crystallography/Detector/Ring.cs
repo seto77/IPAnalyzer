@@ -561,26 +561,27 @@ public static class Ring
     {
         int height = src.Length / width;
         var flag = (flipV ? 2 : 0) + (flipH ? 1 : 0);
-        Func<int, int, (int x, int y)> convertIndexFlip = flag switch
-        {
-            0 => (w, h) => (w, h),
-            1 => (w, h) => (width - w - 1, h),
-            2 => (w, h) => (w, height - h - 1),
-            _ => (w, h) => (width - w - 1, height - h - 1)
-        };
-
-        Func<(int x, int y), int> convertIndexRotate = rotate switch
-        {
-            0 => p => width * p.y + p.x,
-            1 => p => height * p.x + height - p.y - 1,
-            2 => new Func<(int x, int y), int>(p => (height - p.y - 1) * width + (width - p.x - 1)),
-            _ => p => height * (width - p.x - 1) + p.y
-        };
-
         if (flag == 0 && rotate == 0)
             return [.. src];
         else
         {
+            Func<int, int, (int x, int y)> convertIndexFlip = flag switch
+            {
+                0 => (w, h) => (w, h),
+                1 => (w, h) => (width - w - 1, h),
+                2 => (w, h) => (w, height - h - 1),
+                _ => (w, h) => (width - w - 1, height - h - 1)
+            };
+
+            Func<(int x, int y), int> convertIndexRotate = rotate switch
+            {
+                0 => p => width * p.y + p.x,
+                1 => p => height * p.x + height - p.y - 1,
+                2 => new Func<(int x, int y), int>(p => (height - p.y - 1) * width + (width - p.x - 1)),
+                _ => p => height * (width - p.x - 1) + p.y
+            };
+
+
             var result = GC.AllocateUninitializedArray<double>(src.Length);
             if (flag != 0 || rotate != 0)
                 for (int h = 0; h < height; h++)
