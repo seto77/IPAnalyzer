@@ -871,6 +871,7 @@ public partial class FormMain : Form
             pseudoBitmap.Filter2 = [.. Ring.IsThresholdUnder];
             pseudoBitmap.Filter3 = [.. Ring.IsSpots];
             pseudoBitmap.Filter4 = [.. Ring.IsOutsideOfIntegralRegion];
+            pseudoBitmap.Filter5 = [.. Ring.IsOutsideOfIntegralProperty];
         }
 
         var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
