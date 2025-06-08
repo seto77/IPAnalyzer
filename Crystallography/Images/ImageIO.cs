@@ -10,7 +10,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Crystallography;
 public static class ImageIO
@@ -731,14 +730,37 @@ public static class ImageIO
 
     public static bool NXS(string filename)
     {
-        var header = "/entry/instrument/detector/";
         var hdf = new HDF(filename);
 
-        var data = hdf.GetDataset(header + "data");
-        int height = (int)data.Space.Dimensions[1], width = (int)data.Space.Dimensions[2];
-        Ring.Intensity = [.. data.Read<int[]>().Select(e => (double)e)];
+        var header = "/entry/instrument/detector/";
 
-        double pixSizeX = hdf.GetDataset(header + "x_pixel_size").Read<double>(), pixSizeY = hdf.GetDataset(header + "y_pixel_size").Read<double>();
+        var data = hdf.GetDataset(header + "data");
+
+        int num = (int)data.Space.Dimensions[0], height = (int)data.Space.Dimensions[1], width = (int)data.Space.Dimensions[2];
+
+        if(num==1)
+            Ring.Intensity = [.. data.Read<int[]>().Select(e => (double)e)];
+        else
+        {
+            var src = data.Read<int[]>().Select(e=>(double)e).ToArray();
+            Ring.SequentialImageIntensities = [];
+            for(int i=0; i< num; i++)
+                Ring.SequentialImageIntensities.Add( src[(i*width*height)..((i+1)*(width*height))] );
+
+            Ring.SequentialImageNames = [..Enumerable.Range(1,num+1).Select(e=>e.ToString("000"))];
+          
+
+            Ring.Intensity = Ring.SequentialImageIntensities[0];
+        }
+
+
+
+        // double pixSizeX = hdf.GetDataset(header + "x_pixel_size").Read<double>(), pixSizeY = hdf.GetDataset(header + "y_pixel_size").Read<double>();
+
+        Ring.SrcImgSize = new Size(width, height);
+        Ring.ImageType = Ring.ImageTypeEnum.NXS;
+
+        #region コメント情報の取得
 
         (string Name, Type Type)[] comments = [
             ("acquisition_mode", typeof(string)),
@@ -754,22 +776,19 @@ public static class ImageIO
             ("saturation_value", typeof(int)),
             ("sensor_material", typeof(string)),
             ("sensor_thickness", typeof(float)),
-            ("sequence_number", typeof(int)),
+            ("sequence_number", typeof(int[])),
             ("trigger_dead_time", typeof(double)),
             ("trigger_delay_time", typeof(double)),
             ("type", typeof(string)),
             ("x_pixel_size", typeof(double)),
             ("y_pixel_size", typeof(double)),
         ];
-
-        Ring.SrcImgSize = new Size(width, height);
-        Ring.ImageType = Ring.ImageTypeEnum.NXS;
-
         var sb = new StringBuilder();
         foreach (var (name, type) in comments)
         {
             var dataset = hdf.GetDataset(header + name);
-            if (dataset != null)
+
+            if (dataset != null && dataset.Space.Dimensions.Length ==1)
             {
                 if (type == typeof(string))
                     sb.AppendLine($"{name}: {dataset.ReadStr()}");
@@ -786,6 +805,7 @@ public static class ImageIO
             }
         }
         Ring.Comments = sb.ToString();
+        #endregion
 
         return true;
     }

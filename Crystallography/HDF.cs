@@ -2,38 +2,32 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Runtime.InteropServices;
 using PureHDF;
-using PureHDF.Selections;
 namespace Crystallography;
-
-
-public class H5DatasetAdv
-{
-    private IH5Dataset dataset;
-    public string Path;
-
-    public string Name => dataset.Name;
-    public IH5Dataspace Space => dataset.Space;
-    public IH5DataType Type => dataset.Type;
-
-    public T Read<T>() => dataset.Read<T>();
-
-    public string ReadStr() => dataset.Read<string>();
-
-    public H5DatasetAdv(IH5Dataset dataset, string path)
-    {
-        this.dataset = dataset;
-        Path = path;
-    }   
-
-    
-    //public T Read() { return dataset.Read<T>(); }
-
-}
-
 public class HDF
 {
+    public class H5DatasetAdv
+    {
+        private IH5Dataset dataset;
+        public IH5Dataset DatasetOriginal => dataset;
+
+        public string Path;
+
+        public string Name => dataset.Name;
+        public IH5Dataspace Space => dataset.Space;
+        public IH5DataType Type => dataset.Type;
+
+        public T Read<T>() => dataset.Read<T>();
+
+        public string ReadStr() => dataset.Read<string>();
+
+        public H5DatasetAdv(IH5Dataset dataset, string path)
+        {
+            this.dataset = dataset;
+            Path = path;
+        }
+    }
+
     public List<H5DatasetAdv> Datasets = [];
 
     public H5DatasetAdv GetDataset(string path)
@@ -60,13 +54,12 @@ public class HDF
                 else if (link is IH5Dataset childDataset)
                     datasets.Add(childDataset);
             }
+            Datasets.AddRange(datasets.Select(d => new H5DatasetAdv(d, path + "/" + d.Name)));
 
-            if(groups.Count >0)
-                foreach (var childGroup in groups)
-                    func(childGroup, path+"/"+childGroup.Name);
-
-            Datasets.AddRange(datasets.Select(d=> new H5DatasetAdv(d, path+"/" + d.Name)));
+            foreach (var childGroup in groups)
+                func(childGroup, path + "/" + childGroup.Name);
         }
+
         func(file.Group("/"), "");
 
         //var rootId = H5G.open(h5, "/");

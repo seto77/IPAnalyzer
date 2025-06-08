@@ -189,6 +189,10 @@ public partial class FormFindParameterBruteForce : Form
                 //backgroundProfile[i].Pt.Add(new PointD(startTheta, pf.B1 + pf.B2 * (startTheta - pf.X)));
                 //backgroundProfile[i].Pt.Add(new PointD(endTheta, pf.B1 + pf.B2 * (endTheta - pf.X)));
             }
+            else
+            {
+                lineList.Add(new PointD(p.XCalc, double.NaN));
+            }
         }
         for (int i = 0; i < profiles.Count; i++)
         {
@@ -309,7 +313,7 @@ public partial class FormFindParameterBruteForce : Form
         buttonStop.Visible = false;
 
         if (originalSpots != null)
-            Ring.IsSpots = [..originalSpots];
+            Ring.IsSpots = [.. originalSpots];
         FormMain.FormProperty.numericBoxConcentricStart.Value = initialStart;
         FormMain.FormProperty.numericBoxConcentricEnd.Value = initialEnd;
         FormMain.SkipDrawing = false;
@@ -540,7 +544,7 @@ public partial class FormFindParameterBruteForce : Form
 
         if (originalSpots != null)
             Ring.IsSpots = [.. originalSpots];
-        
+
         FormMain.FormProperty.numericBoxConcentricStart.Value = initialStart;
         FormMain.FormProperty.numericBoxConcentricEnd.Value = initialEnd;
         FormMain.Draw();
@@ -906,8 +910,6 @@ public partial class FormFindParameterBruteForce : Form
             crystal = new Crystal((0.5411102, 0.5411102, 0.5411102, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "CeO2", Color.Violet);
             crystal.AddAtoms("Ce", 58, 0, 0, null, 0, 0, 0, 1, new DiffuseScatteringFactor());
             crystal.AddAtoms("O", 8, 0, 0, null, 0.25, 0.25, 0.25, 1, new DiffuseScatteringFactor());
-
-
         }
         else if (name.Contains("LaB6"))
         {
@@ -931,6 +933,9 @@ public partial class FormFindParameterBruteForce : Form
 
         crystalControl1.Crystal = crystal;
         crystalControl1.Enabled = false;
+
+        getProfile();
+
     }
 
     private void radioButtonDirectSpotMode_CheckedChanged(object sender, EventArgs e)
@@ -973,5 +978,8 @@ public partial class FormFindParameterBruteForce : Form
 
     }
 
-
+    private void numericBoxFittingRange_ValueChanged(object sender, EventArgs e)
+    {
+        getProfile();
+    }
 }

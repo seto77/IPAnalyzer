@@ -290,7 +290,6 @@
             numericBoxCameraLengthRange.Minimum = 0D;
             numericBoxCameraLengthRange.Name = "numericBoxCameraLengthRange";
             numericBoxCameraLengthRange.RadianValue = 0.017453292519943295D;
-            numericBoxCameraLengthRange.RoundErrorAccuracy = -1;
             numericBoxCameraLengthRange.ShowUpDown = true;
             numericBoxCameraLengthRange.Value = 1D;
             // 
@@ -341,7 +340,6 @@
             numericBoxFootPointXRange.Minimum = 0D;
             numericBoxFootPointXRange.Name = "numericBoxFootPointXRange";
             numericBoxFootPointXRange.RadianValue = 0.017453292519943295D;
-            numericBoxFootPointXRange.RoundErrorAccuracy = -1;
             numericBoxFootPointXRange.ShowUpDown = true;
             numericBoxFootPointXRange.Value = 1D;
             // 
@@ -353,7 +351,6 @@
             numericBoxFootPointYRange.Minimum = 0D;
             numericBoxFootPointYRange.Name = "numericBoxFootPointYRange";
             numericBoxFootPointYRange.RadianValue = 0.017453292519943295D;
-            numericBoxFootPointYRange.RoundErrorAccuracy = -1;
             numericBoxFootPointYRange.ShowUpDown = true;
             numericBoxFootPointYRange.Value = 1D;
             // 
@@ -373,7 +370,6 @@
             numericBoxWaveLengthStep.Minimum = 0D;
             numericBoxWaveLengthStep.Name = "numericBoxWaveLengthStep";
             numericBoxWaveLengthStep.RadianValue = 8.7266462599716491E-07D;
-            numericBoxWaveLengthStep.RoundErrorAccuracy = -1;
             numericBoxWaveLengthStep.ShowUpDown = true;
             numericBoxWaveLengthStep.SmartIncrement = true;
             numericBoxWaveLengthStep.Value = 5E-05D;
@@ -386,7 +382,6 @@
             numericBoxWaveLengthRange.Minimum = 0D;
             numericBoxWaveLengthRange.Name = "numericBoxWaveLengthRange";
             numericBoxWaveLengthRange.RadianValue = 0.034906585039886591D;
-            numericBoxWaveLengthRange.RoundErrorAccuracy = -1;
             numericBoxWaveLengthRange.ShowUpDown = true;
             numericBoxWaveLengthRange.Value = 2D;
             // 
@@ -458,7 +453,6 @@
             numericBox7.Minimum = 0D;
             numericBox7.Name = "numericBox7";
             numericBox7.RadianValue = 0.017453292519943295D;
-            numericBox7.RoundErrorAccuracy = -1;
             numericBox7.ShowUpDown = true;
             numericBox7.Value = 1D;
             // 
@@ -470,7 +464,6 @@
             numericBox6.Minimum = 0D;
             numericBox6.Name = "numericBox6";
             numericBox6.RadianValue = 0.017453292519943295D;
-            numericBox6.RoundErrorAccuracy = -1;
             numericBox6.ShowUpDown = true;
             numericBox6.Value = 1D;
             // 
@@ -482,7 +475,6 @@
             numericBox5.Minimum = 0D;
             numericBox5.Name = "numericBox5";
             numericBox5.RadianValue = 0.017453292519943295D;
-            numericBox5.RoundErrorAccuracy = -1;
             numericBox5.ShowUpDown = true;
             numericBox5.Value = 1D;
             // 
@@ -507,7 +499,6 @@
             numericBoxTauRange.Minimum = 0D;
             numericBoxTauRange.Name = "numericBoxTauRange";
             numericBoxTauRange.RadianValue = 0.017453292519943295D;
-            numericBoxTauRange.RoundErrorAccuracy = -1;
             numericBoxTauRange.ShowUpDown = true;
             numericBoxTauRange.Value = 1D;
             // 
@@ -541,7 +532,6 @@
             numericBoxPhiRange.Minimum = 0D;
             numericBoxPhiRange.Name = "numericBoxPhiRange";
             numericBoxPhiRange.RadianValue = 0.017453292519943295D;
-            numericBoxPhiRange.RoundErrorAccuracy = -1;
             numericBoxPhiRange.ShowUpDown = true;
             numericBoxPhiRange.Value = 1D;
             // 
@@ -989,7 +979,7 @@
             resources.ApplyResources(graphControl1, "graphControl1");
             graphControl1.AxisLineColor = System.Drawing.Color.Gray;
             graphControl1.AxisTextColor = System.Drawing.Color.Black;
-            graphControl1.AxisTextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            graphControl1.AxisTextFont = new System.Drawing.Font("Segoe UI", 9F);
             graphControl1.AxisXTextVisible = true;
             graphControl1.AxisYTextVisible = true;
             graphControl1.BackgroundColor = System.Drawing.Color.White;
@@ -1024,7 +1014,7 @@
             graphControl1.Smoothing = false;
             graphControl1.UnitX = "";
             graphControl1.UnitY = "";
-            graphControl1.UpperPanelFont = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            graphControl1.UpperPanelFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
             graphControl1.UpperPanelVisible = true;
             graphControl1.UpperX = 1D;
             graphControl1.UpperY = 1D;
@@ -1069,8 +1059,8 @@
             numericBoxFittingRange.BackColor = System.Drawing.Color.Transparent;
             numericBoxFittingRange.Name = "numericBoxFittingRange";
             numericBoxFittingRange.RadianValue = 0.0069813170079773184D;
-            numericBoxFittingRange.RoundErrorAccuracy = -1;
             numericBoxFittingRange.Value = 0.4D;
+            numericBoxFittingRange.ValueChanged += numericBoxFittingRange_ValueChanged;
             // 
             // numericBoxWeight
             // 
@@ -1078,7 +1068,6 @@
             numericBoxWeight.BackColor = System.Drawing.Color.Transparent;
             numericBoxWeight.Name = "numericBoxWeight";
             numericBoxWeight.RadianValue = 1.7453292519943295D;
-            numericBoxWeight.RoundErrorAccuracy = -1;
             numericBoxWeight.Value = 100D;
             // 
             // radioButtonStandardAu
