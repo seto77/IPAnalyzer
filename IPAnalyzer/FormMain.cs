@@ -1890,7 +1890,7 @@ public partial class FormMain : Form
     /// <param name="e"></param>
     private void readImageToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        var dlg = new OpenFileDialog { Filter = ImageIO.FilterString, FilterIndex = filterIndex };
+        var dlg = new OpenFileDialog { Filter = ImageIO.FilterString + "|All files(*.*)|*.*", FilterIndex = filterIndex };
 
         if (initialImageDirectory != "")
             dlg.InitialDirectory = initialImageDirectory;

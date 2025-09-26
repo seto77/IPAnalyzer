@@ -9,7 +9,8 @@ static class Version
 
     static public string History =
         "History" +
-        "\r\n ver3.966(2025/08/29) Fixe a bug on NeXus Data Format (*.nxs)." +
+        "\r\n ver3.967(2025/09/26) Fixed a minor bug on load/save registry." +
+        "\r\n ver3.966(2025/08/29) Fixed a bug on NeXus Data Format (*.nxs)." +
         "\r\n ver3.965(2025/05/20) Fixe minor bugs." +
         "\r\n ver3.964(2025/05/17) Compatible with NeXus Data Format (*.nxs)." +
         "\r\n ver3.963(2025/05/04) Fixed minor bugs (see https://github.com/seto77/IPAnalyzer/issues/6)" +
