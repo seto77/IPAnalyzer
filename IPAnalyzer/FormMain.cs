@@ -162,6 +162,9 @@ public partial class FormMain : Form
             regKey.SetValue("formMainLocationX", Location.X);
             regKey.SetValue("formMainLocationY", Location.Y);
 
+            regKey.SetValue("findCenterBeforeGetProfile", findCenterBeforeGetProfileToolStripMenuItem.Checked);
+            regKey.SetValue("maskSpotsBeforeGetProfile", maskSpotsBeforeGetProfileToolStripMenuItem.Checked);
+
             //FindParameter関係
             regKey.SetValue("formFindParameterWidth", FormFindParameter.Width);
             regKey.SetValue("formFindParameterHeight", FormFindParameter.Height);
@@ -173,6 +176,7 @@ public partial class FormMain : Form
             //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
             //regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
             //regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
+            
             //DrawRingK関係
             regKey.SetValue("formDrawRingWidth", FormDrawRing.Width);
             regKey.SetValue("formDrawRingHeight", FormDrawRing.Height);
@@ -207,7 +211,6 @@ public partial class FormMain : Form
             regKey.SetValue("numericUpDownIntensityStartDspacingValue", FormProperty.StartDspacing);
             regKey.SetValue("numericUpDownIntensityEndDspacingValue", FormProperty.EndDspacing);
             regKey.SetValue("numericUpDownIntensityStepDspacingValue", FormProperty.StepDspacing);
-
 
             regKey.SetValue("formProperty.SectorRadiusTheta", FormProperty.SectorRadiusTheta);
             regKey.SetValue("formProperty.SectorRadiusThetaRange", FormProperty.SectorRadiusThetaRange);
@@ -317,13 +320,11 @@ public partial class FormMain : Form
     #region レジストリをロード
     public void LoadRegistry()
     {
-
         try
         {
             RegistryKey regKey = Registry.CurrentUser.OpenSubKey("Software\\Crystallography\\IPAnalyzer");
 
             if (regKey == null) return;
-
 
             //サイズ、位置関係
             if ((int)regKey.GetValue("formMainLocationX", Location.X) >= 0)
@@ -341,16 +342,18 @@ public partial class FormMain : Form
                 comboBoxScale2.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScale2.SelectedIndex", 0);
                 comboBoxScaleLine.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScaleLine.SelectedIndex", 0);
 
-
                 initialImageDirectory = (string)regKey.GetValue("initialImageDirectory", "");
                 initialParameterDirectory = (string)regKey.GetValue("initialParameterDirectory", "");
                 initialMaskDirectory = (string)regKey.GetValue("initialMaskDirectory", "");
                 filterIndex = (int)regKey.GetValue("filterIndex", 0);
+                
+                findCenterBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("findCenterBeforeGetProfile", "False") == "True";
+                maskSpotsBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("maskSpotsBeforeGetProfile", "False") == "True";
             }
             if (InitialDialog != null)
             {
                 InitialDialog.Location = new Point(Location.X + Width / 2 - InitialDialog.Width / 2, Location.Y + Height / 2 - InitialDialog.Height / 2);
-                InitialDialog.AutomaticallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "False") == "True";
+                InitialDialog.AutomaticallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "True") == "True";
             }
 
 
@@ -384,8 +387,6 @@ public partial class FormMain : Form
                 //formMain.formProperty.Width = (int)regKey.GetValue("formPropertyWidth", formMain.formProperty.Width);
                 //formMain.formProperty.Height = (int)regKey.GetValue("formPropertyHeight", formMain.formProperty.Height);
                 FormProperty.Location = new Point((int)regKey.GetValue("formPropertyLocationX", FormProperty.Location.X), (int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y));
-
-
 
                 FormProperty.numericBoxPixelSizeX.Text = (string)regKey.GetValue("textBoxPixelSizeXText", "0.1");
                 FormProperty.numericBoxPixelSizeY.Text = (string)regKey.GetValue("textBoxPixelSizeYText", "0.1");
@@ -423,16 +424,15 @@ public partial class FormMain : Form
                 FormProperty.radioButtonAngleMode_CheckedChanged(new object(), new EventArgs());
 
                 //ここからRadial Modeの内容
-                FormProperty.SectorRadiusTheta = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusTheta", FormProperty.SectorRadiusTheta));
-                FormProperty.SectorRadiusThetaRange = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusThetaRange", FormProperty.SectorRadiusThetaRange));
-                FormProperty.SectorRadiusD = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusD", FormProperty.SectorRadiusD));
-                FormProperty.SectorRadiusDRange = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusDRange", FormProperty.SectorRadiusDRange));
-                FormProperty.SectorAngle = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorAngle", FormProperty.SectorAngle));
+                FormProperty.SectorRadiusTheta = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusTheta", FormProperty.SectorRadiusTheta.ToString()));
+                FormProperty.SectorRadiusThetaRange = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusThetaRange", FormProperty.SectorRadiusThetaRange.ToString()));
+                FormProperty.SectorRadiusD = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusD", FormProperty.SectorRadiusD.ToString()));
+                FormProperty.SectorRadiusDRange = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusDRange", FormProperty.SectorRadiusDRange.ToString()));
+                FormProperty.SectorAngle = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorAngle", FormProperty.SectorAngle.ToString()));
 
                 FormProperty.radioButtonRadialAngle.Checked = (string)regKey.GetValue("formProperty.radioButtonRadialAngle.Checked", "True") == "True";
 
                 FormProperty.radioButtonRadialAngle_CheckedChanged(new object(), new EventArgs());
-
 
                 //chi角の方向など
                 if ((string)regKey.GetValue("formProperty.radioButtonChiClockwise.Checked", "True") == "True")
@@ -471,6 +471,7 @@ public partial class FormMain : Form
                 FormProperty.checkBoxCorrectPolarization.Checked = (string)regKey.GetValue("FormProperty.checkBoxCorrectPolarization.Checked", "True") == "True";
 
                 //ここからイメージタイプごとのパラメータ読み込み
+                #region
                 for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
                 {
                     FormProperty.ImageTypeParameters[i].CenterPosX = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CenterPosX" + i.ToString(), "0"));
@@ -618,6 +619,7 @@ public partial class FormMain : Form
                     //formProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthFuji", "0.4"));
                 }
 
+                #endregion
             }
 
             //regKey = regKey.OpenSubKey("Macro");
@@ -627,8 +629,6 @@ public partial class FormMain : Form
             //    byteArray[i] = (byte[])regKey.GetValue("Macro" + i.ToString(), null);
             if (FormMacro != null)
                 FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", Array.Empty<byte>());
-
-
 
             regKey.Close();
         }
@@ -3431,7 +3431,7 @@ public partial class FormMain : Form
             toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
         }
         //スポット検出の必要があれば
-        if (findSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
+        if (maskSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
             toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
 
         IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d;
@@ -4664,8 +4664,8 @@ public partial class FormMain : Form
             }
             public bool FindSpotsBeforeGetProfile
             {
-                set => Execute(new Action(() => p.main.findSpotsBeforeGetProfileToolStripMenuItem.Checked = value));
-                get => Execute(() => p.main.findSpotsBeforeGetProfileToolStripMenuItem.Checked);
+                set => Execute(new Action(() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked = value));
+                get => Execute(() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked);
             }
             public bool SendProfileViaClipboard
             {
