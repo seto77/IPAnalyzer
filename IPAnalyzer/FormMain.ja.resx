@@ -938,13 +938,13 @@
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 72</value>
   </data>
-  <data name="toolStripSplitButtonFindSpots.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="toolStripSplitButtonMaskSpots.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="toolStripSplitButtonFindSpots.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSplitButtonMaskSpots.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 72</value>
   </data>
-  <data name="toolStripSplitButtonFindSpots.Text" xml:space="preserve">
+  <data name="toolStripSplitButtonMaskSpots.Text" xml:space="preserve">
     <value>スポット
 検出</value>
   </data>
@@ -969,19 +969,19 @@
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 6</value>
   </data>
-  <data name="toolStripMenuItemFindSpotsManual.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItemMaskSpotsManual.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
   </data>
-  <data name="toolStripMenuItemFindSpotsManual.Text" xml:space="preserve">
+  <data name="toolStripMenuItemMaskSpotsManual.Text" xml:space="preserve">
     <value>マスクをマニュアル設定</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 6</value>
   </data>
-  <data name="toolStripMenuItemFindSpotsOption.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItemMaskSpotsOption.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
   </data>
-  <data name="toolStripMenuItemFindSpotsOption.Text" xml:space="preserve">
+  <data name="toolStripMenuItemMaskSpotsOption.Text" xml:space="preserve">
     <value>オプション</value>
   </data>
   <data name="toolStripButtonManualSpotMode.Font" type="System.Drawing.Font, System.Drawing">
@@ -1063,10 +1063,10 @@
   <data name="findCenterBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
     <value>「１次元化」前に中心位置を検索</value>
   </data>
-  <data name="findSpotsBeforeGetProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>292, 22</value>
   </data>
-  <data name="findSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
     <value>「１次元化」前にスポット検出</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">

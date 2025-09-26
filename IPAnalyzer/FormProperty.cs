@@ -521,7 +521,7 @@ public partial class FormProperty : Form
 
     private void checkBoxManualMaskMode_CheckedChanged(object sender, EventArgs e)
     {
-        formMain.toolStripMenuItemFindSpotsManual.Checked = checkBoxManualMaskMode.Checked;
+        formMain.toolStripMenuItemMaskSpotsManual.Checked = checkBoxManualMaskMode.Checked;
         formMain.toolStripButtonManualSpotMode.Checked = checkBoxManualMaskMode.Checked;
         groupBoxManualMode.Enabled = checkBoxManualMaskMode.Checked;
     }

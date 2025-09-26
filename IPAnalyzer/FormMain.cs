@@ -1335,7 +1335,7 @@ public partial class FormMain : Form
         if (!IsImageReady) return true; ;
 
         //マニュアルスポットモード時
-        if (toolStripMenuItemFindSpotsManual.Checked)
+        if (toolStripMenuItemMaskSpotsManual.Checked)
         {
             // PointD p = new PointD((pt.X - IP.CenterX) * IP.PixSizeX + (pt.Y - IP.CenterY) * IP.PixSizeY * Math.Tan(IP.ksi), (pt.Y - IP.CenterY) * IP.PixSizeY);
             if (FormProperty.radioButtonManualSpot.Checked)
@@ -1767,8 +1767,6 @@ public partial class FormMain : Form
     public bool SkipMax = false;
     public bool SkipMin = false;
     //NumetricUpDownpseudBitmap.MaxValue変更時
-
-
     private bool trackBarAdvancedMaxInt_ValueChanged(object sender, double value)
     {
         if (SkipMax) return true;
@@ -3287,7 +3285,7 @@ public partial class FormMain : Form
     #endregion
 
     #region FindSpotsボタン関連
-    public void toolStripSplitButtonFindSpots_ButtonClick(object sender, EventArgs e)
+    public void toolStripSplitButtonMaskSpots_ButtonClick(object sender, EventArgs e)
     {
         MaskSpots();
     }
@@ -3297,13 +3295,13 @@ public partial class FormMain : Form
         if (!IsImageReady) return;
 
         this.Cursor = Cursors.WaitCursor;
-        toolStripSplitButtonFindSpots.Enabled = false;
+        toolStripSplitButtonMaskSpots.Enabled = false;
         int d = Environment.TickCount;
         SetIntegralProperty();
         Ring.FindSpots(IP, (double)FormProperty.numericUpDownFindSpotsDeviation.Value);
         Draw();
         this.Cursor = Cursors.Default;
-        toolStripSplitButtonFindSpots.Enabled = true;
+        toolStripSplitButtonMaskSpots.Enabled = true;
         this.toolStripStatusLabel.Text = "Calculating Time (Find Spots):  " + (Environment.TickCount - d).ToString() + "ms";
 
 
@@ -3368,14 +3366,14 @@ public partial class FormMain : Form
         if (toolStripButtonManualSpotMode.Checked)
         {
             toolStripButtonManualSpotMode.ForeColor = Color.Red;
-            toolStripSplitButtonFindSpots.Enabled = false;
+            toolStripSplitButtonMaskSpots.Enabled = false;
             FormProperty.tabControl.SelectedIndex = 4;
             FormProperty.checkBoxManualMaskMode.Checked = true;
         }
         else
         {
             toolStripButtonManualSpotMode.ForeColor = Color.Gray;
-            toolStripSplitButtonFindSpots.Enabled = true;
+            toolStripSplitButtonMaskSpots.Enabled = true;
             FormProperty.checkBoxManualMaskMode.Checked = false;
         }
     }
@@ -3432,7 +3430,7 @@ public partial class FormMain : Form
         }
         //スポット検出の必要があれば
         if (maskSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
-            toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
+            toolStripSplitButtonMaskSpots_ButtonClick(new object(), new EventArgs());
 
         IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d;
         try
@@ -3906,7 +3904,7 @@ public partial class FormMain : Form
                 if (e.KeyCode == Keys.F)
                     toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + F
                 else if (e.KeyCode == Keys.S)
-                    toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + S
+                    toolStripSplitButtonMaskSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + S
                 else if (e.KeyCode == Keys.G)
                     toolStripSplitButtonGetProfileButtonClick(new object(), new EventArgs());//CTRL + SHIFT + G
                 else if (e.KeyCode == Keys.B)
@@ -4662,10 +4660,10 @@ public partial class FormMain : Form
                 set => Execute(new Action(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked = value));
                 get => Execute(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked);
             }
-            public bool FindSpotsBeforeGetProfile
+            public bool MaskSpotsBeforeGetProfile
             {
                 set => Execute(new Action(() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked = value));
-                get => Execute(() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked);
+                get => Execute((() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked));
             }
             public bool SendProfileViaClipboard
             {

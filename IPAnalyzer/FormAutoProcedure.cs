@@ -79,7 +79,7 @@ public partial class FormAutoProcedure : Form
 
         //MaskSpots
         if (checkedListBoxAuto.GetItemChecked(2))
-            formMain.toolStripSplitButtonFindSpots_ButtonClick(new object(), new EventArgs());
+            formMain.toolStripSplitButtonMaskSpots_ButtonClick(new object(), new EventArgs());
         Application.DoEvents();
 
         //GetProfile
