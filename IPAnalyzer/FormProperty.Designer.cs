@@ -206,6 +206,10 @@
             label23 = new System.Windows.Forms.Label();
             colorControlScaleAzimuth = new Crystallography.Controls.ColorControl();
             colorControlScale2Theta = new Crystallography.Controls.ColorControl();
+            groupBox19 = new System.Windows.Forms.GroupBox();
+            radioButtonImageName_FullPath = new System.Windows.Forms.RadioButton();
+            radioButtonImageName_LastFolderPlusFilename = new System.Windows.Forms.RadioButton();
+            radioButtonImageName_FileName = new System.Windows.Forms.RadioButton();
             groupBox18 = new System.Windows.Forms.GroupBox();
             checkBoxMaintainImageContrast = new System.Windows.Forms.CheckBox();
             checkBoxMaintainImageRange = new System.Windows.Forms.CheckBox();
@@ -298,6 +302,7 @@
             tabPage5.SuspendLayout();
             groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarScaleLineWidth).BeginInit();
+            groupBox19.SuspendLayout();
             groupBox18.SuspendLayout();
             groupBox11.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
@@ -331,12 +336,12 @@
             // 
             // tabPageXRay
             // 
-            resources.ApplyResources(tabPageXRay, "tabPageXRay");
             tabPageXRay.BackColor = System.Drawing.SystemColors.Control;
             tabPageXRay.Controls.Add(label15);
             tabPageXRay.Controls.Add(label6);
             tabPageXRay.Controls.Add(checkBoxCorrectPolarization);
             tabPageXRay.Controls.Add(waveLengthControl);
+            resources.ApplyResources(tabPageXRay, "tabPageXRay");
             tabPageXRay.Name = "tabPageXRay";
             // 
             // label15
@@ -371,7 +376,6 @@
             // 
             // tabPageIP
             // 
-            resources.ApplyResources(tabPageIP, "tabPageIP");
             tabPageIP.BackColor = System.Drawing.SystemColors.Control;
             tabPageIP.Controls.Add(flowLayoutPanel8);
             tabPageIP.Controls.Add(flowLayoutPanel7);
@@ -381,6 +385,7 @@
             tabPageIP.Controls.Add(groupBoxGandlfiRadius);
             tabPageIP.Controls.Add(groupBoxSphericalCorrection);
             tabPageIP.Controls.Add(groupBoxTiltCorrection);
+            resources.ApplyResources(tabPageIP, "tabPageIP");
             tabPageIP.Name = "tabPageIP";
             // 
             // flowLayoutPanel8
@@ -448,9 +453,9 @@
             // 
             // groupBox9
             // 
-            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Controls.Add(numericBoxFootPositionY);
             groupBox9.Controls.Add(numericBoxFootPositionX);
+            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Name = "groupBox9";
             groupBox9.TabStop = false;
             // 
@@ -486,9 +491,9 @@
             // 
             // groupBox10
             // 
-            resources.ApplyResources(groupBox10, "groupBox10");
             groupBox10.Controls.Add(label17);
             groupBox10.Controls.Add(numericBoxCameraLength2);
+            resources.ApplyResources(groupBox10, "groupBox10");
             groupBox10.Name = "groupBox10";
             groupBox10.TabStop = false;
             // 
@@ -521,9 +526,9 @@
             // 
             // groupBoxDirectSpotPosition
             // 
-            resources.ApplyResources(groupBoxDirectSpotPosition, "groupBoxDirectSpotPosition");
             groupBoxDirectSpotPosition.Controls.Add(numericBoxDirectSpotPositionY);
             groupBoxDirectSpotPosition.Controls.Add(numericBoxDirectSpotPositionX);
+            resources.ApplyResources(groupBoxDirectSpotPosition, "groupBoxDirectSpotPosition");
             groupBoxDirectSpotPosition.Name = "groupBoxDirectSpotPosition";
             groupBoxDirectSpotPosition.TabStop = false;
             // 
@@ -559,9 +564,9 @@
             // 
             // groupBoxCameaLength
             // 
-            resources.ApplyResources(groupBoxCameaLength, "groupBoxCameaLength");
             groupBoxCameaLength.Controls.Add(label18);
             groupBoxCameaLength.Controls.Add(numericBoxCameraLength1);
+            resources.ApplyResources(groupBoxCameaLength, "groupBoxCameaLength");
             groupBoxCameaLength.Name = "groupBoxCameaLength";
             groupBoxCameaLength.TabStop = false;
             // 
@@ -587,10 +592,10 @@
             // 
             // groupBoxPixelShape
             // 
-            resources.ApplyResources(groupBoxPixelShape, "groupBoxPixelShape");
             groupBoxPixelShape.Controls.Add(numericBoxPixelKsi);
             groupBoxPixelShape.Controls.Add(numericBoxPixelSizeY);
             groupBoxPixelShape.Controls.Add(numericBoxPixelSizeX);
+            resources.ApplyResources(groupBoxPixelShape, "groupBoxPixelShape");
             groupBoxPixelShape.Name = "groupBoxPixelShape";
             groupBoxPixelShape.TabStop = false;
             // 
@@ -636,8 +641,8 @@
             // 
             // groupBoxGandlfiRadius
             // 
-            resources.ApplyResources(groupBoxGandlfiRadius, "groupBoxGandlfiRadius");
             groupBoxGandlfiRadius.Controls.Add(numericBoxGandlfiRadius);
+            resources.ApplyResources(groupBoxGandlfiRadius, "groupBoxGandlfiRadius");
             groupBoxGandlfiRadius.Name = "groupBoxGandlfiRadius";
             groupBoxGandlfiRadius.TabStop = false;
             groupBoxGandlfiRadius.Enter += groupBoxGandlfiRadius_Enter;
@@ -656,9 +661,9 @@
             // 
             // groupBoxSphericalCorrection
             // 
-            resources.ApplyResources(groupBoxSphericalCorrection, "groupBoxSphericalCorrection");
             groupBoxSphericalCorrection.Controls.Add(numericBoxSphericalCorections);
             groupBoxSphericalCorrection.Controls.Add(label26);
+            resources.ApplyResources(groupBoxSphericalCorrection, "groupBoxSphericalCorrection");
             groupBoxSphericalCorrection.Name = "groupBoxSphericalCorrection";
             groupBoxSphericalCorrection.TabStop = false;
             // 
@@ -683,9 +688,9 @@
             // 
             // groupBoxTiltCorrection
             // 
-            resources.ApplyResources(groupBoxTiltCorrection, "groupBoxTiltCorrection");
             groupBoxTiltCorrection.Controls.Add(numericBoxTiltTau);
             groupBoxTiltCorrection.Controls.Add(numericBoxTiltPhi);
+            resources.ApplyResources(groupBoxTiltCorrection, "groupBoxTiltCorrection");
             groupBoxTiltCorrection.Name = "groupBoxTiltCorrection";
             groupBoxTiltCorrection.TabStop = false;
             // 
@@ -717,18 +722,17 @@
             // 
             // tabPageIntegralRegion
             // 
-            resources.ApplyResources(tabPageIntegralRegion, "tabPageIntegralRegion");
             tabPageIntegralRegion.BackColor = System.Drawing.SystemColors.Control;
             tabPageIntegralRegion.Controls.Add(groupBox8);
             tabPageIntegralRegion.Controls.Add(radioButtonRectangle);
             tabPageIntegralRegion.Controls.Add(groupBoxRectangle);
             tabPageIntegralRegion.Controls.Add(radioButtonSector);
             tabPageIntegralRegion.Controls.Add(groupBoxSector);
+            resources.ApplyResources(tabPageIntegralRegion, "tabPageIntegralRegion");
             tabPageIntegralRegion.Name = "tabPageIntegralRegion";
             // 
             // groupBox8
             // 
-            resources.ApplyResources(groupBox8, "groupBox8");
             groupBox8.Controls.Add(numericUpDownThresholdOfIntensityMax);
             groupBox8.Controls.Add(label2);
             groupBox8.Controls.Add(numericUpDownThresholdOfIntensityMin);
@@ -737,6 +741,7 @@
             groupBox8.Controls.Add(checkBoxMaskEdge);
             groupBox8.Controls.Add(checkBoxThresholdMax);
             groupBox8.Controls.Add(checkBoxThresholdMin);
+            resources.ApplyResources(groupBox8, "groupBox8");
             groupBox8.Name = "groupBox8";
             groupBox8.TabStop = false;
             // 
@@ -807,7 +812,6 @@
             // 
             // groupBoxRectangle
             // 
-            resources.ApplyResources(groupBoxRectangle, "groupBoxRectangle");
             groupBoxRectangle.Controls.Add(checkBoxRectangleIsBothSide);
             groupBoxRectangle.Controls.Add(comboBoxRectangleDirection);
             groupBoxRectangle.Controls.Add(label8);
@@ -815,6 +819,7 @@
             groupBoxRectangle.Controls.Add(numericUpDownRectangleBand);
             groupBoxRectangle.Controls.Add(numericUpDownRectangleAngle);
             groupBoxRectangle.Controls.Add(label9);
+            resources.ApplyResources(groupBoxRectangle, "groupBoxRectangle");
             groupBoxRectangle.Name = "groupBoxRectangle";
             groupBoxRectangle.TabStop = false;
             // 
@@ -852,8 +857,8 @@
             // 
             // numericUpDownRectangleAngle
             // 
-            resources.ApplyResources(numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
             numericUpDownRectangleAngle.DecimalPlaces = 3;
+            resources.ApplyResources(numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
             numericUpDownRectangleAngle.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
             numericUpDownRectangleAngle.Name = "numericUpDownRectangleAngle";
             numericUpDownRectangleAngle.ValueChanged += numericUpDownRectangleAngle_ValueChanged;
@@ -870,18 +875,18 @@
             // 
             // groupBoxSector
             // 
-            resources.ApplyResources(groupBoxSector, "groupBoxSector");
             groupBoxSector.Controls.Add(numericUpDownSectorStartAngle);
             groupBoxSector.Controls.Add(numericUpDownSectorEndAngle);
             groupBoxSector.Controls.Add(label10);
             groupBoxSector.Controls.Add(label11);
+            resources.ApplyResources(groupBoxSector, "groupBoxSector");
             groupBoxSector.Name = "groupBoxSector";
             groupBoxSector.TabStop = false;
             // 
             // numericUpDownSectorStartAngle
             // 
-            resources.ApplyResources(numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
             numericUpDownSectorStartAngle.DecimalPlaces = 2;
+            resources.ApplyResources(numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
             numericUpDownSectorStartAngle.Maximum = new decimal(new int[] { 720, 0, 0, 0 });
             numericUpDownSectorStartAngle.Minimum = new decimal(new int[] { 720, 0, 0, int.MinValue });
             numericUpDownSectorStartAngle.Name = "numericUpDownSectorStartAngle";
@@ -889,8 +894,8 @@
             // 
             // numericUpDownSectorEndAngle
             // 
-            resources.ApplyResources(numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
             numericUpDownSectorEndAngle.DecimalPlaces = 2;
+            resources.ApplyResources(numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
             numericUpDownSectorEndAngle.Maximum = new decimal(new int[] { 720, 0, 0, 0 });
             numericUpDownSectorEndAngle.Name = "numericUpDownSectorEndAngle";
             numericUpDownSectorEndAngle.ValueChanged += numericUpDownSectorAngle_ValueChanged;
@@ -907,12 +912,12 @@
             // 
             // tabPageIntegralProperty
             // 
-            resources.ApplyResources(tabPageIntegralProperty, "tabPageIntegralProperty");
             tabPageIntegralProperty.BackColor = System.Drawing.SystemColors.Control;
             tabPageIntegralProperty.Controls.Add(radioButtonRadial);
             tabPageIntegralProperty.Controls.Add(groupBoxRadial);
             tabPageIntegralProperty.Controls.Add(radioButtonConcentric);
             tabPageIntegralProperty.Controls.Add(groupBoxConcentric);
+            resources.ApplyResources(tabPageIntegralProperty, "tabPageIntegralProperty");
             tabPageIntegralProperty.Name = "tabPageIntegralProperty";
             // 
             // radioButtonRadial
@@ -923,7 +928,6 @@
             // 
             // groupBoxRadial
             // 
-            resources.ApplyResources(groupBoxRadial, "groupBoxRadial");
             groupBoxRadial.Controls.Add(label46);
             groupBoxRadial.Controls.Add(label40);
             groupBoxRadial.Controls.Add(numericBoxRadialRange);
@@ -935,6 +939,7 @@
             groupBoxRadial.Controls.Add(label37);
             groupBoxRadial.Controls.Add(label36);
             groupBoxRadial.Controls.Add(labelDimensionRadial1);
+            resources.ApplyResources(groupBoxRadial, "groupBoxRadial");
             groupBoxRadial.Name = "groupBoxRadial";
             groupBoxRadial.TabStop = false;
             // 
@@ -957,7 +962,6 @@
             numericBoxRadialRange.HeaderBackColor = System.Drawing.SystemColors.Control;
             numericBoxRadialRange.Name = "numericBoxRadialRange";
             numericBoxRadialRange.RadianValue = 0.0017453292519943296D;
-            numericBoxRadialRange.RoundErrorAccuracy = -1;
             numericBoxRadialRange.SkipEventDuringInput = false;
             numericBoxRadialRange.SmartIncrement = true;
             numericBoxRadialRange.ThonsandsSeparator = true;
@@ -973,7 +977,6 @@
             numericBoxRadialRadius.HeaderBackColor = System.Drawing.SystemColors.Control;
             numericBoxRadialRadius.Name = "numericBoxRadialRadius";
             numericBoxRadialRadius.RadianValue = 0.3490658503988659D;
-            numericBoxRadialRadius.RoundErrorAccuracy = -1;
             numericBoxRadialRadius.SkipEventDuringInput = false;
             numericBoxRadialRadius.SmartIncrement = true;
             numericBoxRadialRadius.ThonsandsSeparator = true;
@@ -989,7 +992,6 @@
             numericBoxRadialStep.HeaderBackColor = System.Drawing.SystemColors.Control;
             numericBoxRadialStep.Name = "numericBoxRadialStep";
             numericBoxRadialStep.RadianValue = 0.0008726646259971648D;
-            numericBoxRadialStep.RoundErrorAccuracy = -1;
             numericBoxRadialStep.SkipEventDuringInput = false;
             numericBoxRadialStep.SmartIncrement = true;
             numericBoxRadialStep.ThonsandsSeparator = true;
@@ -1040,15 +1042,14 @@
             // 
             // groupBoxConcentric
             // 
-            resources.ApplyResources(groupBoxConcentric, "groupBoxConcentric");
             groupBoxConcentric.Controls.Add(groupBox4);
             groupBoxConcentric.Controls.Add(groupBox5);
+            resources.ApplyResources(groupBoxConcentric, "groupBoxConcentric");
             groupBoxConcentric.Name = "groupBoxConcentric";
             groupBoxConcentric.TabStop = false;
             // 
             // groupBox4
             // 
-            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Controls.Add(numericBoxConcentricStep);
             groupBox4.Controls.Add(radioButtonConcentricLength);
             groupBox4.Controls.Add(numericBoxConcentricEnd);
@@ -1058,6 +1059,7 @@
             groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(label14);
             groupBox4.Controls.Add(label12);
+            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Name = "groupBox4";
             groupBox4.TabStop = false;
             // 
@@ -1070,7 +1072,6 @@
             numericBoxConcentricStep.HeaderBackColor = System.Drawing.SystemColors.Control;
             numericBoxConcentricStep.Name = "numericBoxConcentricStep";
             numericBoxConcentricStep.RadianValue = 8.7266462599716482E-05D;
-            numericBoxConcentricStep.RoundErrorAccuracy = -1;
             numericBoxConcentricStep.ShowUpDown = true;
             numericBoxConcentricStep.SmartIncrement = true;
             numericBoxConcentricStep.ThonsandsSeparator = true;
@@ -1092,7 +1093,6 @@
             numericBoxConcentricEnd.HeaderBackColor = System.Drawing.SystemColors.Control;
             numericBoxConcentricEnd.Name = "numericBoxConcentricEnd";
             numericBoxConcentricEnd.RadianValue = 0.52359877559829882D;
-            numericBoxConcentricEnd.RoundErrorAccuracy = -1;
             numericBoxConcentricEnd.ShowUpDown = true;
             numericBoxConcentricEnd.SmartIncrement = true;
             numericBoxConcentricEnd.ThonsandsSeparator = true;
@@ -1114,7 +1114,6 @@
             numericBoxConcentricStart.HeaderBackColor = System.Drawing.SystemColors.Control;
             numericBoxConcentricStart.Name = "numericBoxConcentricStart";
             numericBoxConcentricStart.RadianValue = 0.017453292519943295D;
-            numericBoxConcentricStart.RoundErrorAccuracy = -1;
             numericBoxConcentricStart.ShowUpDown = true;
             numericBoxConcentricStart.SmartIncrement = true;
             numericBoxConcentricStart.ThonsandsSeparator = true;
@@ -1146,9 +1145,9 @@
             // 
             // groupBox5
             // 
-            resources.ApplyResources(groupBox5, "groupBox5");
             groupBox5.Controls.Add(radioButtonBraggBrentano);
             groupBox5.Controls.Add(radioButtonDebyeScherrer);
+            resources.ApplyResources(groupBox5, "groupBox5");
             groupBox5.Name = "groupBox5";
             groupBox5.TabStop = false;
             // 
@@ -1166,7 +1165,6 @@
             // 
             // tabPageSpotsAndCenter
             // 
-            resources.ApplyResources(tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             tabPageSpotsAndCenter.Controls.Add(groupBox13);
             tabPageSpotsAndCenter.Controls.Add(checkBoxManualMaskMode);
             tabPageSpotsAndCenter.Controls.Add(groupBoxManualMode);
@@ -1175,16 +1173,17 @@
             tabPageSpotsAndCenter.Controls.Add(buttonMaskAll);
             tabPageSpotsAndCenter.Controls.Add(buttonInvertMask);
             tabPageSpotsAndCenter.Controls.Add(buttonUnmaskAll);
+            resources.ApplyResources(tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             tabPageSpotsAndCenter.Name = "tabPageSpotsAndCenter";
             tabPageSpotsAndCenter.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
-            resources.ApplyResources(groupBox13, "groupBox13");
             groupBox13.Controls.Add(buttonMaskLeft);
             groupBox13.Controls.Add(buttonMaskTop);
             groupBox13.Controls.Add(buttonMaskBottom);
             groupBox13.Controls.Add(buttonMaskRight);
+            resources.ApplyResources(groupBox13, "groupBox13");
             groupBox13.Name = "groupBox13";
             groupBox13.TabStop = false;
             // 
@@ -1225,7 +1224,6 @@
             // 
             // groupBoxManualMode
             // 
-            resources.ApplyResources(groupBoxManualMode, "groupBoxManualMode");
             groupBoxManualMode.Controls.Add(radioButtonManualCircle);
             groupBoxManualMode.Controls.Add(radioButtonManualSpline);
             groupBoxManualMode.Controls.Add(radioButtonManualPolygon);
@@ -1233,6 +1231,7 @@
             groupBoxManualMode.Controls.Add(radioButtonManualSpot);
             groupBoxManualMode.Controls.Add(groupBoxManualSpot);
             groupBoxManualMode.Controls.Add(groupBoxSpline);
+            resources.ApplyResources(groupBoxManualMode, "groupBoxManualMode");
             groupBoxManualMode.Name = "groupBoxManualMode";
             groupBoxManualMode.TabStop = false;
             groupBoxManualMode.Enter += groupBoxManualMode_Enter;
@@ -1276,13 +1275,13 @@
             // 
             // groupBoxManualSpot
             // 
-            resources.ApplyResources(groupBoxManualSpot, "groupBoxManualSpot");
             groupBoxManualSpot.Controls.Add(textBoxManualSpotSize);
             groupBoxManualSpot.Controls.Add(label31);
             groupBoxManualSpot.Controls.Add(radioButton1);
             groupBoxManualSpot.Controls.Add(numericUpDownManualSpotSize);
             groupBoxManualSpot.Controls.Add(label30);
             groupBoxManualSpot.Controls.Add(radioButtonCircle);
+            resources.ApplyResources(groupBoxManualSpot, "groupBoxManualSpot");
             groupBoxManualSpot.Name = "groupBoxManualSpot";
             groupBoxManualSpot.TabStop = false;
             // 
@@ -1326,10 +1325,10 @@
             // 
             // groupBoxSpline
             // 
-            resources.ApplyResources(groupBoxSpline, "groupBoxSpline");
             groupBoxSpline.Controls.Add(label29);
             groupBoxSpline.Controls.Add(numericBoxSplineWidth);
             groupBoxSpline.Controls.Add(label27);
+            resources.ApplyResources(groupBoxSpline, "groupBoxSpline");
             groupBoxSpline.Name = "groupBoxSpline";
             groupBoxSpline.TabStop = false;
             // 
@@ -1340,13 +1339,12 @@
             // 
             // numericBoxSplineWidth
             // 
-            resources.ApplyResources(numericBoxSplineWidth, "numericBoxSplineWidth");
             numericBoxSplineWidth.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(numericBoxSplineWidth, "numericBoxSplineWidth");
             numericBoxSplineWidth.Maximum = 50D;
             numericBoxSplineWidth.Minimum = 1D;
             numericBoxSplineWidth.Name = "numericBoxSplineWidth";
             numericBoxSplineWidth.RadianValue = 0.087266462599716474D;
-            numericBoxSplineWidth.RoundErrorAccuracy = -1;
             numericBoxSplineWidth.ShowUpDown = true;
             numericBoxSplineWidth.Value = 5D;
             numericBoxSplineWidth.ValueChanged += numericUpDownSplineWidth_ValueChanged;
@@ -1358,8 +1356,8 @@
             // 
             // groupBox7
             // 
-            resources.ApplyResources(groupBox7, "groupBox7");
             groupBox7.Controls.Add(flowLayoutPanel5);
+            resources.ApplyResources(groupBox7, "groupBox7");
             groupBox7.Name = "groupBox7";
             groupBox7.TabStop = false;
             // 
@@ -1393,16 +1391,16 @@
             // 
             // groupBox12
             // 
-            resources.ApplyResources(groupBox12, "groupBox12");
             groupBox12.Controls.Add(numericUpDownFindSpotsDeviation);
             groupBox12.Controls.Add(label28);
+            resources.ApplyResources(groupBox12, "groupBox12");
             groupBox12.Name = "groupBox12";
             groupBox12.TabStop = false;
             // 
             // numericUpDownFindSpotsDeviation
             // 
-            resources.ApplyResources(numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
             numericUpDownFindSpotsDeviation.DecimalPlaces = 2;
+            resources.ApplyResources(numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
             numericUpDownFindSpotsDeviation.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             numericUpDownFindSpotsDeviation.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownFindSpotsDeviation.Name = "numericUpDownFindSpotsDeviation";
@@ -1436,13 +1434,13 @@
             // 
             // tabPageAfterGetProfile
             // 
-            resources.ApplyResources(tabPageAfterGetProfile, "tabPageAfterGetProfile");
             tabPageAfterGetProfile.Controls.Add(numericBoxTest);
             tabPageAfterGetProfile.Controls.Add(checkBoxTest);
             tabPageAfterGetProfile.Controls.Add(checkBoxSendProfileToPDIndexer);
             tabPageAfterGetProfile.Controls.Add(checkBoxSaveFile);
             tabPageAfterGetProfile.Controls.Add(groupBoxSaveProfile);
             tabPageAfterGetProfile.Controls.Add(groupBoxSendPDI);
+            resources.ApplyResources(tabPageAfterGetProfile, "tabPageAfterGetProfile");
             tabPageAfterGetProfile.Name = "tabPageAfterGetProfile";
             tabPageAfterGetProfile.UseVisualStyleBackColor = true;
             // 
@@ -1456,7 +1454,6 @@
             numericBoxTest.Minimum = 0D;
             numericBoxTest.Name = "numericBoxTest";
             numericBoxTest.RadianValue = 0.0087266462599716477D;
-            numericBoxTest.RoundErrorAccuracy = -1;
             numericBoxTest.SkipEventDuringInput = false;
             numericBoxTest.SmartIncrement = true;
             numericBoxTest.ThonsandsSeparator = true;
@@ -1486,18 +1483,18 @@
             // 
             // groupBoxSaveProfile
             // 
-            resources.ApplyResources(groupBoxSaveProfile, "groupBoxSaveProfile");
             groupBoxSaveProfile.Controls.Add(groupBox17);
             groupBoxSaveProfile.Controls.Add(groupBox16);
             groupBoxSaveProfile.Controls.Add(groupBox15);
+            resources.ApplyResources(groupBoxSaveProfile, "groupBoxSaveProfile");
             groupBoxSaveProfile.Name = "groupBoxSaveProfile";
             groupBoxSaveProfile.TabStop = false;
             groupBoxSaveProfile.Enter += groupBoxSaveProfile_Enter;
             // 
             // groupBox17
             // 
-            resources.ApplyResources(groupBox17, "groupBox17");
             groupBox17.Controls.Add(flowLayoutPanel4);
+            resources.ApplyResources(groupBox17, "groupBox17");
             groupBox17.Name = "groupBox17";
             groupBox17.TabStop = false;
             // 
@@ -1524,8 +1521,8 @@
             // 
             // groupBox16
             // 
-            resources.ApplyResources(groupBox16, "groupBox16");
             groupBox16.Controls.Add(flowLayoutPanel1);
+            resources.ApplyResources(groupBox16, "groupBox16");
             groupBox16.Name = "groupBox16";
             groupBox16.TabStop = false;
             // 
@@ -1594,8 +1591,8 @@
             // 
             // groupBoxSendPDI
             // 
-            resources.ApplyResources(groupBoxSendPDI, "groupBoxSendPDI");
             groupBoxSendPDI.Controls.Add(checkBoxSendUnrolledImageToPDIndexer);
+            resources.ApplyResources(groupBoxSendPDI, "groupBoxSendPDI");
             groupBoxSendPDI.Name = "groupBoxSendPDI";
             groupBoxSendPDI.TabStop = false;
             // 
@@ -1607,16 +1604,16 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Controls.Add(groupBox3);
             tabPage1.Controls.Add(groupBox1);
+            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Name = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(numericUpDownUnrollChiDivision);
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
             // 
@@ -1630,7 +1627,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(numericUpDownUnrolledImageXend);
             groupBox1.Controls.Add(numericUpDownUnrolledImageXstart);
             groupBox1.Controls.Add(label38);
@@ -1643,21 +1639,22 @@
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton4);
             groupBox1.Controls.Add(radioButton3);
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
             // numericUpDownUnrolledImageXend
             // 
-            resources.ApplyResources(numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
             numericUpDownUnrolledImageXend.DecimalPlaces = 3;
+            resources.ApplyResources(numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
             numericUpDownUnrolledImageXend.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
             numericUpDownUnrolledImageXend.Name = "numericUpDownUnrolledImageXend";
             numericUpDownUnrolledImageXend.Value = new decimal(new int[] { 30, 0, 0, 0 });
             // 
             // numericUpDownUnrolledImageXstart
             // 
-            resources.ApplyResources(numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
             numericUpDownUnrolledImageXstart.DecimalPlaces = 4;
+            resources.ApplyResources(numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
             numericUpDownUnrolledImageXstart.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             numericUpDownUnrolledImageXstart.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
             numericUpDownUnrolledImageXstart.Name = "numericUpDownUnrolledImageXstart";
@@ -1685,8 +1682,8 @@
             // 
             // numericUpDownUnrolledImageXstep
             // 
-            resources.ApplyResources(numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
             numericUpDownUnrolledImageXstep.DecimalPlaces = 4;
+            resources.ApplyResources(numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
             numericUpDownUnrolledImageXstep.Increment = new decimal(new int[] { 1, 0, 0, 196608 });
             numericUpDownUnrolledImageXstep.Minimum = new decimal(new int[] { 1, 0, 0, 196608 });
             numericUpDownUnrolledImageXstep.Name = "numericUpDownUnrolledImageXstep";
@@ -1721,17 +1718,17 @@
             // 
             // tabPage5
             // 
-            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Controls.Add(groupBox14);
+            tabPage5.Controls.Add(groupBox19);
             tabPage5.Controls.Add(groupBox18);
             tabPage5.Controls.Add(groupBox11);
             tabPage5.Controls.Add(groupBox2);
+            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Name = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
-            resources.ApplyResources(groupBox14, "groupBox14");
             groupBox14.Controls.Add(comboBoxScaleLineDivisions);
             groupBox14.Controls.Add(checkBoxScaleLabel);
             groupBox14.Controls.Add(trackBarScaleLineWidth);
@@ -1739,13 +1736,14 @@
             groupBox14.Controls.Add(label23);
             groupBox14.Controls.Add(colorControlScaleAzimuth);
             groupBox14.Controls.Add(colorControlScale2Theta);
+            resources.ApplyResources(groupBox14, "groupBox14");
             groupBox14.Name = "groupBox14";
             groupBox14.TabStop = false;
             // 
             // comboBoxScaleLineDivisions
             // 
-            resources.ApplyResources(comboBoxScaleLineDivisions, "comboBoxScaleLineDivisions");
             comboBoxScaleLineDivisions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBoxScaleLineDivisions, "comboBoxScaleLineDivisions");
             comboBoxScaleLineDivisions.FormattingEnabled = true;
             comboBoxScaleLineDivisions.Items.AddRange(new object[] { resources.GetString("comboBoxScaleLineDivisions.Items"), resources.GetString("comboBoxScaleLineDivisions.Items1"), resources.GetString("comboBoxScaleLineDivisions.Items2"), resources.GetString("comboBoxScaleLineDivisions.Items3") });
             comboBoxScaleLineDivisions.Name = "comboBoxScaleLineDivisions";
@@ -1781,13 +1779,13 @@
             // 
             // colorControlScaleAzimuth
             // 
-            resources.ApplyResources(colorControlScaleAzimuth, "colorControlScaleAzimuth");
             colorControlScaleAzimuth.Argb = -8960954;
+            resources.ApplyResources(colorControlScaleAzimuth, "colorControlScaleAzimuth");
+            colorControlScaleAzimuth.BackColor = System.Drawing.SystemColors.Control;
             colorControlScaleAzimuth.Blue = 70;
             colorControlScaleAzimuth.BlueF = 0.274509817F;
             colorControlScaleAzimuth.BoxSize = new System.Drawing.Size(20, 20);
             colorControlScaleAzimuth.Color = System.Drawing.Color.FromArgb(119, 68, 70);
-            colorControlScaleAzimuth.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
             colorControlScaleAzimuth.Green = 68;
             colorControlScaleAzimuth.GreenF = 0.266666681F;
             colorControlScaleAzimuth.Name = "colorControlScaleAzimuth";
@@ -1797,13 +1795,13 @@
             // 
             // colorControlScale2Theta
             // 
-            resources.ApplyResources(colorControlScale2Theta, "colorControlScale2Theta");
             colorControlScale2Theta.Argb = -12303240;
+            resources.ApplyResources(colorControlScale2Theta, "colorControlScale2Theta");
+            colorControlScale2Theta.BackColor = System.Drawing.SystemColors.Control;
             colorControlScale2Theta.Blue = 120;
             colorControlScale2Theta.BlueF = 0.470588237F;
             colorControlScale2Theta.BoxSize = new System.Drawing.Size(20, 20);
             colorControlScale2Theta.Color = System.Drawing.Color.FromArgb(68, 68, 120);
-            colorControlScale2Theta.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
             colorControlScale2Theta.Green = 68;
             colorControlScale2Theta.GreenF = 0.266666681F;
             colorControlScale2Theta.Name = "colorControlScale2Theta";
@@ -1811,11 +1809,40 @@
             colorControlScale2Theta.RedF = 0.266666681F;
             colorControlScale2Theta.Load += colorControlScale2Theta_Load;
             // 
+            // groupBox19
+            // 
+            groupBox19.Controls.Add(radioButtonImageName_FullPath);
+            groupBox19.Controls.Add(radioButtonImageName_LastFolderPlusFilename);
+            groupBox19.Controls.Add(radioButtonImageName_FileName);
+            resources.ApplyResources(groupBox19, "groupBox19");
+            groupBox19.Name = "groupBox19";
+            groupBox19.TabStop = false;
+            // 
+            // radioButtonImageName_FullPath
+            // 
+            resources.ApplyResources(radioButtonImageName_FullPath, "radioButtonImageName_FullPath");
+            radioButtonImageName_FullPath.Name = "radioButtonImageName_FullPath";
+            radioButtonImageName_FullPath.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonImageName_LastFolderPlusFilename
+            // 
+            resources.ApplyResources(radioButtonImageName_LastFolderPlusFilename, "radioButtonImageName_LastFolderPlusFilename");
+            radioButtonImageName_LastFolderPlusFilename.Name = "radioButtonImageName_LastFolderPlusFilename";
+            radioButtonImageName_LastFolderPlusFilename.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonImageName_FileName
+            // 
+            resources.ApplyResources(radioButtonImageName_FileName, "radioButtonImageName_FileName");
+            radioButtonImageName_FileName.Checked = true;
+            radioButtonImageName_FileName.Name = "radioButtonImageName_FileName";
+            radioButtonImageName_FileName.TabStop = true;
+            radioButtonImageName_FileName.UseVisualStyleBackColor = true;
+            // 
             // groupBox18
             // 
-            resources.ApplyResources(groupBox18, "groupBox18");
             groupBox18.Controls.Add(checkBoxMaintainImageContrast);
             groupBox18.Controls.Add(checkBoxMaintainImageRange);
+            resources.ApplyResources(groupBox18, "groupBox18");
             groupBox18.Name = "groupBox18";
             groupBox18.TabStop = false;
             // 
@@ -1839,7 +1866,6 @@
             // 
             // groupBox11
             // 
-            resources.ApplyResources(groupBox11, "groupBox11");
             groupBox11.Controls.Add(label50);
             groupBox11.Controls.Add(flowLayoutPanel3);
             groupBox11.Controls.Add(pictureBox1);
@@ -1847,6 +1873,7 @@
             groupBox11.Controls.Add(radioButtonChiRight);
             groupBox11.Controls.Add(radioButtonChiBottom);
             groupBox11.Controls.Add(radioButtonChiTop);
+            resources.ApplyResources(groupBox11, "groupBox11");
             groupBox11.Name = "groupBox11";
             groupBox11.TabStop = false;
             // 
@@ -1880,8 +1907,8 @@
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Image = Properties.Resources.chi;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
@@ -1917,10 +1944,10 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(checkBoxFixCenter);
             groupBox2.Controls.Add(numericBoxFindCenterPeakFittingRange);
             groupBox2.Controls.Add(flowLayoutPanelFindCenterOption);
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
             // 
@@ -1939,7 +1966,6 @@
             numericBoxFindCenterPeakFittingRange.Minimum = 0D;
             numericBoxFindCenterPeakFittingRange.Name = "numericBoxFindCenterPeakFittingRange";
             numericBoxFindCenterPeakFittingRange.RadianValue = 0.0017453292519943296D;
-            numericBoxFindCenterPeakFittingRange.RoundErrorAccuracy = -1;
             numericBoxFindCenterPeakFittingRange.SkipEventDuringInput = false;
             numericBoxFindCenterPeakFittingRange.SmartIncrement = true;
             numericBoxFindCenterPeakFittingRange.ThonsandsSeparator = true;
@@ -1959,7 +1985,6 @@
             numericBoxFindCenterSearchArea.DecimalPlaces = 0;
             numericBoxFindCenterSearchArea.Name = "numericBoxFindCenterSearchArea";
             numericBoxFindCenterSearchArea.RadianValue = 0.13962634015954636D;
-            numericBoxFindCenterSearchArea.RoundErrorAccuracy = -1;
             numericBoxFindCenterSearchArea.SkipEventDuringInput = false;
             numericBoxFindCenterSearchArea.SmartIncrement = true;
             numericBoxFindCenterSearchArea.ThonsandsSeparator = true;
@@ -1974,19 +1999,19 @@
             // 
             // tabPage3
             // 
-            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Controls.Add(groupBox6);
+            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Name = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
-            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Controls.Add(label16);
             groupBox6.Controls.Add(textBoxBackgroundImage);
             groupBox6.Controls.Add(buttonClearBackgroundImage);
             groupBox6.Controls.Add(buttonSetBackgroundImage);
             groupBox6.Controls.Add(numericBoxBackgroundCoeff);
+            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Name = "groupBox6";
             groupBox6.TabStop = false;
             // 
@@ -2026,7 +2051,6 @@
             numericBoxBackgroundCoeff.Minimum = 0D;
             numericBoxBackgroundCoeff.Name = "numericBoxBackgroundCoeff";
             numericBoxBackgroundCoeff.RadianValue = 0.017453292519943295D;
-            numericBoxBackgroundCoeff.RoundErrorAccuracy = -1;
             numericBoxBackgroundCoeff.SkipEventDuringInput = false;
             numericBoxBackgroundCoeff.ThonsandsSeparator = true;
             numericBoxBackgroundCoeff.UpDown_Increment = 0.001D;
@@ -2166,6 +2190,8 @@
             groupBox14.ResumeLayout(false);
             groupBox14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarScaleLineWidth).EndInit();
+            groupBox19.ResumeLayout(false);
+            groupBox19.PerformLayout();
             groupBox18.ResumeLayout(false);
             groupBox18.PerformLayout();
             groupBox11.ResumeLayout(false);
@@ -2395,5 +2421,9 @@
         public System.Windows.Forms.GroupBox groupBox18;
         public System.Windows.Forms.CheckBox checkBoxMaintainImageRange;
         public System.Windows.Forms.CheckBox checkBoxMaintainImageContrast;
+        public System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.RadioButton radioButtonImageName_FileName;
+        private System.Windows.Forms.RadioButton radioButtonImageName_FullPath;
+        private System.Windows.Forms.RadioButton radioButtonImageName_LastFolderPlusFilename;
     }
 }

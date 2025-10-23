@@ -2149,36 +2149,36 @@
     <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>tabPageFrequeicyOfIntensity</value>
   </data>
   <data name="&gt;&gt;graphControlFrequency.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPageFrequeicyOfIntensity.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 26</value>
   </data>
-  <data name="tabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageFrequeicyOfIntensity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageFrequeicyOfIntensity.Size" type="System.Drawing.Size, System.Drawing">
     <value>603, 165</value>
   </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabPageFrequeicyOfIntensity.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
+  <data name="tabPageFrequeicyOfIntensity.Text" xml:space="preserve">
     <value>Frequency of Intensity</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="&gt;&gt;tabPageFrequeicyOfIntensity.Name" xml:space="preserve">
+    <value>tabPageFrequeicyOfIntensity</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageFrequeicyOfIntensity.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPageFrequeicyOfIntensity.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPageFrequeicyOfIntensity.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="graphControlProfile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2206,36 +2206,36 @@
     <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>tabPageConvertedProfile</value>
   </data>
   <data name="&gt;&gt;graphControlProfile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPageConvertedProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 26</value>
   </data>
-  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageConvertedProfile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageConvertedProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>603, 165</value>
   </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabPageConvertedProfile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
+  <data name="tabPageConvertedProfile.Text" xml:space="preserve">
     <value>Converted Profile</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="&gt;&gt;tabPageConvertedProfile.Name" xml:space="preserve">
+    <value>tabPageConvertedProfile</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageConvertedProfile.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPageConvertedProfile.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPageConvertedProfile.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="splitContainer3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2410,7 +2410,7 @@
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;splitContainer3.Parent" xml:space="preserve">
-    <value>tabPage3</value>
+    <value>tabPageStasticalInfo</value>
   </data>
   <data name="&gt;&gt;splitContainer3.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2731,36 +2731,36 @@
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>tabPage3</value>
+    <value>tabPageStasticalInfo</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPageStasticalInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 26</value>
   </data>
-  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageStasticalInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageStasticalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>603, 165</value>
   </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabPageStasticalInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
+  <data name="tabPageStasticalInfo.Text" xml:space="preserve">
     <value>Statistical Information</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
+  <data name="&gt;&gt;tabPageStasticalInfo.Name" xml:space="preserve">
+    <value>tabPageStasticalInfo</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageStasticalInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPageStasticalInfo.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPageStasticalInfo.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

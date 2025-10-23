@@ -123,6 +123,10 @@ public partial class FormProperty : Form
     public bool MaintainImageRange { set => checkBoxMaintainImageRange.Checked = value; get => checkBoxMaintainImageRange.Checked; }
     public bool MaintainImageContrast { set => checkBoxMaintainImageContrast.Checked = value; get => checkBoxMaintainImageContrast.Checked; }
 
+    public bool ImageName_FileName { set => radioButtonImageName_FileName.Checked = value; get => radioButtonImageName_FileName.Checked; }
+    public bool ImageName_LastFolderPlusFileName { set => radioButtonImageName_LastFolderPlusFilename.Checked = value; get => radioButtonImageName_LastFolderPlusFilename.Checked; }
+    public bool ImageName_FullPath { set => radioButtonImageName_FullPath.Checked = value; get => radioButtonImageName_FullPath.Checked; }
+
 
     public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length];
     #endregion
@@ -434,7 +438,7 @@ public partial class FormProperty : Form
     /// renewEnergyは、入射X線波長を更新するかどうかを決めるフラグ. hdfのようにファイルにエネルギー値が埋め込まれている場合への対応。
     /// </summary>
     /// <param name="s"></param>
-    public void SetParameterFromImageType(Ring.ImageTypeEnum imageType, bool renewWavelength = true)
+    public void SetParameterFromImageType(Ring.ImageTypeEnum imageType, bool resetZooom=true, bool renewWavelength = true)
     {
         formMain.Skip = true;
 
@@ -470,7 +474,7 @@ public partial class FormProperty : Form
 
 
         formMain.Skip = false;
-        formMain.FlipRotate_Pollalization_Background();
+        formMain.FlipRotate_Pollalization_Background(resetZooom);
 
         DirectSpotPosition = new PointD(p.CenterPosX, p.CenterPosY);
     }

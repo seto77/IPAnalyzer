@@ -176,7 +176,7 @@ public partial class FormMain : Form
             //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
             //regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
             //regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
-            
+
             //DrawRingK関係
             regKey.SetValue("formDrawRingWidth", FormDrawRing.Width);
             regKey.SetValue("formDrawRingHeight", FormDrawRing.Height);
@@ -346,7 +346,7 @@ public partial class FormMain : Form
                 initialParameterDirectory = (string)regKey.GetValue("initialParameterDirectory", "");
                 initialMaskDirectory = (string)regKey.GetValue("initialMaskDirectory", "");
                 filterIndex = (int)regKey.GetValue("filterIndex", 0);
-                
+
                 findCenterBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("findCenterBeforeGetProfile", "False") == "True";
                 maskSpotsBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("maskSpotsBeforeGetProfile", "False") == "True";
             }
@@ -765,7 +765,7 @@ public partial class FormMain : Form
 
         InitialDialog.Text = "Now Loading...Initializing Macro function.";
 
-        FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this))        {            Visible = false        };
+        FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this)) { Visible = false };
         Type t = typeof(Macro);
         MemberInfo[] members = t.GetMembers();
         var methods = t.GetMethods();
@@ -1901,26 +1901,26 @@ public partial class FormMain : Form
         }
     }
 
-    delegate void ReadImageCallBack(string str, bool? flag = null);
+    delegate void ReadImageCallBack(string fileName, bool? flag = null);
     /// <summary>
     /// 画像を読み込む
     /// </summary>
-    /// <param name="str"></param>
+    /// <param name="fn"></param>
     /// <param name="flag"></param>
-    public void ReadImage(string str, bool? flag = null)
+    public void ReadImage(string fn, bool? flag = null)
     {
         SkipDrawing = true;
 
-        if (str != "ClipBoard.ipa" && !File.Exists(str)) return;  // ファイルの有無をチェック
+        if (fn != "ClipBoard.ipa" && !File.Exists(fn)) return;  // ファイルの有無をチェック
 
         //改行文字が含まれている場合は、それを削除
-        str = str.TrimEnd('\n');
-        str = str.TrimEnd('\r');
+        fn = fn.TrimEnd('\n');
+        fn = fn.TrimEnd('\r');
 
         if (this.InvokeRequired)//別スレッド(ファイル更新監視スレッド)から呼び出されたとき
         {
             ReadImageCallBack d = new ReadImageCallBack(ReadImage);
-            this.Invoke(d, [str, flag]);
+            this.Invoke(d, [fn, flag]);
             return;
         }
 
@@ -1945,10 +1945,10 @@ public partial class FormMain : Form
         var justBeforeMax = trackBarAdvancedMaxInt.Value;
 
 
-        if (!ImageIO.ReadImage(str, flag))
+        if (!ImageIO.ReadImage(fn, flag))
             return;
 
-        string ext = Path.GetExtension(str).TrimStart(['.']).ToLower();
+        string ext = Path.GetExtension(fn).TrimStart(['.']).ToLower();
         if (ext == "ipa")
         {
             FormProperty.waveLengthControl.Property = Ring.IP.WaveProperty;
@@ -1983,16 +1983,17 @@ public partial class FormMain : Form
         trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
         trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
+        bool IslastImageSameSize = lastImageExist && Ring.IsSpots.Length == justBeforeMask.Length;
+
         //直前に画像が読み込まれていた場合、マスク、描画強度、描画範囲の引継ぎ
-        if (lastImageExist)
+        if (IslastImageSameSize)
         {
             //マスクの引継ぎ処理
             if (FormProperty.radioButtonTakeoverMask.Checked)
             {
-                if (Ring.IsSpots.Length == justBeforeMask.Length)
-                    for (int i = 0; i < Ring.IsSpots.Length; i++)
-                        if (Ring.IsSpots[i] != justBeforeMask[i])
-                            Ring.IsSpots[i] = justBeforeMask[i];
+                for (int i = 0; i < Ring.IsSpots.Length; i++)
+                    if (Ring.IsSpots[i] != justBeforeMask[i])
+                        Ring.IsSpots[i] = justBeforeMask[i];
             }
             else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile != "")
                 ReadMask(justBeforeMaskFile);
@@ -2014,9 +2015,18 @@ public partial class FormMain : Form
         graphControlFrequency.VerticalLines = [new(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
 
 
-        FileName = str[(str.LastIndexOf('\\') + 1)..];
         string oldFilePath = FilePath;
-        FilePath = str[..(str.LastIndexOf('\\') + 1)];
+        FilePath = fn[..(fn.LastIndexOf('\\') + 1)];
+
+        if (FormProperty.ImageName_FileName)
+            FileName = fn[(fn.LastIndexOf('\\') + 1)..];
+        else if (FormProperty.ImageName_FullPath)
+            FileName = fn;
+        else
+        {
+            var tmp = FilePath[..^1];
+            FileName = tmp[(tmp.LastIndexOf('\\') + 1)..] + fn[(fn.LastIndexOf('\\'))..];
+        }
 
         SetText(FileName);
 
@@ -2055,7 +2065,7 @@ public partial class FormMain : Form
 
         //偏光補正、FlipRotation, Background補正は、SetParameterFromImageTypeで実行される
         if (Ring.ImageType != Ring.ImageTypeEnum.IPAImage)
-            FormProperty.SetParameterFromImageType(Ring.ImageType, renewEnergy);
+            FormProperty.SetParameterFromImageType(Ring.ImageType, IslastImageSameSize && !FormProperty.MaintainImageRange, renewEnergy);
 
         //DigitalMicrographのファイルに関しては、ファイル情報のパラメータと現在のパラメータのずれが大きすぎる場合、ファイル情報のパラメータをセットする
         if (ext.StartsWith("dm"))
@@ -2082,6 +2092,7 @@ public partial class FormMain : Form
 
         SkipDrawing = false;
         Draw();
+        SetStasticalInformation();
 
         if (FormAutoProc.checkBoxAutoAfterLoad.Checked)
             FormAutoProc.ExecuteAutoProcedure();
@@ -4251,6 +4262,10 @@ public partial class FormMain : Form
 
     #region 画像の統計情報関連
 
+    private void tabControl1_Selected(object sender, TabControlEventArgs e)
+    {
+        scalablePictureBox.ShowAreaRectangle = tabControl1.SelectedIndex == 2;
+    }
     public void SetStasticalInformation(bool renewArea = true)
     {
         //矩形の大きさ情報
@@ -5203,4 +5218,6 @@ public partial class FormMain : Form
     #endregion
 
     #endregion
+
+  
 }

@@ -96,11 +96,11 @@ namespace IPAnalyzer
             flowLayoutPanel1 = new FlowLayoutPanel();
             panelMousePos = new Panel();
             tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
+            tabPageFrequeicyOfIntensity = new TabPage();
             graphControlFrequency = new GraphControl();
-            tabPage2 = new TabPage();
+            tabPageConvertedProfile = new TabPage();
             graphControlProfile = new GraphControl();
-            tabPage3 = new TabPage();
+            tabPageStasticalInfo = new TabPage();
             splitContainer3 = new SplitContainer();
             textBoxStatisticsSelectedArea = new TextBox();
             label16 = new Label();
@@ -263,9 +263,9 @@ namespace IPAnalyzer
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            tabPage3.SuspendLayout();
+            tabPageFrequeicyOfIntensity.SuspendLayout();
+            tabPageConvertedProfile.SuspendLayout();
+            tabPageStasticalInfo.SuspendLayout();
             ((ISupportInitialize)splitContainer3).BeginInit();
             splitContainer3.Panel1.SuspendLayout();
             splitContainer3.Panel2.SuspendLayout();
@@ -756,19 +756,20 @@ namespace IPAnalyzer
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPageFrequeicyOfIntensity);
+            tabControl1.Controls.Add(tabPageConvertedProfile);
+            tabControl1.Controls.Add(tabPageStasticalInfo);
             resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
+            tabControl1.Selected += tabControl1_Selected;
             // 
-            // tabPage1
+            // tabPageFrequeicyOfIntensity
             // 
-            tabPage1.Controls.Add(graphControlFrequency);
-            resources.ApplyResources(tabPage1, "tabPage1");
-            tabPage1.Name = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabPageFrequeicyOfIntensity.Controls.Add(graphControlFrequency);
+            resources.ApplyResources(tabPageFrequeicyOfIntensity, "tabPageFrequeicyOfIntensity");
+            tabPageFrequeicyOfIntensity.Name = "tabPageFrequeicyOfIntensity";
+            tabPageFrequeicyOfIntensity.UseVisualStyleBackColor = true;
             // 
             // graphControlFrequency
             // 
@@ -821,12 +822,12 @@ namespace IPAnalyzer
             graphControlFrequency.YLog = true;
             graphControlFrequency.LinePositionChanged += graphControlFrequency_LinePositionChanged;
             // 
-            // tabPage2
+            // tabPageConvertedProfile
             // 
-            tabPage2.Controls.Add(graphControlProfile);
-            resources.ApplyResources(tabPage2, "tabPage2");
-            tabPage2.Name = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPageConvertedProfile.Controls.Add(graphControlProfile);
+            resources.ApplyResources(tabPageConvertedProfile, "tabPageConvertedProfile");
+            tabPageConvertedProfile.Name = "tabPageConvertedProfile";
+            tabPageConvertedProfile.UseVisualStyleBackColor = true;
             // 
             // graphControlProfile
             // 
@@ -878,13 +879,13 @@ namespace IPAnalyzer
             graphControlProfile.XLog = false;
             graphControlProfile.YLog = false;
             // 
-            // tabPage3
+            // tabPageStasticalInfo
             // 
-            tabPage3.Controls.Add(splitContainer3);
-            tabPage3.Controls.Add(flowLayoutPanel2);
-            resources.ApplyResources(tabPage3, "tabPage3");
-            tabPage3.Name = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
+            tabPageStasticalInfo.Controls.Add(splitContainer3);
+            tabPageStasticalInfo.Controls.Add(flowLayoutPanel2);
+            resources.ApplyResources(tabPageStasticalInfo, "tabPageStasticalInfo");
+            tabPageStasticalInfo.Name = "tabPageStasticalInfo";
+            tabPageStasticalInfo.UseVisualStyleBackColor = true;
             // 
             // splitContainer3
             // 
@@ -1833,10 +1834,10 @@ namespace IPAnalyzer
             tableLayoutPanel3.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
+            tabPageFrequeicyOfIntensity.ResumeLayout(false);
+            tabPageConvertedProfile.ResumeLayout(false);
+            tabPageStasticalInfo.ResumeLayout(false);
+            tabPageStasticalInfo.PerformLayout();
             splitContainer3.Panel1.ResumeLayout(false);
             splitContainer3.Panel1.PerformLayout();
             splitContainer3.Panel2.ResumeLayout(false);
@@ -1942,8 +1943,8 @@ namespace IPAnalyzer
         private TextBox textBoxInformation;
         private Label label11;
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tabPageFrequeicyOfIntensity;
+        private TabPage tabPageConvertedProfile;
         private GraphControl graphControlProfile;
         private ToolStripMenuItem resetFrequencyProfileToolStripMenuItem;
         private ToolStripMenuItem calibrateRaxisImageToolStripMenuItem;
@@ -2012,7 +2013,7 @@ namespace IPAnalyzer
         public ToolStripButton toolStripButtonImageSequence;
         private ToolStripSeparator toolStripSeparator19;
         private ToolStripSeparator toolStripSeparator20;
-        private TabPage tabPage3;
+        private TabPage tabPageStasticalInfo;
         private TextBox textBoxStatisticsSelectedArea;
         private Label label16;
         private FlowLayoutPanel flowLayoutPanel2;
