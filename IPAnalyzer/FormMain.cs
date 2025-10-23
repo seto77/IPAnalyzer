@@ -248,8 +248,6 @@ public partial class FormMain : Form
             regKey.SetValue("comboBoxRectangleDirectionText", FormProperty.comboBoxRectangleDirection.Text);
             regKey.SetValue("numericUpDownFindSpotsDeviationValue", FormProperty.numericUpDownFindSpotsDeviation.Value);
 
-
-
             regKey.SetValue("toolTipToolStripMenuItem", toolTipToolStripMenuItem.Checked);
 
             regKey.SetValue("toolStripComboBoxGradient.SelectedIndex", comboBoxGradient.SelectedIndex);
@@ -261,6 +259,17 @@ public partial class FormMain : Form
             regKey.SetValue("initialParameterDirectory", initialParameterDirectory);
             regKey.SetValue("initialMaskDirectory", initialMaskDirectory);
             regKey.SetValue("filterIndex", filterIndex);
+
+            //画像読み込み時の領域やコントラスト引継ぎ
+            regKey.SetValue("FormProperty.MaintainImageContrast", FormProperty.MaintainImageContrast);
+            regKey.SetValue("FormProperty.MaintainImageRange", FormProperty.MaintainImageRange);
+
+            //画像名の設定
+            regKey.SetValue("FormProperty.ImageName_FileName", FormProperty.ImageName_FileName);
+            regKey.SetValue("FormProperty.ImageName_FullPath", FormProperty.ImageName_FullPath);
+            regKey.SetValue("FormProperty.LastFolderPlusFileName", FormProperty.ImageName_LastFolderPlusFileName);
+
+
 
             //ここからイメージタイプごとのパラメータ書き込み
             for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
@@ -469,6 +478,15 @@ public partial class FormMain : Form
 
                 //偏光補正
                 FormProperty.checkBoxCorrectPolarization.Checked = (string)regKey.GetValue("FormProperty.checkBoxCorrectPolarization.Checked", "True") == "True";
+
+                //画像読み込み時の領域やコントラスト引継ぎ
+                FormProperty.MaintainImageContrast = (string)regKey.GetValue("FormProperty.MaintainImageContrast", "True") == "True";
+                FormProperty.MaintainImageRange = (string)regKey.GetValue("FormProperty.MaintainImageRange", "True") == "True";
+
+                //画像名の設定
+                FormProperty.ImageName_FileName = (string)regKey.GetValue("FormProperty.ImageName_FileName", "True") == "True";
+                FormProperty.ImageName_FullPath = (string)regKey.GetValue("FormProperty.ImageName_FullPath", "True") == "False";
+                FormProperty.ImageName_LastFolderPlusFileName = (string)regKey.GetValue("FormProperty.LastFolderPlusFileName", "False") == "True";
 
                 //ここからイメージタイプごとのパラメータ読み込み
                 #region

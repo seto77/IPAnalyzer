@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.968(2025/10/23) Fixed a minor bug. Added file name options." +
         "\r\n ver3.967(2025/09/26) Fixed a minor bug on load/save registry." +
         "\r\n ver3.966(2025/08/29) Fixed a bug on NeXus Data Format (*.nxs)." +
         "\r\n ver3.965(2025/05/20) Fixe minor bugs." +
