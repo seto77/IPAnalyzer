@@ -39,14 +39,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
     {
         components = new Container();
         ComponentResourceManager resources = new ComponentResourceManager(typeof(FormFindParameter));
-        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
         label1 = new Label();
         label7 = new Label();
         label14 = new Label();
@@ -235,10 +235,6 @@ partial class FormFindParameter : System.Windows.Forms.Form
         label76 = new Label();
         label16 = new Label();
         label8 = new Label();
-        label78 = new Label();
-        label77 = new Label();
-        label47 = new Label();
-        label59 = new Label();
         label50 = new Label();
         label52 = new Label();
         toolTipJapanese = new ToolTip(components);
@@ -1913,8 +1909,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         dataGridView.AllowUserToDeleteRows = false;
         dataGridView.AllowUserToResizeColumns = false;
         dataGridView.AllowUserToResizeRows = false;
-        dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+        dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
         dataGridView.BorderStyle = BorderStyle.Fixed3D;
         dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
         dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1922,8 +1918,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         dataGridView.Name = "dataGridView";
         dataGridView.RowHeadersVisible = false;
         dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-        dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+        dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
         dataGridView.RowTemplate.Height = 21;
         toolTipJapanese.SetToolTip(dataGridView, resources.GetString("dataGridView.ToolTip"));
         dataGridView.CellDoubleClick += dataGridView1_CellDoubleClick;
@@ -1931,9 +1927,9 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // ColumnNo
         // 
         ColumnNo.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
-        dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        ColumnNo.DefaultCellStyle = dataGridViewCellStyle2;
+        dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.TopCenter;
+        dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        ColumnNo.DefaultCellStyle = dataGridViewCellStyle10;
         resources.ApplyResources(ColumnNo, "ColumnNo");
         ColumnNo.Name = "ColumnNo";
         ColumnNo.ReadOnly = true;
@@ -1943,9 +1939,9 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // ColumnHKL
         // 
         ColumnHKL.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        dataGridViewCellStyle3.NullValue = null;
-        ColumnHKL.DefaultCellStyle = dataGridViewCellStyle3;
+        dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        dataGridViewCellStyle11.NullValue = null;
+        ColumnHKL.DefaultCellStyle = dataGridViewCellStyle11;
         resources.ApplyResources(ColumnHKL, "ColumnHKL");
         ColumnHKL.Name = "ColumnHKL";
         ColumnHKL.ReadOnly = true;
@@ -1955,14 +1951,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // ColumnPrimaryCheck
         // 
         ColumnPrimaryCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
-        dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-        dataGridViewCellStyle4.NullValue = false;
-        dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(128, 128, 255);
-        dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-        ColumnPrimaryCheck.DefaultCellStyle = dataGridViewCellStyle4;
+        dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+        dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+        dataGridViewCellStyle12.NullValue = false;
+        dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+        dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+        ColumnPrimaryCheck.DefaultCellStyle = dataGridViewCellStyle12;
         resources.ApplyResources(ColumnPrimaryCheck, "ColumnPrimaryCheck");
         ColumnPrimaryCheck.Name = "ColumnPrimaryCheck";
         ColumnPrimaryCheck.Resizable = DataGridViewTriState.False;
@@ -1971,13 +1967,13 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         ColumnPrimary.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         ColumnPrimary.ContextMenuStrip = contextMenuStrip1;
-        dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
-        dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-        dataGridViewCellStyle5.NullValue = null;
-        dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(64, 64, 128);
-        dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-        ColumnPrimary.DefaultCellStyle = dataGridViewCellStyle5;
+        dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+        dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+        dataGridViewCellStyle13.NullValue = null;
+        dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(64, 64, 128);
+        dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+        ColumnPrimary.DefaultCellStyle = dataGridViewCellStyle13;
         resources.ApplyResources(ColumnPrimary, "ColumnPrimary");
         ColumnPrimary.Name = "ColumnPrimary";
         ColumnPrimary.ReadOnly = true;
@@ -2001,13 +1997,13 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // ColumnSecondaryCheck
         // 
         ColumnSecondaryCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
-        dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-        dataGridViewCellStyle6.NullValue = false;
-        dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(255, 128, 128);
-        dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-        ColumnSecondaryCheck.DefaultCellStyle = dataGridViewCellStyle6;
+        dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
+        dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+        dataGridViewCellStyle5.NullValue = false;
+        dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(255, 128, 128);
+        dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+        ColumnSecondaryCheck.DefaultCellStyle = dataGridViewCellStyle5;
         resources.ApplyResources(ColumnSecondaryCheck, "ColumnSecondaryCheck");
         ColumnSecondaryCheck.Name = "ColumnSecondaryCheck";
         ColumnSecondaryCheck.Resizable = DataGridViewTriState.False;
@@ -2016,13 +2012,13 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         ColumnSecondary.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         ColumnSecondary.ContextMenuStrip = contextMenuStrip1;
-        dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
-        dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
-        dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-        dataGridViewCellStyle7.NullValue = null;
-        dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(128, 64, 64);
-        dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-        ColumnSecondary.DefaultCellStyle = dataGridViewCellStyle7;
+        dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
+        dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F);
+        dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+        dataGridViewCellStyle14.NullValue = null;
+        dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(128, 64, 64);
+        dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+        ColumnSecondary.DefaultCellStyle = dataGridViewCellStyle14;
         resources.ApplyResources(ColumnSecondary, "ColumnSecondary");
         ColumnSecondary.Name = "ColumnSecondary";
         ColumnSecondary.ReadOnly = true;
@@ -2210,30 +2206,6 @@ partial class FormFindParameter : System.Windows.Forms.Form
         label8.Name = "label8";
         toolTipJapanese.SetToolTip(label8, resources.GetString("label8.ToolTip"));
         // 
-        // label78
-        // 
-        resources.ApplyResources(label78, "label78");
-        label78.Name = "label78";
-        toolTipJapanese.SetToolTip(label78, resources.GetString("label78.ToolTip"));
-        // 
-        // label77
-        // 
-        resources.ApplyResources(label77, "label77");
-        label77.Name = "label77";
-        toolTipJapanese.SetToolTip(label77, resources.GetString("label77.ToolTip"));
-        // 
-        // label47
-        // 
-        resources.ApplyResources(label47, "label47");
-        label47.Name = "label47";
-        toolTipJapanese.SetToolTip(label47, resources.GetString("label47.ToolTip"));
-        // 
-        // label59
-        // 
-        resources.ApplyResources(label59, "label59");
-        label59.Name = "label59";
-        toolTipJapanese.SetToolTip(label59, resources.GetString("label59.ToolTip"));
-        // 
         // label50
         // 
         resources.ApplyResources(label50, "label50");
@@ -2328,10 +2300,10 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(panel1, "panel1");
         panel1.AllowDrop = true;
-        panel1.Controls.Add(pictureBoxMain);
         panel1.Controls.Add(pictureBoxTiltCorrection2);
-        panel1.Controls.Add(pictureBoxTiltCorrectionPhi1);
         panel1.Controls.Add(pictureBoxTiltCorrection1);
+        panel1.Controls.Add(pictureBoxMain);
+        panel1.Controls.Add(pictureBoxTiltCorrectionPhi1);
         panel1.Controls.Add(pictureBoxPixelSizeY);
         panel1.Controls.Add(pictureBoxPixelKsi);
         panel1.Controls.Add(pictureBoxCameraLength);
@@ -2349,15 +2321,11 @@ partial class FormFindParameter : System.Windows.Forms.Form
         panel1.Controls.Add(label76);
         panel1.Controls.Add(pictureBoxTiltCorrectionTau1);
         panel1.Controls.Add(label8);
-        panel1.Controls.Add(label47);
         panel1.Controls.Add(label50);
-        panel1.Controls.Add(label59);
         panel1.Controls.Add(label57);
         panel1.Controls.Add(label16);
-        panel1.Controls.Add(label77);
         panel1.Controls.Add(label74);
         panel1.Controls.Add(label72);
-        panel1.Controls.Add(label78);
         panel1.Controls.Add(label52);
         panel1.Controls.Add(label60);
         panel1.Controls.Add(label37);
@@ -2572,12 +2540,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
     public Crystallography.Controls.NumericBox numericTextBoxSecondaryCenterPositionY;
     public Label label15;
     public Label label34;
-    public Label label47;
-    public Label label59;
     public Label label65;
     public Label label66;
-    public Label label77;
-    public Label label78;
     public Crystallography.Controls.NumericBox textBoxFilmDistanceDiscrepancy;
     public Crystallography.Controls.NumericBox textBoxPixelKsi;
     public Crystallography.Controls.NumericBox textBoxPixelSizeX;

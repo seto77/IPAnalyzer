@@ -513,7 +513,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     private void DrawEachPeaks()
     {
         //まず現在がPrimary(0)かSecondary(1)かを調べる
-        int n = textBoxPrimaryFileName.Text == formMain.FilePath + formMain.FileName ? 0 : 1;
+        int n = textBoxPrimaryFileName.Text == formMain.FilePath + Path.GetFileName(formMain.FileName) ? 0 : 1;
         if (n == 0 && formMain.SequentialImageMode && Ring.SequentialImageIntensities.Count >= 2)
             n = numericBoxPrimaryImageNum.ValueInteger == formMain.FormSequentialImage.SelectedIndex ? 0 : 1;
             
@@ -1291,7 +1291,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 IsSpotsSecondary = [.. Ring.IsSpots];
         }
 
-        if (formMain.FilePath + formMain.FileName != fileName)
+        if (formMain.FilePath +  Path.GetFileName( formMain.FileName) != fileName)
             formMain.ReadImage(fileName);
 
         //sequentialImageの時の対応
@@ -1422,7 +1422,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (backgroundWorkerRefine.CancellationPending) return null;
 
         //読み込んでいる画像が違ったら
-        if (formMain.SequentialImageMode || IsPrimary != (textBoxPrimaryFileName.Text == formMain.FilePath + formMain.FileName))
+        if (formMain.SequentialImageMode || IsPrimary != (textBoxPrimaryFileName.Text == formMain.FilePath + Path.GetFileName( formMain.FileName)))
         {
             if (IsPrimary)
                 SetImage(true);

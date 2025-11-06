@@ -485,7 +485,7 @@ public partial class FormMain : Form
 
                 //画像名の設定
                 FormProperty.ImageName_FileName = (string)regKey.GetValue("FormProperty.ImageName_FileName", "True") == "True";
-                FormProperty.ImageName_FullPath = (string)regKey.GetValue("FormProperty.ImageName_FullPath", "True") == "False";
+                FormProperty.ImageName_FullPath = (string)regKey.GetValue("FormProperty.ImageName_FullPath", "False") == "True";
                 FormProperty.ImageName_LastFolderPlusFileName = (string)regKey.GetValue("FormProperty.LastFolderPlusFileName", "False") == "True";
 
                 //ここからイメージタイプごとのパラメータ読み込み
