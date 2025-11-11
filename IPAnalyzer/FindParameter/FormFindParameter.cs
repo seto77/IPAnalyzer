@@ -54,9 +54,21 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     public static Crystal[] crystal = new Crystal[2];
     public static Crystal[] flexibleCrystal = new Crystal[2];
 
-    public IntegralProperty IP = new IntegralProperty();
+    public IntegralProperty IP = new();
+
+    #region フィッティング時のオプション
+    public int Division { get => (int)numericUpDownDivision.Value; set => numericUpDownDivision.Value = value; }
+    public double BandWidthPercentage { get => (double)numericUpDownBandWidth.Value; set => numericUpDownBandWidth.Value = (decimal)value; }
+    public double SearchRange { get => (double)numericUpDownSearchRange.Value; set => numericUpDownSearchRange.Value = (decimal)value; }
+    public double ThresholdOfPeak { get => (double)numericUpDownThresholdOfPeak.Value; set => numericUpDownThresholdOfPeak.Value = (decimal)value; }
+    public int Repetition { get => (int)numericUpDownRepitition.Value; set => numericUpDownRepitition.Value = value; }
+    public bool SectorMode { get => radioButtonSector.Checked; set => radioButtonSector.Checked = value; }
+    public bool RectangleMode { get => radioButtonRectangle.Checked; set => radioButtonRectangle.Checked = value; }
+    public bool PeakDecomposition { get => checkBoxPeakDecomposition.Checked; set => checkBoxPeakDecomposition.Checked = value; }
+    #endregion
 
     enum DrawingMode { Primary, Secondary, Both }
+
 
     
 

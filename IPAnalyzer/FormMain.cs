@@ -1,24 +1,25 @@
 ﻿#region using
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.IO;
-using System.Text;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
-using System.Threading;
 using Crystallography;
 using Crystallography.Controls;
-using Microsoft.Win32;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using IronPython.Hosting;
-using System.Diagnostics;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Xml;
 using Microsoft.Scripting.Utils;
+using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+using System.Xml;
+//using static Crystallography.UniversalConstants;
 #endregion
 
 namespace IPAnalyzer;
@@ -156,7 +157,7 @@ public partial class FormMain : Form
             regKey.SetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
             regKey.SetValue("initialDialog.AutomaricallyClose", InitialDialog.AutomaticallyClose);
 
-            //Main関係
+            #region Main関係
             regKey.SetValue("formMainWidth", Width);
             regKey.SetValue("formMainHeight", Height);
             regKey.SetValue("formMainLocationX", Location.X);
@@ -164,26 +165,40 @@ public partial class FormMain : Form
 
             regKey.SetValue("findCenterBeforeGetProfile", findCenterBeforeGetProfileToolStripMenuItem.Checked);
             regKey.SetValue("maskSpotsBeforeGetProfile", maskSpotsBeforeGetProfileToolStripMenuItem.Checked);
+            #endregion
 
-            //FindParameter関係
+            #region FindParameter関係
+
             regKey.SetValue("formFindParameterWidth", FormFindParameter.Width);
             regKey.SetValue("formFindParameterHeight", FormFindParameter.Height);
             regKey.SetValue("formFindParameterLocationX", FormFindParameter.Location.X);
             regKey.SetValue("formFindParameterLocationY", FormFindParameter.Location.Y);
 
-            //IntTable関係
-            //regKey.SetValue("formIntTableWidth", FormIntTable.Width);
-            //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
-            //regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
-            //regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
+            regKey.SetValue("formFindParameter.Division", FormFindParameter.Division);
+            regKey.SetValue("formFindParameter.BandWidthPercentage", FormFindParameter.BandWidthPercentage);
+            regKey.SetValue("formFindParameter.SearchRange", FormFindParameter.SearchRange);
+            regKey.SetValue("formFindParameter.ThresholdOfPeak", FormFindParameter.ThresholdOfPeak);
+            regKey.SetValue("formFindParameter.Repetition", FormFindParameter.Repetition);
+            regKey.SetValue("formFindParameter.SectorMode", FormFindParameter.SectorMode);
+            regKey.SetValue("formFindParameter.RectangleMode", FormFindParameter.RectangleMode);
+            regKey.SetValue("formFindParameter.PeakDecomposition", FormFindParameter.PeakDecomposition);
+            #endregion
 
-            //DrawRingK関係
-            regKey.SetValue("formDrawRingWidth", FormDrawRing.Width);
+    #region IntTable関係
+    //regKey.SetValue("formIntTableWidth", FormIntTable.Width);
+    //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
+    //regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
+    //regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
+    #endregion
+
+    #region DrawRingK関係
+    regKey.SetValue("formDrawRingWidth", FormDrawRing.Width);
             regKey.SetValue("formDrawRingHeight", FormDrawRing.Height);
             regKey.SetValue("formDrawRingLocationX", FormDrawRing.Location.X);
             regKey.SetValue("formDrawRingLocationY", FormDrawRing.Location.Y);
+            #endregion
 
-            //Property関係
+            #region Property関係
             regKey.SetValue("formPropertyLocationX", FormProperty.Location.X);
             regKey.SetValue("formPropertyLocationY", FormProperty.Location.Y);
 
@@ -303,7 +318,9 @@ public partial class FormMain : Form
 
             }
 
-            //マクロ
+            #endregion
+
+            #region マクロ
             //regKey.DeleteSubKeyTree("Macro", false);
             //regKey.CreateSubKey("Macro");
             //var macro = FormMacro.ZippedMacros;
@@ -311,6 +328,7 @@ public partial class FormMain : Form
             //for (int i = 0; i < macro.Length; i++)
             //    regKey.SetValue("Macro" + i.ToString(), macro[i]);
             regKey.SetValue("Macro", FormMacro.ZippedMacros);
+            #endregion
 
             //偏光補正
             regKey.SetValue("FormProperty.checkBoxCorrectPolarization.Checked", FormProperty.checkBoxCorrectPolarization.Checked);
@@ -335,7 +353,7 @@ public partial class FormMain : Form
 
             if (regKey == null) return;
 
-            //サイズ、位置関係
+            #region Main
             if ((int)regKey.GetValue("formMainLocationX", Location.X) >= 0)
             {
                 Width = (int)regKey.GetValue("formMainWidth", Width);
@@ -359,13 +377,17 @@ public partial class FormMain : Form
                 findCenterBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("findCenterBeforeGetProfile", "False") == "True";
                 maskSpotsBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("maskSpotsBeforeGetProfile", "False") == "True";
             }
+            #endregion
+
+            #region InitialDialog
             if (InitialDialog != null)
             {
                 InitialDialog.Location = new Point(Location.X + Width / 2 - InitialDialog.Width / 2, Location.Y + Height / 2 - InitialDialog.Height / 2);
                 InitialDialog.AutomaticallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "True") == "True";
             }
+            #endregion
 
-
+            #region FindParameter
             if (FormFindParameter != null && (int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y) >= 0)
             {
                 FormFindParameter.Width = (int)regKey.GetValue("formFindParameterWidth", FormFindParameter.Width);
@@ -373,9 +395,28 @@ public partial class FormMain : Form
                 FormFindParameter.Location = new Point(
                     (int)regKey.GetValue("formFindParameterLocationX", FormFindParameter.Location.X),
                     (int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y));
+
+
+
+                FormFindParameter.Division = (int) regKey.GetValue("formFindParameter.Division", FormFindParameter.Division);
+                
+                FormFindParameter.BandWidthPercentage = System.Convert.ToDouble(
+                    (string)regKey.GetValue("formFindParameter.BandWidthPercentage", FormFindParameter.BandWidthPercentage.ToString()));
+                FormFindParameter.SearchRange = System.Convert.ToDouble(
+                   (string)regKey.GetValue("formFindParameter.SearchRange", FormFindParameter.SearchRange.ToString()));
+                FormFindParameter.ThresholdOfPeak = System.Convert.ToDouble(
+                   (string)regKey.GetValue("formFindParameter.ThresholdOfPeak", FormFindParameter.ThresholdOfPeak.ToString()));
+
+                FormFindParameter.Repetition = (int)regKey.GetValue("formFindParameter.Repetition", FormFindParameter.Repetition);
+
+                FormFindParameter.SectorMode = (string)regKey.GetValue("FormFindParameter.SectorMode", "True") == "True";
+                FormFindParameter.RectangleMode = (string)regKey.GetValue("FormFindParameter.RectangleMode", "False") == "True";
+                FormFindParameter.PeakDecomposition = (string)regKey.GetValue("FormFindParameter.PeakDecomposition", "False") == "True";
+
             }
+            #endregion
 
-
+            #region IntTable
             //if (FormIntTable != null && (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
             //{
             //FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
@@ -383,14 +424,18 @@ public partial class FormMain : Form
             //FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
             //(int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
             //}
+            #endregion
+
+            #region DrawRing
             if (FormDrawRing != null && (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y) >= 0)
             {
                 FormDrawRing.Width = (int)regKey.GetValue("formDrawRingWidth", FormDrawRing.Width);
                 FormDrawRing.Height = (int)regKey.GetValue("formDrawRingHeight", FormDrawRing.Height);
                 FormDrawRing.Location = new Point((int)regKey.GetValue("formDrawRingLocationX", FormDrawRing.Location.X), (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y));
             }
-            //サイズ、位置関係終了
+            #endregion
 
+            #region FormProperty
             if (FormProperty != null && (int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y) >= 0)
             {
                 //formMain.formProperty.Width = (int)regKey.GetValue("formPropertyWidth", formMain.formProperty.Width);
@@ -639,7 +684,9 @@ public partial class FormMain : Form
 
                 #endregion
             }
+            #endregion
 
+            #region Macro
             //regKey = regKey.OpenSubKey("Macro");
             //int length = (int)regKey.GetValue("MacroLength", 0);
             //byte[][] byteArray = new byte[length][];
@@ -647,6 +694,7 @@ public partial class FormMain : Form
             //    byteArray[i] = (byte[])regKey.GetValue("Macro" + i.ToString(), null);
             if (FormMacro != null)
                 FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", Array.Empty<byte>());
+            #endregion
 
             regKey.Close();
         }
