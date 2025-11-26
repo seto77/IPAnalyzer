@@ -19,7 +19,6 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
-//using static Crystallography.UniversalConstants;
 #endregion
 
 namespace IPAnalyzer;
@@ -3649,10 +3648,8 @@ public partial class FormMain : Form
                     if (result = mutex.WaitOne(azimuthalDivMode ? 5000 : 500, true))
                     {
                         mutex.ReleaseMutex();
-
-                        Clipboard.SetDataObject(dpList.ToArray());
-
-
+                        //Clipboard.SetDataObject(dpList.ToArray());
+                        Clipboard.SetDataObject(MemoryPackEx.Serialize(DiffractionProfile2.ID, dpList.ToArray()));
                     }
                     Thread.Sleep(500);
 
