@@ -802,19 +802,18 @@ public static class ImageIO
             Ring.Intensity = Ring.SequentialImageIntensities[0];
         }
 
-
-
         // double pixSizeX = hdf.GetDataset(header + "x_pixel_size").Read<double>(), pixSizeY = hdf.GetDataset(header + "y_pixel_size").Read<double>();
 
         Ring.SrcImgSize = new Size(width, height);
         Ring.ImageType = Ring.ImageTypeEnum.NXS;
 
         #region コメント情報の取得
-
         (string Name, Type Type)[] comments = [
+            //20251007時点でのコメント情報
             ("acquisition_mode", typeof(string)),
             ("bit_depth_readout", typeof(int)),
             ("calibration_date", typeof(string)),
+            ("charge_summing", typeof(string)),
             ("countrate_correction_applied", typeof(byte)),
             ("description", typeof(string)),
             ("detector_readout_time", typeof(double)),
@@ -831,26 +830,51 @@ public static class ImageIO
             ("type", typeof(string)),
             ("x_pixel_size", typeof(double)),
             ("y_pixel_size", typeof(double)),
+        
+            //20260116追加分
+            ("bit_depth", typeof(int)),
+            ("calibration_data", typeof(string)),
+            ("collection/compression", typeof(string)),
+            ("collection/count_time", typeof(double)),
+            ("collection/delay_time", typeof(double)),
+            ("collection/frame_numbers", typeof(ulong)),
+            ("collection/threshold_0", typeof(double)),
+            ("collection/threshold_1", typeof(double)),
+            ("counter_mode", typeof(string)),
+            ("description", typeof(string)),
+            ("module", typeof(int)),
+            ("trigger_mode", typeof(string)),
         ];
         var sb = new StringBuilder();
         foreach (var (name, type) in comments)
         {
             var dataset = hdf.GetDataset(header + name);
 
-            if (dataset != null && dataset.Space.Dimensions.Length ==1)
+            if (dataset != null && dataset.Space.Dimensions.Length == 1)
             {
-                if (type == typeof(string))
-                    sb.AppendLine($"{name}: {dataset.ReadStr()}");
-                else if (type == typeof(int))
-                    sb.AppendLine($"{name}: {dataset.Read<int>()}");
-                else if (type == typeof(double))
-                    sb.AppendLine($"{name}: {dataset.Read<double>()}");
-                else if (type == typeof(float))
-                    sb.AppendLine($"{name}: {dataset.Read<float>()}");
-                else if (type == typeof(long))
-                    sb.AppendLine($"{name}: {dataset.Read<long>()}");
-                else if (type == typeof(byte))
-                    sb.AppendLine($"{name}: {dataset.Read<byte>()}");
+                try
+                {
+                    string str = "";
+                    if (type == typeof(string))
+                        str = $"{dataset.ReadStr()}";
+                    else if (type == typeof(int))
+                        str = $"{dataset.Read<int>()}";
+                    else if (type == typeof(double))
+                        str = $"{dataset.Read<double>()}";
+                    else if (type == typeof(float))
+                        str = $"{dataset.Read<float>()}";
+                    else if (type == typeof(long))
+                        str = $"{dataset.Read<long>()}";
+                    else if (type == typeof(byte))
+                        str = $"{dataset.Read<byte>()}";
+                    else if (type == typeof(uint))
+                        str = $"{dataset.Read<uint>()}";
+                    else if (type == typeof(ulong))
+                        str = $"{dataset.Read<ulong>()}";
+
+                    sb.AppendLine($"{name}: {str}");
+                }
+                catch { }
             }
         }
         Ring.Comments = sb.ToString();
