@@ -841,7 +841,6 @@ public static class ImageIO
             ("collection/threshold_0", typeof(double)),
             ("collection/threshold_1", typeof(double)),
             ("counter_mode", typeof(string)),
-            ("description", typeof(string)),
             ("module", typeof(int)),
             ("trigger_mode", typeof(string)),
         ];

@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.972(2026/01/16) Fixed bugs on loading *.nxs files." +
         "\r\n ver3.971(2025/12/12) Fixed bugs on program update and crysta database functions." +
         "\r\n ver3.970(2025/11/26) The framework has been changed to .Net Desktop Runtime 10.0." +
         "\r\n ver3.969(2025/11/06) Fixed minor bugs of 'Find Parameter (geometrically)'." +
