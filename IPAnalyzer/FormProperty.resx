@@ -2,16 +2,16 @@
 <root>
   <!--
     Microsoft ResX Schema
-
+0
     Version 2.0
-
+0
     The primary goals of this format is to allow a simple XML format
     that is mostly human readable. The generation and parsing of the
     various data types are done through the TypeConverter classes
     associated with the data types.
-
+0
     Example:
-
+0
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,34 +26,34 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
+0
     There are any number of "resheader" rows that contain simple
     name/value pairs.
-
+0
     Each data row contains a name, and value. The row also contains a
     type or mimetype. Type corresponds to a .NET class that support
     text/value conversion through the TypeConverter architecture.
     Classes that don't support this are serialized and stored with the
     mimetype set.
-
+0
     The mimetype is used for serialized objects, and tells the
     ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-
+0
     Note - application/x-microsoft.net.object.binary.base64 is the format
     that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-
+0
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+0
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
+0
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
@@ -985,18 +985,18 @@
   <data name="label15.Text" xml:space="preserve">
     <value>(note: χ is azimuth angle defined by miscellaneous tab)</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1018,18 +1018,18 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxCorrectPolarization.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1051,18 +1051,18 @@
   <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
     <value>Correct linear polarization (i.e., linear polarized → unpolarized)</value>
   </data>
-  <data name="&gt;&gt;checkBoxCorrectPolarization.Name" xml:space="preserve">
-    <value>checkBoxCorrectPolarization</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCorrectPolarization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCorrectPolarization.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCorrectPolarization.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="waveLengthControl.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1090,18 +1090,18 @@
   <data name="waveLengthControl.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;waveLengthControl.Name" xml:space="preserve">
-    <value>waveLengthControl</value>
-  </data>
-  <data name="&gt;&gt;waveLengthControl.Type" xml:space="preserve">
-    <value>Crystallography.Controls.WaveLengthControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;waveLengthControl.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;waveLengthControl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1156,18 +1156,18 @@
   <data name="flowLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Name" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1192,18 +1192,18 @@
   <data name="label22.Text" xml:space="preserve">
     <value>Coordinates</value>
   </data>
-  <data name="&gt;&gt;label22.Name" xml:space="preserve">
-    <value>label22</value>
-  </data>
-  <data name="&gt;&gt;label22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonDirectSpotMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1228,18 +1228,18 @@
   <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
     <value>Direct spot</value>
   </data>
-  <data name="&gt;&gt;radioButtonDirectSpotMode.Name" xml:space="preserve">
-    <value>radioButtonDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDirectSpotMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDirectSpotMode.Parent" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDirectSpotMode.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonFootMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1264,18 +1264,18 @@
   <data name="radioButtonFootMode.Text" xml:space="preserve">
     <value>Foot</value>
   </data>
-  <data name="&gt;&gt;radioButtonFootMode.Name" xml:space="preserve">
-    <value>radioButtonFootMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonFootMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonFootMode.Parent" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;radioButtonFootMode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1330,18 +1330,18 @@
   <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1363,18 +1363,18 @@
   <data name="label19.Text" xml:space="preserve">
     <value>Detector type</value>
   </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonFlatPanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1396,18 +1396,18 @@
   <data name="radioButtonFlatPanel.Text" xml:space="preserve">
     <value>Flat panel</value>
   </data>
-  <data name="&gt;&gt;radioButtonFlatPanel.Name" xml:space="preserve">
-    <value>radioButtonFlatPanel</value>
-  </data>
-  <data name="&gt;&gt;radioButtonFlatPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonFlatPanel.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;radioButtonFlatPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonGandlfi.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1432,18 +1432,18 @@
   <data name="radioButtonGandlfi.Text" xml:space="preserve">
     <value>Gandolfi</value>
   </data>
-  <data name="&gt;&gt;radioButtonGandlfi.Name" xml:space="preserve">
-    <value>radioButtonGandlfi</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGandlfi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGandlfi.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGandlfi.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanelFootMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1492,18 +1492,18 @@
   <data name="flowLayoutPanelFootMode.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.Name" xml:space="preserve">
-    <value>flowLayoutPanelFootMode</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxFootPositionY.Name" xml:space="preserve">
     <value>numericBoxFootPositionY</value>
   </data>
@@ -1549,18 +1549,18 @@
   <data name="groupBox9.Text" xml:space="preserve">
     <value>Foot position</value>
   </data>
-  <data name="&gt;&gt;groupBox9.Name" xml:space="preserve">
-    <value>groupBox9</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
-    <value>flowLayoutPanelFootMode</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxFootPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1603,18 +1603,18 @@
   <data name="numericBoxFootPositionY.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootPositionY.Name" xml:space="preserve">
-    <value>numericBoxFootPositionY</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFootPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFootPositionY.Parent" xml:space="preserve">
-    <value>groupBox9</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFootPositionY.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxFootPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1657,18 +1657,18 @@
   <data name="numericBoxFootPositionX.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxFootPositionX.Name" xml:space="preserve">
-    <value>numericBoxFootPositionX</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFootPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFootPositionX.Parent" xml:space="preserve">
-    <value>groupBox9</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFootPositionX.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
   </data>
@@ -1714,18 +1714,18 @@
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Camera Length 2 </value>
   </data>
-  <data name="&gt;&gt;groupBox10.Name" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Parent" xml:space="preserve">
-    <value>flowLayoutPanelFootMode</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1747,18 +1747,18 @@
   <data name="label17.Text" xml:space="preserve">
     <value>(sample to foot)</value>
   </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxCameraLength2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1801,18 +1801,18 @@
   <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
     <value>Distance from sample to direct spot</value>
   </data>
-  <data name="&gt;&gt;numericBoxCameraLength2.Name" xml:space="preserve">
-    <value>numericBoxCameraLength2</value>
-  </data>
-  <data name="&gt;&gt;numericBoxCameraLength2.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxCameraLength2.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;numericBoxCameraLength2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanelDirectSpotMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1858,18 +1858,18 @@
   <data name="flowLayoutPanelDirectSpotMode.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.Name" xml:space="preserve">
-    <value>flowLayoutPanelDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxDirectSpotPositionY.Name" xml:space="preserve">
     <value>numericBoxDirectSpotPositionY</value>
   </data>
@@ -1915,18 +1915,18 @@
   <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
     <value>Direct spot position</value>
   </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.Name" xml:space="preserve">
-    <value>groupBoxDirectSpotPosition</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.Parent" xml:space="preserve">
-    <value>flowLayoutPanelDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxDirectSpotPositionY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1963,18 +1963,18 @@
   <data name="numericBoxDirectSpotPositionY.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionY.Name" xml:space="preserve">
-    <value>numericBoxDirectSpotPositionY</value>
-  </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionY.Parent" xml:space="preserve">
-    <value>groupBoxDirectSpotPosition</value>
-  </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionY.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxDirectSpotPositionX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2011,18 +2011,18 @@
   <data name="numericBoxDirectSpotPositionX.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionX.Name" xml:space="preserve">
-    <value>numericBoxDirectSpotPositionX</value>
-  </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionX.Parent" xml:space="preserve">
-    <value>groupBoxDirectSpotPosition</value>
-  </data>
-  <data name="&gt;&gt;numericBoxDirectSpotPositionX.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
   </data>
@@ -2068,18 +2068,18 @@
   <data name="groupBoxCameaLength.Text" xml:space="preserve">
     <value>Camera Length 1</value>
   </data>
-  <data name="&gt;&gt;groupBoxCameaLength.Name" xml:space="preserve">
-    <value>groupBoxCameaLength</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCameaLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCameaLength.Parent" xml:space="preserve">
-    <value>flowLayoutPanelDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCameaLength.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2104,18 +2104,18 @@
   <data name="label18.Text" xml:space="preserve">
     <value>(sample to direct spot)</value>
   </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>groupBoxCameaLength</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxCameraLength1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2158,18 +2158,18 @@
   <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
     <value>Distance from sample to direct spot</value>
   </data>
-  <data name="&gt;&gt;numericBoxCameraLength1.Name" xml:space="preserve">
-    <value>numericBoxCameraLength1</value>
-  </data>
-  <data name="&gt;&gt;numericBoxCameraLength1.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxCameraLength1.Parent" xml:space="preserve">
-    <value>groupBoxCameaLength</value>
-  </data>
-  <data name="&gt;&gt;numericBoxCameraLength1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxPixelKsi.Name" xml:space="preserve">
     <value>numericBoxPixelKsi</value>
   </data>
@@ -2227,18 +2227,18 @@
   <data name="groupBoxPixelShape.Text" xml:space="preserve">
     <value>Pixel Shape</value>
   </data>
-  <data name="&gt;&gt;groupBoxPixelShape.Name" xml:space="preserve">
-    <value>groupBoxPixelShape</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxPixelKsi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2275,18 +2275,18 @@
   <data name="numericBoxPixelKsi.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxPixelKsi.Name" xml:space="preserve">
-    <value>numericBoxPixelKsi</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelKsi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelKsi.Parent" xml:space="preserve">
-    <value>groupBoxPixelShape</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelKsi.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxPixelSizeY.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2323,18 +2323,18 @@
   <data name="numericBoxPixelSizeY.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxPixelSizeY.Name" xml:space="preserve">
-    <value>numericBoxPixelSizeY</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelSizeY.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelSizeY.Parent" xml:space="preserve">
-    <value>groupBoxPixelShape</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelSizeY.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxPixelSizeX.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2371,18 +2371,18 @@
   <data name="numericBoxPixelSizeX.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxPixelSizeX.Name" xml:space="preserve">
-    <value>numericBoxPixelSizeX</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelSizeX.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelSizeX.Parent" xml:space="preserve">
-    <value>groupBoxPixelShape</value>
-  </data>
-  <data name="&gt;&gt;numericBoxPixelSizeX.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxGandlfiRadius.Name" xml:space="preserve">
     <value>numericBoxGandlfiRadius</value>
   </data>
@@ -2419,18 +2419,18 @@
   <data name="groupBoxGandlfiRadius.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.Name" xml:space="preserve">
-    <value>groupBoxGandlfiRadius</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxGandlfiRadius.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2464,18 +2464,18 @@
   <data name="numericBoxGandlfiRadius.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxGandlfiRadius.Name" xml:space="preserve">
-    <value>numericBoxGandlfiRadius</value>
-  </data>
-  <data name="&gt;&gt;numericBoxGandlfiRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxGandlfiRadius.Parent" xml:space="preserve">
-    <value>groupBoxGandlfiRadius</value>
-  </data>
-  <data name="&gt;&gt;numericBoxGandlfiRadius.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxSphericalCorections.Name" xml:space="preserve">
     <value>numericBoxSphericalCorections</value>
   </data>
@@ -2521,18 +2521,18 @@
   <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
     <value>Spherical correction</value>
   </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.Name" xml:space="preserve">
-    <value>groupBoxSphericalCorrection</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxSphericalCorections.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2575,18 +2575,18 @@
   <data name="numericBoxSphericalCorections.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxSphericalCorections.Name" xml:space="preserve">
-    <value>numericBoxSphericalCorections</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSphericalCorections.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSphericalCorections.Parent" xml:space="preserve">
-    <value>groupBoxSphericalCorrection</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSphericalCorections.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label26.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2611,18 +2611,18 @@
   <data name="label26.Text" xml:space="preserve">
     <value>(normally zero)</value>
   </data>
-  <data name="&gt;&gt;label26.Name" xml:space="preserve">
-    <value>label26</value>
-  </data>
-  <data name="&gt;&gt;label26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
-    <value>groupBoxSphericalCorrection</value>
-  </data>
-  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxTiltTau.Name" xml:space="preserve">
     <value>numericBoxTiltTau</value>
   </data>
@@ -2668,18 +2668,18 @@
   <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
     <value>Tilt</value>
   </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.Name" xml:space="preserve">
-    <value>groupBoxTiltCorrection</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxTiltTau.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2716,18 +2716,18 @@
   <data name="numericBoxTiltTau.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltTau.Name" xml:space="preserve">
-    <value>numericBoxTiltTau</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTiltTau.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTiltTau.Parent" xml:space="preserve">
-    <value>groupBoxTiltCorrection</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTiltTau.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxTiltPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -2764,18 +2764,18 @@
   <data name="numericBoxTiltPhi.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxTiltPhi.Name" xml:space="preserve">
-    <value>numericBoxTiltPhi</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTiltPhi.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTiltPhi.Parent" xml:space="preserve">
-    <value>groupBoxTiltCorrection</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTiltPhi.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericUpDownThresholdOfIntensityMax.Name" xml:space="preserve">
     <value>numericUpDownThresholdOfIntensityMax</value>
   </data>
@@ -2893,18 +2893,18 @@
   <data name="groupBox8.Text" xml:space="preserve">
     <value>Exceptional pixels</value>
   </data>
-  <data name="&gt;&gt;groupBox8.Name" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownThresholdOfIntensityMax.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2926,18 +2926,18 @@
   <data name="numericUpDownThresholdOfIntensityMax.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMax.Name" xml:space="preserve">
-    <value>numericUpDownThresholdOfIntensityMax</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMax.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMax.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2962,18 +2962,18 @@
   <data name="label2.Text" xml:space="preserve">
     <value>pixels from edges</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownThresholdOfIntensityMin.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2995,18 +2995,18 @@
   <data name="numericUpDownThresholdOfIntensityMin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMin.Name" xml:space="preserve">
-    <value>numericUpDownThresholdOfIntensityMin</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMin.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownThresholdOfIntensityMin.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownEdge.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -3025,18 +3025,18 @@
   <data name="numericUpDownEdge.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownEdge.Name" xml:space="preserve">
-    <value>numericUpDownEdge</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownEdge.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownEdge.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownEdge.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxOmitSpots.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3061,18 +3061,18 @@
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>Masked Spots</value>
   </data>
-  <data name="&gt;&gt;checkBoxOmitSpots.Name" xml:space="preserve">
-    <value>checkBoxOmitSpots</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOmitSpots.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOmitSpots.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOmitSpots.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxMaskEdge.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3094,18 +3094,18 @@
   <data name="checkBoxMaskEdge.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;checkBoxMaskEdge.Name" xml:space="preserve">
-    <value>checkBoxMaskEdge</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaskEdge.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaskEdge.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaskEdge.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxThresholdMax.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3130,18 +3130,18 @@
   <data name="checkBoxThresholdMax.Text" xml:space="preserve">
     <value>Over intenstiy of</value>
   </data>
-  <data name="&gt;&gt;checkBoxThresholdMax.Name" xml:space="preserve">
-    <value>checkBoxThresholdMax</value>
-  </data>
-  <data name="&gt;&gt;checkBoxThresholdMax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxThresholdMax.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;checkBoxThresholdMax.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxThresholdMin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3166,18 +3166,18 @@
   <data name="checkBoxThresholdMin.Text" xml:space="preserve">
     <value>Under intensity of</value>
   </data>
-  <data name="&gt;&gt;checkBoxThresholdMin.Name" xml:space="preserve">
-    <value>checkBoxThresholdMin</value>
-  </data>
-  <data name="&gt;&gt;checkBoxThresholdMin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxThresholdMin.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;checkBoxThresholdMin.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonRectangle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3205,18 +3205,18 @@
   <data name="radioButtonRectangle.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
-  <data name="&gt;&gt;radioButtonRectangle.Name" xml:space="preserve">
-    <value>radioButtonRectangle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRectangle.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRectangle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;checkBoxRectangleIsBothSide.Name" xml:space="preserve">
     <value>checkBoxRectangleIsBothSide</value>
   </data>
@@ -3319,18 +3319,18 @@
   <data name="groupBoxRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;groupBoxRectangle.Name" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRectangle.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRectangle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxRectangleIsBothSide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3355,18 +3355,18 @@
   <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
     <value>Both Side</value>
   </data>
-  <data name="&gt;&gt;checkBoxRectangleIsBothSide.Name" xml:space="preserve">
-    <value>checkBoxRectangleIsBothSide</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRectangleIsBothSide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRectangleIsBothSide.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRectangleIsBothSide.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="comboBoxRectangleDirection.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
   </data>
@@ -3415,18 +3415,18 @@
   <data name="comboBoxRectangleDirection.Text" xml:space="preserve">
     <value>Full</value>
   </data>
-  <data name="&gt;&gt;comboBoxRectangleDirection.Name" xml:space="preserve">
-    <value>comboBoxRectangleDirection</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRectangleDirection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRectangleDirection.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRectangleDirection.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3451,18 +3451,18 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3487,18 +3487,18 @@
   <data name="label7.Text" xml:space="preserve">
     <value>Band Width</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownRectangleBand.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -3514,18 +3514,18 @@
   <data name="numericUpDownRectangleBand.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;numericUpDownRectangleBand.Name" xml:space="preserve">
-    <value>numericUpDownRectangleBand</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRectangleBand.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRectangleBand.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRectangleBand.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownRectangleAngle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
@@ -3541,18 +3541,18 @@
   <data name="numericUpDownRectangleAngle.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;numericUpDownRectangleAngle.Name" xml:space="preserve">
-    <value>numericUpDownRectangleAngle</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRectangleAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRectangleAngle.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownRectangleAngle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3577,18 +3577,18 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Direction</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonSector.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3613,18 +3613,18 @@
   <data name="radioButtonSector.Text" xml:space="preserve">
     <value>Sector</value>
   </data>
-  <data name="&gt;&gt;radioButtonSector.Name" xml:space="preserve">
-    <value>radioButtonSector</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSector.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSector.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSector.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericUpDownSectorStartAngle.Name" xml:space="preserve">
     <value>numericUpDownSectorStartAngle</value>
   </data>
@@ -3694,18 +3694,18 @@
   <data name="groupBoxSector.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupBoxSector.Name" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSector.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSector.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSector.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownSectorStartAngle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -3721,18 +3721,18 @@
   <data name="numericUpDownSectorStartAngle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;numericUpDownSectorStartAngle.Name" xml:space="preserve">
-    <value>numericUpDownSectorStartAngle</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSectorStartAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSectorStartAngle.Parent" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSectorStartAngle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownSectorEndAngle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -3748,18 +3748,18 @@
   <data name="numericUpDownSectorEndAngle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;numericUpDownSectorEndAngle.Name" xml:space="preserve">
-    <value>numericUpDownSectorEndAngle</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSectorEndAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSectorEndAngle.Parent" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSectorEndAngle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3784,18 +3784,18 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Start Angle</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3820,18 +3820,18 @@
   <data name="label11.Text" xml:space="preserve">
     <value>End Angle</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonRadial.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3853,18 +3853,18 @@
   <data name="radioButtonRadial.Text" xml:space="preserve">
     <value>Radial integration (cake pattern)</value>
   </data>
-  <data name="&gt;&gt;radioButtonRadial.Name" xml:space="preserve">
-    <value>radioButtonRadial</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadial.Parent" xml:space="preserve">
-    <value>tabPageIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadial.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;label46.Name" xml:space="preserve">
     <value>label46</value>
   </data>
@@ -4015,18 +4015,18 @@
   <data name="groupBoxRadial.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupBoxRadial.Name" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRadial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRadial.Parent" xml:space="preserve">
-    <value>tabPageIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRadial.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label46.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4051,18 +4051,18 @@
   <data name="label46.Text" xml:space="preserve">
     <value>Donut radius</value>
   </data>
-  <data name="&gt;&gt;label46.Name" xml:space="preserve">
-    <value>label46</value>
-  </data>
-  <data name="&gt;&gt;label46.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label46.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label46.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label40.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4087,18 +4087,18 @@
   <data name="label40.Text" xml:space="preserve">
     <value>Donut width</value>
   </data>
-  <data name="&gt;&gt;label40.Name" xml:space="preserve">
-    <value>label40</value>
-  </data>
-  <data name="&gt;&gt;label40.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label40.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label40.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxRadialRange.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4129,18 +4129,18 @@
   <data name="numericBoxRadialRange.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxRadialRange.Name" xml:space="preserve">
-    <value>numericBoxRadialRange</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialRange.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialRange.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialRange.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxRadialRadius.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4171,18 +4171,18 @@
   <data name="numericBoxRadialRadius.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxRadialRadius.Name" xml:space="preserve">
-    <value>numericBoxRadialRadius</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialRadius.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialRadius.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialRadius.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxRadialStep.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4213,18 +4213,18 @@
   <data name="numericBoxRadialStep.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxRadialStep.Name" xml:space="preserve">
-    <value>numericBoxRadialStep</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialStep.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialStep.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;numericBoxRadialStep.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonRadialAngle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4249,18 +4249,18 @@
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="&gt;&gt;radioButtonRadialAngle.Name" xml:space="preserve">
-    <value>radioButtonRadialAngle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadialAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadialAngle.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadialAngle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonRadialDspacing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4285,18 +4285,18 @@
   <data name="radioButtonRadialDspacing.Text" xml:space="preserve">
     <value>d-spacing</value>
   </data>
-  <data name="&gt;&gt;radioButtonRadialDspacing.Name" xml:space="preserve">
-    <value>radioButtonRadialDspacing</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadialDspacing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadialDspacing.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;radioButtonRadialDspacing.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="labelDimensionRadial2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4321,18 +4321,18 @@
   <data name="labelDimensionRadial2.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;labelDimensionRadial2.Name" xml:space="preserve">
-    <value>labelDimensionRadial2</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial2.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label37.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4357,18 +4357,18 @@
   <data name="label37.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label37.Name" xml:space="preserve">
-    <value>label37</value>
-  </data>
-  <data name="&gt;&gt;label37.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label37.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label37.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label36.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4399,18 +4399,18 @@
   <data name="label36.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label36.Name" xml:space="preserve">
-    <value>label36</value>
-  </data>
-  <data name="&gt;&gt;label36.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label36.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label36.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="labelDimensionRadial1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4435,18 +4435,18 @@
   <data name="labelDimensionRadial1.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;labelDimensionRadial1.Name" xml:space="preserve">
-    <value>labelDimensionRadial1</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonConcentric.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4468,18 +4468,18 @@
   <data name="radioButtonConcentric.Text" xml:space="preserve">
     <value>Concentric integration (scattering angle dispersive)</value>
   </data>
-  <data name="&gt;&gt;radioButtonConcentric.Name" xml:space="preserve">
-    <value>radioButtonConcentric</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentric.Parent" xml:space="preserve">
-    <value>tabPageIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentric.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
   </data>
@@ -4519,18 +4519,18 @@
   <data name="groupBoxConcentric.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;groupBoxConcentric.Name" xml:space="preserve">
-    <value>groupBoxConcentric</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.Parent" xml:space="preserve">
-    <value>tabPageIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericBoxConcentricStep.Name" xml:space="preserve">
     <value>numericBoxConcentricStep</value>
   </data>
@@ -4660,18 +4660,18 @@
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Integral Step &amp;&amp; Range</value>
   </data>
-  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>groupBoxConcentric</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxConcentricStep.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4705,18 +4705,18 @@
   <data name="numericBoxConcentricStep.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxConcentricStep.Name" xml:space="preserve">
-    <value>numericBoxConcentricStep</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricStep.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricStep.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricStep.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonConcentricLength.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4744,18 +4744,18 @@
   <data name="radioButtonConcentricLength.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;radioButtonConcentricLength.Name" xml:space="preserve">
-    <value>radioButtonConcentricLength</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricLength.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricLength.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxConcentricEnd.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4789,18 +4789,18 @@
   <data name="numericBoxConcentricEnd.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxConcentricEnd.Name" xml:space="preserve">
-    <value>numericBoxConcentricEnd</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricEnd.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricEnd.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricEnd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonConcentricDspacing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4825,18 +4825,18 @@
   <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
     <value>d-spacing</value>
   </data>
-  <data name="&gt;&gt;radioButtonConcentricDspacing.Name" xml:space="preserve">
-    <value>radioButtonConcentricDspacing</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricDspacing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricDspacing.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricDspacing.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxConcentricStart.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -4870,18 +4870,18 @@
   <data name="numericBoxConcentricStart.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxConcentricStart.Name" xml:space="preserve">
-    <value>numericBoxConcentricStart</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricStart.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricStart.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;numericBoxConcentricStart.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonConcentricAngle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4906,18 +4906,18 @@
   <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="&gt;&gt;radioButtonConcentricAngle.Name" xml:space="preserve">
-    <value>radioButtonConcentricAngle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricAngle.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;radioButtonConcentricAngle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4942,18 +4942,18 @@
   <data name="label13.Text" xml:space="preserve">
     <value>End</value>
   </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4984,18 +4984,18 @@
   <data name="label14.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5020,18 +5020,18 @@
   <data name="label12.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;radioButtonBraggBrentano.Name" xml:space="preserve">
     <value>radioButtonBraggBrentano</value>
   </data>
@@ -5077,18 +5077,18 @@
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Output pattern</value>
   </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>groupBoxConcentric</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonBraggBrentano.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5113,18 +5113,18 @@
   <data name="radioButtonBraggBrentano.Text" xml:space="preserve">
     <value>Bragg - Brentano</value>
   </data>
-  <data name="&gt;&gt;radioButtonBraggBrentano.Name" xml:space="preserve">
-    <value>radioButtonBraggBrentano</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBraggBrentano.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBraggBrentano.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBraggBrentano.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonDebyeScherrer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5152,18 +5152,18 @@
   <data name="radioButtonDebyeScherrer.Text" xml:space="preserve">
     <value>Debye - Scherrer</value>
   </data>
-  <data name="&gt;&gt;radioButtonDebyeScherrer.Name" xml:space="preserve">
-    <value>radioButtonDebyeScherrer</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDebyeScherrer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDebyeScherrer.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDebyeScherrer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;buttonMaskLeft.Name" xml:space="preserve">
     <value>buttonMaskLeft</value>
   </data>
@@ -5233,18 +5233,18 @@
   <data name="groupBox13.Text" xml:space="preserve">
     <value>Half mask</value>
   </data>
-  <data name="&gt;&gt;groupBox13.Name" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonMaskLeft.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 8pt</value>
   </data>
@@ -5266,18 +5266,18 @@
   <data name="buttonMaskLeft.Text" xml:space="preserve">
     <value>Left</value>
   </data>
-  <data name="&gt;&gt;buttonMaskLeft.Name" xml:space="preserve">
-    <value>buttonMaskLeft</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskLeft.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskLeft.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonMaskTop.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 8pt</value>
   </data>
@@ -5299,18 +5299,18 @@
   <data name="buttonMaskTop.Text" xml:space="preserve">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;buttonMaskTop.Name" xml:space="preserve">
-    <value>buttonMaskTop</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskTop.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskTop.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonMaskBottom.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 8pt</value>
   </data>
@@ -5332,18 +5332,18 @@
   <data name="buttonMaskBottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;buttonMaskBottom.Name" xml:space="preserve">
-    <value>buttonMaskBottom</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskBottom.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonMaskRight.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 8pt</value>
   </data>
@@ -5365,18 +5365,18 @@
   <data name="buttonMaskRight.Text" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;buttonMaskRight.Name" xml:space="preserve">
-    <value>buttonMaskRight</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskRight.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskRight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxManualMaskMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5401,18 +5401,18 @@
   <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
     <value>Manual mask mode</value>
   </data>
-  <data name="&gt;&gt;checkBoxManualMaskMode.Name" xml:space="preserve">
-    <value>checkBoxManualMaskMode</value>
-  </data>
-  <data name="&gt;&gt;checkBoxManualMaskMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxManualMaskMode.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;checkBoxManualMaskMode.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;radioButtonManualCircle.Name" xml:space="preserve">
     <value>radioButtonManualCircle</value>
   </data>
@@ -5518,18 +5518,18 @@
   <data name="groupBoxManualMode.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;groupBoxManualMode.Name" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualMode.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualMode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonManualCircle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5554,18 +5554,18 @@
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
     <value>Circle (Drag: set a center &amp;&amp; radius)</value>
   </data>
-  <data name="&gt;&gt;radioButtonManualCircle.Name" xml:space="preserve">
-    <value>radioButtonManualCircle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualCircle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualCircle.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualCircle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonManualSpline.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5590,18 +5590,18 @@
   <data name="radioButtonManualSpline.Text" xml:space="preserve">
     <value>Spline curve</value>
   </data>
-  <data name="&gt;&gt;radioButtonManualSpline.Name" xml:space="preserve">
-    <value>radioButtonManualSpline</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualSpline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualSpline.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualSpline.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonManualPolygon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5627,18 +5627,18 @@
     <value>Polygon (click: add vertices,
                  double click: finalize)</value>
   </data>
-  <data name="&gt;&gt;radioButtonManualPolygon.Name" xml:space="preserve">
-    <value>radioButtonManualPolygon</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualPolygon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualPolygon.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualPolygon.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonManualRectangle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5663,18 +5663,18 @@
   <data name="radioButtonManualRectangle.Text" xml:space="preserve">
     <value>Rectangle (Drag: set diagonal vertices)</value>
   </data>
-  <data name="&gt;&gt;radioButtonManualRectangle.Name" xml:space="preserve">
-    <value>radioButtonManualRectangle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualRectangle.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualRectangle.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonManualSpot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5699,18 +5699,18 @@
   <data name="radioButtonManualSpot.Text" xml:space="preserve">
     <value>Spot ((L/R click: add/remove spots)</value>
   </data>
-  <data name="&gt;&gt;radioButtonManualSpot.Name" xml:space="preserve">
-    <value>radioButtonManualSpot</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualSpot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualSpot.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;radioButtonManualSpot.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;textBoxManualSpotSize.Name" xml:space="preserve">
     <value>textBoxManualSpotSize</value>
   </data>
@@ -5801,18 +5801,18 @@
   <data name="groupBoxManualSpot.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;groupBoxManualSpot.Name" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualSpot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualSpot.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualSpot.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxManualSpotSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -5831,18 +5831,18 @@
   <data name="textBoxManualSpotSize.Text" xml:space="preserve">
     <value>64</value>
   </data>
-  <data name="&gt;&gt;textBoxManualSpotSize.Name" xml:space="preserve">
-    <value>textBoxManualSpotSize</value>
-  </data>
-  <data name="&gt;&gt;textBoxManualSpotSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxManualSpotSize.Parent" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;textBoxManualSpotSize.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label31.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5858,18 +5858,18 @@
   <data name="label31.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;label31.Name" xml:space="preserve">
-    <value>label31</value>
-  </data>
-  <data name="&gt;&gt;label31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButton1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5894,18 +5894,18 @@
   <data name="radioButton1.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
-    <value>radioButton1</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownManualSpotSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -5924,18 +5924,18 @@
   <data name="numericUpDownManualSpotSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownManualSpotSize.Name" xml:space="preserve">
-    <value>numericUpDownManualSpotSize</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownManualSpotSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownManualSpotSize.Parent" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownManualSpotSize.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label30.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5960,18 +5960,18 @@
   <data name="label30.Text" xml:space="preserve">
     <value>pt</value>
   </data>
-  <data name="&gt;&gt;label30.Name" xml:space="preserve">
-    <value>label30</value>
-  </data>
-  <data name="&gt;&gt;label30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label30.Parent" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonCircle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5996,18 +5996,18 @@
   <data name="radioButtonCircle.Text" xml:space="preserve">
     <value>Circle</value>
   </data>
-  <data name="&gt;&gt;radioButtonCircle.Name" xml:space="preserve">
-    <value>radioButtonCircle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCircle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCircle.Parent" xml:space="preserve">
-    <value>groupBoxManualSpot</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCircle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;label29.Name" xml:space="preserve">
     <value>label29</value>
   </data>
@@ -6065,18 +6065,18 @@
   <data name="groupBoxSpline.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupBoxSpline.Name" xml:space="preserve">
-    <value>groupBoxSpline</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSpline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSpline.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSpline.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label29.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6095,18 +6095,18 @@
   <data name="label29.Text" xml:space="preserve">
     <value>Line width</value>
   </data>
-  <data name="&gt;&gt;label29.Name" xml:space="preserve">
-    <value>label29</value>
-  </data>
-  <data name="&gt;&gt;label29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label29.Parent" xml:space="preserve">
-    <value>groupBoxSpline</value>
-  </data>
-  <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxSplineWidth.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -6140,18 +6140,18 @@
   <data name="numericBoxSplineWidth.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxSplineWidth.Name" xml:space="preserve">
-    <value>numericBoxSplineWidth</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSplineWidth.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSplineWidth.Parent" xml:space="preserve">
-    <value>groupBoxSpline</value>
-  </data>
-  <data name="&gt;&gt;numericBoxSplineWidth.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label27.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6168,18 +6168,18 @@
     <value> (L/R click: add/del points,
  double click: set mask)</value>
   </data>
-  <data name="&gt;&gt;label27.Name" xml:space="preserve">
-    <value>label27</value>
-  </data>
-  <data name="&gt;&gt;label27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label27.Parent" xml:space="preserve">
-    <value>groupBoxSpline</value>
-  </data>
-  <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
     <value>flowLayoutPanel5</value>
   </data>
@@ -6213,18 +6213,18 @@
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Take over mask setting</value>
   </data>
-  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6285,18 +6285,18 @@
   <data name="flowLayoutPanel5.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonTakeoverNothing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6318,18 +6318,18 @@
   <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;radioButtonTakeoverNothing.Name" xml:space="preserve">
-    <value>radioButtonTakeoverNothing</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeoverNothing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeoverNothing.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeoverNothing.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonTakeoverMask.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6354,18 +6354,18 @@
   <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
     <value>Take over the current mask state</value>
   </data>
-  <data name="&gt;&gt;radioButtonTakeoverMask.Name" xml:space="preserve">
-    <value>radioButtonTakeoverMask</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeoverMask.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeoverMask.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeoverMask.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonTakeOverMaskfile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6390,18 +6390,18 @@
   <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
     <value>Take over the mask file</value>
   </data>
-  <data name="&gt;&gt;radioButtonTakeOverMaskfile.Name" xml:space="preserve">
-    <value>radioButtonTakeOverMaskfile</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeOverMaskfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeOverMaskfile.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTakeOverMaskfile.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericUpDownFindSpotsDeviation.Name" xml:space="preserve">
     <value>numericUpDownFindSpotsDeviation</value>
   </data>
@@ -6447,18 +6447,18 @@
   <data name="groupBox12.Text" xml:space="preserve">
     <value>Mask spots option</value>
   </data>
-  <data name="&gt;&gt;groupBox12.Name" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownFindSpotsDeviation.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -6477,18 +6477,18 @@
   <data name="numericUpDownFindSpotsDeviation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownFindSpotsDeviation.Name" xml:space="preserve">
-    <value>numericUpDownFindSpotsDeviation</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownFindSpotsDeviation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownFindSpotsDeviation.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownFindSpotsDeviation.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label28.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6514,18 +6514,18 @@
     <value>Criterial deviation
  for "Mask Spots"</value>
   </data>
-  <data name="&gt;&gt;label28.Name" xml:space="preserve">
-    <value>label28</value>
-  </data>
-  <data name="&gt;&gt;label28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonMaskAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6553,18 +6553,18 @@
   <data name="buttonMaskAll.Text" xml:space="preserve">
     <value>Mask All</value>
   </data>
-  <data name="&gt;&gt;buttonMaskAll.Name" xml:space="preserve">
-    <value>buttonMaskAll</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskAll.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;buttonMaskAll.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonInvertMask.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6592,18 +6592,18 @@
   <data name="buttonInvertMask.Text" xml:space="preserve">
     <value>Invert mask</value>
   </data>
-  <data name="&gt;&gt;buttonInvertMask.Name" xml:space="preserve">
-    <value>buttonInvertMask</value>
-  </data>
-  <data name="&gt;&gt;buttonInvertMask.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonInvertMask.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;buttonInvertMask.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonUnmaskAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6631,18 +6631,18 @@
   <data name="buttonUnmaskAll.Text" xml:space="preserve">
     <value>Unmask All</value>
   </data>
-  <data name="&gt;&gt;buttonUnmaskAll.Name" xml:space="preserve">
-    <value>buttonUnmaskAll</value>
-  </data>
-  <data name="&gt;&gt;buttonUnmaskAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonUnmaskAll.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;buttonUnmaskAll.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxTest.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -6676,18 +6676,18 @@
   <data name="numericBoxTest.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxTest.Name" xml:space="preserve">
-    <value>numericBoxTest</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTest.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTest.Parent" xml:space="preserve">
-    <value>tabPageAfterGetProfile</value>
-  </data>
-  <data name="&gt;&gt;numericBoxTest.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6712,18 +6712,18 @@
   <data name="checkBoxTest.Text" xml:space="preserve">
     <value>Remove Kα2 (if Kα1 line is selected)</value>
   </data>
-  <data name="&gt;&gt;checkBoxTest.Name" xml:space="preserve">
-    <value>checkBoxTest</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTest.Parent" xml:space="preserve">
-    <value>tabPageAfterGetProfile</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTest.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxSendProfileToPDIndexer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6748,18 +6748,18 @@
   <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
     <value>Send profile data to PDIndexer through Clipboard</value>
   </data>
-  <data name="&gt;&gt;checkBoxSendProfileToPDIndexer.Name" xml:space="preserve">
-    <value>checkBoxSendProfileToPDIndexer</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendProfileToPDIndexer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendProfileToPDIndexer.Parent" xml:space="preserve">
-    <value>tabPageAfterGetProfile</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendProfileToPDIndexer.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxSaveFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6784,18 +6784,18 @@
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>Save Profile </value>
   </data>
-  <data name="&gt;&gt;checkBoxSaveFile.Name" xml:space="preserve">
-    <value>checkBoxSaveFile</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSaveFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSaveFile.Parent" xml:space="preserve">
-    <value>tabPageAfterGetProfile</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSaveFile.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;groupBox17.Name" xml:space="preserve">
     <value>groupBox17</value>
   </data>
@@ -6853,18 +6853,18 @@
   <data name="groupBoxSaveProfile.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;groupBoxSaveProfile.Name" xml:space="preserve">
-    <value>groupBoxSaveProfile</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSaveProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSaveProfile.Parent" xml:space="preserve">
-    <value>tabPageAfterGetProfile</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSaveProfile.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
     <value>flowLayoutPanel4</value>
   </data>
@@ -6892,18 +6892,18 @@
   <data name="groupBox17.Text" xml:space="preserve">
     <value>Saving Option for Sequential image or Azimuthal division</value>
   </data>
-  <data name="&gt;&gt;groupBox17.Name" xml:space="preserve">
-    <value>groupBox17</value>
-  </data>
-  <data name="&gt;&gt;groupBox17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox17.Parent" xml:space="preserve">
-    <value>groupBoxSaveProfile</value>
-  </data>
-  <data name="&gt;&gt;groupBox17.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6952,18 +6952,18 @@
   <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
-    <value>groupBox17</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonSaveInOneFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6989,18 +6989,18 @@
     <value>In one file 
 (Excluding GSAS)</value>
   </data>
-  <data name="&gt;&gt;radioButtonSaveInOneFile.Name" xml:space="preserve">
-    <value>radioButtonSaveInOneFile</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveInOneFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveInOneFile.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveInOneFile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonSaveInSeparateFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7025,18 +7025,18 @@
   <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
     <value>In separate files</value>
   </data>
-  <data name="&gt;&gt;radioButtonSaveInSeparateFiles.Name" xml:space="preserve">
-    <value>radioButtonSaveInSeparateFiles</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveInSeparateFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveInSeparateFiles.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveInSeparateFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
@@ -7064,18 +7064,18 @@
   <data name="groupBox16.Text" xml:space="preserve">
     <value>Directory to be saved</value>
   </data>
-  <data name="&gt;&gt;groupBox16.Name" xml:space="preserve">
-    <value>groupBox16</value>
-  </data>
-  <data name="&gt;&gt;groupBox16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox16.Parent" xml:space="preserve">
-    <value>groupBoxSaveProfile</value>
-  </data>
-  <data name="&gt;&gt;groupBox16.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7124,18 +7124,18 @@
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>groupBox16</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonSetDirectoryEachTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7160,18 +7160,18 @@
   <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
     <value>At the chosen directory each time</value>
   </data>
-  <data name="&gt;&gt;radioButtonSetDirectoryEachTime.Name" xml:space="preserve">
-    <value>radioButtonSetDirectoryEachTime</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSetDirectoryEachTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSetDirectoryEachTime.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSetDirectoryEachTime.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonSaveAtImageDirectory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7196,18 +7196,18 @@
   <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
     <value>At the same directory of the image</value>
   </data>
-  <data name="&gt;&gt;radioButtonSaveAtImageDirectory.Name" xml:space="preserve">
-    <value>radioButtonSaveAtImageDirectory</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveAtImageDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveAtImageDirectory.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;radioButtonSaveAtImageDirectory.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="groupBox15.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -7238,18 +7238,18 @@
   <data name="groupBox15.Text" xml:space="preserve">
     <value>File format</value>
   </data>
-  <data name="&gt;&gt;groupBox15.Name" xml:space="preserve">
-    <value>groupBox15</value>
-  </data>
-  <data name="&gt;&gt;groupBox15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox15.Parent" xml:space="preserve">
-    <value>groupBoxSaveProfile</value>
-  </data>
-  <data name="&gt;&gt;groupBox15.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7316,18 +7316,18 @@
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>groupBox15</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonAsPDIformat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7352,18 +7352,18 @@
   <data name="radioButtonAsPDIformat.Text" xml:space="preserve">
     <value>PDI</value>
   </data>
-  <data name="&gt;&gt;radioButtonAsPDIformat.Name" xml:space="preserve">
-    <value>radioButtonAsPDIformat</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsPDIformat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsPDIformat.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsPDIformat.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonAsCSVformat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7388,18 +7388,18 @@
   <data name="radioButtonAsCSVformat.Text" xml:space="preserve">
     <value>CSV</value>
   </data>
-  <data name="&gt;&gt;radioButtonAsCSVformat.Name" xml:space="preserve">
-    <value>radioButtonAsCSVformat</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsCSVformat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsCSVformat.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsCSVformat.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonAsTSVformat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7424,18 +7424,18 @@
   <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
     <value>TSV</value>
   </data>
-  <data name="&gt;&gt;radioButtonAsTSVformat.Name" xml:space="preserve">
-    <value>radioButtonAsTSVformat</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsTSVformat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsTSVformat.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsTSVformat.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonAsGSASformat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7460,18 +7460,18 @@
   <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
     <value>GSAS</value>
   </data>
-  <data name="&gt;&gt;radioButtonAsGSASformat.Name" xml:space="preserve">
-    <value>radioButtonAsGSASformat</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsGSASformat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsGSASformat.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;radioButtonAsGSASformat.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;checkBoxSendUnrolledImageToPDIndexer.Name" xml:space="preserve">
     <value>checkBoxSendUnrolledImageToPDIndexer</value>
   </data>
@@ -7502,18 +7502,18 @@
   <data name="groupBoxSendPDI.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="&gt;&gt;groupBoxSendPDI.Name" xml:space="preserve">
-    <value>groupBoxSendPDI</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSendPDI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSendPDI.Parent" xml:space="preserve">
-    <value>tabPageAfterGetProfile</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSendPDI.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxSendUnrolledImageToPDIndexer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7538,18 +7538,18 @@
   <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
     <value>Send also Unrolled Image</value>
   </data>
-  <data name="&gt;&gt;checkBoxSendUnrolledImageToPDIndexer.Name" xml:space="preserve">
-    <value>checkBoxSendUnrolledImageToPDIndexer</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendUnrolledImageToPDIndexer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendUnrolledImageToPDIndexer.Parent" xml:space="preserve">
-    <value>groupBoxSendPDI</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendUnrolledImageToPDIndexer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericUpDownUnrollChiDivision.Name" xml:space="preserve">
     <value>numericUpDownUnrollChiDivision</value>
   </data>
@@ -7580,18 +7580,18 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Vertical (sector angle) step </value>
   </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownUnrollChiDivision.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 26</value>
   </data>
@@ -7604,18 +7604,18 @@
   <data name="numericUpDownUnrollChiDivision.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;numericUpDownUnrollChiDivision.Name" xml:space="preserve">
-    <value>numericUpDownUnrollChiDivision</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrollChiDivision.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrollChiDivision.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrollChiDivision.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;numericUpDownUnrolledImageXend.Name" xml:space="preserve">
     <value>numericUpDownUnrolledImageXend</value>
   </data>
@@ -7778,18 +7778,18 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Horizontal (distance from direct spot) unit and range</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownUnrolledImageXend.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -7808,18 +7808,18 @@
   <data name="numericUpDownUnrolledImageXend.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXend.Name" xml:space="preserve">
-    <value>numericUpDownUnrolledImageXend</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXend.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXend.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownUnrolledImageXstart.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -7838,18 +7838,18 @@
   <data name="numericUpDownUnrolledImageXstart.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstart.Name" xml:space="preserve">
-    <value>numericUpDownUnrolledImageXstart</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstart.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstart.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label38.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7874,18 +7874,18 @@
   <data name="label38.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label38.Name" xml:space="preserve">
-    <value>label38</value>
-  </data>
-  <data name="&gt;&gt;label38.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label38.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label38.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label39.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7910,18 +7910,18 @@
   <data name="label39.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label39.Name" xml:space="preserve">
-    <value>label39</value>
-  </data>
-  <data name="&gt;&gt;label39.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label39.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label39.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label25.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7952,18 +7952,18 @@
   <data name="label25.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label25.Name" xml:space="preserve">
-    <value>label25</value>
-  </data>
-  <data name="&gt;&gt;label25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label41.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7988,18 +7988,18 @@
   <data name="label41.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label41.Name" xml:space="preserve">
-    <value>label41</value>
-  </data>
-  <data name="&gt;&gt;label41.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label41.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label41.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericUpDownUnrolledImageXstep.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -8021,18 +8021,18 @@
   <data name="numericUpDownUnrolledImageXstep.ThousandsSeparator" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstep.Name" xml:space="preserve">
-    <value>numericUpDownUnrolledImageXstep</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstep.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstep.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownUnrolledImageXstep.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label24.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8057,18 +8057,18 @@
   <data name="label24.Text" xml:space="preserve">
     <value>End</value>
   </data>
-  <data name="&gt;&gt;label24.Name" xml:space="preserve">
-    <value>label24</value>
-  </data>
-  <data name="&gt;&gt;label24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label42.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8093,18 +8093,18 @@
   <data name="label42.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="&gt;&gt;label42.Name" xml:space="preserve">
-    <value>label42</value>
-  </data>
-  <data name="&gt;&gt;label42.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label42.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label42.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8129,18 +8129,18 @@
   <data name="radioButton2.Text" xml:space="preserve">
     <value>Length</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
-    <value>radioButton2</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButton4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8165,18 +8165,18 @@
   <data name="radioButton4.Text" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Name" xml:space="preserve">
-    <value>radioButton4</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButton3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8201,18 +8201,18 @@
   <data name="radioButton3.Text" xml:space="preserve">
     <value>d-spacing</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Name" xml:space="preserve">
-    <value>radioButton3</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;comboBoxScaleLineDivisions.Name" xml:space="preserve">
     <value>comboBoxScaleLineDivisions</value>
   </data>
@@ -8318,18 +8318,18 @@
   <data name="groupBox14.Text" xml:space="preserve">
     <value>Scale line options</value>
   </data>
-  <data name="&gt;&gt;groupBox14.Name" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;groupBox14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox14.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox14.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="comboBoxScaleLineDivisions.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
@@ -8354,18 +8354,18 @@
   <data name="comboBoxScaleLineDivisions.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
   </data>
-  <data name="&gt;&gt;comboBoxScaleLineDivisions.Name" xml:space="preserve">
-    <value>comboBoxScaleLineDivisions</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScaleLineDivisions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScaleLineDivisions.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScaleLineDivisions.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxScaleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8384,18 +8384,18 @@
   <data name="checkBoxScaleLabel.Text" xml:space="preserve">
     <value>Show labels</value>
   </data>
-  <data name="&gt;&gt;checkBoxScaleLabel.Name" xml:space="preserve">
-    <value>checkBoxScaleLabel</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScaleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScaleLabel.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScaleLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="trackBarScaleLineWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -8411,18 +8411,18 @@
   <data name="trackBarScaleLineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
   </data>
-  <data name="&gt;&gt;trackBarScaleLineWidth.Name" xml:space="preserve">
-    <value>trackBarScaleLineWidth</value>
-  </data>
-  <data name="&gt;&gt;trackBarScaleLineWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trackBarScaleLineWidth.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;trackBarScaleLineWidth.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8444,18 +8444,18 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Division</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label23.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8477,18 +8477,18 @@
   <data name="label23.Text" xml:space="preserve">
     <value>Line Width</value>
   </data>
-  <data name="&gt;&gt;label23.Name" xml:space="preserve">
-    <value>label23</value>
-  </data>
-  <data name="&gt;&gt;label23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="colorControlScaleAzimuth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8528,18 +8528,18 @@
   <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
     <value>Set a color of azimuth scale lines</value>
   </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.Name" xml:space="preserve">
-    <value>colorControlScaleAzimuth</value>
-  </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ColorControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="colorControlScale2Theta.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8579,18 +8579,18 @@
   <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
     <value>Set a color of 2θ scale lines</value>
   </data>
-  <data name="&gt;&gt;colorControlScale2Theta.Name" xml:space="preserve">
-    <value>colorControlScale2Theta</value>
-  </data>
-  <data name="&gt;&gt;colorControlScale2Theta.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ColorControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;colorControlScale2Theta.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;colorControlScale2Theta.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;radioButtonImageName_FullPath.Name" xml:space="preserve">
     <value>radioButtonImageName_FullPath</value>
   </data>
@@ -8642,18 +8642,18 @@
   <data name="groupBox19.Text" xml:space="preserve">
     <value>Image name options</value>
   </data>
-  <data name="&gt;&gt;groupBox19.Name" xml:space="preserve">
-    <value>groupBox19</value>
-  </data>
-  <data name="&gt;&gt;groupBox19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox19.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox19.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonImageName_FullPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8675,18 +8675,18 @@
   <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
     <value>Full path</value>
   </data>
-  <data name="&gt;&gt;radioButtonImageName_FullPath.Name" xml:space="preserve">
-    <value>radioButtonImageName_FullPath</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_FullPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_FullPath.Parent" xml:space="preserve">
-    <value>groupBox19</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_FullPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonImageName_LastFolderPlusFilename.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8705,18 +8705,18 @@
   <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
     <value>Last folder + file name</value>
   </data>
-  <data name="&gt;&gt;radioButtonImageName_LastFolderPlusFilename.Name" xml:space="preserve">
-    <value>radioButtonImageName_LastFolderPlusFilename</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_LastFolderPlusFilename.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_LastFolderPlusFilename.Parent" xml:space="preserve">
-    <value>groupBox19</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_LastFolderPlusFilename.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonImageName_FileName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8735,18 +8735,18 @@
   <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
     <value>File name</value>
   </data>
-  <data name="&gt;&gt;radioButtonImageName_FileName.Name" xml:space="preserve">
-    <value>radioButtonImageName_FileName</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_FileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_FileName.Parent" xml:space="preserve">
-    <value>groupBox19</value>
-  </data>
-  <data name="&gt;&gt;radioButtonImageName_FileName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;checkBoxMaintainImageContrast.Name" xml:space="preserve">
     <value>checkBoxMaintainImageContrast</value>
   </data>
@@ -8786,18 +8786,18 @@
   <data name="groupBox18.Text" xml:space="preserve">
     <value>Image loading options</value>
   </data>
-  <data name="&gt;&gt;groupBox18.Name" xml:space="preserve">
-    <value>groupBox18</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxMaintainImageContrast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8822,18 +8822,18 @@
   <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
     <value>Maintain image contrast </value>
   </data>
-  <data name="&gt;&gt;checkBoxMaintainImageContrast.Name" xml:space="preserve">
-    <value>checkBoxMaintainImageContrast</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaintainImageContrast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaintainImageContrast.Parent" xml:space="preserve">
-    <value>groupBox18</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaintainImageContrast.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxMaintainImageRange.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8858,18 +8858,18 @@
   <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
     <value>Maintain display range</value>
   </data>
-  <data name="&gt;&gt;checkBoxMaintainImageRange.Name" xml:space="preserve">
-    <value>checkBoxMaintainImageRange</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaintainImageRange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaintainImageRange.Parent" xml:space="preserve">
-    <value>groupBox18</value>
-  </data>
-  <data name="&gt;&gt;checkBoxMaintainImageRange.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;label50.Name" xml:space="preserve">
     <value>label50</value>
   </data>
@@ -8975,18 +8975,18 @@
   <data name="groupBox11.Text" xml:space="preserve">
     <value>Chi (χ) axis options</value>
   </data>
-  <data name="&gt;&gt;groupBox11.Name" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label50.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9011,18 +9011,18 @@
   <data name="label50.Text" xml:space="preserve">
     <value>Rotation:</value>
   </data>
-  <data name="&gt;&gt;label50.Name" xml:space="preserve">
-    <value>label50</value>
-  </data>
-  <data name="&gt;&gt;label50.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label50.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;label50.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanel3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9068,18 +9068,18 @@
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonChiClockwise.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9101,18 +9101,18 @@
   <data name="radioButtonChiClockwise.Text" xml:space="preserve">
     <value>Clockwise</value>
   </data>
-  <data name="&gt;&gt;radioButtonChiClockwise.Name" xml:space="preserve">
-    <value>radioButtonChiClockwise</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiClockwise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiClockwise.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiClockwise.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonChiCounterclockwise.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9134,18 +9134,18 @@
   <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
     <value>Counterclockwise</value>
   </data>
-  <data name="&gt;&gt;radioButtonChiCounterclockwise.Name" xml:space="preserve">
-    <value>radioButtonChiCounterclockwise</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiCounterclockwise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiCounterclockwise.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiCounterclockwise.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -9164,18 +9164,18 @@
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonChiLeft.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9203,18 +9203,18 @@
   <data name="radioButtonChiLeft.Text" xml:space="preserve">
     <value>Left</value>
   </data>
-  <data name="&gt;&gt;radioButtonChiLeft.Name" xml:space="preserve">
-    <value>radioButtonChiLeft</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiLeft.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiLeft.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonChiRight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9239,18 +9239,18 @@
   <data name="radioButtonChiRight.Text" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;radioButtonChiRight.Name" xml:space="preserve">
-    <value>radioButtonChiRight</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiRight.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiRight.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonChiBottom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9275,18 +9275,18 @@
   <data name="radioButtonChiBottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;radioButtonChiBottom.Name" xml:space="preserve">
-    <value>radioButtonChiBottom</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiBottom.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiBottom.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="radioButtonChiTop.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9311,18 +9311,18 @@
   <data name="radioButtonChiTop.Text" xml:space="preserve">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;radioButtonChiTop.Name" xml:space="preserve">
-    <value>radioButtonChiTop</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiTop.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;radioButtonChiTop.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;checkBoxFixCenter.Name" xml:space="preserve">
     <value>checkBoxFixCenter</value>
   </data>
@@ -9380,18 +9380,18 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Find center options</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxFixCenter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9416,18 +9416,18 @@
   <data name="checkBoxFixCenter.Text" xml:space="preserve">
     <value>Fix Center</value>
   </data>
-  <data name="&gt;&gt;checkBoxFixCenter.Name" xml:space="preserve">
-    <value>checkBoxFixCenter</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFixCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFixCenter.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFixCenter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxFindCenterPeakFittingRange.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -9464,18 +9464,18 @@
   <data name="numericBoxFindCenterPeakFittingRange.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxFindCenterPeakFittingRange.Name" xml:space="preserve">
-    <value>numericBoxFindCenterPeakFittingRange</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFindCenterPeakFittingRange.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFindCenterPeakFittingRange.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFindCenterPeakFittingRange.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="flowLayoutPanelFindCenterOption.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9518,18 +9518,18 @@
   <data name="flowLayoutPanelFindCenterOption.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Name" xml:space="preserve">
-    <value>flowLayoutPanelFindCenterOption</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxFindCenterSearchArea.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -9566,18 +9566,18 @@
   <data name="numericBoxFindCenterSearchArea.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxFindCenterSearchArea.Name" xml:space="preserve">
-    <value>numericBoxFindCenterSearchArea</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFindCenterSearchArea.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFindCenterSearchArea.Parent" xml:space="preserve">
-    <value>flowLayoutPanelFindCenterOption</value>
-  </data>
-  <data name="&gt;&gt;numericBoxFindCenterSearchArea.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="checkBoxExcludeMaskedPixels.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9602,18 +9602,18 @@
   <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
     <value>Exclude masked pixels</value>
   </data>
-  <data name="&gt;&gt;checkBoxExcludeMaskedPixels.Name" xml:space="preserve">
-    <value>checkBoxExcludeMaskedPixels</value>
-  </data>
-  <data name="&gt;&gt;checkBoxExcludeMaskedPixels.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxExcludeMaskedPixels.Parent" xml:space="preserve">
-    <value>flowLayoutPanelFindCenterOption</value>
-  </data>
-  <data name="&gt;&gt;checkBoxExcludeMaskedPixels.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>
   </data>
@@ -9692,18 +9692,18 @@
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Reference image setting</value>
   </data>
-  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9722,18 +9722,18 @@
   <data name="label16.Text" xml:space="preserve">
     <value>Coefficient</value>
   </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="textBoxBackgroundImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 40</value>
   </data>
@@ -9746,18 +9746,18 @@
   <data name="textBoxBackgroundImage.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="&gt;&gt;textBoxBackgroundImage.Name" xml:space="preserve">
-    <value>textBoxBackgroundImage</value>
-  </data>
-  <data name="&gt;&gt;textBoxBackgroundImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxBackgroundImage.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;textBoxBackgroundImage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonClearBackgroundImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9785,18 +9785,18 @@
   <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
     <value>Clear</value>
   </data>
-  <data name="&gt;&gt;buttonClearBackgroundImage.Name" xml:space="preserve">
-    <value>buttonClearBackgroundImage</value>
-  </data>
-  <data name="&gt;&gt;buttonClearBackgroundImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClearBackgroundImage.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;buttonClearBackgroundImage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="buttonSetBackgroundImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9821,18 +9821,18 @@
   <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
     <value>Set the current image as background</value>
   </data>
-  <data name="&gt;&gt;buttonSetBackgroundImage.Name" xml:space="preserve">
-    <value>buttonSetBackgroundImage</value>
-  </data>
-  <data name="&gt;&gt;buttonSetBackgroundImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSetBackgroundImage.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;buttonSetBackgroundImage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="numericBoxBackgroundCoeff.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -9863,18 +9863,18 @@
   <data name="numericBoxBackgroundCoeff.TextFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="&gt;&gt;numericBoxBackgroundCoeff.Name" xml:space="preserve">
-    <value>numericBoxBackgroundCoeff</value>
-  </data>
-  <data name="&gt;&gt;numericBoxBackgroundCoeff.Type" xml:space="preserve">
-    <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;numericBoxBackgroundCoeff.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;numericBoxBackgroundCoeff.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+
+
+
+
+
+
+
+
+
+
+
+
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
