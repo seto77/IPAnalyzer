@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PureHDF;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.Metrics;
@@ -6,9 +7,11 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Crystallography;
@@ -797,7 +800,6 @@ public static class ImageIO
                 Ring.SequentialImageIntensities.Add( src[(i*width*height)..((i+1)*(width*height))] );
 
             Ring.SequentialImageNames = [..Enumerable.Range(1,num+1).Select(e=>e.ToString("000"))];
-          
 
             Ring.Intensity = Ring.SequentialImageIntensities[0];
         }
@@ -808,73 +810,34 @@ public static class ImageIO
         Ring.ImageType = Ring.ImageTypeEnum.NXS;
 
         #region コメント情報の取得
-        (string Name, Type Type)[] comments = [
-            //20251007時点でのコメント情報
-            ("acquisition_mode", typeof(string)),
-            ("bit_depth_readout", typeof(int)),
-            ("calibration_date", typeof(string)),
-            ("charge_summing", typeof(string)),
-            ("countrate_correction_applied", typeof(byte)),
-            ("description", typeof(string)),
-            ("detector_readout_time", typeof(double)),
-            ("flatfield_applied", typeof(byte)),
-            ("layout", typeof(string)),
-            ("local_name", typeof(string)),
-            ("pixelmask_applied", typeof(byte)),
-            ("saturation_value", typeof(int)),
-            ("sensor_material", typeof(string)),
-            ("sensor_thickness", typeof(float)),
-            ("sequence_number", typeof(int[])),
-            ("trigger_dead_time", typeof(double)),
-            ("trigger_delay_time", typeof(double)),
-            ("type", typeof(string)),
-            ("x_pixel_size", typeof(double)),
-            ("y_pixel_size", typeof(double)),
-        
-            //20260116追加分
-            ("bit_depth", typeof(int)),
-            ("calibration_data", typeof(string)),
-            ("collection/compression", typeof(string)),
-            ("collection/count_time", typeof(double)),
-            ("collection/delay_time", typeof(double)),
-            ("collection/frame_numbers", typeof(ulong)),
-            ("collection/threshold_0", typeof(double)),
-            ("collection/threshold_1", typeof(double)),
-            ("counter_mode", typeof(string)),
-            ("module", typeof(int)),
-            ("trigger_mode", typeof(string)),
-        ];
         var sb = new StringBuilder();
-        foreach (var (name, type) in comments)
+        foreach (var d in hdf.Datasets.Where(d => d.Name != "data" && d.Space.Rank == 1 && d.Space.Dimensions != null && d.Space.Dimensions.Length > 0 && d.Space.Dimensions[0] == 1))
         {
-            var dataset = hdf.GetDataset(header + name);
-
-            if (dataset != null && dataset.Space.Dimensions.Length == 1)
+            try
             {
-                try
-                {
-                    string str = "";
-                    if (type == typeof(string))
-                        str = $"{dataset.ReadStr()}";
-                    else if (type == typeof(int))
-                        str = $"{dataset.Read<int>()}";
-                    else if (type == typeof(double))
-                        str = $"{dataset.Read<double>()}";
-                    else if (type == typeof(float))
-                        str = $"{dataset.Read<float>()}";
-                    else if (type == typeof(long))
-                        str = $"{dataset.Read<long>()}";
-                    else if (type == typeof(byte))
-                        str = $"{dataset.Read<byte>()}";
-                    else if (type == typeof(uint))
-                        str = $"{dataset.Read<uint>()}";
-                    else if (type == typeof(ulong))
-                        str = $"{dataset.Read<ulong>()}";
-
-                    sb.AppendLine($"{name}: {str}");
-                }
-                catch { }
+                var name = d.Path.Replace(header, "");
+                string str = "";
+                if (d.Type.Class == H5DataTypeClass.String || d.Type.Class == H5DataTypeClass.VariableLength)
+                    str = d.ReadStr();
+                else if (d.Type.Class == H5DataTypeClass.FixedPoint)
+                    str = d.Type.Size switch
+                    {
+                        1 => d.Type.FixedPoint.IsSigned ? d.Read<sbyte>().ToString() : d.Read<byte>().ToString(),
+                        2 => d.Type.FixedPoint.IsSigned ? d.Read<short>().ToString() : d.Read<ushort>().ToString(),
+                        4 => d.Type.FixedPoint.IsSigned ? d.Read<int>().ToString() : d.Read<uint>().ToString(),
+                        8 => d.Type.FixedPoint.IsSigned ? d.Read<long>().ToString() : d.Read<ulong>().ToString(),
+                        _ => "",
+                    };
+                else if (d.Type.Class == H5DataTypeClass.FloatingPoint)
+                    str = d.Type.Size switch
+                    {
+                        4 => d.Read<float>().ToString(),
+                        8 => d.Read<double>().ToString(),
+                        _ => "",
+                    };
+                sb.AppendLine($"{name}: {str}");
             }
+            catch { }
         }
         Ring.Comments = sb.ToString();
         #endregion
