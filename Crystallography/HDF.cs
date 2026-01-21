@@ -1,18 +1,17 @@
-﻿using System;
+﻿using PureHDF;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using PureHDF;
 namespace Crystallography;
-public class HDF
+unsafe public class HDF
 {
     public class H5DatasetAdv
     {
-        private IH5Dataset dataset;
+        private readonly IH5Dataset dataset;
         public IH5Dataset DatasetOriginal => dataset;
 
         public string Path;
-
         public string Name => dataset.Name;
         public IH5Dataspace Space => dataset.Space;
         public IH5DataType Type => dataset.Type;
@@ -20,6 +19,9 @@ public class HDF
         public T Read<T>() => dataset.Read<T>();
 
         public string ReadStr() => dataset.Read<string>();
+
+        public T Read<T>(int rank, ulong[] starts, ulong[] blocks) => dataset.Read<T>(new PureHDF.Selections.HyperslabSelection(rank, starts, blocks), null, null);
+
 
         public H5DatasetAdv(IH5Dataset dataset, string path)
         {
@@ -43,6 +45,7 @@ public class HDF
     public HDF(string filename)
     {
         var file = H5File.OpenRead(filename);
+
         void func (IH5Group group, string path)
         {
             List<IH5Dataset> datasets = [];

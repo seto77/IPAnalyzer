@@ -1,17 +1,15 @@
 ﻿using PureHDF;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Crystallography;
@@ -785,26 +783,66 @@ public static class ImageIO
 
         int num = (int)data.Space.Dimensions[0], height = (int)data.Space.Dimensions[1], width = (int)data.Space.Dimensions[2];
 
-        if(num==1)
-            Ring.Intensity = [.. data.Read<int[]>().Select(e => (double)e)];
+        if (num == 1)
+            Ring.Intensity = data.Type.Class switch
+            {
+                #region データのタイプによって読み込み方法を変更
+                H5DataTypeClass.FixedPoint => data.Type.Size switch
+                {
+                    1 => data.Type.FixedPoint.IsSigned ? [.. data.Read<sbyte[]>().Select(e => (double)e)] : [.. data.Read<byte[]>().Select(e => (double)e)],
+                    2 => data.Type.FixedPoint.IsSigned ? [.. data.Read<short[]>().Select(e => (double)e)] : [.. data.Read<ushort[]>().Select(e => (double)e)],
+                    4 => data.Type.FixedPoint.IsSigned ? [.. data.Read<int[]>().Select(e => (double)e)] : [.. data.Read<uint[]>().Select(e => (double)e)],
+                    8 => data.Type.FixedPoint.IsSigned ? [.. data.Read<long[]>().Select(e => (double)e)] : [.. data.Read<ulong[]>().Select(e => (double)e)],
+                    _ => [0.0],
+                },
+                H5DataTypeClass.FloatingPoint => data.Type.Size switch
+                {
+                    4 => [.. data.Read<float[]>().Select(e => (double)e)],
+                    8 => [.. data.Read<double[]>().Select(e => (double)e)],
+                    _ => [0.0],
+                },
+                _ => [0.0],
+                #endregion
+            };
         else
         {
-            var src = Array.Empty<double>();
-            if(data.Type.Size==4)
-                src = [.. data.Read<int[]>().Select(e => (double)e)];
-            else if (data.Type.Size == 2)
-                src = [.. data.Read<short[]>().Select(e => (double)e)];
+            ulong[] blocks = [1, (ulong)height, (ulong)width];
+            Func<int, double[]> read = data.Type.Class switch
+            {
+                #region データのタイプによって読み込み方法を変更
+                H5DataTypeClass.FixedPoint => data.Type.Size switch
+                {
+                    1 => data.Type.FixedPoint.IsSigned ?
+                         n => [.. data.Read<sbyte[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)] :
+                         n => [.. data.Read<byte[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)],
+                    2 => data.Type.FixedPoint.IsSigned ?
+                         n => [.. data.Read<short[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)] :
+                         n => [.. data.Read<ushort[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)],
+                    4 => data.Type.FixedPoint.IsSigned ?
+                         n => [.. data.Read<int[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)] :
+                         n => [.. data.Read<uint[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)],
+                    8 => data.Type.FixedPoint.IsSigned ?
+                         n => [.. data.Read<long[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)] :
+                         n => [.. data.Read<ulong[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)],
+                    _ => n => [0.0],
+                },
+                H5DataTypeClass.FloatingPoint => data.Type.Size switch
+                {
+                    4 => n => [.. data.Read<float[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)],
+                    8 => n => [.. data.Read<double[]>(3, [(ulong)n, 0, 0], blocks).Select(e => (double)e)],
+                    _ => n => [0.0],
+                },
+                _ => n => [0.0],
+                #endregion
+            };
 
             Ring.SequentialImageIntensities = [];
-            for(int i=0; i< num; i++)
-                Ring.SequentialImageIntensities.Add( src[(i*width*height)..((i+1)*(width*height))] );
+            for (int i = 0; i < num; i++)
+                Ring.SequentialImageIntensities.Add(read(i));
 
-            Ring.SequentialImageNames = [..Enumerable.Range(1,num+1).Select(e=>e.ToString("000"))];
-
+            Ring.SequentialImageNames = [.. Enumerable.Range(1, num + 1).Select(e => e.ToString("000"))];
             Ring.Intensity = Ring.SequentialImageIntensities[0];
         }
-
-        // double pixSizeX = hdf.GetDataset(header + "x_pixel_size").Read<double>(), pixSizeY = hdf.GetDataset(header + "y_pixel_size").Read<double>();
 
         Ring.SrcImgSize = new Size(width, height);
         Ring.ImageType = Ring.ImageTypeEnum.NXS;
@@ -816,25 +854,26 @@ public static class ImageIO
             try
             {
                 var name = d.Path.Replace(header, "");
-                string str = "";
-                if (d.Type.Class == H5DataTypeClass.String || d.Type.Class == H5DataTypeClass.VariableLength)
-                    str = d.ReadStr();
-                else if (d.Type.Class == H5DataTypeClass.FixedPoint)
-                    str = d.Type.Size switch
+                string str = d.Type.Class switch
+                {
+                    H5DataTypeClass.String => d.ReadStr(),
+                    H5DataTypeClass.VariableLength => d.ReadStr(),
+                    H5DataTypeClass.FixedPoint => d.Type.Size switch
                     {
                         1 => d.Type.FixedPoint.IsSigned ? d.Read<sbyte>().ToString() : d.Read<byte>().ToString(),
                         2 => d.Type.FixedPoint.IsSigned ? d.Read<short>().ToString() : d.Read<ushort>().ToString(),
                         4 => d.Type.FixedPoint.IsSigned ? d.Read<int>().ToString() : d.Read<uint>().ToString(),
                         8 => d.Type.FixedPoint.IsSigned ? d.Read<long>().ToString() : d.Read<ulong>().ToString(),
                         _ => "",
-                    };
-                else if (d.Type.Class == H5DataTypeClass.FloatingPoint)
-                    str = d.Type.Size switch
+                    },
+                    H5DataTypeClass.FloatingPoint => d.Type.Size switch
                     {
                         4 => d.Read<float>().ToString(),
                         8 => d.Read<double>().ToString(),
                         _ => "",
-                    };
+                    },
+                    _ => "",
+                };
                 sb.AppendLine($"{name}: {str}");
             }
             catch { }
