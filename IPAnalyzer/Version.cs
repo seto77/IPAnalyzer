@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.975(2026/04/10) Added support for FlatPanel Rad-Xcam3030 and fixed bugs on Radicon1520. " +
         "\r\n ver3.974(2026/04/06) Reduced the size of the installer package. " +
         "\r\n ver3.973(2026/01/21) Fixed bugs on loading *.nxs files." +
         "\r\n ver3.972(2026/01/16) Fixed bugs on loading *.nxs files." +
