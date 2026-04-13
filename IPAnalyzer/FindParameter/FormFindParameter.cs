@@ -928,10 +928,18 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                        cry[i].Plane[j].peakFunction.Hk =　 cry[i].Plane[j].peakFunction.range / 4;
                    else
                        cry[i].Plane[j].peakFunction.Hk = initialHK;*/
-                   if (hk_theta[i] == 0 || hk_theta[i] > Math.PI / 4 || hk_a[i] >= 0)
+                   //260413Cl 線形モデル由来の Hk を NaN/Inf/範囲外までガード
+                   //if (hk_theta[i] == 0 || hk_theta[i] > Math.PI / 4 || hk_a[i] >= 0)
+                   //    cry[i].Plane[j].peakFunction.Hk = cry[i].Plane[j].peakFunction.range / 2;
+                   //else
+                   //    cry[i].Plane[j].peakFunction.Hk = Math.Tan(hk_theta[i]) * cry[i].Plane[j].MillimeterCalc - hk_a[i] / Math.Cos(hk_theta[i]);
+                   double hkModel = Math.Tan(hk_theta[i]) * cry[i].Plane[j].MillimeterCalc - hk_a[i] / Math.Cos(hk_theta[i]);
+                   if (hk_theta[i] == 0 || hk_theta[i] > Math.PI / 4 || hk_a[i] >= 0
+                       || double.IsNaN(hkModel) || double.IsInfinity(hkModel)
+                       || hkModel <= 0 || hkModel > cry[i].Plane[j].peakFunction.range)
                        cry[i].Plane[j].peakFunction.Hk = cry[i].Plane[j].peakFunction.range / 2;
                    else
-                       cry[i].Plane[j].peakFunction.Hk = Math.Tan(hk_theta[i]) * cry[i].Plane[j].MillimeterCalc - hk_a[i] / Math.Cos(hk_theta[i]);
+                       cry[i].Plane[j].peakFunction.Hk = hkModel;
 
                    cry[i].Plane[j].peakFunction.X = cry[i].Plane[j].MillimeterCalc;
                    cry[i].Plane[j].peakFunction.SearchPeakTop = false;
@@ -996,25 +1004,45 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 }
                 //);
 
+                //260413Cl 理論位置から 1 mm 以上ずれたフィット結果は棄却
+                //for (j = 0; j < cry[i].Plane.Count; j++)
+                //    cry[i].Plane[j].MillimeterObs = cry[i].Plane[j].peakFunction.X;
+                const double shiftLimit = 1.0; // mm
                 for (j = 0; j < cry[i].Plane.Count; j++)
-                    cry[i].Plane[j].MillimeterObs = cry[i].Plane[j].peakFunction.X;
-
-                List<PointD> hk= [];
-                List<double> x = [];
-                List<double> y = [];
-                for (int k = 0; k < listPfTemp.Length; k++)
                 {
-                    if (residual[k] < 0.01)
-                        for (j = 0; j < count[k]; j++)
-                        {
-                            hk.Add(new PointD(listPfTemp[k][j].X, listPfTemp[k][j].Hk));
-                            x.Add(listPfTemp[k][j].X);
-                            y.Add(listPfTemp[k][j].Hk);
-
-                        
-                        }
+                    var pf = cry[i].Plane[j].peakFunction;
+                    double shift = pf.X - cry[i].Plane[j].MillimeterCalc;
+                    if (double.IsNaN(pf.X) || double.IsInfinity(pf.X) || Math.Abs(shift) > shiftLimit)
+                        cry[i].Plane[j].MillimeterObs = double.NaN;
+                    else
+                        cry[i].Plane[j].MillimeterObs = pf.X;
                 }
-                
+
+                //260413Cl hk 線形モデルも MillimeterObs が有効なピークだけを使用
+                //(旧 residual[k] < 0.01 グループ判定は、上で個別に MillimeterObs を NaN 化したため不要)
+                //List<PointD> hk= [];
+                //List<double> x = [];
+                //List<double> y = [];
+                //for (int k = 0; k < listPfTemp.Length; k++)
+                //{
+                //    if (residual[k] < 0.01)
+                //        for (j = 0; j < count[k]; j++)
+                //        {
+                //            hk.Add(new PointD(listPfTemp[k][j].X, listPfTemp[k][j].Hk));
+                //            x.Add(listPfTemp[k][j].X);
+                //            y.Add(listPfTemp[k][j].Hk);
+                //        }
+                //}
+                List<PointD> hk = [];
+                for (j = 0; j < cry[i].Plane.Count; j++)
+                {
+                    if (!double.IsNaN(cry[i].Plane[j].MillimeterObs))
+                    {
+                        var pf = cry[i].Plane[j].peakFunction;
+                        hk.Add(new PointD(pf.X, pf.Hk));
+                    }
+                }
+
                 Statistics.LineFitting([.. hk], ref hk_theta[i], ref hk_a[i]);
                 
             }
@@ -1322,8 +1350,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         IP.PixSizeX = textBoxPixelSizeX.Value;
         IP.PixSizeY = textBoxPixelSizeY.Value;
         IP.ksi = textBoxPixelKsi.RadianValue;
-        IP.phi = textBoxTiltCorrectionPrimaryPhi.RadianValue;
-        IP.tau = textBoxTiltCorrectionPrimaryTau.RadianValue;
+        //260413Cl phi/tau は IsPrimary 分岐の中に移動 (Secondary のとき Primary のチルトを使っていたバグ修正)
+        //IP.phi = textBoxTiltCorrectionPrimaryPhi.RadianValue;
+        //IP.tau = textBoxTiltCorrectionPrimaryTau.RadianValue;
 
         IP.SpericalRadiusInverse = numericalTextBoxSphericalRadius.Value/1000;
 
@@ -1345,19 +1374,24 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             IP.FilmDistance = numericTextBoxPrimaryFilmDistance.Value;
             IP.CenterX = numericalTextBoxPrimaryCenterPositionX.Value;
             IP.CenterY = numericTextBoxPrimaryCenterPositionY.Value;
+            IP.phi = textBoxTiltCorrectionPrimaryPhi.RadianValue;//260413Cl
+            IP.tau = textBoxTiltCorrectionPrimaryTau.RadianValue;//260413Cl
         }
         else//Secondaryのとき
         {
             IP.FilmDistance = numericTextBoxPrimaryFilmDistance.Value + textBoxFilmDistanceDiscrepancy.Value;
             IP.CenterX = numericTextBoxSecondaryCenterPositionX.Value;
             IP.CenterY = numericTextBoxSecondaryCenterPositionY.Value;
+            IP.phi = textBoxTiltCorrectionSecondaryPhi.RadianValue;//260413Cl
+            IP.tau = textBoxTiltCorrectionSecondaryTau.RadianValue;//260413Cl
         }
-        double w = Math.Max(Math.Abs(IP.CenterX), Math.Abs(IP.SrcWidth - IP.CenterX));
-        double h = Math.Max(Math.Abs(IP.CenterY), Math.Abs(IP.SrcWidth - IP.CenterY));
+        //260413Cl h の計算で SrcWidth → SrcHeight に修正
+        double w = Math.Max(Math.Abs(IP.CenterX), Math.Abs(IP.SrcWidth  - IP.CenterX));
+        double h = Math.Max(Math.Abs(IP.CenterY), Math.Abs(IP.SrcHeight - IP.CenterY));
         IP.EndLength = textBoxPixelSizeX.Value * Math.Sqrt(w * w + h * h);
         formMain.FormProperty.numericBoxConcentricEnd.Value = IP.EndLength;
-      
-      
+
+
     }
 
     /// <summary>
@@ -1396,8 +1430,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             IP.phi = textBoxRefinedSecondaryPhi.RadianValue;
             IP.tau = textBoxRefinedSecondaryTau.RadianValue;
         }
-        double w = Math.Max(Math.Abs(IP.CenterX), Math.Abs(IP.SrcWidth - IP.CenterX));
-        double h = Math.Max(Math.Abs(IP.CenterY), Math.Abs(IP.SrcWidth - IP.CenterY));
+        //260413Cl h の計算で SrcWidth → SrcHeight に修正
+        double w = Math.Max(Math.Abs(IP.CenterX), Math.Abs(IP.SrcWidth  - IP.CenterX));
+        double h = Math.Max(Math.Abs(IP.CenterY), Math.Abs(IP.SrcHeight - IP.CenterY));
         IP.EndLength = textBoxPixelSizeX.Value * Math.Sqrt(w * w + h * h);
         //formMain.formProperty.numericUpDownIntensityEnd.Value = (decimal)IP.EndLength;
 
@@ -1437,8 +1472,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         IP.StartLength = 1;
         IP.Mode = HorizontalAxis.Length;
         IP.StepLength = textBoxPixelSizeX.Value * 0.25;
-        double w = Math.Max(Math.Abs(IP.CenterX), Math.Abs(IP.SrcWidth - IP.CenterX));
-        double h = Math.Max(Math.Abs(IP.CenterY), Math.Abs(IP.SrcWidth - IP.CenterY));
+        //260413Cl h の計算で SrcWidth → SrcHeight に修正
+        double w = Math.Max(Math.Abs(IP.CenterX), Math.Abs(IP.SrcWidth  - IP.CenterX));
+        double h = Math.Max(Math.Abs(IP.CenterY), Math.Abs(IP.SrcHeight - IP.CenterY));
         IP.EndLength = textBoxPixelSizeX.Value * Math.Sqrt(w * w + h * h);
         IP.IsTiltCorrection = true;
 
@@ -1643,6 +1679,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
         centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY;
 
+        //260413Cl 一回あたりの中心位置変化量を ±1 pixel にクランプ (発散防止)
+        p.X = Math.Clamp(p.X, -1.0, 1.0);
+        p.Y = Math.Clamp(p.Y, -1.0, 1.0);
+
         if (IsPrimary)
         {
             IP.CenterX = numericalTextBoxPrimaryCenterPositionX.Value + p.X;
@@ -1728,7 +1768,11 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         p.Y = centerOffset.Y / IP.PixSizeY;
         centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
         centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY;
-        
+
+        //260413Cl 一回あたりの中心位置変化量を ±1 pixel にクランプ (発散防止)
+        p.X = Math.Clamp(p.X, -1.0, 1.0);
+        p.Y = Math.Clamp(p.Y, -1.0, 1.0);
+
         if (IsPrimary)
         {
             IP.CenterX = numericalTextBoxPrimaryCenterPositionX.Value + p.X;
@@ -2009,6 +2053,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         sw.Start();
         toolStripProgressBar1.Value = 0;
 
+        //260413Cl 前回実行時の残留値を初期化 (1周目の Hk 初期推定にゴミが混じるのを防ぐ)
+        hk_theta[0] = hk_theta[1] = 0;
+        hk_a[0] = hk_a[1] = 0;
+
         List<EllipseParameter> ellipsesPrimary = [];
         List<EllipseParameter> ellipsesSecondary = [];
 
@@ -2033,14 +2081,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 if (checkBoxRefineWaveLength.Checked)
                     GetWaveLengthFromMultiPeaks(ellipsesPrimary);//X線の波長をもとめる
 
-                //Spherical補正
-                if (checkBoxSphericalCorrection.Checked)
-                {
-                    if (backgroundWorkerRefine.CancellationPending) return;
-                    SetSphericfalCorrection(ellipsesPrimary, true);
-                    ellipsesPrimary = CollectEllipses((j + 0.4) / Repetition, true);
-                }
-
+                //260413Cl 順序入替: WL → FD → Center → Tilt → Spherical → Pixel
                 //カメラ長補正
                 if (checkBoxRefineFilmDistance.Checked)
                     GetFilmDistanceFromOneImage(ellipsesPrimary);//フィルムの距離をもとめる
@@ -2056,9 +2097,17 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 //Tilt補正
                 if (checkBoxRefineTiltCorrection.Checked)
                 {
-                    ellipsesPrimary = CollectEllipses((j + 0.60) / Repetition, true);
+                    ellipsesPrimary = CollectEllipses((j + 0.5) / Repetition, true);
                     if (backgroundWorkerRefine.CancellationPending) return;
                     SetTiltCorrection(ellipsesPrimary, true);
+                }
+
+                //Spherical補正 (tilt 補正後の中心に依存するため tilt の後に実行)
+                if (checkBoxSphericalCorrection.Checked)
+                {
+                    ellipsesPrimary = CollectEllipses((j + 0.65) / Repetition, true);
+                    if (backgroundWorkerRefine.CancellationPending) return;
+                    SetSphericfalCorrection(ellipsesPrimary, true);
                 }
                 //Pixel Size & Distortion補正
                 if (checkBoxRefinePixelSize.Checked)
@@ -2078,9 +2127,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         {
             for (int i = 0; i < Repetition; i++)
             {
-                //primary 
+                //primary
                 if (i == 0)//最初の一回は  荒く決めなければいけないので逐一Collectする
                 {
+                    //260413Cl 提案1の単一イメージ予備リファイン削除を撤回 (Secondary collect の peak guidance に必要)
                     ellipsesPrimary = CollectEllipses(0.1 / Repetition, true);
                     if (backgroundWorkerRefine.CancellationPending) return;
                     GetResidual(ellipsesPrimary);
@@ -2117,28 +2167,29 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                         if (backgroundWorkerRefine.CancellationPending) return;
                     }
 
-                    //260413Cl 追加: Spherical補正 (2イメージまとめて)
-                    if (checkBoxSphericalCorrection.Checked)
-                    {
-                        ellipsesPrimary = CollectEllipses(0.53 / Repetition, true);
-                        ellipsesSecondary = CollectEllipses(0.56 / Repetition, false);
-                        if (backgroundWorkerRefine.CancellationPending) return;
-                        SetSphericfalCorrection(ellipsesPrimary, ellipsesSecondary);
-                    }
-
+                    //260413Cl 順序入替: Tilt → Spherical (Spherical は tilt 補正後の中心に依存するため)
                     //Tilt補正
                     if (checkBoxRefineTiltCorrection.Checked)
                     {
                         //secondary
-                        ellipsesSecondary = CollectEllipses(0.6 / Repetition, false);
+                        ellipsesSecondary = CollectEllipses(0.53 / Repetition, false);
                         if (backgroundWorkerRefine.CancellationPending) return;
                         SetTiltCorrection(ellipsesSecondary, false);
 
                         //primary
-                        ellipsesPrimary = CollectEllipses(0.7 / Repetition, true);
+                        ellipsesPrimary = CollectEllipses(0.6 / Repetition, true);
                         if (backgroundWorkerRefine.CancellationPending) return;
                         SetTiltCorrection(ellipsesPrimary, true);
                         if (backgroundWorkerRefine.CancellationPending) return;
+                    }
+
+                    //Spherical補正 (2イメージまとめて)
+                    if (checkBoxSphericalCorrection.Checked)
+                    {
+                        ellipsesPrimary = CollectEllipses(0.67 / Repetition, true);
+                        ellipsesSecondary = CollectEllipses(0.73 / Repetition, false);
+                        if (backgroundWorkerRefine.CancellationPending) return;
+                        SetSphericfalCorrection(ellipsesPrimary, ellipsesSecondary);
                     }
 
                     //AspectRatio補正
@@ -2173,21 +2224,22 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                             GetWaveLengthFromTwoImageFixedPixelShape(ellipsesPrimary, ellipsesSecondary);
                     }
 
-                    //260413Cl 追加: Spherical補正 (2イメージまとめて)
-                    if (checkBoxSphericalCorrection.Checked)
-                    {
-                        ellipsesPrimary = CollectEllipses((i + 0.45) / Repetition, true);
-                        ellipsesSecondary = CollectEllipses((i + 0.50) / Repetition, false);
-                        if (backgroundWorkerRefine.CancellationPending) return;
-                        SetSphericfalCorrection(ellipsesPrimary, ellipsesSecondary);
-                    }
-
+                    //260413Cl 順序入替: Tilt → Spherical
                     //Tilt補正
                     if (checkBoxRefineTiltCorrection.Checked)
                     {
                         SetTiltCorrection(ellipsesSecondary, false);
                         SetTiltCorrection(ellipsesPrimary, true);
 
+                    }
+
+                    //Spherical補正 (2イメージまとめて)
+                    if (checkBoxSphericalCorrection.Checked)
+                    {
+                        ellipsesPrimary = CollectEllipses((i + 0.45) / Repetition, true);
+                        ellipsesSecondary = CollectEllipses((i + 0.50) / Repetition, false);
+                        if (backgroundWorkerRefine.CancellationPending) return;
+                        SetSphericfalCorrection(ellipsesPrimary, ellipsesSecondary);
                     }
                     //AspectRatio補正
                     if (checkBoxRefinePixelSize.Checked)
