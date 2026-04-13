@@ -6,6 +6,7 @@ using System.IO;
 using System.Drawing.Drawing2D;
 using Crystallography;
 using System.Collections.Generic;
+using System.Linq;//260413Cl 追加
 using System.Threading;
 using Crystallography.Controls;
 
@@ -56,6 +57,13 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
     public IntegralProperty IP = new();
 
+    //260413Cl 追加: 現在のモードに応じた結晶配列を返すプロパティ
+    private Crystal[] CurrentCrystals => checkBoxUseStandardCrystal.Checked ? crystal : flexibleCrystal;
+
+    //260413Cl 追加: 描画で繰り返し使う Font を static readonly 化
+    private static readonly Font TahomaFont8 = new("Tahoma", 8);
+    private static readonly Font TahomaFont7 = new("Tahoma", 7);
+
     #region フィッティング時のオプション
     public int Division { get => (int)numericUpDownDivision.Value; set => numericUpDownDivision.Value = value; }
     public double BandWidthPercentage { get => (double)numericUpDownBandWidth.Value; set => numericUpDownBandWidth.Value = (decimal)value; }
@@ -72,18 +80,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
     
 
-    public FormFindParameter()
-    {
-        //
-        // Windows フォーム デザイナ サポートに必要です。
-        //
-        InitializeComponent();
-
-        //
-        // TODO: InitializeComponent 呼び出しの後に、コンストラクタ コードを追加してください。
-        //
-
-    }
+    //260413Cl コンストラクタのデザイナ生成コメントを整理
+    public FormFindParameter() => InitializeComponent();
 
 
 
@@ -233,7 +231,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                     return;
                 }
             }
-            if (e.Button == MouseButtons.Left & e.Clicks == 2)//何もないところでダブルクリックした場合
+            //if (e.Button == MouseButtons.Left & e.Clicks == 2)//何もないところでダブルクリックした場合
+            if (e.Button == MouseButtons.Left && e.Clicks == 2)//260413Cl & → && 修正 //何もないところでダブルクリックした場合
             {
                 int index = radioButton1.Checked ? 0 : 1;
                 var p = new Plane { MillimeterCalc = pt.X };
@@ -269,7 +268,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (e.Button == MouseButtons.Right)
         {
             MouseRange = true;
-            MouseRangeStart = new Point(e.X, e.Y);
+            //MouseRangeStart = new Point(e.X, e.Y);
+            MouseRangeStart = e.Location;//260413Cl
         }
     }
 
@@ -295,7 +295,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         else if (MouseRange)
         {
             MouseRange = false;
-            MouseRangeEnd = new Point(e.X, e.Y);
+            //MouseRangeEnd = new Point(e.X, e.Y);
+            MouseRangeEnd = e.Location;//260413Cl
             if (Math.Abs(MouseRangeEnd.X - MouseRangeStart.X) < 2 || Math.Abs(MouseRangeEnd.Y - MouseRangeStart.Y) < 2)
             {//選択範囲が小さかったら  
                 //縮小
@@ -373,7 +374,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         }
         if (MouseRange)
         {//範囲選択モードのとき
-            MouseRangeEnd = new Point(e.X, e.Y);
+            //MouseRangeEnd = new Point(e.X, e.Y);
+            MouseRangeEnd = e.Location;//260413Cl
             pictureBoxMain.Refresh();
         }
     }
@@ -395,10 +397,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         if (MaximalX == 0) return;
 
-        Crystal[] cry;
+        //260413Cl CurrentCrystals プロパティ経由に置換
+        var cry = CurrentCrystals;
         if (checkBoxUseStandardCrystal.Checked)//通常結晶モードのとき
         {
-            cry = crystal;
             for (int i = 0; i < 2; i++)
             {
                 double Maximal2Theta = Math.Atan(MaximalX / FilmDistance[i]);
@@ -407,15 +409,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                     cry[i].SetPlanes(1000, d_limit, true, true, true, false, HorizontalAxis.Length, 0, 0);
             }
         }
-        else//flexible結晶の場合
-        {
-            cry = flexibleCrystal;
-        }
 
         //datagridviewを設定する
         int n = cry[0].Plane.Count < cry[1].Plane.Count ? 1 : 0;
         //すでにリストにある場合はチェックボックスの内容だけを保持して初期化
-        if (DoesChangeCrystal == false)
+        //if (DoesChangeCrystal == false)
+        if (!DoesChangeCrystal)//260413Cl
         {
             if (dataGridView.Rows.Count > 0)
             {
@@ -477,13 +476,14 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         Draw();
     }
 
-    delegate void drawCallBack();
+    //260413Cl delegate drawCallBack 廃止 → Action に置換
     public void Draw()
     {
         if (this.InvokeRequired)//別スレッドから呼び出されたとき Invokeして呼びなおす
         {
-            drawCallBack d = new drawCallBack(Draw);
-            this.Invoke(d, null);
+            //drawCallBack d = new drawCallBack(Draw);
+            //this.Invoke(d, null);
+            this.Invoke(Draw);//260413Cl
             return;
         }
 
@@ -496,6 +496,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (crystal[0].Plane == null && crystal[1].Plane == null)
             InitializeCrystalPlane(false);
 
+        //260413Cl 前回の gMain を破棄
+        gMain?.Dispose();
         BmpMain = new Bitmap(pictureBoxMain.Width, pictureBoxMain.Height);
         gMain = Graphics.FromImage(BmpMain);
         gMain.SmoothingMode = SmoothingMode.AntiAlias;
@@ -506,7 +508,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     //ピクチャーボックスの描画
     private void DrawPictureBoxes()
     {
-        if (flowLayoutPanelEachPeaks.Visible == false)
+        //if (flowLayoutPanelEachPeaks.Visible == false)
+        if (!flowLayoutPanelEachPeaks.Visible)//260413Cl
         {
             DrawProfile_Original();//オリジナルプロファイル
             DrawProfile_diffraction();//各種ピーク位置描画
@@ -532,7 +535,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
         if (dp[n].SourceProfile == null) return;
         //次に必要なgraph数をカウント
-        Crystal[] cry = checkBoxUseStandardCrystal.Checked ? crystal: flexibleCrystal;
+        var cry = CurrentCrystals;//260413Cl
         if (cry[0] == null || (cry[0].Plane == null && cry[1].Plane == null)) return;
         //描画対象の面をピックアップしリストをつくる
         List<int> drawPeakList=[];
@@ -628,22 +631,13 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     //オリジナルプロファイルの描画
     private void DrawProfile_Original()
     {
-        Pen pen;
-        PointD[] pt;
-
-        if (dp[0].SourceProfile != null)
+        //260413Cl Pen を using で確実に破棄
+        for (int n = 0; n < 2; n++)
         {
-            pen = new Pen(Color.FromArgb(dp[0].ColorARGB.Value), 1);
-            pt = [.. dp[0].SourceProfile.Pt];
-            for (int i = 0; i < pt.Length - 1; i++)
-                gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
-        }
-
-        if (dp[1].SourceProfile != null)
-        {
-            pen = new Pen(Color.FromArgb(dp[1].ColorARGB.Value), 1);
-            pt = [.. dp[1].SourceProfile.Pt];
-            for (int i = 0; i < pt.Length - 1; i++)
+            if (dp[n].SourceProfile == null) continue;
+            using var pen = new Pen(Color.FromArgb(dp[n].ColorARGB.Value), 1);
+            var pt = dp[n].SourceProfile.Pt;
+            for (int i = 0; i < pt.Count - 1; i++)
                 gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
         }
     }
@@ -651,70 +645,66 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     //結晶の計算上のピーク位置の描画
     private void DrawProfile_diffraction()
     {
-        Crystal[] cry;
-        if (checkBoxUseStandardCrystal.Checked)
-            cry = crystal;
-        else
-            cry = flexibleCrystal;
+        //260413Cl if/else → 三項演算子
+        var cry = CurrentCrystals;//260413Cl
 
         if (cry[0] == null || (cry[0].Plane == null && cry[1].Plane == null)) return;
-        Font font = new Font("Tahoma", 8);
-        Pen pen;
-        PointF pt;
+
+        //260413Cl static Font と using Brush/Pen/StringFormat で GDI リソースを確実に破棄
+        using var verticalFmt = new StringFormat(StringFormatFlags.DirectionVertical);
 
         for (int i = 0; i < 2; i++)
-            if (dp[i].SourceProfile != null)
+        {
+            if (dp[i].SourceProfile == null) continue;
+
+            var color = Color.FromArgb(dp[i].ColorARGB.Value);
+            using var br = new SolidBrush(color);
+            using var thinPen = new Pen(color, 1);
+            using var thickPen = new Pen(color, 3);
+
+            //字の部分
+            float JustBeforeX = -10;
+            int shiftY = 40;
+            for (int j = 0; j < cry[i].Plane.Count; j++)
             {
-                //字の部分
-                float JustBeforeX = -10;
-                int shiftY = 40;
-                for (int j = 0; j < cry[i].Plane.Count; j++)
-                {
-                    Brush br = new SolidBrush(Color.FromArgb(dp[i].ColorARGB.Value));
-                    cry[i].Plane[j].MillimeterCalc = Math.Tan(2 * Math.Asin(WaveLength / 2 / cry[i].Plane[j].d)) * FilmDistance[i];
-                    pt = ConvToPicBoxCoord(cry[i].Plane[j].MillimeterCalc, UpperY);
-                    if (pt.X - JustBeforeX < 6)
-                    {//字がかぶらないようにするための措置
-                        pt.Y += shiftY;
-                        gMain.DrawString("  " + cry[i].Plane[j].strHKL, font, br, pt, new StringFormat(StringFormatFlags.DirectionVertical));
-                        shiftY += 40;
-                    }
-                    else
-                    {
-                        gMain.DrawString(cry[i].Plane[j].strHKL, font, br, pt, new StringFormat(StringFormatFlags.DirectionVertical));
-                        shiftY = 40;
-                    }
-                    JustBeforeX = pt.X;
-                    //ここから線の部分
-                    if (i == SelectedCrystalIndex && j == SelectedPlaneIndex)
-                        pen = new Pen(Color.FromArgb(dp[i].ColorARGB.Value), 3);
-                    else
-                        pen = new Pen(Color.FromArgb(dp[i].ColorARGB.Value), 1);
-                    gMain.DrawLine(pen, ConvToPicBoxCoord(cry[i].Plane[j].MillimeterCalc, LowerY), ConvToPicBoxCoord(cry[i].Plane[j].MillimeterCalc, UpperY));
+                cry[i].Plane[j].MillimeterCalc = Math.Tan(2 * Math.Asin(WaveLength / 2 / cry[i].Plane[j].d)) * FilmDistance[i];
+                PointF pt = ConvToPicBoxCoord(cry[i].Plane[j].MillimeterCalc, UpperY);
+                if (pt.X - JustBeforeX < 6)
+                {//字がかぶらないようにするための措置
+                    pt.Y += shiftY;
+                    gMain.DrawString("  " + cry[i].Plane[j].strHKL, TahomaFont8, br, pt, verticalFmt);
+                    shiftY += 40;
                 }
+                else
+                {
+                    gMain.DrawString(cry[i].Plane[j].strHKL, TahomaFont8, br, pt, verticalFmt);
+                    shiftY = 40;
+                }
+                JustBeforeX = pt.X;
+                //ここから線の部分
+                var pen = (i == SelectedCrystalIndex && j == SelectedPlaneIndex) ? thickPen : thinPen;
+                gMain.DrawLine(pen, ConvToPicBoxCoord(cry[i].Plane[j].MillimeterCalc, LowerY), ConvToPicBoxCoord(cry[i].Plane[j].MillimeterCalc, UpperY));
             }
+        }
     }
 
     //フィッティング曲線の描画
     private void DrawProfile_Fitting()
     {
-        Crystal[] cry;
-        if (checkBoxUseStandardCrystal.Checked)
-            cry = crystal;
-        else
-            cry = flexibleCrystal;
+        //260413Cl if/else → 三項演算子
+        var cry = CurrentCrystals;//260413Cl
 
         if (cry[0] == null || (cry[0].Plane == null && cry[1].Plane == null)) return;
         double step = (ConvToRealCoord(1, 0).X - ConvToRealCoord(0, 0).X)/3;
 
         for (int n = 0; n < 2; n++)
-            if (dp[n].SourceProfile != null)
+        {
+            if (dp[n].SourceProfile == null) continue;
+            Color s = Color.FromArgb(dp[n].ColorARGB.Value);
+            Color c = Color.FromArgb((int)(s.R * 0.5), (int)(s.G * 0.5), (int)(s.B * 0.5));
+            using var pen = new Pen(c, 2);//260413Cl using 化
+            for (int i = 0; i < cry[n].Plane.Count; i++)
             {
-                Color s = Color.FromArgb(dp[n].ColorARGB.Value);
-                Color c = Color.FromArgb((int)(s.R * 0.5), (int)(s.G * 0.5), (int)(s.B * 0.5));
-                Pen pen = new Pen(c, 2);
-                for (int i = 0; i < cry[n].Plane.Count; i++)
-                {
                     if (cry[n].Plane != null && cry[n].Plane[i].peakFunction != null)
                     {
                         double theta = Math.Asin(WaveLength / 2 / cry[n].Plane[i].d);
@@ -769,16 +759,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         else if (d / unit / 5 < maxDivisionNumber) AngleGradiation = (float)unit * 5;
         else if (d / unit / 10 < maxDivisionNumber) AngleGradiation = (float)unit * 10;
 
-        Pen pen = new Pen(Brushes.Black, 1);
-
-        gMain.DrawLine(pen, 40, pictureBoxMain.Height - 20, pictureBoxMain.Width, pictureBoxMain.Height - 20);
-        Font strFont = new Font(new FontFamily("tahoma"), 8);
+        //260413Cl Pens.Black/TahomaFont8 に置換し Pen/Font の都度生成を廃止
+        gMain.DrawLine(Pens.Black, 40, pictureBoxMain.Height - 20, pictureBoxMain.Width, pictureBoxMain.Height - 20);
         for (int i = (int)(LowerX / AngleGradiation) + 1; i < UpperX / AngleGradiation; i++)
         {
-            pen = new Pen(Brushes.Black, 1);
-            gMain.DrawLine(pen, ConvToPicBoxCoord(i * AngleGradiation, 0).X, pictureBoxMain.Height - 20, ConvToPicBoxCoord(i * AngleGradiation, 0).X, pictureBoxMain.Height - 16);
-            gMain.DrawString((i * AngleGradiation).ToString(), strFont, Brushes.Black, ConvToPicBoxCoord(i * AngleGradiation, 0).X - 2, pictureBoxMain.Height - 16);
-            pen = new Pen(Brushes.LightGray, 1);
+            gMain.DrawLine(Pens.Black, ConvToPicBoxCoord(i * AngleGradiation, 0).X, pictureBoxMain.Height - 20, ConvToPicBoxCoord(i * AngleGradiation, 0).X, pictureBoxMain.Height - 16);
+            gMain.DrawString((i * AngleGradiation).ToString(), TahomaFont8, Brushes.Black, ConvToPicBoxCoord(i * AngleGradiation, 0).X - 2, pictureBoxMain.Height - 16);
         }
 
        /* float IntensityGradiation;//ここより強度目盛りの描画
@@ -798,16 +784,12 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         else if (d / unit / 5 < maxDivisionNumber) IntensityGradiation = (float)unit * 5;
         else if (d / unit / 10 < maxDivisionNumber) IntensityGradiation = (float)unit * 10;
 
-        pen = new Pen(Brushes.Black, 1);
-        gMain.DrawLine(pen, 40, 0, 40, pictureBoxMain.Height - 20);
+        //260413Cl Pens.Black/TahomaFont8 に置換
+        gMain.DrawLine(Pens.Black, 40, 0, 40, pictureBoxMain.Height - 20);
         for (int i = (int)(LowerY / IntensityGradiation) + 1; i < UpperY / IntensityGradiation; i++)
         {
-            pen = new Pen(Brushes.Black, 1);
-            gMain.DrawLine(pen, 32, ConvToPicBoxCoord(0, i * IntensityGradiation).Y, 40, ConvToPicBoxCoord(0, i * IntensityGradiation).Y);
-            gMain.DrawString((i * IntensityGradiation).ToString(), strFont, Brushes.Black, 0, ConvToPicBoxCoord(0, i * IntensityGradiation).Y - 6);
-            pen = new Pen(Brushes.LightGray, 1);
-
-
+            gMain.DrawLine(Pens.Black, 32, ConvToPicBoxCoord(0, i * IntensityGradiation).Y, 40, ConvToPicBoxCoord(0, i * IntensityGradiation).Y);
+            gMain.DrawString((i * IntensityGradiation).ToString(), TahomaFont8, Brushes.Black, 0, ConvToPicBoxCoord(0, i * IntensityGradiation).Y - 6);
         }
     }
     #endregion
@@ -878,14 +860,14 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         if (MouseRange)
         {
-            Pen pen = new Pen(Brushes.Gray);
-            pen.DashStyle = DashStyle.Dash;
+            //260413Cl Pen を using で破棄 + object initializer
+            using var pen = new Pen(Brushes.Gray) { DashStyle = DashStyle.Dash };
             e.Graphics.DrawRectangle(pen, Math.Min(MouseRangeStart.X, MouseRangeEnd.X), Math.Min(MouseRangeStart.Y, MouseRangeEnd.Y),
                 Math.Abs(MouseRangeStart.X - MouseRangeEnd.X), Math.Abs(MouseRangeStart.Y - MouseRangeEnd.Y));
         }
     }
 
-    delegate void FittingCallBack();
+    //260413Cl delegate FittingCallBack 廃止 → Action に置換
     double initialHK = -1;
 
     /// <summary>
@@ -903,16 +885,14 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         if (this.InvokeRequired)//別スレッドから呼び出されたとき Invokeして呼びなおす
         {
-            FittingCallBack d = new FittingCallBack(Fitting);
-            this.Invoke(d, null);
+            //FittingCallBack d = new FittingCallBack(Fitting);
+            //this.Invoke(d, null);
+            this.Invoke(Fitting);//260413Cl
             return;
         }
 
-        Crystal[] cry;
-        if (checkBoxUseStandardCrystal.Checked)
-            cry = crystal;
-        else
-            cry = flexibleCrystal;
+        //260413Cl if/else → 三項演算子
+        var cry = CurrentCrystals;//260413Cl
 
         if (cry[0] == null || (cry[0].Plane == null && cry[1].Plane == null)) return;
         int i, j;
@@ -966,7 +946,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 for (j = 0; j < cry[i].Plane.Count; j++)
                 {
                     //先ず分離対象となるピークを検出する。対象となるのはピークとピークがSerchRangeの範囲で重なり合うもの
-                    if (this.Enabled == true)
+                    //if (this.Enabled == true)
+                    if (this.Enabled)//260413Cl
                     {
                         if (LastDecompositionGroup == -1)//もしまだ何のグループにも属していなかったら
                         {
@@ -1047,11 +1028,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
     private void RefreshDatagridView()
     {
-        Crystal[] cry;
-        if (checkBoxUseStandardCrystal.Checked)
-            cry = crystal;
-        else
-            cry = flexibleCrystal;
+        //260413Cl if/else → 三項演算子
+        var cry = CurrentCrystals;//260413Cl
 
         int length = Math.Max(cry[0].Plane.Count, cry[1].Plane.Count);
         for (int i = 0; i < 2; i++)
@@ -1079,7 +1057,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         if (dp[0] != null && crystal != null)
         {
-            var colorDialog = new ColorDialog
+            //260413Cl ColorDialog を using で破棄
+            using var colorDialog = new ColorDialog
             {
                 Color = pictureBoxPattern1.BackColor,
                 AllowFullOpen = true,
@@ -1098,7 +1077,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     {
         if (dp[1] != null && crystal != null)
         {
-            var colorDialog = new ColorDialog
+            //260413Cl ColorDialog を using で破棄
+            using var colorDialog = new ColorDialog
             {
                 Color = pictureBoxPattern2.BackColor,
                 AllowFullOpen = true,
@@ -1158,8 +1138,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     private void buttonOpenPrimaryImage_Click(object sender, EventArgs e)
     {
         //ファイルを選択
-        OpenFileDialog dlg = new OpenFileDialog();
-        dlg.Filter = ImageIO.FilterString;
+        //OpenFileDialog dlg = new OpenFileDialog();
+        //dlg.Filter = ImageIO.FilterString;
+        using var dlg = new OpenFileDialog { Filter = ImageIO.FilterString };//260413Cl
         if (dlg.ShowDialog() == DialogResult.OK)
             formMain.ReadImage(dlg.FileName);
         else
@@ -1170,7 +1151,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             selectSequentialImageNumber();
             numericBoxPrimaryImageNum.Value = formMain.FormSequentialImage.SelectedIndex;
         }
-        if (dlg.FileName == "")
+        //if (dlg.FileName == "")
+        if (dlg.FileName.Length == 0)//260413Cl
             dp[0].SourceProfile = null;
     }
     private void buttonClearPrimaryImage_Click(object sender, EventArgs e)
@@ -1181,8 +1163,9 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
     private void buttonOpenSecondaryImage_Click(object sender, EventArgs e)
     {
-        OpenFileDialog dlg = new OpenFileDialog();
-        dlg.Filter = ImageIO.FilterString;
+        //OpenFileDialog dlg = new OpenFileDialog();
+        //dlg.Filter = ImageIO.FilterString;
+        using var dlg = new OpenFileDialog { Filter = ImageIO.FilterString };//260413Cl
         if (dlg.ShowDialog() == DialogResult.OK)
             formMain.ReadImage(dlg.FileName);
         else
@@ -1195,7 +1178,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             numericBoxSecondaryImageNum.Value = formMain.FormSequentialImage.SelectedIndex;
         }
 
-        if (dlg.FileName == "")
+        //if (dlg.FileName == "")
+        if (dlg.FileName.Length == 0)//260413Cl
             dp[1].SourceProfile = null;
     }
     private void buttonClearSecondaryImage_Click(object sender, EventArgs e)
@@ -1239,7 +1223,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         //設定したIPにしたがってプロファイルをげっと
         dp[0].SourceProfile = Ring.GetProfile(IP);
         //dp[0].SetSmoothingAndBackGround();
-        numericTextBoxPrimaryFilmDistance_TextChanged(new object(), new EventArgs());
+        //numericTextBoxPrimaryFilmDistance_TextChanged(new object(), new EventArgs());
+        numericTextBoxPrimaryFilmDistance_TextChanged(this, EventArgs.Empty);//260413Cl
         SetDrawRange(true);
 
         this.Enabled = true;
@@ -1263,7 +1248,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         //設定したIPにしたがってプロファイルをげっと
         dp[1].SourceProfile = Ring.GetProfile(IP);
         //dp[1].SetSmoothingAndBackGround();
-        numericTextBoxPrimaryFilmDistance_TextChanged(new object(), new EventArgs());
+        //numericTextBoxPrimaryFilmDistance_TextChanged(new object(), new EventArgs());
+        numericTextBoxPrimaryFilmDistance_TextChanged(this, EventArgs.Empty);//260413Cl
         SetDrawRange(true);
 
         this.Enabled = true;
@@ -1422,13 +1408,14 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         return CollectEllipses(progress, IsPrimary, true);
     }
 
-    delegate List<EllipseParameter> CollectEllipsesCallBack(double progress, bool IsPrimary, bool IsRenewIP);
+    //260413Cl delegate CollectEllipsesCallBack 廃止 → Func に置換
     private List<EllipseParameter> CollectEllipses(double progress, bool IsPrimary, bool IsRenewIP)
     {
         if (this.InvokeRequired)//別スレッドから呼び出されたとき Invokeして呼びなおす
         {
-            CollectEllipsesCallBack d = new CollectEllipsesCallBack(CollectEllipses);
-            return (List<EllipseParameter>)this.Invoke(d, [progress, IsPrimary, IsRenewIP]);
+            //CollectEllipsesCallBack d = new CollectEllipsesCallBack(CollectEllipses);
+            //return (List<EllipseParameter>)this.Invoke(d, [progress, IsPrimary, IsRenewIP]);
+            return this.Invoke(() => CollectEllipses(progress, IsPrimary, IsRenewIP));//260413Cl
         }
         
         if (backgroundWorkerRefine.CancellationPending) return null;
@@ -1583,6 +1570,30 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
     }
 
+    //260413Cl 追加: 2イメージでまとめて球面補正を適用する
+    private void SetSphericfalCorrection(List<EllipseParameter> ellipses1, List<EllipseParameter> ellipses2)
+    {
+        if (ellipses1 == null || ellipses2 == null) return;
+
+        //各イメージから補正量(デルタ)と誤差を個別に算出 (初期値 0 で呼ぶと += によりデルタが取れる)
+        double delta1 = 0, delta2 = 0, dev1 = 0, dev2 = 0;
+        FindParameter.FindSphericalCorrection(ellipses1, WaveLength, FilmDistance[0], ref delta1, ref dev1);
+        FindParameter.FindSphericalCorrection(ellipses2, WaveLength, FilmDistance[1], ref delta2, ref dev2);
+
+        //波長補正と同じ重み付き合成 (Count / dev^2)
+        double weight1 = dev1 > 0 && !double.IsInfinity(dev1) ? ellipses1.Count / (dev1 * dev1) : 0;
+        double weight2 = dev2 > 0 && !double.IsInfinity(dev2) ? ellipses2.Count / (dev2 * dev2) : 0;
+        if (weight1 + weight2 <= 0) return;
+
+        double delta = (delta1 * weight1 + delta2 * weight2) / (weight1 + weight2);
+        double dev = Math.Sqrt(1 / (weight1 + weight2));
+
+        double radiusInverse = numericalTextBoxRefinedSphericalRadius.Value / 1000 + delta;
+        numericalTextBoxRefinedSphericalRadius.Value = radiusInverse * 1000;
+        numericalTextBoxRadiusInverseDev.Value = dev * 1000;
+        IP.SpericalRadiusInverse = radiusInverse;
+    }
+
     /// <summary>
     /// このモードでは一発で傾き、オフセットを求める
     /// </summary>
@@ -1704,14 +1715,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                 EllipseCenter.Add(p);
         }
 
-        double x = 0, y = 0;
-        for(int i =0; i<EllipseCenter.Count; i++)
-        {
-            x += EllipseCenter[i].X;
-            y += EllipseCenter[i].Y;
-        }
-
-        PointD centerOffset = new PointD(x / EllipseCenter.Count, y / EllipseCenter.Count);//このときのCenterOffsetはmillimeter単位
+        //260413Cl LINQ Average で平均中心を計算 (CenterOffset は mm 単位)
+        PointD centerOffset = new(
+            EllipseCenter.Average(p => p.X),
+            EllipseCenter.Average(p => p.Y));
         SetRefinedIntegralProperty(IsPrimary);
 
         PointD centerOffsetDev= new PointD();
@@ -1969,7 +1976,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             for (int i = 0; i < crystal[0].Plane.Count && i < crystal[1].Plane.Count; i++)
                 if (crystal[0].Plane[i].IsFittingChecked && crystal[1].Plane[i].IsFittingChecked)
                     flag = true;
-            if (flag == false)
+            //if (flag == false)
+            if (!flag)//260413Cl
                 return;
         }
 
@@ -2109,6 +2117,15 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                         if (backgroundWorkerRefine.CancellationPending) return;
                     }
 
+                    //260413Cl 追加: Spherical補正 (2イメージまとめて)
+                    if (checkBoxSphericalCorrection.Checked)
+                    {
+                        ellipsesPrimary = CollectEllipses(0.53 / Repetition, true);
+                        ellipsesSecondary = CollectEllipses(0.56 / Repetition, false);
+                        if (backgroundWorkerRefine.CancellationPending) return;
+                        SetSphericfalCorrection(ellipsesPrimary, ellipsesSecondary);
+                    }
+
                     //Tilt補正
                     if (checkBoxRefineTiltCorrection.Checked)
                     {
@@ -2154,6 +2171,15 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                             GetWaveLengthFromMultiPeaks(ellipsesPrimary, ellipsesSecondary);
                         else
                             GetWaveLengthFromTwoImageFixedPixelShape(ellipsesPrimary, ellipsesSecondary);
+                    }
+
+                    //260413Cl 追加: Spherical補正 (2イメージまとめて)
+                    if (checkBoxSphericalCorrection.Checked)
+                    {
+                        ellipsesPrimary = CollectEllipses((i + 0.45) / Repetition, true);
+                        ellipsesSecondary = CollectEllipses((i + 0.50) / Repetition, false);
+                        if (backgroundWorkerRefine.CancellationPending) return;
+                        SetSphericfalCorrection(ellipsesPrimary, ellipsesSecondary);
                     }
 
                     //Tilt補正
@@ -2422,70 +2448,59 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         }
         max *= 1.2;
 
-        Bitmap bmp;
-        if (IsPrimary)
-            bmp = new Bitmap(pictureBoxTiltCorrection1.Width, pictureBoxTiltCorrection1.Height);
-        else
-            bmp = new Bitmap(pictureBoxTiltCorrection2.Width, pictureBoxTiltCorrection2.Height);
-        Graphics g = Graphics.FromImage(bmp);
-        g.SmoothingMode = SmoothingMode.HighQuality;
-        g.Clear(Color.White);
-        Font strFont = new Font(new FontFamily("tahoma"), 8);
-
-        if (IsPrimary)//今読み込んでいるのがprimaryのとき
-            g.DrawString("Primary", strFont, Brushes.Black, 0, 0);
-        else
-            g.DrawString("Secondary", strFont, Brushes.Black, 0, 0);
-
-        //目盛りを描く
-        double graduation;//ここより角度目盛りの描画
-        int log10 = Math.Log10(2 * max) > 0 ? (int)Math.Log10(2 * max) : (int)Math.Log10(2 * max) - 1;
-        double d = max / Math.Pow(10, log10);
-        if (d < 1.6) graduation = (2 * Math.Pow(10, log10 - 1));
-        else if (d < 4.0) graduation = (5 * Math.Pow(10, log10 - 1));
-        else graduation = (Math.Pow(10, log10));
-
-        Pen pen = new Pen(Brushes.LightGray, 1);
-        g.DrawLine(pen, ConvCoodTiltCorrection(-max, 0, max), ConvCoodTiltCorrection(max, 0, max));
-        g.DrawLine(pen, ConvCoodTiltCorrection(0, -max, max), ConvCoodTiltCorrection(0, max, max));
-
-        pen = new Pen(Brushes.LightGray, 1);
-        for (int i = (int)(-max / graduation) + 1; i < max / graduation; i++)
+        //260413Cl 一本化 + Graphics/Pen を using で破棄, Font は static readonly
+        var target = IsPrimary ? pictureBoxTiltCorrection1 : pictureBoxTiltCorrection2;
+        var bmp = new Bitmap(target.Width, target.Height);
+        using (var g = Graphics.FromImage(bmp))
         {
-            g.DrawLine(pen, ConvCoodTiltCorrection(i * graduation, 0, max), new PointF(ConvCoodTiltCorrection(i * graduation, 0, max).X, ConvCoodTiltCorrection(i * graduation, 0, max).Y + 2));
-            //g.DrawString((i * graduation).ToString(), strFont, Brushes.LightGray, ConvCoodTiltCorrection(i * graduation, 0, max).X - 2, ConvCoodTiltCorrection(i * graduation, 0, max).Y + 2);
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.Clear(Color.White);
 
-            g.DrawLine(pen, ConvCoodTiltCorrection(0, i * graduation, max), new PointF(ConvCoodTiltCorrection(0, i * graduation, max).X + 2, ConvCoodTiltCorrection(0, i * graduation, max).Y));
-            g.DrawString(Math.Round(i * graduation, 8).ToString(), strFont, Brushes.LightGray, ConvCoodTiltCorrection(0, i * graduation, max).X + 4, ConvCoodTiltCorrection(0, i * graduation, max).Y - 4);
-        }
+            g.DrawString(IsPrimary ? "Primary" : "Secondary", TahomaFont8, Brushes.Black, 0, 0);
 
+            //目盛りを描く
+            double graduation;
+            int log10 = Math.Log10(2 * max) > 0 ? (int)Math.Log10(2 * max) : (int)Math.Log10(2 * max) - 1;
+            double d = max / Math.Pow(10, log10);
+            if (d < 1.6) graduation = 2 * Math.Pow(10, log10 - 1);
+            else if (d < 4.0) graduation = 5 * Math.Pow(10, log10 - 1);
+            else graduation = Math.Pow(10, log10);
 
-        //まず点(楕円の中心位置)と
-        for (int i = EllipseCenter.Count - 1; i >= 0; i--)
-        {
-            g.FillEllipse(BrushesForAnalysis[i], ConvCoodTiltCorrection(DirectSpots[i], max).X - 3, ConvCoodTiltCorrection(DirectSpots[i], max).Y - 4, 8, 8);
+            g.DrawLine(Pens.LightGray, ConvCoodTiltCorrection(-max, 0, max), ConvCoodTiltCorrection(max, 0, max));
+            g.DrawLine(Pens.LightGray, ConvCoodTiltCorrection(0, -max, max), ConvCoodTiltCorrection(0, max, max));
 
-            int k;
-
-            for (int j = 0; j < EllipseCenter[i].Count; j++)
+            for (int i = (int)(-max / graduation) + 1; i < max / graduation; i++)
             {
-                g.DrawRectangle(PensForAnalysis[i],
-                    ConvCoodTiltCorrection(EllipseCenter[i][j], max).X - 3, ConvCoodTiltCorrection(EllipseCenter[i][j], max).Y - 3, 6, 6);
-                //番号を振る
-                int temp = -1;
-                for (k = 0; k < crystal[IsPrimary ? 0 : 1].Plane.Count; k++)
-                    if (crystal[IsPrimary ? 0 : 1].Plane[k].IsFittingChecked)
-                        if (++temp == j)
-                            break;
+                g.DrawLine(Pens.LightGray, ConvCoodTiltCorrection(i * graduation, 0, max), new PointF(ConvCoodTiltCorrection(i * graduation, 0, max).X, ConvCoodTiltCorrection(i * graduation, 0, max).Y + 2));
+                g.DrawLine(Pens.LightGray, ConvCoodTiltCorrection(0, i * graduation, max), new PointF(ConvCoodTiltCorrection(0, i * graduation, max).X + 2, ConvCoodTiltCorrection(0, i * graduation, max).Y));
+                g.DrawString(Math.Round(i * graduation, 8).ToString(), TahomaFont8, Brushes.LightGray, ConvCoodTiltCorrection(0, i * graduation, max).X + 4, ConvCoodTiltCorrection(0, i * graduation, max).Y - 4);
+            }
 
-                g.DrawString((k + 1).ToString(), new Font("Tahoma", 7), BrushesForAnalysis[i],
-                    ConvCoodTiltCorrection(EllipseCenter[i][j], max).X + 3, ConvCoodTiltCorrection(EllipseCenter[i][j], max).Y + 3);
+            //まず点(楕円の中心位置)と
+            for (int i = EllipseCenter.Count - 1; i >= 0; i--)
+            {
+                g.FillEllipse(BrushesForAnalysis[i], ConvCoodTiltCorrection(DirectSpots[i], max).X - 3, ConvCoodTiltCorrection(DirectSpots[i], max).Y - 4, 8, 8);
+
+                int k;
+                for (int j = 0; j < EllipseCenter[i].Count; j++)
+                {
+                    g.DrawRectangle(PensForAnalysis[i],
+                        ConvCoodTiltCorrection(EllipseCenter[i][j], max).X - 3, ConvCoodTiltCorrection(EllipseCenter[i][j], max).Y - 3, 6, 6);
+                    //番号を振る
+                    int temp = -1;
+                    for (k = 0; k < crystal[IsPrimary ? 0 : 1].Plane.Count; k++)
+                        if (crystal[IsPrimary ? 0 : 1].Plane[k].IsFittingChecked)
+                            if (++temp == j)
+                                break;
+
+                    g.DrawString((k + 1).ToString(), TahomaFont7, BrushesForAnalysis[i],
+                        ConvCoodTiltCorrection(EllipseCenter[i][j], max).X + 3, ConvCoodTiltCorrection(EllipseCenter[i][j], max).Y + 3);
+                }
             }
         }
-        if (IsPrimary)
-            pictureBoxTiltCorrection1.Image = bmp;
-        else
-            pictureBoxTiltCorrection2.Image = bmp;
+        var old = target.Image;
+        target.Image = bmp;
+        old?.Dispose();//260413Cl 旧ビットマップを破棄
     }
     private PointF ConvCoodTiltCorrection(PointD pt, double max)
     {
@@ -2506,14 +2521,11 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     /// <returns></returns>
     private Bitmap DrawGraph(double[] SeriesValue, int width, int height)
     {
-
-        double max = double.NegativeInfinity;
-        double min = double.PositiveInfinity;
-        for (int i = 0; i < SeriesValue.Length; i++)
-        {
-            max = Math.Max(max, SeriesValue[i]);
-            min = Math.Min(min, SeriesValue[i]);
-        }
+        //260413Cl Max/Min を LINQ に変更
+        if (SeriesValue.Length == 0)
+            return new Bitmap(Math.Max(1, width), Math.Max(1, height));
+        double max = SeriesValue.Max();
+        double min = SeriesValue.Min();
 
         if (max - min < 10E-8)
         {
@@ -2527,45 +2539,37 @@ public partial class FormFindParameter : System.Windows.Forms.Form
         if (width == 0 || height == 0)
             return new Bitmap(1, 1);
 
-        Bitmap bmp = new Bitmap(width, height);
-        Graphics g = Graphics.FromImage(bmp);
+        Bitmap bmp = new(width, height);
+        //260413Cl Graphics/Pen を using 化, Font は static readonly, Pens.Black/LightGray を利用
+        using var g = Graphics.FromImage(bmp);
         g.SmoothingMode = SmoothingMode.AntiAlias;
         g.Clear(Color.White);
 
-
         //目盛りを描く
-
-        //ここより角度目盛りの描画
-
         int log10 = Math.Log10(max - min) > 0 ? (int)Math.Log10(max - min) : (int)Math.Log10(max - min) - 1;
-
         double d = (max - min) / Math.Pow(10, log10);
 
         double graduation;
-        if (d < 1.6) graduation = (2 * Math.Pow(10, log10 - 1));
-        else if (d < 4.0) graduation = (5 * Math.Pow(10, log10 - 1));
-        else graduation = (Math.Pow(10, log10));
+        if (d < 1.6) graduation = 2 * Math.Pow(10, log10 - 1);
+        else if (d < 4.0) graduation = 5 * Math.Pow(10, log10 - 1);
+        else graduation = Math.Pow(10, log10);
 
         if (graduation < 10E-14)
             return bmp;
 
-        Pen pen = new Pen(Brushes.LightGray, 1);
-        g.DrawLine(pen, 45, 0, 45, 500);
-        Font strFont = new Font(new FontFamily("tahoma"), 8);
-        pen = new Pen(Brushes.LightGray, 1);
+        g.DrawLine(Pens.LightGray, 45, 0, 45, 500);
 
         try
         {
             for (int i = (int)(min / graduation) + 1; i < max / graduation; i++)
             {
-                g.DrawLine(pen,
+                g.DrawLine(Pens.LightGray,
                     new PointF(45, ConvCoodForAnalysis(0, i * graduation, min, max, width, height).Y),
                     new PointF(500, ConvCoodForAnalysis(0, i * graduation, min, max, width, height).Y));
 
-                g.DrawString(Math.Round(i * graduation, 8).ToString(), strFont, Brushes.LightGray, 0,
+                g.DrawString(Math.Round(i * graduation, 8).ToString(), TahomaFont8, Brushes.LightGray, 0,
                     ConvCoodForAnalysis(0, i * graduation, max, min, width, height).Y - 4);
             }
-
 
             //点を描く
             for (int i = 0; i < SeriesValue.Length; i++)
@@ -2574,7 +2578,7 @@ public partial class FormFindParameter : System.Windows.Forms.Form
                     ConvCoodForAnalysis(i, SeriesValue[i], max, min, width, height).Y - 3, 6, 6);
             //線を描く
             for (int i = 0; i < SeriesValue.Length - 1; i++)
-                g.DrawLine(new Pen(Brushes.Black, 1),
+                g.DrawLine(Pens.Black,
                     ConvCoodForAnalysis(i, SeriesValue[i], max, min, width, height),
                     ConvCoodForAnalysis(i + 1, SeriesValue[i + 1], max, min, width, height));
         }
@@ -2870,11 +2874,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     private void buttonGetCameraLenghtFromWholePattern_Click(object sender, EventArgs e)
     {
 
-        Crystal[] cry;
-        if (checkBoxUseStandardCrystal.Checked)
-            cry = crystal;
-        else
-            cry = flexibleCrystal;
+        //260413Cl if/else → 三項演算子
+        var cry = CurrentCrystals;//260413Cl
 
         if (cry[0].Plane == null || cry[1].Plane == null)
             return;
@@ -2963,8 +2964,10 @@ public partial class FormFindParameter : System.Windows.Forms.Form
 
         textBoxWaveLength.Text = textBoxRefinedWaveLength.Text;
 
-        buttonPrimaryGetProfile_Click(new object(), new EventArgs());
-        buttonSecondaryGetProfile_Click(new object(), new EventArgs());
+        //buttonPrimaryGetProfile_Click(new object(), new EventArgs());
+        //buttonSecondaryGetProfile_Click(new object(), new EventArgs());
+        buttonPrimaryGetProfile_Click(this, EventArgs.Empty);//260413Cl
+        buttonSecondaryGetProfile_Click(this, EventArgs.Empty);//260413Cl
     }
 
     private void FormFindParameter_Resize(object sender, EventArgs e)
@@ -3074,7 +3077,8 @@ public partial class FormFindParameter : System.Windows.Forms.Form
             string ext = Path.GetExtension(fileName[0]).TrimStart(trimChars);
             if (fileName[0].EndsWith("prm"))
                 formMain.ReadParameter(fileName[0]);
-            buttonSetInitioalParam_Click(sender, new EventArgs());
+            //buttonSetInitioalParam_Click(sender, new EventArgs());
+            buttonSetInitioalParam_Click(sender, EventArgs.Empty);//260413Cl
 
         }
     }
