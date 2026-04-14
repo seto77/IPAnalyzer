@@ -94,7 +94,7 @@ public class Macro : MacroBase
                 if (mutex.WaitOne(Timeout * 1000, true))
                 {
                     mutex.ReleaseMutex();
-                    Clipboard.SetDataObject(new MacroTriger("PDI", Debug, obj, name));
+                    Clipboard.SetDataObject(new MacroTrigger("PDI", Debug, obj, name));
                     Thread.Sleep(500);
                 }
 
