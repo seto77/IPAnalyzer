@@ -403,7 +403,6 @@ namespace IPAnalyzer
             scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
             scalablePictureBoxThumbnail.ShowAreaRectangle = false;
             scalablePictureBoxThumbnail.ShowRimRentangle = false;
-            scalablePictureBoxThumbnail.Title = ((string, Font, Color, Color))resources.GetObject("scalablePictureBoxThumbnail.Title");
             scalablePictureBoxThumbnail.TitleVisible = false;
             scalablePictureBoxThumbnail.VerticalFlip = false;
             scalablePictureBoxThumbnail.Zoom = 128D;
@@ -510,7 +509,6 @@ namespace IPAnalyzer
             scalablePictureBox.Name = "scalablePictureBox";
             scalablePictureBox.ShowAreaRectangle = false;
             scalablePictureBox.ShowRimRentangle = false;
-            scalablePictureBox.Title = ((string, Font, Color, Color))resources.GetObject("scalablePictureBox.Title");
             scalablePictureBox.TitleVisible = false;
             scalablePictureBox.VerticalFlip = false;
             scalablePictureBox.Zoom = 128D;
@@ -785,11 +783,9 @@ namespace IPAnalyzer
             graphControlFrequency.DivisionLineXVisible = true;
             graphControlFrequency.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlFrequency, "graphControlFrequency");
-            graphControlFrequency.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControlFrequency.DrawingRange");
             graphControlFrequency.FixRangeHorizontal = false;
             graphControlFrequency.FixRangeVertical = false;
             graphControlFrequency.GraphTitle = "";
-            graphControlFrequency.Interpolation = false;
             graphControlFrequency.IsIntegerX = true;
             graphControlFrequency.IsIntegerY = true;
             graphControlFrequency.LabelX = "Intensity:";
@@ -808,8 +804,6 @@ namespace IPAnalyzer
             graphControlFrequency.MousePositionYDigit = -1;
             graphControlFrequency.Name = "graphControlFrequency";
             graphControlFrequency.OriginPosition = new Point(40, 20);
-            graphControlFrequency.Profile = null;
-            graphControlFrequency.Smoothing = false;
             graphControlFrequency.UnitX = "";
             graphControlFrequency.UnitY = "";
             graphControlFrequency.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
@@ -843,11 +837,9 @@ namespace IPAnalyzer
             graphControlProfile.DivisionLineXVisible = true;
             graphControlProfile.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlProfile, "graphControlProfile");
-            graphControlProfile.DrawingRange = (Crystallography.RectangleD)resources.GetObject("graphControlProfile.DrawingRange");
             graphControlProfile.FixRangeHorizontal = false;
             graphControlProfile.FixRangeVertical = false;
             graphControlProfile.GraphTitle = "aaa";
-            graphControlProfile.Interpolation = false;
             graphControlProfile.IsIntegerX = false;
             graphControlProfile.IsIntegerY = false;
             graphControlProfile.LabelX = "Angle:";
@@ -866,8 +858,6 @@ namespace IPAnalyzer
             graphControlProfile.MousePositionYDigit = -1;
             graphControlProfile.Name = "graphControlProfile";
             graphControlProfile.OriginPosition = new Point(40, 20);
-            graphControlProfile.Profile = null;
-            graphControlProfile.Smoothing = false;
             graphControlProfile.UnitX = "";
             graphControlProfile.UnitY = "";
             graphControlProfile.UpperPanelFont = new Font("Segoe UI Symbol", 9F);

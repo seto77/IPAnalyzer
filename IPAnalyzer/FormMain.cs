@@ -30,6 +30,124 @@ public partial class FormMain : Form
     private static partial short GetAsyncKeyState(int nVirtKey);
     #endregion
 
+    #region Macro 公開 API  260414Cl 追加
+    // Macro クラス (Macro.cs) から FormMain の private な UI コントロールを直接触らせない
+    // ための薄いプロパティ／メソッド層。コントロール型ではなく機能名で公開することで、
+    // UI 実装を差し替えても Macro 側を壊さない。
+
+    /// <summary>方位角分割解析モードの ON/OFF 260414Cl 追加</summary>
+    public bool AzimuthalDivisionAnalysisEnabled
+    {
+        get => toolStripMenuItemAzimuthalDivisionAnalysis.Checked;
+        set => toolStripMenuItemAzimuthalDivisionAnalysis.Checked = value;
+    }
+
+    /// <summary>プロファイル取得前にセンタリングを行うか 260414Cl 追加</summary>
+    public bool FindCenterBeforeGetProfile
+    {
+        get => findCenterBeforeGetProfileToolStripMenuItem.Checked;
+        set => findCenterBeforeGetProfileToolStripMenuItem.Checked = value;
+    }
+
+    /// <summary>プロファイル取得前にスポットマスクを行うか 260414Cl 追加</summary>
+    public bool MaskSpotsBeforeGetProfile
+    {
+        get => maskSpotsBeforeGetProfileToolStripMenuItem.Checked;
+        set => maskSpotsBeforeGetProfileToolStripMenuItem.Checked = value;
+    }
+
+    /// <summary>強度表示の上限値 (setter は Min/Max 範囲にクランプ) 260414Cl 追加</summary>
+    public double IntensityDisplayMax
+    {
+        get => trackBarAdvancedMaxInt.Value;
+        set => trackBarAdvancedMaxInt.Value = Math.Clamp(value, trackBarAdvancedMaxInt.Minimum, trackBarAdvancedMaxInt.Maximum);
+    }
+
+    /// <summary>強度表示の下限値 (setter は Min/Max 範囲にクランプ) 260414Cl 追加</summary>
+    public double IntensityDisplayMin
+    {
+        get => trackBarAdvancedMinInt.Value;
+        set => trackBarAdvancedMinInt.Value = Math.Clamp(value, trackBarAdvancedMinInt.Minimum, trackBarAdvancedMinInt.Maximum);
+    }
+
+    /// <summary>
+    /// キャンバス表示領域を指定ピクセルサイズにリサイズする。
+    /// splitContainer1 の FixedPanel を一時的に切り替えて Form サイズを調整する内部処理を隠蔽。
+    /// 260414Cl 追加
+    /// </summary>
+    public void ResizeCanvas(int width, int height)
+    {
+        if (width < 1 || height < 1) return;
+        splitContainer1.FixedPanel = FixedPanel.Panel2;
+        var clientSize = scalablePictureBox.ClientSize;
+        var mainSize = Size;
+        Size = new Size(mainSize.Width + width - clientSize.Width, mainSize.Height + height - clientSize.Height);
+        splitContainer1.FixedPanel = FixedPanel.None;
+    }
+
+    /// <summary>画像読み込みダイアログを開く (Macro 用ラッパー) 260414Cl 追加</summary>
+    public void OpenImageDialog() => readImageToolStripMenuItem_Click(this, EventArgs.Empty);
+
+    /// <summary>グラデーションの正/負反転 (true: Negative) 260414Cl 追加</summary>
+    public bool IsNegativeGradient
+    {
+        get => comboBoxGradient.SelectedIndex == 1;
+        set => comboBoxGradient.SelectedIndex = value ? 1 : 0;
+    }
+
+    /// <summary>スケール表示 (true: Linear, false: Log) 260414Cl 追加</summary>
+    public bool IsLinearScale
+    {
+        get => comboBoxScale1.SelectedIndex == 1;
+        set => comboBoxScale1.SelectedIndex = value ? 1 : 0;
+    }
+
+    /// <summary>配色 (true: Gray, false: Color) 260414Cl 追加</summary>
+    public bool IsGrayScale
+    {
+        get => comboBoxScale2.SelectedIndex == 1;
+        set => comboBoxScale2.SelectedIndex = value ? 1 : 0;
+    }
+
+    /// <summary>キャンバスのズーム倍率 260414Cl 追加</summary>
+    public double CanvasZoom
+    {
+        get => scalablePictureBox.Zoom;
+        set => scalablePictureBox.Zoom = value;
+    }
+
+    /// <summary>キャンバスの表示中心座標を設定する 260414Cl 追加</summary>
+    public void SetCanvasCenter(double x, double y) => scalablePictureBox.Center = new PointD(x, y);
+
+    /// <summary>方位角分割数 (文字列コンボボックスを int として公開) 260414Cl 追加</summary>
+    public int AzimuthalDivisionNumber
+    {
+        get => toolStripComboBoxAzimuthalDivisionNumber.Text.ToInt();
+        set => toolStripComboBoxAzimuthalDivisionNumber.Text = value.ToString();
+    }
+
+    /// <summary>同心円積分モードの ON/OFF 260414Cl 追加</summary>
+    public bool ConcentricIntegrationEnabled
+    {
+        get => toolStripMenuItemConcenctricIntegration.Checked;
+        set => toolStripMenuItemConcenctricIntegration.Checked = value;
+    }
+
+    /// <summary>放射方向積分モードの ON/OFF 260414Cl 追加</summary>
+    public bool RadialIntegrationEnabled
+    {
+        get => toolStripMenuItemRadialIntegration.Checked;
+        set => toolStripMenuItemRadialIntegration.Checked = value;
+    }
+
+    /// <summary>プロファイルを PDIndexer へ送信するか 260414Cl 追加</summary>
+    public bool SendProfileToPDIndexerEnabled
+    {
+        get => toolStripMenuItemSendProfileToPDIndexer.Checked;
+        set => toolStripMenuItemSendProfileToPDIndexer.Checked = value;
+    }
+    #endregion
+
     #region プロパティ、フィールド
 
     public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
@@ -2239,7 +2357,8 @@ public partial class FormMain : Form
         saveImageAsTiff();
     }
 
-    private void saveImageAsTiff(string filename = "")
+    // 260414Cl Macro から呼び出すため private → public に昇格 (旧: private)
+    public void saveImageAsTiff(string filename = "")
     {
         if (SrcImgSize.Width == 0) return;
 
@@ -2313,7 +2432,8 @@ public partial class FormMain : Form
         saveImageAsPng();
     }
 
-    private void saveImageAsPng(string filename = "")
+    // 260414Cl Macro から呼び出すため private → public に昇格 (旧: private)
+    public void saveImageAsPng(string filename = "")
     {
         if (SrcImgSize.Width == 0) return;
         if (filename == "")
@@ -4431,847 +4551,7 @@ public partial class FormMain : Form
 
     #endregion
 
-    #region IPAのマクロ操作を提供するサブクラス
-    /// <summary>
-    /// IPAのマクロ操作を提供するサブクラス
-    /// </summary>
-    public class Macro : MacroBase
-    {
-        public readonly FormMain main;
-        public SequentialClass Sequential;
-        public DetectorClass Detector;
-        public FileClass File;
-        public WaveClass Wave;
-        public ProfileClass Profile;
-        public ImageClass Image;
-        public MaskClass Mask;
-        public PDIClass PDI;
-        public IntegralPropertyClass IntegralProperty;
-
-
-        public Macro(FormMain _main) : base(_main, "IPA")
-        {
-            main = _main;
-
-            Sequential = new SequentialClass(this);
-            Detector = new DetectorClass(this);
-            File = new FileClass(this);
-            Wave = new WaveClass(this);
-            Profile = new ProfileClass(this);
-            Image = new ImageClass(this);
-            Mask = new MaskClass(this);
-            PDI = new PDIClass(this);
-            IntegralProperty = new IntegralPropertyClass(this);
-
-        }
-
-        #region PDIClass
-
-        public class PDIClass : MacroSub
-        {
-            Macro p;
-            public PDIClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.PDI.RunMacro() # Execute a macro code in PDIndexer.");
-                p.help.Add("IPA.PDI.RunMacroName(string name) # Execute a macro code in PDIndexer. \r\n Name is macro name on PDI.");
-                p.help.Add("IPA.PDI.RunMacro(obj1, obj2, ...)# Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2,) can be readable \r\n on PDI as 'Obj[1]', 'Obj[2]', ... ");
-                p.help.Add("IPA.PDI.RunMacroName(string name, obj1, obj2, ...) # Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2,) can be readable \r\n on PDI as 'Obj[1]', 'Obj[2]', ... \r\n Name is macro name on PDI.");
-                p.help.Add("IPA.PDI.Timeout # Set/get timeout second for macro operation. Default value is 30 sec.");
-                p.help.Add("IPA.PDI.Debug #True/False. \r\n If true, macro on PDI will be executed with step-by-step.");
-            }
-            public bool Debug = false;
-            public int Timeout { get; set; }
-
-            public void RunMacro(params object[] obj)
-            {
-                RunMacro("", obj);
-            }
-            public void RunMacroName(string name, params object[] obj)
-            {
-                //Mutexを作成
-                using Mutex mutex = new(false, "PDIndexer");
-                try
-                {
-                    //Mutexを取得 最大WaitSeconds秒待つ
-                    if (mutex.WaitOne(Timeout * 1000, true))
-                    {
-                        mutex.ReleaseMutex();
-                        Clipboard.SetDataObject(new MacroTriger("PDI", Debug, obj, name));
-                        Thread.Sleep(500);
-                    }
-
-                    //再びMutexを取得できるまで最大WaitSeconds秒待つ
-                    if (mutex.WaitOne(Timeout * 1000, true))
-                        mutex.ReleaseMutex();
-                }
-                finally { mutex.Close(); }
-            }
-        }
-        #endregion
-
-        #region ImageClass
-
-        public class ImageClass : MacroSub
-        {
-            Macro p;
-            public ImageClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.Image.NegativeGradient  # True/False. \r\n If true, an image is drawn with negative gradient. \r\n This parameter is a counterpart of 'IPA.Image.PositiveGradient'");
-                p.help.Add("IPA.Image.PositiveGradient  # True/False.  \r\n If true, an image is drawn with positive gradient. \r\n This parameter is a counterpart of 'IPA.Image.NegativeGradient'");
-                p.help.Add("IPA.Image.LinearScale  # True/False. \r\n If true, an image is drawn with liner-scale. \r\n This parameter is a counterpart of 'IPA.Image.LogScale'");
-                p.help.Add("IPA.Image.LogScale   # True/False. \r\n If true, an image is drawn with log-scale. \r\n This parameter is a counterpart of 'IPA.Image.LinerScale'");
-                p.help.Add("IPA.Image.GrayScale  # True/False. \r\n If true, an image is drawn with gray-scale. \r\n This parameter is a counterpart of 'IPA.Image.ColorScale'");
-                p.help.Add("IPA.Image.ColorScale  # True/False. \r\n If true, an image is drawn with color-scale. \r\n This parameter is a counterpart of 'IPA.Image.GrayScale'");
-                p.help.Add("IPA.Image.Maximum  #  Float. \r\n Set/get maximum level of brightness.");
-                p.help.Add("IPA.Image.Minimum  # Float. \r\n Set/get miniimum level of brightness.");
-                p.help.Add("IPA.Image.CanvasMagnification # Float. \r\n Set/get magnification of image");
-                p.help.Add("IPA.Image.SetCanvasSize(int Width, int Height)  # Set canvas size (width and height) of picture box in pixel unit.");
-            }
-
-            public bool NegativeGradient
-            {
-                set => Execute(new Action(() => p.main.comboBoxGradient.SelectedIndex = value ? 1 : 0));
-                get => Execute(() => p.main.comboBoxGradient.SelectedIndex == 1);
-            }
-            public bool PositiveGradient
-            {
-                set => Execute(new Action(() => p.main.comboBoxGradient.SelectedIndex = value ? 0 : 1));
-                get => Execute(() => p.main.comboBoxGradient.SelectedIndex == 0);
-            }
-
-            public bool LinearScale
-            {
-                set => Execute(new Action(() => p.main.comboBoxScale1.SelectedIndex = value ? 1 : 0));
-                get => Execute(() => p.main.comboBoxScale1.SelectedIndex == 1);
-            }
-            public bool LogScale
-            {
-                set => Execute(new Action(() => p.main.comboBoxScale1.SelectedIndex = value ? 0 : 1));
-                get => Execute(() => p.main.comboBoxScale1.SelectedIndex == 0);
-            }
-
-            public bool GrayScale
-            {
-                set => Execute(new Action(() => p.main.comboBoxScale2.SelectedIndex = value ? 1 : 0));
-                get => Execute(() => p.main.comboBoxScale2.SelectedIndex == 1);
-            }
-            public bool ColorScale
-            {
-                set => Execute(new Action(() => p.main.comboBoxScale2.SelectedIndex = value ? 0 : 1));
-                get => Execute(() => p.main.comboBoxScale2.SelectedIndex == 0);
-            }
-
-            public double Maximum
-            {
-                set => Execute(new Action(() =>
-                         p.main.trackBarAdvancedMaxInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMaxInt.Maximum, value), p.main.trackBarAdvancedMaxInt.Minimum)
-                        ));
-                get => Execute(() => p.main.trackBarAdvancedMaxInt.Value);
-            }
-            public double Minimum
-            {
-                set => Execute(new Action(() =>
-                         p.main.trackBarAdvancedMinInt.Value = Math.Max(Math.Min(p.main.trackBarAdvancedMinInt.Maximum, value), p.main.trackBarAdvancedMinInt.Minimum)
-                        ));
-                get => Execute(() => p.main.trackBarAdvancedMinInt.Value);
-            }
-
-            public double CanvasMagnification
-            {
-                set => Execute(new Action(() => p.main.scalablePictureBox.Zoom = value));
-                get => Execute(() => p.main.scalablePictureBox.Zoom);
-            }
-
-            public void SetCanvasCenter(double x, double y) => Execute(new Action(() => p.main.scalablePictureBox.Center = new PointD(x, y)));
-
-            public void SetCanvasSize(int width, int height) => Execute(new Action(() =>
-            {
-                if (width < 1 || height < 1) return;
-                p.main.splitContainer1.FixedPanel = FixedPanel.Panel2;
-                var clientSize = p.main.scalablePictureBox.ClientSize;
-                var mainSize = p.main.Size;
-                var destSize = new Size(mainSize.Width + width - clientSize.Width, mainSize.Height + height - clientSize.Height);
-                p.main.Size = destSize;
-                p.main.splitContainer1.FixedPanel = FixedPanel.None;
-            }));
-
-            public void SetArea(double top, double bottom, double left, double right) => Execute(new Action(() =>
-            {
-                int width = (int)(CanvasMagnification * (right - left) + 0.5);
-                int height = (int)(CanvasMagnification * (bottom - top) + 0.5);
-
-                if (width < 1 || height < 1) return;
-
-                SetCanvasSize(width, height);
-                SetCanvasCenter((left + right) / 2.0, (bottom + top) / 2.0);
-            }));
-
-            public void SetFullArea() => Execute(new Action(() =>
-            {
-                var width = (int)(CanvasMagnification * p.main.IP.SrcWidth + 0.5);
-                var height = (int)(CanvasMagnification * p.main.IP.SrcHeight + 0.5);
-
-                if (width < 1 || height < 1) return;
-
-                SetCanvasSize(width, height);
-                SetCanvasCenter(p.main.IP.SrcWidth / 2.0, p.main.IP.SrcHeight / 2.0);
-            }));
-
-        }
-        #endregion
-
-        #region MaskClass
-        public class MaskClass : MacroSub
-        {
-            Macro p;
-            public MaskClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.Mask.MaskSpots() # Mask spots.");
-                p.help.Add("IPA.Mask.ClearMask() # Clear the current masks.");
-                p.help.Add("IPA.Mask.MaskAll() # Mask all area.");
-                p.help.Add("IPA.Mask.InvertMask() # Invert the current mask state.");
-                p.help.Add("IPA.Mask.MaskTop() # Mask the top half area.");
-                p.help.Add("IPA.Mask.MaskBottom() # Mask the bottom half area.");
-                p.help.Add("IPA.Mask.MaskRight() # Mask the right half area.");
-                p.help.Add("IPA.Mask.MaskLeft() # Mask the left half area.");
-
-                p.help.Add("IPA.Mask.TakeOver # Integer. Set/get the take over mask setting. 0: None, 1: Take over the current mask state. 2: Take over the mask file.");
-            }
-
-            public void MaskSpots() => Execute(new Action(() => p.main.MaskSpots()));
-            public void ClearMask() => Execute(new Action(() => p.main.ClearMask()));
-            public void InvertMask() => Execute(new Action(() => p.main.InvertMask()));
-            public void MaskAll() => Execute(new Action(() => p.main.MaskAll()));
-            public void MaskTop() => Execute(new Action(() => p.main.FormProperty.MaskTop()));
-            public void MaskBottom() => Execute(new Action(() => p.main.FormProperty.MaskBottom()));
-            public void MaskLeft() => Execute(new Action(() => p.main.FormProperty.MaskLeft()));
-            public void MaskRight() => Execute(new Action(() => p.main.FormProperty.MaskRight()));
-
-            public int TakeOver
-            {
-                get
-                {
-                    if (p.main.FormProperty.radioButtonTakeoverNothing.Checked)
-                        return 0;
-                    else if (p.main.FormProperty.radioButtonTakeoverMask.Checked)
-                        return 1;
-                    else
-                        return 2;
-                }
-                set
-                {
-
-                    if (value == 0)
-                        Execute(new Action(() => p.main.FormProperty.radioButtonTakeoverNothing.Checked = true));
-                    else if (value == 1)
-                        Execute(new Action(() => p.main.FormProperty.radioButtonTakeoverMask.Checked = true));
-                    else if (value == 2)
-                        Execute(new Action(() => p.main.FormProperty.radioButtonTakeOverMaskfile.Checked = true));
-
-                }
-            }
-
-        }
-        #endregion
-
-        #region ProfileClass
-        public class ProfileClass : MacroSub
-        {
-            Macro p;
-            public ProfileClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.Profile.GetProfile() # Get profile.");
-                p.help.Add("IPA.Profile.GetProfile(string filename) # Get profile. \r\n Profile will be saved to the assigned filename");
-                p.help.Add("IPA.Profile.ConcentricIntegration # True/False. \r\n If true, the image will be \r\n integrated concentrically (2θ-intensity).");
-                p.help.Add("IPA.Profile.RadialIntegration # True/False. \r\n If true, the image will be \r\nintegrated radially (pizza-cut).");
-                p.help.Add("IPA.Profile.FindCenterBeforeGetProfile # True/False. \r\n If true, 'Find Center' will be \r\n executed before 'Get Profile'");
-                p.help.Add("IPA.Profile.FindSpotsBeforeGetProfile  # True/False. \r\n If true, 'Mask Spots' will be \r\n executed before 'Get Profile'");
-                p.help.Add("IPA.Profile.SendProfileViaClipboard  # True/False. \r\n If true, the profile will be sent to PDIndexer via clipboard");
-                p.help.Add("IPA.Profile.SaveProfileAfterGetProfile  # True/False. \r\n If true, the profile will be saved after 'Get Profile'");
-                p.help.Add("IPA.Profile.SaveProfileAsPDI   # True/False. \r\n If true, the profile will be saved as PDI format");
-                p.help.Add("IPA.Profile.SaveProfileAsCSV  # True/False. \r\n If true, the profile will be saved as CSV format");
-                p.help.Add("IPA.Profile.SaveProfileAsTSV  # True/False. \r\n If true, the profile will be saved as TSV format");
-                p.help.Add("IPA.Profile.SaveProfileAsGSAS  # True/False. \r\n If true, the profile will be saved as GSAS format");
-                p.help.Add("IPA.Profile.SaveProfileInOneFile   # True/False. \r\n If true, the profiles of sequential image or azimuthal division data will be saved in one file.");
-                p.help.Add("IPA.Profile.SaveProfileAtImageDirectory   # True/False. \r\n If true, the profiles will be saved in the same directory of the image.");
-                p.help.Add("IPA.Profile.AzimuthalDivision  # True/False. \r\n If true, the profile will be processed azimuthal division mode.");
-                p.help.Add("IPA.Profile.AzimuthalDivisionNumber  # Integer. \r\n Sets the number of Debye ring to be divided.");
-            }
-
-            public int AzimuthalDivisionNumber
-            {
-                set => Execute(new Action(() => p.main.toolStripComboBoxAzimuthalDivisionNumber.Text = value.ToString()));
-                get => Execute(() => p.main.toolStripComboBoxAzimuthalDivisionNumber.Text.ToInt());
-            }
-
-            public bool AzimuthalDivision
-            {
-                set => Execute(new Action(() => p.main.toolStripMenuItemAzimuthalDivisionAnalysis.Checked = value));
-                get => Execute(() => p.main.toolStripMenuItemAzimuthalDivisionAnalysis.Checked);
-            }
-
-            public bool ConcentricIntegration
-            {
-                set => Execute(new Action(() => p.main.toolStripMenuItemConcenctricIntegration.Checked = value));
-                get => Execute(() => p.main.toolStripMenuItemConcenctricIntegration.Checked);
-            }
-            public bool RadialIntegration
-            {
-                set => Execute(new Action(() => p.main.toolStripMenuItemRadialIntegration.Checked = value));
-                get => Execute(() => p.main.toolStripMenuItemRadialIntegration.Checked);
-            }
-            public bool FindCenterBeforeGetProfile
-            {
-                set => Execute(new Action(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked = value));
-                get => Execute(() => p.main.findCenterBeforeGetProfileToolStripMenuItem.Checked);
-            }
-            public bool MaskSpotsBeforeGetProfile
-            {
-                set => Execute(new Action(() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked = value));
-                get => Execute((() => p.main.maskSpotsBeforeGetProfileToolStripMenuItem.Checked));
-            }
-            public bool SendProfileViaClipboard
-            {
-                set => Execute(new Action(() => p.main.toolStripMenuItemSendProfileToPDIndexer.Checked = value));
-                get => Execute(() => p.main.toolStripMenuItemSendProfileToPDIndexer.Checked);
-            }
-            public bool SaveProfileAfterGetProfile
-            {
-                set => Execute(new Action(() => p.main.FormProperty.checkBoxSaveFile.Checked = value));
-                get => Execute(() => p.main.FormProperty.checkBoxSaveFile.Checked);
-            }
-            public bool SaveProfileAsPDI
-            {
-                set => Execute(new Action(() => p.main.FormProperty.radioButtonAsPDIformat.Checked = value));
-                get => Execute(() => p.main.FormProperty.radioButtonAsPDIformat.Checked);
-            }
-            public bool SaveProfileAsCSV
-            {
-                set => Execute(new Action(() => p.main.FormProperty.radioButtonAsCSVformat.Checked = value));
-                get => Execute(() => p.main.FormProperty.radioButtonAsCSVformat.Checked);
-            }
-            public bool SaveProfileAsTSV
-            {
-                set => Execute(new Action(() => p.main.FormProperty.radioButtonAsTSVformat.Checked = value));
-                get => Execute(() => p.main.FormProperty.radioButtonAsTSVformat.Checked);
-            }
-
-            public bool SaveProfileAsGSAS
-            {
-                set => Execute(new Action(() => p.main.FormProperty.radioButtonAsGSASformat.Checked = value));
-                get => Execute(() => p.main.FormProperty.radioButtonAsGSASformat.Checked);
-            }
-
-            public bool SaveProfileInOneFile
-            {
-                set => Execute(new Action(() => p.main.FormProperty.radioButtonSaveInOneFile.Checked = value));
-                get => Execute(() => p.main.FormProperty.radioButtonSaveInOneFile.Checked);
-            }
-
-            public bool SaveProfileAtImageDirectory
-            {
-                set => Execute(new Action(() => p.main.FormProperty.radioButtonSaveAtImageDirectory.Checked = value));
-                get => Execute(() => p.main.FormProperty.radioButtonSaveAtImageDirectory.Checked);
-            }
-
-            public void GetProfile(string filename = "") => Execute(new Action(() =>
-            {
-                if (filename != "")
-                    SaveProfileAfterGetProfile = true;
-                p.main.GetProfile(filename);
-
-                using var mutex = new Mutex(false, "PDIndexer");
-                try { mutex.WaitOne(10000, false); mutex.ReleaseMutex(); }
-                finally { mutex.Close(); }
-            }));
-        }
-        #endregion
-
-        #region IntegralPropertyClass
-
-        public class IntegralPropertyClass : MacroSub
-        {
-            Macro p;
-            public IntegralPropertyClass(Macro _p)
-                : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.IntegralProperty.ConcentricIntegration # True/False. \r\n If true, the image will be \r\n integrated concentrically (2θ-intensity).");
-                p.help.Add("IPA.IntegralProperty.RadialIntegration # True/False. \r\n If true, the image will be \r\nintegrated radially (pizza-cut or cake-pattern).");
-                p.help.Add("IPA.IntegralProperty.ConcentricStart # Float. \r\n Set/get start value for concentric integration mode.");
-                p.help.Add("IPA.IntegralProperty.ConcentricEnd # Float. \r\n Set/get end value for concentric integration mode.");
-                p.help.Add("IPA.IntegralProperty.ConcentricStart # Float. \r\n Set/get step value for concentric integration mode.");
-                p.help.Add("IPA.IntegralProperty.ConcentricUnit # Integer. \r\n Set/get a unit of concentric integration mode. 0: Angle(°), 1: d-spacing(Å), 2: Length (mm)");
-                p.help.Add("IPA.IntegralProperty.RadialRadius # Float. \r\n Set/get a donut radius for radial integration mode");
-                p.help.Add("IPA.IntegralProperty.RadialWidth # Float. \r\n Set/get a donut width for radial integration mode");
-                p.help.Add("IPA.IntegralProperty.RadialStep # Float. \r\n Set/get a sector angle (sweep step) for radial integration mode");
-                p.help.Add("IPA.IntegralProperty.RadialUnit # Integer. \r\n Set/get a unit of concentric integration mode. 0: Angle(°), 2: d-spacing(Å)");
-            }
-
-            public bool ConcentricIntegration
-            {
-                set => Execute(new Action(() => p.main.toolStripMenuItemConcenctricIntegration.Checked = value));
-                get => Execute(() => p.main.toolStripMenuItemConcenctricIntegration.Checked);
-            }
-            public bool RadialIntegration
-            {
-                set => Execute(new Action(() => p.main.toolStripMenuItemRadialIntegration.Checked = value));
-                get => Execute(() => p.main.toolStripMenuItemRadialIntegration.Checked);
-            }
-            public double ConcentricStart
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxConcentricStart.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxConcentricStart.Value);
-            }
-            public double ConcentricEnd
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxConcentricEnd.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxConcentricEnd.Value);
-            }
-            public double ConcentricStep
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxConcentricStep.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxConcentricStep.Value);
-            }
-
-            public int ConcentricUnit
-            {
-                set
-                {
-                    Execute(new Action(() =>
-                    {
-                        switch (value)
-                        {
-                            case 1: p.main.FormProperty.radioButtonConcentricDspacing.Checked = true; break;
-                            case 2: p.main.FormProperty.radioButtonConcentricLength.Checked = true; break;
-                            default: p.main.FormProperty.radioButtonConcentricAngle.Checked = true; break;
-                        }
-                    }));
-                }
-                get
-                {
-                    return Execute<int>(new Func<int>(() =>
-                    {
-                        int i = 0;
-                        if (p.main.FormProperty.radioButtonConcentricDspacing.Checked) i = 1;
-                        if (p.main.FormProperty.radioButtonConcentricLength.Checked) i = 2;
-                        return i;
-                    }));
-                }
-            }
-            public double RadialRadius
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxRadialRadius.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxRadialRadius.Value);
-            }
-            public double RadialWidgh
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxRadialRange.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxRadialRange.Value);
-            }
-            public double RadialStep
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxRadialStep.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxRadialStep.Value);
-            }
-
-            public int RadialUnit
-            {
-                set => Execute(new Action(() =>
-                {
-                    switch (value)
-                    {
-                        case 1: p.main.FormProperty.radioButtonRadialDspacing.Checked = true; break;
-                        default: p.main.FormProperty.radioButtonRadialAngle.Checked = true; break;
-                    }
-                }));
-                get => Execute<int>(new Func<int>(() =>
-                {
-                    int i = 0;
-                    if (p.main.FormProperty.radioButtonRadialDspacing.Checked) i = 1;
-                    return i;
-                }));
-            }
-        }
-
-        #endregion
-
-        #region WaveClass
-
-        public class WaveClass : MacroSub
-        {
-            Macro p;
-            public WaveClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.Wave.SetWaveLength(float wavelength) # Set wavelength (float value) of incident beam in nm unit.");
-                p.help.Add("IPA.Wave.WaveLength           # Float. \r\n Set/get wavelength of incident beam in nm unit.");
-
-            }
-
-            public void SetWaveLength(double x) => Execute(new Action(() => p.main.FormProperty.WaveLength = x));
-            public double WaveLength
-            {
-                set => Execute(new Action(() => p.main.FormProperty.WaveLength = value));
-                get => Execute(() => p.main.FormProperty.WaveLength);
-            }
-
-            public int WaveSource
-            {
-                set => Execute(new Action(() =>
-                {
-                    p.main.FormProperty.waveLengthControl.WaveSource = value switch
-                    {
-                        1 => Crystallography.WaveSource.Xray,
-                        2 => Crystallography.WaveSource.Electron,
-                        3 => Crystallography.WaveSource.Neutron,
-                        _ => Crystallography.WaveSource.None,
-                    };
-                }));
-
-                get => Execute<int>(new Func<int>(() =>
-                    p.main.FormProperty.waveLengthControl.WaveSource switch
-                    {
-                        Crystallography.WaveSource.Xray => 1,
-                        Crystallography.WaveSource.Electron => 2,
-                        Crystallography.WaveSource.Neutron => 3,
-                        _ => 0,
-                    }
-                ));
-            }
-
-            public int XrayLine
-            {
-                set
-                {
-                    switch (value)
-                    {
-                        case 0: p.main.FormProperty.waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka; break;
-                        case 1: p.main.FormProperty.waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka1; break;
-                        case 2: p.main.FormProperty.waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka2; break;
-                        default: break;
-                    }
-                }
-            }
-        }
-        #endregion
-
-        #region FileClass
-
-        public class FileClass : MacroSub
-        {
-            Macro p;
-            public FileClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.File.GetFileName() # Get a fil name. \r\n Returned string is a full path of the selected file.");
-                p.help.Add("IPA.File.GetFileNames() # Get filenames. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
-                p.help.Add("IPA.File.GetAllFileNames() # Get all file names in the directory. \r\n Returned value is a string array, \r\n each of which is a full path of selected files.");
-                p.help.Add("IPA.File.GetDirectoryPath() # Get a directory path.\r\n Returned string is a full path to the filename.\r\n If filename is omitted, selection dialog will open.");
-
-                p.help.Add("IPA.File.ReadImage(string filename)          # Read image file. \r\n If filename is omitted, selection dialog will open.");
-                p.help.Add("IPA.File.ReadImageHDF(string filename, bool Normarize) # Read HDF5 image file. \r\n If filename is omitted, selection dialog will open.");
-                p.help.Add("IPA.File.SaveImageAsTIFF(string filename)    # Save image file as Tiff format. \r\n If filename is omitted, selection dialog will open.");
-                p.help.Add("IPA.File.SaveImageAsPNG(string filename)     # Save image file as PNG format. \r\n If filename is omitted, selection dialog will open.");
-                p.help.Add("IPA.File.SaveImageAsIPA(string filename)     # Save image file as IPA format. \r\n If filename is omitted, selection dialog will open.");
-
-                p.help.Add("IPA.File.ReadParameter(string filename)      # Read parameter file. \r\n If filename is omitted or invalid, selection dialog will open.");
-                p.help.Add("IPA.File.SaveParameter(string filename)      # Save parameter file. \r\n If filename is omitted or invalid, selection dialog will open.");
-                p.help.Add("IPA.File.ReadMask(string filename)           # Read mask file. \r\n If filename is omitted or invalid, selection dialog will open.");
-                p.help.Add("IPA.File.SaveMask(string filename)           # Save mask file. \r\n If filename is omitted or invalid, selection dialog will open.");
-            }
-
-            public string GetDirectoryPath(string filename = "") => Execute<string>(new Func<string>(() =>
-            {
-                var path = "";
-                if (filename == "")
-                {
-                    var dlg = new FolderBrowserDialog();
-                    path = dlg.ShowDialog() == DialogResult.OK ? dlg.SelectedPath : "";
-                }
-                else
-                    path = Path.GetDirectoryName(filename);
-                return path + "\\";
-            }));
-
-
-            public string GetFileName(string message = "") => Execute<string>(new Func<string>(() =>
-            {
-                var dlg = new OpenFileDialog() { Title = message };
-                return dlg.ShowDialog() == DialogResult.OK ? dlg.FileName : "";
-            }));
-
-
-            public string[] GetFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
-            {
-                var dlg = new OpenFileDialog { Multiselect = true, Title = message };
-                return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : [];
-            }));
-
-            public string[] GetAllFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
-            {
-                var dlg = new FolderBrowserDialog() { Description = message };
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    var dir = Path.GetDirectoryName(dlg.SelectedPath);
-                    return Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
-                }
-                else
-                    return [];
-            }));
-
-            public void SaveImageAsTIFF(string fileName = "") => Execute(() => p.main.saveImageAsTiff(fileName));
-            public void SaveImageAsPNG(string fileName = "") => Execute(() => p.main.saveImageAsPng(fileName));
-            public void SaveImageAsIPA(string fileName = "") => Execute(() => p.main.FormSaveImage.SaveImageAsIPA(fileName));
-            public void SaveImageAsCSV(string fileName = "") => Execute(() => p.main.saveImageAsCSV(fileName));
-            public void ReadImageHDF(string _fileName, bool? flag) => Execute(() => p.main.ReadImage(_fileName, flag));
-
-            /// <summary>
-            /// Read image file. if filename is omitted, dialog will open.
-            /// </summary>
-            /// <param name="_fileName"></param>
-            public void ReadImage(string _fileName = "", bool? flag = null) => Execute(new Action(() =>
-            {
-                if (!System.IO.File.Exists(_fileName))
-                    p.main.readImageToolStripMenuItem_Click(new object(), new EventArgs());
-                else
-                    p.main.ReadImage(_fileName, flag);
-            }));
-
-            public void SaveImage(string fileName = "") => Execute(new Action(() => p.main.saveImageAsTiff(fileName)));
-
-            /// <summary>
-            /// Read parameter file.
-            /// </summary>
-            /// <param name="_fileName"></param>
-            public void ReadParameter(string fileName = "") => Execute(new Action(() => p.main.ReadParameter(fileName, true)));
-
-            public void SaveParameter(string fileName = "") => Execute(new Action(() => p.main.SaveParameter(fileName, true)));
-
-            public void ReadMask(string fileName = "") => Execute(new Action(() => p.main.ReadMask(fileName)));
-            public void SaveMask(string fileName = "") => Execute(new Action(() => FormMain.SaveMask(fileName)));
-
-
-
-        }
-        #endregion
-
-        #region SequentialClass
-        public class SequentialClass : MacroSub
-        {
-            Macro p;
-            public SequentialClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.Sequential.SequentialImageMode # True/False. Get whether the current file is sequential image or not.");
-                p.help.Add("IPA.Sequential.Count # Integer.\r\n  Get the number of images");
-                p.help.Add("IPA.Sequential.SelectedIndex # Integer. \r\n Set or get the selected index of the current sequential image.");
-                p.help.Add("IPA.Sequential.SelectedIndices # Array of itegers (like 1,3,5,9). \r\n Set or get the selected indices of the current sequential image.");
-
-                p.help.Add("IPA.Sequential.SelectIndex(int index) # Set number of selected index.");
-                p.help.Add("IPA.Sequential.AppendIndex(int index) # Append selected index to current selections.");
-
-                p.help.Add("IPA.Sequential.SelectIndices(int Start,int End) # Set selected indices (from int_Start to int_End).");
-                p.help.Add("IPA.Sequential.AppendIndices(int Start,int End) # Append indices (from int_Start to int_End) to current selections");
-
-                p.help.Add("IPA.Sequential.MultiSelection # True/False. \r\n Set or get the state of multi-selection mode.");
-                p.help.Add("IPA.Sequential.Averaging # True/False. \r\n Set or get the state of averaging mode .");
-
-                p.help.Add("IPA.Sequential.Target_SelectedImages # True/False. \r\n If set true, the selected images are targets for 'Get Profile'.");
-                p.help.Add("IPA.Sequential.Target_AllImages # True/False. \r\n If set true, all images are targets for 'Get Profile'.");
-                p.help.Add("IPA.Sequential.Target_TopmostImage # True/False. \r\n If set true, the topmost image will be target for 'Get Profile'.");
-            }
-
-
-
-            public bool Target_SelectedImages
-            {
-                set => Execute(new Action(() => p.main.FormSequentialImage.radioButtonGetProfileSelectedImages.Checked = value));
-                get => Execute(() => p.main.FormSequentialImage.radioButtonGetProfileSelectedImages.Checked);
-            }
-
-            public bool Target_AllImages
-            {
-                set => Execute(new Action(() => p.main.FormSequentialImage.radioButtonGetProfileAllImages.Checked = value));
-                get => Execute(() => p.main.FormSequentialImage.radioButtonGetProfileAllImages.Checked);
-            }
-
-            public bool Target_TopmostImage
-            {
-                set => Execute(new Action(() => p.main.FormSequentialImage.radioButtonGetProfileOnlyTopmost.Checked = value));
-                get => Execute(() => p.main.FormSequentialImage.radioButtonGetProfileOnlyTopmost.Checked);
-            }
-
-            public bool SequentialImageMode => Execute(() => p.main.SequentialImageMode);
-            public int SelectedIndex
-            {
-                set => Execute(new Action(() => p.main.FormSequentialImage.SelectedIndex = value));
-                get => Execute(() => p.main.FormSequentialImage.SelectedIndex);
-            }
-
-            public int Count => Execute(() => p.main.FormSequentialImage.MaximumNumber);
-
-            public int[] SelectedIndices
-            {
-                set { Execute(new Action(() => p.main.FormSequentialImage.SelectedIndices = value)); }
-                get => Execute(() => p.main.FormSequentialImage.SelectedIndices);
-            }
-
-            public bool MultiSelection
-            {
-                set => Execute(new Action(() => p.main.FormSequentialImage.MultiSelection = value));
-                get => Execute(() => p.main.FormSequentialImage.MultiSelection);
-            }
-            public bool Averaging
-            {
-                set => Execute(new Action(() => p.main.FormSequentialImage.AverageMode = value));
-                get => Execute(() => p.main.FormSequentialImage.AverageMode);
-            }
-
-            /// <summary>
-            /// 選択する
-            /// </summary>
-            /// <param name="n"></param>
-            public void SelectIndex(int n) => Execute(new Action(() =>
-            {
-                if (!SequentialImageMode) return;
-                MultiSelection = false;
-                p.main.FormSequentialImage.SelectedIndex = n;
-            }));
-
-            /// <summary>
-            /// 選択を追加する
-            /// </summary>
-            /// <param name="n"></param>
-            public void AppendIndex(int n) => Execute(new Action(() =>
-            {
-                if (!SequentialImageMode) return;
-                if (n >= 0 && n < p.main.FormSequentialImage.MaximumNumber)
-                {
-                    MultiSelection = true;
-                    p.main.FormSequentialImage.SelectedIndex = n;
-                }
-            }));
-            /// <summary>
-            /// 範囲を選択する
-            /// </summary>
-            /// <param name="start"></param>
-            /// <param name="end"></param>
-            public void SelectIndices(int start, int end) => Execute(new Action(() =>
-            {
-                if (!SequentialImageMode) return;
-                if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
-                {
-                    MultiSelection = true;
-                    List<int> list = [];
-                    for (int i = start; i <= end; i++)
-                        if (!list.Contains(i))
-                            list.Add(i);
-                    p.main.FormSequentialImage.SelectedIndices = [.. list];
-                    //    SelectedIndex = end;
-                }
-            }));
-            /// <summary>
-            /// 範囲を追加する
-            /// </summary>
-            /// <param name="start"></param>
-            /// <param name="end"></param>
-            public void AppendIndices(int start, int end) => Execute(new Action(() =>
-            {
-                if (!SequentialImageMode) return;
-                if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
-                {
-                    MultiSelection = true;
-                    List<int> list = [.. p.main.FormSequentialImage.SelectedIndices];
-                    for (int i = start; i <= end; i++)
-                        if (!list.Contains(i))
-                            list.Add(i);
-                    p.main.FormSequentialImage.SelectedIndices = [.. list];
-                    SelectedIndex = end;
-                }
-            }));
-
-        }
-
-        #endregion
-
-        #region DetectorClass
-
-        public class DetectorClass : MacroSub
-        {
-            Macro p;
-            public DetectorClass(Macro _p) : base(_p.main)
-            {
-                p = _p;
-                p.help.Add("IPA.Detector.SetCenter(float X, float Y) # Set center (direct spot) position in pixel unit.");
-                p.help.Add("IPA.Detector.CenterX # Float. \r\n Set or get X value of center (direct spot) position in pixel unit.");
-                p.help.Add("IPA.Detector.CenterY # Float. \r\n Set or get Y value of center (direct spot) position in pixel unit.");
-                p.help.Add("IPA.Detector.CameraLength # Float. \r\n Set or get camera length in mm unit.");
-                p.help.Add("IPA.Detector.PixelSizeX  # Float. \r\n Set or get pixel X value (pixel width) in mm unit.");
-                p.help.Add("IPA.Detector.PixelSizeY  # Float. \r\n Set or get pixel Y value (pixel height) in mm unit.");
-                p.help.Add("IPA.Detector.PixelKsi  # Float. \r\n Set or get pixel Ksi value (pixel height) in degree unit.");
-                p.help.Add("IPA.Detector.TiltPhi  # Float. \r\n Set or get tilt phi value in degree unit.");
-                p.help.Add("IPA.Detector.TiltTau  # Float. \r\n Set or get tilt tau value in degree unit.");
-            }
-
-
-            public void SetCenter(double x, double y) => Execute(new Action(() => p.main.FormProperty.DirectSpotPosition = new PointD(x, y)));
-
-            public void SetCameraLength(double x) => Execute(new Action(() => p.main.FormProperty.CameraLength1 = x));
-
-            public double CenterX
-            {
-                set => Execute(new Action(() => p.main.FormProperty.DirectSpotPosition = new PointD(value, p.main.FormProperty.DirectSpotPosition.Y)));
-                get => Execute(() => p.main.FormProperty.DirectSpotPosition.X);
-            }
-            public double CenterY
-            {
-                set => Execute(new Action(() => p.main.FormProperty.DirectSpotPosition = new PointD(p.main.FormProperty.DirectSpotPosition.X, value)));
-                get => Execute(() => p.main.FormProperty.DirectSpotPosition.Y);
-            }
-            public double CameraLength
-            {
-                set => Execute(new Action(() => p.main.FormProperty.CameraLength1 = value));
-                get => Execute(() => p.main.FormProperty.CameraLength1);
-            }
-            public double PixelSizeX
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeX.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxPixelSizeX.Value);
-            }
-            public double PixelSizeY
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxPixelSizeY.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxPixelSizeY.Value);
-            }
-            public double PixelKsi
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxPixelKsi.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxPixelKsi.Value);
-            }
-            public double TiltPhi
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxTiltPhi.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxTiltPhi.Value);
-            }
-            public double TiltTau
-            {
-                set => Execute(new Action(() => p.main.FormProperty.numericBoxTiltTau.Value = value));
-                get => Execute(() => p.main.FormProperty.numericBoxTiltTau.Value);
-            }
-
-        }
-
-    }
-
-
-    #endregion
-
-    #endregion
+    
 
   
 }
