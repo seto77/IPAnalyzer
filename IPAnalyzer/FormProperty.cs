@@ -1,4 +1,5 @@
 ﻿using Crystallography;
+using MemoryPack;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -870,7 +871,10 @@ public partial class FormProperty : Form
 }
 
 #region ImageTypeParameterクラス
-public class ImageTypeParameter
+// Reg.RW 経由で配列まるごとレジストリに永続化するため [MemoryPackable]。
+// フィールド順を変更すると保存済みの registry blob が読めなくなる (破壊的変更扱い)。
+[MemoryPackable]
+public partial class ImageTypeParameter
 {
     public IntegralProperty.CameraEnum CameraMode = IntegralProperty.CameraEnum.FlatPanel;
 

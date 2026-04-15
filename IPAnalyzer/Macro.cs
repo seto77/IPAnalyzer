@@ -59,6 +59,301 @@ public class Macro : MacroBase
         help.AddRange(HelpAttribute.GenerateHelpText(IntegralProperty.GetType(), nameof(IntegralProperty)));
     }
 
+    #region マクロサンプル集
+    // 260415Cl 追加 ReciPro の Macro.cs に倣ってサンプル集を実装。FormMacro が初回表示時に
+    // 保存済みマクロが空なら SampleMacros を挿入する。最初の 2 件 (基本ループ / 数学関数) は
+    // ReciPro 版と同一。それ以降は IPAnalyzer 固有の API (IPA.File, IPA.Detector, IPA.Wave,
+    // IPA.Profile, IPA.Sequential, IPA.Mask, IPA.IntegralProperty) を使った実用例。
+    public override (string name, string body)[] SampleMacros =>
+        Thread.CurrentThread.CurrentUICulture.Name.StartsWith("ja") ? _sampleMacrosJa : _sampleMacrosEn;
+
+    // マスター配列: 各要素で英語版 (nameEn, bodyEn) と日本語版 (nameJa, bodyJa) を並べて定義する。
+    // _sampleMacrosEn/Ja はこの配列から Array.ConvertAll で生成。
+    private static readonly (string nameEn, string bodyEn, string nameJa, string bodyJa)[] _sampleMacros =
+    [
+        (
+            "01. Basic loop and if",
+            """
+            # Loop 10 times computing the squares. Inside the loop, an if/else classifies 'i' as "even" or "odd"
+            # and an if adds a "big" flag once 'sq' exceeds 25. Run with "Step by step" mode and watch
+            # 'i', 'sq', 'kind', 'big' change in the debug panel (print() is not available here).
+            for i in range(10):
+                sq = i * i
+                if i % 2 == 0:
+                    kind = "even"
+                else:
+                    kind = "odd"
+                big = sq > 25
+            """,
+            "01. 基本的なループと条件分岐",
+            """
+            # 10 回ループして二乗を計算し、ループ内の if/else で 'i' を "even" / "odd" に分類しつつ、
+            # 'sq' が 25 を超えたら 'big' フラグを立てます。「Step by step」モードで実行すると、デバッグ
+            # パネルで i・sq・kind・big の値の変化を確認できます (print() は使えません)。
+            for i in range(10):
+                sq = i * i
+                if i % 2 == 0:
+                    kind = "even"
+                else:
+                    kind = "odd"
+                big = sq > 25
+            """
+        ),
+        (
+            "02. Math functions",
+            """
+            # The math module is pre-imported, so you can use it directly without an explicit import statement.
+            # This sample shows pi, trigonometric (sin/cos), sqrt, exponential (exp), and logarithm (log).
+            # Run in Step mode to inspect each variable in the debug panel.
+            r = 5.0
+            area          = math.pi * r * r            # circle area
+            circumference = 2 * math.pi * r            # circle circumference
+            s   = math.sin(math.pi / 6)                # sin(30°) = 0.5
+            c   = math.cos(math.pi / 3)                # cos(60°) = 0.5
+            t   = math.tan(math.pi / 4)                # tan(45°) = 1.0
+            rt2 = math.sqrt(2)                         # square root of 2
+            e2  = math.exp(2)                          # e^2 ≈ 7.389
+            ln  = math.log(math.e)                     # natural log of e = 1.0
+            lg  = math.log10(1000)                     # base-10 log of 1000 = 3.0
+            """,
+            "02. 数学関数の使用",
+            """
+            # math モジュールはあらかじめ import 済みなので、明示的な import 文なしにそのまま使えます。
+            # このサンプルでは pi, 三角関数 (sin/cos/tan), sqrt, 指数関数 (exp), 対数関数 (log) を扱います。
+            # Step モードで実行して各変数の値をデバッグパネルで確認しましょう。
+            r = 5.0
+            area          = math.pi * r * r            # 円の面積
+            circumference = 2 * math.pi * r            # 円周の長さ
+            s   = math.sin(math.pi / 6)                # sin(30°) = 0.5
+            c   = math.cos(math.pi / 3)                # cos(60°) = 0.5
+            t   = math.tan(math.pi / 4)                # tan(45°) = 1.0
+            rt2 = math.sqrt(2)                         # 2 の平方根
+            e2  = math.exp(2)                          # e^2 ≒ 7.389
+            ln  = math.log(math.e)                     # e の自然対数 = 1.0
+            lg  = math.log10(1000)                     # 1000 の常用対数 = 3.0
+            """
+        ),
+        (
+            "03. Load image and set geometry",
+            """
+            # Load an image file via a dialog, then configure the wavelength and detector geometry needed
+            # for the 2θ conversion: X-ray source at 0.10 nm, direct-beam center, camera length, pixel size.
+            # Finally fit the whole image into the canvas. Run in Step mode to see each setting take effect.
+            IPA.File.ReadImage()
+            IPA.Wave.WaveSource = 1              # 0:None, 1:X-ray, 2:Electron, 3:Neutron
+            IPA.Wave.WaveLength = 0.10           # nm
+            IPA.Detector.SetCenter(1024, 1024)   # pixel
+            IPA.Detector.CameraLength = 200.0    # mm
+            IPA.Detector.PixelSizeX   = 0.100    # mm
+            IPA.Detector.PixelSizeY   = 0.100    # mm
+            IPA.Image.SetFullArea()
+            """,
+            "03. 画像読み込みと幾何設定",
+            """
+            # ダイアログから画像ファイルを読み込み、2θ 変換に必要な波長・検出器幾何
+            # (X 線 0.10 nm、直接ビーム中心、カメラ長、ピクセルサイズ) を設定します。
+            # 最後にキャンバス全体に画像をフィットさせます。Step モードで各設定の反映を確認できます。
+            IPA.File.ReadImage()
+            IPA.Wave.WaveSource = 1              # 0:None, 1:X線, 2:電子線, 3:中性子
+            IPA.Wave.WaveLength = 0.10           # nm
+            IPA.Detector.SetCenter(1024, 1024)   # pixel
+            IPA.Detector.CameraLength = 200.0    # mm
+            IPA.Detector.PixelSizeX   = 0.100    # mm
+            IPA.Detector.PixelSizeY   = 0.100    # mm
+            IPA.Image.SetFullArea()
+            """
+        ),
+        (
+            "04. Get profile (concentric)",
+            """
+            # Perform 2θ-intensity (concentric) integration and save the resulting profile as a CSV file
+            # specified in the dialog. Make sure the wavelength and detector geometry are already set
+            # (see sample 03) so that the 2θ axis is correct.
+            IPA.IntegralProperty.ConcentricIntegration = True
+            IPA.IntegralProperty.ConcentricStart = 0.0    # 2θ start (deg)
+            IPA.IntegralProperty.ConcentricEnd   = 60.0   # 2θ end   (deg)
+            IPA.IntegralProperty.ConcentricStep  = 0.02   # 2θ step  (deg)
+            IPA.IntegralProperty.ConcentricUnit  = 0      # 0:Angle, 1:d-spacing, 2:Length
+            IPA.Profile.SaveProfileAsCSV = True
+            fname = IPA.File.GetDirectoryPath() + "profile.csv"
+            IPA.Profile.GetProfile(fname)
+            """,
+            "04. プロファイル取得 (同心円積分)",
+            """
+            # 2θ-強度 (同心円) 積分を行い、結果プロファイルを CSV 形式で保存します。
+            # 2θ 軸が正しい値になるよう、事前に波長と検出器幾何 (サンプル 03) を設定しておくこと。
+            IPA.IntegralProperty.ConcentricIntegration = True
+            IPA.IntegralProperty.ConcentricStart = 0.0    # 2θ 開始 (deg)
+            IPA.IntegralProperty.ConcentricEnd   = 60.0   # 2θ 終了 (deg)
+            IPA.IntegralProperty.ConcentricStep  = 0.02   # 2θ 刻み (deg)
+            IPA.IntegralProperty.ConcentricUnit  = 0      # 0:角度, 1:d値, 2:長さ
+            IPA.Profile.SaveProfileAsCSV = True
+            fname = IPA.File.GetDirectoryPath() + "profile.csv"
+            IPA.Profile.GetProfile(fname)
+            """
+        ),
+        (
+            "05. Batch process multiple files",
+            """
+            # Pick several image files from a dialog, then for each one: read the image, pre-process with
+            # 'Find center' and 'Mask spots' before getting the profile, and save the result as CSV next to
+            # the image. Assumes wavelength and detector geometry are already configured.
+            files = IPA.File.GetFileNames("Select image files")
+            IPA.Profile.FindCenterBeforeGetProfile = True
+            IPA.Profile.MaskSpotsBeforeGetProfile  = True
+            IPA.Profile.SaveProfileAsCSV           = True
+            for path in files:
+                IPA.File.ReadImage(path)
+                out_name = path + ".csv"
+                IPA.Profile.GetProfile(out_name)
+            """,
+            "05. 複数ファイルの一括処理",
+            """
+            # ダイアログで複数の画像ファイルを選択し、各ファイルに対して:
+            # 画像読み込み → 'Find center' と 'Mask spots' を前処理として実行 → プロファイル取得 →
+            # 画像と同じ場所に CSV で保存、を繰り返します。波長・検出器幾何は事前設定済みを前提とします。
+            files = IPA.File.GetFileNames("画像ファイルを選択")
+            IPA.Profile.FindCenterBeforeGetProfile = True
+            IPA.Profile.MaskSpotsBeforeGetProfile  = True
+            IPA.Profile.SaveProfileAsCSV           = True
+            for path in files:
+                IPA.File.ReadImage(path)
+                out_name = path + ".csv"
+                IPA.Profile.GetProfile(out_name)
+            """
+        ),
+        (
+            "06. Sequential image frames",
+            """
+            # For a loaded sequential image (e.g. multi-frame TIFF / HDF5), iterate over every frame and
+            # save a separate profile for each. Sequential.Count returns the total frame number; SelectIndex
+            # switches the active frame.
+            if IPA.Sequential.SequentialImageMode:
+                dir_path = IPA.File.GetDirectoryPath()
+                IPA.Profile.SaveProfileAsCSV = True
+                for i in range(IPA.Sequential.Count):
+                    IPA.Sequential.SelectIndex(i)
+                    fname = dir_path + "frame_" + str(i).zfill(4) + ".csv"
+                    IPA.Profile.GetProfile(fname)
+            """,
+            "06. 連続画像の各フレーム処理",
+            """
+            # 連続画像 (マルチフレーム TIFF / HDF5 等) が読み込まれているとき、全フレームを順に走査して
+            # それぞれ個別のプロファイルとして保存します。Sequential.Count で総フレーム数、
+            # SelectIndex(i) でアクティブフレームを切り替えます。
+            if IPA.Sequential.SequentialImageMode:
+                dir_path = IPA.File.GetDirectoryPath()
+                IPA.Profile.SaveProfileAsCSV = True
+                for i in range(IPA.Sequential.Count):
+                    IPA.Sequential.SelectIndex(i)
+                    fname = dir_path + "frame_" + str(i).zfill(4) + ".csv"
+                    IPA.Profile.GetProfile(fname)
+            """
+        ),
+        (
+            "07. Azimuthal division",
+            """
+            # Split each Debye ring into N azimuthal sectors and integrate each sector separately. Useful
+            # for checking texture / strain anisotropy. Results for all sectors are saved into one file.
+            IPA.Profile.AzimuthalDivision       = True
+            IPA.Profile.AzimuthalDivisionNumber = 12      # split the ring into 12 sectors
+            IPA.Profile.SaveProfileInOneFile    = True
+            IPA.Profile.SaveProfileAsCSV        = True
+            fname = IPA.File.GetDirectoryPath() + "azim.csv"
+            IPA.Profile.GetProfile(fname)
+            """,
+            "07. 方位角分割 (azimuthal division)",
+            """
+            # 各 Debye リングを N 個の方位セクターに分割して、セクターごとに個別積分します。
+            # テクスチャや歪み異方性の確認に便利です。全セクターの結果は 1 ファイルにまとめて保存します。
+            IPA.Profile.AzimuthalDivision       = True
+            IPA.Profile.AzimuthalDivisionNumber = 12      # リングを 12 セクターに分割
+            IPA.Profile.SaveProfileInOneFile    = True
+            IPA.Profile.SaveProfileAsCSV        = True
+            fname = IPA.File.GetDirectoryPath() + "azim.csv"
+            IPA.Profile.GetProfile(fname)
+            """
+        ),
+        (
+            "08. Mask workflow",
+            """
+            # Clear any existing mask, mask out detected spots (single-crystal reflections) and the top
+            # half of the detector (e.g. blocked by a beamstop arm), save the mask, then run the profile.
+            IPA.Mask.ClearMask()
+            IPA.Mask.MaskSpots()
+            IPA.Mask.MaskTop()
+            IPA.File.SaveMask()
+            IPA.Profile.GetProfile()
+            """,
+            "08. マスク処理のワークフロー",
+            """
+            # 既存マスクをクリアし、スポット (単結晶反射) と検出器上半分 (ビームストップアーム等で
+            # 隠れた領域) をマスクし、マスクを保存してからプロファイルを取得します。
+            IPA.Mask.ClearMask()
+            IPA.Mask.MaskSpots()
+            IPA.Mask.MaskTop()
+            IPA.File.SaveMask()
+            IPA.Profile.GetProfile()
+            """
+        ),
+        (
+            "09. Radial (cake) integration",
+            """
+            # Radial (pizza-cut / cake-pattern) integration: sweep a sector of given radius and width
+            # around the beam center and output intensity vs. azimuthal angle. Useful for checking the
+            # azimuthal intensity distribution of a specific ring.
+            IPA.IntegralProperty.RadialIntegration = True
+            IPA.IntegralProperty.RadialRadius = 20.0      # 2θ / d / mm depending on RadialUnit
+            IPA.IntegralProperty.RadialWidgh  = 0.5       # donut width
+            IPA.IntegralProperty.RadialStep   = 1.0       # sector angle step (deg)
+            IPA.IntegralProperty.RadialUnit   = 0         # 0:Angle, 1:d-spacing
+            IPA.Profile.SaveProfileAsCSV = True
+            fname = IPA.File.GetDirectoryPath() + "radial.csv"
+            IPA.Profile.GetProfile(fname)
+            """,
+            "09. 放射状 (cake) 積分",
+            """
+            # 放射状 (ピザカット / ケーキパターン) 積分: ビーム中心周りに指定した半径・幅のドーナツ
+            # セクターを掃引し、方位角 vs 強度を出力します。特定リングの方位強度分布の確認に便利です。
+            IPA.IntegralProperty.RadialIntegration = True
+            IPA.IntegralProperty.RadialRadius = 20.0      # RadialUnit に応じて 2θ / d / mm
+            IPA.IntegralProperty.RadialWidgh  = 0.5       # ドーナツの幅
+            IPA.IntegralProperty.RadialStep   = 1.0       # セクター角度刻み (deg)
+            IPA.IntegralProperty.RadialUnit   = 0         # 0:角度, 1:d値
+            IPA.Profile.SaveProfileAsCSV = True
+            fname = IPA.File.GetDirectoryPath() + "radial.csv"
+            IPA.Profile.GetProfile(fname)
+            """
+        ),
+        (
+            "10. Send to PDIndexer",
+            """
+            # After getting a profile with 'Send profile via clipboard' enabled, IPAnalyzer hands the
+            # data over to PDIndexer. This sample enables the clipboard bridge, acquires a profile, and
+            # then runs a named macro inside PDIndexer via PDI.RunMacroName to post-process it.
+            IPA.Profile.SendProfileViaClipboard = True
+            IPA.Profile.GetProfile()
+            IPA.PDI.Timeout = 30
+            IPA.PDI.RunMacroName("FitPeaks")   # executes the "FitPeaks" macro saved in PDIndexer
+            """,
+            "10. PDIndexer へ送る",
+            """
+            # 'Send profile via clipboard' を有効にした状態でプロファイルを取得すると、IPAnalyzer から
+            # PDIndexer にデータが渡ります。このサンプルではクリップボード連携を有効化 → プロファイル取得
+            # → PDI.RunMacroName で PDIndexer 側の名前付きマクロを実行する流れを示します。
+            IPA.Profile.SendProfileViaClipboard = True
+            IPA.Profile.GetProfile()
+            IPA.PDI.Timeout = 30
+            IPA.PDI.RunMacroName("FitPeaks")   # PDIndexer に保存した "FitPeaks" マクロを実行
+            """
+        ),
+    ];
+
+    private static readonly (string name, string body)[] _sampleMacrosEn = Array.ConvertAll(_sampleMacros, m => (name: m.nameEn, body: m.bodyEn));
+
+    private static readonly (string name, string body)[] _sampleMacrosJa = Array.ConvertAll(_sampleMacros, m => (name: m.nameJa, body: m.bodyJa));
+    #endregion
+
     #region PDIClass
 
     public class PDIClass : MacroSub

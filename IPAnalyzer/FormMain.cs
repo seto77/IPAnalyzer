@@ -12,6 +12,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -236,7 +237,8 @@ public partial class FormMain : Form
     #region コンストラクタ、ロード、クローズ
     public FormMain()
     {
-        using (var regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer"))
+        // Registry プロパティと FormMain.Registry(Reg.Mode) メソッドが名前衝突するため完全修飾
+        using (var regKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(RegistryPath))
         {
             try
             {
@@ -259,566 +261,156 @@ public partial class FormMain : Form
 
     public static void ResetRegistry()
     {
-        try { Registry.CurrentUser.DeleteSubKey("Software\\Crystallography\\IPAnalyzer"); }
+        // Registry プロパティと FormMain.Registry(Reg.Mode) メソッドが名前衝突するため完全修飾
+        try { Microsoft.Win32.Registry.CurrentUser.DeleteSubKey(RegistryPath); }
         catch { }
     }
 
-    #region レジストリをセーブ
-    public void SaveRegistry()
+    private const string RegistryPath = "Software\\Crystallography\\IPAnalyzer";
+
+    #region レジストリ操作
+    private void Registry(Reg.Mode mode)
     {
-        RegistryKey regKey = Registry.CurrentUser.CreateSubKey("Software\\Crystallography\\IPAnalyzer");
-        if (regKey == null) return;
+        using var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(RegistryPath);
+        if (key == null) return;
 
-        try
+        if (mode == Reg.Mode.Write)
+            key.SetValue("Version", Version.VersionAndDate);
+
+        Reg.RW<string>(key, mode, Thread.CurrentThread.CurrentUICulture, "Name");
+
+        void rw<T>(Expression<Func<T>> e) => Reg.RW(key, mode, e);
+
+        #region Main
+        rw(() => Bounds);
+        rw(() => toolTipToolStripMenuItem.Checked);
+        rw(() => comboBoxGradient.SelectedIndex);
+        rw(() => comboBoxScale1.SelectedIndex);
+        rw(() => comboBoxScale2.SelectedIndex);
+        rw(() => comboBoxScaleLine.SelectedIndex);
+        rw(() => initialImageDirectory);
+        rw(() => initialParameterDirectory);
+        rw(() => initialMaskDirectory);
+        rw(() => filterIndex);
+        rw(() => findCenterBeforeGetProfileToolStripMenuItem.Checked);
+        rw(() => maskSpotsBeforeGetProfileToolStripMenuItem.Checked);
+        #endregion
+
+        if (InitialDialog != null)
+            rw(() => InitialDialog.AutomaticallyClose);
+
+        #region FindParameter
+        if (FormFindParameter != null)
         {
-            regKey.SetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
-            regKey.SetValue("initialDialog.AutomaricallyClose", InitialDialog.AutomaticallyClose);
+            rw(() => FormFindParameter.Bounds);
+            rw(() => FormFindParameter.Division);
+            rw(() => FormFindParameter.BandWidthPercentage);
+            rw(() => FormFindParameter.SearchRange);
+            rw(() => FormFindParameter.ThresholdOfPeak);
+            rw(() => FormFindParameter.Repetition);
+            rw(() => FormFindParameter.SectorMode);
+            rw(() => FormFindParameter.RectangleMode);
+            rw(() => FormFindParameter.PeakDecomposition);
+        }
+        #endregion
 
-            #region Main関係
-            regKey.SetValue("formMainWidth", Width);
-            regKey.SetValue("formMainHeight", Height);
-            regKey.SetValue("formMainLocationX", Location.X);
-            regKey.SetValue("formMainLocationY", Location.Y);
+        #region DrawRing
+        if (FormDrawRing != null)
+            rw(() => FormDrawRing.Bounds);
+        #endregion
 
-            regKey.SetValue("findCenterBeforeGetProfile", findCenterBeforeGetProfileToolStripMenuItem.Checked);
-            regKey.SetValue("maskSpotsBeforeGetProfile", maskSpotsBeforeGetProfileToolStripMenuItem.Checked);
-            #endregion
+        #region FormProperty
+        if (FormProperty != null)
+        {
+            rw(() => FormProperty.Location);
 
-            #region FindParameter関係
+            rw(() => FormProperty.numericBoxPixelSizeX.Text);
+            rw(() => FormProperty.numericBoxPixelSizeY.Text);
+            rw(() => FormProperty.numericBoxPixelKsi.Text);
+            rw(() => FormProperty.CameraLength1Text);
+            rw(() => FormProperty.numericBoxDirectSpotPositionX.Text);
+            rw(() => FormProperty.numericBoxDirectSpotPositionY.Text);
 
-            regKey.SetValue("formFindParameterWidth", FormFindParameter.Width);
-            regKey.SetValue("formFindParameterHeight", FormFindParameter.Height);
-            regKey.SetValue("formFindParameterLocationX", FormFindParameter.Location.X);
-            regKey.SetValue("formFindParameterLocationY", FormFindParameter.Location.Y);
+            //Concentric Mode
+            rw(() => FormProperty.StartAngle);
+            rw(() => FormProperty.EndAngle);
+            rw(() => FormProperty.StepAngle);
+            rw(() => FormProperty.StartLength);
+            rw(() => FormProperty.EndLength);
+            rw(() => FormProperty.StepLength);
+            rw(() => FormProperty.StartDspacing);
+            rw(() => FormProperty.EndDspacing);
+            rw(() => FormProperty.StepDspacing);
+            rw(() => FormProperty.radioButtonConcentricAngle.Checked);
+            rw(() => FormProperty.radioButtonConcentricDspacing.Checked);
 
-            regKey.SetValue("formFindParameter.Division", FormFindParameter.Division);
-            regKey.SetValue("formFindParameter.BandWidthPercentage", FormFindParameter.BandWidthPercentage);
-            regKey.SetValue("formFindParameter.SearchRange", FormFindParameter.SearchRange);
-            regKey.SetValue("formFindParameter.ThresholdOfPeak", FormFindParameter.ThresholdOfPeak);
-            regKey.SetValue("formFindParameter.Repetition", FormFindParameter.Repetition);
-            regKey.SetValue("formFindParameter.SectorMode", FormFindParameter.SectorMode);
-            regKey.SetValue("formFindParameter.RectangleMode", FormFindParameter.RectangleMode);
-            regKey.SetValue("formFindParameter.PeakDecomposition", FormFindParameter.PeakDecomposition);
-            #endregion
+            //Radial Mode
+            rw(() => FormProperty.SectorRadiusTheta);
+            rw(() => FormProperty.SectorRadiusThetaRange);
+            rw(() => FormProperty.SectorRadiusD);
+            rw(() => FormProperty.SectorRadiusDRange);
+            rw(() => FormProperty.SectorAngle);
+            rw(() => FormProperty.radioButtonRadialAngle.Checked);
 
-    #region IntTable関係
-    //regKey.SetValue("formIntTableWidth", FormIntTable.Width);
-    //regKey.SetValue("formIntTableHeight", FormIntTable.Height);
-    //regKey.SetValue("formIntTableLocationX", FormIntTable.Location.X);
-    //regKey.SetValue("formIntTableLocationY", FormIntTable.Location.Y);
-    #endregion
+            //Chi 方向
+            rw(() => FormProperty.radioButtonChiClockwise.Checked);
+            rw(() => FormProperty.radioButtonChiRight.Checked);
+            rw(() => FormProperty.radioButtonChiLeft.Checked);
+            rw(() => FormProperty.radioButtonChiTop.Checked);
+            rw(() => FormProperty.radioButtonChiBottom.Checked);
 
-    #region DrawRingK関係
-    regKey.SetValue("formDrawRingWidth", FormDrawRing.Width);
-            regKey.SetValue("formDrawRingHeight", FormDrawRing.Height);
-            regKey.SetValue("formDrawRingLocationX", FormDrawRing.Location.X);
-            regKey.SetValue("formDrawRingLocationY", FormDrawRing.Location.Y);
-            #endregion
+            //Tilt Correction
+            rw(() => FormProperty.numericBoxTiltPhi.Text);
+            rw(() => FormProperty.numericBoxTiltTau.Text);
 
-            #region Property関係
-            regKey.SetValue("formPropertyLocationX", FormProperty.Location.X);
-            regKey.SetValue("formPropertyLocationY", FormProperty.Location.Y);
+            //積分領域
+            rw(() => FormProperty.radioButtonRectangle.Checked);
+            rw(() => FormProperty.numericUpDownRectangleAngle.Value);
+            rw(() => FormProperty.numericUpDownRectangleBand.Value);
+            rw(() => FormProperty.checkBoxRectangleIsBothSide.Checked);
+            rw(() => FormProperty.numericUpDownSectorStartAngle.Value);
+            rw(() => FormProperty.numericUpDownSectorEndAngle.Value);
 
-            regKey.SetValue("textBoxPixelSizeXText", FormProperty.numericBoxPixelSizeX.Text);
-            regKey.SetValue("textBoxPixelSizeYText", FormProperty.numericBoxPixelSizeY.Text);
-            regKey.SetValue("textBoxPixelKsiText", FormProperty.numericBoxPixelKsi.Text);
-
-            regKey.SetValue("textBoxFilmDistanceText", FormProperty.CameraLength1Text);
-            regKey.SetValue("textBoxCenterPositionXText", FormProperty.numericBoxDirectSpotPositionX.Text);
-            regKey.SetValue("textBoxCenterPositionYText", FormProperty.numericBoxDirectSpotPositionY.Text);
-
-            //ConcentricかRadialか
-            regKey.SetValue("formProperty.radioButtonConcentric.Checked", FormProperty.radioButtonConcentric.Checked);
-            regKey.SetValue("formProperty.radioButtonRadial.Checked", FormProperty.radioButtonRadial.Checked);
-
-            //Concentric Mode 関連
-            regKey.SetValue("numericUpDownIntensityStartAngleValue", FormProperty.StartAngle);
-            regKey.SetValue("numericUpDownIntensityEndAngleValue", FormProperty.EndAngle);
-            regKey.SetValue("numericUpDownIntensityStepAngleValue", FormProperty.StepAngle);
-
-            regKey.SetValue("numericUpDownIntensityStartLengthValue", FormProperty.StartLength);
-            regKey.SetValue("numericUpDownIntensityEndLengthValue", FormProperty.EndLength);
-            regKey.SetValue("numericUpDownIntensityStepLengthValue", FormProperty.StepLength);
-
-            regKey.SetValue("numericUpDownIntensityStartDspacingValue", FormProperty.StartDspacing);
-            regKey.SetValue("numericUpDownIntensityEndDspacingValue", FormProperty.EndDspacing);
-            regKey.SetValue("numericUpDownIntensityStepDspacingValue", FormProperty.StepDspacing);
-
-            regKey.SetValue("formProperty.SectorRadiusTheta", FormProperty.SectorRadiusTheta);
-            regKey.SetValue("formProperty.SectorRadiusThetaRange", FormProperty.SectorRadiusThetaRange);
-            regKey.SetValue("formProperty.SectorRadiusD", FormProperty.SectorRadiusD);
-            regKey.SetValue("formProperty.SectorRadiusDRange", FormProperty.SectorRadiusDRange);
-            regKey.SetValue("formProperty.SectorAngle", FormProperty.SectorAngle);
-
-            regKey.SetValue("radioButtonAngleMode", FormProperty.radioButtonConcentricAngle.Checked);
-            //regKey.SetValue("radioButtonLengthMode", radioButtonLengthMode.Checked);
-            regKey.SetValue("radioButtonDspacingMode", FormProperty.radioButtonConcentricDspacing.Checked);
-
-            regKey.SetValue("formProperty.radioButtonRadialAngle.Checked", FormProperty.radioButtonRadialAngle.Checked);
-            regKey.SetValue("formProperty.radioButtonRadialD.Checked", FormProperty.radioButtonRadialDspacing.Checked);
-
-            regKey.SetValue("formProperty.radioButtonChiClockwise.Checked", FormProperty.radioButtonChiClockwise.Checked);
-
-            regKey.SetValue("formProperty.radioButtonChiRight.Checked", FormProperty.radioButtonChiRight.Checked);
-            regKey.SetValue("formProperty.radioButtonChiLeft.Checked", FormProperty.radioButtonChiLeft.Checked);
-            regKey.SetValue("formProperty.radioButtonChiTop.Checked", FormProperty.radioButtonChiTop.Checked);
-            regKey.SetValue("formProperty.radioButtonChiBottom.Checked", FormProperty.radioButtonChiBottom.Checked);
-
-            regKey.SetValue("textBoxTiltCorrectionPhiText", FormProperty.numericBoxTiltPhi.Text);
-            regKey.SetValue("textBoxTiltCorrectionPsiText", FormProperty.numericBoxTiltTau.Text);
-
-            regKey.SetValue("radioButtonRectangleChecked", FormProperty.radioButtonRectangle.Checked);
-
-            regKey.SetValue("numericUpDownRectangleAngleValue", FormProperty.numericUpDownRectangleAngle.Value);
-            regKey.SetValue("numericUpDownRectangleBandValue", FormProperty.numericUpDownRectangleBand.Value);
-            regKey.SetValue("checkBoxRectangleIsBothSideChecked", FormProperty.checkBoxRectangleIsBothSide.Checked);
-
-            regKey.SetValue("numericUpDownSectorStartAngleValue", FormProperty.numericUpDownSectorStartAngle.Value);
-            regKey.SetValue("numericUpDownSectorEndAngleValue", FormProperty.numericUpDownSectorEndAngle.Value);
-
-            regKey.SetValue("textBoxWaveLengthText", FormProperty.WaveLengthText);
-            regKey.SetValue("comboBoxRectangleDirectionText", FormProperty.comboBoxRectangleDirection.Text);
-            regKey.SetValue("numericUpDownFindSpotsDeviationValue", FormProperty.numericUpDownFindSpotsDeviation.Value);
-
-            regKey.SetValue("toolTipToolStripMenuItem", toolTipToolStripMenuItem.Checked);
-
-            regKey.SetValue("toolStripComboBoxGradient.SelectedIndex", comboBoxGradient.SelectedIndex);
-            regKey.SetValue("toolStripComboBoxScale1.SelectedIndex", comboBoxScale1.SelectedIndex);
-            regKey.SetValue("toolStripComboBoxScale2.SelectedIndex", comboBoxScale2.SelectedIndex);
-            regKey.SetValue("toolStripComboBoxScaleLine.SelectedIndex", comboBoxScaleLine.SelectedIndex);
-
-            regKey.SetValue("initialImageDirectory", initialImageDirectory);
-            regKey.SetValue("initialParameterDirectory", initialParameterDirectory);
-            regKey.SetValue("initialMaskDirectory", initialMaskDirectory);
-            regKey.SetValue("filterIndex", filterIndex);
-
-            //画像読み込み時の領域やコントラスト引継ぎ
-            regKey.SetValue("FormProperty.MaintainImageContrast", FormProperty.MaintainImageContrast);
-            regKey.SetValue("FormProperty.MaintainImageRange", FormProperty.MaintainImageRange);
-
-            //画像名の設定
-            regKey.SetValue("FormProperty.ImageName_FileName", FormProperty.ImageName_FileName);
-            regKey.SetValue("FormProperty.ImageName_FullPath", FormProperty.ImageName_FullPath);
-            regKey.SetValue("FormProperty.LastFolderPlusFileName", FormProperty.ImageName_LastFolderPlusFileName);
-
-
-
-            //ここからイメージタイプごとのパラメータ書き込み
-            for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
-            {
-                regKey.SetValue("ImageTypeParameters.CenterPosX" + i.ToString(), FormProperty.ImageTypeParameters[i].CenterPosX);
-                regKey.SetValue("ImageTypeParameters.CenterPosY" + i.ToString(), FormProperty.ImageTypeParameters[i].CenterPosY);
-                regKey.SetValue("ImageTypeParameters.CameraLength" + i.ToString(), FormProperty.ImageTypeParameters[i].CameraLength);
-                regKey.SetValue("ImageTypeParameters.PixelSizeX" + i.ToString(), FormProperty.ImageTypeParameters[i].PixelSizeX);
-                regKey.SetValue("ImageTypeParameters.PixelSizeY" + i.ToString(), FormProperty.ImageTypeParameters[i].PixelSizeY);
-                regKey.SetValue("ImageTypeParameters.PixelKsi" + i.ToString(), FormProperty.ImageTypeParameters[i].PixelKsi);
-                regKey.SetValue("ImageTypeParameters.Phi" + i.ToString(), FormProperty.ImageTypeParameters[i].Phi);
-                regKey.SetValue("ImageTypeParameters.Tau" + i.ToString(), FormProperty.ImageTypeParameters[i].Tau);
-
-                regKey.SetValue("ImageTypeParameters.WaveSource" + i.ToString(), (int)FormProperty.ImageTypeParameters[i].WaveSource);
-                regKey.SetValue("ImageTypeParameters.XrayWaveSourceElementNumber" + i.ToString(), FormProperty.ImageTypeParameters[i].XrayWaveSourceElementNumber);
-                regKey.SetValue("ImageTypeParameters.XrayLine" + i.ToString(), (int)FormProperty.ImageTypeParameters[i].XrayLine);
-                regKey.SetValue("ImageTypeParameters.ElectronAccVoltage" + i.ToString(), FormProperty.ImageTypeParameters[i].ElectronAccVoltage);
-                regKey.SetValue("ImageTypeParameters.WaveLength" + i.ToString(), FormProperty.ImageTypeParameters[i].WaveLength);
-
-                regKey.SetValue("ImageTypeParameters.FlipHorizontally" + i.ToString(), FormProperty.ImageTypeParameters[i].FlipHorizontally);
-                regKey.SetValue("ImageTypeParameters.FlipVertically" + i.ToString(), FormProperty.ImageTypeParameters[i].FlipVertically);
-                regKey.SetValue("ImageTypeParameters.Rotation" + i.ToString(), FormProperty.ImageTypeParameters[i].Rotation);
-
-
-
-                regKey.SetValue("ImageTypeParameters.GandolfiRadius" + i.ToString(), FormProperty.ImageTypeParameters[i].GandolfiRadius);
-
-
-                regKey.SetValue("ImageTypeParameters.CameraMode" + i.ToString(), FormProperty.ImageTypeParameters[i].CameraMode == IntegralProperty.CameraEnum.FlatPanel ? "FlatPanel" : "Gandolfi");
-
-
-            }
-
-            #endregion
-
-            #region マクロ
-            //regKey.DeleteSubKeyTree("Macro", false);
-            //regKey.CreateSubKey("Macro");
-            //var macro = FormMacro.ZippedMacros;
-            //regKey.SetValue("MacroLength", macro.Length);
-            //for (int i = 0; i < macro.Length; i++)
-            //    regKey.SetValue("Macro" + i.ToString(), macro[i]);
-            regKey.SetValue("Macro", FormMacro.ZippedMacros);
-            #endregion
+            rw(() => FormProperty.WaveLengthText);
+            rw(() => FormProperty.comboBoxRectangleDirection.Text);
+            rw(() => FormProperty.numericUpDownFindSpotsDeviation.Value);
 
             //偏光補正
-            regKey.SetValue("FormProperty.checkBoxCorrectPolarization.Checked", FormProperty.checkBoxCorrectPolarization.Checked);
+            rw(() => FormProperty.checkBoxCorrectPolarization.Checked);
 
-            regKey.Close();
+            //画像読み込み時の領域やコントラスト引継ぎ
+            rw(() => FormProperty.MaintainImageContrast);
+            rw(() => FormProperty.MaintainImageRange);
+
+            //画像名の設定
+            rw(() => FormProperty.ImageName_FileName);
+            rw(() => FormProperty.ImageName_FullPath);
+            rw(() => FormProperty.ImageName_LastFolderPlusFileName);
+
+            // ImageTypeParameter は [MemoryPackable] partial 化済み。フィールド順の変更で
+            // 保存済み registry blob がバイナリ互換を失うので、並び替えは破壊的変更扱い。
+            rw(() => FormProperty.ImageTypeParameters);
+
+            if (mode == Reg.Mode.Read)
+            {
+                FormProperty.radioButtonAngleMode_CheckedChanged(new object(), EventArgs.Empty);
+                FormProperty.radioButtonRadialAngle_CheckedChanged(new object(), EventArgs.Empty);
+            }
         }
+        #endregion
 
-        catch
+        #region Macro
+        if (FormMacro != null)
         {
-            regKey.Close();
-            Registry.CurrentUser.DeleteSubKey("Software\\Crystallography\\IPAnalyzer", false);
+            if (mode == Reg.Mode.Read)
+                FormMacro.ZippedMacros = (byte[])key.GetValue("Macro", Array.Empty<byte>());
+            else
+                key.SetValue("Macro", FormMacro.ZippedMacros);
         }
+        #endregion
     }
     #endregion
 
-    #region レジストリをロード
-    public void LoadRegistry()
-    {
-        try
-        {
-            RegistryKey regKey = Registry.CurrentUser.OpenSubKey("Software\\Crystallography\\IPAnalyzer");
-
-            if (regKey == null) return;
-
-            #region Main
-            if ((int)regKey.GetValue("formMainLocationX", Location.X) >= 0)
-            {
-                Width = (int)regKey.GetValue("formMainWidth", Width);
-                Height = (int)regKey.GetValue("formMainHeight", Height);
-                Location = new Point(
-                    (int)regKey.GetValue("formMainLocationX", Location.X),
-                    (int)regKey.GetValue("formMainLocationY", Location.Y));
-
-                toolTipToolStripMenuItem.Checked = (string)regKey.GetValue("toolTipToolStripMenuItem", "True") == "True";
-
-                comboBoxGradient.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxGradient.SelectedIndex", 0);
-                comboBoxScale1.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScale1.SelectedIndex", 0);
-                comboBoxScale2.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScale2.SelectedIndex", 0);
-                comboBoxScaleLine.SelectedIndex = (int)regKey.GetValue("toolStripComboBoxScaleLine.SelectedIndex", 0);
-
-                initialImageDirectory = (string)regKey.GetValue("initialImageDirectory", "");
-                initialParameterDirectory = (string)regKey.GetValue("initialParameterDirectory", "");
-                initialMaskDirectory = (string)regKey.GetValue("initialMaskDirectory", "");
-                filterIndex = (int)regKey.GetValue("filterIndex", 0);
-
-                findCenterBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("findCenterBeforeGetProfile", "False") == "True";
-                maskSpotsBeforeGetProfileToolStripMenuItem.Checked = (string)regKey.GetValue("maskSpotsBeforeGetProfile", "False") == "True";
-            }
-            #endregion
-
-            #region InitialDialog
-            if (InitialDialog != null)
-            {
-                InitialDialog.Location = new Point(Location.X + Width / 2 - InitialDialog.Width / 2, Location.Y + Height / 2 - InitialDialog.Height / 2);
-                InitialDialog.AutomaticallyClose = (string)regKey.GetValue("initialDialog.AutomaricallyClose", "True") == "True";
-            }
-            #endregion
-
-            #region FindParameter
-            if (FormFindParameter != null && (int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y) >= 0)
-            {
-                FormFindParameter.Width = (int)regKey.GetValue("formFindParameterWidth", FormFindParameter.Width);
-                FormFindParameter.Height = (int)regKey.GetValue("formFindParameterHeight", FormFindParameter.Height);
-                FormFindParameter.Location = new Point(
-                    (int)regKey.GetValue("formFindParameterLocationX", FormFindParameter.Location.X),
-                    (int)regKey.GetValue("formFindParameterLocationY", FormFindParameter.Location.Y));
-
-
-
-                FormFindParameter.Division = (int) regKey.GetValue("formFindParameter.Division", FormFindParameter.Division);
-                
-                FormFindParameter.BandWidthPercentage = System.Convert.ToDouble(
-                    (string)regKey.GetValue("formFindParameter.BandWidthPercentage", FormFindParameter.BandWidthPercentage.ToString()));
-                FormFindParameter.SearchRange = System.Convert.ToDouble(
-                   (string)regKey.GetValue("formFindParameter.SearchRange", FormFindParameter.SearchRange.ToString()));
-                FormFindParameter.ThresholdOfPeak = System.Convert.ToDouble(
-                   (string)regKey.GetValue("formFindParameter.ThresholdOfPeak", FormFindParameter.ThresholdOfPeak.ToString()));
-
-                FormFindParameter.Repetition = (int)regKey.GetValue("formFindParameter.Repetition", FormFindParameter.Repetition);
-
-                FormFindParameter.SectorMode = (string)regKey.GetValue("FormFindParameter.SectorMode", "True") == "True";
-                FormFindParameter.RectangleMode = (string)regKey.GetValue("FormFindParameter.RectangleMode", "False") == "True";
-                FormFindParameter.PeakDecomposition = (string)regKey.GetValue("FormFindParameter.PeakDecomposition", "False") == "True";
-
-            }
-            #endregion
-
-            #region IntTable
-            //if (FormIntTable != null && (int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y) >= 0)
-            //{
-            //FormIntTable.Width = (int)regKey.GetValue("formIntTableWidth", FormIntTable.Width);
-            //FormIntTable.Height = (int)regKey.GetValue("formIntTableHeight", FormIntTable.Height);
-            //FormIntTable.Location = new Point((int)regKey.GetValue("formIntTableLocationX", FormIntTable.Location.X),
-            //(int)regKey.GetValue("formIntTableLocationY", FormIntTable.Location.Y));
-            //}
-            #endregion
-
-            #region DrawRing
-            if (FormDrawRing != null && (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y) >= 0)
-            {
-                FormDrawRing.Width = (int)regKey.GetValue("formDrawRingWidth", FormDrawRing.Width);
-                FormDrawRing.Height = (int)regKey.GetValue("formDrawRingHeight", FormDrawRing.Height);
-                FormDrawRing.Location = new Point((int)regKey.GetValue("formDrawRingLocationX", FormDrawRing.Location.X), (int)regKey.GetValue("formDrawRingLocationY", FormDrawRing.Location.Y));
-            }
-            #endregion
-
-            #region FormProperty
-            if (FormProperty != null && (int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y) >= 0)
-            {
-                //formMain.formProperty.Width = (int)regKey.GetValue("formPropertyWidth", formMain.formProperty.Width);
-                //formMain.formProperty.Height = (int)regKey.GetValue("formPropertyHeight", formMain.formProperty.Height);
-                FormProperty.Location = new Point((int)regKey.GetValue("formPropertyLocationX", FormProperty.Location.X), (int)regKey.GetValue("formPropertyLocationY", FormProperty.Location.Y));
-
-                FormProperty.numericBoxPixelSizeX.Text = (string)regKey.GetValue("textBoxPixelSizeXText", "0.1");
-                FormProperty.numericBoxPixelSizeY.Text = (string)regKey.GetValue("textBoxPixelSizeYText", "0.1");
-                FormProperty.numericBoxPixelKsi.Text = (string)regKey.GetValue("textBoxPixelKsiText", "0");
-
-                FormProperty.CameraLength1Text = (string)regKey.GetValue("textBoxFilmDistanceText", "445");
-                FormProperty.numericBoxDirectSpotPositionX.Text = (string)regKey.GetValue("textBoxCenterPositionXText", "1500");
-                FormProperty.numericBoxDirectSpotPositionY.Text = (string)regKey.GetValue("textBoxCenterPositionYText", "1500");
-
-                //ConcentricかRadialか
-                //  if ((string)regKey.GetValue("formProperty.radioButtonConcentric.Checked", "True") == "True")
-                FormProperty.radioButtonConcentric.Checked = true;
-                //  if ((string)regKey.GetValue("formProperty.radioButtonRadial.Checked", "True") == "True")
-                //      formProperty.radioButtonRadial.Checked = true;
-
-                //ここからConcentric Modeの内容
-                FormProperty.StartAngle = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityStartAngleValue", FormProperty.StartAngle.ToString()));
-                FormProperty.EndAngle = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityEndAngleValue", FormProperty.EndAngle.ToString()));
-                FormProperty.StepAngle = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityStepAngleValue", FormProperty.StepAngle.ToString()));
-
-                FormProperty.StartLength = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityStartLengthValue", FormProperty.StartLength.ToString()));
-                FormProperty.EndLength = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityEndLengthValue", FormProperty.EndLength.ToString()));
-                FormProperty.StepLength = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityStepLengthValue", FormProperty.StepLength.ToString()));
-
-                FormProperty.StartDspacing = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityStartDspacingValue", FormProperty.StartDspacing.ToString()));
-                FormProperty.EndDspacing = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityEndDspacingValue", FormProperty.EndDspacing.ToString()));
-                FormProperty.StepDspacing = Convert.ToDouble((string)regKey.GetValue("numericUpDownIntensityStepDspacingValue", FormProperty.StepDspacing.ToString()));
-
-                if ((string)regKey.GetValue("radioButtonAngleMode", "True") == "True")
-                    FormProperty.radioButtonConcentricAngle.Checked = true;
-                //else if ((string)regKey.GetValue("radioButtonLengthMode", "True") == "True")
-                //    radioButtonLengthMode.Checked = true;
-                else if ((string)regKey.GetValue("radioButtonDspacingMode", "True") == "True")
-                    FormProperty.radioButtonConcentricDspacing.Checked = true;
-                FormProperty.radioButtonAngleMode_CheckedChanged(new object(), new EventArgs());
-
-                //ここからRadial Modeの内容
-                FormProperty.SectorRadiusTheta = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusTheta", FormProperty.SectorRadiusTheta.ToString()));
-                FormProperty.SectorRadiusThetaRange = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusThetaRange", FormProperty.SectorRadiusThetaRange.ToString()));
-                FormProperty.SectorRadiusD = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusD", FormProperty.SectorRadiusD.ToString()));
-                FormProperty.SectorRadiusDRange = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorRadiusDRange", FormProperty.SectorRadiusDRange.ToString()));
-                FormProperty.SectorAngle = Convert.ToDouble((string)regKey.GetValue("formProperty.SectorAngle", FormProperty.SectorAngle.ToString()));
-
-                FormProperty.radioButtonRadialAngle.Checked = (string)regKey.GetValue("formProperty.radioButtonRadialAngle.Checked", "True") == "True";
-
-                FormProperty.radioButtonRadialAngle_CheckedChanged(new object(), new EventArgs());
-
-                //chi角の方向など
-                if ((string)regKey.GetValue("formProperty.radioButtonChiClockwise.Checked", "True") == "True")
-                    FormProperty.radioButtonChiClockwise.Checked = true;
-                else
-                    FormProperty.radioButtonChiCounterclockwise.Checked = true;
-
-                FormProperty.radioButtonChiRight.Checked = (string)regKey.GetValue("formProperty.radioButtonChiRight.Checked", "True") == "True";
-                FormProperty.radioButtonChiLeft.Checked = (string)regKey.GetValue("formProperty.radioButtonChiLeft.Checked", "False") == "True";
-                FormProperty.radioButtonChiTop.Checked = (string)regKey.GetValue("formProperty.radioButtonChiTop.Checked", "False") == "True";
-                FormProperty.radioButtonChiBottom.Checked = (string)regKey.GetValue("formProperty.radioButtonChiBottom.Checked", "False") == "True";
-
-
-                //ここからTilt Correction
-                FormProperty.numericBoxTiltPhi.Text = (string)regKey.GetValue("textBoxTiltCorrectionPhiText", FormProperty.numericBoxTiltPhi.Text);
-                FormProperty.numericBoxTiltTau.Text = (string)regKey.GetValue("textBoxTiltCorrectionPsiText", FormProperty.numericBoxTiltTau.Text);
-
-                //ここから積分領域
-                if ((string)regKey.GetValue("radioButtonRectangleChecked", "True") == "True")
-                    FormProperty.radioButtonRectangle.Checked = true;
-                else
-                    FormProperty.radioButtonSector.Checked = true;
-
-                FormProperty.numericUpDownRectangleAngle.Value = Convert.ToDecimal((string)regKey.GetValue("numericUpDownRectangleAngleValue", FormProperty.numericUpDownRectangleAngle.Value.ToString()));
-                FormProperty.numericUpDownRectangleBand.Value = Convert.ToDecimal((string)regKey.GetValue("numericUpDownRectangleBandValue", FormProperty.numericUpDownRectangleBand.Value.ToString()));
-                FormProperty.checkBoxRectangleIsBothSide.Checked = (string)regKey.GetValue("checkBoxRectangleIsBothSideChecked", "True") == "True";
-
-                FormProperty.numericUpDownSectorStartAngle.Value = Convert.ToDecimal((string)regKey.GetValue("numericUpDownSectorStartAngleValue", FormProperty.numericUpDownSectorStartAngle.Value.ToString()));
-                FormProperty.numericUpDownSectorEndAngle.Value = Convert.ToDecimal((string)regKey.GetValue("numericUpDownSectorEndAngleValue", FormProperty.numericUpDownSectorEndAngle.Value.ToString()));
-
-                FormProperty.WaveLengthText = (string)regKey.GetValue("textBoxWaveLengthText", "0.4");
-                FormProperty.comboBoxRectangleDirection.Text = (string)regKey.GetValue("comboBoxRectangleDirectionText", FormProperty.comboBoxRectangleDirection.Text);
-                FormProperty.numericUpDownFindSpotsDeviation.Value = Convert.ToDecimal((string)regKey.GetValue("numericUpDownFindSpotsDeviationValue", FormProperty.numericUpDownFindSpotsDeviation.Value.ToString()));
-
-                //偏光補正
-                FormProperty.checkBoxCorrectPolarization.Checked = (string)regKey.GetValue("FormProperty.checkBoxCorrectPolarization.Checked", "True") == "True";
-
-                //画像読み込み時の領域やコントラスト引継ぎ
-                FormProperty.MaintainImageContrast = (string)regKey.GetValue("FormProperty.MaintainImageContrast", "True") == "True";
-                FormProperty.MaintainImageRange = (string)regKey.GetValue("FormProperty.MaintainImageRange", "True") == "True";
-
-                //画像名の設定
-                FormProperty.ImageName_FileName = (string)regKey.GetValue("FormProperty.ImageName_FileName", "True") == "True";
-                FormProperty.ImageName_FullPath = (string)regKey.GetValue("FormProperty.ImageName_FullPath", "False") == "True";
-                FormProperty.ImageName_LastFolderPlusFileName = (string)regKey.GetValue("FormProperty.LastFolderPlusFileName", "False") == "True";
-
-                //ここからイメージタイプごとのパラメータ読み込み
-                #region
-                for (int i = 0; i < Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length; i++)
-                {
-                    FormProperty.ImageTypeParameters[i].CenterPosX = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CenterPosX" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].CenterPosY = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CenterPosY" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].CameraLength = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.CameraLength" + i.ToString(), "100"));
-                    FormProperty.ImageTypeParameters[i].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.PixelSizeX" + i.ToString(), "0.1"));
-                    FormProperty.ImageTypeParameters[i].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.PixelSizeY" + i.ToString(), "0.1"));
-                    FormProperty.ImageTypeParameters[i].PixelKsi = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.PixelKsi" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].Phi = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.Phi" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].Tau = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.Tau" + i.ToString(), "0"));
-
-                    FormProperty.ImageTypeParameters[i].WaveSource = (WaveSource)Convert.ToInt32(regKey.GetValue("ImageTypeParameters.WaveSource" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].XrayWaveSourceElementNumber = Convert.ToInt32(regKey.GetValue("ImageTypeParameters.XrayWaveSourceElementNumber" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].XrayLine = (XrayLine)Convert.ToInt32(regKey.GetValue("ImageTypeParameters.XrayLine" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].ElectronAccVoltage = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.ElectronAccVoltage" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].WaveLength = Convert.ToDouble(regKey.GetValue("ImageTypeParameters.WaveLength" + i.ToString(), "0"));
-
-                    FormProperty.ImageTypeParameters[i].ElectronAccVoltage = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.ElectronAccVoltage" + i.ToString(), "0"));
-                    FormProperty.ImageTypeParameters[i].WaveLength = Convert.ToDouble(regKey.GetValue("ImageTypeParameters.WaveLength" + i.ToString(), "0"));
-
-                    FormProperty.ImageTypeParameters[i].FlipHorizontally = (string)regKey.GetValue("ImageTypeParameters.FlipHorizontally" + i.ToString(), "False") == "True";
-                    FormProperty.ImageTypeParameters[i].FlipVertically = (string)regKey.GetValue("ImageTypeParameters.FlipVertically" + i.ToString(), "False") == "True";
-
-                    FormProperty.ImageTypeParameters[i].Rotation = (int)regKey.GetValue("ImageTypeParameters.Rotation" + i.ToString(), 0);
-
-                    FormProperty.ImageTypeParameters[i].GandolfiRadius = Convert.ToDouble((string)regKey.GetValue("ImageTypeParameters.GandolfiRadius" + i.ToString(), "127.4"));
-
-                    if ((string)regKey.GetValue("ImageTypeParameters.CameraMode" + i.ToString(), "FlatPanel") == "FlatPanel")
-                        FormProperty.ImageTypeParameters[i].CameraMode = IntegralProperty.CameraEnum.FlatPanel;
-                    else
-                        FormProperty.ImageTypeParameters[i].CameraMode = IntegralProperty.CameraEnum.Gandolfi;
-                }
-
-                int m = (int)Ring.ImageTypeEnum.Rigaku_RAxis_IV;//RAxis4用
-                if (FormProperty.ImageTypeParameters[m].CenterPosX == 0)
-                {
-                    FormProperty.ImageTypeParameters[m].CenterPosX = Convert.ToDouble((string)regKey.GetValue("centerPosRAxis4X", "1500"));
-                    FormProperty.ImageTypeParameters[m].CenterPosY = Convert.ToDouble((string)regKey.GetValue("centerPosRAxis4Y", "1500"));
-                    FormProperty.ImageTypeParameters[m].CameraLength = Convert.ToDouble((string)regKey.GetValue("CameraLengthRAxis4", "445"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("PixelSizeXRAxis4", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("PixelSizeYRAxis4", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelKsi = Convert.ToDouble((string)regKey.GetValue("PixelKsiRAxis4", "0"));
-                    FormProperty.ImageTypeParameters[m].Phi = Convert.ToDouble((string)regKey.GetValue("PhiRAxis4", "0"));
-                    FormProperty.ImageTypeParameters[m].Tau = Convert.ToDouble((string)regKey.GetValue("TauRAxis4", "0"));
-
-                    FormProperty.ImageTypeParameters[m].WaveSource = 0;
-                    FormProperty.ImageTypeParameters[m].XrayWaveSourceElementNumber = 0;
-                    FormProperty.ImageTypeParameters[m].XrayLine = 0;
-                    FormProperty.ImageTypeParameters[m].ElectronAccVoltage = 200;
-                    FormProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthRAxis4", "0.4"));
-                }
-
-                m = (int)Ring.ImageTypeEnum.Rigaku_RAxis_V;//RAxis5用
-                if (FormProperty.ImageTypeParameters[m].CenterPosX == 0)
-                {
-                    FormProperty.ImageTypeParameters[m].CenterPosX = Convert.ToDouble((string)regKey.GetValue("centerPosRAxis4X", "1500"));
-                    FormProperty.ImageTypeParameters[m].CenterPosY = Convert.ToDouble((string)regKey.GetValue("centerPosRAxis4Y", "1500"));
-                    FormProperty.ImageTypeParameters[m].CameraLength = Convert.ToDouble((string)regKey.GetValue("CameraLengthRAxis4", "445"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("PixelSizeXRAxis4", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("PixelSizeYRAxis4", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelKsi = Convert.ToDouble((string)regKey.GetValue("PixelKsiRAxis4", "0"));
-                    FormProperty.ImageTypeParameters[m].Phi = Convert.ToDouble((string)regKey.GetValue("PhiRAxis4", "0"));
-                    FormProperty.ImageTypeParameters[m].Tau = Convert.ToDouble((string)regKey.GetValue("TauRAxis4", "0"));
-
-                    FormProperty.ImageTypeParameters[m].WaveSource = 0;
-                    FormProperty.ImageTypeParameters[m].XrayWaveSourceElementNumber = 0;
-                    FormProperty.ImageTypeParameters[m].XrayLine = 0;
-                    FormProperty.ImageTypeParameters[m].ElectronAccVoltage = 200;
-                    FormProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthRAxis4", "0.4"));
-                }
-
-                m = (int)Ring.ImageTypeEnum.Brucker_CCD;  //Brucker用
-                if (FormProperty.ImageTypeParameters[m].CenterPosX == 0)
-                {
-                    FormProperty.ImageTypeParameters[m].CenterPosX = Convert.ToDouble((string)regKey.GetValue("centerPosBruckerX", "512"));
-                    FormProperty.ImageTypeParameters[m].CenterPosY = Convert.ToDouble((string)regKey.GetValue("centerPosBruckerY", "512"));
-                    FormProperty.ImageTypeParameters[m].CameraLength = Convert.ToDouble((string)regKey.GetValue("CameraLengthBrucker", "100"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("PixelSizeXBrucker", "0.06"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("PixelSizeYBrucker", "0.06"));
-                    FormProperty.ImageTypeParameters[m].PixelKsi = Convert.ToDouble((string)regKey.GetValue("PixelKsiBrucker", "0"));
-                    FormProperty.ImageTypeParameters[m].Phi = Convert.ToDouble((string)regKey.GetValue("PhiBrucker", "0"));
-                    FormProperty.ImageTypeParameters[m].Tau = Convert.ToDouble((string)regKey.GetValue("TauBrucker", "0"));
-
-                    FormProperty.ImageTypeParameters[m].WaveSource = 0;
-                    FormProperty.ImageTypeParameters[m].XrayWaveSourceElementNumber = 0;
-                    FormProperty.ImageTypeParameters[m].XrayLine = 0;
-                    FormProperty.ImageTypeParameters[m].ElectronAccVoltage = 200;
-                    FormProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthBrucker", "0.4"));
-                }
-
-                m = (int)Ring.ImageTypeEnum.Fuji_BAS2000;  //FujiBAS用
-                if (FormProperty.ImageTypeParameters[m].CenterPosX == 0)
-                {
-                    FormProperty.ImageTypeParameters[m].CenterPosX = Convert.ToDouble((string)regKey.GetValue("centerPosFujiX", "1000"));
-                    FormProperty.ImageTypeParameters[m].CenterPosY = Convert.ToDouble((string)regKey.GetValue("centerPosFujiY", "1300"));
-                    FormProperty.ImageTypeParameters[m].CameraLength = Convert.ToDouble((string)regKey.GetValue("CameraLengthFuji", "445"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("PixelSizeXFuji", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("PixelSizeYFuji", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelKsi = Convert.ToDouble((string)regKey.GetValue("PixelKsiBrucker", "0"));
-                    FormProperty.ImageTypeParameters[m].Phi = Convert.ToDouble((string)regKey.GetValue("PhiFuji", "0"));
-                    FormProperty.ImageTypeParameters[m].Tau = Convert.ToDouble((string)regKey.GetValue("TauFuji", "0"));
-
-                    FormProperty.ImageTypeParameters[m].WaveSource = 0;
-                    FormProperty.ImageTypeParameters[m].XrayWaveSourceElementNumber = 0;
-                    FormProperty.ImageTypeParameters[m].XrayLine = 0;
-                    FormProperty.ImageTypeParameters[m].ElectronAccVoltage = 200;
-                    FormProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthFuji", "0.4"));
-                }
-
-                m = (int)Ring.ImageTypeEnum.Fuji_BAS2500;  //FujiBAS用
-                if (FormProperty.ImageTypeParameters[m].CenterPosX == 0)
-                {
-                    FormProperty.ImageTypeParameters[m].CenterPosX = Convert.ToDouble((string)regKey.GetValue("centerPosFujiX", "1000"));
-                    FormProperty.ImageTypeParameters[m].CenterPosY = Convert.ToDouble((string)regKey.GetValue("centerPosFujiY", "1300"));
-                    FormProperty.ImageTypeParameters[m].CameraLength = Convert.ToDouble((string)regKey.GetValue("CameraLengthFuji", "445"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeX = Convert.ToDouble((string)regKey.GetValue("PixelSizeXFuji", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelSizeY = Convert.ToDouble((string)regKey.GetValue("PixelSizeYFuji", "0.1"));
-                    FormProperty.ImageTypeParameters[m].PixelKsi = Convert.ToDouble((string)regKey.GetValue("PixelKsiBrucker", "0"));
-                    FormProperty.ImageTypeParameters[m].Phi = Convert.ToDouble((string)regKey.GetValue("PhiFuji", "0"));
-                    FormProperty.ImageTypeParameters[m].Tau = Convert.ToDouble((string)regKey.GetValue("TauFuji", "0"));
-
-                    FormProperty.ImageTypeParameters[m].WaveSource = 0;
-                    FormProperty.ImageTypeParameters[m].XrayWaveSourceElementNumber = 0;
-                    FormProperty.ImageTypeParameters[m].XrayLine = 0;
-                    FormProperty.ImageTypeParameters[m].ElectronAccVoltage = 200;
-                    FormProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthFuji", "0.4"));
-                }
-
-                m = (int)Ring.ImageTypeEnum.Fuji_FDL;  //FujiFDL用
-                if (FormProperty.ImageTypeParameters[m].CenterPosX == 0)
-                {
-                    FormProperty.ImageTypeParameters[m].CenterPosX = 1880;
-                    FormProperty.ImageTypeParameters[m].CenterPosY = 1500;
-                    FormProperty.ImageTypeParameters[m].CameraLength = 1000;
-                    FormProperty.ImageTypeParameters[m].PixelSizeX = 0.025;
-                    FormProperty.ImageTypeParameters[m].PixelSizeY = 0.025;
-                    FormProperty.ImageTypeParameters[m].PixelKsi = 0;
-                    FormProperty.ImageTypeParameters[m].Phi = 0;
-                    FormProperty.ImageTypeParameters[m].Tau = 0;
-
-                    FormProperty.ImageTypeParameters[m].WaveSource = WaveSource.Electron;
-                    FormProperty.ImageTypeParameters[m].XrayWaveSourceElementNumber = 0;
-                    FormProperty.ImageTypeParameters[m].XrayLine = 0;
-                    FormProperty.ImageTypeParameters[m].ElectronAccVoltage = 200;
-                    //formProperty.ImageTypeParameters[m].WaveLength = Convert.ToDouble((string)regKey.GetValue("WaveLengthFuji", "0.4"));
-                }
-
-                #endregion
-            }
-            #endregion
-
-            #region Macro
-            //regKey = regKey.OpenSubKey("Macro");
-            //int length = (int)regKey.GetValue("MacroLength", 0);
-            //byte[][] byteArray = new byte[length][];
-            //for (int i = 0; i < length; i++)
-            //    byteArray[i] = (byte[])regKey.GetValue("Macro" + i.ToString(), null);
-            if (FormMacro != null)
-                FormMacro.ZippedMacros = (byte[])regKey.GetValue("Macro", Array.Empty<byte>());
-            #endregion
-
-            regKey.Close();
-        }
-
-        catch { }
-    }
-    #endregion
 
     public void SetText(string filename = "", string filenameSub = "")
     {
@@ -867,7 +459,7 @@ public partial class FormMain : Form
             Width = 600,
 
         };
-        LoadRegistry();
+        Registry(Reg.Mode.Read);
 
         InitialDialog.Show();
         Application.DoEvents();
@@ -956,7 +548,7 @@ public partial class FormMain : Form
 
         InitialDialog.Text = "Now Loading...Reading registries";
 
-        LoadRegistry();
+        Registry(Reg.Mode.Read);
 
         InitialDialog.Text = "Now Loading...Generating ReadMe.txt.";
 
@@ -1008,7 +600,7 @@ public partial class FormMain : Form
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
 
         if (!clearRegistrycheckAndRestartToolStripMenuItem.Checked)
-            SaveRegistry();
+            Registry(Reg.Mode.Write);
         else
             ResetRegistry();
 
