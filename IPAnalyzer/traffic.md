@@ -4,7 +4,7 @@ Last updated: 2026-04-17
 
 ## Views
 
-### Daily (最大1年保持)
+### Daily (最大14日保持)
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
 | 2026-04-16 | 8 | 4 |
@@ -20,16 +20,8 @@ Last updated: 2026-04-17
 | 2026-04-06 | 1 | 1 |
 | 2026-04-05 | 1 | 1 |
 | 2026-04-04 | 2 | 1 |
-| 2026-04-03 | 0 | 0 |
-| 2026-04-02 | 0 | 0 |
-| 2026-04-01 | 3 | 1 |
-| 2026-03-31 | 0 | 0 |
-| 2026-03-30 | 3 | 2 |
-| 2026-03-29 | 2 | 2 |
-| 2026-03-28 | 0 | 0 |
-| 2026-03-27 | 7 | 4 |
 
-### Weekly
+### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
 | 2026-W16 | 40 | 18 |
@@ -37,20 +29,20 @@ Last updated: 2026-04-17
 | 2026-W14 | 9 | 5 |
 | 2026-W13 | 9 | 6 |
 
-### Monthly
+### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
 | 2026-04 | 68 | 37 |
 | 2026-03 | 12 | 8 |
 
-### Yearly
+### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
 | 2026 | 80 | 45 |
 
 ## Clones
 
-### Daily (最大1年保持)
+### Daily (最大14日保持)
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
 | 2026-04-16 | 4 | 4 |
@@ -66,16 +58,8 @@ Last updated: 2026-04-17
 | 2026-04-06 | 13 | 11 |
 | 2026-04-05 | 1 | 1 |
 | 2026-04-04 | 1 | 1 |
-| 2026-04-03 | 0 | 0 |
-| 2026-04-02 | 2 | 2 |
-| 2026-04-01 | 2 | 2 |
-| 2026-03-31 | 0 | 0 |
-| 2026-03-30 | 0 | 0 |
-| 2026-03-29 | 1 | 1 |
-| 2026-03-28 | 1 | 1 |
-| 2026-03-27 | 2 | 2 |
 
-### Weekly
+### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
 | 2026-W16 | 76 | 30 |
@@ -83,20 +67,20 @@ Last updated: 2026-04-17
 | 2026-W14 | 6 | 6 |
 | 2026-W13 | 4 | 4 |
 
-### Monthly
+### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
 | 2026-04 | 108 | 60 |
 | 2026-03 | 4 | 4 |
 
-### Yearly
+### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
 | 2026 | 112 | 64 |
 
 ## Referrers
 
-### Daily (最大1年保持)
+### Daily (最大14日保持)
 | Date Collected | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
 | 2026-04-17 | yseto.net | 18 | 11 |
@@ -118,7 +102,7 @@ Last updated: 2026-04-17
 | 2026-04-10 | yseto.net | 15 | 7 |
 | 2026-04-10 | Google | 1 | 1 |
 
-### Weekly
+### Weekly (最大14週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
 | 2026-W16 | Google | 32 | 6 |
@@ -127,14 +111,14 @@ Last updated: 2026-04-17
 | 2026-W15 | yseto.net | 77 | 41 |
 | 2026-W15 | Google | 6 | 6 |
 
-### Monthly
+### Monthly (最大12か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
 | 2026-04 | yseto.net | 107 | 60 |
 | 2026-04 | Google | 38 | 12 |
 | 2026-04 | github.com | 13 | 7 |
 
-### Yearly
+### Yearly (無制限)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
 | 2026 | yseto.net | 107 | 60 |
@@ -143,7 +127,7 @@ Last updated: 2026-04-17
 
 ## Popular Paths
 
-### Daily (最大1年保持)
+### Daily (最大14日保持)
 | Date Collected | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-04-17 | /seto77/IPAnalyzer | Overview | 16 | 10 |
@@ -222,7 +206,7 @@ Last updated: 2026-04-17
 | 2026-04-10 | /seto77/IPAnalyzer/issues | /issues | 1 | 1 |
 | 2026-04-10 | /seto77/ipanalyzer/pulls | /pulls | 1 | 1 |
 
-### Weekly
+### Weekly (最大14週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-W16 | /seto77/IPAnalyzer | Overview | 27 | 17 |
@@ -249,7 +233,7 @@ Last updated: 2026-04-17
 | 2026-W15 | /seto77/IPAnalyzer/blob/master/LICENSE.md | /blob/master/LICENSE.md | 2 | 2 |
 | 2026-W15 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
 
-### Monthly
+### Monthly (最大12か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-04 | /seto77/IPAnalyzer/releases | /releases | 55 | 41 |
@@ -268,7 +252,7 @@ Last updated: 2026-04-17
 | 2026-04 | /seto77/IPAnalyzer/blob/master/LICENSE.md | /blob/master/LICENSE.md | 2 | 2 |
 | 2026-04 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
 
-### Yearly
+### Yearly (無制限)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | /seto77/IPAnalyzer/releases | /releases | 55 | 41 |
@@ -376,7 +360,7 @@ Last updated: 2026-04-17
 
 ## Stats
 
-### Daily (最大1年保持)
+### Daily (最大14日保持)
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-04-17 | 12 | 3 | 0 | 3 |
@@ -385,18 +369,18 @@ Last updated: 2026-04-17
 | 2026-04-11 | 12 | 3 | 0 | 0 |
 | 2026-04-10 | 12 | 3 | 0 | 3 |
 
-### Weekly
+### Weekly (最大14週保持)
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-W16 | 12 | 3 | 0 | 3 |
 | 2026-W15 | 12 | 3 | 0 | 3 |
 
-### Monthly
+### Monthly (最大12か月保持)
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-04 | 12 | 3 | 0 | 3 |
 
-### Yearly
+### Yearly (無制限)
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
