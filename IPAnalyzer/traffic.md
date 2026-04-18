@@ -1,12 +1,14 @@
 # Traffic Data: IPAnalyzer
 
-Last updated: 2026-04-17
+Last updated: 2026-04-18
 
 ## Views
 
 ### Daily (最大14日保持)
+
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-04-17 | 6 | 5 |
 | 2026-04-16 | 8 | 4 |
 | 2026-04-15 | 5 | 4 |
 | 2026-04-14 | 6 | 5 |
@@ -22,29 +24,34 @@ Last updated: 2026-04-17
 | 2026-04-04 | 2 | 1 |
 
 ### Weekly (最大14週保持)
+
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-W16 | 40 | 18 |
+| 2026-W16 | 46 | 23 |
 | 2026-W15 | 22 | 16 |
 | 2026-W14 | 9 | 5 |
 | 2026-W13 | 9 | 6 |
 
 ### Monthly (最大12か月保持)
+
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-04 | 68 | 37 |
+| 2026-04 | 74 | 42 |
 | 2026-03 | 12 | 8 |
 
 ### Yearly (無制限)
+
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 80 | 45 |
+| 2026 | 86 | 50 |
 
 ## Clones
 
 ### Daily (最大14日保持)
+
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-04-17 | 89 | 22 |
 | 2026-04-16 | 4 | 4 |
 | 2026-04-15 | 20 | 5 |
 | 2026-04-14 | 34 | 14 |
@@ -60,29 +67,36 @@ Last updated: 2026-04-17
 | 2026-04-04 | 1 | 1 |
 
 ### Weekly (最大14週保持)
+
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-W16 | 76 | 30 |
+| 2026-W16 | 165 | 52 |
 | 2026-W15 | 26 | 24 |
 | 2026-W14 | 6 | 6 |
 | 2026-W13 | 4 | 4 |
 
 ### Monthly (最大12か月保持)
+
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-04 | 108 | 60 |
+| 2026-04 | 197 | 82 |
 | 2026-03 | 4 | 4 |
 
 ### Yearly (無制限)
+
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 112 | 64 |
+| 2026 | 201 | 86 |
 
 ## Referrers
 
 ### Daily (最大14日保持)
+
 | Date Collected | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
+| 2026-04-18 | yseto.net | 21 | 13 |
+| 2026-04-18 | Google | 18 | 5 |
+| 2026-04-18 | github.com | 10 | 4 |
 | 2026-04-17 | yseto.net | 18 | 11 |
 | 2026-04-17 | Google | 17 | 4 |
 | 2026-04-17 | github.com | 8 | 4 |
@@ -103,33 +117,47 @@ Last updated: 2026-04-17
 | 2026-04-10 | Google | 1 | 1 |
 
 ### Weekly (最大14週保持)
+
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-W16 | Google | 32 | 6 |
-| 2026-W16 | yseto.net | 30 | 19 |
-| 2026-W16 | github.com | 13 | 7 |
+| 2026-W16 | yseto.net | 51 | 32 |
+| 2026-W16 | Google | 50 | 11 |
+| 2026-W16 | github.com | 23 | 11 |
 | 2026-W15 | yseto.net | 77 | 41 |
 | 2026-W15 | Google | 6 | 6 |
 
 ### Monthly (最大12か月保持)
+
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-04 | yseto.net | 107 | 60 |
-| 2026-04 | Google | 38 | 12 |
-| 2026-04 | github.com | 13 | 7 |
+| 2026-04 | yseto.net | 128 | 73 |
+| 2026-04 | Google | 56 | 17 |
+| 2026-04 | github.com | 23 | 11 |
 
 ### Yearly (無制限)
+
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026 | yseto.net | 107 | 60 |
-| 2026 | Google | 38 | 12 |
-| 2026 | github.com | 13 | 7 |
+| 2026 | yseto.net | 128 | 73 |
+| 2026 | Google | 56 | 17 |
+| 2026 | github.com | 23 | 11 |
 
 ## Popular Paths
 
 ### Daily (最大14日保持)
+
 | Date Collected | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-04-18 | /seto77/IPAnalyzer | Overview | 19 | 11 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 11 | 8 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases | /releases | 8 | 6 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 7 | 4 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 3 | 3 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 3 | 3 |
+| 2026-04-18 | /seto77/IPAnalyzer/issues | /issues | 3 | 1 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 2 | 2 |
+| 2026-04-18 | /seto77/IPAnalyzer/pulls | /pulls | 2 | 1 |
+| 2026-04-18 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 2 | 1 |
 | 2026-04-17 | /seto77/IPAnalyzer | Overview | 16 | 10 |
 | 2026-04-17 | /seto77/IPAnalyzer/releases | /releases | 8 | 6 |
 | 2026-04-17 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 8 | 6 |
@@ -207,18 +235,19 @@ Last updated: 2026-04-17
 | 2026-04-10 | /seto77/ipanalyzer/pulls | /pulls | 1 | 1 |
 
 ### Weekly (最大14週保持)
+
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-W16 | /seto77/IPAnalyzer | Overview | 27 | 17 |
-| 2026-W16 | /seto77/IPAnalyzer/releases | /releases | 17 | 12 |
-| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 14 | 8 |
-| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 8 | 6 |
-| 2026-W16 | /seto77/IPAnalyzer/issues | /issues | 6 | 2 |
-| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 5 | 5 |
-| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 5 | 5 |
-| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 5 | 3 |
-| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 4 | 4 |
-| 2026-W16 | /seto77/IPAnalyzer/pulls | /pulls | 4 | 2 |
+| 2026-W16 | /seto77/IPAnalyzer | Overview | 46 | 28 |
+| 2026-W16 | /seto77/IPAnalyzer/releases | /releases | 25 | 18 |
+| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 21 | 12 |
+| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 19 | 14 |
+| 2026-W16 | /seto77/IPAnalyzer/issues | /issues | 9 | 3 |
+| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 8 | 8 |
+| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 8 | 8 |
+| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 7 | 4 |
+| 2026-W16 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 6 | 6 |
+| 2026-W16 | /seto77/IPAnalyzer/pulls | /pulls | 6 | 3 |
 | 2026-W16 | /seto77/IPAnalyzer/actions | /actions | 1 | 1 |
 | 2026-W15 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 40 | 22 |
 | 2026-W15 | /seto77/IPAnalyzer/releases | /releases | 38 | 29 |
@@ -234,39 +263,41 @@ Last updated: 2026-04-17
 | 2026-W15 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
 
 ### Monthly (最大12か月保持)
+
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-04 | /seto77/IPAnalyzer/releases | /releases | 55 | 41 |
-| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 54 | 30 |
-| 2026-04 | /seto77/IPAnalyzer | Overview | 51 | 41 |
-| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 43 | 23 |
-| 2026-04 | /seto77/IPAnalyzer/issues | /issues | 12 | 8 |
-| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 8 | 6 |
-| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 8 | 8 |
-| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 7 | 7 |
+| 2026-04 | /seto77/IPAnalyzer | Overview | 70 | 52 |
+| 2026-04 | /seto77/IPAnalyzer/releases | /releases | 63 | 47 |
+| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 61 | 34 |
+| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 45 | 24 |
+| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 19 | 14 |
+| 2026-04 | /seto77/IPAnalyzer/issues | /issues | 15 | 9 |
+| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 11 | 11 |
+| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 9 | 9 |
+| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 8 | 8 |
 | 2026-04 | /seto77/IPAnalyzer/actions | /actions | 7 | 7 |
 | 2026-04 | /seto77/ipanalyzer/pulls | /pulls | 6 | 6 |
-| 2026-04 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 5 | 5 |
-| 2026-04 | /seto77/IPAnalyzer/pulls | /pulls | 4 | 2 |
+| 2026-04 | /seto77/IPAnalyzer/pulls | /pulls | 6 | 3 |
 | 2026-04 | /seto77/IPAnalyzer/commits | /commits | 3 | 3 |
 | 2026-04 | /seto77/IPAnalyzer/blob/master/LICENSE.md | /blob/master/LICENSE.md | 2 | 2 |
 | 2026-04 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
 
 ### Yearly (無制限)
+
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026 | /seto77/IPAnalyzer/releases | /releases | 55 | 41 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 54 | 30 |
-| 2026 | /seto77/IPAnalyzer | Overview | 51 | 41 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 43 | 23 |
-| 2026 | /seto77/IPAnalyzer/issues | /issues | 12 | 8 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 8 | 6 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 8 | 8 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 7 | 7 |
+| 2026 | /seto77/IPAnalyzer | Overview | 70 | 52 |
+| 2026 | /seto77/IPAnalyzer/releases | /releases | 63 | 47 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 61 | 34 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 45 | 24 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 19 | 14 |
+| 2026 | /seto77/IPAnalyzer/issues | /issues | 15 | 9 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 11 | 11 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 9 | 9 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 8 | 8 |
 | 2026 | /seto77/IPAnalyzer/actions | /actions | 7 | 7 |
 | 2026 | /seto77/ipanalyzer/pulls | /pulls | 6 | 6 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 5 | 5 |
-| 2026 | /seto77/IPAnalyzer/pulls | /pulls | 4 | 2 |
+| 2026 | /seto77/IPAnalyzer/pulls | /pulls | 6 | 3 |
 | 2026 | /seto77/IPAnalyzer/commits | /commits | 3 | 3 |
 | 2026 | /seto77/IPAnalyzer/blob/master/LICENSE.md | /blob/master/LICENSE.md | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
@@ -305,64 +336,16 @@ Last updated: 2026-04-17
 | v.3.947 | 2023-06-28 | IPAnalyzerSetup.msi | 58 |
 | v.3.946 | 2023-04-22 | IPAnalyzerSetup.msi | 104 |
 | v.3.945 | 2023-03-18 | IPAnalyzerSetup.msi | 75 |
-| v.3.944 | 2023-03-08 | IPAnalyzerSetup.msi | 28 |
-| v.3.943 | 2023-03-07 | IPAnalyzerSetup.msi | 13 |
-| v.3.942 | 2023-02-06 | IPAnalyzerSetup.msi | 37 |
-| v.3.941 | 2023-01-30 | IPAnalyzerSetup.msi | 21 |
-| v.3.940 | 2023-01-27 | IPAnalyzerSetup.msi | 15 |
-| v.3.939 | 2023-01-23 | IPAnalyzerSetup.msi | 26 |
-| v.3.938 | 2022-11-28 | IPAnalyzerSetup.msi | 121 |
-| v.3.937 | 2022-11-16 | IPAnalyzerSetup.msi | 41 |
-| v.3.936 | 2022-11-07 | IPAnalyzerSetup.msi | 58 |
-| v.3.935 | 2022-10-14 | IPAnalyzerSetup.msi | 52 |
-| v.3.933 | 2022-07-20 | IPAnalyzerSetup.msi | 175 |
-| v.3.932 | 2022-06-29 | IPAnalyzerSetup.msi | 52 |
-| v.3.931 | 2022-06-26 | IPAnalyzerSetup.msi | 26 |
-| v.3.930 | 2021-12-01 | IPAnalyzerSetup.msi | 349 |
-| v.3.929 | 2021-11-30 | IPAnalyzerSetup.msi | 16 |
-| v.3.928 | 2021-11-23 | IPAnalyzerSetup.msi | 32 |
-| v.3.927 | 2021-11-22 | IPAnalyzerSetup.msi | 10 |
-| v.3.922 | 2021-11-18 | IPAnalyzerSetup.msi | 14 |
-| v.3.920 | 2021-11-12 | IPAnalyzerSetup.msi | 35 |
-| v.3.918 | 2021-11-03 | IPAnalyzerSetup.msi | 51 |
-| v.3.917 | 2021-10-15 | IPAnalyzerSetup.msi | 69 |
-| v.3.916 | 2021-10-12 | IPAnalyzerSetup.msi | 11 |
-| v.3.915 | 2021-10-11 | IPAnalyzerSetup.msi | 9 |
-| v.3.914 | 2021-09-21 | IPAnalyzerSetup.msi | 57 |
-| v.3.913 | 2021-09-08 | IPAnalyzerSetup.msi | 31 |
-| v.3.912 | 2021-08-17 | IPAnalyzerSetup.msi | 45 |
-| v.3.911 | 2021-08-10 | IPAnalyzerSetup.msi | 15 |
-| v.3.910 | 2021-07-19 | IPAnalyzerSetup.msi | 52 |
-| v.3.909 | 2021-07-10 | IPAnalyzerSetup.msi | 29 |
-| v.3.908 | 2021-07-02 | IPAnalyzerSetup.msi | 39 |
-| v.3.907 | 2021-05-02 | IPAnalyzerSetup.msi | 139 |
-| v.3.906 | 2021-05-01 | IPAnalyzerSetup.msi | 19 |
-| v.3.904 | 2020-12-18 | IPAnalyzerSetup.msi | 177 |
-| v.3.903 | 2020-12-11 | IPAnalyzerSetup.msi | 34 |
-| v.3.902 | 2020-12-02 | IPAnalyzerSetup.msi | 36 |
-| v.3.901 | 2020-11-17 | IPAnalyzerSetup.msi | 47 |
-| v.3.900 | 2020-11-16 | IPAnalyzerSetup.msi | 22 |
-| v.3.899 | 2020-10-31 | IPAnalyzerSetup.msi | 56 |
-| v.3.898 | 2020-10-24 | IPAnalyzerSetup.msi | 21 |
-| v.3.896 | 2020-10-15 | IPAnalyzerSetup.msi | 41 |
-| v.3.895 | 2020-08-14 | IPAnalyzerSetup.msi | 81 |
-| v.3.894 | 2020-08-08 | IPAnalyzerSetup.msi | 14 |
-| v.3.893 | 2020-07-28 | IPAnalyzerSetup.msi | 37 |
-| v.3.892 | 2020-06-24 | IPAnalyzerSetup.msi | 70 |
-| v.3.891 | 2020-04-10 | IPAnalyzerSetup.msi | 83 |
-| v.3.890 | 2020-04-09 | IPAnalyzerSetup.msi | 6 |
-| v.3.889 | 2020-03-11 | IPAnalyzerSetup.msi | 31 |
-| v.3.888 | 2020-03-03 | IPAnalyzerSetup.msi | 27 |
-| v.3.887 | 2020-03-01 | IPAnalyzerSetup.msi | 11 |
-| v.3.885 | 2019-12-20 | IPAnalyzerSetup.msi | 10 |
 
-**TOTAL: 4316**
+**TOTAL: 1825**
 
 ## Stats
 
 ### Daily (最大14日保持)
+
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-04-18 | 12 | 3 | 0 | 3 |
 | 2026-04-17 | 12 | 3 | 0 | 3 |
 | 2026-04-15 | 12 | 3 | 0 | 12 |
 | 2026-04-12 | 12 | 3 | 0 | 3 |
@@ -370,17 +353,20 @@ Last updated: 2026-04-17
 | 2026-04-10 | 12 | 3 | 0 | 3 |
 
 ### Weekly (最大14週保持)
+
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-W16 | 12 | 3 | 0 | 3 |
 | 2026-W15 | 12 | 3 | 0 | 3 |
 
 ### Monthly (最大12か月保持)
+
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-04 | 12 | 3 | 0 | 3 |
 
 ### Yearly (無制限)
+
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
