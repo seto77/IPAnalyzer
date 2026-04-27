@@ -25,7 +25,7 @@ Last updated: 2026-04-27
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
 | 2026-W17 | 29 | 14 |
-| 2026-W16 | 46 | 23 |
+| 2026-W16 | 67 | 28 |
 | 2026-W15 | 22 | 16 |
 | 2026-W14 | 9 | 5 |
 | 2026-W13 | 9 | 6 |
@@ -33,13 +33,13 @@ Last updated: 2026-04-27
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-04 | 103 | 56 |
+| 2026-04 | 124 | 61 |
 | 2026-03 | 12 | 8 |
 
 ### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 115 | 64 |
+| 2026 | 136 | 69 |
 
 ## Clones
 
@@ -64,7 +64,7 @@ Last updated: 2026-04-27
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
 | 2026-W17 | 92 | 43 |
-| 2026-W16 | 193 | 71 |
+| 2026-W16 | 211 | 78 |
 | 2026-W15 | 26 | 24 |
 | 2026-W14 | 6 | 6 |
 | 2026-W13 | 4 | 4 |
@@ -72,17 +72,17 @@ Last updated: 2026-04-27
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-04 | 317 | 144 |
+| 2026-04 | 335 | 151 |
 | 2026-03 | 4 | 4 |
 
 ### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 321 | 148 |
+| 2026 | 339 | 155 |
 
 ## Referrers
 
-### Weekly (最大14週保持)
+### Weekly (最大2週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
 | 2026-W18 | yseto.net | 20 | 14 |
@@ -92,7 +92,7 @@ Last updated: 2026-04-27
 | 2026-W17 | Google | 19 | 6 |
 | 2026-W17 | github.com | 12 | 6 |
 
-### Monthly (最大12か月保持)
+### Monthly (最大3か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
 | 2026-04 | yseto.net | 187 | 112 |
@@ -108,7 +108,7 @@ Last updated: 2026-04-27
 
 ## Popular Paths
 
-### Weekly (最大14週保持)
+### Weekly (最大2週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-W18 | /seto77/IPAnalyzer | Overview | 22 | 12 |
@@ -132,7 +132,7 @@ Last updated: 2026-04-27
 | 2026-W17 | /seto77/IPAnalyzer/issues | /issues | 3 | 1 |
 | 2026-W17 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 2 | 2 |
 
-### Monthly (最大12か月保持)
+### Monthly (最大3か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
 | 2026-04 | /seto77/IPAnalyzer | Overview | 133 | 88 |
