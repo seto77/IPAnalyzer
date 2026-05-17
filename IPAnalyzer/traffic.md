@@ -1,12 +1,13 @@
 # Traffic Data: IPAnalyzer
 
-Last updated: 2026-05-16
+Last updated: 2026-05-17
 
 ## Views
 
 ### Daily (最大14日保持)
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-05-16 | 1 | 1 |
 | 2026-05-15 | 4 | 2 |
 | 2026-05-14 | 6 | 3 |
 | 2026-05-13 | 6 | 2 |
@@ -19,12 +20,11 @@ Last updated: 2026-05-16
 | 2026-05-06 | 1 | 1 |
 | 2026-05-05 | 19 | 3 |
 | 2026-05-04 | 0 | 0 |
-| 2026-05-03 | 0 | 0 |
 
 ### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-W20 | 22 | 11 |
+| 2026-W20 | 23 | 12 |
 | 2026-W19 | 30 | 12 |
 | 2026-W18 | 18 | 13 |
 | 2026-W17 | 29 | 14 |
@@ -36,20 +36,21 @@ Last updated: 2026-05-16
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-05 | 53 | 24 |
+| 2026-05 | 54 | 25 |
 | 2026-04 | 168 | 83 |
 | 2026-03 | 12 | 8 |
 
 ### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 233 | 115 |
+| 2026 | 234 | 116 |
 
 ## Clones
 
 ### Daily (最大14日保持)
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-05-16 | 9 | 5 |
 | 2026-05-15 | 12 | 9 |
 | 2026-05-14 | 16 | 10 |
 | 2026-05-13 | 4 | 4 |
@@ -62,12 +63,11 @@ Last updated: 2026-05-16
 | 2026-05-06 | 29 | 14 |
 | 2026-05-05 | 29 | 9 |
 | 2026-05-04 | 42 | 16 |
-| 2026-05-03 | 28 | 9 |
 
 ### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-W20 | 48 | 32 |
+| 2026-W20 | 57 | 37 |
 | 2026-W19 | 148 | 72 |
 | 2026-W18 | 211 | 84 |
 | 2026-W17 | 92 | 43 |
@@ -79,23 +79,23 @@ Last updated: 2026-05-16
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-05 | 252 | 128 |
+| 2026-05 | 261 | 133 |
 | 2026-04 | 542 | 232 |
 | 2026-03 | 4 | 4 |
 
 ### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 798 | 364 |
+| 2026 | 807 | 369 |
 
 ## Referrers
 
 ### Weekly (最大2週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-W20 | Google | 116 | 25 |
-| 2026-W20 | yseto.net | 103 | 75 |
-| 2026-W20 | github.com | 18 | 11 |
+| 2026-W20 | Google | 137 | 29 |
+| 2026-W20 | yseto.net | 125 | 90 |
+| 2026-W20 | github.com | 21 | 13 |
 | 2026-W19 | Google | 92 | 30 |
 | 2026-W19 | yseto.net | 69 | 63 |
 | 2026-W19 | github.com | 26 | 19 |
@@ -103,9 +103,9 @@ Last updated: 2026-05-16
 ### Monthly (最大3か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-05 | Google | 217 | 64 |
-| 2026-05 | yseto.net | 199 | 160 |
-| 2026-05 | github.com | 58 | 40 |
+| 2026-05 | Google | 238 | 68 |
+| 2026-05 | yseto.net | 221 | 175 |
+| 2026-05 | github.com | 61 | 42 |
 | 2026-04 | yseto.net | 242 | 151 |
 | 2026-04 | Google | 127 | 49 |
 | 2026-04 | github.com | 83 | 37 |
@@ -113,29 +113,29 @@ Last updated: 2026-05-16
 ### Yearly (無制限)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026 | yseto.net | 441 | 311 |
-| 2026 | Google | 344 | 113 |
-| 2026 | github.com | 141 | 77 |
+| 2026 | yseto.net | 463 | 326 |
+| 2026 | Google | 365 | 117 |
+| 2026 | github.com | 144 | 79 |
 
 ## Popular Paths
 
 ### Weekly (最大2週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-W20 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 99 | 81 |
-| 2026-W20 | /seto77/IPAnalyzer | Overview | 54 | 33 |
-| 2026-W20 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 21 | 9 |
-| 2026-W20 | /seto77/IPAnalyzer/wiki | /wiki | 10 | 10 |
+| 2026-W20 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 120 | 97 |
+| 2026-W20 | /seto77/IPAnalyzer | Overview | 66 | 39 |
+| 2026-W20 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 25 | 11 |
+| 2026-W20 | /seto77/IPAnalyzer/wiki | /wiki | 12 | 12 |
 | 2026-W20 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 9 | 3 |
 | 2026-W20 | /seto77/IPanalyzer | Overview | 8 | 6 |
 | 2026-W20 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 8 | 8 |
-| 2026-W20 | /seto77/IPAnalyzer/actions | /actions | 6 | 6 |
-| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 6 | 6 |
-| 2026-W20 | /seto77/IPAnalyzer/releases | /releases | 6 | 6 |
-| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 5 | 5 |
+| 2026-W20 | /seto77/IPAnalyzer/releases | /releases | 8 | 8 |
+| 2026-W20 | /seto77/IPAnalyzer/actions | /actions | 7 | 7 |
+| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 7 | 7 |
+| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 6 | 6 |
 | 2026-W20 | /seto77/IPAnalyzer/stargazers | /stargazers | 4 | 4 |
-| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 3 | 3 |
-| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | /blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | 2 | 2 |
+| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 4 | 4 |
+| 2026-W20 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | /blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | 3 | 3 |
 | 2026-W19 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 83 | 77 |
 | 2026-W19 | /seto77/IPAnalyzer | Overview | 46 | 35 |
 | 2026-W19 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 22 | 7 |
@@ -157,24 +157,24 @@ Last updated: 2026-05-16
 ### Monthly (最大3か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-05 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 213 | 184 |
-| 2026-05 | /seto77/IPAnalyzer | Overview | 119 | 83 |
+| 2026-05 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 234 | 200 |
+| 2026-05 | /seto77/IPAnalyzer | Overview | 131 | 89 |
+| 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 40 | 16 |
 | 2026-05 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 39 | 12 |
-| 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 36 | 14 |
 | 2026-05 | /seto77/IPanalyzer | Overview | 34 | 24 |
-| 2026-05 | /seto77/IPAnalyzer/releases | /releases | 27 | 12 |
+| 2026-05 | /seto77/IPAnalyzer/releases | /releases | 29 | 14 |
 | 2026-05 | /seto77/IPAnalyzer/stargazers | /stargazers | 22 | 22 |
 | 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 18 | 18 |
-| 2026-05 | /seto77/IPAnalyzer/actions | /actions | 11 | 11 |
-| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 11 | 11 |
-| 2026-05 | /seto77/IPAnalyzer/wiki | /wiki | 10 | 10 |
+| 2026-05 | /seto77/IPAnalyzer/actions | /actions | 12 | 12 |
+| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 12 | 12 |
+| 2026-05 | /seto77/IPAnalyzer/wiki | /wiki | 12 | 12 |
+| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 10 | 10 |
 | 2026-05 | /seto77/IPAnalyzer/commits | /commits | 9 | 3 |
 | 2026-05 | /seto77/IPAnalyzer/wiki/List-of-macro-functions | /wiki/List-of-macro-functions | 9 | 3 |
-| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 9 | 9 |
 | 2026-05 | /seto77/IPAnalyzer/blob/master/README.md | /blob/master/README.md | 4 | 4 |
 | 2026-05 | /seto77/IPAnalyzer/commit/d90a89e187bd2d09e38a8e2e5d7e51060fb43aca | /commit/d90a89e187bd2d09e38a8e2e5d7e51060fb43aca | 4 | 4 |
-| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 3 | 3 |
-| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | /blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | 2 | 2 |
+| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 4 | 4 |
+| 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | /blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | 3 | 3 |
 | 2026-05 | /seto77/IPAnalyzer/tree/master/.github | /tree/master/.github | 1 | 1 |
 | 2026-05 | /seto77/IPAnalyzer/tree/master/.github/workflows | /tree/master/.github/workflows | 1 | 1 |
 | 2026-04 | /seto77/IPAnalyzer | Overview | 173 | 110 |
@@ -204,36 +204,36 @@ Last updated: 2026-05-16
 ### Yearly (無制限)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 334 | 272 |
-| 2026 | /seto77/IPAnalyzer | Overview | 292 | 193 |
-| 2026 | /seto77/IPAnalyzer/releases | /releases | 124 | 77 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 355 | 288 |
+| 2026 | /seto77/IPAnalyzer | Overview | 304 | 199 |
+| 2026 | /seto77/IPAnalyzer/releases | /releases | 126 | 79 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 75 | 42 |
 | 2026 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 50 | 20 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 45 | 24 |
+| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 40 | 16 |
 | 2026 | /seto77/IPanalyzer | Overview | 36 | 26 |
-| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 36 | 14 |
 | 2026 | /seto77/IPAnalyzer/commits | /commits | 28 | 12 |
 | 2026 | /seto77/IPAnalyzer/wiki/List-of-macro-functions | /wiki/List-of-macro-functions | 25 | 13 |
 | 2026 | /seto77/IPAnalyzer/issues | /issues | 24 | 12 |
 | 2026 | /seto77/IPAnalyzer/stargazers | /stargazers | 24 | 24 |
+| 2026 | /seto77/IPAnalyzer/actions | /actions | 20 | 20 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 19 | 19 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 19 | 19 |
-| 2026 | /seto77/IPAnalyzer/actions | /actions | 19 | 19 |
 | 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 18 | 18 |
+| 2026 | /seto77/IPAnalyzer/wiki | /wiki | 14 | 14 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 13 | 13 |
-| 2026 | /seto77/IPAnalyzer/wiki | /wiki | 12 | 12 |
-| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 11 | 11 |
+| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 12 | 12 |
 | 2026 | /seto77/IPAnalyzer/pulls | /pulls | 10 | 5 |
-| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 9 | 9 |
+| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 10 | 10 |
 | 2026 | /seto77/IPAnalyzer/commit/d90a89e187bd2d09e38a8e2e5d7e51060fb43aca | /commit/d90a89e187bd2d09e38a8e2e5d7e51060fb43aca | 7 | 7 |
 | 2026 | /seto77/ipanalyzer/pulls | /pulls | 6 | 6 |
 | 2026 | /seto77/IPAnalyzer/blob/master/README.md | /blob/master/README.md | 4 | 4 |
-| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 3 | 3 |
+| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 4 | 4 |
+| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | /blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | 3 | 3 |
 | 2026 | /seto77/IPAnalyzer/blob/master/LICENSE.md | /blob/master/LICENSE.md | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/commit/688d6b975e519fda7c87b7a12b289dc3cebd635f | /commit/688d6b975e519fda7c87b7a12b289dc3cebd635f | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/tree/master/.github | /tree/master/.github | 2 | 2 |
-| 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | /blob/master/IPAnalyzerSetup/REQUIREMENT.rtf | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/tree/master/.github/workflows | /tree/master/.github/workflows | 1 | 1 |
 
 ## Downloads
@@ -278,6 +278,7 @@ Last updated: 2026-05-16
 ### Daily (最大14日保持)
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-05-17 | 12 | 3 | 0 | 3 |
 | 2026-05-16 | 12 | 3 | 0 | 3 |
 | 2026-05-15 | 12 | 3 | 0 | 3 |
 | 2026-05-14 | 12 | 3 | 0 | 3 |
@@ -291,7 +292,6 @@ Last updated: 2026-05-16
 | 2026-05-06 | 12 | 3 | 0 | 3 |
 | 2026-05-05 | 12 | 3 | 0 | 3 |
 | 2026-05-04 | 12 | 3 | 0 | 3 |
-| 2026-05-03 | 12 | 3 | 0 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Stars | Forks | Open Issues | Watchers |
@@ -314,4 +314,4 @@ Last updated: 2026-05-16
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
 
-<!-- meta: last_collected_paths=2026-05-16 last_collected_referrers=2026-05-16 -->
+<!-- meta: last_collected_paths=2026-05-17 last_collected_referrers=2026-05-17 -->
