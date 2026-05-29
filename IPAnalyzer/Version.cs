@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.978(2026/05/29) Enhanced the Auto Procedure feature (added keyword matching support). " +
         "\r\n ver3.977(2026/04/14) Refactored Macro class with encapsulated FormMain API and migrated help to [Help] attributes. " +
         "\r\n ver3.976(2026/04/13) Fixed bugs in the Find Parameter feature. " +
         "\r\n ver3.975(2026/04/10) Added support for FlatPanel Rad-Xcam3030 and fixed bugs on Radicon1520. " +
