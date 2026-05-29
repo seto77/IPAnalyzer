@@ -1,12 +1,13 @@
 # Traffic Data: IPAnalyzer
 
-Last updated: 2026-05-28
+Last updated: 2026-05-29
 
 ## Views
 
 ### Daily (最大14日保持)
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-05-28 | 5 | 3 |
 | 2026-05-27 | 0 | 0 |
 | 2026-05-26 | 4 | 2 |
 | 2026-05-25 | 4 | 2 |
@@ -19,12 +20,11 @@ Last updated: 2026-05-28
 | 2026-05-18 | 0 | 0 |
 | 2026-05-17 | 0 | 0 |
 | 2026-05-16 | 1 | 1 |
-| 2026-05-15 | 4 | 2 |
 
 ### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-W22 | 8 | 4 |
+| 2026-W22 | 13 | 7 |
 | 2026-W21 | 116 | 16 |
 | 2026-W20 | 23 | 12 |
 | 2026-W19 | 30 | 12 |
@@ -38,20 +38,21 @@ Last updated: 2026-05-28
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-05 | 178 | 45 |
+| 2026-05 | 183 | 48 |
 | 2026-04 | 168 | 83 |
 | 2026-03 | 12 | 8 |
 
 ### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 358 | 136 |
+| 2026 | 363 | 139 |
 
 ## Clones
 
 ### Daily (最大14日保持)
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-05-28 | 2 | 2 |
 | 2026-05-27 | 4 | 4 |
 | 2026-05-26 | 14 | 7 |
 | 2026-05-25 | 18 | 11 |
@@ -64,12 +65,11 @@ Last updated: 2026-05-28
 | 2026-05-18 | 11 | 10 |
 | 2026-05-17 | 12 | 7 |
 | 2026-05-16 | 9 | 5 |
-| 2026-05-15 | 12 | 9 |
 
 ### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-W22 | 36 | 22 |
+| 2026-W22 | 38 | 24 |
 | 2026-W21 | 83 | 54 |
 | 2026-W20 | 69 | 44 |
 | 2026-W19 | 148 | 72 |
@@ -83,24 +83,24 @@ Last updated: 2026-05-28
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-05 | 392 | 216 |
+| 2026-05 | 394 | 218 |
 | 2026-04 | 542 | 232 |
 | 2026-03 | 4 | 4 |
 
 ### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 938 | 452 |
+| 2026 | 940 | 454 |
 
 ## Referrers
 
 ### Weekly (最大2週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-W22 | yseto.net | 213 | 59 |
-| 2026-W22 | github.com | 71 | 32 |
-| 2026-W22 | Google | 14 | 5 |
-| 2026-W22 | Bing | 3 | 3 |
+| 2026-W22 | yseto.net | 263 | 74 |
+| 2026-W22 | github.com | 89 | 40 |
+| 2026-W22 | Google | 15 | 6 |
+| 2026-W22 | Bing | 4 | 4 |
 | 2026-W21 | yseto.net | 239 | 110 |
 | 2026-W21 | Google | 73 | 18 |
 | 2026-W21 | github.com | 58 | 27 |
@@ -108,10 +108,10 @@ Last updated: 2026-05-28
 ### Monthly (最大3か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-05 | yseto.net | 673 | 344 |
-| 2026-05 | Google | 325 | 91 |
-| 2026-05 | github.com | 190 | 101 |
-| 2026-05 | Bing | 3 | 3 |
+| 2026-05 | yseto.net | 723 | 359 |
+| 2026-05 | Google | 326 | 92 |
+| 2026-05 | github.com | 208 | 109 |
+| 2026-05 | Bing | 4 | 4 |
 | 2026-04 | yseto.net | 242 | 151 |
 | 2026-04 | Google | 127 | 49 |
 | 2026-04 | github.com | 83 | 37 |
@@ -119,26 +119,26 @@ Last updated: 2026-05-28
 ### Yearly (無制限)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026 | yseto.net | 915 | 495 |
-| 2026 | Google | 452 | 140 |
-| 2026 | github.com | 273 | 138 |
-| 2026 | Bing | 3 | 3 |
+| 2026 | yseto.net | 965 | 510 |
+| 2026 | Google | 453 | 141 |
+| 2026 | github.com | 291 | 146 |
+| 2026 | Bing | 4 | 4 |
 
 ## Popular Paths
 
 ### Weekly (最大2週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-W22 | /seto77/IPAnalyzer/tags | /tags | 116 | 4 |
-| 2026-W22 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 106 | 58 |
-| 2026-W22 | /seto77/IPAnalyzer | Overview | 55 | 37 |
-| 2026-W22 | /seto77/IPAnalyzer/releases | /releases | 23 | 7 |
-| 2026-W22 | /seto77/IPAnalyzer/tree/master | /tree/master | 21 | 17 |
-| 2026-W22 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 17 | 17 |
-| 2026-W22 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 12 | 12 |
-| 2026-W22 | /seto77/IPAnalyzer/issues | /issues | 12 | 8 |
-| 2026-W22 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | 8 | 4 |
-| 2026-W22 | /seto77/IPanalyzer | Overview | 4 | 4 |
+| 2026-W22 | /seto77/IPAnalyzer/tags | /tags | 145 | 5 |
+| 2026-W22 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 129 | 73 |
+| 2026-W22 | /seto77/IPAnalyzer | Overview | 69 | 46 |
+| 2026-W22 | /seto77/IPAnalyzer/releases | /releases | 28 | 8 |
+| 2026-W22 | /seto77/IPAnalyzer/tree/master | /tree/master | 26 | 21 |
+| 2026-W22 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 21 | 21 |
+| 2026-W22 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 15 | 15 |
+| 2026-W22 | /seto77/IPAnalyzer/issues | /issues | 15 | 10 |
+| 2026-W22 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | 10 | 5 |
+| 2026-W22 | /seto77/IPanalyzer | Overview | 6 | 6 |
 | 2026-W22 | /seto77/IPAnalyzer/wiki | /wiki | 2 | 2 |
 | 2026-W22 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.cs | 2 | 1 |
 | 2026-W21 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 167 | 113 |
@@ -165,21 +165,21 @@ Last updated: 2026-05-28
 ### Monthly (最大3か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-05 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 507 | 371 |
-| 2026-05 | /seto77/IPAnalyzer | Overview | 267 | 174 |
-| 2026-05 | /seto77/IPAnalyzer/tags | /tags | 174 | 6 |
-| 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 79 | 51 |
-| 2026-05 | /seto77/IPAnalyzer/releases | /releases | 76 | 33 |
+| 2026-05 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 530 | 386 |
+| 2026-05 | /seto77/IPAnalyzer | Overview | 281 | 183 |
+| 2026-05 | /seto77/IPAnalyzer/tags | /tags | 203 | 7 |
+| 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 83 | 55 |
+| 2026-05 | /seto77/IPAnalyzer/releases | /releases | 81 | 34 |
+| 2026-05 | /seto77/IPAnalyzer/tree/master | /tree/master | 43 | 34 |
+| 2026-05 | /seto77/IPanalyzer | Overview | 40 | 30 |
+| 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 40 | 40 |
 | 2026-05 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 39 | 12 |
-| 2026-05 | /seto77/IPanalyzer | Overview | 38 | 28 |
-| 2026-05 | /seto77/IPAnalyzer/tree/master | /tree/master | 38 | 30 |
-| 2026-05 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 37 | 37 |
 | 2026-05 | /seto77/IPAnalyzer/wiki | /wiki | 26 | 26 |
 | 2026-05 | /seto77/IPAnalyzer/stargazers | /stargazers | 22 | 22 |
-| 2026-05 | /seto77/IPAnalyzer/issues | /issues | 18 | 12 |
+| 2026-05 | /seto77/IPAnalyzer/issues | /issues | 21 | 14 |
+| 2026-05 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | 16 | 8 |
 | 2026-05 | /seto77/IPAnalyzer/actions | /actions | 14 | 14 |
 | 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 14 | 14 |
-| 2026-05 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | 14 | 7 |
 | 2026-05 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 12 | 12 |
 | 2026-05 | /seto77/IPAnalyzer/commits | /commits | 9 | 3 |
 | 2026-05 | /seto77/IPAnalyzer/wiki/List-of-macro-functions | /wiki/List-of-macro-functions | 9 | 3 |
@@ -221,18 +221,18 @@ Last updated: 2026-05-28
 ### Yearly (無制限)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 628 | 459 |
-| 2026 | /seto77/IPAnalyzer | Overview | 440 | 284 |
-| 2026 | /seto77/IPAnalyzer/tags | /tags | 174 | 6 |
-| 2026 | /seto77/IPAnalyzer/releases | /releases | 173 | 98 |
-| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 79 | 51 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 651 | 474 |
+| 2026 | /seto77/IPAnalyzer | Overview | 454 | 293 |
+| 2026 | /seto77/IPAnalyzer/tags | /tags | 203 | 7 |
+| 2026 | /seto77/IPAnalyzer/releases | /releases | 178 | 99 |
+| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 83 | 55 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 75 | 42 |
 | 2026 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 50 | 20 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 45 | 24 |
-| 2026 | /seto77/IPAnalyzer/issues | /issues | 42 | 24 |
-| 2026 | /seto77/IPanalyzer | Overview | 40 | 30 |
-| 2026 | /seto77/IPAnalyzer/tree/master | /tree/master | 38 | 30 |
-| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 37 | 37 |
+| 2026 | /seto77/IPAnalyzer/issues | /issues | 45 | 26 |
+| 2026 | /seto77/IPAnalyzer/tree/master | /tree/master | 43 | 34 |
+| 2026 | /seto77/IPanalyzer | Overview | 42 | 32 |
+| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 40 | 40 |
 | 2026 | /seto77/IPAnalyzer/commits | /commits | 28 | 12 |
 | 2026 | /seto77/IPAnalyzer/wiki | /wiki | 28 | 28 |
 | 2026 | /seto77/IPAnalyzer/wiki/List-of-macro-functions | /wiki/List-of-macro-functions | 25 | 13 |
@@ -240,8 +240,8 @@ Last updated: 2026-05-28
 | 2026 | /seto77/IPAnalyzer/actions | /actions | 22 | 22 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.975 | /releases/tag/v.3.975 | 19 | 19 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.976 | /releases/tag/v.3.976 | 19 | 19 |
+| 2026 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | 16 | 8 |
 | 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | /blob/master/IPAnalyzerSetup/EnableLaunchApplication.js | 14 | 14 |
-| 2026 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.Designer.cs | 14 | 7 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.961 | /releases/tag/v.3.961 | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 12 | 12 |
 | 2026 | /seto77/IPAnalyzer/pulls | /pulls | 10 | 5 |
@@ -265,7 +265,8 @@ Last updated: 2026-05-28
 
 | Release Tag | Release Date | Asset Name | Download Count |
 | ---- | ---- | ---- | ---- |
-| v.3.977 | 2026-04-14 | IPAnalyzerSetup.msi | 76 |
+| v.3.978 | 2026-05-29 | IPAnalyzerSetup.msi | 2 |
+| v.3.977 | 2026-04-14 | IPAnalyzerSetup.msi | 77 |
 | v.3.976 | 2026-04-13 | IPAnalyzerSetup.msi | 4 |
 | v.3.975 | 2026-04-10 | IPAnalyzerSetup.msi | 6 |
 | v.3.974 | 2026-04-06 | IPAnalyzerSetup.msi | 14 |
@@ -294,15 +295,15 @@ Last updated: 2026-05-28
 | v.3.948 | 2023-07-18 | IPAnalyzerSetup.msi | 87 |
 | v.3.947 | 2023-06-28 | IPAnalyzerSetup.msi | 58 |
 | v.3.946 | 2023-04-22 | IPAnalyzerSetup.msi | 104 |
-| v.3.945 | 2023-03-18 | IPAnalyzerSetup.msi | 75 |
 
-**TOTAL: 1897**
+**TOTAL: 1825**
 
 ## Stats
 
 ### Daily (最大14日保持)
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-05-29 | 12 | 3 | 0 | 3 |
 | 2026-05-28 | 12 | 3 | 0 | 3 |
 | 2026-05-27 | 12 | 3 | 0 | 3 |
 | 2026-05-26 | 12 | 3 | 0 | 3 |
@@ -316,7 +317,6 @@ Last updated: 2026-05-28
 | 2026-05-18 | 12 | 3 | 0 | 3 |
 | 2026-05-17 | 12 | 3 | 0 | 3 |
 | 2026-05-16 | 12 | 3 | 0 | 3 |
-| 2026-05-15 | 12 | 3 | 0 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Stars | Forks | Open Issues | Watchers |
@@ -341,4 +341,4 @@ Last updated: 2026-05-28
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
 
-<!-- meta: last_collected_paths=2026-05-28 last_collected_referrers=2026-05-28 -->
+<!-- meta: last_collected_paths=2026-05-29 last_collected_referrers=2026-05-29 -->
