@@ -61,10 +61,10 @@
             this.numericBox1.SkipEventDuringInput = false;
             this.numericBox1.SmartIncrement = false;
             this.numericBox1.TabIndex = 0;
-            this.numericBox1.TextBoxBackColor = System.Drawing.SystemColors.Window;
-            this.numericBox1.TextBoxForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericBox1.TextFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
-            this.numericBox1.ThonsandsSeparator = true;
+            this.numericBox1.ValueBackColor = System.Drawing.SystemColors.Window;
+            this.numericBox1.ValueForeColor = System.Drawing.SystemColors.WindowText;
+            this.numericBox1.ValueFont = new System.Drawing.Font("Segoe UI Symbol", 9.75F);
+            this.numericBox1.ThousandsSeparator = true;
             this.numericBox1.ToolTip = "";
             this.numericBox1.UpDown_Increment = 1D;
             this.numericBox1.Value = 0D;

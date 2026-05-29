@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -1087,7 +1087,7 @@
   <data name="waveLengthControl.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="waveLengthControl.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="waveLengthControl.LabelFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
 
@@ -1600,7 +1600,7 @@
   <data name="numericBoxFootPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="numericBoxFootPositionY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFootPositionY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -1654,7 +1654,7 @@
   <data name="numericBoxFootPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxFootPositionX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFootPositionX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -1795,7 +1795,7 @@
   <data name="numericBoxCameraLength2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxCameraLength2.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxCameraLength2.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
@@ -1960,7 +1960,7 @@
   <data name="numericBoxDirectSpotPositionY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="numericBoxDirectSpotPositionY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxDirectSpotPositionY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2008,7 +2008,7 @@
   <data name="numericBoxDirectSpotPositionX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxDirectSpotPositionX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxDirectSpotPositionX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2152,7 +2152,7 @@
   <data name="numericBoxCameraLength1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxCameraLength1.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxCameraLength1.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
@@ -2272,7 +2272,7 @@
   <data name="numericBoxPixelKsi.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="numericBoxPixelKsi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPixelKsi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2320,7 +2320,7 @@
   <data name="numericBoxPixelSizeY.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="numericBoxPixelSizeY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPixelSizeY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2368,7 +2368,7 @@
   <data name="numericBoxPixelSizeX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxPixelSizeX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPixelSizeX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2461,7 +2461,7 @@
   <data name="numericBoxGandlfiRadius.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxGandlfiRadius.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxGandlfiRadius.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2572,7 +2572,7 @@
   <data name="numericBoxSphericalCorections.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxSphericalCorections.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxSphericalCorections.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2713,7 +2713,7 @@
   <data name="numericBoxTiltTau.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="numericBoxTiltTau.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTiltTau.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -2761,7 +2761,7 @@
   <data name="numericBoxTiltPhi.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxTiltPhi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTiltPhi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -4126,7 +4126,7 @@
   <data name="numericBoxRadialRange.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="numericBoxRadialRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxRadialRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -4168,7 +4168,7 @@
   <data name="numericBoxRadialRadius.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="numericBoxRadialRadius.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxRadialRadius.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -4210,7 +4210,7 @@
   <data name="numericBoxRadialStep.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="numericBoxRadialStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxRadialStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -4702,7 +4702,7 @@
   <data name="numericBoxConcentricStep.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="numericBoxConcentricStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxConcentricStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -4786,7 +4786,7 @@
   <data name="numericBoxConcentricEnd.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="numericBoxConcentricEnd.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxConcentricEnd.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -4867,7 +4867,7 @@
   <data name="numericBoxConcentricStart.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="numericBoxConcentricStart.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxConcentricStart.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -6137,7 +6137,7 @@
   <data name="numericBoxSplineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="numericBoxSplineWidth.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxSplineWidth.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -6673,7 +6673,7 @@
   <data name="numericBoxTest.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="numericBoxTest.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTest.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -9461,7 +9461,7 @@
   <data name="numericBoxFindCenterPeakFittingRange.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxFindCenterPeakFittingRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFindCenterPeakFittingRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -9563,7 +9563,7 @@
   <data name="numericBoxFindCenterSearchArea.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="numericBoxFindCenterSearchArea.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFindCenterSearchArea.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 
@@ -9860,7 +9860,7 @@
   <data name="numericBoxBackgroundCoeff.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="numericBoxBackgroundCoeff.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxBackgroundCoeff.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
 

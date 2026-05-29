@@ -38,12 +38,14 @@ partial class FormAutoProcedure
         buttonSetDirectory = new System.Windows.Forms.Button();
         checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
         groupBox1 = new System.Windows.Forms.GroupBox();
-        checkBoxPatternMatching = new System.Windows.Forms.CheckBox();
+        checkBoxKeywords = new System.Windows.Forms.CheckBox();
+        checkBoxNumberMatching = new System.Windows.Forms.CheckBox();
         flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
         numericBoxDivisor = new Crystallography.Controls.NumericBox();
         radioButtonEqual = new System.Windows.Forms.RadioButton();
         radioButtonNotEqual = new System.Windows.Forms.RadioButton();
         numericBoxRemainder = new Crystallography.Controls.NumericBox();
+        textBoxKeyword = new System.Windows.Forms.TextBox();
         groupBox2 = new System.Windows.Forms.GroupBox();
         label2 = new System.Windows.Forms.Label();
         comboBoxMacro = new System.Windows.Forms.ComboBox();
@@ -54,8 +56,8 @@ partial class FormAutoProcedure
         // 
         // checkedListBoxAuto
         // 
-        checkedListBoxAuto.CheckOnClick = true;
         resources.ApplyResources(checkedListBoxAuto, "checkedListBoxAuto");
+        checkedListBoxAuto.CheckOnClick = true;
         checkedListBoxAuto.Items.AddRange(new object[] { resources.GetString("checkedListBoxAuto.Items"), resources.GetString("checkedListBoxAuto.Items1"), resources.GetString("checkedListBoxAuto.Items2"), resources.GetString("checkedListBoxAuto.Items3"), resources.GetString("checkedListBoxAuto.Items4") });
         checkedListBoxAuto.MultiColumn = true;
         checkedListBoxAuto.Name = "checkedListBoxAuto";
@@ -82,6 +84,10 @@ partial class FormAutoProcedure
         resources.ApplyResources(label1, "label1");
         label1.Name = "label1";
         // 
+        // folderBrowserDialog1
+        // 
+        resources.ApplyResources(folderBrowserDialog1, "folderBrowserDialog1");
+        // 
         // buttonSetDirectory
         // 
         resources.ApplyResources(buttonSetDirectory, "buttonSetDirectory");
@@ -98,19 +104,26 @@ partial class FormAutoProcedure
         // 
         // groupBox1
         // 
-        groupBox1.Controls.Add(checkBoxPatternMatching);
+        resources.ApplyResources(groupBox1, "groupBox1");
+        groupBox1.Controls.Add(checkBoxKeywords);
+        groupBox1.Controls.Add(checkBoxNumberMatching);
         groupBox1.Controls.Add(flowLayoutPanel1);
         groupBox1.Controls.Add(label1);
+        groupBox1.Controls.Add(textBoxKeyword);
         groupBox1.Controls.Add(textBoxDiectory);
         groupBox1.Controls.Add(buttonSetDirectory);
-        resources.ApplyResources(groupBox1, "groupBox1");
         groupBox1.Name = "groupBox1";
         groupBox1.TabStop = false;
         // 
-        // checkBoxPatternMatching
+        // checkBoxKeywords
         // 
-        resources.ApplyResources(checkBoxPatternMatching, "checkBoxPatternMatching");
-        checkBoxPatternMatching.Name = "checkBoxPatternMatching";
+        resources.ApplyResources(checkBoxKeywords, "checkBoxKeywords");
+        checkBoxKeywords.Name = "checkBoxKeywords";
+        // 
+        // checkBoxNumberMatching
+        // 
+        resources.ApplyResources(checkBoxNumberMatching, "checkBoxNumberMatching");
+        checkBoxNumberMatching.Name = "checkBoxNumberMatching";
         // 
         // flowLayoutPanel1
         // 
@@ -123,11 +136,12 @@ partial class FormAutoProcedure
         // 
         // numericBoxDivisor
         // 
-        numericBoxDivisor.BackColor = System.Drawing.Color.Transparent;
         resources.ApplyResources(numericBoxDivisor, "numericBoxDivisor");
+        numericBoxDivisor.BackColor = System.Drawing.Color.Transparent;
         numericBoxDivisor.Name = "numericBoxDivisor";
         numericBoxDivisor.RadianValue = 0.052359877559829883D;
         numericBoxDivisor.Value = 3D;
+        numericBoxDivisor.ValueFontSize = 8F;
         // 
         // radioButtonEqual
         // 
@@ -145,18 +159,24 @@ partial class FormAutoProcedure
         // 
         // numericBoxRemainder
         // 
-        numericBoxRemainder.BackColor = System.Drawing.Color.Transparent;
         resources.ApplyResources(numericBoxRemainder, "numericBoxRemainder");
+        numericBoxRemainder.BackColor = System.Drawing.Color.Transparent;
         numericBoxRemainder.Name = "numericBoxRemainder";
         numericBoxRemainder.RadianValue = 0.034906585039886591D;
         numericBoxRemainder.Value = 2D;
+        numericBoxRemainder.ValueFontSize = 8F;
+        // 
+        // textBoxKeyword
+        // 
+        resources.ApplyResources(textBoxKeyword, "textBoxKeyword");
+        textBoxKeyword.Name = "textBoxKeyword";
         // 
         // groupBox2
         // 
+        resources.ApplyResources(groupBox2, "groupBox2");
         groupBox2.Controls.Add(label2);
         groupBox2.Controls.Add(comboBoxMacro);
         groupBox2.Controls.Add(checkedListBoxAuto);
-        resources.ApplyResources(groupBox2, "groupBox2");
         groupBox2.Name = "groupBox2";
         groupBox2.TabStop = false;
         // 
@@ -167,8 +187,8 @@ partial class FormAutoProcedure
         // 
         // comboBoxMacro
         // 
-        comboBoxMacro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         resources.ApplyResources(comboBoxMacro, "comboBoxMacro");
+        comboBoxMacro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         comboBoxMacro.FormattingEnabled = true;
         comboBoxMacro.Name = "comboBoxMacro";
         // 
@@ -211,7 +231,9 @@ partial class FormAutoProcedure
     private Crystallography.Controls.NumericBox numericBoxDivisor;
     private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     private Crystallography.Controls.NumericBox numericBoxRemainder;
-    public System.Windows.Forms.CheckBox checkBoxPatternMatching;
+    public System.Windows.Forms.CheckBox checkBoxNumberMatching;
     private System.Windows.Forms.RadioButton radioButtonEqual;
     private System.Windows.Forms.RadioButton radioButtonNotEqual;
+    public System.Windows.Forms.CheckBox checkBoxKeywords;
+    private System.Windows.Forms.TextBox textBoxKeyword;
 }

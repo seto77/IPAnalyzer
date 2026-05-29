@@ -439,7 +439,7 @@
   <data name="numericBoxCameraLengthRange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxCameraLengthRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxCameraLengthRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxCameraLengthRange.Name" xml:space="preserve">
@@ -484,7 +484,7 @@
   <data name="numericBoxCameraLengthStep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxCameraLengthStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxCameraLengthStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxCameraLengthStep.Name" xml:space="preserve">
@@ -529,7 +529,7 @@
   <data name="numericBoxPointXStep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxPointXStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPointXStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxPointXStep.Name" xml:space="preserve">
@@ -574,7 +574,7 @@
   <data name="numericBoxPointYStep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxPointYStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPointYStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxPointYStep.Name" xml:space="preserve">
@@ -622,7 +622,7 @@
   <data name="numericBoxFootPointXRange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxFootPointXRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFootPointXRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxFootPointXRange.Name" xml:space="preserve">
@@ -670,7 +670,7 @@
   <data name="numericBoxFootPointYRange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxFootPointYRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFootPointYRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxFootPointYRange.Name" xml:space="preserve">
@@ -748,7 +748,7 @@
   <data name="numericBoxWaveLengthStep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxWaveLengthStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxWaveLengthStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxWaveLengthStep.Name" xml:space="preserve">
@@ -799,7 +799,7 @@
   <data name="numericBoxWaveLengthRange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxWaveLengthRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxWaveLengthRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxWaveLengthRange.Name" xml:space="preserve">
@@ -946,7 +946,7 @@
   <data name="numericBox4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBox4.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBox4.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBox4.Name" xml:space="preserve">
@@ -994,7 +994,7 @@
   <data name="numericBox3.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBox3.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBox3.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBox3.Name" xml:space="preserve">
@@ -1042,7 +1042,7 @@
   <data name="numericBox2.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBox2.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBox2.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBox2.Name" xml:space="preserve">
@@ -1093,7 +1093,7 @@
   <data name="numericBox7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBox7.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBox7.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBox7.Name" xml:space="preserve">
@@ -1144,7 +1144,7 @@
   <data name="numericBox6.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBox6.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBox6.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBox6.Name" xml:space="preserve">
@@ -1195,7 +1195,7 @@
   <data name="numericBox5.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBox5.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBox5.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBox5.Name" xml:space="preserve">
@@ -1240,7 +1240,7 @@
   <data name="numericBoxTauStep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxTauStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTauStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxTauStep.Name" xml:space="preserve">
@@ -1288,7 +1288,7 @@
   <data name="numericBoxTauRange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxTauRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxTauRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxTauRange.Name" xml:space="preserve">
@@ -1363,7 +1363,7 @@
   <data name="numericBoxPhiStep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxPhiStep.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPhiStep.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxPhiStep.Name" xml:space="preserve">
@@ -1411,7 +1411,7 @@
   <data name="numericBoxPhiRange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxPhiRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPhiRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxPhiRange.Name" xml:space="preserve">
@@ -2994,7 +2994,7 @@
   <data name="numericBoxIteration.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="numericBoxIteration.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxIteration.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxIteration.Name" xml:space="preserve">
@@ -3301,7 +3301,7 @@
   <data name="numericBoxFittingRange.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="numericBoxFittingRange.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxFittingRange.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="&gt;&gt;numericBoxFittingRange.Name" xml:space="preserve">
@@ -3343,7 +3343,7 @@
   <data name="numericBoxWeight.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="numericBoxWeight.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxWeight.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="numericBoxWeight.Visible" type="System.Boolean, mscorlib">

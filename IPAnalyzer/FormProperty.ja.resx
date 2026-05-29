@@ -522,7 +522,7 @@
   <data name="numericBoxSphericalCorections.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 20</value>
   </data>
-  <data name="numericBoxSphericalCorections.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxSphericalCorections.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
   <data name="label26.Font" type="System.Drawing.Font, System.Drawing">

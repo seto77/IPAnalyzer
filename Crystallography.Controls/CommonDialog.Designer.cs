@@ -34,7 +34,7 @@
             checkBoxCloseWindow = new System.Windows.Forms.CheckBox();
             flowLayoutPanelSoftwareInformation = new System.Windows.Forms.FlowLayoutPanel();
             labelAuthor = new System.Windows.Forms.Label();
-            linkLabel1 = new System.Windows.Forms.LinkLabel();
+            label1 = new System.Windows.Forms.Label();
             panelOK = new System.Windows.Forms.Panel();
             flowLayoutPanelSoftwareInformation.SuspendLayout();
             panelOK.SuspendLayout();
@@ -42,9 +42,9 @@
             // 
             // progressBar
             // 
+            resources.ApplyResources(progressBar, "progressBar");
             progressBar.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             progressBar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            resources.ApplyResources(progressBar, "progressBar");
             progressBar.ForeColor = System.Drawing.Color.Silver;
             progressBar.MarqueeAnimationSpeed = 1;
             progressBar.Maximum = 1000000;
@@ -54,8 +54,8 @@
             // 
             // textBox
             // 
-            textBox.BackColor = System.Drawing.Color.AliceBlue;
             resources.ApplyResources(textBox, "textBox");
+            textBox.BackColor = System.Drawing.Color.AliceBlue;
             textBox.ForeColor = System.Drawing.Color.DarkBlue;
             textBox.Name = "textBox";
             textBox.ReadOnly = true;
@@ -100,7 +100,7 @@
             flowLayoutPanelSoftwareInformation.Controls.Add(labelSoftwareAndVersion);
             flowLayoutPanelSoftwareInformation.Controls.Add(labelCopyRight);
             flowLayoutPanelSoftwareInformation.Controls.Add(labelAuthor);
-            flowLayoutPanelSoftwareInformation.Controls.Add(linkLabel1);
+            flowLayoutPanelSoftwareInformation.Controls.Add(label1);
             flowLayoutPanelSoftwareInformation.Name = "flowLayoutPanelSoftwareInformation";
             // 
             // labelAuthor
@@ -108,18 +108,17 @@
             resources.ApplyResources(labelAuthor, "labelAuthor");
             labelAuthor.Name = "labelAuthor";
             // 
-            // linkLabel1
+            // label1
             // 
-            resources.ApplyResources(linkLabel1, "linkLabel1");
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.TabStop = true;
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // panelOK
             // 
+            resources.ApplyResources(panelOK, "panelOK");
             panelOK.Controls.Add(checkBoxCloseWindow);
             panelOK.Controls.Add(buttonOK);
             panelOK.Controls.Add(buttonNext);
-            resources.ApplyResources(panelOK, "panelOK");
             panelOK.Name = "panelOK";
             // 
             // CommonDialog
@@ -154,7 +153,7 @@
         private System.Windows.Forms.CheckBox checkBoxCloseWindow;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSoftwareInformation;
         private System.Windows.Forms.Panel panelOK;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label labelAuthor;
+        private System.Windows.Forms.Label label1;
     }
 }

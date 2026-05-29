@@ -143,7 +143,7 @@
     <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxAutoAfterLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 128</value>
+    <value>14, 193</value>
   </data>
   <data name="checkBoxAutoAfterLoad.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 40</value>
@@ -188,20 +188,11 @@
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>新しい画像を自動で読み込む</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 118</value>
-  </data>
-  <data name="checkBoxPatternMatching.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 70</value>
-  </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 90</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 140</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 174</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 178</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -224,7 +215,13 @@
   <data name="comboBoxMacro.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 26</value>
   </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 205</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 174</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>259, 323</value>
+    <value>259, 383</value>
   </data>
 </root>

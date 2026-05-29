@@ -115,11 +115,11 @@ public partial class FormAutoProcedure : Form
 
                         if (!Miscellaneous.isFileExistsAndLocked(f) && !backgroundWorker.CancellationPending && ImageIO.IsReadable(Path.GetExtension(f)))
                         {
-                            if (!checkBoxPatternMatching.Checked)
-                                formMain.ReadImage(f);
-                            else//パターンマッチングの場合
+                            var flag = true;
+                            var filename = Path.GetFileNameWithoutExtension(f);
+                            if (checkBoxNumberMatching.Checked)//ナンバーマッチングの場合
                             {
-                                var filename = Path.GetFileNameWithoutExtension(f);
+                                //260529Cl ファイル名末尾の連続した数字を取り出して判定する
                                 var numStr = new List<char>();
                                 for (int i = filename.Length - 1; i >= 0; i--)
                                 {
@@ -129,21 +129,36 @@ public partial class FormAutoProcedure : Form
                                         break;
                                 }
                                 numStr.Reverse();
-                                if (int.TryParse(new string([.. numStr]), out int num))
+
+                                //数字が一致するかどうか (数字を取得できない・除数が0の場合は不一致とみなす)
+                                bool matched = int.TryParse(new string([.. numStr]), out int num)
+                                    && numericBoxDivisor.ValueInteger != 0
+                                    && num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger;
+
+                                //等号: 一致したら正解 / 不等号: 不一致なら正解。正解でなければ flag を false にする
+                                if ((radioButtonEqual.Checked && !matched) || (radioButtonNotEqual.Checked && matched))
+                                    flag = false;
+                            }
+                            if (flag && checkBoxKeywords.Checked)
+                            {
+                                if (!filename.Contains(textBoxKeyword.Text))
+                                    flag = false;
+                            }
+
+                            //260529Cl 読み込み前にファイルサイズの変動が無くなるまで待機する
+                            if (flag)
+                            {
+                                long fileSize = -1, current;
+                                while ((current = new FileInfo(f).Length) != fileSize && !backgroundWorker.CancellationPending)
                                 {
-                                    if ((radioButtonEqual.Checked && num % numericBoxDivisor.ValueInteger == numericBoxRemainder.ValueInteger) ||
-                                        (radioButtonNotEqual.Checked && num % numericBoxDivisor.ValueInteger != numericBoxRemainder.ValueInteger))
-                                    {
-                                        long fileSize = 0;
-                                        while (fileSize != new FileInfo(f).Length && !backgroundWorker.CancellationPending)
-                                        {
-                                            Thread.Sleep(50);
-                                            fileSize = new FileInfo(f).Length;
-                                        }
-                                        formMain.ReadImage(f);
-                                    }
+                                    fileSize = current;
+                                    Thread.Sleep(50);
                                 }
                             }
+
+                            if (flag && !backgroundWorker.CancellationPending)
+                                formMain.ReadImage(f);
+
                         }
                     }
 

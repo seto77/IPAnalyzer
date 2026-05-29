@@ -119,17 +119,17 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="comboBoxXRayElement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 0</value>
+    <value>34, 0</value>
   </data>
   <data name="comboBoxXRayElement.ToolTip" xml:space="preserve">
     <value>特性X線を発する元素（1:H～98:Cf）を選択します。
 「0:custom」を選択すると、エネルギーまたは波長を自由に入力できます。</value>
   </data>
   <data name="radioButtonXray.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="radioButtonXray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 22</value>
+    <value>49, 21</value>
   </data>
   <data name="radioButtonXray.Text" xml:space="preserve">
     <value>X線</value>
@@ -138,13 +138,13 @@
     <value>波源を選択</value>
   </data>
   <data name="radioButtonElectron.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="radioButtonElectron.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 0</value>
+    <value>49, 0</value>
   </data>
   <data name="radioButtonElectron.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>67, 21</value>
   </data>
   <data name="radioButtonElectron.Text" xml:space="preserve">
     <value>電子線</value>
@@ -153,19 +153,16 @@
     <value>波源を選択</value>
   </data>
   <data name="comboBoxXrayLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 0</value>
+    <value>106, 0</value>
   </data>
   <data name="comboBoxXrayLine.ToolTip" xml:space="preserve">
     <value>特性X線の線を選択</value>
   </data>
-  <data name="numericBoxEnergy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="numericBoxEnergy.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="numericBoxEnergy.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="numericBoxEnergy.HeaderText" xml:space="preserve">
     <value>エネルギー</value>
@@ -180,22 +177,22 @@
     <value>波動エネルギーを入力</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 18</value>
+    <value>34, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>元素</value>
   </data>
-  <data name="numericBoxWaveLength.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="numericBoxWaveLength.FooterFont" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="numericBoxWaveLength.HeaderFont" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="numericBoxWaveLength.HeaderText" xml:space="preserve">
     <value>波長</value>
@@ -210,13 +207,13 @@
     <value>波長を入力</value>
   </data>
   <data name="radioButtonNeutron.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+    <value>Yu Gothic UI, 9.75pt</value>
   </data>
   <data name="radioButtonNeutron.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 0</value>
+    <value>116, 0</value>
   </data>
   <data name="radioButtonNeutron.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
+    <value>80, 21</value>
   </data>
   <data name="radioButtonNeutron.Text" xml:space="preserve">
     <value>中性子線</value>
@@ -224,19 +221,25 @@
   <data name="radioButtonNeutron.ToolTip" xml:space="preserve">
     <value>波源を選択</value>
   </data>
-  <data name="flowLayoutPanelWaveSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+  <data name="labelFlatWhite.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="flowLayoutPanelWaveSource.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="flowLayoutPanelElement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 25</value>
+    <value>162, 25</value>
   </data>
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 22</value>
+  <data name="flowLayoutPanelElement.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 118</value>
+  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 119</value>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -335,7 +335,7 @@
   <data name="&gt;&gt;textBoxPixelSizeYDev.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="textBoxPixelSizeY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPixelSizeY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonSchematicDiagram.Size" type="System.Drawing.Size, System.Drawing">
@@ -693,7 +693,7 @@
   <data name="&gt;&gt;textBoxRefinedWaveLength.ZOrder" xml:space="preserve">
     <value>35</value>
   </data>
-  <data name="textBoxTiltCorrectionSecondaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxTiltCorrectionSecondaryPhi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
@@ -856,7 +856,7 @@
   <data name="label61.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="textBoxPixelSizeXDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPixelSizeXDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="textBoxRefinedWaveLength.Font" type="System.Drawing.Font, System.Drawing">
@@ -1039,7 +1039,7 @@
   <data name="&gt;&gt;textBoxRefinedSecondaryTauDev.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="textBoxTiltCorrectionPrimaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxTiltCorrectionPrimaryPhi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;textBoxPixelSizeXDev.Name" xml:space="preserve">
@@ -1390,7 +1390,7 @@
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionYDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericalTextBoxPrimaryCenterPositionYDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonSecondaryGetProfile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1412,7 +1412,7 @@
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryPhi</value>
   </data>
-  <data name="textBoxTiltCorrectionPrimaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxTiltCorrectionPrimaryTau.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1567,7 +1567,7 @@
   <data name="textBoxPixelSizeXDev.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 24</value>
   </data>
-  <data name="numericTextBoxPrimaryFilmDistance.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericTextBoxPrimaryFilmDistance.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonGetCenterPositionFromMainForm2.Font" type="System.Drawing.Font, System.Drawing">
@@ -1750,7 +1750,7 @@
   <data name="label24.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="numericalTextBoxSphericalRadius.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericalTextBoxSphericalRadius.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label53.TabIndex" type="System.Int32, mscorlib">
@@ -1777,7 +1777,7 @@
   <data name="&gt;&gt;numericUpDownBandWidth.Name" xml:space="preserve">
     <value>numericUpDownBandWidth</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericalTextBoxPrimaryCenterPositionX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
@@ -1858,7 +1858,7 @@
   <data name="textBoxRefinedSecondaryTauDev.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 27</value>
   </data>
-  <data name="textBoxPrimaryFilmDistanceCopy.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPrimaryFilmDistanceCopy.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxRadiusInverseDev.Parent" xml:space="preserve">
@@ -1870,7 +1870,7 @@
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
     <value>1340, 337</value>
   </data>
-  <data name="textBoxRefinedSecondaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedSecondaryPhi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="statusStrip1.ToolTip" xml:space="preserve">
@@ -1943,7 +1943,7 @@
   <data name="checkBoxRefineTiltCorrection.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
   </data>
-  <data name="numericBoxPrimaryImageNum.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxPrimaryImageNum.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.Location" type="System.Drawing.Point, System.Drawing">
@@ -1976,7 +1976,7 @@
   <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="textBoxPixelKsi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPixelKsi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonGetWaveLengthFromWholePattern.Text" xml:space="preserve">
@@ -2366,7 +2366,7 @@
   <data name="numericUpDownSearchRange.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 21</value>
   </data>
-  <data name="textBoxPixelSizeX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPixelSizeX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label29.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -2424,7 +2424,7 @@
   <data name="&gt;&gt;buttonOpenPrimaryImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxRefinedSecondaryPhiDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedSecondaryPhiDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
@@ -2451,7 +2451,7 @@
   <data name="label74.TabIndex" type="System.Int32, mscorlib">
     <value>94</value>
   </data>
-  <data name="textBoxWaveLength.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxWaveLength.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
@@ -2490,7 +2490,7 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="numericTextBoxPrimaryCenterPositionY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericTextBoxPrimaryCenterPositionY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
@@ -2655,7 +2655,7 @@
   <data name="textBoxRefinedPrimaryFilmDistance.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="textBoxRefinedPrimaryPhi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPrimaryPhi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
@@ -2781,7 +2781,7 @@
   <data name="&gt;&gt;textBoxWaveLengthDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
   </data>
-  <data name="textBoxRefinedPixelKsiDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPixelKsiDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.TabIndex" type="System.Int32, mscorlib">
@@ -3009,13 +3009,13 @@
   <data name="&gt;&gt;label41.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxRefinedSecondaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedSecondaryTau.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="numericBoxSecondaryImageNum.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 30</value>
   </data>
-  <data name="numericalTextBoxRefinedSphericalRadius.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericalTextBoxRefinedSphericalRadius.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="textBoxPixelSizeX.Location" type="System.Drawing.Point, System.Drawing">
@@ -3101,7 +3101,7 @@
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="textBoxRefinedSecondaryTauDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedSecondaryTauDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;label42.Parent" xml:space="preserve">
@@ -3307,7 +3307,7 @@
   <data name="&gt;&gt;label60.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxTiltCorrectionSecondaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxTiltCorrectionSecondaryTau.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="groupBoxSecondaryImage.Enabled" type="System.Boolean, mscorlib">
@@ -3408,7 +3408,7 @@
   <data name="numericalTextBoxPrimaryCenterPositionX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="textBoxRefinedPixelSizeY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPixelSizeY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryFilmDistance.ZOrder" xml:space="preserve">
@@ -3675,7 +3675,7 @@
   <data name="textBoxCameraLengthDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="numericalTextBoxPrimaryCenterPositionXDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericalTextBoxPrimaryCenterPositionXDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;label33.Type" xml:space="preserve">
@@ -3927,7 +3927,7 @@
   <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
     <value>「Secondary」のファイルを読み込みます。</value>
   </data>
-  <data name="textBoxFilmDistanceDiscrepancy.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxFilmDistanceDiscrepancy.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="textBoxRefinedSecondaryPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -4077,7 +4077,7 @@
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
     <value>71</value>
   </data>
-  <data name="textBoxRefinedPrimaryTau.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPrimaryTau.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonStopRefinements.TabIndex" type="System.Int32, mscorlib">
@@ -4209,7 +4209,7 @@
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="numericalTextBoxRadiusInverseDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericalTextBoxRadiusInverseDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="checkBoxSphericalCorrection.Text" xml:space="preserve">
@@ -4344,7 +4344,7 @@
   <data name="&gt;&gt;label68.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
   </data>
-  <data name="textBoxWaveLengthDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxWaveLengthDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label61.TabIndex" type="System.Int32, mscorlib">
@@ -4729,7 +4729,7 @@
   <data name="&gt;&gt;label75.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxRefinedPrimaryTauDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPrimaryTauDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonGetCameraLenghtFromWholePattern.Size" type="System.Drawing.Size, System.Drawing">
@@ -4949,7 +4949,7 @@
   <data name="&gt;&gt;checkBoxCenterPosition.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxRefinedPixelSizeX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPixelSizeX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;label48.Type" xml:space="preserve">
@@ -5060,7 +5060,7 @@
   <data name="buttonOpenPrimaryImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="textBoxRefinedWaveLength.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedWaveLength.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
@@ -5339,7 +5339,7 @@
   <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBoxPixelSizeYDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPixelSizeYDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -5754,7 +5754,7 @@
   <data name="label53.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
-  <data name="textBoxRefinedPrimaryFilmDistance.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPrimaryFilmDistance.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label44.ToolTip" xml:space="preserve">
@@ -5805,7 +5805,7 @@
   <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
   </data>
-  <data name="textBoxRefinedPrimaryPhiDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPrimaryPhiDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
@@ -5896,7 +5896,7 @@
   <data name="checkBoxShowEachPeaks.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="textBoxPrimaryFilmDistanceCopy2.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxPrimaryFilmDistanceCopy2.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
@@ -6026,7 +6026,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>mm</value>
   </data>
-  <data name="textBoxRefinedPixelKsi.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxRefinedPixelKsi.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="pictureBoxCameraLength.TabIndex" type="System.Int32, mscorlib">
@@ -6132,7 +6132,7 @@
   <data name="textBoxRefinedPixelSizeX.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 73</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionYDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericTextBoxSecondaryCenterPositionYDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
@@ -6165,10 +6165,10 @@
   <data name="textBoxPixelSizeX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionXDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericTextBoxSecondaryCenterPositionXDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="numericBoxLowerThan.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxLowerThan.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="label33.TabIndex" type="System.Int32, mscorlib">
@@ -6231,7 +6231,7 @@
   <data name="&gt;&gt;label49.ZOrder" xml:space="preserve">
     <value>64</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionX.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericTextBoxSecondaryCenterPositionX.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="&gt;&gt;numericalTextBoxPrimaryCenterPositionYDev.ZOrder" xml:space="preserve">
@@ -6281,7 +6281,7 @@
   <data name="&gt;&gt;buttonSendMainForm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxCameraLengthDev.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxCameraLengthDev.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="checkBoxUseStandardCrystal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -6673,7 +6673,7 @@
   <data name="&gt;&gt;pictureBoxTiltCorrectionTau1.Name" xml:space="preserve">
     <value>pictureBoxTiltCorrectionTau1</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionY.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericTextBoxSecondaryCenterPositionY.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="textBoxCameraLengthDev.Font" type="System.Drawing.Font, System.Drawing">
@@ -7087,7 +7087,7 @@
   <data name="numericalTextBoxPrimaryCenterPositionXDev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="numericBoxSecondaryImageNum.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxSecondaryImageNum.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -7258,7 +7258,7 @@
   <data name="&gt;&gt;label19.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="numericBoxAwayFrom.TextFont" type="System.Drawing.Font, System.Drawing">
+  <data name="numericBoxAwayFrom.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="&gt;&gt;buttonPrimaryGetProfile.ZOrder" xml:space="preserve">

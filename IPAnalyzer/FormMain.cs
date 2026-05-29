@@ -20,6 +20,8 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 #endregion
 
 namespace IPAnalyzer;

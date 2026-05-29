@@ -431,7 +431,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxPrimaryImageNum.Name = "numericBoxPrimaryImageNum";
         numericBoxPrimaryImageNum.SkipEventDuringInput = false;
         numericBoxPrimaryImageNum.SmartIncrement = true;
-        numericBoxPrimaryImageNum.ThonsandsSeparator = true;
+        numericBoxPrimaryImageNum.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericBoxPrimaryImageNum, resources.GetString("numericBoxPrimaryImageNum.ToolTip"));
         // 
         // numericTextBoxPrimaryCenterPositionY
@@ -443,7 +443,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxPrimaryCenterPositionY.Name = "numericTextBoxPrimaryCenterPositionY";
         numericTextBoxPrimaryCenterPositionY.SkipEventDuringInput = false;
         numericTextBoxPrimaryCenterPositionY.SmartIncrement = true;
-        numericTextBoxPrimaryCenterPositionY.ThonsandsSeparator = true;
+        numericTextBoxPrimaryCenterPositionY.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericTextBoxPrimaryCenterPositionY, resources.GetString("numericTextBoxPrimaryCenterPositionY.ToolTip"));
         numericTextBoxPrimaryCenterPositionY.ValueChanged += textBox_TextChanged;
         numericTextBoxPrimaryCenterPositionY.DoubleClick += textBoxPrimaryCenterPositionX_DoubleClick;
@@ -457,7 +457,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxPrimaryFilmDistance.Name = "numericTextBoxPrimaryFilmDistance";
         numericTextBoxPrimaryFilmDistance.SkipEventDuringInput = false;
         numericTextBoxPrimaryFilmDistance.SmartIncrement = true;
-        numericTextBoxPrimaryFilmDistance.ThonsandsSeparator = true;
+        numericTextBoxPrimaryFilmDistance.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericTextBoxPrimaryFilmDistance, resources.GetString("numericTextBoxPrimaryFilmDistance.ToolTip"));
         numericTextBoxPrimaryFilmDistance.ValueChanged += numericTextBoxPrimaryFilmDistance_TextChanged;
         // 
@@ -470,7 +470,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxPrimaryCenterPositionX.Name = "numericalTextBoxPrimaryCenterPositionX";
         numericalTextBoxPrimaryCenterPositionX.SkipEventDuringInput = false;
         numericalTextBoxPrimaryCenterPositionX.SmartIncrement = true;
-        numericalTextBoxPrimaryCenterPositionX.ThonsandsSeparator = true;
+        numericalTextBoxPrimaryCenterPositionX.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericalTextBoxPrimaryCenterPositionX, resources.GetString("numericalTextBoxPrimaryCenterPositionX.ToolTip"));
         numericalTextBoxPrimaryCenterPositionX.ValueChanged += textBox_TextChanged;
         numericalTextBoxPrimaryCenterPositionX.DoubleClick += textBoxPrimaryCenterPositionX_DoubleClick;
@@ -558,8 +558,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxPrimaryCenterPositionYDev.ReadOnly = true;
         numericalTextBoxPrimaryCenterPositionYDev.SkipEventDuringInput = false;
         numericalTextBoxPrimaryCenterPositionYDev.SmartIncrement = true;
-        numericalTextBoxPrimaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        numericalTextBoxPrimaryCenterPositionYDev.ThonsandsSeparator = true;
+        numericalTextBoxPrimaryCenterPositionYDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        numericalTextBoxPrimaryCenterPositionYDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericalTextBoxPrimaryCenterPositionYDev, resources.GetString("numericalTextBoxPrimaryCenterPositionYDev.ToolTip"));
         numericalTextBoxPrimaryCenterPositionYDev.WordWrap = false;
         // 
@@ -574,8 +574,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxPrimaryCenterPositionXDev.ReadOnly = true;
         numericalTextBoxPrimaryCenterPositionXDev.SkipEventDuringInput = false;
         numericalTextBoxPrimaryCenterPositionXDev.SmartIncrement = true;
-        numericalTextBoxPrimaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        numericalTextBoxPrimaryCenterPositionXDev.ThonsandsSeparator = true;
+        numericalTextBoxPrimaryCenterPositionXDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        numericalTextBoxPrimaryCenterPositionXDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericalTextBoxPrimaryCenterPositionXDev, resources.GetString("numericalTextBoxPrimaryCenterPositionXDev.ToolTip"));
         numericalTextBoxPrimaryCenterPositionXDev.WordWrap = false;
         // 
@@ -639,7 +639,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxSecondaryImageNum.Name = "numericBoxSecondaryImageNum";
         numericBoxSecondaryImageNum.SkipEventDuringInput = false;
         numericBoxSecondaryImageNum.SmartIncrement = true;
-        numericBoxSecondaryImageNum.ThonsandsSeparator = true;
+        numericBoxSecondaryImageNum.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericBoxSecondaryImageNum, resources.GetString("numericBoxSecondaryImageNum.ToolTip"));
         // 
         // numericTextBoxSecondaryCenterPositionY
@@ -651,7 +651,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionY.Name = "numericTextBoxSecondaryCenterPositionY";
         numericTextBoxSecondaryCenterPositionY.SkipEventDuringInput = false;
         numericTextBoxSecondaryCenterPositionY.SmartIncrement = true;
-        numericTextBoxSecondaryCenterPositionY.ThonsandsSeparator = true;
+        numericTextBoxSecondaryCenterPositionY.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionY, resources.GetString("numericTextBoxSecondaryCenterPositionY.ToolTip"));
         numericTextBoxSecondaryCenterPositionY.ValueChanged += textBox_TextChanged;
         numericTextBoxSecondaryCenterPositionY.DoubleClick += textBoxSecondaryCenterPositionX_DoubleClick;
@@ -673,7 +673,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionX.Name = "numericTextBoxSecondaryCenterPositionX";
         numericTextBoxSecondaryCenterPositionX.SkipEventDuringInput = false;
         numericTextBoxSecondaryCenterPositionX.SmartIncrement = true;
-        numericTextBoxSecondaryCenterPositionX.ThonsandsSeparator = true;
+        numericTextBoxSecondaryCenterPositionX.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionX, resources.GetString("numericTextBoxSecondaryCenterPositionX.ToolTip"));
         numericTextBoxSecondaryCenterPositionX.ValueChanged += textBox_TextChanged;
         numericTextBoxSecondaryCenterPositionX.DoubleClick += textBoxSecondaryCenterPositionX_DoubleClick;
@@ -696,7 +696,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxFilmDistanceDiscrepancy.RadianValue = 1.7453292519943295D;
         textBoxFilmDistanceDiscrepancy.SkipEventDuringInput = false;
         textBoxFilmDistanceDiscrepancy.SmartIncrement = true;
-        textBoxFilmDistanceDiscrepancy.ThonsandsSeparator = true;
+        textBoxFilmDistanceDiscrepancy.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxFilmDistanceDiscrepancy, resources.GetString("textBoxFilmDistanceDiscrepancy.ToolTip"));
         textBoxFilmDistanceDiscrepancy.Value = 100D;
         textBoxFilmDistanceDiscrepancy.WordWrap = false;
@@ -714,8 +714,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPrimaryFilmDistanceCopy.ReadOnly = true;
         textBoxPrimaryFilmDistanceCopy.SkipEventDuringInput = false;
         textBoxPrimaryFilmDistanceCopy.SmartIncrement = true;
-        textBoxPrimaryFilmDistanceCopy.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxPrimaryFilmDistanceCopy.ThonsandsSeparator = true;
+        textBoxPrimaryFilmDistanceCopy.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxPrimaryFilmDistanceCopy.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPrimaryFilmDistanceCopy, resources.GetString("textBoxPrimaryFilmDistanceCopy.ToolTip"));
         textBoxPrimaryFilmDistanceCopy.Value = 445D;
         textBoxPrimaryFilmDistanceCopy.WordWrap = false;
@@ -783,8 +783,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionYDev.ReadOnly = true;
         numericTextBoxSecondaryCenterPositionYDev.SkipEventDuringInput = false;
         numericTextBoxSecondaryCenterPositionYDev.SmartIncrement = true;
-        numericTextBoxSecondaryCenterPositionYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        numericTextBoxSecondaryCenterPositionYDev.ThonsandsSeparator = true;
+        numericTextBoxSecondaryCenterPositionYDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        numericTextBoxSecondaryCenterPositionYDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionYDev, resources.GetString("numericTextBoxSecondaryCenterPositionYDev.ToolTip"));
         numericTextBoxSecondaryCenterPositionYDev.WordWrap = false;
         // 
@@ -799,8 +799,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionXDev.ReadOnly = true;
         numericTextBoxSecondaryCenterPositionXDev.SkipEventDuringInput = false;
         numericTextBoxSecondaryCenterPositionXDev.SmartIncrement = true;
-        numericTextBoxSecondaryCenterPositionXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        numericTextBoxSecondaryCenterPositionXDev.ThonsandsSeparator = true;
+        numericTextBoxSecondaryCenterPositionXDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        numericTextBoxSecondaryCenterPositionXDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionXDev, resources.GetString("numericTextBoxSecondaryCenterPositionXDev.ToolTip"));
         numericTextBoxSecondaryCenterPositionXDev.WordWrap = false;
         // 
@@ -1206,7 +1206,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelKsi.Name = "textBoxPixelKsi";
         textBoxPixelKsi.SkipEventDuringInput = false;
         textBoxPixelKsi.SmartIncrement = true;
-        textBoxPixelKsi.ThonsandsSeparator = true;
+        textBoxPixelKsi.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPixelKsi, resources.GetString("textBoxPixelKsi.ToolTip"));
         textBoxPixelKsi.WordWrap = false;
         textBoxPixelKsi.TextChanged += textBox_TextChanged;
@@ -1221,7 +1221,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionSecondaryTau.Name = "textBoxTiltCorrectionSecondaryTau";
         textBoxTiltCorrectionSecondaryTau.SkipEventDuringInput = false;
         textBoxTiltCorrectionSecondaryTau.SmartIncrement = true;
-        textBoxTiltCorrectionSecondaryTau.ThonsandsSeparator = true;
+        textBoxTiltCorrectionSecondaryTau.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxTiltCorrectionSecondaryTau, resources.GetString("textBoxTiltCorrectionSecondaryTau.ToolTip"));
         textBoxTiltCorrectionSecondaryTau.WordWrap = false;
         textBoxTiltCorrectionSecondaryTau.TextChanged += textBox_TextChanged;
@@ -1236,7 +1236,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionPrimaryTau.Name = "textBoxTiltCorrectionPrimaryTau";
         textBoxTiltCorrectionPrimaryTau.SkipEventDuringInput = false;
         textBoxTiltCorrectionPrimaryTau.SmartIncrement = true;
-        textBoxTiltCorrectionPrimaryTau.ThonsandsSeparator = true;
+        textBoxTiltCorrectionPrimaryTau.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxTiltCorrectionPrimaryTau, resources.GetString("textBoxTiltCorrectionPrimaryTau.ToolTip"));
         textBoxTiltCorrectionPrimaryTau.WordWrap = false;
         textBoxTiltCorrectionPrimaryTau.TextChanged += textBox_TextChanged;
@@ -1251,7 +1251,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxSphericalRadius.Name = "numericalTextBoxSphericalRadius";
         numericalTextBoxSphericalRadius.SkipEventDuringInput = false;
         numericalTextBoxSphericalRadius.SmartIncrement = true;
-        numericalTextBoxSphericalRadius.ThonsandsSeparator = true;
+        numericalTextBoxSphericalRadius.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericalTextBoxSphericalRadius, resources.GetString("numericalTextBoxSphericalRadius.ToolTip"));
         numericalTextBoxSphericalRadius.WordWrap = false;
         numericalTextBoxSphericalRadius.TextChanged += textBox_TextChanged;
@@ -1266,7 +1266,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionSecondaryPhi.Name = "textBoxTiltCorrectionSecondaryPhi";
         textBoxTiltCorrectionSecondaryPhi.SkipEventDuringInput = false;
         textBoxTiltCorrectionSecondaryPhi.SmartIncrement = true;
-        textBoxTiltCorrectionSecondaryPhi.ThonsandsSeparator = true;
+        textBoxTiltCorrectionSecondaryPhi.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxTiltCorrectionSecondaryPhi, resources.GetString("textBoxTiltCorrectionSecondaryPhi.ToolTip"));
         textBoxTiltCorrectionSecondaryPhi.WordWrap = false;
         textBoxTiltCorrectionSecondaryPhi.TextChanged += textBox_TextChanged;
@@ -1281,7 +1281,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionPrimaryPhi.Name = "textBoxTiltCorrectionPrimaryPhi";
         textBoxTiltCorrectionPrimaryPhi.SkipEventDuringInput = false;
         textBoxTiltCorrectionPrimaryPhi.SmartIncrement = true;
-        textBoxTiltCorrectionPrimaryPhi.ThonsandsSeparator = true;
+        textBoxTiltCorrectionPrimaryPhi.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxTiltCorrectionPrimaryPhi, resources.GetString("textBoxTiltCorrectionPrimaryPhi.ToolTip"));
         textBoxTiltCorrectionPrimaryPhi.WordWrap = false;
         textBoxTiltCorrectionPrimaryPhi.TextChanged += textBox_TextChanged;
@@ -1299,8 +1299,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelKsiDev.SkipEventDuringInput = false;
         textBoxRefinedPixelKsiDev.SmartIncrement = true;
         textBoxRefinedPixelKsiDev.TabStop = false;
-        textBoxRefinedPixelKsiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPixelKsiDev.ThonsandsSeparator = true;
+        textBoxRefinedPixelKsiDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPixelKsiDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPixelKsiDev, resources.GetString("textBoxRefinedPixelKsiDev.ToolTip"));
         textBoxRefinedPixelKsiDev.WordWrap = false;
         // 
@@ -1335,8 +1335,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxWaveLengthDev.SkipEventDuringInput = false;
         textBoxWaveLengthDev.SmartIncrement = true;
         textBoxWaveLengthDev.TabStop = false;
-        textBoxWaveLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxWaveLengthDev.ThonsandsSeparator = true;
+        textBoxWaveLengthDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxWaveLengthDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxWaveLengthDev, resources.GetString("textBoxWaveLengthDev.ToolTip"));
         textBoxWaveLengthDev.WordWrap = false;
         // 
@@ -1351,8 +1351,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelKsi.SkipEventDuringInput = false;
         textBoxRefinedPixelKsi.SmartIncrement = true;
         textBoxRefinedPixelKsi.TabStop = false;
-        textBoxRefinedPixelKsi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPixelKsi.ThonsandsSeparator = true;
+        textBoxRefinedPixelKsi.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPixelKsi.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPixelKsi, resources.GetString("textBoxRefinedPixelKsi.ToolTip"));
         textBoxRefinedPixelKsi.WordWrap = false;
         // 
@@ -1386,8 +1386,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPrimaryFilmDistanceCopy2.SkipEventDuringInput = false;
         textBoxPrimaryFilmDistanceCopy2.SmartIncrement = true;
         textBoxPrimaryFilmDistanceCopy2.TabStop = false;
-        textBoxPrimaryFilmDistanceCopy2.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxPrimaryFilmDistanceCopy2.ThonsandsSeparator = true;
+        textBoxPrimaryFilmDistanceCopy2.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxPrimaryFilmDistanceCopy2.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPrimaryFilmDistanceCopy2, resources.GetString("textBoxPrimaryFilmDistanceCopy2.ToolTip"));
         textBoxPrimaryFilmDistanceCopy2.Value = 445D;
         textBoxPrimaryFilmDistanceCopy2.WordWrap = false;
@@ -1404,8 +1404,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxRadiusInverseDev.SkipEventDuringInput = false;
         numericalTextBoxRadiusInverseDev.SmartIncrement = true;
         numericalTextBoxRadiusInverseDev.TabStop = false;
-        numericalTextBoxRadiusInverseDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        numericalTextBoxRadiusInverseDev.ThonsandsSeparator = true;
+        numericalTextBoxRadiusInverseDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        numericalTextBoxRadiusInverseDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericalTextBoxRadiusInverseDev, resources.GetString("numericalTextBoxRadiusInverseDev.ToolTip"));
         numericalTextBoxRadiusInverseDev.WordWrap = false;
         // 
@@ -1421,8 +1421,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryTauDev.SkipEventDuringInput = false;
         textBoxRefinedSecondaryTauDev.SmartIncrement = true;
         textBoxRefinedSecondaryTauDev.TabStop = false;
-        textBoxRefinedSecondaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedSecondaryTauDev.ThonsandsSeparator = true;
+        textBoxRefinedSecondaryTauDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedSecondaryTauDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedSecondaryTauDev, resources.GetString("textBoxRefinedSecondaryTauDev.ToolTip"));
         textBoxRefinedSecondaryTauDev.WordWrap = false;
         // 
@@ -1438,8 +1438,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeYDev.SkipEventDuringInput = false;
         textBoxPixelSizeYDev.SmartIncrement = true;
         textBoxPixelSizeYDev.TabStop = false;
-        textBoxPixelSizeYDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxPixelSizeYDev.ThonsandsSeparator = true;
+        textBoxPixelSizeYDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxPixelSizeYDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPixelSizeYDev, resources.GetString("textBoxPixelSizeYDev.ToolTip"));
         textBoxPixelSizeYDev.WordWrap = false;
         // 
@@ -1453,7 +1453,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxWaveLength.RadianValue = 0.0069813170079773184D;
         textBoxWaveLength.SkipEventDuringInput = false;
         textBoxWaveLength.SmartIncrement = true;
-        textBoxWaveLength.ThonsandsSeparator = true;
+        textBoxWaveLength.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxWaveLength, resources.GetString("textBoxWaveLength.ToolTip"));
         textBoxWaveLength.Value = 0.4D;
         textBoxWaveLength.WordWrap = false;
@@ -1473,8 +1473,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelSizeY.SkipEventDuringInput = false;
         textBoxRefinedPixelSizeY.SmartIncrement = true;
         textBoxRefinedPixelSizeY.TabStop = false;
-        textBoxRefinedPixelSizeY.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPixelSizeY.ThonsandsSeparator = true;
+        textBoxRefinedPixelSizeY.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPixelSizeY.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPixelSizeY, resources.GetString("textBoxRefinedPixelSizeY.ToolTip"));
         textBoxRefinedPixelSizeY.Value = 0.1D;
         textBoxRefinedPixelSizeY.WordWrap = false;
@@ -1491,8 +1491,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryTauDev.SkipEventDuringInput = false;
         textBoxRefinedPrimaryTauDev.SmartIncrement = true;
         textBoxRefinedPrimaryTauDev.TabStop = false;
-        textBoxRefinedPrimaryTauDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPrimaryTauDev.ThonsandsSeparator = true;
+        textBoxRefinedPrimaryTauDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPrimaryTauDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPrimaryTauDev, resources.GetString("textBoxRefinedPrimaryTauDev.ToolTip"));
         textBoxRefinedPrimaryTauDev.WordWrap = false;
         // 
@@ -1506,7 +1506,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
         textBoxPixelSizeY.SkipEventDuringInput = false;
         textBoxPixelSizeY.SmartIncrement = true;
-        textBoxPixelSizeY.ThonsandsSeparator = true;
+        textBoxPixelSizeY.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPixelSizeY, resources.GetString("textBoxPixelSizeY.ToolTip"));
         textBoxPixelSizeY.Value = 0.1D;
         textBoxPixelSizeY.WordWrap = false;
@@ -1525,8 +1525,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryPhiDev.SkipEventDuringInput = false;
         textBoxRefinedSecondaryPhiDev.SmartIncrement = true;
         textBoxRefinedSecondaryPhiDev.TabStop = false;
-        textBoxRefinedSecondaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedSecondaryPhiDev.ThonsandsSeparator = true;
+        textBoxRefinedSecondaryPhiDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedSecondaryPhiDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedSecondaryPhiDev, resources.GetString("textBoxRefinedSecondaryPhiDev.ToolTip"));
         textBoxRefinedSecondaryPhiDev.WordWrap = false;
         // 
@@ -1548,8 +1548,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryFilmDistance.SkipEventDuringInput = false;
         textBoxRefinedPrimaryFilmDistance.SmartIncrement = true;
         textBoxRefinedPrimaryFilmDistance.TabStop = false;
-        textBoxRefinedPrimaryFilmDistance.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPrimaryFilmDistance.ThonsandsSeparator = true;
+        textBoxRefinedPrimaryFilmDistance.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPrimaryFilmDistance.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPrimaryFilmDistance, resources.GetString("textBoxRefinedPrimaryFilmDistance.ToolTip"));
         textBoxRefinedPrimaryFilmDistance.Value = 400D;
         textBoxRefinedPrimaryFilmDistance.WordWrap = false;
@@ -1572,8 +1572,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryPhiDev.SkipEventDuringInput = false;
         textBoxRefinedPrimaryPhiDev.SmartIncrement = true;
         textBoxRefinedPrimaryPhiDev.TabStop = false;
-        textBoxRefinedPrimaryPhiDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPrimaryPhiDev.ThonsandsSeparator = true;
+        textBoxRefinedPrimaryPhiDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPrimaryPhiDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPrimaryPhiDev, resources.GetString("textBoxRefinedPrimaryPhiDev.ToolTip"));
         textBoxRefinedPrimaryPhiDev.WordWrap = false;
         // 
@@ -1587,7 +1587,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
         textBoxPixelSizeX.SkipEventDuringInput = false;
         textBoxPixelSizeX.SmartIncrement = true;
-        textBoxPixelSizeX.ThonsandsSeparator = true;
+        textBoxPixelSizeX.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPixelSizeX, resources.GetString("textBoxPixelSizeX.ToolTip"));
         textBoxPixelSizeX.Value = 0.1D;
         textBoxPixelSizeX.WordWrap = false;
@@ -1604,8 +1604,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedWaveLength.SkipEventDuringInput = false;
         textBoxRefinedWaveLength.SmartIncrement = true;
         textBoxRefinedWaveLength.TabStop = false;
-        textBoxRefinedWaveLength.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedWaveLength.ThonsandsSeparator = true;
+        textBoxRefinedWaveLength.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedWaveLength.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedWaveLength, resources.GetString("textBoxRefinedWaveLength.ToolTip"));
         textBoxRefinedWaveLength.Value = 0.4D;
         textBoxRefinedWaveLength.WordWrap = false;
@@ -1622,8 +1622,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelSizeX.SkipEventDuringInput = false;
         textBoxRefinedPixelSizeX.SmartIncrement = true;
         textBoxRefinedPixelSizeX.TabStop = false;
-        textBoxRefinedPixelSizeX.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPixelSizeX.ThonsandsSeparator = true;
+        textBoxRefinedPixelSizeX.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPixelSizeX.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPixelSizeX, resources.GetString("textBoxRefinedPixelSizeX.ToolTip"));
         textBoxRefinedPixelSizeX.Value = 0.1D;
         textBoxRefinedPixelSizeX.WordWrap = false;
@@ -1639,8 +1639,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxRefinedSphericalRadius.SkipEventDuringInput = false;
         numericalTextBoxRefinedSphericalRadius.SmartIncrement = true;
         numericalTextBoxRefinedSphericalRadius.TabStop = false;
-        numericalTextBoxRefinedSphericalRadius.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        numericalTextBoxRefinedSphericalRadius.ThonsandsSeparator = true;
+        numericalTextBoxRefinedSphericalRadius.ValueBackColor = System.Drawing.SystemColors.Control;
+        numericalTextBoxRefinedSphericalRadius.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericalTextBoxRefinedSphericalRadius, resources.GetString("numericalTextBoxRefinedSphericalRadius.ToolTip"));
         numericalTextBoxRefinedSphericalRadius.WordWrap = false;
         // 
@@ -1655,8 +1655,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryTau.SkipEventDuringInput = false;
         textBoxRefinedSecondaryTau.SmartIncrement = true;
         textBoxRefinedSecondaryTau.TabStop = false;
-        textBoxRefinedSecondaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedSecondaryTau.ThonsandsSeparator = true;
+        textBoxRefinedSecondaryTau.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedSecondaryTau.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedSecondaryTau, resources.GetString("textBoxRefinedSecondaryTau.ToolTip"));
         textBoxRefinedSecondaryTau.WordWrap = false;
         // 
@@ -1678,8 +1678,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeXDev.SkipEventDuringInput = false;
         textBoxPixelSizeXDev.SmartIncrement = true;
         textBoxPixelSizeXDev.TabStop = false;
-        textBoxPixelSizeXDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxPixelSizeXDev.ThonsandsSeparator = true;
+        textBoxPixelSizeXDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxPixelSizeXDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxPixelSizeXDev, resources.GetString("textBoxPixelSizeXDev.ToolTip"));
         textBoxPixelSizeXDev.WordWrap = false;
         // 
@@ -1694,8 +1694,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryTau.SkipEventDuringInput = false;
         textBoxRefinedPrimaryTau.SmartIncrement = true;
         textBoxRefinedPrimaryTau.TabStop = false;
-        textBoxRefinedPrimaryTau.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPrimaryTau.ThonsandsSeparator = true;
+        textBoxRefinedPrimaryTau.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPrimaryTau.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPrimaryTau, resources.GetString("textBoxRefinedPrimaryTau.ToolTip"));
         textBoxRefinedPrimaryTau.WordWrap = false;
         // 
@@ -1759,8 +1759,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxCameraLengthDev.SkipEventDuringInput = false;
         textBoxCameraLengthDev.SmartIncrement = true;
         textBoxCameraLengthDev.TabStop = false;
-        textBoxCameraLengthDev.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxCameraLengthDev.ThonsandsSeparator = true;
+        textBoxCameraLengthDev.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxCameraLengthDev.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxCameraLengthDev, resources.GetString("textBoxCameraLengthDev.ToolTip"));
         textBoxCameraLengthDev.WordWrap = false;
         // 
@@ -1781,8 +1781,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryPhi.SkipEventDuringInput = false;
         textBoxRefinedSecondaryPhi.SmartIncrement = true;
         textBoxRefinedSecondaryPhi.TabStop = false;
-        textBoxRefinedSecondaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedSecondaryPhi.ThonsandsSeparator = true;
+        textBoxRefinedSecondaryPhi.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedSecondaryPhi.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedSecondaryPhi, resources.GetString("textBoxRefinedSecondaryPhi.ToolTip"));
         textBoxRefinedSecondaryPhi.WordWrap = false;
         // 
@@ -1803,8 +1803,8 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryPhi.SkipEventDuringInput = false;
         textBoxRefinedPrimaryPhi.SmartIncrement = true;
         textBoxRefinedPrimaryPhi.TabStop = false;
-        textBoxRefinedPrimaryPhi.TextBoxBackColor = System.Drawing.SystemColors.Control;
-        textBoxRefinedPrimaryPhi.ThonsandsSeparator = true;
+        textBoxRefinedPrimaryPhi.ValueBackColor = System.Drawing.SystemColors.Control;
+        textBoxRefinedPrimaryPhi.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(textBoxRefinedPrimaryPhi, resources.GetString("textBoxRefinedPrimaryPhi.ToolTip"));
         textBoxRefinedPrimaryPhi.WordWrap = false;
         // 
@@ -2272,7 +2272,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxAwayFrom.RadianValue = 0.017453292519943295D;
         numericBoxAwayFrom.SkipEventDuringInput = false;
         numericBoxAwayFrom.SmartIncrement = true;
-        numericBoxAwayFrom.ThonsandsSeparator = true;
+        numericBoxAwayFrom.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericBoxAwayFrom, resources.GetString("numericBoxAwayFrom.ToolTip"));
         numericBoxAwayFrom.Value = 1D;
         numericBoxAwayFrom.WordWrap = false;
@@ -2290,7 +2290,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxLowerThan.RadianValue = 2.6179938779914944D;
         numericBoxLowerThan.SkipEventDuringInput = false;
         numericBoxLowerThan.SmartIncrement = true;
-        numericBoxLowerThan.ThonsandsSeparator = true;
+        numericBoxLowerThan.ThousandsSeparator = true;
         toolTipJapanese.SetToolTip(numericBoxLowerThan, resources.GetString("numericBoxLowerThan.ToolTip"));
         numericBoxLowerThan.Value = 150D;
         numericBoxLowerThan.WordWrap = false;

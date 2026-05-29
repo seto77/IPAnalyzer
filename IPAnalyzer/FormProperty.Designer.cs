@@ -470,7 +470,7 @@
             numericBoxFootPositionY.RoundErrorAccuracy = 8;
             numericBoxFootPositionY.SkipEventDuringInput = false;
             numericBoxFootPositionY.SmartIncrement = true;
-            numericBoxFootPositionY.ThonsandsSeparator = true;
+            numericBoxFootPositionY.ThousandsSeparator = true;
             numericBoxFootPositionY.Value = 1500D;
             numericBoxFootPositionY.ValueChanged += DetectorParameters_Changed;
             // 
@@ -485,7 +485,7 @@
             numericBoxFootPositionX.RoundErrorAccuracy = 8;
             numericBoxFootPositionX.SkipEventDuringInput = false;
             numericBoxFootPositionX.SmartIncrement = true;
-            numericBoxFootPositionX.ThonsandsSeparator = true;
+            numericBoxFootPositionX.ThousandsSeparator = true;
             numericBoxFootPositionX.Value = 1500D;
             numericBoxFootPositionX.ValueChanged += DetectorParameters_Changed;
             // 
@@ -513,7 +513,7 @@
             numericBoxCameraLength2.RoundErrorAccuracy = 8;
             numericBoxCameraLength2.SkipEventDuringInput = false;
             numericBoxCameraLength2.SmartIncrement = true;
-            numericBoxCameraLength2.ThonsandsSeparator = true;
+            numericBoxCameraLength2.ThousandsSeparator = true;
             numericBoxCameraLength2.Value = 445D;
             numericBoxCameraLength2.ValueChanged += DetectorParameters_Changed;
             // 
@@ -543,7 +543,7 @@
             numericBoxDirectSpotPositionY.RoundErrorAccuracy = 8;
             numericBoxDirectSpotPositionY.SkipEventDuringInput = false;
             numericBoxDirectSpotPositionY.SmartIncrement = true;
-            numericBoxDirectSpotPositionY.ThonsandsSeparator = true;
+            numericBoxDirectSpotPositionY.ThousandsSeparator = true;
             numericBoxDirectSpotPositionY.Value = 1500D;
             numericBoxDirectSpotPositionY.ValueChanged += DetectorParameters_Changed;
             // 
@@ -558,7 +558,7 @@
             numericBoxDirectSpotPositionX.RoundErrorAccuracy = 8;
             numericBoxDirectSpotPositionX.SkipEventDuringInput = false;
             numericBoxDirectSpotPositionX.SmartIncrement = true;
-            numericBoxDirectSpotPositionX.ThonsandsSeparator = true;
+            numericBoxDirectSpotPositionX.ThousandsSeparator = true;
             numericBoxDirectSpotPositionX.Value = 1500D;
             numericBoxDirectSpotPositionX.ValueChanged += DetectorParameters_Changed;
             // 
@@ -586,7 +586,7 @@
             numericBoxCameraLength1.RoundErrorAccuracy = 8;
             numericBoxCameraLength1.SkipEventDuringInput = false;
             numericBoxCameraLength1.SmartIncrement = true;
-            numericBoxCameraLength1.ThonsandsSeparator = true;
+            numericBoxCameraLength1.ThousandsSeparator = true;
             numericBoxCameraLength1.Value = 445D;
             numericBoxCameraLength1.ValueChanged += DetectorParameters_Changed;
             // 
@@ -608,7 +608,7 @@
             numericBoxPixelKsi.Name = "numericBoxPixelKsi";
             numericBoxPixelKsi.RoundErrorAccuracy = 8;
             numericBoxPixelKsi.SmartIncrement = true;
-            numericBoxPixelKsi.ThonsandsSeparator = true;
+            numericBoxPixelKsi.ThousandsSeparator = true;
             numericBoxPixelKsi.ValueChanged += DetectorParameters_Changed;
             // 
             // numericBoxPixelSizeY
@@ -621,7 +621,7 @@
             numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
             numericBoxPixelSizeY.RoundErrorAccuracy = 10;
             numericBoxPixelSizeY.SmartIncrement = true;
-            numericBoxPixelSizeY.ThonsandsSeparator = true;
+            numericBoxPixelSizeY.ThousandsSeparator = true;
             numericBoxPixelSizeY.Value = 0.1D;
             numericBoxPixelSizeY.ValueChanged += DetectorParameters_Changed;
             // 
@@ -635,7 +635,7 @@
             numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
             numericBoxPixelSizeX.RoundErrorAccuracy = 10;
             numericBoxPixelSizeX.SmartIncrement = true;
-            numericBoxPixelSizeX.ThonsandsSeparator = true;
+            numericBoxPixelSizeX.ThousandsSeparator = true;
             numericBoxPixelSizeX.Value = 0.1D;
             numericBoxPixelSizeX.ValueChanged += DetectorParameters_Changed;
             // 
@@ -656,7 +656,7 @@
             numericBoxGandlfiRadius.Name = "numericBoxGandlfiRadius";
             numericBoxGandlfiRadius.RoundErrorAccuracy = 8;
             numericBoxGandlfiRadius.SmartIncrement = true;
-            numericBoxGandlfiRadius.ThonsandsSeparator = true;
+            numericBoxGandlfiRadius.ThousandsSeparator = true;
             numericBoxGandlfiRadius.ValueChanged += DetectorParameters_Changed;
             // 
             // groupBoxSphericalCorrection
@@ -677,7 +677,7 @@
             numericBoxSphericalCorections.RoundErrorAccuracy = 8;
             numericBoxSphericalCorections.SkipEventDuringInput = false;
             numericBoxSphericalCorections.SmartIncrement = true;
-            numericBoxSphericalCorections.ThonsandsSeparator = true;
+            numericBoxSphericalCorections.ThousandsSeparator = true;
             numericBoxSphericalCorections.ValueChanged += DetectorParameters_Changed;
             // 
             // label26
@@ -704,7 +704,7 @@
             numericBoxTiltTau.RoundErrorAccuracy = 9;
             numericBoxTiltTau.SkipEventDuringInput = false;
             numericBoxTiltTau.SmartIncrement = true;
-            numericBoxTiltTau.ThonsandsSeparator = true;
+            numericBoxTiltTau.ThousandsSeparator = true;
             numericBoxTiltTau.ValueChanged += DetectorParameters_Changed;
             // 
             // numericBoxTiltPhi
@@ -717,7 +717,7 @@
             numericBoxTiltPhi.RoundErrorAccuracy = 8;
             numericBoxTiltPhi.SkipEventDuringInput = false;
             numericBoxTiltPhi.SmartIncrement = true;
-            numericBoxTiltPhi.ThonsandsSeparator = true;
+            numericBoxTiltPhi.ThousandsSeparator = true;
             numericBoxTiltPhi.ValueChanged += DetectorParameters_Changed;
             // 
             // tabPageIntegralRegion
@@ -964,7 +964,7 @@
             numericBoxRadialRange.RadianValue = 0.0017453292519943296D;
             numericBoxRadialRange.SkipEventDuringInput = false;
             numericBoxRadialRange.SmartIncrement = true;
-            numericBoxRadialRange.ThonsandsSeparator = true;
+            numericBoxRadialRange.ThousandsSeparator = true;
             numericBoxRadialRange.Value = 0.1D;
             numericBoxRadialRange.ValueChanged += numericBoxIntegralProperty_ValueChanged;
             // 
@@ -979,7 +979,7 @@
             numericBoxRadialRadius.RadianValue = 0.3490658503988659D;
             numericBoxRadialRadius.SkipEventDuringInput = false;
             numericBoxRadialRadius.SmartIncrement = true;
-            numericBoxRadialRadius.ThonsandsSeparator = true;
+            numericBoxRadialRadius.ThousandsSeparator = true;
             numericBoxRadialRadius.Value = 20D;
             numericBoxRadialRadius.ValueChanged += numericBoxIntegralProperty_ValueChanged;
             // 
@@ -994,7 +994,7 @@
             numericBoxRadialStep.RadianValue = 0.0008726646259971648D;
             numericBoxRadialStep.SkipEventDuringInput = false;
             numericBoxRadialStep.SmartIncrement = true;
-            numericBoxRadialStep.ThonsandsSeparator = true;
+            numericBoxRadialStep.ThousandsSeparator = true;
             numericBoxRadialStep.Value = 0.05D;
             numericBoxRadialStep.ValueChanged += numericBoxIntegralProperty_ValueChanged;
             // 
@@ -1074,7 +1074,7 @@
             numericBoxConcentricStep.RadianValue = 8.7266462599716482E-05D;
             numericBoxConcentricStep.ShowUpDown = true;
             numericBoxConcentricStep.SmartIncrement = true;
-            numericBoxConcentricStep.ThonsandsSeparator = true;
+            numericBoxConcentricStep.ThousandsSeparator = true;
             numericBoxConcentricStep.Value = 0.005D;
             numericBoxConcentricStep.ValueChanged += numericBoxIntegralProperty_ValueChanged;
             // 
@@ -1095,7 +1095,7 @@
             numericBoxConcentricEnd.RadianValue = 0.52359877559829882D;
             numericBoxConcentricEnd.ShowUpDown = true;
             numericBoxConcentricEnd.SmartIncrement = true;
-            numericBoxConcentricEnd.ThonsandsSeparator = true;
+            numericBoxConcentricEnd.ThousandsSeparator = true;
             numericBoxConcentricEnd.Value = 30D;
             numericBoxConcentricEnd.ValueChanged += numericBoxIntegralProperty_ValueChanged;
             // 
@@ -1116,7 +1116,7 @@
             numericBoxConcentricStart.RadianValue = 0.017453292519943295D;
             numericBoxConcentricStart.ShowUpDown = true;
             numericBoxConcentricStart.SmartIncrement = true;
-            numericBoxConcentricStart.ThonsandsSeparator = true;
+            numericBoxConcentricStart.ThousandsSeparator = true;
             numericBoxConcentricStart.Value = 1D;
             numericBoxConcentricStart.ValueChanged += numericBoxIntegralProperty_ValueChanged;
             // 
@@ -1456,7 +1456,7 @@
             numericBoxTest.RadianValue = 0.0087266462599716477D;
             numericBoxTest.SkipEventDuringInput = false;
             numericBoxTest.SmartIncrement = true;
-            numericBoxTest.ThonsandsSeparator = true;
+            numericBoxTest.ThousandsSeparator = true;
             numericBoxTest.Value = 0.5D;
             // 
             // checkBoxTest
@@ -1968,7 +1968,7 @@
             numericBoxFindCenterPeakFittingRange.RadianValue = 0.0017453292519943296D;
             numericBoxFindCenterPeakFittingRange.SkipEventDuringInput = false;
             numericBoxFindCenterPeakFittingRange.SmartIncrement = true;
-            numericBoxFindCenterPeakFittingRange.ThonsandsSeparator = true;
+            numericBoxFindCenterPeakFittingRange.ThousandsSeparator = true;
             numericBoxFindCenterPeakFittingRange.Value = 0.1D;
             // 
             // flowLayoutPanelFindCenterOption
@@ -1987,7 +1987,7 @@
             numericBoxFindCenterSearchArea.RadianValue = 0.13962634015954636D;
             numericBoxFindCenterSearchArea.SkipEventDuringInput = false;
             numericBoxFindCenterSearchArea.SmartIncrement = true;
-            numericBoxFindCenterSearchArea.ThonsandsSeparator = true;
+            numericBoxFindCenterSearchArea.ThousandsSeparator = true;
             numericBoxFindCenterSearchArea.Value = 8D;
             // 
             // checkBoxExcludeMaskedPixels
@@ -2052,7 +2052,7 @@
             numericBoxBackgroundCoeff.Name = "numericBoxBackgroundCoeff";
             numericBoxBackgroundCoeff.RadianValue = 0.017453292519943295D;
             numericBoxBackgroundCoeff.SkipEventDuringInput = false;
-            numericBoxBackgroundCoeff.ThonsandsSeparator = true;
+            numericBoxBackgroundCoeff.ThousandsSeparator = true;
             numericBoxBackgroundCoeff.UpDown_Increment = 0.001D;
             numericBoxBackgroundCoeff.Value = 1D;
             numericBoxBackgroundCoeff.ValueChanged += NumericBoxBackgroundCoeff_ValueChanged;
