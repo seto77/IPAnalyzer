@@ -73,7 +73,6 @@ public partial class FormMacro : FormBase
     public FormMacro(ScriptEngine engine, object scopeObject)
     {
         InitializeComponent();
-        HelpPage = "20-macro"; //260529Cl 追加
 
         Engine = engine;
         // 260414Cl scopeObject を MacroBase 型へ。3 アプリすべて MacroBase 派生を渡している。

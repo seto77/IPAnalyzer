@@ -301,9 +301,9 @@
             numericBoxVolumeAng.SkipEventDuringInput = false;
             numericBoxVolumeAng.SmartIncrement = true;
             numericBoxVolumeAng.TabStop = false;
-            toolTip.SetToolTip(numericBoxVolumeAng, resources.GetString("numericBoxVolumeAng.ToolTip"));
             numericBoxVolumeAng.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxVolumeAng.ValueFontSize = 9F;
+            toolTip.SetToolTip(numericBoxVolumeAng, resources.GetString("numericBoxVolumeAng.ToolTip"));
             // 
             // numericBoxCellVolumeNm
             // 
@@ -318,9 +318,9 @@
             numericBoxCellVolumeNm.SkipEventDuringInput = false;
             numericBoxCellVolumeNm.SmartIncrement = true;
             numericBoxCellVolumeNm.TabStop = false;
-            toolTip.SetToolTip(numericBoxCellVolumeNm, resources.GetString("numericBoxCellVolumeNm.ToolTip"));
             numericBoxCellVolumeNm.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxCellVolumeNm.ValueFontSize = 9F;
+            toolTip.SetToolTip(numericBoxCellVolumeNm, resources.GetString("numericBoxCellVolumeNm.ToolTip"));
             // 
             // numericBoxCellMass
             // 
@@ -335,9 +335,9 @@
             numericBoxCellMass.SkipEventDuringInput = false;
             numericBoxCellMass.SmartIncrement = true;
             numericBoxCellMass.TabStop = false;
-            toolTip.SetToolTip(numericBoxCellMass, resources.GetString("numericBoxCellMass.ToolTip"));
             numericBoxCellMass.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxCellMass.ValueFontSize = 9F;
+            toolTip.SetToolTip(numericBoxCellMass, resources.GetString("numericBoxCellMass.ToolTip"));
             // 
             // numericBoxMolarVolume
             // 
@@ -352,9 +352,9 @@
             numericBoxMolarVolume.SkipEventDuringInput = false;
             numericBoxMolarVolume.SmartIncrement = true;
             numericBoxMolarVolume.TabStop = false;
-            toolTip.SetToolTip(numericBoxMolarVolume, resources.GetString("numericBoxMolarVolume.ToolTip"));
             numericBoxMolarVolume.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxMolarVolume.ValueFontSize = 9F;
+            toolTip.SetToolTip(numericBoxMolarVolume, resources.GetString("numericBoxMolarVolume.ToolTip"));
             // 
             // numericBoxMolarMass
             // 
@@ -369,9 +369,9 @@
             numericBoxMolarMass.SkipEventDuringInput = false;
             numericBoxMolarMass.SmartIncrement = true;
             numericBoxMolarMass.TabStop = false;
-            toolTip.SetToolTip(numericBoxMolarMass, resources.GetString("numericBoxMolarMass.ToolTip"));
             numericBoxMolarMass.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxMolarMass.ValueFontSize = 9F;
+            toolTip.SetToolTip(numericBoxMolarMass, resources.GetString("numericBoxMolarMass.ToolTip"));
             // 
             // numericBoxDensity
             // 
@@ -383,10 +383,10 @@
             numericBoxDensity.SkipEventDuringInput = false;
             numericBoxDensity.SmartIncrement = true;
             numericBoxDensity.TabStop = false;
-            numericBoxDensity.ThousandsSeparator = true;
-            toolTip.SetToolTip(numericBoxDensity, resources.GetString("numericBoxDensity.ToolTip"));
             numericBoxDensity.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxDensity.ValueFontSize = 9F;
+            numericBoxDensity.ThousandsSeparator = true;
+            toolTip.SetToolTip(numericBoxDensity, resources.GetString("numericBoxDensity.ToolTip"));
             // 
             // flowLayoutPanelSymmetryActions
             // 
@@ -1142,10 +1142,10 @@
             numericBoxZnumber.SkipEventDuringInput = false;
             numericBoxZnumber.SmartIncrement = true;
             numericBoxZnumber.TabStop = false;
-            numericBoxZnumber.ThousandsSeparator = true;
-            toolTip.SetToolTip(numericBoxZnumber, resources.GetString("numericBoxZnumber.ToolTip1"));
             numericBoxZnumber.ValueBackColor = System.Drawing.SystemColors.Control;
             numericBoxZnumber.ValueFontSize = 9F;
+            numericBoxZnumber.ThousandsSeparator = true;
+            toolTip.SetToolTip(numericBoxZnumber, resources.GetString("numericBoxZnumber.ToolTip1"));
             // 
             // contextMenuStrip
             // 

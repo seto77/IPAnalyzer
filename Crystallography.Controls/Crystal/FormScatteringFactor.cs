@@ -36,7 +36,6 @@ public partial class FormScatteringFactor : FormBase
     public FormScatteringFactor()
     {
         InitializeComponent();
-        HelpPage = "3-scattering-factor"; //260529Cl 追加
     }
     private void FormCrystallographicInformation_Load(object sender, EventArgs e)
     {

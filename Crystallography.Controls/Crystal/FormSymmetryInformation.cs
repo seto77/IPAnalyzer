@@ -30,7 +30,6 @@ public partial class FormSymmetryInformation : FormBase
     public FormSymmetryInformation()
     {
         InitializeComponent(); // (260426Ch)
-        HelpPage = "2-symmetry-information"; //260529Cl 追加
     }
 
     /// <summary>
