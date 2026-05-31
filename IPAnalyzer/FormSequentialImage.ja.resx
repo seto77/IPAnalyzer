@@ -209,4 +209,28 @@
   <data name="$this.Text" xml:space="preserve">
     <value>シーケンシャル画像 オプション</value>
   </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>画像スタックのフレームをスクロールして表示します。選択フレームへ移動し、その1次元プロファイルを再計算して再描画します。範囲は0〜(フレーム数-1)。複数選択モードでは無効。</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>スタック内の全フレーム一覧。クリックで該当フレームを表示。複数選択モードではCtrl/Shift(Ctrl+Aで全選択)で複数フレームを選び、平均/積算の対象にできます。HDF5フレームには3桁の連番が付きます。</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>複数フレームの同時選択を許可します(平均/積算の選択肢が有効になり、フレームスライダーは無効化)。オフ時は1フレームずつ表示します。</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>選択した複数フレームの画素ごとの平均(強度の合計をフレーム数で割った値)を表示します。積算とは排他。複数選択が必要です。</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>選択した複数フレームの画素ごとの合計(強度を割らずに加算)を表示します。弱いフレームの計数統計を向上させます。平均とは排他。複数選択が必要です。</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>「プロファイル取得」(2theta/d/qに対する1次元強度への放射方向積分)を、上のリストで現在選択しているフレームだけに対して実行します。</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>「プロファイル取得」(1次元プロファイルへの放射方向積分)を、現在最前面に表示している1フレームのみに対して実行します。</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>「プロファイル取得」(1次元への放射方向積分)を、リストの選択に関係なくスタック内の全フレームに対して実行します(フレームごとに1本のプロファイルを生成)。</value>
+  </data>
 </root>

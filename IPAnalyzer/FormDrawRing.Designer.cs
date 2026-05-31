@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrawRing));
             this.textBoxR = new System.Windows.Forms.TextBox();
             this.textBoxTwoTheta = new System.Windows.Forms.TextBox();
@@ -45,6 +47,7 @@
             // 
             this.textBoxR.Location = new System.Drawing.Point(20, 3);
             this.textBoxR.Name = "textBoxR";
+            toolTip.SetToolTip(textBoxR, resources.GetString("textBoxR.ToolTip")); // 260531Cl 追加
             this.textBoxR.Size = new System.Drawing.Size(84, 20);
             this.textBoxR.TabIndex = 0;
             this.textBoxR.Text = "0";
@@ -56,6 +59,7 @@
             // 
             this.textBoxTwoTheta.Location = new System.Drawing.Point(20, 29);
             this.textBoxTwoTheta.Name = "textBoxTwoTheta";
+            toolTip.SetToolTip(textBoxTwoTheta, resources.GetString("textBoxTwoTheta.ToolTip")); // 260531Cl 追加
             this.textBoxTwoTheta.ReadOnly = true;
             this.textBoxTwoTheta.Size = new System.Drawing.Size(84, 20);
             this.textBoxTwoTheta.TabIndex = 0;
@@ -68,6 +72,7 @@
             // 
             this.textBoxD.Location = new System.Drawing.Point(20, 55);
             this.textBoxD.Name = "textBoxD";
+            toolTip.SetToolTip(textBoxD, resources.GetString("textBoxD.ToolTip")); // 260531Cl 追加
             this.textBoxD.ReadOnly = true;
             this.textBoxD.Size = new System.Drawing.Size(84, 20);
             this.textBoxD.TabIndex = 0;
@@ -81,6 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(0, 32);
             this.label1.Name = "label1";
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip")); // 260531Cl 追加
             this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "2θ";
@@ -90,6 +96,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 60);
             this.label2.Name = "label2";
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip")); // 260531Cl 追加
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "d";
@@ -99,6 +106,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(4, 8);
             this.label3.Name = "label3";
+            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip")); // 260531Cl 追加
             this.label3.Size = new System.Drawing.Size(15, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "R";
@@ -108,6 +116,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(104, 8);
             this.label4.Name = "label4";
+            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip")); // 260531Cl 追加
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "mm";
@@ -117,6 +126,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(104, 32);
             this.label5.Name = "label5";
+            toolTip.SetToolTip(label5, resources.GetString("label5.ToolTip")); // 260531Cl 追加
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "°";
@@ -126,6 +136,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(104, 60);
             this.label6.Name = "label6";
+            toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip")); // 260531Cl 追加
             this.label6.Size = new System.Drawing.Size(14, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Å";
@@ -134,6 +145,7 @@
             // 
             this.buttonOk.Location = new System.Drawing.Point(68, 80);
             this.buttonOk.Name = "buttonOk";
+            toolTip.SetToolTip(buttonOk, resources.GetString("buttonOk.ToolTip")); // 260531Cl 追加
             this.buttonOk.Size = new System.Drawing.Size(60, 24);
             this.buttonOk.TabIndex = 2;
             this.buttonOk.Text = "OK";
@@ -180,5 +192,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonOk;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

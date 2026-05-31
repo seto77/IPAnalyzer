@@ -117,4 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Include wave/source settings (radiation type X-ray/neutron/electron, wavelength in angstrom, X-ray target element &amp; emission line) when saving or loading this parameter file.</value>
+  </data>
+  <data name="checkBoxCameraMode.ToolTip" xml:space="preserve">
+    <value>Include the detector geometry mode (Flat panel = stationary area detector, or Gandolfi = oscillating-sample camera) when saving or loading this parameter file.</value>
+  </data>
+  <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>Include the camera length (sample-to-detector distance, in mm) when saving or loading this parameter file. Affects the calculated 2theta scale.</value>
+  </data>
+  <data name="checkBoxTiltCorrection.ToolTip" xml:space="preserve">
+    <value>Include detector tilt-correction angles phi and tau (degrees) when saving or loading. Tilt correction compensates for the detector plane not being perpendicular to the beam.</value>
+  </data>
+  <data name="checkBoxPixelShape.ToolTip" xml:space="preserve">
+    <value>Include pixel geometry (pixel size X and Y in micrometres, and ksi distortion/skew angle) when saving or loading this parameter file.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Include the beam center position (direct-beam spot X/Y in pixels, and foot-of-normal position) when saving or loading this parameter file.</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
+    <value>Include the spherical-bending correction (inverse radius, 1/mm) when saving or loading. Corrects for a curved/bent imaging plate that is not flat.</value>
+  </data>
+  <data name="checkBoxGandolfiRadius.ToolTip" xml:space="preserve">
+    <value>Include the Gandolfi camera radius (mm) when saving or loading. Used only in Gandolfi (oscillating-sample) mode to define the detector ring radius.</value>
+  </data>
+  <data name="checkBoxIntegralRegion.ToolTip" xml:space="preserve">
+    <value>Include the radial-integration region geometry (rectangle or sector shape, direction, band width, and start/end azimuthal angles) when saving or loading.</value>
+  </data>
+  <data name="checkBoxInetgralProperty.ToolTip" xml:space="preserve">
+    <value>Include integration parameters (Concentric or Radial mode; axis unit = 2theta angle, length, or d-spacing; and start/end/step or radius/width/step) when saving or loading. Note: control name is misspelled 'Inetgral'.</value>
+  </data>
+  <data name="buttonOK.ToolTip" xml:space="preserve">
+    <value>Confirm and apply: save (or read) only the parameter groups whose checkboxes are ticked above.</value>
+  </data>
+  <data name="buttonCancel.ToolTip" xml:space="preserve">
+    <value>Cancel: abort the save/read operation without writing or applying any parameters.</value>
+  </data>
 </root>

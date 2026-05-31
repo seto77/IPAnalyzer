@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormParameterOption)); // 260531Cl 追加 (resources 宣言漏れによる CS0103 修正)
             this.checkBoxWaveLength = new System.Windows.Forms.CheckBox();
             this.checkBoxCameraLength = new System.Windows.Forms.CheckBox();
             this.checkBoxPixelShape = new System.Windows.Forms.CheckBox();
@@ -50,6 +53,7 @@
             this.checkBoxWaveLength.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxWaveLength.Location = new System.Drawing.Point(18, 12);
             this.checkBoxWaveLength.Name = "checkBoxWaveLength";
+            toolTip.SetToolTip(checkBoxWaveLength, resources.GetString("checkBoxWaveLength.ToolTip")); // 260531Cl 追加
             this.checkBoxWaveLength.Size = new System.Drawing.Size(269, 21);
             this.checkBoxWaveLength.TabIndex = 0;
             this.checkBoxWaveLength.Text = "Wave propety (source, wave length, etc...)";
@@ -61,6 +65,7 @@
             this.checkBoxCameraLength.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCameraLength.Location = new System.Drawing.Point(6, 52);
             this.checkBoxCameraLength.Name = "checkBoxCameraLength";
+            toolTip.SetToolTip(checkBoxCameraLength, resources.GetString("checkBoxCameraLength.ToolTip")); // 260531Cl 追加
             this.checkBoxCameraLength.Size = new System.Drawing.Size(112, 21);
             this.checkBoxCameraLength.TabIndex = 0;
             this.checkBoxCameraLength.Text = "Camera length";
@@ -72,6 +77,7 @@
             this.checkBoxPixelShape.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxPixelShape.Location = new System.Drawing.Point(6, 106);
             this.checkBoxPixelShape.Name = "checkBoxPixelShape";
+            toolTip.SetToolTip(checkBoxPixelShape, resources.GetString("checkBoxPixelShape.ToolTip")); // 260531Cl 追加
             this.checkBoxPixelShape.Size = new System.Drawing.Size(92, 21);
             this.checkBoxPixelShape.TabIndex = 0;
             this.checkBoxPixelShape.Text = "Pixel shape";
@@ -83,6 +89,7 @@
             this.checkBoxCenterPosition.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCenterPosition.Location = new System.Drawing.Point(136, 106);
             this.checkBoxCenterPosition.Name = "checkBoxCenterPosition";
+            toolTip.SetToolTip(checkBoxCenterPosition, resources.GetString("checkBoxCenterPosition.ToolTip")); // 260531Cl 追加
             this.checkBoxCenterPosition.Size = new System.Drawing.Size(116, 21);
             this.checkBoxCenterPosition.TabIndex = 0;
             this.checkBoxCenterPosition.Text = "Center position";
@@ -94,6 +101,7 @@
             this.checkBoxTiltCorrection.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxTiltCorrection.Location = new System.Drawing.Point(6, 79);
             this.checkBoxTiltCorrection.Name = "checkBoxTiltCorrection";
+            toolTip.SetToolTip(checkBoxTiltCorrection, resources.GetString("checkBoxTiltCorrection.ToolTip")); // 260531Cl 追加
             this.checkBoxTiltCorrection.Size = new System.Drawing.Size(107, 21);
             this.checkBoxTiltCorrection.TabIndex = 0;
             this.checkBoxTiltCorrection.Text = "Tilt correction";
@@ -105,6 +113,7 @@
             this.checkBoxSphericalCorrection.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxSphericalCorrection.Location = new System.Drawing.Point(136, 79);
             this.checkBoxSphericalCorrection.Name = "checkBoxSphericalCorrection";
+            toolTip.SetToolTip(checkBoxSphericalCorrection, resources.GetString("checkBoxSphericalCorrection.ToolTip")); // 260531Cl 追加
             this.checkBoxSphericalCorrection.Size = new System.Drawing.Size(143, 21);
             this.checkBoxSphericalCorrection.TabIndex = 0;
             this.checkBoxSphericalCorrection.Text = "Spherical correction";
@@ -116,6 +125,7 @@
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Location = new System.Drawing.Point(185, 305);
             this.buttonOK.Name = "buttonOK";
+            toolTip.SetToolTip(buttonOK, resources.GetString("buttonOK.ToolTip")); // 260531Cl 追加
             this.buttonOK.Size = new System.Drawing.Size(51, 32);
             this.buttonOK.TabIndex = 1;
             this.buttonOK.Text = "OK";
@@ -127,6 +137,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(245, 305);
             this.buttonCancel.Name = "buttonCancel";
+            toolTip.SetToolTip(buttonCancel, resources.GetString("buttonCancel.ToolTip")); // 260531Cl 追加
             this.buttonCancel.Size = new System.Drawing.Size(56, 32);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Cancel";
@@ -139,6 +150,7 @@
             this.checkBoxCameraMode.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCameraMode.Location = new System.Drawing.Point(6, 25);
             this.checkBoxCameraMode.Name = "checkBoxCameraMode";
+            toolTip.SetToolTip(checkBoxCameraMode, resources.GetString("checkBoxCameraMode.ToolTip")); // 260531Cl 追加
             this.checkBoxCameraMode.Size = new System.Drawing.Size(248, 21);
             this.checkBoxCameraMode.TabIndex = 2;
             this.checkBoxCameraMode.Text = "Camera mode (Flat panel or Gandolfi)";
@@ -151,6 +163,7 @@
             this.checkBoxGandolfiRadius.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxGandolfiRadius.Location = new System.Drawing.Point(6, 133);
             this.checkBoxGandolfiRadius.Name = "checkBoxGandolfiRadius";
+            toolTip.SetToolTip(checkBoxGandolfiRadius, resources.GetString("checkBoxGandolfiRadius.ToolTip")); // 260531Cl 追加
             this.checkBoxGandolfiRadius.Size = new System.Drawing.Size(119, 21);
             this.checkBoxGandolfiRadius.TabIndex = 3;
             this.checkBoxGandolfiRadius.Text = "Gandolfi Radius";
@@ -177,6 +190,7 @@
             this.checkBoxIntegralRegion.AutoSize = true;
             this.checkBoxIntegralRegion.Location = new System.Drawing.Point(18, 234);
             this.checkBoxIntegralRegion.Name = "checkBoxIntegralRegion";
+            toolTip.SetToolTip(checkBoxIntegralRegion, resources.GetString("checkBoxIntegralRegion.ToolTip")); // 260531Cl 追加
             this.checkBoxIntegralRegion.Size = new System.Drawing.Size(258, 21);
             this.checkBoxIntegralRegion.TabIndex = 0;
             this.checkBoxIntegralRegion.Text = "Integral Region (rectangle, sector, etc...)";
@@ -187,6 +201,7 @@
             this.checkBoxInetgralProperty.AutoSize = true;
             this.checkBoxInetgralProperty.Location = new System.Drawing.Point(18, 261);
             this.checkBoxInetgralProperty.Name = "checkBoxInetgralProperty";
+            toolTip.SetToolTip(checkBoxInetgralProperty, resources.GetString("checkBoxInetgralProperty.ToolTip")); // 260531Cl 追加
             this.checkBoxInetgralProperty.Size = new System.Drawing.Size(269, 21);
             this.checkBoxInetgralProperty.TabIndex = 0;
             this.checkBoxInetgralProperty.Text = "Integral Property (angle range, step, etc..)";
@@ -240,5 +255,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBoxIntegralRegion;
         private System.Windows.Forms.CheckBox checkBoxInetgralProperty;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

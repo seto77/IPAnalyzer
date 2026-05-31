@@ -224,4 +224,49 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>259, 383</value>
   </data>
+  <data name="checkBoxAutoLoad.ToolTip" xml:space="preserve">
+    <value>選択したディレクトリを監視し、新しく追加された画像ファイルを検出するたびに自動で読み込みます（開始前に有効なディレクトリを設定してください）。</value>
+  </data>
+  <data name="textBoxDiectory.ToolTip" xml:space="preserve">
+    <value>新しい回折画像ファイルを監視するフォルダのフルパス。Set ボタンで参照するか直接入力します。サブフォルダも再帰的に監視されます。</value>
+  </data>
+  <data name="buttonSetDirectory.ToolTip" xml:space="preserve">
+    <value>監視するフォルダを参照して選択し、そのパスをディレクトリ欄に設定します。</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>新しい回折画像ファイルを監視するフォルダのフルパス。Set ボタンで参照するか直接入力します。サブフォルダも再帰的に監視されます。</value>
+  </data>
+  <data name="checkBoxNumberMatching.ToolTip" xml:space="preserve">
+    <value>ファイル名末尾の数字でフィルタします。(数字 mod 除数) が剰余と等しい／等しくない（=/≠ で選択）場合のみ読み込みます。</value>
+  </data>
+  <data name="radioButtonEqual.ToolTip" xml:space="preserve">
+    <value>等号モード: (末尾の数字 mod 除数) が剰余と等しいときだけ読み込みます。</value>
+  </data>
+  <data name="radioButtonNotEqual.ToolTip" xml:space="preserve">
+    <value>不等号モード: (末尾の数字 mod 除数) が剰余と等しくないときだけ読み込みます。</value>
+  </data>
+  <data name="numericBoxDivisor.ToolTip" xml:space="preserve">
+    <value>ファイル名数字テストの除数。(末尾の数字 mod この除数) が剰余と等しいとき適合。1 以上の整数、0 は常に不一致。既定値 3。</value>
+  </data>
+  <data name="numericBoxRemainder.ToolTip" xml:space="preserve">
+    <value>ファイル名数字テストの目標剰余。(末尾の数字 mod 除数) がこの値と等しいとき適合。0〜(除数-1) の整数。既定値 2。</value>
+  </data>
+  <data name="checkBoxKeywords.ToolTip" xml:space="preserve">
+    <value>ファイル名でフィルタします。右に入力したキーワードを名前に含むファイルだけを読み込みます。</value>
+  </data>
+  <data name="textBoxKeyword.ToolTip" xml:space="preserve">
+    <value>自動読み込みの対象となるためにファイル名へ含まれている必要がある文字列（大文字小文字を区別）。キーワードフィルタ有効時のみ使用。</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.ToolTip" xml:space="preserve">
+    <value>オンにすると、新しい画像の読み込みが完了するたびに下でチェックした一連の処理（自動コントラスト・中心検索・スポット除去・一次元化・マクロ）を自動実行します。</value>
+  </data>
+  <data name="checkedListBoxAuto.ToolTip" xml:space="preserve">
+    <value>画像読み込み後に実行する処理（上から順に）: 自動コントラスト（自動輝度調整）、中心位置検索（ビーム中心検出）、スポット検出（単結晶スポット除去）、一次元化（回折環を1次元の2θプロファイルへ積算）、マクロ実行。</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>自動処理の最後に実行するマクロを名前で選択します（「マクロ実行」がチェックされている場合のみ）。</value>
+  </data>
+  <data name="comboBoxMacro.ToolTip" xml:space="preserve">
+    <value>一連の処理の最後に実行する保存済みマクロを選択します。上のリストで「マクロ実行」がチェックされているときのみ有効です。</value>
+  </data>
 </root>

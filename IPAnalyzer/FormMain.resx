@@ -596,7 +596,7 @@
     <value>204, 25</value>
   </metadata>
   <data name="comboBoxScale1.ToolTip" xml:space="preserve">
-    <value>Set log or linear scale</value>
+    <value>Brightness scale: logarithmic or linear mapping of intensity to brightness. Log compresses high values to reveal weak rings.</value>
   </data>
   <data name="&gt;&gt;comboBoxScale1.Name" xml:space="preserve">
     <value>comboBoxScale1</value>
@@ -668,7 +668,7 @@
     <value>11</value>
   </data>
   <data name="comboBoxGradient.ToolTip" xml:space="preserve">
-    <value>Select positive or nagative image</value>
+    <value>Choose positive or negative (film) display. Negative inverts the gray/color mapping so high intensity appears dark.</value>
   </data>
   <data name="&gt;&gt;comboBoxGradient.Name" xml:space="preserve">
     <value>comboBoxGradient</value>
@@ -2850,8 +2850,7 @@
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonIntensityTable.ToolTipText" xml:space="preserve">
-    <value>Intensity Table
-現在の中心位置に隣接するピクセルの強度テーブルを表示します。</value>
+    <value>Intensity table: show a grid of the numeric intensity values of the pixels around the current beam center.</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -2876,8 +2875,7 @@ procedure</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonAutoProcedure.ToolTipText" xml:space="preserve">
-    <value>Auto Procedure
-作業を連続して実行するためのフォームを表示します。</value>
+    <value>Auto procedure: open a form that runs a sequence of processing steps automatically as a batch.</value>
   </data>
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -2901,7 +2899,7 @@ procedure</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonRing.ToolTipText" xml:space="preserve">
-    <value>Draw debye ring on image accoding to the current IP condition.</value>
+    <value>Draw ring: overlay Debye rings (powder diffraction rings) on the image at a chosen 2-theta, d-spacing or radius, using the current imaging-plate (IP) geometry.</value>
   </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -2926,9 +2924,7 @@ procedure</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonFindParameter.ToolTipText" xml:space="preserve">
-    <value>Find experimental parameter (wave length, camera length...)
-by starndard diffraction patterns
-</value>
+    <value>Find parameters (geometric): refine wavelength, camera length, beam center and detector tilt by least-squares fitting Debye rings of a known standard.</value>
   </data>
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -2953,9 +2949,7 @@ by starndard diffraction patterns
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonFindParameterBruteForce.ToolTipText" xml:space="preserve">
-    <value>Find experimental parameter (wave length, camera length...)
-by starndard diffraction patterns
-</value>
+    <value>Find parameters (brute force): grid/exhaustive search for wavelength, camera length, center and tilt from a standard's rings; slower but more robust than the geometric method.</value>
   </data>
   <data name="toolStripSeparator31.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -2980,7 +2974,7 @@ image</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonUnroll.ToolTipText" xml:space="preserve">
-    <value>toolStripButtonUnroll</value>
+    <value>Unroll image: transform the 2D ring pattern into a cake (azimuthally-unrolled) image, plotting radius / 2-theta against azimuthal angle chi.</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -3005,7 +2999,7 @@ blur </value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonCircumferentialBlur.ToolTipText" xml:space="preserve">
-    <value>toolStripButtonUnroll</value>
+    <value>Circumferential blur: average/smooth intensity along the azimuthal (ring) direction over a chosen angle to suppress spots and improve ring statistics.</value>
   </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -3033,7 +3027,7 @@ image</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripButtonImageSequence.ToolTipText" xml:space="preserve">
-    <value>Image Sequence Option</value>
+    <value>Sequential images: open options for loading and stepping through a multi-frame image sequence (enabled once a sequence is loaded).</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
@@ -3213,8 +3207,7 @@ image</value>
     <value>Wave Source</value>
   </data>
   <data name="toolStripMenuItemPropertyWaveSource.ToolTipText" xml:space="preserve">
-    <value>X-ray Condition
-X線の波長とカメラ長を設定します。</value>
+    <value>Wave source: set the radiation wavelength (X-ray / neutron / electron) and the camera length (sample-to-detector distance).</value>
   </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 24</value>
@@ -3223,8 +3216,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Imaging Plate Condition</value>
   </data>
   <data name="toolStripMenuItem9.ToolTipText" xml:space="preserve">
-    <value>Imaging Plate Condition
-イメージングプレートの画素形状や傾き、ビームの中心を設定します。</value>
+    <value>Imaging plate (IP) condition: set pixel size/shape, detector tilt correction and beam-center position.</value>
   </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 6</value>
@@ -3597,8 +3589,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>Option</value>
   </data>
   <data name="toolStripMenuItemFindCenterOption.ToolTipText" xml:space="preserve">
-    <value>Option
-中心スポットを検索する際の検索範囲を設定します。</value>
+    <value>Options: set the search range (radius) used by Find Center when locating the central spot.</value>
   </data>
   <data name="findCenterBasedOnTheRingToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3631,10 +3622,7 @@ X線の波長とカメラ長を設定します。</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripSplitButtonFindCenter.ToolTipText" xml:space="preserve">
-    <value>Find Center
-現在の中心位置から設定範囲(Optionで変更可)内で
-2次元PseudoVoigt関数フィッティングを行い、中心スポ
-ットを検索します。</value>
+    <value>Find center: locate the beam center by 2D pseudo-Voigt fitting of the central spot within the search range (set via Option).</value>
   </data>
   <data name="toolStripButtonFixCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt, style=Italic</value>
@@ -3674,8 +3662,7 @@ Center</value>
     <value>Clear mask</value>
   </data>
   <data name="toolStripMenuItemClearMask.ToolTipText" xml:space="preserve">
-    <value>Clear All Mask
-マスクされた部分を全てクリアします。</value>
+    <value>Clear all masks: remove every masked region from the image.</value>
   </data>
   <data name="toolStripMenuItemMaskAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 22</value>
@@ -3684,8 +3671,7 @@ Center</value>
     <value>Mask all area</value>
   </data>
   <data name="toolStripMenuItemMaskAll.ToolTipText" xml:space="preserve">
-    <value>Mask All Area
-全てをマスクします</value>
+    <value>Mask all: mask the entire image (e.g. before manually un-masking only the region of interest).</value>
   </data>
   <data name="inverseMaskToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 22</value>
@@ -3703,9 +3689,7 @@ Center</value>
     <value>Manual Mode</value>
   </data>
   <data name="toolStripMenuItemMaskSpotsManual.ToolTipText" xml:space="preserve">
-    <value>Manual Mode
-チェックされているときはスポットを手動で選択できます。
-スポットの大きさは"Option"から変更できます。</value>
+    <value>Manual mode: when checked, click spots on the image to mask them by hand; spot size is set via Option.</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 6</value>
@@ -3717,8 +3701,7 @@ Center</value>
     <value>Option</value>
   </data>
   <data name="toolStripMenuItemMaskSpotsOption.ToolTipText" xml:space="preserve">
-    <value>Option
-Find Spotsのオプション設定をします</value>
+    <value>Options: configure the spot-detection settings (threshold, size) used by Mask Spots.</value>
   </data>
   <data name="toolStripSplitButtonMaskSpots.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -3739,8 +3722,7 @@ Find Spotsのオプション設定をします</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripSplitButtonMaskSpots.ToolTipText" xml:space="preserve">
-    <value>Find Spots
-</value>
+    <value>Mask spots: automatically detect sharp single-crystal spots on the rings and mask them so they are excluded from the integrated profile.</value>
   </data>
   <data name="toolStripButtonManualSpotMode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt, style=Italic</value>
@@ -3822,8 +3804,7 @@ Mode</value>
     <value>Integral Property</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralProperty.ToolTipText" xml:space="preserve">
-    <value>Integral Property
-角度の上下限･ステップ、積算後の動作を変更します。</value>
+    <value>Integration properties: set the 2-theta lower/upper limits and step, and the action performed after integration.</value>
   </data>
   <data name="toolStripMenuItemConcenctricIntegration.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -3853,8 +3834,7 @@ Mode</value>
     <value>Integral Region</value>
   </data>
   <data name="toolStripMenuItemGetProfileIntegralRegion.ToolTipText" xml:space="preserve">
-    <value>Integral Region
-画像の積算範囲・形状を変更します。</value>
+    <value>Integration region: set the area and shape of the image (azimuthal range, radial limits) used when integrating.</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 6</value>
@@ -3869,7 +3849,7 @@ Mode</value>
     <value>Find Center before Get Profile</value>
   </data>
   <data name="findCenterBeforeGetProfileToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Find the center position before acquiring the profile</value>
+    <value>When checked, automatically run Find Center before each integration (skipped if Fix Center is on).</value>
   </data>
   <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 22</value>
@@ -3878,7 +3858,7 @@ Mode</value>
     <value>Mask Spots before Get Profile</value>
   </data>
   <data name="maskSpotsBeforeGetProfileToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Mask the spots before acquiring the profile.</value>
+    <value>When checked, automatically detect and mask spots before each integration (skipped in manual spot mode).</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 6</value>
@@ -4013,7 +3993,7 @@ Mode</value>
     <value>ImageAboveText</value>
   </data>
   <data name="toolStripSplitButtonGetProfile.ToolTipText" xml:space="preserve">
-    <value>Convert the two-dimensional diffraction pattern to one dimensional 2θ-intensity profile</value>
+    <value>Get profile: radially integrate the 2D diffraction pattern into a 1D intensity vs 2-theta (or d / q) profile; use the dropdown for integration mode and region.</value>
   </data>
   <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 56</value>
@@ -4898,5 +4878,218 @@ Mode</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
+    <value>Main diffraction-image view. Hover to read pixel intensity, radius r, 2-theta and d-spacing; double/middle-click sets beam center; wheel zooms; CTRL+right-drag selects an area for statistics.</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
+    <value>Overview thumbnail of the image. Click to pan the main view; toggle Whole image / Near center to choose the displayed region.</value>
+  </data>
+  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
+    <value>Show the whole image in the thumbnail/preview.</value>
+  </data>
+  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
+    <value>Show only the region near the beam center in the thumbnail/preview.</value>
+  </data>
+  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
+    <value>Color palette for intensity: Gray, Cold-Warm, Spectrum or Fire. Changes only display colors, not the data.</value>
+  </data>
+  <data name="comboBoxScaleLine.ToolTip" xml:space="preserve">
+    <value>Density of the overlaid scale (grid) lines on the image: None, Coarse, Medium or Fine.</value>
+  </data>
+  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
+    <value>Auto-contrast: set the min/max intensity display range to mean plus/minus 2 standard deviations. Does not alter the data.</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value>Reset the intensity display range to full scale (0 to 65535).</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.ToolTipText" xml:space="preserve">
+    <value>Lower intensity clip for display (0-65535 counts). Values at or below this map to the darkest level; raising it hides background. Display only.</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.ToolTipText" xml:space="preserve">
+    <value>Upper intensity clip for display (0-65535 counts). Values at or above this map to the brightest level; lowering it brightens weak rings. Display only.</value>
+  </data>
+  <data name="buttonMag1.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 1x (100%, one screen pixel per image pixel).</value>
+  </data>
+  <data name="buttonMag2.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 2x.</value>
+  </data>
+  <data name="buttonMag4.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 4x.</value>
+  </data>
+  <data name="buttonMag_2.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 1/2x (50%).</value>
+  </data>
+  <data name="buttonMag_4.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 1/4x (25%).</value>
+  </data>
+  <data name="buttonMag_8.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 1/8x.</value>
+  </data>
+  <data name="buttonMag_16.ToolTip" xml:space="preserve">
+    <value>Set image zoom to 1/16x (fit large images).</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Magnification: current image zoom factor and resolution.</value>
+  </data>
+  <data name="labelResolution.ToolTip" xml:space="preserve">
+    <value>Current display resolution (screen pixels per image pixel) at the active zoom.</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>Intensity (counts) at the cursor pixel.</value>
+  </data>
+  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
+    <value>Intensity (counts) of the image pixel under the mouse cursor.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>R: radial distance from the beam center to the cursor, in millimetres.</value>
+  </data>
+  <data name="labelMousePointR.ToolTip" xml:space="preserve">
+    <value>Radial distance R (mm) from the beam center to the cursor position.</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>2-theta: diffraction (scattering) angle at the cursor, in degrees.</value>
+  </data>
+  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
+    <value>Diffraction angle 2-theta (degrees) at the cursor, from the current camera length and beam center.</value>
+  </data>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value>d: lattice plane spacing (d-spacing) at the cursor, in angstroms.</value>
+  </data>
+  <data name="labelMousePointD.ToolTip" xml:space="preserve">
+    <value>Lattice d-spacing (angstrom) at the cursor, derived from 2-theta and the wavelength via Bragg's law.</value>
+  </data>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>Chi: azimuthal angle around the ring at the cursor, in degrees.</value>
+  </data>
+  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
+    <value>Azimuthal angle chi (degrees) of the cursor around the beam center / Debye ring.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Real-space detector coordinates (mm) of the cursor.</value>
+  </data>
+  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
+    <value>Cursor position in real detector-plane coordinates (mm), origin at the beam center.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Image pixel coordinates (x, y) of the cursor.</value>
+  </data>
+  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
+    <value>Cursor position in image pixel coordinates (column x, row y).</value>
+  </data>
+  <data name="textBoxInformation.ToolTip" xml:space="preserve">
+    <value>Read-only image information: file header and acquisition metadata of the loaded image.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
+    <value>Statistics (count, mean, min, max, standard deviation) of intensity inside the selected rectangular area.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
+    <value>Statistics of the same selected area measured in the other images of the loaded sequence.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
+    <value>X (column, pixels) of the first corner of the statistics rectangle; clamped to image width. Max 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
+    <value>Y (row, pixels) of the first corner of the statistics rectangle; clamped to image height. Max 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
+    <value>X (column, pixels) of the opposite corner of the statistics rectangle; clamped to image width.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
+    <value>Y (row, pixels) of the opposite corner of the statistics rectangle; clamped to image height.</value>
+  </data>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value>Selected rectangular area for statistics, given as two corner points (x, y) in image pixels.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>You can also select the statistics rectangle directly on the image by holding CTRL and right-dragging.</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.ToolTip" xml:space="preserve">
+    <value>Histogram of pixel-intensity frequency; the two vertical lines set the min/max display range.</value>
+  </data>
+  <data name="tabPageConvertedProfile.ToolTip" xml:space="preserve">
+    <value>One-dimensional profile (intensity vs 2-theta / d / q) obtained by radial integration of the 2D image.</value>
+  </data>
+  <data name="tabPageStasticalInfo.ToolTip" xml:space="preserve">
+    <value>Statistics of the selected image area, including the same area across a sequence of images.</value>
+  </data>
+  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
+    <value>Intensity histogram. Drag the two vertical red lines to set the minimum/maximum display intensity.</value>
+  </data>
+  <data name="graphControlProfile.ToolTip" xml:space="preserve">
+    <value>Plot of the integrated 1D profile: intensity versus 2-theta, d-spacing or q.</value>
+  </data>
+  <data name="toolStripSplitButtonBackground.ToolTipText" xml:space="preserve">
+    <value>Background: estimate and subtract a smooth background from the image. Configure the percentile range, Fourier or reference-image method from the dropdown.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundLower.ToolTip" xml:space="preserve">
+    <value>Background fit lower bound, as a percentage of image size; pixels below this percentile are used to estimate the background.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundUpper.ToolTip" xml:space="preserve">
+    <value>Background fit upper bound, as a percentage of image size; pixels above this percentile are excluded from the background estimate.</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.ToolTipText" xml:space="preserve">
+    <value>Use a separately loaded reference image as the background to subtract.</value>
+  </data>
+  <data name="fourierToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Estimate the background by low-frequency Fourier filtering of the image.</value>
+  </data>
+  <data name="toolStripButtonFixCenter.ToolTipText" xml:space="preserve">
+    <value>Fix center: lock the current beam center so it is not changed; while on, automatic Find Center is disabled.</value>
+  </data>
+  <data name="inverseMaskToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Invert mask: swap masked and unmasked regions.</value>
+  </data>
+  <data name="toolStripButtonManualSpotMode.ToolTipText" xml:space="preserve">
+    <value>Manual spot mask: toggle hand-masking mode; click on the image to mask spots, choosing the brush size from the adjacent box.</value>
+  </data>
+  <data name="toolStripComboBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Brush size in pixels (2-512) for manual spot masking; larger values mask a bigger area per click.</value>
+  </data>
+  <data name="toolStripMenuItemConcenctricIntegration.ToolTipText" xml:space="preserve">
+    <value>Concentric integration: integrate along concentric circles, giving intensity vs radius / 2-theta.</value>
+  </data>
+  <data name="toolStripMenuItemRadialIntegration.ToolTipText" xml:space="preserve">
+    <value>Radial integration: integrate along radial directions; distinct from concentric (ring) integration.</value>
+  </data>
+  <data name="toolStripMenuItemSendProfileToPDIndexer.ToolTipText" xml:space="preserve">
+    <value>Send the integrated 1D profile to PDIndexer (peak indexing / phase ID application).</value>
+  </data>
+  <data name="toolStripMenuItemSendUnrolledImage.ToolTipText" xml:space="preserve">
+    <value>Also include the unrolled (cake / azimuthally-unrolled) image when sending the profile.</value>
+  </data>
+  <data name="toolStripMenuItemAzimuthalDivisionAnalysis.ToolTipText" xml:space="preserve">
+    <value>Azimuthal division analysis: integrate the rings in N azimuthal sectors (set Number of divisions) to study orientation/texture.</value>
+  </data>
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
+    <value>Number of azimuthal sectors (6-360) for azimuthal division analysis; more sectors give finer angular resolution.</value>
+  </data>
+  <data name="toolStripMenuItemAllSequentialImages.ToolTipText" xml:space="preserve">
+    <value>Integrate and get profiles for every image in the loaded sequence.</value>
+  </data>
+  <data name="toolStripMenuItemSelectedSequentialImages.ToolTipText" xml:space="preserve">
+    <value>Integrate and get profiles only for the images you selected in the sequence.</value>
+  </data>
+  <data name="toolStripComboBoxRotate.ToolTip" xml:space="preserve">
+    <value>Rotate the image by 0, 90, 180 or 270 degrees before analysis.</value>
+  </data>
+  <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
+    <value>Open integration-region settings (area and shape used for profile integration).</value>
+  </data>
+  <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
+    <value>Open integration-property settings (2-theta limits, step, post-integration action).</value>
+  </data>
+  <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
+    <value>Toggle manual mask mode (hand-select masked regions on the image).</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Calibrate an R-AXIS detector image (apply R-AXIS-specific geometric correction).</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Reset the intensity-frequency histogram to its default range.</value>
+  </data>
+  <data name="toolStripButton1.ToolTipText" xml:space="preserve">
+    <value>Unused placeholder button - no action is wired; consider removing it from the toolbar.</value>
   </data>
 </root>

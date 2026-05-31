@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAboutMe));
             this.linkLabelMail = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +50,7 @@
             this.linkLabelMail.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelMail.Location = new System.Drawing.Point(354, 32);
             this.linkLabelMail.Name = "linkLabelMail";
+            toolTip.SetToolTip(linkLabelMail, resources.GetString("linkLabelMail.ToolTip")); // 260531Cl 追加
             this.linkLabelMail.Size = new System.Drawing.Size(143, 15);
             this.linkLabelMail.TabIndex = 25;
             this.linkLabelMail.TabStop = true;
@@ -83,6 +86,7 @@
             this.labelVersion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelVersion.Location = new System.Drawing.Point(0, 0);
             this.labelVersion.Name = "labelVersion";
+            toolTip.SetToolTip(labelVersion, resources.GetString("labelVersion.ToolTip")); // 260531Cl 追加
             this.labelVersion.Size = new System.Drawing.Size(62, 15);
             this.labelVersion.TabIndex = 24;
             this.labelVersion.Text = "IPAnalyzer";
@@ -105,6 +109,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(326, 32);
             this.label6.Name = "label6";
+            toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip")); // 260531Cl 追加
             this.label6.Size = new System.Drawing.Size(33, 15);
             this.label6.TabIndex = 15;
             this.label6.Text = "Mail:";
@@ -127,6 +132,7 @@
             this.textBoxReadMe.Location = new System.Drawing.Point(0, 70);
             this.textBoxReadMe.Multiline = true;
             this.textBoxReadMe.Name = "textBoxReadMe";
+            toolTip.SetToolTip(textBoxReadMe, resources.GetString("textBoxReadMe.ToolTip")); // 260531Cl 追加
             this.textBoxReadMe.ReadOnly = true;
             this.textBoxReadMe.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxReadMe.Size = new System.Drawing.Size(592, 170);
@@ -149,6 +155,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 32);
             this.label4.Name = "label4";
+            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip")); // 260531Cl 追加
             this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 15;
             this.label4.Text = "HomePage:";
@@ -160,6 +167,7 @@
             this.linkLabelHomePage.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelHomePage.Location = new System.Drawing.Point(64, 32);
             this.linkLabelHomePage.Name = "linkLabelHomePage";
+            toolTip.SetToolTip(linkLabelHomePage, resources.GetString("linkLabelHomePage.ToolTip")); // 260531Cl 追加
             this.linkLabelHomePage.Size = new System.Drawing.Size(230, 15);
             this.linkLabelHomePage.TabIndex = 25;
             this.linkLabelHomePage.TabStop = true;
@@ -209,5 +217,6 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabelHomePage;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

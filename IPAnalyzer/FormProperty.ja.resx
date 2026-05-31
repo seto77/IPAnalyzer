@@ -2031,4 +2031,346 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
+  <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
+    <value>カメラ長2: 試料から垂線の足までの距離(mm)。傾いた検出器面への垂線距離(=カメラ長1×cosτ)で、ダイレクトスポットまでの距離ではありません。</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
+    <value>直線偏光(放射光)X線の偏光補正を行い、無偏光相当の強度に変換します。方位角χによる相対ピーク強度が変化します。</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>ダイレクトスポット基準で幾何を定義: 直接ビームのピクセル位置とカメラ長1(試料-ダイレクトスポット距離)を入力します。ビームが検出器に当たる場合に使用。</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>垂線の足(傾いた検出器に下ろした試料からの垂線の足)とカメラ長2(試料-垂線の足距離)で幾何を定義します。傾いたフラットパネル用。</value>
+  </data>
+  <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
+    <value>フラットパネル/イメージングプレート(平面検出器)の幾何。傾き補正と垂線の足モードが有効になります。</value>
+  </data>
+  <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
+    <value>ガンドルフィ(円筒/湾曲フィルム)カメラの幾何。Gandolfi半径の入力欄が現れ、垂線の足モードは無効になります。</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
+    <value>ダイレクトスポット(ビーム中心)のX座標(ピクセル単位)。全ての2θ/d/qリング計算の原点で、ずらすと積算中心が移動します。</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
+    <value>ダイレクトスポット(ビーム中心)のY座標(ピクセル単位)。リングパターンの原点で、ずらすと積算中心が移動します。</value>
+  </data>
+  <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
+    <value>垂線の足のX座標(ピクセル): 試料からの垂線が傾いた検出器と交わる点。傾き角を介してダイレクトスポットXと連動します。</value>
+  </data>
+  <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
+    <value>垂線の足のY座標(ピクセル): 試料からの垂線が傾いた検出器と交わる点。傾き角を介してダイレクトスポットYと連動します。</value>
+  </data>
+  <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
+    <value>カメラ長1: 試料からダイレクトスポットまでの距離(mm)。ピクセル半径→2θ変換の基準で、長くするとリングは小さい2θ側へ広がります。</value>
+  </data>
+  <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>検出器のX方向ピクセルサイズ(mm/ピクセル)。ピクセル位置を実距離に変換します。検出器仕様と一致させないと2θスケールがずれます。</value>
+  </data>
+  <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>検出器のY方向ピクセルサイズ(mm/ピクセル)。X方向と合わせてピクセルのアスペクト比を定義します。</value>
+  </data>
+  <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>ピクセル非直交角ξ(度): 検出器のX軸とY軸のせん断(歪み)。0で完全な直交ピクセル。歪んだ検出器を補正します。</value>
+  </data>
+  <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
+    <value>傾き方位角φ(度): 検出器の傾き軸の面内方向。τと組み合わせて、ビームに垂直でない検出器の傾きを補正します。</value>
+  </data>
+  <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
+    <value>傾き角τ(度): 検出器面がビーム垂直からどれだけ傾いているか。0で傾きなし。値があるとリングは楕円状になり、補正で円に戻ります。</value>
+  </data>
+  <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>ガンドルフィカメラ半径(mm): 湾曲/円筒検出器の半径。ガンドルフィモードでのみ、ピクセル位置を2θに変換するのに使用します。</value>
+  </data>
+  <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
+    <value>湾曲したイメージングプレートの球面補正(通常0)。 IPが平面でない場合の半径依存の歪みを補正します。</value>
+  </data>
+  <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
+    <value>飽和ピクセルを除外: 右の値を超える強度のピクセルを積算から除外します。ブルーミングや異常高強度ピクセルの除去に使用します。</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
+    <value>上限強度しきい値(カウント)。この値を超えるピクセルは積算から除外されます。「強度が右値以上」がオンのときのみ有効。</value>
+  </data>
+  <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
+    <value>低強度ピクセルを除外: 右の値未満の強度のピクセルを無視します。デッドピクセルや背景のみのピクセルの除去に使用します。</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
+    <value>下限強度しきい値(カウント)。この値未満のピクセルは積算から除外されます。「強度が右値以下」がオンのときのみ有効。</value>
+  </data>
+  <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
+    <value>画像端をマスク: 積算時に各端からNピクセル(右で設定)の帯を除外し、検出器端のアーティファクトを取り除きます。</value>
+  </data>
+  <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
+    <value>端マスク幅(ピクセル, 0-256): 「ピクセル分の画像端」が有効なとき積算から除外する縁取りの厚さ。</value>
+  </data>
+  <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
+    <value>マスクしたスポットを積算から除外: スポット(単結晶反射やゴミ等)としてマークされたピクセルを除き、粉末プロファイルへの混入を防ぎます。</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>全リングではなく矩形バンドで積算します。方向・角度・バンド幅で帯状の領域を指定できます。</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>矩形ではなく、開始角度と終了角度の間の扇形(円弧セクター)でリングを積算します。</value>
+  </data>
+  <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
+    <value>矩形積算バンドの向き: 全周(Full)、片側(上/下/左/右)、対称(Vertical/Horizontal)、または自由角度(Free)。</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
+    <value>バンド回転角(度, 0-360)。矩形積算帯の方位方向。Direction が Free のときのみ編集可能。</value>
+  </data>
+  <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
+    <value>バンド幅(ピクセル, 最大10000): ビーム中心線を横切る矩形積算帯の幅。広いほど多くのピクセルが平均化されます。</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
+    <value>ビーム中心の両側でバンドを対称に積算します(中心対称)。サンプリング領域が倍になります。Vertical/Horizontal時に使用。</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
+    <value>扇形の開始角度(度, 方位角χ)。積算する円弧セクターの方位範囲の始点。終了角度と対になります。</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
+    <value>扇形の終了角度(度, 方位角χ)。積算する円弧セクターの方位範囲の終点。開始角度より大きくします。</value>
+  </data>
+  <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
+    <value>同心円(散乱角分散)積算: デバイ環全周を積算して、標準的な1次元プロファイル(強度 vs 2θ/d値/長さ)を作成します。</value>
+  </data>
+  <data name="radioButtonRadial.ToolTip" xml:space="preserve">
+    <value>放射状(ケーキ)積算: 固定半径のリング上で方位を走査し、強度 vs 方位角χを得ます。1本のリング周りの集合組織/配向を調べられます。</value>
+  </data>
+  <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
+    <value>プロファイルの横軸に散乱角2θ(度)を使用します。開始/終了/ステップは度単位で解釈されます。</value>
+  </data>
+  <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
+    <value>プロファイルの横軸に検出器上の弧長(mm)を使用します。開始/終了/ステップはmm単位。</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
+    <value>プロファイルの横軸に格子面間隔d値(Å)を使用します。開始/終了/ステップはÅ単位。d = 波長/(2 sinθ)。</value>
+  </data>
+  <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
+    <value>プロファイル範囲の開始値(選択中の単位: 2θ度/長さmm/d値Å)。出力1次元プロファイルの下限。</value>
+  </data>
+  <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
+    <value>プロファイル範囲の終了値(選択中の単位: 2θ度/mm/Å)。出力1次元プロファイルの上限。</value>
+  </data>
+  <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
+    <value>プロファイルのビン幅(ステップ, 選択中の単位)。小さいほど分解能・点数が増えますが各ビンはノイジーになります。</value>
+  </data>
+  <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
+    <value>出力1次元パターンにBragg-Brentano(反射・集中法)の強度規約を適用します(実験室回折計との比較等)。</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
+    <value>出力1次元パターンにDebye-Scherrer(透過・粉末環)の強度規約を適用します。2次元検出器データの通常モード。</value>
+  </data>
+  <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
+    <value>放射状(ケーキ)積算で走査するリング半径。Angle/d値の切替に応じて2θ(度)またはd値(Å)で指定します。</value>
+  </data>
+  <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
+    <value>各方位で積算する、選択半径周りのリング(ドーナツ)幅。2θ度またはd値Å。広いほどカウントは増えますが角度分解能は低下します。</value>
+  </data>
+  <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
+    <value>放射状積算の方位走査ステップ(度): リング周りの出力点の角度間隔。小さいほどχ分解能が細かくなります。</value>
+  </data>
+  <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
+    <value>放射状リング半径を散乱角2θ(度)で指定します。</value>
+  </data>
+  <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
+    <value>放射状リング半径を格子面間隔d値(Å)で指定します。</value>
+  </data>
+  <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
+    <value>画像の左半分全体をマスク(積算から除外)します。既存マスクに追加されます。解除はUnmask All。</value>
+  </data>
+  <data name="buttonMaskTop.ToolTip" xml:space="preserve">
+    <value>画像の上半分全体をマスク(積算から除外)します。既存マスクに追加されます。</value>
+  </data>
+  <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
+    <value>画像の下半分全体をマスク(積算から除外)します。既存マスクに追加されます。</value>
+  </data>
+  <data name="buttonMaskRight.ToolTip" xml:space="preserve">
+    <value>画像の右半分全体をマスク(積算から除外)します。既存マスクに追加されます。</value>
+  </data>
+  <data name="buttonMaskAll.ToolTip" xml:space="preserve">
+    <value>画像全体をマスクします(全ピクセルを積算から除外)。通常は手動で関心領域だけを解除する前に使用します。</value>
+  </data>
+  <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
+    <value>すべてのマスクを解除: 全ピクセルを積算に戻します。Mask All・半分マスク・スポットマスクを取り消します。</value>
+  </data>
+  <data name="buttonInvertMask.ToolTip" xml:space="preserve">
+    <value>マスクを反転: マスク済みピクセルを有効に、有効ピクセルをマスク済みに入れ替えます。</value>
+  </data>
+  <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
+    <value>手動マスクモードに入り、マウスで画像上にマスク領域(スポット/円/矩形/多角形/スプライン)を直接描けるようにします。</value>
+  </data>
+  <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
+    <value>手動マスクツール: スポット。左クリックで追加、右クリックで指定サイズのスポットマスクをカーソル位置から削除します。</value>
+  </data>
+  <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
+    <value>手動マスクツール: 円。中心からドラッグして円形領域をマスクします(中心と半径をドラッグで設定)。</value>
+  </data>
+  <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
+    <value>手動マスクツール: 矩形。対角の2点をドラッグして矩形領域をマスクします。</value>
+  </data>
+  <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
+    <value>手動マスクツール: 多角形。クリックで頂点を追加、ダブルクリックで閉じて内部をマスクします。</value>
+  </data>
+  <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
+    <value>手動マスクツール: スプライン曲線。クリックで制御点追加(右クリックで削除)、ダブルクリックで指定幅の帯を曲線に沿ってマスクします。</value>
+  </data>
+  <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
+    <value>スプラインマスクの帯幅(ピクセル, 1-50): スプライン曲線に沿って描かれるマスク帯の太さ。</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
+    <value>手動スポットサイズ(2のべき乗): スポット径 = 2^値 ピクセル(0-10 → 1..1024px)。大きいほど1クリックで広い範囲をマスクします。</value>
+  </data>
+  <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>手動スポット径(ピクセル, =2^サイズ)。主にサイズスライダーとメインツールバーのスポットサイズ選択と連動表示します。</value>
+  </data>
+  <data name="radioButtonCircle.ToolTip" xml:space="preserve">
+    <value>手動スポットマスクの形状を円にします。</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>手動スポットマスクの形状を矩形(正方形)にします。</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
+    <value>次の画像を読み込む際、マスクを引き継がず空の状態から開始します。</value>
+  </data>
+  <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
+    <value>次の画像を読み込む際、現在メモリ上のマスク状態をそのまま引き継ぎます。</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
+    <value>次の画像を読み込む際、メモリ上のマスクではなく保存済みマスクファイルのマスクを適用します。</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
+    <value>自動「Mask Spots」のスポット検出しきい値(局所平均からの標準偏差倍数)。小さいほど多くのスポットを、大きいほど強いスポットのみをマスクします。</value>
+  </data>
+  <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
+    <value>「Get Profile」のたびに抽出した1次元プロファイルをファイルへ自動保存します。下の形式・保存先オプションが有効になります。</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
+    <value>積算のたびに抽出した1次元プロファイルをクリップボード経由でPDIndexer(連携アプリ)へ送ります。</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
+    <value>1次元プロファイルだけでなく、切り開き画像(ケーキ/方位展開した2θ-χ画像)もPDIndexerへ送ります。</value>
+  </data>
+  <data name="checkBoxTest.ToolTip" xml:space="preserve">
+    <value>Kα1管球線を選択している場合、プロファイルからKα2成分を除去(Rachinger補正)し、Kα1のみのパターンにします。</value>
+  </data>
+  <data name="numericBoxTest.ToolTip" xml:space="preserve">
+    <value>Kα2除去補正に用いるKα2/Kα1強度比(範囲0-2, 通常~0.5)。大きいほどKα2を多く差し引きます。</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
+    <value>連続/方位分割の一連のプロファイルを1つのファイルにまとめて保存します(GSAS形式は不可)。</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
+    <value>連続/方位分割の各プロファイルを個別のファイルとして保存します。</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
+    <value>プロファイル保存のたびに保存先フォルダを尋ねます。</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
+    <value>確認せずに、元画像と同じフォルダへプロファイルを保存します。</value>
+  </data>
+  <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
+    <value>プロファイルをPDI形式(PDIndexerのネイティブ形式)で保存します。</value>
+  </data>
+  <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
+    <value>プロファイルをCSV(カンマ区切り)で保存します(表計算ソフト向け)。</value>
+  </data>
+  <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
+    <value>プロファイルをTSV(タブ区切り)で保存します。</value>
+  </data>
+  <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
+    <value>プロファイルをリートベルト解析用のGSAS形式で保存します。この形式では「1ファイル」保存は使えません。</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
+    <value>切り開き(ケーキ)画像の方位角χ分割数(1-2048, 既定720)。方位軸方向の縦分解能を決めます。</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
+    <value>切り開き画像の横軸開始値(0-180)。単位選択に応じて2θ度/長さ/d値。ケーキ画像の左端。</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
+    <value>切り開き画像の横軸終了値(0-180, 選択中の単位)。ケーキ画像の右端。</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
+    <value>切り開き画像の横軸ステップ(ビン幅, 選択中の単位)。ケーキ画像の横方向(2θ/d)分解能を決めます。</value>
+  </data>
+  <data name="radioButton4.ToolTip" xml:space="preserve">
+    <value>切り開き画像の横軸に散乱角2θ(度)を使用します。</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>切り開き画像の横軸に検出器上の長さ(mm)を使用します。</value>
+  </data>
+  <data name="radioButton3.ToolTip" xml:space="preserve">
+    <value>切り開き画像の横軸に格子面間隔d値(Å)を使用します。</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
+    <value>画像に重ねる2θ/方位スケール線の密度: None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
+  </data>
+  <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
+    <value>画像に重ねたスケール線の横に数値ラベル(2θ/方位)を表示します。</value>
+  </data>
+  <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
+    <value>重ねたスケール線の太さ(ピクセル)。右へドラッグすると線が太く見やすくなります。</value>
+  </data>
+  <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
+    <value>画像に重ねる方位角(χ)スケール線の色を設定します。</value>
+  </data>
+  <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
+    <value>保存/表示する画像の名前にファイル名のみを使用します(パスなし)。</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
+    <value>画像名に親フォルダ名+ファイル名(例: run3/img001.tif)を使用し、同名ファイルを区別します。</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
+    <value>画像名にファイルのフルパスを使用します。</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
+    <value>次の画像を読み込む際、毎回自動再スケールせず現在の強度コントラスト(表示の最小/最大スケール)を維持します。</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
+    <value>次の画像を読み込む際、毎回ビューを合わせ直さず現在のズーム/表示範囲(パン・ズーム)を維持します。</value>
+  </data>
+  <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
+    <value>方位角χを画像上で時計回りに増加するよう定義します。方位展開やセクター角度の符号規約を決めます。</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
+    <value>方位角χを画像上で反時計回りに増加するよう定義します(時計回り規約の逆)。</value>
+  </data>
+  <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
+    <value>方位角の原点(χ=0)を画像の右方向に設定します。方位積算の開始位置を決めます。</value>
+  </data>
+  <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
+    <value>方位角の原点(χ=0)を画像の上方向に設定します。</value>
+  </data>
+  <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
+    <value>方位角の原点(χ=0)を画像の左方向に設定します。</value>
+  </data>
+  <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
+    <value>方位角の原点(χ=0)を画像の下方向に設定します。</value>
+  </data>
+  <data name="pictureBox1.ToolTip" xml:space="preserve">
+    <value>方位角(χ)軸のプレビュー: 現在の方向・回転設定でχ=0の位置とχの増加方向を示します。</value>
+  </data>
+  <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
+    <value>中心検出/精密化の際、ビーム中心位置を固定し、他のパラメータのみを最適化します。探索範囲オプションは無効になります。</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
+    <value>中心探索範囲(ピクセル/ステップ, 整数): 自動中心検出が現在の中心周りを探索する半径。大きいほど広範囲ですが遅くなります。</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
+    <value>中心精密化時に各デバイ環のピークフィットに使う範囲(2θ度)。ピークが広い場合は広げ、隣接ピークを避けたい場合は狭めます。</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
+    <value>ビーム中心の検出/精密化でマスク済みピクセルを無視し、マスクしたスポットや不良領域が結果に影響しないようにします。</value>
+  </data>
+  <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
+    <value>現在読み込んでいる画像を、以降の画像から差し引く背景として登録します(係数で倍率調整)。</value>
+  </data>
+  <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
+    <value>登録した背景画像を消去し、背景差し引きを行わないようにします。</value>
+  </data>
+  <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
+    <value>差し引く背景として現在使用している画像のパス(読み取り専用)。背景未設定時は空欄。</value>
+  </data>
+  <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
+    <value>背景のスケール係数(0-10, 既定1): 表示 = 画像 - 係数×背景。大きくすると背景を多く、小さくすると少なく差し引きます。</value>
+  </data>
 </root>

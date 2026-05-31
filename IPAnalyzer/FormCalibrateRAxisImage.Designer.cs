@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalibrateRAxisImage));
             textBoxFile1 = new System.Windows.Forms.TextBox();
             textBoxFile2 = new System.Windows.Forms.TextBox();
@@ -46,6 +48,7 @@
             // 
             textBoxFile1.Location = new System.Drawing.Point(66, 14);
             textBoxFile1.Name = "textBoxFile1";
+            toolTip.SetToolTip(textBoxFile1, resources.GetString("textBoxFile1.ToolTip")); // 260531Cl 追加
             textBoxFile1.Size = new System.Drawing.Size(257, 22);
             textBoxFile1.TabIndex = 0;
             // 
@@ -53,6 +56,7 @@
             // 
             textBoxFile2.Location = new System.Drawing.Point(66, 41);
             textBoxFile2.Name = "textBoxFile2";
+            toolTip.SetToolTip(textBoxFile2, resources.GetString("textBoxFile2.ToolTip")); // 260531Cl 追加
             textBoxFile2.Size = new System.Drawing.Size(257, 22);
             textBoxFile2.TabIndex = 0;
             // 
@@ -60,6 +64,7 @@
             // 
             textBoxFile3.Location = new System.Drawing.Point(66, 70);
             textBoxFile3.Name = "textBoxFile3";
+            toolTip.SetToolTip(textBoxFile3, resources.GetString("textBoxFile3.ToolTip")); // 260531Cl 追加
             textBoxFile3.Size = new System.Drawing.Size(257, 22);
             textBoxFile3.TabIndex = 0;
             // 
@@ -67,6 +72,7 @@
             // 
             buttonReadFile1.Location = new System.Drawing.Point(329, 11);
             buttonReadFile1.Name = "buttonReadFile1";
+            toolTip.SetToolTip(buttonReadFile1, resources.GetString("buttonReadFile1.ToolTip")); // 260531Cl 追加
             buttonReadFile1.Size = new System.Drawing.Size(75, 27);
             buttonReadFile1.TabIndex = 1;
             buttonReadFile1.Text = "Open";
@@ -77,6 +83,7 @@
             // 
             buttonReadFile2.Location = new System.Drawing.Point(329, 39);
             buttonReadFile2.Name = "buttonReadFile2";
+            toolTip.SetToolTip(buttonReadFile2, resources.GetString("buttonReadFile2.ToolTip")); // 260531Cl 追加
             buttonReadFile2.Size = new System.Drawing.Size(75, 27);
             buttonReadFile2.TabIndex = 1;
             buttonReadFile2.Text = "Open";
@@ -86,6 +93,7 @@
             // 
             buttonReadFile3.Location = new System.Drawing.Point(329, 67);
             buttonReadFile3.Name = "buttonReadFile3";
+            toolTip.SetToolTip(buttonReadFile3, resources.GetString("buttonReadFile3.ToolTip")); // 260531Cl 追加
             buttonReadFile3.Size = new System.Drawing.Size(75, 27);
             buttonReadFile3.TabIndex = 1;
             buttonReadFile3.Text = "Open";
@@ -96,6 +104,7 @@
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(10, 45);
             label1.Name = "label1";
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip")); // 260531Cl 追加
             label1.Size = new System.Drawing.Size(50, 14);
             label1.TabIndex = 3;
             label1.Text = "Image 2";
@@ -105,6 +114,7 @@
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(10, 17);
             label2.Name = "label2";
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip")); // 260531Cl 追加
             label2.Size = new System.Drawing.Size(50, 14);
             label2.TabIndex = 3;
             label2.Text = "Image 1";
@@ -114,6 +124,7 @@
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(10, 73);
             label3.Name = "label3";
+            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip")); // 260531Cl 追加
             label3.Size = new System.Drawing.Size(50, 14);
             label3.TabIndex = 3;
             label3.Text = "Image 3";
@@ -176,6 +187,7 @@
             // 
             button4.Location = new System.Drawing.Point(623, 34);
             button4.Name = "button4";
+            toolTip.SetToolTip(button4, resources.GetString("button4.ToolTip")); // 260531Cl 追加
             button4.Size = new System.Drawing.Size(75, 27);
             button4.TabIndex = 1;
             button4.Text = "Calc !";
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Label label3;
         private Crystallography.Controls.GraphControl graphControl1;
         private System.Windows.Forms.Button button4;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

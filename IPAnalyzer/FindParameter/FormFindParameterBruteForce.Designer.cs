@@ -170,6 +170,7 @@
             // buttonOptimize
             // 
             resources.ApplyResources(buttonOptimize, "buttonOptimize");
+            toolTip1.SetToolTip(buttonOptimize, resources.GetString("buttonOptimize.ToolTip")); // 260531Cl 追加
             buttonOptimize.BackColor = System.Drawing.Color.SteelBlue;
             buttonOptimize.ForeColor = System.Drawing.Color.Transparent;
             buttonOptimize.Name = "buttonOptimize";
@@ -179,6 +180,7 @@
             // buttonGetProfile
             // 
             resources.ApplyResources(buttonGetProfile, "buttonGetProfile");
+            toolTip1.SetToolTip(buttonGetProfile, resources.GetString("buttonGetProfile.ToolTip")); // 260531Cl 追加
             buttonGetProfile.BackColor = System.Drawing.Color.SteelBlue;
             buttonGetProfile.ForeColor = System.Drawing.Color.White;
             buttonGetProfile.Name = "buttonGetProfile";
@@ -196,15 +198,18 @@
             toolStripProgressBar1.Maximum = 100000;
             toolStripProgressBar1.Name = "toolStripProgressBar1";
             resources.ApplyResources(toolStripProgressBar1, "toolStripProgressBar1");
+            toolStripProgressBar1.ToolTipText = resources.GetString("toolStripProgressBar1.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             // 
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(toolStripStatusLabel1, "toolStripStatusLabel1");
+            toolStripStatusLabel1.ToolTipText = resources.GetString("toolStripStatusLabel1.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             // 
             // checkBoxCameraLength
             // 
             resources.ApplyResources(checkBoxCameraLength, "checkBoxCameraLength");
+            toolTip1.SetToolTip(checkBoxCameraLength, resources.GetString("checkBoxCameraLength.ToolTip")); // 260531Cl 追加
             checkBoxCameraLength.Checked = true;
             checkBoxCameraLength.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxCameraLength.Name = "checkBoxCameraLength";
@@ -214,6 +219,7 @@
             // checkBoxTau
             // 
             resources.ApplyResources(checkBoxTau, "checkBoxTau");
+            toolTip1.SetToolTip(checkBoxTau, resources.GetString("checkBoxTau.ToolTip")); // 260531Cl 追加
             checkBoxTau.Checked = true;
             checkBoxTau.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxTau.Name = "checkBoxTau";
@@ -223,6 +229,7 @@
             // checkBoxPointX
             // 
             resources.ApplyResources(checkBoxPointX, "checkBoxPointX");
+            toolTip1.SetToolTip(checkBoxPointX, resources.GetString("checkBoxPointX.ToolTip")); // 260531Cl 追加
             checkBoxPointX.Checked = true;
             checkBoxPointX.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxPointX.Name = "checkBoxPointX";
@@ -232,6 +239,7 @@
             // checkBoxPointY
             // 
             resources.ApplyResources(checkBoxPointY, "checkBoxPointY");
+            toolTip1.SetToolTip(checkBoxPointY, resources.GetString("checkBoxPointY.ToolTip")); // 260531Cl 追加
             checkBoxPointY.Checked = true;
             checkBoxPointY.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxPointY.Name = "checkBoxPointY";
@@ -275,11 +283,13 @@
             // label3
             // 
             resources.ApplyResources(label3, "label3");
+            toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip")); // 260531Cl 追加
             label3.Name = "label3";
             // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
+            toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip")); // 260531Cl 追加
             label4.Name = "label4";
             // 
             // numericBoxCameraLengthRange
@@ -357,6 +367,7 @@
             // checkBoxWaveLength
             // 
             resources.ApplyResources(checkBoxWaveLength, "checkBoxWaveLength");
+            toolTip1.SetToolTip(checkBoxWaveLength, resources.GetString("checkBoxWaveLength.ToolTip")); // 260531Cl 追加
             checkBoxWaveLength.Name = "checkBoxWaveLength";
             checkBoxWaveLength.UseVisualStyleBackColor = true;
             checkBoxWaveLength.CheckedChanged += checkBoxDistance_CheckedChanged;
@@ -388,6 +399,7 @@
             // checkBox4
             // 
             resources.ApplyResources(checkBox4, "checkBox4");
+            toolTip1.SetToolTip(checkBox4, resources.GetString("checkBox4.ToolTip")); // 260531Cl 追加
             checkBox4.Name = "checkBox4";
             checkBox4.UseVisualStyleBackColor = true;
             checkBox4.CheckedChanged += checkBoxDistance_CheckedChanged;
@@ -395,6 +407,7 @@
             // checkBox3
             // 
             resources.ApplyResources(checkBox3, "checkBox3");
+            toolTip1.SetToolTip(checkBox3, resources.GetString("checkBox3.ToolTip")); // 260531Cl 追加
             checkBox3.Name = "checkBox3";
             checkBox3.UseVisualStyleBackColor = true;
             checkBox3.CheckedChanged += checkBoxDistance_CheckedChanged;
@@ -402,6 +415,7 @@
             // checkBox2
             // 
             resources.ApplyResources(checkBox2, "checkBox2");
+            toolTip1.SetToolTip(checkBox2, resources.GetString("checkBox2.ToolTip")); // 260531Cl 追加
             checkBox2.Name = "checkBox2";
             checkBox2.UseVisualStyleBackColor = true;
             checkBox2.CheckedChanged += checkBoxDistance_CheckedChanged;
@@ -505,6 +519,7 @@
             // checkBoxPhi
             // 
             resources.ApplyResources(checkBoxPhi, "checkBoxPhi");
+            toolTip1.SetToolTip(checkBoxPhi, resources.GetString("checkBoxPhi.ToolTip")); // 260531Cl 追加
             checkBoxPhi.Checked = true;
             checkBoxPhi.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxPhi.Name = "checkBoxPhi";
@@ -538,6 +553,7 @@
             // textBox1
             // 
             resources.ApplyResources(textBox1, "textBox1");
+            toolTip1.SetToolTip(textBox1, resources.GetString("textBox1.ToolTip")); // 260531Cl 追加
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
             // 
@@ -583,6 +599,7 @@
             numericUpDownCameraLengthStep.DecimalPlaces = 2;
             numericUpDownCameraLengthStep.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             resources.ApplyResources(numericUpDownCameraLengthStep, "numericUpDownCameraLengthStep");
+            toolTip1.SetToolTip(numericUpDownCameraLengthStep, resources.GetString("numericUpDownCameraLengthStep.ToolTip")); // 260531Cl 追加
             numericUpDownCameraLengthStep.Name = "numericUpDownCameraLengthStep";
             numericUpDownCameraLengthStep.Value = new decimal(new int[] { 5, 0, 0, 65536 });
             // 
@@ -594,6 +611,7 @@
             // checkBoxCenterPosition
             // 
             resources.ApplyResources(checkBoxCenterPosition, "checkBoxCenterPosition");
+            toolTip1.SetToolTip(checkBoxCenterPosition, resources.GetString("checkBoxCenterPosition.ToolTip")); // 260531Cl 追加
             checkBoxCenterPosition.Checked = true;
             checkBoxCenterPosition.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxCenterPosition.Name = "checkBoxCenterPosition";
@@ -602,6 +620,7 @@
             // checkBoxPixelSize
             // 
             resources.ApplyResources(checkBoxPixelSize, "checkBoxPixelSize");
+            toolTip1.SetToolTip(checkBoxPixelSize, resources.GetString("checkBoxPixelSize.ToolTip")); // 260531Cl 追加
             checkBoxPixelSize.Checked = true;
             checkBoxPixelSize.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxPixelSize.Name = "checkBoxPixelSize";
@@ -610,6 +629,7 @@
             // checkBoxCameraLengthGandlfi
             // 
             resources.ApplyResources(checkBoxCameraLengthGandlfi, "checkBoxCameraLengthGandlfi");
+            toolTip1.SetToolTip(checkBoxCameraLengthGandlfi, resources.GetString("checkBoxCameraLengthGandlfi.ToolTip")); // 260531Cl 追加
             checkBoxCameraLengthGandlfi.Checked = true;
             checkBoxCameraLengthGandlfi.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxCameraLengthGandlfi.Name = "checkBoxCameraLengthGandlfi";
@@ -618,6 +638,7 @@
             // label7
             // 
             resources.ApplyResources(label7, "label7");
+            toolTip1.SetToolTip(label7, resources.GetString("label7.ToolTip")); // 260531Cl 追加
             label7.Name = "label7";
             // 
             // flowLayoutPanel2
@@ -632,6 +653,7 @@
             numericUpDownPixelSizeStep.DecimalPlaces = 4;
             numericUpDownPixelSizeStep.Increment = new decimal(new int[] { 5, 0, 0, 196608 });
             resources.ApplyResources(numericUpDownPixelSizeStep, "numericUpDownPixelSizeStep");
+            toolTip1.SetToolTip(numericUpDownPixelSizeStep, resources.GetString("numericUpDownPixelSizeStep.ToolTip")); // 260531Cl 追加
             numericUpDownPixelSizeStep.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownPixelSizeStep.Name = "numericUpDownPixelSizeStep";
             numericUpDownPixelSizeStep.Value = new decimal(new int[] { 1, 0, 0, 262144 });
@@ -653,6 +675,7 @@
             numericUpDownCenterPositionStep.DecimalPlaces = 1;
             numericUpDownCenterPositionStep.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             resources.ApplyResources(numericUpDownCenterPositionStep, "numericUpDownCenterPositionStep");
+            toolTip1.SetToolTip(numericUpDownCenterPositionStep, resources.GetString("numericUpDownCenterPositionStep.ToolTip")); // 260531Cl 追加
             numericUpDownCenterPositionStep.Name = "numericUpDownCenterPositionStep";
             numericUpDownCenterPositionStep.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -664,6 +687,7 @@
             // label23
             // 
             resources.ApplyResources(label23, "label23");
+            toolTip1.SetToolTip(label23, resources.GetString("label23.ToolTip")); // 260531Cl 追加
             label23.Name = "label23";
             // 
             // flowLayoutPanel5
@@ -682,6 +706,7 @@
             // numericUpDownCameraLengthRange
             // 
             resources.ApplyResources(numericUpDownCameraLengthRange, "numericUpDownCameraLengthRange");
+            toolTip1.SetToolTip(numericUpDownCameraLengthRange, resources.GetString("numericUpDownCameraLengthRange.ToolTip")); // 260531Cl 追加
             numericUpDownCameraLengthRange.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownCameraLengthRange.Name = "numericUpDownCameraLengthRange";
             numericUpDownCameraLengthRange.Value = new decimal(new int[] { 2, 0, 0, 0 });
@@ -707,6 +732,7 @@
             // numericUpDownPixelSizeRange
             // 
             resources.ApplyResources(numericUpDownPixelSizeRange, "numericUpDownPixelSizeRange");
+            toolTip1.SetToolTip(numericUpDownPixelSizeRange, resources.GetString("numericUpDownPixelSizeRange.ToolTip")); // 260531Cl 追加
             numericUpDownPixelSizeRange.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownPixelSizeRange.Name = "numericUpDownPixelSizeRange";
             numericUpDownPixelSizeRange.Value = new decimal(new int[] { 2, 0, 0, 0 });
@@ -732,6 +758,7 @@
             // numericUpDownCenterPositionRange
             // 
             resources.ApplyResources(numericUpDownCenterPositionRange, "numericUpDownCenterPositionRange");
+            toolTip1.SetToolTip(numericUpDownCenterPositionRange, resources.GetString("numericUpDownCenterPositionRange.ToolTip")); // 260531Cl 追加
             numericUpDownCenterPositionRange.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownCenterPositionRange.Name = "numericUpDownCenterPositionRange";
             numericUpDownCenterPositionRange.Value = new decimal(new int[] { 2, 0, 0, 0 });
@@ -744,6 +771,7 @@
             // checkBoxIPTilt
             // 
             resources.ApplyResources(checkBoxIPTilt, "checkBoxIPTilt");
+            toolTip1.SetToolTip(checkBoxIPTilt, resources.GetString("checkBoxIPTilt.ToolTip")); // 260531Cl 追加
             checkBoxIPTilt.Checked = true;
             checkBoxIPTilt.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxIPTilt.Name = "checkBoxIPTilt";
@@ -761,6 +789,7 @@
             numericUpDownIPTiltStep.DecimalPlaces = 3;
             numericUpDownIPTiltStep.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             resources.ApplyResources(numericUpDownIPTiltStep, "numericUpDownIPTiltStep");
+            toolTip1.SetToolTip(numericUpDownIPTiltStep, resources.GetString("numericUpDownIPTiltStep.ToolTip")); // 260531Cl 追加
             numericUpDownIPTiltStep.Name = "numericUpDownIPTiltStep";
             numericUpDownIPTiltStep.Value = new decimal(new int[] { 1, 0, 0, 131072 });
             // 
@@ -772,6 +801,7 @@
             // checkBoxGandlfiRadius
             // 
             resources.ApplyResources(checkBoxGandlfiRadius, "checkBoxGandlfiRadius");
+            toolTip1.SetToolTip(checkBoxGandlfiRadius, resources.GetString("checkBoxGandlfiRadius.ToolTip")); // 260531Cl 追加
             checkBoxGandlfiRadius.Checked = true;
             checkBoxGandlfiRadius.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxGandlfiRadius.Name = "checkBoxGandlfiRadius";
@@ -793,6 +823,7 @@
             // numericUpDownTiltRange
             // 
             resources.ApplyResources(numericUpDownTiltRange, "numericUpDownTiltRange");
+            toolTip1.SetToolTip(numericUpDownTiltRange, resources.GetString("numericUpDownTiltRange.ToolTip")); // 260531Cl 追加
             numericUpDownTiltRange.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownTiltRange.Name = "numericUpDownTiltRange";
             numericUpDownTiltRange.Value = new decimal(new int[] { 2, 0, 0, 0 });
@@ -814,6 +845,7 @@
             numericUpDownGandolfiRadiusStep.DecimalPlaces = 2;
             numericUpDownGandolfiRadiusStep.Increment = new decimal(new int[] { 5, 0, 0, 196608 });
             resources.ApplyResources(numericUpDownGandolfiRadiusStep, "numericUpDownGandolfiRadiusStep");
+            toolTip1.SetToolTip(numericUpDownGandolfiRadiusStep, resources.GetString("numericUpDownGandolfiRadiusStep.ToolTip")); // 260531Cl 追加
             numericUpDownGandolfiRadiusStep.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownGandolfiRadiusStep.Name = "numericUpDownGandolfiRadiusStep";
             numericUpDownGandolfiRadiusStep.Value = new decimal(new int[] { 5, 0, 0, 65536 });
@@ -839,6 +871,7 @@
             // numericUpDownGandolfiRadiusRange
             // 
             resources.ApplyResources(numericUpDownGandolfiRadiusRange, "numericUpDownGandolfiRadiusRange");
+            toolTip1.SetToolTip(numericUpDownGandolfiRadiusRange, resources.GetString("numericUpDownGandolfiRadiusRange.ToolTip")); // 260531Cl 追加
             numericUpDownGandolfiRadiusRange.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownGandolfiRadiusRange.Name = "numericUpDownGandolfiRadiusRange";
             numericUpDownGandolfiRadiusRange.Value = new decimal(new int[] { 2, 0, 0, 0 });
@@ -872,11 +905,13 @@
             // label1
             // 
             resources.ApplyResources(label1, "label1");
+            toolTip1.SetToolTip(label1, resources.GetString("label1.ToolTip")); // 260531Cl 追加
             label1.Name = "label1";
             // 
             // checkBox1
             // 
             resources.ApplyResources(checkBox1, "checkBox1");
+            toolTip1.SetToolTip(checkBox1, resources.GetString("checkBox1.ToolTip")); // 260531Cl 追加
             checkBox1.Checked = true;
             checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBox1.Name = "checkBox1";
@@ -892,6 +927,7 @@
             // radioButtonDirectSpotMode
             // 
             resources.ApplyResources(radioButtonDirectSpotMode, "radioButtonDirectSpotMode");
+            toolTip1.SetToolTip(radioButtonDirectSpotMode, resources.GetString("radioButtonDirectSpotMode.ToolTip")); // 260531Cl 追加
             radioButtonDirectSpotMode.Checked = true;
             radioButtonDirectSpotMode.Name = "radioButtonDirectSpotMode";
             radioButtonDirectSpotMode.TabStop = true;
@@ -901,12 +937,14 @@
             // radioButtonFootMode
             // 
             resources.ApplyResources(radioButtonFootMode, "radioButtonFootMode");
+            toolTip1.SetToolTip(radioButtonFootMode, resources.GetString("radioButtonFootMode.ToolTip")); // 260531Cl 追加
             radioButtonFootMode.Name = "radioButtonFootMode";
             radioButtonFootMode.UseVisualStyleBackColor = true;
             // 
             // buttonStop
             // 
             resources.ApplyResources(buttonStop, "buttonStop");
+            toolTip1.SetToolTip(buttonStop, resources.GetString("buttonStop.ToolTip")); // 260531Cl 追加
             buttonStop.BackColor = System.Drawing.Color.IndianRed;
             buttonStop.ForeColor = System.Drawing.Color.Transparent;
             buttonStop.Name = "buttonStop";
@@ -942,11 +980,13 @@
             // label5
             // 
             resources.ApplyResources(label5, "label5");
+            toolTip1.SetToolTip(label5, resources.GetString("label5.ToolTip")); // 260531Cl 追加
             label5.Name = "label5";
             // 
             // buttonOptimizeGandolfi
             // 
             resources.ApplyResources(buttonOptimizeGandolfi, "buttonOptimizeGandolfi");
+            toolTip1.SetToolTip(buttonOptimizeGandolfi, resources.GetString("buttonOptimizeGandolfi.ToolTip")); // 260531Cl 追加
             buttonOptimizeGandolfi.Name = "buttonOptimizeGandolfi";
             buttonOptimizeGandolfi.UseVisualStyleBackColor = true;
             buttonOptimizeGandolfi.Click += buttonOptimizeGandolfi_Click;
@@ -961,6 +1001,7 @@
             numericUpDownFittingRangeForGandolfi.DecimalPlaces = 2;
             numericUpDownFittingRangeForGandolfi.Increment = new decimal(new int[] { 2, 0, 0, 131072 });
             resources.ApplyResources(numericUpDownFittingRangeForGandolfi, "numericUpDownFittingRangeForGandolfi");
+            toolTip1.SetToolTip(numericUpDownFittingRangeForGandolfi, resources.GetString("numericUpDownFittingRangeForGandolfi.ToolTip")); // 260531Cl 追加
             numericUpDownFittingRangeForGandolfi.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownFittingRangeForGandolfi.Minimum = new decimal(new int[] { 2, 0, 0, 131072 });
             numericUpDownFittingRangeForGandolfi.Name = "numericUpDownFittingRangeForGandolfi";
@@ -970,6 +1011,7 @@
             // numericUpDownIterationGandolfi
             // 
             resources.ApplyResources(numericUpDownIterationGandolfi, "numericUpDownIterationGandolfi");
+            toolTip1.SetToolTip(numericUpDownIterationGandolfi, resources.GetString("numericUpDownIterationGandolfi.ToolTip")); // 260531Cl 追加
             numericUpDownIterationGandolfi.Name = "numericUpDownIterationGandolfi";
             numericUpDownIterationGandolfi.Value = new decimal(new int[] { 30, 0, 0, 0 });
             // 
@@ -1073,6 +1115,7 @@
             // radioButtonStandardAu
             // 
             resources.ApplyResources(radioButtonStandardAu, "radioButtonStandardAu");
+            toolTip1.SetToolTip(radioButtonStandardAu, resources.GetString("radioButtonStandardAu.ToolTip")); // 260531Cl 追加
             radioButtonStandardAu.Checked = true;
             radioButtonStandardAu.Name = "radioButtonStandardAu";
             radioButtonStandardAu.TabStop = true;
@@ -1082,6 +1125,7 @@
             // radioButtonStandardCeO2
             // 
             resources.ApplyResources(radioButtonStandardCeO2, "radioButtonStandardCeO2");
+            toolTip1.SetToolTip(radioButtonStandardCeO2, resources.GetString("radioButtonStandardCeO2.ToolTip")); // 260531Cl 追加
             radioButtonStandardCeO2.Name = "radioButtonStandardCeO2";
             radioButtonStandardCeO2.UseVisualStyleBackColor = true;
             radioButtonStandardCeO2.CheckedChanged += radioButtonStandard_CheckedChanged;
@@ -1089,6 +1133,7 @@
             // radioButtonStandardLaB6
             // 
             resources.ApplyResources(radioButtonStandardLaB6, "radioButtonStandardLaB6");
+            toolTip1.SetToolTip(radioButtonStandardLaB6, resources.GetString("radioButtonStandardLaB6.ToolTip")); // 260531Cl 追加
             radioButtonStandardLaB6.Name = "radioButtonStandardLaB6";
             radioButtonStandardLaB6.UseVisualStyleBackColor = true;
             radioButtonStandardLaB6.CheckedChanged += radioButtonStandard_CheckedChanged;
@@ -1096,6 +1141,7 @@
             // radioButtonStandardAl2O3
             // 
             resources.ApplyResources(radioButtonStandardAl2O3, "radioButtonStandardAl2O3");
+            toolTip1.SetToolTip(radioButtonStandardAl2O3, resources.GetString("radioButtonStandardAl2O3.ToolTip")); // 260531Cl 追加
             radioButtonStandardAl2O3.Name = "radioButtonStandardAl2O3";
             radioButtonStandardAl2O3.UseVisualStyleBackColor = true;
             radioButtonStandardAl2O3.CheckedChanged += radioButtonStandard_CheckedChanged;
@@ -1103,6 +1149,7 @@
             // radioButtonStandardOther
             // 
             resources.ApplyResources(radioButtonStandardOther, "radioButtonStandardOther");
+            toolTip1.SetToolTip(radioButtonStandardOther, resources.GetString("radioButtonStandardOther.ToolTip")); // 260531Cl 追加
             radioButtonStandardOther.Name = "radioButtonStandardOther";
             radioButtonStandardOther.UseVisualStyleBackColor = true;
             radioButtonStandardOther.CheckedChanged += radioButtonStandard_CheckedChanged;

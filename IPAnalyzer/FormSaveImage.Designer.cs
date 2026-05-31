@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSaveImage)); // 260531Cl 追加 (resources 宣言漏れによる CS0103 修正)
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +62,7 @@
             this.label2.Location = new System.Drawing.Point(223, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip")); // 260531Cl 追加
             this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 12;
             this.label2.Text = "Height";
@@ -81,6 +85,7 @@
             this.label1.Location = new System.Drawing.Point(96, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip")); // 260531Cl 追加
             this.label1.Size = new System.Drawing.Size(42, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Width";
@@ -106,6 +111,7 @@
             0,
             0});
             this.numericUpDownHeight.Name = "numericUpDownHeight";
+            toolTip.SetToolTip(numericUpDownHeight, resources.GetString("numericUpDownHeight.ToolTip")); // 260531Cl 追加
             this.numericUpDownHeight.Size = new System.Drawing.Size(62, 25);
             this.numericUpDownHeight.TabIndex = 1;
             this.numericUpDownHeight.Value = new decimal(new int[] {
@@ -136,6 +142,7 @@
             0,
             0});
             this.numericUpDownWidth.Name = "numericUpDownWidth";
+            toolTip.SetToolTip(numericUpDownWidth, resources.GetString("numericUpDownWidth.ToolTip")); // 260531Cl 追加
             this.numericUpDownWidth.Size = new System.Drawing.Size(62, 25);
             this.numericUpDownWidth.TabIndex = 0;
             this.numericUpDownWidth.Value = new decimal(new int[] {
@@ -152,6 +159,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(412, 118);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
+            toolTip.SetToolTip(buttonCancel, resources.GetString("buttonCancel.ToolTip")); // 260531Cl 追加
             this.buttonCancel.Size = new System.Drawing.Size(76, 31);
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
@@ -165,6 +173,7 @@
             this.buttonOK.Location = new System.Drawing.Point(329, 118);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
+            toolTip.SetToolTip(buttonOK, resources.GetString("buttonOK.ToolTip")); // 260531Cl 追加
             this.buttonOK.Size = new System.Drawing.Size(76, 31);
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = "OK";
@@ -192,6 +201,7 @@
             0,
             0});
             this.numericUpDownResolution.Name = "numericUpDownResolution";
+            toolTip.SetToolTip(numericUpDownResolution, resources.GetString("numericUpDownResolution.ToolTip")); // 260531Cl 追加
             this.numericUpDownResolution.Size = new System.Drawing.Size(62, 25);
             this.numericUpDownResolution.TabIndex = 3;
             this.numericUpDownResolution.Value = new decimal(new int[] {
@@ -208,6 +218,7 @@
             this.label7.Location = new System.Drawing.Point(222, 125);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
+            toolTip.SetToolTip(label7, resources.GetString("label7.ToolTip")); // 260531Cl 追加
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "μm / pixel";
@@ -221,6 +232,7 @@
             this.checkBoxKeepAspect.Location = new System.Drawing.Point(354, 42);
             this.checkBoxKeepAspect.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxKeepAspect.Name = "checkBoxKeepAspect";
+            toolTip.SetToolTip(checkBoxKeepAspect, resources.GetString("checkBoxKeepAspect.ToolTip")); // 260531Cl 追加
             this.checkBoxKeepAspect.Size = new System.Drawing.Size(134, 21);
             this.checkBoxKeepAspect.TabIndex = 2;
             this.checkBoxKeepAspect.Text = "Keep Aspect Ratio";
@@ -233,6 +245,7 @@
             this.label3.Location = new System.Drawing.Point(10, 120);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
+            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip")); // 260531Cl 追加
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Resolution";
@@ -244,6 +257,7 @@
             this.label6.Location = new System.Drawing.Point(10, 81);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
+            toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip")); // 260531Cl 追加
             this.label6.Size = new System.Drawing.Size(97, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Center position";
@@ -269,6 +283,7 @@
             0,
             -2147483648});
             this.numericUpDownCenterX.Name = "numericUpDownCenterX";
+            toolTip.SetToolTip(numericUpDownCenterX, resources.GetString("numericUpDownCenterX.ToolTip")); // 260531Cl 追加
             this.numericUpDownCenterX.Size = new System.Drawing.Size(62, 25);
             this.numericUpDownCenterX.TabIndex = 0;
             this.numericUpDownCenterX.Value = new decimal(new int[] {
@@ -299,6 +314,7 @@
             0,
             -2147483648});
             this.numericUpDownCenterY.Name = "numericUpDownCenterY";
+            toolTip.SetToolTip(numericUpDownCenterY, resources.GetString("numericUpDownCenterY.ToolTip")); // 260531Cl 追加
             this.numericUpDownCenterY.Size = new System.Drawing.Size(62, 25);
             this.numericUpDownCenterY.TabIndex = 0;
             this.numericUpDownCenterY.Value = new decimal(new int[] {
@@ -315,6 +331,7 @@
             this.label8.Location = new System.Drawing.Point(130, 81);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
+            toolTip.SetToolTip(label8, resources.GetString("label8.ToolTip")); // 260531Cl 追加
             this.label8.Size = new System.Drawing.Size(16, 17);
             this.label8.TabIndex = 8;
             this.label8.Text = "X";
@@ -326,6 +343,7 @@
             this.label9.Location = new System.Drawing.Point(224, 82);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
+            toolTip.SetToolTip(label9, resources.GetString("label9.ToolTip")); // 260531Cl 追加
             this.label9.Size = new System.Drawing.Size(15, 17);
             this.label9.TabIndex = 8;
             this.label9.Text = "Y";
@@ -337,6 +355,7 @@
             this.label4.Location = new System.Drawing.Point(10, 42);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
+            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip")); // 260531Cl 追加
             this.label4.Size = new System.Drawing.Size(31, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Size";
@@ -403,5 +422,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

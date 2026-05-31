@@ -237,7 +237,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         label8 = new Label();
         label50 = new Label();
         label52 = new Label();
-        toolTipJapanese = new ToolTip(components);
+        toolTip = new ToolTip(components); // 260531Cl toolTipJapanese から改名
         statusStrip1 = new StatusStrip();
         toolStripProgressBar1 = new ToolStripProgressBar();
         toolStripStatusLabel1 = new ToolStripStatusLabel();
@@ -284,49 +284,49 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(label1, "label1");
         label1.Name = "label1";
-        toolTipJapanese.SetToolTip(label1, resources.GetString("label1.ToolTip"));
+        toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip"));
         // 
         // label7
         // 
         resources.ApplyResources(label7, "label7");
         label7.Name = "label7";
-        toolTipJapanese.SetToolTip(label7, resources.GetString("label7.ToolTip"));
+        toolTip.SetToolTip(label7, resources.GetString("label7.ToolTip"));
         // 
         // label14
         // 
         resources.ApplyResources(label14, "label14");
         label14.Name = "label14";
-        toolTipJapanese.SetToolTip(label14, resources.GetString("label14.ToolTip"));
+        toolTip.SetToolTip(label14, resources.GetString("label14.ToolTip"));
         // 
         // label19
         // 
         resources.ApplyResources(label19, "label19");
         label19.Name = "label19";
-        toolTipJapanese.SetToolTip(label19, resources.GetString("label19.ToolTip"));
+        toolTip.SetToolTip(label19, resources.GetString("label19.ToolTip"));
         // 
         // label24
         // 
         resources.ApplyResources(label24, "label24");
         label24.Name = "label24";
-        toolTipJapanese.SetToolTip(label24, resources.GetString("label24.ToolTip"));
+        toolTip.SetToolTip(label24, resources.GetString("label24.ToolTip"));
         // 
         // label25
         // 
         resources.ApplyResources(label25, "label25");
         label25.Name = "label25";
-        toolTipJapanese.SetToolTip(label25, resources.GetString("label25.ToolTip"));
+        toolTip.SetToolTip(label25, resources.GetString("label25.ToolTip"));
         // 
         // label26
         // 
         resources.ApplyResources(label26, "label26");
         label26.Name = "label26";
-        toolTipJapanese.SetToolTip(label26, resources.GetString("label26.ToolTip"));
+        toolTip.SetToolTip(label26, resources.GetString("label26.ToolTip"));
         // 
         // numericUpDownBandWidth
         // 
         resources.ApplyResources(numericUpDownBandWidth, "numericUpDownBandWidth");
         numericUpDownBandWidth.Name = "numericUpDownBandWidth";
-        toolTipJapanese.SetToolTip(numericUpDownBandWidth, resources.GetString("numericUpDownBandWidth.ToolTip"));
+        toolTip.SetToolTip(numericUpDownBandWidth, resources.GetString("numericUpDownBandWidth.ToolTip"));
         numericUpDownBandWidth.Value = new decimal(new int[] { 4, 0, 0, 0 });
         // 
         // label28
@@ -334,7 +334,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         resources.ApplyResources(label28, "label28");
         label28.BackColor = System.Drawing.SystemColors.Control;
         label28.Name = "label28";
-        toolTipJapanese.SetToolTip(label28, resources.GetString("label28.ToolTip"));
+        toolTip.SetToolTip(label28, resources.GetString("label28.ToolTip"));
         // 
         // numericUpDownSearchRange
         // 
@@ -344,7 +344,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericUpDownSearchRange.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
         numericUpDownSearchRange.Minimum = new decimal(new int[] { 1, 0, 0, 65536 });
         numericUpDownSearchRange.Name = "numericUpDownSearchRange";
-        toolTipJapanese.SetToolTip(numericUpDownSearchRange, resources.GetString("numericUpDownSearchRange.ToolTip"));
+        toolTip.SetToolTip(numericUpDownSearchRange, resources.GetString("numericUpDownSearchRange.ToolTip"));
         numericUpDownSearchRange.Value = new decimal(new int[] { 8, 0, 0, 65536 });
         numericUpDownSearchRange.ValueChanged += numericUpDownSearchRange_ValueChanged;
         // 
@@ -352,13 +352,13 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(label11, "label11");
         label11.Name = "label11";
-        toolTipJapanese.SetToolTip(label11, resources.GetString("label11.ToolTip"));
+        toolTip.SetToolTip(label11, resources.GetString("label11.ToolTip"));
         // 
         // label27
         // 
         resources.ApplyResources(label27, "label27");
         label27.Name = "label27";
-        toolTipJapanese.SetToolTip(label27, resources.GetString("label27.ToolTip"));
+        toolTip.SetToolTip(label27, resources.GetString("label27.ToolTip"));
         // 
         // checkBoxUseStandardCrystal
         // 
@@ -366,32 +366,32 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxUseStandardCrystal.Checked = true;
         checkBoxUseStandardCrystal.CheckState = CheckState.Checked;
         checkBoxUseStandardCrystal.Name = "checkBoxUseStandardCrystal";
-        toolTipJapanese.SetToolTip(checkBoxUseStandardCrystal, resources.GetString("checkBoxUseStandardCrystal.ToolTip"));
+        toolTip.SetToolTip(checkBoxUseStandardCrystal, resources.GetString("checkBoxUseStandardCrystal.ToolTip"));
         checkBoxUseStandardCrystal.CheckedChanged += checkBoxShowCrystalParameter_CheckedChanged;
         // 
         // label38
         // 
         resources.ApplyResources(label38, "label38");
         label38.Name = "label38";
-        toolTipJapanese.SetToolTip(label38, resources.GetString("label38.ToolTip"));
+        toolTip.SetToolTip(label38, resources.GetString("label38.ToolTip"));
         // 
         // label36
         // 
         resources.ApplyResources(label36, "label36");
         label36.Name = "label36";
-        toolTipJapanese.SetToolTip(label36, resources.GetString("label36.ToolTip"));
+        toolTip.SetToolTip(label36, resources.GetString("label36.ToolTip"));
         // 
         // label46
         // 
         resources.ApplyResources(label46, "label46");
         label46.Name = "label46";
-        toolTipJapanese.SetToolTip(label46, resources.GetString("label46.ToolTip"));
+        toolTip.SetToolTip(label46, resources.GetString("label46.ToolTip"));
         // 
         // label48
         // 
         resources.ApplyResources(label48, "label48");
         label48.Name = "label48";
-        toolTipJapanese.SetToolTip(label48, resources.GetString("label48.ToolTip"));
+        toolTip.SetToolTip(label48, resources.GetString("label48.ToolTip"));
         // 
         // groupBoxPrimaryImage
         // 
@@ -418,7 +418,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         groupBoxPrimaryImage.Controls.Add(label26);
         groupBoxPrimaryImage.Name = "groupBoxPrimaryImage";
         groupBoxPrimaryImage.TabStop = false;
-        toolTipJapanese.SetToolTip(groupBoxPrimaryImage, resources.GetString("groupBoxPrimaryImage.ToolTip"));
+        toolTip.SetToolTip(groupBoxPrimaryImage, resources.GetString("groupBoxPrimaryImage.ToolTip"));
         groupBoxPrimaryImage.DragDrop += groupBoxPrimaryImage_DragDrop;
         groupBoxPrimaryImage.DragEnter += groupBoxPrimaryImage_DragEnter;
         // 
@@ -432,7 +432,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxPrimaryImageNum.SkipEventDuringInput = false;
         numericBoxPrimaryImageNum.SmartIncrement = true;
         numericBoxPrimaryImageNum.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericBoxPrimaryImageNum, resources.GetString("numericBoxPrimaryImageNum.ToolTip"));
+        toolTip.SetToolTip(numericBoxPrimaryImageNum, resources.GetString("numericBoxPrimaryImageNum.ToolTip"));
         // 
         // numericTextBoxPrimaryCenterPositionY
         // 
@@ -444,7 +444,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxPrimaryCenterPositionY.SkipEventDuringInput = false;
         numericTextBoxPrimaryCenterPositionY.SmartIncrement = true;
         numericTextBoxPrimaryCenterPositionY.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericTextBoxPrimaryCenterPositionY, resources.GetString("numericTextBoxPrimaryCenterPositionY.ToolTip"));
+        toolTip.SetToolTip(numericTextBoxPrimaryCenterPositionY, resources.GetString("numericTextBoxPrimaryCenterPositionY.ToolTip"));
         numericTextBoxPrimaryCenterPositionY.ValueChanged += textBox_TextChanged;
         numericTextBoxPrimaryCenterPositionY.DoubleClick += textBoxPrimaryCenterPositionX_DoubleClick;
         // 
@@ -458,7 +458,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxPrimaryFilmDistance.SkipEventDuringInput = false;
         numericTextBoxPrimaryFilmDistance.SmartIncrement = true;
         numericTextBoxPrimaryFilmDistance.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericTextBoxPrimaryFilmDistance, resources.GetString("numericTextBoxPrimaryFilmDistance.ToolTip"));
+        toolTip.SetToolTip(numericTextBoxPrimaryFilmDistance, resources.GetString("numericTextBoxPrimaryFilmDistance.ToolTip"));
         numericTextBoxPrimaryFilmDistance.ValueChanged += numericTextBoxPrimaryFilmDistance_TextChanged;
         // 
         // numericalTextBoxPrimaryCenterPositionX
@@ -471,7 +471,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxPrimaryCenterPositionX.SkipEventDuringInput = false;
         numericalTextBoxPrimaryCenterPositionX.SmartIncrement = true;
         numericalTextBoxPrimaryCenterPositionX.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericalTextBoxPrimaryCenterPositionX, resources.GetString("numericalTextBoxPrimaryCenterPositionX.ToolTip"));
+        toolTip.SetToolTip(numericalTextBoxPrimaryCenterPositionX, resources.GetString("numericalTextBoxPrimaryCenterPositionX.ToolTip"));
         numericalTextBoxPrimaryCenterPositionX.ValueChanged += textBox_TextChanged;
         numericalTextBoxPrimaryCenterPositionX.DoubleClick += textBoxPrimaryCenterPositionX_DoubleClick;
         // 
@@ -479,7 +479,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(label9, "label9");
         label9.Name = "label9";
-        toolTipJapanese.SetToolTip(label9, resources.GetString("label9.ToolTip"));
+        toolTip.SetToolTip(label9, resources.GetString("label9.ToolTip"));
         // 
         // pictureBoxPattern1
         // 
@@ -488,38 +488,38 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxPattern1.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxPattern1.Name = "pictureBoxPattern1";
         pictureBoxPattern1.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxPattern1, resources.GetString("pictureBoxPattern1.ToolTip"));
+        toolTip.SetToolTip(pictureBoxPattern1, resources.GetString("pictureBoxPattern1.ToolTip"));
         pictureBoxPattern1.Click += pictureBoxPattern1_Click;
         // 
         // label2
         // 
         resources.ApplyResources(label2, "label2");
         label2.Name = "label2";
-        toolTipJapanese.SetToolTip(label2, resources.GetString("label2.ToolTip"));
+        toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
         // 
         // label43
         // 
         resources.ApplyResources(label43, "label43");
         label43.Name = "label43";
-        toolTipJapanese.SetToolTip(label43, resources.GetString("label43.ToolTip"));
+        toolTip.SetToolTip(label43, resources.GetString("label43.ToolTip"));
         // 
         // label10
         // 
         resources.ApplyResources(label10, "label10");
         label10.Name = "label10";
-        toolTipJapanese.SetToolTip(label10, resources.GetString("label10.ToolTip"));
+        toolTip.SetToolTip(label10, resources.GetString("label10.ToolTip"));
         // 
         // label51
         // 
         resources.ApplyResources(label51, "label51");
         label51.Name = "label51";
-        toolTipJapanese.SetToolTip(label51, resources.GetString("label51.ToolTip"));
+        toolTip.SetToolTip(label51, resources.GetString("label51.ToolTip"));
         // 
         // buttonGetCenterPositionFromMainForm
         // 
         resources.ApplyResources(buttonGetCenterPositionFromMainForm, "buttonGetCenterPositionFromMainForm");
         buttonGetCenterPositionFromMainForm.Name = "buttonGetCenterPositionFromMainForm";
-        toolTipJapanese.SetToolTip(buttonGetCenterPositionFromMainForm, resources.GetString("buttonGetCenterPositionFromMainForm.ToolTip"));
+        toolTip.SetToolTip(buttonGetCenterPositionFromMainForm, resources.GetString("buttonGetCenterPositionFromMainForm.ToolTip"));
         buttonGetCenterPositionFromMainForm.UseVisualStyleBackColor = true;
         buttonGetCenterPositionFromMainForm.Click += textBoxPrimaryCenterPositionX_DoubleClick;
         // 
@@ -527,7 +527,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonPrimaryGetProfile, "buttonPrimaryGetProfile");
         buttonPrimaryGetProfile.Name = "buttonPrimaryGetProfile";
-        toolTipJapanese.SetToolTip(buttonPrimaryGetProfile, resources.GetString("buttonPrimaryGetProfile.ToolTip"));
+        toolTip.SetToolTip(buttonPrimaryGetProfile, resources.GetString("buttonPrimaryGetProfile.ToolTip"));
         buttonPrimaryGetProfile.UseVisualStyleBackColor = true;
         buttonPrimaryGetProfile.Click += buttonPrimaryGetProfile_Click;
         // 
@@ -535,7 +535,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonClearPrimaryImage, "buttonClearPrimaryImage");
         buttonClearPrimaryImage.Name = "buttonClearPrimaryImage";
-        toolTipJapanese.SetToolTip(buttonClearPrimaryImage, resources.GetString("buttonClearPrimaryImage.ToolTip"));
+        toolTip.SetToolTip(buttonClearPrimaryImage, resources.GetString("buttonClearPrimaryImage.ToolTip"));
         buttonClearPrimaryImage.UseVisualStyleBackColor = true;
         buttonClearPrimaryImage.Click += buttonClearPrimaryImage_Click;
         // 
@@ -543,7 +543,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonOpenPrimaryImage, "buttonOpenPrimaryImage");
         buttonOpenPrimaryImage.Name = "buttonOpenPrimaryImage";
-        toolTipJapanese.SetToolTip(buttonOpenPrimaryImage, resources.GetString("buttonOpenPrimaryImage.ToolTip"));
+        toolTip.SetToolTip(buttonOpenPrimaryImage, resources.GetString("buttonOpenPrimaryImage.ToolTip"));
         buttonOpenPrimaryImage.UseVisualStyleBackColor = true;
         buttonOpenPrimaryImage.Click += buttonOpenPrimaryImage_Click;
         // 
@@ -560,7 +560,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxPrimaryCenterPositionYDev.SmartIncrement = true;
         numericalTextBoxPrimaryCenterPositionYDev.ValueBackColor = System.Drawing.SystemColors.Control;
         numericalTextBoxPrimaryCenterPositionYDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericalTextBoxPrimaryCenterPositionYDev, resources.GetString("numericalTextBoxPrimaryCenterPositionYDev.ToolTip"));
+        toolTip.SetToolTip(numericalTextBoxPrimaryCenterPositionYDev, resources.GetString("numericalTextBoxPrimaryCenterPositionYDev.ToolTip"));
         numericalTextBoxPrimaryCenterPositionYDev.WordWrap = false;
         // 
         // numericalTextBoxPrimaryCenterPositionXDev
@@ -576,7 +576,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxPrimaryCenterPositionXDev.SmartIncrement = true;
         numericalTextBoxPrimaryCenterPositionXDev.ValueBackColor = System.Drawing.SystemColors.Control;
         numericalTextBoxPrimaryCenterPositionXDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericalTextBoxPrimaryCenterPositionXDev, resources.GetString("numericalTextBoxPrimaryCenterPositionXDev.ToolTip"));
+        toolTip.SetToolTip(numericalTextBoxPrimaryCenterPositionXDev, resources.GetString("numericalTextBoxPrimaryCenterPositionXDev.ToolTip"));
         numericalTextBoxPrimaryCenterPositionXDev.WordWrap = false;
         // 
         // textBoxPrimaryFileName
@@ -584,20 +584,20 @@ partial class FormFindParameter : System.Windows.Forms.Form
         resources.ApplyResources(textBoxPrimaryFileName, "textBoxPrimaryFileName");
         textBoxPrimaryFileName.Name = "textBoxPrimaryFileName";
         textBoxPrimaryFileName.ReadOnly = true;
-        toolTipJapanese.SetToolTip(textBoxPrimaryFileName, resources.GetString("textBoxPrimaryFileName.ToolTip"));
+        toolTip.SetToolTip(textBoxPrimaryFileName, resources.GetString("textBoxPrimaryFileName.ToolTip"));
         textBoxPrimaryFileName.TextChanged += textBoxPrimaryFileName_TextChanged;
         // 
         // label23
         // 
         resources.ApplyResources(label23, "label23");
         label23.Name = "label23";
-        toolTipJapanese.SetToolTip(label23, resources.GetString("label23.ToolTip"));
+        toolTip.SetToolTip(label23, resources.GetString("label23.ToolTip"));
         // 
         // label53
         // 
         resources.ApplyResources(label53, "label53");
         label53.Name = "label53";
-        toolTipJapanese.SetToolTip(label53, resources.GetString("label53.ToolTip"));
+        toolTip.SetToolTip(label53, resources.GetString("label53.ToolTip"));
         // 
         // groupBoxSecondaryImage
         // 
@@ -626,7 +626,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         groupBoxSecondaryImage.Controls.Add(label29);
         groupBoxSecondaryImage.Name = "groupBoxSecondaryImage";
         groupBoxSecondaryImage.TabStop = false;
-        toolTipJapanese.SetToolTip(groupBoxSecondaryImage, resources.GetString("groupBoxSecondaryImage.ToolTip"));
+        toolTip.SetToolTip(groupBoxSecondaryImage, resources.GetString("groupBoxSecondaryImage.ToolTip"));
         groupBoxSecondaryImage.DragDrop += groupBoxSecondaryImage_DragDrop;
         groupBoxSecondaryImage.DragEnter += groupBoxSecondaryImage_DragEnter;
         // 
@@ -640,7 +640,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxSecondaryImageNum.SkipEventDuringInput = false;
         numericBoxSecondaryImageNum.SmartIncrement = true;
         numericBoxSecondaryImageNum.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericBoxSecondaryImageNum, resources.GetString("numericBoxSecondaryImageNum.ToolTip"));
+        toolTip.SetToolTip(numericBoxSecondaryImageNum, resources.GetString("numericBoxSecondaryImageNum.ToolTip"));
         // 
         // numericTextBoxSecondaryCenterPositionY
         // 
@@ -652,7 +652,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionY.SkipEventDuringInput = false;
         numericTextBoxSecondaryCenterPositionY.SmartIncrement = true;
         numericTextBoxSecondaryCenterPositionY.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionY, resources.GetString("numericTextBoxSecondaryCenterPositionY.ToolTip"));
+        toolTip.SetToolTip(numericTextBoxSecondaryCenterPositionY, resources.GetString("numericTextBoxSecondaryCenterPositionY.ToolTip"));
         numericTextBoxSecondaryCenterPositionY.ValueChanged += textBox_TextChanged;
         numericTextBoxSecondaryCenterPositionY.DoubleClick += textBoxSecondaryCenterPositionX_DoubleClick;
         // 
@@ -660,7 +660,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonOpenSecondaryImage, "buttonOpenSecondaryImage");
         buttonOpenSecondaryImage.Name = "buttonOpenSecondaryImage";
-        toolTipJapanese.SetToolTip(buttonOpenSecondaryImage, resources.GetString("buttonOpenSecondaryImage.ToolTip"));
+        toolTip.SetToolTip(buttonOpenSecondaryImage, resources.GetString("buttonOpenSecondaryImage.ToolTip"));
         buttonOpenSecondaryImage.UseVisualStyleBackColor = true;
         buttonOpenSecondaryImage.Click += buttonOpenSecondaryImage_Click;
         // 
@@ -674,7 +674,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionX.SkipEventDuringInput = false;
         numericTextBoxSecondaryCenterPositionX.SmartIncrement = true;
         numericTextBoxSecondaryCenterPositionX.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionX, resources.GetString("numericTextBoxSecondaryCenterPositionX.ToolTip"));
+        toolTip.SetToolTip(numericTextBoxSecondaryCenterPositionX, resources.GetString("numericTextBoxSecondaryCenterPositionX.ToolTip"));
         numericTextBoxSecondaryCenterPositionX.ValueChanged += textBox_TextChanged;
         numericTextBoxSecondaryCenterPositionX.DoubleClick += textBoxSecondaryCenterPositionX_DoubleClick;
         // 
@@ -683,7 +683,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         resources.ApplyResources(textBoxSecondaryFileName, "textBoxSecondaryFileName");
         textBoxSecondaryFileName.Name = "textBoxSecondaryFileName";
         textBoxSecondaryFileName.ReadOnly = true;
-        toolTipJapanese.SetToolTip(textBoxSecondaryFileName, resources.GetString("textBoxSecondaryFileName.ToolTip"));
+        toolTip.SetToolTip(textBoxSecondaryFileName, resources.GetString("textBoxSecondaryFileName.ToolTip"));
         textBoxSecondaryFileName.TextChanged += textBoxSecondaryFileName_TextChanged;
         // 
         // textBoxFilmDistanceDiscrepancy
@@ -697,7 +697,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxFilmDistanceDiscrepancy.SkipEventDuringInput = false;
         textBoxFilmDistanceDiscrepancy.SmartIncrement = true;
         textBoxFilmDistanceDiscrepancy.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxFilmDistanceDiscrepancy, resources.GetString("textBoxFilmDistanceDiscrepancy.ToolTip"));
+        toolTip.SetToolTip(textBoxFilmDistanceDiscrepancy, resources.GetString("textBoxFilmDistanceDiscrepancy.ToolTip"));
         textBoxFilmDistanceDiscrepancy.Value = 100D;
         textBoxFilmDistanceDiscrepancy.WordWrap = false;
         textBoxFilmDistanceDiscrepancy.ValueChanged += textBoxFilmDistanceDiscrepancy_TextChanged;
@@ -716,7 +716,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPrimaryFilmDistanceCopy.SmartIncrement = true;
         textBoxPrimaryFilmDistanceCopy.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxPrimaryFilmDistanceCopy.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPrimaryFilmDistanceCopy, resources.GetString("textBoxPrimaryFilmDistanceCopy.ToolTip"));
+        toolTip.SetToolTip(textBoxPrimaryFilmDistanceCopy, resources.GetString("textBoxPrimaryFilmDistanceCopy.ToolTip"));
         textBoxPrimaryFilmDistanceCopy.Value = 445D;
         textBoxPrimaryFilmDistanceCopy.WordWrap = false;
         // 
@@ -727,32 +727,32 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxPattern2.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxPattern2.Name = "pictureBoxPattern2";
         pictureBoxPattern2.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxPattern2, resources.GetString("pictureBoxPattern2.ToolTip"));
+        toolTip.SetToolTip(pictureBoxPattern2, resources.GetString("pictureBoxPattern2.ToolTip"));
         pictureBoxPattern2.Click += pictureBoxPattern2_Click;
         // 
         // label54
         // 
         resources.ApplyResources(label54, "label54");
         label54.Name = "label54";
-        toolTipJapanese.SetToolTip(label54, resources.GetString("label54.ToolTip"));
+        toolTip.SetToolTip(label54, resources.GetString("label54.ToolTip"));
         // 
         // label5
         // 
         resources.ApplyResources(label5, "label5");
         label5.Name = "label5";
-        toolTipJapanese.SetToolTip(label5, resources.GetString("label5.ToolTip"));
+        toolTip.SetToolTip(label5, resources.GetString("label5.ToolTip"));
         // 
         // label55
         // 
         resources.ApplyResources(label55, "label55");
         label55.Name = "label55";
-        toolTipJapanese.SetToolTip(label55, resources.GetString("label55.ToolTip"));
+        toolTip.SetToolTip(label55, resources.GetString("label55.ToolTip"));
         // 
         // buttonGetCenterPositionFromMainForm2
         // 
         resources.ApplyResources(buttonGetCenterPositionFromMainForm2, "buttonGetCenterPositionFromMainForm2");
         buttonGetCenterPositionFromMainForm2.Name = "buttonGetCenterPositionFromMainForm2";
-        toolTipJapanese.SetToolTip(buttonGetCenterPositionFromMainForm2, resources.GetString("buttonGetCenterPositionFromMainForm2.ToolTip"));
+        toolTip.SetToolTip(buttonGetCenterPositionFromMainForm2, resources.GetString("buttonGetCenterPositionFromMainForm2.ToolTip"));
         buttonGetCenterPositionFromMainForm2.UseVisualStyleBackColor = true;
         buttonGetCenterPositionFromMainForm2.Click += textBoxSecondaryCenterPositionX_DoubleClick;
         // 
@@ -760,7 +760,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonClearSecondaryImage, "buttonClearSecondaryImage");
         buttonClearSecondaryImage.Name = "buttonClearSecondaryImage";
-        toolTipJapanese.SetToolTip(buttonClearSecondaryImage, resources.GetString("buttonClearSecondaryImage.ToolTip"));
+        toolTip.SetToolTip(buttonClearSecondaryImage, resources.GetString("buttonClearSecondaryImage.ToolTip"));
         buttonClearSecondaryImage.UseVisualStyleBackColor = true;
         buttonClearSecondaryImage.Click += buttonClearSecondaryImage_Click;
         // 
@@ -768,7 +768,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonSecondaryGetProfile, "buttonSecondaryGetProfile");
         buttonSecondaryGetProfile.Name = "buttonSecondaryGetProfile";
-        toolTipJapanese.SetToolTip(buttonSecondaryGetProfile, resources.GetString("buttonSecondaryGetProfile.ToolTip"));
+        toolTip.SetToolTip(buttonSecondaryGetProfile, resources.GetString("buttonSecondaryGetProfile.ToolTip"));
         buttonSecondaryGetProfile.UseVisualStyleBackColor = true;
         buttonSecondaryGetProfile.Click += buttonSecondaryGetProfile_Click;
         // 
@@ -785,7 +785,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionYDev.SmartIncrement = true;
         numericTextBoxSecondaryCenterPositionYDev.ValueBackColor = System.Drawing.SystemColors.Control;
         numericTextBoxSecondaryCenterPositionYDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionYDev, resources.GetString("numericTextBoxSecondaryCenterPositionYDev.ToolTip"));
+        toolTip.SetToolTip(numericTextBoxSecondaryCenterPositionYDev, resources.GetString("numericTextBoxSecondaryCenterPositionYDev.ToolTip"));
         numericTextBoxSecondaryCenterPositionYDev.WordWrap = false;
         // 
         // numericTextBoxSecondaryCenterPositionXDev
@@ -801,44 +801,44 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericTextBoxSecondaryCenterPositionXDev.SmartIncrement = true;
         numericTextBoxSecondaryCenterPositionXDev.ValueBackColor = System.Drawing.SystemColors.Control;
         numericTextBoxSecondaryCenterPositionXDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericTextBoxSecondaryCenterPositionXDev, resources.GetString("numericTextBoxSecondaryCenterPositionXDev.ToolTip"));
+        toolTip.SetToolTip(numericTextBoxSecondaryCenterPositionXDev, resources.GetString("numericTextBoxSecondaryCenterPositionXDev.ToolTip"));
         numericTextBoxSecondaryCenterPositionXDev.WordWrap = false;
         // 
         // label4
         // 
         resources.ApplyResources(label4, "label4");
         label4.Name = "label4";
-        toolTipJapanese.SetToolTip(label4, resources.GetString("label4.ToolTip"));
+        toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip"));
         // 
         // label56
         // 
         resources.ApplyResources(label56, "label56");
         label56.Name = "label56";
-        toolTipJapanese.SetToolTip(label56, resources.GetString("label56.ToolTip"));
+        toolTip.SetToolTip(label56, resources.GetString("label56.ToolTip"));
         // 
         // label31
         // 
         resources.ApplyResources(label31, "label31");
         label31.Name = "label31";
-        toolTipJapanese.SetToolTip(label31, resources.GetString("label31.ToolTip"));
+        toolTip.SetToolTip(label31, resources.GetString("label31.ToolTip"));
         // 
         // label3
         // 
         resources.ApplyResources(label3, "label3");
         label3.Name = "label3";
-        toolTipJapanese.SetToolTip(label3, resources.GetString("label3.ToolTip"));
+        toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip"));
         // 
         // label58
         // 
         resources.ApplyResources(label58, "label58");
         label58.Name = "label58";
-        toolTipJapanese.SetToolTip(label58, resources.GetString("label58.ToolTip"));
+        toolTip.SetToolTip(label58, resources.GetString("label58.ToolTip"));
         // 
         // label29
         // 
         resources.ApplyResources(label29, "label29");
         label29.Name = "label29";
-        toolTipJapanese.SetToolTip(label29, resources.GetString("label29.ToolTip"));
+        toolTip.SetToolTip(label29, resources.GetString("label29.ToolTip"));
         // 
         // checkBoxRefineTiltCorrection
         // 
@@ -846,7 +846,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxRefineTiltCorrection.Checked = true;
         checkBoxRefineTiltCorrection.CheckState = CheckState.Checked;
         checkBoxRefineTiltCorrection.Name = "checkBoxRefineTiltCorrection";
-        toolTipJapanese.SetToolTip(checkBoxRefineTiltCorrection, resources.GetString("checkBoxRefineTiltCorrection.ToolTip"));
+        toolTip.SetToolTip(checkBoxRefineTiltCorrection, resources.GetString("checkBoxRefineTiltCorrection.ToolTip"));
         checkBoxRefineTiltCorrection.UseVisualStyleBackColor = true;
         checkBoxRefineTiltCorrection.CheckedChanged += checkBoxRefineTiltCorrection_CheckedChanged;
         // 
@@ -856,7 +856,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxRefinePixelSize.Checked = true;
         checkBoxRefinePixelSize.CheckState = CheckState.Checked;
         checkBoxRefinePixelSize.Name = "checkBoxRefinePixelSize";
-        toolTipJapanese.SetToolTip(checkBoxRefinePixelSize, resources.GetString("checkBoxRefinePixelSize.ToolTip"));
+        toolTip.SetToolTip(checkBoxRefinePixelSize, resources.GetString("checkBoxRefinePixelSize.ToolTip"));
         checkBoxRefinePixelSize.UseVisualStyleBackColor = true;
         checkBoxRefinePixelSize.CheckedChanged += checkBoxRefinePixelSize_CheckedChanged;
         // 
@@ -866,7 +866,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxRefineFilmDistance.Checked = true;
         checkBoxRefineFilmDistance.CheckState = CheckState.Checked;
         checkBoxRefineFilmDistance.Name = "checkBoxRefineFilmDistance";
-        toolTipJapanese.SetToolTip(checkBoxRefineFilmDistance, resources.GetString("checkBoxRefineFilmDistance.ToolTip"));
+        toolTip.SetToolTip(checkBoxRefineFilmDistance, resources.GetString("checkBoxRefineFilmDistance.ToolTip"));
         checkBoxRefineFilmDistance.UseVisualStyleBackColor = true;
         // 
         // checkBoxRefineWaveLength
@@ -875,26 +875,26 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxRefineWaveLength.Checked = true;
         checkBoxRefineWaveLength.CheckState = CheckState.Checked;
         checkBoxRefineWaveLength.Name = "checkBoxRefineWaveLength";
-        toolTipJapanese.SetToolTip(checkBoxRefineWaveLength, resources.GetString("checkBoxRefineWaveLength.ToolTip"));
+        toolTip.SetToolTip(checkBoxRefineWaveLength, resources.GetString("checkBoxRefineWaveLength.ToolTip"));
         checkBoxRefineWaveLength.UseVisualStyleBackColor = true;
         // 
         // label18
         // 
         resources.ApplyResources(label18, "label18");
         label18.Name = "label18";
-        toolTipJapanese.SetToolTip(label18, resources.GetString("label18.ToolTip"));
+        toolTip.SetToolTip(label18, resources.GetString("label18.ToolTip"));
         // 
         // label35
         // 
         resources.ApplyResources(label35, "label35");
         label35.Name = "label35";
-        toolTipJapanese.SetToolTip(label35, resources.GetString("label35.ToolTip"));
+        toolTip.SetToolTip(label35, resources.GetString("label35.ToolTip"));
         // 
         // label40
         // 
         resources.ApplyResources(label40, "label40");
         label40.Name = "label40";
-        toolTipJapanese.SetToolTip(label40, resources.GetString("label40.ToolTip"));
+        toolTip.SetToolTip(label40, resources.GetString("label40.ToolTip"));
         // 
         // groupBoxOption
         // 
@@ -932,13 +932,13 @@ partial class FormFindParameter : System.Windows.Forms.Form
         groupBoxOption.Controls.Add(radioButtonSector);
         groupBoxOption.Name = "groupBoxOption";
         groupBoxOption.TabStop = false;
-        toolTipJapanese.SetToolTip(groupBoxOption, resources.GetString("groupBoxOption.ToolTip"));
+        toolTip.SetToolTip(groupBoxOption, resources.GetString("groupBoxOption.ToolTip"));
         // 
         // buttonSchematicDiagram
         // 
         resources.ApplyResources(buttonSchematicDiagram, "buttonSchematicDiagram");
         buttonSchematicDiagram.Name = "buttonSchematicDiagram";
-        toolTipJapanese.SetToolTip(buttonSchematicDiagram, resources.GetString("buttonSchematicDiagram.ToolTip"));
+        toolTip.SetToolTip(buttonSchematicDiagram, resources.GetString("buttonSchematicDiagram.ToolTip"));
         buttonSchematicDiagram.UseVisualStyleBackColor = true;
         buttonSchematicDiagram.Click += buttonSchematicDiagram_Click;
         // 
@@ -946,14 +946,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonClearGraphs, "buttonClearGraphs");
         buttonClearGraphs.Name = "buttonClearGraphs";
-        toolTipJapanese.SetToolTip(buttonClearGraphs, resources.GetString("buttonClearGraphs.ToolTip"));
+        toolTip.SetToolTip(buttonClearGraphs, resources.GetString("buttonClearGraphs.ToolTip"));
         buttonClearGraphs.Click += buttonClearGraphs_Click;
         // 
         // buttonSetStandardCrystal
         // 
         resources.ApplyResources(buttonSetStandardCrystal, "buttonSetStandardCrystal");
         buttonSetStandardCrystal.Name = "buttonSetStandardCrystal";
-        toolTipJapanese.SetToolTip(buttonSetStandardCrystal, resources.GetString("buttonSetStandardCrystal.ToolTip"));
+        toolTip.SetToolTip(buttonSetStandardCrystal, resources.GetString("buttonSetStandardCrystal.ToolTip"));
         buttonSetStandardCrystal.Click += buttonSetStandardCrystal_Click;
         // 
         // checkBoxRefinePixelDistortion
@@ -962,7 +962,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxRefinePixelDistortion.Checked = true;
         checkBoxRefinePixelDistortion.CheckState = CheckState.Checked;
         checkBoxRefinePixelDistortion.Name = "checkBoxRefinePixelDistortion";
-        toolTipJapanese.SetToolTip(checkBoxRefinePixelDistortion, resources.GetString("checkBoxRefinePixelDistortion.ToolTip"));
+        toolTip.SetToolTip(checkBoxRefinePixelDistortion, resources.GetString("checkBoxRefinePixelDistortion.ToolTip"));
         checkBoxRefinePixelDistortion.UseVisualStyleBackColor = true;
         // 
         // buttonExecuteRefinements
@@ -971,7 +971,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         buttonExecuteRefinements.BackColor = System.Drawing.Color.SteelBlue;
         buttonExecuteRefinements.ForeColor = System.Drawing.SystemColors.ButtonFace;
         buttonExecuteRefinements.Name = "buttonExecuteRefinements";
-        toolTipJapanese.SetToolTip(buttonExecuteRefinements, resources.GetString("buttonExecuteRefinements.ToolTip"));
+        toolTip.SetToolTip(buttonExecuteRefinements, resources.GetString("buttonExecuteRefinements.ToolTip"));
         buttonExecuteRefinements.UseVisualStyleBackColor = false;
         buttonExecuteRefinements.Click += buttonExecuteRefinements_Click;
         // 
@@ -979,7 +979,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(checkBoxSphericalCorrection, "checkBoxSphericalCorrection");
         checkBoxSphericalCorrection.Name = "checkBoxSphericalCorrection";
-        toolTipJapanese.SetToolTip(checkBoxSphericalCorrection, resources.GetString("checkBoxSphericalCorrection.ToolTip"));
+        toolTip.SetToolTip(checkBoxSphericalCorrection, resources.GetString("checkBoxSphericalCorrection.ToolTip"));
         checkBoxSphericalCorrection.UseVisualStyleBackColor = true;
         // 
         // checkBoxCenterPosition
@@ -988,28 +988,28 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxCenterPosition.Checked = true;
         checkBoxCenterPosition.CheckState = CheckState.Checked;
         checkBoxCenterPosition.Name = "checkBoxCenterPosition";
-        toolTipJapanese.SetToolTip(checkBoxCenterPosition, resources.GetString("checkBoxCenterPosition.ToolTip"));
+        toolTip.SetToolTip(checkBoxCenterPosition, resources.GetString("checkBoxCenterPosition.ToolTip"));
         checkBoxCenterPosition.UseVisualStyleBackColor = true;
         // 
         // numericUpDownRepitition
         // 
         resources.ApplyResources(numericUpDownRepitition, "numericUpDownRepitition");
         numericUpDownRepitition.Name = "numericUpDownRepitition";
-        toolTipJapanese.SetToolTip(numericUpDownRepitition, resources.GetString("numericUpDownRepitition.ToolTip"));
+        toolTip.SetToolTip(numericUpDownRepitition, resources.GetString("numericUpDownRepitition.ToolTip"));
         numericUpDownRepitition.Value = new decimal(new int[] { 12, 0, 0, 0 });
         // 
         // checkBoxPeakDecomposition
         // 
         resources.ApplyResources(checkBoxPeakDecomposition, "checkBoxPeakDecomposition");
         checkBoxPeakDecomposition.Name = "checkBoxPeakDecomposition";
-        toolTipJapanese.SetToolTip(checkBoxPeakDecomposition, resources.GetString("checkBoxPeakDecomposition.ToolTip"));
+        toolTip.SetToolTip(checkBoxPeakDecomposition, resources.GetString("checkBoxPeakDecomposition.ToolTip"));
         checkBoxPeakDecomposition.CheckedChanged += checkBoxShowCrystalParameter_CheckedChanged;
         // 
         // checkBoxMouseOperation
         // 
         resources.ApplyResources(checkBoxMouseOperation, "checkBoxMouseOperation");
         checkBoxMouseOperation.Name = "checkBoxMouseOperation";
-        toolTipJapanese.SetToolTip(checkBoxMouseOperation, resources.GetString("checkBoxMouseOperation.ToolTip"));
+        toolTip.SetToolTip(checkBoxMouseOperation, resources.GetString("checkBoxMouseOperation.ToolTip"));
         // 
         // checkBoxRefleshMainform
         // 
@@ -1017,7 +1017,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         checkBoxRefleshMainform.Checked = true;
         checkBoxRefleshMainform.CheckState = CheckState.Checked;
         checkBoxRefleshMainform.Name = "checkBoxRefleshMainform";
-        toolTipJapanese.SetToolTip(checkBoxRefleshMainform, resources.GetString("checkBoxRefleshMainform.ToolTip"));
+        toolTip.SetToolTip(checkBoxRefleshMainform, resources.GetString("checkBoxRefleshMainform.ToolTip"));
         // 
         // numericUpDownThresholdOfPeak
         // 
@@ -1026,7 +1026,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericUpDownThresholdOfPeak.Increment = new decimal(new int[] { 5, 0, 0, 131072 });
         numericUpDownThresholdOfPeak.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
         numericUpDownThresholdOfPeak.Name = "numericUpDownThresholdOfPeak";
-        toolTipJapanese.SetToolTip(numericUpDownThresholdOfPeak, resources.GetString("numericUpDownThresholdOfPeak.ToolTip"));
+        toolTip.SetToolTip(numericUpDownThresholdOfPeak, resources.GetString("numericUpDownThresholdOfPeak.ToolTip"));
         numericUpDownThresholdOfPeak.ValueChanged += numericUpDownThresholdOfPeak_ValueChanged;
         // 
         // numericUpDownDivision
@@ -1035,7 +1035,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericUpDownDivision.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
         numericUpDownDivision.Minimum = new decimal(new int[] { 8, 0, 0, 0 });
         numericUpDownDivision.Name = "numericUpDownDivision";
-        toolTipJapanese.SetToolTip(numericUpDownDivision, resources.GetString("numericUpDownDivision.ToolTip"));
+        toolTip.SetToolTip(numericUpDownDivision, resources.GetString("numericUpDownDivision.ToolTip"));
         numericUpDownDivision.Value = new decimal(new int[] { 18, 0, 0, 0 });
         // 
         // label45
@@ -1043,44 +1043,44 @@ partial class FormFindParameter : System.Windows.Forms.Form
         resources.ApplyResources(label45, "label45");
         label45.BackColor = System.Drawing.SystemColors.Control;
         label45.Name = "label45";
-        toolTipJapanese.SetToolTip(label45, resources.GetString("label45.ToolTip"));
+        toolTip.SetToolTip(label45, resources.GetString("label45.ToolTip"));
         // 
         // label21
         // 
         resources.ApplyResources(label21, "label21");
         label21.BackColor = System.Drawing.SystemColors.Control;
         label21.Name = "label21";
-        toolTipJapanese.SetToolTip(label21, resources.GetString("label21.ToolTip"));
+        toolTip.SetToolTip(label21, resources.GetString("label21.ToolTip"));
         // 
         // label73
         // 
         resources.ApplyResources(label73, "label73");
         label73.Name = "label73";
-        toolTipJapanese.SetToolTip(label73, resources.GetString("label73.ToolTip"));
+        toolTip.SetToolTip(label73, resources.GetString("label73.ToolTip"));
         // 
         // label67
         // 
         resources.ApplyResources(label67, "label67");
         label67.Name = "label67";
-        toolTipJapanese.SetToolTip(label67, resources.GetString("label67.ToolTip"));
+        toolTip.SetToolTip(label67, resources.GetString("label67.ToolTip"));
         // 
         // label82
         // 
         resources.ApplyResources(label82, "label82");
         label82.Name = "label82";
-        toolTipJapanese.SetToolTip(label82, resources.GetString("label82.ToolTip"));
+        toolTip.SetToolTip(label82, resources.GetString("label82.ToolTip"));
         // 
         // label17
         // 
         resources.ApplyResources(label17, "label17");
         label17.Name = "label17";
-        toolTipJapanese.SetToolTip(label17, resources.GetString("label17.ToolTip"));
+        toolTip.SetToolTip(label17, resources.GetString("label17.ToolTip"));
         // 
         // radioButtonRectangle
         // 
         resources.ApplyResources(radioButtonRectangle, "radioButtonRectangle");
         radioButtonRectangle.Name = "radioButtonRectangle";
-        toolTipJapanese.SetToolTip(radioButtonRectangle, resources.GetString("radioButtonRectangle.ToolTip"));
+        toolTip.SetToolTip(radioButtonRectangle, resources.GetString("radioButtonRectangle.ToolTip"));
         radioButtonRectangle.UseVisualStyleBackColor = true;
         // 
         // radioButtonSector
@@ -1089,7 +1089,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         radioButtonSector.Checked = true;
         radioButtonSector.Name = "radioButtonSector";
         radioButtonSector.TabStop = true;
-        toolTipJapanese.SetToolTip(radioButtonSector, resources.GetString("radioButtonSector.ToolTip"));
+        toolTip.SetToolTip(radioButtonSector, resources.GetString("radioButtonSector.ToolTip"));
         radioButtonSector.UseVisualStyleBackColor = true;
         // 
         // buttonStopRefinements
@@ -1098,7 +1098,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         buttonStopRefinements.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
         buttonStopRefinements.ForeColor = System.Drawing.Color.White;
         buttonStopRefinements.Name = "buttonStopRefinements";
-        toolTipJapanese.SetToolTip(buttonStopRefinements, resources.GetString("buttonStopRefinements.ToolTip"));
+        toolTip.SetToolTip(buttonStopRefinements, resources.GetString("buttonStopRefinements.ToolTip"));
         buttonStopRefinements.UseVisualStyleBackColor = false;
         buttonStopRefinements.Click += buttonStopRefinements_Click;
         // 
@@ -1106,14 +1106,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(buttonSetInitioalParam, "buttonSetInitioalParam");
         buttonSetInitioalParam.Name = "buttonSetInitioalParam";
-        toolTipJapanese.SetToolTip(buttonSetInitioalParam, resources.GetString("buttonSetInitioalParam.ToolTip"));
+        toolTip.SetToolTip(buttonSetInitioalParam, resources.GetString("buttonSetInitioalParam.ToolTip"));
         buttonSetInitioalParam.Click += buttonSetInitioalParam_Click;
         // 
         // buttonSendMainForm
         // 
         resources.ApplyResources(buttonSendMainForm, "buttonSendMainForm");
         buttonSendMainForm.Name = "buttonSendMainForm";
-        toolTipJapanese.SetToolTip(buttonSendMainForm, resources.GetString("buttonSendMainForm.ToolTip"));
+        toolTip.SetToolTip(buttonSendMainForm, resources.GetString("buttonSendMainForm.ToolTip"));
         buttonSendMainForm.Click += buttonSendMainForm_Click;
         // 
         // groupBoxParameter
@@ -1193,7 +1193,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         groupBoxParameter.Controls.Add(label18);
         groupBoxParameter.Name = "groupBoxParameter";
         groupBoxParameter.TabStop = false;
-        toolTipJapanese.SetToolTip(groupBoxParameter, resources.GetString("groupBoxParameter.ToolTip"));
+        toolTip.SetToolTip(groupBoxParameter, resources.GetString("groupBoxParameter.ToolTip"));
         groupBoxParameter.DragDrop += groupBoxParameter_DragDrop;
         groupBoxParameter.DragEnter += groupBoxParameter_DragEnter;
         // 
@@ -1207,7 +1207,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelKsi.SkipEventDuringInput = false;
         textBoxPixelKsi.SmartIncrement = true;
         textBoxPixelKsi.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPixelKsi, resources.GetString("textBoxPixelKsi.ToolTip"));
+        toolTip.SetToolTip(textBoxPixelKsi, resources.GetString("textBoxPixelKsi.ToolTip"));
         textBoxPixelKsi.WordWrap = false;
         textBoxPixelKsi.TextChanged += textBox_TextChanged;
         textBoxPixelKsi.KeyPress += textBoxNumOnly_KeyPress;
@@ -1222,7 +1222,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionSecondaryTau.SkipEventDuringInput = false;
         textBoxTiltCorrectionSecondaryTau.SmartIncrement = true;
         textBoxTiltCorrectionSecondaryTau.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxTiltCorrectionSecondaryTau, resources.GetString("textBoxTiltCorrectionSecondaryTau.ToolTip"));
+        toolTip.SetToolTip(textBoxTiltCorrectionSecondaryTau, resources.GetString("textBoxTiltCorrectionSecondaryTau.ToolTip"));
         textBoxTiltCorrectionSecondaryTau.WordWrap = false;
         textBoxTiltCorrectionSecondaryTau.TextChanged += textBox_TextChanged;
         textBoxTiltCorrectionSecondaryTau.KeyPress += textBoxNumOnly_KeyPress;
@@ -1237,7 +1237,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionPrimaryTau.SkipEventDuringInput = false;
         textBoxTiltCorrectionPrimaryTau.SmartIncrement = true;
         textBoxTiltCorrectionPrimaryTau.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxTiltCorrectionPrimaryTau, resources.GetString("textBoxTiltCorrectionPrimaryTau.ToolTip"));
+        toolTip.SetToolTip(textBoxTiltCorrectionPrimaryTau, resources.GetString("textBoxTiltCorrectionPrimaryTau.ToolTip"));
         textBoxTiltCorrectionPrimaryTau.WordWrap = false;
         textBoxTiltCorrectionPrimaryTau.TextChanged += textBox_TextChanged;
         textBoxTiltCorrectionPrimaryTau.KeyPress += textBoxNumOnly_KeyPress;
@@ -1252,7 +1252,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxSphericalRadius.SkipEventDuringInput = false;
         numericalTextBoxSphericalRadius.SmartIncrement = true;
         numericalTextBoxSphericalRadius.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericalTextBoxSphericalRadius, resources.GetString("numericalTextBoxSphericalRadius.ToolTip"));
+        toolTip.SetToolTip(numericalTextBoxSphericalRadius, resources.GetString("numericalTextBoxSphericalRadius.ToolTip"));
         numericalTextBoxSphericalRadius.WordWrap = false;
         numericalTextBoxSphericalRadius.TextChanged += textBox_TextChanged;
         numericalTextBoxSphericalRadius.KeyPress += textBoxNumOnly_KeyPress;
@@ -1267,7 +1267,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionSecondaryPhi.SkipEventDuringInput = false;
         textBoxTiltCorrectionSecondaryPhi.SmartIncrement = true;
         textBoxTiltCorrectionSecondaryPhi.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxTiltCorrectionSecondaryPhi, resources.GetString("textBoxTiltCorrectionSecondaryPhi.ToolTip"));
+        toolTip.SetToolTip(textBoxTiltCorrectionSecondaryPhi, resources.GetString("textBoxTiltCorrectionSecondaryPhi.ToolTip"));
         textBoxTiltCorrectionSecondaryPhi.WordWrap = false;
         textBoxTiltCorrectionSecondaryPhi.TextChanged += textBox_TextChanged;
         textBoxTiltCorrectionSecondaryPhi.KeyPress += textBoxNumOnly_KeyPress;
@@ -1282,7 +1282,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxTiltCorrectionPrimaryPhi.SkipEventDuringInput = false;
         textBoxTiltCorrectionPrimaryPhi.SmartIncrement = true;
         textBoxTiltCorrectionPrimaryPhi.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxTiltCorrectionPrimaryPhi, resources.GetString("textBoxTiltCorrectionPrimaryPhi.ToolTip"));
+        toolTip.SetToolTip(textBoxTiltCorrectionPrimaryPhi, resources.GetString("textBoxTiltCorrectionPrimaryPhi.ToolTip"));
         textBoxTiltCorrectionPrimaryPhi.WordWrap = false;
         textBoxTiltCorrectionPrimaryPhi.TextChanged += textBox_TextChanged;
         textBoxTiltCorrectionPrimaryPhi.KeyPress += textBoxNumOnly_KeyPress;
@@ -1301,27 +1301,27 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelKsiDev.TabStop = false;
         textBoxRefinedPixelKsiDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPixelKsiDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPixelKsiDev, resources.GetString("textBoxRefinedPixelKsiDev.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPixelKsiDev, resources.GetString("textBoxRefinedPixelKsiDev.ToolTip"));
         textBoxRefinedPixelKsiDev.WordWrap = false;
         // 
         // label68
         // 
         resources.ApplyResources(label68, "label68");
         label68.Name = "label68";
-        toolTipJapanese.SetToolTip(label68, resources.GetString("label68.ToolTip"));
+        toolTip.SetToolTip(label68, resources.GetString("label68.ToolTip"));
         // 
         // buttonCopyToClipboard
         // 
         resources.ApplyResources(buttonCopyToClipboard, "buttonCopyToClipboard");
         buttonCopyToClipboard.Name = "buttonCopyToClipboard";
-        toolTipJapanese.SetToolTip(buttonCopyToClipboard, resources.GetString("buttonCopyToClipboard.ToolTip"));
+        toolTip.SetToolTip(buttonCopyToClipboard, resources.GetString("buttonCopyToClipboard.ToolTip"));
         buttonCopyToClipboard.Click += buttonCopyToClipboard_Click;
         // 
         // label34
         // 
         resources.ApplyResources(label34, "label34");
         label34.Name = "label34";
-        toolTipJapanese.SetToolTip(label34, resources.GetString("label34.ToolTip"));
+        toolTip.SetToolTip(label34, resources.GetString("label34.ToolTip"));
         // 
         // textBoxWaveLengthDev
         // 
@@ -1337,7 +1337,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxWaveLengthDev.TabStop = false;
         textBoxWaveLengthDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxWaveLengthDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxWaveLengthDev, resources.GetString("textBoxWaveLengthDev.ToolTip"));
+        toolTip.SetToolTip(textBoxWaveLengthDev, resources.GetString("textBoxWaveLengthDev.ToolTip"));
         textBoxWaveLengthDev.WordWrap = false;
         // 
         // textBoxRefinedPixelKsi
@@ -1353,26 +1353,26 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelKsi.TabStop = false;
         textBoxRefinedPixelKsi.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPixelKsi.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPixelKsi, resources.GetString("textBoxRefinedPixelKsi.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPixelKsi, resources.GetString("textBoxRefinedPixelKsi.ToolTip"));
         textBoxRefinedPixelKsi.WordWrap = false;
         // 
         // label15
         // 
         resources.ApplyResources(label15, "label15");
         label15.Name = "label15";
-        toolTipJapanese.SetToolTip(label15, resources.GetString("label15.ToolTip"));
+        toolTip.SetToolTip(label15, resources.GetString("label15.ToolTip"));
         // 
         // label32
         // 
         resources.ApplyResources(label32, "label32");
         label32.Name = "label32";
-        toolTipJapanese.SetToolTip(label32, resources.GetString("label32.ToolTip"));
+        toolTip.SetToolTip(label32, resources.GetString("label32.ToolTip"));
         // 
         // label70
         // 
         resources.ApplyResources(label70, "label70");
         label70.Name = "label70";
-        toolTipJapanese.SetToolTip(label70, resources.GetString("label70.ToolTip"));
+        toolTip.SetToolTip(label70, resources.GetString("label70.ToolTip"));
         // 
         // textBoxPrimaryFilmDistanceCopy2
         // 
@@ -1388,7 +1388,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPrimaryFilmDistanceCopy2.TabStop = false;
         textBoxPrimaryFilmDistanceCopy2.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxPrimaryFilmDistanceCopy2.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPrimaryFilmDistanceCopy2, resources.GetString("textBoxPrimaryFilmDistanceCopy2.ToolTip"));
+        toolTip.SetToolTip(textBoxPrimaryFilmDistanceCopy2, resources.GetString("textBoxPrimaryFilmDistanceCopy2.ToolTip"));
         textBoxPrimaryFilmDistanceCopy2.Value = 445D;
         textBoxPrimaryFilmDistanceCopy2.WordWrap = false;
         // 
@@ -1406,7 +1406,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxRadiusInverseDev.TabStop = false;
         numericalTextBoxRadiusInverseDev.ValueBackColor = System.Drawing.SystemColors.Control;
         numericalTextBoxRadiusInverseDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericalTextBoxRadiusInverseDev, resources.GetString("numericalTextBoxRadiusInverseDev.ToolTip"));
+        toolTip.SetToolTip(numericalTextBoxRadiusInverseDev, resources.GetString("numericalTextBoxRadiusInverseDev.ToolTip"));
         numericalTextBoxRadiusInverseDev.WordWrap = false;
         // 
         // textBoxRefinedSecondaryTauDev
@@ -1423,7 +1423,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryTauDev.TabStop = false;
         textBoxRefinedSecondaryTauDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedSecondaryTauDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedSecondaryTauDev, resources.GetString("textBoxRefinedSecondaryTauDev.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedSecondaryTauDev, resources.GetString("textBoxRefinedSecondaryTauDev.ToolTip"));
         textBoxRefinedSecondaryTauDev.WordWrap = false;
         // 
         // textBoxPixelSizeYDev
@@ -1440,7 +1440,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeYDev.TabStop = false;
         textBoxPixelSizeYDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxPixelSizeYDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPixelSizeYDev, resources.GetString("textBoxPixelSizeYDev.ToolTip"));
+        toolTip.SetToolTip(textBoxPixelSizeYDev, resources.GetString("textBoxPixelSizeYDev.ToolTip"));
         textBoxPixelSizeYDev.WordWrap = false;
         // 
         // textBoxWaveLength
@@ -1454,7 +1454,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxWaveLength.SkipEventDuringInput = false;
         textBoxWaveLength.SmartIncrement = true;
         textBoxWaveLength.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxWaveLength, resources.GetString("textBoxWaveLength.ToolTip"));
+        toolTip.SetToolTip(textBoxWaveLength, resources.GetString("textBoxWaveLength.ToolTip"));
         textBoxWaveLength.Value = 0.4D;
         textBoxWaveLength.WordWrap = false;
         textBoxWaveLength.ValueChanged += textBox_TextChanged;
@@ -1475,7 +1475,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelSizeY.TabStop = false;
         textBoxRefinedPixelSizeY.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPixelSizeY.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPixelSizeY, resources.GetString("textBoxRefinedPixelSizeY.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPixelSizeY, resources.GetString("textBoxRefinedPixelSizeY.ToolTip"));
         textBoxRefinedPixelSizeY.Value = 0.1D;
         textBoxRefinedPixelSizeY.WordWrap = false;
         // 
@@ -1493,7 +1493,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryTauDev.TabStop = false;
         textBoxRefinedPrimaryTauDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPrimaryTauDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPrimaryTauDev, resources.GetString("textBoxRefinedPrimaryTauDev.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPrimaryTauDev, resources.GetString("textBoxRefinedPrimaryTauDev.ToolTip"));
         textBoxRefinedPrimaryTauDev.WordWrap = false;
         // 
         // textBoxPixelSizeY
@@ -1507,7 +1507,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeY.SkipEventDuringInput = false;
         textBoxPixelSizeY.SmartIncrement = true;
         textBoxPixelSizeY.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPixelSizeY, resources.GetString("textBoxPixelSizeY.ToolTip"));
+        toolTip.SetToolTip(textBoxPixelSizeY, resources.GetString("textBoxPixelSizeY.ToolTip"));
         textBoxPixelSizeY.Value = 0.1D;
         textBoxPixelSizeY.WordWrap = false;
         textBoxPixelSizeY.TextChanged += textBox_TextChanged;
@@ -1527,14 +1527,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryPhiDev.TabStop = false;
         textBoxRefinedSecondaryPhiDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedSecondaryPhiDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedSecondaryPhiDev, resources.GetString("textBoxRefinedSecondaryPhiDev.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedSecondaryPhiDev, resources.GetString("textBoxRefinedSecondaryPhiDev.ToolTip"));
         textBoxRefinedSecondaryPhiDev.WordWrap = false;
         // 
         // label41
         // 
         resources.ApplyResources(label41, "label41");
         label41.Name = "label41";
-        toolTipJapanese.SetToolTip(label41, resources.GetString("label41.ToolTip"));
+        toolTip.SetToolTip(label41, resources.GetString("label41.ToolTip"));
         // 
         // textBoxRefinedPrimaryFilmDistance
         // 
@@ -1550,7 +1550,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryFilmDistance.TabStop = false;
         textBoxRefinedPrimaryFilmDistance.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPrimaryFilmDistance.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPrimaryFilmDistance, resources.GetString("textBoxRefinedPrimaryFilmDistance.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPrimaryFilmDistance, resources.GetString("textBoxRefinedPrimaryFilmDistance.ToolTip"));
         textBoxRefinedPrimaryFilmDistance.Value = 400D;
         textBoxRefinedPrimaryFilmDistance.WordWrap = false;
         // 
@@ -1558,7 +1558,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         // 
         resources.ApplyResources(label13, "label13");
         label13.Name = "label13";
-        toolTipJapanese.SetToolTip(label13, resources.GetString("label13.ToolTip"));
+        toolTip.SetToolTip(label13, resources.GetString("label13.ToolTip"));
         // 
         // textBoxRefinedPrimaryPhiDev
         // 
@@ -1574,7 +1574,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryPhiDev.TabStop = false;
         textBoxRefinedPrimaryPhiDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPrimaryPhiDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPrimaryPhiDev, resources.GetString("textBoxRefinedPrimaryPhiDev.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPrimaryPhiDev, resources.GetString("textBoxRefinedPrimaryPhiDev.ToolTip"));
         textBoxRefinedPrimaryPhiDev.WordWrap = false;
         // 
         // textBoxPixelSizeX
@@ -1588,7 +1588,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeX.SkipEventDuringInput = false;
         textBoxPixelSizeX.SmartIncrement = true;
         textBoxPixelSizeX.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPixelSizeX, resources.GetString("textBoxPixelSizeX.ToolTip"));
+        toolTip.SetToolTip(textBoxPixelSizeX, resources.GetString("textBoxPixelSizeX.ToolTip"));
         textBoxPixelSizeX.Value = 0.1D;
         textBoxPixelSizeX.WordWrap = false;
         // 
@@ -1606,7 +1606,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedWaveLength.TabStop = false;
         textBoxRefinedWaveLength.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedWaveLength.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedWaveLength, resources.GetString("textBoxRefinedWaveLength.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedWaveLength, resources.GetString("textBoxRefinedWaveLength.ToolTip"));
         textBoxRefinedWaveLength.Value = 0.4D;
         textBoxRefinedWaveLength.WordWrap = false;
         // 
@@ -1624,7 +1624,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPixelSizeX.TabStop = false;
         textBoxRefinedPixelSizeX.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPixelSizeX.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPixelSizeX, resources.GetString("textBoxRefinedPixelSizeX.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPixelSizeX, resources.GetString("textBoxRefinedPixelSizeX.ToolTip"));
         textBoxRefinedPixelSizeX.Value = 0.1D;
         textBoxRefinedPixelSizeX.WordWrap = false;
         // 
@@ -1641,7 +1641,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericalTextBoxRefinedSphericalRadius.TabStop = false;
         numericalTextBoxRefinedSphericalRadius.ValueBackColor = System.Drawing.SystemColors.Control;
         numericalTextBoxRefinedSphericalRadius.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericalTextBoxRefinedSphericalRadius, resources.GetString("numericalTextBoxRefinedSphericalRadius.ToolTip"));
+        toolTip.SetToolTip(numericalTextBoxRefinedSphericalRadius, resources.GetString("numericalTextBoxRefinedSphericalRadius.ToolTip"));
         numericalTextBoxRefinedSphericalRadius.WordWrap = false;
         // 
         // textBoxRefinedSecondaryTau
@@ -1657,14 +1657,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryTau.TabStop = false;
         textBoxRefinedSecondaryTau.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedSecondaryTau.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedSecondaryTau, resources.GetString("textBoxRefinedSecondaryTau.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedSecondaryTau, resources.GetString("textBoxRefinedSecondaryTau.ToolTip"));
         textBoxRefinedSecondaryTau.WordWrap = false;
         // 
         // label20
         // 
         resources.ApplyResources(label20, "label20");
         label20.Name = "label20";
-        toolTipJapanese.SetToolTip(label20, resources.GetString("label20.ToolTip"));
+        toolTip.SetToolTip(label20, resources.GetString("label20.ToolTip"));
         // 
         // textBoxPixelSizeXDev
         // 
@@ -1680,7 +1680,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxPixelSizeXDev.TabStop = false;
         textBoxPixelSizeXDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxPixelSizeXDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxPixelSizeXDev, resources.GetString("textBoxPixelSizeXDev.ToolTip"));
+        toolTip.SetToolTip(textBoxPixelSizeXDev, resources.GetString("textBoxPixelSizeXDev.ToolTip"));
         textBoxPixelSizeXDev.WordWrap = false;
         // 
         // textBoxRefinedPrimaryTau
@@ -1696,56 +1696,56 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryTau.TabStop = false;
         textBoxRefinedPrimaryTau.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPrimaryTau.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPrimaryTau, resources.GetString("textBoxRefinedPrimaryTau.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPrimaryTau, resources.GetString("textBoxRefinedPrimaryTau.ToolTip"));
         textBoxRefinedPrimaryTau.WordWrap = false;
         // 
         // label44
         // 
         resources.ApplyResources(label44, "label44");
         label44.Name = "label44";
-        toolTipJapanese.SetToolTip(label44, resources.GetString("label44.ToolTip"));
+        toolTip.SetToolTip(label44, resources.GetString("label44.ToolTip"));
         // 
         // label6
         // 
         resources.ApplyResources(label6, "label6");
         label6.Name = "label6";
-        toolTipJapanese.SetToolTip(label6, resources.GetString("label6.ToolTip"));
+        toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip"));
         // 
         // label69
         // 
         resources.ApplyResources(label69, "label69");
         label69.Name = "label69";
-        toolTipJapanese.SetToolTip(label69, resources.GetString("label69.ToolTip"));
+        toolTip.SetToolTip(label69, resources.GetString("label69.ToolTip"));
         // 
         // label33
         // 
         resources.ApplyResources(label33, "label33");
         label33.Name = "label33";
-        toolTipJapanese.SetToolTip(label33, resources.GetString("label33.ToolTip"));
+        toolTip.SetToolTip(label33, resources.GetString("label33.ToolTip"));
         // 
         // label63
         // 
         resources.ApplyResources(label63, "label63");
         label63.Name = "label63";
-        toolTipJapanese.SetToolTip(label63, resources.GetString("label63.ToolTip"));
+        toolTip.SetToolTip(label63, resources.GetString("label63.ToolTip"));
         // 
         // label39
         // 
         resources.ApplyResources(label39, "label39");
         label39.Name = "label39";
-        toolTipJapanese.SetToolTip(label39, resources.GetString("label39.ToolTip"));
+        toolTip.SetToolTip(label39, resources.GetString("label39.ToolTip"));
         // 
         // label81
         // 
         resources.ApplyResources(label81, "label81");
         label81.Name = "label81";
-        toolTipJapanese.SetToolTip(label81, resources.GetString("label81.ToolTip"));
+        toolTip.SetToolTip(label81, resources.GetString("label81.ToolTip"));
         // 
         // label62
         // 
         resources.ApplyResources(label62, "label62");
         label62.Name = "label62";
-        toolTipJapanese.SetToolTip(label62, resources.GetString("label62.ToolTip"));
+        toolTip.SetToolTip(label62, resources.GetString("label62.ToolTip"));
         // 
         // textBoxCameraLengthDev
         // 
@@ -1761,14 +1761,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxCameraLengthDev.TabStop = false;
         textBoxCameraLengthDev.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxCameraLengthDev.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxCameraLengthDev, resources.GetString("textBoxCameraLengthDev.ToolTip"));
+        toolTip.SetToolTip(textBoxCameraLengthDev, resources.GetString("textBoxCameraLengthDev.ToolTip"));
         textBoxCameraLengthDev.WordWrap = false;
         // 
         // label22
         // 
         resources.ApplyResources(label22, "label22");
         label22.Name = "label22";
-        toolTipJapanese.SetToolTip(label22, resources.GetString("label22.ToolTip"));
+        toolTip.SetToolTip(label22, resources.GetString("label22.ToolTip"));
         // 
         // textBoxRefinedSecondaryPhi
         // 
@@ -1783,14 +1783,14 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedSecondaryPhi.TabStop = false;
         textBoxRefinedSecondaryPhi.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedSecondaryPhi.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedSecondaryPhi, resources.GetString("textBoxRefinedSecondaryPhi.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedSecondaryPhi, resources.GetString("textBoxRefinedSecondaryPhi.ToolTip"));
         textBoxRefinedSecondaryPhi.WordWrap = false;
         // 
         // label42
         // 
         resources.ApplyResources(label42, "label42");
         label42.Name = "label42";
-        toolTipJapanese.SetToolTip(label42, resources.GetString("label42.ToolTip"));
+        toolTip.SetToolTip(label42, resources.GetString("label42.ToolTip"));
         // 
         // textBoxRefinedPrimaryPhi
         // 
@@ -1805,56 +1805,56 @@ partial class FormFindParameter : System.Windows.Forms.Form
         textBoxRefinedPrimaryPhi.TabStop = false;
         textBoxRefinedPrimaryPhi.ValueBackColor = System.Drawing.SystemColors.Control;
         textBoxRefinedPrimaryPhi.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(textBoxRefinedPrimaryPhi, resources.GetString("textBoxRefinedPrimaryPhi.ToolTip"));
+        toolTip.SetToolTip(textBoxRefinedPrimaryPhi, resources.GetString("textBoxRefinedPrimaryPhi.ToolTip"));
         textBoxRefinedPrimaryPhi.WordWrap = false;
         // 
         // label61
         // 
         resources.ApplyResources(label61, "label61");
         label61.Name = "label61";
-        toolTipJapanese.SetToolTip(label61, resources.GetString("label61.ToolTip"));
+        toolTip.SetToolTip(label61, resources.GetString("label61.ToolTip"));
         // 
         // label49
         // 
         resources.ApplyResources(label49, "label49");
         label49.Name = "label49";
-        toolTipJapanese.SetToolTip(label49, resources.GetString("label49.ToolTip"));
+        toolTip.SetToolTip(label49, resources.GetString("label49.ToolTip"));
         // 
         // label30
         // 
         resources.ApplyResources(label30, "label30");
         label30.Name = "label30";
-        toolTipJapanese.SetToolTip(label30, resources.GetString("label30.ToolTip"));
+        toolTip.SetToolTip(label30, resources.GetString("label30.ToolTip"));
         // 
         // label66
         // 
         resources.ApplyResources(label66, "label66");
         label66.Name = "label66";
-        toolTipJapanese.SetToolTip(label66, resources.GetString("label66.ToolTip"));
+        toolTip.SetToolTip(label66, resources.GetString("label66.ToolTip"));
         // 
         // label65
         // 
         resources.ApplyResources(label65, "label65");
         label65.Name = "label65";
-        toolTipJapanese.SetToolTip(label65, resources.GetString("label65.ToolTip"));
+        toolTip.SetToolTip(label65, resources.GetString("label65.ToolTip"));
         // 
         // label64
         // 
         resources.ApplyResources(label64, "label64");
         label64.Name = "label64";
-        toolTipJapanese.SetToolTip(label64, resources.GetString("label64.ToolTip"));
+        toolTip.SetToolTip(label64, resources.GetString("label64.ToolTip"));
         // 
         // label75
         // 
         resources.ApplyResources(label75, "label75");
         label75.Name = "label75";
-        toolTipJapanese.SetToolTip(label75, resources.GetString("label75.ToolTip"));
+        toolTip.SetToolTip(label75, resources.GetString("label75.ToolTip"));
         // 
         // label71
         // 
         resources.ApplyResources(label71, "label71");
         label71.Name = "label71";
-        toolTipJapanese.SetToolTip(label71, resources.GetString("label71.ToolTip"));
+        toolTip.SetToolTip(label71, resources.GetString("label71.ToolTip"));
         // 
         // backgroundWorkerRefine
         // 
@@ -1870,7 +1870,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         flowLayoutPanel1.Controls.Add(radioButton1);
         flowLayoutPanel1.Controls.Add(radioButton2);
         flowLayoutPanel1.Name = "flowLayoutPanel1";
-        toolTipJapanese.SetToolTip(flowLayoutPanel1, resources.GetString("flowLayoutPanel1.ToolTip"));
+        toolTip.SetToolTip(flowLayoutPanel1, resources.GetString("flowLayoutPanel1.ToolTip"));
         // 
         // radioButton1
         // 
@@ -1878,28 +1878,28 @@ partial class FormFindParameter : System.Windows.Forms.Form
         radioButton1.Checked = true;
         radioButton1.Name = "radioButton1";
         radioButton1.TabStop = true;
-        toolTipJapanese.SetToolTip(radioButton1, resources.GetString("radioButton1.ToolTip"));
+        toolTip.SetToolTip(radioButton1, resources.GetString("radioButton1.ToolTip"));
         radioButton1.UseVisualStyleBackColor = true;
         // 
         // radioButton2
         // 
         resources.ApplyResources(radioButton2, "radioButton2");
         radioButton2.Name = "radioButton2";
-        toolTipJapanese.SetToolTip(radioButton2, resources.GetString("radioButton2.ToolTip"));
+        toolTip.SetToolTip(radioButton2, resources.GetString("radioButton2.ToolTip"));
         radioButton2.UseVisualStyleBackColor = true;
         // 
         // buttonGetWaveLengthFromWholePattern
         // 
         resources.ApplyResources(buttonGetWaveLengthFromWholePattern, "buttonGetWaveLengthFromWholePattern");
         buttonGetWaveLengthFromWholePattern.Name = "buttonGetWaveLengthFromWholePattern";
-        toolTipJapanese.SetToolTip(buttonGetWaveLengthFromWholePattern, resources.GetString("buttonGetWaveLengthFromWholePattern.ToolTip"));
+        toolTip.SetToolTip(buttonGetWaveLengthFromWholePattern, resources.GetString("buttonGetWaveLengthFromWholePattern.ToolTip"));
         buttonGetWaveLengthFromWholePattern.Click += buttonGetWaveLengthFromWholePattern_Click;
         // 
         // buttonGetCameraLenghtFromWholePattern
         // 
         resources.ApplyResources(buttonGetCameraLenghtFromWholePattern, "buttonGetCameraLenghtFromWholePattern");
         buttonGetCameraLenghtFromWholePattern.Name = "buttonGetCameraLenghtFromWholePattern";
-        toolTipJapanese.SetToolTip(buttonGetCameraLenghtFromWholePattern, resources.GetString("buttonGetCameraLenghtFromWholePattern.ToolTip"));
+        toolTip.SetToolTip(buttonGetCameraLenghtFromWholePattern, resources.GetString("buttonGetCameraLenghtFromWholePattern.ToolTip"));
         buttonGetCameraLenghtFromWholePattern.Click += buttonGetCameraLenghtFromWholePattern_Click;
         // 
         // dataGridView
@@ -1921,7 +1921,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
         dataGridView.RowTemplate.Height = 21;
-        toolTipJapanese.SetToolTip(dataGridView, resources.GetString("dataGridView.ToolTip"));
+        toolTip.SetToolTip(dataGridView, resources.GetString("dataGridView.ToolTip"));
         dataGridView.CellDoubleClick += dataGridView1_CellDoubleClick;
         // 
         // ColumnNo
@@ -1986,7 +1986,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
         contextMenuStrip1.Items.AddRange(new ToolStripItem[] { checkUncheckToolStripMenuItem });
         contextMenuStrip1.Name = "contextMenuStrip1";
-        toolTipJapanese.SetToolTip(contextMenuStrip1, resources.GetString("contextMenuStrip1.ToolTip"));
+        toolTip.SetToolTip(contextMenuStrip1, resources.GetString("contextMenuStrip1.ToolTip"));
         // 
         // checkUncheckToolStripMenuItem
         // 
@@ -2032,7 +2032,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxMain.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxMain.Name = "pictureBoxMain";
         pictureBoxMain.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxMain, resources.GetString("pictureBoxMain.ToolTip"));
+        toolTip.SetToolTip(pictureBoxMain, resources.GetString("pictureBoxMain.ToolTip"));
         pictureBoxMain.Paint += pictureBoxMain_Paint;
         pictureBoxMain.MouseDown += pictureBoxMain_MouseDown;
         pictureBoxMain.MouseMove += pictureBoxMain_MouseMove;
@@ -2045,7 +2045,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxPixelKsi.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxPixelKsi.Name = "pictureBoxPixelKsi";
         pictureBoxPixelKsi.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxPixelKsi, resources.GetString("pictureBoxPixelKsi.ToolTip"));
+        toolTip.SetToolTip(pictureBoxPixelKsi, resources.GetString("pictureBoxPixelKsi.ToolTip"));
         // 
         // pictureBoxPixelSizeY
         // 
@@ -2054,7 +2054,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxPixelSizeY.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxPixelSizeY.Name = "pictureBoxPixelSizeY";
         pictureBoxPixelSizeY.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxPixelSizeY, resources.GetString("pictureBoxPixelSizeY.ToolTip"));
+        toolTip.SetToolTip(pictureBoxPixelSizeY, resources.GetString("pictureBoxPixelSizeY.ToolTip"));
         // 
         // pictureBoxPixelSizeX
         // 
@@ -2063,7 +2063,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxPixelSizeX.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxPixelSizeX.Name = "pictureBoxPixelSizeX";
         pictureBoxPixelSizeX.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxPixelSizeX, resources.GetString("pictureBoxPixelSizeX.ToolTip"));
+        toolTip.SetToolTip(pictureBoxPixelSizeX, resources.GetString("pictureBoxPixelSizeX.ToolTip"));
         // 
         // pictureBoxTiltCorrectionTau2
         // 
@@ -2072,7 +2072,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxTiltCorrectionTau2.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxTiltCorrectionTau2.Name = "pictureBoxTiltCorrectionTau2";
         pictureBoxTiltCorrectionTau2.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxTiltCorrectionTau2, resources.GetString("pictureBoxTiltCorrectionTau2.ToolTip"));
+        toolTip.SetToolTip(pictureBoxTiltCorrectionTau2, resources.GetString("pictureBoxTiltCorrectionTau2.ToolTip"));
         // 
         // pictureBoxTiltCorrectionTau1
         // 
@@ -2081,7 +2081,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxTiltCorrectionTau1.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxTiltCorrectionTau1.Name = "pictureBoxTiltCorrectionTau1";
         pictureBoxTiltCorrectionTau1.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxTiltCorrectionTau1, resources.GetString("pictureBoxTiltCorrectionTau1.ToolTip"));
+        toolTip.SetToolTip(pictureBoxTiltCorrectionTau1, resources.GetString("pictureBoxTiltCorrectionTau1.ToolTip"));
         // 
         // pictureBoxTiltCorrectionPhi2
         // 
@@ -2090,7 +2090,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxTiltCorrectionPhi2.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxTiltCorrectionPhi2.Name = "pictureBoxTiltCorrectionPhi2";
         pictureBoxTiltCorrectionPhi2.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxTiltCorrectionPhi2, resources.GetString("pictureBoxTiltCorrectionPhi2.ToolTip"));
+        toolTip.SetToolTip(pictureBoxTiltCorrectionPhi2, resources.GetString("pictureBoxTiltCorrectionPhi2.ToolTip"));
         // 
         // pictureBoxTiltCorrectionPhi1
         // 
@@ -2099,7 +2099,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxTiltCorrectionPhi1.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxTiltCorrectionPhi1.Name = "pictureBoxTiltCorrectionPhi1";
         pictureBoxTiltCorrectionPhi1.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxTiltCorrectionPhi1, resources.GetString("pictureBoxTiltCorrectionPhi1.ToolTip"));
+        toolTip.SetToolTip(pictureBoxTiltCorrectionPhi1, resources.GetString("pictureBoxTiltCorrectionPhi1.ToolTip"));
         // 
         // pictureBoxCameraLength
         // 
@@ -2108,7 +2108,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxCameraLength.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxCameraLength.Name = "pictureBoxCameraLength";
         pictureBoxCameraLength.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxCameraLength, resources.GetString("pictureBoxCameraLength.ToolTip"));
+        toolTip.SetToolTip(pictureBoxCameraLength, resources.GetString("pictureBoxCameraLength.ToolTip"));
         // 
         // pictureBoxResidual
         // 
@@ -2117,7 +2117,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxResidual.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxResidual.Name = "pictureBoxResidual";
         pictureBoxResidual.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxResidual, resources.GetString("pictureBoxResidual.ToolTip"));
+        toolTip.SetToolTip(pictureBoxResidual, resources.GetString("pictureBoxResidual.ToolTip"));
         // 
         // pictureBoxWaveLength
         // 
@@ -2126,7 +2126,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxWaveLength.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxWaveLength.Name = "pictureBoxWaveLength";
         pictureBoxWaveLength.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxWaveLength, resources.GetString("pictureBoxWaveLength.ToolTip"));
+        toolTip.SetToolTip(pictureBoxWaveLength, resources.GetString("pictureBoxWaveLength.ToolTip"));
         // 
         // pictureBoxTiltCorrection2
         // 
@@ -2135,7 +2135,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxTiltCorrection2.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxTiltCorrection2.Name = "pictureBoxTiltCorrection2";
         pictureBoxTiltCorrection2.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxTiltCorrection2, resources.GetString("pictureBoxTiltCorrection2.ToolTip"));
+        toolTip.SetToolTip(pictureBoxTiltCorrection2, resources.GetString("pictureBoxTiltCorrection2.ToolTip"));
         // 
         // pictureBoxTiltCorrection1
         // 
@@ -2144,79 +2144,79 @@ partial class FormFindParameter : System.Windows.Forms.Form
         pictureBoxTiltCorrection1.BorderStyle = BorderStyle.Fixed3D;
         pictureBoxTiltCorrection1.Name = "pictureBoxTiltCorrection1";
         pictureBoxTiltCorrection1.TabStop = false;
-        toolTipJapanese.SetToolTip(pictureBoxTiltCorrection1, resources.GetString("pictureBoxTiltCorrection1.ToolTip"));
+        toolTip.SetToolTip(pictureBoxTiltCorrection1, resources.GetString("pictureBoxTiltCorrection1.ToolTip"));
         // 
         // label74
         // 
         resources.ApplyResources(label74, "label74");
         label74.Name = "label74";
-        toolTipJapanese.SetToolTip(label74, resources.GetString("label74.ToolTip"));
+        toolTip.SetToolTip(label74, resources.GetString("label74.ToolTip"));
         // 
         // label80
         // 
         resources.ApplyResources(label80, "label80");
         label80.Name = "label80";
-        toolTipJapanese.SetToolTip(label80, resources.GetString("label80.ToolTip"));
+        toolTip.SetToolTip(label80, resources.GetString("label80.ToolTip"));
         // 
         // label57
         // 
         resources.ApplyResources(label57, "label57");
         label57.Name = "label57";
-        toolTipJapanese.SetToolTip(label57, resources.GetString("label57.ToolTip"));
+        toolTip.SetToolTip(label57, resources.GetString("label57.ToolTip"));
         // 
         // label60
         // 
         resources.ApplyResources(label60, "label60");
         label60.Name = "label60";
-        toolTipJapanese.SetToolTip(label60, resources.GetString("label60.ToolTip"));
+        toolTip.SetToolTip(label60, resources.GetString("label60.ToolTip"));
         // 
         // label79
         // 
         resources.ApplyResources(label79, "label79");
         label79.Name = "label79";
-        toolTipJapanese.SetToolTip(label79, resources.GetString("label79.ToolTip"));
+        toolTip.SetToolTip(label79, resources.GetString("label79.ToolTip"));
         // 
         // label72
         // 
         resources.ApplyResources(label72, "label72");
         label72.Name = "label72";
-        toolTipJapanese.SetToolTip(label72, resources.GetString("label72.ToolTip"));
+        toolTip.SetToolTip(label72, resources.GetString("label72.ToolTip"));
         // 
         // label37
         // 
         resources.ApplyResources(label37, "label37");
         label37.Name = "label37";
-        toolTipJapanese.SetToolTip(label37, resources.GetString("label37.ToolTip"));
+        toolTip.SetToolTip(label37, resources.GetString("label37.ToolTip"));
         // 
         // label76
         // 
         resources.ApplyResources(label76, "label76");
         label76.Name = "label76";
-        toolTipJapanese.SetToolTip(label76, resources.GetString("label76.ToolTip"));
+        toolTip.SetToolTip(label76, resources.GetString("label76.ToolTip"));
         // 
         // label16
         // 
         resources.ApplyResources(label16, "label16");
         label16.Name = "label16";
-        toolTipJapanese.SetToolTip(label16, resources.GetString("label16.ToolTip"));
+        toolTip.SetToolTip(label16, resources.GetString("label16.ToolTip"));
         // 
         // label8
         // 
         resources.ApplyResources(label8, "label8");
         label8.Name = "label8";
-        toolTipJapanese.SetToolTip(label8, resources.GetString("label8.ToolTip"));
+        toolTip.SetToolTip(label8, resources.GetString("label8.ToolTip"));
         // 
         // label50
         // 
         resources.ApplyResources(label50, "label50");
         label50.Name = "label50";
-        toolTipJapanese.SetToolTip(label50, resources.GetString("label50.ToolTip"));
+        toolTip.SetToolTip(label50, resources.GetString("label50.ToolTip"));
         // 
         // label52
         // 
         resources.ApplyResources(label52, "label52");
         label52.Name = "label52";
-        toolTipJapanese.SetToolTip(label52, resources.GetString("label52.ToolTip"));
+        toolTip.SetToolTip(label52, resources.GetString("label52.ToolTip"));
         // 
         // statusStrip1
         // 
@@ -2224,7 +2224,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
         statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripProgressBar1, toolStripStatusLabel1 });
         statusStrip1.Name = "statusStrip1";
-        toolTipJapanese.SetToolTip(statusStrip1, resources.GetString("statusStrip1.ToolTip"));
+        toolTip.SetToolTip(statusStrip1, resources.GetString("statusStrip1.ToolTip"));
         // 
         // toolStripProgressBar1
         // 
@@ -2250,13 +2250,13 @@ partial class FormFindParameter : System.Windows.Forms.Form
         groupBoxPeakList.Controls.Add(numericBoxLowerThan);
         groupBoxPeakList.Name = "groupBoxPeakList";
         groupBoxPeakList.TabStop = false;
-        toolTipJapanese.SetToolTip(groupBoxPeakList, resources.GetString("groupBoxPeakList.ToolTip"));
+        toolTip.SetToolTip(groupBoxPeakList, resources.GetString("groupBoxPeakList.ToolTip"));
         // 
         // buttonCheckPeaks
         // 
         resources.ApplyResources(buttonCheckPeaks, "buttonCheckPeaks");
         buttonCheckPeaks.Name = "buttonCheckPeaks";
-        toolTipJapanese.SetToolTip(buttonCheckPeaks, resources.GetString("buttonCheckPeaks.ToolTip"));
+        toolTip.SetToolTip(buttonCheckPeaks, resources.GetString("buttonCheckPeaks.ToolTip"));
         buttonCheckPeaks.UseVisualStyleBackColor = true;
         buttonCheckPeaks.Click += buttonCheckPeaks_Click;
         // 
@@ -2273,7 +2273,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxAwayFrom.SkipEventDuringInput = false;
         numericBoxAwayFrom.SmartIncrement = true;
         numericBoxAwayFrom.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericBoxAwayFrom, resources.GetString("numericBoxAwayFrom.ToolTip"));
+        toolTip.SetToolTip(numericBoxAwayFrom, resources.GetString("numericBoxAwayFrom.ToolTip"));
         numericBoxAwayFrom.Value = 1D;
         numericBoxAwayFrom.WordWrap = false;
         numericBoxAwayFrom.TextChanged += textBox_TextChanged;
@@ -2291,7 +2291,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         numericBoxLowerThan.SkipEventDuringInput = false;
         numericBoxLowerThan.SmartIncrement = true;
         numericBoxLowerThan.ThousandsSeparator = true;
-        toolTipJapanese.SetToolTip(numericBoxLowerThan, resources.GetString("numericBoxLowerThan.ToolTip"));
+        toolTip.SetToolTip(numericBoxLowerThan, resources.GetString("numericBoxLowerThan.ToolTip"));
         numericBoxLowerThan.Value = 150D;
         numericBoxLowerThan.WordWrap = false;
         numericBoxLowerThan.TextChanged += textBox_TextChanged;
@@ -2332,19 +2332,19 @@ partial class FormFindParameter : System.Windows.Forms.Form
         panel1.Controls.Add(label80);
         panel1.Controls.Add(label79);
         panel1.Name = "panel1";
-        toolTipJapanese.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
+        toolTip.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
         // 
         // flowLayoutPanelEachPeaks
         // 
         resources.ApplyResources(flowLayoutPanelEachPeaks, "flowLayoutPanelEachPeaks");
         flowLayoutPanelEachPeaks.Name = "flowLayoutPanelEachPeaks";
-        toolTipJapanese.SetToolTip(flowLayoutPanelEachPeaks, resources.GetString("flowLayoutPanelEachPeaks.ToolTip"));
+        toolTip.SetToolTip(flowLayoutPanelEachPeaks, resources.GetString("flowLayoutPanelEachPeaks.ToolTip"));
         // 
         // checkBoxShowEachPeaks
         // 
         resources.ApplyResources(checkBoxShowEachPeaks, "checkBoxShowEachPeaks");
         checkBoxShowEachPeaks.Name = "checkBoxShowEachPeaks";
-        toolTipJapanese.SetToolTip(checkBoxShowEachPeaks, resources.GetString("checkBoxShowEachPeaks.ToolTip"));
+        toolTip.SetToolTip(checkBoxShowEachPeaks, resources.GetString("checkBoxShowEachPeaks.ToolTip"));
         checkBoxShowEachPeaks.UseVisualStyleBackColor = true;
         checkBoxShowEachPeaks.CheckedChanged += checkBoxShowEachPeaks_CheckedChanged;
         // 
@@ -2359,7 +2359,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         Controls.Add(statusStrip1);
         Controls.Add(panel1);
         Name = "FormFindParameter";
-        toolTipJapanese.SetToolTip(this, resources.GetString("$this.ToolTip"));
+        toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
         FormClosing += FormFindParameter_FormClosing;
         Load += FormCLandWL_Load;
         VisibleChanged += FormFindParameter_VisibleChanged;
@@ -2529,7 +2529,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
     public Crystallography.Controls.NumericBox textBoxRefinedSecondaryPhiDev;
     public Crystallography.Controls.NumericBox textBoxRefinedSecondaryTau;
     public Crystallography.Controls.NumericBox textBoxRefinedSecondaryTauDev;
-    private ToolTip toolTipJapanese;
+    private ToolTip toolTip; // 260531Cl toolTipJapanese から改名（レガシー廃止）。多言語は resx (neutral=英語 / .ja.resx=日本語) で切替
     public CheckBox checkBoxPeakDecomposition;
     public CheckBox checkBoxRefleshMainform;
     public CheckBox checkBoxUseStandardCrystal;

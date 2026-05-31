@@ -307,7 +307,7 @@
     <value>114, 25</value>
   </data>
   <data name="comboBoxScale1.ToolTip" xml:space="preserve">
-    <value />
+    <value>強度スケール：強度を明るさに対数または線形で対応付けます。対数は高強度を圧縮し弱いリングを見やすくします。</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -328,7 +328,7 @@
     <value>114, 25</value>
   </data>
   <data name="comboBoxGradient.ToolTip" xml:space="preserve">
-    <value>ポジフィルムかネガフィルムかを選択します</value>
+    <value>ポジ表示かネガ（フィルム）表示かを選択します。ネガにすると高強度が暗く表示されます。</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -526,8 +526,7 @@
 描画</value>
   </data>
   <data name="toolStripButtonRing.ToolTipText" xml:space="preserve">
-    <value>画像中に指定された角度、距離、あるいは回折角の
-(楕)円を描きます。</value>
+    <value>リング描画：現在のイメージングプレート(IP)条件に基づき、指定した2θ・d値・半径のデバイ環（粉末回折リング）を画像に重ねて描きます。</value>
   </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 6</value>
@@ -543,7 +542,7 @@
 (幾何学的)</value>
   </data>
   <data name="toolStripButtonFindParameter.ToolTipText" xml:space="preserve">
-    <value>X線の波長やカメラ長などの各種パラメータを計算します。</value>
+    <value>パラメータ校正（幾何学的）：既知標準試料のデバイ環を最小二乗フィットし、波長・カメラ長・ビーム中心・検出器傾きを精密化します。</value>
   </data>
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 6</value>
@@ -1184,5 +1183,278 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="toolStripButtonUnroll.ToolTipText" xml:space="preserve">
+    <value>アンロール画像：2Dリングパターンを展開（ケーキ）画像に変換し、半径/2θを方位角χに対して表示します。</value>
+  </data>
+  <data name="toolStripButtonCircumferentialBlur.ToolTipText" xml:space="preserve">
+    <value>円周方向ぼかし：指定角度にわたりリングの周方向に強度を平滑化し、スポットを抑えてリング統計を改善します。</value>
+  </data>
+  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
+    <value>回折画像のメインビュー。カーソル位置の強度・半径r・2θ・d値を表示。ダブル/中クリックでビーム中心を設定、ホイールで拡大縮小、Ctrl+右ドラッグで統計用の矩形領域を選択。</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
+    <value>画像全体のサムネイル表示。クリックでメインビューを移動。全体表示/中心付近の切替で表示範囲を選択。</value>
+  </data>
+  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
+    <value>サムネイルに画像全体を表示します。</value>
+  </data>
+  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
+    <value>サムネイルにビーム中心付近の領域だけを表示します。</value>
+  </data>
+  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
+    <value>強度のカラーパレットを選択（グレー/寒暖/スペクトル/ファイア）。表示色のみ変更しデータは変わりません。</value>
+  </data>
+  <data name="comboBoxScaleLine.ToolTip" xml:space="preserve">
+    <value>画像に重ねるスケール（目盛）線の密度を選択：なし/粗/中/細。</value>
+  </data>
+  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
+    <value>自動コントラスト：表示の強度上下限を平均±2σに自動設定します。データは変更しません。</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value>強度の表示範囲をフルスケール（0〜65535）にリセットします。</value>
+  </data>
+  <data name="trackBarAdvancedMinInt.ToolTipText" xml:space="preserve">
+    <value>表示の強度下限（0〜65535カウント）。これ以下は最暗で表示され、上げると背景が隠れます。表示のみでデータは不変。</value>
+  </data>
+  <data name="trackBarAdvancedMaxInt.ToolTipText" xml:space="preserve">
+    <value>表示の強度上限（0〜65535カウント）。これ以上は最明で表示され、下げると弱いリングが明るくなります。表示のみでデータは不変。</value>
+  </data>
+  <data name="buttonMag1.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を1倍（等倍）に設定します。</value>
+  </data>
+  <data name="buttonMag2.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を2倍に設定します。</value>
+  </data>
+  <data name="buttonMag4.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を4倍に設定します。</value>
+  </data>
+  <data name="buttonMag_2.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を1/2倍に設定します。</value>
+  </data>
+  <data name="buttonMag_4.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を1/4倍に設定します。</value>
+  </data>
+  <data name="buttonMag_8.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を1/8倍に設定します。</value>
+  </data>
+  <data name="buttonMag_16.ToolTip" xml:space="preserve">
+    <value>画像の表示倍率を1/16倍に設定します（大きな画像の全体表示用）。</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>倍率：現在の表示倍率と分解能。</value>
+  </data>
+  <data name="labelResolution.ToolTip" xml:space="preserve">
+    <value>現在の表示分解能（画像1ピクセルあたりの画面ピクセル数）を表示します。</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>カーソル位置ピクセルの強度（カウント）。</value>
+  </data>
+  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
+    <value>マウスカーソル下のピクセルの強度（カウント）。</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>R：ビーム中心からカーソルまでの動径距離（mm）。</value>
+  </data>
+  <data name="labelMousePointR.ToolTip" xml:space="preserve">
+    <value>ビーム中心からカーソルまでの動径距離R（mm）。</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>2θ：カーソル位置の回折（散乱）角（度）。</value>
+  </data>
+  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
+    <value>カーソル位置の回折角2θ（度）。現在のカメラ長とビーム中心から算出。</value>
+  </data>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value>d：カーソル位置の面間隔（d値、Å）。</value>
+  </data>
+  <data name="labelMousePointD.ToolTip" xml:space="preserve">
+    <value>カーソル位置の面間隔d（Å）。ブラッグの式により2θと波長から算出。</value>
+  </data>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>χ（カイ）：リング周方向の方位角（度）。</value>
+  </data>
+  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
+    <value>ビーム中心（デバイ環）まわりの方位角χ（度）。</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>カーソルの実空間（検出器面）座標（mm）。</value>
+  </data>
+  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
+    <value>カーソルの検出器面実座標（mm）。原点はビーム中心。</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>カーソルの画像ピクセル座標（x, y）。</value>
+  </data>
+  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
+    <value>カーソルの画像ピクセル座標（列x, 行y）。</value>
+  </data>
+  <data name="textBoxInformation.ToolTip" xml:space="preserve">
+    <value>読み取り専用の画像情報：読み込んだ画像のヘッダーや測定メタデータを表示します。</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
+    <value>選択した矩形領域内の強度統計（画素数・平均・最小・最大・標準偏差）。</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
+    <value>読み込んだ連続画像の他フレームで、同じ選択領域を測定した強度統計。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
+    <value>統計矩形の始点X座標（列、ピクセル）。画像幅に制限。最大10000。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
+    <value>統計矩形の始点Y座標（行、ピクセル）。画像高さに制限。最大10000。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
+    <value>統計矩形の終点X座標（列、ピクセル）。画像幅に制限。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
+    <value>統計矩形の終点Y座標（行、ピクセル）。画像高さに制限。</value>
+  </data>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value>統計対象の矩形領域。2つの角の座標(x, y)を画像ピクセルで指定します。</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>統計矩形は画像上でCtrlキーを押しながら右ドラッグして直接選択することもできます。</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.ToolTip" xml:space="preserve">
+    <value>画素強度の頻度ヒストグラム。2本の縦線で表示の強度上下限を設定します。</value>
+  </data>
+  <data name="tabPageConvertedProfile.ToolTip" xml:space="preserve">
+    <value>2D画像の動径積分で得た1次元プロファイル（強度 対 2θ/d/q）。</value>
+  </data>
+  <data name="tabPageStasticalInfo.ToolTip" xml:space="preserve">
+    <value>選択領域の統計情報（連続画像内の同一領域の統計を含む）。</value>
+  </data>
+  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
+    <value>強度ヒストグラム。2本の赤い縦線をドラッグして表示強度の最小・最大を設定します。</value>
+  </data>
+  <data name="graphControlProfile.ToolTip" xml:space="preserve">
+    <value>積分された1次元プロファイルの表示：強度 対 2θ・d値・q。</value>
+  </data>
+  <data name="toolStripButtonIntensityTable.ToolTipText" xml:space="preserve">
+    <value>強度テーブル：現在のビーム中心付近のピクセルの強度値を表で表示します。</value>
+  </data>
+  <data name="toolStripButtonAutoProcedure.ToolTipText" xml:space="preserve">
+    <value>自動実行：一連の処理を連続してバッチ実行するためのフォームを開きます。</value>
+  </data>
+  <data name="toolStripButtonFindParameterBruteForce.ToolTipText" xml:space="preserve">
+    <value>パラメータ校正（力ずく）：標準試料のリングから波長・カメラ長・中心・傾きを総当たり探索。幾何学的法より低速だが頑健です。</value>
+  </data>
+  <data name="toolStripButtonImageSequence.ToolTipText" xml:space="preserve">
+    <value>連続画像：複数フレームの連続画像を読み込み・送るためのオプションを開きます（連続画像読込後に有効）。</value>
+  </data>
+  <data name="toolStripSplitButtonBackground.ToolTipText" xml:space="preserve">
+    <value>バックグラウンド：画像から滑らかな背景を推定し差し引きます。ドロップダウンでパーセンタイル範囲・フーリエ・参照画像法を設定します。</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundLower.ToolTip" xml:space="preserve">
+    <value>バックグラウンド推定の下限（画像サイズに対する％）。この百分位以下の画素を背景推定に使用します。</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundUpper.ToolTip" xml:space="preserve">
+    <value>バックグラウンド推定の上限（画像サイズに対する％）。この百分位以上の画素は背景推定から除外します。</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.ToolTipText" xml:space="preserve">
+    <value>別途読み込んだ参照画像を背景として差し引きます。</value>
+  </data>
+  <data name="fourierToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>画像の低周波フーリエ成分から背景を推定します。</value>
+  </data>
+  <data name="toolStripSplitButtonFindCenter.ToolTipText" xml:space="preserve">
+    <value>中心検索：Optionで設定した探索範囲内で2次元擬フォークト関数フィッティングを行い、中心スポットを検出します。</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.ToolTipText" xml:space="preserve">
+    <value>オプション：中心スポット検索時の探索範囲（半径）を設定します。</value>
+  </data>
+  <data name="toolStripButtonFixCenter.ToolTipText" xml:space="preserve">
+    <value>中心固定：現在のビーム中心を固定し変更しないようにします。オンの間は自動の中心検索を無効化します。</value>
+  </data>
+  <data name="toolStripSplitButtonMaskSpots.ToolTipText" xml:space="preserve">
+    <value>スポットマスク：リング上の鋭い単結晶スポットを自動検出してマスクし、積分プロファイルから除外します。</value>
+  </data>
+  <data name="toolStripMenuItemClearMask.ToolTipText" xml:space="preserve">
+    <value>マスク全消去：マスクされた領域をすべてクリアします。</value>
+  </data>
+  <data name="toolStripMenuItemMaskAll.ToolTipText" xml:space="preserve">
+    <value>全領域マスク：画像全体をマスクします（必要部分だけ後で解除する用途）。</value>
+  </data>
+  <data name="inverseMaskToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>マスク反転：マスク領域と非マスク領域を入れ替えます。</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsManual.ToolTipText" xml:space="preserve">
+    <value>手動モード：チェック時は画像上のスポットをクリックして手動でマスクできます。スポットの大きさはOptionで変更します。</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsOption.ToolTipText" xml:space="preserve">
+    <value>オプション：スポットマスクの検出設定（しきい値・サイズ）を設定します。</value>
+  </data>
+  <data name="toolStripButtonManualSpotMode.ToolTipText" xml:space="preserve">
+    <value>手動スポットマスク：手動マスクモードを切替。画像をクリックしてスポットをマスクし、隣のボックスでブラシサイズを選びます。</value>
+  </data>
+  <data name="toolStripComboBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>手動スポットマスクのブラシサイズ（2〜512ピクセル）。値が大きいほど1クリックで広い領域をマスクします。</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.ToolTipText" xml:space="preserve">
+    <value>プロファイル取得：2D回折パターンを動径積分し、強度 対 2θ（またはd/q）の1次元プロファイルに変換します。積分方式や範囲はドロップダウンで設定。</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralProperty.ToolTipText" xml:space="preserve">
+    <value>積分プロパティ：2θの上下限とステップ、積分後の動作を設定します。</value>
+  </data>
+  <data name="toolStripMenuItemConcenctricIntegration.ToolTipText" xml:space="preserve">
+    <value>同心円積分：同心円に沿って積分し、強度 対 半径/2θを求めます。</value>
+  </data>
+  <data name="toolStripMenuItemRadialIntegration.ToolTipText" xml:space="preserve">
+    <value>動径積分：動径方向に沿って積分します（同心円積分とは別方式）。</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralRegion.ToolTipText" xml:space="preserve">
+    <value>積分範囲：積分に用いる画像の範囲・形状（方位角範囲、半径範囲）を設定します。</value>
+  </data>
+  <data name="findCenterBeforeGetProfileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>チェック時、各プロファイル取得前に自動で中心検索を実行します（中心固定がオンの場合は省略）。</value>
+  </data>
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>チェック時、各プロファイル取得前に自動でスポットを検出・マスクします（手動モード時は省略）。</value>
+  </data>
+  <data name="toolStripMenuItemSendProfileToPDIndexer.ToolTipText" xml:space="preserve">
+    <value>積分した1次元プロファイルを外部アプリPDIndexer（ピーク指数付け・相同定）へ送ります。</value>
+  </data>
+  <data name="toolStripMenuItemSendUnrolledImage.ToolTipText" xml:space="preserve">
+    <value>プロファイル送信時に、アンロール（ケーキ）画像も併せて送ります。</value>
+  </data>
+  <data name="toolStripMenuItemAzimuthalDivisionAnalysis.ToolTipText" xml:space="preserve">
+    <value>方位分割解析：リングをN個の方位セクターに分けて積分し（分割数で設定）、配向・集合組織を調べます。</value>
+  </data>
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
+    <value>方位分割解析のセクター数（6〜360）。多いほど角度分解能が細かくなります。</value>
+  </data>
+  <data name="toolStripMenuItemAllSequentialImages.ToolTipText" xml:space="preserve">
+    <value>読み込んだ連続画像の全フレームについてプロファイルを取得します。</value>
+  </data>
+  <data name="toolStripMenuItemSelectedSequentialImages.ToolTipText" xml:space="preserve">
+    <value>連続画像のうち選択したフレームについてのみプロファイルを取得します。</value>
+  </data>
+  <data name="toolStripComboBoxRotate.ToolTip" xml:space="preserve">
+    <value>解析前に画像を0/90/180/270度回転させます。</value>
+  </data>
+  <data name="toolStripMenuItemPropertyWaveSource.ToolTipText" xml:space="preserve">
+    <value>線源：放射線の波長（X線/中性子/電子）とカメラ長（試料-検出器間距離）を設定します。</value>
+  </data>
+  <data name="toolStripMenuItem9.ToolTipText" xml:space="preserve">
+    <value>イメージングプレート(IP)条件：画素サイズ・形状、検出器の傾き補正、ビーム中心位置を設定します。</value>
+  </data>
+  <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
+    <value>積分範囲の設定（プロファイル積分に用いる範囲・形状）を開きます。</value>
+  </data>
+  <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
+    <value>積分プロパティの設定（2θ上下限・ステップ・積分後動作）を開きます。</value>
+  </data>
+  <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
+    <value>手動マスクモードを切り替えます（画像上で手動でマスク領域を選択）。</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>R-AXIS検出器画像を校正します（R-AXIS固有の幾何補正を適用）。</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>強度頻度ヒストグラムを既定の範囲にリセットします。</value>
+  </data>
+  <data name="toolStripButton1.ToolTipText" xml:space="preserve">
+    <value>未使用のプレースホルダーボタン。動作が割り当てられていません。ツールバーから削除を検討してください。</value>
   </data>
 </root>

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalibrateIntensity));
             buttonOpenFile1 = new System.Windows.Forms.Button();
             buttonOpenFile2 = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@
             buttonOpenFile1.Location = new System.Drawing.Point(299, 5);
             buttonOpenFile1.Margin = new System.Windows.Forms.Padding(4);
             buttonOpenFile1.Name = "buttonOpenFile1";
+            toolTip.SetToolTip(buttonOpenFile1, resources.GetString("buttonOpenFile1.ToolTip")); // 260531Cl 追加
             buttonOpenFile1.Size = new System.Drawing.Size(88, 29);
             buttonOpenFile1.TabIndex = 1;
             buttonOpenFile1.Text = "Open";
@@ -53,6 +56,7 @@
             buttonOpenFile2.Location = new System.Drawing.Point(299, 70);
             buttonOpenFile2.Margin = new System.Windows.Forms.Padding(4);
             buttonOpenFile2.Name = "buttonOpenFile2";
+            toolTip.SetToolTip(buttonOpenFile2, resources.GetString("buttonOpenFile2.ToolTip")); // 260531Cl 追加
             buttonOpenFile2.Size = new System.Drawing.Size(88, 29);
             buttonOpenFile2.TabIndex = 1;
             buttonOpenFile2.Text = "Open";
@@ -64,6 +68,7 @@
             textBoxFile1.Location = new System.Drawing.Point(77, 10);
             textBoxFile1.Margin = new System.Windows.Forms.Padding(4);
             textBoxFile1.Name = "textBoxFile1";
+            toolTip.SetToolTip(textBoxFile1, resources.GetString("textBoxFile1.ToolTip")); // 260531Cl 追加
             textBoxFile1.ReadOnly = true;
             textBoxFile1.Size = new System.Drawing.Size(216, 23);
             textBoxFile1.TabIndex = 2;
@@ -73,6 +78,7 @@
             textBoxFile2.Location = new System.Drawing.Point(77, 70);
             textBoxFile2.Margin = new System.Windows.Forms.Padding(4);
             textBoxFile2.Name = "textBoxFile2";
+            toolTip.SetToolTip(textBoxFile2, resources.GetString("textBoxFile2.ToolTip")); // 260531Cl 追加
             textBoxFile2.ReadOnly = true;
             textBoxFile2.Size = new System.Drawing.Size(216, 23);
             textBoxFile2.TabIndex = 2;
@@ -82,6 +88,7 @@
             buttonCalibrate.Location = new System.Drawing.Point(173, 136);
             buttonCalibrate.Margin = new System.Windows.Forms.Padding(4);
             buttonCalibrate.Name = "buttonCalibrate";
+            toolTip.SetToolTip(buttonCalibrate, resources.GetString("buttonCalibrate.ToolTip")); // 260531Cl 追加
             buttonCalibrate.Size = new System.Drawing.Size(210, 29);
             buttonCalibrate.TabIndex = 1;
             buttonCalibrate.Text = "Calibrate";
@@ -126,6 +133,7 @@
             graphControl1.MousePositionXDigit = -1;
             graphControl1.MousePositionYDigit = -1;
             graphControl1.Name = "graphControl1";
+            toolTip.SetToolTip(graphControl1, resources.GetString("graphControl1.ToolTip")); // 260531Cl 追加
             graphControl1.OriginPosition = new System.Drawing.Point(40, 20);
             graphControl1.Profile = null;
             graphControl1.Size = new System.Drawing.Size(678, 581);
@@ -169,5 +177,6 @@
         public System.Windows.Forms.TextBox textBoxFile1;
         public System.Windows.Forms.TextBox textBoxFile2;
         private Crystallography.Controls.GraphControl graphControl1;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

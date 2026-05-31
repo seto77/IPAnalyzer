@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFindParameterOption1)); // 260531Cl 追加 (resources 宣言漏れによる CS0103 修正)
             this.numericBox1 = new Crystallography.Controls.NumericBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -77,6 +80,7 @@
             this.buttonOK.Location = new System.Drawing.Point(105, 40);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonOK.Name = "buttonOK";
+            toolTip.SetToolTip(buttonOK, resources.GetString("buttonOK.ToolTip")); // 260531Cl 追加
             this.buttonOK.Size = new System.Drawing.Size(87, 29);
             this.buttonOK.TabIndex = 1;
             this.buttonOK.Text = "OK";
@@ -107,5 +111,6 @@
 
         private Crystallography.Controls.NumericBox numericBox1;
         private System.Windows.Forms.Button buttonOK;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

@@ -61,4 +61,34 @@
   <data name="graphControl1.DrawingRange" type="Crystallography.RectangleD, Crystallography">
     <value>0, 0, 1, 1</value>
   </data>
+  <data name="buttonReadFile1.ToolTip" xml:space="preserve">
+    <value>Open a Rigaku R-AXIS imaging-plate image (.img/.stl) for slot 1. Loads the 2D detector pixel data used for camera-length / beam-center calibration.</value>
+  </data>
+  <data name="buttonReadFile2.ToolTip" xml:space="preserve">
+    <value>Open a second R-AXIS imaging-plate image (.img/.stl) for slot 2. Used together with the other images for geometric calibration.</value>
+  </data>
+  <data name="buttonReadFile3.ToolTip" xml:space="preserve">
+    <value>Open a third R-AXIS imaging-plate image (.img/.stl) for slot 3. Used together with the other images for geometric calibration.</value>
+  </data>
+  <data name="button4.ToolTip" xml:space="preserve">
+    <value>Run the calibration calculation from the loaded R-AXIS images (e.g. camera length, beam center, detector tilt). Result is plotted in the graph below.</value>
+  </data>
+  <data name="textBoxFile1.ToolTip" xml:space="preserve">
+    <value>Path of the R-AXIS imaging-plate image (.img/.stl) for slot 1 (Image 1). Use the adjacent Open button to browse and select the file.</value>
+  </data>
+  <data name="textBoxFile2.ToolTip" xml:space="preserve">
+    <value>Path of the R-AXIS imaging-plate image (.img/.stl) for slot 2 (Image 2). Use the adjacent Open button to browse and select the file.</value>
+  </data>
+  <data name="textBoxFile3.ToolTip" xml:space="preserve">
+    <value>Path of the R-AXIS imaging-plate image (.img/.stl) for slot 3 (Image 3). Use the adjacent Open button to browse and select the file.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Path of the R-AXIS imaging-plate image (.img/.stl) for slot 1 (Image 1). Use the adjacent Open button to browse and select the file.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Path of the R-AXIS imaging-plate image (.img/.stl) for slot 2 (Image 2). Use the adjacent Open button to browse and select the file.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Path of the R-AXIS imaging-plate image (.img/.stl) for slot 3 (Image 3). Use the adjacent Open button to browse and select the file.</value>
+  </data>
 </root>

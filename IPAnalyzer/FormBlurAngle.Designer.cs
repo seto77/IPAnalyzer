@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBlurAngle)); // 260531Cl 追加 (resources 宣言漏れによる CS0103 修正)
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
@@ -51,6 +54,7 @@
             0,
             131072});
             this.numericUpDown1.Name = "numericUpDown1";
+            toolTip.SetToolTip(numericUpDown1, resources.GetString("numericUpDown1.ToolTip")); // 260531Cl 追加
             this.numericUpDown1.Size = new System.Drawing.Size(62, 23);
             this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.Value = new decimal(new int[] {
@@ -64,6 +68,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(76, 5);
             this.label1.Name = "label1";
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip")); // 260531Cl 追加
             this.label1.Size = new System.Drawing.Size(14, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "°";
@@ -74,6 +79,7 @@
             this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonOK.Location = new System.Drawing.Point(103, 2);
             this.buttonOK.Name = "buttonOK";
+            toolTip.SetToolTip(buttonOK, resources.GetString("buttonOK.ToolTip")); // 260531Cl 追加
             this.buttonOK.Size = new System.Drawing.Size(48, 26);
             this.buttonOK.TabIndex = 2;
             this.buttonOK.Text = "OK";
@@ -85,6 +91,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCancel.Location = new System.Drawing.Point(152, 3);
             this.buttonCancel.Name = "buttonCancel";
+            toolTip.SetToolTip(buttonCancel, resources.GetString("buttonCancel.ToolTip")); // 260531Cl 追加
             this.buttonCancel.Size = new System.Drawing.Size(66, 25);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
@@ -118,5 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

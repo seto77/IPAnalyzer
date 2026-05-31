@@ -28,6 +28,8 @@ partial class FormAutoProcedure
     /// </summary>
     private void InitializeComponent()
     {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAutoProcedure));
         checkedListBoxAuto = new System.Windows.Forms.CheckedListBox();
         checkBoxAutoAfterLoad = new System.Windows.Forms.CheckBox();
@@ -57,6 +59,7 @@ partial class FormAutoProcedure
         // checkedListBoxAuto
         // 
         resources.ApplyResources(checkedListBoxAuto, "checkedListBoxAuto");
+            toolTip.SetToolTip(checkedListBoxAuto, resources.GetString("checkedListBoxAuto.ToolTip")); // 260531Cl 追加
         checkedListBoxAuto.CheckOnClick = true;
         checkedListBoxAuto.Items.AddRange(new object[] { resources.GetString("checkedListBoxAuto.Items"), resources.GetString("checkedListBoxAuto.Items1"), resources.GetString("checkedListBoxAuto.Items2"), resources.GetString("checkedListBoxAuto.Items3"), resources.GetString("checkedListBoxAuto.Items4") });
         checkedListBoxAuto.MultiColumn = true;
@@ -66,6 +69,7 @@ partial class FormAutoProcedure
         // checkBoxAutoAfterLoad
         // 
         resources.ApplyResources(checkBoxAutoAfterLoad, "checkBoxAutoAfterLoad");
+            toolTip.SetToolTip(checkBoxAutoAfterLoad, resources.GetString("checkBoxAutoAfterLoad.ToolTip")); // 260531Cl 追加
         checkBoxAutoAfterLoad.Name = "checkBoxAutoAfterLoad";
         // 
         // backgroundWorker
@@ -77,11 +81,13 @@ partial class FormAutoProcedure
         // textBoxDiectory
         // 
         resources.ApplyResources(textBoxDiectory, "textBoxDiectory");
+            toolTip.SetToolTip(textBoxDiectory, resources.GetString("textBoxDiectory.ToolTip")); // 260531Cl 追加
         textBoxDiectory.Name = "textBoxDiectory";
         // 
         // label1
         // 
         resources.ApplyResources(label1, "label1");
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip")); // 260531Cl 追加
         label1.Name = "label1";
         // 
         // folderBrowserDialog1
@@ -91,6 +97,7 @@ partial class FormAutoProcedure
         // buttonSetDirectory
         // 
         resources.ApplyResources(buttonSetDirectory, "buttonSetDirectory");
+            toolTip.SetToolTip(buttonSetDirectory, resources.GetString("buttonSetDirectory.ToolTip")); // 260531Cl 追加
         buttonSetDirectory.Name = "buttonSetDirectory";
         buttonSetDirectory.UseVisualStyleBackColor = true;
         buttonSetDirectory.Click += buttonSetDirectory_Click;
@@ -98,6 +105,7 @@ partial class FormAutoProcedure
         // checkBoxAutoLoad
         // 
         resources.ApplyResources(checkBoxAutoLoad, "checkBoxAutoLoad");
+            toolTip.SetToolTip(checkBoxAutoLoad, resources.GetString("checkBoxAutoLoad.ToolTip")); // 260531Cl 追加
         checkBoxAutoLoad.Name = "checkBoxAutoLoad";
         checkBoxAutoLoad.UseVisualStyleBackColor = true;
         checkBoxAutoLoad.CheckedChanged += checkBoxAutoLoad_CheckedChanged;
@@ -118,11 +126,13 @@ partial class FormAutoProcedure
         // checkBoxKeywords
         // 
         resources.ApplyResources(checkBoxKeywords, "checkBoxKeywords");
+            toolTip.SetToolTip(checkBoxKeywords, resources.GetString("checkBoxKeywords.ToolTip")); // 260531Cl 追加
         checkBoxKeywords.Name = "checkBoxKeywords";
         // 
         // checkBoxNumberMatching
         // 
         resources.ApplyResources(checkBoxNumberMatching, "checkBoxNumberMatching");
+            toolTip.SetToolTip(checkBoxNumberMatching, resources.GetString("checkBoxNumberMatching.ToolTip")); // 260531Cl 追加
         checkBoxNumberMatching.Name = "checkBoxNumberMatching";
         // 
         // flowLayoutPanel1
@@ -146,6 +156,7 @@ partial class FormAutoProcedure
         // radioButtonEqual
         // 
         resources.ApplyResources(radioButtonEqual, "radioButtonEqual");
+            toolTip.SetToolTip(radioButtonEqual, resources.GetString("radioButtonEqual.ToolTip")); // 260531Cl 追加
         radioButtonEqual.Name = "radioButtonEqual";
         radioButtonEqual.TabStop = true;
         radioButtonEqual.UseVisualStyleBackColor = true;
@@ -153,6 +164,7 @@ partial class FormAutoProcedure
         // radioButtonNotEqual
         // 
         resources.ApplyResources(radioButtonNotEqual, "radioButtonNotEqual");
+            toolTip.SetToolTip(radioButtonNotEqual, resources.GetString("radioButtonNotEqual.ToolTip")); // 260531Cl 追加
         radioButtonNotEqual.Name = "radioButtonNotEqual";
         radioButtonNotEqual.TabStop = true;
         radioButtonNotEqual.UseVisualStyleBackColor = true;
@@ -169,6 +181,7 @@ partial class FormAutoProcedure
         // textBoxKeyword
         // 
         resources.ApplyResources(textBoxKeyword, "textBoxKeyword");
+            toolTip.SetToolTip(textBoxKeyword, resources.GetString("textBoxKeyword.ToolTip")); // 260531Cl 追加
         textBoxKeyword.Name = "textBoxKeyword";
         // 
         // groupBox2
@@ -183,11 +196,13 @@ partial class FormAutoProcedure
         // label2
         // 
         resources.ApplyResources(label2, "label2");
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip")); // 260531Cl 追加
         label2.Name = "label2";
         // 
         // comboBoxMacro
         // 
         resources.ApplyResources(comboBoxMacro, "comboBoxMacro");
+            toolTip.SetToolTip(comboBoxMacro, resources.GetString("comboBoxMacro.ToolTip")); // 260531Cl 追加
         comboBoxMacro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         comboBoxMacro.FormattingEnabled = true;
         comboBoxMacro.Name = "comboBoxMacro";
@@ -236,4 +251,5 @@ partial class FormAutoProcedure
     private System.Windows.Forms.RadioButton radioButtonNotEqual;
     public System.Windows.Forms.CheckBox checkBoxKeywords;
     private System.Windows.Forms.TextBox textBoxKeyword;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
 }

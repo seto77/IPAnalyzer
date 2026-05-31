@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSequentialImage));
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.listBox = new System.Windows.Forms.ListBox();
@@ -50,6 +52,7 @@
             // 
             resources.ApplyResources(this.trackBar1, "trackBar1");
             this.trackBar1.Name = "trackBar1";
+            toolTip.SetToolTip(trackBar1, resources.GetString("trackBar1.ToolTip")); // 260531Cl 追加
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // listBox
@@ -58,6 +61,7 @@
             this.listBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBox.FormattingEnabled = true;
             this.listBox.Name = "listBox";
+            toolTip.SetToolTip(listBox, resources.GetString("listBox.ToolTip")); // 260531Cl 追加
             this.listBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_DrawItem);
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             this.listBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox_KeyDown);
@@ -66,6 +70,7 @@
             // 
             resources.ApplyResources(this.checkBoxMultiSelection, "checkBoxMultiSelection");
             this.checkBoxMultiSelection.Name = "checkBoxMultiSelection";
+            toolTip.SetToolTip(checkBoxMultiSelection, resources.GetString("checkBoxMultiSelection.ToolTip")); // 260531Cl 追加
             this.checkBoxMultiSelection.UseVisualStyleBackColor = true;
             this.checkBoxMultiSelection.CheckedChanged += new System.EventHandler(this.checkBoxMultiSelection_CheckedChanged);
             // 
@@ -73,6 +78,7 @@
             // 
             resources.ApplyResources(this.checkBoxAverage, "checkBoxAverage");
             this.checkBoxAverage.Name = "checkBoxAverage";
+            toolTip.SetToolTip(checkBoxAverage, resources.GetString("checkBoxAverage.ToolTip")); // 260531Cl 追加
             this.checkBoxAverage.UseVisualStyleBackColor = true;
             this.checkBoxAverage.CheckedChanged += new System.EventHandler(this.checkBoxAverage_CheckedChanged);
             // 
@@ -96,6 +102,7 @@
             resources.ApplyResources(this.radioButtonGetProfileSelectedImages, "radioButtonGetProfileSelectedImages");
             this.radioButtonGetProfileSelectedImages.Checked = true;
             this.radioButtonGetProfileSelectedImages.Name = "radioButtonGetProfileSelectedImages";
+            toolTip.SetToolTip(radioButtonGetProfileSelectedImages, resources.GetString("radioButtonGetProfileSelectedImages.ToolTip")); // 260531Cl 追加
             this.radioButtonGetProfileSelectedImages.TabStop = true;
             this.radioButtonGetProfileSelectedImages.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileSelectedImages.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
@@ -104,6 +111,7 @@
             // 
             resources.ApplyResources(this.radioButtonGetProfileOnlyTopmost, "radioButtonGetProfileOnlyTopmost");
             this.radioButtonGetProfileOnlyTopmost.Name = "radioButtonGetProfileOnlyTopmost";
+            toolTip.SetToolTip(radioButtonGetProfileOnlyTopmost, resources.GetString("radioButtonGetProfileOnlyTopmost.ToolTip")); // 260531Cl 追加
             this.radioButtonGetProfileOnlyTopmost.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileOnlyTopmost.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
             // 
@@ -111,6 +119,7 @@
             // 
             resources.ApplyResources(this.radioButtonGetProfileAllImages, "radioButtonGetProfileAllImages");
             this.radioButtonGetProfileAllImages.Name = "radioButtonGetProfileAllImages";
+            toolTip.SetToolTip(radioButtonGetProfileAllImages, resources.GetString("radioButtonGetProfileAllImages.ToolTip")); // 260531Cl 追加
             this.radioButtonGetProfileAllImages.UseVisualStyleBackColor = true;
             this.radioButtonGetProfileAllImages.CheckedChanged += new System.EventHandler(this.RadioButtonGetProfileOnlyTopmost_CheckedChanged);
             // 
@@ -118,6 +127,7 @@
             // 
             resources.ApplyResources(this.checkBoxSummation, "checkBoxSummation");
             this.checkBoxSummation.Name = "checkBoxSummation";
+            toolTip.SetToolTip(checkBoxSummation, resources.GetString("checkBoxSummation.ToolTip")); // 260531Cl 追加
             this.checkBoxSummation.UseVisualStyleBackColor = true;
             this.checkBoxSummation.CheckedChanged += new System.EventHandler(this.checkBoxSummation_CheckedChanged);
             // 
@@ -166,5 +176,6 @@
         public System.Windows.Forms.RadioButton radioButtonGetProfileSelectedImages;
         private System.Windows.Forms.CheckBox checkBoxSummation;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

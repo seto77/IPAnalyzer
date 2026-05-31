@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container(); // 260531Cl 追加
+            toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProperty));
             tabControl = new System.Windows.Forms.TabControl();
             tabPageXRay = new System.Windows.Forms.TabPage();
@@ -357,6 +359,7 @@
             // checkBoxCorrectPolarization
             // 
             resources.ApplyResources(checkBoxCorrectPolarization, "checkBoxCorrectPolarization");
+            toolTip.SetToolTip(checkBoxCorrectPolarization, resources.GetString("checkBoxCorrectPolarization.ToolTip")); // 260531Cl 追加
             checkBoxCorrectPolarization.Name = "checkBoxCorrectPolarization";
             checkBoxCorrectPolarization.UseVisualStyleBackColor = true;
             checkBoxCorrectPolarization.CheckedChanged += checkBoxCorrectPolarization_CheckedChanged;
@@ -404,6 +407,7 @@
             // radioButtonDirectSpotMode
             // 
             resources.ApplyResources(radioButtonDirectSpotMode, "radioButtonDirectSpotMode");
+            toolTip.SetToolTip(radioButtonDirectSpotMode, resources.GetString("radioButtonDirectSpotMode.ToolTip")); // 260531Cl 追加
             radioButtonDirectSpotMode.Checked = true;
             radioButtonDirectSpotMode.Name = "radioButtonDirectSpotMode";
             radioButtonDirectSpotMode.TabStop = true;
@@ -413,6 +417,7 @@
             // radioButtonFootMode
             // 
             resources.ApplyResources(radioButtonFootMode, "radioButtonFootMode");
+            toolTip.SetToolTip(radioButtonFootMode, resources.GetString("radioButtonFootMode.ToolTip")); // 260531Cl 追加
             radioButtonFootMode.Name = "radioButtonFootMode";
             radioButtonFootMode.UseVisualStyleBackColor = true;
             // 
@@ -432,6 +437,7 @@
             // radioButtonFlatPanel
             // 
             resources.ApplyResources(radioButtonFlatPanel, "radioButtonFlatPanel");
+            toolTip.SetToolTip(radioButtonFlatPanel, resources.GetString("radioButtonFlatPanel.ToolTip")); // 260531Cl 追加
             radioButtonFlatPanel.Checked = true;
             radioButtonFlatPanel.Name = "radioButtonFlatPanel";
             radioButtonFlatPanel.TabStop = true;
@@ -441,6 +447,7 @@
             // radioButtonGandlfi
             // 
             resources.ApplyResources(radioButtonGandlfi, "radioButtonGandlfi");
+            toolTip.SetToolTip(radioButtonGandlfi, resources.GetString("radioButtonGandlfi.ToolTip")); // 260531Cl 追加
             radioButtonGandlfi.Name = "radioButtonGandlfi";
             radioButtonGandlfi.UseVisualStyleBackColor = true;
             // 
@@ -748,6 +755,7 @@
             // numericUpDownThresholdOfIntensityMax
             // 
             resources.ApplyResources(numericUpDownThresholdOfIntensityMax, "numericUpDownThresholdOfIntensityMax");
+            toolTip.SetToolTip(numericUpDownThresholdOfIntensityMax, resources.GetString("numericUpDownThresholdOfIntensityMax.ToolTip")); // 260531Cl 追加
             numericUpDownThresholdOfIntensityMax.Maximum = new decimal(new int[] { 1410065408, 2, 0, 0 });
             numericUpDownThresholdOfIntensityMax.Name = "numericUpDownThresholdOfIntensityMax";
             numericUpDownThresholdOfIntensityMax.Value = new decimal(new int[] { 65535, 0, 0, 0 });
@@ -761,6 +769,7 @@
             // numericUpDownThresholdOfIntensityMin
             // 
             resources.ApplyResources(numericUpDownThresholdOfIntensityMin, "numericUpDownThresholdOfIntensityMin");
+            toolTip.SetToolTip(numericUpDownThresholdOfIntensityMin, resources.GetString("numericUpDownThresholdOfIntensityMin.ToolTip")); // 260531Cl 追加
             numericUpDownThresholdOfIntensityMin.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numericUpDownThresholdOfIntensityMin.Name = "numericUpDownThresholdOfIntensityMin";
             numericUpDownThresholdOfIntensityMin.Value = new decimal(new int[] { 1, 0, 0, 0 });
@@ -769,6 +778,7 @@
             // numericUpDownEdge
             // 
             resources.ApplyResources(numericUpDownEdge, "numericUpDownEdge");
+            toolTip.SetToolTip(numericUpDownEdge, resources.GetString("numericUpDownEdge.ToolTip")); // 260531Cl 追加
             numericUpDownEdge.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
             numericUpDownEdge.Name = "numericUpDownEdge";
             numericUpDownEdge.Value = new decimal(new int[] { 5, 0, 0, 0 });
@@ -777,6 +787,7 @@
             // checkBoxOmitSpots
             // 
             resources.ApplyResources(checkBoxOmitSpots, "checkBoxOmitSpots");
+            toolTip.SetToolTip(checkBoxOmitSpots, resources.GetString("checkBoxOmitSpots.ToolTip")); // 260531Cl 追加
             checkBoxOmitSpots.Checked = true;
             checkBoxOmitSpots.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxOmitSpots.Name = "checkBoxOmitSpots";
@@ -784,6 +795,7 @@
             // checkBoxMaskEdge
             // 
             resources.ApplyResources(checkBoxMaskEdge, "checkBoxMaskEdge");
+            toolTip.SetToolTip(checkBoxMaskEdge, resources.GetString("checkBoxMaskEdge.ToolTip")); // 260531Cl 追加
             checkBoxMaskEdge.Checked = true;
             checkBoxMaskEdge.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxMaskEdge.Name = "checkBoxMaskEdge";
@@ -793,18 +805,21 @@
             // checkBoxThresholdMax
             // 
             resources.ApplyResources(checkBoxThresholdMax, "checkBoxThresholdMax");
+            toolTip.SetToolTip(checkBoxThresholdMax, resources.GetString("checkBoxThresholdMax.ToolTip")); // 260531Cl 追加
             checkBoxThresholdMax.Name = "checkBoxThresholdMax";
             checkBoxThresholdMax.CheckedChanged += checkBoxThreshold_CheckedChanged;
             // 
             // checkBoxThresholdMin
             // 
             resources.ApplyResources(checkBoxThresholdMin, "checkBoxThresholdMin");
+            toolTip.SetToolTip(checkBoxThresholdMin, resources.GetString("checkBoxThresholdMin.ToolTip")); // 260531Cl 追加
             checkBoxThresholdMin.Name = "checkBoxThresholdMin";
             checkBoxThresholdMin.CheckedChanged += checkBoxThreshold_CheckedChanged;
             // 
             // radioButtonRectangle
             // 
             resources.ApplyResources(radioButtonRectangle, "radioButtonRectangle");
+            toolTip.SetToolTip(radioButtonRectangle, resources.GetString("radioButtonRectangle.ToolTip")); // 260531Cl 追加
             radioButtonRectangle.Checked = true;
             radioButtonRectangle.Name = "radioButtonRectangle";
             radioButtonRectangle.TabStop = true;
@@ -826,6 +841,7 @@
             // checkBoxRectangleIsBothSide
             // 
             resources.ApplyResources(checkBoxRectangleIsBothSide, "checkBoxRectangleIsBothSide");
+            toolTip.SetToolTip(checkBoxRectangleIsBothSide, resources.GetString("checkBoxRectangleIsBothSide.ToolTip")); // 260531Cl 追加
             checkBoxRectangleIsBothSide.Name = "checkBoxRectangleIsBothSide";
             checkBoxRectangleIsBothSide.UseVisualStyleBackColor = true;
             checkBoxRectangleIsBothSide.CheckedChanged += checkBoxRectangleIsBothSide_CheckedChanged;
@@ -833,6 +849,7 @@
             // comboBoxRectangleDirection
             // 
             resources.ApplyResources(comboBoxRectangleDirection, "comboBoxRectangleDirection");
+            toolTip.SetToolTip(comboBoxRectangleDirection, resources.GetString("comboBoxRectangleDirection.ToolTip")); // 260531Cl 追加
             comboBoxRectangleDirection.Items.AddRange(new object[] { resources.GetString("comboBoxRectangleDirection.Items"), resources.GetString("comboBoxRectangleDirection.Items1"), resources.GetString("comboBoxRectangleDirection.Items2"), resources.GetString("comboBoxRectangleDirection.Items3"), resources.GetString("comboBoxRectangleDirection.Items4"), resources.GetString("comboBoxRectangleDirection.Items5"), resources.GetString("comboBoxRectangleDirection.Items6"), resources.GetString("comboBoxRectangleDirection.Items7") });
             comboBoxRectangleDirection.Name = "comboBoxRectangleDirection";
             comboBoxRectangleDirection.SelectedIndexChanged += comboBoxRectangleDirection_SelectedIndexChanged;
@@ -850,6 +867,7 @@
             // numericUpDownRectangleBand
             // 
             resources.ApplyResources(numericUpDownRectangleBand, "numericUpDownRectangleBand");
+            toolTip.SetToolTip(numericUpDownRectangleBand, resources.GetString("numericUpDownRectangleBand.ToolTip")); // 260531Cl 追加
             numericUpDownRectangleBand.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownRectangleBand.Name = "numericUpDownRectangleBand";
             numericUpDownRectangleBand.Value = new decimal(new int[] { 1500, 0, 0, 0 });
@@ -859,6 +877,7 @@
             // 
             numericUpDownRectangleAngle.DecimalPlaces = 3;
             resources.ApplyResources(numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
+            toolTip.SetToolTip(numericUpDownRectangleAngle, resources.GetString("numericUpDownRectangleAngle.ToolTip")); // 260531Cl 追加
             numericUpDownRectangleAngle.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
             numericUpDownRectangleAngle.Name = "numericUpDownRectangleAngle";
             numericUpDownRectangleAngle.ValueChanged += numericUpDownRectangleAngle_ValueChanged;
@@ -871,6 +890,7 @@
             // radioButtonSector
             // 
             resources.ApplyResources(radioButtonSector, "radioButtonSector");
+            toolTip.SetToolTip(radioButtonSector, resources.GetString("radioButtonSector.ToolTip")); // 260531Cl 追加
             radioButtonSector.Name = "radioButtonSector";
             // 
             // groupBoxSector
@@ -887,6 +907,7 @@
             // 
             numericUpDownSectorStartAngle.DecimalPlaces = 2;
             resources.ApplyResources(numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
+            toolTip.SetToolTip(numericUpDownSectorStartAngle, resources.GetString("numericUpDownSectorStartAngle.ToolTip")); // 260531Cl 追加
             numericUpDownSectorStartAngle.Maximum = new decimal(new int[] { 720, 0, 0, 0 });
             numericUpDownSectorStartAngle.Minimum = new decimal(new int[] { 720, 0, 0, int.MinValue });
             numericUpDownSectorStartAngle.Name = "numericUpDownSectorStartAngle";
@@ -896,6 +917,7 @@
             // 
             numericUpDownSectorEndAngle.DecimalPlaces = 2;
             resources.ApplyResources(numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
+            toolTip.SetToolTip(numericUpDownSectorEndAngle, resources.GetString("numericUpDownSectorEndAngle.ToolTip")); // 260531Cl 追加
             numericUpDownSectorEndAngle.Maximum = new decimal(new int[] { 720, 0, 0, 0 });
             numericUpDownSectorEndAngle.Name = "numericUpDownSectorEndAngle";
             numericUpDownSectorEndAngle.ValueChanged += numericUpDownSectorAngle_ValueChanged;
@@ -923,6 +945,7 @@
             // radioButtonRadial
             // 
             resources.ApplyResources(radioButtonRadial, "radioButtonRadial");
+            toolTip.SetToolTip(radioButtonRadial, resources.GetString("radioButtonRadial.ToolTip")); // 260531Cl 追加
             radioButtonRadial.Name = "radioButtonRadial";
             radioButtonRadial.UseVisualStyleBackColor = true;
             // 
@@ -1001,6 +1024,7 @@
             // radioButtonRadialAngle
             // 
             resources.ApplyResources(radioButtonRadialAngle, "radioButtonRadialAngle");
+            toolTip.SetToolTip(radioButtonRadialAngle, resources.GetString("radioButtonRadialAngle.ToolTip")); // 260531Cl 追加
             radioButtonRadialAngle.Checked = true;
             radioButtonRadialAngle.Name = "radioButtonRadialAngle";
             radioButtonRadialAngle.TabStop = true;
@@ -1009,6 +1033,7 @@
             // radioButtonRadialDspacing
             // 
             resources.ApplyResources(radioButtonRadialDspacing, "radioButtonRadialDspacing");
+            toolTip.SetToolTip(radioButtonRadialDspacing, resources.GetString("radioButtonRadialDspacing.ToolTip")); // 260531Cl 追加
             radioButtonRadialDspacing.Name = "radioButtonRadialDspacing";
             // 
             // labelDimensionRadial2
@@ -1034,6 +1059,7 @@
             // radioButtonConcentric
             // 
             resources.ApplyResources(radioButtonConcentric, "radioButtonConcentric");
+            toolTip.SetToolTip(radioButtonConcentric, resources.GetString("radioButtonConcentric.ToolTip")); // 260531Cl 追加
             radioButtonConcentric.Checked = true;
             radioButtonConcentric.Name = "radioButtonConcentric";
             radioButtonConcentric.TabStop = true;
@@ -1081,6 +1107,7 @@
             // radioButtonConcentricLength
             // 
             resources.ApplyResources(radioButtonConcentricLength, "radioButtonConcentricLength");
+            toolTip.SetToolTip(radioButtonConcentricLength, resources.GetString("radioButtonConcentricLength.ToolTip")); // 260531Cl 追加
             radioButtonConcentricLength.Name = "radioButtonConcentricLength";
             radioButtonConcentricLength.CheckedChanged += radioButtonAngleMode_CheckedChanged;
             // 
@@ -1102,6 +1129,7 @@
             // radioButtonConcentricDspacing
             // 
             resources.ApplyResources(radioButtonConcentricDspacing, "radioButtonConcentricDspacing");
+            toolTip.SetToolTip(radioButtonConcentricDspacing, resources.GetString("radioButtonConcentricDspacing.ToolTip")); // 260531Cl 追加
             radioButtonConcentricDspacing.Name = "radioButtonConcentricDspacing";
             radioButtonConcentricDspacing.CheckedChanged += radioButtonAngleMode_CheckedChanged;
             // 
@@ -1123,6 +1151,7 @@
             // radioButtonConcentricAngle
             // 
             resources.ApplyResources(radioButtonConcentricAngle, "radioButtonConcentricAngle");
+            toolTip.SetToolTip(radioButtonConcentricAngle, resources.GetString("radioButtonConcentricAngle.ToolTip")); // 260531Cl 追加
             radioButtonConcentricAngle.Checked = true;
             radioButtonConcentricAngle.Name = "radioButtonConcentricAngle";
             radioButtonConcentricAngle.TabStop = true;
@@ -1154,6 +1183,7 @@
             // radioButtonBraggBrentano
             // 
             resources.ApplyResources(radioButtonBraggBrentano, "radioButtonBraggBrentano");
+            toolTip.SetToolTip(radioButtonBraggBrentano, resources.GetString("radioButtonBraggBrentano.ToolTip")); // 260531Cl 追加
             radioButtonBraggBrentano.Checked = true;
             radioButtonBraggBrentano.Name = "radioButtonBraggBrentano";
             radioButtonBraggBrentano.TabStop = true;
@@ -1161,6 +1191,7 @@
             // radioButtonDebyeScherrer
             // 
             resources.ApplyResources(radioButtonDebyeScherrer, "radioButtonDebyeScherrer");
+            toolTip.SetToolTip(radioButtonDebyeScherrer, resources.GetString("radioButtonDebyeScherrer.ToolTip")); // 260531Cl 追加
             radioButtonDebyeScherrer.Name = "radioButtonDebyeScherrer";
             // 
             // tabPageSpotsAndCenter
@@ -1190,6 +1221,7 @@
             // buttonMaskLeft
             // 
             resources.ApplyResources(buttonMaskLeft, "buttonMaskLeft");
+            toolTip.SetToolTip(buttonMaskLeft, resources.GetString("buttonMaskLeft.ToolTip")); // 260531Cl 追加
             buttonMaskLeft.Name = "buttonMaskLeft";
             buttonMaskLeft.UseVisualStyleBackColor = true;
             buttonMaskLeft.Click += buttonMaskAll_Click;
@@ -1197,6 +1229,7 @@
             // buttonMaskTop
             // 
             resources.ApplyResources(buttonMaskTop, "buttonMaskTop");
+            toolTip.SetToolTip(buttonMaskTop, resources.GetString("buttonMaskTop.ToolTip")); // 260531Cl 追加
             buttonMaskTop.Name = "buttonMaskTop";
             buttonMaskTop.UseVisualStyleBackColor = true;
             buttonMaskTop.Click += buttonMaskAll_Click;
@@ -1204,6 +1237,7 @@
             // buttonMaskBottom
             // 
             resources.ApplyResources(buttonMaskBottom, "buttonMaskBottom");
+            toolTip.SetToolTip(buttonMaskBottom, resources.GetString("buttonMaskBottom.ToolTip")); // 260531Cl 追加
             buttonMaskBottom.Name = "buttonMaskBottom";
             buttonMaskBottom.UseVisualStyleBackColor = true;
             buttonMaskBottom.Click += buttonMaskAll_Click;
@@ -1211,6 +1245,7 @@
             // buttonMaskRight
             // 
             resources.ApplyResources(buttonMaskRight, "buttonMaskRight");
+            toolTip.SetToolTip(buttonMaskRight, resources.GetString("buttonMaskRight.ToolTip")); // 260531Cl 追加
             buttonMaskRight.Name = "buttonMaskRight";
             buttonMaskRight.UseVisualStyleBackColor = true;
             buttonMaskRight.Click += buttonMaskAll_Click;
@@ -1218,6 +1253,7 @@
             // checkBoxManualMaskMode
             // 
             resources.ApplyResources(checkBoxManualMaskMode, "checkBoxManualMaskMode");
+            toolTip.SetToolTip(checkBoxManualMaskMode, resources.GetString("checkBoxManualMaskMode.ToolTip")); // 260531Cl 追加
             checkBoxManualMaskMode.Name = "checkBoxManualMaskMode";
             checkBoxManualMaskMode.UseVisualStyleBackColor = true;
             checkBoxManualMaskMode.CheckedChanged += checkBoxManualMaskMode_CheckedChanged;
@@ -1239,6 +1275,7 @@
             // radioButtonManualCircle
             // 
             resources.ApplyResources(radioButtonManualCircle, "radioButtonManualCircle");
+            toolTip.SetToolTip(radioButtonManualCircle, resources.GetString("radioButtonManualCircle.ToolTip")); // 260531Cl 追加
             radioButtonManualCircle.Name = "radioButtonManualCircle";
             radioButtonManualCircle.UseVisualStyleBackColor = true;
             radioButtonManualCircle.CheckedChanged += radioButtonManualSpot_CheckedChanged;
@@ -1246,6 +1283,7 @@
             // radioButtonManualSpline
             // 
             resources.ApplyResources(radioButtonManualSpline, "radioButtonManualSpline");
+            toolTip.SetToolTip(radioButtonManualSpline, resources.GetString("radioButtonManualSpline.ToolTip")); // 260531Cl 追加
             radioButtonManualSpline.Name = "radioButtonManualSpline";
             radioButtonManualSpline.UseVisualStyleBackColor = true;
             radioButtonManualSpline.CheckedChanged += radioButtonManualSpot_CheckedChanged;
@@ -1253,6 +1291,7 @@
             // radioButtonManualPolygon
             // 
             resources.ApplyResources(radioButtonManualPolygon, "radioButtonManualPolygon");
+            toolTip.SetToolTip(radioButtonManualPolygon, resources.GetString("radioButtonManualPolygon.ToolTip")); // 260531Cl 追加
             radioButtonManualPolygon.Name = "radioButtonManualPolygon";
             radioButtonManualPolygon.UseVisualStyleBackColor = true;
             radioButtonManualPolygon.CheckedChanged += radioButtonManualSpot_CheckedChanged;
@@ -1260,6 +1299,7 @@
             // radioButtonManualRectangle
             // 
             resources.ApplyResources(radioButtonManualRectangle, "radioButtonManualRectangle");
+            toolTip.SetToolTip(radioButtonManualRectangle, resources.GetString("radioButtonManualRectangle.ToolTip")); // 260531Cl 追加
             radioButtonManualRectangle.Name = "radioButtonManualRectangle";
             radioButtonManualRectangle.UseVisualStyleBackColor = true;
             radioButtonManualRectangle.CheckedChanged += radioButtonManualSpot_CheckedChanged;
@@ -1267,6 +1307,7 @@
             // radioButtonManualSpot
             // 
             resources.ApplyResources(radioButtonManualSpot, "radioButtonManualSpot");
+            toolTip.SetToolTip(radioButtonManualSpot, resources.GetString("radioButtonManualSpot.ToolTip")); // 260531Cl 追加
             radioButtonManualSpot.Checked = true;
             radioButtonManualSpot.Name = "radioButtonManualSpot";
             radioButtonManualSpot.TabStop = true;
@@ -1288,6 +1329,7 @@
             // textBoxManualSpotSize
             // 
             resources.ApplyResources(textBoxManualSpotSize, "textBoxManualSpotSize");
+            toolTip.SetToolTip(textBoxManualSpotSize, resources.GetString("textBoxManualSpotSize.ToolTip")); // 260531Cl 追加
             textBoxManualSpotSize.Name = "textBoxManualSpotSize";
             textBoxManualSpotSize.TextChanged += textBoxManualSpotSize_TextChanged;
             // 
@@ -1299,12 +1341,14 @@
             // radioButton1
             // 
             resources.ApplyResources(radioButton1, "radioButton1");
+            toolTip.SetToolTip(radioButton1, resources.GetString("radioButton1.ToolTip")); // 260531Cl 追加
             radioButton1.Name = "radioButton1";
             radioButton1.UseVisualStyleBackColor = true;
             // 
             // numericUpDownManualSpotSize
             // 
             resources.ApplyResources(numericUpDownManualSpotSize, "numericUpDownManualSpotSize");
+            toolTip.SetToolTip(numericUpDownManualSpotSize, resources.GetString("numericUpDownManualSpotSize.ToolTip")); // 260531Cl 追加
             numericUpDownManualSpotSize.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownManualSpotSize.Name = "numericUpDownManualSpotSize";
             numericUpDownManualSpotSize.Value = new decimal(new int[] { 6, 0, 0, 0 });
@@ -1318,6 +1362,7 @@
             // radioButtonCircle
             // 
             resources.ApplyResources(radioButtonCircle, "radioButtonCircle");
+            toolTip.SetToolTip(radioButtonCircle, resources.GetString("radioButtonCircle.ToolTip")); // 260531Cl 追加
             radioButtonCircle.Checked = true;
             radioButtonCircle.Name = "radioButtonCircle";
             radioButtonCircle.TabStop = true;
@@ -1372,12 +1417,14 @@
             // radioButtonTakeoverNothing
             // 
             resources.ApplyResources(radioButtonTakeoverNothing, "radioButtonTakeoverNothing");
+            toolTip.SetToolTip(radioButtonTakeoverNothing, resources.GetString("radioButtonTakeoverNothing.ToolTip")); // 260531Cl 追加
             radioButtonTakeoverNothing.Name = "radioButtonTakeoverNothing";
             radioButtonTakeoverNothing.UseVisualStyleBackColor = true;
             // 
             // radioButtonTakeoverMask
             // 
             resources.ApplyResources(radioButtonTakeoverMask, "radioButtonTakeoverMask");
+            toolTip.SetToolTip(radioButtonTakeoverMask, resources.GetString("radioButtonTakeoverMask.ToolTip")); // 260531Cl 追加
             radioButtonTakeoverMask.Checked = true;
             radioButtonTakeoverMask.Name = "radioButtonTakeoverMask";
             radioButtonTakeoverMask.TabStop = true;
@@ -1386,6 +1433,7 @@
             // radioButtonTakeOverMaskfile
             // 
             resources.ApplyResources(radioButtonTakeOverMaskfile, "radioButtonTakeOverMaskfile");
+            toolTip.SetToolTip(radioButtonTakeOverMaskfile, resources.GetString("radioButtonTakeOverMaskfile.ToolTip")); // 260531Cl 追加
             radioButtonTakeOverMaskfile.Name = "radioButtonTakeOverMaskfile";
             radioButtonTakeOverMaskfile.UseVisualStyleBackColor = true;
             // 
@@ -1401,6 +1449,7 @@
             // 
             numericUpDownFindSpotsDeviation.DecimalPlaces = 2;
             resources.ApplyResources(numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
+            toolTip.SetToolTip(numericUpDownFindSpotsDeviation, resources.GetString("numericUpDownFindSpotsDeviation.ToolTip")); // 260531Cl 追加
             numericUpDownFindSpotsDeviation.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             numericUpDownFindSpotsDeviation.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownFindSpotsDeviation.Name = "numericUpDownFindSpotsDeviation";
@@ -1414,6 +1463,7 @@
             // buttonMaskAll
             // 
             resources.ApplyResources(buttonMaskAll, "buttonMaskAll");
+            toolTip.SetToolTip(buttonMaskAll, resources.GetString("buttonMaskAll.ToolTip")); // 260531Cl 追加
             buttonMaskAll.Name = "buttonMaskAll";
             buttonMaskAll.UseVisualStyleBackColor = true;
             buttonMaskAll.Click += buttonMaskAll_Click;
@@ -1421,6 +1471,7 @@
             // buttonInvertMask
             // 
             resources.ApplyResources(buttonInvertMask, "buttonInvertMask");
+            toolTip.SetToolTip(buttonInvertMask, resources.GetString("buttonInvertMask.ToolTip")); // 260531Cl 追加
             buttonInvertMask.Name = "buttonInvertMask";
             buttonInvertMask.UseVisualStyleBackColor = true;
             buttonInvertMask.Click += buttonInvertMask_Click;
@@ -1428,6 +1479,7 @@
             // buttonUnmaskAll
             // 
             resources.ApplyResources(buttonUnmaskAll, "buttonUnmaskAll");
+            toolTip.SetToolTip(buttonUnmaskAll, resources.GetString("buttonUnmaskAll.ToolTip")); // 260531Cl 追加
             buttonUnmaskAll.Name = "buttonUnmaskAll";
             buttonUnmaskAll.UseVisualStyleBackColor = true;
             buttonUnmaskAll.Click += buttonUnmaskAll_Click;
@@ -1462,6 +1514,7 @@
             // checkBoxTest
             // 
             resources.ApplyResources(checkBoxTest, "checkBoxTest");
+            toolTip.SetToolTip(checkBoxTest, resources.GetString("checkBoxTest.ToolTip")); // 260531Cl 追加
             checkBoxTest.Checked = true;
             checkBoxTest.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxTest.Name = "checkBoxTest";
@@ -1470,6 +1523,7 @@
             // checkBoxSendProfileToPDIndexer
             // 
             resources.ApplyResources(checkBoxSendProfileToPDIndexer, "checkBoxSendProfileToPDIndexer");
+            toolTip.SetToolTip(checkBoxSendProfileToPDIndexer, resources.GetString("checkBoxSendProfileToPDIndexer.ToolTip")); // 260531Cl 追加
             checkBoxSendProfileToPDIndexer.Checked = true;
             checkBoxSendProfileToPDIndexer.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxSendProfileToPDIndexer.Name = "checkBoxSendProfileToPDIndexer";
@@ -1478,6 +1532,7 @@
             // checkBoxSaveFile
             // 
             resources.ApplyResources(checkBoxSaveFile, "checkBoxSaveFile");
+            toolTip.SetToolTip(checkBoxSaveFile, resources.GetString("checkBoxSaveFile.ToolTip")); // 260531Cl 追加
             checkBoxSaveFile.Name = "checkBoxSaveFile";
             checkBoxSaveFile.CheckedChanged += checkBoxSaveFile_CheckedChanged;
             // 
@@ -1508,12 +1563,14 @@
             // radioButtonSaveInOneFile
             // 
             resources.ApplyResources(radioButtonSaveInOneFile, "radioButtonSaveInOneFile");
+            toolTip.SetToolTip(radioButtonSaveInOneFile, resources.GetString("radioButtonSaveInOneFile.ToolTip")); // 260531Cl 追加
             radioButtonSaveInOneFile.Name = "radioButtonSaveInOneFile";
             radioButtonSaveInOneFile.UseVisualStyleBackColor = true;
             // 
             // radioButtonSaveInSeparateFiles
             // 
             resources.ApplyResources(radioButtonSaveInSeparateFiles, "radioButtonSaveInSeparateFiles");
+            toolTip.SetToolTip(radioButtonSaveInSeparateFiles, resources.GetString("radioButtonSaveInSeparateFiles.ToolTip")); // 260531Cl 追加
             radioButtonSaveInSeparateFiles.Checked = true;
             radioButtonSaveInSeparateFiles.Name = "radioButtonSaveInSeparateFiles";
             radioButtonSaveInSeparateFiles.TabStop = true;
@@ -1536,12 +1593,14 @@
             // radioButtonSetDirectoryEachTime
             // 
             resources.ApplyResources(radioButtonSetDirectoryEachTime, "radioButtonSetDirectoryEachTime");
+            toolTip.SetToolTip(radioButtonSetDirectoryEachTime, resources.GetString("radioButtonSetDirectoryEachTime.ToolTip")); // 260531Cl 追加
             radioButtonSetDirectoryEachTime.Name = "radioButtonSetDirectoryEachTime";
             radioButtonSetDirectoryEachTime.UseVisualStyleBackColor = true;
             // 
             // radioButtonSaveAtImageDirectory
             // 
             resources.ApplyResources(radioButtonSaveAtImageDirectory, "radioButtonSaveAtImageDirectory");
+            toolTip.SetToolTip(radioButtonSaveAtImageDirectory, resources.GetString("radioButtonSaveAtImageDirectory.ToolTip")); // 260531Cl 追加
             radioButtonSaveAtImageDirectory.Checked = true;
             radioButtonSaveAtImageDirectory.Name = "radioButtonSaveAtImageDirectory";
             radioButtonSaveAtImageDirectory.TabStop = true;
@@ -1566,12 +1625,14 @@
             // radioButtonAsPDIformat
             // 
             resources.ApplyResources(radioButtonAsPDIformat, "radioButtonAsPDIformat");
+            toolTip.SetToolTip(radioButtonAsPDIformat, resources.GetString("radioButtonAsPDIformat.ToolTip")); // 260531Cl 追加
             radioButtonAsPDIformat.Name = "radioButtonAsPDIformat";
             radioButtonAsPDIformat.UseVisualStyleBackColor = true;
             // 
             // radioButtonAsCSVformat
             // 
             resources.ApplyResources(radioButtonAsCSVformat, "radioButtonAsCSVformat");
+            toolTip.SetToolTip(radioButtonAsCSVformat, resources.GetString("radioButtonAsCSVformat.ToolTip")); // 260531Cl 追加
             radioButtonAsCSVformat.Checked = true;
             radioButtonAsCSVformat.Name = "radioButtonAsCSVformat";
             radioButtonAsCSVformat.TabStop = true;
@@ -1580,12 +1641,14 @@
             // radioButtonAsTSVformat
             // 
             resources.ApplyResources(radioButtonAsTSVformat, "radioButtonAsTSVformat");
+            toolTip.SetToolTip(radioButtonAsTSVformat, resources.GetString("radioButtonAsTSVformat.ToolTip")); // 260531Cl 追加
             radioButtonAsTSVformat.Name = "radioButtonAsTSVformat";
             radioButtonAsTSVformat.UseVisualStyleBackColor = true;
             // 
             // radioButtonAsGSASformat
             // 
             resources.ApplyResources(radioButtonAsGSASformat, "radioButtonAsGSASformat");
+            toolTip.SetToolTip(radioButtonAsGSASformat, resources.GetString("radioButtonAsGSASformat.ToolTip")); // 260531Cl 追加
             radioButtonAsGSASformat.Name = "radioButtonAsGSASformat";
             radioButtonAsGSASformat.UseVisualStyleBackColor = true;
             // 
@@ -1599,6 +1662,7 @@
             // checkBoxSendUnrolledImageToPDIndexer
             // 
             resources.ApplyResources(checkBoxSendUnrolledImageToPDIndexer, "checkBoxSendUnrolledImageToPDIndexer");
+            toolTip.SetToolTip(checkBoxSendUnrolledImageToPDIndexer, resources.GetString("checkBoxSendUnrolledImageToPDIndexer.ToolTip")); // 260531Cl 追加
             checkBoxSendUnrolledImageToPDIndexer.Name = "checkBoxSendUnrolledImageToPDIndexer";
             checkBoxSendUnrolledImageToPDIndexer.CheckedChanged += checkBoxSendUnrolledImageToPDIndexer_CheckedChanged;
             // 
@@ -1620,6 +1684,7 @@
             // numericUpDownUnrollChiDivision
             // 
             resources.ApplyResources(numericUpDownUnrollChiDivision, "numericUpDownUnrollChiDivision");
+            toolTip.SetToolTip(numericUpDownUnrollChiDivision, resources.GetString("numericUpDownUnrollChiDivision.ToolTip")); // 260531Cl 追加
             numericUpDownUnrollChiDivision.Maximum = new decimal(new int[] { 2048, 0, 0, 0 });
             numericUpDownUnrollChiDivision.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownUnrollChiDivision.Name = "numericUpDownUnrollChiDivision";
@@ -1647,6 +1712,7 @@
             // 
             numericUpDownUnrolledImageXend.DecimalPlaces = 3;
             resources.ApplyResources(numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
+            toolTip.SetToolTip(numericUpDownUnrolledImageXend, resources.GetString("numericUpDownUnrolledImageXend.ToolTip")); // 260531Cl 追加
             numericUpDownUnrolledImageXend.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
             numericUpDownUnrolledImageXend.Name = "numericUpDownUnrolledImageXend";
             numericUpDownUnrolledImageXend.Value = new decimal(new int[] { 30, 0, 0, 0 });
@@ -1655,6 +1721,7 @@
             // 
             numericUpDownUnrolledImageXstart.DecimalPlaces = 4;
             resources.ApplyResources(numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
+            toolTip.SetToolTip(numericUpDownUnrolledImageXstart, resources.GetString("numericUpDownUnrolledImageXstart.ToolTip")); // 260531Cl 追加
             numericUpDownUnrolledImageXstart.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             numericUpDownUnrolledImageXstart.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
             numericUpDownUnrolledImageXstart.Name = "numericUpDownUnrolledImageXstart";
@@ -1684,6 +1751,7 @@
             // 
             numericUpDownUnrolledImageXstep.DecimalPlaces = 4;
             resources.ApplyResources(numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
+            toolTip.SetToolTip(numericUpDownUnrolledImageXstep, resources.GetString("numericUpDownUnrolledImageXstep.ToolTip")); // 260531Cl 追加
             numericUpDownUnrolledImageXstep.Increment = new decimal(new int[] { 1, 0, 0, 196608 });
             numericUpDownUnrolledImageXstep.Minimum = new decimal(new int[] { 1, 0, 0, 196608 });
             numericUpDownUnrolledImageXstep.Name = "numericUpDownUnrolledImageXstep";
@@ -1702,11 +1770,13 @@
             // radioButton2
             // 
             resources.ApplyResources(radioButton2, "radioButton2");
+            toolTip.SetToolTip(radioButton2, resources.GetString("radioButton2.ToolTip")); // 260531Cl 追加
             radioButton2.Name = "radioButton2";
             // 
             // radioButton4
             // 
             resources.ApplyResources(radioButton4, "radioButton4");
+            toolTip.SetToolTip(radioButton4, resources.GetString("radioButton4.ToolTip")); // 260531Cl 追加
             radioButton4.Checked = true;
             radioButton4.Name = "radioButton4";
             radioButton4.TabStop = true;
@@ -1714,6 +1784,7 @@
             // radioButton3
             // 
             resources.ApplyResources(radioButton3, "radioButton3");
+            toolTip.SetToolTip(radioButton3, resources.GetString("radioButton3.ToolTip")); // 260531Cl 追加
             radioButton3.Name = "radioButton3";
             // 
             // tabPage5
@@ -1744,6 +1815,7 @@
             // 
             comboBoxScaleLineDivisions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(comboBoxScaleLineDivisions, "comboBoxScaleLineDivisions");
+            toolTip.SetToolTip(comboBoxScaleLineDivisions, resources.GetString("comboBoxScaleLineDivisions.ToolTip")); // 260531Cl 追加
             comboBoxScaleLineDivisions.FormattingEnabled = true;
             comboBoxScaleLineDivisions.Items.AddRange(new object[] { resources.GetString("comboBoxScaleLineDivisions.Items"), resources.GetString("comboBoxScaleLineDivisions.Items1"), resources.GetString("comboBoxScaleLineDivisions.Items2"), resources.GetString("comboBoxScaleLineDivisions.Items3") });
             comboBoxScaleLineDivisions.Name = "comboBoxScaleLineDivisions";
@@ -1752,6 +1824,7 @@
             // checkBoxScaleLabel
             // 
             resources.ApplyResources(checkBoxScaleLabel, "checkBoxScaleLabel");
+            toolTip.SetToolTip(checkBoxScaleLabel, resources.GetString("checkBoxScaleLabel.ToolTip")); // 260531Cl 追加
             checkBoxScaleLabel.Checked = true;
             checkBoxScaleLabel.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxScaleLabel.Name = "checkBoxScaleLabel";
@@ -1761,6 +1834,7 @@
             // trackBarScaleLineWidth
             // 
             resources.ApplyResources(trackBarScaleLineWidth, "trackBarScaleLineWidth");
+            toolTip.SetToolTip(trackBarScaleLineWidth, resources.GetString("trackBarScaleLineWidth.ToolTip")); // 260531Cl 追加
             trackBarScaleLineWidth.Minimum = 1;
             trackBarScaleLineWidth.Name = "trackBarScaleLineWidth";
             trackBarScaleLineWidth.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -1821,18 +1895,21 @@
             // radioButtonImageName_FullPath
             // 
             resources.ApplyResources(radioButtonImageName_FullPath, "radioButtonImageName_FullPath");
+            toolTip.SetToolTip(radioButtonImageName_FullPath, resources.GetString("radioButtonImageName_FullPath.ToolTip")); // 260531Cl 追加
             radioButtonImageName_FullPath.Name = "radioButtonImageName_FullPath";
             radioButtonImageName_FullPath.UseVisualStyleBackColor = true;
             // 
             // radioButtonImageName_LastFolderPlusFilename
             // 
             resources.ApplyResources(radioButtonImageName_LastFolderPlusFilename, "radioButtonImageName_LastFolderPlusFilename");
+            toolTip.SetToolTip(radioButtonImageName_LastFolderPlusFilename, resources.GetString("radioButtonImageName_LastFolderPlusFilename.ToolTip")); // 260531Cl 追加
             radioButtonImageName_LastFolderPlusFilename.Name = "radioButtonImageName_LastFolderPlusFilename";
             radioButtonImageName_LastFolderPlusFilename.UseVisualStyleBackColor = true;
             // 
             // radioButtonImageName_FileName
             // 
             resources.ApplyResources(radioButtonImageName_FileName, "radioButtonImageName_FileName");
+            toolTip.SetToolTip(radioButtonImageName_FileName, resources.GetString("radioButtonImageName_FileName.ToolTip")); // 260531Cl 追加
             radioButtonImageName_FileName.Checked = true;
             radioButtonImageName_FileName.Name = "radioButtonImageName_FileName";
             radioButtonImageName_FileName.TabStop = true;
@@ -1849,6 +1926,7 @@
             // checkBoxMaintainImageContrast
             // 
             resources.ApplyResources(checkBoxMaintainImageContrast, "checkBoxMaintainImageContrast");
+            toolTip.SetToolTip(checkBoxMaintainImageContrast, resources.GetString("checkBoxMaintainImageContrast.ToolTip")); // 260531Cl 追加
             checkBoxMaintainImageContrast.Checked = true;
             checkBoxMaintainImageContrast.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxMaintainImageContrast.Name = "checkBoxMaintainImageContrast";
@@ -1858,6 +1936,7 @@
             // checkBoxMaintainImageRange
             // 
             resources.ApplyResources(checkBoxMaintainImageRange, "checkBoxMaintainImageRange");
+            toolTip.SetToolTip(checkBoxMaintainImageRange, resources.GetString("checkBoxMaintainImageRange.ToolTip")); // 260531Cl 追加
             checkBoxMaintainImageRange.Checked = true;
             checkBoxMaintainImageRange.CheckState = System.Windows.Forms.CheckState.Checked;
             checkBoxMaintainImageRange.Name = "checkBoxMaintainImageRange";
@@ -1892,6 +1971,7 @@
             // radioButtonChiClockwise
             // 
             resources.ApplyResources(radioButtonChiClockwise, "radioButtonChiClockwise");
+            toolTip.SetToolTip(radioButtonChiClockwise, resources.GetString("radioButtonChiClockwise.ToolTip")); // 260531Cl 追加
             radioButtonChiClockwise.Checked = true;
             radioButtonChiClockwise.Name = "radioButtonChiClockwise";
             radioButtonChiClockwise.TabStop = true;
@@ -1901,6 +1981,7 @@
             // radioButtonChiCounterclockwise
             // 
             resources.ApplyResources(radioButtonChiCounterclockwise, "radioButtonChiCounterclockwise");
+            toolTip.SetToolTip(radioButtonChiCounterclockwise, resources.GetString("radioButtonChiCounterclockwise.ToolTip")); // 260531Cl 追加
             radioButtonChiCounterclockwise.Name = "radioButtonChiCounterclockwise";
             radioButtonChiCounterclockwise.UseVisualStyleBackColor = true;
             radioButtonChiCounterclockwise.CheckedChanged += radioButtonChi_CheckedChanged;
@@ -1909,12 +1990,14 @@
             // 
             pictureBox1.Image = Properties.Resources.chi;
             resources.ApplyResources(pictureBox1, "pictureBox1");
+            toolTip.SetToolTip(pictureBox1, resources.GetString("pictureBox1.ToolTip")); // 260531Cl 追加
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
             // radioButtonChiLeft
             // 
             resources.ApplyResources(radioButtonChiLeft, "radioButtonChiLeft");
+            toolTip.SetToolTip(radioButtonChiLeft, resources.GetString("radioButtonChiLeft.ToolTip")); // 260531Cl 追加
             radioButtonChiLeft.Name = "radioButtonChiLeft";
             radioButtonChiLeft.UseVisualStyleBackColor = true;
             radioButtonChiLeft.CheckedChanged += radioButtonChi_CheckedChanged;
@@ -1922,6 +2005,7 @@
             // radioButtonChiRight
             // 
             resources.ApplyResources(radioButtonChiRight, "radioButtonChiRight");
+            toolTip.SetToolTip(radioButtonChiRight, resources.GetString("radioButtonChiRight.ToolTip")); // 260531Cl 追加
             radioButtonChiRight.Checked = true;
             radioButtonChiRight.Name = "radioButtonChiRight";
             radioButtonChiRight.TabStop = true;
@@ -1931,6 +2015,7 @@
             // radioButtonChiBottom
             // 
             resources.ApplyResources(radioButtonChiBottom, "radioButtonChiBottom");
+            toolTip.SetToolTip(radioButtonChiBottom, resources.GetString("radioButtonChiBottom.ToolTip")); // 260531Cl 追加
             radioButtonChiBottom.Name = "radioButtonChiBottom";
             radioButtonChiBottom.UseVisualStyleBackColor = true;
             radioButtonChiBottom.CheckedChanged += radioButtonChi_CheckedChanged;
@@ -1938,6 +2023,7 @@
             // radioButtonChiTop
             // 
             resources.ApplyResources(radioButtonChiTop, "radioButtonChiTop");
+            toolTip.SetToolTip(radioButtonChiTop, resources.GetString("radioButtonChiTop.ToolTip")); // 260531Cl 追加
             radioButtonChiTop.Name = "radioButtonChiTop";
             radioButtonChiTop.UseVisualStyleBackColor = true;
             radioButtonChiTop.CheckedChanged += radioButtonChi_CheckedChanged;
@@ -1954,6 +2040,7 @@
             // checkBoxFixCenter
             // 
             resources.ApplyResources(checkBoxFixCenter, "checkBoxFixCenter");
+            toolTip.SetToolTip(checkBoxFixCenter, resources.GetString("checkBoxFixCenter.ToolTip")); // 260531Cl 追加
             checkBoxFixCenter.Name = "checkBoxFixCenter";
             checkBoxFixCenter.UseVisualStyleBackColor = true;
             checkBoxFixCenter.CheckedChanged += checkBoxFixCenter_CheckedChanged;
@@ -1993,6 +2080,7 @@
             // checkBoxExcludeMaskedPixels
             // 
             resources.ApplyResources(checkBoxExcludeMaskedPixels, "checkBoxExcludeMaskedPixels");
+            toolTip.SetToolTip(checkBoxExcludeMaskedPixels, resources.GetString("checkBoxExcludeMaskedPixels.ToolTip")); // 260531Cl 追加
             checkBoxExcludeMaskedPixels.Name = "checkBoxExcludeMaskedPixels";
             checkBoxExcludeMaskedPixels.UseVisualStyleBackColor = true;
             checkBoxExcludeMaskedPixels.CheckedChanged += checkBoxFixCenter_CheckedChanged;
@@ -2023,12 +2111,14 @@
             // textBoxBackgroundImage
             // 
             resources.ApplyResources(textBoxBackgroundImage, "textBoxBackgroundImage");
+            toolTip.SetToolTip(textBoxBackgroundImage, resources.GetString("textBoxBackgroundImage.ToolTip")); // 260531Cl 追加
             textBoxBackgroundImage.Name = "textBoxBackgroundImage";
             textBoxBackgroundImage.ReadOnly = true;
             // 
             // buttonClearBackgroundImage
             // 
             resources.ApplyResources(buttonClearBackgroundImage, "buttonClearBackgroundImage");
+            toolTip.SetToolTip(buttonClearBackgroundImage, resources.GetString("buttonClearBackgroundImage.ToolTip")); // 260531Cl 追加
             buttonClearBackgroundImage.Name = "buttonClearBackgroundImage";
             buttonClearBackgroundImage.UseVisualStyleBackColor = true;
             buttonClearBackgroundImage.Click += buttonClearBackgroundImage_Click;
@@ -2036,6 +2126,7 @@
             // buttonSetBackgroundImage
             // 
             resources.ApplyResources(buttonSetBackgroundImage, "buttonSetBackgroundImage");
+            toolTip.SetToolTip(buttonSetBackgroundImage, resources.GetString("buttonSetBackgroundImage.ToolTip")); // 260531Cl 追加
             buttonSetBackgroundImage.Name = "buttonSetBackgroundImage";
             buttonSetBackgroundImage.UseVisualStyleBackColor = true;
             buttonSetBackgroundImage.Click += buttonSetBackgroundImage_Click;
@@ -2425,5 +2516,6 @@
         private System.Windows.Forms.RadioButton radioButtonImageName_FileName;
         private System.Windows.Forms.RadioButton radioButtonImageName_FullPath;
         private System.Windows.Forms.RadioButton radioButtonImageName_LastFolderPlusFilename;
+    private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
     }
 }

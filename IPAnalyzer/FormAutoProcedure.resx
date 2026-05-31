@@ -740,4 +740,49 @@
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>ja</value>
   </metadata>
+  <data name="checkBoxAutoLoad.ToolTip" xml:space="preserve">
+    <value>Start/stop watching the selected directory for newly added image files and automatically load each new file as it appears (must set a valid directory first).</value>
+  </data>
+  <data name="textBoxDiectory.ToolTip" xml:space="preserve">
+    <value>Full path of the folder to monitor for new diffraction-image files. Use the Set button to browse, or type a path. Subfolders are watched recursively.</value>
+  </data>
+  <data name="buttonSetDirectory.ToolTip" xml:space="preserve">
+    <value>Browse for the folder to monitor and put its path in the directory box.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Full path of the folder to monitor for new diffraction-image files. Use the Set button to browse, or type a path. Subfolders are watched recursively.</value>
+  </data>
+  <data name="checkBoxNumberMatching.ToolTip" xml:space="preserve">
+    <value>Filter auto-loaded files by the trailing number in the filename: load only when (number mod divisor) equals/does not equal the remainder, per the =/= toggle.</value>
+  </data>
+  <data name="radioButtonEqual.ToolTip" xml:space="preserve">
+    <value>Equal mode: load the file only when (trailing number mod divisor) equals the remainder.</value>
+  </data>
+  <data name="radioButtonNotEqual.ToolTip" xml:space="preserve">
+    <value>Not-equal mode: load the file only when (trailing number mod divisor) does NOT equal the remainder.</value>
+  </data>
+  <data name="numericBoxDivisor.ToolTip" xml:space="preserve">
+    <value>Divisor for the filename-number test: file passes when (trailing number mod this divisor) equals the remainder. Integer &gt;0; 0 never matches. Default 3.</value>
+  </data>
+  <data name="numericBoxRemainder.ToolTip" xml:space="preserve">
+    <value>Target remainder for the filename-number test: file passes when (trailing number mod divisor) equals this value. Integer in 0..divisor-1. Default 2.</value>
+  </data>
+  <data name="checkBoxKeywords.ToolTip" xml:space="preserve">
+    <value>Filter auto-loaded files by name: load only files whose filename contains the keyword text entered to the right.</value>
+  </data>
+  <data name="textBoxKeyword.ToolTip" xml:space="preserve">
+    <value>Substring that a filename must contain to be auto-loaded (case-sensitive). Only used when the Keyword filter checkbox is enabled.</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.ToolTip" xml:space="preserve">
+    <value>When checked, automatically run the checked steps below (auto-contrast, find center, mask spots, get profile, macro) every time a new image finishes loading.</value>
+  </data>
+  <data name="checkedListBoxAuto.ToolTip" xml:space="preserve">
+    <value>Steps run after each image loads (top to bottom): Auto contrast (auto brightness), Find center (beam-center detection), Mask spots (remove single-crystal spots), Get profile (integrate rings into a 1D 2theta profile), Execute macro.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Select the named macro to run as the final step of the auto-procedure (only when 'Execute macro' is checked).</value>
+  </data>
+  <data name="comboBoxMacro.ToolTip" xml:space="preserve">
+    <value>Choose which saved macro runs as the last step of the sequence. Enabled only when 'Execute macro' is checked in the list above.</value>
+  </data>
 </root>

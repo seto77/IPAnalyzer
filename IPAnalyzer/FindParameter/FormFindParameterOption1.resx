@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonOK.ToolTip" xml:space="preserve">
+    <value>Close this Option dialog and apply the selected image number for parameter finding.</value>
+  </data>
+  <data name="numericBox1.ToolTip" xml:space="preserve">
+    <value>Index of the image in the loaded sequential (multi-image) stack to use for parameter finding. Range 0 to (number of images - 1); selects which frame's Debye rings are fitted.</value>
+  </data>
 </root>

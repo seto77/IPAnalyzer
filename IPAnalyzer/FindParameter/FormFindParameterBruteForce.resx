@@ -2744,8 +2744,7 @@
     <value>Options</value>
   </data>
   <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value>Mutiple factor of step
- when value is not changed</value>
+    <value>Step-size and search-range settings for each Gandolfi parameter. When a cycle gives no improvement, each step is automatically reduced to refine more finely.</value>
   </data>
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
@@ -3552,5 +3551,218 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabControl1 / tabPage1 (Flat Panel).ToolTip" xml:space="preserve">
+    <value>Brute-force geometry refinement for a flat-panel / area detector (e.g. SACLA). Scans camera length, beam center, tilt and wavelength to best fit the standard's Debye rings.</value>
+  </data>
+  <data name="tabPage2 (Gandolfi).ToolTip" xml:space="preserve">
+    <value>Brute-force refinement for Gandolfi / curved imaging-plate geometry. Scans camera length, pixel size, center, tilt and Gandolfi radius to fit the standard's Debye rings.</value>
+  </data>
+  <data name="radioButtonStandardAu.ToolTip" xml:space="preserve">
+    <value>Use gold (Au) as the calibration standard (cubic, a=4.07825 Å). Its known Debye-ring positions are the reference the fit aligns the detector geometry to.</value>
+  </data>
+  <data name="radioButtonStandardCeO2.ToolTip" xml:space="preserve">
+    <value>Use cerium oxide (CeO2) as the calibration standard (cubic, a=5.411102 Å). A common NIST powder standard for detector-geometry calibration.</value>
+  </data>
+  <data name="radioButtonStandardLaB6.ToolTip" xml:space="preserve">
+    <value>Use lanthanum hexaboride (LaB6) as the calibration standard (cubic, a=4.157 Å). A widely used NIST line-position / instrument standard.</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.ToolTip" xml:space="preserve">
+    <value>Use corundum (Al2O3) as the calibration standard (hexagonal, a=4.7657 Å, c=13.01 Å). Provides many rings over a wide 2-theta range.</value>
+  </data>
+  <data name="radioButtonStandardOther.ToolTip" xml:space="preserve">
+    <value>Use a custom standard: enables the crystal editor below so you can enter any lattice/atoms instead of a built-in preset (Au, CeO2, LaB6, Al2O3).</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>Reference geometry on the direct beam spot: uses Camera length 1 and the direct-spot pixel (X,Y) where the undiffracted beam hits the detector.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>Reference geometry on the perpendicular foot: uses Camera length 2 and the foot-of-perpendicular pixel (X,Y) - the point on the tilted detector closest to the sample.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Choose the coordinate reference for the geometry: direct beam spot (Camera length 1) or foot of perpendicular on a tilted detector (Camera length 2).</value>
+  </data>
+  <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>Refine the camera length (sample-to-detector distance, mm). Larger camera length spreads the Debye rings outward; this scans it to best match the standard.</value>
+  </data>
+  <data name="checkBoxPointX.ToolTip" xml:space="preserve">
+    <value>Refine the beam-center X coordinate (pixels): direct-spot X or foot-of-perpendicular X. Shifts where the ring center sits on the detector.</value>
+  </data>
+  <data name="checkBoxPointY.ToolTip" xml:space="preserve">
+    <value>Refine the beam-center Y coordinate (pixels): direct-spot Y or foot-of-perpendicular Y. Shifts the ring center vertically on the detector.</value>
+  </data>
+  <data name="checkBoxPhi.ToolTip" xml:space="preserve">
+    <value>Refine detector tilt azimuth phi (radians): the in-plane direction about which the detector is tilted off-perpendicular to the beam. Makes rings elliptical.</value>
+  </data>
+  <data name="checkBoxTau.ToolTip" xml:space="preserve">
+    <value>Refine detector tilt angle tau (radians): how far the detector plane is tilted from perpendicular to the beam. Distorts ring positions if nonzero.</value>
+  </data>
+  <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Refine the X-ray/neutron wavelength (Angstrom). Scaling the wavelength shifts every Debye ring in 2-theta; enable only if the wavelength is uncertain.</value>
+  </data>
+  <data name="checkBox2.ToolTip" xml:space="preserve">
+    <value>Refine detector pixel size in X (mm/pixel). Currently disabled in flat-panel mode; pixel-size calibration is done on the Gandolfi tab.</value>
+  </data>
+  <data name="checkBox3.ToolTip" xml:space="preserve">
+    <value>Refine detector pixel size in Y (mm/pixel). Currently disabled in flat-panel mode; use the Gandolfi tab for pixel-size calibration.</value>
+  </data>
+  <data name="checkBox4.ToolTip" xml:space="preserve">
+    <value>Refine pixel distortion ksi (degrees): the shear/non-orthogonality angle between detector pixel axes. Currently disabled in flat-panel mode.</value>
+  </data>
+  <data name="numericBoxCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Initial camera-length search step (mm). The scan tries +/- multiples of this; it auto-shrinks when a cycle yields no improvement. Smaller = finer but slower.</value>
+  </data>
+  <data name="numericBoxCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Camera-length search half-width in steps (integer, 0-10). Scans +/- this many step increments, so total grid = 2N+1 points. Larger = wider but slower search.</value>
+  </data>
+  <data name="numericBoxPointXStep.ToolTip" xml:space="preserve">
+    <value>Initial beam-center X search step (pixels). Scan tries +/- multiples; auto-shrinks when no improvement. Smaller = finer center calibration but slower.</value>
+  </data>
+  <data name="numericBoxPointYStep.ToolTip" xml:space="preserve">
+    <value>Initial beam-center Y search step (pixels). Scan tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericBoxFootPointXRange.ToolTip" xml:space="preserve">
+    <value>Beam-center X search half-width in steps (integer, 0-10). Scans +/- this many step increments around the current X. Larger = wider but slower.</value>
+  </data>
+  <data name="numericBoxFootPointYRange.ToolTip" xml:space="preserve">
+    <value>Beam-center Y search half-width in steps (integer, 0-10). Scans +/- this many step increments around the current Y.</value>
+  </data>
+  <data name="numericBoxPhiStep.ToolTip" xml:space="preserve">
+    <value>Initial tilt-azimuth phi search step (degrees). Scan tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericBoxPhiRange.ToolTip" xml:space="preserve">
+    <value>Tilt-azimuth phi search half-width in steps (integer, 0-10). Scans +/- this many step increments around the current phi.</value>
+  </data>
+  <data name="numericBoxTauStep.ToolTip" xml:space="preserve">
+    <value>Initial tilt-angle tau search step (degrees). Scan tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericBoxTauRange.ToolTip" xml:space="preserve">
+    <value>Tilt-angle tau search half-width in steps (integer, 0-10). Scans +/- this many step increments around the current tau.</value>
+  </data>
+  <data name="numericBoxWaveLengthStep.ToolTip" xml:space="preserve">
+    <value>Initial wavelength search step (Angstrom). Note: applied internally at 0.1x. Scan tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericBoxWaveLengthRange.ToolTip" xml:space="preserve">
+    <value>Wavelength search half-width in steps (integer, 0-10). Scans +/- this many step increments around the current wavelength.</value>
+  </data>
+  <data name="numericBox2.ToolTip" xml:space="preserve">
+    <value>Pixel-size-X search step (mm/pixel). Disabled in flat-panel mode; pixel-size calibration is performed on the Gandolfi tab.</value>
+  </data>
+  <data name="numericBox3.ToolTip" xml:space="preserve">
+    <value>Pixel-size-Y search step (mm/pixel). Disabled in flat-panel mode; use the Gandolfi tab for pixel-size calibration.</value>
+  </data>
+  <data name="numericBox4.ToolTip" xml:space="preserve">
+    <value>Pixel-distortion ksi search step (degrees). Disabled in flat-panel mode.</value>
+  </data>
+  <data name="numericBox5.ToolTip" xml:space="preserve">
+    <value>Pixel-size-X search half-width in steps. Disabled in flat-panel mode.</value>
+  </data>
+  <data name="numericBox6.ToolTip" xml:space="preserve">
+    <value>Pixel-size-Y search half-width in steps. Disabled in flat-panel mode.</value>
+  </data>
+  <data name="numericBox7.ToolTip" xml:space="preserve">
+    <value>Pixel-distortion ksi search half-width in steps. Disabled in flat-panel mode.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Initial search step for each parameter. The brute-force scan moves +/- multiples of this and auto-shrinks the step when a cycle yields no improvement.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Search half-width per parameter, in number of steps. Scans +/- this many step increments (grid = 2N+1 points). 0 disables that parameter.</value>
+  </data>
+  <data name="numericBoxIteration.ToolTip" xml:space="preserve">
+    <value>Number of refinement cycles (1-100). Each cycle re-centers the grid on the current best and shrinks the step when no improvement, converging the geometry.</value>
+  </data>
+  <data name="numericBoxFittingRange.ToolTip" xml:space="preserve">
+    <value>Peak-fit window half-width around each calculated ring, in 2-theta degrees. Too small misses the peak; too large pulls in neighbors/background. Re-fits on change.</value>
+  </data>
+  <data name="numericBoxWeight.ToolTip" xml:space="preserve">
+    <value>Cost-function weight balancing peak height against 2-theta (d-spacing) deviation: cost = devThetaSq + Weight/height. Higher favors taller, sharper rings.</value>
+  </data>
+  <data name="buttonOptimize.ToolTip" xml:space="preserve">
+    <value>Start the brute-force refinement: scan the enabled parameters (camera length, center, tilt, wavelength) to best fit the standard's Debye rings. Use Stop to abort.</value>
+  </data>
+  <data name="buttonStop.ToolTip" xml:space="preserve">
+    <value>Abort the running optimization and restore the parameters, spot mask and integration range to their values before Optimize was pressed.</value>
+  </data>
+  <data name="buttonGetProfile.ToolTip" xml:space="preserve">
+    <value>Recompute the 1D radial profile (intensity vs 2-theta) with the current geometry and overlay the standard's calculated ring positions, without refining.</value>
+  </data>
+  <data name="checkBox1.ToolTip" xml:space="preserve">
+    <value>Assume square pixels: constrain pixel size X = Y during refinement instead of fitting them independently.</value>
+  </data>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value>Progress report (read-only): current cycle, best-so-far camera length, center, tilt, wavelength (with Changed/Unchanged), current step sizes and top fit scores.</value>
+  </data>
+  <data name="graphControl1.ToolTip" xml:space="preserve">
+    <value>Profile graph: intensity vs 2-theta with red lines at calculated Debye-ring positions and fitted peaks. Double-click a line to remove that reflection from the fit.</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.ToolTip" xml:space="preserve">
+    <value>Refine camera length (sample-to-detector distance, mm) in the Gandolfi scan. Scans it together with the Gandolfi radius.</value>
+  </data>
+  <data name="checkBoxPixelSize.ToolTip" xml:space="preserve">
+    <value>Refine detector pixel size X and Y (mm/pixel) in the Gandolfi scan. Affects the d-spacing scale of the rings.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Refine the beam-center position X and Y (pixels) in the Gandolfi scan. Shifts where the ring centers sit on the detector.</value>
+  </data>
+  <data name="checkBoxIPTilt.ToolTip" xml:space="preserve">
+    <value>Refine imaging-plate (IP) tilt angles tau and phi (degrees) in the Gandolfi scan. Tilt = detector not perpendicular to the beam.</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Refine the Gandolfi radius (mm): the radius of the curved imaging-plate / Gandolfi camera. Affects ring-position curvature correction.</value>
+  </data>
+  <data name="numericUpDownCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Initial camera-length search step (mm) for the Gandolfi scan. Tries +/- multiples; auto-shrinks when a cycle yields no improvement.</value>
+  </data>
+  <data name="numericUpDownPixelSizeStep.ToolTip" xml:space="preserve">
+    <value>Initial pixel-size search step (mm/pixel) for the Gandolfi scan. Tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericUpDownCenterPositionStep.ToolTip" xml:space="preserve">
+    <value>Initial beam-center search step (pixels) for the Gandolfi scan. Tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericUpDownIPTiltStep.ToolTip" xml:space="preserve">
+    <value>Initial tilt (tau and phi) search step (degrees) for the Gandolfi scan. Tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusStep.ToolTip" xml:space="preserve">
+    <value>Initial Gandolfi-radius search step (mm). Tries +/- multiples; auto-shrinks when no improvement.</value>
+  </data>
+  <data name="numericUpDownCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Camera-length search half-width in steps (integer, 0-10) for the Gandolfi scan. Scans +/- this many increments. 0 disables.</value>
+  </data>
+  <data name="numericUpDownPixelSizeRange.ToolTip" xml:space="preserve">
+    <value>Pixel-size search half-width in steps (integer, 0-10) for the Gandolfi scan. Scans +/- this many increments.</value>
+  </data>
+  <data name="numericUpDownCenterPositionRange.ToolTip" xml:space="preserve">
+    <value>Beam-center search half-width in steps (integer, 0-10) for the Gandolfi scan. Scans +/- this many increments in X and Y.</value>
+  </data>
+  <data name="numericUpDownTiltRange.ToolTip" xml:space="preserve">
+    <value>Tilt (tau/phi) search half-width in steps (integer, 0-10) for the Gandolfi scan. Scans +/- this many increments.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi-radius search half-width in steps (integer, 0-10). Scans +/- this many increments around the current radius.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Initial search step for each Gandolfi parameter. The scan moves +/- multiples of this and auto-shrinks the step when no improvement.</value>
+  </data>
+  <data name="label23.ToolTip" xml:space="preserve">
+    <value>Search half-width per Gandolfi parameter, in number of steps. Scans +/- this many step increments. 0 disables that parameter.</value>
+  </data>
+  <data name="numericUpDownIterationGandolfi.ToolTip" xml:space="preserve">
+    <value>Number of Gandolfi refinement cycles. Each cycle re-centers on the current best and shrinks the step when no improvement, converging the geometry.</value>
+  </data>
+  <data name="numericUpDownFittingRangeForGandolfi.ToolTip" xml:space="preserve">
+    <value>Peak-fit window half-width (2-theta degrees, 0.2-1) around each calculated ring for the Gandolfi fit. Too small misses the peak; too large pulls in neighbors.</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value>Number of Gandolfi refinement cycles (see the iteration box). More cycles converge the geometry more thoroughly but take longer.</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.ToolTip" xml:space="preserve">
+    <value>Start the Gandolfi brute-force refinement: scan the enabled parameters (camera length, pixel size, center, tilt, Gandolfi radius) to best fit the standard's Debye rings.</value>
+  </data>
+  <data name="toolStripProgressBar1.ToolTip" xml:space="preserve">
+    <value>Optimization progress: fraction of the parameter-grid scan completed across all cycles.</value>
+  </data>
+  <data name="toolStripStatusLabel1.ToolTip" xml:space="preserve">
+    <value>Status line: time per scan step, percent complete, elapsed time and estimated time remaining for the running optimization.</value>
   </data>
 </root>

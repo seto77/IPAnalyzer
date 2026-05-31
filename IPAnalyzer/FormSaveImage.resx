@@ -57,4 +57,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="numericUpDownWidth.ToolTip" xml:space="preserve">
+    <value>Width of the saved corrected image, in pixels (1-4096). Larger = finer sampling and bigger file. Linked to Height when Keep Aspect Ratio is on.</value>
+  </data>
+  <data name="numericUpDownHeight.ToolTip" xml:space="preserve">
+    <value>Height of the saved corrected image, in pixels (1-4096). Larger = finer sampling and bigger file. Linked to Width when Keep Aspect Ratio is on.</value>
+  </data>
+  <data name="checkBoxKeepAspect.ToolTip" xml:space="preserve">
+    <value>Lock Width and Height together so the saved image stays square; editing one copies its value to the other.</value>
+  </data>
+  <data name="numericUpDownResolution.ToolTip" xml:space="preserve">
+    <value>Pixel size of the saved corrected image, in micrometres per pixel (1-1000 um/px). Smaller value = finer detail. Stored internally as mm/pixel (value/1000).</value>
+  </data>
+  <data name="numericUpDownCenterX.ToolTip" xml:space="preserve">
+    <value>X position of the beam center (direct-beam spot) in the saved corrected image, in pixels (-4096 to 4096). Defines where the ring pattern is centered.</value>
+  </data>
+  <data name="numericUpDownCenterY.ToolTip" xml:space="preserve">
+    <value>Y position of the beam center (direct-beam spot) in the saved corrected image, in pixels (-4096 to 4096). Defines where the ring pattern is centered.</value>
+  </data>
+  <data name="buttonOK.ToolTip" xml:space="preserve">
+    <value>Save the geometry-corrected image to an .ipa file using the width, height, resolution and center set above (includes camera length and wavelength).</value>
+  </data>
+  <data name="buttonCancel.ToolTip" xml:space="preserve">
+    <value>Close this dialog without saving any image.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Output image dimensions in pixels. Width and Height of the saved corrected image (1-4096 each).</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Width of the saved corrected image, in pixels (1-4096).</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Height of the saved corrected image, in pixels (1-4096).</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>Beam center (direct-beam spot) position in the saved corrected image, in pixels. Sets where the diffraction rings are centered.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>X position of the beam center in the saved image, in pixels.</value>
+  </data>
+  <data name="label9.ToolTip" xml:space="preserve">
+    <value>Y position of the beam center in the saved image, in pixels.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Pixel size of the saved corrected image, in micrometres per pixel. Smaller = finer detail.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Unit for Resolution: micrometres per pixel (um/px). Smaller value = finer pixels.</value>
+  </data>
 </root>
