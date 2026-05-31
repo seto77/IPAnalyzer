@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container(); // 260531Cl 追加
             toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
             toolTip.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
+            toolTip.AutoPopDelay = 10000; // 260531Cl 追加: 長文ツールチップ用に表示時間を10秒へ延長
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBlurAngle)); // 260531Cl 追加 (resources 宣言漏れによる CS0103 修正)
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();

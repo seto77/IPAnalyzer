@@ -239,6 +239,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         label52 = new Label();
         toolTip = new ToolTip(components); // 260531Cl toolTipJapanese から改名
         toolTip.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
+        toolTip.AutoPopDelay = 10000; // 260531Cl 追加: 長文ツールチップ用に表示時間を10秒へ延長
         statusStrip1 = new StatusStrip();
         toolStripProgressBar1 = new ToolStripProgressBar();
         toolStripStatusLabel1 = new ToolStripStatusLabel();

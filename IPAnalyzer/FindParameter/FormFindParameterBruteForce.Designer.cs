@@ -68,6 +68,7 @@
             textBox1 = new System.Windows.Forms.TextBox();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
             toolTip1.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
+            toolTip1.AutoPopDelay = 10000; // 260531Cl 追加: 長文ツールチップ用に表示時間を10秒へ延長
             groupBox2 = new System.Windows.Forms.GroupBox();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();

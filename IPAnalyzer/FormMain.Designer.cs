@@ -1813,6 +1813,7 @@ namespace IPAnalyzer
             // toolTip
             // 
             toolTip.IsBalloon = true;
+            toolTip.AutoPopDelay = 10000; // 260531Cl 追加: 長文ツールチップ用に表示時間を10秒へ延長
             // 
             // FormMain
             // 
