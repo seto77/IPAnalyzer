@@ -258,7 +258,8 @@
     <value>18, 25</value>
   </data>
   <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
-    <value>連続(マルチフレーム)画像スタック内で、Primaryに用いるフレーム番号。</value>
+    <value>連続(マルチフレーム)画像スタック
+内で、Primaryに用いるフレーム番号。</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 24</value>
@@ -267,7 +268,8 @@
     <value />
   </data>
   <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
-    <value>Primaryパターンの色見本。クリックするとPrimaryプロファイルとリングの描画色を選択できます。</value>
+    <value>Primaryパターンの色見本。クリックすると
+Primaryプロファイルとリングの描画色を選択できます。</value>
   </data>
   <data name="label2.ToolTip" xml:space="preserve">
     <value />
@@ -306,7 +308,8 @@
     <value>Primary画像のビーム中心(ダイレクトスポット)位置(ピクセル)。</value>
   </data>
   <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
-    <value>メインウィンドウのビーム中心(ダイレクトスポット)座標をPrimaryの中心X/Y欄にコピーします。</value>
+    <value>メインウィンドウのビーム中心(ダイレクトスポット)
+座標をPrimaryの中心X/Y欄にコピーします。</value>
   </data>
   <data name="buttonPrimaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -318,7 +321,8 @@
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
-    <value>読み込んだPrimary画像と抽出済みプロファイルを消去し、Primaryを初期化します。</value>
+    <value>読み込んだPrimary画像と抽出済みプロファイル
+を消去し、Primaryを初期化します。</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonOpenPrimaryImage.AutoSize" type="System.Boolean, mscorlib">
@@ -382,7 +386,8 @@
     <value>18, 25</value>
   </data>
   <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
-    <value>連続(マルチフレーム)画像スタック内で、Secondaryに用いるフレーム番号。</value>
+    <value>連続(マルチフレーム)画像スタック
+内で、Secondaryに用いるフレーム番号。</value>
   </data>
   <data name="buttonOpenSecondaryImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -403,7 +408,8 @@
     <value>99, 21</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>読み取り専用。現在読み込まれているSecondary画像のファイル名(連続モードではフレーム番号も)。</value>
+    <value>読み取り専用。現在読み込まれているSecondary画像の
+ファイル名(連続モードではフレーム番号も)。</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 60</value>
@@ -412,10 +418,12 @@
     <value>157, 60</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
-    <value>読み取り専用。Primaryのカメラ長(mm)のコピー。Secondaryの差分入力の参照用に表示します。</value>
+    <value>読み取り専用。Primaryのカメラ長(mm)のコピー。
+Secondaryの差分入力の参照用に表示します。</value>
   </data>
   <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
-    <value>Secondaryパターンの色見本。クリックするとSecondaryプロファイルとリングの描画色を選択できます。</value>
+    <value>Secondaryパターンの色見本。クリックすると
+Secondaryプロファイルとリングの描画色を選択できます。</value>
   </data>
   <data name="label54.ToolTip" xml:space="preserve">
     <value />
@@ -430,13 +438,15 @@
     <value />
   </data>
   <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
-    <value>メインウィンドウのビーム中心(ダイレクトスポット)座標をSecondaryの中心X/Y欄にコピーします。</value>
+    <value>メインウィンドウのビーム中心(ダイレクトスポット)
+座標をSecondaryの中心X/Y欄にコピーします。</value>
   </data>
   <data name="buttonClearSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
-    <value>読み込んだSecondary画像と抽出済みプロファイルを消去し、Secondaryを初期化します。</value>
+    <value>読み込んだSecondary画像と抽出済みプロファイル
+を消去し、Secondaryを初期化します。</value>
   </data>
   <data name="buttonSecondaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -499,7 +509,8 @@
     <value>中心ピクセル</value>
   </data>
   <data name="label58.ToolTip" xml:space="preserve">
-    <value>Secondary画像のビーム中心(ダイレクトスポット)位置(ピクセル)。</value>
+    <value>Secondary画像のビーム中心
+(ダイレクトスポット)位置(ピクセル)。</value>
   </data>
   <data name="label29.ToolTip" xml:space="preserve">
     <value />
@@ -632,7 +643,8 @@
     <value>設定</value>
   </data>
   <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
-    <value>標準試料(既定はCeO2)を選択/編集するダイアログを開きます。そのd値から期待されるデバイリング位置が決まります。</value>
+    <value>標準試料(既定はCeO2)を選択/編集するダイアログを開きま
+す。そのd値から期待されるデバイリング位置が決まります。</value>
   </data>
   <data name="checkBoxRefinePixelDistortion.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -690,7 +702,9 @@
     <value>ピーク分離を行う</value>
   </data>
   <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
-    <value>重なり合うデバイリングピークを分離します。フィッティング範囲の約2倍以内に近接するピークを1グループとして同時にフィットし、分離精度を高めます。</value>
+    <value>重なり合うデバイリングピークを分離します。
+フィッティング範囲の約2倍以内に近接するピークを
+1グループとして同時にフィットし、分離精度を高めます。</value>
   </data>
   <data name="checkBoxMouseOperation.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -723,7 +737,9 @@
     <value>55, 121</value>
   </data>
   <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
-    <value>各リング周りでサンプリングする方位方向(セクター)の数(8-360)。多いほど傾き・中心の感度が上がりますが計算は遅くなります。</value>
+    <value>各リング周りでサンプリングする方位方向
+(セクター)の数(8-360)。多いほど傾き・中心の
+感度が上がりますが計算は遅くなります。</value>
   </data>
   <data name="label45.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -738,7 +754,8 @@
     <value>ピーク閾値</value>
   </data>
   <data name="label45.ToolTip" xml:space="preserve">
-    <value>ピーク採用閾値(0-1)。この強度比を下回るピークは最適化から除外。</value>
+    <value>ピーク採用閾値(0-1)。この強度比を
+下回るピークは最適化から除外。</value>
   </data>
   <data name="label21.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -807,7 +824,8 @@
     <value>矩形</value>
   </data>
   <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
-    <value>リングを横切る矩形バンド領域で積算します。単純で高速ですが、リングの曲率が大きいと精度が落ちます。</value>
+    <value>リングを横切る矩形バンド領域で積算します。単純で
+高速ですが、リングの曲率が大きいと精度が落ちます。</value>
   </data>
   <data name="radioButtonSector.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -822,7 +840,9 @@
     <value>セクター</value>
   </data>
   <data name="radioButtonSector.ToolTip" xml:space="preserve">
-    <value>リングの角度セクター(扇形)領域で積算します。リングの曲率に沿うため、カメラ長が短い/傾きが大きい場合に適します。</value>
+    <value>リングの角度セクター(扇形)領域で積算し
+ます。リングの曲率に沿うため、カメラ
+長が短い/傾きが大きい場合に適します。</value>
   </data>
   <data name="buttonStopRefinements.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -852,7 +872,8 @@
     <value>初期パラメータをメインフォームから取得</value>
   </data>
   <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
-    <value>メインウィンドウの現在のジオメトリパラメータを、最適化の初期値としてInitial欄に読み込みます。</value>
+    <value>メインウィンドウの現在のジオメトリパラメータを、
+最適化の初期値としてInitial欄に読み込みます。</value>
   </data>
   <data name="buttonSendMainForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -867,7 +888,9 @@
     <value>校正パラメータをメインフォームに送信</value>
   </data>
   <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
-    <value>最適化されたパラメータ(カメラ長, ピクセルサイズ/歪み, 傾き, 波長, 球面補正, ビーム中心)をメインウィンドウに反映します。</value>
+    <value>最適化されたパラメータ(カメラ長,
+ピクセルサイズ/歪み, 傾き, 波長, 球面補正,
+ビーム中心)をメインウィンドウに反映します。</value>
   </data>
   <data name="groupBoxParameter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -882,13 +905,16 @@
     <value />
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
-    <value>Secondaryイメージングプレート(IP)の傾き角τ(度)の初期値。2枚目画像の検出器のビーム垂直からの傾き量です。</value>
+    <value>Secondaryイメージングプレート(IP)の傾き角τ(度)の
+初期値。2枚目画像の検出器のビーム垂直からの傾き量です。</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
-    <value>球面湾曲補正の初期値で、曲率半径の逆数 1/R (1/mm)で入力します。湾曲した検出器/IPを補正し、0で平面です。</value>
+    <value>球面湾曲補正の初期値で、曲率半径の逆数 1/R (1/mm)で
+入力します。湾曲した検出器/IPを補正し、0で平面です。</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
-    <value>Secondaryイメージングプレート(IP)の傾き方位角φ(度)の初期値。2枚目画像の検出器傾きの面内方向です。</value>
+    <value>Secondaryイメージングプレート(IP)の傾き方位角φ(度)の
+初期値。2枚目画像の検出器傾きの面内方向です。</value>
   </data>
   <data name="textBoxRefinedPixelKsiDev.ToolTip" xml:space="preserve">
     <value />
@@ -909,7 +935,9 @@
     <value>クリップボードにコピー</value>
   </data>
   <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
-    <value>最適化された全パラメータと±誤差を、タブ区切りテキストとしてクリップボードにコピーします(波長, カメラ長, ピクセルサイズ, ξ, 傾き, 中心)。</value>
+    <value>最適化された全パラメータと±誤差を、タブ区切り
+テキストとしてクリップボードにコピーします(波長,
+カメラ長, ピクセルサイズ, ξ, 傾き, 中心)。</value>
   </data>
   <data name="label34.ToolTip" xml:space="preserve">
     <value />
@@ -921,7 +949,8 @@
     <value />
   </data>
   <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
-    <value>読み取り専用。直近の最適化で得られたピクセル歪み角ξ(度)の結果値。</value>
+    <value>読み取り専用。直近の最適化で得ら
+れたピクセル歪み角ξ(度)の結果値。</value>
   </data>
   <data name="label15.ToolTip" xml:space="preserve">
     <value />
@@ -957,7 +986,8 @@
     <value>111, 26</value>
   </data>
   <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
-    <value>読み取り専用。直近の最適化で得られたY方向ピクセルサイズ(mm)の結果値。</value>
+    <value>読み取り専用。直近の最適化で得られ
+たY方向ピクセルサイズ(mm)の結果値。</value>
   </data>
   <data name="textBoxRefinedPrimaryTauDev.ToolTip" xml:space="preserve">
     <value />
@@ -984,13 +1014,16 @@
     <value>206, 26</value>
   </data>
   <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
-    <value>読み取り専用。直近の最適化で得られた波長(0.1 nm = Å)の結果値。</value>
+    <value>読み取り専用。直近の最適化で得ら
+れた波長(0.1 nm = Å)の結果値。</value>
   </data>
   <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
-    <value>読み取り専用。直近の最適化で得られたX方向ピクセルサイズ(mm)の結果値。</value>
+    <value>読み取り専用。直近の最適化で得られ
+たX方向ピクセルサイズ(mm)の結果値。</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
-    <value>読み取り専用。直近の最適化で得られた球面湾曲補正(曲率半径の逆数1/R, 1/mm)の結果値。</value>
+    <value>読み取り専用。直近の最適化で得られた
+球面湾曲補正(曲率半径の逆数1/R, 1/mm)の結果値。</value>
   </data>
   <data name="textBoxRefinedSecondaryTau.ToolTip" xml:space="preserve">
     <value />
@@ -1059,7 +1092,8 @@
     <value>296, 50</value>
   </data>
   <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
-    <value>読み取り専用。最適化で得られたカメラ長の推定標準誤差(±, mm)。</value>
+    <value>読み取り専用。最適化で得られた
+カメラ長の推定標準誤差(±, mm)。</value>
   </data>
   <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1071,7 +1105,8 @@
     <value>傾き補正項</value>
   </data>
   <data name="label22.ToolTip" xml:space="preserve">
-    <value>イメージングプレート(IP)の傾き: 検出器がビームに垂直でない状態を、方位角φと傾き角τで表します。</value>
+    <value>イメージングプレート(IP)の傾き: 検出器がビームに
+垂直でない状態を、方位角φと傾き角τで表します。</value>
   </data>
   <data name="textBoxRefinedSecondaryPhi.ToolTip" xml:space="preserve">
     <value />
@@ -1089,7 +1124,8 @@
     <value>各最適化パラメータの推定標準誤差(±)。</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
-    <value>読み取り専用。直近の最適化で得られたPrimary検出器の傾き方位角φ(度)の結果値。</value>
+    <value>読み取り専用。直近の最適化で得られた
+Primary検出器の傾き方位角φ(度)の結果値。</value>
   </data>
   <data name="label61.ToolTip" xml:space="preserve">
     <value />
@@ -1131,7 +1167,8 @@
     <value>傾き補正項</value>
   </data>
   <data name="label71.ToolTip" xml:space="preserve">
-    <value>Secondaryイメージングプレート(IP)の傾き: 検出器がビームに垂直でない状態を方位角φと傾き角τで表します。</value>
+    <value>Secondaryイメージングプレート(IP)の傾き: 検出器が
+ビームに垂直でない状態を方位角φと傾き角τで表します。</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>503, 317</value>
@@ -1152,7 +1189,8 @@
     <value>プライマリ</value>
   </data>
   <data name="radioButton1.ToolTip" xml:space="preserve">
-    <value>フレキシブルモードでデバイリングを手動追加・移動する際、Primary画像を対象にします。</value>
+    <value>フレキシブルモードでデバイリングを手動追加・
+移動する際、Primary画像を対象にします。</value>
   </data>
   <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1167,25 +1205,29 @@
     <value>セカンダリ</value>
   </data>
   <data name="radioButton2.ToolTip" xml:space="preserve">
-    <value>フレキシブルモードでデバイリングを手動追加・移動する際、Secondary画像を対象にします。</value>
+    <value>フレキシブルモードでデバイリングを手動追加・
+移動する際、Secondary画像を対象にします。</value>
   </data>
   <data name="buttonGetWaveLengthFromWholePattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 400</value>
   </data>
   <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
-    <value>両画像のチェック済みデバイリングピークを用いてパターン全体から波長を推定し、最適化結果として読み込みます。</value>
+    <value>両画像のチェック済みデバイリングピークを用いてパターン
+全体から波長を推定し、最適化結果として読み込みます。</value>
   </data>
   <data name="buttonGetCameraLenghtFromWholePattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 400</value>
   </data>
   <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
-    <value>パターン全体のPrimary/Secondaryリング位置のずれからカメラ長を推定し、最適化結果として読み込みます。</value>
+    <value>パターン全体のPrimary/Secondaryリング位置のずれか
+らカメラ長を推定し、最適化結果として読み込みます。</value>
   </data>
   <data name="contextMenuStrip1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ColumnPrimary.ToolTipText" xml:space="preserve">
-    <value>Double click: focus the peak. Right click: the check/unchek selected peaks.</value>
+    <value>Double click: focus the peak. Right
+click: the check/unchek selected peaks.</value>
   </data>
   <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 305</value>
@@ -1209,7 +1251,8 @@
     <value>1015, 270</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのSecondary傾き角τの変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのSecondary傾き角τの変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1015, 102</value>
@@ -1218,7 +1261,8 @@
     <value>1013, 186</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのSecondary傾き方位角φの変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのSecondary傾き方位角φの変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1015, 18</value>
@@ -1236,7 +1280,9 @@
     <value>1145, 18</value>
   </data>
   <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
-    <value>Secondaryのフィット済みデバイリング中心の分布(mm)を表示します。古い順に着色。一方向の相関があるとSecondary検出器の傾き補正が不十分です。</value>
+    <value>Secondaryのフィット済みデバイリング中心の
+分布(mm)を表示します。古い順に着色。一方向の相関が
+あるとSecondary検出器の傾き補正が不十分です。</value>
   </data>
   <data name="pictureBoxTiltCorrection1.Location" type="System.Drawing.Point, System.Drawing">
     <value>693, 18</value>
@@ -1329,7 +1375,8 @@
     <value>残差二乗和</value>
   </data>
   <data name="label72.ToolTip" xml:space="preserve">
-    <value>反復ごとの平均相対残差(計算値と実測ピーク位置の差)。収束に伴い減少します。</value>
+    <value>反復ごとの平均相対残差(計算値と実測ピーク
+位置の差)。収束に伴い減少します。</value>
   </data>
   <data name="label37.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1359,7 +1406,8 @@
     <value>リング中心 (サブ画像)</value>
   </data>
   <data name="label76.ToolTip" xml:space="preserve">
-    <value>Secondaryのフィット済みリング中心分布。偏った相関があるとSecondaryの傾き補正が不十分です。</value>
+    <value>Secondaryのフィット済みリング中心分布。偏った
+相関があるとSecondaryの傾き補正が不十分です。</value>
   </data>
   <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1389,7 +1437,8 @@
     <value>リング中心 (メイン画像)</value>
   </data>
   <data name="label8.ToolTip" xml:space="preserve">
-    <value>Primaryのフィット済みリング中心分布。偏った相関があると傾き補正が不十分です。</value>
+    <value>Primaryのフィット済みリング中心分布。
+偏った相関があると傾き補正が不十分です。</value>
   </data>
   <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8.25pt</value>
@@ -1440,19 +1489,23 @@
     <value />
   </data>
   <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
-    <value>下の条件(『away from』以上孤立し、『lower than』以内の距離)を満たすピークを自動的にチェック(フィッティング対象に)します。</value>
+    <value>下の条件(『away from』以上孤立し、『lower
+than』以内の距離)を満たすピークを自動的に
+チェック(フィッティング対象に)します。</value>
   </data>
   <data name="numericBoxAwayFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 23</value>
   </data>
   <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
-    <value>最小間隔(mm)。「Check peaks」は、隣接ピークからこの距離以上離れて孤立しているピークを自動選択します。</value>
+    <value>最小間隔(mm)。「Check peaks」は、隣接ピークからこの
+距離以上離れて孤立しているピークを自動選択します。</value>
   </data>
   <data name="numericBoxLowerThan.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 23</value>
   </data>
   <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
-    <value>距離の上限(mm)。「Check peaks」は、この半径距離より内側にあるピークのみを自動選択します。</value>
+    <value>距離の上限(mm)。「Check peaks」は、この半径距離よ
+り内側にあるピークのみを自動選択します。</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1468, 722</value>
@@ -1482,7 +1535,9 @@
     <value>ピークを拡大</value>
   </data>
   <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
-    <value>選択した各デバイリングピークについて、個別のフィット結果グラフ(実測プロファイル・フィット曲線・バックグラウンド)を表示します。</value>
+    <value>選択した各デバイリングピークについて、個別の
+フィット結果グラフ(実測プロファイル・フィット
+曲線・バックグラウンド)を表示します。</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1468, 722</value>
@@ -1559,144 +1614,219 @@
     <value />
   </data>
   <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
-    <value>最適化中にメインウィンドウの画像を更新します。オフにすると再描画を抑制し、計算がわずかに速くなります。</value>
+    <value>最適化中にメインウィンドウの画像を更新します。オフに
+すると再描画を抑制し、計算がわずかに速くなります。</value>
   </data>
   <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
-    <value>最適化の実行中に、各ピークのグラフでマウス操作(ドラッグ)を有効にします。不安定になる場合があるため、安定動作させたいときはオフにしてください。</value>
+    <value>最適化の実行中に、各ピークのグラフでマウス
+操作(ドラッグ)を有効にします。不安定になる場合があ
+るため、安定動作させたいときはオフにしてください。</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのPrimary傾き方位角φの変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのPrimary傾き方位角φの変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのピクセルサイズ(Y)の変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのピクセルサイズ(Y)の変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのピクセルサイズ(X)の変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのピクセルサイズ(X)の変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
-    <value>選択したデバイリングピークの計算値と実測値のずれ(平均二乗残差)を反復ごとに表示します。最適化が進むと単調に減少し、最新値は右へ追加されます。</value>
+    <value>選択したデバイリングピークの計算値と実測値のずれ
+(平均二乗残差)を反復ごとに表示します。最適化が
+進むと単調に減少し、最新値は右へ追加されます。</value>
   </data>
   <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとの波長の変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとの波長の変化を表示します(最新値は
+右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
-    <value>Primaryの2次元画像を半径方向に積算し、ピークフィッティング用の1次元プロファイル(距離-強度)を取得します。</value>
+    <value>Primaryの2次元画像を半径方向に積算し、
+ピークフィッティング用の1次元
+プロファイル(距離-強度)を取得します。</value>
   </data>
   <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
-    <value>検出器の1ピクセルあたりの大きさ(Y方向, mm)の初期値。最適化の開始値で、画像の縦方向のピクセル→mm換算を決めます。</value>
+    <value>検出器の1ピクセルあたりの大きさ(Y方向,
+mm)の初期値。最適化の開始値で、画像の
+縦方向のピクセル→mm換算を決めます。</value>
   </data>
   <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
-    <value>検出器の1ピクセルあたりの大きさ(X方向, mm)の初期値。最適化の開始値で、画像の横方向のピクセル→mm換算を決めます。</value>
+    <value>検出器の1ピクセルあたりの大きさ(X方向,
+mm)の初期値。最適化の開始値で、画像の
+横方向のピクセル→mm換算を決めます。</value>
   </data>
   <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
-    <value>上でチェックしたジオメトリパラメータの最小二乗最適化を、選択したデバイリングピークに対して開始します。途中で止めるにはStopを押してください。</value>
+    <value>上でチェックしたジオメトリパラメータの
+最小二乗最適化を、選択したデバイリングピークに対して
+開始します。途中で止めるにはStopを押してください。</value>
   </data>
   <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
-    <value>実行中の最適化を停止・キャンセルします。それまでに到達したパラメータ値は保持されます。</value>
+    <value>実行中の最適化を停止・キャンセルします。それ
+までに到達したパラメータ値は保持されます。</value>
   </data>
   <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value>予測されるデバイリングピーク一覧。Primary/Secondaryのチェックで最適化に使うピークを選択し、mm列に観測フィット位置を表示します。行をダブルクリックするとそのピークにグラフを拡大します。</value>
+    <value>予測されるデバイリングピーク一覧。Primary/Secondary
+のチェックで最適化に使うピークを選択し、mm列に
+観測フィット位置を表示します。行をダブルクリックす
+るとそのピークにグラフを拡大します。</value>
   </data>
   <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
-    <value>積算領域の短辺の幅を画像横幅に対する割合(%)で指定します(既定4%)。広いほど多くの画素を平均しますが、近接リングがぼやけます。</value>
+    <value>積算領域の短辺の幅を画像横幅に対する
+割合(%)で指定します(既定4%)。広いほど多くの
+画素を平均しますが、近接リングがぼやけます。</value>
   </data>
   <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
-    <value>放射線波長(0.1 nm = Å単位)の初期値。最適化の開始値に使われます。波長を大きくすると全回折リングが外側へ移動します。</value>
+    <value>放射線波長(0.1 nm = Å単位)の初期値。
+最適化の開始値に使われます。波長を大きく
+すると全回折リングが外側へ移動します。</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>読み取り専用。現在読み込まれているPrimary画像のファイル名(連続モードではフレーム番号も)。</value>
+    <value>読み取り専用。現在読み込まれているPrimary画像の
+ファイル名(連続モードではフレーム番号も)。</value>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのピクセル歪み角ξの変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのピクセル歪み角ξの変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
-    <value>Secondaryのビーム中心(ダイレクトスポット)Y座標(ピクセル)。ダブルクリックでメインウィンドウの中心座標をコピー。メイン側の「Find Center」でも反映されます。</value>
+    <value>Secondaryのビーム中心(ダイレクトスポット)Y
+座標(ピクセル)。ダブルクリックで
+メインウィンドウの中心座標をコピー。メイン
+側の「Find Center」でも反映されます。</value>
   </data>
   <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
-    <value>既知の標準物質を使用します。デバイ-シェラーリング位置を標準物質のd値から計算します。オフにするとリングを手動で配置/ドラッグ(フレキシブルモード)。</value>
+    <value>既知の標準物質を使用します。デバイ-シェラーリング
+位置を標準物質のd値から計算します。オフにすると
+リングを手動で配置/ドラッグ(フレキシブルモード)。</value>
   </data>
   <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
-    <value>ピーク採用の閾値(0-1)。積分強度/(積分強度+バックグラウンド) がこの値を下回るピークは最適化から除外します。</value>
+    <value>ピーク採用の閾値(0-1)。積分強度/(積分
+強度+バックグラウンド) がこの値を
+下回るピークは最適化から除外します。</value>
   </data>
   <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
-    <value>チェックすると検出器の傾き補正(方位角φと傾き角τ)を最適化します。傾きと中心は連動するため、中心位置の最適化も自動でオンになります。</value>
+    <value>チェックすると検出器の傾き補正(方位角φと傾き
+角τ)を最適化します。傾きと中心は連動するた
+め、中心位置の最適化も自動でオンになります。</value>
   </data>
   <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
-    <value>Primaryのビーム中心(ダイレクトスポット)Y座標(ピクセル)。ダブルクリックでメインウィンドウの中心座標をコピー。メイン側の「Find Center」でも反映されます。</value>
+    <value>Primaryのビーム中心(ダイレクトスポット)Y座
+標(ピクセル)。ダブルクリックで
+メインウィンドウの中心座標をコピー。メイン
+側の「Find Center」でも反映されます。</value>
   </data>
   <data name="pictureBoxMain.ToolTip" xml:space="preserve">
-    <value>距離-強度プロファイル表示。左ドラッグで拡大、右クリックで縮小。回折線をドラッグすると移動でき、カメラ長(フレキシブルモードではd値)が変更されます。</value>
+    <value>距離-強度プロファイル表示。左ドラッグで拡大、
+右クリックで縮小。回折線をドラッグすると移動でき、
+カメラ長(フレキシブルモードではd値)が変更されます。</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
-    <value>Primaryイメージングプレート(IP)の傾き角τ(度)の初期値。検出器がビーム垂直からどれだけ傾いているかを表します。</value>
+    <value>Primaryイメージングプレート(IP)の傾き角τ(度)の初期値。
+検出器がビーム垂直からどれだけ傾いているかを表します。</value>
   </data>
   <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
-    <value>Secondaryの回折画像ファイルを読み込みます(二距離ジオメトリ最適化用の任意の2枚目パターン)。</value>
+    <value>Secondaryの回折画像ファイルを読み込みます
+(二距離ジオメトリ最適化用の任意の2枚目パターン)。</value>
   </data>
   <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
-    <value>チェックすると、ビーム中心(ダイレクトスポット)位置を最適化します。傾き補正が有効な間は自動でオンに固定されます。</value>
+    <value>チェックすると、ビーム中心
+(ダイレクトスポット)位置を最適化します。傾き
+補正が有効な間は自動でオンに固定されます。</value>
   </data>
   <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
-    <value>チェックすると、カメラ長(試料-検出器間距離)を最適化の自由パラメータに含めます。</value>
+    <value>チェックすると、カメラ長(試料-検出器間距
+離)を最適化の自由パラメータに含めます。</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのPrimary傾き角τの変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
+    <value>最適化反復ごとのPrimary傾き角τの変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整されます。</value>
   </data>
   <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
-    <value>Secondaryの2次元画像を半径方向に積算し、ピークフィッティング用の1次元プロファイル(距離-強度)を取得します。</value>
+    <value>Secondaryの2次元画像を半径方向に積算し、
+ピークフィッティング用の1次元
+プロファイル(距離-強度)を取得します。</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
-    <value>Primary画像のカメラ長(試料-検出器間距離, mm)の初期値。真値に近い値を入れておくと最適化の収束が速くなります。</value>
+    <value>Primary画像のカメラ長(試料-検出器間距離, mm)の初期値。
+真値に近い値を入れておくと最適化の収束が速くなります。</value>
   </data>
   <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
-    <value>Primaryの回折画像ファイルを読み込みます(最適化の主基準となる標準試料パターン)。</value>
+    <value>Primaryの回折画像ファイルを読み込みます
+(最適化の主基準となる標準試料パターン)。</value>
   </data>
   <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
-    <value>フィットしたデバイリング中心の分布(mm)を表示します。古い順に赤→緑→青で表示。一方向に偏った相関がある場合、検出器の傾き補正が不十分なことを意味します。</value>
+    <value>フィットしたデバイリング中心の分布(mm)を表示します。
+古い順に赤→緑→青で表示。一方向に偏った相関がある
+場合、検出器の傾き補正が不十分なことを意味します。</value>
   </data>
   <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
-    <value>チェックすると、検出器のピクセルサイズ(X・Y)を最適化の自由パラメータに含めます。</value>
+    <value>チェックすると、検出器のピクセルサイズ(X・
+Y)を最適化の自由パラメータに含めます。</value>
   </data>
   <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
-    <value>ピクセルの歪み角ξ(X軸とY軸の非直交=せん断量, 度)の初期値。ピクセル格子の歪みを補正します。</value>
+    <value>ピクセルの歪み角ξ(X軸とY軸の非直交=せん断量,
+度)の初期値。ピクセル格子の歪みを補正します。</value>
   </data>
   <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
-    <value>チェックすると、湾曲したイメージングプレートを表す球面湾曲補正(曲率半径の逆数1/R)を最適化します。</value>
+    <value>チェックすると、湾曲したイメージングプレートを表す
+球面湾曲補正(曲率半径の逆数1/R)を最適化します。</value>
   </data>
   <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
-    <value>チェックすると、放射線波長を最適化の自由パラメータに含めます。</value>
+    <value>チェックすると、放射線波長を
+最適化の自由パラメータに含めます。</value>
   </data>
   <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
-    <value>最適化反復ごとのカメラ長の変化を表示します(最新値は右へ追加)。縦軸スケールは自動調整されるため、絶対的な高さでなく傾向で判断してください。</value>
+    <value>最適化反復ごとのカメラ長の変化を表示します
+(最新値は右へ追加)。縦軸スケールは自動調整される
+ため、絶対的な高さでなく傾向で判断してください。</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
-    <value>Primaryに対するSecondaryのカメラ長の差(mm, 負値可)。2枚目検出器が前後どれだけ離れているかを指定します。</value>
+    <value>Primaryに対するSecondaryのカメラ長の差(mm, 負値可)。
+2枚目検出器が前後どれだけ離れているかを指定します。</value>
   </data>
   <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
-    <value>各予測ピーク位置を中心としたフィッティング窓の半幅(mm, 0.01-10)。大きくすると近接ピークの影響や計算時間が増え、小さすぎるとフィッティング精度が低下します。</value>
+    <value>各予測ピーク位置を中心としたフィッティング窓の半幅(mm,
+0.01-10)。大きくすると近接ピークの影響や計算時間が
+増え、小さすぎるとフィッティング精度が低下します。</value>
   </data>
   <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
-    <value>現在描画されているパラメータ履歴グラフと残差グラフをすべて消去します。</value>
+    <value>現在描画されているパラメータ履歴グラフ
+と残差グラフをすべて消去します。</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
-    <value>Secondaryのビーム中心(ダイレクトスポット)X座標(ピクセル)。ダブルクリックでメインウィンドウの中心座標をコピー。メイン側の「Find Center」でも反映されます。</value>
+    <value>Secondaryのビーム中心(ダイレクトスポット)X
+座標(ピクセル)。ダブルクリックで
+メインウィンドウの中心座標をコピー。メイン
+側の「Find Center」でも反映されます。</value>
   </data>
   <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
-    <value>チェックすると、ピクセル歪み角ξ(X/Yのせん断)を最適化の自由パラメータに含めます。</value>
+    <value>チェックすると、ピクセル歪み角ξ(X/Yのせん
+断)を最適化の自由パラメータに含めます。</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
-    <value>Primaryイメージングプレート(IP)の傾き方位角φ(度)の初期値。検出器がビームに対し傾いている回転軸の面内方向です。</value>
+    <value>Primaryイメージングプレート(IP)の傾き
+方位角φ(度)の初期値。検出器がビームに
+対し傾いている回転軸の面内方向です。</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
-    <value>Primaryのビーム中心(ダイレクトスポット)X座標(ピクセル)。ダブルクリックでメインウィンドウの中心座標をコピー。メイン側の「Find Center」でも反映されます。</value>
+    <value>Primaryのビーム中心(ダイレクトスポット)X座
+標(ピクセル)。ダブルクリックで
+メインウィンドウの中心座標をコピー。メイン
+側の「Find Center」でも反映されます。</value>
   </data>
   <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
-    <value>最適化を繰り返す回数(既定12)。多いほど収束が進みますが時間がかかります。</value>
+    <value>最適化を繰り返す回数(既定12)。多いほ
+ど収束が進みますが時間がかかります。</value>
   </data>
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
-    <value>各幾何パラメータ(カメラ長, 中心, 検出器傾き, ピクセルサイズ, 歪み)を説明する模式図を表示します。</value>
+    <value>各幾何パラメータ(カメラ長, 中心, 検出器傾き,
+ピクセルサイズ, 歪み)を説明する模式図を表示します。</value>
   </data>
   <data name="checkUncheckToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>選択中のピーク行/セルのフィッティング選択チェックを一括で反転します。</value>
+    <value>選択中のピーク行/セルのフィッティング
+選択チェックを一括で反転します。</value>
   </data>
 </root>

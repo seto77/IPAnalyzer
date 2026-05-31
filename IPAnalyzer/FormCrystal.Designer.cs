@@ -27,6 +27,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
             this.crystalControl = new Crystallography.Controls.CrystalControl();
             this.SuspendLayout();
             // 

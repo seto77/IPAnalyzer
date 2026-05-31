@@ -493,27 +493,45 @@
     <value>True</value>
   </metadata>
   <data name="trackBar1.ToolTip" xml:space="preserve">
-    <value>Scrub through frames of the image stack; jumps to the selected frame, recalculates its 1D profile and redraws. Range 0..(frame count-1). Disabled in Multi selection mode.</value>
+    <value>Scrub through frames of the image stack;
+jumps to the selected frame, recalculates
+its 1D profile and redraws. Range 0..(frame
+count-1). Disabled in Multi selection mode.</value>
   </data>
   <data name="listBox.ToolTip" xml:space="preserve">
-    <value>List of all frames in the stack. Click to display a frame; in Multi selection mode use Ctrl/Shift (Ctrl+A = all) to pick several for averaging or summation. HDF5 frames are prefixed with a 3-digit index.</value>
+    <value>List of all frames in the stack. Click to display a
+frame; in Multi selection mode use Ctrl/Shift (Ctrl+A
+= all) to pick several for averaging or summation.
+HDF5 frames are prefixed with a 3-digit index.</value>
   </data>
   <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
-    <value>Allow selecting several frames at once (enables the Average / Summation options and disables the frame slider). Off = view one frame at a time.</value>
+    <value>Allow selecting several frames at once (enables
+the Average / Summation options and disables the
+frame slider). Off = view one frame at a time.</value>
   </data>
   <data name="checkBoxAverage.ToolTip" xml:space="preserve">
-    <value>Show the per-pixel average (intensity sum divided by number of frames) of the selected frames. Mutually exclusive with Summation. Requires Multi selection.</value>
+    <value>Show the per-pixel average (intensity sum divided by
+number of frames) of the selected frames. Mutually
+exclusive with Summation. Requires Multi selection.</value>
   </data>
   <data name="checkBoxSummation.ToolTip" xml:space="preserve">
-    <value>Show the per-pixel sum (intensities added, not divided) of the selected frames; raises statistics and improves counting for weak frames. Mutually exclusive with Average. Requires Multi selection.</value>
+    <value>Show the per-pixel sum (intensities added, not
+divided) of the selected frames; raises statistics
+and improves counting for weak frames. Mutually
+exclusive with Average. Requires Multi selection.</value>
   </data>
   <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
-    <value>Run 'Get Profile' (radial integration to a 1D I-vs-2theta/d/q curve) only on the frame(s) currently selected in the list above.</value>
+    <value>Run 'Get Profile' (radial integration to a 1D
+I-vs-2theta/d/q curve) only on the frame(s)
+currently selected in the list above.</value>
   </data>
   <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
-    <value>Run 'Get Profile' (radial integration to a 1D profile) only on the single frame currently shown on top.</value>
+    <value>Run 'Get Profile' (radial integration to a 1D profile)
+only on the single frame currently shown on top.</value>
   </data>
   <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
-    <value>Run 'Get Profile' (radial integration to 1D) on every frame in the stack, ignoring the current list selection; produces one profile per frame.</value>
+    <value>Run 'Get Profile' (radial integration to 1D) on
+every frame in the stack, ignoring the current
+list selection; produces one profile per frame.</value>
   </data>
 </root>

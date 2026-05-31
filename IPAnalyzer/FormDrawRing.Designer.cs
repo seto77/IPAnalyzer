@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container(); // 260531Cl 追加
             toolTip = new System.Windows.Forms.ToolTip(components); // 260531Cl 追加
+            toolTip.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrawRing));
             this.textBoxR = new System.Windows.Forms.TextBox();
             this.textBoxTwoTheta = new System.Windows.Forms.TextBox();

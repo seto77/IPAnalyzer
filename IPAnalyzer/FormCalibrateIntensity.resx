@@ -128,21 +128,38 @@
 </value>
   </data>
   <data name="textBoxFile1.ToolTip" xml:space="preserve">
-    <value>Path of the first raw imaging-plate (IP) image (Fuji .img / R-AXIS4 .stl / Bruker .ccd / PF-BL4B1 .ipf). Read-only; set via Open. Used as reference image 1 in the intensity-response fit.</value>
+    <value>Path of the first raw imaging-plate (IP) image
+(Fuji .img / R-AXIS4 .stl / Bruker .ccd /
+PF-BL4B1 .ipf). Read-only; set via Open. Used as
+reference image 1 in the intensity-response fit.</value>
   </data>
   <data name="buttonOpenFile1.ToolTip" xml:space="preserve">
-    <value>Open and load the first raw IP image (Fuji .img / R-AXIS4 .stl / Bruker .ccd / PF-BL4B1 .ipf) for intensity-response calibration; its path appears in the box at left.</value>
+    <value>Open and load the first raw IP image (Fuji
+.img / R-AXIS4 .stl / Bruker .ccd / PF-BL4B1
+.ipf) for intensity-response calibration;
+its path appears in the box at left.</value>
   </data>
   <data name="textBoxFile2.ToolTip" xml:space="preserve">
-    <value>Path of the second raw IP image (same formats as image 1). Read-only; set via Open. Used as image 2; should be the same pattern at a different reader gain so the response curve can be fitted.</value>
+    <value>Path of the second raw IP image (same formats as
+image 1). Read-only; set via Open. Used as image
+2; should be the same pattern at a different
+reader gain so the response curve can be fitted.</value>
   </data>
   <data name="buttonOpenFile2.ToolTip" xml:space="preserve">
-    <value>Open and load the second raw IP image (same formats as image 1) for intensity-response calibration; its path appears in the box at left.</value>
+    <value>Open and load the second raw IP image (same
+formats as image 1) for intensity-response
+calibration; its path appears in the box at left.</value>
   </data>
   <data name="buttonCalibrate.ToolTip" xml:space="preserve">
-    <value>Fit the intensity-response curve: iteratively adjust a 16-point raw-to-linear conversion table to minimize the least-squares difference between the two images. Progress is drawn live in the graph.</value>
+    <value>Fit the intensity-response curve: iteratively
+adjust a 16-point raw-to-linear conversion table to
+minimize the least-squares difference between the
+two images. Progress is drawn live in the graph.</value>
   </data>
   <data name="graphControl1.ToolTip" xml:space="preserve">
-    <value>Plot of the intensity-response conversion table: X = raw recorded value, Y = corrected linear intensity. Shows the initial curve and the current best fit, redrawn each iteration. Drag/scroll to zoom and pan.</value>
+    <value>Plot of the intensity-response conversion table: X =
+raw recorded value, Y = corrected linear intensity.
+Shows the initial curve and the current best fit,
+redrawn each iteration. Drag/scroll to zoom and pan.</value>
   </data>
 </root>

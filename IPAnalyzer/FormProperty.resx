@@ -1799,7 +1799,9 @@
     <value>メイリオ, 9pt</value>
   </data>
   <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
-    <value>Camera Length 2: sample-to-foot distance (mm), the perpendicular distance to the tilted detector plane (= CL1·cos tau). Not the sample-to-direct-spot length.</value>
+    <value>Camera Length 2: sample-to-foot distance (mm), the
+perpendicular distance to the tilted detector plane
+(= CL1·cos tau). Not the sample-to-direct-spot length.</value>
   </data>
 
 
@@ -2156,7 +2158,9 @@
     <value>メイリオ, 9pt</value>
   </data>
   <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
-    <value>Camera Length 1: sample-to-direct-spot distance (mm). Sets the pixel-radius-to-2theta scale; larger length spreads rings to smaller 2theta.</value>
+    <value>Camera Length 1: sample-to-direct-spot distance
+(mm). Sets the pixel-radius-to-2theta scale;
+larger length spreads rings to smaller 2theta.</value>
   </data>
 
 
@@ -8526,7 +8530,8 @@
     <value>52</value>
   </data>
   <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
-    <value>Set the color of the azimuth (χ) scale lines overlaid on the image.</value>
+    <value>Set the color of the azimuth (χ)
+scale lines overlaid on the image.</value>
   </data>
 
 
@@ -10118,190 +10123,305 @@
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
-    <value>Correct intensities for linear (synchrotron) X-ray polarization, converting the measured pattern to an unpolarized-equivalent; affects relative peak heights vs azimuth χ.</value>
+    <value>Correct intensities for linear (synchrotron)
+X-ray polarization, converting the measured
+pattern to an unpolarized-equivalent;
+affects relative peak heights vs azimuth χ.</value>
   </data>
   <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
-    <value>Define detector geometry from the direct-beam spot: enter the direct-spot pixel and Camera Length 1 (sample-to-direct-spot distance). Use when the beam hits the detector.</value>
+    <value>Define detector geometry from the direct-beam
+spot: enter the direct-spot pixel and Camera
+Length 1 (sample-to-direct-spot distance).
+Use when the beam hits the detector.</value>
   </data>
   <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
-    <value>Define geometry from the foot of the perpendicular (sample's normal projection onto a tilted detector) and Camera Length 2 (sample-to-foot). For tilted flat panels.</value>
+    <value>Define geometry from the foot of the
+perpendicular (sample's normal projection
+onto a tilted detector) and Camera Length
+2 (sample-to-foot). For tilted flat panels.</value>
   </data>
   <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
-    <value>Flat-panel / imaging-plate detector geometry (planar detector perpendicular-ish to beam). Enables tilt and foot-mode options.</value>
+    <value>Flat-panel / imaging-plate detector geometry
+(planar detector perpendicular-ish to beam).
+Enables tilt and foot-mode options.</value>
   </data>
   <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
-    <value>Gandolfi (cylindrical/curved film) camera geometry; reveals the Gandolfi radius input and disables foot mode.</value>
+    <value>Gandolfi (cylindrical/curved film)
+camera geometry; reveals the Gandolfi
+radius input and disables foot mode.</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
-    <value>Beam-center X (direct-spot) in detector pixels. Sets the origin for all 2theta/d/q ring calculations; shifting it moves the integration center.</value>
+    <value>Beam-center X (direct-spot) in detector pixels. Sets
+the origin for all 2theta/d/q ring calculations;
+shifting it moves the integration center.</value>
   </data>
   <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
-    <value>Beam-center Y (direct-spot) in detector pixels. Sets the ring-pattern origin; shifting it moves the integration center.</value>
+    <value>Beam-center Y (direct-spot) in detector
+pixels. Sets the ring-pattern origin;
+shifting it moves the integration center.</value>
   </data>
   <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
-    <value>Foot-point X in pixels: where the sample's perpendicular meets the tilted detector. Coupled to direct-spot X through the tilt angles.</value>
+    <value>Foot-point X in pixels: where the sample's
+perpendicular meets the tilted detector. Coupled
+to direct-spot X through the tilt angles.</value>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
-    <value>Foot-point Y in pixels: where the sample's perpendicular meets the tilted detector. Coupled to direct-spot Y through the tilt angles.</value>
+    <value>Foot-point Y in pixels: where the sample's
+perpendicular meets the tilted detector. Coupled
+to direct-spot Y through the tilt angles.</value>
   </data>
   <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
-    <value>Detector pixel size along X (mm/pixel). Converts pixel positions to real distance; must match the detector spec or 2theta scaling is wrong.</value>
+    <value>Detector pixel size along X (mm/pixel). Converts
+pixel positions to real distance; must match the
+detector spec or 2theta scaling is wrong.</value>
   </data>
   <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
-    <value>Detector pixel size along Y (mm/pixel). Together with X size defines pixel aspect ratio used in geometry.</value>
+    <value>Detector pixel size along Y (mm/pixel). Together with
+X size defines pixel aspect ratio used in geometry.</value>
   </data>
   <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
-    <value>Pixel non-orthogonality angle ksi (deg): shear/skew between detector X and Y axes. 0 = perfectly rectangular pixels; corrects distorted detectors.</value>
+    <value>Pixel non-orthogonality angle ksi (deg): shear/skew
+between detector X and Y axes. 0 = perfectly
+rectangular pixels; corrects distorted detectors.</value>
   </data>
   <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
-    <value>Tilt azimuth phi (deg): in-plane direction of the detector's tilt axis. Combined with tau it corrects a detector not perpendicular to the beam.</value>
+    <value>Tilt azimuth phi (deg): in-plane direction of the
+detector's tilt axis. Combined with tau it
+corrects a detector not perpendicular to the beam.</value>
   </data>
   <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
-    <value>Tilt angle tau (deg): how far the detector plane deviates from perpendicular to the beam. 0 = no tilt; nonzero makes rings elliptical until corrected.</value>
+    <value>Tilt angle tau (deg): how far the detector plane
+deviates from perpendicular to the beam. 0 = no
+tilt; nonzero makes rings elliptical until corrected.</value>
   </data>
   <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
-    <value>Gandolfi camera radius (mm): radius of the curved/cylindrical detector. Used only in Gandolfi mode to map pixel position to 2theta.</value>
+    <value>Gandolfi camera radius (mm): radius of the
+curved/cylindrical detector. Used only in
+Gandolfi mode to map pixel position to 2theta.</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>Spherical-bending correction for a curved imaging plate (normally 0). Compensates radius-dependent distortion when the IP is not flat.</value>
+    <value>Spherical-bending correction for a curved imaging
+plate (normally 0). Compensates radius-dependent
+distortion when the IP is not flat.</value>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
-    <value>Exclude saturated pixels: ignore pixels whose count exceeds the value at right during integration. Use to drop blooming/dead-hot pixels.</value>
+    <value>Exclude saturated pixels: ignore pixels whose
+count exceeds the value at right during
+integration. Use to drop blooming/dead-hot pixels.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>Upper intensity threshold (counts). Pixels above this value are excluded from integration; only active when 'Over intensity of' is checked.</value>
+    <value>Upper intensity threshold (counts). Pixels
+above this value are excluded from integration;
+only active when 'Over intensity of' is checked.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
-    <value>Exclude low-count pixels: ignore pixels whose intensity is below the value at right. Use to drop dead/background-only pixels.</value>
+    <value>Exclude low-count pixels: ignore pixels
+whose intensity is below the value at right.
+Use to drop dead/background-only pixels.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>Lower intensity threshold (counts). Pixels below this value are excluded from integration; only active when 'Under intensity of' is checked.</value>
+    <value>Lower intensity threshold (counts). Pixels below
+this value are excluded from integration; only
+active when 'Under intensity of' is checked.</value>
   </data>
   <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
-    <value>Mask image border: exclude a strip of N pixels (set at right) from every edge during integration, removing detector-edge artifacts.</value>
+    <value>Mask image border: exclude a strip of N
+pixels (set at right) from every edge during
+integration, removing detector-edge artifacts.</value>
   </data>
   <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
-    <value>Edge-mask width in pixels (0-256): thickness of the border strip excluded from integration when 'pixels from edges' is enabled.</value>
+    <value>Edge-mask width in pixels (0-256): thickness
+of the border strip excluded from integration
+when 'pixels from edges' is enabled.</value>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
-    <value>Exclude masked spots from integration: pixels flagged as spots (e.g. single-crystal reflections, dust) are skipped so they don't contaminate the powder profile.</value>
+    <value>Exclude masked spots from integration: pixels flagged
+as spots (e.g. single-crystal reflections, dust) are
+skipped so they don't contaminate the powder profile.</value>
   </data>
   <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
-    <value>Integrate over a rectangular band instead of a full ring; enables direction, angle and band-width controls for a strip-shaped region.</value>
+    <value>Integrate over a rectangular band instead of
+a full ring; enables direction, angle and
+band-width controls for a strip-shaped region.</value>
   </data>
   <data name="radioButtonSector.ToolTip" xml:space="preserve">
-    <value>Integrate over an angular sector (pie slice) of the rings, between the start and end azimuth angles, instead of a rectangle.</value>
+    <value>Integrate over an angular sector (pie
+slice) of the rings, between the start and
+end azimuth angles, instead of a rectangle.</value>
   </data>
   <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
-    <value>Orientation of the rectangular integration band: Full ring, one side (Top/Bottom/Left/Right), symmetric Vertical/Horizontal, or Free (custom angle).</value>
+    <value>Orientation of the rectangular integration band: Full
+ring, one side (Top/Bottom/Left/Right), symmetric
+Vertical/Horizontal, or Free (custom angle).</value>
   </data>
   <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
-    <value>Band rotation angle (deg, 0-360). Azimuthal orientation of the rectangular integration strip; editable only when Direction = Free.</value>
+    <value>Band rotation angle (deg, 0-360). Azimuthal
+orientation of the rectangular integration
+strip; editable only when Direction = Free.</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
-    <value>Band width in pixels (max 10000): half-thickness of the rectangular integration strip across the beam-center line; wider = more pixels averaged.</value>
+    <value>Band width in pixels (max 10000): half-thickness
+of the rectangular integration strip across the
+beam-center line; wider = more pixels averaged.</value>
   </data>
   <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
-    <value>Integrate the band symmetrically on both sides of the beam center (centrosymmetric), doubling the sampled region. Used by Vertical/Horizontal presets.</value>
+    <value>Integrate the band symmetrically on both sides of
+the beam center (centrosymmetric), doubling the
+sampled region. Used by Vertical/Horizontal presets.</value>
   </data>
   <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
-    <value>Sector start angle (deg, azimuth χ). Beginning of the pie-slice azimuthal range integrated; pairs with End Angle.</value>
+    <value>Sector start angle (deg, azimuth χ).
+Beginning of the pie-slice azimuthal
+range integrated; pairs with End Angle.</value>
   </data>
   <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
-    <value>Sector end angle (deg, azimuth χ). End of the pie-slice azimuthal range integrated; must exceed the start angle.</value>
+    <value>Sector end angle (deg, azimuth χ). End
+of the pie-slice azimuthal range
+integrated; must exceed the start angle.</value>
   </data>
   <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
-    <value>Concentric integration: produce a standard 1D profile (intensity vs 2theta, d-spacing or length) by integrating around full Debye rings.</value>
+    <value>Concentric integration: produce a standard 1D
+profile (intensity vs 2theta, d-spacing or
+length) by integrating around full Debye rings.</value>
   </data>
   <data name="radioButtonRadial.ToolTip" xml:space="preserve">
-    <value>Radial (cake) integration: sweep azimuth at a fixed ring radius to get intensity vs azimuth angle χ - reveals texture/preferred orientation around one ring.</value>
+    <value>Radial (cake) integration: sweep azimuth at a fixed
+ring radius to get intensity vs azimuth angle χ -
+reveals texture/preferred orientation around one ring.</value>
   </data>
   <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
-    <value>Use scattering angle 2theta (degrees) as the profile x-axis; Start/End/Step are interpreted in degrees.</value>
+    <value>Use scattering angle 2theta (degrees) as the profile
+x-axis; Start/End/Step are interpreted in degrees.</value>
   </data>
   <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
-    <value>Use detector arc length (mm) as the profile x-axis; Start/End/Step are in millimetres.</value>
+    <value>Use detector arc length (mm) as the profile
+x-axis; Start/End/Step are in millimetres.</value>
   </data>
   <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
-    <value>Use lattice d-spacing (Angstrom) as the profile x-axis; Start/End/Step are in Angstroms. d = wavelength / (2 sin theta).</value>
+    <value>Use lattice d-spacing (Angstrom) as the
+profile x-axis; Start/End/Step are in
+Angstroms. d = wavelength / (2 sin theta).</value>
   </data>
   <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
-    <value>Profile range start, in the currently selected unit (2theta deg, length mm, or d-spacing Angstrom). Lower bound of the output 1D profile.</value>
+    <value>Profile range start, in the currently selected
+unit (2theta deg, length mm, or d-spacing
+Angstrom). Lower bound of the output 1D profile.</value>
   </data>
   <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
-    <value>Profile range end, in the currently selected unit (2theta deg / mm / Angstrom). Upper bound of the output 1D profile.</value>
+    <value>Profile range end, in the currently
+selected unit (2theta deg / mm / Angstrom).
+Upper bound of the output 1D profile.</value>
   </data>
   <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
-    <value>Profile bin width (step) in the selected unit. Smaller step = finer resolution and more points but noisier bins.</value>
+    <value>Profile bin width (step) in the selected
+unit. Smaller step = finer resolution
+and more points but noisier bins.</value>
   </data>
   <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
-    <value>Apply Bragg-Brentano (reflection, para-focusing) intensity convention to the output 1D pattern, e.g. for lab-diffractometer comparison.</value>
+    <value>Apply Bragg-Brentano (reflection, para-focusing)
+intensity convention to the output 1D pattern,
+e.g. for lab-diffractometer comparison.</value>
   </data>
   <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
-    <value>Apply Debye-Scherrer (transmission powder-ring) intensity convention to the output 1D pattern - the usual mode for 2D area-detector data.</value>
+    <value>Apply Debye-Scherrer (transmission powder-ring)
+intensity convention to the output 1D pattern -
+the usual mode for 2D area-detector data.</value>
   </data>
   <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
-    <value>Ring radius to sweep for radial (cake) integration, given as 2theta (deg) or d-spacing (Angstrom) per the Angle/d-spacing toggle.</value>
+    <value>Ring radius to sweep for radial (cake)
+integration, given as 2theta (deg) or d-spacing
+(Angstrom) per the Angle/d-spacing toggle.</value>
   </data>
   <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
-    <value>Ring (donut) half-width around the chosen radius integrated at each azimuth, in 2theta deg or d-spacing Angstrom. Wider = more counts, lower angular resolution.</value>
+    <value>Ring (donut) half-width around the chosen
+radius integrated at each azimuth, in
+2theta deg or d-spacing Angstrom. Wider =
+more counts, lower angular resolution.</value>
   </data>
   <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
-    <value>Azimuthal sweep step (deg) for radial integration: angular spacing between output points around the ring. Smaller = finer χ resolution.</value>
+    <value>Azimuthal sweep step (deg) for radial integration:
+angular spacing between output points around the
+ring. Smaller = finer χ resolution.</value>
   </data>
   <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
-    <value>Specify the radial ring radius as scattering angle 2theta (degrees).</value>
+    <value>Specify the radial ring radius as
+scattering angle 2theta (degrees).</value>
   </data>
   <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
-    <value>Specify the radial ring radius as lattice d-spacing (Angstrom).</value>
+    <value>Specify the radial ring radius
+as lattice d-spacing (Angstrom).</value>
   </data>
   <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
-    <value>Mask (exclude from integration) the entire left half of the image. Adds to existing mask; use Unmask All to clear.</value>
+    <value>Mask (exclude from integration) the
+entire left half of the image. Adds to
+existing mask; use Unmask All to clear.</value>
   </data>
   <data name="buttonMaskTop.ToolTip" xml:space="preserve">
-    <value>Mask (exclude from integration) the entire top half of the image. Adds to existing mask.</value>
+    <value>Mask (exclude from integration) the entire
+top half of the image. Adds to existing mask.</value>
   </data>
   <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
-    <value>Mask (exclude from integration) the entire bottom half of the image. Adds to existing mask.</value>
+    <value>Mask (exclude from integration) the entire
+bottom half of the image. Adds to existing mask.</value>
   </data>
   <data name="buttonMaskRight.ToolTip" xml:space="preserve">
-    <value>Mask (exclude from integration) the entire right half of the image. Adds to existing mask.</value>
+    <value>Mask (exclude from integration) the entire
+right half of the image. Adds to existing mask.</value>
   </data>
   <data name="buttonMaskAll.ToolTip" xml:space="preserve">
-    <value>Mask the entire image (every pixel excluded from integration). Typically used before manually unmasking only the region of interest.</value>
+    <value>Mask the entire image (every pixel excluded
+from integration). Typically used before
+manually unmasking only the region of interest.</value>
   </data>
   <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
-    <value>Clear all masks: re-include every pixel in the integration. Undoes Mask All / half-mask / spot masking.</value>
+    <value>Clear all masks: re-include every
+pixel in the integration. Undoes
+Mask All / half-mask / spot masking.</value>
   </data>
   <data name="buttonInvertMask.ToolTip" xml:space="preserve">
-    <value>Invert the mask: previously masked pixels become active and active pixels become masked.</value>
+    <value>Invert the mask: previously masked pixels
+become active and active pixels become masked.</value>
   </data>
   <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
-    <value>Enter manual masking mode so you can draw mask regions (spot/circle/rectangle/polygon/spline) directly on the image with the mouse.</value>
+    <value>Enter manual masking mode so you can draw mask
+regions (spot/circle/rectangle/polygon/spline)
+directly on the image with the mouse.</value>
   </data>
   <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
-    <value>Manual mask tool: Spot. Left-click adds, right-click removes a spot mask of the selected size at the cursor.</value>
+    <value>Manual mask tool: Spot. Left-click adds, right-click
+removes a spot mask of the selected size at the cursor.</value>
   </data>
   <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
-    <value>Manual mask tool: Circle. Drag from the center outward to mask a circular region (center and radius set by the drag).</value>
+    <value>Manual mask tool: Circle. Drag from the
+center outward to mask a circular region
+(center and radius set by the drag).</value>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
-    <value>Manual mask tool: Rectangle. Drag between two diagonal corners to mask a rectangular region.</value>
+    <value>Manual mask tool: Rectangle. Drag between two
+diagonal corners to mask a rectangular region.</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
-    <value>Manual mask tool: Polygon. Click to add vertices, double-click to close and mask the enclosed area.</value>
+    <value>Manual mask tool: Polygon. Click to add vertices,
+double-click to close and mask the enclosed area.</value>
   </data>
   <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
-    <value>Manual mask tool: Spline curve. Click to add control points (right-click deletes); double-click masks a band of the set width along the curve.</value>
+    <value>Manual mask tool: Spline curve. Click to add
+control points (right-click deletes); double-click
+masks a band of the set width along the curve.</value>
   </data>
   <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
-    <value>Spline mask band width in pixels (1-50): thickness of the masked strip drawn along the spline curve.</value>
+    <value>Spline mask band width in pixels (1-50): thickness
+of the masked strip drawn along the spline curve.</value>
   </data>
   <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
-    <value>Manual spot size as power of two: spot diameter = 2^value pixels (0-10 -&gt; 1..1024 px). Larger value masks a bigger spot per click.</value>
+    <value>Manual spot size as power of two: spot diameter
+= 2^value pixels (0-10 -&gt; 1..1024 px). Larger
+value masks a bigger spot per click.</value>
   </data>
   <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
-    <value>Resulting manual-spot diameter in pixels (= 2^size). Read-mostly; mirrors the size slider and the main toolbar spot-size selector.</value>
+    <value>Resulting manual-spot diameter in pixels (=
+2^size). Read-mostly; mirrors the size slider
+and the main toolbar spot-size selector.</value>
   </data>
   <data name="radioButtonCircle.ToolTip" xml:space="preserve">
     <value>Use a circular shape for manual spot masks.</value>
@@ -10310,144 +10430,210 @@
     <value>Use a rectangular (square) shape for manual spot masks.</value>
   </data>
   <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
-    <value>When the next image loads, start with no mask (discard any current mask).</value>
+    <value>When the next image loads, start with
+no mask (discard any current mask).</value>
   </data>
   <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
-    <value>When the next image loads, keep the mask currently in memory (reuse the same masked pixels).</value>
+    <value>When the next image loads, keep the mask currently
+in memory (reuse the same masked pixels).</value>
   </data>
   <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
-    <value>When the next image loads, apply the mask stored in the saved mask file instead of the in-memory mask.</value>
+    <value>When the next image loads, apply the mask stored in
+the saved mask file instead of the in-memory mask.</value>
   </data>
   <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
-    <value>Spot-detection threshold for auto 'Mask Spots', in standard deviations above local mean. Lower = masks more spots; higher = only the strongest.</value>
+    <value>Spot-detection threshold for auto 'Mask Spots',
+in standard deviations above local mean. Lower
+= masks more spots; higher = only the strongest.</value>
   </data>
   <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
-    <value>Automatically save the extracted 1D profile to a file after each 'Get Profile'. Enables the file-format and directory options below.</value>
+    <value>Automatically save the extracted 1D profile
+to a file after each 'Get Profile'. Enables
+the file-format and directory options below.</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
-    <value>Send the extracted 1D profile to PDIndexer (companion app) through the clipboard after each integration.</value>
+    <value>Send the extracted 1D profile to PDIndexer (companion
+app) through the clipboard after each integration.</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
-    <value>Also send the unrolled (cake / azimuthally-unrolled 2theta-vs-χ) image to PDIndexer, not just the 1D profile.</value>
+    <value>Also send the unrolled (cake /
+azimuthally-unrolled 2theta-vs-χ) image
+to PDIndexer, not just the 1D profile.</value>
   </data>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
-    <value>Strip the Kα2 contribution from the profile (Rachinger correction) when a Kα1 tube line is selected, leaving a Kα1-only pattern.</value>
+    <value>Strip the Kα2 contribution from the profile
+(Rachinger correction) when a Kα1 tube line
+is selected, leaving a Kα1-only pattern.</value>
   </data>
   <data name="numericBoxTest.ToolTip" xml:space="preserve">
-    <value>Kα2/Kα1 intensity ratio used for the Kα2-removal correction (range 0-2, typically ~0.5). Higher subtracts more Kα2.</value>
+    <value>Kα2/Kα1 intensity ratio used for the
+Kα2-removal correction (range 0-2,
+typically ~0.5). Higher subtracts more Kα2.</value>
   </data>
   <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
-    <value>Save all profiles of a sequential/azimuthal series into a single file (not available for GSAS format).</value>
+    <value>Save all profiles of a sequential/azimuthal series
+into a single file (not available for GSAS format).</value>
   </data>
   <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
-    <value>Save each profile of a sequential/azimuthal series as a separate file.</value>
+    <value>Save each profile of a sequential/azimuthal
+series as a separate file.</value>
   </data>
   <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
     <value>Ask for the output directory each time a profile is saved.</value>
   </data>
   <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
-    <value>Save profiles automatically in the same folder as the source image, without prompting.</value>
+    <value>Save profiles automatically in the same
+folder as the source image, without prompting.</value>
   </data>
   <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
     <value>Save the profile in PDI format (PDIndexer's native format).</value>
   </data>
   <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
-    <value>Save the profile as CSV (comma-separated values) for spreadsheets.</value>
+    <value>Save the profile as CSV (comma-separated
+values) for spreadsheets.</value>
   </data>
   <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
     <value>Save the profile as TSV (tab-separated values).</value>
   </data>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
-    <value>Save the profile in GSAS format for Rietveld refinement; note 'one file' option is unavailable in this format.</value>
+    <value>Save the profile in GSAS format for
+Rietveld refinement; note 'one file'
+option is unavailable in this format.</value>
   </data>
   <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
-    <value>Number of azimuth (χ) bins for the unrolled cake image (1-2048, default 720); sets the vertical resolution along the azimuth axis.</value>
+    <value>Number of azimuth (χ) bins for the unrolled
+cake image (1-2048, default 720); sets the
+vertical resolution along the azimuth axis.</value>
   </data>
   <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
-    <value>Unrolled-image horizontal-axis start value (0-180), in 2theta deg / length / d-spacing per the unit selection. Left edge of the cake image.</value>
+    <value>Unrolled-image horizontal-axis start value
+(0-180), in 2theta deg / length / d-spacing per
+the unit selection. Left edge of the cake image.</value>
   </data>
   <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
-    <value>Unrolled-image horizontal-axis end value (0-180), in the selected unit. Right edge of the cake image.</value>
+    <value>Unrolled-image horizontal-axis end value (0-180),
+in the selected unit. Right edge of the cake image.</value>
   </data>
   <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
-    <value>Unrolled-image horizontal-axis step (bin width) in the selected unit; sets the 2theta/d resolution across the cake image.</value>
+    <value>Unrolled-image horizontal-axis step (bin
+width) in the selected unit; sets the
+2theta/d resolution across the cake image.</value>
   </data>
   <data name="radioButton4.ToolTip" xml:space="preserve">
-    <value>Use scattering angle 2theta (degrees) for the unrolled image's horizontal axis.</value>
+    <value>Use scattering angle 2theta (degrees)
+for the unrolled image's horizontal axis.</value>
   </data>
   <data name="radioButton2.ToolTip" xml:space="preserve">
-    <value>Use detector length (mm) for the unrolled image's horizontal axis.</value>
+    <value>Use detector length (mm) for the
+unrolled image's horizontal axis.</value>
   </data>
   <data name="radioButton3.ToolTip" xml:space="preserve">
-    <value>Use lattice d-spacing (Angstrom) for the unrolled image's horizontal axis.</value>
+    <value>Use lattice d-spacing (Angstrom) for
+the unrolled image's horizontal axis.</value>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
-    <value>Density of overlaid 2theta/azimuth scale lines on the image: None, Coarse, Medium or Fine (more lines = finer grid).</value>
+    <value>Density of overlaid 2theta/azimuth scale
+lines on the image: None, Coarse, Medium
+or Fine (more lines = finer grid).</value>
   </data>
   <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
-    <value>Show numeric value labels (2theta / azimuth) next to the overlaid scale lines on the image.</value>
+    <value>Show numeric value labels (2theta / azimuth)
+next to the overlaid scale lines on the image.</value>
   </data>
   <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
-    <value>Pen width (in pixels) of the overlaid scale lines; drag right for thicker, more visible grid lines.</value>
+    <value>Pen width (in pixels) of the overlaid scale lines;
+drag right for thicker, more visible grid lines.</value>
   </data>
   <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
     <value>Label saved/displayed images by file name only (no path).</value>
   </data>
   <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
-    <value>Label images by parent-folder name plus file name (e.g. run3/img001.tif), to distinguish same-named files.</value>
+    <value>Label images by parent-folder name
+plus file name (e.g. run3/img001.tif),
+to distinguish same-named files.</value>
   </data>
   <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
     <value>Label images by their full file path.</value>
   </data>
   <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
-    <value>Keep the current intensity contrast (min/max display scaling) when loading the next image, instead of auto-rescaling each image.</value>
+    <value>Keep the current intensity contrast (min/max
+display scaling) when loading the next
+image, instead of auto-rescaling each image.</value>
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
-    <value>Keep the current zoom / display range (pan &amp; zoom) when loading the next image, instead of fitting the view to each new image.</value>
+    <value>Keep the current zoom / display range (pan &amp;
+zoom) when loading the next image, instead
+of fitting the view to each new image.</value>
   </data>
   <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
-    <value>Define the azimuth angle χ to increase clockwise on the image. Sets the sign convention for azimuthal unrolling and sector angles.</value>
+    <value>Define the azimuth angle χ to increase clockwise
+on the image. Sets the sign convention for
+azimuthal unrolling and sector angles.</value>
   </data>
   <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
-    <value>Define the azimuth angle χ to increase counterclockwise on the image (opposite of clockwise convention).</value>
+    <value>Define the azimuth angle χ to increase
+counterclockwise on the image
+(opposite of clockwise convention).</value>
   </data>
   <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
-    <value>Place the azimuth origin (χ = 0) toward the right of the image. Sets where azimuthal integration starts.</value>
+    <value>Place the azimuth origin (χ = 0) toward the right of
+the image. Sets where azimuthal integration starts.</value>
   </data>
   <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
-    <value>Place the azimuth origin (χ = 0) toward the top of the image.</value>
+    <value>Place the azimuth origin (χ =
+0) toward the top of the image.</value>
   </data>
   <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
-    <value>Place the azimuth origin (χ = 0) toward the left of the image.</value>
+    <value>Place the azimuth origin (χ =
+0) toward the left of the image.</value>
   </data>
   <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
-    <value>Place the azimuth origin (χ = 0) toward the bottom of the image.</value>
+    <value>Place the azimuth origin (χ = 0)
+toward the bottom of the image.</value>
   </data>
   <data name="pictureBox1.ToolTip" xml:space="preserve">
-    <value>Preview of the azimuth (χ) axis: shows where χ = 0 lies and which way χ increases for the current direction and rotation settings.</value>
+    <value>Preview of the azimuth (χ) axis: shows where
+χ = 0 lies and which way χ increases for the
+current direction and rotation settings.</value>
   </data>
   <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
-    <value>Hold the beam-center position fixed during center-finding/refinement, so only other parameters are optimized. Disables the search-area options.</value>
+    <value>Hold the beam-center position fixed during
+center-finding/refinement, so only other parameters
+are optimized. Disables the search-area options.</value>
   </data>
   <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
-    <value>Center-search area (pixels/steps, integer): radius around the current center within which the auto center-finder searches. Larger = wider but slower search.</value>
+    <value>Center-search area (pixels/steps,
+integer): radius around the current center
+within which the auto center-finder
+searches. Larger = wider but slower search.</value>
   </data>
   <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
-    <value>Peak-fitting range (2theta deg) around each Debye-ring used when refining the center; widen if peaks are broad, narrow to avoid neighbors.</value>
+    <value>Peak-fitting range (2theta deg) around each
+Debye-ring used when refining the center; widen
+if peaks are broad, narrow to avoid neighbors.</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
-    <value>Ignore masked pixels when finding/refining the beam center, so masked spots and bad regions don't bias the result.</value>
+    <value>Ignore masked pixels when finding/refining
+the beam center, so masked spots and bad
+regions don't bias the result.</value>
   </data>
   <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
-    <value>Use the currently loaded image as the background to subtract from subsequent images (scaled by the coefficient).</value>
+    <value>Use the currently loaded image as the
+background to subtract from subsequent
+images (scaled by the coefficient).</value>
   </data>
   <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
-    <value>Clear the stored background image so no background subtraction is applied.</value>
+    <value>Clear the stored background image so
+no background subtraction is applied.</value>
   </data>
   <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
-    <value>Path of the image currently used as the subtracted background (read-only); empty when no background is set.</value>
+    <value>Path of the image currently used as
+the subtracted background (read-only);
+empty when no background is set.</value>
   </data>
   <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
-    <value>Background scaling factor (0-10, default 1): displayed = image - factor x background. Raise to subtract more background, lower to subtract less.</value>
+    <value>Background scaling factor (0-10, default 1):
+displayed = image - factor x background. Raise to
+subtract more background, lower to subtract less.</value>
   </data>
 </root>

@@ -238,6 +238,7 @@ partial class FormFindParameter : System.Windows.Forms.Form
         label50 = new Label();
         label52 = new Label();
         toolTip = new ToolTip(components); // 260531Cl toolTipJapanese から改名
+        toolTip.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
         statusStrip1 = new StatusStrip();
         toolStripProgressBar1 = new ToolStripProgressBar();
         toolStripStatusLabel1 = new ToolStripStatusLabel();

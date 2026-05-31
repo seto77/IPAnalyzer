@@ -124,33 +124,56 @@
 </value>
   </data>
   <data name="textBoxR.ToolTip" xml:space="preserve">
-    <value>Ring radius R: distance in mm from the beam center to the diffraction ring on the detector. Click to edit, then OK draws the ring and computes 2theta and d from camera length and wavelength.</value>
+    <value>Ring radius R: distance in mm from the beam center
+to the diffraction ring on the detector. Click to
+edit, then OK draws the ring and computes 2theta
+and d from camera length and wavelength.</value>
   </data>
   <data name="textBoxTwoTheta.ToolTip" xml:space="preserve">
-    <value>Diffraction angle 2theta in degrees. Click to edit, then OK draws the ring and computes ring radius R and d-spacing from this angle, the camera length, and the wavelength.</value>
+    <value>Diffraction angle 2theta in degrees. Click
+to edit, then OK draws the ring and computes
+ring radius R and d-spacing from this angle,
+the camera length, and the wavelength.</value>
   </data>
   <data name="textBoxD.ToolTip" xml:space="preserve">
-    <value>d-spacing (interplanar lattice spacing) in Angstrom. Click to edit, then OK draws the ring and computes 2theta and ring radius R via Bragg's law using the wavelength and camera length.</value>
+    <value>d-spacing (interplanar lattice spacing) in
+Angstrom. Click to edit, then OK draws the ring
+and computes 2theta and ring radius R via Bragg's
+law using the wavelength and camera length.</value>
   </data>
   <data name="buttonOk.ToolTip" xml:space="preserve">
-    <value>Apply: compute the remaining values from the field you edited and draw a diffraction ring at that R / 2theta / d on the image (Enter in any field does the same).</value>
+    <value>Apply: compute the remaining values from the field you
+edited and draw a diffraction ring at that R / 2theta
+/ d on the image (Enter in any field does the same).</value>
   </data>
   <data name="label3.ToolTip" xml:space="preserve">
-    <value>Ring radius R: distance in mm from the beam center to the diffraction ring on the detector. Click to edit, then OK draws the ring and computes 2theta and d from camera length and wavelength.</value>
+    <value>Ring radius R: distance in mm from the beam center
+to the diffraction ring on the detector. Click to
+edit, then OK draws the ring and computes 2theta
+and d from camera length and wavelength.</value>
   </data>
   <data name="label1.ToolTip" xml:space="preserve">
-    <value>Diffraction angle 2theta in degrees. Click to edit, then OK draws the ring and computes ring radius R and d-spacing from this angle, the camera length, and the wavelength.</value>
+    <value>Diffraction angle 2theta in degrees. Click
+to edit, then OK draws the ring and computes
+ring radius R and d-spacing from this angle,
+the camera length, and the wavelength.</value>
   </data>
   <data name="label2.ToolTip" xml:space="preserve">
-    <value>d-spacing (interplanar lattice spacing) in Angstrom. Click to edit, then OK draws the ring and computes 2theta and ring radius R via Bragg's law using the wavelength and camera length.</value>
+    <value>d-spacing (interplanar lattice spacing) in
+Angstrom. Click to edit, then OK draws the ring
+and computes 2theta and ring radius R via Bragg's
+law using the wavelength and camera length.</value>
   </data>
   <data name="label4.ToolTip" xml:space="preserve">
-    <value>Unit of R: millimeters (mm) - radial distance from beam center to the diffraction ring on the detector.</value>
+    <value>Unit of R: millimeters (mm) - radial distance from
+beam center to the diffraction ring on the detector.</value>
   </data>
   <data name="label5.ToolTip" xml:space="preserve">
-    <value>Unit of 2theta: degrees - the diffraction (scattering) angle.</value>
+    <value>Unit of 2theta: degrees - the
+diffraction (scattering) angle.</value>
   </data>
   <data name="label6.ToolTip" xml:space="preserve">
-    <value>Unit of d: Angstrom (1 A = 0.1 nm) - the interplanar lattice spacing.</value>
+    <value>Unit of d: Angstrom (1 A = 0.1 nm)
+- the interplanar lattice spacing.</value>
   </data>
 </root>

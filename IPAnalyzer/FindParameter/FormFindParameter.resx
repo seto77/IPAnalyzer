@@ -138,7 +138,8 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
-    <value>Copy the main window's beam-center (direct-spot) position into the Secondary center X/Y fields.</value>
+    <value>Copy the main window's beam-center (direct-spot)
+position into the Secondary center X/Y fields.</value>
   </data>
   <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 145</value>
@@ -178,7 +179,9 @@
     <value>200, 17</value>
   </data>
   <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
-    <value>Apply the refined parameters (camera length, pixel size/distortion, tilt, wavelength, spherical correction, beam center) to the main window.</value>
+    <value>Apply the refined parameters (camera length, pixel
+size/distortion, tilt, wavelength, spherical
+correction, beam center) to the main window.</value>
   </data>
   <data name="label18.ToolTip" xml:space="preserve">
     <value />
@@ -223,7 +226,9 @@
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="label76.ToolTip" xml:space="preserve">
-    <value>Scatter of fitted Secondary ring centers; a directional trend means Secondary tilt correction is insufficient.</value>
+    <value>Scatter of fitted Secondary ring centers;
+a directional trend means Secondary tilt
+correction is insufficient.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Ring centers (Prmary)</value>
@@ -296,7 +301,9 @@
     <value>16, 16</value>
   </data>
   <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
-    <value>Refresh the main window's image during refinement. Uncheck to suppress redrawing and gain a small speed-up.</value>
+    <value>Refresh the main window's image during
+refinement. Uncheck to suppress
+redrawing and gain a small speed-up.</value>
   </data>
   <data name="label57.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -311,7 +318,8 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="radioButton1.ToolTip" xml:space="preserve">
-    <value>Target the Primary image when manually adding or dragging Debye rings (flexible mode).</value>
+    <value>Target the Primary image when manually adding
+or dragging Debye rings (flexible mode).</value>
   </data>
   <data name="label38.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -344,7 +352,9 @@
     <value>Top, Right</value>
   </data>
   <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
-    <value>Enable mouse interaction (drag) on the per-peak graphs while refinement is running. May be unstable; leave off for reliable runs.</value>
+    <value>Enable mouse interaction (drag) on the
+per-peak graphs while refinement is running.
+May be unstable; leave off for reliable runs.</value>
   </data>
   <data name="label44.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -401,13 +411,17 @@
     <value>groupBoxParameter</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
-    <value>History of the refined Primary tilt azimuth phi across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined Primary tilt
+azimuth phi across iterations (newest on
+the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="&gt;&gt;checkBoxRefineWaveLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
-    <value>History of the refined pixel size (Y) across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined pixel size
+(Y) across iterations (newest on the
+right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="label3.ToolTip" xml:space="preserve">
     <value />
@@ -419,7 +433,9 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
-    <value>History of the refined pixel size (X) across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined pixel size
+(X) across iterations (newest on the
+right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="&gt;&gt;label82.ZOrder" xml:space="preserve">
     <value>27</value>
@@ -458,7 +474,11 @@
     <value>°</value>
   </data>
   <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
-    <value>Mean relative residual (calculated vs observed peak positions) of the selected Debye-ring peaks, plotted per iteration. It decreases monotonically as refinement converges; newest values append on the right.</value>
+    <value>Mean relative residual (calculated vs
+observed peak positions) of the selected
+Debye-ring peaks, plotted per iteration. It
+decreases monotonically as refinement
+converges; newest values append on the right.</value>
   </data>
   <data name="&gt;&gt;numericBoxLowerThan.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -524,7 +544,8 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
-    <value>History of the refined wavelength across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined wavelength across iterations
+(newest on the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="buttonPrimaryGetProfile.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 84</value>
@@ -684,7 +705,9 @@
     <value>Arial, 9.75pt</value>
   </data>
   <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
-    <value>Radially integrate the Primary 2D image into a 1D profile (intensity vs radial distance) used for peak fitting.</value>
+    <value>Radially integrate the Primary 2D
+image into a 1D profile (intensity vs
+radial distance) used for peak fitting.</value>
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 17</value>
@@ -907,7 +930,9 @@
     <value>NoControl</value>
   </data>
   <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
-    <value>Initial detector pixel size in the Y direction, in mm. Starting value for refinement; scales the vertical pixel-to-mm conversion of the image.</value>
+    <value>Initial detector pixel size in the Y direction,
+in mm. Starting value for refinement; scales the
+vertical pixel-to-mm conversion of the image.</value>
   </data>
   <data name="textBoxPixelSizeXDev.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -988,7 +1013,8 @@
     <value>282, 231</value>
   </data>
   <data name="label8.ToolTip" xml:space="preserve">
-    <value>Scatter of fitted Primary ring centers; a directional trend means tilt correction is insufficient.</value>
+    <value>Scatter of fitted Primary ring centers; a directional
+trend means tilt correction is insufficient.</value>
   </data>
   <data name="textBoxWaveLength.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 24</value>
@@ -1283,7 +1309,9 @@
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
-    <value>Show an individual fit graph for each selected Debye-ring peak (observed profile, fitted curve, background) instead of the combined profile.</value>
+    <value>Show an individual fit graph for each selected
+Debye-ring peak (observed profile, fitted curve,
+background) instead of the combined profile.</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1393,7 +1421,9 @@
     <value>273, 466</value>
   </data>
   <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
-    <value>Initial detector pixel size in the X direction, in mm. Starting value for refinement; scales the horizontal pixel-to-mm conversion of the image.</value>
+    <value>Initial detector pixel size in the X direction,
+in mm. Starting value for refinement; scales the
+horizontal pixel-to-mm conversion of the image.</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryPhi.Name" xml:space="preserve">
     <value>textBoxRefinedPrimaryPhi</value>
@@ -1447,7 +1477,9 @@
     <value>7, 258</value>
   </data>
   <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
-    <value>Start least-squares refinement of the geometry parameters checked above, fitting the selected Debye-ring peaks. Press Stop to abort partway.</value>
+    <value>Start least-squares refinement of the geometry
+parameters checked above, fitting the selected
+Debye-ring peaks. Press Stop to abort partway.</value>
   </data>
   <data name="label10.ToolTip" xml:space="preserve">
     <value />
@@ -1468,7 +1500,8 @@
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
-    <value>Stop and cancel the running refinement, keeping the parameter values reached so far.</value>
+    <value>Stop and cancel the running refinement,
+keeping the parameter values reached so far.</value>
   </data>
   <data name="numericalTextBoxRadiusInverseDev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -1801,7 +1834,10 @@
     <value>17</value>
   </data>
   <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value>Predicted Debye-ring peaks. Check the Primary/Secondary boxes to choose which peaks are used in refinement; the mm columns show fitted positions. Double-click a row to zoom the graph to that peak.</value>
+    <value>Predicted Debye-ring peaks. Check the
+Primary/Secondary boxes to choose which peaks are used
+in refinement; the mm columns show fitted positions.
+Double-click a row to zoom the graph to that peak.</value>
   </data>
   <data name="&gt;&gt;buttonGetWaveLengthFromWholePattern.Parent" xml:space="preserve">
     <value>groupBoxPeakList</value>
@@ -1831,7 +1867,9 @@
     <value />
   </data>
   <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
-    <value>Open the crystal editor to select/edit the standard sample (default CeO2) whose d-spacings define the expected Debye-ring positions.</value>
+    <value>Open the crystal editor to select/edit the
+standard sample (default CeO2) whose d-spacings
+define the expected Debye-ring positions.</value>
   </data>
   <data name="textBoxSecondaryFileName.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 20</value>
@@ -1882,7 +1920,9 @@
     <value>112, 230</value>
   </data>
   <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
-    <value>Width of the integration band's short side, as a percentage of the image width (default 4%). Wider averages more pixels but blurs closely spaced rings.</value>
+    <value>Width of the integration band's short side, as a
+percentage of the image width (default 4%). Wider
+averages more pixels but blurs closely spaced rings.</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Fitting Range
@@ -2015,7 +2055,9 @@
     <value>NoControl</value>
   </data>
   <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
-    <value>Estimate camera length from the Primary/Secondary ring-position discrepancy across the whole pattern and load it as the refined value.</value>
+    <value>Estimate camera length from the Primary/Secondary
+ring-position discrepancy across the whole
+pattern and load it as the refined value.</value>
   </data>
   <data name="pictureBoxResidual.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2150,7 +2192,8 @@
     <value>22</value>
   </data>
   <data name="label60.ToolTip" xml:space="preserve">
-    <value>Primary detector tilt magnitude tau (angle from perpendicular), in degrees.</value>
+    <value>Primary detector tilt magnitude tau
+(angle from perpendicular), in degrees.</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2192,7 +2235,9 @@
     <value />
   </data>
   <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
-    <value>Initial radiation wavelength in 0.1 nm (Angstrom). Used as the starting value when refining; larger wavelength shifts all Debye rings outward.</value>
+    <value>Initial radiation wavelength in 0.1 nm (Angstrom).
+Used as the starting value when refining; larger
+wavelength shifts all Debye rings outward.</value>
   </data>
   <data name="&gt;&gt;label73.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2270,7 +2315,8 @@
     <value>groupBoxParameter</value>
   </data>
   <data name="label57.ToolTip" xml:space="preserve">
-    <value>Camera length (sample-to-detector distance) of the Primary image, in mm.</value>
+    <value>Camera length (sample-to-detector
+distance) of the Primary image, in mm.</value>
   </data>
   <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
     <value>31</value>
@@ -2294,7 +2340,8 @@
     <value>numericUpDownSearchRange</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>Read-only: file name (and frame index, if sequential) of the currently loaded Primary image.</value>
+    <value>Read-only: file name (and frame index, if
+sequential) of the currently loaded Primary image.</value>
   </data>
   <data name="checkBoxCenterPosition.Text" xml:space="preserve">
     <value>Center Position</value>
@@ -2357,7 +2404,9 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
-    <value>History of the refined pixel-distortion angle ksi across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined pixel-distortion
+angle ksi across iterations (newest on
+the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>IP Tilt</value>
@@ -2375,7 +2424,8 @@
     <value>Off</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
-    <value>Read-only: refined spherical-bending correction as inverse radius 1/R (per mm) from the last optimization.</value>
+    <value>Read-only: refined spherical-bending correction as
+inverse radius 1/R (per mm) from the last optimization.</value>
   </data>
   <data name="&gt;&gt;label82.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -2399,7 +2449,9 @@
     <value>contextMenuStrip1</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
-    <value>Secondary beam-center (direct-spot) Y position, in pixels. Double-click to copy the center from the main window; 'Find Center' there also updates it.</value>
+    <value>Secondary beam-center (direct-spot) Y position, in
+pixels. Double-click to copy the center from the
+main window; 'Find Center' there also updates it.</value>
   </data>
   <data name="&gt;&gt;buttonOpenPrimaryImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2435,7 +2487,9 @@
     <value>Arial, 9.75pt</value>
   </data>
   <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
-    <value>History of the refined Secondary tilt azimuth phi across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined Secondary tilt
+azimuth phi across iterations (newest on
+the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="radioButtonSector.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 17</value>
@@ -2495,7 +2549,9 @@
     <value>282, 27</value>
   </data>
   <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
-    <value>Automatically check (select for fitting) the peaks that satisfy the conditions below: isolated by 'away from' and within 'lower than' distance.</value>
+    <value>Automatically check (select for fitting) the
+peaks that satisfy the conditions below: isolated
+by 'away from' and within 'lower than' distance.</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 77</value>
@@ -2591,7 +2647,9 @@
     <value>Pixel distortion</value>
   </data>
   <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
-    <value>Use a known standard crystal: Debye-ring positions are computed from the standard's d-spacings. Uncheck to place/drag rings manually (flexible mode).</value>
+    <value>Use a known standard crystal: Debye-ring positions
+are computed from the standard's d-spacings. Uncheck
+to place/drag rings manually (flexible mode).</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3038,16 +3096,21 @@
     <value>3</value>
   </data>
   <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
-    <value>Peak acceptance threshold (0-1). A peak is excluded from refinement when integrated-intensity / (integrated-intensity + background) falls below this value.</value>
+    <value>Peak acceptance threshold (0-1). A peak is
+excluded from refinement when
+integrated-intensity / (integrated-intensity
++ background) falls below this value.</value>
   </data>
   <data name="label22.ToolTip" xml:space="preserve">
-    <value>Imaging-plate (IP) tilt: detector not perpendicular to the beam, given as azimuth phi and magnitude tau.</value>
+    <value>Imaging-plate (IP) tilt: detector not perpendicular
+to the beam, given as azimuth phi and magnitude tau.</value>
   </data>
   <data name="pictureBoxPattern2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
-    <value>Clear the loaded Primary image and its extracted profile, resetting the Primary slot.</value>
+    <value>Clear the loaded Primary image and its
+extracted profile, resetting the Primary slot.</value>
   </data>
   <data name="buttonPrimaryGetProfile.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -3149,10 +3212,13 @@
     <value>checkBoxUseStandardCrystal</value>
   </data>
   <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
-    <value>When checked, refine the detector tilt correction (azimuth phi and magnitude tau). This forces beam-center refinement on, since the two are coupled.</value>
+    <value>When checked, refine the detector tilt correction
+(azimuth phi and magnitude tau). This forces
+beam-center refinement on, since the two are coupled.</value>
   </data>
   <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
-    <value>Copy the main window's beam-center (direct-spot) position into the Primary center X/Y fields.</value>
+    <value>Copy the main window's beam-center (direct-spot)
+position into the Primary center X/Y fields.</value>
   </data>
   <data name="&gt;&gt;label41.Name" xml:space="preserve">
     <value>label41</value>
@@ -3266,7 +3332,9 @@
     <value>1, 17</value>
   </data>
   <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
-    <value>Primary beam-center (direct-spot) Y position, in pixels. Double-click to copy the center from the main window; 'Find Center' there also updates it.</value>
+    <value>Primary beam-center (direct-spot) Y position, in
+pixels. Double-click to copy the center from the
+main window; 'Find Center' there also updates it.</value>
   </data>
   <data name="&gt;&gt;textBoxTiltCorrectionPrimaryTau.Name" xml:space="preserve">
     <value>textBoxTiltCorrectionPrimaryTau</value>
@@ -3314,7 +3382,10 @@
     <value>label6</value>
   </data>
   <data name="pictureBoxMain.ToolTip" xml:space="preserve">
-    <value>Distance-intensity profile. Left-drag to zoom in, right-click to zoom out; drag a diffraction line to move it (this adjusts camera length, or d-spacing in flexible mode).</value>
+    <value>Distance-intensity profile. Left-drag to zoom
+in, right-click to zoom out; drag a
+diffraction line to move it (this adjusts
+camera length, or d-spacing in flexible mode).</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -3446,7 +3517,8 @@
     <value>textBoxWaveLength</value>
   </data>
   <data name="label51.ToolTip" xml:space="preserve">
-    <value>Beam-center (direct-spot) position of the Primary image, in pixels.</value>
+    <value>Beam-center (direct-spot) position
+of the Primary image, in pixels.</value>
   </data>
   <data name="pictureBoxWaveLength.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3464,7 +3536,9 @@
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
-    <value>Scatter of fitted Secondary Debye-ring centers (mm), colored oldest-&gt;newest. A one-directional trend means the Secondary detector tilt correction is insufficient.</value>
+    <value>Scatter of fitted Secondary Debye-ring centers (mm),
+colored oldest-&gt;newest. A one-directional trend means
+the Secondary detector tilt correction is insufficient.</value>
   </data>
   <data name="&gt;&gt;textBoxSecondaryFileName.Name" xml:space="preserve">
     <value>textBoxSecondaryFileName</value>
@@ -3713,7 +3787,9 @@
     <value>3</value>
   </data>
   <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
-    <value>Number of azimuthal directions (sectors, 8-360) sampled around each ring. More directions improve tilt/center sensitivity but slow the calculation.</value>
+    <value>Number of azimuthal directions (sectors, 8-360)
+sampled around each ring. More directions improve
+tilt/center sensitivity but slow the calculation.</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3752,7 +3828,8 @@
     <value>119</value>
   </data>
   <data name="label80.ToolTip" xml:space="preserve">
-    <value>Secondary detector tilt magnitude tau (angle from perpendicular), in degrees.</value>
+    <value>Secondary detector tilt magnitude tau
+(angle from perpendicular), in degrees.</value>
   </data>
   <data name="label50.Location" type="System.Drawing.Point, System.Drawing">
     <value>1191, 337</value>
@@ -3842,7 +3919,9 @@
     <value>1, 17</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
-    <value>Initial tilt magnitude tau of the Primary imaging plate (IP), in degrees: how far the detector is tilted away from perpendicular to the beam.</value>
+    <value>Initial tilt magnitude tau of the Primary imaging
+plate (IP), in degrees: how far the detector is
+tilted away from perpendicular to the beam.</value>
   </data>
   <data name="&gt;&gt;label21.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -3860,7 +3939,8 @@
     <value>1, 17</value>
   </data>
   <data name="label14.ToolTip" xml:space="preserve">
-    <value>Camera length (sample-to-detector distance) of the Primary image, in mm.</value>
+    <value>Camera length (sample-to-detector
+distance) of the Primary image, in mm.</value>
   </data>
   <data name="label53.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -3899,7 +3979,9 @@
     <value>2</value>
   </data>
   <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
-    <value>Open and load the Secondary diffraction image file (the optional second pattern for dual-distance geometry refinement).</value>
+    <value>Open and load the Secondary diffraction
+image file (the optional second pattern
+for dual-distance geometry refinement).</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.ValueFont" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
@@ -4088,13 +4170,17 @@
     <value>94, 20</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
-    <value>Initial tilt azimuth phi of the Secondary imaging plate (IP), in degrees: in-plane direction of the detector tilt for the second image.</value>
+    <value>Initial tilt azimuth phi of the Secondary imaging
+plate (IP), in degrees: in-plane direction of the
+detector tilt for the second image.</value>
   </data>
   <data name="label36.Text" xml:space="preserve">
     <value>°</value>
   </data>
   <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
-    <value>When checked, the beam-center (direct-spot) position is refined. Automatically forced on while Tilt Correction is enabled.</value>
+    <value>When checked, the beam-center (direct-spot)
+position is refined. Automatically forced
+on while Tilt Correction is enabled.</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -4172,7 +4258,9 @@
     <value>16, 81</value>
   </data>
   <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
-    <value>Minimum separation in mm. 'Check peaks' auto-selects peaks that are isolated by more than this distance from their neighbors.</value>
+    <value>Minimum separation in mm. 'Check peaks'
+auto-selects peaks that are isolated by more
+than this distance from their neighbors.</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau1.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 68</value>
@@ -4331,7 +4419,9 @@
     <value>3</value>
   </data>
   <data name="label71.ToolTip" xml:space="preserve">
-    <value>Secondary imaging-plate (IP) tilt: detector not perpendicular to beam, as azimuth phi and magnitude tau.</value>
+    <value>Secondary imaging-plate (IP) tilt:
+detector not perpendicular to beam,
+as azimuth phi and magnitude tau.</value>
   </data>
   <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
     <value>22</value>
@@ -4484,7 +4574,8 @@
     <value>16</value>
   </data>
   <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
-    <value>Read-only: refined camera length (mm) resulting from the last optimization.</value>
+    <value>Read-only: refined camera length (mm)
+resulting from the last optimization.</value>
   </data>
   <data name="&gt;&gt;label41.ZOrder" xml:space="preserve">
     <value>28</value>
@@ -4552,13 +4643,17 @@
     <value>groupBoxOption</value>
   </data>
   <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
-    <value>When checked, the camera length (sample-to-detector distance) is included as a free parameter in the refinement.</value>
+    <value>When checked, the camera length
+(sample-to-detector distance) is included
+as a free parameter in the refinement.</value>
   </data>
   <data name="&gt;&gt;label61.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
-    <value>History of the refined Primary tilt magnitude tau across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined Primary tilt
+magnitude tau across iterations (newest on
+the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="label9.ToolTip" xml:space="preserve">
     <value />
@@ -4606,7 +4701,9 @@
     <value>46</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
-    <value>History of the refined Secondary tilt magnitude tau across iterations (newest on the right). Vertical scale auto-adjusts.</value>
+    <value>History of the refined Secondary tilt
+magnitude tau across iterations (newest on
+the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="textBoxRefinedPixelKsiDev.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4651,7 +4748,9 @@
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
-    <value>Color swatch for the Primary pattern. Click to choose the color used to draw the Primary profile and its rings.</value>
+    <value>Color swatch for the Primary pattern.
+Click to choose the color used to draw
+the Primary profile and its rings.</value>
   </data>
   <data name="&gt;&gt;label74.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -4849,7 +4948,9 @@
     <value>numericBoxLowerThan</value>
   </data>
   <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
-    <value>Radially integrate the Secondary 2D image into a 1D profile (intensity vs radial distance) used for peak fitting.</value>
+    <value>Radially integrate the Secondary 2D
+image into a 1D profile (intensity vs
+radial distance) used for peak fitting.</value>
   </data>
   <data name="textBoxRefinedPrimaryTau.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -4876,7 +4977,8 @@
     <value>groupBoxOption</value>
   </data>
   <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
-    <value>Frame number of the Primary image within a sequential (multi-frame) image stack.</value>
+    <value>Frame number of the Primary image within
+a sequential (multi-frame) image stack.</value>
   </data>
   <data name="label32.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4897,7 +4999,9 @@
     <value>52, 16</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
-    <value>Initial camera length (sample-to-detector distance) of the Primary image, in mm. Enter a value close to the true one so refinement converges faster.</value>
+    <value>Initial camera length (sample-to-detector distance)
+of the Primary image, in mm. Enter a value close to
+the true one so refinement converges faster.</value>
   </data>
   <data name="&gt;&gt;radioButtonSector.Name" xml:space="preserve">
     <value>radioButtonSector</value>
@@ -4942,7 +5046,9 @@
     <value>3</value>
   </data>
   <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
-    <value>Open and load the Primary diffraction image file (the standard-sample pattern used as the main reference for refinement).</value>
+    <value>Open and load the Primary diffraction
+image file (the standard-sample pattern
+used as the main reference for refinement).</value>
   </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
@@ -4975,7 +5081,10 @@
     <value>116, 35</value>
   </data>
   <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
-    <value>Scatter of fitted Debye-ring centers (mm), colored red-&gt;green-&gt;blue from oldest to newest iteration. A one-directional trend indicates the detector tilt correction is still insufficient.</value>
+    <value>Scatter of fitted Debye-ring centers (mm),
+colored red-&gt;green-&gt;blue from oldest to newest
+iteration. A one-directional trend indicates the
+detector tilt correction is still insufficient.</value>
   </data>
   <data name="&gt;&gt;numericTextBoxPrimaryCenterPositionY.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -4993,7 +5102,8 @@
     <value>groupBoxParameter</value>
   </data>
   <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
-    <value>Read-only: refined wavelength (0.1 nm / Angstrom) from the last optimization.</value>
+    <value>Read-only: refined wavelength (0.1 nm
+/ Angstrom) from the last optimization.</value>
   </data>
   <data name="label70.ToolTip" xml:space="preserve">
     <value />
@@ -5080,7 +5190,8 @@
     <value>283, 164</value>
   </data>
   <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
-    <value>Read-only: refined Primary detector tilt azimuth phi (degrees) from the last optimization.</value>
+    <value>Read-only: refined Primary detector tilt azimuth
+phi (degrees) from the last optimization.</value>
   </data>
   <data name="label62.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
@@ -5167,7 +5278,8 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
-    <value>When checked, the detector pixel size (X and Y) is included as a free parameter in the refinement.</value>
+    <value>When checked, the detector pixel size (X and Y)
+is included as a free parameter in the refinement.</value>
   </data>
   <data name="&gt;&gt;label43.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5179,7 +5291,9 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
-    <value>Decompose overlapping Debye-ring peaks: peaks closer than ~2x the fitting range are fitted simultaneously as a group for better separation.</value>
+    <value>Decompose overlapping Debye-ring peaks: peaks
+closer than ~2x the fitting range are fitted
+simultaneously as a group for better separation.</value>
   </data>
   <data name="buttonGetCenterPositionFromMainForm2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5188,7 +5302,9 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
-    <value>Initial pixel-distortion angle ksi (shear / non-orthogonality between the X and Y pixel axes), in degrees. Corrects skewed pixel grids.</value>
+    <value>Initial pixel-distortion angle ksi (shear /
+non-orthogonality between the X and Y pixel
+axes), in degrees. Corrects skewed pixel grids.</value>
   </data>
   <data name="&gt;&gt;label56.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5233,7 +5349,8 @@
     <value>Y</value>
   </data>
   <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
-    <value>Frame number of the Secondary image within a sequential (multi-frame) image stack.</value>
+    <value>Frame number of the Secondary image within
+a sequential (multi-frame) image stack.</value>
   </data>
   <data name="pictureBoxTiltCorrectionTau1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5457,7 +5574,8 @@
     <value>True</value>
   </data>
   <data name="label79.ToolTip" xml:space="preserve">
-    <value>Secondary detector tilt azimuth phi (tilt-axis direction), in degrees.</value>
+    <value>Secondary detector tilt azimuth phi
+(tilt-axis direction), in degrees.</value>
   </data>
   <data name="label38.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 164</value>
@@ -5484,7 +5602,8 @@
     <value />
   </data>
   <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
-    <value>Read-only: refined pixel size in the X direction (mm) from the last optimization.</value>
+    <value>Read-only: refined pixel size in the X
+direction (mm) from the last optimization.</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -5523,7 +5642,9 @@
     <value>208, 93</value>
   </data>
   <data name="radioButtonSector.ToolTip" xml:space="preserve">
-    <value>Integrate over an angular sector (wedge) region of the ring. Follows ring curvature; better for short camera lengths / strong tilt.</value>
+    <value>Integrate over an angular sector (wedge)
+region of the ring. Follows ring curvature;
+better for short camera lengths / strong tilt.</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionXDev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -5574,7 +5695,9 @@
     <value />
   </data>
   <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
-    <value>When checked, refine the spherical-bending correction (inverse radius 1/R) that accounts for a curved imaging plate.</value>
+    <value>When checked, refine the spherical-bending
+correction (inverse radius 1/R) that
+accounts for a curved imaging plate.</value>
   </data>
   <data name="&gt;&gt;groupBoxParameter.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5613,10 +5736,13 @@
     <value>283, 97</value>
   </data>
   <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
-    <value>Copy all refined parameters and their +/- errors to the clipboard as tab-separated text (wavelength, camera length, pixel size, ksi, tilt, centers).</value>
+    <value>Copy all refined parameters and their +/- errors to
+the clipboard as tab-separated text (wavelength,
+camera length, pixel size, ksi, tilt, centers).</value>
   </data>
   <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
-    <value>When checked, the radiation wavelength is included as a free parameter in the refinement.</value>
+    <value>When checked, the radiation wavelength is
+included as a free parameter in the refinement.</value>
   </data>
   <data name="ColumnSecondaryCheck.Width" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5691,7 +5817,9 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
-    <value>History of the refined camera length across iterations (newest on the right). The vertical scale auto-adjusts, so judge trends, not absolute height.</value>
+    <value>History of the refined camera length across
+iterations (newest on the right). The vertical scale
+auto-adjusts, so judge trends, not absolute height.</value>
   </data>
   <data name="buttonSendMainForm.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
@@ -5724,7 +5852,8 @@
     <value>Arial, 9.75pt</value>
   </data>
   <data name="label44.ToolTip" xml:space="preserve">
-    <value>Pixel-distortion angle ksi (X/Y non-orthogonality), in degrees.</value>
+    <value>Pixel-distortion angle ksi (X/Y
+non-orthogonality), in degrees.</value>
   </data>
   <data name="&gt;&gt;label23.Parent" xml:space="preserve">
     <value>groupBoxPrimaryImage</value>
@@ -5805,7 +5934,8 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
-    <value>Read-only: refined pixel size in the Y direction (mm) from the last optimization.</value>
+    <value>Read-only: refined pixel size in the Y
+direction (mm) from the last optimization.</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionPhi1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -5814,7 +5944,9 @@
     <value>NoControl</value>
   </data>
   <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
-    <value>Secondary camera-length offset relative to Primary, in mm (negative allowed). Defines how much farther/closer the second detector sits.</value>
+    <value>Secondary camera-length offset relative to
+Primary, in mm (negative allowed). Defines how
+much farther/closer the second detector sits.</value>
   </data>
   <data name="buttonSetStandardCrystal.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 27</value>
@@ -5832,7 +5964,9 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
-    <value>Estimate the wavelength from the whole pattern using the checked Debye-ring peaks of both images, and load it as the refined value.</value>
+    <value>Estimate the wavelength from the whole
+pattern using the checked Debye-ring peaks of
+both images, and load it as the refined value.</value>
   </data>
   <data name="numericBoxAwayFrom.HeaderText" xml:space="preserve">
     <value>&gt;</value>
@@ -5886,7 +6020,9 @@
     <value>1310, 577</value>
   </data>
   <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
-    <value>Color swatch for the Secondary pattern. Click to choose the color used to draw the Secondary profile and its rings.</value>
+    <value>Color swatch for the Secondary pattern.
+Click to choose the color used to draw
+the Secondary profile and its rings.</value>
   </data>
   <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 86</value>
@@ -5898,16 +6034,22 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
-    <value>Peak-fitting window half-width in mm (0.01-10) around each predicted peak. Larger captures more but risks neighbor interference and slower fits; too small reduces accuracy.</value>
+    <value>Peak-fitting window half-width in mm
+(0.01-10) around each predicted peak. Larger
+captures more but risks neighbor interference
+and slower fits; too small reduces accuracy.</value>
   </data>
   <data name="buttonGetCenterPositionFromMainForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
-    <value>Clear all currently drawn parameter-history and residual graphs.</value>
+    <value>Clear all currently drawn
+parameter-history and residual graphs.</value>
   </data>
   <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
-    <value>Integrate over a rectangular band region across the ring. Simpler/faster but less accurate when rings are strongly curved.</value>
+    <value>Integrate over a rectangular band region
+across the ring. Simpler/faster but less
+accurate when rings are strongly curved.</value>
   </data>
   <data name="numericUpDownDivision.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 126</value>
@@ -6028,7 +6170,8 @@
     <value>Camera Length</value>
   </data>
   <data name="label37.ToolTip" xml:space="preserve">
-    <value>Primary detector tilt azimuth phi (tilt-axis direction), in degrees.</value>
+    <value>Primary detector tilt azimuth phi
+(tilt-axis direction), in degrees.</value>
   </data>
   <data name="checkBoxMouseOperation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6151,7 +6294,8 @@
     <value>pictureBoxTiltCorrection1</value>
   </data>
   <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
-    <value>Read-only: refined pixel-distortion angle ksi (degrees) from the last optimization.</value>
+    <value>Read-only: refined pixel-distortion angle
+ksi (degrees) from the last optimization.</value>
   </data>
   <data name="&gt;&gt;label17.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -6205,7 +6349,9 @@
     <value>45</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
-    <value>Secondary beam-center (direct-spot) X position, in pixels. Double-click to copy the center from the main window; 'Find Center' there also updates it.</value>
+    <value>Secondary beam-center (direct-spot) X position, in
+pixels. Double-click to copy the center from the
+main window; 'Find Center' there also updates it.</value>
   </data>
   <data name="textBoxRefinedPrimaryPhiDev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -6286,7 +6432,8 @@
     <value>checkBoxMouseOperation</value>
   </data>
   <data name="label45.ToolTip" xml:space="preserve">
-    <value>Peak acceptance threshold (0-1): peaks below this intensity ratio are excluded from refinement.</value>
+    <value>Peak acceptance threshold (0-1): peaks below this
+intensity ratio are excluded from refinement.</value>
   </data>
   <data name="textBoxRefinedWaveLength.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -6334,13 +6481,15 @@
     <value>129, 13</value>
   </data>
   <data name="label21.ToolTip" xml:space="preserve">
-    <value>Number of azimuthal directions (sectors) sampled around each ring (8-360).</value>
+    <value>Number of azimuthal directions (sectors)
+sampled around each ring (8-360).</value>
   </data>
   <data name="&gt;&gt;textBoxRefinedPrimaryTauDev.Parent" xml:space="preserve">
     <value>groupBoxParameter</value>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
-    <value>Read-only: copy of the Primary camera length (mm), shown for reference next to the Secondary offset.</value>
+    <value>Read-only: copy of the Primary camera length (mm),
+shown for reference next to the Secondary offset.</value>
   </data>
   <data name="buttonCopyToClipboard.Text" xml:space="preserve">
     <value>Refined parameters =&gt; clipboard</value>
@@ -6352,7 +6501,9 @@
     <value>68</value>
   </data>
   <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
-    <value>When checked, the pixel-distortion angle ksi (X/Y shear) is included as a free parameter in the refinement.</value>
+    <value>When checked, the pixel-distortion
+angle ksi (X/Y shear) is included as
+a free parameter in the refinement.</value>
   </data>
   <data name="&gt;&gt;checkBoxMouseOperation.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -6397,13 +6548,16 @@
     <value>3</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
-    <value>Initial spherical-bending correction as inverse radius 1/R (per mm). Corrects for a curved detector/IP; 0 means flat.</value>
+    <value>Initial spherical-bending correction as
+inverse radius 1/R (per mm). Corrects
+for a curved detector/IP; 0 means flat.</value>
   </data>
   <data name="label66.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>Read-only: file name (and frame index, if sequential) of the currently loaded Secondary image.</value>
+    <value>Read-only: file name (and frame index, if
+sequential) of the currently loaded Secondary image.</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -6454,7 +6608,8 @@
     <value>NoControl</value>
   </data>
   <data name="label58.ToolTip" xml:space="preserve">
-    <value>Beam-center (direct-spot) position of the Secondary image, in pixels.</value>
+    <value>Beam-center (direct-spot) position
+of the Secondary image, in pixels.</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Camera Length</value>
@@ -6538,7 +6693,9 @@
     <value>68, 24</value>
   </data>
   <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
-    <value>Load the main window's current geometry parameters into the Initial-parameter fields as the refinement starting point.</value>
+    <value>Load the main window's current geometry
+parameters into the Initial-parameter
+fields as the refinement starting point.</value>
   </data>
   <data name="numericTextBoxPrimaryFilmDistance.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -6556,7 +6713,8 @@
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
-    <value>Clear the loaded Secondary image and its extracted profile, resetting the Secondary slot.</value>
+    <value>Clear the loaded Secondary image and its
+extracted profile, resetting the Secondary slot.</value>
   </data>
   <data name="&gt;&gt;label36.ZOrder" xml:space="preserve">
     <value>62</value>
@@ -6595,7 +6753,9 @@
     <value>NoControl</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
-    <value>Initial tilt azimuth phi of the Primary imaging plate (IP), in degrees: the in-plane direction about which the detector is tilted relative to the beam.</value>
+    <value>Initial tilt azimuth phi of the Primary imaging
+plate (IP), in degrees: the in-plane direction about
+which the detector is tilted relative to the beam.</value>
   </data>
   <data name="label48.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -6604,7 +6764,9 @@
     <value>±</value>
   </data>
   <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
-    <value>Primary beam-center (direct-spot) X position, in pixels. Double-click to copy the center from the main window; main-window 'Find Center' also updates it.</value>
+    <value>Primary beam-center (direct-spot) X position, in
+pixels. Double-click to copy the center from the main
+window; main-window 'Find Center' also updates it.</value>
   </data>
   <data name="&gt;&gt;numericUpDownBandWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -6625,7 +6787,8 @@
     <value>516, 343</value>
   </data>
   <data name="label11.ToolTip" xml:space="preserve">
-    <value>Peak-fitting window half-width around each predicted peak (Primary), in mm.</value>
+    <value>Peak-fitting window half-width around
+each predicted peak (Primary), in mm.</value>
   </data>
   <data name="&gt;&gt;pictureBoxTiltCorrectionTau1.Name" xml:space="preserve">
     <value>pictureBoxTiltCorrectionTau1</value>
@@ -6697,7 +6860,8 @@
     <value />
   </data>
   <data name="label28.ToolTip" xml:space="preserve">
-    <value>Integration band width (short side) as a percentage of image width.</value>
+    <value>Integration band width (short side)
+as a percentage of image width.</value>
   </data>
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
@@ -6736,13 +6900,16 @@
     <value>buttonSendMainForm</value>
   </data>
   <data name="radioButton2.ToolTip" xml:space="preserve">
-    <value>Target the Secondary image when manually adding or dragging Debye rings (flexible mode).</value>
+    <value>Target the Secondary image when manually
+adding or dragging Debye rings (flexible mode).</value>
   </data>
   <data name="&gt;&gt;label76.Name" xml:space="preserve">
     <value>label76</value>
   </data>
   <data name="label72.ToolTip" xml:space="preserve">
-    <value>Mean relative residual (calc vs observed peak position) per iteration; decreases as the fit converges.</value>
+    <value>Mean relative residual (calc vs
+observed peak position) per iteration;
+decreases as the fit converges.</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 9</value>
@@ -6757,7 +6924,9 @@
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
-    <value>Initial tilt magnitude tau of the Secondary imaging plate (IP), in degrees: tilt away from perpendicular to the beam for the second image.</value>
+    <value>Initial tilt magnitude tau of the Secondary
+imaging plate (IP), in degrees: tilt away from
+perpendicular to the beam for the second image.</value>
   </data>
   <data name="numericBoxPrimaryImageNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 99</value>
@@ -6772,7 +6941,8 @@
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
-    <value>Distance upper limit in mm. 'Check peaks' auto-selects only peaks located closer than this radial distance.</value>
+    <value>Distance upper limit in mm. 'Check peaks' auto-selects
+only peaks located closer than this radial distance.</value>
   </data>
   <data name="numericUpDownSearchRange.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt</value>
@@ -6907,7 +7077,8 @@
     <value>65</value>
   </data>
   <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
-    <value>Read-only: estimated standard error (+/-) of the refined camera length (mm).</value>
+    <value>Read-only: estimated standard error
+(+/-) of the refined camera length (mm).</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, 64</value>
@@ -6919,7 +7090,9 @@
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
-    <value>Number of refinement iterations to perform (default 12). More iterations let the fit converge further at the cost of time.</value>
+    <value>Number of refinement iterations to perform
+(default 12). More iterations let the fit
+converge further at the cost of time.</value>
   </data>
   <data name="textBoxRefinedSecondaryPhiDev.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 17</value>
@@ -7135,7 +7308,8 @@
     <value>116</value>
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
-    <value>Spherical-bending correction as inverse radius 1/R (per mm); 0 = flat detector.</value>
+    <value>Spherical-bending correction as inverse
+radius 1/R (per mm); 0 = flat detector.</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -7171,7 +7345,9 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
-    <value>Show a schematic diagram illustrating each geometric parameter (camera length, beam center, detector tilt, pixel size, distortion).</value>
+    <value>Show a schematic diagram illustrating each
+geometric parameter (camera length, beam
+center, detector tilt, pixel size, distortion).</value>
   </data>
   <data name="&gt;&gt;label45.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -7369,6 +7545,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="checkUncheckToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Toggle the fitting-selection checkbox for all currently selected peak rows/cells.</value>
+    <value>Toggle the fitting-selection checkbox for
+all currently selected peak rows/cells.</value>
   </data>
 </root>

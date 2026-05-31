@@ -276,219 +276,331 @@
     <value>4, 31</value>
   </data>
   <data name="tabControl1 / tabPage1 (Flat Panel).ToolTip" xml:space="preserve">
-    <value>フラットパネル / エリア検出器(SACLA など)向けの総当たり幾何補正。カメラ長・ビーム中心・傾き・波長を走査し、標準試料のデバイ環に最もよく一致させます。</value>
+    <value>フラットパネル / エリア検出器(SACLA など)向けの
+総当たり幾何補正。カメラ長・ビーム中心・傾き・波長を
+走査し、標準試料のデバイ環に最もよく一致させます。</value>
   </data>
   <data name="tabPage2 (Gandolfi).ToolTip" xml:space="preserve">
-    <value>ガンドルフィ / 湾曲イメージングプレート幾何の総当たり補正。カメラ長・ピクセルサイズ・中心・傾き・ガンドルフィ半径を走査し標準試料のデバイ環に一致させます。</value>
+    <value>ガンドルフィ / 湾曲イメージングプレート幾何の
+総当たり補正。カメラ長・ピクセルサイズ・
+中心・傾き・ガンドルフィ半径を走査し
+標準試料のデバイ環に一致させます。</value>
   </data>
   <data name="radioButtonStandardAu.ToolTip" xml:space="preserve">
-    <value>校正標準として金 (Au) を使用 (立方晶, a=4.07825 Å)。既知のデバイ環位置を基準に検出器幾何を合わせ込みます。</value>
+    <value>校正標準として金 (Au) を使用 (立方晶, a=4.07825 Å)。
+既知のデバイ環位置を基準に検出器幾何を合わせ込みます。</value>
   </data>
   <data name="radioButtonStandardCeO2.ToolTip" xml:space="preserve">
-    <value>校正標準として酸化セリウム (CeO2) を使用 (立方晶, a=5.411102 Å)。検出器幾何校正でよく使われる粉末標準です。</value>
+    <value>校正標準として酸化セリウム (CeO2) を使用
+(立方晶, a=5.411102 Å)。検出器幾何校正で
+よく使われる粉末標準です。</value>
   </data>
   <data name="radioButtonStandardLaB6.ToolTip" xml:space="preserve">
-    <value>校正標準として六ホウ化ランタン (LaB6) を使用 (立方晶, a=4.157 Å)。ピーク位置校正に広く使われる標準です。</value>
+    <value>校正標準として六ホウ化ランタン (LaB6) を使用 (立方晶,
+a=4.157 Å)。ピーク位置校正に広く使われる標準です。</value>
   </data>
   <data name="radioButtonStandardAl2O3.ToolTip" xml:space="preserve">
-    <value>校正標準としてコランダム (Al2O3) を使用 (六方晶, a=4.7657 Å, c=13.01 Å)。広い 2θ 範囲に多数の環が現れます。</value>
+    <value>校正標準としてコランダム (Al2O3) を
+使用 (六方晶, a=4.7657 Å, c=13.01 Å)。
+広い 2θ 範囲に多数の環が現れます。</value>
   </data>
   <data name="radioButtonStandardOther.ToolTip" xml:space="preserve">
-    <value>任意の標準を使用: 下の結晶エディタが有効になり、内蔵プリセット (Au, CeO2, LaB6, Al2O3) の代わりに任意の格子・原子を入力できます。</value>
+    <value>任意の標準を使用: 下の結晶エディタが有効にな
+り、内蔵プリセット (Au, CeO2, LaB6, Al2O3)
+の代わりに任意の格子・原子を入力できます。</value>
   </data>
   <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
-    <value>ダイレクトスポット基準の幾何: カメラ長1と、直接ビームが検出器に当たる位置 (ダイレクトスポット X, Y) を用います。</value>
+    <value>ダイレクトスポット基準の幾何: カメラ
+長1と、直接ビームが検出器に当たる位置
+(ダイレクトスポット X, Y) を用います。</value>
   </data>
   <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
-    <value>垂線の足基準の幾何: カメラ長2と、傾いた検出器上で試料に最も近い点 (垂線の足 X, Y) を用います。</value>
+    <value>垂線の足基準の幾何: カメラ長2と、傾いた検出器上で
+試料に最も近い点 (垂線の足 X, Y) を用います。</value>
   </data>
   <data name="label1.ToolTip" xml:space="preserve">
-    <value>幾何の座標基準を選択: ダイレクトスポット (カメラ長1) か、傾いた検出器の垂線の足 (カメラ長2) か。</value>
+    <value>幾何の座標基準を選択: ダイレクトスポット (カメラ
+長1) か、傾いた検出器の垂線の足 (カメラ長2) か。</value>
   </data>
   <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
-    <value>カメラ長 (試料-検出器間距離, mm) を補正対象にします。カメラ長が大きいほどデバイ環が外側に広がります。標準試料に合うよう走査します。</value>
+    <value>カメラ長 (試料-検出器間距離, mm) を補正対象に
+します。カメラ長が大きいほどデバイ環が外側に
+広がります。標準試料に合うよう走査します。</value>
   </data>
   <data name="checkBoxPointX.ToolTip" xml:space="preserve">
-    <value>ビーム中心の X 座標 (ピクセル) を補正対象にします (ダイレクトスポット X または垂線の足 X)。検出器上の環中心の位置がずれます。</value>
+    <value>ビーム中心の X 座標 (ピクセル) を補正対象に
+します (ダイレクトスポット X または垂線の
+足 X)。検出器上の環中心の位置がずれます。</value>
   </data>
   <data name="checkBoxPointY.ToolTip" xml:space="preserve">
-    <value>ビーム中心の Y 座標 (ピクセル) を補正対象にします (ダイレクトスポット Y または垂線の足 Y)。検出器上の環中心が上下にずれます。</value>
+    <value>ビーム中心の Y 座標 (ピクセル) を補正対象に
+します (ダイレクトスポット Y または垂線の
+足 Y)。検出器上の環中心が上下にずれます。</value>
   </data>
   <data name="checkBoxPhi.ToolTip" xml:space="preserve">
-    <value>検出器の傾き方位角 φ (ラジアン) を補正対象にします。ビームに対し検出器がどの方向に傾くかを表し、環が楕円化します。</value>
+    <value>検出器の傾き方位角 φ (ラジアン) を
+補正対象にします。ビームに対し検出器がど
+の方向に傾くかを表し、環が楕円化します。</value>
   </data>
   <data name="checkBoxTau.ToolTip" xml:space="preserve">
-    <value>検出器の傾き角 τ (ラジアン) を補正対象にします。検出器面がビーム垂直からどれだけ傾いているかを表し、ゼロでないと環位置が歪みます。</value>
+    <value>検出器の傾き角 τ (ラジアン) を補正対象にしま
+す。検出器面がビーム垂直からどれだけ傾いてい
+るかを表し、ゼロでないと環位置が歪みます。</value>
   </data>
   <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
-    <value>X線・中性子の波長 (Å) を補正対象にします。波長を変えると全デバイ環の 2θ が一斉に移動します。波長が不確かな場合のみ有効化してください。</value>
+    <value>X線・中性子の波長 (Å) を補正対象にします。
+波長を変えると全デバイ環の 2θ が一斉に移動しま
+す。波長が不確かな場合のみ有効化してください。</value>
   </data>
   <data name="checkBox2.ToolTip" xml:space="preserve">
-    <value>検出器の X 方向ピクセルサイズ (mm/pixel) を補正対象にします。フラットパネルでは現在無効で、ピクセルサイズ校正は Gandolfi タブで行います。</value>
+    <value>検出器の X 方向ピクセルサイズ (mm/pixel) を
+補正対象にします。フラットパネルでは現在無効で、
+ピクセルサイズ校正は Gandolfi タブで行います。</value>
   </data>
   <data name="checkBox3.ToolTip" xml:space="preserve">
-    <value>検出器の Y 方向ピクセルサイズ (mm/pixel) を補正対象にします。フラットパネルでは現在無効で、ピクセルサイズ校正は Gandolfi タブで行います。</value>
+    <value>検出器の Y 方向ピクセルサイズ (mm/pixel) を
+補正対象にします。フラットパネルでは現在無効で、
+ピクセルサイズ校正は Gandolfi タブで行います。</value>
   </data>
   <data name="checkBox4.ToolTip" xml:space="preserve">
-    <value>ピクセル歪み ξ (度) を補正対象にします。検出器ピクセル軸間のせん断・非直交角を表します。フラットパネルでは現在無効です。</value>
+    <value>ピクセル歪み ξ (度) を補正対象にします。
+検出器ピクセル軸間のせん断・非直交角を表し
+ます。フラットパネルでは現在無効です。</value>
   </data>
   <data name="numericBoxCameraLengthStep.ToolTip" xml:space="preserve">
-    <value>カメラ長探索の初期ステップ (mm)。この整数倍で ± 方向に走査し、改善がなければ自動的に縮小します。小さいほど高精度ですが低速です。</value>
+    <value>カメラ長探索の初期ステップ (mm)。この整数倍で
+± 方向に走査し、改善がなければ自動的に縮小しま
+す。小さいほど高精度ですが低速です。</value>
   </data>
   <data name="numericBoxCameraLengthRange.ToolTip" xml:space="preserve">
-    <value>カメラ長探索の片側ステップ数 (整数, 0-10)。± 方向にこのステップ数だけ走査し、合計 2N+1 点になります。大きいほど広範囲ですが低速です。</value>
+    <value>カメラ長探索の片側ステップ数 (整数, 0-10)。±
+方向にこのステップ数だけ走査し、合計 2N+1 点に
+なります。大きいほど広範囲ですが低速です。</value>
   </data>
   <data name="numericBoxPointXStep.ToolTip" xml:space="preserve">
-    <value>ビーム中心 X 探索の初期ステップ (ピクセル)。この整数倍で ± 走査し、改善がなければ自動縮小します。小さいほど高精度ですが低速です。</value>
+    <value>ビーム中心 X 探索の初期ステップ (ピクセル)。こ
+の整数倍で ± 走査し、改善がなければ自動縮小し
+ます。小さいほど高精度ですが低速です。</value>
   </data>
   <data name="numericBoxPointYStep.ToolTip" xml:space="preserve">
-    <value>ビーム中心 Y 探索の初期ステップ (ピクセル)。この整数倍で ± 走査し、改善がなければ自動縮小します。</value>
+    <value>ビーム中心 Y 探索の初期ステップ (ピクセル)。この
+整数倍で ± 走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericBoxFootPointXRange.ToolTip" xml:space="preserve">
-    <value>ビーム中心 X 探索の片側ステップ数 (整数, 0-10)。現在値の周囲を ± このステップ数だけ走査します。大きいほど広範囲ですが低速です。</value>
+    <value>ビーム中心 X 探索の片側ステップ数 (整数,
+0-10)。現在値の周囲を ± このステップ数だけ
+走査します。大きいほど広範囲ですが低速です。</value>
   </data>
   <data name="numericBoxFootPointYRange.ToolTip" xml:space="preserve">
-    <value>ビーム中心 Y 探索の片側ステップ数 (整数, 0-10)。現在値の周囲を ± このステップ数だけ走査します。</value>
+    <value>ビーム中心 Y 探索の片側ステップ数 (整数, 0-10)。
+現在値の周囲を ± このステップ数だけ走査します。</value>
   </data>
   <data name="numericBoxPhiStep.ToolTip" xml:space="preserve">
-    <value>傾き方位角 φ 探索の初期ステップ (度)。この整数倍で ± 走査し、改善がなければ自動縮小します。</value>
+    <value>傾き方位角 φ 探索の初期ステップ (度)。この
+整数倍で ± 走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericBoxPhiRange.ToolTip" xml:space="preserve">
-    <value>傾き方位角 φ 探索の片側ステップ数 (整数, 0-10)。現在値の周囲を ± このステップ数だけ走査します。</value>
+    <value>傾き方位角 φ 探索の片側ステップ数 (整数, 0-10)。
+現在値の周囲を ± このステップ数だけ走査します。</value>
   </data>
   <data name="numericBoxTauStep.ToolTip" xml:space="preserve">
-    <value>傾き角 τ 探索の初期ステップ (度)。この整数倍で ± 走査し、改善がなければ自動縮小します。</value>
+    <value>傾き角 τ 探索の初期ステップ (度)。この整数倍で
+± 走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericBoxTauRange.ToolTip" xml:space="preserve">
-    <value>傾き角 τ 探索の片側ステップ数 (整数, 0-10)。現在値の周囲を ± このステップ数だけ走査します。</value>
+    <value>傾き角 τ 探索の片側ステップ数 (整数, 0-10)。
+現在値の周囲を ± このステップ数だけ走査します。</value>
   </data>
   <data name="numericBoxWaveLengthStep.ToolTip" xml:space="preserve">
-    <value>波長探索の初期ステップ (Å)。内部では 0.1 倍で適用されます。この整数倍で ± 走査し、改善がなければ自動縮小します。</value>
+    <value>波長探索の初期ステップ (Å)。内部では
+0.1 倍で適用されます。この整数倍で ±
+走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericBoxWaveLengthRange.ToolTip" xml:space="preserve">
-    <value>波長探索の片側ステップ数 (整数, 0-10)。現在値の周囲を ± このステップ数だけ走査します。</value>
+    <value>波長探索の片側ステップ数 (整数, 0-10)。現在値の
+周囲を ± このステップ数だけ走査します。</value>
   </data>
   <data name="numericBox2.ToolTip" xml:space="preserve">
-    <value>ピクセルサイズ X 探索ステップ (mm/pixel)。フラットパネルでは無効で、ピクセルサイズ校正は Gandolfi タブで行います。</value>
+    <value>ピクセルサイズ X 探索ステップ (mm/pixel)。
+フラットパネルでは無効で、ピクセルサイズ
+校正は Gandolfi タブで行います。</value>
   </data>
   <data name="numericBox3.ToolTip" xml:space="preserve">
-    <value>ピクセルサイズ Y 探索ステップ (mm/pixel)。フラットパネルでは無効で、ピクセルサイズ校正は Gandolfi タブで行います。</value>
+    <value>ピクセルサイズ Y 探索ステップ (mm/pixel)。
+フラットパネルでは無効で、ピクセルサイズ
+校正は Gandolfi タブで行います。</value>
   </data>
   <data name="numericBox4.ToolTip" xml:space="preserve">
-    <value>ピクセル歪み ξ 探索ステップ (度)。フラットパネルでは無効です。</value>
+    <value>ピクセル歪み ξ 探索ステップ (度)。
+フラットパネルでは無効です。</value>
   </data>
   <data name="numericBox5.ToolTip" xml:space="preserve">
-    <value>ピクセルサイズ X 探索の片側ステップ数。フラットパネルでは無効です。</value>
+    <value>ピクセルサイズ X 探索の片側ステップ
+数。フラットパネルでは無効です。</value>
   </data>
   <data name="numericBox6.ToolTip" xml:space="preserve">
-    <value>ピクセルサイズ Y 探索の片側ステップ数。フラットパネルでは無効です。</value>
+    <value>ピクセルサイズ Y 探索の片側ステップ
+数。フラットパネルでは無効です。</value>
   </data>
   <data name="numericBox7.ToolTip" xml:space="preserve">
-    <value>ピクセル歪み ξ 探索の片側ステップ数。フラットパネルでは無効です。</value>
+    <value>ピクセル歪み ξ 探索の片側ステップ
+数。フラットパネルでは無効です。</value>
   </data>
   <data name="label3.ToolTip" xml:space="preserve">
-    <value>各パラメータの初期探索ステップ。総当たり走査はこの ± 整数倍で動き、改善がなければステップを自動縮小します。</value>
+    <value>各パラメータの初期探索ステップ。総当たり走査はこの ±
+整数倍で動き、改善がなければステップを自動縮小します。</value>
   </data>
   <data name="label4.ToolTip" xml:space="preserve">
-    <value>各パラメータの探索片側幅 (ステップ数)。± このステップ数だけ走査します (格子は 2N+1 点)。0 でそのパラメータを無効化します。</value>
+    <value>各パラメータの探索片側幅 (ステップ数)。±
+このステップ数だけ走査します (格子は 2N+1
+点)。0 でそのパラメータを無効化します。</value>
   </data>
   <data name="numericBoxIteration.ToolTip" xml:space="preserve">
-    <value>補正サイクル数 (1-100)。各サイクルで現在の最良値に格子を再配置し、改善がなければステップを縮小して幾何を収束させます。</value>
+    <value>補正サイクル数 (1-100)。各サイクルで現在の
+最良値に格子を再配置し、改善がなければ
+ステップを縮小して幾何を収束させます。</value>
   </data>
   <data name="numericBoxFittingRange.ToolTip" xml:space="preserve">
-    <value>各計算環の周囲のピークフィット窓の半幅 (2θ 度)。小さすぎるとピークを外し、大きすぎると隣接ピークや背景を含みます。変更で再フィットします。</value>
+    <value>各計算環の周囲のピークフィット窓の半幅 (2θ 度)。
+小さすぎるとピークを外し、大きすぎると隣接ピーク
+や背景を含みます。変更で再フィットします。</value>
   </data>
   <data name="numericBoxWeight.ToolTip" xml:space="preserve">
-    <value>コスト関数で、ピーク高さと 2θ (d 値) のずれの重み付けを調整: コスト = θずれ二乗 + 重み/高さ。大きいほど高く鋭い環を優先します。</value>
+    <value>コスト関数で、ピーク高さと 2θ (d 値) のずれ
+の重み付けを調整: コスト = θずれ二乗 + 重み
+/高さ。大きいほど高く鋭い環を優先します。</value>
   </data>
   <data name="buttonOptimize.ToolTip" xml:space="preserve">
-    <value>総当たり補正を開始: 有効なパラメータ (カメラ長・中心・傾き・波長) を走査し、標準試料のデバイ環に最もよく一致させます。中断は Stop。</value>
+    <value>総当たり補正を開始: 有効なパラメータ (カメラ
+長・中心・傾き・波長) を走査し、標準試料の
+デバイ環に最もよく一致させます。中断は Stop。</value>
   </data>
   <data name="buttonStop.ToolTip" xml:space="preserve">
-    <value>実行中の最適化を中断し、パラメータ・スポットマスク・積分範囲を Optimize 実行前の値に戻します。</value>
+    <value>実行中の最適化を中断し、パラメータ・スポットマスク・
+積分範囲を Optimize 実行前の値に戻します。</value>
   </data>
   <data name="buttonGetProfile.ToolTip" xml:space="preserve">
-    <value>現在の幾何で 1D 放射方向プロファイル (強度 vs 2θ) を再計算し、標準試料の計算環位置を重ね描きします (補正は行いません)。</value>
+    <value>現在の幾何で 1D 放射方向プロファイル (強度
+vs 2θ) を再計算し、標準試料の計算環位置を
+重ね描きします (補正は行いません)。</value>
   </data>
   <data name="checkBox1.ToolTip" xml:space="preserve">
-    <value>正方ピクセルを仮定: 補正時にピクセルサイズ X = Y を拘束し、独立には変化させません。</value>
+    <value>正方ピクセルを仮定: 補正時にピクセルサイズ
+X = Y を拘束し、独立には変化させません。</value>
   </data>
   <data name="textBox1.ToolTip" xml:space="preserve">
-    <value>進捗レポート (読み取り専用): 現在のサイクル、これまでの最良のカメラ長・中心・傾き・波長 (変化/不変)、現在のステップ幅、上位の適合スコアを表示します。</value>
+    <value>進捗レポート (読み取り専用): 現在のサイクル、これま
+での最良のカメラ長・中心・傾き・波長 (変化/不変)、
+現在のステップ幅、上位の適合スコアを表示します。</value>
   </data>
   <data name="graphControl1.ToolTip" xml:space="preserve">
-    <value>プロファイルグラフ: 強度 vs 2θ。赤線は計算デバイ環位置、曲線はフィット結果。線をダブルクリックするとその反射をフィットから除外します。</value>
+    <value>プロファイルグラフ: 強度 vs 2θ。赤線は計算デバイ
+環位置、曲線はフィット結果。線をダブルクリックす
+るとその反射をフィットから除外します。</value>
   </data>
   <data name="checkBoxCameraLengthGandlfi.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査でカメラ長 (試料-検出器間距離, mm) を補正対象にします。ガンドルフィ半径と組で走査します。</value>
+    <value>ガンドルフィ走査でカメラ長 (試料-検出器間距離, mm) を
+補正対象にします。ガンドルフィ半径と組で走査します。</value>
   </data>
   <data name="checkBoxPixelSize.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査で検出器のピクセルサイズ X, Y (mm/pixel) を補正対象にします。環の d 値スケールに影響します。</value>
+    <value>ガンドルフィ走査で検出器のピクセルサイズ
+X, Y (mm/pixel) を補正対象にします。環の
+d 値スケールに影響します。</value>
   </data>
   <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査でビーム中心位置 X, Y (ピクセル) を補正対象にします。検出器上の環中心位置がずれます。</value>
+    <value>ガンドルフィ走査でビーム中心位置 X, Y (ピクセル) を
+補正対象にします。検出器上の環中心位置がずれます。</value>
   </data>
   <data name="checkBoxIPTilt.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査でイメージングプレート (IP) の傾き角 τ, φ (度) を補正対象にします。傾き = 検出器がビームに垂直でないこと。</value>
+    <value>ガンドルフィ走査でイメージングプレート
+(IP) の傾き角 τ, φ (度) を補正対象にしま
+す。傾き = 検出器がビームに垂直でないこと。</value>
   </data>
   <data name="checkBoxGandlfiRadius.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ半径 (mm) を補正対象にします。湾曲イメージングプレート / ガンドルフィカメラの半径で、環位置の曲率補正に影響します。</value>
+    <value>ガンドルフィ半径 (mm) を補正対象にします。
+湾曲イメージングプレート / ガンドルフィカメラ
+の半径で、環位置の曲率補正に影響します。</value>
   </data>
   <data name="numericUpDownCameraLengthStep.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査のカメラ長探索の初期ステップ (mm)。± 整数倍で走査し、改善がなければ自動縮小します。</value>
+    <value>ガンドルフィ走査のカメラ長探索の初期ステップ (mm)。
+± 整数倍で走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericUpDownPixelSizeStep.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査のピクセルサイズ探索の初期ステップ (mm/pixel)。± 整数倍で走査し、改善がなければ自動縮小します。</value>
+    <value>ガンドルフィ走査のピクセルサイズ探索の
+初期ステップ (mm/pixel)。± 整数倍で
+走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericUpDownCenterPositionStep.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査のビーム中心探索の初期ステップ (ピクセル)。± 整数倍で走査し、改善がなければ自動縮小します。</value>
+    <value>ガンドルフィ走査のビーム中心探索の
+初期ステップ (ピクセル)。± 整数倍で
+走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericUpDownIPTiltStep.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査の傾き (τ, φ) 探索の初期ステップ (度)。± 整数倍で走査し、改善がなければ自動縮小します。</value>
+    <value>ガンドルフィ走査の傾き (τ, φ) 探索の初期ステップ
+(度)。± 整数倍で走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericUpDownGandolfiRadiusStep.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ半径探索の初期ステップ (mm)。± 整数倍で走査し、改善がなければ自動縮小します。</value>
+    <value>ガンドルフィ半径探索の初期ステップ (mm)。±
+整数倍で走査し、改善がなければ自動縮小します。</value>
   </data>
   <data name="numericUpDownCameraLengthRange.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査のカメラ長探索の片側ステップ数 (整数, 0-10)。± この数だけ走査します。0 で無効。</value>
+    <value>ガンドルフィ走査のカメラ長探索の片側ステップ数
+(整数, 0-10)。± この数だけ走査します。0 で無効。</value>
   </data>
   <data name="numericUpDownPixelSizeRange.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査のピクセルサイズ探索の片側ステップ数 (整数, 0-10)。± この数だけ走査します。</value>
+    <value>ガンドルフィ走査のピクセルサイズ探索の片側ステップ
+数 (整数, 0-10)。± この数だけ走査します。</value>
   </data>
   <data name="numericUpDownCenterPositionRange.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査のビーム中心探索の片側ステップ数 (整数, 0-10)。X, Y を ± この数だけ走査します。</value>
+    <value>ガンドルフィ走査のビーム中心探索の片側ステップ数
+(整数, 0-10)。X, Y を ± この数だけ走査します。</value>
   </data>
   <data name="numericUpDownTiltRange.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ走査の傾き (τ, φ) 探索の片側ステップ数 (整数, 0-10)。± この数だけ走査します。</value>
+    <value>ガンドルフィ走査の傾き (τ, φ) 探索の片側ステップ
+数 (整数, 0-10)。± この数だけ走査します。</value>
   </data>
   <data name="numericUpDownGandolfiRadiusRange.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ半径探索の片側ステップ数 (整数, 0-10)。現在半径の周囲を ± この数だけ走査します。</value>
+    <value>ガンドルフィ半径探索の片側ステップ数 (整数,
+0-10)。現在半径の周囲を ± この数だけ走査します。</value>
   </data>
   <data name="label7.ToolTip" xml:space="preserve">
-    <value>各ガンドルフィパラメータの初期探索ステップ。走査はこの ± 整数倍で動き、改善がなければ自動縮小します。</value>
+    <value>各ガンドルフィパラメータの初期探索ステップ。走査は
+この ± 整数倍で動き、改善がなければ自動縮小します。</value>
   </data>
   <data name="label23.ToolTip" xml:space="preserve">
-    <value>各ガンドルフィパラメータの探索片側幅 (ステップ数)。± この数だけ走査します。0 でそのパラメータを無効化します。</value>
+    <value>各ガンドルフィパラメータの探索片側幅 (ステップ数)。± こ
+の数だけ走査します。0 でそのパラメータを無効化します。</value>
   </data>
   <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value>各ガンドルフィパラメータのステップ幅と探索範囲の設定。サイクルで改善がない場合、各ステップを自動的に縮小してより細かく補正します。</value>
+    <value>各ガンドルフィパラメータのステップ幅と探索範囲の
+設定。サイクルで改善がない場合、各ステップを
+自動的に縮小してより細かく補正します。</value>
   </data>
   <data name="numericUpDownIterationGandolfi.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ補正のサイクル数。各サイクルで現在の最良値に再配置し、改善がなければステップを縮小して幾何を収束させます。</value>
+    <value>ガンドルフィ補正のサイクル数。各サイクル
+で現在の最良値に再配置し、改善がなければ
+ステップを縮小して幾何を収束させます。</value>
   </data>
   <data name="numericUpDownFittingRangeForGandolfi.ToolTip" xml:space="preserve">
-    <value>ガンドルフィフィットで各計算環の周囲のピークフィット窓の半幅 (2θ 度, 0.2-1)。小さすぎるとピークを外し、大きすぎると隣接ピークを含みます。</value>
+    <value>ガンドルフィフィットで各計算環の周囲の
+ピークフィット窓の半幅 (2θ 度, 0.2-1)。小さすぎる
+とピークを外し、大きすぎると隣接ピークを含みます。</value>
   </data>
   <data name="label5.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ補正のサイクル数 (右の入力欄)。多いほど幾何がより収束しますが時間がかかります。</value>
+    <value>ガンドルフィ補正のサイクル数 (右の入力欄)。多い
+ほど幾何がより収束しますが時間がかかります。</value>
   </data>
   <data name="buttonOptimizeGandolfi.ToolTip" xml:space="preserve">
-    <value>ガンドルフィ総当たり補正を開始: 有効なパラメータ (カメラ長・ピクセルサイズ・中心・傾き・ガンドルフィ半径) を走査し標準試料のデバイ環に一致させます。</value>
+    <value>ガンドルフィ総当たり補正を開始: 有効なパラメータ
+(カメラ長・ピクセルサイズ・中心・傾き・ガンドルフィ
+半径) を走査し標準試料のデバイ環に一致させます。</value>
   </data>
   <data name="toolStripProgressBar1.ToolTip" xml:space="preserve">
-    <value>最適化の進捗: 全サイクルにわたるパラメータ格子走査の完了割合を示します。</value>
+    <value>最適化の進捗: 全サイクルにわたる
+パラメータ格子走査の完了割合を示します。</value>
   </data>
   <data name="toolStripStatusLabel1.ToolTip" xml:space="preserve">
-    <value>ステータス行: 1ステップあたりの時間、完了率、経過時間、実行中の最適化の推定残り時間を表示します。</value>
+    <value>ステータス行: 1ステップあたりの時間、完了率、
+経過時間、実行中の最適化の推定残り時間を表示します。</value>
   </data>
 </root>

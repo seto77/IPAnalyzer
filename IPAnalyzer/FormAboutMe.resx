@@ -184,21 +184,31 @@
 </value>
   </data>
   <data name="linkLabelMail.ToolTip" xml:space="preserve">
-    <value>Click to open your e-mail client with a new message addressed to the author (seto@crystal.kobe-u.ac.jp). Use for bug reports, questions, and requests.</value>
+    <value>Click to open your e-mail client with a new message
+addressed to the author (seto@crystal.kobe-u.ac.jp).
+Use for bug reports, questions, and requests.</value>
   </data>
   <data name="linkLabelHomePage.ToolTip" xml:space="preserve">
-    <value>Click to open the author's homepage in your default web browser (latest IPAnalyzer downloads and documentation).</value>
+    <value>Click to open the author's homepage in
+your default web browser (latest
+IPAnalyzer downloads and documentation).</value>
   </data>
   <data name="textBoxReadMe.ToolTip" xml:space="preserve">
-    <value>Read-only release notes: introduction, copyright, usage conditions, disclaimer, contact, acknowledgements and version history. Scroll to read all.</value>
+    <value>Read-only release notes: introduction,
+copyright, usage conditions,
+disclaimer, contact, acknowledgements
+and version history. Scroll to read all.</value>
   </data>
   <data name="label6.ToolTip" xml:space="preserve">
-    <value>Click the address to open your e-mail client with a new message to the author.</value>
+    <value>Click the address to open your e-mail
+client with a new message to the author.</value>
   </data>
   <data name="label4.ToolTip" xml:space="preserve">
-    <value>Click the link to open the author's homepage in your default web browser.</value>
+    <value>Click the link to open the author's
+homepage in your default web browser.</value>
   </data>
   <data name="labelVersion.ToolTip" xml:space="preserve">
-    <value>Currently running IPAnalyzer version and build date. Cite this when reporting a bug.</value>
+    <value>Currently running IPAnalyzer version and
+build date. Cite this when reporting a bug.</value>
   </data>
 </root>

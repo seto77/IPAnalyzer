@@ -67,6 +67,7 @@
             numericBoxPhiRange = new Crystallography.Controls.NumericBox();
             textBox1 = new System.Windows.Forms.TextBox();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
+            toolTip1.IsBalloon = true; // 260531Cl 追加: バルーン表示に統一
             groupBox2 = new System.Windows.Forms.GroupBox();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();

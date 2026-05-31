@@ -58,15 +58,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="numericUpDown1.ToolTip" xml:space="preserve">
-    <value>Blur (azimuthal smoothing) angle in degrees, 0.01-10. Averages the integration over this angular window; larger = smoother but lower-resolution 1D profile.</value>
+    <value>Blur (azimuthal smoothing) angle in degrees, 0.01-10.
+Averages the integration over this angular window;
+larger = smoother but lower-resolution 1D profile.</value>
   </data>
   <data name="label1.ToolTip" xml:space="preserve">
-    <value>Degrees - unit of the blur (azimuthal smoothing) angle entered to the left.</value>
+    <value>Degrees - unit of the blur (azimuthal
+smoothing) angle entered to the left.</value>
   </data>
   <data name="buttonOK.ToolTip" xml:space="preserve">
     <value>Apply the entered blur angle and close this dialog.</value>
   </data>
   <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value>Discard the change and close this dialog without applying the blur angle.</value>
+    <value>Discard the change and close this
+dialog without applying the blur angle.</value>
   </data>
 </root>
