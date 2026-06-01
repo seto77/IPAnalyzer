@@ -1,0 +1,29 @@
+13:39:12.521	capture start -> C:\Users\seto\source\repos\IPAnalyzer\docs\src\assets\cap-ja-auto
+13:39:12.531	==================================================================================
+13:39:12.531	[CAUTION] Capture uses CopyFromScreen. Keep the screen VISIBLE and FOCUSED until done.
+13:39:12.531	          Over Remote Desktop (RDP): keep the RDP window in the foreground, and do NOT
+13:39:12.531	          minimize or disconnect. A hidden/minimized session yields blank/failed shots.
+13:39:12.531	[注意] 画面キャプチャ中はウィンドウを前面・表示のまま保ってください。RDP の場合は RDP ウィンドウを
+13:39:12.531	       前面に出したまま最小化・切断しないでください (非表示だと撮影が失敗/真っ黒になります)。
+13:39:12.531	==================================================================================
+13:39:12.547	16 form types (parameterless ctor)
+13:39:17.217	FormMain	INFO	prepared FormMain (sample image loaded)
+13:39:18.672	FormMain	OK	721x893	Crops=0	Tabs=3	Menus=0
+13:39:19.890	FormMacro	OK	786x593	Crops=0	Tabs=0	Menus=0
+13:39:20.976	FormAboutMe	OK	594x272	Crops=0	Tabs=0	Menus=0
+13:39:22.097	FormAutoProcedure	OK	261x415	Crops=0	Tabs=0	Menus=0
+13:39:23.136	FormBlurAngle	OK	224x62	Crops=0	Tabs=0	Menus=0
+13:39:24.208	FormCalibrateIntensity	OK	686x842	Crops=0	Tabs=0	Menus=0
+13:39:25.303	FormCalibrateRAxisImage	OK	823x632	Crops=0	Tabs=0	Menus=0
+13:39:31.965	FormCrystal	OK	754x449	Crops=6	Tabs=8	Menus=0
+13:39:33.086	FormDrawRing	OK	136x138	Crops=0	Tabs=0	Menus=0
+13:39:35.702	FormFindParameter	OK	1470x754	Crops=0	Tabs=0	Menus=0
+13:39:43.145	FormFindParameterBruteForce	OK	1021x763	Crops=4	Tabs=8	Menus=0
+13:39:44.303	FormFindParameterGeometry	OK	1112x774	Crops=0	Tabs=0	Menus=0
+13:39:45.359	FormFindParameterOption1	OK	198x109	Crops=0	Tabs=0	Menus=0
+13:39:45.747	FormParameterOption	INFO	prepared parameter option (all checked)
+13:39:46.428	FormParameterOption	OK	306x372	Crops=0	Tabs=0	Menus=0
+13:39:50.374	FormProperty	OK	598x293	Crops=0	Tabs=9	Menus=0
+13:39:51.523	FormSaveImage	OK	492x180	Crops=0	Tabs=0	Menus=0
+13:39:52.590	FormSequentialImage	OK	338x398	Crops=0	Tabs=0	Menus=0
+13:39:52.753	done: ok=17 fail=0

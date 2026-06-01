@@ -99,6 +99,11 @@ nav:
       - 2. Property Windows: en/2-property-windows.md
       - 3. Tools: en/3-tools.md
       - 4. Procedures: en/4-procedures.md
+      - 5. Macro:
+          - en/5-macro/index.md
+          - 5.1. Built-in functions: en/5-macro/1-built-in-functions.md
+          - 5.2. Examples: en/5-macro/2-examples.md
+      - 6. Find Parameter (brute force): en/6-find-parameter.md
       - Appendix:
           - en/appendix/index.md
   - 日本語:
@@ -108,5 +113,10 @@ nav:
       - 2. プロパティウィンドウ: ja/2-property-windows.md
       - 3. 各種ツール: ja/3-tools.md
       - 4. 実際の手順: ja/4-procedures.md
+      - 5. マクロ:
+          - ja/5-macro/index.md
+          - 5.1. 組み込み関数: ja/5-macro/1-built-in-functions.md
+          - 5.2. 使用例: ja/5-macro/2-examples.md
+      - 6. パラメータ校正（力ずく）: ja/6-find-parameter.md
       - 付録:
           - ja/appendix/index.md

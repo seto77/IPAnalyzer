@@ -251,6 +251,11 @@ public partial class FormMain : Form
             catch { }
         }
 
+        // 260601Cl 追加: --capture でカルチャを強制指定した場合は、レジストリ値より優先する (ReciPro/FormMain と同様)。
+        // InitializeComponent の前に確定させないと、resx ローカライズが強制カルチャを反映しない。
+        if (GuiCapture.ForcedUICulture != null)
+            Thread.CurrentThread.CurrentUICulture = GuiCapture.ForcedUICulture;
+
         InitializeComponent();
         ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
 
@@ -280,6 +285,10 @@ public partial class FormMain : Form
             key.SetValue("Version", Version.VersionAndDate);
 
         Reg.RW<string>(key, mode, Thread.CurrentThread.CurrentUICulture, "Name");
+
+        // 260601Cl 追加: --capture 中は Read でレジストリの保存カルチャに戻さず、強制カルチャを維持する (ReciPro/FormMain と同様)。
+        if (mode == Reg.Mode.Read && GuiCapture.ForcedUICulture != null)
+            Thread.CurrentThread.CurrentUICulture = GuiCapture.ForcedUICulture;
 
         void rw<T>(Expression<Func<T>> e) => Reg.RW(key, mode, e);
 
@@ -594,6 +603,20 @@ public partial class FormMain : Form
         if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
             File.Delete(UserAppDataPath + "IPAnalyzerSetup.msi");
 
+    }
+
+    // 260601Cl 追加: --capture (GuiCapture) 用の代表状態準備。ReciPro/FormMain.PrepareCaptureCrystalSelection に相当。
+    // 起動スプラッシュ (InitialDialog) を隠し、代表的な回折画像を読み込んで、画像依存フォームを典型例に近づける。
+    internal bool PrepareCaptureState()
+    {
+        try { if (InitialDialog != null) InitialDialog.Visible = false; } catch { /* スプラッシュ非表示失敗は無視 */ }
+        try
+        {
+            var sample = GuiCapture.FindSampleImage();
+            if (sample != null) { ReadImage(sample); return true; }
+        }
+        catch { /* サンプル画像が無い/読込失敗時は空のまま撮影する (最善努力) */ }
+        return false;
     }
 
     //フォームクローズ時
