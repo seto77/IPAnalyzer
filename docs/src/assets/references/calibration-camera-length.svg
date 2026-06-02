@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 260602Cl 追加: カメラ長の2距離決定法の幾何図 (Appendix A2 用)。相似三角形 R1/CL = R2/(CL+D) より CL = R1 D /(R2-R1)。 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="cl-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#222"/>
+    </marker>
+    <marker id="cl-dim" markerWidth="9" markerHeight="9" refX="4" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#444"/>
+    </marker>
+    <marker id="cl-dim2" markerWidth="9" markerHeight="9" refX="3" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="480" height="360" fill="#ffffff"/>
+
+  <!-- IP detector planes -->
+  <line x1="44" y1="212" x2="332" y2="212" stroke="#222" stroke-width="2"/>
+  <line x1="44" y1="302" x2="372" y2="302" stroke="#222" stroke-width="2"/>
+  <text x="336" y="210" font-size="12" fill="#222">IP (position 1)</text>
+  <text x="376" y="300" font-size="12" fill="#222">IP (position 2)</text>
+
+  <!-- direct beam (vertical axis) -->
+  <line x1="90" y1="32" x2="90" y2="340" stroke="#888" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#cl-arrow)"/>
+  <!-- diffracted ray -->
+  <line x1="90" y1="32" x2="300" y2="312" stroke="#c0392b" stroke-width="1.8" marker-end="url(#cl-arrow)"/>
+
+  <!-- sample -->
+  <rect x="84" y="26" width="12" height="12" fill="#e08020" stroke="#222"/>
+  <text x="52" y="22" font-size="13" fill="#222">Sample</text>
+
+  <!-- direct spots -->
+  <circle cx="90" cy="212" r="3.2" fill="#222"/>
+  <circle cx="90" cy="302" r="3.2" fill="#222"/>
+
+  <!-- 2theta arc at sample -->
+  <path d="M 90 72 A 40 40 0 0 0 114 64" fill="none" stroke="#222" stroke-width="1.2"/>
+  <text x="98" y="78" font-size="13" fill="#222">2&#952;</text>
+
+  <!-- CL dimension -->
+  <line x1="62" y1="32" x2="62" y2="212" stroke="#444" stroke-width="1" marker-start="url(#cl-dim2)" marker-end="url(#cl-dim)"/>
+  <text x="32" y="126" font-size="13" fill="#444">CL</text>
+  <!-- D dimension -->
+  <line x1="62" y1="212" x2="62" y2="302" stroke="#444" stroke-width="1" marker-start="url(#cl-dim2)" marker-end="url(#cl-dim)"/>
+  <text x="44" y="261" font-size="13" fill="#444">D</text>
+
+  <!-- R1 dimension -->
+  <line x1="90" y1="224" x2="225" y2="224" stroke="#444" stroke-width="1" marker-start="url(#cl-dim2)" marker-end="url(#cl-dim)"/>
+  <text x="150" y="240" font-size="13" fill="#444">R&#8321;</text>
+  <!-- R2 dimension -->
+  <line x1="90" y1="314" x2="292" y2="314" stroke="#444" stroke-width="1" marker-start="url(#cl-dim2)" marker-end="url(#cl-dim)"/>
+  <text x="185" y="330" font-size="13" fill="#444">R&#8322;</text>
+</svg>

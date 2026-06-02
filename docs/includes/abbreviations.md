@@ -6,3 +6,5 @@
 *[ROI]: Region of Interest
 *[FWHM]: Full Width at Half Maximum
 *[RAxis]: Rigaku R-Axis image format
+*[CL]: Camera Length
+*[SN]: Signal-to-Noise ratio
