@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormSaveImage : Form
+    public partial class FormSaveImage : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public FormMain FormMain;
 
         public FormSaveImage()
         {
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
         }
 
         public double ImageResolution

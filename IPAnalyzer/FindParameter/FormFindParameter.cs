@@ -15,7 +15,7 @@ namespace IPAnalyzer;
 /// <summary>
 /// FormCLandWL の概要の説明です。
 /// </summary>
-public partial class FormFindParameter : System.Windows.Forms.Form
+public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に変更
 {
     public FormCrystal formCrystal;
     int NumberOfDirection = 20;//計算する方向の数
@@ -81,7 +81,11 @@ public partial class FormFindParameter : System.Windows.Forms.Form
     
 
     //260413Cl コンストラクタのデザイナ生成コメントを整理
-    public FormFindParameter() => InitializeComponent();
+    public FormFindParameter()//260604Cl ブロック本体化 (HelpPage 設定のため)
+    {
+        InitializeComponent();
+        HelpPage = "4-procedures"; //260605Cl 変更 (3-tools→4-procedures: 幾何学的パラメータ校正の手順ページへ)
+    }
 
 
 

@@ -109,6 +109,8 @@ nav:
           - A1. Detector geometry: en/appendix/a1-geometry.md
           - A2. Parameter determination: en/appendix/a2-calibration.md
           - A3. Image integration: en/appendix/a3-image-integration.md
+          - A4. Symmetry information: en/appendix/a4-symmetry-information.md
+          - A5. Scattering factor: en/appendix/a5-scattering-factor.md
   - 日本語:
       - ホーム: ja/index.md
       - 0. 概要: ja/0-overview.md
@@ -126,3 +128,5 @@ nav:
           - A1. 検出器の幾何: ja/appendix/a1-geometry.md
           - A2. パラメータの決定: ja/appendix/a2-calibration.md
           - A3. 画像の積算: ja/appendix/a3-image-integration.md
+          - A4. 対称性情報: ja/appendix/a4-symmetry-information.md
+          - A5. 散乱因子: ja/appendix/a5-scattering-factor.md

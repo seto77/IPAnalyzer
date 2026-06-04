@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer;
 
-public partial class FormProperty : Form
+public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
 {
     #region プロパティ、フィールド
     public FormMain formMain;
@@ -138,6 +138,7 @@ public partial class FormProperty : Form
         PerformAutoScale();
 
         InitializeComponent();
+        HelpPage = "2-property-windows"; //260604Cl 追加
 
         PerformAutoScale();
 

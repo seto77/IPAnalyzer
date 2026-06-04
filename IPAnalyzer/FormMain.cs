@@ -26,7 +26,7 @@ using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 
 namespace IPAnalyzer;
 
-public partial class FormMain : Form
+public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 {
     #region DllImport
     [LibraryImport("user32")]
@@ -257,6 +257,20 @@ public partial class FormMain : Form
             Thread.CurrentThread.CurrentUICulture = GuiCapture.ForcedUICulture;
 
         InitializeComponent();
+
+        HelpPage = "1-main-window"; //260604Cl 追加
+
+        //260604Cl 追加: F1 オンラインヘルプの URL 解決ロジックを登録 (起動時に 1 回)。ReciPro/FormMain と同じ方式。
+        //Crystallography.Controls 側のフォームは IPAnalyzer 固有の URL を知らないため、ここで一括して組み立てる。
+        //en ページは /IPAnalyzer/en/<slug>/、ja ページは /IPAnalyzer/ja/<slug>/。HelpPage 未設定時は各言語のトップへ。
+        FormBase.HelpUrlResolver = f =>
+        {
+            var lang = Thread.CurrentThread.CurrentUICulture.Name == "ja" ? "ja" : "en";
+            return string.IsNullOrEmpty(f.HelpPage)
+                ? (lang == "ja" ? "https://seto77.github.io/IPAnalyzer/ja/" : "https://seto77.github.io/IPAnalyzer/")
+                : $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/";
+        };
+
         ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
 
         this.SetStyle(ControlStyles.ResizeRedraw, true);

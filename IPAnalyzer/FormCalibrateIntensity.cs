@@ -10,7 +10,7 @@ using Crystallography;
 
 namespace IPAnalyzer
 {
-    public partial class FormCalibrateIntensity : Form
+    public partial class FormCalibrateIntensity : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public FormMain formMain;
 
@@ -18,6 +18,7 @@ namespace IPAnalyzer
         public FormCalibrateIntensity()
         {
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
         }
 
         private void buttonOpenFile_Click(object sender, EventArgs e)

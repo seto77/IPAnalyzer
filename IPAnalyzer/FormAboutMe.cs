@@ -9,11 +9,12 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormAboutMe : Form
+    public partial class FormAboutMe : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public FormAboutMe()
         {
             InitializeComponent();
+            HelpPage = "0-overview"; //260604Cl 追加
         }
 
 

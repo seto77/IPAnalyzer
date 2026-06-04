@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormDrawRing : Form
+    public partial class FormDrawRing : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public FormMain formMain;
         public double R, D, TwoTheta;
@@ -16,6 +16,7 @@ namespace IPAnalyzer
         public FormDrawRing()
         {
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
         }
 
         private void FormDrawRing_Load(object sender, EventArgs e)

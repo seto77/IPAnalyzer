@@ -12,7 +12,7 @@ namespace IPAnalyzer
     /// <summary>
     /// FormCrystal の概要の説明です。
     /// </summary>
-    public partial class FormCrystal : System.Windows.Forms.Form
+    public partial class FormCrystal : FormBase //260604Cl FormBase 継承に変更
     {
         public FormFindParameter formFindParameter;
 
@@ -28,6 +28,11 @@ namespace IPAnalyzer
             // Windows フォーム デザイナ サポートに必要です。
             //
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
+
+            //260605Cl 追加: CrystalControl 内の対称性情報/散乱因子サブウィンドウの F1 ヘルプ先を付録ページに設定。
+            crystalControl.FormSymmetryInformation.HelpPage = "appendix/a4-symmetry-information";
+            crystalControl.FormScatteringFactor.HelpPage = "appendix/a5-scattering-factor";
 
             //
             // TODO: InitializeComponent 呼び出しの後に、コンストラクタ コードを追加してください。

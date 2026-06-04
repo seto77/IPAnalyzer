@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormParameterOption : Form
+    public partial class FormParameterOption : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public FormMain FormMain;
         public bool CameraModeChecked { get { return checkBoxCameraMode.Checked; } set { checkBoxCameraMode.Checked = value; } }
@@ -43,6 +43,7 @@ namespace IPAnalyzer
         public FormParameterOption()
         {
             InitializeComponent();
+            HelpPage = "2-property-windows"; //260604Cl 追加
         }
 
         private void FormParameterOption_Load(object sender, EventArgs e)

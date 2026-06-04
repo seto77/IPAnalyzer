@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormFindParameterOption1 : Form
+    public partial class FormFindParameterOption1 : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public int SetMaximumNumber
         { set { numericBox1.Maximum = value; } }
@@ -18,6 +18,7 @@ namespace IPAnalyzer
         public FormFindParameterOption1()
         {
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
         }
 
         public FormMain FormMain;

@@ -10,13 +10,14 @@ using Crystallography;
 
 namespace IPAnalyzer
 {
-    public partial class FormCalibrateRAxisImage : Form
+    public partial class FormCalibrateRAxisImage : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
 
 
         public FormCalibrateRAxisImage()
         {
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
         }
 
 

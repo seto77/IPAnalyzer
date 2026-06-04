@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IPAnalyzer
 {
-    public partial class FormBlurAngle : Form
+    public partial class FormBlurAngle : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
     {
         public double BlurAngle
         {
@@ -20,6 +20,7 @@ namespace IPAnalyzer
         public FormBlurAngle()
         {
             InitializeComponent();
+            HelpPage = "3-tools"; //260604Cl 追加
         }
     }
 }

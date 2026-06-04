@@ -11,6 +11,8 @@ The content is based on the legacy document `doc/IPAnalyzerAlgorithm.pdf` bundle
 - **[A1. Detector geometry and coordinate transforms](a1-geometry.md)** — definition of the right-handed coordinate system, the rotation matrices that describe the IP tilt ($\varphi,\ \tau$), and correction of the pixel shape ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$).
 - **[A2. Parameter determination](a2-calibration.md)** — calibration of camera length, wavelength, pixel size, and IP tilt using a standard material (two-distance method, two-line method, ellipse fitting).
 - **[A3. Image integration](a3-image-integration.md)** — the area-partitioning algorithm that distributes pixel intensities into angular steps.
+- **[A4. Symmetry information](a4-symmetry-information.md)** — space-group symmetry, geometric calculations, Wyckoff positions, reflection conditions, and symmetry-element diagrams of the standard crystal (a sub-window of the Crystal window).
+- **[A5. Scattering factor](a5-scattering-factor.md)** — structure factors and the reflection list of the standard crystal (X-ray, electron, neutron) (a sub-window of the Crystal window).
 
 ## Coordinate system (common reference figure)
 

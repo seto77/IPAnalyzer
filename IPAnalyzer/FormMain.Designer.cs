@@ -9,7 +9,7 @@ namespace IPAnalyzer
     /// <summary>
     /// Form1 の概要の説明です。
     /// </summary>
-    partial class FormMain : System.Windows.Forms.Form
+    partial class FormMain //260604Cl 基底クラス宣言は FormMain.cs 側 (FormBase) に集約
     {
         /// <summary>
         /// 必要なデザイナ変数です。

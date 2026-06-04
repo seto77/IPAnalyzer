@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Crystallography;
 
 namespace IPAnalyzer;
-public partial class FormSequentialImage : Form
+public partial class FormSequentialImage : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
 {
     #region プロパティ
     public bool MultiSelection
@@ -193,6 +193,7 @@ public partial class FormSequentialImage : Form
     public FormSequentialImage()
     {
         InitializeComponent();
+        HelpPage = "3-tools"; //260604Cl 追加
     }
 
     private void FormSequentialImage_FormClosing(object sender, FormClosingEventArgs e)

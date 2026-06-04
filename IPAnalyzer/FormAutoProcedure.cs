@@ -13,7 +13,7 @@ using System.Threading;
 
 namespace IPAnalyzer;
 
-public partial class FormAutoProcedure : Form
+public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260604Cl FormBase 継承に変更
 {
     #region フィールド、プロパティ
     public FormMain formMain;
@@ -36,6 +36,7 @@ public partial class FormAutoProcedure : Form
     public FormAutoProcedure()
     {
         InitializeComponent();
+        HelpPage = "3-tools"; //260604Cl 追加
     }
     private void FormAutoProcedure_Load(object sender, EventArgs e)
     {

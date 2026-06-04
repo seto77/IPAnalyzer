@@ -5,7 +5,7 @@ using System.Windows.Forms;
 /// <summary>
 /// FormCLandWL の概要の説明です。
 /// </summary>
-partial class FormFindParameter : System.Windows.Forms.Form
+partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindParameter.cs 側 (FormBase) に集約
 {
     /// <summary>
     /// 必要なデザイナ変数です。
