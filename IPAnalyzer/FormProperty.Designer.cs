@@ -369,7 +369,7 @@
             // waveLengthControl
             // 
             resources.ApplyResources(waveLengthControl, "waveLengthControl");
-            waveLengthControl.Direction = System.Windows.Forms.FlowDirection.LeftToRight;
+            waveLengthControl.DirectionWhole = System.Windows.Forms.FlowDirection.LeftToRight;//260606Cl Direction→DirectionWhole 改名に追随
             waveLengthControl.Energy = 17.44419672D;
             waveLengthControl.Monochrome = true;
             waveLengthControl.Name = "waveLengthControl";

@@ -30,10 +30,17 @@ public partial class FormBase : Form
     public string HelpPage { get; set; } = ""; //260529Cl 追加
 
     //260604Cl 追加: F1 でヘルプを開けるフォームのタイトル右端に出す案内文字列 (UI 言語で切替)。
+    //【真因と対策 (260605Cl 調査)】キャプション(タイトルバー)文字は Windows/DWM が "255 文字までしか描画しない"
+    //(256 文字バッファ=255文字+NUL。実測で Text.Length>=256 で末尾が右から欠ける。Web 傍証: RC4206 "truncated at 256" 等)。
+    //通常スペースで右寄せすると幅広フォームでは詰めるスペースが多く 256 文字を超え、末尾の案内が右から消えていた。
+    //→ 全角スペース(U+3000, 通常の約4倍幅)で詰めれば約1/4の文字数で同じ右寄せができ 255 文字上限に達しにくい。
+    //  さらに総文字数を HelpCharLimit でクランプし、極端に広い窓 (4K 最大化等) でも案内が消えない (右寄せ位置は少し内側で妥協)。
+    private const char HelpPadChar = '　';        //260605Cl 追加: 詰めに使う全角スペース
     private const string HelpCoreEn = "(F1: Help)";   //260604Cl 追加
     private const string HelpCoreJa = "(F1: ヘルプ)";  //260604Cl 追加
-    private const int HelpFallbackSpaces = 10;        //260604Cl 追加: 右寄せ量を計算できない時に挟む固定スペース数
-    private const int HelpMinSpaces = 4;              //260604Cl 追加: タイトルと案内が接触しないための最小スペース数
+    private const int HelpCharLimit = 250;            //260605Cl 追加: 255文字描画上限に対する安全な総文字数クランプ
+    private const int HelpFallbackPad = 6;            //260605Cl 追加: 右寄せ量を計算できない時の固定全角スペース数
+    private const int HelpMinPad = 2;                 //260605Cl 追加: タイトルと案内が接触しないための最小詰め数
     private bool isUpdatingHelpSuffix = false;        //260604Cl 追加: 自分の Text 書換で再入する TextChanged を弾くフラグ
 
     //260604Cl 追加: タイトルに F1 ヘルプ案内を付けるか。出したくない派生フォーム (CommonDialog 等) は override で false にする。
@@ -45,15 +52,13 @@ public partial class FormBase : Form
         HelpRequested += FormBase_HelpRequested; //260529Cl 追加: F1 キー (HelpRequested) を購読
 
         //260604Cl 追加: F1 でヘルプが開けるフォームは、タイトル右端に案内 ("(F1: Help)" / 日本語 UI なら "(F1: ヘルプ)") を出して存在を知らせる。
-        //表示時点では HelpPage / HelpUrlResolver が確定しているので Shown で初回付与し、
-        //タイトル変更 (TextChanged) や幅変更 (Resize, 右寄せ位置が変わる) でも付け直す。
+        //表示時点では HelpPage / HelpUrlResolver が確定しているので Shown で初回付与し、タイトル変更や幅変更でも付け直す。
         Shown += (s, e) => AppendHelpSuffix();
         TextChanged += (s, e) => AppendHelpSuffix();
         Resize += (s, e) => AppendHelpSuffix();
     }
 
-    //260604Cl 追加: タイトル(Text)の右端に現在の UI 言語の案内文字列を配置する。
-    //案内はキャプション右端 (最小化ボタンの手前) に来るよう、本文との間にスペースを動的に詰める。
+    //260604Cl 追加: タイトル(Text)の右端に現在の UI 言語の案内文字列を配置する (本文との間を全角スペースで詰めて右寄せ)。
     //HelpUrlResolver が未登録/空 URL を返すフォーム (他ホストアプリや設計時) には付けない。
     private void AppendHelpSuffix()
     {
@@ -67,11 +72,11 @@ public partial class FormBase : Form
         var core = System.Globalization.CultureInfo.CurrentUICulture.Name == "ja" ? HelpCoreJa : HelpCoreEn;
         var baseText = StripHelpSuffix(Text); //既存の案内を一旦取り除いた素のタイトル
 
-        int spaces = ComputeRightAlignSpaces(baseText, core); //キャプション右端に寄せるためのスペース数
-        if (spaces < 0)
-            spaces = HelpFallbackSpaces; //計測できない時 (ハンドル未生成・枠無し等) は固定スペースでフォールバック
+        int pad = ComputeRightAlignPad(baseText, core); //右寄せに必要な全角スペース数
+        if (pad < 0)
+            pad = HelpFallbackPad; //計測できない時 (ハンドル未生成・枠無し等) は固定数でフォールバック
 
-        var desired = baseText + new string(' ', spaces) + core;
+        var desired = baseText + new string(HelpPadChar, pad) + core;
         if (Text == desired)
             return; //既に正しい状態 (再表示・連続更新・同幅 Resize 時のちらつき防止)
 
@@ -80,20 +85,20 @@ public partial class FormBase : Form
         finally { isUpdatingHelpSuffix = false; }
     }
 
-    //260604Cl 追加: 既存の案内 (両言語) と直前のスペースを取り除いた素のタイトルを返す。
+    //260604Cl 追加: 既存の案内 (両言語) と直前の詰め文字 (全角/半角スペース) を取り除いた素のタイトルを返す。
     //言語切替で逆言語の案内が残っていても二重化しないよう、core 一致で末尾を剥がす。
     private static string StripHelpSuffix(string text)
     {
-        if (text.EndsWith(HelpCoreEn, StringComparison.Ordinal))
-            return text.Substring(0, text.Length - HelpCoreEn.Length).TrimEnd(' ');
-        if (text.EndsWith(HelpCoreJa, StringComparison.Ordinal))
-            return text.Substring(0, text.Length - HelpCoreJa.Length).TrimEnd(' ');
-        return text;
+        string core = text.EndsWith(HelpCoreEn, StringComparison.Ordinal) ? HelpCoreEn
+                    : text.EndsWith(HelpCoreJa, StringComparison.Ordinal) ? HelpCoreJa : null;
+        return core == null ? text : text.Substring(0, text.Length - core.Length).TrimEnd(HelpPadChar, ' ');
     }
 
-    //260604Cl 追加: baseText の後ろに何個スペースを入れれば core がキャプション右端 (ボタン手前) に来るかを算出する。
-    //計測不能 (ハンドル未生成・枠無し・最小化・キャプション無し等) なら -1 を返し、呼び出し側で固定スペースにフォールバックする。
-    private int ComputeRightAlignSpaces(string baseText, string core)
+    //260605Cl 追加: baseText の後ろに全角スペースを何個入れれば core がキャプション右端 (ボタン手前) に来るかを算出する。
+    //・位置はピクセルで右寄せ (WM_GETTITLEBARINFOEX のボタン左 + GenericTypographic の MeasureString は実描画と一致)。
+    //・総文字数を HelpCharLimit でクランプし、255 文字描画上限による末尾欠けを防ぐ (超広幅では右寄せ位置が少し内側になる)。
+    //計測不能 (ハンドル未生成・枠無し・最小化・キャプション無し等) なら -1 を返し、呼び出し側で固定数にフォールバックする。
+    private int ComputeRightAlignPad(string baseText, string core)
     {
         try
         {
@@ -132,23 +137,24 @@ public partial class FormBase : Form
             if (font == null)
                 return -1;
 
-            //重要: タイトルバー (DWM) の文字描画は GDI の TextRenderer よりやや広く、TextRenderer 基準だと
-            //スペース数を過大評価して案内が右端に食い込み隠れる。GenericTypographic の MeasureString が
-            //実描画とよく一致する (実測: 96dpi でスペース 3.287px ≒ 実描画)。計測単位はフォームの DPI なので
-            //スクリーン座標 (物理px) の右端境界と整合する。
+            //実描画(DWM)と一致する GenericTypographic の MeasureString で計測 (計測単位はフォームの DPI = 物理px で右端境界と整合)。
             using var g = CreateGraphics();
             float Measure(string s) => g.MeasureString(s, font, int.MaxValue, StringFormat.GenericTypographic).Width;
 
-            float spaceW = (Measure("x" + new string(' ', 100) + "x") - Measure("xx")) / 100f; //連続スペースの平均で空白1個の幅 (サブピクセル精度)
-            if (spaceW <= 0.1f)
+            float padW = (Measure("x" + new string(HelpPadChar, 50) + "x") - Measure("xx")) / 50f; //全角スペース1個の幅
+            if (padW <= 0.1f)
                 return -1;
-            spaceW *= 1.03f; //安全側: DPI 差等の残差があっても右にはみ出す (隠れる) より、わずかに左に余らせる
+            padW *= 1.02f; //安全側: わずかに左に余らせて右のボタンに被らせない
 
-            float baseW = baseText.Length == 0 ? 0 : Measure(baseText);
+            float baseW = Measure(baseText);
             float coreW = Measure(core);
-            float gapPx = availRight - (textStart + baseW) - coreW; //本文と案内の間に詰めたい余白px
-            int spaces = (int)(gapPx / spaceW);
-            return spaces < HelpMinSpaces ? HelpMinSpaces : spaces;
+            int pad = (int)((availRight - (textStart + baseW) - coreW) / padW);
+
+            //255 文字描画上限ガード: 総文字数 (baseText + pad + core) を HelpCharLimit 以下にクランプ
+            int maxByChars = Math.Max(0, HelpCharLimit - baseText.Length - core.Length);
+            if (pad > maxByChars) pad = maxByChars;
+            if (pad < HelpMinPad) pad = Math.Min(HelpMinPad, maxByChars);
+            return pad;
         }
         catch { return -1; }
     }
