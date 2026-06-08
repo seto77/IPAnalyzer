@@ -741,7 +741,11 @@ public partial class NumericBox : UserControlBase
 
         if (text.Length == 0)
         {
-            text = numericalValue.ToString(DecimalPlaces >= 0 ? $"f{DecimalPlaces}" : "");
+            // 260608Cl 変更: FormatSpecifier が有効ならそちらを優先し DecimalPlaces を無視する。
+            //               無効/空文字の場合は従来どおり DecimalPlaces ベースの書式を使う。
+            //text = numericalValue.ToString(DecimalPlaces >= 0 ? $"f{DecimalPlaces}" : "");
+            var format = formatSpecifierValid ? formatSpecifier : (DecimalPlaces >= 0 ? $"f{DecimalPlaces}" : "");
+            text = numericalValue.ToString(format);
             if (TrimEndZero && text.Contains('.'))
                 text = text.TrimEnd(['0']).TrimEnd(['.']);
 
