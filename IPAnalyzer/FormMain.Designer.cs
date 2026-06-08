@@ -808,7 +808,6 @@ namespace IPAnalyzer
             graphControlFrequency.AxisXTextVisible = true;
             graphControlFrequency.AxisYTextVisible = true;
             graphControlFrequency.BackgroundColor = Color.White;
-            graphControlFrequency.BottomMargin = 0D;
             graphControlFrequency.DivisionLineColor = Color.LightGray;
             graphControlFrequency.DivisionLineXVisible = true;
             graphControlFrequency.DivisionLineYVisible = true;
@@ -820,7 +819,6 @@ namespace IPAnalyzer
             graphControlFrequency.IsIntegerY = true;
             graphControlFrequency.LabelX = "Intensity:";
             graphControlFrequency.LabelY = "Frequency:";
-            graphControlFrequency.LeftMargin = 0F;
             graphControlFrequency.LineWidth = 1F;
             graphControlFrequency.LowerX = 0D;
             graphControlFrequency.LowerY = 0D;
@@ -837,7 +835,6 @@ namespace IPAnalyzer
             graphControlFrequency.UnitX = "";
             graphControlFrequency.UnitY = "";
             graphControlFrequency.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlFrequency.UpperPanelVisible = false;
             graphControlFrequency.UpperX = 1D;
             graphControlFrequency.UpperY = 1D;
             graphControlFrequency.UseLineWidth = true;
@@ -862,19 +859,17 @@ namespace IPAnalyzer
             graphControlProfile.AxisXTextVisible = true;
             graphControlProfile.AxisYTextVisible = true;
             graphControlProfile.BackgroundColor = Color.White;
-            graphControlProfile.BottomMargin = 0D;
             graphControlProfile.DivisionLineColor = Color.LightGray;
             graphControlProfile.DivisionLineXVisible = true;
             graphControlProfile.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlProfile, "graphControlProfile");
             graphControlProfile.FixRangeHorizontal = false;
             graphControlProfile.FixRangeVertical = false;
-            graphControlProfile.GraphTitle = "aaa";
+            graphControlProfile.GraphTitle = "";
             graphControlProfile.IsIntegerX = false;
             graphControlProfile.IsIntegerY = false;
             graphControlProfile.LabelX = "Angle:";
             graphControlProfile.LabelY = "Intensity:";
-            graphControlProfile.LeftMargin = 0F;
             graphControlProfile.LineWidth = 1F;
             graphControlProfile.LowerX = 0D;
             graphControlProfile.LowerY = 0D;
@@ -891,7 +886,6 @@ namespace IPAnalyzer
             graphControlProfile.UnitX = "";
             graphControlProfile.UnitY = "";
             graphControlProfile.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlProfile.UpperPanelVisible = false;
             graphControlProfile.UpperX = 1D;
             graphControlProfile.UpperY = 1D;
             graphControlProfile.UseLineWidth = true;

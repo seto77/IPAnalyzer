@@ -93,7 +93,7 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
 
         //260605Cl 追加: CrystalControl 内の対称性情報/散乱因子サブウィンドウの F1 ヘルプ先を付録ページに設定。
         crystalControl1.FormSymmetryInformation.HelpPage = "appendix/a4-symmetry-information";
-        crystalControl1.FormScatteringFactor.HelpPage = "appendix/a5-scattering-factor";
+        crystalControl1.FormBeamInteraction.HelpPage = "appendix/a5-scattering-factor";
 
         crystalControl1.Crystal = new Crystal((0.407825, 0.407825, 0.407825, Math.PI / 2, Math.PI / 2, Math.PI / 2), 523, "Au", Color.Violet);
     }

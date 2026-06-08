@@ -1027,7 +1027,6 @@
             graphControl1.AxisXTextVisible = true;
             graphControl1.AxisYTextVisible = true;
             graphControl1.BackgroundColor = System.Drawing.Color.White;
-            graphControl1.BottomMargin = 0D;
             graphControl1.DivisionLineColor = System.Drawing.Color.LightGray;
             graphControl1.DivisionLineXVisible = true;
             graphControl1.DivisionLineYVisible = true;
@@ -1040,7 +1039,6 @@
             graphControl1.IsIntegerY = false;
             graphControl1.LabelX = "X:";
             graphControl1.LabelY = "Y:";
-            graphControl1.LeftMargin = 0F;
             graphControl1.LineWidth = 1F;
             graphControl1.LowerX = 0D;
             graphControl1.LowerY = 0D;
@@ -1059,7 +1057,6 @@
             graphControl1.UnitX = "";
             graphControl1.UnitY = "";
             graphControl1.UpperPanelFont = new System.Drawing.Font("Segoe UI Symbol", 9F);
-            graphControl1.UpperPanelVisible = true;
             graphControl1.UpperX = 1D;
             graphControl1.UpperY = 1D;
             graphControl1.UseLineWidth = true;
@@ -1081,7 +1078,7 @@
             crystalControl1.DefaultTabNumber = 0;
             crystalControl1.Gamma = 0D;
             crystalControl1.Name = "crystalControl1";
-            crystalControl1.ScatteringFactorVisible = false;
+            crystalControl1.BeamInteractionVisible = false;
             crystalControl1.SkipEvent = false;
             crystalControl1.SymmetryInformationVisible = false;
             crystalControl1.SymmetrySeriesNumber = 0;

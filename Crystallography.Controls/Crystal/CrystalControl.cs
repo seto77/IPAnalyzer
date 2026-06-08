@@ -21,39 +21,53 @@ public partial class CrystalControl : UserControlBase
     public bool SkipEvent { get; set; } = false;
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+    [DefaultValue(false)] // 260607Cl
     public bool SymmetryInformationVisible { get => FormSymmetryInformation.Visible; set => FormSymmetryInformation.Visible = value; }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-    public bool ScatteringFactorVisible { get => FormScatteringFactor.Visible; set => FormScatteringFactor.Visible = value; }
+    [DefaultValue(false)] // 260607Cl
+    public bool BeamInteractionVisible { get => FormBeamInteraction.Visible; set => FormBeamInteraction.Visible = value; }
 
     public bool StrainControlVisible => formStrain.Visible;
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+    [DefaultValue(true)] // 260607Cl
     public bool ColorControlVisible { get => colorControl.Visible; set => colorControl.Visible = value; }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+    [DefaultValue(0)] // 260607Cl
     public int SymmetrySeriesNumber { get => symmetryControl.SymmetrySeriesNumber; set => symmetryControl.SymmetrySeriesNumber = value; }
 
     #region Tab ページの表示/非表示
 
+    [DefaultValue(true)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleBasicInfoTab { get => visibleBasicInfoTab; set { visibleBasicInfoTab = value; setTabPages(); } }
     private bool visibleBasicInfoTab = true;
+    [DefaultValue(true)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleAtomTab { get => visibleAtomTab; set { visibleAtomTab = value; setTabPages(); } }
     private bool visibleAtomTab = true;
+    [DefaultValue(true)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleElasticityTab { get => visibleElasticityTab; set { visibleElasticityTab = value; setTabPages(); } }
     private bool visibleElasticityTab = true;
+    [DefaultValue(true)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleBondsPolyhedraTab { get => visibleBondsPolyhedraTab; set { visibleBondsPolyhedraTab = value; setTabPages(); } }
     private bool visibleBondsPolyhedraTab = true;
+    [DefaultValue(true)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleReferenceTab { get => visibleReferenceTab; set { visibleReferenceTab = value; setTabPages(); } }
     private bool visibleReferenceTab = true;
+    [DefaultValue(true)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleEOSTab { get => visibleEOSTab; set { visibleEOSTab = value; setTabPages(); } }
     private bool visibleEOSTab = true;
+    [DefaultValue(false)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleStressStrainTab { get => visibleStressStrainTab; set { visibleStressStrainTab = value; setTabPages(); } }
     private bool visibleStressStrainTab = false;
+    [DefaultValue(false)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisiblePolycrystallineTab { get => visiblePolycrystallineTab; set { visiblePolycrystallineTab = value; setTabPages(); } }
     private bool visiblePolycrystallineTab = false;
+    [DefaultValue(false)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleBoundTab { get => visibleBoundTab; set { visibleBoundTab = value; setTabPages(); } }
     private bool visibleBoundTab = false;
+    [DefaultValue(false)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public bool VisibleLatticePlaneTab { get => visibleLatticePlaneTab; set { visibleLatticePlaneTab = value; setTabPages(); } }
     private bool visibleLatticePlaneTab = false;
 
@@ -105,19 +119,26 @@ public partial class CrystalControl : UserControlBase
         set => symmetryControl.CellConstants = value;
     }
 
+    [DefaultValue(0.0)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public double A { get => symmetryControl.A; set => symmetryControl.A = value; }
+    [DefaultValue(0.0)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public double B { get => symmetryControl.B; set => symmetryControl.B = value; }
+    [DefaultValue(0.0)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public double C { get => symmetryControl.C; set => symmetryControl.C = value; }
+    [DefaultValue(0.0)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public double Alpha { get => symmetryControl.Alpha; set => symmetryControl.Alpha = value; }
+    [DefaultValue(0.0)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public double Beta { get => symmetryControl.Beta; set => symmetryControl.Beta = value; }
+    [DefaultValue(0.0)] // 260607Cl
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public double Gamma { get => symmetryControl.Gamma; set => symmetryControl.Gamma = value; }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+    [DefaultValue(0)] // 260607Cl
     public int DefaultTabNumber { get => tabControl.SelectedIndex; set => tabControl.SelectedIndex = value; }
 
     public event EventHandler CrystalChanged;
 
-    public FormScatteringFactor FormScatteringFactor;
+    public FormBeamInteraction FormBeamInteraction;
     public FormSymmetryInformation FormSymmetryInformation;
     public FormStrain formStrain;
 
@@ -127,11 +148,11 @@ public partial class CrystalControl : UserControlBase
     {
         InitializeComponent();
 
-        FormScatteringFactor = new FormScatteringFactor { CrystalControl = this, Visible = false };
+        FormBeamInteraction = new FormBeamInteraction { CrystalControl = this, Visible = false };
         FormSymmetryInformation = new FormSymmetryInformation { CrystalControl = this, Visible = false };
         formStrain = new FormStrain { CrystalControl = this, Visible = false };
 
-        FormScatteringFactor.VisibleChanged += formScatteringFactor_VisibleChanged;
+        FormBeamInteraction.VisibleChanged += formBeamInteraction_VisibleChanged;
         FormSymmetryInformation.VisibleChanged += formSymmetryInformation_VisibleChanged;
     }
 
@@ -141,7 +162,7 @@ public partial class CrystalControl : UserControlBase
         typeof(UserControl).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(this, true, null);
     }
 
-    public event EventHandler ScatteringFactor_VisibleChanged;
+    public event EventHandler BeamInteraction_VisibleChanged;
     public event EventHandler SymmetryInformation_VisibleChanged;
 
     #region Crystal クラスを画面下部から生成 / にセット
@@ -438,12 +459,12 @@ public partial class CrystalControl : UserControlBase
     }
     #endregion
 
-    #region SymmetryInformation / ScatteringFactor の表示
+    #region SymmetryInformation / BeamInteraction の表示
     private void buttonSymmetryInfo_Click(object sender, EventArgs e) => FormSymmetryInformation.Visible = !FormSymmetryInformation.Visible;
     private void formSymmetryInformation_VisibleChanged(object sender, EventArgs e) => SymmetryInformation_VisibleChanged?.Invoke(sender, e);
 
-    private void buttonScatteringFactor_Click(object sender, EventArgs e) => FormScatteringFactor.Visible = !FormScatteringFactor.Visible;
-    private void formScatteringFactor_VisibleChanged(object sender, EventArgs e) => ScatteringFactor_VisibleChanged?.Invoke(sender, e);
+    private void buttonBeamInteraction_Click(object sender, EventArgs e) => FormBeamInteraction.Visible = !FormBeamInteraction.Visible;
+    private void formBeamInteraction_VisibleChanged(object sender, EventArgs e) => BeamInteraction_VisibleChanged?.Invoke(sender, e);
     #endregion
 
     #region リサイズ中は描画停止
@@ -477,7 +498,7 @@ public partial class CrystalControl : UserControlBase
             Crystal.ExportCIF(dlg.FileName);
     }
 
-    private void scatteringFactorToolStripMenuItem_Click(object sender, EventArgs e) => FormScatteringFactor.Visible = !FormScatteringFactor.Visible;
+    private void beamInteractionToolStripMenuItem_Click(object sender, EventArgs e) => FormBeamInteraction.Visible = !FormBeamInteraction.Visible;
     private void symmetryInformationToolStripMenuItem_Click(object sender, EventArgs e) => FormSymmetryInformation.Visible = !FormSymmetryInformation.Visible;
 
     private void sendThisCrystalToOtherSoftwareToolStripMenuItem_Click(object sender, EventArgs e)
@@ -783,7 +804,7 @@ public partial class CrystalControl : UserControlBase
         set
         {
             var enabled = value && crystal != null && crystal.MillerBravaisCapable; // 260517Cl 共通式の一度きり評価、crystal null 防御
-            FormSymmetryInformation.MillerBravais = FormScatteringFactor.MillerBravais = enabled;
+            FormSymmetryInformation.MillerBravais = FormBeamInteraction.MillerBravais = enabled;
             latticePlaneControl.MillerBravaisIndex = boundControl.MillerBravaisIndex = enabled;
         }
     }

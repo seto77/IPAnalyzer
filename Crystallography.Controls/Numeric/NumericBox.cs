@@ -155,6 +155,7 @@ public partial class NumericBox : UserControlBase
     [Localizable(true)]
     [Browsable(false)] // 260531Cl 追加: デザイナのプロパティグリッドから隠す。標準 ToolTip 拡張子("ToolTip on toolTip1")と二重に並んで「どちらに書くか」迷う問題を解消。Localizable は残すので既存 resx 値は従来通り適用され、子(textBox/ラベル)への配布=hover も維持される
     [EditorBrowsable(EditorBrowsableState.Never)] // 260531Cl 追加: IntelliSense からも隠す(廃止予定プロパティ。ValueFont 等と同作法)
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] // 260607Cl 追加: 廃止予定プロパティを今後一切シリアライズさせない。Browsable(false)/DefaultValue("") だけでは抑止しきれず消費側に "= \"\"" が再発し得るため。Hidden は書込のみ抑止し、ApplyResources による既存 resx 値の読込/子への配布(hover)には影響しない
     [Category("Behavior")]
     public string ToolTip
     {
@@ -219,7 +220,8 @@ public partial class NumericBox : UserControlBase
     public Padding HeaderPadding { set => labelHeader.Padding = value; get => labelHeader.Padding; }
 
     [Localizable(true)]
-    [DefaultValue(typeof(Font), "Segoe UI Symbol, 9.75pt")]
+    //[DefaultValue(typeof(Font), "Segoe UI Symbol, 9.75pt")]                                                                                          // 260607Cl 修正: "Segoe UI Symbol" は記号フォントで誤り。resx の labelHeader.Font は "Segoe UI, 9.75pt" なので属性も実値に合わせる (font policy: Segoe UI / Yu Gothic UI)
+    [DefaultValue(typeof(Font), "Segoe UI, 9.75pt")]
     [Category("Header && Footer")]
     public Font HeaderFont { set => labelHeader.Font = value; get => labelHeader.Font; }
 
@@ -227,7 +229,8 @@ public partial class NumericBox : UserControlBase
     [Category("Header && Footer")]
     public Color HeaderForeColor { set => labelHeader.ForeColor = value; get => labelHeader.ForeColor; }
 
-    [DefaultValue(typeof(Color), "Transparent")]
+    //[DefaultValue(typeof(Color), "Transparent")]                                                                                                     // 260607Cl 修正: 実測で構築直後の getter (labelHeader.BackColor) は SystemColors.Control を返す (resx に BackColor 指定が無く、未設定 Label は親 Transparent を継承せず DefaultBackColor=Control に解決)。属性を実値に合わせ、消費側 146 件の冗長 "= SystemColors.Control" を抑止
+    [DefaultValue(typeof(Color), "Control")]
     [Category("Header && Footer")]
     public Color HeaderBackColor { set => labelHeader.BackColor = value; get => labelHeader.BackColor; }
 
@@ -254,7 +257,8 @@ public partial class NumericBox : UserControlBase
     public Padding FooterPadding { set => labelFooter.Padding = value; get => labelFooter.Padding; }
 
     [Category("Header && Footer")]
-    [DefaultValue(typeof(Font), "Segoe UI Symbol, 9.75pt")]
+    //[DefaultValue(typeof(Font), "Segoe UI Symbol, 9.75pt")]                                                                                          // 260607Cl 修正: HeaderFont と同様 "Segoe UI Symbol" は誤り。resx の labelFooter.Font = "Segoe UI, 9.75pt" に合わせる
+    [DefaultValue(typeof(Font), "Segoe UI, 9.75pt")]
     [Localizable(true)]
     public Font FooterFont { set => labelFooter.Font = value; get => labelFooter.Font; }
 
@@ -262,7 +266,8 @@ public partial class NumericBox : UserControlBase
     [Category("Header && Footer")]
     public Color FooterForeColor { set => labelFooter.ForeColor = value; get => labelFooter.ForeColor; }
 
-    [DefaultValue(typeof(Color), "Transparent")]
+    //[DefaultValue(typeof(Color), "Transparent")]                                                                                                     // 260607Cl 修正: HeaderBackColor と同様、構築直後の getter は SystemColors.Control。属性を実値に合わせ消費側 146 件の冗長行を抑止
+    [DefaultValue(typeof(Color), "Control")]
     [Category("Header && Footer")]
     public Color FooterBackColor { set => labelFooter.BackColor = value; get => labelFooter.BackColor; }
     #endregion
@@ -384,6 +389,37 @@ public partial class NumericBox : UserControlBase
     }
     private int decimalPlaces = -1;
 
+    /// <summary>
+    /// 数値書式指定子 (.NET の数値書式文字列。例: "f3", "e2", "0.###", "N0")。
+    /// 空文字 (既定) または不正な書式の場合は <see cref="DecimalPlaces"/> に従う従来どおりの挙動。
+    /// 有効な書式が指定されている場合は <see cref="DecimalPlaces"/> を無視してこちらを優先する。
+    /// </summary>
+    [DefaultValue("")]
+    [Category("Value format")]
+    public string FormatSpecifier // 260608Cl 追加
+    {
+        set
+        {
+            formatSpecifier = value ?? "";
+            formatSpecifierValid = isValidFormatSpecifier(formatSpecifier); // 有効性を判定してキャッシュ
+            textBox.Text = GetString();
+        }
+        get => formatSpecifier;
+    }
+    private string formatSpecifier = ""; // 260608Cl 追加
+    private bool formatSpecifierValid = false; // 260608Cl 追加 FormatSpecifier が有効な書式かどうかのキャッシュ
+
+    // 260608Cl 追加: 書式文字列が double.ToString で例外を投げないか判定する。
+    // 空文字は「DecimalPlaces を使う」ことを意味するので無効扱い (false) とする。
+    // (単独の未知標準書式指定子は FormatException を投げるため、これでタイプミス等を弾ける)
+    private static bool isValidFormatSpecifier(string format)
+    {
+        if (string.IsNullOrEmpty(format))
+            return false;
+        try { _ = 0.0.ToString(format); return true; }
+        catch (FormatException) { return false; }
+    }
+
     /// <summary>小数点以下のゼロの記号を削除するかどうか</summary>
     [DefaultValue(false)]
     [Category("Value format")]
@@ -465,6 +501,15 @@ public partial class NumericBox : UserControlBase
         //   アンチエイリアスを改善し、TextBox (常に GDI で描画) と描画パスを揃える。
         labelHeader.UseCompatibleTextRendering = false;
         labelFooter.UseCompatibleTextRendering = false;
+
+        // 260607Cl 追加: labelHeader/labelFooter の BackColor を Label 標準既定 (SystemColors.Control) に明示固定する。
+        // 未設定だと親 NumericBox.BackColor=Transparent を継承して実行時は Transparent に解決される一方、
+        // 設計時シリアライザは (親未接続のタイミングで) DefaultBackColor=Control を返すため設計時/実行時で
+        // getter 値が食い違い、消費側 Designer.cs に "HeaderBackColor = Control" が大量直列化されていた。
+        // 明示的に Control を設定して両者を一致させ、[DefaultValue(Control)] が冗長直列化を正しく抑止する。
+        // (260607Cl: 旧来の見た目=灰背景を維持。透明にしたい場合は SystemColors.Control → Color.Transparent + DefaultValue を Transparent に)
+        labelHeader.BackColor = SystemColors.Control;
+        labelFooter.BackColor = SystemColors.Control;
 
         applyLabelOrientation();                                                                                                                      // 260428Cl 追加: orientation 別の Dock/TextAlign を初期化
 

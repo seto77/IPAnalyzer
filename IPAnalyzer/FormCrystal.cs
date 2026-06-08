@@ -32,7 +32,7 @@ namespace IPAnalyzer
 
             //260605Cl 追加: CrystalControl 内の対称性情報/散乱因子サブウィンドウの F1 ヘルプ先を付録ページに設定。
             crystalControl.FormSymmetryInformation.HelpPage = "appendix/a4-symmetry-information";
-            crystalControl.FormScatteringFactor.HelpPage = "appendix/a5-scattering-factor";
+            crystalControl.FormBeamInteraction.HelpPage = "appendix/a5-scattering-factor";
 
             //
             // TODO: InitializeComponent 呼び出しの後に、コンストラクタ コードを追加してください。

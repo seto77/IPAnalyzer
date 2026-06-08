@@ -561,7 +561,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
             g.AllowMouseOperation = checkBoxMouseOperation.Checked;
             g.GraphTitle = "";
             
-            g.UpperPanelVisible = true;
+            //g.UpperPanelVisible = true;//260607Cl 廃止: UpperPanelVisible 撤去。GraphTitle="" + MousePositionVisible=false により上部パネルは自動で非表示になる
             g.MousePositionVisible = false;
             
             g.VerticalLineColor = Color.Red;
