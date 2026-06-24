@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyVersion>2026.6.8.0320</AssemblyVersion>
-    <FileVersion>2026.6.8.0320</FileVersion>
+    <AssemblyVersion>2026.6.24.1212</AssemblyVersion>
+    <FileVersion>2026.6.24.1212</FileVersion>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <StartupObject>IPAnalyzer.Program</StartupObject>
     <DebugType>embedded</DebugType>
@@ -14,7 +14,12 @@
     <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Platforms>x64</Platforms>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- 260625Cl: design-time ビルド (WinForms デザイナーが参照を集める background build) では RID を外す。
+         RID を無条件で持つと out-of-process デザイナー (DesignToolsServer) が別プロジェクトの基底クラス
+         Crystallography.Controls.FormBase をロードできず「基本クラス … を読み込めませんでした」になる (4 アプリ共通)。
+         F5・CLI ビルド・publish は従来どおり win-x64 (DesignTimeBuild!=true なので影響なし。CLI publish は -r で global property 上書き)。
+         旧: <RuntimeIdentifier>win-x64</RuntimeIdentifier> (無条件) -->
+    <RuntimeIdentifier Condition="'$(DesignTimeBuild)' != 'true'">win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
