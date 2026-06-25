@@ -470,6 +470,10 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 260625Cl 追加: release job は checkout しない (artifact のみ) ため .git が無く、gh が repo を特定できず
+          #   "failed to run git: fatal: not a git repository" で gh release create が落ちる。GH_REPO で repo を明示する
+          #   (--target は明示 SHA なので API のみで tag+release を作れる。checkout 不要)。
+          GH_REPO: ${{ github.repository }}
           DRY_RUN: ${{ inputs.dry_run }}
           ARM64_BUILD: ${{ needs.build-arm64.result }}
           ARM64_SMOKE: ${{ needs.smoke-arm64.result }}
