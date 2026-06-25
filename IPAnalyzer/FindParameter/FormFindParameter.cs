@@ -2262,7 +2262,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         }//2imageモード終了
 
         toolStripProgressBar1.Value = toolStripProgressBar1.Maximum;
-        toolStripStatusLabel1.Text = "Completed !  Elapsed time: " + (sw.ElapsedMilliseconds / 1000.0).ToString("f2") + "sec.";
+        toolStripStatusLabel1.Text = string.Format(Crystallography.Localization.Loc(en: "Completed !  Elapsed time: {0}sec.", ja: "完了 !  経過時間: {0}秒"), (sw.ElapsedMilliseconds / 1000.0).ToString("f2")); // 260626Cl Loc化
     }
 
     /// <summary>
@@ -2512,7 +2512,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
             g.SmoothingMode = SmoothingMode.HighQuality;
             g.Clear(Color.White);
 
-            g.DrawString(IsPrimary ? "Primary" : "Secondary", TahomaFont8, Brushes.Black, 0, 0);
+            g.DrawString(IsPrimary ? Crystallography.Localization.Loc(en: "Primary", ja: "プライマリ") : Crystallography.Localization.Loc(en: "Secondary", ja: "セカンダリ"), TahomaFont8, Brushes.Black, 0, 0); // 260626Cl Loc化
 
             //目盛りを描く
             double graduation;
