@@ -1,5 +1,15 @@
 # 260406Cl IPAnalyzer 用に PDIndexer の release.yml を改修
 # 260602Cl portable ZIP も同じリリースに添付するため、MSI を主配布のまま workflow 名を更新
+# 260625Cl WiX 移行 Phase B/C: 旧 vdproj/devenv ビルド経路を全廃し、単一 job を 5 job (prepare/build-x64/build-arm64/
+#   smoke-arm64/release) に再編。staging publish + dotnet build WiX に置換し、arm64 (portable ZIP + MSI) を同一 run で
+#   ビルド・windows-11-arm 実機で smoke して x64 と一緒に 1 回の gh release create で原子的に公開する。
+#   PDIndexer\.github\workflows\release.yml を移植。IPAnalyzer 固有の簡素化:
+#     * native 依存ゼロ (libxrl も Crystallography.Native も非同梱) → devenv / native ビルド・libxrl 配線・LoadLibrary が全 job で不要
+#     * glfw3.dll は実行時未使用 (OpenTK 透過の死荷物) → staging/ZIP から除外。arm64 publish には元々入らない
+#     * arm64 smoke は xraylib 非使用のため --smoke ではなく既存 --capture (全フォーム構築) を機能ゲートに使う
+#   ★不変条件「x64 は arm64 の成否に連動しない」を維持: release job は build-x64 成功のみ必須とし、arm64 (build/smoke) が
+#   失敗したら x64 のみ公開して †脚注を残す (フォールバック)。FileVersion は prepare で 1 度算出し x64/arm64 双方へ渡して
+#   完全一致させる (same-version cross-grade 要件)。
 name: Build And Release Installer And Portable ZIP
 
 on:
@@ -13,39 +23,51 @@ on:
         description: "既存リリースを削除してリビルドする"
         type: boolean
         default: false
+      dry_run:
+        description: "x64+arm64 をビルド・smoke するが release は作らない (資産は artifact のみ)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 jobs:
-  release:
-    runs-on: windows-2025-vs2026
-    timeout-minutes: 30
-
+  # ---- 1. prepare: 版数解析・リリース要否判定・FileVersion 算出 (gh + git だけなので ubuntu) ----
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      needed: ${{ steps.version.outputs.needed }}
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+      product_version: ${{ steps.version.outputs.product_version }}
+      assembly_version: ${{ steps.version.outputs.assembly_version }}
+      history_line: ${{ steps.version.outputs.history_line }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
-          submodules: recursive # 260624Cl shared libs are git submodules
+          fetch-depth: 0 # assembly_version 用に GITHUB_SHA の commit 時刻を git log で引くため全履歴が要る
 
       - name: Parse version and check if release needed
         id: version
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          $content = Get-Content "IPAnalyzer\Version.cs" -Raw
-          if ($content -notmatch 'ver(\d+\.\d+)\(') {
-            throw "Could not parse version from Version.cs History."
-          }
+          $content = Get-Content "IPAnalyzer/Version.cs" -Raw
+          if ($content -notmatch 'ver(\d+\.\d+)\(') { throw "Could not parse version from Version.cs History." }
           $ver = $Matches[1]
           $tag = "v.$ver"
+          $dryRun = $env:DRY_RUN -eq 'true'
 
-          # 同じバージョンのリリースが既にあればスキップ (force 時は既存を削除して続行)
+          # 同じバージョンのリリースが既にあれば: dry_run は検証目的なので続行 (release job が create をスキップ)、
+          #   force は既存を削除して続行、いずれでもなければスキップ。
           gh release view $tag 2>&1 | Out-Null
           $releaseExists = ($LASTEXITCODE -eq 0)
           $global:LASTEXITCODE = 0
-          if ($releaseExists) {
+          if ($releaseExists -and -not $dryRun) {
             if ("${{ inputs.force }}" -eq "true") {
               Write-Host "Force mode: deleting existing release $tag..."
               gh release delete $tag --yes
@@ -58,230 +80,467 @@ jobs:
             }
           }
 
-          # History の先頭行をリリースノートに使う
+          # History の先頭行をリリースノートに使う (release job が notes を組む)
           $historyLine = ([regex]::Match($content, 'ver[^\r\n"]+').Value).Trim()
-          $notesPath = Join-Path $env:RUNNER_TEMP "release-notes.txt"
-          # $historyLine | Set-Content -Path $notesPath -Encoding UTF8 # 260602Cl 旧: 変更履歴 1 行のみ
-          @( # 260602Cl MSI を第一候補、portable ZIP を管理PC向け代替として release notes に明記
-            $historyLine
-            ""
-            "Assets:"
-            "- IPAnalyzerSetup.msi: recommended installer."
-            "- IPAnalyzer-v.$ver-win-x64-portable.zip: no-install, self-contained alternative for managed Windows PCs."
-            "- SHA256SUMS.txt: SHA256 hashes for release files."
-          ) | Set-Content -Path $notesPath -Encoding UTF8
 
-          # AssemblyVersion / FileVersion 用のタイムスタンプ (yyyy.M.d.HHmm UTC)
-          $now = [System.DateTime]::UtcNow
+          # AssemblyVersion / FileVersion 用タイムスタンプ。x64⇔arm64 の same-version cross-grade には両 MSI の
+          #   FileVersion 完全一致が必要。release commit (GITHUB_SHA) の commit 時刻にアンカーし決定論化する
+          #   (同一 run の x64/arm64 がこの 1 値を共有。arm64 へは build-arm64-portable.yml の入力で渡す)。
+          $now = ([System.DateTimeOffset]::Parse((git log -1 --format=%cI $env:GITHUB_SHA))).UtcDateTime
           $assemblyVer = "$($now.Year).$($now.Month).$($now.Day).$($now.ToString('HHmm'))"
 
-          Write-Host "New version detected: $ver (tag: $tag, assembly: $assemblyVer)"
-          "needed=true"           >> $env:GITHUB_OUTPUT
-          "version=$ver"          >> $env:GITHUB_OUTPUT
-          "tag=$tag"              >> $env:GITHUB_OUTPUT
+          Write-Host "Version: $ver (tag: $tag, assembly: $assemblyVer, dryRun: $dryRun)"
+          "needed=true"            >> $env:GITHUB_OUTPUT
+          "version=$ver"           >> $env:GITHUB_OUTPUT
+          "tag=$tag"               >> $env:GITHUB_OUTPUT
           "product_version=0.$ver" >> $env:GITHUB_OUTPUT
-          "notes_path=$notesPath" >> $env:GITHUB_OUTPUT
           "assembly_version=$assemblyVer" >> $env:GITHUB_OUTPUT
+          "history_line=$historyLine" >> $env:GITHUB_OUTPUT
 
-      # ---- 以降、新バージョンが検出されたときのみ実行 ----
+  # ---- 2. build-x64: x64 MSI (+旧名コピー) + portable ZIP ----
+  build-x64:
+    needs: prepare
+    if: needs.prepare.outputs.needed == 'true'
+    runs-on: windows-2025-vs2026
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive # shared libs are git submodules
 
       - name: Setup .NET 10
-        if: steps.version.outputs.needed == 'true'
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: "10.0.x"
 
       - name: Restore managed dependencies
-        if: steps.version.outputs.needed == 'true'
         shell: pwsh
         run: dotnet restore IPAnalyzer\IPAnalyzer.csproj
 
-      - name: Find devenv.com
-        if: steps.version.outputs.needed == 'true'
-        id: devenv
+      # IPAnalyzer は native 依存ゼロのため devenv / native ビルドは無い。
+      - name: Stage MSI payload (framework-dependent publish)
         shell: pwsh
         run: |
-          $devenvExe = (& "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property productPath).Trim()
-          if (-not $devenvExe) { throw "Visual Studio was not found." }
-          $cli = [System.IO.Path]::ChangeExtension($devenvExe, ".com")
-          if (-not (Test-Path $cli)) { throw "devenv.com was not found." }
-          Write-Host "devenv.com: $cli"
-          "cli=$cli" >> $env:GITHUB_OUTPUT
+          $s = "artifacts\staging-msi-x64"
+          dotnet publish IPAnalyzer\IPAnalyzer.csproj -c Release -p:Platform=x64 --self-contained false -o $s --no-restore `
+            -p:AssemblyVersion=${{ needs.prepare.outputs.assembly_version }} -p:FileVersion=${{ needs.prepare.outputs.assembly_version }}
+          if ($LASTEXITCODE -ne 0) { throw "x64 publish failed." }
+          # glfw3.dll を除外 (IPAnalyzer は GLFW/GLControl を生成せず実行時未使用)
+          Get-ChildItem $s -Filter "glfw3*.dll" -ErrorAction SilentlyContinue | Remove-Item -Force
+          Copy-Item IPAnalyzerSetup.Wix\LICENSE.rtf, IPAnalyzerSetup.Wix\REQUIREMENT.rtf $s
+          Get-ChildItem $s -Filter *.pdb | Remove-Item
+          if (Test-Path "$s\README-PORTABLE.txt") { throw "README-PORTABLE.txt leaked (portable marker must not be in MSI)" }
+          if (Test-Path "$s\coreclr.dll") { throw "self-contained runtime leaked into framework-dependent staging" }
+          if (Test-Path "$s\glfw3.dll") { throw "glfw3.dll leaked (must be excluded)" }
+          if (Test-Path "$s\libxrl-11.dll") { throw "libxrl-11.dll appeared (IPAnalyzer does not bundle xraylib)" }
+          if (Get-ChildItem $s -Filter "Crystallography.Native*" -ErrorAction SilentlyContinue) { throw "Crystallography.Native* appeared (IPAnalyzer does not bundle it)" }
+          if (-not (Test-Path "$s\IPAnalyzer.exe")) { throw "IPAnalyzer.exe missing from staging" }
+          $controlsCultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
+          $missing = $controlsCultures | Where-Object { -not (Test-Path "$s\$_\Crystallography.Controls.resources.dll") }
+          if ($missing) { throw "Crystallography.Controls satellite missing for culture(s): $($missing -join ', ')" }
+          if (-not (Test-Path "$s\ja\IPAnalyzer.resources.dll")) { throw "IPAnalyzer ja satellite missing" }
+          Write-Host "MSI staging OK: $((Get-ChildItem $s -Recurse -File).Count) files"
 
-      - name: Build managed application
-        if: steps.version.outputs.needed == 'true'
-        shell: pwsh
-        run: dotnet build IPAnalyzer\IPAnalyzer.csproj -c Release -p:Platform=x64 -p:AssemblyVersion=${{ steps.version.outputs.assembly_version }} -p:FileVersion=${{ steps.version.outputs.assembly_version }} --no-restore
-
-      - name: Update installer version in vdproj
-        if: steps.version.outputs.needed == 'true'
-        shell: pwsh
-        run: |
-          $vdproj = Get-Content "IPAnalyzerSetup\IPAnalyzerSetup.vdproj" -Raw
-
-          # ProductVersion を更新 (例: "8:0.3.973")
-          $vdproj = $vdproj -replace '"ProductVersion" = "8:[^"]*"', '"ProductVersion" = "8:${{ steps.version.outputs.product_version }}"'
-
-          # ProductCode と PackageCode を新しい GUID に更新 (UpgradeCode は変えない)
-          $newProductCode = ([guid]::NewGuid()).ToString("B").ToUpper()
-          $newPackageCode = ([guid]::NewGuid()).ToString("B").ToUpper()
-          $vdproj = $vdproj -replace '"ProductCode" = "8:\{[^}]+\}"', "`"ProductCode`" = `"8:$newProductCode`""
-          $vdproj = $vdproj -replace '"PackageCode" = "8:\{[^}]+\}"', "`"PackageCode`" = `"8:$newPackageCode`""
-
-          Set-Content "IPAnalyzerSetup\IPAnalyzerSetup.vdproj" $vdproj -NoNewline
-          Write-Host "ProductVersion = 0.${{ steps.version.outputs.version }}"
-          Write-Host "ProductCode    = $newProductCode"
-          Write-Host "PackageCode    = $newPackageCode"
-
-      - name: Disable out-of-proc setup project build
-        if: steps.version.outputs.needed == 'true'
-        shell: pwsh
-        run: |
-          $visualStudioRoot = "HKCU:\Software\Microsoft\VisualStudio"
-          Get-ChildItem $visualStudioRoot -ErrorAction SilentlyContinue |
-            Where-Object { $_.PSChildName -like '17.0*_Config' -or $_.PSChildName -like '18.0*_Config' } |
-            ForEach-Object {
-              $key = Join-Path $_.PSPath "MSBuild"
-              if (-not (Test-Path $key)) { New-Item -Path $key -Force | Out-Null }
-              New-ItemProperty -Path $key -Name DisableOutOfProcBuild -PropertyType DWord -Value 1 -Force | Out-Null
-              Write-Host "Set DisableOutOfProcBuild=1 at $key"
-            }
-
-      - name: Create installer-only solution
-        if: steps.version.outputs.needed == 'true'
-        id: pack_solution
-        shell: pwsh
-        run: |
-          $solutionPath = Join-Path (Get-Location) "IPAnalyzerSetup.CI.sln"
-          @'
-          Microsoft Visual Studio Solution File, Format Version 12.00
-          # Visual Studio Version 18
-          VisualStudioVersion = 18.1.11304.174
-          MinimumVisualStudioVersion = 10.0.40219.1
-          Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPAnalyzer", "IPAnalyzer\IPAnalyzer.csproj", "{FB4EF56F-1D54-4C20-B917-BD039DF5087F}"
-          EndProject
-          Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crystallography", "Crystallography\Crystallography.csproj", "{A83FB49A-D844-49F3-BB0B-57366C9C7F8E}"
-          EndProject
-          Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crystallography.Controls", "Crystallography.Controls\Crystallography.Controls.csproj", "{FD2B1025-7A73-4AD7-9C59-16F9BE24AB78}"
-          EndProject
-          Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IPAnalyzerSetup", "IPAnalyzerSetup\IPAnalyzerSetup.vdproj", "{2F0447A9-4FCC-484F-AC52-E06DD5D6D9AC}"
-          EndProject
-          Global
-          	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-          		Release|x64 = Release|x64
-          	EndGlobalSection
-          	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-          		{FB4EF56F-1D54-4C20-B917-BD039DF5087F}.Release|x64.ActiveCfg = Release|x64
-          		{A83FB49A-D844-49F3-BB0B-57366C9C7F8E}.Release|x64.ActiveCfg = Release|x64
-          		{FD2B1025-7A73-4AD7-9C59-16F9BE24AB78}.Release|x64.ActiveCfg = Release|x64
-          		{2F0447A9-4FCC-484F-AC52-E06DD5D6D9AC}.Release|x64.ActiveCfg = Release
-          		{2F0447A9-4FCC-484F-AC52-E06DD5D6D9AC}.Release|x64.Build.0 = Release
-          	EndGlobalSection
-          EndGlobal
-          '@ | Set-Content -Path $solutionPath -Encoding ASCII
-          "path=$solutionPath" >> $env:GITHUB_OUTPUT
-
-      - name: Build installer with Visual Studio
+      - name: Build installer with WiX
         id: build_installer
-        if: steps.version.outputs.needed == 'true'
         timeout-minutes: 10
         shell: pwsh
         run: |
-          $log = Join-Path $env:RUNNER_TEMP "devenv-setup.log"
-          & "${{ steps.devenv.outputs.cli }}" "${{ steps.pack_solution.outputs.path }}" /Build "Release|x64" /Project "IPAnalyzerSetup" /Out $log
-          $exitCode = $LASTEXITCODE
-          if (Test-Path $log) { Get-Content $log }
-          if ($exitCode -ne 0) { throw "IPAnalyzerSetup build failed (exit $exitCode)." }
-
-          # MSI の存在確認
-          $msi = Get-ChildItem -Path "IPAnalyzerSetup" -Filter "IPAnalyzerSetup.msi" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
-          if (-not $msi) { throw "IPAnalyzerSetup.msi was not found." }
-          Write-Host "MSI built: $($msi.FullName)"
+          dotnet build IPAnalyzerSetup.Wix\IPAnalyzerSetup.wixproj -c Release -p:InstallerPlatform=x64 `
+            -p:ProductVersion=${{ needs.prepare.outputs.product_version }} `
+            -p:StagingDir="$PWD\artifacts\staging-msi-x64"
+          if ($LASTEXITCODE -ne 0) { throw "WiX build failed (exit $LASTEXITCODE)." }
+          # 主名称 IPAnalyzer-setup.msi + 旧名互換コピー IPAnalyzerSetup.msi (同一バイト、{software}Setup.msi 自動更新固定参照を維持)
+          $msi = Get-Item "IPAnalyzerSetup.Wix\bin\Release\IPAnalyzer-setup.msi" -ErrorAction SilentlyContinue
+          if (-not $msi) { throw "IPAnalyzer-setup.msi was not found." }
+          Write-Host "MSI built: $($msi.FullName) ($($msi.Length) bytes)"
           "msi_path=$($msi.FullName)" >> $env:GITHUB_OUTPUT
+          $legacy = Join-Path (Split-Path $msi.FullName) "IPAnalyzerSetup.msi"
+          Copy-Item $msi.FullName $legacy -Force
+          "legacy_msi_path=$legacy" >> $env:GITHUB_OUTPUT
 
       - name: Publish portable ZIP
-        if: steps.version.outputs.needed == 'true'
         id: portable
         shell: pwsh
         run: |
-          # 260602Cl 管理された Windows PC 向けの代替配布。MSI が第一候補、ZIP は管理者権限や .NET Runtime 導入が難しい環境用。
-          # 260602Cl このステップは installer (MSI) ビルドより後に置くこと。self-contained publish は IPAnalyzer.csproj が
-          #   AppendRuntimeIdentifierToOutputPath=false のため obj\x64\Release / bin\Release を共有しており、DebugType=None で
-          #   再コンパイルして bin\Release を self-contained ランタイムで汚染する。MSI ビルドより前に走らせると framework-dependent
-          #   であるべき MSI に紛れ込む恐れがあるため、必ず MSI ビルド完了後に publish する。
           $publishDir = Join-Path $env:RUNNER_TEMP "IPAnalyzer-portable\IPAnalyzer"
-          $zipPath = Join-Path (Get-Location) "IPAnalyzer-v.${{ steps.version.outputs.version }}-win-x64-portable.zip"
-
+          $zipPath = Join-Path (Get-Location) "IPAnalyzer-v.${{ needs.prepare.outputs.version }}.zip"
           if (Test-Path $publishDir) { Remove-Item -LiteralPath $publishDir -Recurse -Force }
           if (Test-Path $zipPath) { Remove-Item -LiteralPath $zipPath -Force }
-
           dotnet publish IPAnalyzer\IPAnalyzer.csproj `
             -c Release `
             -r win-x64 `
             --self-contained true `
             -p:Platform=x64 `
-            -p:AssemblyVersion=${{ steps.version.outputs.assembly_version }} `
-            -p:FileVersion=${{ steps.version.outputs.assembly_version }} `
+            -p:AssemblyVersion=${{ needs.prepare.outputs.assembly_version }} `
+            -p:FileVersion=${{ needs.prepare.outputs.assembly_version }} `
             -p:PublishSingleFile=false `
             -p:PublishTrimmed=false `
             -p:DebugType=None `
             -p:DebugSymbols=false `
             -o $publishDir
-
+          if ($LASTEXITCODE -ne 0) { throw "x64 self-contained publish failed." }
+          # glfw3.dll は portable ZIP からも除外 (MSI と同方針)
+          Get-ChildItem $publishDir -Filter "glfw3*.dll" -ErrorAction SilentlyContinue | Remove-Item -Force
           Copy-Item "LICENSE.md" $publishDir -Force
-          Copy-Item "README-PORTABLE.txt" $publishDir -Force
+          Copy-Item "README-PORTABLE.txt" $publishDir -Force # portable 判定マーカー (MSI には入れない)
           Compress-Archive -Path (Join-Path (Split-Path $publishDir -Parent) "IPAnalyzer") -DestinationPath $zipPath -Force
-
           Write-Host "Portable ZIP built: $zipPath"
           "zip_path=$zipPath" >> $env:GITHUB_OUTPUT
 
-      - name: Generate release checksums
-        if: steps.version.outputs.needed == 'true'
-        id: checksums
+      - name: Collect x64 release assets
         shell: pwsh
         run: |
-          # 260602Cl MSI と portable ZIP の検証用 SHA256 を同梱する。
-          $checksums = Join-Path (Get-Location) "SHA256SUMS.txt"
-          $files = @(
-            "${{ steps.build_installer.outputs.msi_path }}",
-            "${{ steps.portable.outputs.zip_path }}"
-          )
-          $lines = foreach ($file in $files) {
-            $hash = Get-FileHash $file -Algorithm SHA256
-            "$($hash.Hash)  $(Split-Path $file -Leaf)"
-          }
-          $lines | Set-Content -Path $checksums -Encoding ASCII
-          Get-Content $checksums
-          "checksums_path=$checksums" >> $env:GITHUB_OUTPUT
+          $out = Join-Path $env:RUNNER_TEMP "x64-out"
+          New-Item -ItemType Directory -Force -Path $out | Out-Null
+          Copy-Item "${{ steps.build_installer.outputs.msi_path }}" $out
+          Copy-Item "${{ steps.build_installer.outputs.legacy_msi_path }}" $out
+          Copy-Item "${{ steps.portable.outputs.zip_path }}" $out
+          Get-ChildItem $out | ForEach-Object { Write-Host "x64 asset: $($_.Name) ($($_.Length) bytes)" }
 
-      - name: Upload workflow artifacts
-        if: steps.version.outputs.needed == 'true'
-        uses: actions/upload-artifact@v4
+      - name: Upload x64 release assets
+        uses: actions/upload-artifact@v6
         with:
-          name: IPAnalyzer-release-v.${{ steps.version.outputs.version }}
+          name: x64-release-assets
+          path: ${{ runner.temp }}/x64-out
+
+  # ---- 3. build-arm64: reusable build (二重保守なし)。prepare の FileVersion を渡して x64 と一致させる ----
+  build-arm64:
+    needs: prepare
+    if: needs.prepare.outputs.needed == 'true'
+    uses: ./.github/workflows/build-arm64-portable.yml
+    with:
+      assembly_version: ${{ needs.prepare.outputs.assembly_version }}
+    permissions:
+      contents: read
+
+  # ---- 4. smoke-arm64: windows-11-arm 実機で smoke → 検証済み ZIP+MSI を artifact 化 ----
+  # このジョブが失敗しても release job は走る (フォールバックで x64 のみ公開)。想定故障は「ビルド緑・実行時死亡」型なので
+  # PE 検査 + IPAnalyzer.exe --capture (全フォーム構築) + GUI 起動 + MSI install/--capture/uninstall を実機で行う。
+  smoke-arm64:
+    needs: [prepare, build-arm64]
+    if: needs.prepare.outputs.needed == 'true'
+    runs-on: windows-11-arm # arm64 ネイティブランナー (public repo 無料)
+    timeout-minutes: 30
+    steps:
+      - name: Resolve arm64 asset names
+        id: names
+        shell: pwsh
+        run: |
+          $ver = "${{ needs.prepare.outputs.version }}"
+          "zip_name=IPAnalyzer-v.${ver}_arm64.zip" >> $env:GITHUB_OUTPUT
+          "msi_name=IPAnalyzer-setup_arm64.msi"    >> $env:GITHUB_OUTPUT
+
+      - name: Verify version consistency between prepare and build
+        shell: pwsh
+        run: |
+          if ('${{ needs.prepare.outputs.version }}' -ne '${{ needs.build-arm64.outputs.version }}') {
+            throw "Version mismatch: prepare=${{ needs.prepare.outputs.version }} build=${{ needs.build-arm64.outputs.version }}"
+          }
+
+      - name: Download portable artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ needs.build-arm64.outputs.artifact_name }}
+          path: ${{ runner.temp }}/arm64-artifact
+
+      - name: Download arm64 MSI artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ needs.build-arm64.outputs.msi_artifact_name }}
+          path: ${{ runner.temp }}/arm64-msi
+
+      - name: "Smoke 1: PE machine + no glfw/native (arm64-native pwsh)"
+        shell: pwsh
+        run: |
+          $dir = Join-Path $env:RUNNER_TEMP "arm64-artifact/IPAnalyzer"
+          if (-not (Test-Path (Join-Path $dir "IPAnalyzer.exe"))) { throw "Artifact layout unexpected: IPAnalyzer.exe not found in $dir" }
+          function Get-PEMachine([string]$path) {
+            $b = [IO.File]::ReadAllBytes($path)
+            return [BitConverter]::ToUInt16($b, [BitConverter]::ToInt32($b, 0x3C) + 4)
+          }
+          # IPAnalyzer は native 依存ゼロ。glfw/libxrl/Native は不在が正常。
+          if (Test-Path (Join-Path $dir "glfw3.dll")) { throw "glfw3.dll present in arm64 portable (must be excluded)" }
+          if (Test-Path (Join-Path $dir "libxrl-11.dll")) { throw "libxrl-11.dll present (IPAnalyzer does not bundle xraylib)" }
+          if (Get-ChildItem $dir -Filter "Crystallography.Native*" -ErrorAction SilentlyContinue) { throw "Crystallography.Native* present (must not be bundled)" }
+          $m = Get-PEMachine (Join-Path $dir "IPAnalyzer.exe")
+          "IPAnalyzer.exe: machine=0x{0:X4}" -f $m
+          if ($m -ne 0xAA64) { throw "IPAnalyzer.exe is not ARM64 (machine=0x$($m.ToString('X4')))" }
+          Write-Host "PE machine + no-native check OK."
+
+      - name: "Smoke 2: IPAnalyzer.exe --capture (all forms build under arm64)"
+        shell: pwsh
+        run: |
+          # 黙殺フォールバック型故障の検出。--capture は全 parameterless-ctor フォームを reflection で構築する (引数: <出力dir> <culture>)。
+          # ★機能ゲートの設計 (レビュー指摘反映 260625Cl):
+          #   GuiCapture.Run は全フォーム構築後に無条件 Environment.Exit(0) し、managed なフォーム構築失敗は握り潰して
+          #   _capture-log.tsv の done 行 (ok=N fail=M) に集計するだけ。よって exit code は「ハードクラッシュ (arm64 codegen /
+          #   assembly load 失敗で Exit(0) に到達せず非0)」検出専用で、フォーム構築の成否は反映しない。
+          #   さらに PNG 生成は CopyFromScreen (物理画面取得) 依存で、ヘッドレス/RDP 非表示だと健全でも PNG=0 になる
+          #   (GuiCapture.cs 自身が警告)。そこで機能ゲートは画面非依存な「done 行の fail=0」で行い、PNG 枚数は情報表示のみとする。
+          #   フォーム構築成否 (ok/fail) は画面取得成否と独立に集計される (単色画面でも構築成功なら ok、PNG 保存だけスキップ)。
+          $dir = Join-Path $env:RUNNER_TEMP "arm64-artifact/IPAnalyzer"
+          $cap = Join-Path $env:RUNNER_TEMP "smoke2-capture"
+          New-Item -ItemType Directory -Force $cap | Out-Null
+          $p = Start-Process -FilePath (Join-Path $dir "IPAnalyzer.exe") -ArgumentList @("--capture", "`"$cap`"", "en") -WorkingDirectory $dir -PassThru
+          if (-not $p.WaitForExit(600000)) { Stop-Process -Id $p.Id -Force; throw "--capture did not finish within 10 minutes." }
+          if ($p.ExitCode -ne 0) { throw "--capture crashed (exit $($p.ExitCode)) — hard failure under arm64." }
+          $logFile = Join-Path $cap "_capture-log.tsv"
+          if (-not (Test-Path $logFile)) { throw "--capture did not write _capture-log.tsv (GuiCapture.Run did not complete)." }
+          $doneLine = Get-Content $logFile | Where-Object { $_ -match 'done: ok=(\d+) fail=(\d+)' } | Select-Object -Last 1
+          if (-not $doneLine) { throw "--capture log has no 'done:' summary (capture aborted mid-run)." }
+          [void]($doneLine -match 'done: ok=(\d+) fail=(\d+)'); $okCount = [int]$Matches[1]; $failCount = [int]$Matches[2]
+          $pngs = (Get-ChildItem $cap -Recurse -Filter *.png -ErrorAction SilentlyContinue).Count
+          Write-Host "capture: ok=$okCount fail=$failCount, $pngs PNG(s) (PNG count is screen-capture dependent, informational)."
+          if ($failCount -ne 0) {
+            Write-Host "Failed forms:"; (Get-Content $logFile | Where-Object { $_ -match "`tFAIL`t" }) | ForEach-Object { Write-Host "  $_" }
+            throw "$failCount form(s) failed to construct under arm64."
+          }
+          if ($okCount -lt 5) { throw "capture built only $okCount form(s) — form discovery likely failed under arm64." }
+
+      - name: "Smoke 3: GUI launch (main window appears and survives)"
+        shell: pwsh
+        run: |
+          # 起動即死の検出。IPAnalyzer は OpenGL を使わない (GuiCapture.cs) ため GL 無効化回避ロジックは不要。
+          # FormMain_Load は全子フォームを構築してから FormMain を表示し、SetText でタイトルを "IPAnalyzer  ver..." にする。
+          # EnumWindows でプロセスの全トップレベルウィンドウを定期確認し「unowned + visible + タイトル 'IPAnalyzer*'」を合格条件にする。
+          Add-Type -TypeDefinition @'
+          using System;
+          using System.Collections.Generic;
+          using System.Runtime.InteropServices;
+          using System.Text;
+          public static class WinEnum {
+            delegate bool EnumProc(IntPtr h, IntPtr lp);
+            [DllImport("user32.dll")] static extern bool EnumWindows(EnumProc cb, IntPtr lp);
+            [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr h, out uint pid);
+            [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr h);
+            [DllImport("user32.dll", CharSet = CharSet.Unicode)] static extern int GetWindowText(IntPtr h, StringBuilder sb, int n);
+            [DllImport("user32.dll")] static extern IntPtr GetWindow(IntPtr h, uint cmd);
+            public static List<string> List(int pid) {
+              var r = new List<string>();
+              EnumWindows((h, lp) => {
+                uint wpid; GetWindowThreadProcessId(h, out wpid);
+                if (wpid == pid) {
+                  var sb = new StringBuilder(512); GetWindowText(h, sb, 512);
+                  r.Add((IsWindowVisible(h) ? "visible" : "hidden") + "|" + (GetWindow(h, 4) != IntPtr.Zero ? "owned" : "unowned") + "|" + sb);
+                }
+                return true;
+              }, IntPtr.Zero);
+              return r;
+            }
+          }
+          '@
+          $dir = Join-Path $env:RUNNER_TEMP "arm64-artifact/IPAnalyzer"
+          $p = Start-Process -FilePath (Join-Path $dir "IPAnalyzer.exe") -WorkingDirectory $dir -PassThru
+          $deadline = (Get-Date).AddSeconds(480) # 初回起動は全子フォーム構築 + JIT で数分かかり得る
+          $shown = $false
+          $lastLog = [DateTime]::MinValue
+          while ((Get-Date) -lt $deadline) {
+            if ($p.HasExited) { throw "IPAnalyzer.exe exited prematurely (exit $($p.ExitCode))." }
+            $windows = [WinEnum]::List($p.Id)
+            if ($windows | Where-Object { $_ -like 'visible|unowned|IPAnalyzer*' }) { $shown = $true; break }
+            if (((Get-Date) - $lastLog).TotalSeconds -ge 30) {
+              $p.Refresh()
+              Write-Host ("t={0:f0}s cpu={1:f1}s windows: {2}" -f ((Get-Date) - $p.StartTime).TotalSeconds, $p.TotalProcessorTime.TotalSeconds, ($windows -join ' / '))
+              $lastLog = Get-Date
+            }
+            Start-Sleep -Seconds 3
+          }
+          if (-not $shown) {
+            Write-Host "Final window list: $(([WinEnum]::List($p.Id)) -join ' / ')"
+            Add-Type -AssemblyName System.Windows.Forms, System.Drawing
+            $bounds = [System.Windows.Forms.SystemInformation]::VirtualScreen
+            $bmp = New-Object System.Drawing.Bitmap $bounds.Width, $bounds.Height
+            [System.Drawing.Graphics]::FromImage($bmp).CopyFromScreen($bounds.X, $bounds.Y, 0, 0, $bmp.Size)
+            $bmp.Save((Join-Path $env:RUNNER_TEMP "smoke3-desktop.png"))
+            Stop-Process -Id $p.Id -Force
+            throw "IPAnalyzer main window did not appear within 480 s (see logged window lists and smoke3-desktop.png artifact)."
+          }
+          Write-Host "Main window appeared: $(([WinEnum]::List($p.Id) | Where-Object { $_ -like 'visible|*' }) -join ' / ')"
+          Start-Sleep -Seconds 10 # 表示直後のクラッシュ検出
+          if ($p.HasExited) { throw "IPAnalyzer.exe crashed shortly after showing the main window (exit $($p.ExitCode))." }
+          Stop-Process -Id $p.Id -Force
+          Write-Host "GUI launch smoke OK."
+
+      - name: "Smoke 4: arm64 MSI (per-user install, --capture, uninstall)"
+        shell: pwsh
+        run: |
+          # MSI の Template/UpgradeCode/ProductVersion 検査はビルド側 (x64 ランナー、build-arm64-portable.yml) で実施済み:
+          #   windows-11-arm の COM 遅延バインディングは OpenDatabase が DISP_E_TYPEMISMATCH で失敗する (ReciPro/PDIndexer 実測)。
+          #   ここでは COM を使わず install/uninstall とも MSI パス指定で行う。
+          $msi = Join-Path $env:RUNNER_TEMP "arm64-msi/${{ steps.names.outputs.msi_name }}"
+          if (-not (Test-Path $msi)) { throw "MSI artifact not found: $msi" }
+
+          # MSI 版は framework-dependent → smoke 実行に .NET 10 Desktop Runtime (arm64) が必要。ランナーに無ければ導入。
+          $hasDesktop = $false
+          try { $hasDesktop = ((dotnet --list-runtimes) | Select-String "Microsoft.WindowsDesktop.App 10\.") -ne $null } catch {}
+          if (-not $hasDesktop) {
+            Write-Host "Installing .NET 10 Desktop Runtime (arm64) for the smoke test..."
+            Invoke-WebRequest https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:RUNNER_TEMP\dotnet-install.ps1"
+            & "$env:RUNNER_TEMP\dotnet-install.ps1" -Runtime windowsdesktop -Channel 10.0 -Architecture arm64 -InstallDir "$env:RUNNER_TEMP\dotnet"
+            $env:DOTNET_ROOT = "$env:RUNNER_TEMP\dotnet"
+          }
+
+          # per-user silent install (ALLUSERS/MSIINSTALLPERUSER は渡さない = per-user 固定パッケージの既定)
+          $p = Start-Process msiexec -ArgumentList '/i', "`"$msi`"", '/qn', '/l*v', "$env:RUNNER_TEMP\msi-install.log" -Wait -PassThru
+          if ($p.ExitCode -ne 0) { throw "MSI install failed (exit $($p.ExitCode)). See msi-install.log artifact." }
+          $appDir = "$env:LOCALAPPDATA\Crystallography Software\IPAnalyzer"
+          if (-not (Test-Path "$appDir\IPAnalyzer.exe")) { throw "installed IPAnalyzer.exe missing in $appDir" }
+
+          # インストール実体で --capture (黙殺フォールバック型故障の検出。Smoke 2 と同一の画面非依存ゲート: done 行の fail=0)
+          $cap = Join-Path $env:RUNNER_TEMP "msi-smoke-capture"
+          New-Item -ItemType Directory -Force $cap | Out-Null
+          $p = Start-Process -FilePath "$appDir\IPAnalyzer.exe" -ArgumentList @("--capture", "`"$cap`"", "en") -WorkingDirectory $appDir -PassThru
+          if (-not $p.WaitForExit(600000)) { Stop-Process -Id $p.Id -Force; throw "--capture (MSI install) did not finish within 10 minutes." }
+          if ($p.ExitCode -ne 0) { throw "--capture (MSI install) crashed (exit $($p.ExitCode)) — hard failure." }
+          $logFile = Join-Path $cap "_capture-log.tsv"
+          if (-not (Test-Path $logFile)) { throw "--capture (MSI install) did not write _capture-log.tsv." }
+          $doneLine = Get-Content $logFile | Where-Object { $_ -match 'done: ok=(\d+) fail=(\d+)' } | Select-Object -Last 1
+          if (-not $doneLine) { throw "--capture (MSI install) log has no 'done:' summary." }
+          [void]($doneLine -match 'done: ok=(\d+) fail=(\d+)'); $okCount = [int]$Matches[1]; $failCount = [int]$Matches[2]
+          $pngs = (Get-ChildItem $cap -Recurse -Filter *.png -ErrorAction SilentlyContinue).Count
+          Write-Host "MSI-install capture: ok=$okCount fail=$failCount, $pngs PNG(s) (PNG informational)."
+          if ($failCount -ne 0) {
+            Write-Host "Failed forms:"; (Get-Content $logFile | Where-Object { $_ -match "`tFAIL`t" }) | ForEach-Object { Write-Host "  $_" }
+            throw "$failCount form(s) failed to construct from MSI install under arm64."
+          }
+          if ($okCount -lt 5) { throw "MSI-install capture built only $okCount form(s) — form discovery likely failed." }
+
+          # アンインストールしてランナーを汚さない。ProductCode は不要 (MSI パス指定で /x できる)
+          $p = Start-Process msiexec -ArgumentList '/x', "`"$msi`"", '/qn', '/l*v', "$env:RUNNER_TEMP\msi-uninstall.log" -Wait -PassThru
+          if ($p.ExitCode -ne 0) { throw "MSI uninstall failed (exit $($p.ExitCode))." }
+          if (Test-Path "$appDir\IPAnalyzer.exe") { throw "uninstall left IPAnalyzer.exe behind" }
+          Write-Host "MSI smoke OK (install -> --capture -> uninstall)."
+
+      - name: Upload smoke diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: smoke-arm64-diagnostics
           path: |
-            ${{ steps.build_installer.outputs.msi_path }}
-            ${{ steps.portable.outputs.zip_path }}
-            ${{ steps.checksums.outputs.checksums_path }}
+            ${{ runner.temp }}/smoke3-desktop.png
+            ${{ runner.temp }}/msi-install.log
+            ${{ runner.temp }}/msi-uninstall.log
+            ${{ runner.temp }}/smoke2-capture/_capture-log.tsv
+            ${{ runner.temp }}/msi-smoke-capture/_capture-log.tsv
+          if-no-files-found: ignore
+
+      - name: Create release ZIP and stage arm64 assets
+        shell: pwsh
+        run: |
+          # x64 portable ZIP (build-x64) と同じ構造 (ZIP 直下に IPAnalyzer\ フォルダ) に合わせる
+          $out = Join-Path $env:RUNNER_TEMP "arm64-out"
+          New-Item -ItemType Directory -Force -Path $out | Out-Null
+          $zip = Join-Path $out "${{ steps.names.outputs.zip_name }}"
+          Compress-Archive -Path (Join-Path $env:RUNNER_TEMP "arm64-artifact/IPAnalyzer") -DestinationPath $zip -Force
+          $msi = Join-Path $env:RUNNER_TEMP "arm64-msi/${{ steps.names.outputs.msi_name }}"
+          if (-not (Test-Path $msi)) { throw "MSI not found: $msi" }
+          Copy-Item $msi $out
+          Get-ChildItem $out | ForEach-Object { Write-Host "arm64 asset: $($_.Name) ($($_.Length) bytes)" }
+
+      - name: Upload arm64 release assets
+        uses: actions/upload-artifact@v6
+        with:
+          name: arm64-release-assets
+          path: ${{ runner.temp }}/arm64-out
+
+  # ---- 5. release: x64 必須・arm64 は揃っていれば一緒に、1 回の gh release create で原子的に公開 ----
+  release:
+    needs: [prepare, build-x64, build-arm64, smoke-arm64]
+    if: ${{ !cancelled() && needs.prepare.outputs.needed == 'true' && needs.build-x64.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download x64 release assets
+        uses: actions/download-artifact@v7
+        with:
+          name: x64-release-assets
+          path: ${{ runner.temp }}/x64
+
+      - name: Download arm64 release assets
+        if: ${{ needs.build-arm64.result == 'success' && needs.smoke-arm64.result == 'success' }}
+        uses: actions/download-artifact@v7
+        with:
+          name: arm64-release-assets
+          path: ${{ runner.temp }}/arm64
 
       - name: Create tag and GitHub Release
-        if: steps.version.outputs.needed == 'true'
+        id: create
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          ARM64_BUILD: ${{ needs.build-arm64.result }}
+          ARM64_SMOKE: ${{ needs.smoke-arm64.result }}
+          HISTORY_LINE: ${{ needs.prepare.outputs.history_line }}
         run: |
-          $tag = "${{ steps.version.outputs.tag }}"
+          $ver = "${{ needs.prepare.outputs.version }}"
+          $tag = "${{ needs.prepare.outputs.tag }}"
+          $historyLine = $env:HISTORY_LINE
+          $dryRun = $env:DRY_RUN -eq 'true'
+          $arm64Ok = ($env:ARM64_BUILD -eq 'success') -and ($env:ARM64_SMOKE -eq 'success')
 
-          # タグを作成してプッシュ
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -a $tag -m "IPAnalyzer ${{ steps.version.outputs.version }}"
-          git push origin $tag
+          $x64 = Join-Path $env:RUNNER_TEMP "x64"
+          # 主名称 IPAnalyzer-setup.msi + 旧名コピー IPAnalyzerSetup.msi (旧クライアント自動更新互換) + portable ZIP
+          $assets = @(
+            (Join-Path $x64 "IPAnalyzer-setup.msi")
+            (Join-Path $x64 "IPAnalyzerSetup.msi")
+            (Join-Path $x64 "IPAnalyzer-v.$ver.zip")
+          )
 
-          # 260602Cl リリースを作成して、第一候補の MSI と第二候補の portable ZIP と SHA256SUMS を添付
-          gh release create $tag `
-            "${{ steps.build_installer.outputs.msi_path }}" `
-            "${{ steps.portable.outputs.zip_path }}" `
-            "${{ steps.checksums.outputs.checksums_path }}" `
+          # arm64 が揃っていれば 5 資産を atomic 公開し †脚注なし。揃わなければ x64 のみ公開し arm64 行は残して †脚注で説明。
+          if ($arm64Ok) {
+            $arm64 = Join-Path $env:RUNNER_TEMP "arm64"
+            $assets += (Join-Path $arm64 "IPAnalyzer-v.${ver}_arm64.zip")
+            $assets += (Join-Path $arm64 "IPAnalyzer-setup_arm64.msi")
+            $mark = ""
+            $footnote = @()
+          } else {
+            Write-Warning "ARM64 build/smoke did not succeed (build=$env:ARM64_BUILD smoke=$env:ARM64_SMOKE); publishing x64-only with footnote."
+            $mark = "&dagger;"
+            $footnote = @("", "&dagger; Arm64 files are attached after on-device verification and may appear slightly later than the x64 files.")
+          }
+
+          $notes = @(
+            $historyLine
+            ""
+            "| Download | Description |"
+            "|---|---|"
+            "| **[IPAnalyzer-setup.msi](https://github.com/seto77/IPAnalyzer/releases/download/v.$ver/IPAnalyzer-setup.msi)** | **Recommended.** Installer for ordinary (x64) Windows PCs. |"
+            "| [IPAnalyzer-setup_arm64.msi](https://github.com/seto77/IPAnalyzer/releases/download/v.$ver/IPAnalyzer-setup_arm64.msi) | Installer for Windows on Arm (Snapdragon PCs, or Apple Silicon Macs running Windows via virtualization, etc.).$mark |"
+            "| [IPAnalyzer-v.$ver.zip](https://github.com/seto77/IPAnalyzer/releases/download/v.$ver/IPAnalyzer-v.$ver.zip) | Portable (x64): no installation, self-contained. Suitable for PCs where you have no administrator rights. |"
+            "| [IPAnalyzer-v.${ver}_arm64.zip](https://github.com/seto77/IPAnalyzer/releases/download/v.$ver/IPAnalyzer-v.${ver}_arm64.zip) | Portable for Windows on Arm: no installation, no administrator rights needed.$mark |"
+            "| IPAnalyzerSetup.msi | Identical to IPAnalyzer-setup.msi (legacy name for auto-update from older versions). |"
+          ) + $footnote
+          $notesPath = Join-Path $env:RUNNER_TEMP "release-notes.txt"
+          $notes | Set-Content -Path $notesPath -Encoding UTF8
+
+          foreach ($a in $assets) { if (-not (Test-Path $a)) { throw "Release asset missing: $a" } }
+
+          if ($dryRun) {
+            Write-Host "=== DRY RUN: would 'gh release create $tag' with assets: ==="
+            $assets | ForEach-Object { Write-Host "  $_" }
+            Write-Host "=== notes ==="; Get-Content $notesPath | ForEach-Object { Write-Host $_ }
+            $stage = Join-Path $env:RUNNER_TEMP "release-staged"
+            New-Item -ItemType Directory -Force -Path $stage | Out-Null
+            $assets | ForEach-Object { Copy-Item $_ $stage }
+            Copy-Item $notesPath $stage
+            "staged=$stage" >> $env:GITHUB_OUTPUT
+            return
+          }
+
+          # 原子的: tag 未存在時に --target のコミットへ lightweight tag を作成し release と一括で作る (orphan tag を防ぐ)
+          gh release create $tag $assets `
+            --target $env:GITHUB_SHA `
             --title "IPAnalyzer $tag" `
-            --notes-file "${{ steps.version.outputs.notes_path }}"
+            --notes-file $notesPath
+          if ($LASTEXITCODE -ne 0) { throw "gh release create failed (exit $LASTEXITCODE)." }
+          Write-Host "Released $tag with $($assets.Count) assets (arm64Ok=$arm64Ok)."
+
+      - name: Upload staged release assets (dry-run inspection)
+        if: ${{ inputs.dry_run }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: release-staged-${{ needs.prepare.outputs.tag }}
+          path: ${{ steps.create.outputs.staged }}

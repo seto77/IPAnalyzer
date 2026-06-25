@@ -20,6 +20,11 @@
          F5・CLI ビルド・publish は従来どおり win-x64 (DesignTimeBuild!=true なので影響なし。CLI publish は -r で global property 上書き)。
          旧: <RuntimeIdentifier>win-x64</RuntimeIdentifier> (無条件) -->
     <RuntimeIdentifier Condition="'$(DesignTimeBuild)' != 'true'">win-x64</RuntimeIdentifier>
+    <!-- 260625Cl 追加: restore グラフを両 RID 対応にする (build 出力には無影響、WiX移行計画 §4.4)。これが無いと arm64 publish
+         (-r win-arm64) の implicit restore が obj\project.assets.json を単一 RID で書き換え、no-restore 付き x64 ビルドが
+         NETSDK1047 で死ぬ。RID 自体は無条件 win-x64 のまま。CLI の -r win-arm64 が global property としてこれを上書きする。
+         (PDIndexer.csproj と同方針) -->
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -41,6 +46,12 @@
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <!-- 260625Cl 追加: ARM64 ビルドは bin\Release を共有しない (x64 MSI/ZIP への arm64 アセンブリ混入防止、WiX移行計画 §4.4)。
+       条件付き PropertyGroup は後勝ちのため、必ず上の Release 条件グループより後に置くこと (PDIndexer.csproj と同方針) -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

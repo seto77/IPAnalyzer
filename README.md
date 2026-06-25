@@ -18,8 +18,11 @@
 
 ## Install
 
-* Access https://github.com/seto77/IPAnalyzer/releases/latest, download *IPAnalyzerSetup.msi*, and execute it.
-* *IPAnalyzer* runs on Windows OS with ***.Net Desktop Runtime 10.0*** (NOT ***.Net Runtime 10.0***), which can be installed from [here](https://dotnet.microsoft.com/download/dotnet/10.0).
+* Access https://github.com/seto77/IPAnalyzer/releases/latest and download the latest release.
+* Recommended: download `IPAnalyzer-setup.msi` (x64) and run the installer. For Windows on Arm (e.g. Snapdragon PCs), download `IPAnalyzer-setup_arm64.msi` instead. <!-- 260625Cl WiX asset names + arm64 -->
+* Alternative for managed Windows PCs: download the portable ZIP (`IPAnalyzer-v.<ver>.zip` for x64, or `IPAnalyzer-v.<ver>_arm64.zip` for Arm), extract it to a user-writable folder, and run `IPAnalyzer.exe` from the extracted folder.
+* The MSI installer requires ***.Net Desktop Runtime 10.0*** (NOT ***.Net Runtime 10.0***), which can be installed from [here](https://dotnet.microsoft.com/download/dotnet/10.0). On Windows on Arm, install the **Arm64** build of the Desktop Runtime.
+* The portable ZIP package is self-contained for the matching architecture (x64 or Arm64) and does not require a separate .NET Desktop Runtime installation. It is a no-install package, but it still stores user settings and copied default data under the current user's AppData folder.
 * *IPAnalyzer* is distributed under the **MIT license** (free for anyone to use, modify, and redistribute).
 
 ### Note on Windows Security Warnings
@@ -29,7 +32,8 @@
 * If you would like to verify the downloaded installer yourself, you can calculate its SHA256 hash in PowerShell:
 
 ```powershell
-Get-FileHash .\IPAnalyzerSetup.msi -Algorithm SHA256
+Get-FileHash .\IPAnalyzer-setup.msi -Algorithm SHA256
+Get-FileHash .\IPAnalyzer-v.*.zip -Algorithm SHA256
 ```
 
 * For an additional check, you may also scan the installer with a multi-engine service such as VirusTotal.

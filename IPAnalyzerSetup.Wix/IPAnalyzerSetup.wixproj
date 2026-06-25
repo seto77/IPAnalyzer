@@ -1,0 +1,36 @@
+<!-- 260625Cl 追加: WiX v7 による MSI ビルド (vdproj 置換、計画は codex 相談済み・PDIndexer_WiX移行計画.md を IPAnalyzer 用に具体化)。
+     PDIndexer\PDIndexerSetup.Wix\PDIndexerSetup.wixproj を IPAnalyzer 用に移植。
+     IPAnalyzer 固有の簡素化: native 依存ゼロ (libxrl/Crystallography.Native を同梱しない) のため staging は純粋に managed publish。 -->
+<Project Sdk="WixToolset.Sdk/7.0.0">
+  <PropertyGroup>
+    <!-- OSMF EULA 受諾 (収益$10k未満の無償OSSは支払い免除、受諾操作のみ必須) -->
+    <AcceptEula>wix7</AcceptEula>
+    <InstallerPlatform Condition="'$(InstallerPlatform)'==''">x64</InstallerPlatform>
+    <!-- CI が -p:ProductVersion=0.X.YYY を注入する (Version.cs 由来) -->
+    <ProductVersion Condition="'$(ProductVersion)'==''">0.0.0</ProductVersion>
+    <DefineConstants>ProductVersion=$(ProductVersion)</DefineConstants>
+    <!-- 資産命名: 主名称 IPAnalyzer-setup.msi。アーキ接尾辞は _arm64 (ピリオドより後・英字より前にソートされ、無印 x64 がペアの上に来る)。
+         旧名 IPAnalyzerSetup.msi は release.yml が同一バイトコピーを併置 (旧クライアント自動更新 {software}Setup.msi 固定参照を維持)。 -->
+    <OutputName>IPAnalyzer-setup</OutputName>
+    <OutputName Condition="'$(InstallerPlatform)'=='arm64'">IPAnalyzer-setup_arm64</OutputName>
+    <!-- x64/arm64 連続ビルドの obj 混在防止 -->
+    <IntermediateOutputPath>obj\$(InstallerPlatform)\</IntermediateOutputPath>
+    <!-- per-user (LocalAppData) + Files 収集の既知 ICE。初回ビルドのログで実測して最小集合に絞る。
+         初期値は PDIndexer/ReciPro 実績 (ICE38/64/91 = per-user user-profile 配下の File KeyPath / RemoveFile 未登録 / ALLUSERS 不変ディレクトリ、
+         ICE61 = AllowSameVersionUpgrades 副作用、ICE69 = コンポーネント跨ぎ Shortcut Target)。IPAnalyzer も native 非同梱で
+         PDIndexer と近いファイル構成 (PDIndexer から libxrl を除いただけ) のため、まず同集合で開始し初回ビルド後に再測定する。 -->
+    <SuppressIces>ICE38;ICE64;ICE91;ICE61;ICE69</SuppressIces>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0" />
+    <PackageReference Include="WixToolset.Util.wixext" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- ハーベスト元 = framework-dependent publish + 後処理済みの staging フォルダ (-p:StagingDir で注入) -->
+    <BindPath Include="$(StagingDir)" BindName="staging" />
+  </ItemGroup>
+  <Target Name="RequireStagingDir" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(StagingDir)'=='' OR !Exists('$(StagingDir)')"
+           Text="StagingDir must point to an existing publish staging folder (pass -p:StagingDir=...)." />
+  </Target>
+</Project>

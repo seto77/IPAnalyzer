@@ -23,11 +23,11 @@ How to run
 Runtime
 -------
 
-This portable package is self-contained for Windows x64. A separate .NET
-Desktop Runtime 10 installation is not required; the required .NET runtime
-files are bundled in this folder. When Microsoft releases .NET runtime
-security updates, this package should be rebuilt and redistributed so that
-the bundled runtime is also updated. (260602Cl)
+This portable package is self-contained for the matching architecture
+(Windows x64 or Arm64). A separate .NET Desktop Runtime 10 installation is
+not required; the required .NET runtime files are bundled in this folder.
+When Microsoft releases .NET runtime security updates, this package should be
+rebuilt and redistributed so that the bundled runtime is also updated. (260625Cl)
 
 Notes for managed PCs
 ---------------------
@@ -48,4 +48,4 @@ Verification
 If SHA256SUMS.txt is provided with the release, you can verify the downloaded
 ZIP file in PowerShell:
 
-  Get-FileHash .\IPAnalyzer-*-win-x64-portable.zip -Algorithm SHA256
+  Get-FileHash .\IPAnalyzer-v.*.zip -Algorithm SHA256
