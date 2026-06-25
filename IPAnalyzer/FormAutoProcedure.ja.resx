@@ -297,4 +297,13 @@ mod この除数) が剰余と等しいとき適合。1
 選択します。上のリストで「マクロ実行」が
 チェックされているときのみ有効です。</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>自動処理</value>
+  </data>
+  <data name="checkBoxNumberMatching.Text" xml:space="preserve">
+    <value>パターンマッチング</value>
+  </data>
+  <data name="checkBoxKeywords.Text" xml:space="preserve">
+    <value>キーワード</value>
+  </data>
 </root>

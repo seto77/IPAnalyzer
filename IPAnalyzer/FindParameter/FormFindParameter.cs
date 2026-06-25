@@ -1963,7 +1963,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
 
         sw.Stop();
         resetHorizontalMode();
-        formMain.toolStripStatusLabel.Text = "Calculating Time (Find Parameter):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
+        formMain.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Parameter):  ", ja: "計算時間 (パラメータ探索):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
 
         IsSkipTextChangeEvent = false;
 

@@ -1528,4 +1528,100 @@ PDIndexer（ピーク指数付け・相同定）へ送ります。</value>
     <value>未使用のプレースホルダーボタン。動作が割り当てられ
 ていません。ツールバーから削除を検討してください。</value>
   </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>倍率:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>強度:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>実座標(mm):</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>画像座標(pix):</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.Text" xml:space="preserve">
+    <value>強度頻度</value>
+  </data>
+  <data name="tabPageConvertedProfile.Text" xml:space="preserve">
+    <value>変換プロファイル</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>選択領域の統計</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>他画像の同一領域の統計</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>選択領域: (</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(CTRL + 右ドラッグ)</value>
+  </data>
+  <data name="tabPageStasticalInfo.Text" xml:space="preserve">
+    <value>統計情報</value>
+  </data>
+  <data name="tiffToolStripMenuItem.Text" xml:space="preserve">
+    <value>TIFF形式</value>
+  </data>
+  <data name="pngToolStripMenuItem.Text" xml:space="preserve">
+    <value>PNG形式 (明るさ・コントラスト・マスク領域を保持)</value>
+  </data>
+  <data name="csvToolStripMenuItem.Text" xml:space="preserve">
+    <value>CSV形式</value>
+  </data>
+  <data name="ipaToolStripMenuItem.Text" xml:space="preserve">
+    <value>IPA形式 (独自形式)</value>
+  </data>
+  <data name="clearMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>マスクをすべてクリア</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>頻度プロファイルをリセット</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>R-AXIS画像の校正</value>
+  </data>
+  <data name="clearRegistrycheckAndRestartToolStripMenuItem.Text" xml:space="preserve">
+    <value>レジストリをクリア (チェックで再起動)</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="programUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>プログラムの更新</value>
+  </data>
+  <data name="hintToolStripMenuItem.Text" xml:space="preserve">
+    <value>ヒント</value>
+  </data>
+  <data name="licenseToolStripMenuItem.Text" xml:space="preserve">
+    <value>ライセンス</value>
+  </data>
+  <data name="versionHistoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>バージョン履歴</value>
+  </data>
+  <data name="webPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="resetToolStripMenuItem.Text" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>下限 (画像サイズの%)</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>上限 (画像サイズの%)</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>検出範囲</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
+    <value>参照画像</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.Text" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="findCenterBasedOnTheRingToolStripMenuItem.Text" xml:space="preserve">
+    <value>リングに基づいて中心を検出</value>
+  </data>
 </root>

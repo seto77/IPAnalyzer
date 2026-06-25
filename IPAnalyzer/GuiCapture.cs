@@ -42,7 +42,9 @@ internal static class GuiCapture
     private static string DefaultAutoCaptureDir()
     {
         var culture = ForcedUICulture ?? System.Threading.Thread.CurrentThread.CurrentUICulture;
-        var langDir = culture.Name == "ja" ? "cap-ja-auto" : "cap-en-auto";
+        // 260625Cl 変更: en/ja 二択固定から SupportedCultures 駆動へ (cap-{culture}-auto。将来 de 等もそのまま出力先が決まる)。
+        // 旧: var langDir = culture.Name == "ja" ? "cap-ja-auto" : "cap-en-auto";
+        var langDir = "cap-" + Crystallography.SupportedCultures.Resolve(culture.Name).Name + "-auto";
         var repoRoot = RepoRoot();
         return repoRoot != null
             ? Path.Combine(repoRoot, "docs", "src", "assets", langDir)

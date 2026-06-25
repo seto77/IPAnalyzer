@@ -239,16 +239,21 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     #region コンストラクタ、ロード、クローズ
     public FormMain()
     {
+        // 260625Cl 変更: InitializeComponent が resx を CurrentUICulture で適用するため、その前に永続化された UI 言語を復元する。
+        //   従来は死んだ "Culture" 文字列キー (どこにも書かれない) を読み、二値 ja/en に潰していた → 再起動方式に移行すると
+        //   初回描画が選択言語にならない。実際の保存先は Registry(Write) が使う Reg.RW の
+        //   "System.Globalization.CultureInfo.Name"(MemoryPack) で、その Read は SupportedCultures.Resolve() 経由で
+        //   CurrentUICulture を復元する (Reg.cs:79-92)。ここではそのカルチャ 1 件だけを先に読む (子コントロールはまだ無いため)。
+        // 旧:
+        //   var culture = (string)regKey.GetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
+        //   Thread.CurrentThread.CurrentUICulture = culture.ToLower().StartsWith("ja") ?
+        //           new System.Globalization.CultureInfo("ja") : new System.Globalization.CultureInfo("en");
         // Registry プロパティと FormMain.Registry(Reg.Mode) メソッドが名前衝突するため完全修飾
         using (var regKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(RegistryPath))
         {
-            try
-            {
-                var culture = (string)regKey.GetValue("Culture", Thread.CurrentThread.CurrentUICulture.Name);
-                Thread.CurrentThread.CurrentUICulture = culture.ToLower().StartsWith("ja") ?
-                        new System.Globalization.CultureInfo("ja") : new System.Globalization.CultureInfo("en");
-            }
-            catch { }
+            if (regKey != null)
+                try { Reg.RW<string>(regKey, Reg.Mode.Read, Thread.CurrentThread.CurrentUICulture, "Name"); }
+                catch { }
         }
 
         // 260601Cl 追加: --capture でカルチャを強制指定した場合は、レジストリ値より優先する (ReciPro/FormMain と同様)。
@@ -263,11 +268,16 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //260604Cl 追加: F1 オンラインヘルプの URL 解決ロジックを登録 (起動時に 1 回)。ReciPro/FormMain と同じ方式。
         //Crystallography.Controls 側のフォームは IPAnalyzer 固有の URL を知らないため、ここで一括して組み立てる。
         //en ページは /IPAnalyzer/en/<slug>/、ja ページは /IPAnalyzer/ja/<slug>/。HelpPage 未設定時は各言語のトップへ。
+        //260625Cl 変更: マニュアルが整備済みの言語 (manualReadyCultures) のみ自言語へ向け、未整備言語は英語へ落とす。
+        //  共有 SupportedCultures.HelpCulture は ReciPro/PDIndexer 基準で全言語整備済 (各言語コード) だが、IPAnalyzer の
+        //  マニュアルは現状 en/ja のみ。よって SupportedCultures.HelpCulture ではなく IPAnalyzer 専用の allow-list で判定する。
+        //旧: var lang = Thread.CurrentThread.CurrentUICulture.Name == "ja" ? "ja" : "en";
         FormBase.HelpUrlResolver = f =>
         {
-            var lang = Thread.CurrentThread.CurrentUICulture.Name == "ja" ? "ja" : "en";
+            var cur = Crystallography.SupportedCultures.Current.Name;
+            var lang = Array.IndexOf(manualReadyCultures, cur) >= 0 ? cur : "en";
             return string.IsNullOrEmpty(f.HelpPage)
-                ? (lang == "ja" ? "https://seto77.github.io/IPAnalyzer/ja/" : "https://seto77.github.io/IPAnalyzer/")
+                ? (lang == "en" ? "https://seto77.github.io/IPAnalyzer/" : $"https://seto77.github.io/IPAnalyzer/{lang}/")
                 : $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/";
         };
 
@@ -491,10 +501,16 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.1);
 
-        InitialDialog.Text = "Now Loading...Checking language.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking language.", ja: "読み込み中...言語を確認中。");
 
-        englishToolStripMenuItem.Checked = Thread.CurrentThread.CurrentUICulture.Name != "ja";
-        japaneseToolStripMenuItem.Checked = Thread.CurrentThread.CurrentUICulture.Name == "ja";
+        // 260625Cl 変更: english/japanese 固定チェックを廃止し、言語メニューを SupportedCultures から動的生成して
+        //   現在カルチャにチェックを付ける (公開は releasedCulturesInIPA={en,ja} に限定。ReciPro/FormMain と同方式)。
+        //   この時点で ctor の Reg.RW と後段の Registry(Read) により CurrentUICulture は永続言語へ復元済み。
+        // 旧:
+        //   englishToolStripMenuItem.Checked = Thread.CurrentThread.CurrentUICulture.Name != "ja";
+        //   japaneseToolStripMenuItem.Checked = Thread.CurrentThread.CurrentUICulture.Name == "ja";
+        PopulateLanguageMenu();
+        UpdateLanguageMenuChecks(Crystallography.SupportedCultures.Current.Name);
 
         //260602Cl 追加 Portable-Zip版は実行フォルダに README-PORTABLE.txt を同梱する (MSI版には無い)。
         //この場合インストーラ(MSI)による更新が成立しないため、Updateメニューを非表示にする。
@@ -503,7 +519,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.2);
-        InitialDialog.Text = "Now Loading...Setting image scales.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Setting image scales.", ja: "読み込み中...画像スケールを設定中。");
         pseudoBitmap.MaxValue = 65535;
         pseudoBitmap.MinValue = 0;
         IP = new IntegralProperty();
@@ -512,7 +528,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         comboBoxScale2.SelectedIndex = 0;
         comboBoxGradient.SelectedIndex = 0;
 
-        InitialDialog.Text = "Now Loading...Initializing 'Intensity table' form";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Intensity table' form", ja: "読み込み中...「強度テーブル」フォームを初期化中");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.3);
 
         //FormIntTable = new FormIntTable();
@@ -520,55 +536,55 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //FormIntTable.Visible = false;
         //FormIntTable.Owner = this;
 
-        InitialDialog.Text = "Now Loading...Initializing 'Auto procedure' form";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Auto procedure' form", ja: "読み込み中...「自動処理」フォームを初期化中");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.4);
 
         FormAutoProc = new FormAutoProcedure { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = "Now Loading...Initializing 'Find parameter' form";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Find parameter' form", ja: "読み込み中...「パラメータ探索」フォームを初期化中");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.5);
 
         FormFindParameter = new FormFindParameter { formMain = this, Visible = false, Owner = this };
 
 
-        InitialDialog.Text = "Now Loading...Initializing 'Draw ring' form";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Draw ring' form", ja: "読み込み中...「リング描画」フォームを初期化中");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.6);
 
         FormDrawRing = new FormDrawRing { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = "Now Loading...Initializing 'Property' form";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Property' form", ja: "読み込み中...「プロパティ」フォームを初期化中");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.7);
 
 
         FormProperty = new FormProperty { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = "Now Loading...Initializing 'Calibrate Intensity' form";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Calibrate Intensity' form", ja: "読み込み中...「強度校正」フォームを初期化中");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.8);
         Application.DoEvents();
 
         FormCalibrateIntensity = new FormCalibrateIntensity { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = "Now Loading...Initializing 'Save Image' form.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Save Image' form.", ja: "読み込み中...「画像保存」フォームを初期化中。");
 
         FormSaveImage = new FormSaveImage { FormMain = this, Owner = this, Visible = false };
 
-        InitialDialog.Text = "Now Loading...Initializing 'Sequential' form.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Sequential' form.", ja: "読み込み中...「シーケンシャル画像」フォームを初期化中。");
 
         FormSequentialImage = new FormSequentialImage { formMain = this, Owner = this, Visible = false };
 
-        InitialDialog.Text = "Now Loading...Initializing 'Parameter option' form.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Parameter option' form.", ja: "読み込み中...「パラメータオプション」フォームを初期化中。");
 
         FormParameterOption = new FormParameterOption { FormMain = this, Owner = this, Visible = false };
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.9);
-        InitialDialog.Text = "Now Loading...Initializing 'SACLA' form.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'SACLA' form.", ja: "読み込み中...「SACLA」フォームを初期化中。");
 
         FormFindParameterBruteForce = new FormFindParameterBruteForce { FormMain = this, Owner = this, Visible = false };
 
         FormProperty.Visible = true;
 
 
-        InitialDialog.Text = "Now Loading...Initializing Macro function.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing Macro function.", ja: "読み込み中...マクロ機能を初期化中。");
 
         FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this)) { Visible = false };
         Type t = typeof(Macro);
@@ -576,11 +592,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         var methods = t.GetMethods();
 
 
-        InitialDialog.Text = "Now Loading...Reading registries";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Reading registries", ja: "読み込み中...レジストリを読み込み中");
 
         Registry(Reg.Mode.Read);
 
-        InitialDialog.Text = "Now Loading...Generating ReadMe.txt.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Generating ReadMe.txt.", ja: "読み込み中...ReadMe.txt を生成中。");
 
         ReadMeGenerator.WriteReadMeFile(
             "IPAnalyzer   " + Version.VersionAndDate,
@@ -593,7 +609,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             Version.Acknowledge,
             Version.History);
 
-        InitialDialog.Text = "Now Loading...Checking command line options.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking command line options.", ja: "読み込み中...コマンドライン引数を確認中。");
         var s = Environment.GetCommandLineArgs();
         var fileName = "";
         for (int i = 1; i < s.Length; i++)
@@ -614,7 +630,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 1);
 
-        InitialDialog.Text = "Initializing has been finished successfully. You can close this window.";
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Initializing has been finished successfully. You can close this window.", ja: "初期化が正常に完了しました。このウィンドウを閉じてかまいません。");
         if (InitialDialog.AutomaticallyClose)
             InitialDialog.Visible = false;
 
@@ -2191,7 +2207,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"エラーが発生しました: {ex.Message}");
+            MessageBox.Show(Crystallography.Localization.Loc(en: $"An error occurred: {ex.Message}", ja: $"エラーが発生しました: {ex.Message}")); // 260625Cl Loc化 (英日混在→en正規化)
         }
     }
 
@@ -2335,7 +2351,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             sw.Close();
 
         }
-        catch { MessageBox.Show("Failed to save the file. Sorry."); }
+        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to save the file. Sorry.", ja: "ファイルの保存に失敗しました。")); } // 260625Cl Loc化
 
     }
 
@@ -2520,7 +2536,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         }
-        catch { MessageBox.Show("Failed to read the file. Sorry."); }
+        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to read the file. Sorry.", ja: "ファイルの読み込みに失敗しました。")); } // 260625Cl Loc化
         //イベントスキップを解除
         skipSelectedAreaChangedEvent = false;
         Skip = false;
@@ -2816,7 +2832,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         try
         {
-            var fn = "\\doc\\IPAnalyzerManual(" + (japaneseToolStripMenuItem.Checked ? "ja" : "en") + ").pdf";
+            // 260625Cl 変更: japaneseToolStripMenuItem は言語メニュー動的化で DropDownItems から外れ Checked が当てにならないため、現在カルチャで判定する。
+            // 旧: var fn = "\\doc\\IPAnalyzerManual(" + (japaneseToolStripMenuItem.Checked ? "ja" : "en") + ").pdf";
+            var fn = "\\doc\\IPAnalyzerManual(" + (Crystallography.SupportedCultures.Current.Name == "ja" ? "ja" : "en") + ").pdf";
             var appPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var f = new FormPDF(appPath + fn) { Text = "IPAnalyzer manual" };
             f.Show();
@@ -2865,13 +2883,114 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     #endregion
 
     #region Language メニュー
+    // 260625Cl 追加: IPAnalyzer が UI 翻訳(resx)を整備済みで言語メニューに公開してよい言語の allow-list (公開ゲート)。
+    //   共有 SupportedCultures.Released は ReciPro/PDIndexer 基準で全 11 言語 true だが、IPAnalyzer はまだ en/ja しか
+    //   resx を整備していない。新言語の resx が揃うたびにここへ足す (多言語化 Phase 3)。
+    private static readonly string[] releasedCulturesInIPA = { "en", "ja" };
+
+    // 260625Cl 追加: F1/PDF マニュアルが整備済みの言語の allow-list (未整備言語は英語マニュアルへ落とす)。
+    //   公開ゲート (releasedCulturesInIPA) とは別概念 (UI 翻訳済 ≠ マニュアル整備済) だが現状はどちらも en/ja。
+    private static readonly string[] manualReadyCultures = { "en", "ja" };
+
+    // 260625Cl 変更: english/japanese 二択固定 + ライブ切替(Language.Change) を廃止し、項目の Tag(CultureInfo 名) 駆動 +
+    //   確認ダイアログ + 自動再起動方式へ (ReciPro/PDIndexer と統一)。ライブ切替は ApplyResources/コード側 Loc/フォント/
+    //   AutoScale の全再適用が要り投資対効果が悪いため採らない。選択カルチャを CurrentUICulture へ入れて Registry(Write) で
+    //   保存し、再起動後の ctor/Registry(Read) → SupportedCultures.Resolve が新言語を復元する既存経路に乗せる。
+    // 旧:
+    //   englishToolStripMenuItem.Checked = ((ToolStripMenuItem)sender).Name.Contains("english");
+    //   japaneseToolStripMenuItem.Checked = !englishToolStripMenuItem.Checked;
+    //   Thread.CurrentThread.CurrentUICulture = englishToolStripMenuItem.Checked ? new System.Globalization.CultureInfo("en") : new System.Globalization.CultureInfo("ja");
+    //   Language.Change(this);
     private void languageToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        englishToolStripMenuItem.Checked = ((ToolStripMenuItem)sender).Name.Contains("english");
-        japaneseToolStripMenuItem.Checked = !englishToolStripMenuItem.Checked;
-        Thread.CurrentThread.CurrentUICulture = englishToolStripMenuItem.Checked ? new System.Globalization.CultureInfo("en") : new System.Globalization.CultureInfo("ja");
-        Language.Change(this);
+        var culture = Crystallography.SupportedCultures.Resolve(LanguageMenuItemCulture((ToolStripMenuItem)sender));
+
+        // 既に現在の言語を選んだだけなら何もしない (再クリックでの無用な再起動を防ぐ)。
+        if (culture.Name == Crystallography.SupportedCultures.Current.Name)
+        {
+            UpdateLanguageMenuChecks(culture.Name);
+            return;
+        }
+
+        // 切替には再起動が要る (作業中の状態は失われる) ことを、まだ切り替わっていない現在の言語で確認する。
+        var msg = Crystallography.Localization.Loc(
+            en: $"Switching the display language to \"{culture.NativeName}\" requires restarting IPAnalyzer.\nUnsaved work will be lost. Restart now?",
+            ja: $"表示言語を「{culture.NativeName}」に切り替えるには IPAnalyzer の再起動が必要です。\n保存していない作業は失われます。今すぐ再起動しますか？");
+        if (MessageBox.Show(this, msg, Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+        {
+            // キャンセル: メニューのチェックを現在の言語へ戻す (新言語に先走ってチェックされたままにしない)。
+            UpdateLanguageMenuChecks(Crystallography.SupportedCultures.Current.Name);
+            return;
+        }
+
+        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture.Name);
+        UpdateLanguageMenuChecks(culture.Name);
+        RestartApplicationForLanguageChange();
     }
+
+    // 260625Cl 追加: 言語切替のために自分自身を再起動する (ReciPro/FormMain と同方式)。
+    //   FormClosing→Registry(Write) 頼みだと終了後に新プロセスが起動しない環境があったため、先に言語値を保存し
+    //   新プロセスを起動してから Close() する。CurrentUICulture は呼び出し側で既に新言語へ切替済み。
+    private void RestartApplicationForLanguageChange()
+    {
+        Registry(Reg.Mode.Write); // 新プロセスが起動直後に新言語を読めるよう、FormClosing を待たず言語値を先行保存
+
+        var startInfo = new ProcessStartInfo
+        {
+            FileName = !string.IsNullOrEmpty(Application.ExecutablePath) ? Application.ExecutablePath : Environment.ProcessPath,
+            WorkingDirectory = Environment.CurrentDirectory,
+            UseShellExecute = true,
+        };
+
+        try
+        {
+            if (Process.Start(startInfo) == null)
+                throw new InvalidOperationException("Process.Start returned null.");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this,
+                Crystallography.Localization.Loc(
+                    en: $"Failed to restart IPAnalyzer.\n{ex.Message}",
+                    ja: $"IPAnalyzer の再起動に失敗しました。\n{ex.Message}"),
+                Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更"),
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        Close();
+    }
+
+    // 260625Cl 追加: 言語メニュー各項目のチェックを現在カルチャに合わせて更新する (Load 時と切替時で共用)。
+    private void UpdateLanguageMenuChecks(string currentName)
+    {
+        foreach (ToolStripItem it in languageToolStripMenuItem.DropDownItems)
+            if (it is ToolStripMenuItem mi)
+                mi.Checked = LanguageMenuItemCulture(mi) == currentName;
+    }
+
+    // 260625Cl 追加: 言語メニュー項目を中央 allow-list (SupportedCultures) から動的生成する。
+    //   Released かつ IPAnalyzer が公開可 (releasedCulturesInIPA) の言語だけを自言語表記 (NativeName) で並べ、
+    //   Tag に CultureInfo 名を入れて Tag 駆動の切替/チェック更新に乗せる。
+    //   → 言語を増やすときは SupportedCultures で Released=true + releasedCulturesInIPA へ追加するだけ (Designer 編集不要)。
+    private void PopulateLanguageMenu()
+    {
+        languageToolStripMenuItem.DropDownItems.Clear();
+        foreach (var c in Crystallography.SupportedCultures.All)
+        {
+            if (!c.Released || Array.IndexOf(releasedCulturesInIPA, c.Name) < 0)
+                continue;
+            var item = new ToolStripMenuItem(c.NativeName) { Tag = c.Name, Name = c.Name + "ToolStripMenuItem" };
+            item.Click += languageToolStripMenuItem_Click;
+            languageToolStripMenuItem.DropDownItems.Add(item);
+        }
+    }
+
+    // 260625Cl 追加: 言語メニュー項目が表すカルチャ名。PopulateLanguageMenu が生成する項目は Tag を必ず持つ。
+    //   Name からの english/japanese 解決は旧 Designer 項目向けの後方互換。
+    private static string LanguageMenuItemCulture(ToolStripMenuItem item)
+        => (item.Tag as string) ?? (item.Name.Contains("english") ? "en" : item.Name.Contains("japanese") ? "ja" : null);
 
     #endregion
 
@@ -2967,7 +3086,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         catch
         {
-            MessageBox.Show("適切に入力されていない項目があります");
+            MessageBox.Show(Crystallography.Localization.Loc(en: "Some items are not entered correctly.", ja: "適切に入力されていない項目があります")); // 260625Cl Loc化 (英日混在→en正規化)
             return;
         }
         Ring.IP = IP;
@@ -3018,7 +3137,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 FormProperty.DirectSpotPosition = center;
             }
             toolStripSplitButtonFindCenter.Enabled = true;
-            this.toolStripStatusLabel.Text = "Calculating Time (Find Center):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Center):  ", ja: "計算時間 (中心検出):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
 
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosX = FormProperty.DirectSpotPosition.X;
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosY = FormProperty.DirectSpotPosition.Y;
@@ -3134,7 +3253,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         Draw();
         this.Cursor = Cursors.Default;
         toolStripSplitButtonMaskSpots.Enabled = true;
-        this.toolStripStatusLabel.Text = "Calculating Time (Find Spots):  " + (Environment.TickCount - d).ToString() + "ms";
+        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Spots):  ", ja: "計算時間 (スポット検出):  ") + (Environment.TickCount - d).ToString() + "ms";
 
 
     }
@@ -3418,7 +3537,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message);
-            MessageBox.Show("Failed to processing. sorry.");
+            MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to processing. sorry.", ja: "処理に失敗しました。")); // 260625Cl Loc化
         }
         finally
         {
@@ -3554,7 +3673,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         else
             Ring.SetInsideArea(IP);
 
-        this.toolStripStatusLabel.Text = "Calculating Time (SetIntegralArea):  " + sw.ElapsedMilliseconds.ToString() + "ms";
+        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (SetIntegralArea):  ", ja: "計算時間 (積算領域設定):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
 
         SetMask();
         Draw();
@@ -3642,7 +3761,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             double[] imageArray = Ring.GetUnrolledImageArray(IP, chiDivision, xStart, xEnd, xStep);
 
-            this.toolStripStatusLabel.Text = "Calculating Time (Unroll Image):  " + sw.ElapsedMilliseconds.ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Unroll Image):  ", ja: "計算時間 (画像の切り開き):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
 
             byte[] scale = new byte[256];
             for (int i = 0; i < 256; i++)
@@ -3877,7 +3996,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         toolStripProgressBar.Visible = true;
 
 
-        (var Title, var Message, var NeedUpdate, var URL, var Path) = ProgramUpdates.Check(Version.Software, Version.VersionAndDate);
+        //260625Cl arm64 ビルドはアーキ専用インストーラ IPAnalyzer-setup_arm64.msi を取得する (WiX 移行 Phase C)。
+        //         x64 (エミュ実行含む) は IPAnalyzer-setup.msi。旧名 IPAnalyzerSetup.msi は旧クライアント (installerAsset
+        //         無し既定) 用に release.yml が同一バイトコピーを併置するため、新旧どちらの更新経路も到達可能。
+        //         共有 ProgramUpdates.Check は資産存在 GET チェック付き (arm64 MSI が release 後に後付け添付される時間窓を案内)。
+        //旧: (var Title, var Message, var NeedUpdate, var URL, var Path) = ProgramUpdates.Check(Version.Software, Version.VersionAndDate);
+        var installerAsset = RuntimeInformation.ProcessArchitecture == Architecture.Arm64 ? "IPAnalyzer-setup_arm64.msi" : "IPAnalyzer-setup.msi";
+        (var Title, var Message, var NeedUpdate, var URL, var Path) = ProgramUpdates.Check(Version.Software, Version.VersionAndDate, installerAsset);
 
         if (!NeedUpdate)
             MessageBox.Show(Message, Title, MessageBoxButtons.OK);
@@ -3891,11 +4016,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 if (ProgramUpdates.Execute(Path))
                     Close();
                 else
-                    MessageBox.Show($"Failed to download {Path}. \r\nSorry!", "Error!");
+                    MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed to download {Path}. \r\nSorry!", ja: $"{Path} のダウンロードに失敗しました。\r\nすみません！"), "Error!"); // 260625Cl Loc化
             }
             catch
             {
-                MessageBox.Show($"Failed update check. \r\nServer may be down. \r\nAccess https://github.com/seto77/{Version.Software}/releases/latest", "Error");
+                MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed update check. \r\nServer may be down. \r\nAccess https://github.com/seto77/{Version.Software}/releases/latest", ja: $"更新確認に失敗しました。\r\nサーバーがダウンしている可能性があります。\r\nhttps://github.com/seto77/{Version.Software}/releases/latest にアクセスしてください"), "Error"); // 260625Cl Loc化
             }
         }
     }
@@ -4053,7 +4178,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1;
             Ring.Intensity = Ring.CorrectPolarization(index);
-            this.toolStripStatusLabel.Text = "Calculating Time (Polarization Correction):  " + (sw.ElapsedMilliseconds).ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Polarization Correction):  ", ja: "計算時間 (偏光補正):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
         }
         //偏光補正ここまで
 

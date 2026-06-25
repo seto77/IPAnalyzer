@@ -603,4 +603,89 @@ d 値スケールに影響します。</value>
     <value>ステータス行: 1ステップあたりの時間、完了率、
 経過時間、実行中の最適化の推定残り時間を表示します。</value>
   </data>
+  <data name="buttonOptimize.Text" xml:space="preserve">
+    <value>最適化</value>
+  </data>
+  <data name="buttonGetProfile.Text" xml:space="preserve">
+    <value>一次元化</value>
+  </data>
+  <data name="checkBoxPointX.Text" xml:space="preserve">
+    <value>ダイレクトスポット X</value>
+  </data>
+  <data name="checkBoxPointY.Text" xml:space="preserve">
+    <value>ダイレクトスポット Y</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>初期ステップ</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>探索範囲</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>中心位置</value>
+  </data>
+  <data name="checkBoxPixelSize.Text" xml:space="preserve">
+    <value>ピクセルサイズ</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.Text" xml:space="preserve">
+    <value>カメラ長</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>初期ステップ</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>探索範囲</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>ステップ</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>ステップ</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>ステップ</value>
+  </data>
+  <data name="checkBoxIPTilt.Text" xml:space="preserve">
+    <value>傾き補正項</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Gandolfi 半径</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>ステップ</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>ステップ</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>正方
+ピクセル</value>
+  </data>
+  <data name="buttonStop.Text" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>フラットパネル</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>反復</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.Text" xml:space="preserve">
+    <value>最適化</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>回</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>ガンドルフィ</value>
+  </data>
+  <data name="radioButtonStandardOther.Text" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>パラメータ探索 (総当たり)</value>
+  </data>
 </root>

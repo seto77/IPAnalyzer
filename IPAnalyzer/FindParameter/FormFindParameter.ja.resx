@@ -1829,4 +1829,38 @@ Y)を最適化の自由パラメータに含めます。</value>
     <value>選択中のピーク行/セルのフィッティング
 選択チェックを一括で反転します。</value>
   </data>
+  <data name="buttonGetCenterPositionFromMainForm2.Text" xml:space="preserve">
+    <value>メイン画面から取得</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.Text" xml:space="preserve">
+    <value>メイン画面から取得</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>球面半径
+(1/R)</value>
+  </data>
+  <data name="checkUncheckToolStripMenuItem.Text" xml:space="preserve">
+    <value>チェック/解除</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.Text" xml:space="preserve">
+    <value>波長を取得</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>中心位置</value>
+  </data>
+  <data name="groupBoxPeakList.Text" xml:space="preserve">
+    <value>ピークリスト</value>
+  </data>
+  <data name="buttonCheckPeaks.Text" xml:space="preserve">
+    <value>以下の条件を満たすピークをチェック</value>
+  </data>
+  <data name="buttonClearPrimaryImage.Text" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="buttonClearSecondaryImage.Text" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.Text" xml:space="preserve">
+    <value>カメラ長を取得</value>
+  </data>
 </root>
