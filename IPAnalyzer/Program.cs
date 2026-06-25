@@ -15,6 +15,11 @@ namespace IPAnalyzer
         [STAThread]
         static void Main(string[] args)
         {
+            // 260626Cl 追加 (多言語化 Phase 2c): Localizable=false フォームの Designer 直書きラベルの訳テーブルを、
+            //   フォーム生成より前に共有 Crystallography.Localization の中央レジストリへ app-local provider として登録する。
+            //   FormBase.OnLoad の CodeLocalizer.Apply が FullName キー("IPAnalyzer.<Form>")で引き OnLoad で差し替える。
+            IPAnalyzerLocalizationData.Register();
+
             // 260601Cl 追加: --capture の言語指定を FormMain 構築より前に確定させる (各フォームの resx ローカライズが
             // CurrentUICulture を参照するため)。ReciPro/Program.cs と同じ引数仕様。
             //   IPAnalyzer.exe --capture [出力ディレクトリ] [カルチャ(en/ja)]
