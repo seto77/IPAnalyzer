@@ -9,6 +9,7 @@ static class Version
 
     static public string History =
         "History" +
+        "\r\n ver3.981(2026/06/25) GUIのバグ修正。多言語対応." +
         "\r\n ver3.980(2026/06/08) Added support for the new image format: Rigaku 2D-PXD Image Header Format / d*TREK extended." +
         "\r\n ver3.979(2026/06/02) Added a portable ZIP distribution (no-install, self-contained) in addition to the installer." +
         "\r\n ver3.978(2026/05/29) Enhanced the Auto Procedure feature (added keyword matching support). " +
