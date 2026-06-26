@@ -52,7 +52,7 @@ Integration with *PDIndexer* is performed locally through the Windows clipboard 
 
 * Online manual (11 languages) : https://seto77.github.io/IPAnalyzer/
 
-The manual offers full-text search, a light / dark theme, and a language selector covering 11 languages: English, 日本語, Deutsch, Français, Español, Italiano, Русский, 简体中文, 繁體中文, 한국어, and Português. (The application UI itself is currently English / Japanese, so screenshots on the other-language pages are shown in English.)
+The manual offers full-text search, a light / dark theme, and a language selector covering 11 languages: English, 日本語, Deutsch, Français, Español, Italiano, Русский, 简体中文, 繁體中文, 한국어, and Português. (Screenshots are captured only in English and Japanese, so on the other-language pages they are shown in English.)
 
 ***
 
