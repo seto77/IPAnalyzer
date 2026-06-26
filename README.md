@@ -85,7 +85,7 @@ The manual offers full-text search, a light / dark theme, and English / 日本�
 ### Automation
 
 * **Auto Procedure**: watch a folder and automatically load + process new images as they arrive (auto-contrast → find center → mask spots → get profile → run macro).
-* **Python-syntax macro** for scripting repetitive tasks (batch conversion, azimuthal splitting, masking, format conversion, etc.). See the [Macro manual](https://seto77.github.io/IPAnalyzer/en/5-macro/).
+* **Python-syntax macro** for scripting repetitive tasks (batch conversion, azimuthal splitting, masking, format conversion, etc.). See the [Macro manual](https://seto77.github.io/IPAnalyzer/5-macro/).
 * **PDIndexer integration**: send profiles directly to [PDIndexer](https://github.com/seto77/PDIndexer) via the clipboard and trigger named macros there.
 
 ***

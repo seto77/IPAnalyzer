@@ -1,0 +1,95 @@
+{# 260625Cl: mkdocs-static-i18n の告知バナー (2 種)。
+   (1) 未訳ページ (fallback_to_default で英語本文がローカライズ URL に出ているページ) では
+       i18n_page_locale (閲覧中の言語) と i18n_file_locale (実ファイルの言語) が食い違う。
+       その場合に「このページはまだ翻訳されておらず英語版を表示しています」と知らせる。
+   (2) 翻訳済みの非 en/ja ページでは、本文は訳されているが IPAnalyzer の GUI は en/ja のみ
+       ローカライズ済みのため、スクリーンショットは英語で表示される。その旨を注記する。
+   各言語の文面はここに 1 分岐ずつ足す (未対応言語は英語の文面にフォールバック)。 #}
+{% extends "base.html" %}
+
+{% block content %}
+  {% if i18n_page_locale and i18n_file_locale and i18n_page_locale != i18n_file_locale %}
+    {# (1) 未訳ページ = 英語フォールバック #}
+    <div class="admonition warning" markdown="0">
+      {% if i18n_page_locale == "ja" %}
+      <p class="admonition-title">翻訳準備中</p>
+      <p>このページはまだ翻訳されていないため、英語版を表示しています。</p>
+      {% elif i18n_page_locale == "de" %}
+      {# 260626Cl: Phase 1 de パイロット #}
+      <p class="admonition-title">Übersetzung ausstehend</p>
+      <p>Diese Seite wurde noch nicht übersetzt und wird auf Englisch angezeigt.</p>
+      {% elif i18n_page_locale == "fr" %}
+      {# 260626Cl: 波A fr #}
+      <p class="admonition-title">Traduction en attente</p>
+      <p>Cette page n'a pas encore été traduite et est affichée en anglais.</p>
+      {% elif i18n_page_locale == "es" %}
+      {# 260626Cl: 波A es #}
+      <p class="admonition-title">Traducción pendiente</p>
+      <p>Esta página aún no se ha traducido y se muestra en inglés.</p>
+      {% elif i18n_page_locale == "it" %}
+      {# 260626Cl: 波A it #}
+      <p class="admonition-title">Traduzione in sospeso</p>
+      <p>Questa pagina non è ancora stata tradotta ed è mostrata in inglese.</p>
+      {% elif i18n_page_locale == "ru" %}
+      {# 260626Cl: 波A ru #}
+      <p class="admonition-title">Перевод ожидается</p>
+      <p>Эта страница ещё не переведена и отображается на английском языке.</p>
+      {% elif i18n_page_locale == "zh-Hans" %}
+      {# 260626Cl: 波B zh-Hans #}
+      <p class="admonition-title">翻译待定</p>
+      <p>此页面尚未翻译，显示为英文版本。</p>
+      {% elif i18n_page_locale == "zh-Hant" %}
+      {# 260626Cl: 波B zh-Hant #}
+      <p class="admonition-title">翻譯待定</p>
+      <p>此頁面尚未翻譯，顯示為英文版本。</p>
+      {% elif i18n_page_locale == "ko" %}
+      {# 260626Cl: 波B ko #}
+      <p class="admonition-title">번역 준비 중</p>
+      <p>이 페이지는 아직 번역되지 않아 영어로 표시됩니다.</p>
+      {% elif i18n_page_locale == "pt" %}
+      {# 260626Cl: 波B pt #}
+      <p class="admonition-title">Tradução pendente</p>
+      <p>Esta página ainda não foi traduzida e é exibida em inglês.</p>
+      {% else %}
+      <p class="admonition-title">Translation pending</p>
+      <p>This page has not been translated yet and is shown in English.</p>
+      {% endif %}
+    </div>
+  {% elif i18n_page_locale and i18n_page_locale not in ["en", "ja"] %}
+    {# (2) 翻訳済みの非 en/ja ページ = 本文は訳済みだがスクリーンショットは英語 #}
+    <div class="admonition info" markdown="0">
+      {% if i18n_page_locale == "de" %}
+      <p class="admonition-title">Screenshots auf Englisch</p>
+      <p>Die Benutzeroberfläche von IPAnalyzer ist derzeit nur auf Englisch und Japanisch lokalisiert. Die Screenshots auf dieser Seite werden daher auf Englisch angezeigt, auch wenn der Text übersetzt ist.</p>
+      {% elif i18n_page_locale == "fr" %}
+      <p class="admonition-title">Captures d'écran en anglais</p>
+      <p>L'interface d'IPAnalyzer n'est actuellement localisée qu'en anglais et en japonais. Les captures d'écran de cette page sont donc affichées en anglais, même si le texte est traduit.</p>
+      {% elif i18n_page_locale == "es" %}
+      <p class="admonition-title">Capturas de pantalla en inglés</p>
+      <p>La interfaz de IPAnalyzer solo está localizada actualmente en inglés y japonés, por lo que las capturas de pantalla de esta página se muestran en inglés aunque el texto esté traducido.</p>
+      {% elif i18n_page_locale == "it" %}
+      <p class="admonition-title">Screenshot in inglese</p>
+      <p>L'interfaccia di IPAnalyzer è attualmente localizzata solo in inglese e giapponese, quindi gli screenshot di questa pagina sono mostrati in inglese anche se il testo è tradotto.</p>
+      {% elif i18n_page_locale == "ru" %}
+      <p class="admonition-title">Снимки экрана на английском</p>
+      <p>Интерфейс IPAnalyzer в настоящее время локализован только на английский и японский языки, поэтому снимки экрана на этой странице показаны на английском, даже если текст переведён.</p>
+      {% elif i18n_page_locale == "zh-Hans" %}
+      <p class="admonition-title">屏幕截图为英文</p>
+      <p>IPAnalyzer 的界面目前仅本地化为英文和日文，因此本页的屏幕截图以英文显示，即使正文已翻译。</p>
+      {% elif i18n_page_locale == "zh-Hant" %}
+      <p class="admonition-title">螢幕截圖為英文</p>
+      <p>IPAnalyzer 的介面目前僅在地化為英文與日文，因此本頁的螢幕截圖以英文顯示，即使內文已翻譯。</p>
+      {% elif i18n_page_locale == "ko" %}
+      <p class="admonition-title">스크린샷은 영어로 표시됩니다</p>
+      <p>IPAnalyzer 인터페이스는 현재 영어와 일본어로만 현지화되어 있으므로, 본문이 번역되어 있더라도 이 페이지의 스크린샷은 영어로 표시됩니다.</p>
+      {% elif i18n_page_locale == "pt" %}
+      <p class="admonition-title">Capturas de tela em inglês</p>
+      <p>A interface do IPAnalyzer está atualmente localizada apenas em inglês e japonês, portanto as capturas de tela desta página são exibidas em inglês, mesmo que o texto esteja traduzido.</p>
+      {% else %}
+      <p class="admonition-title">Screenshots are in English</p>
+      <p>The IPAnalyzer interface is currently localized only in English and Japanese, so the screenshots on this page are shown in English even though the text is translated.</p>
+      {% endif %}
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}

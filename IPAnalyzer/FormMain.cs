@@ -267,7 +267,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         //260604Cl 追加: F1 オンラインヘルプの URL 解決ロジックを登録 (起動時に 1 回)。ReciPro/FormMain と同じ方式。
         //Crystallography.Controls 側のフォームは IPAnalyzer 固有の URL を知らないため、ここで一括して組み立てる。
-        //en ページは /IPAnalyzer/en/<slug>/、ja ページは /IPAnalyzer/ja/<slug>/。HelpPage 未設定時は各言語のトップへ。
+        //260625Cl 変更: Pages を mkdocs-static-i18n (folder mode) へ移行し、default locale (en) を
+        //  サイトルートへ出すようにした。よって en ページは /IPAnalyzer/<slug>/ (旧 /en/<slug>/ は廃止)、
+        //  ja など他言語は /IPAnalyzer/<lang>/<slug>/。旧 /en/ URL は legacy_en_redirects フックが互換維持する。
         //260625Cl 変更: マニュアルが整備済みの言語 (manualReadyCultures) のみ自言語へ向け、未整備言語は英語へ落とす。
         //  共有 SupportedCultures.HelpCulture は ReciPro/PDIndexer 基準で全言語整備済 (各言語コード) だが、IPAnalyzer の
         //  マニュアルは現状 en/ja のみ。よって SupportedCultures.HelpCulture ではなく IPAnalyzer 専用の allow-list で判定する。
@@ -276,9 +278,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         {
             var cur = Crystallography.SupportedCultures.Current.Name;
             var lang = Array.IndexOf(manualReadyCultures, cur) >= 0 ? cur : "en";
+            //旧 (static-i18n 移行前・en も /en/ 配下だった): $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/"
             return string.IsNullOrEmpty(f.HelpPage)
                 ? (lang == "en" ? "https://seto77.github.io/IPAnalyzer/" : $"https://seto77.github.io/IPAnalyzer/{lang}/")
-                : $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/";
+                : (lang == "en" ? $"https://seto77.github.io/IPAnalyzer/{f.HelpPage}/" : $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/");
         };
 
         ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport

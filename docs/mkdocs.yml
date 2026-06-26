@@ -1,4 +1,10 @@
 # 260531Ch: MkDocs Material configuration for the IPAnalyzer GitHub Pages manual.
+# 260625Cl: 多言語化のため mkdocs-static-i18n (folder mode) へ移行 (ReciPro と同じ構成)。
+#   - en を default locale としてサイトルート (/IPAnalyzer/) へ、ja を /IPAnalyzer/ja/ へ出力。
+#   - 未訳ページは fallback_to_default で英語本文をローカライズ URL に自動生成 (ページ単位の増分公開)。
+#   - 言語切替は reconfigure_material が Material のセレクタを現在ページ基準で自動構成 (旧 language_switch.js は廃止)。
+#   - IPAnalyzer の GUI は en/ja のみローカライズ済みのため、他言語ページは英語スクリーンショットを表示する
+#     (overrides/main.html のバナーで明示)。新言語は plugins.i18n.languages に 1 行ずつ追加していく。
 site_name: IPAnalyzer Manual
 site_description: IPAnalyzer user manual
 site_url: https://seto77.github.io/IPAnalyzer/
@@ -13,9 +19,11 @@ use_directory_urls: true
 theme:
   name: material
   language: en
+  custom_dir: overrides   # 260625Cl: 未訳=英語フォールバック告知 + 他言語スクショ注記バナー (overrides/main.html)
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
+    # 260625Cl: navigation.tabs / navigation.tabs.sticky は言語タブ用途だったため撤去。
+    #   多言語化後は言語選択をヘッダーのセレクタ (static-i18n が構成) に一本化し、
+    #   nav は 1 言語ぶん (章立て) を左サイドバーに出す。
     - navigation.indexes
     - navigation.footer
     - navigation.top
@@ -40,12 +48,246 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 
+# 260625Cl: 旧英語 URL (/en/<slug>/) → 新ルート URL (/<slug>/) 互換の stub を post-build で生成。
+#   mkdocs-redirects は static-i18n 再ホーム後のルート URL を target にできない (ReciPro 実測) ため、
+#   英語の /en/ 互換はこのフックが担当する。IPAnalyzer はリネーム履歴が無いので現行ページの自動 alias のみ。
+hooks:
+  - hooks/legacy_en_redirects.py
+
 plugins:
   - search:
       lang:
         - en
         - ja
   - glightbox
+  # 260625Cl: 多言語化プラグイン。languages は en (default=ルート出力) / ja。新言語はここに 1 行ずつ追加していく。
+  #   redirects より前に置く: redirects (将来の JA リネーム履歴) は i18n 適用後のファイル URL を解決する必要がある。
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            Home: ホーム
+            0. Overview: 0. 概要
+            1. Main Window: 1. メインウィンドウ
+            2. Property Windows: 2. プロパティウィンドウ
+            3. Tools: 3. 各種ツール
+            4. Procedures: 4. 実際の手順
+            5. Macro: 5. マクロ
+            5.1. Built-in functions: 5.1. 組み込み関数
+            5.2. Examples: 5.2. 使用例
+            6. Find Parameter (brute force): 6. パラメータ校正（力ずく）
+            Appendix: 付録
+            A1. Detector geometry: A1. 検出器の幾何
+            A2. Parameter determination: A2. パラメータの決定
+            A3. Image integration: A3. 画像の積算
+            A4. Symmetry information: A4. 対称性情報
+            A5. Scattering factor: A5. 散乱因子
+        # 260626Cl: Phase 1 = de パイロット。IPAnalyzer の GUI は en/ja のみローカライズ済みのため、
+        #   de ページは英語スクリーンショット (cap-en-auto) を表示する (overrides/main.html のバナーで明示)。
+        #   nav_translations の用語は .project-guidance/IPAnalyzer_Pages_de用語集.md に準拠。
+        - locale: de
+          name: Deutsch
+          build: true
+          nav_translations:
+            Home: Startseite
+            0. Overview: 0. Überblick
+            1. Main Window: 1. Hauptfenster
+            2. Property Windows: 2. Eigenschaftsfenster
+            3. Tools: 3. Werkzeuge
+            4. Procedures: 4. Arbeitsabläufe
+            5. Macro: 5. Makro
+            5.1. Built-in functions: 5.1. Integrierte Funktionen
+            5.2. Examples: 5.2. Beispiele
+            6. Find Parameter (brute force): 6. Parameter finden (Brute-Force)
+            Appendix: Anhang
+            A1. Detector geometry: A1. Detektorgeometrie
+            A2. Parameter determination: A2. Parameterbestimmung
+            A3. Image integration: A3. Bildintegration
+            A4. Symmetry information: A4. Symmetrieinformationen
+            A5. Scattering factor: A5. Streufaktor
+        # 260626Cl: 波A fr。用語は .project-guidance/IPAnalyzer_Pages_fr用語集.md に準拠。スクショは英語 (cap-en-auto)。
+        - locale: fr
+          name: Français
+          build: true
+          nav_translations:
+            Home: Accueil
+            0. Overview: 0. Aperçu
+            1. Main Window: 1. Fenêtre principale
+            2. Property Windows: 2. Fenêtres de propriétés
+            3. Tools: 3. Outils
+            4. Procedures: 4. Procédures
+            5. Macro: 5. Macro
+            5.1. Built-in functions: 5.1. Fonctions intégrées
+            5.2. Examples: 5.2. Exemples
+            6. Find Parameter (brute force): 6. Recherche de paramètres (force brute)
+            Appendix: Annexe
+            A1. Detector geometry: A1. Géométrie du détecteur
+            A2. Parameter determination: A2. Détermination des paramètres
+            A3. Image integration: A3. Intégration de l'image
+            A4. Symmetry information: A4. Informations de symétrie
+            A5. Scattering factor: A5. Facteur de diffusion
+        # 260626Cl: 波A es。用語は .project-guidance/IPAnalyzer_Pages_es用語集.md に準拠。スクショは英語 (cap-en-auto)。
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Home: Inicio
+            0. Overview: 0. Visión general
+            1. Main Window: 1. Ventana principal
+            2. Property Windows: 2. Ventanas de propiedades
+            3. Tools: 3. Herramientas
+            4. Procedures: 4. Procedimientos
+            5. Macro: 5. Macro
+            5.1. Built-in functions: 5.1. Funciones integradas
+            5.2. Examples: 5.2. Ejemplos
+            6. Find Parameter (brute force): 6. Buscar parámetros (fuerza bruta)
+            Appendix: Apéndice
+            A1. Detector geometry: A1. Geometría del detector
+            A2. Parameter determination: A2. Determinación de parámetros
+            A3. Image integration: A3. Integración de la imagen
+            A4. Symmetry information: A4. Información de simetría
+            A5. Scattering factor: A5. Factor de dispersión
+        # 260626Cl: 波A it。用語は .project-guidance/IPAnalyzer_Pages_it用語集.md に準拠。スクショは英語 (cap-en-auto)。
+        - locale: it
+          name: Italiano
+          build: true
+          nav_translations:
+            Home: Home
+            0. Overview: 0. Panoramica
+            1. Main Window: 1. Finestra principale
+            2. Property Windows: 2. Finestre delle proprietà
+            3. Tools: 3. Strumenti
+            4. Procedures: 4. Procedure
+            5. Macro: 5. Macro
+            5.1. Built-in functions: 5.1. Funzioni integrate
+            5.2. Examples: 5.2. Esempi
+            6. Find Parameter (brute force): 6. Trova parametri (forza bruta)
+            Appendix: Appendice
+            A1. Detector geometry: A1. Geometria del rivelatore
+            A2. Parameter determination: A2. Determinazione dei parametri
+            A3. Image integration: A3. Integrazione dell'immagine
+            A4. Symmetry information: A4. Informazioni di simmetria
+            A5. Scattering factor: A5. Fattore di diffusione
+        # 260626Cl: 波A ru (Cyrillic)。用語は .project-guidance/IPAnalyzer_Pages_ru用語集.md に準拠。スクショは英語 (cap-en-auto)。
+        - locale: ru
+          name: Русский
+          build: true
+          nav_translations:
+            Home: Главная
+            0. Overview: 0. Обзор
+            1. Main Window: 1. Главное окно
+            2. Property Windows: 2. Окна свойств
+            3. Tools: 3. Инструменты
+            4. Procedures: 4. Процедуры
+            5. Macro: 5. Макрос
+            5.1. Built-in functions: 5.1. Встроенные функции
+            5.2. Examples: 5.2. Примеры
+            6. Find Parameter (brute force): 6. Поиск параметров (полный перебор)
+            Appendix: Приложение
+            A1. Detector geometry: A1. Геометрия детектора
+            A2. Parameter determination: A2. Определение параметров
+            A3. Image integration: A3. Интегрирование изображения
+            A4. Symmetry information: A4. Сведения о симметрии
+            A5. Scattering factor: A5. Фактор рассеяния
+        # 260626Cl: 波B zh-Hans (簡体字)。partial alias = overrides/partials/languages/zh-Hans.html。
+        #   lunr は zh-Hans 非対応 → search から自動除外 (情報ログ)。用語は IPAnalyzer_Pages_zh-Hans用語集.md に準拠。
+        - locale: zh-Hans
+          name: 简体中文
+          build: true
+          nav_translations:
+            Home: 首页
+            0. Overview: 0. 概述
+            1. Main Window: 1. 主窗口
+            2. Property Windows: 2. 属性窗口
+            3. Tools: 3. 工具
+            4. Procedures: 4. 操作步骤
+            5. Macro: 5. 宏
+            5.1. Built-in functions: 5.1. 内置函数
+            5.2. Examples: 5.2. 示例
+            6. Find Parameter (brute force): 6. 查找参数（暴力搜索）
+            Appendix: 附录
+            A1. Detector geometry: A1. 探测器几何
+            A2. Parameter determination: A2. 参数确定
+            A3. Image integration: A3. 图像积分
+            A4. Symmetry information: A4. 对称性信息
+            A5. Scattering factor: A5. 散射因子
+        # 260626Cl: 波B zh-Hant (繁体字・台湾)。Material 内蔵 zh-Hant partial で動作 (alias 不要)。lunr 非対応で検索除外。
+        #   ★zh-Hans の単純変換でなく台湾用語に一致 (繞射/巨集/視窗/偵測器/資訊/範例/函式/影格)。用語は IPAnalyzer_Pages_zh-Hant用語集.md に準拠。
+        - locale: zh-Hant
+          name: 繁體中文
+          build: true
+          nav_translations:
+            Home: 首頁
+            0. Overview: 0. 概觀
+            1. Main Window: 1. 主視窗
+            2. Property Windows: 2. 屬性視窗
+            3. Tools: 3. 工具
+            4. Procedures: 4. 操作步驟
+            5. Macro: 5. 巨集
+            5.1. Built-in functions: 5.1. 內建函式
+            5.2. Examples: 5.2. 範例
+            6. Find Parameter (brute force): 6. 尋找參數（暴力搜尋）
+            Appendix: 附錄
+            A1. Detector geometry: A1. 偵測器幾何
+            A2. Parameter determination: A2. 參數決定
+            A3. Image integration: A3. 影像積分
+            A4. Symmetry information: A4. 對稱性資訊
+            A5. Scattering factor: A5. 散射因子
+        # 260626Cl: 波B ko。Material 内蔵 ko partial で動作。lunr 非対応で検索除外。用語は IPAnalyzer_Pages_ko用語集.md に準拠。
+        - locale: ko
+          name: 한국어
+          build: true
+          nav_translations:
+            Home: 홈
+            0. Overview: 0. 개요
+            1. Main Window: 1. 메인 창
+            2. Property Windows: 2. 속성 창
+            3. Tools: 3. 도구
+            4. Procedures: 4. 작업 절차
+            5. Macro: 5. 매크로
+            5.1. Built-in functions: 5.1. 내장 함수
+            5.2. Examples: 5.2. 예제
+            6. Find Parameter (brute force): 6. 매개변수 찾기 (전수 탐색)
+            Appendix: 부록
+            A1. Detector geometry: A1. 검출기 기하
+            A2. Parameter determination: A2. 매개변수 결정
+            A3. Image integration: A3. 이미지 적분
+            A4. Symmetry information: A4. 대칭 정보
+            A5. Scattering factor: A5. 산란 인자
+        # 260626Cl: 波B pt (pt-BR 寄り綴り・要ネイティブ校閲)。用語は IPAnalyzer_Pages_pt用語集.md に準拠。
+        - locale: pt
+          name: Português
+          build: true
+          nav_translations:
+            Home: Início
+            0. Overview: 0. Visão geral
+            1. Main Window: 1. Janela principal
+            2. Property Windows: 2. Janelas de propriedades
+            3. Tools: 3. Ferramentas
+            4. Procedures: 4. Procedimentos
+            5. Macro: 5. Macro
+            5.1. Built-in functions: 5.1. Funções integradas
+            5.2. Examples: 5.2. Exemplos
+            6. Find Parameter (brute force): 6. Encontrar parâmetros (força bruta)
+            Appendix: Apêndice
+            A1. Detector geometry: A1. Geometria do detector
+            A2. Parameter determination: A2. Determinação de parâmetros
+            A3. Image integration: A3. Integração da imagem
+            A4. Symmetry information: A4. Informação de simetria
+            A5. Scattering factor: A5. Fator de espalhamento
+  # 260625Cl: 日本語ページのリネーム/移動履歴の redirect 用スロット (現状リネーム履歴は無いので空)。
+  #   i18n の後に置くこと (i18n 適用後の File URL を解決させるため)。
+  #   罠: 'foo.md':'foo/index.md' 形の自己ループ redirect を張らない (use_directory_urls で同一 URL)。
   - redirects:
       redirect_maps: {}
 
@@ -56,6 +298,10 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      # 260625Cl: 非ASCII 見出し (日本語・独・露・中・韓) の slug を機能させる (pymdownx の Unicode slugify)。
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
@@ -80,53 +326,27 @@ extra_css:
 extra_javascript:
   - assets/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - assets/javascripts/language_switch.js
+  # 260625Cl: 言語切替 JS (language_switch.js) は static-i18n の reconfigure_material が
+  #   現在ページ基準のセレクタを構成するため不要になり廃止。
 
-extra:
-  alternate:
-    - name: English
-      link: /IPAnalyzer/
-      lang: en
-    - name: 日本語
-      link: /IPAnalyzer/ja/
-      lang: ja
+# 260625Cl: extra.alternate は static-i18n が自動構成するため手書きしない。
 
 nav:
-  - English:
-      - Home: index.md
-      - 0. Overview: en/0-overview.md
-      - 1. Main Window: en/1-main-window.md
-      - 2. Property Windows: en/2-property-windows.md
-      - 3. Tools: en/3-tools.md
-      - 4. Procedures: en/4-procedures.md
-      - 5. Macro:
-          - en/5-macro/index.md
-          - 5.1. Built-in functions: en/5-macro/1-built-in-functions.md
-          - 5.2. Examples: en/5-macro/2-examples.md
-      - 6. Find Parameter (brute force): en/6-find-parameter.md
-      - Appendix:
-          - en/appendix/index.md
-          - A1. Detector geometry: en/appendix/a1-geometry.md
-          - A2. Parameter determination: en/appendix/a2-calibration.md
-          - A3. Image integration: en/appendix/a3-image-integration.md
-          - A4. Symmetry information: en/appendix/a4-symmetry-information.md
-          - A5. Scattering factor: en/appendix/a5-scattering-factor.md
-  - 日本語:
-      - ホーム: ja/index.md
-      - 0. 概要: ja/0-overview.md
-      - 1. メインウィンドウ: ja/1-main-window.md
-      - 2. プロパティウィンドウ: ja/2-property-windows.md
-      - 3. 各種ツール: ja/3-tools.md
-      - 4. 実際の手順: ja/4-procedures.md
-      - 5. マクロ:
-          - ja/5-macro/index.md
-          - 5.1. 組み込み関数: ja/5-macro/1-built-in-functions.md
-          - 5.2. 使用例: ja/5-macro/2-examples.md
-      - 6. パラメータ校正（力ずく）: ja/6-find-parameter.md
-      - 付録:
-          - ja/appendix/index.md
-          - A1. 検出器の幾何: ja/appendix/a1-geometry.md
-          - A2. パラメータの決定: ja/appendix/a2-calibration.md
-          - A3. 画像の積算: ja/appendix/a3-image-integration.md
-          - A4. 対称性情報: ja/appendix/a4-symmetry-information.md
-          - A5. 散乱因子: ja/appendix/a5-scattering-factor.md
+  - Home: index.md
+  - 0. Overview: 0-overview.md
+  - 1. Main Window: 1-main-window.md
+  - 2. Property Windows: 2-property-windows.md
+  - 3. Tools: 3-tools.md
+  - 4. Procedures: 4-procedures.md
+  - 5. Macro:
+      - 5-macro/index.md
+      - 5.1. Built-in functions: 5-macro/1-built-in-functions.md
+      - 5.2. Examples: 5-macro/2-examples.md
+  - 6. Find Parameter (brute force): 6-find-parameter.md
+  - Appendix:
+      - appendix/index.md
+      - A1. Detector geometry: appendix/a1-geometry.md
+      - A2. Parameter determination: appendix/a2-calibration.md
+      - A3. Image integration: appendix/a3-image-integration.md
+      - A4. Symmetry information: appendix/a4-symmetry-information.md
+      - A5. Scattering factor: appendix/a5-scattering-factor.md

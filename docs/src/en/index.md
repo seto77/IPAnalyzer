@@ -1,4 +1,5 @@
 <!-- 260601Cl: Rewrote English home page into a richer landing page (Find by goal / Features / Quick start), modeled on the ReciPro manual home. -->
+<!-- 260625Cl: Moved from docs/src/index.md to docs/src/en/index.md for the mkdocs-static-i18n folder-mode migration (en is the default locale, output at the site root). Internal links de-prefixed from en/<slug> to <slug>. -->
 
 # IPAnalyzer Manual
 
@@ -12,11 +13,11 @@
 
 | Goal | Start here | Main next steps |
 |------|------------|-----------------|
-| Understand the coordinate system and geometry | [Overview](en/0-overview.md) | [Property Windows](en/2-property-windows.md) |
-| Load an image and get a 1D profile | [Procedures](en/4-procedures.md) | [Main Window](en/1-main-window.md), [Property Windows](en/2-property-windows.md) |
-| Calibrate camera length / wavelength | [Procedures](en/4-procedures.md) | [Tools](en/3-tools.md), [Find Parameter (brute force)](en/6-find-parameter.md) |
-| Mask spots / handle multi-frame data | [Tools](en/3-tools.md) | [Procedures](en/4-procedures.md) |
-| Automate processing | [Macro](en/5-macro/index.md) | [Built-in functions](en/5-macro/1-built-in-functions.md), [Examples](en/5-macro/2-examples.md), [Auto Procedure](en/3-tools.md) |
+| Understand the coordinate system and geometry | [Overview](0-overview.md) | [Property Windows](2-property-windows.md) |
+| Load an image and get a 1D profile | [Procedures](4-procedures.md) | [Main Window](1-main-window.md), [Property Windows](2-property-windows.md) |
+| Calibrate camera length / wavelength | [Procedures](4-procedures.md) | [Tools](3-tools.md), [Find Parameter (brute force)](6-find-parameter.md) |
+| Mask spots / handle multi-frame data | [Tools](3-tools.md) | [Procedures](4-procedures.md) |
+| Automate processing | [Macro](5-macro/index.md) | [Built-in functions](5-macro/1-built-in-functions.md), [Examples](5-macro/2-examples.md), [Auto Procedure](3-tools.md) |
 
 ## Features
 
@@ -25,7 +26,7 @@
 * **Geometry calibration** : Geometric (double-cassette) refinement of wavelength, camera length, pixel size/distortion, and tilt (φ, τ), plus a brute-force grid search for difficult data.
 * **Image handling** : Automatic beam-center detection, single-crystal spot detection and masking, circumferential blur, draw-ring overlays, intensity-table detector calibration, and geometry-preserving IPA save.
 * **Multi-frame data** : Select, average, or sum frames of HDF5/NeXus and other sequential data, with per-frame wavelength from embedded energy.
-* **Automation** : Folder-watching Auto Procedure and a Python-syntax [macro](en/5-macro/index.md) for batch and scripted processing.
+* **Automation** : Folder-watching Auto Procedure and a Python-syntax [macro](5-macro/index.md) for batch and scripted processing.
 * **PDIndexer integration** : Send profiles to [PDIndexer](https://github.com/seto77/PDIndexer) via the clipboard and trigger named macros there.
 * **Light / dark theme** : The interface follows a selectable light or dark colour mode.
 
@@ -43,9 +44,9 @@
 2. Read a diffraction image (File → Read image, or drag & drop).
 3. Set the **Wave source** and **Detector condition** (camera length, pixel size, approximate center) in the property window.
 4. Find the center, mask spots if needed, and press **Get Profile** to obtain the 1D profile.
-5. If the geometry is unknown, calibrate it from a standard material — see [Procedures](en/4-procedures.md).
+5. If the geometry is unknown, calibrate it from a standard material — see [Procedures](4-procedures.md).
 
-See [Procedures](en/4-procedures.md) for the full workflow.
+See [Procedures](4-procedures.md) for the full workflow.
 
 ## How to use this manual
 
