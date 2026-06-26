@@ -2928,7 +2928,15 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         var msg = Crystallography.Localization.Loc(
             en: $"Switching the display language to \"{culture.NativeName}\" requires restarting IPAnalyzer.\nUnsaved work will be lost. Restart now?",
             ja: $"表示言語を「{culture.NativeName}」に切り替えるには IPAnalyzer の再起動が必要です。\n保存していない作業は失われます。今すぐ再起動しますか？",
-            de: $"Zum Umschalten der Anzeigesprache auf \"{culture.NativeName}\" muss IPAnalyzer neu gestartet werden.\nNicht gespeicherte Arbeit geht verloren. Jetzt neu starten?");
+            de: $"Zum Umschalten der Anzeigesprache auf \"{culture.NativeName}\" muss IPAnalyzer neu gestartet werden.\nNicht gespeicherte Arbeit geht verloren. Jetzt neu starten?",
+            fr: $"Le changement de langue d'affichage vers « {culture.NativeName} » nécessite le redémarrage d'IPAnalyzer.\nLe travail non enregistré sera perdu. Redémarrer maintenant ?",
+            es: $"Cambiar el idioma de visualización a «{culture.NativeName}» requiere reiniciar IPAnalyzer.\nSe perderá el trabajo no guardado. ¿Reiniciar ahora?",
+            pt: $"Alterar o idioma de exibição para \"{culture.NativeName}\" requer reiniciar o IPAnalyzer.\nO trabalho não salvo será perdido. Reiniciar agora?",
+            it: $"Per cambiare la lingua di visualizzazione in \"{culture.NativeName}\" è necessario riavviare IPAnalyzer.\nIl lavoro non salvato andrà perso. Riavviare ora?",
+            ru: $"Для смены языка интерфейса на «{culture.NativeName}» требуется перезапуск IPAnalyzer.\nНесохранённая работа будет потеряна. Перезапустить сейчас?",
+            zhHans: $"将显示语言切换为\"{culture.NativeName}\"需要重启 IPAnalyzer。\n未保存的工作将丢失。现在重启吗？",
+            zhHant: $"將顯示語言切換為「{culture.NativeName}」需要重新啟動 IPAnalyzer。\n未儲存的工作將遺失。現在重新啟動嗎？",
+            ko: $"표시 언어를 \"{culture.NativeName}\"(으)로 전환하려면 IPAnalyzer를 다시 시작해야 합니다.\n저장하지 않은 작업은 손실됩니다. 지금 다시 시작하시겠습니까?");
         if (MessageBox.Show(this, msg, Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern", fr: "Changer de langue", es: "Cambiar idioma", pt: "Alterar idioma", it: "Cambia lingua", ru: "Сменить язык", zhHans: "更改语言", zhHant: "變更語言", ko: "언어 변경"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
         {
@@ -2967,7 +2975,15 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 Crystallography.Localization.Loc(
                     en: $"Failed to restart IPAnalyzer.\n{ex.Message}",
                     ja: $"IPAnalyzer の再起動に失敗しました。\n{ex.Message}",
-                    de: $"Neustart von IPAnalyzer fehlgeschlagen.\n{ex.Message}"),
+                    de: $"Neustart von IPAnalyzer fehlgeschlagen.\n{ex.Message}",
+                    fr: $"Échec du redémarrage d'IPAnalyzer.\n{ex.Message}",
+                    es: $"Error al reiniciar IPAnalyzer.\n{ex.Message}",
+                    pt: $"Falha ao reiniciar o IPAnalyzer.\n{ex.Message}",
+                    it: $"Riavvio di IPAnalyzer non riuscito.\n{ex.Message}",
+                    ru: $"Не удалось перезапустить IPAnalyzer.\n{ex.Message}",
+                    zhHans: $"重启 IPAnalyzer 失败。\n{ex.Message}",
+                    zhHant: $"重新啟動 IPAnalyzer 失敗。\n{ex.Message}",
+                    ko: $"IPAnalyzer 다시 시작에 실패했습니다.\n{ex.Message}"),
                 Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern", fr: "Changer de langue", es: "Cambiar idioma", pt: "Alterar idioma", it: "Cambia lingua", ru: "Сменить язык", zhHans: "更改语言", zhHant: "變更語言", ko: "언어 변경"),
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -4030,11 +4046,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 if (ProgramUpdates.Execute(Path))
                     Close();
                 else
-                    MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed to download {Path}. \r\nSorry!", ja: $"{Path} のダウンロードに失敗しました。\r\nすみません！", de: $"Download von {Path} fehlgeschlagen. \r\nEntschuldigung!"), "Error!"); // 260625Cl Loc化
+                    MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed to download {Path}. \r\nSorry!", ja: $"{Path} のダウンロードに失敗しました。\r\nすみません！", de: $"Download von {Path} fehlgeschlagen. \r\nEntschuldigung!", fr: $"Échec du téléchargement de {Path}. \r\nDésolé !", es: $"Error al descargar {Path}. \r\n¡Lo sentimos!", pt: $"Falha ao baixar {Path}. \r\nDesculpe!", it: $"Download di {Path} non riuscito. \r\nSpiacenti!", ru: $"Не удалось загрузить {Path}. \r\nИзвините!", zhHans: $"下载 {Path} 失败。\r\n抱歉！", zhHant: $"下載 {Path} 失敗。\r\n抱歉！", ko: $"{Path} 다운로드에 실패했습니다. \r\n죄송합니다!"), "Error!"); // 260625Cl Loc化
             }
             catch
             {
-                MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed update check. \r\nServer may be down. \r\nAccess https://github.com/seto77/{Version.Software}/releases/latest", ja: $"更新確認に失敗しました。\r\nサーバーがダウンしている可能性があります。\r\nhttps://github.com/seto77/{Version.Software}/releases/latest にアクセスしてください", de: $"Update-Prüfung fehlgeschlagen. \r\nDer Server ist möglicherweise nicht erreichbar. \r\nÖffnen Sie https://github.com/seto77/{Version.Software}/releases/latest"), "Error"); // 260625Cl Loc化
+                MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed update check. \r\nServer may be down. \r\nAccess https://github.com/seto77/{Version.Software}/releases/latest", ja: $"更新確認に失敗しました。\r\nサーバーがダウンしている可能性があります。\r\nhttps://github.com/seto77/{Version.Software}/releases/latest にアクセスしてください", de: $"Update-Prüfung fehlgeschlagen. \r\nDer Server ist möglicherweise nicht erreichbar. \r\nÖffnen Sie https://github.com/seto77/{Version.Software}/releases/latest", fr: $"Échec de la vérification des mises à jour. \r\nLe serveur est peut-être hors service. \r\nAccédez à https://github.com/seto77/{Version.Software}/releases/latest", es: $"Error al comprobar actualizaciones. \r\nEl servidor puede estar caído. \r\nAcceda a https://github.com/seto77/{Version.Software}/releases/latest", pt: $"Falha na verificação de atualizações. \r\nO servidor pode estar fora do ar. \r\nAcesse https://github.com/seto77/{Version.Software}/releases/latest", it: $"Controllo aggiornamenti non riuscito. \r\nIl server potrebbe non essere raggiungibile. \r\nVai su https://github.com/seto77/{Version.Software}/releases/latest", ru: $"Не удалось проверить обновления. \r\nСервер может быть недоступен. \r\nОткройте https://github.com/seto77/{Version.Software}/releases/latest", zhHans: $"检查更新失败。\r\n服务器可能已关闭。\r\n请访问 https://github.com/seto77/{Version.Software}/releases/latest", zhHant: $"檢查更新失敗。\r\n伺服器可能已關閉。\r\n請存取 https://github.com/seto77/{Version.Software}/releases/latest", ko: $"업데이트 확인에 실패했습니다. \r\n서버가 다운되었을 수 있습니다. \r\nhttps://github.com/seto77/{Version.Software}/releases/latest 에 접속하세요"), "Error"); // 260625Cl Loc化
             }
         }
     }
