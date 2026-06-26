@@ -2893,8 +2893,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     private static readonly string[] releasedCulturesInIPA = { "en", "ja", "de" };
 
     // 260625Cl 追加: F1/PDF マニュアルが整備済みの言語の allow-list (未整備言語は英語マニュアルへ落とす)。
-    //   公開ゲート (releasedCulturesInIPA) とは別概念 (UI 翻訳済 ≠ マニュアル整備済) だが現状はどちらも en/ja。
-    private static readonly string[] manualReadyCultures = { "en", "ja" };
+    //   公開ゲート (releasedCulturesInIPA) とは別概念 (UI 翻訳済 ≠ マニュアル整備済)。
+    // 260626Cl 変更: GitHub Pages マニュアルを全11言語へ整備したため en/ja → 全11言語へ拡張。
+    //   独語 Windows 等では UI は英語フォールバックでも F1 がその言語のマニュアルを開く。
+    //   cur = SupportedCultures.Current.Name は Resolve() で常にこの11個の正規名へ解決される
+    //   (de-DE→de, pt-BR→pt, zh-CN→zh-Hans, zh-TW→zh-Hant 等。CurrentUICulture 基準)。
+    //   よって raw culture 名は来ず、cur をそのまま比較・URL ディレクトリ名に使ってよい (Codex レビュー確認済)。
+    //   旧: { "en", "ja" }
+    private static readonly string[] manualReadyCultures = { "en", "ja", "de", "fr", "es", "it", "ru", "zh-Hans", "zh-Hant", "ko", "pt" };
 
     // 260625Cl 変更: english/japanese 二択固定 + ライブ切替(Language.Change) を廃止し、項目の Tag(CultureInfo 名) 駆動 +
     //   確認ダイアログ + 自動再起動方式へ (ReciPro/PDIndexer と統一)。ライブ切替は ApplyResources/コード側 Loc/フォント/

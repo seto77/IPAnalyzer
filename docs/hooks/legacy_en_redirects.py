@@ -28,6 +28,8 @@ _STUB = (
     "<!doctype html>\n"
     '<html lang="en"><head><meta charset="utf-8">\n'
     '<meta http-equiv="refresh" content="0; url={url}">\n'
+    # 260626Cl: stub 自体は検索索引に載せない (canonical 先=新ルート URL を代表にする)。Codex レビュー指摘。
+    '<meta name="robots" content="noindex">\n'
     '<link rel="canonical" href="{url}">\n'
     "<script>location.replace({url_js}+location.search+location.hash)</script>\n"
     '<title>Redirecting…</title></head><body>\n'
