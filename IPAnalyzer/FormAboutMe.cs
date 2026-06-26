@@ -71,10 +71,11 @@ namespace IPAnalyzer
             else if (n == 3)
             {
                 // 260626Cl Loc化 (英語環境で日本語直書きが出ていたのを修正)
-                textBoxReadMe.Text = Crystallography.Localization.Loc(en: "Hidden comment\r\n", ja: "隠しコメント\r\n");
+                textBoxReadMe.Text = Crystallography.Localization.Loc(en: "Hidden comment\r\n", ja: "隠しコメント\r\n", de: "Versteckter Kommentar\r\n");
                 textBoxReadMe.Text += Crystallography.Localization.Loc(
                     en: "This software is free, but donations are gladly accepted.\r\nIf you found this software useful, please treat me to a meal at a conference or some other occasion.",
-                    ja: "このソフトはフリーですが、喜んで寄付も申し受けております。\r\nもしこのソフトを使って便利だなぁと感じた方、学会か何かの折にご飯をおごってください。");
+                    ja: "このソフトはフリーですが、喜んで寄付も申し受けております。\r\nもしこのソフトを使って便利だなぁと感じた方、学会か何かの折にご飯をおごってください。",
+                    de: "Diese Software ist kostenlos, über Spenden freue ich mich aber sehr.\r\nWenn Sie diese Software nützlich finden, laden Sie mich bei Gelegenheit (z. B. auf einer Tagung) gern zu einer Mahlzeit ein.");
 
                 n = 0;
 

@@ -188,7 +188,7 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
             targetFolder = textBoxDiectory.Text;
             if (targetFolder.Length == 0 || !Directory.Exists(targetFolder))
             {
-                MessageBox.Show(Crystallography.Localization.Loc(en: "Set the appropriate directories to be monitored.", ja: "監視するディレクトリを正しく設定してください。")); // 260625Cl Loc化
+                MessageBox.Show(Crystallography.Localization.Loc(en: "Set the appropriate directories to be monitored.", ja: "監視するディレクトリを正しく設定してください。", de: "Bitte legen Sie die zu überwachenden Verzeichnisse korrekt fest.")); // 260625Cl Loc化
                 checkBoxAutoLoad.Checked = false;
                 return;
             }

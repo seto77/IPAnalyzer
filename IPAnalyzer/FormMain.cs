@@ -504,7 +504,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.1);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking language.", ja: "読み込み中...言語を確認中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking language.", ja: "読み込み中...言語を確認中。", de: "Wird geladen... Sprache wird geprüft.");
 
         // 260625Cl 変更: english/japanese 固定チェックを廃止し、言語メニューを SupportedCultures から動的生成して
         //   現在カルチャにチェックを付ける (公開は releasedCulturesInIPA={en,ja} に限定。ReciPro/FormMain と同方式)。
@@ -522,7 +522,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.2);
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Setting image scales.", ja: "読み込み中...画像スケールを設定中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Setting image scales.", ja: "読み込み中...画像スケールを設定中。", de: "Wird geladen... Bildskalen werden gesetzt.");
         pseudoBitmap.MaxValue = 65535;
         pseudoBitmap.MinValue = 0;
         IP = new IntegralProperty();
@@ -531,7 +531,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         comboBoxScale2.SelectedIndex = 0;
         comboBoxGradient.SelectedIndex = 0;
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Intensity table' form", ja: "読み込み中...「強度テーブル」フォームを初期化中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Intensity table' form", ja: "読み込み中...「強度テーブル」フォームを初期化中", de: "Wird geladen... Fenster „Intensitätstabelle“ wird initialisiert");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.3);
 
         //FormIntTable = new FormIntTable();
@@ -539,55 +539,55 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //FormIntTable.Visible = false;
         //FormIntTable.Owner = this;
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Auto procedure' form", ja: "読み込み中...「自動処理」フォームを初期化中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Auto procedure' form", ja: "読み込み中...「自動処理」フォームを初期化中", de: "Wird geladen... Fenster „Autoprozedur“ wird initialisiert");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.4);
 
         FormAutoProc = new FormAutoProcedure { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Find parameter' form", ja: "読み込み中...「パラメータ探索」フォームを初期化中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Find parameter' form", ja: "読み込み中...「パラメータ探索」フォームを初期化中", de: "Wird geladen... Fenster „Parameter finden“ wird initialisiert");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.5);
 
         FormFindParameter = new FormFindParameter { formMain = this, Visible = false, Owner = this };
 
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Draw ring' form", ja: "読み込み中...「リング描画」フォームを初期化中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Draw ring' form", ja: "読み込み中...「リング描画」フォームを初期化中", de: "Wird geladen... Fenster „Ring zeichnen“ wird initialisiert");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.6);
 
         FormDrawRing = new FormDrawRing { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Property' form", ja: "読み込み中...「プロパティ」フォームを初期化中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Property' form", ja: "読み込み中...「プロパティ」フォームを初期化中", de: "Wird geladen... Fenster „Eigenschaften“ wird initialisiert");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.7);
 
 
         FormProperty = new FormProperty { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Calibrate Intensity' form", ja: "読み込み中...「強度校正」フォームを初期化中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Calibrate Intensity' form", ja: "読み込み中...「強度校正」フォームを初期化中", de: "Wird geladen... Fenster „Intensität kalibrieren“ wird initialisiert");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.8);
         Application.DoEvents();
 
         FormCalibrateIntensity = new FormCalibrateIntensity { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Save Image' form.", ja: "読み込み中...「画像保存」フォームを初期化中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Save Image' form.", ja: "読み込み中...「画像保存」フォームを初期化中。", de: "Wird geladen... Fenster „Bild speichern“ wird initialisiert.");
 
         FormSaveImage = new FormSaveImage { FormMain = this, Owner = this, Visible = false };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Sequential' form.", ja: "読み込み中...「シーケンシャル画像」フォームを初期化中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Sequential' form.", ja: "読み込み中...「シーケンシャル画像」フォームを初期化中。", de: "Wird geladen... Fenster „Bildsequenz“ wird initialisiert.");
 
         FormSequentialImage = new FormSequentialImage { formMain = this, Owner = this, Visible = false };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Parameter option' form.", ja: "読み込み中...「パラメータオプション」フォームを初期化中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Parameter option' form.", ja: "読み込み中...「パラメータオプション」フォームを初期化中。", de: "Wird geladen... Fenster „Parameteroptionen“ wird initialisiert.");
 
         FormParameterOption = new FormParameterOption { FormMain = this, Owner = this, Visible = false };
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.9);
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'SACLA' form.", ja: "読み込み中...「SACLA」フォームを初期化中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'SACLA' form.", ja: "読み込み中...「SACLA」フォームを初期化中。", de: "Wird geladen... Fenster „SACLA“ wird initialisiert.");
 
         FormFindParameterBruteForce = new FormFindParameterBruteForce { FormMain = this, Owner = this, Visible = false };
 
         FormProperty.Visible = true;
 
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing Macro function.", ja: "読み込み中...マクロ機能を初期化中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing Macro function.", ja: "読み込み中...マクロ機能を初期化中。", de: "Wird geladen... Makrofunktion wird initialisiert.");
 
         FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this)) { Visible = false };
         Type t = typeof(Macro);
@@ -595,11 +595,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         var methods = t.GetMethods();
 
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Reading registries", ja: "読み込み中...レジストリを読み込み中");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Reading registries", ja: "読み込み中...レジストリを読み込み中", de: "Wird geladen... Registry wird gelesen");
 
         Registry(Reg.Mode.Read);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Generating ReadMe.txt.", ja: "読み込み中...ReadMe.txt を生成中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Generating ReadMe.txt.", ja: "読み込み中...ReadMe.txt を生成中。", de: "Wird geladen... ReadMe.txt wird erzeugt.");
 
         ReadMeGenerator.WriteReadMeFile(
             "IPAnalyzer   " + Version.VersionAndDate,
@@ -612,7 +612,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             Version.Acknowledge,
             Version.History);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking command line options.", ja: "読み込み中...コマンドライン引数を確認中。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking command line options.", ja: "読み込み中...コマンドライン引数を確認中。", de: "Wird geladen... Kommandozeilenoptionen werden geprüft.");
         var s = Environment.GetCommandLineArgs();
         var fileName = "";
         for (int i = 1; i < s.Length; i++)
@@ -633,7 +633,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 1);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Initializing has been finished successfully. You can close this window.", ja: "初期化が正常に完了しました。このウィンドウを閉じてかまいません。");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Initializing has been finished successfully. You can close this window.", ja: "初期化が正常に完了しました。このウィンドウを閉じてかまいません。", de: "Initialisierung erfolgreich abgeschlossen. Sie können dieses Fenster schließen.");
         if (InitialDialog.AutomaticallyClose)
             InitialDialog.Visible = false;
 
@@ -2210,7 +2210,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         catch (Exception ex)
         {
-            MessageBox.Show(Crystallography.Localization.Loc(en: $"An error occurred: {ex.Message}", ja: $"エラーが発生しました: {ex.Message}")); // 260625Cl Loc化 (英日混在→en正規化)
+            MessageBox.Show(Crystallography.Localization.Loc(en: $"An error occurred: {ex.Message}", ja: $"エラーが発生しました: {ex.Message}", de: $"Ein Fehler ist aufgetreten: {ex.Message}")); // 260625Cl Loc化 (英日混在→en正規化)
         }
     }
 
@@ -2354,7 +2354,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             sw.Close();
 
         }
-        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to save the file. Sorry.", ja: "ファイルの保存に失敗しました。")); } // 260625Cl Loc化
+        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to save the file. Sorry.", ja: "ファイルの保存に失敗しました。", de: "Speichern der Datei fehlgeschlagen. Entschuldigung.")); } // 260625Cl Loc化
 
     }
 
@@ -2539,7 +2539,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         }
-        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to read the file. Sorry.", ja: "ファイルの読み込みに失敗しました。")); } // 260625Cl Loc化
+        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to read the file. Sorry.", ja: "ファイルの読み込みに失敗しました。", de: "Lesen der Datei fehlgeschlagen. Entschuldigung.")); } // 260625Cl Loc化
         //イベントスキップを解除
         skipSelectedAreaChangedEvent = false;
         Skip = false;
@@ -2918,8 +2918,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         // 切替には再起動が要る (作業中の状態は失われる) ことを、まだ切り替わっていない現在の言語で確認する。
         var msg = Crystallography.Localization.Loc(
             en: $"Switching the display language to \"{culture.NativeName}\" requires restarting IPAnalyzer.\nUnsaved work will be lost. Restart now?",
-            ja: $"表示言語を「{culture.NativeName}」に切り替えるには IPAnalyzer の再起動が必要です。\n保存していない作業は失われます。今すぐ再起動しますか？");
-        if (MessageBox.Show(this, msg, Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更"),
+            ja: $"表示言語を「{culture.NativeName}」に切り替えるには IPAnalyzer の再起動が必要です。\n保存していない作業は失われます。今すぐ再起動しますか？",
+            de: $"Zum Umschalten der Anzeigesprache auf \"{culture.NativeName}\" muss IPAnalyzer neu gestartet werden.\nNicht gespeicherte Arbeit geht verloren. Jetzt neu starten?");
+        if (MessageBox.Show(this, msg, Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
         {
             // キャンセル: メニューのチェックを現在の言語へ戻す (新言語に先走ってチェックされたままにしない)。
@@ -2956,8 +2957,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             MessageBox.Show(this,
                 Crystallography.Localization.Loc(
                     en: $"Failed to restart IPAnalyzer.\n{ex.Message}",
-                    ja: $"IPAnalyzer の再起動に失敗しました。\n{ex.Message}"),
-                Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更"),
+                    ja: $"IPAnalyzer の再起動に失敗しました。\n{ex.Message}",
+                    de: $"Neustart von IPAnalyzer fehlgeschlagen.\n{ex.Message}"),
+                Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern"),
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
@@ -3089,7 +3091,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         catch
         {
-            MessageBox.Show(Crystallography.Localization.Loc(en: "Some items are not entered correctly.", ja: "適切に入力されていない項目があります")); // 260625Cl Loc化 (英日混在→en正規化)
+            MessageBox.Show(Crystallography.Localization.Loc(en: "Some items are not entered correctly.", ja: "適切に入力されていない項目があります", de: "Einige Felder sind nicht korrekt ausgefüllt.")); // 260625Cl Loc化 (英日混在→en正規化)
             return;
         }
         Ring.IP = IP;
@@ -3140,7 +3142,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 FormProperty.DirectSpotPosition = center;
             }
             toolStripSplitButtonFindCenter.Enabled = true;
-            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Center):  ", ja: "計算時間 (中心検出):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Center):  ", ja: "計算時間 (中心検出):  ", de: "Berechnungszeit (Zentrum finden):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
 
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosX = FormProperty.DirectSpotPosition.X;
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosY = FormProperty.DirectSpotPosition.Y;
@@ -3256,7 +3258,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         Draw();
         this.Cursor = Cursors.Default;
         toolStripSplitButtonMaskSpots.Enabled = true;
-        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Spots):  ", ja: "計算時間 (スポット検出):  ") + (Environment.TickCount - d).ToString() + "ms";
+        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Spots):  ", ja: "計算時間 (スポット検出):  ", de: "Berechnungszeit (Spots finden):  ") + (Environment.TickCount - d).ToString() + "ms";
 
 
     }
@@ -3540,7 +3542,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message);
-            MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to processing. sorry.", ja: "処理に失敗しました。")); // 260625Cl Loc化
+            MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to processing. sorry.", ja: "処理に失敗しました。", de: "Verarbeitung fehlgeschlagen. Entschuldigung.")); // 260625Cl Loc化
         }
         finally
         {
@@ -3676,7 +3678,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         else
             Ring.SetInsideArea(IP);
 
-        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (SetIntegralArea):  ", ja: "計算時間 (積算領域設定):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
+        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (SetIntegralArea):  ", ja: "計算時間 (積算領域設定):  ", de: "Berechnungszeit (Integrationsbereich setzen):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
 
         SetMask();
         Draw();
@@ -3764,7 +3766,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             double[] imageArray = Ring.GetUnrolledImageArray(IP, chiDivision, xStart, xEnd, xStep);
 
-            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Unroll Image):  ", ja: "計算時間 (画像の切り開き):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Unroll Image):  ", ja: "計算時間 (画像の切り開き):  ", de: "Berechnungszeit (Bild abrollen):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
 
             byte[] scale = new byte[256];
             for (int i = 0; i < 256; i++)
@@ -4019,11 +4021,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 if (ProgramUpdates.Execute(Path))
                     Close();
                 else
-                    MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed to download {Path}. \r\nSorry!", ja: $"{Path} のダウンロードに失敗しました。\r\nすみません！"), "Error!"); // 260625Cl Loc化
+                    MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed to download {Path}. \r\nSorry!", ja: $"{Path} のダウンロードに失敗しました。\r\nすみません！", de: $"Download von {Path} fehlgeschlagen. \r\nEntschuldigung!"), "Error!"); // 260625Cl Loc化
             }
             catch
             {
-                MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed update check. \r\nServer may be down. \r\nAccess https://github.com/seto77/{Version.Software}/releases/latest", ja: $"更新確認に失敗しました。\r\nサーバーがダウンしている可能性があります。\r\nhttps://github.com/seto77/{Version.Software}/releases/latest にアクセスしてください"), "Error"); // 260625Cl Loc化
+                MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed update check. \r\nServer may be down. \r\nAccess https://github.com/seto77/{Version.Software}/releases/latest", ja: $"更新確認に失敗しました。\r\nサーバーがダウンしている可能性があります。\r\nhttps://github.com/seto77/{Version.Software}/releases/latest にアクセスしてください", de: $"Update-Prüfung fehlgeschlagen. \r\nDer Server ist möglicherweise nicht erreichbar. \r\nÖffnen Sie https://github.com/seto77/{Version.Software}/releases/latest"), "Error"); // 260625Cl Loc化
             }
         }
     }
@@ -4181,7 +4183,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1;
             Ring.Intensity = Ring.CorrectPolarization(index);
-            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Polarization Correction):  ", ja: "計算時間 (偏光補正):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Polarization Correction):  ", ja: "計算時間 (偏光補正):  ", de: "Berechnungszeit (Polarisationskorrektur):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
         }
         //偏光補正ここまで
 

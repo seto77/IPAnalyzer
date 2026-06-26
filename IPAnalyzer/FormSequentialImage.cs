@@ -157,7 +157,7 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
                         text += ", " + Ring.SequentialImageNames[selectedIndices[i]];
                     }
                 }
-                formMain.SetText(formMain.FileName, (AverageMode ? Crystallography.Localization.Loc(en: "Ave. of #", ja: "平均 #") : Crystallography.Localization.Loc(en: "Sum. of #", ja: "積算 #")) + text); // 260626Cl Loc化
+                formMain.SetText(formMain.FileName, (AverageMode ? Crystallography.Localization.Loc(en: "Ave. of #", ja: "平均 #", de: "Mittelw. von #") : Crystallography.Localization.Loc(en: "Sum. of #", ja: "積算 #", de: "Summe von #")) + text); // 260626Cl Loc化
                 formMain.SetStasticalInformation(false);
                 formMain.SetFrequencyProfile();
                 formMain.Draw();
