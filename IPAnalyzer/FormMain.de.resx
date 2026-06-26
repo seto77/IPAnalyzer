@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>46, 20</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label11.Text" xml:space="preserve">
+    <value>Bildinformation</value>
+  </data>
+  <data name="radioButtonNearCenter.Text" xml:space="preserve">
+    <value>Nahe dem Zentrum</value>
+  </data>
+  <data name="radioButtonWhole.Text" xml:space="preserve">
+    <value>Ganzes Bild</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Maßstabslinie</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Farbskala</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Helligkeitsskala</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Vergr.:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Int.:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>R(mm):</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>2θ:</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>d:</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>c:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Realkoord.(mm):</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Bildkoord.(pix):</value>
+  </data>
+  <data name="buttonAutoLevel.Text" xml:space="preserve">
+    <value>Autokontrast</value>
+  </data>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>Kontrast zurücksetzen</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.Text" xml:space="preserve">
+    <value>Intensitätshäufigkeit</value>
+  </data>
+  <data name="tabPageConvertedProfile.Text" xml:space="preserve">
+    <value>Konvertiertes Profil</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Statistik des ausgewählten Bereichs</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Statistik desselben Bereichs in anderen Bildern</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Ausgewählter Bereich: (</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(STRG + Rechts-Ziehen)</value>
+  </data>
+  <data name="tabPageStasticalInfo.Text" xml:space="preserve">
+    <value>Statistische Information</value>
+  </data>
+  <data name="toolStripButtonIntensityTable.Text" xml:space="preserve">
+    <value>Intensitäts-
+tabelle</value>
+  </data>
+  <data name="toolStripButtonAutoProcedure.Text" xml:space="preserve">
+    <value>Auto-
+prozedur</value>
+  </data>
+  <data name="toolStripButtonRing.Text" xml:space="preserve">
+    <value>Ring zeichnen</value>
+  </data>
+  <data name="toolStripButtonFindParameter.Text" xml:space="preserve">
+    <value>Parameter finden
+(geometrisch)</value>
+  </data>
+  <data name="toolStripButtonFindParameterBruteForce.Text" xml:space="preserve">
+    <value>Parameter finden 
+(Brute Force)</value>
+  </data>
+  <data name="toolStripButtonUnroll.Text" xml:space="preserve">
+    <value>Bild
+abrollen</value>
+  </data>
+  <data name="toolStripButtonCircumferentialBlur.Text" xml:space="preserve">
+    <value>Umfangs-
+unschärfe </value>
+  </data>
+  <data name="toolStripButtonImageSequence.Text" xml:space="preserve">
+    <value>Bildsequenz
+</value>
+  </data>
+  <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bild einlesen</value>
+  </data>
+  <data name="tiffToolStripMenuItem.Text" xml:space="preserve">
+    <value>als TIFF-Format</value>
+  </data>
+  <data name="pngToolStripMenuItem.Text" xml:space="preserve">
+    <value>als PNG-Format (Helligkeit, Kontrast, maskierten Bereich erhalten)</value>
+  </data>
+  <data name="csvToolStripMenuItem.Text" xml:space="preserve">
+    <value>als CSV-Format</value>
+  </data>
+  <data name="ipaToolStripMenuItem.Text" xml:space="preserve">
+    <value>als IPA-Format (Originalformat)</value>
+  </data>
+  <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
+    <value>Bild speichern</value>
+  </data>
+  <data name="toolStripMenuItemReadParameter.Text" xml:space="preserve">
+    <value>Parameter einlesen</value>
+  </data>
+  <data name="toolStripMenuItemSaveParameter.Text" xml:space="preserve">
+    <value>Parameter speichern</value>
+  </data>
+  <data name="toolStripMenuItemReadMask.Text" xml:space="preserve">
+    <value>Maske einlesen</value>
+  </data>
+  <data name="toolStripMenuItemSaveMask.Text" xml:space="preserve">
+    <value>Maske speichern</value>
+  </data>
+  <data name="clearMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Maske löschen</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Häufigkeitsprofil zurücksetzen</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>R-AXIS-Bild kalibrieren</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="toolStripMenuItemPropertyWaveSource.Text" xml:space="preserve">
+    <value>Strahlungsart</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Imaging-Plate-Bedingung</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Integralbereich</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Integraleigenschaft</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Manueller Maskenmodus</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>Nach "Profil abrufen"</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Option für abgerolltes Bild</value>
+  </data>
+  <data name="misToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verschiedenes</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
+    <value>QuickInfo</value>
+  </data>
+  <data name="flipHorizontallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="flipVerticallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Spiegeln</value>
+  </data>
+  <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Drehen</value>
+  </data>
+  <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ngen-Kompilierung</value>
+  </data>
+  <data name="clearRegistrycheckAndRestartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Registry löschen (prüfen und neu starten)</value>
+  </data>
+  <data name="optionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="japaneseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Japanisch</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="editorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="macroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Makro</value>
+  </data>
+  <data name="programUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programm-Updates</value>
+  </data>
+  <data name="hintToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hinweis</value>
+  </data>
+  <data name="licenseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="versionHistoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Versionsverlauf</value>
+  </data>
+  <data name="webPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="resetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Untere (% der Bildgröße)</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Obere (% der Bildgröße)</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>Erkennungsbereich</value>
+  </data>
+  <data name="fourierToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fourier</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
+    <value>Referenzbild</value>
+  </data>
+  <data name="toolStripSplitButtonBackground.Text" xml:space="preserve">
+    <value>Hintergrund</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.Text" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="findCenterBasedOnTheRingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zentrum anhand des Rings finden</value>
+  </data>
+  <data name="toolStripSplitButtonFindCenter.Text" xml:space="preserve">
+    <value>Zentrum finden</value>
+  </data>
+  <data name="toolStripButtonFixCenter.Text" xml:space="preserve">
+    <value>Zentrum
+fixieren</value>
+  </data>
+  <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
+    <value>Maske löschen</value>
+  </data>
+  <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
+    <value>Gesamten Bereich maskieren</value>
+  </data>
+  <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Maske umkehren</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsManual.Text" xml:space="preserve">
+    <value>Manueller Modus</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsOption.Text" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="toolStripSplitButtonMaskSpots.Text" xml:space="preserve">
+    <value>Spots maskieren</value>
+  </data>
+  <data name="toolStripButtonManualSpotMode.Text" xml:space="preserve">
+    <value>Manueller
+Modus</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralProperty.Text" xml:space="preserve">
+    <value>Integraleigenschaft</value>
+  </data>
+  <data name="toolStripMenuItemConcenctricIntegration.Text" xml:space="preserve">
+    <value>     Konzentrische Integration</value>
+  </data>
+  <data name="toolStripMenuItemRadialIntegration.Text" xml:space="preserve">
+    <value>     Radiale Integration</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralRegion.Text" xml:space="preserve">
+    <value>Integralbereich</value>
+  </data>
+  <data name="findCenterBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zentrum vor Profilabruf finden</value>
+  </data>
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spots vor Profilabruf maskieren</value>
+  </data>
+  <data name="toolStripMenuItemSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>Profil an PDIndexer senden</value>
+  </data>
+  <data name="toolStripMenuItemSendUnrolledImage.Text" xml:space="preserve">
+    <value>     mit abgerolltem Bild</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Anzahl der Unterteilungen</value>
+  </data>
+  <data name="toolStripMenuItemAzimuthalDivisionAnalysis.Text" xml:space="preserve">
+    <value>Azimutale Unterteilungsanalyse</value>
+  </data>
+  <data name="toolStripMenuItemAllSequentialImages.Text" xml:space="preserve">
+    <value>Profile für alle Sequenzbilder abrufen</value>
+  </data>
+  <data name="toolStripMenuItemSelectedSequentialImages.Text" xml:space="preserve">
+    <value>Profile für ausgewählte Bilder abrufen</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
+    <value>Profil abrufen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>IPAnalyzer</value>
+  </data>
+</root>

@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxScaleLabel.Text" xml:space="preserve">
+    <value>Beschriftungen anzeigen</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Koeffizient</value>
+  </data>
+  <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
+    <value>Manueller Maskenmodus</value>
+  </data>
+  <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
+    <value>TSV</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
+    <value>Bildkontrast beibehalten </value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Detektortyp</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Maßstabslinien-Optionen</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
+    <value>Leeren</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Rechteck</value>
+  </data>
+  <data name="radioButtonChiClockwise.Text" xml:space="preserve">
+    <value>Im Uhrzeigersinn</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Sektorwinkel-Schritt (Sweep-Schritt)</value>
+  </data>
+  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
+    <value>Nach "Profil abrufen"</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
+    <value>Letzter Ordner + Dateiname</value>
+  </data>
+  <data name="buttonMaskAll.Text" xml:space="preserve">
+    <value>Alles maskieren</value>
+  </data>
+  <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Gandolfi-Radius</value>
+  </data>
+  <data name="tabPageIP.Text" xml:space="preserve">
+    <value>Detektorbedingung</value>
+  </data>
+  <data name="radioButtonRadialDspacing.Text" xml:space="preserve">
+    <value>d-Wert</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>(Probe bis Direktstrahl)</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Donut-Breite</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Maskeneinstellung übernehmen</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Winkel</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>Rechteck</value>
+  </data>
+  <data name="buttonMaskRight.Text" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Horizontal (Abstand vom Direktstrahl): Einheit und Bereich</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Ausgabemuster</value>
+  </data>
+  <data name="radioButton3.Text" xml:space="preserve">
+    <value>d-Wert</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
+    <value>Auch abgewickeltes Bild senden</value>
+  </data>
+  <data name="radioButtonGandlfi.Text" xml:space="preserve">
+    <value>Gandolfi</value>
+  </data>
+  <data name="radioButtonAsCSVformat.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
+    <value>Integralbereich</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Vertikal (Sektorwinkel): Schritt </value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Abgewickeltes Bild – Optionen</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
+    <value>Beide Seiten</value>
+  </data>
+  <data name="groupBox18.Text" xml:space="preserve">
+    <value>Bildladeoptionen</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Koordinaten</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Spots-Maskieren-Optionen</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Unterteilung</value>
+  </data>
+  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
+    <value>Maskenoptionen</value>
+  </data>
+  <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="groupBoxCameaLength.Text" xml:space="preserve">
+    <value>Kameralänge 1</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
+    <value>Anzeigebereich beibehalten</value>
+  </data>
+  <data name="buttonMaskLeft.Text" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="radioButtonManualRectangle.Text" xml:space="preserve">
+    <value>Rechteck (Ziehen: Diagonalecken setzen)</value>
+  </data>
+  <data name="radioButtonChiRight.Text" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>Direktstrahl</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Donut-Radius</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>(Probe bis Fuß)</value>
+  </data>
+  <data name="buttonUnmaskAll.Text" xml:space="preserve">
+    <value>Alle Maskierungen aufheben</value>
+  </data>
+  <data name="radioButtonManualCircle.Text" xml:space="preserve">
+    <value>Kreis (Ziehen: Zentrum &amp;amp;&amp;amp; Radius setzen)</value>
+  </data>
+  <data name="radioButtonRadialAngle.Text" xml:space="preserve">
+    <value>Winkel</value>
+  </data>
+  <data name="buttonInvertMask.Text" xml:space="preserve">
+    <value>Maske invertieren</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Startwinkel</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
+    <value>Lineare Polarisation korrigieren (d. h. linear polarisiert → unpolarisiert)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Kriteriumsabweichung
+ für "Spots maskieren"</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Richtung</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>(Hinweis: χ ist der im Tab Sonstiges definierte Azimutwinkel)</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Hintergrundoptionen</value>
+  </data>
+  <data name="radioButtonCircle.Text" xml:space="preserve">
+    <value>Kreis</value>
+  </data>
+  <data name="radioButtonRadial.Text" xml:space="preserve">
+    <value>Radiale Integration (Cake-Muster)</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
+    <value>Jedes Mal im gewählten Verzeichnis</value>
+  </data>
+  <data name="groupBox17.Text" xml:space="preserve">
+    <value>Speicheroption für Bildserie oder azimutale Unterteilung</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Referenzbild-Einstellung</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Drehung:</value>
+  </data>
+  <data name="radioButtonManualSpot.Text" xml:space="preserve">
+    <value>Spot (L/R-Klick: Spots hinzufügen/entfernen)</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
+    <value>d-Wert</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Schritt</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Pixel von den Rändern</value>
+  </data>
+  <data name="radioButtonManualPolygon.Text" xml:space="preserve">
+    <value>Polygon (Klick: Ecken hinzufügen,
+                 Doppelklick: abschließen)</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
+    <value>Keine</value>
+  </data>
+  <data name="comboBoxRectangleDirection.Text" xml:space="preserve">
+    <value>Voll</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>Linienbreite</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Fußposition</value>
+  </data>
+  <data name="checkBoxThresholdMax.Text" xml:space="preserve">
+    <value>Über Intensität von</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Integralschritt &amp;amp;&amp;amp; -bereich</value>
+  </data>
+  <data name="checkBoxSaveFile.Text" xml:space="preserve">
+    <value>Profil speichern </value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
+    <value>Maskierte Pixel ausschließen</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Halbmaske</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>Sektor</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Filmabstand</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value> (L/R-Klick: Punkte hinzufügen/löschen,
+ Doppelklick: Maske setzen)</value>
+  </data>
+  <data name="checkBoxOmitSpots.Text" xml:space="preserve">
+    <value>Maskierte Spots</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Ausnahmepixel</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Kameralänge 2 </value>
+  </data>
+  <data name="radioButtonChiTop.Text" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.Text" xml:space="preserve">
+    <value>In einer Datei 
+(außer GSAS)</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="radioButtonConcentricLength.Text" xml:space="preserve">
+    <value>Länge</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(normalerweise null)</value>
+  </data>
+  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
+    <value>Integraleigenschaft</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.Text" xml:space="preserve">
+    <value>Debye-Scherrer</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Endwinkel</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Linienbreite</value>
+  </data>
+  <data name="radioButtonConcentric.Text" xml:space="preserve">
+    <value>Konzentrische Integration (streuwinkeldispersiv)</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
+    <value>In getrennten Dateien</value>
+  </data>
+  <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
+    <value>Direktstrahlposition</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Länge</value>
+  </data>
+  <data name="radioButtonChiLeft.Text" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="checkBoxFixCenter.Text" xml:space="preserve">
+    <value>Zentrum fixieren</value>
+  </data>
+  <data name="groupBox16.Text" xml:space="preserve">
+    <value>Speicherverzeichnis</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
+    <value>Vollständiger Pfad</value>
+  </data>
+  <data name="buttonMaskTop.Text" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
+    <value>Aktuelles Bild als Hintergrund festlegen</value>
+  </data>
+  <data name="radioButtonChiBottom.Text" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="groupBox19.Text" xml:space="preserve">
+    <value>Bildnamen-Optionen</value>
+  </data>
+  <data name="radioButtonFlatPanel.Text" xml:space="preserve">
+    <value>Flachdetektor</value>
+  </data>
+  <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
+    <value>Neigung</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
+    <value>Gegen den Uhrzeigersinn</value>
+  </data>
+  <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
+    <value>Winkel</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>Profildaten über Zwischenablage an PDIndexer senden</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
+    <value>Im selben Verzeichnis wie das Bild</value>
+  </data>
+  <data name="radioButtonBraggBrentano.Text" xml:space="preserve">
+    <value>Bragg-Brentano</value>
+  </data>
+  <data name="groupBoxPixelShape.Text" xml:space="preserve">
+    <value>Pixelform</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
+    <value>Maskendatei übernehmen</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
+    <value>GSAS</value>
+  </data>
+  <data name="radioButtonAsPDIformat.Text" xml:space="preserve">
+    <value>PDI</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Sonstiges</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Zentrumsuche-Optionen</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Bandbreite</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>Sphärische Korrektur</value>
+  </data>
+  <data name="groupBox15.Text" xml:space="preserve">
+    <value>Dateiformat</value>
+  </data>
+  <data name="radioButtonManualSpline.Text" xml:space="preserve">
+    <value>Spline-Kurve</value>
+  </data>
+  <data name="tabPageXRay.Text" xml:space="preserve">
+    <value>Wellenquelle</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Schritt</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
+    <value>Aktuellen Maskenzustand übernehmen</value>
+  </data>
+  <data name="buttonMaskBottom.Text" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="checkBoxTest.Text" xml:space="preserve">
+    <value>Kα2 entfernen (wenn Kα1-Linie gewählt)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Wellenlänge</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Chi-(χ)-Achsen-Optionen</value>
+  </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>Winkel</value>
+  </data>
+  <data name="checkBoxThresholdMin.Text" xml:space="preserve">
+    <value>Unter Intensität von</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>Fuß</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
+    <value>Kehrwert des Radius</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.HeaderText" xml:space="preserve">
+    <value>Peak-Fit-Bereich (2θ)</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.HeaderText" xml:space="preserve">
+    <value>Suchbereich 　±</value>
+  </data>
+  <data name="numericBoxTest.HeaderText" xml:space="preserve">
+    <value>Kα2/Kα1</value>
+  </data>
+</root>
