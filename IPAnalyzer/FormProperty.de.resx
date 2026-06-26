@@ -541,4 +541,630 @@
   <data name="numericBoxTest.HeaderText" xml:space="preserve">
     <value>Kα2/Kα1</value>
   </data>
+  <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Gandolfi-Kameraradius (mm): Radius des
+gekrümmten/zylindrischen Detektors. Wird nur
+im Gandolfi-Modus verwendet, um die
+Pixelposition auf 2theta abzubilden.</value>
+  </data>
+  <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
+    <value>Wendet die Bragg-Brentano-Intensitätskonvention
+(Reflexion, Parafokussierung) auf das ausgegebene
+1D-Muster an, z. B. zum Vergleich mit einem
+Labordiffraktometer.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
+    <value>Schrittweite (Bin-Breite) der Horizontalachse
+des abgewickelten Bildes in der gewählten
+Einheit; legt die 2theta/d-Auflösung über
+das Cake-Bild fest.</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
+    <value>Wendet die Debye-Scherrer-Intensitätskonvention
+(Transmission, Pulverring) auf das ausgegebene
+1D-Muster an - der übliche Modus für
+2D-Flächendetektordaten.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>Verwendet eine rechteckige (quadratische)
+Form für manuelle Punktmasken.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>Verwendet die Detektorlänge (mm) für
+die Horizontalachse des abgewickelten Bildes.</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
+    <value>Speichert Profile automatisch im selben
+Ordner wie das Quellbild, ohne Nachfrage.</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
+    <value>Beschriftet Bilder mit dem Namen des
+übergeordneten Ordners plus Dateiname
+(z. B. run3/img001.tif), um gleichnamige
+Dateien zu unterscheiden.</value>
+  </data>
+  <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Löscht das gespeicherte Hintergrundbild,
+sodass kein Hintergrundabzug angewendet wird.</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
+    <value>Beschriftet Bilder mit ihrem
+vollständigen Dateipfad.</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
+    <value>Anzahl der Azimut-Bins (χ) für das
+abgewickelte Cake-Bild (1-2048, Standard 720);
+legt die vertikale Auflösung entlang der
+Azimutachse fest.</value>
+  </data>
+  <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi-Kamerageometrie (zylindrischer/
+gekrümmter Film); blendet die Eingabe des
+Gandolfi-Radius ein und deaktiviert den
+Fußmodus.</value>
+  </data>
+  <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
+    <value>Azimutale Schrittweite (°) für die radiale
+Integration: Winkelabstand zwischen den
+Ausgabepunkten entlang des Rings.
+Kleiner = feinere χ-Auflösung.</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
+    <value>Sendet zusätzlich das abgewickelte Bild
+(Cake / azimutal abgewickelt, 2theta gegen χ)
+an PDIndexer, nicht nur das 1D-Profil.</value>
+  </data>
+  <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
+    <value>Speichert das Profil im PDI-Format
+(natives Format von PDIndexer).</value>
+  </data>
+  <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Pfad des Bildes, das derzeit als abgezogener
+Hintergrund verwendet wird (schreibgeschützt);
+leer, wenn kein Hintergrund festgelegt ist.</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
+    <value>Sektor-Startwinkel (°, Azimut χ).
+Beginn des integrierten tortenförmigen
+Azimutbereichs; bildet ein Paar mit dem
+Endwinkel.</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
+    <value>Speichert jedes Profil einer sequenziellen/
+azimutalen Serie als separate Datei.</value>
+  </data>
+  <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
+    <value>Bin-Breite (Schrittweite) des Profils in der
+gewählten Einheit. Kleinerer Schritt = feinere
+Auflösung und mehr Punkte, aber verrauschtere
+Bins.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
+    <value>Strahlzentrum Y (Direktstrahlpunkt) in
+Detektorpixeln. Legt den Ursprung des
+Ringmusters fest; eine Verschiebung bewegt
+das Integrationszentrum.</value>
+  </data>
+  <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
+    <value>Legt den Azimutursprung (χ = 0) zur rechten
+Bildseite. Bestimmt, wo die azimutale
+Integration beginnt.</value>
+  </data>
+  <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
+    <value>Maskiert (schließt von der Integration aus)
+die gesamte linke Bildhälfte. Wird zur
+bestehenden Maske hinzugefügt; mit "Alle
+Maskierungen aufheben" löschen.</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
+    <value>Peak-Fit-Bereich (2theta °) um jeden
+Debye-Ring, der bei der Verfeinerung des
+Zentrums verwendet wird; bei breiten Peaks
+vergrößern, zur Vermeidung von Nachbarn
+verkleinern.</value>
+  </data>
+  <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
+    <value>Kameralänge 2: Abstand Probe-Fuß (mm), der
+senkrechte Abstand zur geneigten Detektorebene
+(= CL1·cos tau). Nicht der Abstand
+Probe-Direktstrahlpunkt.</value>
+  </data>
+  <data name="radioButtonCircle.ToolTip" xml:space="preserve">
+    <value>Verwendet eine kreisförmige Form
+für manuelle Punktmasken.</value>
+  </data>
+  <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
+    <value>Zeigt numerische Wertbeschriftungen
+(2theta / Azimut) neben den eingeblendeten
+Maßstabslinien auf dem Bild an.</value>
+  </data>
+  <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
+    <value>Manuelles Maskenwerkzeug: Punkt. Linksklick
+fügt eine Punktmaske der gewählten Größe an der
+Cursorposition hinzu, Rechtsklick entfernt sie.</value>
+  </data>
+  <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße entlang X (mm/Pixel).
+Rechnet Pixelpositionen in reale Abstände um;
+muss der Detektorspezifikation entsprechen,
+sonst ist die 2theta-Skalierung falsch.</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Manuelle Punktgröße als Zweierpotenz:
+Punktdurchmesser = 2^Wert Pixel
+(0-10 -&amp;gt; 1..1024 px). Größerer Wert
+maskiert pro Klick einen größeren Punkt.</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
+    <value>Behält den aktuellen Zoom-/Anzeigebereich
+(Verschieben &amp;amp; Zoom) beim Laden des nächsten
+Bildes bei, statt die Ansicht an jedes neue
+Bild anzupassen.</value>
+  </data>
+  <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
+    <value>Legt den Azimutursprung (χ = 0)
+zur Oberseite des Bildes.</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
+    <value>Beginnt beim Laden des nächsten Bildes
+ohne Maske (verwirft die aktuelle Maske).</value>
+  </data>
+  <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
+    <value>Startwert des Profilbereichs in der aktuell
+gewählten Einheit (2theta °, Länge mm oder
+Netzebenenabstand Å). Untere Grenze des
+ausgegebenen 1D-Profils.</value>
+  </data>
+  <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
+    <value>Korrektur für sphärische Krümmung einer
+gebogenen Imaging Plate (normalerweise 0).
+Gleicht radiusabhängige Verzerrungen aus,
+wenn die IP nicht flach ist.</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
+    <value>Dichte der eingeblendeten 2theta-/Azimut-
+Maßstabslinien auf dem Bild: Keine, Grob,
+Mittel oder Fein (mehr Linien = feineres
+Gitter).</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>Integriert über einen Winkelsektor
+(Tortenstück) der Ringe zwischen Start- und
+Endazimutwinkel statt über ein Rechteck.</value>
+  </data>
+  <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
+    <value>Verwendet den Streuwinkel 2theta (Grad) als
+x-Achse des Profils; Start/Ende/Schritt werden
+in Grad interpretiert.</value>
+  </data>
+  <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
+    <value>Breite der Randmaske in Pixeln (0-256):
+Dicke des Randstreifens, der von der Integration
+ausgeschlossen wird, wenn "Pixel von den
+Rändern" aktiviert ist.</value>
+  </data>
+  <data name="radioButtonRadial.ToolTip" xml:space="preserve">
+    <value>Radiale (Cake-)Integration: tastet den Azimut
+bei festem Ringradius ab, um die Intensität
+gegen den Azimutwinkel χ zu erhalten - zeigt
+Textur/Vorzugsorientierung entlang eines Rings.</value>
+  </data>
+  <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
+    <value>Behält beim Laden des nächsten Bildes die
+derzeit im Speicher befindliche Maske bei
+(verwendet dieselben maskierten Pixel erneut).</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
+    <value>Drehwinkel des Bandes (°, 0-360). Azimutale
+Ausrichtung des rechteckigen Integrationsstreifens;
+nur bearbeitbar, wenn Richtung = Frei.</value>
+  </data>
+  <data name="buttonMaskRight.ToolTip" xml:space="preserve">
+    <value>Maskiert (schließt von der Integration aus)
+die gesamte rechte Bildhälfte. Wird zur
+bestehenden Maske hinzugefügt.</value>
+  </data>
+  <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
+    <value>Legt eine Farbe für die 2θ-Maßstabslinien fest</value>
+  </data>
+  <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
+    <value>Stiftbreite (in Pixeln) der eingeblendeten
+Maßstabslinien; nach rechts ziehen für dickere,
+besser sichtbare Gitterlinien.</value>
+  </data>
+  <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
+    <value>Aktiviert den manuellen Maskierungsmodus,
+sodass Sie Maskenbereiche (Punkt/Kreis/Rechteck/
+Polygon/Spline) direkt mit der Maus auf dem
+Bild zeichnen können.</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
+    <value>Wendet beim Laden des nächsten Bildes die in
+der gespeicherten Maskendatei abgelegte Maske
+an statt der Maske im Speicher.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
+    <value>Strahlzentrum X (Direktstrahlpunkt) in
+Detektorpixeln. Legt den Ursprung für alle
+2theta/d/q-Ringberechnungen fest; eine
+Verschiebung bewegt das Integrationszentrum.</value>
+  </data>
+  <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
+    <value>Geometrie für Flachdetektor / Imaging Plate
+(ebener Detektor näherungsweise senkrecht zum
+Strahl). Aktiviert die Optionen für Neigung
+und Fußmodus.</value>
+  </data>
+  <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
+    <value>Ausrichtung des rechteckigen Integrationsbandes:
+Ganzer Ring, eine Seite (Oben/Unten/Links/Rechts),
+symmetrisch Vertikal/Horizontal oder Frei
+(benutzerdefinierter Winkel).</value>
+  </data>
+  <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
+    <value>Abzutastender Ringradius für die radiale
+(Cake-)Integration, angegeben als 2theta (°)
+oder Netzebenenabstand (Å) je nach
+Winkel/d-Wert-Umschaltung.</value>
+  </data>
+  <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
+    <value>Fußpunkt X in Pixeln: wo das Lot der Probe
+auf den geneigten Detektor trifft. Über die
+Neigungswinkel mit dem Direktstrahlpunkt X
+gekoppelt.</value>
+  </data>
+  <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
+    <value>Schließt Pixel mit niedriger Zählrate aus:
+ignoriert Pixel, deren Intensität unter dem
+Wert rechts liegt. Zum Entfernen von toten
+oder reinen Hintergrundpixeln.</value>
+  </data>
+  <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
+    <value>Fußpunkt Y in Pixeln: wo das Lot der Probe
+auf den geneigten Detektor trifft. Über die
+Neigungswinkel mit dem Direktstrahlpunkt Y
+gekoppelt.</value>
+  </data>
+  <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
+    <value>Hintergrund-Skalierungsfaktor (0-10, Standard 1):
+Anzeige = Bild - Faktor x Hintergrund. Erhöhen,
+um mehr Hintergrund abzuziehen, verringern, um
+weniger abzuziehen.</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
+    <value>Untere Intensitätsschwelle (Counts). Pixel
+unter diesem Wert werden von der Integration
+ausgeschlossen; nur aktiv, wenn "Unter
+Intensität von" markiert ist.</value>
+  </data>
+  <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
+    <value>Schließt gesättigte Pixel aus: ignoriert
+bei der Integration Pixel, deren Zählrate den
+Wert rechts überschreitet. Zum Entfernen von
+Blooming- oder Hot-Pixeln.</value>
+  </data>
+  <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
+    <value>Schließt maskierte Punkte von der Integration
+aus: als Punkte markierte Pixel (z. B.
+Einkristallreflexe, Staub) werden übersprungen,
+damit sie das Pulverprofil nicht verfälschen.</value>
+  </data>
+  <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
+    <value>Neigungsazimut phi (°): Richtung der
+Detektor-Neigungsachse in der Ebene. Korrigiert
+zusammen mit tau einen nicht senkrecht zum
+Strahl stehenden Detektor.</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>Definiert die Detektorgeometrie über den
+Direktstrahlpunkt: Direktstrahl-Pixel und
+Kameralänge 1 (Abstand Probe-Direktstrahlpunkt)
+eingeben. Verwenden, wenn der Strahl den
+Detektor trifft.</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
+    <value>Ignoriert maskierte Pixel beim Finden/
+Verfeinern des Strahlzentrums, damit maskierte
+Punkte und fehlerhafte Bereiche das Ergebnis
+nicht verfälschen.</value>
+  </data>
+  <data name="numericBoxTest.ToolTip" xml:space="preserve">
+    <value>Kα2/Kα1-Intensitätsverhältnis für die
+Kα2-Entfernungskorrektur (Bereich 0-2,
+typisch ~0,5). Höher zieht mehr Kα2 ab.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
+    <value>Endwert der Horizontalachse des abgewickelten
+Bildes (0-180) in der gewählten Einheit.
+Rechter Rand des Cake-Bildes.</value>
+  </data>
+  <data name="buttonMaskAll.ToolTip" xml:space="preserve">
+    <value>Maskiert das gesamte Bild (jedes Pixel von der
+Integration ausgeschlossen). Üblicherweise
+verwendet, bevor manuell nur der interessierende
+Bereich demaskiert wird.</value>
+  </data>
+  <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
+    <value>Speichert das Profil im GSAS-Format für die
+Rietveld-Verfeinerung; Hinweis: Die Option
+"eine Datei" ist in diesem Format nicht
+verfügbar.</value>
+  </data>
+  <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
+    <value>Bandbreite in Pixeln (max. 10000): halbe Dicke
+des rechteckigen Integrationsstreifens über die
+Strahlzentrumslinie; breiter = mehr gemittelte
+Pixel.</value>
+  </data>
+  <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
+    <value>Speichert das extrahierte 1D-Profil nach jedem
+"Profil abrufen" automatisch in eine Datei.
+Aktiviert die Dateiformat- und Ordneroptionen
+unten.</value>
+  </data>
+  <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
+    <value>Maskiert (schließt von der Integration aus)
+die gesamte untere Bildhälfte. Wird zur
+bestehenden Maske hinzugefügt.</value>
+  </data>
+  <data name="checkBoxTest.ToolTip" xml:space="preserve">
+    <value>Entfernt den Kα2-Beitrag aus dem Profil
+(Rachinger-Korrektur), wenn eine Kα1-Röhrenlinie
+gewählt ist, sodass ein reines Kα1-Muster
+übrig bleibt.</value>
+  </data>
+  <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
+    <value>Manuelles Maskenwerkzeug: Polygon. Klicken,
+um Eckpunkte hinzuzufügen, Doppelklick, um
+es zu schließen und die umschlossene Fläche
+zu maskieren.</value>
+  </data>
+  <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Pixel-Nichtorthogonalitätswinkel ksi (°):
+Scherung/Verzerrung zwischen X- und Y-Achse des
+Detektors. 0 = perfekt rechteckige Pixel;
+korrigiert verzerrte Detektoren.</value>
+  </data>
+  <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
+    <value>Kameralänge 1: Abstand Probe-Direktstrahlpunkt
+(mm). Legt die Skala von Pixelradius zu 2theta
+fest; größere Länge verschiebt die Ringe zu
+kleineren 2theta.</value>
+  </data>
+  <data name="radioButton3.ToolTip" xml:space="preserve">
+    <value>Verwendet den Netzebenenabstand (Å)
+für die Horizontalachse des abgewickelten
+Bildes.</value>
+  </data>
+  <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße entlang Y (mm/Pixel).
+Definiert zusammen mit der X-Größe das in der
+Geometrie verwendete Pixel-Seitenverhältnis.</value>
+  </data>
+  <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
+    <value>Bandbreite der Spline-Maske in Pixeln (1-50):
+Dicke des entlang der Spline-Kurve gezeichneten
+maskierten Streifens.</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
+    <value>Legt fest, dass der Azimutwinkel χ auf dem
+Bild gegen den Uhrzeigersinn zunimmt
+(Gegenteil der Uhrzeigersinn-Konvention).</value>
+  </data>
+  <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
+    <value>Maskiert den Bildrand: schließt bei der
+Integration einen Streifen von N Pixeln
+(rechts eingestellt) von jedem Rand aus und
+entfernt so Detektorrand-Artefakte.</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
+    <value>Behält den aktuellen Intensitätskontrast
+(Min/Max-Anzeigeskalierung) beim Laden des
+nächsten Bildes bei, statt jedes Bild
+automatisch neu zu skalieren.</value>
+  </data>
+  <data name="radioButton4.ToolTip" xml:space="preserve">
+    <value>Verwendet den Streuwinkel 2theta (Grad)
+für die Horizontalachse des abgewickelten
+Bildes.</value>
+  </data>
+  <data name="buttonInvertMask.ToolTip" xml:space="preserve">
+    <value>Invertiert die Maske: zuvor maskierte Pixel
+werden aktiv und aktive Pixel werden maskiert.</value>
+  </data>
+  <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
+    <value>Manuelles Maskenwerkzeug: Spline-Kurve. Klicken,
+um Kontrollpunkte hinzuzufügen (Rechtsklick
+löscht); Doppelklick maskiert ein Band der
+eingestellten Breite entlang der Kurve.</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
+    <value>Verwendet den Netzebenenabstand (Å) als
+x-Achse des Profils; Start/Ende/Schritt in
+Ångström. d = Wellenlänge / (2 sin theta).</value>
+  </data>
+  <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
+    <value>Neigungswinkel tau (°): wie weit die
+Detektorebene von der Senkrechten zum Strahl
+abweicht. 0 = keine Neigung; Werte ungleich
+null machen die Ringe elliptisch, bis sie
+korrigiert werden.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>Definiert die Geometrie über den Lotfußpunkt
+(Projektion der Probennormalen auf einen
+geneigten Detektor) und Kameralänge 2
+(Probe-Fuß). Für geneigte Flachdetektoren.</value>
+  </data>
+  <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
+    <value>Löscht alle Masken: bezieht jedes Pixel wieder
+in die Integration ein. Macht "Alles
+maskieren" / Halbmaske / Punktmaskierung
+rückgängig.</value>
+  </data>
+  <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
+    <value>Legt den Azimutursprung (χ = 0)
+zur linken Bildseite.</value>
+  </data>
+  <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
+    <value>Konzentrische Integration: erzeugt ein
+standardmäßiges 1D-Profil (Intensität gegen
+2theta, Netzebenenabstand oder Länge) durch
+Integration über vollständige Debye-Ringe.</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
+    <value>Sektor-Endwinkel (°, Azimut χ). Ende des
+integrierten tortenförmigen Azimutbereichs;
+muss größer als der Startwinkel sein.</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
+    <value>Korrigiert die Intensitäten für lineare
+(Synchrotron-)Röntgenpolarisation und wandelt
+das gemessene Muster in ein unpolarisiertes
+Äquivalent um; beeinflusst die relativen
+Peak-Höhen gegen den Azimut χ.</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
+    <value>Zentrumssuchbereich (Pixel/Schritte, ganzzahlig):
+Radius um das aktuelle Zentrum, innerhalb dessen
+die automatische Zentrumssuche sucht.
+Größer = weitere, aber langsamere Suche.</value>
+  </data>
+  <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
+    <value>Gibt den radialen Ringradius als
+Netzebenenabstand (Å) an.</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
+    <value>Obere Intensitätsschwelle (Counts). Pixel
+über diesem Wert werden von der Integration
+ausgeschlossen; nur aktiv, wenn "Über
+Intensität von" markiert ist.</value>
+  </data>
+  <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
+    <value>Manuelles Maskenwerkzeug: Rechteck. Zwischen
+zwei diagonalen Ecken ziehen, um einen
+rechteckigen Bereich zu maskieren.</value>
+  </data>
+  <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
+    <value>Legt die Farbe der auf dem Bild
+eingeblendeten Azimut-Maßstabslinien (χ) fest.</value>
+  </data>
+  <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
+    <value>Verwendet die Detektor-Bogenlänge (mm) als
+x-Achse des Profils; Start/Ende/Schritt in
+Millimetern.</value>
+  </data>
+  <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
+    <value>Halbe Ringbreite (Donut) um den gewählten
+Radius, die bei jedem Azimut integriert wird,
+in 2theta ° oder Netzebenenabstand Å.
+Breiter = mehr Counts, geringere
+Winkelauflösung.</value>
+  </data>
+  <data name="pictureBox1.ToolTip" xml:space="preserve">
+    <value>Vorschau der Azimutachse (χ): zeigt, wo
+χ = 0 liegt und in welche Richtung χ bei den
+aktuellen Richtungs- und Drehungseinstellungen
+zunimmt.</value>
+  </data>
+  <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Resultierender Durchmesser des manuellen Punkts
+in Pixeln (= 2^Größe). Überwiegend
+schreibgeschützt; spiegelt den Größenregler und
+die Punktgrößenauswahl der Hauptsymbolleiste
+wider.</value>
+  </data>
+  <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
+    <value>Legt den Azimutursprung (χ = 0)
+zur Unterseite des Bildes.</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
+    <value>Integriert das Band symmetrisch auf beiden
+Seiten des Strahlzentrums (zentrosymmetrisch)
+und verdoppelt den abgetasteten Bereich. Wird
+von den Vertikal-/Horizontal-Voreinstellungen
+verwendet.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>Integriert über ein rechteckiges Band statt
+über einen vollständigen Ring; aktiviert die
+Steuerungen für Richtung, Winkel und Bandbreite
+für einen streifenförmigen Bereich.</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
+    <value>Schwelle der Punkterkennung für das automatische
+"Punkte maskieren", in Standardabweichungen über
+dem lokalen Mittelwert. Niedriger = maskiert mehr
+Punkte; höher = nur die stärksten.</value>
+  </data>
+  <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
+    <value>Gibt den radialen Ringradius als
+Streuwinkel 2theta (Grad) an.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
+    <value>Startwert der Horizontalachse des abgewickelten
+Bildes (0-180), in 2theta ° / Länge /
+Netzebenenabstand je nach Einheitenauswahl.
+Linker Rand des Cake-Bildes.</value>
+  </data>
+  <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
+    <value>Speichert das Profil als CSV
+(kommagetrennte Werte) für Tabellenkalkulationen.</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
+    <value>Fragt bei jedem Speichern eines Profils
+nach dem Ausgabeordner.</value>
+  </data>
+  <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
+    <value>Endwert des Profilbereichs in der aktuell
+gewählten Einheit (2theta ° / mm / Å).
+Obere Grenze des ausgegebenen 1D-Profils.</value>
+  </data>
+  <data name="buttonMaskTop.ToolTip" xml:space="preserve">
+    <value>Maskiert (schließt von der Integration aus)
+die gesamte obere Bildhälfte. Wird zur
+bestehenden Maske hinzugefügt.</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
+    <value>Sendet das extrahierte 1D-Profil nach jeder
+Integration über die Zwischenablage an PDIndexer
+(Begleitanwendung).</value>
+  </data>
+  <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
+    <value>Hält die Position des Strahlzentrums während
+der Zentrumssuche/Verfeinerung fest, sodass nur
+andere Parameter optimiert werden. Deaktiviert
+die Suchbereichsoptionen.</value>
+  </data>
+  <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
+    <value>Legt fest, dass der Azimutwinkel χ auf dem
+Bild im Uhrzeigersinn zunimmt. Bestimmt die
+Vorzeichenkonvention für das azimutale
+Abwickeln und die Sektorwinkel.</value>
+  </data>
+  <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
+    <value>Manuelles Maskenwerkzeug: Kreis. Vom Zentrum
+nach außen ziehen, um einen kreisförmigen
+Bereich zu maskieren (Zentrum und Radius durch
+das Ziehen festgelegt).</value>
+  </data>
+  <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
+    <value>Beschriftet gespeicherte/angezeigte Bilder
+nur mit dem Dateinamen (ohne Pfad).</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
+    <value>Speichert alle Profile einer sequenziellen/
+azimutalen Serie in einer einzigen Datei
+(nicht verfügbar für das GSAS-Format).</value>
+  </data>
+  <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
+    <value>Speichert das Profil als TSV
+(tabulatorgetrennte Werte).</value>
+  </data>
+  <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Verwendet das aktuell geladene Bild als
+Hintergrund, der von nachfolgenden Bildern
+abgezogen wird (mit dem Koeffizienten
+skaliert).</value>
+  </data>
 </root>

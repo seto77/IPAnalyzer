@@ -82,4 +82,54 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Optionen für Bildserie</value>
   </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>Durch die Einzelbilder des Bildstapels
+blättern; springt zum gewählten Bild,
+berechnet dessen 1D-Profil neu und zeichnet
+es neu. Bereich 0..(Bildanzahl-1). Im
+Mehrfachauswahl-Modus deaktiviert.</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>Liste aller Einzelbilder im Stapel. Zum Anzeigen
+eines Bildes anklicken; im Mehrfachauswahl-Modus
+mit Strg/Umschalt (Strg+A = alle) mehrere für
+Mittelung oder Summation auswählen. HDF5-Bildern
+wird ein 3-stelliger Index vorangestellt.</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>Erlaubt die Auswahl mehrerer Einzelbilder
+auf einmal (aktiviert die Optionen Mittelung /
+Summation und deaktiviert den Bild-Schieberegler).
+Aus = jeweils nur ein Bild anzeigen.</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>Zeigt den pixelweisen Mittelwert (Intensitätssumme
+geteilt durch die Anzahl der Bilder) der gewählten
+Einzelbilder. Schließt sich mit Summation gegenseitig
+aus. Erfordert Mehrfachauswahl.</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>Zeigt die pixelweise Summe (Intensitäten addiert,
+nicht geteilt) der gewählten Einzelbilder; erhöht
+die Statistik und verbessert die Zählung bei
+schwachen Bildern. Schließt sich mit Mittelung
+gegenseitig aus. Erfordert Mehrfachauswahl.</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>Führt 'Get Profile' (radiale Integration zu einer
+1D-Kurve I-gegen-2theta/d/q) nur für das bzw.
+die aktuell in der obigen Liste gewählten
+Einzelbilder aus.</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>Führt 'Get Profile' (radiale Integration zu einem
+1D-Profil) nur für das einzelne, aktuell
+zuoberst angezeigte Bild aus.</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>Führt 'Get Profile' (radiale Integration zu 1D)
+für jedes Einzelbild im Stapel aus, unabhängig
+von der aktuellen Listenauswahl; erzeugt ein
+Profil pro Bild.</value>
+  </data>
 </root>

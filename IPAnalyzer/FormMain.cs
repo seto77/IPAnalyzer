@@ -2887,9 +2887,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
     #region Language メニュー
     // 260625Cl 追加: IPAnalyzer が UI 翻訳(resx)を整備済みで言語メニューに公開してよい言語の allow-list (公開ゲート)。
-    //   共有 SupportedCultures.Released は ReciPro/PDIndexer 基準で全 11 言語 true だが、IPAnalyzer はまだ en/ja しか
+    //   共有 SupportedCultures.Released は ReciPro/PDIndexer 基準で全 11 言語 true だが、IPAnalyzer はまだ en/ja/de しか
     //   resx を整備していない。新言語の resx が揃うたびにここへ足す (多言語化 Phase 3)。
-    private static readonly string[] releasedCulturesInIPA = { "en", "ja" };
+    //   260626Cl: de を公開 (Phase 3 de波: 全フォーム可視ラベル+tooltip+コード文字列+LocalizationData を独語化済)。
+    private static readonly string[] releasedCulturesInIPA = { "en", "ja", "de" };
 
     // 260625Cl 追加: F1/PDF マニュアルが整備済みの言語の allow-list (未整備言語は英語マニュアルへ落とす)。
     //   公開ゲート (releasedCulturesInIPA) とは別概念 (UI 翻訳済 ≠ マニュアル整備済) だが現状はどちらも en/ja。

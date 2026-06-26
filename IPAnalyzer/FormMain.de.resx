@@ -454,4 +454,236 @@ Modus</value>
   <data name="$this.Text" xml:space="preserve">
     <value>IPAnalyzer</value>
   </data>
+  <data name="comboBoxScale1.ToolTip" xml:space="preserve">
+    <value>Helligkeitsskala: logarithmische oder lineare
+Zuordnung der Intensität zur Helligkeit. Log
+staucht hohe Werte, um schwache Ringe
+sichtbar zu machen.</value>
+  </data>
+  <data name="comboBoxGradient.ToolTip" xml:space="preserve">
+    <value>Positive oder negative (Film-)Darstellung
+wählen. Negativ kehrt die Grau-/Farbzuordnung
+um, sodass hohe Intensität dunkel erscheint.</value>
+  </data>
+  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
+    <value>Hauptansicht des Beugungsbildes. Der Mauszeiger
+zeigt Pixelintensität, Radius r, 2-Theta und
+d-Wert an; Doppel-/Mittelklick setzt das
+Strahlzentrum; das Mausrad zoomt; STRG+Rechtsziehen
+wählt einen Bereich für die Statistik aus.</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
+    <value>Übersichts-Miniaturbild des Bildes. Klicken,
+um die Hauptansicht zu verschieben; mit
+Gesamtbild / Nahe Zentrum den angezeigten
+Bereich wählen.</value>
+  </data>
+  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
+    <value>Das gesamte Bild im Miniaturbild/in der
+Vorschau anzeigen.</value>
+  </data>
+  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
+    <value>Nur den Bereich nahe dem Strahlzentrum
+im Miniaturbild/in der Vorschau anzeigen.</value>
+  </data>
+  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
+    <value>Farbpalette für die Intensität: Grau, Kalt-Warm,
+Spektrum oder Feuer. Ändert nur die Anzeigefarben,
+nicht die Daten.</value>
+  </data>
+  <data name="comboBoxScaleLine.ToolTip" xml:space="preserve">
+    <value>Dichte der eingeblendeten Maßstabslinien
+(Gitterlinien) auf dem Bild: Keine, Grob,
+Mittel oder Fein.</value>
+  </data>
+  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
+    <value>Auto-Kontrast: setzt den Min./Max.-Anzeige-
+bereich der Intensität auf Mittelwert plus/minus
+2 Standardabweichungen. Ändert die Daten nicht.</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value>Setzt den Intensitäts-Anzeigebereich
+auf den vollen Bereich zurück (0 bis 65535).</value>
+  </data>
+  <data name="buttonMag1.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 1x setzen (100 %, ein
+Bildschirmpixel pro Bildpixel).</value>
+  </data>
+  <data name="buttonMag2.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 2x setzen.</value>
+  </data>
+  <data name="buttonMag4.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 4x setzen.</value>
+  </data>
+  <data name="buttonMag_2.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 1/2x setzen (50 %).</value>
+  </data>
+  <data name="buttonMag_4.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 1/4x setzen (25 %).</value>
+  </data>
+  <data name="buttonMag_8.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 1/8x setzen.</value>
+  </data>
+  <data name="buttonMag_16.ToolTip" xml:space="preserve">
+    <value>Bildzoom auf 1/16x setzen (große Bilder
+einpassen).</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Vergrößerung: aktueller Bildzoomfaktor
+und Auflösung.</value>
+  </data>
+  <data name="labelResolution.ToolTip" xml:space="preserve">
+    <value>Aktuelle Anzeigeauflösung (Bildschirmpixel
+pro Bildpixel) beim aktiven Zoom.</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>Intensität (Counts) am Pixel unter dem Cursor.</value>
+  </data>
+  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
+    <value>Intensität (Counts) des Bildpixels
+unter dem Mauszeiger.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>R: radialer Abstand vom Strahlzentrum
+zum Cursor, in Millimetern.</value>
+  </data>
+  <data name="labelMousePointR.ToolTip" xml:space="preserve">
+    <value>Radialer Abstand R (mm) vom Strahlzentrum
+zur Cursorposition.</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>2-Theta: Beugungswinkel (Streuwinkel)
+am Cursor, in Grad.</value>
+  </data>
+  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
+    <value>Beugungswinkel 2-Theta (Grad) am Cursor,
+aus der aktuellen Kameralänge und dem
+Strahlzentrum.</value>
+  </data>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value>d: Netzebenenabstand (d-Wert)
+am Cursor, in Ångström.</value>
+  </data>
+  <data name="labelMousePointD.ToolTip" xml:space="preserve">
+    <value>Netzebenenabstand d (Ångström) am Cursor,
+abgeleitet aus 2-Theta und der Wellenlänge
+über die Bragg-Gleichung.</value>
+  </data>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>Chi: Azimutwinkel um den Ring
+am Cursor, in Grad.</value>
+  </data>
+  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
+    <value>Azimutwinkel Chi (Grad) des Cursors um
+das Strahlzentrum / den Debye-Ring.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Realraum-Detektorkoordinaten (mm)
+des Cursors.</value>
+  </data>
+  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
+    <value>Cursorposition in realen Detektorebenen-
+koordinaten (mm), Ursprung im Strahlzentrum.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Bildpixelkoordinaten (x, y) des Cursors.</value>
+  </data>
+  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
+    <value>Cursorposition in Bildpixelkoordinaten
+(Spalte x, Zeile y).</value>
+  </data>
+  <data name="textBoxInformation.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützte Bildinformationen: Dateikopf
+und Aufnahmemetadaten des geladenen Bildes.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
+    <value>Statistik (Anzahl, Mittelwert, Min., Max.,
+Standardabweichung) der Intensität im
+ausgewählten Rechteckbereich.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
+    <value>Statistik desselben ausgewählten Bereichs,
+gemessen in den übrigen Bildern der
+geladenen Sequenz.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
+    <value>X (Spalte, Pixel) der ersten Ecke
+des Statistik-Rechtecks; auf die Bildbreite
+begrenzt. Max. 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
+    <value>Y (Zeile, Pixel) der ersten Ecke des
+Statistik-Rechtecks; auf die Bildhöhe
+begrenzt. Max. 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
+    <value>X (Spalte, Pixel) der gegenüberliegenden Ecke
+des Statistik-Rechtecks; auf die Bildbreite
+begrenzt.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
+    <value>Y (Zeile, Pixel) der gegenüberliegenden Ecke
+des Statistik-Rechtecks; auf die Bildhöhe
+begrenzt.</value>
+  </data>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value>Ausgewählter Rechteckbereich für die Statistik,
+angegeben als zwei Eckpunkte (x, y) in
+Bildpixeln.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Sie können das Statistik-Rechteck auch direkt
+im Bild auswählen, indem Sie STRG halten und
+mit der rechten Maustaste ziehen.</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.ToolTip" xml:space="preserve">
+    <value>Histogramm der Häufigkeit der Pixelintensität;
+die beiden vertikalen Linien legen den Min./Max.-
+Anzeigebereich fest.</value>
+  </data>
+  <data name="tabPageConvertedProfile.ToolTip" xml:space="preserve">
+    <value>Eindimensionales Profil (Intensität über 2-Theta /
+d / q), gewonnen durch radiale Integration des
+2D-Bildes.</value>
+  </data>
+  <data name="tabPageStasticalInfo.ToolTip" xml:space="preserve">
+    <value>Statistik des ausgewählten Bildbereichs,
+einschließlich desselben Bereichs über eine
+Bildsequenz hinweg.</value>
+  </data>
+  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
+    <value>Intensitätshistogramm. Ziehen Sie die beiden
+vertikalen roten Linien, um die minimale/maximale
+Anzeigeintensität festzulegen.</value>
+  </data>
+  <data name="graphControlProfile.ToolTip" xml:space="preserve">
+    <value>Diagramm des integrierten 1D-Profils:
+Intensität über 2-Theta, d-Wert oder q.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundLower.ToolTip" xml:space="preserve">
+    <value>Untere Grenze der Hintergrundanpassung, als
+Prozentsatz der Bildgröße; Pixel unterhalb
+dieses Perzentils werden zur Schätzung des
+Hintergrunds verwendet.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundUpper.ToolTip" xml:space="preserve">
+    <value>Obere Grenze der Hintergrundanpassung, als
+Prozentsatz der Bildgröße; Pixel oberhalb
+dieses Perzentils werden von der
+Hintergrundschätzung ausgeschlossen.</value>
+  </data>
+  <data name="toolStripComboBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Pinselgröße in Pixeln (2-512) zum manuellen
+Maskieren von Spots; größere Werte maskieren
+pro Klick einen größeren Bereich.</value>
+  </data>
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
+    <value>Anzahl der Azimutsektoren (6-360) für die
+azimutale Unterteilungsanalyse; mehr Sektoren
+ergeben eine feinere Winkelauflösung.</value>
+  </data>
+  <data name="toolStripComboBoxRotate.ToolTip" xml:space="preserve">
+    <value>Das Bild vor der Analyse um 0, 90, 180
+oder 270 Grad drehen.</value>
+  </data>
 </root>

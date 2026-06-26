@@ -373,4 +373,600 @@
   <data name="numericBoxAwayFrom.HeaderText" xml:space="preserve">
     <value>&amp;gt;</value>
   </data>
+  <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
+    <value>Übernimmt die Strahlzentrumsposition
+(Direktstrahl) des Hauptfensters in die
+X/Y-Felder des sekundären Zentrums.</value>
+  </data>
+  <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
+    <value>Überträgt die verfeinerten Parameter
+(Kameralänge, Pixelgröße/-verzerrung, Neigung,
+Wellenlänge, sphärische Korrektur, Strahl-
+zentrum) an das Hauptfenster.</value>
+  </data>
+  <data name="label76.ToolTip" xml:space="preserve">
+    <value>Streuung der angepassten sekundären
+Ringzentren; ein gerichteter Trend bedeutet,
+dass die sekundäre Neigungskorrektur
+unzureichend ist.</value>
+  </data>
+  <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
+    <value>Aktualisiert das Bild des Hauptfensters
+während der Verfeinerung. Deaktivieren, um
+das Neuzeichnen zu unterdrücken und etwas
+Geschwindigkeit zu gewinnen.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>Wählt das primäre Bild als Ziel beim
+manuellen Hinzufügen oder Ziehen von
+Debye-Ringen (flexibler Modus).</value>
+  </data>
+  <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
+    <value>Aktiviert die Mausinteraktion (Ziehen) in den
+Einzelpeak-Diagrammen während der laufenden
+Verfeinerung. Kann instabil sein; für
+zuverlässige Läufe deaktiviert lassen.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
+    <value>Verlauf des verfeinerten primären
+Neigungsazimuts phi über die Iterationen
+(neueste rechts). Vertikale Skala passt sich
+automatisch an.</value>
+  </data>
+  <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Verlauf der verfeinerten Pixelgröße (Y)
+über die Iterationen (neueste rechts).
+Vertikale Skala passt sich automatisch an.</value>
+  </data>
+  <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Verlauf der verfeinerten Pixelgröße (X)
+über die Iterationen (neueste rechts).
+Vertikale Skala passt sich automatisch an.</value>
+  </data>
+  <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
+    <value>Mittleres relatives Residuum (berechnete vs.
+beobachtete Peakpositionen) der ausgewählten
+Debye-Ring-Peaks, pro Iteration aufgetragen.
+Es nimmt monoton ab, wenn die Verfeinerung
+konvergiert; neueste Werte werden rechts
+angefügt.</value>
+  </data>
+  <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Verlauf der verfeinerten Wellenlänge über die
+Iterationen (neueste rechts). Vertikale Skala
+passt sich automatisch an.</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Integriert das primäre 2D-Bild radial zu
+einem 1D-Profil (Intensität vs. radialer
+Abstand), das für die Peak-Anpassung
+verwendet wird.</value>
+  </data>
+  <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Anfängliche Detektor-Pixelgröße in Y-Richtung,
+in mm. Startwert für die Verfeinerung; skaliert
+die vertikale Pixel-zu-mm-Umrechnung des
+Bildes.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>Streuung der angepassten primären
+Ringzentren; ein gerichteter Trend bedeutet,
+dass die Neigungskorrektur unzureichend ist.</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
+    <value>Zeigt für jeden ausgewählten Debye-Ring-Peak
+ein eigenes Anpassungsdiagramm an
+(beobachtetes Profil, angepasste Kurve,
+Hintergrund) statt des kombinierten Profils.</value>
+  </data>
+  <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Anfängliche Detektor-Pixelgröße in X-Richtung,
+in mm. Startwert für die Verfeinerung; skaliert
+die horizontale Pixel-zu-mm-Umrechnung des
+Bildes.</value>
+  </data>
+  <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
+    <value>Startet die Kleinste-Quadrate-Verfeinerung der
+oben markierten Geometrieparameter und passt
+die ausgewählten Debye-Ring-Peaks an. Mit Stop
+lässt sich der Vorgang vorzeitig abbrechen.</value>
+  </data>
+  <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
+    <value>Stoppt und bricht die laufende Verfeinerung
+ab und behält die bisher erreichten
+Parameterwerte bei.</value>
+  </data>
+  <data name="label50.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße in X-Richtung, in mm.</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value>Vorhergesagte Debye-Ring-Peaks. Aktivieren Sie
+die Kästchen Primär/Sekundär, um auszuwählen,
+welche Peaks in der Verfeinerung verwendet
+werden; die mm-Spalten zeigen die angepassten
+Positionen. Doppelklicken Sie auf eine Zeile,
+um das Diagramm auf diesen Peak zu zoomen.</value>
+  </data>
+  <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
+    <value>Öffnet den Kristalleditor, um die Standardprobe
+(standardmäßig CeO2) auszuwählen/zu bearbeiten,
+deren Netzebenenabstände die erwarteten
+Debye-Ring-Positionen festlegen.</value>
+  </data>
+  <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
+    <value>Breite der kurzen Seite des Integrationsbands,
+als Prozentsatz der Bildbreite (Standard 4%).
+Breiter mittelt über mehr Pixel, verwischt aber
+eng beieinander liegende Ringe.</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
+    <value>Schätzt die Kameralänge aus der Abweichung
+der primären/sekundären Ringpositionen über
+das gesamte Muster und lädt sie als
+verfeinerten Wert.</value>
+  </data>
+  <data name="label60.ToolTip" xml:space="preserve">
+    <value>Betrag der primären Detektorneigung tau
+(Winkel zur Senkrechten), in Grad.</value>
+  </data>
+  <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Anfängliche Strahlungswellenlänge in 0,1 nm
+(Ångström). Wird als Startwert bei der
+Verfeinerung verwendet; eine größere
+Wellenlänge verschiebt alle Debye-Ringe nach
+außen.</value>
+  </data>
+  <data name="label57.ToolTip" xml:space="preserve">
+    <value>Kameralänge (Abstand Probe–Detektor)
+des primären Bildes, in mm.</value>
+  </data>
+  <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: Dateiname (und Bildindex,
+bei Sequenzen) des aktuell geladenen primären
+Bildes.</value>
+  </data>
+  <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Verlauf des verfeinerten
+Pixelverzerrungswinkels ksi über die
+Iterationen (neueste rechts). Vertikale Skala
+passt sich automatisch an.</value>
+  </data>
+  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerte Korrektur der
+sphärischen Wölbung als inverser Radius 1/R
+(pro mm) aus der letzten Optimierung.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Y-Position des sekundären Strahlzentrums
+(Direktstrahl), in Pixeln. Doppelklicken, um
+das Zentrum aus dem Hauptfenster zu übernehmen;
+'Zentrum finden' dort aktualisiert es ebenfalls.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
+    <value>Verlauf des verfeinerten sekundären
+Neigungsazimuts phi über die Iterationen
+(neueste rechts). Vertikale Skala passt sich
+automatisch an.</value>
+  </data>
+  <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
+    <value>Markiert automatisch (für die Anpassung) die
+Peaks, die die untenstehenden Bedingungen
+erfüllen: isoliert gemäß 'entfernt von' und
+innerhalb des Abstands 'näher als'.</value>
+  </data>
+  <data name="label16.ToolTip" xml:space="preserve">
+    <value>Strahlungswellenlänge in 0,1 nm (Ångström).</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
+    <value>Verwendet einen bekannten Standardkristall:
+Die Debye-Ring-Positionen werden aus den
+Netzebenenabständen des Standards berechnet.
+Deaktivieren, um Ringe manuell zu platzieren/zu
+ziehen (flexibler Modus).</value>
+  </data>
+  <data name="label74.ToolTip" xml:space="preserve">
+    <value>Pixelverzerrungswinkel ksi (X/Y-Scherung),
+in Grad.</value>
+  </data>
+  <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
+    <value>Akzeptanzschwelle für Peaks (0-1). Ein Peak
+wird von der Verfeinerung ausgeschlossen, wenn
+integrierte Intensität / (integrierte
+Intensität + Hintergrund) unter diesen Wert
+fällt.</value>
+  </data>
+  <data name="label22.ToolTip" xml:space="preserve">
+    <value>Neigung der Imaging-Plate (IP): Detektor nicht
+senkrecht zum Strahl, angegeben als Azimut phi
+und Betrag tau.</value>
+  </data>
+  <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Löscht das geladene primäre Bild und sein
+extrahiertes Profil und setzt den primären
+Platz zurück.</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird die
+Detektor-Neigungskorrektur (Azimut phi und
+Betrag tau) verfeinert. Dies erzwingt die
+Verfeinerung des Strahlzentrums, da beide
+gekoppelt sind.</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
+    <value>Übernimmt die Strahlzentrumsposition
+(Direktstrahl) des Hauptfensters in die
+X/Y-Felder des primären Zentrums.</value>
+  </data>
+  <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Y-Position des primären Strahlzentrums
+(Direktstrahl), in Pixeln. Doppelklicken, um
+das Zentrum aus dem Hauptfenster zu übernehmen;
+'Zentrum finden' dort aktualisiert es ebenfalls.</value>
+  </data>
+  <data name="pictureBoxMain.ToolTip" xml:space="preserve">
+    <value>Abstand-Intensitäts-Profil. Linksziehen zum
+Vergrößern, Rechtsklick zum Verkleinern; ziehen
+Sie eine Beugungslinie, um sie zu verschieben
+(dies passt die Kameralänge an, oder den
+Netzebenenabstand im flexiblen Modus).</value>
+  </data>
+  <data name="label51.ToolTip" xml:space="preserve">
+    <value>Strahlzentrumsposition (Direktstrahl)
+des primären Bildes, in Pixeln.</value>
+  </data>
+  <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
+    <value>Streuung der angepassten sekundären
+Debye-Ring-Zentren (mm), gefärbt von ältesten
+zu neuesten. Ein einseitig gerichteter Trend
+bedeutet, dass die sekundäre
+Detektor-Neigungskorrektur unzureichend ist.</value>
+  </data>
+  <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
+    <value>Anzahl der azimutalen Richtungen (Sektoren,
+8-360), die um jeden Ring abgetastet werden.
+Mehr Richtungen verbessern die Empfindlichkeit
+für Neigung/Zentrum, verlangsamen aber die
+Berechnung.</value>
+  </data>
+  <data name="label80.ToolTip" xml:space="preserve">
+    <value>Betrag der sekundären Detektorneigung tau
+(Winkel zur Senkrechten), in Grad.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
+    <value>Anfänglicher Neigungsbetrag tau der primären
+Imaging-Plate (IP), in Grad: wie weit der
+Detektor von der Senkrechten zum Strahl
+weggeneigt ist.</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Kameralänge (Abstand Probe–Detektor)
+des primären Bildes, in mm.</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Öffnet und lädt die sekundäre
+Beugungsbilddatei (das optionale zweite Muster
+für die Geometrieverfeinerung mit zwei
+Abständen).</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
+    <value>Anfänglicher Neigungsazimut phi der sekundären
+Imaging-Plate (IP), in Grad: Richtung der
+Detektorneigung in der Ebene für das zweite
+Bild.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Strahlzentrumsposition
+(Direktstrahl) verfeinert. Wird automatisch
+erzwungen, solange die Neigungskorrektur
+aktiviert ist.</value>
+  </data>
+  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
+    <value>Mindestabstand in mm. 'Peaks markieren' wählt
+automatisch Peaks aus, die um mehr als diesen
+Abstand von ihren Nachbarn isoliert sind.</value>
+  </data>
+  <data name="label71.ToolTip" xml:space="preserve">
+    <value>Neigung der sekundären Imaging-Plate (IP):
+Detektor nicht senkrecht zum Strahl, als
+Azimut phi und Betrag tau.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerte Kameralänge
+(mm) als Ergebnis der letzten Optimierung.</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Kameralänge
+(Abstand Probe–Detektor) als freier Parameter
+in die Verfeinerung einbezogen.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
+    <value>Verlauf des verfeinerten primären
+Neigungsbetrags tau über die Iterationen
+(neueste rechts). Vertikale Skala passt sich
+automatisch an.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
+    <value>Verlauf des verfeinerten sekundären
+Neigungsbetrags tau über die Iterationen
+(neueste rechts). Vertikale Skala passt sich
+automatisch an.</value>
+  </data>
+  <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
+    <value>Farbfeld für das primäre Muster. Klicken Sie,
+um die Farbe zu wählen, mit der das primäre
+Profil und seine Ringe gezeichnet werden.</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Integriert das sekundäre 2D-Bild radial zu
+einem 1D-Profil (Intensität vs. radialer
+Abstand), das für die Peak-Anpassung
+verwendet wird.</value>
+  </data>
+  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
+    <value>Bildnummer des primären Bildes innerhalb
+eines sequenziellen Bildstapels (mehrere
+Einzelbilder).</value>
+  </data>
+  <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Anfängliche Kameralänge (Abstand Probe–Detektor)
+des primären Bildes, in mm. Geben Sie einen Wert
+nahe am wahren Wert ein, damit die Verfeinerung
+schneller konvergiert.</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Öffnet und lädt die primäre
+Beugungsbilddatei (das Muster der
+Standardprobe, das als Hauptreferenz für die
+Verfeinerung dient).</value>
+  </data>
+  <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
+    <value>Streuung der angepassten Debye-Ring-Zentren
+(mm), von der ältesten zur neuesten Iteration
+rot-&amp;gt;grün-&amp;gt;blau gefärbt. Ein einseitig
+gerichteter Trend zeigt an, dass die
+Detektor-Neigungskorrektur noch unzureichend
+ist.</value>
+  </data>
+  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerte Wellenlänge
+(0,1 nm / Ångström) aus der letzten
+Optimierung.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerter Azimut der
+primären Detektorneigung phi (Grad) aus der
+letzten Optimierung.</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Detektor-Pixelgröße
+(X und Y) als freier Parameter in die
+Verfeinerung einbezogen.</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
+    <value>Zerlegt überlappende Debye-Ring-Peaks: Peaks,
+die näher als ~2x des Anpassungsbereichs liegen,
+werden zur besseren Trennung gleichzeitig als
+Gruppe angepasst.</value>
+  </data>
+  <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Anfänglicher Pixelverzerrungswinkel ksi
+(Scherung / Nicht-Orthogonalität zwischen den
+X- und Y-Pixelachsen), in Grad. Korrigiert
+verzerrte Pixelraster.</value>
+  </data>
+  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
+    <value>Bildnummer des sekundären Bildes innerhalb
+eines sequenziellen Bildstapels (mehrere
+Einzelbilder).</value>
+  </data>
+  <data name="label79.ToolTip" xml:space="preserve">
+    <value>Azimut der sekundären Detektorneigung phi
+(Richtung der Neigungsachse), in Grad.</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerte Pixelgröße in
+X-Richtung (mm) aus der letzten Optimierung.</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>Integriert über einen Winkelsektor (Keil)
+des Rings. Folgt der Ringkrümmung; besser für
+kurze Kameralängen / starke Neigung.</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Korrektur der
+sphärischen Wölbung (inverser Radius 1/R)
+verfeinert, die eine gekrümmte Imaging-Plate
+berücksichtigt.</value>
+  </data>
+  <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
+    <value>Kopiert alle verfeinerten Parameter und ihre
++/--Fehler als tabulatorgetrennten Text in die
+Zwischenablage (Wellenlänge, Kameralänge,
+Pixelgröße, ksi, Neigung, Zentren).</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Strahlungswellenlänge
+als freier Parameter in die Verfeinerung
+einbezogen.</value>
+  </data>
+  <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>Verlauf der verfeinerten Kameralänge über die
+Iterationen (neueste rechts). Die vertikale
+Skala passt sich automatisch an, beurteilen Sie
+daher Trends, nicht die absolute Höhe.</value>
+  </data>
+  <data name="label44.ToolTip" xml:space="preserve">
+    <value>Pixelverzerrungswinkel ksi
+(X/Y-Nicht-Orthogonalität), in Grad.</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerte Pixelgröße in
+Y-Richtung (mm) aus der letzten Optimierung.</value>
+  </data>
+  <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
+    <value>Versatz der sekundären Kameralänge relativ zur
+primären, in mm (negativ zulässig). Legt fest,
+wie viel weiter/näher der zweite Detektor
+sitzt.</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
+    <value>Schätzt die Wellenlänge aus dem gesamten Muster
+anhand der markierten Debye-Ring-Peaks beider
+Bilder und lädt sie als verfeinerten Wert.</value>
+  </data>
+  <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
+    <value>Farbfeld für das sekundäre Muster. Klicken Sie,
+um die Farbe zu wählen, mit der das sekundäre
+Profil und seine Ringe gezeichnet werden.</value>
+  </data>
+  <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
+    <value>Halbe Breite des Peak-Anpassungsfensters in mm
+(0,01-10) um jeden vorhergesagten Peak. Größer
+erfasst mehr, riskiert aber Störungen durch
+Nachbarn und langsamere Anpassungen; zu klein
+verringert die Genauigkeit.</value>
+  </data>
+  <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
+    <value>Löscht alle aktuell gezeichneten
+Parameterverlaufs- und Residuumsdiagramme.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>Integriert über einen rechteckigen
+Bandbereich quer über den Ring.
+Einfacher/schneller, aber weniger genau bei
+stark gekrümmten Ringen.</value>
+  </data>
+  <data name="label37.ToolTip" xml:space="preserve">
+    <value>Azimut der primären Detektorneigung phi
+(Richtung der Neigungsachse), in Grad.</value>
+  </data>
+  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: verfeinerter
+Pixelverzerrungswinkel ksi (Grad) aus der
+letzten Optimierung.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>X-Position des sekundären Strahlzentrums
+(Direktstrahl), in Pixeln. Doppelklicken, um
+das Zentrum aus dem Hauptfenster zu übernehmen;
+'Zentrum finden' dort aktualisiert es ebenfalls.</value>
+  </data>
+  <data name="label52.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße in Y-Richtung, in mm.</value>
+  </data>
+  <data name="label45.ToolTip" xml:space="preserve">
+    <value>Akzeptanzschwelle für Peaks (0-1): Peaks
+unterhalb dieses Intensitätsverhältnisses
+werden von der Verfeinerung ausgeschlossen.</value>
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value>Anzahl der azimutalen Richtungen (Sektoren),
+die um jeden Ring abgetastet werden (8-360).</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: Kopie der primären Kameralänge
+(mm), zur Referenz neben dem sekundären Versatz
+angezeigt.</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, wird der Pixelverzerrungswinkel
+ksi (X/Y-Scherung) als freier Parameter in die
+Verfeinerung einbezogen.</value>
+  </data>
+  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
+    <value>Anfängliche Korrektur der sphärischen Wölbung
+als inverser Radius 1/R (pro mm). Korrigiert
+einen gekrümmten Detektor/IP; 0 bedeutet flach.</value>
+  </data>
+  <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: Dateiname (und Bildindex,
+bei Sequenzen) des aktuell geladenen sekundären
+Bildes.</value>
+  </data>
+  <data name="label67.ToolTip" xml:space="preserve">
+    <value>Anzahl der auszuführenden
+Verfeinerungsiterationen.</value>
+  </data>
+  <data name="label58.ToolTip" xml:space="preserve">
+    <value>Strahlzentrumsposition (Direktstrahl)
+des sekundären Bildes, in Pixeln.</value>
+  </data>
+  <data name="label42.ToolTip" xml:space="preserve">
+    <value>Geschätzter Standardfehler (+/-) jedes
+verfeinerten Parameters.</value>
+  </data>
+  <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
+    <value>Lädt die aktuellen Geometrieparameter des
+Hauptfensters als Startpunkt der Verfeinerung
+in die Felder der Anfangsparameter.</value>
+  </data>
+  <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Löscht das geladene sekundäre Bild und sein
+extrahiertes Profil und setzt den sekundären
+Platz zurück.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Anfänglicher Neigungsazimut phi der primären
+Imaging-Plate (IP), in Grad: die Richtung in
+der Ebene, um die der Detektor relativ zum
+Strahl geneigt ist.</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>X-Position des primären Strahlzentrums
+(Direktstrahl), in Pixeln. Doppelklicken, um
+das Zentrum aus dem Hauptfenster zu übernehmen;
+'Zentrum finden' im Hauptfenster aktualisiert
+es ebenfalls.</value>
+  </data>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>Halbe Breite des Peak-Anpassungsfensters um
+jeden vorhergesagten Peak (Primär), in mm.</value>
+  </data>
+  <data name="label28.ToolTip" xml:space="preserve">
+    <value>Breite des Integrationsbands (kurze Seite)
+als Prozentsatz der Bildbreite.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>Wählt das sekundäre Bild als Ziel beim
+manuellen Hinzufügen oder Ziehen von
+Debye-Ringen (flexibler Modus).</value>
+  </data>
+  <data name="label72.ToolTip" xml:space="preserve">
+    <value>Mittleres relatives Residuum (berechnete vs.
+beobachtete Peakposition) pro Iteration; nimmt
+ab, wenn die Anpassung konvergiert.</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
+    <value>Anfänglicher Neigungsbetrag tau der sekundären
+Imaging-Plate (IP), in Grad: Neigung weg von der
+Senkrechten zum Strahl für das zweite Bild.</value>
+  </data>
+  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
+    <value>Obergrenze des Abstands in mm. 'Peaks markieren'
+wählt automatisch nur Peaks aus, die näher als
+dieser radiale Abstand liegen.</value>
+  </data>
+  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
+    <value>Schreibgeschützt: geschätzter Standardfehler
+(+/-) der verfeinerten Kameralänge (mm).</value>
+  </data>
+  <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
+    <value>Anzahl der durchzuführenden
+Verfeinerungsiterationen (Standard 12). Mehr
+Iterationen lassen die Anpassung weiter
+konvergieren, kosten aber Zeit.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Einheit: Ångström (0,1 nm) für die Wellenlänge.</value>
+  </data>
+  <data name="label75.ToolTip" xml:space="preserve">
+    <value>Korrektur der sphärischen Wölbung als inverser
+Radius 1/R (pro mm); 0 = flacher Detektor.</value>
+  </data>
+  <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
+    <value>Zeigt eine Schemazeichnung, die jeden
+geometrischen Parameter veranschaulicht
+(Kameralänge, Strahlzentrum, Detektorneigung,
+Pixelgröße, Verzerrung).</value>
+  </data>
 </root>

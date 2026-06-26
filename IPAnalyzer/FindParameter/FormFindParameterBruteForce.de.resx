@@ -251,4 +251,410 @@
   <data name="numericBoxWeight.HeaderText" xml:space="preserve">
     <value>Höhe : Netzebenenabstand</value>
   </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value>Schrittweiten- und Suchbereichseinstellungen für
+jeden Gandolfi-Parameter. Bringt ein Zyklus keine
+Verbesserung, wird jede Schrittweite automatisch
+verkleinert, um feiner zu verfeinern.</value>
+  </data>
+  <data name="tabControl1 / tabPage1 (Flat Panel).ToolTip" xml:space="preserve">
+    <value>Brute-Force-Geometrieverfeinerung für einen
+Flachbild-/Flächendetektor (z. B. SACLA). Variiert
+Kameralänge, Strahlzentrum, Neigung und Wellenlänge,
+um die Debye-Ringe des Standards bestmöglich
+anzupassen.</value>
+  </data>
+  <data name="tabPage2 (Gandolfi).ToolTip" xml:space="preserve">
+    <value>Brute-Force-Verfeinerung für die Geometrie einer
+Gandolfi-/gekrümmten Imaging-Plate. Variiert
+Kameralänge, Pixelgröße, Zentrum, Neigung und
+Gandolfi-Radius, um die Debye-Ringe des Standards
+anzupassen.</value>
+  </data>
+  <data name="radioButtonStandardAu.ToolTip" xml:space="preserve">
+    <value>Gold (Au) als Kalibrierstandard verwenden (kubisch,
+a=4.07825 Å). Seine bekannten Debye-Ring-Positionen
+sind die Referenz, an der der Fit die
+Detektorgeometrie ausrichtet.</value>
+  </data>
+  <data name="radioButtonStandardCeO2.ToolTip" xml:space="preserve">
+    <value>Ceroxid (CeO2) als Kalibrierstandard verwenden
+(kubisch, a=5.411102 Å). Ein verbreiteter
+NIST-Pulverstandard zur Kalibrierung der
+Detektorgeometrie.</value>
+  </data>
+  <data name="radioButtonStandardLaB6.ToolTip" xml:space="preserve">
+    <value>Lanthanhexaborid (LaB6) als Kalibrierstandard
+verwenden (kubisch, a=4.157 Å). Ein weit
+verbreiteter NIST-Standard für Linienpositionen
+bzw. Instrumente.</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.ToolTip" xml:space="preserve">
+    <value>Korund (Al2O3) als Kalibrierstandard verwenden
+(hexagonal, a=4.7657 Å, c=13.01 Å). Liefert
+viele Ringe über einen weiten 2θ-Bereich.</value>
+  </data>
+  <data name="radioButtonStandardOther.ToolTip" xml:space="preserve">
+    <value>Eigenen Standard verwenden: aktiviert den
+Kristalleditor unten, sodass Sie ein beliebiges
+Gitter / beliebige Atome eingeben können statt
+einer Voreinstellung (Au, CeO2, LaB6, Al2O3).</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>Geometrie auf den Direktstrahl-Fleck beziehen:
+verwendet Kameralänge 1 und das Direktfleck-Pixel
+(X,Y), an dem der ungebeugte Strahl auf den
+Detektor trifft.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>Geometrie auf den Lotfußpunkt beziehen:
+verwendet Kameralänge 2 und das Lotfußpunkt-Pixel
+(X,Y) - den Punkt auf dem geneigten Detektor,
+der der Probe am nächsten liegt.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Koordinatenreferenz für die Geometrie wählen:
+Direktstrahl-Fleck (Kameralänge 1) oder
+Lotfußpunkt auf einem geneigten Detektor
+(Kameralänge 2).</value>
+  </data>
+  <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>Die Kameralänge (Abstand Probe-Detektor, mm)
+verfeinern. Eine größere Kameralänge spreizt die
+Debye-Ringe nach außen; diese wird variiert, um sie
+bestmöglich an den Standard anzupassen.</value>
+  </data>
+  <data name="checkBoxPointX.ToolTip" xml:space="preserve">
+    <value>Die X-Koordinate des Strahlzentrums (Pixel)
+verfeinern: Direktfleck-X oder Lotfußpunkt-X.
+Verschiebt die Lage des Ringzentrums auf dem
+Detektor.</value>
+  </data>
+  <data name="checkBoxPointY.ToolTip" xml:space="preserve">
+    <value>Die Y-Koordinate des Strahlzentrums (Pixel)
+verfeinern: Direktfleck-Y oder Lotfußpunkt-Y.
+Verschiebt das Ringzentrum vertikal auf dem
+Detektor.</value>
+  </data>
+  <data name="checkBoxPhi.ToolTip" xml:space="preserve">
+    <value>Den Neigungsazimut φ des Detektors (Bogenmaß)
+verfeinern: die Richtung in der Ebene, um die der
+Detektor aus der Senkrechten zum Strahl geneigt ist.
+Macht die Ringe elliptisch.</value>
+  </data>
+  <data name="checkBoxTau.ToolTip" xml:space="preserve">
+    <value>Den Neigungswinkel τ des Detektors (Bogenmaß)
+verfeinern: wie stark die Detektorebene aus der
+Senkrechten zum Strahl geneigt ist. Verzerrt
+bei einem Wert ungleich 0 die Ringpositionen.</value>
+  </data>
+  <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Die Wellenlänge der Röntgen-/Neutronenstrahlung
+(Ångström) verfeinern. Eine Skalierung der
+Wellenlänge verschiebt jeden Debye-Ring in 2θ;
+nur aktivieren, wenn die Wellenlänge unsicher ist.</value>
+  </data>
+  <data name="checkBox2.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße in X (mm/Pixel) verfeinern.
+Derzeit im Flachbildmodus deaktiviert; die
+Kalibrierung der Pixelgröße erfolgt auf der
+Gandolfi-Registerkarte.</value>
+  </data>
+  <data name="checkBox3.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße in Y (mm/Pixel) verfeinern.
+Derzeit im Flachbildmodus deaktiviert; verwenden
+Sie die Gandolfi-Registerkarte zur Kalibrierung
+der Pixelgröße.</value>
+  </data>
+  <data name="checkBox4.ToolTip" xml:space="preserve">
+    <value>Pixelverzerrung ξ (Grad) verfeinern: den
+Scher- bzw. Nichtorthogonalitätswinkel zwischen
+den Pixelachsen des Detektors. Derzeit im
+Flachbildmodus deaktiviert.</value>
+  </data>
+  <data name="numericBoxCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite der Kameralänge (mm).
+Die Suche probiert +/- Vielfache davon und
+verkleinert sie automatisch, wenn ein Zyklus keine
+Verbesserung bringt. Kleiner = feiner, aber langsamer.</value>
+  </data>
+  <data name="numericBoxCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite der Kameralänge in Schritten
+(ganzzahlig, 0-10). Variiert +/- so viele Schritte,
+also Gitter = 2N+1 Punkte. Größer = breitere, aber
+langsamere Suche.</value>
+  </data>
+  <data name="numericBoxPointXStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite des Strahlzentrums
+in X (Pixel). Die Suche probiert +/- Vielfache;
+verkleinert sich automatisch ohne Verbesserung.
+Kleiner = feinere Zentrumskalibrierung, aber
+langsamer.</value>
+  </data>
+  <data name="numericBoxPointYStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite des Strahlzentrums
+in Y (Pixel). Die Suche probiert +/- Vielfache;
+verkleinert sich automatisch ohne Verbesserung.</value>
+  </data>
+  <data name="numericBoxFootPointXRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite des Strahlzentrums in X in
+Schritten (ganzzahlig, 0-10). Variiert +/- so viele
+Schritte um das aktuelle X. Größer = breiter,
+aber langsamer.</value>
+  </data>
+  <data name="numericBoxFootPointYRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite des Strahlzentrums in Y in
+Schritten (ganzzahlig, 0-10). Variiert +/- so viele
+Schritte um das aktuelle Y.</value>
+  </data>
+  <data name="numericBoxPhiStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite des Neigungsazimuts φ
+(Grad). Die Suche probiert +/- Vielfache;
+verkleinert sich automatisch ohne Verbesserung.</value>
+  </data>
+  <data name="numericBoxPhiRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite des Neigungsazimuts φ in
+Schritten (ganzzahlig, 0-10). Variiert +/- so viele
+Schritte um das aktuelle φ.</value>
+  </data>
+  <data name="numericBoxTauStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite des Neigungswinkels τ
+(Grad). Die Suche probiert +/- Vielfache;
+verkleinert sich automatisch ohne Verbesserung.</value>
+  </data>
+  <data name="numericBoxTauRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite des Neigungswinkels τ in
+Schritten (ganzzahlig, 0-10). Variiert +/- so viele
+Schritte um das aktuelle τ.</value>
+  </data>
+  <data name="numericBoxWaveLengthStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite der Wellenlänge
+(Ångström). Hinweis: intern mit 0,1× angewendet.
+Die Suche probiert +/- Vielfache; verkleinert sich
+automatisch ohne Verbesserung.</value>
+  </data>
+  <data name="numericBoxWaveLengthRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite der Wellenlänge in Schritten
+(ganzzahlig, 0-10). Variiert +/- so viele Schritte
+um die aktuelle Wellenlänge.</value>
+  </data>
+  <data name="numericBox2.ToolTip" xml:space="preserve">
+    <value>Suchschrittweite für Pixelgröße-X (mm/Pixel).
+Im Flachbildmodus deaktiviert; die Kalibrierung
+der Pixelgröße erfolgt auf der
+Gandolfi-Registerkarte.</value>
+  </data>
+  <data name="numericBox3.ToolTip" xml:space="preserve">
+    <value>Suchschrittweite für Pixelgröße-Y (mm/Pixel).
+Im Flachbildmodus deaktiviert; verwenden Sie die
+Gandolfi-Registerkarte zur Kalibrierung der
+Pixelgröße.</value>
+  </data>
+  <data name="numericBox4.ToolTip" xml:space="preserve">
+    <value>Suchschrittweite für Pixelverzerrung ξ
+(Grad). Im Flachbildmodus deaktiviert.</value>
+  </data>
+  <data name="numericBox5.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite für Pixelgröße-X in
+Schritten. Im Flachbildmodus deaktiviert.</value>
+  </data>
+  <data name="numericBox6.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite für Pixelgröße-Y in
+Schritten. Im Flachbildmodus deaktiviert.</value>
+  </data>
+  <data name="numericBox7.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite für Pixelverzerrung ξ
+in Schritten. Im Flachbildmodus deaktiviert.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite für jeden
+Parameter. Die Brute-Force-Suche variiert +/-
+Vielfache davon und verkleinert die Schrittweite
+automatisch, wenn ein Zyklus keine Verbesserung
+bringt.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite pro Parameter, in Anzahl von
+Schritten. Variiert +/- so viele Schritte
+(Gitter = 2N+1 Punkte). 0 deaktiviert diesen
+Parameter.</value>
+  </data>
+  <data name="numericBoxIteration.ToolTip" xml:space="preserve">
+    <value>Anzahl der Verfeinerungszyklen (1-100). Jeder Zyklus
+zentriert das Gitter neu auf das aktuelle Optimum und
+verkleinert die Schrittweite ohne Verbesserung,
+wodurch die Geometrie konvergiert.</value>
+  </data>
+  <data name="numericBoxFittingRange.ToolTip" xml:space="preserve">
+    <value>Halbe Breite des Peak-Fit-Fensters um jeden
+berechneten Ring, in 2θ-Grad. Zu klein verfehlt den
+Peak; zu groß zieht Nachbarn/Hintergrund hinein.
+Wird bei Änderung neu berechnet.</value>
+  </data>
+  <data name="numericBoxWeight.ToolTip" xml:space="preserve">
+    <value>Gewicht der Kostenfunktion, das die Peakhöhe gegen
+die 2θ-(Netzebenenabstand-)Abweichung abwägt:
+cost = devThetaSq + Weight/height. Höher bevorzugt
+höhere, schärfere Ringe.</value>
+  </data>
+  <data name="buttonOptimize.ToolTip" xml:space="preserve">
+    <value>Brute-Force-Verfeinerung starten: die
+aktivierten Parameter (Kameralänge, Zentrum,
+Neigung, Wellenlänge) variieren, um die Debye-Ringe
+des Standards bestmöglich anzupassen. Mit Stop
+abbrechen.</value>
+  </data>
+  <data name="buttonStop.ToolTip" xml:space="preserve">
+    <value>Die laufende Optimierung abbrechen und die
+Parameter, die Spot-Maske und den
+Integrationsbereich auf ihre Werte vor dem Drücken
+von Optimize zurücksetzen.</value>
+  </data>
+  <data name="buttonGetProfile.ToolTip" xml:space="preserve">
+    <value>Das 1D-Radialprofil (Intensität über 2θ) mit der
+aktuellen Geometrie neu berechnen und die berechneten
+Ringpositionen des Standards überlagern, ohne zu
+verfeinern.</value>
+  </data>
+  <data name="checkBox1.ToolTip" xml:space="preserve">
+    <value>Quadratische Pixel annehmen: Pixelgröße X = Y
+während der Verfeinerung erzwingen, statt sie
+unabhängig anzupassen.</value>
+  </data>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value>Fortschrittsbericht (schreibgeschützt): aktueller
+Zyklus, bisher bester Wert für Kameralänge,
+Zentrum, Neigung, Wellenlänge (mit
+Geändert/Unverändert), aktuelle Schrittweiten und
+beste Fit-Werte.</value>
+  </data>
+  <data name="graphControl1.ToolTip" xml:space="preserve">
+    <value>Profildiagramm: Intensität über 2θ mit roten
+Linien an den berechneten Debye-Ring-Positionen
+und gefitteten Peaks. Doppelklicken Sie eine
+Linie, um diesen Reflex aus dem Fit zu entfernen.</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.ToolTip" xml:space="preserve">
+    <value>Kameralänge (Abstand Probe-Detektor, mm) im
+Gandolfi-Scan verfeinern. Wird zusammen mit dem
+Gandolfi-Radius variiert.</value>
+  </data>
+  <data name="checkBoxPixelSize.ToolTip" xml:space="preserve">
+    <value>Detektor-Pixelgröße X und Y (mm/Pixel) im
+Gandolfi-Scan verfeinern. Beeinflusst die
+Netzebenenabstandsskala der Ringe.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Die Position des Strahlzentrums X und Y (Pixel) im
+Gandolfi-Scan verfeinern. Verschiebt die Lage der
+Ringzentren auf dem Detektor.</value>
+  </data>
+  <data name="checkBoxIPTilt.ToolTip" xml:space="preserve">
+    <value>Die Neigungswinkel τ und φ (Grad) der Imaging-Plate
+(IP) im Gandolfi-Scan verfeinern. Neigung =
+Detektor nicht senkrecht zum Strahl.</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Den Gandolfi-Radius (mm) verfeinern: den Radius der
+gekrümmten Imaging-Plate / Gandolfi-Kamera.
+Beeinflusst die Krümmungskorrektur der
+Ringpositionen.</value>
+  </data>
+  <data name="numericUpDownCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite der Kameralänge (mm)
+für den Gandolfi-Scan. Probiert +/- Vielfache;
+verkleinert sich automatisch, wenn ein Zyklus keine
+Verbesserung bringt.</value>
+  </data>
+  <data name="numericUpDownPixelSizeStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite der Pixelgröße
+(mm/Pixel) für den Gandolfi-Scan. Probiert +/-
+Vielfache; verkleinert sich automatisch ohne
+Verbesserung.</value>
+  </data>
+  <data name="numericUpDownCenterPositionStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite des Strahlzentrums
+(Pixel) für den Gandolfi-Scan. Probiert +/-
+Vielfache; verkleinert sich automatisch ohne
+Verbesserung.</value>
+  </data>
+  <data name="numericUpDownIPTiltStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite der Neigung (τ und φ)
+(Grad) für den Gandolfi-Scan. Probiert +/-
+Vielfache; verkleinert sich automatisch ohne
+Verbesserung.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusStep.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite des Gandolfi-Radius
+(mm). Probiert +/- Vielfache; verkleinert sich
+automatisch ohne Verbesserung.</value>
+  </data>
+  <data name="numericUpDownCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite der Kameralänge in Schritten
+(ganzzahlig, 0-10) für den Gandolfi-Scan. Variiert
++/- so viele Schritte. 0 deaktiviert.</value>
+  </data>
+  <data name="numericUpDownPixelSizeRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite der Pixelgröße in Schritten
+(ganzzahlig, 0-10) für den Gandolfi-Scan. Variiert
++/- so viele Schritte.</value>
+  </data>
+  <data name="numericUpDownCenterPositionRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite des Strahlzentrums in Schritten
+(ganzzahlig, 0-10) für den Gandolfi-Scan. Variiert
++/- so viele Schritte in X und Y.</value>
+  </data>
+  <data name="numericUpDownTiltRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite der Neigung (τ/φ) in
+Schritten (ganzzahlig, 0-10) für den
+Gandolfi-Scan. Variiert +/- so viele Schritte.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusRange.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite des Gandolfi-Radius in
+Schritten (ganzzahlig, 0-10). Variiert +/- so
+viele Schritte um den aktuellen Radius.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Anfängliche Suchschrittweite für jeden
+Gandolfi-Parameter. Die Suche variiert +/-
+Vielfache davon und verkleinert die Schrittweite
+automatisch ohne Verbesserung.</value>
+  </data>
+  <data name="label23.ToolTip" xml:space="preserve">
+    <value>Halbe Suchbreite pro Gandolfi-Parameter, in
+Anzahl von Schritten. Variiert +/- so viele
+Schritte. 0 deaktiviert diesen Parameter.</value>
+  </data>
+  <data name="numericUpDownIterationGandolfi.ToolTip" xml:space="preserve">
+    <value>Anzahl der Gandolfi-Verfeinerungszyklen. Jeder Zyklus
+zentriert neu auf das aktuelle Optimum und verkleinert
+die Schrittweite ohne Verbesserung, wodurch die
+Geometrie konvergiert.</value>
+  </data>
+  <data name="numericUpDownFittingRangeForGandolfi.ToolTip" xml:space="preserve">
+    <value>Halbe Breite des Peak-Fit-Fensters (2θ-Grad, 0,2-1)
+um jeden berechneten Ring für den Gandolfi-Fit. Zu
+klein verfehlt den Peak; zu groß zieht Nachbarn
+hinein.</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value>Anzahl der Gandolfi-Verfeinerungszyklen (siehe das
+Iterationsfeld). Mehr Zyklen lassen die Geometrie
+gründlicher konvergieren, dauern aber länger.</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi-Brute-Force-Verfeinerung starten: die
+aktivierten Parameter (Kameralänge, Pixelgröße,
+Zentrum, Neigung, Gandolfi-Radius) variieren, um die
+Debye-Ringe des Standards bestmöglich anzupassen.</value>
+  </data>
+  <data name="toolStripProgressBar1.ToolTip" xml:space="preserve">
+    <value>Optimierungsfortschritt: Anteil des abgeschlossenen
+Parametergitter-Scans über alle Zyklen hinweg.</value>
+  </data>
+  <data name="toolStripStatusLabel1.ToolTip" xml:space="preserve">
+    <value>Statuszeile: Zeit pro Scanschritt, Prozent
+abgeschlossen, verstrichene Zeit und geschätzte
+verbleibende Zeit für die laufende Optimierung.</value>
+  </data>
 </root>

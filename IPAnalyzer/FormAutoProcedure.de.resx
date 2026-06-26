@@ -149,4 +149,99 @@
   <data name="numericBoxDivisor.HeaderText" xml:space="preserve">
     <value>Zahl im Dateinamen %</value>
   </data>
+  <data name="checkBoxAutoLoad.ToolTip" xml:space="preserve">
+    <value>Überwachung des ausgewählten Verzeichnisses
+auf neu hinzugefügte Bilddateien starten/stoppen
+und jede neue Datei automatisch laden, sobald sie
+erscheint (zuvor muss ein gültiges Verzeichnis
+festgelegt werden).</value>
+  </data>
+  <data name="textBoxDiectory.ToolTip" xml:space="preserve">
+    <value>Vollständiger Pfad des Ordners, der auf neue
+Beugungsbilddateien überwacht werden soll.
+Mit der Schaltfläche „Festlegen“ durchsuchen
+oder einen Pfad eingeben. Unterordner werden
+rekursiv überwacht.</value>
+  </data>
+  <data name="buttonSetDirectory.ToolTip" xml:space="preserve">
+    <value>Nach dem zu überwachenden Ordner suchen
+und seinen Pfad in das Verzeichnisfeld eintragen.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Vollständiger Pfad des Ordners, der auf neue
+Beugungsbilddateien überwacht werden soll.
+Mit der Schaltfläche „Festlegen“ durchsuchen
+oder einen Pfad eingeben. Unterordner werden
+rekursiv überwacht.</value>
+  </data>
+  <data name="checkBoxNumberMatching.ToolTip" xml:space="preserve">
+    <value>Automatisch geladene Dateien anhand der
+abschließenden Zahl im Dateinamen filtern:
+nur laden, wenn (Zahl mod Divisor) dem Rest
+entspricht bzw. nicht entspricht, je nach
+Umschalter =/=.</value>
+  </data>
+  <data name="radioButtonEqual.ToolTip" xml:space="preserve">
+    <value>Modus „Gleich“: Datei nur laden, wenn
+(abschließende Zahl mod Divisor) dem Rest
+entspricht.</value>
+  </data>
+  <data name="radioButtonNotEqual.ToolTip" xml:space="preserve">
+    <value>Modus „Ungleich“: Datei nur laden, wenn
+(abschließende Zahl mod Divisor) dem Rest
+NICHT entspricht.</value>
+  </data>
+  <data name="numericBoxDivisor.ToolTip" xml:space="preserve">
+    <value>Divisor für den Dateinummern-Test: Die Datei
+besteht den Test, wenn (abschließende Zahl mod
+diesem Divisor) dem Rest entspricht. Ganzzahl
+&amp;gt;0; bei 0 trifft nichts zu. Standard 3.</value>
+  </data>
+  <data name="numericBoxRemainder.ToolTip" xml:space="preserve">
+    <value>Ziel-Rest für den Dateinummern-Test: Die Datei
+besteht den Test, wenn (abschließende Zahl mod
+Divisor) diesem Wert entspricht. Ganzzahl im
+Bereich 0..Divisor-1. Standard 2.</value>
+  </data>
+  <data name="checkBoxKeywords.ToolTip" xml:space="preserve">
+    <value>Automatisch geladene Dateien nach Namen
+filtern: nur Dateien laden, deren Dateiname
+den rechts eingegebenen Schlüsselworttext
+enthält.</value>
+  </data>
+  <data name="textBoxKeyword.ToolTip" xml:space="preserve">
+    <value>Teilzeichenfolge, die ein Dateiname enthalten
+muss, um automatisch geladen zu werden
+(Groß-/Kleinschreibung wird beachtet). Wird nur
+verwendet, wenn das Kontrollkästchen für den
+Schlüsselwortfilter aktiviert ist.</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.ToolTip" xml:space="preserve">
+    <value>Wenn aktiviert, werden die unten markierten
+Schritte (Auto-Kontrast, Zentrum suchen,
+Spots maskieren, Profil abrufen, Makro)
+jedes Mal automatisch ausgeführt, sobald ein
+neues Bild fertig geladen ist.</value>
+  </data>
+  <data name="checkedListBoxAuto.ToolTip" xml:space="preserve">
+    <value>Schritte, die nach dem Laden jedes Bildes
+ausgeführt werden (von oben nach unten):
+Auto-Kontrast (automatische Helligkeit), Zentrum
+suchen (Erkennung des Strahlzentrums), Spots
+maskieren (Einkristall-Spots entfernen), Profil
+abrufen (Ringe zu einem 1D-2theta-Profil
+integrieren), Makro ausführen.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Wählen Sie das benannte Makro aus, das als
+letzter Schritt der automatischen Prozedur
+ausgeführt wird (nur wenn „Makro ausführen“
+aktiviert ist).</value>
+  </data>
+  <data name="comboBoxMacro.ToolTip" xml:space="preserve">
+    <value>Wählen Sie aus, welches gespeicherte Makro
+als letzter Schritt der Sequenz ausgeführt wird.
+Nur aktiviert, wenn „Makro ausführen“ in der
+obigen Liste markiert ist.</value>
+  </data>
 </root>
