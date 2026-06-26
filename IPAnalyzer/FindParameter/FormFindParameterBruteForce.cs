@@ -541,7 +541,7 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
         }
         #endregion
 
-        toolStripStatusLabel1.Text = string.Format(Crystallography.Localization.Loc(en: "Complete! Total time: {0} sec.", ja: "完了! 合計時間: {0} 秒.", de: "Fertig! Gesamtzeit: {0} Sek."), (sw.ElapsedMilliseconds / 1000.0).ToString("f0")); // 260626Cl Loc化
+        toolStripStatusLabel1.Text = string.Format(Crystallography.Localization.Loc(en: "Complete! Total time: {0} sec.", ja: "完了! 合計時間: {0} 秒.", de: "Fertig! Gesamtzeit: {0} Sek.", fr: "Terminé ! Temps total : {0} s.", es: "¡Completado! Tiempo total: {0} seg.", pt: "Concluído! Tempo total: {0} seg.", it: "Completato! Tempo totale: {0} sec.", ru: "Готово! Общее время: {0} с.", zhHans: "完成！总耗时：{0} 秒。", zhHant: "完成！總時間: {0} 秒。", ko: "완료! 총 시간: {0} sec."), (sw.ElapsedMilliseconds / 1000.0).ToString("f0")); // 260626Cl Loc化
         buttonStop.Visible = false;
         FormMain.SetIntegralProperty();
         var finalProfile = Ring.GetProfile(Ring.IP);
@@ -844,7 +844,7 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
             }
 
         }
-        toolStripStatusLabel1.Text = string.Format(Crystallography.Localization.Loc(en: "Complete! Total time: {0} sec.", ja: "完了! 合計時間: {0} 秒.", de: "Fertig! Gesamtzeit: {0} Sek."), (sw.ElapsedMilliseconds / 1000.0).ToString("f0")); // 260626Cl Loc化
+        toolStripStatusLabel1.Text = string.Format(Crystallography.Localization.Loc(en: "Complete! Total time: {0} sec.", ja: "完了! 合計時間: {0} 秒.", de: "Fertig! Gesamtzeit: {0} Sek.", fr: "Terminé ! Temps total : {0} s.", es: "¡Completado! Tiempo total: {0} seg.", pt: "Concluído! Tempo total: {0} seg.", it: "Completato! Tempo totale: {0} sec.", ru: "Готово! Общее время: {0} с.", zhHans: "完成！总耗时：{0} 秒。", zhHant: "完成！總時間: {0} 秒。", ko: "완료! 총 시간: {0} sec."), (sw.ElapsedMilliseconds / 1000.0).ToString("f0")); // 260626Cl Loc化
         FormMain.SetIntegralProperty();
         Profile finalProfile = Ring.GetProfile(Ring.IP);
         Fitting(finalProfile, crystal.Plane);

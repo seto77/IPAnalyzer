@@ -1,0 +1,127 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Objetivo(s) de "Obtener perfil"</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Text" xml:space="preserve">
+    <value>Solo la imagen superior</value>
+  </data>
+  <data name="checkBoxAverage.Text" xml:space="preserve">
+    <value>Promedio</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
+    <value>Todas las imágenes sin importar las selecciones actuales</value>
+  </data>
+  <data name="checkBoxMultiSelection.Text" xml:space="preserve">
+    <value>Selección múltiple</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Text" xml:space="preserve">
+    <value>La(s) imagen(es) seleccionada(s)</value>
+  </data>
+  <data name="checkBoxSummation.Text" xml:space="preserve">
+    <value>Suma</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Opciones de imágenes secuenciales</value>
+  </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>Recorre los fotogramas de la pila de imágenes;
+salta al fotograma seleccionado, recalcula
+su perfil 1D y lo redibuja. Intervalo 0..(núm. de
+fotogramas-1). Desactivado en modo Multiselección.</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>Lista de todos los fotogramas de la pila. Haga clic para
+mostrar uno; en modo Multiselección use Ctrl/Mayús (Ctrl+A
+= todos) para elegir varios y promediarlos o sumarlos.
+Los fotogramas HDF5 llevan delante un índice de 3 dígitos.</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>Permite seleccionar varios fotogramas a la vez (activa
+las opciones Promedio / Suma y desactiva el
+deslizador de fotogramas). Desactivado = ver uno a uno.</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>Muestra el promedio por píxel (suma de intensidades
+dividida por el núm. de fotogramas) de los fotogramas seleccionados.
+Excluyente con Suma. Requiere Multiselección.</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>Muestra la suma por píxel (intensidades sumadas, no
+divididas) de los fotogramas seleccionados; mejora la
+estadística y el conteo en fotogramas débiles.
+Excluyente con Promedio. Requiere Multiselección.</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>Ejecuta 'Obtener perfil' (integración radial a una
+curva 1D de I frente a 2theta/d/q) solo en el o los
+fotogramas seleccionados en la lista de arriba.</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>Ejecuta 'Obtener perfil' (integración radial a un perfil
+1D) solo en el fotograma que se muestra encima actualmente.</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>Ejecuta 'Obtener perfil' (integración radial a 1D) en
+cada fotograma de la pila, ignorando la selección
+actual de la lista; genera un perfil por fotograma.</value>
+  </data>
+</root>

@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>46, 20</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label11.Text" xml:space="preserve">
+    <value>Информация об изображении</value>
+  </data>
+  <data name="radioButtonNearCenter.Text" xml:space="preserve">
+    <value>Около центра</value>
+  </data>
+  <data name="radioButtonWhole.Text" xml:space="preserve">
+    <value>Всё изображение</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Масштабная линия</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Цветовая шкала</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Шкала яркости</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Градиент</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Увел.:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Инт.:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>R(mm):</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>2θ:</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>d:</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>c:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Реальн. координаты (mm):</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Коорд. изображения (пикс):</value>
+  </data>
+  <data name="buttonAutoLevel.Text" xml:space="preserve">
+    <value>Авто контраст</value>
+  </data>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>Сброс контраста</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.Text" xml:space="preserve">
+    <value>Частота интенсивности</value>
+  </data>
+  <data name="tabPageConvertedProfile.Text" xml:space="preserve">
+    <value>Преобразованный профиль</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Статистика выбранной области</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Статистика той же области в других изображениях</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Выбранная область: (</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(CTRL + правое перетаскивание)</value>
+  </data>
+  <data name="tabPageStasticalInfo.Text" xml:space="preserve">
+    <value>Статистическая информация</value>
+  </data>
+  <data name="toolStripButtonIntensityTable.Text" xml:space="preserve">
+    <value>Таблица
+ интенсивности</value>
+  </data>
+  <data name="toolStripButtonAutoProcedure.Text" xml:space="preserve">
+    <value>Авто
+процедура</value>
+  </data>
+  <data name="toolStripButtonRing.Text" xml:space="preserve">
+    <value>Нарисовать кольцо</value>
+  </data>
+  <data name="toolStripButtonFindParameter.Text" xml:space="preserve">
+    <value>Найти параметр
+(геометрически)</value>
+  </data>
+  <data name="toolStripButtonFindParameterBruteForce.Text" xml:space="preserve">
+    <value>Найти параметр 
+(полным перебором)</value>
+  </data>
+  <data name="toolStripButtonUnroll.Text" xml:space="preserve">
+    <value>Развернуть
+изображение</value>
+  </data>
+  <data name="toolStripButtonCircumferentialBlur.Text" xml:space="preserve">
+    <value>Окружное
+размытие </value>
+  </data>
+  <data name="toolStripButtonImageSequence.Text" xml:space="preserve">
+    <value>Последовательное
+изображение</value>
+  </data>
+  <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Прочитать изображение</value>
+  </data>
+  <data name="tiffToolStripMenuItem.Text" xml:space="preserve">
+    <value>в формате TIFF</value>
+  </data>
+  <data name="pngToolStripMenuItem.Text" xml:space="preserve">
+    <value>в формате PNG (с сохранением яркости, контраста, маскированной области)</value>
+  </data>
+  <data name="csvToolStripMenuItem.Text" xml:space="preserve">
+    <value>в формате CSV</value>
+  </data>
+  <data name="ipaToolStripMenuItem.Text" xml:space="preserve">
+    <value>в формате IPA (собственный формат)</value>
+  </data>
+  <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
+    <value>Сохранить изображение</value>
+  </data>
+  <data name="toolStripMenuItemReadParameter.Text" xml:space="preserve">
+    <value>Прочитать параметр</value>
+  </data>
+  <data name="toolStripMenuItemSaveParameter.Text" xml:space="preserve">
+    <value>Сохранить параметр</value>
+  </data>
+  <data name="toolStripMenuItemReadMask.Text" xml:space="preserve">
+    <value>Прочитать маску</value>
+  </data>
+  <data name="toolStripMenuItemSaveMask.Text" xml:space="preserve">
+    <value>Сохранить маску</value>
+  </data>
+  <data name="clearMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Очистить маску</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сбросить частотный профиль</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Калибровать изображение R-AXIS</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="toolStripMenuItemPropertyWaveSource.Text" xml:space="preserve">
+    <value>Источник излучения</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Условия Imaging Plate</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Область интегрирования</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Свойства интегрирования</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Режим ручной маски</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>После «Получить профиль»</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Параметры развёрнутого изображения</value>
+  </data>
+  <data name="misToolStripMenuItem.Text" xml:space="preserve">
+    <value>Разное</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Подсказки</value>
+  </data>
+  <data name="flipHorizontallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>По горизонтали</value>
+  </data>
+  <data name="flipVerticallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>По вертикали</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Отразить</value>
+  </data>
+  <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Повернуть</value>
+  </data>
+  <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Компиляция Ngen</value>
+  </data>
+  <data name="clearRegistrycheckAndRestartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Очистить реестр (проверка и перезапуск)</value>
+  </data>
+  <data name="optionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="japaneseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Японский</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="editorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Редактор</value>
+  </data>
+  <data name="macroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Макрос</value>
+  </data>
+  <data name="programUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Обновления программы</value>
+  </data>
+  <data name="hintToolStripMenuItem.Text" xml:space="preserve">
+    <value>Подсказка</value>
+  </data>
+  <data name="licenseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Лицензия</value>
+  </data>
+  <data name="versionHistoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>История версий</value>
+  </data>
+  <data name="webPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="resetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сброс</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Нижний (% от размера изображения)</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Верхний (% от размера изображения)</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>Диапазон обнаружения</value>
+  </data>
+  <data name="fourierToolStripMenuItem.Text" xml:space="preserve">
+    <value>Фурье</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
+    <value>Эталонное изображение</value>
+  </data>
+  <data name="toolStripSplitButtonBackground.Text" xml:space="preserve">
+    <value>Фон</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.Text" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="findCenterBasedOnTheRingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Найти центр по кольцу</value>
+  </data>
+  <data name="toolStripSplitButtonFindCenter.Text" xml:space="preserve">
+    <value>Найти центр</value>
+  </data>
+  <data name="toolStripButtonFixCenter.Text" xml:space="preserve">
+    <value>Зафиксир.
+центр</value>
+  </data>
+  <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
+    <value>Очистить маску</value>
+  </data>
+  <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
+    <value>Маскировать всю область</value>
+  </data>
+  <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Инвертировать маску</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsManual.Text" xml:space="preserve">
+    <value>Ручной режим</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsOption.Text" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="toolStripSplitButtonMaskSpots.Text" xml:space="preserve">
+    <value>Маскировать рефлексы</value>
+  </data>
+  <data name="toolStripButtonManualSpotMode.Text" xml:space="preserve">
+    <value>Ручной
+режим</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralProperty.Text" xml:space="preserve">
+    <value>Свойства интегрирования</value>
+  </data>
+  <data name="toolStripMenuItemConcenctricIntegration.Text" xml:space="preserve">
+    <value>     Концентрическое интегрирование</value>
+  </data>
+  <data name="toolStripMenuItemRadialIntegration.Text" xml:space="preserve">
+    <value>     Радиальное интегрирование</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralRegion.Text" xml:space="preserve">
+    <value>Область интегрирования</value>
+  </data>
+  <data name="findCenterBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Найти центр перед получением профиля</value>
+  </data>
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Маскировать рефлексы перед получением профиля</value>
+  </data>
+  <data name="toolStripMenuItemSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>Отправить профиль в PDIndexer</value>
+  </data>
+  <data name="toolStripMenuItemSendUnrolledImage.Text" xml:space="preserve">
+    <value>     с развёрнутым изображением</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Число делений</value>
+  </data>
+  <data name="toolStripMenuItemAzimuthalDivisionAnalysis.Text" xml:space="preserve">
+    <value>Анализ с азимутальным делением</value>
+  </data>
+  <data name="toolStripMenuItemAllSequentialImages.Text" xml:space="preserve">
+    <value>Получить профили для всех последовательных изображений</value>
+  </data>
+  <data name="toolStripMenuItemSelectedSequentialImages.Text" xml:space="preserve">
+    <value>Получить профили для выбранных изображений</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
+    <value>Получить профиль</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>IPAnalyzer</value>
+  </data>
+  <data name="comboBoxScale1.ToolTip" xml:space="preserve">
+    <value>Шкала яркости: логарифмическое или линейное
+отображение интенсивности в яркость. Логарифм
+сжимает большие значения, выявляя слабые кольца.</value>
+  </data>
+  <data name="comboBoxGradient.ToolTip" xml:space="preserve">
+    <value>Выберите позитивное или негативное (плёночное)
+отображение. Негатив инвертирует серое/цветное
+отображение, и высокая интенсивность темнеет.</value>
+  </data>
+  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
+    <value>Главный вид дифракционного изображения. Наведите,
+чтобы узнать интенсивность пикселя, радиус r, 2θ и
+межплоскостное расстояние; двойной/средний клик задаёт
+центр пучка; колесо масштабирует; CTRL+перетаскивание
+правой кнопкой выделяет область для статистики.</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
+    <value>Обзорная миниатюра изображения. Щёлкните, чтобы
+прокрутить главный вид; переключатель Всё изображение /
+Вблизи центра выбирает отображаемую область.</value>
+  </data>
+  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
+    <value>Показывать всё изображение в миниатюре/предпросмотре.</value>
+  </data>
+  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
+    <value>Показывать только область вблизи центра
+пучка в миниатюре/предпросмотре.</value>
+  </data>
+  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
+    <value>Цветовая палитра интенсивности: Серая, Холодно-тёплая,
+Спектр или Огонь. Меняет только цвета отображения, не данные.</value>
+  </data>
+  <data name="comboBoxScaleLine.ToolTip" xml:space="preserve">
+    <value>Плотность наложенных масштабных (сеточных) линий
+на изображении: Нет, Грубая, Средняя или Тонкая.</value>
+  </data>
+  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
+    <value>Автоконтраст: задаёт мин./макс. диапазон
+отображения интенсивности как среднее плюс/минус
+2 стандартных отклонения. Данные не изменяет.</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value>Сбросить диапазон отображения интенсивности
+до полной шкалы (от 0 до 65535).</value>
+  </data>
+  <data name="buttonMag1.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 1x (100%, один
+пиксель экрана на пиксель изображения).</value>
+  </data>
+  <data name="buttonMag2.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 2x.</value>
+  </data>
+  <data name="buttonMag4.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 4x.</value>
+  </data>
+  <data name="buttonMag_2.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 1/2x (50%).</value>
+  </data>
+  <data name="buttonMag_4.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 1/4x (25%).</value>
+  </data>
+  <data name="buttonMag_8.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 1/8x.</value>
+  </data>
+  <data name="buttonMag_16.ToolTip" xml:space="preserve">
+    <value>Установить масштаб изображения 1/16x (для больших изображений).</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Увеличение: текущий масштаб изображения и разрешение.</value>
+  </data>
+  <data name="labelResolution.ToolTip" xml:space="preserve">
+    <value>Текущее разрешение отображения (пикселей экрана
+на пиксель изображения) при активном масштабе.</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>Интенсивность (отсчёты) в пикселе под курсором.</value>
+  </data>
+  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
+    <value>Интенсивность (отсчёты) пикселя
+изображения под курсором мыши.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>R: радиальное расстояние от центра
+пучка до курсора, в миллиметрах.</value>
+  </data>
+  <data name="labelMousePointR.ToolTip" xml:space="preserve">
+    <value>Радиальное расстояние R (mm) от центра
+пучка до положения курсора.</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>2θ: дифракционный угол (рассеяния)
+в точке курсора, в градусах.</value>
+  </data>
+  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
+    <value>Дифракционный угол 2θ (градусы) в точке курсора,
+по текущей длине камеры и центру пучка.</value>
+  </data>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value>d: межплоскостное расстояние решётки (d)
+в точке курсора, в ангстремах.</value>
+  </data>
+  <data name="labelMousePointD.ToolTip" xml:space="preserve">
+    <value>Межплоскостное расстояние d (ангстрем) в точке курсора,
+полученное из 2θ и длины волны по закону Брэгга.</value>
+  </data>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>χ: азимутальный угол вокруг
+кольца в точке курсора, в градусах.</value>
+  </data>
+  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
+    <value>Азимутальный угол χ (градусы) курсора
+вокруг центра пучка / кольца Дебая.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Координаты курсора на детекторе в реальном
+пространстве (mm).</value>
+  </data>
+  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
+    <value>Положение курсора в реальных координатах
+плоскости детектора (mm), начало в центре пучка.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Координаты курсора в пикселях изображения (x, y).</value>
+  </data>
+  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
+    <value>Положение курсора в координатах пикселей
+изображения (столбец x, строка y).</value>
+  </data>
+  <data name="textBoxInformation.ToolTip" xml:space="preserve">
+    <value>Сведения об изображении только для чтения: заголовок
+файла и метаданные съёмки загруженного изображения.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
+    <value>Статистика (число, среднее, мин., макс., стандартное
+отклонение) интенсивности внутри выбранной прямоугольной области.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
+    <value>Статистика той же выбранной области, измеренная
+на других изображениях загруженной последовательности.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
+    <value>X (столбец, пиксели) первого угла
+прямоугольника статистики; ограничивается
+шириной изображения. Макс. 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
+    <value>Y (строка, пиксели) первого угла прямоугольника
+статистики; ограничивается высотой изображения. Макс. 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
+    <value>X (столбец, пиксели) противоположного угла прямоугольника
+статистики; ограничивается шириной изображения.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
+    <value>Y (строка, пиксели) противоположного угла прямоугольника
+статистики; ограничивается высотой изображения.</value>
+  </data>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value>Выбранная прямоугольная область для статистики, заданная
+двумя угловыми точками (x, y) в пикселях изображения.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Прямоугольник статистики также можно выделить прямо
+на изображении, удерживая CTRL и перетаскивая правой кнопкой.</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.ToolTip" xml:space="preserve">
+    <value>Гистограмма частоты интенсивности пикселей; две
+вертикальные линии задают мин./макс. диапазон отображения.</value>
+  </data>
+  <data name="tabPageConvertedProfile.ToolTip" xml:space="preserve">
+    <value>Одномерный профиль (интенсивность от 2θ / d / q),
+полученный радиальным интегрированием 2D-изображения.</value>
+  </data>
+  <data name="tabPageStasticalInfo.ToolTip" xml:space="preserve">
+    <value>Статистика выбранной области изображения, включая
+ту же область по всей последовательности изображений.</value>
+  </data>
+  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
+    <value>Гистограмма интенсивности. Перетащите две вертикальные
+красные линии, чтобы задать мин./макс. интенсивность отображения.</value>
+  </data>
+  <data name="graphControlProfile.ToolTip" xml:space="preserve">
+    <value>График проинтегрированного 1D-профиля:
+интенсивность от 2θ, межплоскостного расстояния d или q.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundLower.ToolTip" xml:space="preserve">
+    <value>Нижняя граница подгонки фона, в процентах
+от размера изображения; пиксели ниже этого
+процентиля используются для оценки фона.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundUpper.ToolTip" xml:space="preserve">
+    <value>Верхняя граница подгонки фона, в процентах
+от размера изображения; пиксели выше этого
+процентиля исключаются из оценки фона.</value>
+  </data>
+  <data name="toolStripComboBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Размер кисти в пикселях (2-512) для ручного
+маскирования рефлексов; большие значения маскируют
+большую область за один клик.</value>
+  </data>
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
+    <value>Число азимутальных секторов (6-360)
+для анализа азимутального деления; больше
+секторов даёт более тонкое угловое разрешение.</value>
+  </data>
+  <data name="toolStripComboBoxRotate.ToolTip" xml:space="preserve">
+    <value>Повернуть изображение на 0, 90, 180
+или 270 градусов перед анализом.</value>
+  </data>
+</root>

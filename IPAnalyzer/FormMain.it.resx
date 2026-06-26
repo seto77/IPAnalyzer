@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>46, 20</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label11.Text" xml:space="preserve">
+    <value>Informazioni immagine</value>
+  </data>
+  <data name="radioButtonNearCenter.Text" xml:space="preserve">
+    <value>Vicino al centro</value>
+  </data>
+  <data name="radioButtonWhole.Text" xml:space="preserve">
+    <value>Immagine intera</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Linea di scala</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Scala di colore</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Scala di luminosità</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Gradiente</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Ingr.:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Int.:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>R(mm):</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>2θ:</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>d:</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>c:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Coord. reali (mm):</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Coord. immagine (pix):</value>
+  </data>
+  <data name="buttonAutoLevel.Text" xml:space="preserve">
+    <value>Contrasto automatico</value>
+  </data>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>Reimposta contrasto</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.Text" xml:space="preserve">
+    <value>Frequenza dell'intensità</value>
+  </data>
+  <data name="tabPageConvertedProfile.Text" xml:space="preserve">
+    <value>Profilo convertito</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Statistiche dell'area selezionata</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Statistiche della stessa area nelle altre immagini</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Area selezionata: (</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(CTRL + trascina con il tasto destro)</value>
+  </data>
+  <data name="tabPageStasticalInfo.Text" xml:space="preserve">
+    <value>Informazioni statistiche</value>
+  </data>
+  <data name="toolStripButtonIntensityTable.Text" xml:space="preserve">
+    <value>Tabella
+ intensità</value>
+  </data>
+  <data name="toolStripButtonAutoProcedure.Text" xml:space="preserve">
+    <value>Procedura
+automatica</value>
+  </data>
+  <data name="toolStripButtonRing.Text" xml:space="preserve">
+    <value>Disegna anello</value>
+  </data>
+  <data name="toolStripButtonFindParameter.Text" xml:space="preserve">
+    <value>Trova parametro
+(geometricamente)</value>
+  </data>
+  <data name="toolStripButtonFindParameterBruteForce.Text" xml:space="preserve">
+    <value>Trova parametro 
+(forza bruta)</value>
+  </data>
+  <data name="toolStripButtonUnroll.Text" xml:space="preserve">
+    <value>Srotola
+immagine</value>
+  </data>
+  <data name="toolStripButtonCircumferentialBlur.Text" xml:space="preserve">
+    <value>Sfocatura
+circonferenziale </value>
+  </data>
+  <data name="toolStripButtonImageSequence.Text" xml:space="preserve">
+    <value>Immagine
+sequenziale</value>
+  </data>
+  <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Leggi immagine</value>
+  </data>
+  <data name="tiffToolStripMenuItem.Text" xml:space="preserve">
+    <value>in formato TIFF</value>
+  </data>
+  <data name="pngToolStripMenuItem.Text" xml:space="preserve">
+    <value>in formato PNG (mantieni luminosità, contrasto, area mascherata)</value>
+  </data>
+  <data name="csvToolStripMenuItem.Text" xml:space="preserve">
+    <value>in formato CSV</value>
+  </data>
+  <data name="ipaToolStripMenuItem.Text" xml:space="preserve">
+    <value>in formato IPA (formato originale)</value>
+  </data>
+  <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
+    <value>Salva immagine</value>
+  </data>
+  <data name="toolStripMenuItemReadParameter.Text" xml:space="preserve">
+    <value>Leggi parametro</value>
+  </data>
+  <data name="toolStripMenuItemSaveParameter.Text" xml:space="preserve">
+    <value>Salva parametro</value>
+  </data>
+  <data name="toolStripMenuItemReadMask.Text" xml:space="preserve">
+    <value>Leggi maschera</value>
+  </data>
+  <data name="toolStripMenuItemSaveMask.Text" xml:space="preserve">
+    <value>Salva maschera</value>
+  </data>
+  <data name="clearMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cancella maschera</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reimposta profilo di frequenza</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Calibra immagine R-AXIS</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Strumenti</value>
+  </data>
+  <data name="toolStripMenuItemPropertyWaveSource.Text" xml:space="preserve">
+    <value>Sorgente di radiazione</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Condizione dell'imaging plate</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Regione di integrazione</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Proprietà di integrazione</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Modalità maschera manuale</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>Dopo "Ottieni profilo"</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Opzione immagine srotolata</value>
+  </data>
+  <data name="misToolStripMenuItem.Text" xml:space="preserve">
+    <value>Varie</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Suggerimento</value>
+  </data>
+  <data name="flipHorizontallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Orizzontalmente</value>
+  </data>
+  <data name="flipVerticallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verticalmente</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Capovolgi</value>
+  </data>
+  <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ruota</value>
+  </data>
+  <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Compilazione Ngen</value>
+  </data>
+  <data name="clearRegistrycheckAndRestartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cancella registro (verifica e riavvia)</value>
+  </data>
+  <data name="optionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inglese</value>
+  </data>
+  <data name="japaneseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Giapponese</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="editorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="macroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Macro</value>
+  </data>
+  <data name="programUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aggiornamenti del programma</value>
+  </data>
+  <data name="hintToolStripMenuItem.Text" xml:space="preserve">
+    <value>Suggerimento</value>
+  </data>
+  <data name="licenseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Licenza</value>
+  </data>
+  <data name="versionHistoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cronologia versioni</value>
+  </data>
+  <data name="webPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Guida</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Guida</value>
+  </data>
+  <data name="resetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reimposta</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Inferiore (% della dimensione immagine)</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Superiore (% della dimensione immagine)</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>Intervallo di rilevamento</value>
+  </data>
+  <data name="fourierToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fourier</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
+    <value>Immagine di riferimento</value>
+  </data>
+  <data name="toolStripSplitButtonBackground.Text" xml:space="preserve">
+    <value>Sfondo</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.Text" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="findCenterBasedOnTheRingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Trova centro in base all'anello</value>
+  </data>
+  <data name="toolStripSplitButtonFindCenter.Text" xml:space="preserve">
+    <value>Trova centro</value>
+  </data>
+  <data name="toolStripButtonFixCenter.Text" xml:space="preserve">
+    <value>Fissa
+centro</value>
+  </data>
+  <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
+    <value>Cancella maschera</value>
+  </data>
+  <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
+    <value>Maschera tutta l'area</value>
+  </data>
+  <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inverti maschera</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsManual.Text" xml:space="preserve">
+    <value>Modalità manuale</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsOption.Text" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="toolStripSplitButtonMaskSpots.Text" xml:space="preserve">
+    <value>Maschera spot</value>
+  </data>
+  <data name="toolStripButtonManualSpotMode.Text" xml:space="preserve">
+    <value>Modalità
+manuale</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralProperty.Text" xml:space="preserve">
+    <value>Proprietà di integrazione</value>
+  </data>
+  <data name="toolStripMenuItemConcenctricIntegration.Text" xml:space="preserve">
+    <value>     Integrazione concentrica</value>
+  </data>
+  <data name="toolStripMenuItemRadialIntegration.Text" xml:space="preserve">
+    <value>     Integrazione radiale</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralRegion.Text" xml:space="preserve">
+    <value>Regione di integrazione</value>
+  </data>
+  <data name="findCenterBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Trova centro prima di Ottieni profilo</value>
+  </data>
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Maschera spot prima di Ottieni profilo</value>
+  </data>
+  <data name="toolStripMenuItemSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>Invia profilo a PDIndexer</value>
+  </data>
+  <data name="toolStripMenuItemSendUnrolledImage.Text" xml:space="preserve">
+    <value>     con immagine srotolata</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Numero di divisioni</value>
+  </data>
+  <data name="toolStripMenuItemAzimuthalDivisionAnalysis.Text" xml:space="preserve">
+    <value>Analisi a divisione azimutale</value>
+  </data>
+  <data name="toolStripMenuItemAllSequentialImages.Text" xml:space="preserve">
+    <value>Ottieni profili per tutte le immagini sequenziali</value>
+  </data>
+  <data name="toolStripMenuItemSelectedSequentialImages.Text" xml:space="preserve">
+    <value>Ottieni profili per le immagini selezionate</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
+    <value>Ottieni profilo</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>IPAnalyzer</value>
+  </data>
+  <data name="comboBoxScale1.ToolTip" xml:space="preserve">
+    <value>Scala di luminosità: mappatura logaritmica o
+lineare dell'intensità sulla luminosità. La scala
+log comprime i valori alti per rivelare gli anelli deboli.</value>
+  </data>
+  <data name="comboBoxGradient.ToolTip" xml:space="preserve">
+    <value>Scegli la visualizzazione positiva o negativa
+(pellicola). Il negativo inverte la mappatura
+grigio/colore, così l'alta intensità appare scura.</value>
+  </data>
+  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
+    <value>Vista principale dell'immagine di diffrazione. Passa
+il cursore per leggere intensità del pixel, raggio r,
+2θ e spaziatura d; doppio clic / clic con il tasto
+centrale imposta il centro del fascio; la rotellina
+zooma; CTRL+trascina con il tasto destro seleziona
+un'area per le statistiche.</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
+    <value>Miniatura panoramica dell'immagine. Clicca per
+spostare la vista principale; usa Immagine intera /
+Vicino al centro per scegliere la regione mostrata.</value>
+  </data>
+  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
+    <value>Mostra l'immagine intera nella miniatura/anteprima.</value>
+  </data>
+  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
+    <value>Mostra solo la regione vicino al centro
+del fascio nella miniatura/anteprima.</value>
+  </data>
+  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
+    <value>Tavolozza di colori per l'intensità: Grigio, Freddo-Caldo,
+Spettro o Fuoco. Cambia solo i colori, non i dati.</value>
+  </data>
+  <data name="comboBoxScaleLine.ToolTip" xml:space="preserve">
+    <value>Densità delle linee di scala (griglia) sovrapposte
+all'immagine: Nessuna, Grossolana, Media o Fine.</value>
+  </data>
+  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
+    <value>Contrasto automatico: imposta l'intervallo min/max
+di intensità visualizzato sulla media più/meno 2
+deviazioni standard. Non altera i dati.</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value>Reimposta l'intervallo di intensità
+visualizzato a fondo scala (da 0 a 65535).</value>
+  </data>
+  <data name="buttonMag1.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 1x (100%, un
+pixel dello schermo per pixel dell'immagine).</value>
+  </data>
+  <data name="buttonMag2.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 2x.</value>
+  </data>
+  <data name="buttonMag4.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 4x.</value>
+  </data>
+  <data name="buttonMag_2.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 1/2x (50%).</value>
+  </data>
+  <data name="buttonMag_4.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 1/4x (25%).</value>
+  </data>
+  <data name="buttonMag_8.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 1/8x.</value>
+  </data>
+  <data name="buttonMag_16.ToolTip" xml:space="preserve">
+    <value>Imposta lo zoom dell'immagine a 1/16x
+(adatta immagini grandi).</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Ingrandimento: fattore di zoom corrente
+dell'immagine e risoluzione.</value>
+  </data>
+  <data name="labelResolution.ToolTip" xml:space="preserve">
+    <value>Risoluzione di visualizzazione corrente (pixel dello
+schermo per pixel dell'immagine) allo zoom attivo.</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>Intensità (conteggi) al pixel del cursore.</value>
+  </data>
+  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
+    <value>Intensità (conteggi) del pixel dell'immagine
+sotto il cursore del mouse.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>R: distanza radiale dal centro del fascio
+al cursore, in millimetri.</value>
+  </data>
+  <data name="labelMousePointR.ToolTip" xml:space="preserve">
+    <value>Distanza radiale R (mm) dal centro del
+fascio alla posizione del cursore.</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>2θ: angolo di diffrazione (scattering)
+al cursore, in gradi.</value>
+  </data>
+  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
+    <value>Angolo di diffrazione 2θ (gradi) al cursore, dalla
+lunghezza camera e dal centro del fascio correnti.</value>
+  </data>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value>d: spaziatura dei piani reticolari (spaziatura d)
+al cursore, in angstrom.</value>
+  </data>
+  <data name="labelMousePointD.ToolTip" xml:space="preserve">
+    <value>Spaziatura d reticolare (angstrom) al cursore, derivata
+da 2θ e dalla lunghezza d'onda tramite la legge di Bragg.</value>
+  </data>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>Chi: angolo azimutale attorno
+all'anello al cursore, in gradi.</value>
+  </data>
+  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
+    <value>Angolo azimutale chi (gradi) del cursore
+attorno al centro del fascio / anello di Debye.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Coordinate del rivelatore nello spazio reale
+(mm) del cursore.</value>
+  </data>
+  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
+    <value>Posizione del cursore in coordinate reali del piano
+del rivelatore (mm), origine al centro del fascio.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Coordinate in pixel dell'immagine (x, y) del cursore.</value>
+  </data>
+  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
+    <value>Posizione del cursore in coordinate pixel
+dell'immagine (colonna x, riga y).</value>
+  </data>
+  <data name="textBoxInformation.ToolTip" xml:space="preserve">
+    <value>Informazioni sull'immagine in sola lettura: intestazione
+del file e metadati di acquisizione dell'immagine caricata.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
+    <value>Statistiche (conteggio, media, min, max, deviazione standard)
+dell'intensità all'interno dell'area rettangolare selezionata.</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
+    <value>Statistiche della stessa area selezionata misurate
+nelle altre immagini della sequenza caricata.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
+    <value>X (colonna, pixel) del primo angolo del
+rettangolo delle statistiche; limitato alla
+larghezza dell'immagine. Max 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
+    <value>Y (riga, pixel) del primo angolo del rettangolo delle
+statistiche; limitato all'altezza dell'immagine. Max 10000.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
+    <value>X (colonna, pixel) dell'angolo opposto del rettangolo
+delle statistiche; limitato alla larghezza dell'immagine.</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
+    <value>Y (riga, pixel) dell'angolo opposto del rettangolo
+delle statistiche; limitato all'altezza dell'immagine.</value>
+  </data>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value>Area rettangolare selezionata per le statistiche, indicata
+come due punti d'angolo (x, y) in pixel dell'immagine.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Puoi anche selezionare il rettangolo delle statistiche
+direttamente sull'immagine tenendo premuto CTRL
+e trascinando con il tasto destro.</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.ToolTip" xml:space="preserve">
+    <value>Istogramma della frequenza di intensità dei pixel; le due
+linee verticali impostano l'intervallo min/max visualizzato.</value>
+  </data>
+  <data name="tabPageConvertedProfile.ToolTip" xml:space="preserve">
+    <value>Profilo monodimensionale (intensità rispetto a 2θ / d /
+q) ottenuto per integrazione radiale dell'immagine 2D.</value>
+  </data>
+  <data name="tabPageStasticalInfo.ToolTip" xml:space="preserve">
+    <value>Statistiche dell'area dell'immagine selezionata, inclusa
+la stessa area su una sequenza di immagini.</value>
+  </data>
+  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
+    <value>Istogramma dell'intensità. Trascina le due linee rosse
+verticali per impostare l'intensità minima/massima
+visualizzata.</value>
+  </data>
+  <data name="graphControlProfile.ToolTip" xml:space="preserve">
+    <value>Grafico del profilo 1D integrato: intensità
+rispetto a 2θ, spaziatura d o q.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundLower.ToolTip" xml:space="preserve">
+    <value>Limite inferiore del fit dello sfondo, come percentuale
+della dimensione dell'immagine; i pixel sotto questo
+percentile sono usati per stimare lo sfondo.</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundUpper.ToolTip" xml:space="preserve">
+    <value>Limite superiore del fit dello sfondo, come percentuale
+della dimensione dell'immagine; i pixel sopra questo
+percentile sono esclusi dalla stima dello sfondo.</value>
+  </data>
+  <data name="toolStripComboBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Dimensione del pennello in pixel (2-512) per la mascheratura
+manuale degli spot; valori maggiori mascherano un'area
+più grande per ogni clic.</value>
+  </data>
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
+    <value>Numero di settori azimutali (6-360) per l'analisi a
+divisione azimutale; più settori danno una risoluzione
+angolare più fine.</value>
+  </data>
+  <data name="toolStripComboBoxRotate.ToolTip" xml:space="preserve">
+    <value>Ruota l'immagine di 0, 90, 180
+o 270 gradi prima dell'analisi.</value>
+  </data>
+</root>

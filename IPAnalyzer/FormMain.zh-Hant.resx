@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>46, 20</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label11.Text" xml:space="preserve">
+    <value>影像資訊</value>
+  </data>
+  <data name="radioButtonNearCenter.Text" xml:space="preserve">
+    <value>中心附近</value>
+  </data>
+  <data name="radioButtonWhole.Text" xml:space="preserve">
+    <value>整張影像</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>比例尺線</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>色階</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>亮度刻度</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>漸層</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>放大:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>強度:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>R(mm):</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>2θ:</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>d:</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>c:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>實際座標(mm):</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>影像座標(pix):</value>
+  </data>
+  <data name="buttonAutoLevel.Text" xml:space="preserve">
+    <value>自動對比</value>
+  </data>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>重設對比</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.Text" xml:space="preserve">
+    <value>強度頻率</value>
+  </data>
+  <data name="tabPageConvertedProfile.Text" xml:space="preserve">
+    <value>轉換後圖譜</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>選取區域統計</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>其他影像中相同區域的統計</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>選取區域: (</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(CTRL + 右鍵拖曳)</value>
+  </data>
+  <data name="tabPageStasticalInfo.Text" xml:space="preserve">
+    <value>統計資訊</value>
+  </data>
+  <data name="toolStripButtonIntensityTable.Text" xml:space="preserve">
+    <value>強度
+ 表格</value>
+  </data>
+  <data name="toolStripButtonAutoProcedure.Text" xml:space="preserve">
+    <value>自動
+程序</value>
+  </data>
+  <data name="toolStripButtonRing.Text" xml:space="preserve">
+    <value>繪製環</value>
+  </data>
+  <data name="toolStripButtonFindParameter.Text" xml:space="preserve">
+    <value>尋找參數
+(幾何法)</value>
+  </data>
+  <data name="toolStripButtonFindParameterBruteForce.Text" xml:space="preserve">
+    <value>尋找參數 
+(暴力法)</value>
+  </data>
+  <data name="toolStripButtonUnroll.Text" xml:space="preserve">
+    <value>展開
+影像</value>
+  </data>
+  <data name="toolStripButtonCircumferentialBlur.Text" xml:space="preserve">
+    <value>周向
+模糊 </value>
+  </data>
+  <data name="toolStripButtonImageSequence.Text" xml:space="preserve">
+    <value>連續
+影像</value>
+  </data>
+  <data name="readImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>讀取影像</value>
+  </data>
+  <data name="tiffToolStripMenuItem.Text" xml:space="preserve">
+    <value>以 TIFF 格式</value>
+  </data>
+  <data name="pngToolStripMenuItem.Text" xml:space="preserve">
+    <value>以 PNG 格式 (保留亮度、對比、遮罩區域)</value>
+  </data>
+  <data name="csvToolStripMenuItem.Text" xml:space="preserve">
+    <value>以 CSV 格式</value>
+  </data>
+  <data name="ipaToolStripMenuItem.Text" xml:space="preserve">
+    <value>以 IPA 格式 (原生格式)</value>
+  </data>
+  <data name="toolStripMenuItemSaveImage.Text" xml:space="preserve">
+    <value>儲存影像</value>
+  </data>
+  <data name="toolStripMenuItemReadParameter.Text" xml:space="preserve">
+    <value>讀取參數</value>
+  </data>
+  <data name="toolStripMenuItemSaveParameter.Text" xml:space="preserve">
+    <value>儲存參數</value>
+  </data>
+  <data name="toolStripMenuItemReadMask.Text" xml:space="preserve">
+    <value>讀取遮罩</value>
+  </data>
+  <data name="toolStripMenuItemSaveMask.Text" xml:space="preserve">
+    <value>儲存遮罩</value>
+  </data>
+  <data name="clearMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>清除遮罩</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="resetFrequencyProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>重設頻率圖譜</value>
+  </data>
+  <data name="calibrateRaxisImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>校正 R-AXIS 影像</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="toolStripMenuItemPropertyWaveSource.Text" xml:space="preserve">
+    <value>波源</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>成像板條件</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>積分區域</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>積分性質</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>手動遮罩模式</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>「取得圖譜」之後</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>展開影像選項</value>
+  </data>
+  <data name="misToolStripMenuItem.Text" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>性質</value>
+  </data>
+  <data name="toolTipToolStripMenuItem.Text" xml:space="preserve">
+    <value>工具提示</value>
+  </data>
+  <data name="flipHorizontallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>水平</value>
+  </data>
+  <data name="flipVerticallyToolStripMenuItem.Text" xml:space="preserve">
+    <value>垂直</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>翻轉</value>
+  </data>
+  <data name="rotateToolStripMenuItem.Text" xml:space="preserve">
+    <value>旋轉</value>
+  </data>
+  <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ngen 編譯</value>
+  </data>
+  <data name="clearRegistrycheckAndRestartToolStripMenuItem.Text" xml:space="preserve">
+    <value>清除登錄檔 (檢查並重新啟動)</value>
+  </data>
+  <data name="optionToolStripMenuItem.Text" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>英文</value>
+  </data>
+  <data name="japaneseToolStripMenuItem.Text" xml:space="preserve">
+    <value>日文</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="editorToolStripMenuItem.Text" xml:space="preserve">
+    <value>編輯器</value>
+  </data>
+  <data name="macroToolStripMenuItem.Text" xml:space="preserve">
+    <value>巨集</value>
+  </data>
+  <data name="programUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>程式更新</value>
+  </data>
+  <data name="hintToolStripMenuItem.Text" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="licenseToolStripMenuItem.Text" xml:space="preserve">
+    <value>授權</value>
+  </data>
+  <data name="versionHistoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>版本歷程</value>
+  </data>
+  <data name="webPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="resetToolStripMenuItem.Text" xml:space="preserve">
+    <value>重設</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>下限 (影像大小的 %)</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>上限 (影像大小的 %)</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>偵測範圍</value>
+  </data>
+  <data name="fourierToolStripMenuItem.Text" xml:space="preserve">
+    <value>傅立葉</value>
+  </data>
+  <data name="toolStripMenuItemReferenceBackground.Text" xml:space="preserve">
+    <value>參考影像</value>
+  </data>
+  <data name="toolStripSplitButtonBackground.Text" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="toolStripMenuItemFindCenterOption.Text" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="findCenterBasedOnTheRingToolStripMenuItem.Text" xml:space="preserve">
+    <value>依環尋找中心</value>
+  </data>
+  <data name="toolStripSplitButtonFindCenter.Text" xml:space="preserve">
+    <value>尋找中心</value>
+  </data>
+  <data name="toolStripButtonFixCenter.Text" xml:space="preserve">
+    <value>固定
+中心</value>
+  </data>
+  <data name="toolStripMenuItemClearMask.Text" xml:space="preserve">
+    <value>清除遮罩</value>
+  </data>
+  <data name="toolStripMenuItemMaskAll.Text" xml:space="preserve">
+    <value>遮罩全部區域</value>
+  </data>
+  <data name="inverseMaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>反轉遮罩</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsManual.Text" xml:space="preserve">
+    <value>手動模式</value>
+  </data>
+  <data name="toolStripMenuItemMaskSpotsOption.Text" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="toolStripSplitButtonMaskSpots.Text" xml:space="preserve">
+    <value>遮罩斑點</value>
+  </data>
+  <data name="toolStripButtonManualSpotMode.Text" xml:space="preserve">
+    <value>手動
+模式</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralProperty.Text" xml:space="preserve">
+    <value>積分性質</value>
+  </data>
+  <data name="toolStripMenuItemConcenctricIntegration.Text" xml:space="preserve">
+    <value>     同心積分</value>
+  </data>
+  <data name="toolStripMenuItemRadialIntegration.Text" xml:space="preserve">
+    <value>     徑向積分</value>
+  </data>
+  <data name="toolStripMenuItemGetProfileIntegralRegion.Text" xml:space="preserve">
+    <value>積分區域</value>
+  </data>
+  <data name="findCenterBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>取得圖譜前先尋找中心</value>
+  </data>
+  <data name="maskSpotsBeforeGetProfileToolStripMenuItem.Text" xml:space="preserve">
+    <value>取得圖譜前先遮罩斑點</value>
+  </data>
+  <data name="toolStripMenuItemSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>將圖譜傳送至 PDIndexer</value>
+  </data>
+  <data name="toolStripMenuItemSendUnrolledImage.Text" xml:space="preserve">
+    <value>     連同展開影像</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>分割數</value>
+  </data>
+  <data name="toolStripMenuItemAzimuthalDivisionAnalysis.Text" xml:space="preserve">
+    <value>方位角分割分析</value>
+  </data>
+  <data name="toolStripMenuItemAllSequentialImages.Text" xml:space="preserve">
+    <value>取得所有連續影像的圖譜</value>
+  </data>
+  <data name="toolStripMenuItemSelectedSequentialImages.Text" xml:space="preserve">
+    <value>取得選取影像的圖譜</value>
+  </data>
+  <data name="toolStripSplitButtonGetProfile.Text" xml:space="preserve">
+    <value>取得圖譜</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>IPAnalyzer</value>
+  </data>
+  <data name="comboBoxScale1.ToolTip" xml:space="preserve">
+    <value>亮度刻度：將強度以對數或線性方式
+對應至亮度。對數會壓縮高值，
+以顯現微弱的繞射環。</value>
+  </data>
+  <data name="comboBoxGradient.ToolTip" xml:space="preserve">
+    <value>選擇正片或負片（底片）顯示。
+負片會反轉灰階／色彩對應，
+使高強度顯示為暗色。</value>
+  </data>
+  <data name="scalablePictureBox.ToolTip" xml:space="preserve">
+    <value>主繞射影像檢視。將游標移至像素上可讀取
+強度、半徑 r、2θ 與 d 間距；
+雙擊／中鍵點擊可設定光束中心；滾輪可縮放；
+CTRL+右鍵拖曳可選取區域進行統計。</value>
+  </data>
+  <data name="scalablePictureBoxThumbnail.ToolTip" xml:space="preserve">
+    <value>影像的總覽縮圖。點擊可平移主檢視；
+切換「整張影像」／「中心附近」
+以選擇所顯示的區域。</value>
+  </data>
+  <data name="radioButtonWhole.ToolTip" xml:space="preserve">
+    <value>在縮圖／預覽中顯示整張影像。</value>
+  </data>
+  <data name="radioButtonNearCenter.ToolTip" xml:space="preserve">
+    <value>在縮圖／預覽中僅顯示
+光束中心附近的區域。</value>
+  </data>
+  <data name="comboBoxScale2.ToolTip" xml:space="preserve">
+    <value>強度的色盤：灰階、冷暖、光譜或火焰。
+僅變更顯示色彩，不影響資料。</value>
+  </data>
+  <data name="comboBoxScaleLine.ToolTip" xml:space="preserve">
+    <value>影像上疊加的比例尺（格線）密度：
+無、粗、中或細。</value>
+  </data>
+  <data name="buttonAutoLevel.ToolTip" xml:space="preserve">
+    <value>自動對比：將強度顯示的最小／最大範圍
+設為平均值加減 2 個標準差。
+不會更動資料。</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value>將強度顯示範圍重設為
+全刻度（0 至 65535）。</value>
+  </data>
+  <data name="buttonMag1.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 1 倍（100%，
+每個影像像素對應一個螢幕像素）。</value>
+  </data>
+  <data name="buttonMag2.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 2 倍。</value>
+  </data>
+  <data name="buttonMag4.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 4 倍。</value>
+  </data>
+  <data name="buttonMag_2.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 1/2 倍（50%）。</value>
+  </data>
+  <data name="buttonMag_4.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 1/4 倍（25%）。</value>
+  </data>
+  <data name="buttonMag_8.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 1/8 倍。</value>
+  </data>
+  <data name="buttonMag_16.ToolTip" xml:space="preserve">
+    <value>將影像縮放設為 1/16 倍（適合大型影像）。</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>放大率：目前的影像縮放倍率與解析度。</value>
+  </data>
+  <data name="labelResolution.ToolTip" xml:space="preserve">
+    <value>目前縮放下的顯示解析度
+（每個影像像素對應的螢幕像素數）。</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>游標所在像素的強度（計數）。</value>
+  </data>
+  <data name="labelMousePointIntensity.ToolTip" xml:space="preserve">
+    <value>滑鼠游標下方影像像素的
+強度（計數）。</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>R：從光束中心到游標的
+徑向距離，單位為毫米。</value>
+  </data>
+  <data name="labelMousePointR.ToolTip" xml:space="preserve">
+    <value>從光束中心到游標位置的
+徑向距離 R（mm）。</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>2θ：游標處的繞射（散射）角，
+單位為度。</value>
+  </data>
+  <data name="labelMousePointTheta.ToolTip" xml:space="preserve">
+    <value>游標處的繞射角 2θ（度），
+根據目前的相機長度與光束中心計算。</value>
+  </data>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value>d：游標處的晶面間距（d 間距），
+單位為埃。</value>
+  </data>
+  <data name="labelMousePointD.ToolTip" xml:space="preserve">
+    <value>游標處的晶格 d 間距（埃），
+由 2θ 與波長透過布拉格定律導出。</value>
+  </data>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>χ：游標處繞行繞射環的
+方位角，單位為度。</value>
+  </data>
+  <data name="labelMousePointChi.ToolTip" xml:space="preserve">
+    <value>游標繞行光束中心／Debye 環的
+方位角 χ（度）。</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>游標的實空間偵測器座標（mm）。</value>
+  </data>
+  <data name="labelMousePointReal.ToolTip" xml:space="preserve">
+    <value>游標在實際偵測器平面座標（mm）中的位置，
+原點位於光束中心。</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>游標的影像像素座標 (x, y)。</value>
+  </data>
+  <data name="labelMousePointPixel.ToolTip" xml:space="preserve">
+    <value>游標在影像像素座標中的位置
+（行 x、列 y）。</value>
+  </data>
+  <data name="textBoxInformation.ToolTip" xml:space="preserve">
+    <value>唯讀的影像資訊：所載入影像的
+檔案標頭與擷取中介資料。</value>
+  </data>
+  <data name="textBoxStatisticsSelectedArea.ToolTip" xml:space="preserve">
+    <value>所選矩形區域內強度的統計值
+（計數、平均、最小、最大、標準差）。</value>
+  </data>
+  <data name="textBoxStatisticsSelectedAreaSequential.ToolTip" xml:space="preserve">
+    <value>在所載入序列的其他影像中，
+對同一所選區域量測得到的統計值。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX1.ToolTip" xml:space="preserve">
+    <value>統計矩形第一角的 X（行，像素）；
+限制在影像寬度內。最大 10000。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
+    <value>統計矩形第一角的 Y（列，像素）；
+限制在影像高度內。最大 10000。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
+    <value>統計矩形對角的 X（行，像素）；
+限制在影像寬度內。</value>
+  </data>
+  <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
+    <value>統計矩形對角的 Y（列，像素）；
+限制在影像高度內。</value>
+  </data>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value>用於統計的所選矩形區域，
+以影像像素中的兩個角點 (x, y) 表示。</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>您也可以按住 CTRL 並以右鍵拖曳，
+直接在影像上選取統計矩形。</value>
+  </data>
+  <data name="tabPageFrequeicyOfIntensity.ToolTip" xml:space="preserve">
+    <value>像素強度頻率的直方圖；
+兩條垂直線可設定最小／最大顯示範圍。</value>
+  </data>
+  <data name="tabPageConvertedProfile.ToolTip" xml:space="preserve">
+    <value>由二維影像徑向積分所得的
+一維圖譜（強度對 2θ / d / q）。</value>
+  </data>
+  <data name="tabPageStasticalInfo.ToolTip" xml:space="preserve">
+    <value>所選影像區域的統計值，包括
+一系列影像中相同區域的統計值。</value>
+  </data>
+  <data name="graphControlFrequency.ToolTip" xml:space="preserve">
+    <value>強度直方圖。拖曳兩條垂直紅線
+可設定最小／最大顯示強度。</value>
+  </data>
+  <data name="graphControlProfile.ToolTip" xml:space="preserve">
+    <value>積分後一維圖譜的繪圖：
+強度對 2θ、d 間距或 q。</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundLower.ToolTip" xml:space="preserve">
+    <value>背景擬合的下界，以影像大小的百分比表示；
+低於此百分位的像素
+會用於估計背景。</value>
+  </data>
+  <data name="toolStripComboBoxBackgroundUpper.ToolTip" xml:space="preserve">
+    <value>背景擬合的上界，以影像大小的百分比表示；
+高於此百分位的像素
+會自背景估計中排除。</value>
+  </data>
+  <data name="toolStripComboBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>手動斑點遮罩的筆刷大小（像素，2-512）；
+值越大，每次點擊遮罩的區域越大。</value>
+  </data>
+  <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
+    <value>方位分割分析的方位扇區數（6-360）；
+扇區越多，角度解析度越細。</value>
+  </data>
+  <data name="toolStripComboBoxRotate.ToolTip" xml:space="preserve">
+    <value>分析前將影像旋轉 0、90、180
+或 270 度。</value>
+  </data>
+</root>

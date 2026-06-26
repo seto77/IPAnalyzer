@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonOptimize.Text" xml:space="preserve">
+    <value>최적화</value>
+  </data>
+  <data name="buttonGetProfile.Text" xml:space="preserve">
+    <value>프로파일 가져오기</value>
+  </data>
+  <data name="checkBoxCameraLength.Text" xml:space="preserve">
+    <value>카메라 길이 1</value>
+  </data>
+  <data name="checkBoxTau.Text" xml:space="preserve">
+    <value>기울기 τ</value>
+  </data>
+  <data name="checkBoxPointX.Text" xml:space="preserve">
+    <value>직접 스폿 X</value>
+  </data>
+  <data name="checkBoxPointY.Text" xml:space="preserve">
+    <value>직접 스폿 Y</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>초기 스텝</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>검색 범위</value>
+  </data>
+  <data name="checkBoxWaveLength.Text" xml:space="preserve">
+    <value>파장</value>
+  </data>
+  <data name="checkBox4.Text" xml:space="preserve">
+    <value>픽셀 ξ</value>
+  </data>
+  <data name="checkBox3.Text" xml:space="preserve">
+    <value>픽셀 크기 Y</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>픽셀 크기 X</value>
+  </data>
+  <data name="checkBoxPhi.Text" xml:space="preserve">
+    <value>기울기 φ</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>중심 위치</value>
+  </data>
+  <data name="checkBoxPixelSize.Text" xml:space="preserve">
+    <value>픽셀 크기</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.Text" xml:space="preserve">
+    <value>카메라 길이</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>초기 스텝</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>검색 범위</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="checkBoxIPTilt.Text" xml:space="preserve">
+    <value>IP 기울기</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Gandolfi 반지름</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>옵션</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>좌표</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>정사각형
+ 픽셀</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>직접 스폿</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>푸트</value>
+  </data>
+  <data name="buttonStop.Text" xml:space="preserve">
+    <value>정지</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>평판</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>반복</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.Text" xml:space="preserve">
+    <value>최적화</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>회</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Gandolfi</value>
+  </data>
+  <data name="radioButtonStandardCeO2.Text" xml:space="preserve">
+    <value>CeO2</value>
+  </data>
+  <data name="radioButtonStandardLaB6.Text" xml:space="preserve">
+    <value>LaB6</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.Text" xml:space="preserve">
+    <value>Al2O3</value>
+  </data>
+  <data name="radioButtonStandardOther.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>매개변수 찾기 (전수 탐색)</value>
+  </data>
+  <data name="numericBoxIteration.HeaderText" xml:space="preserve">
+    <value>반복</value>
+  </data>
+  <data name="numericBoxFittingRange.HeaderText" xml:space="preserve">
+    <value>피팅 범위</value>
+  </data>
+  <data name="numericBoxWeight.HeaderText" xml:space="preserve">
+    <value>높이 : 면간격</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value>각 Gandolfi 매개변수의 스텝 크기와 탐색
+범위 설정. 한 사이클에서 개선이 없으면 각
+스텝이 자동으로 줄어들어 더 정밀하게 정밀화합니다.</value>
+  </data>
+  <data name="tabControl1 / tabPage1 (Flat Panel).ToolTip" xml:space="preserve">
+    <value>평판 / 면 검출기(예: SACLA)용 전수 탐색
+기하구조 정밀화. 카메라 길이, 빔 중심, 기울기,
+파장을 스캔하여 표준 시료의 디바이 링에
+가장 잘 맞춥니다.</value>
+  </data>
+  <data name="tabPage2 (Gandolfi).ToolTip" xml:space="preserve">
+    <value>Gandolfi / 곡면 이미징 플레이트 기하구조용
+전수 탐색 정밀화. 카메라 길이, 픽셀 크기,
+중심, 기울기, Gandolfi 반지름을 스캔하여 표준
+시료의 디바이 링에 맞춥니다.</value>
+  </data>
+  <data name="radioButtonStandardAu.ToolTip" xml:space="preserve">
+    <value>금(Au)을 보정 표준 시료로 사용(입방정,
+a=4.07825 Å). 알려진 디바이 링 위치가 피팅이
+검출기 기하구조를 정렬하는 기준이 됩니다.</value>
+  </data>
+  <data name="radioButtonStandardCeO2.ToolTip" xml:space="preserve">
+    <value>산화 세륨(CeO2)을 보정 표준 시료로 사용
+(입방정, a=5.411102 Å). 검출기 기하구조 보정에
+널리 쓰이는 NIST 분말 표준입니다.</value>
+  </data>
+  <data name="radioButtonStandardLaB6.ToolTip" xml:space="preserve">
+    <value>육붕화 란타넘(LaB6)을 보정 표준 시료로
+사용(입방정, a=4.157 Å). 선 위치 / 장비
+표준으로 널리 쓰이는 NIST 표준입니다.</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.ToolTip" xml:space="preserve">
+    <value>강옥(Al2O3)을 보정 표준 시료로 사용
+(육방정, a=4.7657 Å, c=13.01 Å).
+넓은 2θ 범위에 걸쳐 많은 링을 제공합니다.</value>
+  </data>
+  <data name="radioButtonStandardOther.ToolTip" xml:space="preserve">
+    <value>사용자 지정 표준 시료 사용: 아래 결정 편집기를
+활성화하여 내장 프리셋(Au, CeO2, LaB6, Al2O3)
+대신 임의의 격자/원자를 입력할 수 있습니다.</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>직접 빔 스폿을 기준으로 기하구조 설정: 카메라
+길이 1과 회절되지 않은 빔이 검출기에 닿는
+직접 스폿 픽셀(X,Y)을 사용합니다.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>수선의 발을 기준으로 기하구조 설정: 카메라
+길이 2와 수선의 발 픽셀(X,Y) - 기울어진
+검출기에서 시료에 가장 가까운 점 - 을
+사용합니다.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>기하구조의 좌표 기준을 선택: 직접 빔 스폿
+(카메라 길이 1) 또는 기울어진 검출기 상의
+수선의 발(카메라 길이 2).</value>
+  </data>
+  <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>카메라 길이(시료-검출기 거리, mm)를 정밀화.
+카메라 길이가 클수록 디바이 링이 바깥으로
+퍼집니다. 표준 시료에 가장 잘 맞도록 스캔합니다.</value>
+  </data>
+  <data name="checkBoxPointX.ToolTip" xml:space="preserve">
+    <value>빔 중심 X 좌표(픽셀)를 정밀화: 직접 스폿 X
+또는 수선의 발 X. 검출기 상에서 링 중심이
+놓이는 위치를 이동시킵니다.</value>
+  </data>
+  <data name="checkBoxPointY.ToolTip" xml:space="preserve">
+    <value>빔 중심 Y 좌표(픽셀)를 정밀화: 직접 스폿 Y
+또는 수선의 발 Y. 검출기 상에서 링 중심을
+수직 방향으로 이동시킵니다.</value>
+  </data>
+  <data name="checkBoxPhi.ToolTip" xml:space="preserve">
+    <value>검출기 기울기 방위각 φ(라디안)를 정밀화: 검출기가
+빔에 대해 수직에서 벗어나 기울어지는 면내
+방향. 링을 타원형으로 만듭니다.</value>
+  </data>
+  <data name="checkBoxTau.ToolTip" xml:space="preserve">
+    <value>검출기 기울기 각도 τ(라디안)를 정밀화: 검출기
+면이 빔에 대한 수직에서 얼마나 기울어졌는지.
+0이 아니면 링 위치를 왜곡시킵니다.</value>
+  </data>
+  <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>X선/중성자 파장(옹스트롬)을 정밀화. 파장을
+조정하면 모든 디바이 링이 2θ 방향으로
+이동합니다. 파장이 불확실할 때만 사용하세요.</value>
+  </data>
+  <data name="checkBox2.ToolTip" xml:space="preserve">
+    <value>검출기 X 방향 픽셀 크기(mm/pixel)를 정밀화.
+현재 평판 모드에서는 비활성화됨. 픽셀 크기
+보정은 Gandolfi 탭에서 수행합니다.</value>
+  </data>
+  <data name="checkBox3.ToolTip" xml:space="preserve">
+    <value>검출기 Y 방향 픽셀 크기(mm/pixel)를 정밀화.
+현재 평판 모드에서는 비활성화됨. 픽셀 크기
+보정은 Gandolfi 탭을 사용하세요.</value>
+  </data>
+  <data name="checkBox4.ToolTip" xml:space="preserve">
+    <value>픽셀 왜곡 ξ(도)를 정밀화: 검출기 픽셀 축
+사이의 전단/비직교 각도. 현재 평판
+모드에서는 비활성화됨.</value>
+  </data>
+  <data name="numericBoxCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>초기 카메라 길이 탐색 스텝(mm). 스캔은 이 값의
++/- 배수를 시도하며, 한 사이클에서 개선이 없으면
+자동으로 줄어듭니다. 작을수록 정밀하지만 느립니다.</value>
+  </data>
+  <data name="numericBoxCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>카메라 길이 탐색 반폭(스텝 단위, 정수, 0-10).
+이만큼의 스텝 증분을 +/- 스캔하므로 전체 격자 =
+2N+1점. 클수록 넓지만 느린 탐색이 됩니다.</value>
+  </data>
+  <data name="numericBoxPointXStep.ToolTip" xml:space="preserve">
+    <value>초기 빔 중심 X 탐색 스텝(픽셀). 스캔은 +/-
+배수를 시도하며 개선이 없으면 자동으로 줄어듭니다.
+작을수록 정밀한 중심 보정이지만 느립니다.</value>
+  </data>
+  <data name="numericBoxPointYStep.ToolTip" xml:space="preserve">
+    <value>초기 빔 중심 Y 탐색 스텝(픽셀). 스캔은 +/-
+배수를 시도하며 개선이 없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericBoxFootPointXRange.ToolTip" xml:space="preserve">
+    <value>빔 중심 X 탐색 반폭(스텝 단위, 정수, 0-10).
+현재 X 주변에서 이만큼의 스텝 증분을 +/-
+스캔합니다. 클수록 넓지만 느립니다.</value>
+  </data>
+  <data name="numericBoxFootPointYRange.ToolTip" xml:space="preserve">
+    <value>빔 중심 Y 탐색 반폭(스텝 단위, 정수, 0-10).
+현재 Y 주변에서 이만큼의 스텝 증분을
++/- 스캔합니다.</value>
+  </data>
+  <data name="numericBoxPhiStep.ToolTip" xml:space="preserve">
+    <value>초기 기울기 방위각 φ 탐색 스텝(도). 스캔은 +/-
+배수를 시도하며 개선이 없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericBoxPhiRange.ToolTip" xml:space="preserve">
+    <value>기울기 방위각 φ 탐색 반폭(스텝 단위, 정수,
+0-10). 현재 φ 주변에서 이만큼의 스텝
+증분을 +/- 스캔합니다.</value>
+  </data>
+  <data name="numericBoxTauStep.ToolTip" xml:space="preserve">
+    <value>초기 기울기 각도 τ 탐색 스텝(도). 스캔은 +/-
+배수를 시도하며 개선이 없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericBoxTauRange.ToolTip" xml:space="preserve">
+    <value>기울기 각도 τ 탐색 반폭(스텝 단위, 정수,
+0-10). 현재 τ 주변에서 이만큼의 스텝
+증분을 +/- 스캔합니다.</value>
+  </data>
+  <data name="numericBoxWaveLengthStep.ToolTip" xml:space="preserve">
+    <value>초기 파장 탐색 스텝(옹스트롬). 참고: 내부적으로
+0.1배로 적용됨. 스캔은 +/- 배수를 시도하며
+개선이 없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericBoxWaveLengthRange.ToolTip" xml:space="preserve">
+    <value>파장 탐색 반폭(스텝 단위, 정수, 0-10).
+현재 파장 주변에서 이만큼의 스텝 증분을
++/- 스캔합니다.</value>
+  </data>
+  <data name="numericBox2.ToolTip" xml:space="preserve">
+    <value>픽셀 크기 X 탐색 스텝(mm/pixel).
+평판 모드에서는 비활성화됨. 픽셀 크기
+보정은 Gandolfi 탭에서 수행합니다.</value>
+  </data>
+  <data name="numericBox3.ToolTip" xml:space="preserve">
+    <value>픽셀 크기 Y 탐색 스텝(mm/pixel).
+평판 모드에서는 비활성화됨. 픽셀 크기
+보정은 Gandolfi 탭을 사용하세요.</value>
+  </data>
+  <data name="numericBox4.ToolTip" xml:space="preserve">
+    <value>픽셀 왜곡 ξ 탐색 스텝(도).
+평판 모드에서는 비활성화됨.</value>
+  </data>
+  <data name="numericBox5.ToolTip" xml:space="preserve">
+    <value>픽셀 크기 X 탐색 반폭(스텝 단위).
+평판 모드에서는 비활성화됨.</value>
+  </data>
+  <data name="numericBox6.ToolTip" xml:space="preserve">
+    <value>픽셀 크기 Y 탐색 반폭(스텝 단위).
+평판 모드에서는 비활성화됨.</value>
+  </data>
+  <data name="numericBox7.ToolTip" xml:space="preserve">
+    <value>픽셀 왜곡 ξ 탐색 반폭(스텝 단위).
+평판 모드에서는 비활성화됨.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>각 매개변수의 초기 탐색 스텝.
+전수 탐색 스캔은 이 값의 +/- 배수만큼
+이동하며, 한 사이클에서 개선이 없으면
+스텝을 자동으로 줄입니다.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>매개변수별 탐색 반폭(스텝 개수). 이만큼의
+스텝 증분을 +/- 스캔합니다(격자 = 2N+1점).
+0이면 해당 매개변수를 비활성화합니다.</value>
+  </data>
+  <data name="numericBoxIteration.ToolTip" xml:space="preserve">
+    <value>정밀화 사이클 수(1-100). 각 사이클은 현재
+최적값을 중심으로 격자를 다시 맞추고 개선이
+없으면 스텝을 줄여 기하구조를 수렴시킵니다.</value>
+  </data>
+  <data name="numericBoxFittingRange.ToolTip" xml:space="preserve">
+    <value>각 계산된 링 주변의 피크 피팅 창 반폭
+(2θ 도 단위). 너무 작으면 피크를 놓치고,
+너무 크면 이웃/배경을 끌어들입니다.
+변경 시 다시 피팅합니다.</value>
+  </data>
+  <data name="numericBoxWeight.ToolTip" xml:space="preserve">
+    <value>피크 높이와 2θ(면간격) 편차의 균형을 맞추는
+비용 함수 가중치: cost = devThetaSq + Weight/height.
+클수록 높고 날카로운 링을 선호합니다.</value>
+  </data>
+  <data name="buttonOptimize.ToolTip" xml:space="preserve">
+    <value>전수 탐색 정밀화 시작: 활성화된 매개변수
+(카메라 길이, 중심, 기울기, 파장)를 스캔하여
+표준 시료의 디바이 링에 가장 잘 맞춥니다.
+중단하려면 정지를 사용하세요.</value>
+  </data>
+  <data name="buttonStop.ToolTip" xml:space="preserve">
+    <value>실행 중인 최적화를 중단하고 매개변수, 스폿
+마스크, 적분 범위를 최적화 버튼을 누르기
+전의 값으로 복원합니다.</value>
+  </data>
+  <data name="buttonGetProfile.ToolTip" xml:space="preserve">
+    <value>정밀화 없이 현재 기하구조로 1D 방사형 프로파일
+(강도 대 2θ)을 다시 계산하고 표준 시료의
+계산된 링 위치를 겹쳐 표시합니다.</value>
+  </data>
+  <data name="checkBox1.ToolTip" xml:space="preserve">
+    <value>정사각형 픽셀 가정: 정밀화 시 픽셀 크기를
+독립적으로 피팅하는 대신 X = Y로
+제약합니다.</value>
+  </data>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value>진행 보고서(읽기 전용): 현재 사이클, 지금까지
+최적의 카메라 길이, 중심, 기울기, 파장
+(Changed/Unchanged 포함), 현재 스텝 크기와
+상위 피팅 점수.</value>
+  </data>
+  <data name="graphControl1.ToolTip" xml:space="preserve">
+    <value>프로파일 그래프: 강도 대 2θ로, 계산된 디바이
+링 위치와 피팅된 피크에 빨간 선이 표시됩니다.
+선을 더블 클릭하면 해당 반사를 피팅에서
+제거합니다.</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔에서 카메라 길이(시료-검출기
+거리, mm)를 정밀화. Gandolfi 반지름과
+함께 스캔합니다.</value>
+  </data>
+  <data name="checkBoxPixelSize.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔에서 검출기 픽셀 크기 X와 Y
+(mm/pixel)를 정밀화. 링의 면간격 스케일에
+영향을 줍니다.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔에서 빔 중심 위치 X와 Y
+(픽셀)를 정밀화. 검출기 상에서 링 중심이
+놓이는 위치를 이동시킵니다.</value>
+  </data>
+  <data name="checkBoxIPTilt.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔에서 이미징 플레이트(IP) 기울기
+각도 τ와 φ(도)를 정밀화. 기울기 = 검출기가
+빔에 수직이 아님.</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Gandolfi 반지름(mm)을 정밀화: 곡면 이미징
+플레이트 / Gandolfi 카메라의 반지름.
+링 위치 곡률 보정에 영향을 줍니다.</value>
+  </data>
+  <data name="numericUpDownCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 초기 카메라 길이 탐색 스텝(mm).
++/- 배수를 시도하며, 한 사이클에서 개선이
+없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericUpDownPixelSizeStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 초기 픽셀 크기 탐색 스텝
+(mm/pixel). +/- 배수를 시도하며 개선이
+없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericUpDownCenterPositionStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 초기 빔 중심 탐색 스텝(픽셀).
++/- 배수를 시도하며 개선이 없으면
+자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericUpDownIPTiltStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 초기 기울기(τ와 φ) 탐색 스텝
+(도). +/- 배수를 시도하며 개선이 없으면
+자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusStep.ToolTip" xml:space="preserve">
+    <value>초기 Gandolfi 반지름 탐색 스텝(mm). +/-
+배수를 시도하며 개선이 없으면 자동으로 줄어듭니다.</value>
+  </data>
+  <data name="numericUpDownCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 카메라 길이 탐색 반폭
+(스텝 단위, 정수, 0-10). 이만큼의 증분을
++/- 스캔합니다. 0이면 비활성화.</value>
+  </data>
+  <data name="numericUpDownPixelSizeRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 픽셀 크기 탐색 반폭(스텝 단위,
+정수, 0-10). 이만큼의 증분을 +/- 스캔합니다.</value>
+  </data>
+  <data name="numericUpDownCenterPositionRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 빔 중심 탐색 반폭(스텝 단위,
+정수, 0-10). X와 Y에서 이만큼의 증분을
++/- 스캔합니다.</value>
+  </data>
+  <data name="numericUpDownTiltRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 스캔용 기울기(τ/φ) 탐색 반폭
+(스텝 단위, 정수, 0-10). 이만큼의 증분을
++/- 스캔합니다.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 반지름 탐색 반폭(스텝 단위, 정수,
+0-10). 현재 반지름 주변에서 이만큼의
+증분을 +/- 스캔합니다.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>각 Gandolfi 매개변수의 초기 탐색 스텝.
+스캔은 이 값의 +/- 배수만큼 이동하며 개선이
+없으면 스텝을 자동으로 줄입니다.</value>
+  </data>
+  <data name="label23.ToolTip" xml:space="preserve">
+    <value>Gandolfi 매개변수별 탐색 반폭(스텝 개수).
+이만큼의 스텝 증분을 +/- 스캔합니다.
+0이면 해당 매개변수를 비활성화합니다.</value>
+  </data>
+  <data name="numericUpDownIterationGandolfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi 정밀화 사이클 수. 각 사이클은 현재
+최적값을 중심으로 다시 맞추고 개선이 없으면
+스텝을 줄여 기하구조를 수렴시킵니다.</value>
+  </data>
+  <data name="numericUpDownFittingRangeForGandolfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi 피팅에서 각 계산된 링 주변의 피크
+피팅 창 반폭(2θ 도, 0.2-1). 너무 작으면 피크를
+놓치고, 너무 크면 이웃을 끌어들입니다.</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value>Gandolfi 정밀화 사이클 수(반복 횟수 상자
+참조). 사이클이 많을수록 기하구조가 더
+철저히 수렴하지만 시간이 오래 걸립니다.</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi 전수 탐색 정밀화 시작: 활성화된
+매개변수(카메라 길이, 픽셀 크기, 중심, 기울기,
+Gandolfi 반지름)를 스캔하여 표준 시료의
+디바이 링에 가장 잘 맞춥니다.</value>
+  </data>
+  <data name="toolStripProgressBar1.ToolTip" xml:space="preserve">
+    <value>최적화 진행 상황: 모든 사이클에 걸쳐 완료된
+매개변수 격자 스캔의 비율.</value>
+  </data>
+  <data name="toolStripStatusLabel1.ToolTip" xml:space="preserve">
+    <value>상태 표시줄: 실행 중인 최적화의 스캔 스텝당
+시간, 완료 비율, 경과 시간, 예상 남은 시간.</value>
+  </data>
+</root>

@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Вторичное</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Центры колец (первичное)</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.Text" xml:space="preserve">
+    <value>Коррекция наклона</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.Text" xml:space="preserve">
+    <value>Из главной формы</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Первичное</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Повторение</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Средняя относительная невязка</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Наклон τ (вторичное)</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Длина волны</value>
+  </data>
+  <data name="checkBoxMouseOperation.Text" xml:space="preserve">
+    <value>Включить управление мышью
+ при уточнении (нестабильно !)</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.Text" xml:space="preserve">
+    <value>Искажение пикселя</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Начальное</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Положение центра (пиксель)</value>
+  </data>
+  <data name="buttonExecuteRefinements.Text" xml:space="preserve">
+    <value>Уточнить!</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Сферический радиус 
+(1/R)</value>
+  </data>
+  <data name="groupBoxParameter.Text" xml:space="preserve">
+    <value>Параметр</value>
+  </data>
+  <data name="buttonSchematicDiagram.Text" xml:space="preserve">
+    <value>Схем. диаграмма</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.Text" xml:space="preserve">
+    <value>Длина камеры</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.Text" xml:space="preserve">
+    <value>Размер пикселя</value>
+  </data>
+  <data name="checkUncheckToolStripMenuItem.Text" xml:space="preserve">
+    <value>Отметить/снять</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Диапазон подгонки
+(для первичного)</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.Text" xml:space="preserve">
+    <value>Получить длину волны</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Порог</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>Положение центра</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Длина камеры
+ (первичное)</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Наклон IP</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Поиск параметров</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Искажение пикселя</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Наклон τ (первичное)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Ширина полосы</value>
+  </data>
+  <data name="buttonSetInitioalParam.Text" xml:space="preserve">
+    <value>Параметры главной формы =&amp;gt; Начальные параметры </value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.Text" xml:space="preserve">
+    <value>Использовать эталонный кристалл</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Центры колец (вторичное)</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>раз</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Размер пикселя (X)</value>
+  </data>
+  <data name="groupBoxPeakList.Text" xml:space="preserve">
+    <value>Список пиков</value>
+  </data>
+  <data name="groupBoxPrimaryImage.Text" xml:space="preserve">
+    <value>Первичное изображение</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>Искажение пикселя (ξ)</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Наклон φ (первичное)</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Размер пикселя (Y)</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Наклон φ (вторичное)</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>Сферическая коррекция</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
+    <value>Разложение пиков</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="buttonCheckPeaks.Text" xml:space="preserve">
+    <value>Отметить пики, удовлетворяющие условию</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Длина камеры (первичное)</value>
+  </data>
+  <data name="buttonClearPrimaryImage.Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.Text" xml:space="preserve">
+    <value>Получить длину камеры</value>
+  </data>
+  <data name="buttonClearSecondaryImage.Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>Прямоугольник</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
+    <value>Задать кристалл</value>
+  </data>
+  <data name="buttonStopRefinements.Text" xml:space="preserve">
+    <value>Стоп!</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.Text" xml:space="preserve">
+    <value>Получить профиль</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Размер пикселя</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Вторичное</value>
+  </data>
+  <data name="checkBoxRefleshMainform.Text" xml:space="preserve">
+    <value>Обновлять главную форму при уточнении</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Положение центра (пиксель)</value>
+  </data>
+  <data name="groupBoxSecondaryImage.Text" xml:space="preserve">
+    <value>Вторичное изображение</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>Сектор</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Уточнённое</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.Text" xml:space="preserve">
+    <value>Получить профиль</value>
+  </data>
+  <data name="buttonSendMainForm.Text" xml:space="preserve">
+    <value>Уточнённые параметры =&amp;gt; Главная форма</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Длина камеры</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Наклон IP</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.Text" xml:space="preserve">
+    <value>Длина волны</value>
+  </data>
+  <data name="groupBoxOption.Text" xml:space="preserve">
+    <value>Уточняемый параметр</value>
+  </data>
+  <data name="buttonCopyToClipboard.Text" xml:space="preserve">
+    <value>Уточнённые параметры =&amp;gt; буфер обмена</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Первичное</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Длина камеры</value>
+  </data>
+  <data name="buttonClearGraphs.Text" xml:space="preserve">
+    <value>Очистить все графики</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Деление</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.Text" xml:space="preserve">
+    <value>Показывать каждый пик</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>Длина волны</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.Text" xml:space="preserve">
+    <value>Из главной формы</value>
+  </data>
+  <data name="numericBoxLowerThan.HeaderText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="ColumnHKL.HeaderText" xml:space="preserve">
+    <value>hkl</value>
+  </data>
+  <data name="ColumnNo.HeaderText" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="ColumnPrimary.HeaderText" xml:space="preserve">
+    <value>Первичное</value>
+  </data>
+  <data name="ColumnSecondary.HeaderText" xml:space="preserve">
+    <value>Вторичное</value>
+  </data>
+  <data name="numericBoxAwayFrom.HeaderText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
+    <value>Скопировать положение центра пучка (прямого
+рефлекса) из главного окна в поля центра X/Y
+для вторичного изображения.</value>
+  </data>
+  <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
+    <value>Применить уточнённые параметры (длина камеры,
+размер/искажение пикселя, наклон, длина волны,
+сферическая коррекция, центр пучка) к главному окну.</value>
+  </data>
+  <data name="label76.ToolTip" xml:space="preserve">
+    <value>Разброс подобранных центров вторичных колец;
+направленный тренд означает, что коррекция
+наклона вторичного изображения недостаточна.</value>
+  </data>
+  <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
+    <value>Обновлять изображение в главном окне во
+время уточнения. Снимите флажок, чтобы
+отключить перерисовку и слегка ускорить работу.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>Работать с первичным изображением при ручном
+добавлении или перетаскивании колец Дебая
+(гибкий режим).</value>
+  </data>
+  <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
+    <value>Разрешить управление мышью (перетаскивание) на
+графиках отдельных пиков во время уточнения.
+Может быть нестабильно; для надёжной работы
+оставьте выключенным.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
+    <value>История уточнённого азимута наклона phi
+первичного изображения по итерациям (новые
+справа). Вертикальный масштаб подстраивается
+автоматически.</value>
+  </data>
+  <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>История уточнённого размера пикселя (Y) по
+итерациям (новые справа). Вертикальный масштаб
+подстраивается автоматически.</value>
+  </data>
+  <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>История уточнённого размера пикселя (X) по
+итерациям (новые справа). Вертикальный масштаб
+подстраивается автоматически.</value>
+  </data>
+  <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
+    <value>Средняя относительная невязка (расчётные
+против наблюдаемых положений пиков) для
+выбранных пиков колец Дебая, по итерациям.
+Монотонно убывает по мере сходимости
+уточнения; новые значения добавляются справа.</value>
+  </data>
+  <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>История уточнённой длины волны по итерациям
+(новые справа). Вертикальный масштаб
+подстраивается автоматически.</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Радиально проинтегрировать двумерное
+первичное изображение в одномерный профиль
+(интенсивность от радиального расстояния)
+для подгонки пиков.</value>
+  </data>
+  <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Начальный размер пикселя детектора по
+направлению Y, в mm. Стартовое значение для
+уточнения; задаёт вертикальный масштаб
+пересчёта пикселей в mm.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>Разброс подобранных центров первичных колец;
+направленный тренд означает, что коррекция
+наклона недостаточна.</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
+    <value>Показывать отдельный график подгонки для
+каждого выбранного пика колец Дебая
+(наблюдаемый профиль, подобранная кривая, фон)
+вместо объединённого профиля.</value>
+  </data>
+  <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Начальный размер пикселя детектора по
+направлению X, в mm. Стартовое значение для
+уточнения; задаёт горизонтальный масштаб
+пересчёта пикселей в mm.</value>
+  </data>
+  <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
+    <value>Запустить уточнение геометрических параметров,
+отмеченных выше, методом наименьших квадратов с
+подгонкой выбранных пиков колец Дебая. Нажмите
+«Стоп», чтобы прервать на полпути.</value>
+  </data>
+  <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
+    <value>Остановить и отменить выполняемое уточнение,
+сохранив достигнутые к этому моменту значения
+параметров.</value>
+  </data>
+  <data name="label50.ToolTip" xml:space="preserve">
+    <value>Размер пикселя детектора по направлению X, в mm.</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value>Предсказанные пики колец Дебая. Отметьте флажки
+первичного/вторичного изображения, чтобы выбрать
+пики для уточнения; столбцы в mm показывают
+подобранные положения. Двойной щелчок по строке
+приближает график к этому пику.</value>
+  </data>
+  <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
+    <value>Открыть редактор кристалла для выбора/правки
+стандартного образца (по умолчанию CeO2),
+межплоскостные расстояния которого задают
+ожидаемые положения колец Дебая.</value>
+  </data>
+  <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
+    <value>Ширина короткой стороны полосы интегрирования,
+в процентах от ширины изображения (по умолчанию
+4%). Большая ширина усредняет больше пикселей,
+но размывает близко расположенные кольца.</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
+    <value>Оценить длину камеры по расхождению положений
+колец первичного/вторичного изображений по всей
+картине и загрузить как уточнённое значение.</value>
+  </data>
+  <data name="label60.ToolTip" xml:space="preserve">
+    <value>Величина наклона tau первичного детектора
+(угол от перпендикуляра), в градусах.</value>
+  </data>
+  <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Начальная длина волны излучения в 0.1 nm
+(ангстрем). Используется как стартовое значение
+при уточнении; большая длина волны сдвигает все
+кольца Дебая наружу.</value>
+  </data>
+  <data name="label57.ToolTip" xml:space="preserve">
+    <value>Длина камеры (расстояние образец–детектор)
+первичного изображения, в mm.</value>
+  </data>
+  <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
+    <value>Только для чтения: имя файла (и номер кадра, если
+последовательный) текущего загруженного
+первичного изображения.</value>
+  </data>
+  <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>История уточнённого угла искажения пикселя ksi
+по итерациям (новые справа). Вертикальный
+масштаб подстраивается автоматически.</value>
+  </data>
+  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённая коррекция
+сферического изгиба в виде обратного радиуса
+1/R (на mm) по результатам последней оптимизации.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Положение Y центра пучка (прямого рефлекса)
+вторичного изображения, в пикселях. Двойной
+щелчок копирует центр из главного окна; команда
+«Найти центр» там также его обновляет.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
+    <value>История уточнённого азимута наклона phi
+вторичного изображения по итерациям (новые
+справа). Вертикальный масштаб подстраивается
+автоматически.</value>
+  </data>
+  <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
+    <value>Автоматически отметить (выбрать для подгонки)
+пики, удовлетворяющие условиям ниже: изолированные
+на расстоянии «away from» и в пределах
+расстояния «lower than».</value>
+  </data>
+  <data name="label16.ToolTip" xml:space="preserve">
+    <value>Длина волны излучения в 0.1 nm (ангстрем).</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
+    <value>Использовать известный стандартный кристалл:
+положения колец Дебая вычисляются по
+межплоскостным расстояниям стандарта. Снимите
+флажок, чтобы размещать/перетаскивать кольца
+вручную (гибкий режим).</value>
+  </data>
+  <data name="label74.ToolTip" xml:space="preserve">
+    <value>Угол искажения пикселя ksi (сдвиг X/Y), в градусах.</value>
+  </data>
+  <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
+    <value>Порог принятия пика (0-1). Пик исключается из
+уточнения, когда отношение интегральной
+интенсивности / (интегральная интенсивность
++ фон) падает ниже этого значения.</value>
+  </data>
+  <data name="label22.ToolTip" xml:space="preserve">
+    <value>Наклон image-plate (IP): детектор не
+перпендикулярен пучку, задаётся азимутом phi и
+величиной tau.</value>
+  </data>
+  <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Очистить загруженное первичное изображение и
+извлечённый из него профиль, сбросив слот
+первичного изображения.</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
+    <value>Если отмечено, уточнять коррекцию наклона
+детектора (азимут phi и величину tau). Это
+принудительно включает уточнение центра пучка,
+так как они связаны.</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
+    <value>Скопировать положение центра пучка (прямого
+рефлекса) из главного окна в поля центра X/Y
+для первичного изображения.</value>
+  </data>
+  <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Положение Y центра пучка (прямого рефлекса)
+первичного изображения, в пикселях. Двойной
+щелчок копирует центр из главного окна; команда
+«Найти центр» там также его обновляет.</value>
+  </data>
+  <data name="pictureBoxMain.ToolTip" xml:space="preserve">
+    <value>Профиль расстояние–интенсивность. Перетаскивание
+левой кнопкой увеличивает, правый щелчок
+уменьшает; перетащите дифракционную линию, чтобы
+её сдвинуть (это меняет длину камеры или
+межплоскостное расстояние в гибком режиме).</value>
+  </data>
+  <data name="label51.ToolTip" xml:space="preserve">
+    <value>Положение центра пучка (прямого рефлекса)
+первичного изображения, в пикселях.</value>
+  </data>
+  <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
+    <value>Разброс подобранных центров колец Дебая
+вторичного изображения (mm), окрашенных от
+старых к новым. Однонаправленный тренд означает,
+что коррекция наклона вторичного детектора
+недостаточна.</value>
+  </data>
+  <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
+    <value>Число азимутальных направлений (секторов, 8-360),
+сэмплируемых вокруг каждого кольца. Больше
+направлений повышает чувствительность к
+наклону/центру, но замедляет расчёт.</value>
+  </data>
+  <data name="label80.ToolTip" xml:space="preserve">
+    <value>Величина наклона tau вторичного детектора
+(угол от перпендикуляра), в градусах.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
+    <value>Начальная величина наклона tau первичной
+image-plate (IP), в градусах: насколько детектор
+отклонён от перпендикуляра к пучку.</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Длина камеры (расстояние образец–детектор)
+первичного изображения, в mm.</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Открыть и загрузить файл вторичного
+дифракционного изображения (необязательная
+вторая картина для уточнения геометрии с двумя
+расстояниями).</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
+    <value>Начальный азимут наклона phi вторичной
+image-plate (IP), в градусах: направление
+наклона детектора в плоскости для второго
+изображения.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Если отмечено, положение центра пучка (прямого
+рефлекса) уточняется. Принудительно включается,
+пока активна коррекция наклона.</value>
+  </data>
+  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
+    <value>Минимальное расстояние в mm. «Check peaks»
+автоматически выбирает пики, изолированные от
+соседей более чем на это расстояние.</value>
+  </data>
+  <data name="label71.ToolTip" xml:space="preserve">
+    <value>Наклон вторичной image-plate (IP): детектор
+не перпендикулярен пучку, задаётся азимутом
+phi и величиной tau.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённая длина камеры (mm)
+по результатам последней оптимизации.</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
+    <value>Если отмечено, длина камеры (расстояние
+образец–детектор) включается в уточнение как
+свободный параметр.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
+    <value>История уточнённой величины наклона tau
+первичного изображения по итерациям (новые
+справа). Вертикальный масштаб подстраивается
+автоматически.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
+    <value>История уточнённой величины наклона tau
+вторичного изображения по итерациям (новые
+справа). Вертикальный масштаб подстраивается
+автоматически.</value>
+  </data>
+  <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
+    <value>Образец цвета для первичной картины. Щёлкните,
+чтобы выбрать цвет отрисовки первичного профиля
+и его колец.</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Радиально проинтегрировать двумерное
+вторичное изображение в одномерный профиль
+(интенсивность от радиального расстояния)
+для подгонки пиков.</value>
+  </data>
+  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
+    <value>Номер кадра первичного изображения в
+последовательном (многокадровом) стеке
+изображений.</value>
+  </data>
+  <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Начальная длина камеры (расстояние
+образец–детектор) первичного изображения, в mm.
+Введите значение, близкое к истинному, чтобы
+уточнение сходилось быстрее.</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Открыть и загрузить файл первичного
+дифракционного изображения (картина
+стандартного образца, используемая как
+основной эталон для уточнения).</value>
+  </data>
+  <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
+    <value>Разброс подобранных центров колец Дебая (mm),
+окрашенных красный-&amp;gt;зелёный-&amp;gt;синий от старых к
+новым итерациям. Однонаправленный тренд
+указывает, что коррекция наклона детектора всё
+ещё недостаточна.</value>
+  </data>
+  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённая длина волны
+(0.1 nm / ангстрем) по результатам последней
+оптимизации.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённый азимут наклона phi
+первичного детектора (градусы) по результатам
+последней оптимизации.</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
+    <value>Если отмечено, размер пикселя детектора (X и Y)
+включается в уточнение как свободный параметр.</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
+    <value>Разложение перекрывающихся пиков колец Дебая:
+пики, расположенные ближе ~2x диапазона
+подгонки, подгоняются одновременно как группа
+для лучшего разделения.</value>
+  </data>
+  <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Начальный угол искажения пикселя ksi (сдвиг /
+неортогональность между осями пикселей X и Y),
+в градусах. Корректирует перекошенные сетки
+пикселей.</value>
+  </data>
+  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
+    <value>Номер кадра вторичного изображения в
+последовательном (многокадровом) стеке
+изображений.</value>
+  </data>
+  <data name="label79.ToolTip" xml:space="preserve">
+    <value>Азимут наклона phi вторичного детектора
+(направление оси наклона), в градусах.</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённый размер пикселя
+по направлению X (mm) по результатам последней
+оптимизации.</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>Интегрировать по угловой секторной (клиновой)
+области кольца. Следует кривизне кольца; лучше
+для коротких длин камеры / сильного наклона.</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
+    <value>Если отмечено, уточнять коррекцию сферического
+изгиба (обратный радиус 1/R), учитывающую
+изогнутую image-plate.</value>
+  </data>
+  <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
+    <value>Скопировать все уточнённые параметры и их
+погрешности +/- в буфер обмена как текст с
+табуляцией (длина волны, длина камеры, размер
+пикселя, ksi, наклон, центры).</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
+    <value>Если отмечено, длина волны излучения включается
+в уточнение как свободный параметр.</value>
+  </data>
+  <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>История уточнённой длины камеры по итерациям
+(новые справа). Вертикальный масштаб
+подстраивается автоматически, поэтому оценивайте
+тренды, а не абсолютную высоту.</value>
+  </data>
+  <data name="label44.ToolTip" xml:space="preserve">
+    <value>Угол искажения пикселя ksi
+(неортогональность X/Y), в градусах.</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённый размер пикселя
+по направлению Y (mm) по результатам последней
+оптимизации.</value>
+  </data>
+  <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
+    <value>Смещение длины камеры вторичного изображения
+относительно первичного, в mm (отрицательное
+допустимо). Задаёт, насколько дальше/ближе
+расположен второй детектор.</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
+    <value>Оценить длину волны по всей картине с
+использованием отмеченных пиков колец Дебая
+обоих изображений и загрузить как уточнённое
+значение.</value>
+  </data>
+  <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
+    <value>Образец цвета для вторичной картины. Щёлкните,
+чтобы выбрать цвет отрисовки вторичного профиля
+и его колец.</value>
+  </data>
+  <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
+    <value>Полуширина окна подгонки пика в mm (0.01-10)
+вокруг каждого предсказанного пика. Больше
+захватывает больше, но рискует помехами от
+соседей и замедляет подгонку; слишком малое
+снижает точность.</value>
+  </data>
+  <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
+    <value>Очистить все отображаемые графики истории
+параметров и невязки.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>Интегрировать по прямоугольной полосовой
+области поперёк кольца. Проще/быстрее, но менее
+точно при сильно изогнутых кольцах.</value>
+  </data>
+  <data name="label37.ToolTip" xml:space="preserve">
+    <value>Азимут наклона phi первичного детектора
+(направление оси наклона), в градусах.</value>
+  </data>
+  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
+    <value>Только для чтения: уточнённый угол искажения
+пикселя ksi (градусы) по результатам последней
+оптимизации.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>Положение X центра пучка (прямого рефлекса)
+вторичного изображения, в пикселях. Двойной
+щелчок копирует центр из главного окна; команда
+«Найти центр» там также его обновляет.</value>
+  </data>
+  <data name="label52.ToolTip" xml:space="preserve">
+    <value>Размер пикселя детектора по направлению Y, в mm.</value>
+  </data>
+  <data name="label45.ToolTip" xml:space="preserve">
+    <value>Порог принятия пика (0-1): пики с интенсивностным
+отношением ниже этого исключаются из уточнения.</value>
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value>Число азимутальных направлений (секторов),
+сэмплируемых вокруг каждого кольца (8-360).</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
+    <value>Только для чтения: копия длины камеры первичного
+изображения (mm), показанная для справки рядом
+со смещением вторичного.</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
+    <value>Если отмечено, угол искажения пикселя ksi
+(сдвиг X/Y) включается в уточнение как
+свободный параметр.</value>
+  </data>
+  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
+    <value>Начальная коррекция сферического изгиба в виде
+обратного радиуса 1/R (на mm). Корректирует
+изогнутый детектор/IP; 0 означает плоский.</value>
+  </data>
+  <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
+    <value>Только для чтения: имя файла (и номер кадра, если
+последовательный) текущего загруженного
+вторичного изображения.</value>
+  </data>
+  <data name="label67.ToolTip" xml:space="preserve">
+    <value>Число выполняемых итераций уточнения.</value>
+  </data>
+  <data name="label58.ToolTip" xml:space="preserve">
+    <value>Положение центра пучка (прямого рефлекса)
+вторичного изображения, в пикселях.</value>
+  </data>
+  <data name="label42.ToolTip" xml:space="preserve">
+    <value>Оценённая стандартная погрешность (+/-) каждого
+уточнённого параметра.</value>
+  </data>
+  <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
+    <value>Загрузить текущие геометрические параметры
+главного окна в поля начальных параметров как
+стартовую точку уточнения.</value>
+  </data>
+  <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Очистить загруженное вторичное изображение и
+извлечённый из него профиль, сбросив слот
+вторичного изображения.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Начальный азимут наклона phi первичной
+image-plate (IP), в градусах: направление в
+плоскости, вокруг которого детектор наклонён
+относительно пучка.</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>Положение X центра пучка (прямого рефлекса)
+первичного изображения, в пикселях. Двойной
+щелчок копирует центр из главного окна; команда
+«Найти центр» главного окна также его обновляет.</value>
+  </data>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>Полуширина окна подгонки пика вокруг каждого
+предсказанного пика (первичное), в mm.</value>
+  </data>
+  <data name="label28.ToolTip" xml:space="preserve">
+    <value>Ширина полосы интегрирования (короткая
+сторона) в процентах от ширины изображения.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>Работать с вторичным изображением при ручном
+добавлении или перетаскивании колец Дебая
+(гибкий режим).</value>
+  </data>
+  <data name="label72.ToolTip" xml:space="preserve">
+    <value>Средняя относительная невязка (расчётное
+против наблюдаемого положения пика) по
+итерациям; убывает по мере сходимости подгонки.</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
+    <value>Начальная величина наклона tau вторичной
+image-plate (IP), в градусах: отклонение от
+перпендикуляра к пучку для второго изображения.</value>
+  </data>
+  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
+    <value>Верхний предел расстояния в mm. «Check peaks»
+автоматически выбирает только пики, расположенные
+ближе этого радиального расстояния.</value>
+  </data>
+  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
+    <value>Только для чтения: оценённая стандартная
+погрешность (+/-) уточнённой длины камеры (mm).</value>
+  </data>
+  <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
+    <value>Число выполняемых итераций уточнения (по
+умолчанию 12). Больше итераций позволяет
+подгонке сойтись дальше ценой времени.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Единица: ангстрем (0.1 nm) для длины волны.</value>
+  </data>
+  <data name="label75.ToolTip" xml:space="preserve">
+    <value>Коррекция сферического изгиба в виде обратного
+радиуса 1/R (на mm); 0 = плоский детектор.</value>
+  </data>
+  <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
+    <value>Показать схематическую диаграмму, иллюстрирующую
+каждый геометрический параметр (длина камеры,
+центр пучка, наклон детектора, размер пикселя,
+искажение).</value>
+  </data>
+</root>

@@ -1,0 +1,134 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Цель(и) «Получить профиль»</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Text" xml:space="preserve">
+    <value>Только верхнее изображение</value>
+  </data>
+  <data name="checkBoxAverage.Text" xml:space="preserve">
+    <value>Среднее</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
+    <value>Все изображения независимо от текущего выбора</value>
+  </data>
+  <data name="checkBoxMultiSelection.Text" xml:space="preserve">
+    <value>Множественный выбор</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Text" xml:space="preserve">
+    <value>Выбранное(ые) изображение(я)</value>
+  </data>
+  <data name="checkBoxSummation.Text" xml:space="preserve">
+    <value>Суммирование</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Параметры последовательных изображений</value>
+  </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>Прокрутка кадров стека изображений;
+переход к выбранному кадру, пересчёт
+его 1D-профиля и перерисовка. Диапазон
+0..(число кадров-1). Отключено в режиме
+множественного выбора.</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>Список всех кадров стека. Щёлкните, чтобы
+показать кадр; в режиме множественного выбора
+используйте Ctrl/Shift (Ctrl+A = все), чтобы
+выбрать несколько для усреднения или суммирования.
+Кадры HDF5 имеют префикс из 3-значного индекса.</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>Разрешить выбор нескольких кадров сразу
+(включает параметры усреднения / суммирования
+и отключает ползунок кадров). Выкл. = просмотр
+по одному кадру за раз.</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>Показать попиксельное среднее (сумма
+интенсивностей, делённая на число кадров)
+выбранных кадров. Взаимоисключающе
+с суммированием. Требует множественного выбора.</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>Показать попиксельную сумму (интенсивности
+складываются, без деления) выбранных кадров;
+повышает статистику и улучшает счёт для слабых
+кадров. Взаимоисключающе с усреднением.
+Требует множественного выбора.</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>Выполнить «Получить профиль» (радиальное
+интегрирование в 1D-кривую I-от-2θ/d/q) только
+для кадра(ов), выбранного(ых) в списке выше.</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>Выполнить «Получить профиль» (радиальное
+интегрирование в 1D-профиль) только для
+одного кадра, показываемого сверху.</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>Выполнить «Получить профиль» (радиальное
+интегрирование в 1D) для каждого кадра стека,
+игнорируя текущий выбор в списке; создаёт
+по одному профилю на каждый кадр.</value>
+  </data>
+</root>

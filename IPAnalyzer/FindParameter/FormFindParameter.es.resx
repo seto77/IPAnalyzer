@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Secundario</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Centros de anillos (primario)</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.Text" xml:space="preserve">
+    <value>Corrección de inclinación</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.Text" xml:space="preserve">
+    <value>Desde formulario principal</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Primario</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Repetición</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Residuo relativo medio</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Inclinación τ (secundario)</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Longitud de onda</value>
+  </data>
+  <data name="checkBoxMouseOperation.Text" xml:space="preserve">
+    <value>Habilitar control con ratón
+ durante el refinamiento (¡inestable!)</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.Text" xml:space="preserve">
+    <value>Distorsión de píxel</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Inicial</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Posición del centro (píxel)</value>
+  </data>
+  <data name="buttonExecuteRefinements.Text" xml:space="preserve">
+    <value>¡Refinar!</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Radio esférico 
+(1/R)</value>
+  </data>
+  <data name="groupBoxParameter.Text" xml:space="preserve">
+    <value>Parámetro</value>
+  </data>
+  <data name="buttonSchematicDiagram.Text" xml:space="preserve">
+    <value>Diagrama esquemático</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.Text" xml:space="preserve">
+    <value>Longitud de cámara</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.Text" xml:space="preserve">
+    <value>Tamaño de píxel</value>
+  </data>
+  <data name="checkUncheckToolStripMenuItem.Text" xml:space="preserve">
+    <value>Marcar/Desmarcar</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Intervalo de ajuste
+(para primario)</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.Text" xml:space="preserve">
+    <value>Obtener longitud de onda</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Umbral</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>Posición del centro</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Longitud de cámara
+ (primario)</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Inclinación IP</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Buscar parámetro</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Distorsión de píxel</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Inclinación τ (primario)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Anch. banda</value>
+  </data>
+  <data name="buttonSetInitioalParam.Text" xml:space="preserve">
+    <value>Parámetros del formulario principal =&amp;gt; Parámetros iniciales </value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.Text" xml:space="preserve">
+    <value>Usar cristal estándar</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Centros de anillos (secundario)</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>veces</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Tamaño de píxel (X)</value>
+  </data>
+  <data name="groupBoxPeakList.Text" xml:space="preserve">
+    <value>Lista de picos</value>
+  </data>
+  <data name="groupBoxPrimaryImage.Text" xml:space="preserve">
+    <value>Imagen primaria</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>Distorsión de píxel (ξ)</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Inclinación φ (primario)</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Tamaño de píxel (Y)</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Inclinación φ (secundario)</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>Corrección esférica</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
+    <value>Descomposición de picos</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Nombre de archivo</value>
+  </data>
+  <data name="buttonCheckPeaks.Text" xml:space="preserve">
+    <value>Marcar picos que cumplan la condición siguiente</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Longitud de cámara (primario)</value>
+  </data>
+  <data name="buttonClearPrimaryImage.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.Text" xml:space="preserve">
+    <value>Obtener longitud de cámara</value>
+  </data>
+  <data name="buttonClearSecondaryImage.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>Rectángulo</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
+    <value>Definir cristal</value>
+  </data>
+  <data name="buttonStopRefinements.Text" xml:space="preserve">
+    <value>¡Detener!</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.Text" xml:space="preserve">
+    <value>Obtener perfil</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Tamaño de píxel</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Secundario</value>
+  </data>
+  <data name="checkBoxRefleshMainform.Text" xml:space="preserve">
+    <value>Actualizar formulario principal durante el refinamiento</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Posición del centro (píxel)</value>
+  </data>
+  <data name="groupBoxSecondaryImage.Text" xml:space="preserve">
+    <value>Imagen secundaria</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Refinado</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.Text" xml:space="preserve">
+    <value>Obtener perfil</value>
+  </data>
+  <data name="buttonSendMainForm.Text" xml:space="preserve">
+    <value>Parámetros refinados =&amp;gt; Formulario principal</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Longitud de cámara</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Inclinación IP</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.Text" xml:space="preserve">
+    <value>Longitud de onda</value>
+  </data>
+  <data name="groupBoxOption.Text" xml:space="preserve">
+    <value>Parámetro refinado</value>
+  </data>
+  <data name="buttonCopyToClipboard.Text" xml:space="preserve">
+    <value>Parámetros refinados =&amp;gt; portapapeles</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Primario</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Longitud de cámara</value>
+  </data>
+  <data name="buttonClearGraphs.Text" xml:space="preserve">
+    <value>Borrar todos los gráficos</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Nombre de archivo</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>División</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.Text" xml:space="preserve">
+    <value>Mostrar cada pico</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>Longitud de onda</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.Text" xml:space="preserve">
+    <value>Desde formulario principal</value>
+  </data>
+  <data name="numericBoxLowerThan.HeaderText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="ColumnHKL.HeaderText" xml:space="preserve">
+    <value>hkl</value>
+  </data>
+  <data name="ColumnNo.HeaderText" xml:space="preserve">
+    <value>N.º</value>
+  </data>
+  <data name="ColumnPrimary.HeaderText" xml:space="preserve">
+    <value>Primario</value>
+  </data>
+  <data name="ColumnSecondary.HeaderText" xml:space="preserve">
+    <value>Secundario</value>
+  </data>
+  <data name="numericBoxAwayFrom.HeaderText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
+    <value>Copia la posición del centro del haz (punto
+directo) de la ventana principal a los campos
+X/Y del centro Secundario.</value>
+  </data>
+  <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
+    <value>Aplica los parámetros refinados (longitud de cámara,
+tamaño/distorsión de píxel, inclinación, longitud de
+onda, corrección esférica, centro del haz) a la
+ventana principal.</value>
+  </data>
+  <data name="label76.ToolTip" xml:space="preserve">
+    <value>Dispersión de los centros de anillo Secundarios
+ajustados; una tendencia direccional indica que la
+corrección de inclinación Secundaria es insuficiente.</value>
+  </data>
+  <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
+    <value>Actualiza la imagen de la ventana principal
+durante el refinamiento. Desmárquelo para evitar
+el redibujado y ganar algo de velocidad.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>Apunta a la imagen Primaria al añadir o
+arrastrar manualmente anillos de Debye
+(modo flexible).</value>
+  </data>
+  <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
+    <value>Habilita la interacción con el ratón (arrastrar)
+en los gráficos por pico mientras se ejecuta el
+refinamiento. Puede ser inestable; déjelo
+desactivado para ejecuciones fiables.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
+    <value>Historial del azimut de inclinación phi Primario
+refinado a lo largo de las iteraciones (lo más
+reciente a la derecha). La escala vertical se
+ajusta automáticamente.</value>
+  </data>
+  <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Historial del tamaño de píxel (Y) refinado
+a lo largo de las iteraciones (lo más reciente
+a la derecha). La escala vertical se ajusta
+automáticamente.</value>
+  </data>
+  <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Historial del tamaño de píxel (X) refinado
+a lo largo de las iteraciones (lo más reciente
+a la derecha). La escala vertical se ajusta
+automáticamente.</value>
+  </data>
+  <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
+    <value>Residuo relativo medio (posiciones de pico
+calculadas vs. observadas) de los picos de anillo
+de Debye seleccionados, trazado por iteración.
+Disminuye monótonamente a medida que converge el
+refinamiento; los valores más recientes se añaden
+a la derecha.</value>
+  </data>
+  <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Historial de la longitud de onda refinada a lo
+largo de las iteraciones (lo más reciente a la
+derecha). La escala vertical se ajusta
+automáticamente.</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Integra radialmente la imagen 2D Primaria en
+un perfil 1D (intensidad vs. distancia radial)
+usado para el ajuste de picos.</value>
+  </data>
+  <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Tamaño de píxel inicial del detector en la
+dirección Y, en mm. Valor de partida para el
+refinamiento; escala la conversión vertical de
+píxel a mm de la imagen.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>Dispersión de los centros de anillo Primarios
+ajustados; una tendencia direccional indica que
+la corrección de inclinación es insuficiente.</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
+    <value>Muestra un gráfico de ajuste individual para cada
+pico de anillo de Debye seleccionado (perfil
+observado, curva ajustada, fondo) en lugar del
+perfil combinado.</value>
+  </data>
+  <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Tamaño de píxel inicial del detector en la
+dirección X, en mm. Valor de partida para el
+refinamiento; escala la conversión horizontal de
+píxel a mm de la imagen.</value>
+  </data>
+  <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
+    <value>Inicia el refinamiento por mínimos cuadrados de
+los parámetros geométricos marcados arriba,
+ajustando los picos de anillo de Debye
+seleccionados. Pulse Detener para abortar a
+medio camino.</value>
+  </data>
+  <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
+    <value>Detiene y cancela el refinamiento en curso,
+conservando los valores de parámetros
+alcanzados hasta ahora.</value>
+  </data>
+  <data name="label50.ToolTip" xml:space="preserve">
+    <value>Tamaño de píxel del detector en la dirección X, en mm.</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value>Picos de anillo de Debye predichos. Marque las
+casillas Primario/Secundario para elegir qué picos se
+usan en el refinamiento; las columnas en mm muestran
+las posiciones ajustadas. Haga doble clic en una fila
+para ampliar el gráfico a ese pico.</value>
+  </data>
+  <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
+    <value>Abre el editor de cristales para seleccionar/editar
+la muestra estándar (CeO2 por defecto) cuyas
+distancias d definen las posiciones esperadas de los
+anillos de Debye.</value>
+  </data>
+  <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
+    <value>Ancho del lado corto de la banda de integración,
+como porcentaje del ancho de la imagen (4% por
+defecto). Un valor mayor promedia más píxeles pero
+difumina los anillos muy próximos.</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
+    <value>Estima la longitud de cámara a partir de la
+discrepancia de posición de anillos
+Primaria/Secundaria en todo el patrón y la
+carga como valor refinado.</value>
+  </data>
+  <data name="label60.ToolTip" xml:space="preserve">
+    <value>Magnitud de inclinación tau del detector Primario
+(ángulo respecto a la perpendicular), en grados.</value>
+  </data>
+  <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Longitud de onda inicial de la radiación en 0.1 nm
+(Angstrom). Se usa como valor de partida al
+refinar; una longitud de onda mayor desplaza todos
+los anillos de Debye hacia fuera.</value>
+  </data>
+  <data name="label57.ToolTip" xml:space="preserve">
+    <value>Longitud de cámara (distancia muestra-detector)
+de la imagen Primaria, en mm.</value>
+  </data>
+  <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
+    <value>Solo lectura: nombre de archivo (e índice de
+fotograma, si es secuencial) de la imagen Primaria
+actualmente cargada.</value>
+  </data>
+  <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Historial del ángulo de distorsión de píxel ksi
+refinado a lo largo de las iteraciones (lo más
+reciente a la derecha). La escala vertical se
+ajusta automáticamente.</value>
+  </data>
+  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
+    <value>Solo lectura: corrección de curvatura esférica
+refinada como radio inverso 1/R (por mm) de la
+última optimización.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Posición Y del centro del haz (punto directo)
+Secundario, en píxeles. Haga doble clic para
+copiar el centro desde la ventana principal;
+'Buscar centro' allí también lo actualiza.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
+    <value>Historial del azimut de inclinación phi Secundario
+refinado a lo largo de las iteraciones (lo más
+reciente a la derecha). La escala vertical se
+ajusta automáticamente.</value>
+  </data>
+  <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
+    <value>Marca automáticamente (selecciona para ajuste) los
+picos que cumplen las condiciones siguientes:
+aislados según 'alejados de' y dentro de la
+distancia 'menor que'.</value>
+  </data>
+  <data name="label16.ToolTip" xml:space="preserve">
+    <value>Longitud de onda de la radiación en 0.1 nm (Angstrom).</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
+    <value>Usa un cristal estándar conocido: las posiciones
+de los anillos de Debye se calculan a partir de las
+distancias d del estándar. Desmárquelo para
+colocar/arrastrar anillos manualmente (modo
+flexible).</value>
+  </data>
+  <data name="label74.ToolTip" xml:space="preserve">
+    <value>Ángulo de distorsión de píxel ksi (cizalla X/Y),
+en grados.</value>
+  </data>
+  <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
+    <value>Umbral de aceptación de picos (0-1). Un pico se
+excluye del refinamiento cuando intensidad
+integrada / (intensidad integrada + fondo) cae
+por debajo de este valor.</value>
+  </data>
+  <data name="label22.ToolTip" xml:space="preserve">
+    <value>Inclinación de la placa de imagen (IP): detector
+no perpendicular al haz, dada como azimut phi y
+magnitud tau.</value>
+  </data>
+  <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Borra la imagen Primaria cargada y su perfil
+extraído, restableciendo la ranura Primaria.</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
+    <value>Si está marcado, refina la corrección de
+inclinación del detector (azimut phi y magnitud
+tau). Esto fuerza el refinamiento del centro del
+haz, ya que ambos están acoplados.</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
+    <value>Copia la posición del centro del haz (punto
+directo) de la ventana principal a los campos
+X/Y del centro Primario.</value>
+  </data>
+  <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Posición Y del centro del haz (punto directo)
+Primario, en píxeles. Haga doble clic para copiar
+el centro desde la ventana principal; 'Buscar
+centro' allí también lo actualiza.</value>
+  </data>
+  <data name="pictureBoxMain.ToolTip" xml:space="preserve">
+    <value>Perfil distancia-intensidad. Arrastre con el botón
+izquierdo para ampliar, clic derecho para reducir;
+arrastre una línea de difracción para moverla
+(esto ajusta la longitud de cámara, o la distancia
+d en modo flexible).</value>
+  </data>
+  <data name="label51.ToolTip" xml:space="preserve">
+    <value>Posición del centro del haz (punto directo) de
+la imagen Primaria, en píxeles.</value>
+  </data>
+  <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
+    <value>Dispersión de los centros de anillo de Debye
+Secundarios ajustados (mm), coloreados del más
+antiguo al más reciente. Una tendencia
+unidireccional indica que la corrección de
+inclinación del detector Secundario es insuficiente.</value>
+  </data>
+  <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
+    <value>Número de direcciones azimutales (sectores, 8-360)
+muestreadas alrededor de cada anillo. Más
+direcciones mejoran la sensibilidad de
+inclinación/centro pero ralentizan el cálculo.</value>
+  </data>
+  <data name="label80.ToolTip" xml:space="preserve">
+    <value>Magnitud de inclinación tau del detector
+Secundario (ángulo respecto a la perpendicular),
+en grados.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
+    <value>Magnitud de inclinación inicial tau de la placa de
+imagen (IP) Primaria, en grados: cuánto se inclina
+el detector respecto a la perpendicular al haz.</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Longitud de cámara (distancia muestra-detector)
+de la imagen Primaria, en mm.</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Abre y carga el archivo de imagen de difracción
+Secundaria (el segundo patrón opcional para el
+refinamiento de geometría de doble distancia).</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
+    <value>Azimut de inclinación inicial phi de la placa de
+imagen (IP) Secundaria, en grados: dirección en el
+plano de la inclinación del detector para la
+segunda imagen.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Si está marcado, se refina la posición del centro
+del haz (punto directo). Se fuerza automáticamente
+mientras la Corrección de inclinación está
+activada.</value>
+  </data>
+  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
+    <value>Separación mínima en mm. 'Marcar picos'
+selecciona automáticamente los picos aislados
+por más de esta distancia de sus vecinos.</value>
+  </data>
+  <data name="label71.ToolTip" xml:space="preserve">
+    <value>Inclinación de la placa de imagen (IP)
+Secundaria: detector no perpendicular al haz,
+como azimut phi y magnitud tau.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Solo lectura: longitud de cámara refinada (mm)
+resultante de la última optimización.</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
+    <value>Si está marcado, la longitud de cámara (distancia
+muestra-detector) se incluye como parámetro libre
+en el refinamiento.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
+    <value>Historial de la magnitud de inclinación tau
+Primaria refinada a lo largo de las iteraciones
+(lo más reciente a la derecha). La escala vertical
+se ajusta automáticamente.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
+    <value>Historial de la magnitud de inclinación tau
+Secundaria refinada a lo largo de las iteraciones
+(lo más reciente a la derecha). La escala vertical
+se ajusta automáticamente.</value>
+  </data>
+  <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
+    <value>Muestra de color para el patrón Primario.
+Haga clic para elegir el color usado para dibujar
+el perfil Primario y sus anillos.</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Integra radialmente la imagen 2D Secundaria en
+un perfil 1D (intensidad vs. distancia radial)
+usado para el ajuste de picos.</value>
+  </data>
+  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
+    <value>Número de fotograma de la imagen Primaria dentro
+de una pila de imágenes secuencial (multifotograma).</value>
+  </data>
+  <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Longitud de cámara inicial (distancia
+muestra-detector) de la imagen Primaria, en mm.
+Introduzca un valor cercano al real para que el
+refinamiento converja más rápido.</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Abre y carga el archivo de imagen de difracción
+Primaria (el patrón de la muestra estándar usado
+como referencia principal para el refinamiento).</value>
+  </data>
+  <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
+    <value>Dispersión de los centros de anillo de Debye
+ajustados (mm), coloreados rojo-&amp;gt;verde-&amp;gt;azul de la
+iteración más antigua a la más reciente. Una
+tendencia unidireccional indica que la corrección
+de inclinación del detector sigue siendo
+insuficiente.</value>
+  </data>
+  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
+    <value>Solo lectura: longitud de onda refinada (0.1 nm
+/ Angstrom) de la última optimización.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Solo lectura: azimut de inclinación phi del
+detector Primario refinado (grados) de la última
+optimización.</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
+    <value>Si está marcado, el tamaño de píxel del detector
+(X e Y) se incluye como parámetro libre en el
+refinamiento.</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
+    <value>Descompone los picos de anillo de Debye
+superpuestos: los picos más próximos que ~2x el
+rango de ajuste se ajustan simultáneamente como
+grupo para una mejor separación.</value>
+  </data>
+  <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Ángulo de distorsión de píxel inicial ksi (cizalla
+/ no ortogonalidad entre los ejes de píxel X e Y),
+en grados. Corrige las rejillas de píxeles
+sesgadas.</value>
+  </data>
+  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
+    <value>Número de fotograma de la imagen Secundaria dentro
+de una pila de imágenes secuencial (multifotograma).</value>
+  </data>
+  <data name="label79.ToolTip" xml:space="preserve">
+    <value>Azimut de inclinación phi del detector Secundario
+(dirección del eje de inclinación), en grados.</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Solo lectura: tamaño de píxel refinado en la
+dirección X (mm) de la última optimización.</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>Integra sobre una región de sector angular (cuña)
+del anillo. Sigue la curvatura del anillo; mejor
+para longitudes de cámara cortas / inclinación
+fuerte.</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
+    <value>Si está marcado, refina la corrección de curvatura
+esférica (radio inverso 1/R) que tiene en cuenta
+una placa de imagen curvada.</value>
+  </data>
+  <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
+    <value>Copia todos los parámetros refinados y sus errores
++/- al portapapeles como texto separado por
+tabulaciones (longitud de onda, longitud de cámara,
+tamaño de píxel, ksi, inclinación, centros).</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
+    <value>Si está marcado, la longitud de onda de la
+radiación se incluye como parámetro libre en el
+refinamiento.</value>
+  </data>
+  <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>Historial de la longitud de cámara refinada a lo
+largo de las iteraciones (lo más reciente a la
+derecha). La escala vertical se ajusta
+automáticamente, así que juzgue las tendencias, no
+la altura absoluta.</value>
+  </data>
+  <data name="label44.ToolTip" xml:space="preserve">
+    <value>Ángulo de distorsión de píxel ksi (no
+ortogonalidad X/Y), en grados.</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Solo lectura: tamaño de píxel refinado en la
+dirección Y (mm) de la última optimización.</value>
+  </data>
+  <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
+    <value>Desplazamiento de la longitud de cámara Secundaria
+respecto a la Primaria, en mm (se permiten
+negativos). Define cuánto más lejos/cerca se sitúa
+el segundo detector.</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
+    <value>Estima la longitud de onda a partir de todo el
+patrón usando los picos de anillo de Debye
+marcados de ambas imágenes, y la carga como valor
+refinado.</value>
+  </data>
+  <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
+    <value>Muestra de color para el patrón Secundario.
+Haga clic para elegir el color usado para dibujar
+el perfil Secundario y sus anillos.</value>
+  </data>
+  <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
+    <value>Semianchura de la ventana de ajuste de picos en mm
+(0.01-10) alrededor de cada pico predicho. Un valor
+mayor captura más pero arriesga interferencia de
+vecinos y ajustes más lentos; demasiado pequeño
+reduce la precisión.</value>
+  </data>
+  <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
+    <value>Borra todos los gráficos de historial de
+parámetros y de residuo dibujados actualmente.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>Integra sobre una región de banda rectangular a
+través del anillo. Más simple/rápido pero menos
+preciso cuando los anillos están muy curvados.</value>
+  </data>
+  <data name="label37.ToolTip" xml:space="preserve">
+    <value>Azimut de inclinación phi del detector Primario
+(dirección del eje de inclinación), en grados.</value>
+  </data>
+  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
+    <value>Solo lectura: ángulo de distorsión de píxel ksi
+refinado (grados) de la última optimización.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>Posición X del centro del haz (punto directo)
+Secundario, en píxeles. Haga doble clic para
+copiar el centro desde la ventana principal;
+'Buscar centro' allí también lo actualiza.</value>
+  </data>
+  <data name="label52.ToolTip" xml:space="preserve">
+    <value>Tamaño de píxel del detector en la dirección Y, en mm.</value>
+  </data>
+  <data name="label45.ToolTip" xml:space="preserve">
+    <value>Umbral de aceptación de picos (0-1): los picos por
+debajo de esta relación de intensidad se excluyen
+del refinamiento.</value>
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value>Número de direcciones azimutales (sectores)
+muestreadas alrededor de cada anillo (8-360).</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
+    <value>Solo lectura: copia de la longitud de cámara
+Primaria (mm), mostrada como referencia junto al
+desplazamiento Secundario.</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
+    <value>Si está marcado, el ángulo de distorsión de píxel
+ksi (cizalla X/Y) se incluye como parámetro libre
+en el refinamiento.</value>
+  </data>
+  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
+    <value>Corrección de curvatura esférica inicial como
+radio inverso 1/R (por mm). Corrige un
+detector/IP curvado; 0 significa plano.</value>
+  </data>
+  <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
+    <value>Solo lectura: nombre de archivo (e índice de
+fotograma, si es secuencial) de la imagen
+Secundaria actualmente cargada.</value>
+  </data>
+  <data name="label67.ToolTip" xml:space="preserve">
+    <value>Número de iteraciones de refinamiento a ejecutar.</value>
+  </data>
+  <data name="label58.ToolTip" xml:space="preserve">
+    <value>Posición del centro del haz (punto directo) de
+la imagen Secundaria, en píxeles.</value>
+  </data>
+  <data name="label42.ToolTip" xml:space="preserve">
+    <value>Error estándar estimado (+/-) de cada parámetro
+refinado.</value>
+  </data>
+  <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
+    <value>Carga los parámetros geométricos actuales de la
+ventana principal en los campos de parámetro
+inicial como punto de partida del refinamiento.</value>
+  </data>
+  <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Borra la imagen Secundaria cargada y su perfil
+extraído, restableciendo la ranura Secundaria.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Azimut de inclinación inicial phi de la placa de
+imagen (IP) Primaria, en grados: la dirección en
+el plano alrededor de la cual el detector se
+inclina respecto al haz.</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>Posición X del centro del haz (punto directo)
+Primario, en píxeles. Haga doble clic para copiar
+el centro desde la ventana principal; 'Buscar
+centro' de la ventana principal también lo
+actualiza.</value>
+  </data>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>Semianchura de la ventana de ajuste de picos
+alrededor de cada pico predicho (Primario), en mm.</value>
+  </data>
+  <data name="label28.ToolTip" xml:space="preserve">
+    <value>Ancho de la banda de integración (lado corto)
+como porcentaje del ancho de la imagen.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>Apunta a la imagen Secundaria al añadir o
+arrastrar manualmente anillos de Debye
+(modo flexible).</value>
+  </data>
+  <data name="label72.ToolTip" xml:space="preserve">
+    <value>Residuo relativo medio (posición de pico calculada
+vs. observada) por iteración; disminuye a medida
+que converge el ajuste.</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
+    <value>Magnitud de inclinación inicial tau de la placa de
+imagen (IP) Secundaria, en grados: inclinación
+respecto a la perpendicular al haz para la segunda
+imagen.</value>
+  </data>
+  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
+    <value>Límite superior de distancia en mm. 'Marcar picos'
+selecciona automáticamente solo los picos situados
+más cerca que esta distancia radial.</value>
+  </data>
+  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
+    <value>Solo lectura: error estándar estimado (+/-) de la
+longitud de cámara refinada (mm).</value>
+  </data>
+  <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
+    <value>Número de iteraciones de refinamiento a realizar
+(12 por defecto). Más iteraciones permiten que el
+ajuste converja más a costa de tiempo.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Unidad: Angstrom (0.1 nm) para la longitud de onda.</value>
+  </data>
+  <data name="label75.ToolTip" xml:space="preserve">
+    <value>Corrección de curvatura esférica como radio
+inverso 1/R (por mm); 0 = detector plano.</value>
+  </data>
+  <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
+    <value>Muestra un diagrama esquemático que ilustra cada
+parámetro geométrico (longitud de cámara, centro
+del haz, inclinación del detector, tamaño de
+píxel, distorsión).</value>
+  </data>
+</root>

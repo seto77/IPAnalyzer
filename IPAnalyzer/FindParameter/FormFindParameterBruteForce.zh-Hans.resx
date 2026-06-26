@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonOptimize.Text" xml:space="preserve">
+    <value>优化</value>
+  </data>
+  <data name="buttonGetProfile.Text" xml:space="preserve">
+    <value>获取图谱</value>
+  </data>
+  <data name="checkBoxCameraLength.Text" xml:space="preserve">
+    <value>相机长度 1</value>
+  </data>
+  <data name="checkBoxTau.Text" xml:space="preserve">
+    <value>倾斜 τ</value>
+  </data>
+  <data name="checkBoxPointX.Text" xml:space="preserve">
+    <value>直射斑点 X</value>
+  </data>
+  <data name="checkBoxPointY.Text" xml:space="preserve">
+    <value>直射斑点 Y</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>初始步长</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>搜索范围</value>
+  </data>
+  <data name="checkBoxWaveLength.Text" xml:space="preserve">
+    <value>波长</value>
+  </data>
+  <data name="checkBox4.Text" xml:space="preserve">
+    <value>像素 ξ</value>
+  </data>
+  <data name="checkBox3.Text" xml:space="preserve">
+    <value>像素大小 Y</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>像素大小 X</value>
+  </data>
+  <data name="checkBoxPhi.Text" xml:space="preserve">
+    <value>倾斜 φ</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>中心位置</value>
+  </data>
+  <data name="checkBoxPixelSize.Text" xml:space="preserve">
+    <value>像素大小</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.Text" xml:space="preserve">
+    <value>相机长度</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>初始步长</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>搜索范围</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>步</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>步</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>步</value>
+  </data>
+  <data name="checkBoxIPTilt.Text" xml:space="preserve">
+    <value>IP 倾斜</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Gandolfi 半径</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>步</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>步</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>坐标</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>方形
+ 像素</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>直射斑点</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="buttonStop.Text" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>平板</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>迭代</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.Text" xml:space="preserve">
+    <value>优化</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>次</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Gandolfi</value>
+  </data>
+  <data name="radioButtonStandardCeO2.Text" xml:space="preserve">
+    <value>CeO2</value>
+  </data>
+  <data name="radioButtonStandardLaB6.Text" xml:space="preserve">
+    <value>LaB6</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.Text" xml:space="preserve">
+    <value>Al2O3</value>
+  </data>
+  <data name="radioButtonStandardOther.Text" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>查找参数 (穷举)</value>
+  </data>
+  <data name="numericBoxIteration.HeaderText" xml:space="preserve">
+    <value>迭代</value>
+  </data>
+  <data name="numericBoxFittingRange.HeaderText" xml:space="preserve">
+    <value>拟合范围</value>
+  </data>
+  <data name="numericBoxWeight.HeaderText" xml:space="preserve">
+    <value>高度 : 晶面间距</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value>各 Gandolfi 参数的步长与搜索范围设置。
+当某次循环没有改善时，每个步长会自动
+缩小，以进行更精细的精修。</value>
+  </data>
+  <data name="tabControl1 / tabPage1 (Flat Panel).ToolTip" xml:space="preserve">
+    <value>针对平板 / 面探测器（如 SACLA）的
+穷举几何精修。扫描相机长度、束中心、
+倾斜和波长，以最佳拟合标准物的德拜环。</value>
+  </data>
+  <data name="tabPage2 (Gandolfi).ToolTip" xml:space="preserve">
+    <value>针对 Gandolfi / 弯曲成像板几何的穷举精修。
+扫描相机长度、像素大小、中心、倾斜和
+Gandolfi 半径，以拟合标准物的德拜环。</value>
+  </data>
+  <data name="radioButtonStandardAu.ToolTip" xml:space="preserve">
+    <value>使用金 (Au) 作为校准标准物（立方，
+a=4.07825 Å）。其已知的德拜环位置是拟合
+用以对齐探测器几何的参考。</value>
+  </data>
+  <data name="radioButtonStandardCeO2.ToolTip" xml:space="preserve">
+    <value>使用氧化铈 (CeO2) 作为校准标准物（立方，
+a=5.411102 Å）。一种常用的 NIST 粉末标准物，
+用于探测器几何校准。</value>
+  </data>
+  <data name="radioButtonStandardLaB6.ToolTip" xml:space="preserve">
+    <value>使用六硼化镧 (LaB6) 作为校准标准物（立方，
+a=4.157 Å）。一种广泛使用的 NIST 线位置 /
+仪器标准物。</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.ToolTip" xml:space="preserve">
+    <value>使用刚玉 (Al2O3) 作为校准标准物（六方，
+a=4.7657 Å，c=13.01 Å）。在很宽的 2θ 范围内
+提供众多衍射环。</value>
+  </data>
+  <data name="radioButtonStandardOther.ToolTip" xml:space="preserve">
+    <value>使用自定义标准物：启用下方的晶体编辑器，
+以便输入任意晶格 / 原子，而非内置预设
+（Au、CeO2、LaB6、Al2O3）。</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>以直射束斑点为几何参考：使用相机长度 1
+以及直射斑点像素 (X,Y)，即未衍射束
+打在探测器上的位置。</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>以垂足为几何参考：使用相机长度 2
+以及垂足像素 (X,Y)——倾斜探测器上
+离样品最近的点。</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>选择几何的坐标参考：直射束斑点
+（相机长度 1），或倾斜探测器上的
+垂足（相机长度 2）。</value>
+  </data>
+  <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>精修相机长度（样品到探测器距离，mm）。
+相机长度越大，德拜环越向外扩展；此项
+扫描该值以最佳匹配标准物。</value>
+  </data>
+  <data name="checkBoxPointX.ToolTip" xml:space="preserve">
+    <value>精修束中心 X 坐标（像素）：直射斑点 X
+或垂足 X。改变衍射环中心在探测器上的位置。</value>
+  </data>
+  <data name="checkBoxPointY.ToolTip" xml:space="preserve">
+    <value>精修束中心 Y 坐标（像素）：直射斑点 Y
+或垂足 Y。沿垂直方向移动衍射环中心
+在探测器上的位置。</value>
+  </data>
+  <data name="checkBoxPhi.ToolTip" xml:space="preserve">
+    <value>精修探测器倾斜方位角 φ（弧度）：探测器
+偏离与束垂直方向所绕的面内方向。
+会使衍射环变为椭圆。</value>
+  </data>
+  <data name="checkBoxTau.ToolTip" xml:space="preserve">
+    <value>精修探测器倾斜角 τ（弧度）：探测器平面
+偏离与束垂直方向的程度。非零时会使
+衍射环位置发生畸变。</value>
+  </data>
+  <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>精修 X 射线 / 中子波长（埃）。
+缩放波长会使每个德拜环在 2θ 上移动；
+仅在波长不确定时启用。</value>
+  </data>
+  <data name="checkBox2.ToolTip" xml:space="preserve">
+    <value>精修探测器 X 方向的像素大小（mm/pixel）。
+当前在平板模式下禁用；像素大小校准
+在 Gandolfi 选项卡中进行。</value>
+  </data>
+  <data name="checkBox3.ToolTip" xml:space="preserve">
+    <value>精修探测器 Y 方向的像素大小（mm/pixel）。
+当前在平板模式下禁用；像素大小校准
+请使用 Gandolfi 选项卡。</value>
+  </data>
+  <data name="checkBox4.ToolTip" xml:space="preserve">
+    <value>精修像素畸变 ξ（度）：探测器像素轴之间的
+剪切 / 非正交角。当前在平板模式下禁用。</value>
+  </data>
+  <data name="numericBoxCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>相机长度初始搜索步长（mm）。扫描会尝试此值的
+± 整数倍；当某次循环没有改善时自动缩小。
+越小越精细但越慢。</value>
+  </data>
+  <data name="numericBoxCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>相机长度搜索半宽，以步数计（整数，0-10）。
+扫描 ± 此数目的步长增量，故总网格 = 2N+1 点。
+越大搜索范围越宽但越慢。</value>
+  </data>
+  <data name="numericBoxPointXStep.ToolTip" xml:space="preserve">
+    <value>束中心 X 初始搜索步长（像素）。扫描尝试 ± 整数倍；
+无改善时自动缩小。越小中心校准越精细但越慢。</value>
+  </data>
+  <data name="numericBoxPointYStep.ToolTip" xml:space="preserve">
+    <value>束中心 Y 初始搜索步长（像素）。扫描尝试 ± 整数倍；
+无改善时自动缩小。</value>
+  </data>
+  <data name="numericBoxFootPointXRange.ToolTip" xml:space="preserve">
+    <value>束中心 X 搜索半宽，以步数计（整数，0-10）。
+围绕当前 X 扫描 ± 此数目的步长增量。
+越大范围越宽但越慢。</value>
+  </data>
+  <data name="numericBoxFootPointYRange.ToolTip" xml:space="preserve">
+    <value>束中心 Y 搜索半宽，以步数计
+（整数，0-10）。围绕当前 Y 扫描
+± 此数目的步长增量。</value>
+  </data>
+  <data name="numericBoxPhiStep.ToolTip" xml:space="preserve">
+    <value>倾斜方位角 φ 初始搜索步长（度）。扫描尝试 ± 整数倍；
+无改善时自动缩小。</value>
+  </data>
+  <data name="numericBoxPhiRange.ToolTip" xml:space="preserve">
+    <value>倾斜方位角 φ 搜索半宽，以步数计
+（整数，0-10）。围绕当前 φ 扫描
+± 此数目的步长增量。</value>
+  </data>
+  <data name="numericBoxTauStep.ToolTip" xml:space="preserve">
+    <value>倾斜角 τ 初始搜索步长（度）。扫描尝试 ± 整数倍；
+无改善时自动缩小。</value>
+  </data>
+  <data name="numericBoxTauRange.ToolTip" xml:space="preserve">
+    <value>倾斜角 τ 搜索半宽，以步数计
+（整数，0-10）。围绕当前 τ 扫描
+± 此数目的步长增量。</value>
+  </data>
+  <data name="numericBoxWaveLengthStep.ToolTip" xml:space="preserve">
+    <value>波长初始搜索步长（埃）。
+注意：内部按 0.1x 应用。扫描尝试 ± 整数倍；
+无改善时自动缩小。</value>
+  </data>
+  <data name="numericBoxWaveLengthRange.ToolTip" xml:space="preserve">
+    <value>波长搜索半宽，以步数计
+（整数，0-10）。围绕当前波长扫描
+± 此数目的步长增量。</value>
+  </data>
+  <data name="numericBox2.ToolTip" xml:space="preserve">
+    <value>像素大小 X 搜索步长（mm/pixel）。
+在平板模式下禁用；像素大小校准
+在 Gandolfi 选项卡中进行。</value>
+  </data>
+  <data name="numericBox3.ToolTip" xml:space="preserve">
+    <value>像素大小 Y 搜索步长（mm/pixel）。
+在平板模式下禁用；像素大小校准
+请使用 Gandolfi 选项卡。</value>
+  </data>
+  <data name="numericBox4.ToolTip" xml:space="preserve">
+    <value>像素畸变 ξ 搜索步长（度）。
+在平板模式下禁用。</value>
+  </data>
+  <data name="numericBox5.ToolTip" xml:space="preserve">
+    <value>像素大小 X 搜索半宽，以步数计。
+在平板模式下禁用。</value>
+  </data>
+  <data name="numericBox6.ToolTip" xml:space="preserve">
+    <value>像素大小 Y 搜索半宽，以步数计。
+在平板模式下禁用。</value>
+  </data>
+  <data name="numericBox7.ToolTip" xml:space="preserve">
+    <value>像素畸变 ξ 搜索半宽，以步数计。
+在平板模式下禁用。</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>各参数的初始搜索步长。
+穷举扫描以此值的 ± 整数倍移动，
+并在某次循环没有改善时
+自动缩小步长。</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>各参数的搜索半宽，以步数计。
+扫描 ± 此数目的步长增量（网格 = 2N+1 点）。
+设为 0 则禁用该参数。</value>
+  </data>
+  <data name="numericBoxIteration.ToolTip" xml:space="preserve">
+    <value>精修循环次数（1-100）。每次循环将网格
+重新以当前最优为中心，并在无改善时缩小
+步长，使几何逐步收敛。</value>
+  </data>
+  <data name="numericBoxFittingRange.ToolTip" xml:space="preserve">
+    <value>围绕每个计算衍射环的峰拟合窗口半宽，
+以 2θ 度计。过小会漏掉峰；过大会引入
+相邻峰 / 背景。更改时会重新拟合。</value>
+  </data>
+  <data name="numericBoxWeight.ToolTip" xml:space="preserve">
+    <value>代价函数权重，用于在峰高与 2θ（d 间距）
+偏差之间取得平衡：cost = devThetaSq +
+Weight/height。越高越偏向更高更锐的衍射环。</value>
+  </data>
+  <data name="buttonOptimize.ToolTip" xml:space="preserve">
+    <value>启动穷举精修：扫描已启用的参数
+（相机长度、中心、倾斜、波长），以最佳
+拟合标准物的德拜环。使用“停止”可中止。</value>
+  </data>
+  <data name="buttonStop.ToolTip" xml:space="preserve">
+    <value>中止正在运行的优化，并将参数、斑点掩模
+和积分范围恢复到按下“优化”之前的值。</value>
+  </data>
+  <data name="buttonGetProfile.ToolTip" xml:space="preserve">
+    <value>以当前几何重新计算一维径向图谱
+（强度对 2θ），并叠加标准物的计算衍射环
+位置，但不进行精修。</value>
+  </data>
+  <data name="checkBox1.ToolTip" xml:space="preserve">
+    <value>假定为方形像素：精修时约束
+像素大小 X = Y，而非独立拟合两者。</value>
+  </data>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value>进度报告（只读）：当前循环、迄今最优的
+相机长度、中心、倾斜、波长
+（附带 Changed/Unchanged）、当前步长
+以及最佳拟合得分。</value>
+  </data>
+  <data name="graphControl1.ToolTip" xml:space="preserve">
+    <value>图谱图：强度对 2θ，红线标出计算的
+德拜环位置和拟合峰。双击某条线可将
+该衍射从拟合中移除。</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.ToolTip" xml:space="preserve">
+    <value>在 Gandolfi 扫描中精修相机长度
+（样品到探测器距离，mm）。与
+Gandolfi 半径一同扫描。</value>
+  </data>
+  <data name="checkBoxPixelSize.ToolTip" xml:space="preserve">
+    <value>在 Gandolfi 扫描中精修探测器像素大小
+X 和 Y（mm/pixel）。影响衍射环的
+d 间距比例。</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>在 Gandolfi 扫描中精修束中心位置
+X 和 Y（像素）。改变衍射环中心
+在探测器上的位置。</value>
+  </data>
+  <data name="checkBoxIPTilt.ToolTip" xml:space="preserve">
+    <value>在 Gandolfi 扫描中精修成像板 (IP) 倾斜角
+τ 和 φ（度）。倾斜 = 探测器与束不垂直。</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>精修 Gandolfi 半径（mm）：弯曲成像板 /
+Gandolfi 相机的半径。影响衍射环位置的
+曲率校正。</value>
+  </data>
+  <data name="numericUpDownCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的相机长度初始搜索步长（mm）。
+尝试 ± 整数倍；当某次循环没有改善时
+自动缩小。</value>
+  </data>
+  <data name="numericUpDownPixelSizeStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的像素大小初始搜索步长
+（mm/pixel）。尝试 ± 整数倍；
+无改善时自动缩小。</value>
+  </data>
+  <data name="numericUpDownCenterPositionStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的束中心初始搜索步长
+（像素）。尝试 ± 整数倍；
+无改善时自动缩小。</value>
+  </data>
+  <data name="numericUpDownIPTiltStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的倾斜（τ 和 φ）初始搜索步长
+（度）。尝试 ± 整数倍；无改善时自动缩小。</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusStep.ToolTip" xml:space="preserve">
+    <value>Gandolfi 半径初始搜索步长（mm）。尝试
+± 整数倍；无改善时自动缩小。</value>
+  </data>
+  <data name="numericUpDownCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的相机长度搜索半宽，
+以步数计（整数，0-10）。扫描 ± 此数目的
+增量。设为 0 则禁用。</value>
+  </data>
+  <data name="numericUpDownPixelSizeRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的像素大小搜索半宽，以步数计
+（整数，0-10）。扫描 ± 此数目的增量。</value>
+  </data>
+  <data name="numericUpDownCenterPositionRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的束中心搜索半宽，
+以步数计（整数，0-10）。在 X 和 Y 上
+扫描 ± 此数目的增量。</value>
+  </data>
+  <data name="numericUpDownTiltRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 扫描的倾斜（τ/φ）搜索半宽，
+以步数计（整数，0-10）。扫描
+± 此数目的增量。</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusRange.ToolTip" xml:space="preserve">
+    <value>Gandolfi 半径搜索半宽，以步数计
+（整数，0-10）。围绕当前半径扫描
+± 此数目的增量。</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>各 Gandolfi 参数的初始搜索步长。
+扫描以此值的 ± 整数倍移动，
+并在无改善时自动缩小步长。</value>
+  </data>
+  <data name="label23.ToolTip" xml:space="preserve">
+    <value>各 Gandolfi 参数的搜索半宽，以步数计。
+扫描 ± 此数目的步长增量。设为 0
+则禁用该参数。</value>
+  </data>
+  <data name="numericUpDownIterationGandolfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi 精修循环次数。每次循环以当前
+最优为中心，并在无改善时缩小步长，
+使几何逐步收敛。</value>
+  </data>
+  <data name="numericUpDownFittingRangeForGandolfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi 拟合中围绕每个计算衍射环的
+峰拟合窗口半宽（2θ 度，0.2-1）。过小会
+漏掉峰；过大会引入相邻峰。</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value>Gandolfi 精修循环次数（见迭代框）。
+循环越多，几何收敛越彻底，但耗时越长。</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.ToolTip" xml:space="preserve">
+    <value>启动 Gandolfi 穷举精修：扫描已启用的参数
+（相机长度、像素大小、中心、倾斜、
+Gandolfi 半径），以最佳拟合标准物的德拜环。</value>
+  </data>
+  <data name="toolStripProgressBar1.ToolTip" xml:space="preserve">
+    <value>优化进度：所有循环中已完成的
+参数网格扫描比例。</value>
+  </data>
+  <data name="toolStripStatusLabel1.ToolTip" xml:space="preserve">
+    <value>状态行：正在运行的优化的每步扫描耗时、
+完成百分比、已用时间和预计剩余时间。</value>
+  </data>
+</root>

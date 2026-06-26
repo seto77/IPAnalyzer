@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>Carica automaticamente le nuove immagini</value>
+  </data>
+  <data name="radioButtonNotEqual.Text" xml:space="preserve">
+    <value>≠</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Procedura automatica</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.Text" xml:space="preserve">
+    <value>Una volta caricata la nuova immagine,
+ esegui la seguente sequenza</value>
+  </data>
+  <data name="checkBoxNumberMatching.Text" xml:space="preserve">
+    <value>Corrispondenza di pattern</value>
+  </data>
+  <data name="checkBoxKeywords.Text" xml:space="preserve">
+    <value>Parola chiave</value>
+  </data>
+  <data name="buttonSetDirectory.Text" xml:space="preserve">
+    <value>Imposta</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cartella da monitorare</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Macro</value>
+  </data>
+  <data name="numericBoxDivisor.HeaderText" xml:space="preserve">
+    <value>Num. nel nome file %</value>
+  </data>
+  <data name="checkBoxAutoLoad.ToolTip" xml:space="preserve">
+    <value>Avvia/interrompe il monitoraggio della cartella
+selezionata per nuovi file immagine e carica
+automaticamente ogni nuovo file appena compare
+(impostare prima una cartella valida).</value>
+  </data>
+  <data name="textBoxDiectory.ToolTip" xml:space="preserve">
+    <value>Percorso completo della cartella da monitorare per
+nuovi file di immagini di diffrazione. Usare il pulsante
+Imposta per sfogliare o digitare un percorso. Le
+sottocartelle vengono monitorate in modo ricorsivo.</value>
+  </data>
+  <data name="buttonSetDirectory.ToolTip" xml:space="preserve">
+    <value>Sfoglia per selezionare la cartella da monitorare
+e inserisce il suo percorso nella casella.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Percorso completo della cartella da monitorare per
+nuovi file di immagini di diffrazione. Usare il pulsante
+Imposta per sfogliare o digitare un percorso. Le
+sottocartelle vengono monitorate in modo ricorsivo.</value>
+  </data>
+  <data name="checkBoxNumberMatching.ToolTip" xml:space="preserve">
+    <value>Filtra i file caricati automaticamente in base al
+numero finale nel nome file: carica solo quando
+(numero mod divisore) è uguale/diverso dal resto,
+secondo l'interruttore =/=.</value>
+  </data>
+  <data name="radioButtonEqual.ToolTip" xml:space="preserve">
+    <value>Modalità uguale: carica il file solo quando
+(numero finale mod divisore) è uguale al resto.</value>
+  </data>
+  <data name="radioButtonNotEqual.ToolTip" xml:space="preserve">
+    <value>Modalità diverso: carica il file solo quando
+(numero finale mod divisore) NON è uguale al resto.</value>
+  </data>
+  <data name="numericBoxDivisor.ToolTip" xml:space="preserve">
+    <value>Divisore per il test sul numero del nome file: il file
+supera il test quando (numero finale mod questo
+divisore) è uguale al resto. Intero &amp;gt;0; 0 non
+corrisponde mai. Predefinito 3.</value>
+  </data>
+  <data name="numericBoxRemainder.ToolTip" xml:space="preserve">
+    <value>Resto di riferimento per il test sul numero del nome
+file: il file supera il test quando (numero finale mod
+divisore) è uguale a questo valore. Intero in
+0..divisore-1. Predefinito 2.</value>
+  </data>
+  <data name="checkBoxKeywords.ToolTip" xml:space="preserve">
+    <value>Filtra i file caricati automaticamente per nome:
+carica solo i file il cui nome contiene il testo
+chiave inserito a destra.</value>
+  </data>
+  <data name="textBoxKeyword.ToolTip" xml:space="preserve">
+    <value>Sottostringa che il nome file deve contenere per
+essere caricato automaticamente (distingue maiuscole/
+minuscole). Usata solo quando la casella del filtro
+per parola chiave è attivata.</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.ToolTip" xml:space="preserve">
+    <value>Se selezionato, esegue automaticamente i passaggi
+selezionati qui sotto (contrasto automatico, trova
+centro, maschera spot, ottieni profilo, macro) ogni
+volta che termina il caricamento di una nuova immagine.</value>
+  </data>
+  <data name="checkedListBoxAuto.ToolTip" xml:space="preserve">
+    <value>Passaggi eseguiti dopo il caricamento di ogni immagine
+(dall'alto in basso): Contrasto automatico (luminosità
+automatica), Trova centro (rilevamento del centro del
+fascio), Maschera spot (rimuove gli spot di cristallo
+singolo), Ottieni profilo (integra gli anelli in un
+profilo 2theta 1D), Esegui macro.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Seleziona la macro da eseguire come ultimo passaggio
+della procedura automatica (solo quando 'Esegui macro'
+è selezionato).</value>
+  </data>
+  <data name="comboBoxMacro.ToolTip" xml:space="preserve">
+    <value>Scegli quale macro salvata viene eseguita come ultimo
+passaggio della sequenza. Abilitato solo quando
+'Esegui macro' è selezionato nell'elenco sopra.</value>
+  </data>
+</root>

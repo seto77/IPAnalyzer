@@ -1,0 +1,1081 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxScaleLabel.Text" xml:space="preserve">
+    <value>Mostrar etiquetas</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Coeficiente</value>
+  </data>
+  <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
+    <value>Modo de máscara manual</value>
+  </data>
+  <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
+    <value>TSV</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
+    <value>Mantener contraste de imagen </value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Tipo de detector</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Opciones de línea de escala</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Rectángulo</value>
+  </data>
+  <data name="radioButtonChiClockwise.Text" xml:space="preserve">
+    <value>Sentido horario</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Paso del ángulo de sector (paso de barrido)</value>
+  </data>
+  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
+    <value>Después de "Obtener perfil"</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
+    <value>Última carpeta + nombre de archivo</value>
+  </data>
+  <data name="buttonMaskAll.Text" xml:space="preserve">
+    <value>Enmascarar todo</value>
+  </data>
+  <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Radio de Gandolfi</value>
+  </data>
+  <data name="tabPageIP.Text" xml:space="preserve">
+    <value>Condición del detector</value>
+  </data>
+  <data name="radioButtonRadialDspacing.Text" xml:space="preserve">
+    <value>d-espaciado</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>(muestra a punto directo)</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Anchura del anillo</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Heredar configuración de máscara</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Ángulo</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>Rectángulo</value>
+  </data>
+  <data name="buttonMaskRight.Text" xml:space="preserve">
+    <value>Derecha</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Unidad e intervalo horizontal (distancia desde el punto directo)</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Patrón de salida</value>
+  </data>
+  <data name="radioButton3.Text" xml:space="preserve">
+    <value>d-espaciado</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
+    <value>Enviar también la imagen desplegada</value>
+  </data>
+  <data name="radioButtonGandlfi.Text" xml:space="preserve">
+    <value>Gandolfi</value>
+  </data>
+  <data name="radioButtonAsCSVformat.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
+    <value>Región de integración</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Paso vertical (ángulo de sector) </value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Opciones de imagen desplegada</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
+    <value>Ambos lados</value>
+  </data>
+  <data name="groupBox18.Text" xml:space="preserve">
+    <value>Opciones de carga de imagen</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Coordenadas</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Opciones de enmascarar puntos</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>División</value>
+  </data>
+  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
+    <value>Opciones de máscara</value>
+  </data>
+  <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
+    <value>Nombre de archivo</value>
+  </data>
+  <data name="groupBoxCameaLength.Text" xml:space="preserve">
+    <value>Longitud de cámara 1</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
+    <value>Mantener intervalo de visualización</value>
+  </data>
+  <data name="buttonMaskLeft.Text" xml:space="preserve">
+    <value>Izquierda</value>
+  </data>
+  <data name="radioButtonManualRectangle.Text" xml:space="preserve">
+    <value>Rectángulo (arrastrar: definir vértices diagonales)</value>
+  </data>
+  <data name="radioButtonChiRight.Text" xml:space="preserve">
+    <value>Derecha</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>Punto directo</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Radio del anillo</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>(muestra a pie)</value>
+  </data>
+  <data name="buttonUnmaskAll.Text" xml:space="preserve">
+    <value>Desenmascarar todo</value>
+  </data>
+  <data name="radioButtonManualCircle.Text" xml:space="preserve">
+    <value>Círculo (arrastrar: definir centro &amp;amp;&amp;amp; radio)</value>
+  </data>
+  <data name="radioButtonRadialAngle.Text" xml:space="preserve">
+    <value>Ángulo</value>
+  </data>
+  <data name="buttonInvertMask.Text" xml:space="preserve">
+    <value>Invertir máscara</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Ángulo inicial</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
+    <value>Corregir polarización lineal (es decir, polarizado lineal → no polarizado)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Desviación de criterio
+ para "Enmascarar puntos"</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>(nota: χ es el ángulo azimutal definido en la pestaña varios)</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Opciones de fondo</value>
+  </data>
+  <data name="radioButtonCircle.Text" xml:space="preserve">
+    <value>Círculo</value>
+  </data>
+  <data name="radioButtonRadial.Text" xml:space="preserve">
+    <value>Integración radial (patrón de pastel)</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
+    <value>En el directorio elegido cada vez</value>
+  </data>
+  <data name="groupBox17.Text" xml:space="preserve">
+    <value>Opciones de guardado para imagen secuencial o división azimutal</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Configuración de imagen de referencia</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Rotación:</value>
+  </data>
+  <data name="radioButtonManualSpot.Text" xml:space="preserve">
+    <value>Punto (clic izq./der.: añadir/quitar puntos)</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
+    <value>d-espaciado</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Paso</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>píxeles desde los bordes</value>
+  </data>
+  <data name="radioButtonManualPolygon.Text" xml:space="preserve">
+    <value>Polígono (clic: añadir vértices,
+                 doble clic: finalizar)</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="comboBoxRectangleDirection.Text" xml:space="preserve">
+    <value>Completo</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>Anchura de línea</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Posición del pie</value>
+  </data>
+  <data name="checkBoxThresholdMax.Text" xml:space="preserve">
+    <value>Por encima de la intensidad de</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Paso &amp;amp;&amp;amp; intervalo de integración</value>
+  </data>
+  <data name="checkBoxSaveFile.Text" xml:space="preserve">
+    <value>Guardar perfil </value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
+    <value>Excluir píxeles enmascarados</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Media máscara</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Distancia de película</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value> (clic izq./der.: añadir/eliminar puntos,
+ doble clic: definir máscara)</value>
+  </data>
+  <data name="checkBoxOmitSpots.Text" xml:space="preserve">
+    <value>Puntos enmascarados</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Píxeles excepcionales</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Longitud de cámara 2 </value>
+  </data>
+  <data name="radioButtonChiTop.Text" xml:space="preserve">
+    <value>Superior</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.Text" xml:space="preserve">
+    <value>En un solo archivo 
+(excepto GSAS)</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="radioButtonConcentricLength.Text" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(normalmente cero)</value>
+  </data>
+  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
+    <value>Propiedad de integración</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.Text" xml:space="preserve">
+    <value>Debye - Scherrer</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Ángulo final</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Anchura de línea</value>
+  </data>
+  <data name="radioButtonConcentric.Text" xml:space="preserve">
+    <value>Integración concéntrica (dispersiva en ángulo de dispersión)</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
+    <value>En archivos separados</value>
+  </data>
+  <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
+    <value>Posición del punto directo</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="radioButtonChiLeft.Text" xml:space="preserve">
+    <value>Izquierda</value>
+  </data>
+  <data name="checkBoxFixCenter.Text" xml:space="preserve">
+    <value>Fijar centro</value>
+  </data>
+  <data name="groupBox16.Text" xml:space="preserve">
+    <value>Directorio de guardado</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
+    <value>Ruta completa</value>
+  </data>
+  <data name="buttonMaskTop.Text" xml:space="preserve">
+    <value>Superior</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
+    <value>Definir la imagen actual como fondo</value>
+  </data>
+  <data name="radioButtonChiBottom.Text" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="groupBox19.Text" xml:space="preserve">
+    <value>Opciones de nombre de imagen</value>
+  </data>
+  <data name="radioButtonFlatPanel.Text" xml:space="preserve">
+    <value>Panel plano</value>
+  </data>
+  <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
+    <value>Inclinación</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
+    <value>Sentido antihorario</value>
+  </data>
+  <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
+    <value>Ángulo</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>Enviar datos de perfil a PDIndexer mediante el portapapeles</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
+    <value>En el mismo directorio de la imagen</value>
+  </data>
+  <data name="radioButtonBraggBrentano.Text" xml:space="preserve">
+    <value>Bragg - Brentano</value>
+  </data>
+  <data name="groupBoxPixelShape.Text" xml:space="preserve">
+    <value>Forma del píxel</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
+    <value>Heredar el archivo de máscara</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
+    <value>GSAS</value>
+  </data>
+  <data name="radioButtonAsPDIformat.Text" xml:space="preserve">
+    <value>PDI</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Opciones de búsqueda de centro</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ancho de banda</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>Corrección esférica</value>
+  </data>
+  <data name="groupBox15.Text" xml:space="preserve">
+    <value>Formato de archivo</value>
+  </data>
+  <data name="radioButtonManualSpline.Text" xml:space="preserve">
+    <value>Curva spline</value>
+  </data>
+  <data name="tabPageXRay.Text" xml:space="preserve">
+    <value>Fuente de ondas</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Paso</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Propiedad</value>
+  </data>
+  <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
+    <value>Heredar el estado de máscara actual</value>
+  </data>
+  <data name="buttonMaskBottom.Text" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="checkBoxTest.Text" xml:space="preserve">
+    <value>Eliminar Kα2 (si se selecciona la línea Kα1)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Longitud de onda</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Opciones del eje chi (χ)</value>
+  </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>Ángulo</value>
+  </data>
+  <data name="checkBoxThresholdMin.Text" xml:space="preserve">
+    <value>Por debajo de la intensidad de</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>Pie</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
+    <value>Inverso del radio</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.HeaderText" xml:space="preserve">
+    <value>Intervalo de ajuste de pico (2θ)</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.HeaderText" xml:space="preserve">
+    <value>Área de búsqueda 　±</value>
+  </data>
+  <data name="numericBoxTest.HeaderText" xml:space="preserve">
+    <value>Kα2/Kα1</value>
+  </data>
+  <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Radio de la cámara Gandolfi (mm): radio del
+detector curvo/cilíndrico. Se usa solo en
+modo Gandolfi para asignar la posición del píxel a 2theta.</value>
+  </data>
+  <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
+    <value>Aplica la convención de intensidad Bragg-Brentano
+(reflexión, parafocalización) al patrón 1D de salida,
+p. ej. para comparar con un difractómetro de laboratorio.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
+    <value>Paso del eje horizontal de la imagen desplegada
+(ancho de bin) en la unidad seleccionada; define la
+resolución 2theta/d a lo largo de la imagen tipo pastel.</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
+    <value>Aplica la convención de intensidad Debye-Scherrer
+(anillos de polvo en transmisión) al patrón 1D de salida:
+el modo habitual para datos de detector de área 2D.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>Usa una forma rectangular (cuadrada) para las máscaras
+de puntos manuales.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>Usa la longitud del detector (mm) para el eje
+horizontal de la imagen desplegada.</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
+    <value>Guarda los perfiles automáticamente en la misma
+carpeta que la imagen de origen, sin preguntar.</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
+    <value>Etiqueta las imágenes con el nombre de la carpeta
+superior más el nombre de archivo (p. ej. run3/img001.tif),
+para distinguir archivos con el mismo nombre.</value>
+  </data>
+  <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Borra la imagen de fondo almacenada para que
+no se aplique ninguna sustracción de fondo.</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
+    <value>Etiqueta las imágenes con su ruta de archivo completa.</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
+    <value>Número de bins de azimut (χ) para la imagen
+desplegada tipo pastel (1-2048, predet. 720); define la
+resolución vertical a lo largo del eje de azimut.</value>
+  </data>
+  <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
+    <value>Geometría de cámara Gandolfi (película
+cilíndrica/curva); muestra el campo del radio
+Gandolfi y desactiva el modo de pie.</value>
+  </data>
+  <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
+    <value>Paso del barrido azimutal (grados) para la integración
+radial: separación angular entre puntos de salida
+alrededor del anillo. Menor = resolución χ más fina.</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
+    <value>Envía también la imagen desplegada (tipo pastel /
+2theta-frente-a-χ desplegada azimutalmente)
+a PDIndexer, no solo el perfil 1D.</value>
+  </data>
+  <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
+    <value>Guarda el perfil en formato PDI (el formato nativo de
+PDIndexer).</value>
+  </data>
+  <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Ruta de la imagen usada actualmente como
+fondo sustraído (solo lectura);
+vacío cuando no se ha definido ningún fondo.</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
+    <value>Ángulo inicial del sector (grados, azimut χ).
+Inicio del intervalo azimutal en forma de porción
+que se integra; se combina con el ángulo final.</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
+    <value>Guarda cada perfil de una serie secuencial/azimutal
+como un archivo independiente.</value>
+  </data>
+  <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
+    <value>Ancho de bin del perfil (paso) en la unidad
+seleccionada. Paso menor = resolución más fina
+y más puntos, pero bins con más ruido.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
+    <value>Centro del haz Y (punto directo) en píxeles
+del detector. Define el origen del patrón de anillos;
+desplazarlo mueve el centro de integración.</value>
+  </data>
+  <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
+    <value>Sitúa el origen del azimut (χ = 0) hacia la derecha de
+la imagen. Define dónde comienza la integración azimutal.</value>
+  </data>
+  <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
+    <value>Enmascara (excluye de la integración) toda
+la mitad izquierda de la imagen. Se suma a la
+máscara existente; usa Desenmascarar todo para borrar.</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
+    <value>Intervalo de ajuste de picos (2theta grados) alrededor de
+cada anillo de Debye usado al refinar el centro; amplíalo
+si los picos son anchos, redúcelo para evitar vecinos.</value>
+  </data>
+  <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
+    <value>Longitud de cámara 2: distancia muestra-pie (mm), la
+distancia perpendicular al plano del detector inclinado
+(= CL1·cos tau). No la longitud muestra-punto directo.</value>
+  </data>
+  <data name="radioButtonCircle.ToolTip" xml:space="preserve">
+    <value>Usa una forma circular para las máscaras de puntos
+manuales.</value>
+  </data>
+  <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
+    <value>Muestra etiquetas con valores numéricos (2theta / azimut)
+junto a las líneas de escala superpuestas en la imagen.</value>
+  </data>
+  <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
+    <value>Herramienta de máscara manual: Punto. El clic izquierdo añade
+y el derecho quita una máscara de punto del tamaño seleccionado
+en el cursor.</value>
+  </data>
+  <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Tamaño de píxel del detector en X (mm/píxel). Convierte
+las posiciones de píxel a distancia real; debe coincidir con la
+especificación del detector o el escalado de 2theta será erróneo.</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Tamaño de punto manual como potencia de dos: diámetro
+= 2^valor píxeles (0-10 -&amp;gt; 1..1024 px). Un valor
+mayor enmascara un punto más grande por clic.</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
+    <value>Mantiene el zoom / intervalo de visualización actual
+(desplazamiento y zoom) al cargar la siguiente imagen, en
+lugar de ajustar la vista a cada nueva imagen.</value>
+  </data>
+  <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
+    <value>Sitúa el origen del azimut (χ =
+0) hacia la parte superior de la imagen.</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
+    <value>Al cargar la siguiente imagen, comienza
+sin máscara (descarta cualquier máscara actual).</value>
+  </data>
+  <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
+    <value>Inicio del intervalo del perfil, en la unidad
+seleccionada (2theta grados, longitud mm o espaciado d en
+Angstrom). Límite inferior del perfil 1D de salida.</value>
+  </data>
+  <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
+    <value>Corrección de curvatura esférica para una placa de imagen
+curva (normalmente 0). Compensa la distorsión dependiente del
+radio cuando la IP no es plana.</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
+    <value>Densidad de las líneas de escala 2theta/azimut
+superpuestas en la imagen: Ninguna, Gruesa, Media
+o Fina (más líneas = cuadrícula más fina).</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>Integra sobre un sector angular (porción)
+de los anillos, entre los ángulos de azimut inicial
+y final, en lugar de un rectángulo.</value>
+  </data>
+  <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
+    <value>Usa el ángulo de dispersión 2theta (grados) como eje x
+del perfil; Inicio/Fin/Paso se interpretan en grados.</value>
+  </data>
+  <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
+    <value>Ancho de la máscara de borde en píxeles (0-256): grosor
+de la franja de borde excluida de la integración
+cuando 'píxeles desde los bordes' está activado.</value>
+  </data>
+  <data name="radioButtonRadial.ToolTip" xml:space="preserve">
+    <value>Integración radial (tipo pastel): barre el azimut a un radio
+de anillo fijo para obtener intensidad frente al ángulo de azimut χ:
+revela textura/orientación preferente alrededor de un anillo.</value>
+  </data>
+  <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
+    <value>Al cargar la siguiente imagen, mantiene la máscara que está
+actualmente en memoria (reutiliza los mismos píxeles enmascarados).</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
+    <value>Ángulo de rotación de la banda (grados, 0-360). Orientación
+azimutal de la franja de integración rectangular;
+editable solo cuando Dirección = Libre.</value>
+  </data>
+  <data name="buttonMaskRight.ToolTip" xml:space="preserve">
+    <value>Enmascara (excluye de la integración) toda
+la mitad derecha de la imagen. Se suma a la máscara existente.</value>
+  </data>
+  <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
+    <value>Define un color para las líneas de escala 2θ</value>
+  </data>
+  <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
+    <value>Ancho del trazo (en píxeles) de las líneas de escala superpuestas;
+arrastra a la derecha para líneas de cuadrícula más gruesas y visibles.</value>
+  </data>
+  <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
+    <value>Entra en el modo de enmascarado manual para poder dibujar
+regiones de máscara (punto/círculo/rectángulo/polígono/spline)
+directamente sobre la imagen con el ratón.</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
+    <value>Al cargar la siguiente imagen, aplica la máscara guardada
+en el archivo de máscara en lugar de la máscara en memoria.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
+    <value>Centro del haz X (punto directo) en píxeles del detector. Define
+el origen de todos los cálculos de anillos 2theta/d/q;
+desplazarlo mueve el centro de integración.</value>
+  </data>
+  <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
+    <value>Geometría de detector de panel plano / placa de imagen
+(detector planar casi perpendicular al haz).
+Activa las opciones de inclinación y modo de pie.</value>
+  </data>
+  <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
+    <value>Orientación de la banda de integración rectangular: anillo
+completo, un lado (Arriba/Abajo/Izquierda/Derecha), Vertical/Horizontal
+simétrica, o Libre (ángulo personalizado).</value>
+  </data>
+  <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
+    <value>Radio del anillo a barrer para la integración radial
+(tipo pastel), indicado como 2theta (grados) o espaciado d
+(Angstrom) según el selector Ángulo/espaciado d.</value>
+  </data>
+  <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
+    <value>Punto de pie X en píxeles: donde la perpendicular
+de la muestra encuentra el detector inclinado. Acoplado
+al punto directo X mediante los ángulos de inclinación.</value>
+  </data>
+  <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
+    <value>Excluye píxeles con cuentas bajas: ignora los píxeles
+cuya intensidad está por debajo del valor de la derecha.
+Úsalo para descartar píxeles muertos/solo de fondo.</value>
+  </data>
+  <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
+    <value>Punto de pie Y en píxeles: donde la perpendicular
+de la muestra encuentra el detector inclinado. Acoplado
+al punto directo Y mediante los ángulos de inclinación.</value>
+  </data>
+  <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
+    <value>Factor de escala del fondo (0-10, predet. 1):
+mostrado = imagen - factor x fondo. Auméntalo para
+sustraer más fondo, redúcelo para sustraer menos.</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
+    <value>Umbral de intensidad inferior (cuentas). Los píxeles por
+debajo de este valor se excluyen de la integración; solo
+activo cuando 'Por debajo de la intensidad de' está marcado.</value>
+  </data>
+  <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
+    <value>Excluye píxeles saturados: ignora los píxeles cuyas
+cuentas superan el valor de la derecha durante
+la integración. Úsalo para descartar píxeles con blooming/calientes.</value>
+  </data>
+  <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
+    <value>Excluye los puntos enmascarados de la integración: los píxeles
+marcados como puntos (p. ej. reflexiones de monocristal, polvo) se
+omiten para que no contaminen el perfil de polvo.</value>
+  </data>
+  <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
+    <value>Azimut de inclinación phi (grados): dirección en el plano del
+eje de inclinación del detector. Combinado con tau,
+corrige un detector no perpendicular al haz.</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>Define la geometría del detector a partir del punto del haz
+directo: introduce el píxel del punto directo y la Longitud
+de cámara 1 (distancia muestra-punto directo).
+Úsalo cuando el haz incide en el detector.</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
+    <value>Ignora los píxeles enmascarados al buscar/refinar
+el centro del haz, para que los puntos enmascarados y las
+regiones defectuosas no sesguen el resultado.</value>
+  </data>
+  <data name="numericBoxTest.ToolTip" xml:space="preserve">
+    <value>Relación de intensidad Kα2/Kα1 usada para la
+corrección de eliminación de Kα2 (intervalo 0-2,
+típicamente ~0,5). Mayor sustrae más Kα2.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
+    <value>Valor final del eje horizontal de la imagen desplegada (0-180),
+en la unidad seleccionada. Borde derecho de la imagen tipo pastel.</value>
+  </data>
+  <data name="buttonMaskAll.ToolTip" xml:space="preserve">
+    <value>Enmascara toda la imagen (todos los píxeles excluidos
+de la integración). Suele usarse antes de
+desenmascarar manualmente solo la región de interés.</value>
+  </data>
+  <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
+    <value>Guarda el perfil en formato GSAS para
+refinamiento Rietveld; ten en cuenta que la opción
+'un archivo' no está disponible en este formato.</value>
+  </data>
+  <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
+    <value>Ancho de banda en píxeles (máx. 10000): semigrosor
+de la franja de integración rectangular a través de la
+línea del centro del haz; más ancho = más píxeles promediados.</value>
+  </data>
+  <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
+    <value>Guarda automáticamente el perfil 1D extraído
+en un archivo después de cada 'Obtener perfil'. Activa
+las opciones de formato de archivo y directorio de abajo.</value>
+  </data>
+  <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
+    <value>Enmascara (excluye de la integración) toda
+la mitad inferior de la imagen. Se suma a la máscara existente.</value>
+  </data>
+  <data name="checkBoxTest.ToolTip" xml:space="preserve">
+    <value>Elimina la contribución Kα2 del perfil
+(corrección de Rachinger) cuando se selecciona una línea de tubo
+Kα1, dejando un patrón únicamente de Kα1.</value>
+  </data>
+  <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
+    <value>Herramienta de máscara manual: Polígono. Haz clic para añadir
+vértices, doble clic para cerrar y enmascarar el área encerrada.</value>
+  </data>
+  <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Ángulo de no ortogonalidad de píxel ksi (grados): cizalla/sesgo
+entre los ejes X e Y del detector. 0 = píxeles perfectamente
+rectangulares; corrige detectores distorsionados.</value>
+  </data>
+  <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
+    <value>Longitud de cámara 1: distancia muestra-punto directo
+(mm). Define la escala radio-de-píxel-a-2theta;
+una longitud mayor desplaza los anillos a 2theta menores.</value>
+  </data>
+  <data name="radioButton3.ToolTip" xml:space="preserve">
+    <value>Usa el espaciado d de la red (Angstrom) para
+el eje horizontal de la imagen desplegada.</value>
+  </data>
+  <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Tamaño de píxel del detector en Y (mm/píxel). Junto con
+el tamaño en X define la relación de aspecto del píxel usada en la geometría.</value>
+  </data>
+  <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
+    <value>Ancho de la banda de máscara spline en píxeles (1-50): grosor
+de la franja enmascarada dibujada a lo largo de la curva spline.</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
+    <value>Define que el ángulo de azimut χ aumente
+en sentido antihorario sobre la imagen
+(lo opuesto a la convención horaria).</value>
+  </data>
+  <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
+    <value>Enmascara el borde de la imagen: excluye una franja de N
+píxeles (definida a la derecha) de cada borde durante
+la integración, eliminando artefactos del borde del detector.</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
+    <value>Mantiene el contraste de intensidad actual (escalado de
+visualización mín./máx.) al cargar la siguiente
+imagen, en lugar de reescalar automáticamente cada imagen.</value>
+  </data>
+  <data name="radioButton4.ToolTip" xml:space="preserve">
+    <value>Usa el ángulo de dispersión 2theta (grados)
+para el eje horizontal de la imagen desplegada.</value>
+  </data>
+  <data name="buttonInvertMask.ToolTip" xml:space="preserve">
+    <value>Invierte la máscara: los píxeles antes enmascarados
+pasan a estar activos y los activos pasan a estar enmascarados.</value>
+  </data>
+  <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
+    <value>Herramienta de máscara manual: curva Spline. Haz clic para añadir
+puntos de control (el clic derecho los elimina); el doble clic
+enmascara una banda del ancho definido a lo largo de la curva.</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
+    <value>Usa el espaciado d de la red (Angstrom) como eje x
+del perfil; Inicio/Fin/Paso están en
+Angstroms. d = longitud de onda / (2 sin theta).</value>
+  </data>
+  <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
+    <value>Ángulo de inclinación tau (grados): cuánto se desvía el plano del
+detector de la perpendicular al haz. 0 = sin
+inclinación; un valor distinto hace los anillos elípticos hasta corregirlos.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>Define la geometría a partir del pie de la
+perpendicular (proyección de la normal de la muestra
+sobre un detector inclinado) y la Longitud de cámara
+2 (muestra-pie). Para paneles planos inclinados.</value>
+  </data>
+  <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
+    <value>Borra todas las máscaras: vuelve a incluir todos
+los píxeles en la integración. Deshace
+Enmascarar todo / media máscara / enmascarado de puntos.</value>
+  </data>
+  <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
+    <value>Sitúa el origen del azimut (χ =
+0) hacia la izquierda de la imagen.</value>
+  </data>
+  <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
+    <value>Integración concéntrica: produce un perfil 1D
+estándar (intensidad frente a 2theta, espaciado d o
+longitud) integrando alrededor de anillos de Debye completos.</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
+    <value>Ángulo final del sector (grados, azimut χ). Fin
+del intervalo azimutal en forma de porción
+que se integra; debe superar el ángulo inicial.</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
+    <value>Corrige las intensidades por la polarización lineal
+(sincrotrón) de los rayos X, convirtiendo el patrón
+medido a un equivalente no polarizado;
+afecta a las alturas relativas de los picos frente al azimut χ.</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
+    <value>Área de búsqueda del centro (píxeles/pasos,
+entero): radio alrededor del centro actual
+dentro del cual busca el localizador automático de
+centro. Mayor = búsqueda más amplia pero más lenta.</value>
+  </data>
+  <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
+    <value>Especifica el radio del anillo radial
+como espaciado d de la red (Angstrom).</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
+    <value>Umbral de intensidad superior (cuentas). Los píxeles
+por encima de este valor se excluyen de la integración;
+solo activo cuando 'Por encima de la intensidad de' está marcado.</value>
+  </data>
+  <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
+    <value>Herramienta de máscara manual: Rectángulo. Arrastra entre dos
+esquinas diagonales para enmascarar una región rectangular.</value>
+  </data>
+  <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
+    <value>Define el color de las líneas de escala
+de azimut (χ) superpuestas en la imagen.</value>
+  </data>
+  <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
+    <value>Usa la longitud de arco del detector (mm) como eje x
+del perfil; Inicio/Fin/Paso están en milímetros.</value>
+  </data>
+  <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
+    <value>Semiancho del anillo (rosquilla) alrededor del radio
+elegido que se integra en cada azimut, en
+2theta grados o espaciado d en Angstrom. Más ancho =
+más cuentas, menor resolución angular.</value>
+  </data>
+  <data name="pictureBox1.ToolTip" xml:space="preserve">
+    <value>Vista previa del eje de azimut (χ): muestra dónde
+está χ = 0 y en qué sentido aumenta χ con la
+configuración actual de dirección y rotación.</value>
+  </data>
+  <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Diámetro resultante del punto manual en píxeles (=
+2^tamaño). Casi de solo lectura; refleja el control deslizante de tamaño
+y el selector de tamaño de punto de la barra de herramientas principal.</value>
+  </data>
+  <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
+    <value>Sitúa el origen del azimut (χ = 0)
+hacia la parte inferior de la imagen.</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
+    <value>Integra la banda simétricamente a ambos lados del
+centro del haz (centrosimétrica), duplicando la
+región muestreada. Usado por los preajustes Vertical/Horizontal.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>Integra sobre una banda rectangular en lugar de
+un anillo completo; activa los controles de dirección, ángulo y
+ancho de banda para una región en forma de franja.</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
+    <value>Umbral de detección de puntos para 'Enmascarar puntos' automático,
+en desviaciones estándar por encima de la media local. Menor
+= enmascara más puntos; mayor = solo los más intensos.</value>
+  </data>
+  <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
+    <value>Especifica el radio del anillo radial como
+ángulo de dispersión 2theta (grados).</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
+    <value>Valor inicial del eje horizontal de la imagen desplegada
+(0-180), en 2theta grados / longitud / espaciado d según
+la selección de unidad. Borde izquierdo de la imagen tipo pastel.</value>
+  </data>
+  <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
+    <value>Guarda el perfil como CSV (valores separados por
+comas) para hojas de cálculo.</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
+    <value>Pregunta por el directorio de salida cada vez que se guarda
+un perfil.</value>
+  </data>
+  <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
+    <value>Fin del intervalo del perfil, en la unidad
+seleccionada (2theta grados / mm / Angstrom).
+Límite superior del perfil 1D de salida.</value>
+  </data>
+  <data name="buttonMaskTop.ToolTip" xml:space="preserve">
+    <value>Enmascara (excluye de la integración) toda
+la mitad superior de la imagen. Se suma a la máscara existente.</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
+    <value>Envía el perfil 1D extraído a PDIndexer (aplicación
+complementaria) a través del portapapeles tras cada integración.</value>
+  </data>
+  <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
+    <value>Mantiene fija la posición del centro del haz durante
+la búsqueda/refinamiento del centro, de modo que solo se optimizan
+los demás parámetros. Desactiva las opciones de área de búsqueda.</value>
+  </data>
+  <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
+    <value>Define que el ángulo de azimut χ aumente en sentido horario
+sobre la imagen. Establece la convención de signo para
+el desplegado azimutal y los ángulos de sector.</value>
+  </data>
+  <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
+    <value>Herramienta de máscara manual: Círculo. Arrastra desde el
+centro hacia afuera para enmascarar una región circular
+(el centro y el radio se definen con el arrastre).</value>
+  </data>
+  <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
+    <value>Etiqueta las imágenes guardadas/mostradas solo con el nombre
+de archivo (sin ruta).</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
+    <value>Guarda todos los perfiles de una serie secuencial/azimutal
+en un único archivo (no disponible para el formato GSAS).</value>
+  </data>
+  <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
+    <value>Guarda el perfil como TSV (valores separados por tabuladores).</value>
+  </data>
+  <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Usa la imagen cargada actualmente como
+fondo a sustraer de las imágenes posteriores
+(escalado por el coeficiente).</value>
+  </data>
+</root>

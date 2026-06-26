@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonOptimize.Text" xml:space="preserve">
+    <value>Optimiser</value>
+  </data>
+  <data name="buttonGetProfile.Text" xml:space="preserve">
+    <value>Obtenir le profil</value>
+  </data>
+  <data name="checkBoxCameraLength.Text" xml:space="preserve">
+    <value>Longueur de caméra 1</value>
+  </data>
+  <data name="checkBoxTau.Text" xml:space="preserve">
+    <value>Inclinaison τ</value>
+  </data>
+  <data name="checkBoxPointX.Text" xml:space="preserve">
+    <value>Tache directe X</value>
+  </data>
+  <data name="checkBoxPointY.Text" xml:space="preserve">
+    <value>Tache directe Y</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Pas initial</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Plage de recherche</value>
+  </data>
+  <data name="checkBoxWaveLength.Text" xml:space="preserve">
+    <value>Longueur d'onde</value>
+  </data>
+  <data name="checkBox4.Text" xml:space="preserve">
+    <value>Pixel ξ</value>
+  </data>
+  <data name="checkBox3.Text" xml:space="preserve">
+    <value>Taille de pixel Y</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Taille de pixel X</value>
+  </data>
+  <data name="checkBoxPhi.Text" xml:space="preserve">
+    <value>Inclinaison φ</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>Position du centre</value>
+  </data>
+  <data name="checkBoxPixelSize.Text" xml:space="preserve">
+    <value>Taille de pixel</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.Text" xml:space="preserve">
+    <value>Longueur de caméra</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Pas initial</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Plage de recherche</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>pas</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>pas</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>pas</value>
+  </data>
+  <data name="checkBoxIPTilt.Text" xml:space="preserve">
+    <value>Inclinaison IP</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Rayon Gandolfi</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>pas</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>pas</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Coordonnées</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Pixel
+ carré</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>Tache directe</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>Pied</value>
+  </data>
+  <data name="buttonStop.Text" xml:space="preserve">
+    <value>Arrêter</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Panneau plat</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Itération</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.Text" xml:space="preserve">
+    <value>Optimiser</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>fois</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Gandolfi</value>
+  </data>
+  <data name="radioButtonStandardCeO2.Text" xml:space="preserve">
+    <value>CeO2</value>
+  </data>
+  <data name="radioButtonStandardLaB6.Text" xml:space="preserve">
+    <value>LaB6</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.Text" xml:space="preserve">
+    <value>Al2O3</value>
+  </data>
+  <data name="radioButtonStandardOther.Text" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Trouver les paramètres (force brute)</value>
+  </data>
+  <data name="numericBoxIteration.HeaderText" xml:space="preserve">
+    <value>Itération</value>
+  </data>
+  <data name="numericBoxFittingRange.HeaderText" xml:space="preserve">
+    <value>Plage d'ajustement</value>
+  </data>
+  <data name="numericBoxWeight.HeaderText" xml:space="preserve">
+    <value>Hauteur : distance interréticulaire</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value>Réglages du pas et de la plage de recherche pour
+chaque paramètre Gandolfi. Si un cycle n'apporte
+aucune amélioration, chaque pas est automatiquement
+réduit pour affiner plus finement.</value>
+  </data>
+  <data name="tabControl1 / tabPage1 (Flat Panel).ToolTip" xml:space="preserve">
+    <value>Affinement de géométrie par force brute pour un
+détecteur plan / matriciel (p. ex. SACLA). Balaye
+la longueur de caméra, le centre du faisceau,
+l'inclinaison et la longueur d'onde pour ajuster
+au mieux les anneaux de Debye de l'étalon.</value>
+  </data>
+  <data name="tabPage2 (Gandolfi).ToolTip" xml:space="preserve">
+    <value>Affinement par force brute pour la géométrie
+Gandolfi / plaque image courbe. Balaye la longueur
+de caméra, la taille de pixel, le centre,
+l'inclinaison et le rayon Gandolfi pour ajuster
+les anneaux de Debye de l'étalon.</value>
+  </data>
+  <data name="radioButtonStandardAu.ToolTip" xml:space="preserve">
+    <value>Utiliser l'or (Au) comme étalon d'étalonnage
+(cubique, a=4.07825 Å). Ses positions d'anneaux de
+Debye connues servent de référence sur laquelle
+l'ajustement aligne la géométrie du détecteur.</value>
+  </data>
+  <data name="radioButtonStandardCeO2.ToolTip" xml:space="preserve">
+    <value>Utiliser l'oxyde de cérium (CeO2) comme étalon
+d'étalonnage (cubique, a=5.411102 Å). Étalon en
+poudre NIST courant pour l'étalonnage de la
+géométrie du détecteur.</value>
+  </data>
+  <data name="radioButtonStandardLaB6.ToolTip" xml:space="preserve">
+    <value>Utiliser l'hexaborure de lanthane (LaB6) comme
+étalon d'étalonnage (cubique, a=4.157 Å). Étalon
+NIST de position de raies / d'instrument très
+utilisé.</value>
+  </data>
+  <data name="radioButtonStandardAl2O3.ToolTip" xml:space="preserve">
+    <value>Utiliser le corindon (Al2O3) comme étalon
+d'étalonnage (hexagonal, a=4.7657 Å, c=13.01 Å).
+Fournit de nombreux anneaux sur une large plage
+de 2θ.</value>
+  </data>
+  <data name="radioButtonStandardOther.ToolTip" xml:space="preserve">
+    <value>Utiliser un étalon personnalisé : active l'éditeur
+de cristal ci-dessous pour saisir n'importe quel
+réseau/atomes au lieu d'un préréglage intégré
+(Au, CeO2, LaB6, Al2O3).</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>Référencer la géométrie sur le spot du faisceau
+direct : utilise la longueur de caméra 1 et le
+pixel du spot direct (X,Y) où le faisceau non
+diffracté frappe le détecteur.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>Référencer la géométrie sur le pied de la
+perpendiculaire : utilise la longueur de caméra 2
+et le pixel du pied de la perpendiculaire (X,Y) -
+le point du détecteur incliné le plus proche
+de l'échantillon.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Choisir la référence de coordonnées pour la
+géométrie : spot du faisceau direct (longueur de
+caméra 1) ou pied de la perpendiculaire sur un
+détecteur incliné (longueur de caméra 2).</value>
+  </data>
+  <data name="checkBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>Affiner la longueur de caméra (distance
+échantillon-détecteur, mm). Une longueur de caméra
+plus grande écarte les anneaux de Debye vers
+l'extérieur ; ceci la balaye pour correspondre au
+mieux à l'étalon.</value>
+  </data>
+  <data name="checkBoxPointX.ToolTip" xml:space="preserve">
+    <value>Affiner la coordonnée X du centre du faisceau
+(pixels) : X du spot direct ou X du pied de la
+perpendiculaire. Déplace l'emplacement du centre
+de l'anneau sur le détecteur.</value>
+  </data>
+  <data name="checkBoxPointY.ToolTip" xml:space="preserve">
+    <value>Affiner la coordonnée Y du centre du faisceau
+(pixels) : Y du spot direct ou Y du pied de la
+perpendiculaire. Déplace verticalement le centre
+de l'anneau sur le détecteur.</value>
+  </data>
+  <data name="checkBoxPhi.ToolTip" xml:space="preserve">
+    <value>Affiner l'azimut d'inclinaison du détecteur φ
+(radians) : la direction dans le plan autour de
+laquelle le détecteur est incliné par rapport à la
+perpendiculaire au faisceau. Rend les anneaux
+elliptiques.</value>
+  </data>
+  <data name="checkBoxTau.ToolTip" xml:space="preserve">
+    <value>Affiner l'angle d'inclinaison du détecteur τ
+(radians) : de combien le plan du détecteur est
+incliné par rapport à la perpendiculaire au
+faisceau. Déforme les positions des anneaux s'il
+est non nul.</value>
+  </data>
+  <data name="checkBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>Affiner la longueur d'onde des rayons X/neutrons
+(angström). Mettre à l'échelle la longueur d'onde
+déplace chaque anneau de Debye en 2θ ; activer
+uniquement si la longueur d'onde est incertaine.</value>
+  </data>
+  <data name="checkBox2.ToolTip" xml:space="preserve">
+    <value>Affiner la taille de pixel du détecteur en X
+(mm/pixel). Actuellement désactivé en mode
+détecteur plan ; l'étalonnage de la taille de
+pixel se fait dans l'onglet Gandolfi.</value>
+  </data>
+  <data name="checkBox3.ToolTip" xml:space="preserve">
+    <value>Affiner la taille de pixel du détecteur en Y
+(mm/pixel). Actuellement désactivé en mode
+détecteur plan ; utiliser l'onglet Gandolfi pour
+l'étalonnage de la taille de pixel.</value>
+  </data>
+  <data name="checkBox4.ToolTip" xml:space="preserve">
+    <value>Affiner la distorsion de pixel ξ (degrés) :
+l'angle de cisaillement/non-orthogonalité entre
+les axes de pixels du détecteur. Actuellement
+désactivé en mode détecteur plan.</value>
+  </data>
+  <data name="numericBoxCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de la longueur de caméra
+(mm). Le balayage essaie +/- des multiples de
+celui-ci ; il se réduit automatiquement quand un
+cycle n'apporte aucune amélioration. Plus petit =
+plus fin mais plus lent.</value>
+  </data>
+  <data name="numericBoxCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la longueur de caméra
+en pas (entier, 0-10). Balaye +/- ce nombre
+d'incréments de pas, soit une grille totale de
+2N+1 points. Plus grand = recherche plus large
+mais plus lente.</value>
+  </data>
+  <data name="numericBoxPointXStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial du centre du faisceau en
+X (pixels). Le balayage essaie +/- des multiples ;
+se réduit automatiquement sans amélioration. Plus
+petit = étalonnage du centre plus fin mais plus
+lent.</value>
+  </data>
+  <data name="numericBoxPointYStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial du centre du faisceau en
+Y (pixels). Le balayage essaie +/- des multiples ;
+se réduit automatiquement sans amélioration.</value>
+  </data>
+  <data name="numericBoxFootPointXRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche du centre du faisceau en
+X, en pas (entier, 0-10). Balaye +/- ce nombre
+d'incréments de pas autour du X actuel. Plus grand
+= plus large mais plus lent.</value>
+  </data>
+  <data name="numericBoxFootPointYRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche du centre du faisceau en
+Y, en pas (entier, 0-10). Balaye +/- ce nombre
+d'incréments de pas autour du Y actuel.</value>
+  </data>
+  <data name="numericBoxPhiStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de l'azimut d'inclinaison
+φ (degrés). Le balayage essaie +/- des multiples ;
+se réduit automatiquement sans amélioration.</value>
+  </data>
+  <data name="numericBoxPhiRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de l'azimut
+d'inclinaison φ, en pas (entier, 0-10). Balaye +/-
+ce nombre d'incréments de pas autour du φ actuel.</value>
+  </data>
+  <data name="numericBoxTauStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de l'angle d'inclinaison
+τ (degrés). Le balayage essaie +/- des multiples ;
+se réduit automatiquement sans amélioration.</value>
+  </data>
+  <data name="numericBoxTauRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de l'angle
+d'inclinaison τ, en pas (entier, 0-10). Balaye +/-
+ce nombre d'incréments de pas autour du τ actuel.</value>
+  </data>
+  <data name="numericBoxWaveLengthStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de la longueur d'onde
+(angström). Remarque : appliqué en interne à 0.1x.
+Le balayage essaie +/- des multiples ; se réduit
+automatiquement sans amélioration.</value>
+  </data>
+  <data name="numericBoxWaveLengthRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la longueur d'onde,
+en pas (entier, 0-10). Balaye +/- ce nombre
+d'incréments de pas autour de la longueur d'onde
+actuelle.</value>
+  </data>
+  <data name="numericBox2.ToolTip" xml:space="preserve">
+    <value>Pas de recherche de la taille de pixel en X
+(mm/pixel). Désactivé en mode détecteur plan ;
+l'étalonnage de la taille de pixel s'effectue dans
+l'onglet Gandolfi.</value>
+  </data>
+  <data name="numericBox3.ToolTip" xml:space="preserve">
+    <value>Pas de recherche de la taille de pixel en Y
+(mm/pixel). Désactivé en mode détecteur plan ;
+utiliser l'onglet Gandolfi pour l'étalonnage de la
+taille de pixel.</value>
+  </data>
+  <data name="numericBox4.ToolTip" xml:space="preserve">
+    <value>Pas de recherche de la distorsion de pixel ξ
+(degrés). Désactivé en mode détecteur plan.</value>
+  </data>
+  <data name="numericBox5.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la taille de pixel en
+X, en pas. Désactivé en mode détecteur plan.</value>
+  </data>
+  <data name="numericBox6.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la taille de pixel en
+Y, en pas. Désactivé en mode détecteur plan.</value>
+  </data>
+  <data name="numericBox7.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la distorsion de
+pixel ξ, en pas. Désactivé en mode détecteur plan.</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial pour chaque paramètre.
+Le balayage par force brute se déplace de +/- des
+multiples de celui-ci et réduit automatiquement le
+pas quand un cycle n'apporte aucune amélioration.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche par paramètre, en
+nombre de pas. Balaye +/- ce nombre d'incréments
+de pas (grille = 2N+1 points). 0 désactive ce
+paramètre.</value>
+  </data>
+  <data name="numericBoxIteration.ToolTip" xml:space="preserve">
+    <value>Nombre de cycles d'affinement (1-100). Chaque
+cycle recentre la grille sur le meilleur résultat
+actuel et réduit le pas en l'absence
+d'amélioration, faisant converger la géométrie.</value>
+  </data>
+  <data name="numericBoxFittingRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de la fenêtre d'ajustement de pic
+autour de chaque anneau calculé, en degrés 2θ.
+Trop petite, elle manque le pic ; trop grande,
+elle inclut les voisins/le fond. Réajuste à chaque
+modification.</value>
+  </data>
+  <data name="numericBoxWeight.ToolTip" xml:space="preserve">
+    <value>Poids de la fonction de coût équilibrant la
+hauteur du pic et l'écart en 2θ (distance
+réticulaire) : coût = devThetaSq + Poids/hauteur.
+Plus élevé, il favorise les anneaux plus hauts et
+plus nets.</value>
+  </data>
+  <data name="buttonOptimize.ToolTip" xml:space="preserve">
+    <value>Démarrer l'affinement par force brute : balayer
+les paramètres activés (longueur de caméra,
+centre, inclinaison, longueur d'onde) pour ajuster
+au mieux les anneaux de Debye de l'étalon.
+Utiliser Arrêter pour interrompre.</value>
+  </data>
+  <data name="buttonStop.ToolTip" xml:space="preserve">
+    <value>Interrompre l'optimisation en cours et rétablir
+les paramètres, le masque de spots et la plage
+d'intégration à leurs valeurs antérieures à
+l'activation d'Optimiser.</value>
+  </data>
+  <data name="buttonGetProfile.ToolTip" xml:space="preserve">
+    <value>Recalculer le profil radial 1D (intensité en
+fonction de 2θ) avec la géométrie actuelle et
+superposer les positions d'anneaux calculées de
+l'étalon, sans affiner.</value>
+  </data>
+  <data name="checkBox1.ToolTip" xml:space="preserve">
+    <value>Supposer des pixels carrés : contraindre la taille
+de pixel X = Y pendant l'affinement au lieu de les
+ajuster indépendamment.</value>
+  </data>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value>Rapport d'avancement (lecture seule) : cycle
+actuel, meilleure longueur de caméra obtenue,
+centre, inclinaison, longueur d'onde (avec
+Modifié/Inchangé), pas actuels et meilleurs scores
+d'ajustement.</value>
+  </data>
+  <data name="graphControl1.ToolTip" xml:space="preserve">
+    <value>Graphique de profil : intensité en fonction de 2θ
+avec des lignes rouges aux positions calculées des
+anneaux de Debye et des pics ajustés.
+Double-cliquer sur une ligne pour retirer cette
+réflexion de l'ajustement.</value>
+  </data>
+  <data name="checkBoxCameraLengthGandlfi.ToolTip" xml:space="preserve">
+    <value>Affiner la longueur de caméra (distance
+échantillon-détecteur, mm) dans le balayage
+Gandolfi. La balaye conjointement avec le rayon
+Gandolfi.</value>
+  </data>
+  <data name="checkBoxPixelSize.ToolTip" xml:space="preserve">
+    <value>Affiner la taille de pixel du détecteur en X et Y
+(mm/pixel) dans le balayage Gandolfi. Affecte
+l'échelle de distance réticulaire des anneaux.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>Affiner la position du centre du faisceau en X et
+Y (pixels) dans le balayage Gandolfi. Déplace
+l'emplacement des centres des anneaux sur le
+détecteur.</value>
+  </data>
+  <data name="checkBoxIPTilt.ToolTip" xml:space="preserve">
+    <value>Affiner les angles d'inclinaison de la plaque
+image (IP) τ et φ (degrés) dans le balayage
+Gandolfi. Inclinaison = détecteur non
+perpendiculaire au faisceau.</value>
+  </data>
+  <data name="checkBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Affiner le rayon Gandolfi (mm) : le rayon de la
+plaque image courbe / caméra Gandolfi. Affecte la
+correction de courbure des positions d'anneaux.</value>
+  </data>
+  <data name="numericUpDownCameraLengthStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de la longueur de caméra
+(mm) pour le balayage Gandolfi. Essaie +/- des
+multiples ; se réduit automatiquement quand un
+cycle n'apporte aucune amélioration.</value>
+  </data>
+  <data name="numericUpDownPixelSizeStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de la taille de pixel
+(mm/pixel) pour le balayage Gandolfi. Essaie +/-
+des multiples ; se réduit automatiquement sans
+amélioration.</value>
+  </data>
+  <data name="numericUpDownCenterPositionStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial du centre du faisceau
+(pixels) pour le balayage Gandolfi. Essaie +/- des
+multiples ; se réduit automatiquement sans
+amélioration.</value>
+  </data>
+  <data name="numericUpDownIPTiltStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial de l'inclinaison (τ et φ)
+(degrés) pour le balayage Gandolfi. Essaie +/- des
+multiples ; se réduit automatiquement sans
+amélioration.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusStep.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial du rayon Gandolfi (mm).
+Essaie +/- des multiples ; se réduit
+automatiquement sans amélioration.</value>
+  </data>
+  <data name="numericUpDownCameraLengthRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la longueur de caméra
+en pas (entier, 0-10) pour le balayage Gandolfi.
+Balaye +/- ce nombre d'incréments. 0 désactive.</value>
+  </data>
+  <data name="numericUpDownPixelSizeRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de la taille de pixel en
+pas (entier, 0-10) pour le balayage Gandolfi.
+Balaye +/- ce nombre d'incréments.</value>
+  </data>
+  <data name="numericUpDownCenterPositionRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche du centre du faisceau en
+pas (entier, 0-10) pour le balayage Gandolfi.
+Balaye +/- ce nombre d'incréments en X et Y.</value>
+  </data>
+  <data name="numericUpDownTiltRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche de l'inclinaison (τ/φ)
+en pas (entier, 0-10) pour le balayage Gandolfi.
+Balaye +/- ce nombre d'incréments.</value>
+  </data>
+  <data name="numericUpDownGandolfiRadiusRange.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche du rayon Gandolfi en pas
+(entier, 0-10). Balaye +/- ce nombre d'incréments
+autour du rayon actuel.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Pas de recherche initial pour chaque paramètre
+Gandolfi. Le balayage se déplace de +/- des
+multiples de celui-ci et réduit automatiquement le
+pas sans amélioration.</value>
+  </data>
+  <data name="label23.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de recherche par paramètre Gandolfi,
+en nombre de pas. Balaye +/- ce nombre
+d'incréments de pas. 0 désactive ce paramètre.</value>
+  </data>
+  <data name="numericUpDownIterationGandolfi.ToolTip" xml:space="preserve">
+    <value>Nombre de cycles d'affinement Gandolfi. Chaque
+cycle recentre sur le meilleur résultat actuel et
+réduit le pas en l'absence d'amélioration, faisant
+converger la géométrie.</value>
+  </data>
+  <data name="numericUpDownFittingRangeForGandolfi.ToolTip" xml:space="preserve">
+    <value>Demi-largeur de la fenêtre d'ajustement de pic
+(degrés 2θ, 0.2-1) autour de chaque anneau calculé
+pour l'ajustement Gandolfi. Trop petite, elle
+manque le pic ; trop grande, elle inclut les
+voisins.</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value>Nombre de cycles d'affinement Gandolfi (voir le
+champ d'itération). Plus de cycles font converger
+la géométrie plus complètement mais prennent plus
+de temps.</value>
+  </data>
+  <data name="buttonOptimizeGandolfi.ToolTip" xml:space="preserve">
+    <value>Démarrer l'affinement Gandolfi par force brute :
+balayer les paramètres activés (longueur de
+caméra, taille de pixel, centre, inclinaison,
+rayon Gandolfi) pour ajuster au mieux les anneaux
+de Debye de l'étalon.</value>
+  </data>
+  <data name="toolStripProgressBar1.ToolTip" xml:space="preserve">
+    <value>Avancement de l'optimisation : fraction du
+balayage de la grille de paramètres effectuée sur
+l'ensemble des cycles.</value>
+  </data>
+  <data name="toolStripStatusLabel1.ToolTip" xml:space="preserve">
+    <value>Ligne d'état : temps par pas de balayage,
+pourcentage d'avancement, temps écoulé et temps
+restant estimé pour l'optimisation en cours.</value>
+  </data>
+</root>

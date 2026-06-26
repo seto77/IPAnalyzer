@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label64.Text" xml:space="preserve">
+    <value>보조</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>링 중심 (주)</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.Text" xml:space="preserve">
+    <value>기울기 보정</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.Text" xml:space="preserve">
+    <value>메인 폼에서</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>주</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>반복</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>평균 상대 잔차</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>기울기 τ (보조)</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>파장</value>
+  </data>
+  <data name="checkBoxMouseOperation.Text" xml:space="preserve">
+    <value>정밀화 중
+ 마우스 조작 허용 (불안정 !)</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.Text" xml:space="preserve">
+    <value>픽셀 왜곡</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>초기</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>중심 위치 (픽셀)</value>
+  </data>
+  <data name="buttonExecuteRefinements.Text" xml:space="preserve">
+    <value>정밀화!</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>구면 반지름 
+(1/R)</value>
+  </data>
+  <data name="groupBoxParameter.Text" xml:space="preserve">
+    <value>매개변수</value>
+  </data>
+  <data name="buttonSchematicDiagram.Text" xml:space="preserve">
+    <value>개략도</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.Text" xml:space="preserve">
+    <value>카메라 길이</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.Text" xml:space="preserve">
+    <value>픽셀 크기</value>
+  </data>
+  <data name="checkUncheckToolStripMenuItem.Text" xml:space="preserve">
+    <value>선택/해제</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>피팅 범위
+(주용)</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.Text" xml:space="preserve">
+    <value>파장 가져오기</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.Text" xml:space="preserve">
+    <value>열기</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>임계값</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>중심 위치</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>카메라 길이
+ (주)</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>IP 기울기</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>매개변수 찾기</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>픽셀 왜곡</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>기울기 τ (주)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>밴드 폭</value>
+  </data>
+  <data name="buttonSetInitioalParam.Text" xml:space="preserve">
+    <value>메인 폼 매개변수 =&amp;gt; 초기 매개변수 </value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.Text" xml:space="preserve">
+    <value>표준 결정 사용</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>링 중심 (보조)</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.Text" xml:space="preserve">
+    <value>열기</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>회</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>픽셀 크기 (X)</value>
+  </data>
+  <data name="groupBoxPeakList.Text" xml:space="preserve">
+    <value>피크 목록</value>
+  </data>
+  <data name="groupBoxPrimaryImage.Text" xml:space="preserve">
+    <value>주 이미지</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>픽셀 왜곡 (ξ)</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>기울기 φ (주)</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>픽셀 크기 (Y)</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>기울기 φ (보조)</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>구면 보정</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
+    <value>피크 분해</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>파일 이름</value>
+  </data>
+  <data name="buttonCheckPeaks.Text" xml:space="preserve">
+    <value>다음 조건을 만족하는 피크 선택</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>카메라 길이 (주)</value>
+  </data>
+  <data name="buttonClearPrimaryImage.Text" xml:space="preserve">
+    <value>지우기</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.Text" xml:space="preserve">
+    <value>카메라 길이 가져오기</value>
+  </data>
+  <data name="buttonClearSecondaryImage.Text" xml:space="preserve">
+    <value>지우기</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>직사각형</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>오차</value>
+  </data>
+  <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
+    <value>결정 설정</value>
+  </data>
+  <data name="buttonStopRefinements.Text" xml:space="preserve">
+    <value>중지!</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.Text" xml:space="preserve">
+    <value>프로파일 가져오기</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>픽셀 크기</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>보조</value>
+  </data>
+  <data name="checkBoxRefleshMainform.Text" xml:space="preserve">
+    <value>정밀화 중 메인 폼 새로 고침</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>중심 위치 (픽셀)</value>
+  </data>
+  <data name="groupBoxSecondaryImage.Text" xml:space="preserve">
+    <value>보조 이미지</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>섹터</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>정밀화됨</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.Text" xml:space="preserve">
+    <value>프로파일 가져오기</value>
+  </data>
+  <data name="buttonSendMainForm.Text" xml:space="preserve">
+    <value>정밀화 매개변수 =&amp;gt; 메인 폼</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>카메라 길이</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>IP 기울기</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.Text" xml:space="preserve">
+    <value>파장</value>
+  </data>
+  <data name="groupBoxOption.Text" xml:space="preserve">
+    <value>정밀화 매개변수</value>
+  </data>
+  <data name="buttonCopyToClipboard.Text" xml:space="preserve">
+    <value>정밀화 매개변수 =&amp;gt; 클립보드</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>주</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>카메라 길이</value>
+  </data>
+  <data name="buttonClearGraphs.Text" xml:space="preserve">
+    <value>모든 그래프 지우기</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>파일 이름</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>분할</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.Text" xml:space="preserve">
+    <value>각 피크 표시</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>파장</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.Text" xml:space="preserve">
+    <value>메인 폼에서</value>
+  </data>
+  <data name="numericBoxLowerThan.HeaderText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="ColumnHKL.HeaderText" xml:space="preserve">
+    <value>hkl</value>
+  </data>
+  <data name="ColumnNo.HeaderText" xml:space="preserve">
+    <value>번호</value>
+  </data>
+  <data name="ColumnPrimary.HeaderText" xml:space="preserve">
+    <value>주</value>
+  </data>
+  <data name="ColumnSecondary.HeaderText" xml:space="preserve">
+    <value>보조</value>
+  </data>
+  <data name="numericBoxAwayFrom.HeaderText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
+    <value>메인 창의 빔 중심(직접 스폿) 위치를
+Secondary 중심 X/Y 필드로 복사합니다.</value>
+  </data>
+  <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
+    <value>정밀화된 매개변수(카메라 길이, 픽셀
+크기/왜곡, 기울기, 파장, 구면 보정,
+빔 중심)를 메인 창에 적용합니다.</value>
+  </data>
+  <data name="label76.ToolTip" xml:space="preserve">
+    <value>피팅된 Secondary 링 중심의 산포로,
+방향성 경향이 있으면 Secondary 기울기
+보정이 불충분함을 의미합니다.</value>
+  </data>
+  <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
+    <value>정밀화 중 메인 창의 이미지를 갱신합니다.
+체크를 해제하면 다시 그리기를 억제하여
+약간의 속도 향상을 얻습니다.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>디바이 링을 수동으로 추가하거나 드래그할 때
+Primary 이미지를 대상으로 합니다(유연 모드).</value>
+  </data>
+  <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
+    <value>정밀화 실행 중 피크별 그래프에서 마우스
+조작(드래그)을 활성화합니다. 불안정할 수
+있으니 안정적인 실행을 위해 꺼 두세요.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 Primary 기울기
+방위각 phi의 이력(가장 최근이 오른쪽).
+세로 축척은 자동 조정됩니다.</value>
+  </data>
+  <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 픽셀 크기(Y)의
+이력(가장 최근이 오른쪽). 세로 축척은
+자동 조정됩니다.</value>
+  </data>
+  <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 픽셀 크기(X)의
+이력(가장 최근이 오른쪽). 세로 축척은
+자동 조정됩니다.</value>
+  </data>
+  <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
+    <value>선택된 디바이 링 피크의 평균 상대 잔차
+(계산 위치 대 관측 피크 위치)를 반복마다
+표시합니다. 정밀화가 수렴함에 따라 단조롭게
+감소하며, 가장 최근 값이 오른쪽에 추가됩니다.</value>
+  </data>
+  <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 파장의 이력(가장 최근이
+오른쪽). 세로 축척은 자동 조정됩니다.</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Primary 2D 이미지를 방사상으로 적분하여
+피크 피팅에 사용되는 1D 프로파일
+(강도 대 방사 거리)로 만듭니다.</value>
+  </data>
+  <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Y 방향의 초기 검출기 픽셀 크기(mm).
+정밀화의 시작값으로, 이미지의 세로
+픽셀-mm 변환 비율을 결정합니다.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>피팅된 Primary 링 중심의 산포로, 방향성 경향이
+있으면 기울기 보정이 불충분함을 의미합니다.</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
+    <value>결합된 프로파일 대신 선택된 각 디바이 링
+피크의 개별 피팅 그래프(관측 프로파일,
+피팅 곡선, 배경)를 표시합니다.</value>
+  </data>
+  <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>X 방향의 초기 검출기 픽셀 크기(mm).
+정밀화의 시작값으로, 이미지의 가로
+픽셀-mm 변환 비율을 결정합니다.</value>
+  </data>
+  <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
+    <value>위에서 체크한 기하 매개변수의 최소제곱
+정밀화를 시작하여 선택된 디바이 링 피크를
+피팅합니다. 도중에 중단하려면 정지를 누르세요.</value>
+  </data>
+  <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
+    <value>실행 중인 정밀화를 정지 및 취소하며,
+지금까지 도달한 매개변수 값을 유지합니다.</value>
+  </data>
+  <data name="label50.ToolTip" xml:space="preserve">
+    <value>X 방향의 검출기 픽셀 크기(mm).</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value>예측된 디바이 링 피크입니다. Primary/Secondary
+체크박스로 정밀화에 사용할 피크를 선택하며,
+mm 열은 피팅된 위치를 표시합니다. 행을 더블클릭
+하면 그래프를 해당 피크로 확대합니다.</value>
+  </data>
+  <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
+    <value>결정 편집기를 열어 d-간격으로 예상 디바이 링
+위치를 정의하는 표준 시료(기본값 CeO2)를
+선택/편집합니다.</value>
+  </data>
+  <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
+    <value>적분 밴드 단변의 폭으로, 이미지 폭에 대한
+백분율(기본값 4%)입니다. 넓을수록 더 많은
+픽셀을 평균화하지만 인접한 링이 흐려집니다.</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
+    <value>전체 패턴에 걸친 Primary/Secondary 링 위치
+불일치로부터 카메라 길이를 추정하여
+정밀화 값으로 불러옵니다.</value>
+  </data>
+  <data name="label60.ToolTip" xml:space="preserve">
+    <value>Primary 검출기 기울기 크기 tau
+(수직으로부터의 각도), 단위 도(°).</value>
+  </data>
+  <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>0.1 nm(Å) 단위의 초기 방사선 파장입니다.
+정밀화 시 시작값으로 사용되며, 파장이
+클수록 모든 디바이 링이 바깥쪽으로 이동합니다.</value>
+  </data>
+  <data name="label57.ToolTip" xml:space="preserve">
+    <value>Primary 이미지의 카메라 길이
+(시료-검출기 거리), 단위 mm.</value>
+  </data>
+  <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 현재 로드된 Primary 이미지의
+파일 이름(연속 이미지인 경우 프레임 번호 포함).</value>
+  </data>
+  <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 픽셀 왜곡 각도 ksi의
+이력(가장 최근이 오른쪽). 세로 축척은
+자동 조정됩니다.</value>
+  </data>
+  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화에서 얻은 구면 휨
+보정을 역반지름 1/R(per mm)로 표시.</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Secondary 빔 중심(직접 스폿) Y 위치(픽셀)
+입니다. 더블클릭하면 메인 창의 중심을
+복사하며, 메인 창의 'Find Center'도 갱신합니다.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 Secondary 기울기
+방위각 phi의 이력(가장 최근이 오른쪽).
+세로 축척은 자동 조정됩니다.</value>
+  </data>
+  <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
+    <value>아래 조건을 만족하는 피크를 자동으로 체크
+(피팅 대상으로 선택)합니다: 'away from'만큼
+고립되고 'lower than' 거리 이내인 피크.</value>
+  </data>
+  <data name="label16.ToolTip" xml:space="preserve">
+    <value>0.1 nm(Å) 단위의 방사선 파장.</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
+    <value>알려진 표준 결정을 사용합니다: 디바이 링 위치를
+표준의 d-간격으로부터 계산합니다. 체크를 해제하면
+링을 수동으로 배치/드래그합니다(유연 모드).</value>
+  </data>
+  <data name="label74.ToolTip" xml:space="preserve">
+    <value>픽셀 왜곡 각도 ksi(X/Y 전단), 단위 도(°).</value>
+  </data>
+  <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
+    <value>피크 채택 임계값(0-1)입니다. 적분 강도 /
+(적분 강도 + 배경) 값이 이 값보다 낮으면
+해당 피크는 정밀화에서 제외됩니다.</value>
+  </data>
+  <data name="label22.ToolTip" xml:space="preserve">
+    <value>이미징 플레이트(IP) 기울기: 검출기가 빔에 수직이
+아닌 상태로, 방위각 phi와 크기 tau로 주어집니다.</value>
+  </data>
+  <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
+    <value>로드된 Primary 이미지와 추출된 프로파일을
+지우고 Primary 슬롯을 초기화합니다.</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
+    <value>체크하면 검출기 기울기 보정(방위각 phi와 크기
+tau)을 정밀화합니다. 둘이 결합되어 있으므로
+빔 중심 정밀화가 강제로 켜집니다.</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
+    <value>메인 창의 빔 중심(직접 스폿) 위치를
+Primary 중심 X/Y 필드로 복사합니다.</value>
+  </data>
+  <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>Primary 빔 중심(직접 스폿) Y 위치(픽셀)
+입니다. 더블클릭하면 메인 창의 중심을
+복사하며, 메인 창의 'Find Center'도 갱신합니다.</value>
+  </data>
+  <data name="pictureBoxMain.ToolTip" xml:space="preserve">
+    <value>거리-강도 프로파일입니다. 왼쪽 드래그로 확대,
+오른쪽 클릭으로 축소하며, 회절 선을 드래그하여
+이동합니다(카메라 길이, 또는 유연 모드에서는
+d-간격이 조정됩니다).</value>
+  </data>
+  <data name="label51.ToolTip" xml:space="preserve">
+    <value>Primary 이미지의 빔 중심(직접 스폿)
+위치, 단위 픽셀.</value>
+  </data>
+  <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
+    <value>피팅된 Secondary 디바이 링 중심(mm)의 산포로,
+오래된 것에서 최근 순으로 색이 매겨집니다. 한 방향
+경향이 있으면 Secondary 검출기 기울기 보정이
+불충분함을 의미합니다.</value>
+  </data>
+  <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
+    <value>각 링 주위에서 샘플링하는 방위 방향(섹터,
+8-360)의 수입니다. 방향이 많을수록 기울기/중심
+감도가 향상되지만 계산이 느려집니다.</value>
+  </data>
+  <data name="label80.ToolTip" xml:space="preserve">
+    <value>Secondary 검출기 기울기 크기 tau
+(수직으로부터의 각도), 단위 도(°).</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
+    <value>Primary 이미징 플레이트(IP)의 초기 기울기 크기
+tau(도): 검출기가 빔에 대한 수직에서 얼마나
+기울어져 있는지를 나타냅니다.</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>Primary 이미지의 카메라 길이
+(시료-검출기 거리), 단위 mm.</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
+    <value>Secondary 회절 이미지 파일을 열어 로드합니다
+(이중 거리 기하 정밀화를 위한 선택적인
+두 번째 패턴).</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
+    <value>Secondary 이미징 플레이트(IP)의 초기 기울기
+방위각 phi(도): 두 번째 이미지에 대한 검출기
+기울기의 면내 방향입니다.</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>체크하면 빔 중심(직접 스폿) 위치가 정밀화됩니다.
+기울기 보정이 활성화된 동안에는 자동으로
+강제로 켜집니다.</value>
+  </data>
+  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
+    <value>최소 간격(mm)입니다. 'Check peaks'는 이웃으로부터
+이 거리보다 멀리 고립된 피크를 자동으로
+선택합니다.</value>
+  </data>
+  <data name="label71.ToolTip" xml:space="preserve">
+    <value>Secondary 이미징 플레이트(IP) 기울기:
+검출기가 빔에 수직이 아닌 상태로,
+방위각 phi와 크기 tau로 나타냅니다.</value>
+  </data>
+  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화로 얻은
+정밀화된 카메라 길이(mm).</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
+    <value>체크하면 카메라 길이(시료-검출기 거리)가
+정밀화에서 자유 매개변수로 포함됩니다.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 Primary 기울기
+크기 tau의 이력(가장 최근이 오른쪽).
+세로 축척은 자동 조정됩니다.</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 Secondary 기울기
+크기 tau의 이력(가장 최근이 오른쪽).
+세로 축척은 자동 조정됩니다.</value>
+  </data>
+  <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
+    <value>Primary 패턴의 색상 견본입니다. 클릭하면
+Primary 프로파일과 그 링을 그리는 데
+사용되는 색상을 선택합니다.</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
+    <value>Secondary 2D 이미지를 방사상으로 적분하여
+피크 피팅에 사용되는 1D 프로파일
+(강도 대 방사 거리)로 만듭니다.</value>
+  </data>
+  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
+    <value>연속(다중 프레임) 이미지 스택 내에서의
+Primary 이미지 프레임 번호.</value>
+  </data>
+  <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>Primary 이미지의 초기 카메라 길이(시료-검출기
+거리), 단위 mm입니다. 정밀화가 더 빨리 수렴하도록
+실제 값에 가까운 값을 입력하세요.</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
+    <value>Primary 회절 이미지 파일을 열어 로드합니다
+(정밀화의 주 기준으로 사용되는 표준 시료
+패턴).</value>
+  </data>
+  <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
+    <value>피팅된 디바이 링 중심(mm)의 산포로, 오래된
+반복에서 최근 반복 순으로 빨강-&amp;gt;초록-&amp;gt;파랑으로
+색이 매겨집니다. 한 방향 경향이 있으면 검출기
+기울기 보정이 아직 불충분함을 나타냅니다.</value>
+  </data>
+  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화로 얻은
+정밀화된 파장(0.1 nm / Å).</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화로 얻은 정밀화된
+Primary 검출기 기울기 방위각 phi(도).</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
+    <value>체크하면 검출기 픽셀 크기(X 및 Y)가
+정밀화에서 자유 매개변수로 포함됩니다.</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
+    <value>겹치는 디바이 링 피크를 분해합니다: 피팅 범위의
+약 2배보다 가까운 피크들은 더 나은 분리를 위해
+한 그룹으로 동시에 피팅됩니다.</value>
+  </data>
+  <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>초기 픽셀 왜곡 각도 ksi(X 및 Y 픽셀 축
+사이의 전단 / 비직교성), 단위 도(°)입니다.
+뒤틀린 픽셀 격자를 보정합니다.</value>
+  </data>
+  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
+    <value>연속(다중 프레임) 이미지 스택 내에서의
+Secondary 이미지 프레임 번호.</value>
+  </data>
+  <data name="label79.ToolTip" xml:space="preserve">
+    <value>Secondary 검출기 기울기 방위각 phi
+(기울기 축 방향), 단위 도(°).</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화로 얻은 X 방향
+정밀화된 픽셀 크기(mm).</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>링의 각도 섹터(쐐기) 영역에 걸쳐 적분합니다.
+링 곡률을 따르며, 짧은 카메라 길이 / 큰
+기울기에 더 적합합니다.</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
+    <value>체크하면 휘어진 이미징 플레이트를 반영하는
+구면 휨 보정(역반지름 1/R)을 정밀화합니다.</value>
+  </data>
+  <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
+    <value>모든 정밀화된 매개변수와 그 +/- 오차를 탭 구분
+텍스트로 클립보드에 복사합니다(파장, 카메라
+길이, 픽셀 크기, ksi, 기울기, 중심).</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
+    <value>체크하면 방사선 파장이 정밀화에서
+자유 매개변수로 포함됩니다.</value>
+  </data>
+  <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>반복에 따른 정밀화된 카메라 길이의 이력(가장
+최근이 오른쪽). 세로 축척이 자동 조정되므로
+절대 높이가 아닌 경향으로 판단하세요.</value>
+  </data>
+  <data name="label44.ToolTip" xml:space="preserve">
+    <value>픽셀 왜곡 각도 ksi(X/Y 비직교성),
+단위 도(°).</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화로 얻은 Y 방향
+정밀화된 픽셀 크기(mm).</value>
+  </data>
+  <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
+    <value>Primary 대비 Secondary 카메라 길이 오프셋(mm,
+음수 허용)입니다. 두 번째 검출기가 얼마나
+멀리/가까이 위치하는지를 정의합니다.</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
+    <value>두 이미지의 체크된 디바이 링 피크를 사용하여
+전체 패턴으로부터 파장을 추정하고
+정밀화 값으로 불러옵니다.</value>
+  </data>
+  <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
+    <value>Secondary 패턴의 색상 견본입니다. 클릭하면
+Secondary 프로파일과 그 링을 그리는 데
+사용되는 색상을 선택합니다.</value>
+  </data>
+  <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
+    <value>각 예측 피크 주위의 피크 피팅 창 반폭(mm,
+0.01-10)입니다. 클수록 더 많이 포착하지만
+이웃 간섭과 느린 피팅의 위험이 있고, 너무
+작으면 정확도가 떨어집니다.</value>
+  </data>
+  <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
+    <value>현재 그려진 모든 매개변수 이력 및
+잔차 그래프를 지웁니다.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>링을 가로지르는 직사각형 밴드 영역에 걸쳐
+적분합니다. 더 간단/빠르지만 링이 강하게
+휘어 있을 때는 정확도가 떨어집니다.</value>
+  </data>
+  <data name="label37.ToolTip" xml:space="preserve">
+    <value>Primary 검출기 기울기 방위각 phi
+(기울기 축 방향), 단위 도(°).</value>
+  </data>
+  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 마지막 최적화로 얻은 정밀화된
+픽셀 왜곡 각도 ksi(도).</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>Secondary 빔 중심(직접 스폿) X 위치(픽셀)
+입니다. 더블클릭하면 메인 창의 중심을
+복사하며, 메인 창의 'Find Center'도 갱신합니다.</value>
+  </data>
+  <data name="label52.ToolTip" xml:space="preserve">
+    <value>Y 방향의 검출기 픽셀 크기(mm).</value>
+  </data>
+  <data name="label45.ToolTip" xml:space="preserve">
+    <value>피크 채택 임계값(0-1): 이 강도 비율보다 낮은
+피크는 정밀화에서 제외됩니다.</value>
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value>각 링 주위에서 샘플링하는 방위 방향(섹터)의
+수(8-360).</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
+    <value>읽기 전용: Primary 카메라 길이(mm)의 사본으로,
+Secondary 오프셋 옆에 참고용으로 표시됩니다.</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
+    <value>체크하면 픽셀 왜곡 각도 ksi(X/Y 전단)가
+정밀화에서 자유 매개변수로 포함됩니다.</value>
+  </data>
+  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
+    <value>초기 구면 휨 보정을 역반지름 1/R(per mm)로
+표시합니다. 휘어진 검출기/IP를 보정하며,
+0은 평평함을 의미합니다.</value>
+  </data>
+  <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 현재 로드된 Secondary 이미지의
+파일 이름(연속 이미지인 경우 프레임 번호 포함).</value>
+  </data>
+  <data name="label67.ToolTip" xml:space="preserve">
+    <value>실행할 정밀화 반복 횟수.</value>
+  </data>
+  <data name="label58.ToolTip" xml:space="preserve">
+    <value>Secondary 이미지의 빔 중심(직접 스폿)
+위치, 단위 픽셀.</value>
+  </data>
+  <data name="label42.ToolTip" xml:space="preserve">
+    <value>각 정밀화된 매개변수의 추정 표준 오차(+/-).</value>
+  </data>
+  <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
+    <value>메인 창의 현재 기하 매개변수를 정밀화
+시작점으로서 초기 매개변수 필드로
+불러옵니다.</value>
+  </data>
+  <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
+    <value>로드된 Secondary 이미지와 추출된 프로파일을
+지우고 Secondary 슬롯을 초기화합니다.</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>Primary 이미징 플레이트(IP)의 초기 기울기
+방위각 phi(도): 검출기가 빔에 대해 기울어진
+면내 방향을 나타냅니다.</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>Primary 빔 중심(직접 스폿) X 위치(픽셀)
+입니다. 더블클릭하면 메인 창의 중심을 복사하며,
+메인 창의 'Find Center'도 갱신합니다.</value>
+  </data>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>각 예측 피크(Primary) 주위의 피크 피팅
+창 반폭, 단위 mm.</value>
+  </data>
+  <data name="label28.ToolTip" xml:space="preserve">
+    <value>적분 밴드 폭(단변)을 이미지 폭에 대한
+백분율로 표시.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>디바이 링을 수동으로 추가하거나 드래그할 때
+Secondary 이미지를 대상으로 합니다(유연 모드).</value>
+  </data>
+  <data name="label72.ToolTip" xml:space="preserve">
+    <value>반복마다의 평균 상대 잔차(계산 대 관측
+피크 위치)로, 피팅이 수렴함에 따라
+감소합니다.</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
+    <value>Secondary 이미징 플레이트(IP)의 초기 기울기
+크기 tau(도): 두 번째 이미지에 대해 빔의
+수직에서 벗어난 기울기입니다.</value>
+  </data>
+  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
+    <value>거리 상한(mm)입니다. 'Check peaks'는 이 방사
+거리보다 가까이 위치한 피크만 자동으로 선택합니다.</value>
+  </data>
+  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
+    <value>읽기 전용: 정밀화된 카메라 길이(mm)의
+추정 표준 오차(+/-).</value>
+  </data>
+  <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
+    <value>수행할 정밀화 반복 횟수(기본값 12)입니다.
+반복이 많을수록 시간이 더 들지만 피팅이
+더 수렴합니다.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>단위: 파장은 Å(0.1 nm).</value>
+  </data>
+  <data name="label75.ToolTip" xml:space="preserve">
+    <value>구면 휨 보정을 역반지름 1/R(per mm)로 표시,
+0 = 평평한 검출기.</value>
+  </data>
+  <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
+    <value>각 기하 매개변수(카메라 길이, 빔 중심, 검출기
+기울기, 픽셀 크기, 왜곡)를 설명하는 개략도를
+표시합니다.</value>
+  </data>
+</root>

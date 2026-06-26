@@ -1,0 +1,128 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>"프로파일 가져오기" 대상</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Text" xml:space="preserve">
+    <value>최상단 이미지만</value>
+  </data>
+  <data name="checkBoxAverage.Text" xml:space="preserve">
+    <value>평균</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
+    <value>현재 선택과 무관하게 모든 이미지</value>
+  </data>
+  <data name="checkBoxMultiSelection.Text" xml:space="preserve">
+    <value>다중 선택</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Text" xml:space="preserve">
+    <value>선택된 이미지</value>
+  </data>
+  <data name="checkBoxSummation.Text" xml:space="preserve">
+    <value>합산</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>연속 이미지 옵션</value>
+  </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>이미지 스택의 프레임을 훑어봅니다.
+선택한 프레임으로 이동하여 1D 프로파일을
+다시 계산하고 다시 그립니다. 범위 0..(프레임
+수-1). 다중 선택 모드에서는 비활성화됩니다.</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>스택의 모든 프레임 목록입니다. 클릭하면 프레임이
+표시됩니다. 다중 선택 모드에서는 Ctrl/Shift(Ctrl+A
+= 전체)로 여러 개를 골라 평균 또는 합산할 수 있습니다.
+HDF5 프레임에는 3자리 색인이 앞에 붙습니다.</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>여러 프레임을 한 번에 선택할 수 있게 합니다(평균 /
+합산 옵션이 활성화되고 프레임 슬라이더는
+비활성화됩니다). 끄면 한 번에 한 프레임씩 봅니다.</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>선택한 프레임의 픽셀별 평균(강도 합을 프레임 수로
+나눈 값)을 표시합니다. 합산과 함께 사용할 수
+없습니다. 다중 선택이 필요합니다.</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>선택한 프레임의 픽셀별 합(강도를 나누지 않고 더한
+값)을 표시합니다. 통계량을 높이고 약한 프레임의
+계수를 개선합니다. 평균과 함께 사용할 수
+없습니다. 다중 선택이 필요합니다.</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>위 목록에서 현재 선택된 프레임에 대해서만
+'Get Profile'(1D I-vs-2θ/d/q 곡선으로의 방사
+적분)을 실행합니다.</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>현재 맨 위에 표시된 단일 프레임에 대해서만
+'Get Profile'(1D 프로파일로의 방사 적분)을
+실행합니다.</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>현재 목록 선택을 무시하고 스택의 모든 프레임에
+대해 'Get Profile'(1D로의 방사 적분)을
+실행합니다. 프레임마다 하나의 프로파일을 생성합니다.</value>
+  </data>
+</root>

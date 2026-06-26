@@ -1,0 +1,127 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Cible(s) de « Get Profile »</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Text" xml:space="preserve">
+    <value>Uniquement l'image au premier plan</value>
+  </data>
+  <data name="checkBoxAverage.Text" xml:space="preserve">
+    <value>Moyenne</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
+    <value>Toutes les images indépendamment des sélections actuelles</value>
+  </data>
+  <data name="checkBoxMultiSelection.Text" xml:space="preserve">
+    <value>Sélection multiple</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Text" xml:space="preserve">
+    <value>La ou les images sélectionnées</value>
+  </data>
+  <data name="checkBoxSummation.Text" xml:space="preserve">
+    <value>Sommation</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Option d'images séquentielles</value>
+  </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>Faites défiler les trames de la pile d'images ;
+le curseur saute à la trame sélectionnée, recalcule
+son profil 1D et le redessine. Plage 0..(nombre
+de trames-1). Désactivé en mode Sélection multiple.</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>Liste de toutes les trames de la pile. Cliquez pour afficher
+une trame ; en mode Sélection multiple, utilisez Ctrl/Maj (Ctrl+A
+= tout) pour en sélectionner plusieurs à moyenner ou à sommer.
+Les trames HDF5 sont préfixées d'un indice à 3 chiffres.</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>Permet de sélectionner plusieurs trames à la fois (active
+les options Moyenne / Sommation et désactive le
+curseur de trames). Désactivé = afficher une trame à la fois.</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>Affiche la moyenne par pixel (somme des intensités divisée par
+le nombre de trames) des trames sélectionnées. Mutuellement
+exclusif avec Sommation. Nécessite la Sélection multiple.</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>Affiche la somme par pixel (intensités additionnées, non
+divisées) des trames sélectionnées ; améliore la statistique
+et le comptage pour les trames faibles. Mutuellement
+exclusif avec Moyenne. Nécessite la Sélection multiple.</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>Exécute « Obtenir le profil » (intégration radiale en une
+courbe 1D I-vs-2theta/d/q) uniquement sur la ou les
+trames actuellement sélectionnées dans la liste ci-dessus.</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>Exécute « Obtenir le profil » (intégration radiale en un profil 1D)
+uniquement sur l'unique trame actuellement affichée au premier plan.</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>Exécute « Obtenir le profil » (intégration radiale en 1D) sur
+chaque trame de la pile, en ignorant la sélection
+actuelle de la liste ; produit un profil par trame.</value>
+  </data>
+</root>

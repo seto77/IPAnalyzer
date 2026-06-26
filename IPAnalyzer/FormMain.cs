@@ -504,7 +504,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.1);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking language.", ja: "読み込み中...言語を確認中。", de: "Wird geladen... Sprache wird geprüft.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking language.", ja: "読み込み中...言語を確認中。", de: "Wird geladen... Sprache wird geprüft.", fr: "Chargement en cours... Vérification de la langue.", es: "Cargando...Comprobando el idioma.", pt: "Carregando...Verificando o idioma.", it: "Caricamento in corso...Controllo della lingua.", ru: "Загрузка...Проверка языка.", zhHans: "正在加载…正在检查语言。", zhHant: "載入中...正在檢查語言。", ko: "로딩 중...언어 확인 중.");
 
         // 260625Cl 変更: english/japanese 固定チェックを廃止し、言語メニューを SupportedCultures から動的生成して
         //   現在カルチャにチェックを付ける (公開は releasedCulturesInIPA={en,ja} に限定。ReciPro/FormMain と同方式)。
@@ -522,7 +522,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.2);
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Setting image scales.", ja: "読み込み中...画像スケールを設定中。", de: "Wird geladen... Bildskalen werden gesetzt.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Setting image scales.", ja: "読み込み中...画像スケールを設定中。", de: "Wird geladen... Bildskalen werden gesetzt.", fr: "Chargement en cours... Définition des échelles d'image.", es: "Cargando...Configurando las escalas de imagen.", pt: "Carregando...Definindo as escalas da imagem.", it: "Caricamento in corso...Impostazione delle scale dell'immagine.", ru: "Загрузка...Настройка масштабов изображения.", zhHans: "正在加载…正在设置图像比例。", zhHant: "載入中...正在設定影像比例尺。", ko: "로딩 중...이미지 배율 설정 중.");
         pseudoBitmap.MaxValue = 65535;
         pseudoBitmap.MinValue = 0;
         IP = new IntegralProperty();
@@ -531,7 +531,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         comboBoxScale2.SelectedIndex = 0;
         comboBoxGradient.SelectedIndex = 0;
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Intensity table' form", ja: "読み込み中...「強度テーブル」フォームを初期化中", de: "Wird geladen... Fenster „Intensitätstabelle“ wird initialisiert");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Intensity table' form", ja: "読み込み中...「強度テーブル」フォームを初期化中", de: "Wird geladen... Fenster „Intensitätstabelle“ wird initialisiert", fr: "Chargement en cours... Initialisation du formulaire « Table d'intensité »", es: "Cargando...Inicializando el formulario 'Tabla de intensidad'", pt: "Carregando...Inicializando o formulário 'Tabela de intensidade'", it: "Caricamento in corso...Inizializzazione della finestra 'Tabella delle intensità'", ru: "Загрузка...Инициализация формы «Таблица интенсивности»", zhHans: "正在加载…正在初始化“强度表”窗体", zhHant: "載入中...正在初始化「強度表」視窗", ko: "로딩 중...'Intensity table' 폼 초기화 중");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.3);
 
         //FormIntTable = new FormIntTable();
@@ -539,55 +539,55 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //FormIntTable.Visible = false;
         //FormIntTable.Owner = this;
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Auto procedure' form", ja: "読み込み中...「自動処理」フォームを初期化中", de: "Wird geladen... Fenster „Autoprozedur“ wird initialisiert");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Auto procedure' form", ja: "読み込み中...「自動処理」フォームを初期化中", de: "Wird geladen... Fenster „Autoprozedur“ wird initialisiert", fr: "Chargement en cours... Initialisation du formulaire « Procédure automatique »", es: "Cargando...Inicializando el formulario 'Procedimiento automático'", pt: "Carregando...Inicializando o formulário 'Procedimento automático'", it: "Caricamento in corso...Inizializzazione della finestra 'Procedura automatica'", ru: "Загрузка...Инициализация формы «Автопроцедура»", zhHans: "正在加载…正在初始化“自动流程”窗体", zhHant: "載入中...正在初始化「自動程序」視窗", ko: "로딩 중...'Auto procedure' 폼 초기화 중");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.4);
 
         FormAutoProc = new FormAutoProcedure { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Find parameter' form", ja: "読み込み中...「パラメータ探索」フォームを初期化中", de: "Wird geladen... Fenster „Parameter finden“ wird initialisiert");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Find parameter' form", ja: "読み込み中...「パラメータ探索」フォームを初期化中", de: "Wird geladen... Fenster „Parameter finden“ wird initialisiert", fr: "Chargement en cours... Initialisation du formulaire « Rechercher le paramètre »", es: "Cargando...Inicializando el formulario 'Buscar parámetro'", pt: "Carregando...Inicializando o formulário 'Encontrar parâmetro'", it: "Caricamento in corso...Inizializzazione della finestra 'Trova parametro'", ru: "Загрузка...Инициализация формы «Поиск параметра»", zhHans: "正在加载…正在初始化“查找参数”窗体", zhHant: "載入中...正在初始化「尋找參數」視窗", ko: "로딩 중...'Find parameter' 폼 초기화 중");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.5);
 
         FormFindParameter = new FormFindParameter { formMain = this, Visible = false, Owner = this };
 
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Draw ring' form", ja: "読み込み中...「リング描画」フォームを初期化中", de: "Wird geladen... Fenster „Ring zeichnen“ wird initialisiert");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Draw ring' form", ja: "読み込み中...「リング描画」フォームを初期化中", de: "Wird geladen... Fenster „Ring zeichnen“ wird initialisiert", fr: "Chargement en cours... Initialisation du formulaire « Tracer l'anneau »", es: "Cargando...Inicializando el formulario 'Dibujar anillo'", pt: "Carregando...Inicializando o formulário 'Desenhar anel'", it: "Caricamento in corso...Inizializzazione della finestra 'Disegna anello'", ru: "Загрузка...Инициализация формы «Рисование кольца»", zhHans: "正在加载…正在初始化“绘制衍射环”窗体", zhHant: "載入中...正在初始化「繪製環」視窗", ko: "로딩 중...'Draw ring' 폼 초기화 중");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.6);
 
         FormDrawRing = new FormDrawRing { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Property' form", ja: "読み込み中...「プロパティ」フォームを初期化中", de: "Wird geladen... Fenster „Eigenschaften“ wird initialisiert");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Property' form", ja: "読み込み中...「プロパティ」フォームを初期化中", de: "Wird geladen... Fenster „Eigenschaften“ wird initialisiert", fr: "Chargement en cours... Initialisation du formulaire « Propriété »", es: "Cargando...Inicializando el formulario 'Propiedades'", pt: "Carregando...Inicializando o formulário 'Propriedade'", it: "Caricamento in corso...Inizializzazione della finestra 'Proprietà'", ru: "Загрузка...Инициализация формы «Свойства»", zhHans: "正在加载…正在初始化“属性”窗体", zhHant: "載入中...正在初始化「性質」視窗", ko: "로딩 중...'Property' 폼 초기화 중");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.7);
 
 
         FormProperty = new FormProperty { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Calibrate Intensity' form", ja: "読み込み中...「強度校正」フォームを初期化中", de: "Wird geladen... Fenster „Intensität kalibrieren“ wird initialisiert");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Calibrate Intensity' form", ja: "読み込み中...「強度校正」フォームを初期化中", de: "Wird geladen... Fenster „Intensität kalibrieren“ wird initialisiert", fr: "Chargement en cours... Initialisation du formulaire « Étalonner l'intensité »", es: "Cargando...Inicializando el formulario 'Calibrar intensidad'", pt: "Carregando...Inicializando o formulário 'Calibrar intensidade'", it: "Caricamento in corso...Inizializzazione della finestra 'Calibra intensità'", ru: "Загрузка...Инициализация формы «Калибровка интенсивности»", zhHans: "正在加载…正在初始化“强度校准”窗体", zhHant: "載入中...正在初始化「校正強度」視窗", ko: "로딩 중...'Calibrate Intensity' 폼 초기화 중");
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.8);
         Application.DoEvents();
 
         FormCalibrateIntensity = new FormCalibrateIntensity { formMain = this, Visible = false, Owner = this };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Save Image' form.", ja: "読み込み中...「画像保存」フォームを初期化中。", de: "Wird geladen... Fenster „Bild speichern“ wird initialisiert.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Save Image' form.", ja: "読み込み中...「画像保存」フォームを初期化中。", de: "Wird geladen... Fenster „Bild speichern“ wird initialisiert.", fr: "Chargement en cours... Initialisation du formulaire « Enregistrer l'image ».", es: "Cargando...Inicializando el formulario 'Guardar imagen'.", pt: "Carregando...Inicializando o formulário 'Salvar imagem'.", it: "Caricamento in corso...Inizializzazione della finestra 'Salva immagine'.", ru: "Загрузка...Инициализация формы «Сохранить изображение».", zhHans: "正在加载…正在初始化“保存图像”窗体。", zhHant: "載入中...正在初始化「儲存影像」視窗。", ko: "로딩 중...'Save Image' 폼 초기화 중.");
 
         FormSaveImage = new FormSaveImage { FormMain = this, Owner = this, Visible = false };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Sequential' form.", ja: "読み込み中...「シーケンシャル画像」フォームを初期化中。", de: "Wird geladen... Fenster „Bildsequenz“ wird initialisiert.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Sequential' form.", ja: "読み込み中...「シーケンシャル画像」フォームを初期化中。", de: "Wird geladen... Fenster „Bildsequenz“ wird initialisiert.", fr: "Chargement en cours... Initialisation du formulaire « Séquentiel ».", es: "Cargando...Inicializando el formulario 'Secuencial'.", pt: "Carregando...Inicializando o formulário 'Sequencial'.", it: "Caricamento in corso...Inizializzazione della finestra 'Sequenziale'.", ru: "Загрузка...Инициализация формы «Последовательность».", zhHans: "正在加载…正在初始化“序列处理”窗体。", zhHant: "載入中...正在初始化「連續」視窗。", ko: "로딩 중...'Sequential' 폼 초기화 중.");
 
         FormSequentialImage = new FormSequentialImage { formMain = this, Owner = this, Visible = false };
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Parameter option' form.", ja: "読み込み中...「パラメータオプション」フォームを初期化中。", de: "Wird geladen... Fenster „Parameteroptionen“ wird initialisiert.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'Parameter option' form.", ja: "読み込み中...「パラメータオプション」フォームを初期化中。", de: "Wird geladen... Fenster „Parameteroptionen“ wird initialisiert.", fr: "Chargement en cours... Initialisation du formulaire « Option de paramètre ».", es: "Cargando...Inicializando el formulario 'Opciones de parámetro'.", pt: "Carregando...Inicializando o formulário 'Opção de parâmetro'.", it: "Caricamento in corso...Inizializzazione della finestra 'Opzioni parametro'.", ru: "Загрузка...Инициализация формы «Параметры».", zhHans: "正在加载…正在初始化“参数选项”窗体。", zhHant: "載入中...正在初始化「參數選項」視窗。", ko: "로딩 중...'Parameter option' 폼 초기화 중.");
 
         FormParameterOption = new FormParameterOption { FormMain = this, Owner = this, Visible = false };
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 0.9);
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'SACLA' form.", ja: "読み込み中...「SACLA」フォームを初期化中。", de: "Wird geladen... Fenster „SACLA“ wird initialisiert.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing 'SACLA' form.", ja: "読み込み中...「SACLA」フォームを初期化中。", de: "Wird geladen... Fenster „SACLA“ wird initialisiert.", fr: "Chargement en cours... Initialisation du formulaire « SACLA ».", es: "Cargando...Inicializando el formulario 'SACLA'.", pt: "Carregando...Inicializando o formulário 'SACLA'.", it: "Caricamento in corso...Inizializzazione della finestra 'SACLA'.", ru: "Загрузка...Инициализация формы «SACLA».", zhHans: "正在加载…正在初始化“SACLA”窗体。", zhHant: "載入中...正在初始化「SACLA」視窗。", ko: "로딩 중...'SACLA' 폼 초기화 중.");
 
         FormFindParameterBruteForce = new FormFindParameterBruteForce { FormMain = this, Owner = this, Visible = false };
 
         FormProperty.Visible = true;
 
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing Macro function.", ja: "読み込み中...マクロ機能を初期化中。", de: "Wird geladen... Makrofunktion wird initialisiert.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing Macro function.", ja: "読み込み中...マクロ機能を初期化中。", de: "Wird geladen... Makrofunktion wird initialisiert.", fr: "Chargement en cours... Initialisation de la fonction Macro.", es: "Cargando...Inicializando la función Macro.", pt: "Carregando...Inicializando a função de macro.", it: "Caricamento in corso...Inizializzazione della funzione Macro.", ru: "Загрузка...Инициализация функции макросов.", zhHans: "正在加载…正在初始化宏功能。", zhHant: "載入中...正在初始化巨集功能。", ko: "로딩 중...매크로 기능 초기화 중.");
 
         FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this)) { Visible = false };
         Type t = typeof(Macro);
@@ -595,11 +595,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         var methods = t.GetMethods();
 
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Reading registries", ja: "読み込み中...レジストリを読み込み中", de: "Wird geladen... Registry wird gelesen");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Reading registries", ja: "読み込み中...レジストリを読み込み中", de: "Wird geladen... Registry wird gelesen", fr: "Chargement en cours... Lecture du registre", es: "Cargando...Leyendo el registro", pt: "Carregando...Lendo os registros", it: "Caricamento in corso...Lettura del registro di sistema", ru: "Загрузка...Чтение реестра", zhHans: "正在加载…正在读取注册表", zhHant: "載入中...正在讀取登錄", ko: "로딩 중...레지스트리 읽는 중");
 
         Registry(Reg.Mode.Read);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Generating ReadMe.txt.", ja: "読み込み中...ReadMe.txt を生成中。", de: "Wird geladen... ReadMe.txt wird erzeugt.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Generating ReadMe.txt.", ja: "読み込み中...ReadMe.txt を生成中。", de: "Wird geladen... ReadMe.txt wird erzeugt.", fr: "Chargement en cours... Génération de ReadMe.txt.", es: "Cargando...Generando ReadMe.txt.", pt: "Carregando...Gerando o ReadMe.txt.", it: "Caricamento in corso...Generazione di ReadMe.txt.", ru: "Загрузка...Создание ReadMe.txt.", zhHans: "正在加载…正在生成 ReadMe.txt。", zhHant: "載入中...正在產生 ReadMe.txt。", ko: "로딩 중...ReadMe.txt 생성 중.");
 
         ReadMeGenerator.WriteReadMeFile(
             "IPAnalyzer   " + Version.VersionAndDate,
@@ -612,7 +612,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             Version.Acknowledge,
             Version.History);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking command line options.", ja: "読み込み中...コマンドライン引数を確認中。", de: "Wird geladen... Kommandozeilenoptionen werden geprüft.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking command line options.", ja: "読み込み中...コマンドライン引数を確認中。", de: "Wird geladen... Kommandozeilenoptionen werden geprüft.", fr: "Chargement en cours... Vérification des options de ligne de commande.", es: "Cargando...Comprobando las opciones de línea de comandos.", pt: "Carregando...Verificando as opções de linha de comando.", it: "Caricamento in corso...Controllo delle opzioni della riga di comando.", ru: "Загрузка...Проверка параметров командной строки.", zhHans: "正在加载…正在检查命令行选项。", zhHant: "載入中...正在檢查命令列選項。", ko: "로딩 중...명령줄 옵션 확인 중.");
         var s = Environment.GetCommandLineArgs();
         var fileName = "";
         for (int i = 1; i < s.Length; i++)
@@ -633,7 +633,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.progressBar.Value = (int)(InitialDialog.progressBar.Maximum * 1);
 
-        InitialDialog.Text = Crystallography.Localization.Loc(en: "Initializing has been finished successfully. You can close this window.", ja: "初期化が正常に完了しました。このウィンドウを閉じてかまいません。", de: "Initialisierung erfolgreich abgeschlossen. Sie können dieses Fenster schließen.");
+        InitialDialog.Text = Crystallography.Localization.Loc(en: "Initializing has been finished successfully. You can close this window.", ja: "初期化が正常に完了しました。このウィンドウを閉じてかまいません。", de: "Initialisierung erfolgreich abgeschlossen. Sie können dieses Fenster schließen.", fr: "L'initialisation s'est terminée avec succès. Vous pouvez fermer cette fenêtre.", es: "La inicialización se ha completado correctamente. Puede cerrar esta ventana.", pt: "A inicialização foi concluída com sucesso. Você pode fechar esta janela.", it: "L'inizializzazione è terminata con successo. Puoi chiudere questa finestra.", ru: "Инициализация успешно завершена. Это окно можно закрыть.", zhHans: "初始化已成功完成。您可以关闭此窗口。", zhHant: "初始化已成功完成。您可以關閉此視窗。", ko: "초기화가 성공적으로 완료되었습니다. 이 창을 닫아도 됩니다.");
         if (InitialDialog.AutomaticallyClose)
             InitialDialog.Visible = false;
 
@@ -2210,7 +2210,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         catch (Exception ex)
         {
-            MessageBox.Show(Crystallography.Localization.Loc(en: $"An error occurred: {ex.Message}", ja: $"エラーが発生しました: {ex.Message}", de: $"Ein Fehler ist aufgetreten: {ex.Message}")); // 260625Cl Loc化 (英日混在→en正規化)
+            MessageBox.Show(Crystallography.Localization.Loc(en: $"An error occurred: {ex.Message}", ja: $"エラーが発生しました: {ex.Message}", de: $"Ein Fehler ist aufgetreten: {ex.Message}", fr: $"Une erreur s'est produite : {ex.Message}", es: $"Se ha producido un error: {ex.Message}", pt: $"Ocorreu um erro: {ex.Message}", it: $"Si è verificato un errore: {ex.Message}", ru: $"Произошла ошибка: {ex.Message}", zhHans: $"发生错误：{ex.Message}", zhHant: $"發生錯誤: {ex.Message}", ko: $"오류가 발생했습니다: {ex.Message}")); // 260625Cl Loc化 (英日混在→en正規化)
         }
     }
 
@@ -2354,7 +2354,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             sw.Close();
 
         }
-        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to save the file. Sorry.", ja: "ファイルの保存に失敗しました。", de: "Speichern der Datei fehlgeschlagen. Entschuldigung.")); } // 260625Cl Loc化
+        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to save the file. Sorry.", ja: "ファイルの保存に失敗しました。", de: "Speichern der Datei fehlgeschlagen. Entschuldigung.", fr: "Échec de l'enregistrement du fichier. Désolé.", es: "No se pudo guardar el archivo. Lo sentimos.", pt: "Falha ao salvar o arquivo. Desculpe.", it: "Impossibile salvare il file. Spiacenti.", ru: "Не удалось сохранить файл. Извините.", zhHans: "文件保存失败。抱歉。", zhHant: "儲存檔案失敗。抱歉。", ko: "파일을 저장하지 못했습니다. 죄송합니다.")); } // 260625Cl Loc化
 
     }
 
@@ -2539,7 +2539,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         }
-        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to read the file. Sorry.", ja: "ファイルの読み込みに失敗しました。", de: "Lesen der Datei fehlgeschlagen. Entschuldigung.")); } // 260625Cl Loc化
+        catch { MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to read the file. Sorry.", ja: "ファイルの読み込みに失敗しました。", de: "Lesen der Datei fehlgeschlagen. Entschuldigung.", fr: "Échec de la lecture du fichier. Désolé.", es: "No se pudo leer el archivo. Lo sentimos.", pt: "Falha ao ler o arquivo. Desculpe.", it: "Impossibile leggere il file. Spiacenti.", ru: "Не удалось прочитать файл. Извините.", zhHans: "文件读取失败。抱歉。", zhHant: "讀取檔案失敗。抱歉。", ko: "파일을 읽지 못했습니다. 죄송합니다.")); } // 260625Cl Loc化
         //イベントスキップを解除
         skipSelectedAreaChangedEvent = false;
         Skip = false;
@@ -2890,7 +2890,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     //   共有 SupportedCultures.Released は ReciPro/PDIndexer 基準で全 11 言語 true だが、IPAnalyzer はまだ en/ja/de しか
     //   resx を整備していない。新言語の resx が揃うたびにここへ足す (多言語化 Phase 3)。
     //   260626Cl: de を公開 (Phase 3 de波: 全フォーム可視ラベル+tooltip+コード文字列+LocalizationData を独語化済)。
-    private static readonly string[] releasedCulturesInIPA = { "en", "ja", "de" };
+    //   260627Cl: fr/es/it/ru/pt/zh-Hans/zh-Hant/ko を公開 (Phase 3 全言語波: 可視ラベル+tooltip+LocalizationData を翻訳済。
+    //     コード文字列は大半 fr..ko 化済、一部メッセージは未訳で en フォールバック)。これで ReciPro/PDIndexer と同じ 11 言語対応。
+    private static readonly string[] releasedCulturesInIPA = { "en", "ja", "de", "fr", "es", "it", "ru", "pt", "zh-Hans", "zh-Hant", "ko" };
 
     // 260625Cl 追加: F1/PDF マニュアルが整備済みの言語の allow-list (未整備言語は英語マニュアルへ落とす)。
     //   公開ゲート (releasedCulturesInIPA) とは別概念 (UI 翻訳済 ≠ マニュアル整備済)。
@@ -2927,7 +2929,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             en: $"Switching the display language to \"{culture.NativeName}\" requires restarting IPAnalyzer.\nUnsaved work will be lost. Restart now?",
             ja: $"表示言語を「{culture.NativeName}」に切り替えるには IPAnalyzer の再起動が必要です。\n保存していない作業は失われます。今すぐ再起動しますか？",
             de: $"Zum Umschalten der Anzeigesprache auf \"{culture.NativeName}\" muss IPAnalyzer neu gestartet werden.\nNicht gespeicherte Arbeit geht verloren. Jetzt neu starten?");
-        if (MessageBox.Show(this, msg, Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern"),
+        if (MessageBox.Show(this, msg, Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern", fr: "Changer de langue", es: "Cambiar idioma", pt: "Alterar idioma", it: "Cambia lingua", ru: "Сменить язык", zhHans: "更改语言", zhHant: "變更語言", ko: "언어 변경"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
         {
             // キャンセル: メニューのチェックを現在の言語へ戻す (新言語に先走ってチェックされたままにしない)。
@@ -2966,7 +2968,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     en: $"Failed to restart IPAnalyzer.\n{ex.Message}",
                     ja: $"IPAnalyzer の再起動に失敗しました。\n{ex.Message}",
                     de: $"Neustart von IPAnalyzer fehlgeschlagen.\n{ex.Message}"),
-                Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern"),
+                Crystallography.Localization.Loc(en: "Change language", ja: "言語の変更", de: "Sprache ändern", fr: "Changer de langue", es: "Cambiar idioma", pt: "Alterar idioma", it: "Cambia lingua", ru: "Сменить язык", zhHans: "更改语言", zhHant: "變更語言", ko: "언어 변경"),
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
@@ -3098,7 +3100,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         catch
         {
-            MessageBox.Show(Crystallography.Localization.Loc(en: "Some items are not entered correctly.", ja: "適切に入力されていない項目があります", de: "Einige Felder sind nicht korrekt ausgefüllt.")); // 260625Cl Loc化 (英日混在→en正規化)
+            MessageBox.Show(Crystallography.Localization.Loc(en: "Some items are not entered correctly.", ja: "適切に入力されていない項目があります", de: "Einige Felder sind nicht korrekt ausgefüllt.", fr: "Certains éléments ne sont pas saisis correctement.", es: "Algunos elementos no se han introducido correctamente.", pt: "Alguns itens não foram inseridos corretamente.", it: "Alcuni elementi non sono inseriti correttamente.", ru: "Некоторые поля заполнены неверно.", zhHans: "部分项目输入不正确。", zhHant: "部分項目未正確輸入。", ko: "일부 항목이 올바르게 입력되지 않았습니다.")); // 260625Cl Loc化 (英日混在→en正規化)
             return;
         }
         Ring.IP = IP;
@@ -3149,7 +3151,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 FormProperty.DirectSpotPosition = center;
             }
             toolStripSplitButtonFindCenter.Enabled = true;
-            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Center):  ", ja: "計算時間 (中心検出):  ", de: "Berechnungszeit (Zentrum finden):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Center):  ", ja: "計算時間 (中心検出):  ", de: "Berechnungszeit (Zentrum finden):  ", fr: "Temps de calcul (Rechercher le centre) :  ", es: "Tiempo de cálculo (Buscar centro):  ", pt: "Tempo de cálculo (Encontrar centro):  ", it: "Tempo di calcolo (Trova centro):  ", ru: "Время вычисления (Поиск центра):  ", zhHans: "计算时间（查找中心）：  ", zhHant: "計算時間 (尋找中心):  ", ko: "계산 시간 (Find Center):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
 
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosX = FormProperty.DirectSpotPosition.X;
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosY = FormProperty.DirectSpotPosition.Y;
@@ -3265,7 +3267,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         Draw();
         this.Cursor = Cursors.Default;
         toolStripSplitButtonMaskSpots.Enabled = true;
-        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Spots):  ", ja: "計算時間 (スポット検出):  ", de: "Berechnungszeit (Spots finden):  ") + (Environment.TickCount - d).ToString() + "ms";
+        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Spots):  ", ja: "計算時間 (スポット検出):  ", de: "Berechnungszeit (Spots finden):  ", fr: "Temps de calcul (Rechercher les taches) :  ", es: "Tiempo de cálculo (Buscar puntos):  ", pt: "Tempo de cálculo (Encontrar pontos):  ", it: "Tempo di calcolo (Trova spot):  ", ru: "Время вычисления (Поиск рефлексов):  ", zhHans: "计算时间（查找斑点）：  ", zhHant: "計算時間 (尋找斑點):  ", ko: "계산 시간 (Find Spots):  ") + (Environment.TickCount - d).ToString() + "ms";
 
 
     }
@@ -3549,7 +3551,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message);
-            MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to processing. sorry.", ja: "処理に失敗しました。", de: "Verarbeitung fehlgeschlagen. Entschuldigung.")); // 260625Cl Loc化
+            MessageBox.Show(Crystallography.Localization.Loc(en: "Failed to processing. sorry.", ja: "処理に失敗しました。", de: "Verarbeitung fehlgeschlagen. Entschuldigung.", fr: "Échec du traitement. Désolé.", es: "Error en el procesamiento. Lo sentimos.", pt: "Falha no processamento. Desculpe.", it: "Elaborazione non riuscita. spiacenti.", ru: "Не удалось выполнить обработку. Извините.", zhHans: "处理失败。抱歉。", zhHant: "處理失敗。抱歉。", ko: "처리하지 못했습니다. 죄송합니다.")); // 260625Cl Loc化
         }
         finally
         {
@@ -3685,7 +3687,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         else
             Ring.SetInsideArea(IP);
 
-        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (SetIntegralArea):  ", ja: "計算時間 (積算領域設定):  ", de: "Berechnungszeit (Integrationsbereich setzen):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
+        this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (SetIntegralArea):  ", ja: "計算時間 (積算領域設定):  ", de: "Berechnungszeit (Integrationsbereich setzen):  ", fr: "Temps de calcul (SetIntegralArea) :  ", es: "Tiempo de cálculo (SetIntegralArea):  ", pt: "Tempo de cálculo (SetIntegralArea):  ", it: "Tempo di calcolo (SetIntegralArea):  ", ru: "Время вычисления (SetIntegralArea):  ", zhHans: "计算时间（SetIntegralArea）：  ", zhHant: "計算時間 (SetIntegralArea):  ", ko: "계산 시간 (SetIntegralArea):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
 
         SetMask();
         Draw();
@@ -3773,7 +3775,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             double[] imageArray = Ring.GetUnrolledImageArray(IP, chiDivision, xStart, xEnd, xStep);
 
-            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Unroll Image):  ", ja: "計算時間 (画像の切り開き):  ", de: "Berechnungszeit (Bild abrollen):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Unroll Image):  ", ja: "計算時間 (画像の切り開き):  ", de: "Berechnungszeit (Bild abrollen):  ", fr: "Temps de calcul (Déroulement de l'image) :  ", es: "Tiempo de cálculo (Desenrollar imagen):  ", pt: "Tempo de cálculo (Desenrolar imagem):  ", it: "Tempo di calcolo (Srotola immagine):  ", ru: "Время вычисления (Развёртка изображения):  ", zhHans: "计算时间（展开图像）：  ", zhHant: "計算時間 (展開影像):  ", ko: "계산 시간 (Unroll Image):  ") + sw.ElapsedMilliseconds.ToString() + "ms";
 
             byte[] scale = new byte[256];
             for (int i = 0; i < 256; i++)
@@ -4190,7 +4192,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1;
             Ring.Intensity = Ring.CorrectPolarization(index);
-            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Polarization Correction):  ", ja: "計算時間 (偏光補正):  ", de: "Berechnungszeit (Polarisationskorrektur):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
+            this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Polarization Correction):  ", ja: "計算時間 (偏光補正):  ", de: "Berechnungszeit (Polarisationskorrektur):  ", fr: "Temps de calcul (Correction de polarisation) :  ", es: "Tiempo de cálculo (Corrección de polarización):  ", pt: "Tempo de cálculo (Correção de polarização):  ", it: "Tempo di calcolo (Correzione di polarizzazione):  ", ru: "Время вычисления (Поляризационная коррекция):  ", zhHans: "计算时间（偏振校正）：  ", zhHant: "計算時間 (偏極化校正):  ", ko: "계산 시간 (Polarization Correction):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
         }
         //偏光補正ここまで
 

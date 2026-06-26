@@ -1,0 +1,1073 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxScaleLabel.Text" xml:space="preserve">
+    <value>顯示標籤</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>係數</value>
+  </data>
+  <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
+    <value>手動遮罩模式</value>
+  </data>
+  <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
+    <value>TSV</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
+    <value>維持影像對比 </value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>偵測器類型</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>比例尺線選項</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>矩形</value>
+  </data>
+  <data name="radioButtonChiClockwise.Text" xml:space="preserve">
+    <value>順時針</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>扇形角度步進 (掃掠步進)</value>
+  </data>
+  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
+    <value>「取得圖譜」之後</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
+    <value>末層資料夾 + 檔名</value>
+  </data>
+  <data name="buttonMaskAll.Text" xml:space="preserve">
+    <value>全部遮罩</value>
+  </data>
+  <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Gandolfi 半徑</value>
+  </data>
+  <data name="tabPageIP.Text" xml:space="preserve">
+    <value>偵測器條件</value>
+  </data>
+  <data name="radioButtonRadialDspacing.Text" xml:space="preserve">
+    <value>d 間距</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>(試樣至直射點)</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>甜甜圈寬度</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>沿用遮罩設定</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>矩形</value>
+  </data>
+  <data name="buttonMaskRight.Text" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>水平 (距直射點距離) 單位與範圍</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>輸出圖樣</value>
+  </data>
+  <data name="radioButton3.Text" xml:space="preserve">
+    <value>d 間距</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
+    <value>同時傳送展開影像</value>
+  </data>
+  <data name="radioButtonGandlfi.Text" xml:space="preserve">
+    <value>Gandolfi</value>
+  </data>
+  <data name="radioButtonAsCSVformat.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
+    <value>積分區域</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>垂直 (扇形角度) 步進 </value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>展開影像選項</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
+    <value>兩側</value>
+  </data>
+  <data name="groupBox18.Text" xml:space="preserve">
+    <value>影像載入選項</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>座標</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>斑點遮罩選項</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>分割數</value>
+  </data>
+  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
+    <value>遮罩選項</value>
+  </data>
+  <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
+    <value>檔名</value>
+  </data>
+  <data name="groupBoxCameaLength.Text" xml:space="preserve">
+    <value>相機長度 1</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
+    <value>維持顯示範圍</value>
+  </data>
+  <data name="buttonMaskLeft.Text" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="radioButtonManualRectangle.Text" xml:space="preserve">
+    <value>矩形 (拖曳：設定對角頂點)</value>
+  </data>
+  <data name="radioButtonChiRight.Text" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>直射點</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>甜甜圈半徑</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>(試樣至基底)</value>
+  </data>
+  <data name="buttonUnmaskAll.Text" xml:space="preserve">
+    <value>取消所有遮罩</value>
+  </data>
+  <data name="radioButtonManualCircle.Text" xml:space="preserve">
+    <value>圓形 (拖曳：設定中心與半徑)</value>
+  </data>
+  <data name="radioButtonRadialAngle.Text" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="buttonInvertMask.Text" xml:space="preserve">
+    <value>反轉遮罩</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>起始角度</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
+    <value>校正線偏振 (即線偏振 → 非偏振)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>「遮罩斑點」的
+判定偏差</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>方向</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>(註：χ 為其他項目分頁所定義的方位角)</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>背景選項</value>
+  </data>
+  <data name="radioButtonCircle.Text" xml:space="preserve">
+    <value>圓形</value>
+  </data>
+  <data name="radioButtonRadial.Text" xml:space="preserve">
+    <value>徑向積分 (蛋糕圖樣)</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
+    <value>每次於所選目錄</value>
+  </data>
+  <data name="groupBox17.Text" xml:space="preserve">
+    <value>連續影像或方位角分割的儲存選項</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>參考影像設定</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>旋轉:</value>
+  </data>
+  <data name="radioButtonManualSpot.Text" xml:space="preserve">
+    <value>斑點 (左/右鍵：新增/移除斑點)</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
+    <value>d 間距</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>步進</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>距邊緣像素</value>
+  </data>
+  <data name="radioButtonManualPolygon.Text" xml:space="preserve">
+    <value>多邊形 (點選：新增頂點，
+                 雙擊：完成)</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="comboBoxRectangleDirection.Text" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>線寬</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>基底位置</value>
+  </data>
+  <data name="checkBoxThresholdMax.Text" xml:space="preserve">
+    <value>強度高於</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>積分步進與範圍</value>
+  </data>
+  <data name="checkBoxSaveFile.Text" xml:space="preserve">
+    <value>儲存圖譜 </value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
+    <value>排除遮罩像素</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>半遮罩</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>扇形</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>底片距離</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value> (左/右鍵：新增/刪除點，
+ 雙擊：設定遮罩)</value>
+  </data>
+  <data name="checkBoxOmitSpots.Text" xml:space="preserve">
+    <value>遮罩斑點</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>例外像素</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>相機長度 2 </value>
+  </data>
+  <data name="radioButtonChiTop.Text" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.Text" xml:space="preserve">
+    <value>存於單一檔案 
+(GSAS 除外)</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>結束</value>
+  </data>
+  <data name="radioButtonConcentricLength.Text" xml:space="preserve">
+    <value>長度</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(通常為零)</value>
+  </data>
+  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
+    <value>積分性質</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.Text" xml:space="preserve">
+    <value>Debye - Scherrer</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>結束</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>結束角度</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>線寬</value>
+  </data>
+  <data name="radioButtonConcentric.Text" xml:space="preserve">
+    <value>同心積分 (散射角色散)</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
+    <value>存於個別檔案</value>
+  </data>
+  <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
+    <value>直射點位置</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>長度</value>
+  </data>
+  <data name="radioButtonChiLeft.Text" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="checkBoxFixCenter.Text" xml:space="preserve">
+    <value>固定中心</value>
+  </data>
+  <data name="groupBox16.Text" xml:space="preserve">
+    <value>儲存目錄</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
+    <value>完整路徑</value>
+  </data>
+  <data name="buttonMaskTop.Text" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
+    <value>將目前影像設為背景</value>
+  </data>
+  <data name="radioButtonChiBottom.Text" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="groupBox19.Text" xml:space="preserve">
+    <value>影像名稱選項</value>
+  </data>
+  <data name="radioButtonFlatPanel.Text" xml:space="preserve">
+    <value>平板</value>
+  </data>
+  <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
+    <value>傾斜</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
+    <value>逆時針</value>
+  </data>
+  <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>透過剪貼簿將圖譜資料傳送至 PDIndexer</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
+    <value>於影像所在的相同目錄</value>
+  </data>
+  <data name="radioButtonBraggBrentano.Text" xml:space="preserve">
+    <value>Bragg - Brentano</value>
+  </data>
+  <data name="groupBoxPixelShape.Text" xml:space="preserve">
+    <value>像素形狀</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
+    <value>沿用遮罩檔案</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
+    <value>GSAS</value>
+  </data>
+  <data name="radioButtonAsPDIformat.Text" xml:space="preserve">
+    <value>PDI</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>其他項目</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>尋找中心選項</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>條帶寬度</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>球面校正</value>
+  </data>
+  <data name="groupBox15.Text" xml:space="preserve">
+    <value>檔案格式</value>
+  </data>
+  <data name="radioButtonManualSpline.Text" xml:space="preserve">
+    <value>雲線</value>
+  </data>
+  <data name="tabPageXRay.Text" xml:space="preserve">
+    <value>波源</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>步進</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>性質</value>
+  </data>
+  <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
+    <value>沿用目前的遮罩狀態</value>
+  </data>
+  <data name="buttonMaskBottom.Text" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="checkBoxTest.Text" xml:space="preserve">
+    <value>移除 Kα2 (若已選取 Kα1 線)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>波長</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Chi (χ) 軸選項</value>
+  </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="checkBoxThresholdMin.Text" xml:space="preserve">
+    <value>強度低於</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>基底</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
+    <value>半徑倒數</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.HeaderText" xml:space="preserve">
+    <value>峰擬合範圍 (2θ)</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.HeaderText" xml:space="preserve">
+    <value>搜尋區域 　±</value>
+  </data>
+  <data name="numericBoxTest.HeaderText" xml:space="preserve">
+    <value>Kα2/Kα1</value>
+  </data>
+  <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Gandolfi 相機半徑 (mm)：彎曲／圓柱形
+偵測器的半徑。僅在 Gandolfi 模式下
+用於將像素位置對應到 2θ。</value>
+  </data>
+  <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
+    <value>對輸出的 1D 圖樣套用 Bragg-Brentano
+（反射、準聚焦）強度慣例，
+例如用於實驗室繞射儀的比較。</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
+    <value>展開影像水平軸的步進（分格寬度），
+以所選單位表示；設定整張 cake 影像
+的 2θ／d 解析度。</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
+    <value>對輸出的 1D 圖樣套用 Debye-Scherrer
+（穿透粉末環）強度慣例——
+這是 2D 面偵測器資料的常用模式。</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>手動斑點遮罩使用矩形（正方形）形狀。</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>展開影像的水平軸使用偵測器
+長度 (mm)。</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
+    <value>自動將圖譜儲存到與來源影像相同的
+資料夾，不另行詢問。</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
+    <value>以上層資料夾名稱加上檔名
+（例如 run3/img001.tif）標示影像，
+以區分同名檔案。</value>
+  </data>
+  <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
+    <value>清除已儲存的背景影像，
+使其不套用背景扣除。</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
+    <value>以完整檔案路徑標示影像。</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
+    <value>展開 cake 影像的方位角 (χ) 分格數
+（1-2048，預設 720）；設定沿方位角
+軸的垂直解析度。</value>
+  </data>
+  <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
+    <value>Gandolfi（圓柱／彎曲底片）相機
+幾何；顯示 Gandolfi 半徑輸入欄
+並停用基底模式。</value>
+  </data>
+  <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
+    <value>徑向積分的方位角掃描步進 (deg)：
+環上輸出點之間的角度間距。
+越小 = χ 解析度越精細。</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
+    <value>除了 1D 圖譜外，也將展開（cake／
+依方位角展開的 2θ 對 χ）影像
+傳送至 PDIndexer。</value>
+  </data>
+  <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
+    <value>以 PDI 格式（PDIndexer 的原生格式）儲存圖譜。</value>
+  </data>
+  <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
+    <value>目前用作扣除背景的影像路徑
+（唯讀）；未設定背景時為空白。</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
+    <value>扇形起始角度（deg，方位角 χ）。
+積分的扇形方位角範圍起點；
+與結束角度配對使用。</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
+    <value>將連續／方位角系列的每個圖譜
+分別儲存為各自的檔案。</value>
+  </data>
+  <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
+    <value>圖譜分格寬度（步進），以所選
+單位表示。步進越小 = 解析度越
+精細、點數越多，但分格雜訊越大。</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
+    <value>光束中心 Y（直接斑點），以偵測器
+像素表示。設定環圖樣原點；
+移動它會改變積分中心。</value>
+  </data>
+  <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
+    <value>將方位角原點 (χ = 0) 置於影像右側。
+設定方位角積分的起始位置。</value>
+  </data>
+  <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
+    <value>遮罩（從積分中排除）影像的整個
+左半部。會加入既有遮罩；
+使用「取消所有遮罩」可清除。</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
+    <value>精修中心時用於各 Debye 環周圍的
+峰擬合範圍（2θ deg）；峰較寬時
+調大，要避開鄰近峰時調小。</value>
+  </data>
+  <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
+    <value>相機長度 2：試樣到基底的距離 (mm)，
+即到傾斜偵測器平面的垂直距離
+(= CL1·cos τ)。並非試樣到直接斑點的長度。</value>
+  </data>
+  <data name="radioButtonCircle.ToolTip" xml:space="preserve">
+    <value>手動斑點遮罩使用圓形形狀。</value>
+  </data>
+  <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
+    <value>在影像上疊加的比例尺線旁顯示
+數值標籤（2θ／方位角）。</value>
+  </data>
+  <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
+    <value>手動遮罩工具：斑點。左鍵點擊新增、
+右鍵移除游標處所選大小的斑點遮罩。</value>
+  </data>
+  <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>偵測器沿 X 方向的像素大小 (mm/pixel)。
+將像素位置換算為實際距離；必須符合
+偵測器規格，否則 2θ 縮放會錯誤。</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
+    <value>手動斑點大小以 2 的次方表示：斑點直徑
+= 2^值 像素（0-10 -&amp;gt; 1..1024 px）。
+值越大，每次點擊遮罩的斑點越大。</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
+    <value>載入下一張影像時保持目前的縮放／
+顯示範圍（平移與縮放），而不是
+針對每張新影像調整檢視大小。</value>
+  </data>
+  <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
+    <value>將方位角原點 (χ =
+0) 置於影像頂端。</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
+    <value>載入下一張影像時，以無遮罩
+開始（捨棄目前任何遮罩）。</value>
+  </data>
+  <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
+    <value>圖譜範圍起點，以目前所選單位表示
+（2θ deg、長度 mm 或 d 間距 Å）。
+輸出 1D 圖譜的下限。</value>
+  </data>
+  <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
+    <value>彎曲影像板的球面彎曲校正
+（通常為 0）。在 IP 非平面時補償
+與半徑相關的畸變。</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
+    <value>影像上疊加的 2θ／方位角比例尺線
+密度：無、粗、中或細
+（線越多 = 格線越精細）。</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>在環的角度扇形（扇區）上積分，
+介於起始與結束方位角之間，
+而非矩形。</value>
+  </data>
+  <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
+    <value>以散射角 2θ（度）作為圖譜 x 軸；
+起點／終點／步進以度解讀。</value>
+  </data>
+  <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
+    <value>邊緣遮罩寬度，以像素表示（0-256）：
+啟用「距邊緣像素」時，從積分中
+排除的邊框條帶厚度。</value>
+  </data>
+  <data name="radioButtonRadial.ToolTip" xml:space="preserve">
+    <value>徑向（cake）積分：在固定環半徑下
+掃描方位角，取得強度對方位角 χ——
+顯示單一環周圍的織構／擇優取向。</value>
+  </data>
+  <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
+    <value>載入下一張影像時，保留目前記憶體中
+的遮罩（重複使用相同的遮罩像素）。</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
+    <value>條帶旋轉角度（deg，0-360）。矩形
+積分條帶的方位角取向；僅在
+方向 = 自由時可編輯。</value>
+  </data>
+  <data name="buttonMaskRight.ToolTip" xml:space="preserve">
+    <value>遮罩（從積分中排除）影像的整個
+右半部。會加入既有遮罩。</value>
+  </data>
+  <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
+    <value>設定 2θ 比例尺線的顏色</value>
+  </data>
+  <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
+    <value>疊加比例尺線的筆寬（以像素表示）；
+向右拖曳可使格線更粗、更明顯。</value>
+  </data>
+  <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
+    <value>進入手動遮罩模式，可用滑鼠直接在
+影像上繪製遮罩區域（斑點／圓形／
+矩形／多邊形／樣條）。</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
+    <value>載入下一張影像時，套用已儲存遮罩
+檔案中的遮罩，而非記憶體中的遮罩。</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
+    <value>光束中心 X（直接斑點），以偵測器像素表示。
+設定所有 2θ／d／q 環計算的原點；
+移動它會改變積分中心。</value>
+  </data>
+  <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
+    <value>平板／影像板偵測器幾何（大致垂直
+於光束的平面偵測器）。
+啟用傾斜與基底模式選項。</value>
+  </data>
+  <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
+    <value>矩形積分條帶的取向：整環、
+單側（上／下／左／右）、對稱
+垂直／水平，或自由（自訂角度）。</value>
+  </data>
+  <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
+    <value>徑向（cake）積分要掃描的環半徑，
+依角度／d 間距切換以 2θ (deg) 或
+d 間距 (Å) 表示。</value>
+  </data>
+  <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
+    <value>基底點 X，以像素表示：試樣的垂線
+與傾斜偵測器交會處。透過傾斜角
+與直接斑點 X 相耦合。</value>
+  </data>
+  <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
+    <value>排除低計數像素：忽略強度低於
+右方數值的像素。用於剔除
+死點／僅含背景的像素。</value>
+  </data>
+  <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
+    <value>基底點 Y，以像素表示：試樣的垂線
+與傾斜偵測器交會處。透過傾斜角
+與直接斑點 Y 相耦合。</value>
+  </data>
+  <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
+    <value>背景縮放係數（0-10，預設 1）：
+顯示 = 影像 - 係數 x 背景。調高可
+扣除更多背景，調低可扣除較少。</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
+    <value>強度下限閾值（計數）。低於此值的
+像素會從積分中排除；僅在勾選
+「強度低於」時生效。</value>
+  </data>
+  <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
+    <value>排除飽和像素：積分時忽略計數超過
+右方數值的像素。用於剔除
+暈散／死亮像素。</value>
+  </data>
+  <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
+    <value>從積分中排除遮罩斑點：標記為斑點的
+像素（例如單晶繞射、灰塵）會被略過，
+以免污染粉末圖譜。</value>
+  </data>
+  <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
+    <value>傾斜方位角 φ (deg)：偵測器傾斜軸的
+面內方向。與 τ 結合可校正
+不垂直於光束的偵測器。</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>以直接光束斑點定義偵測器幾何：
+輸入直接斑點像素與相機長度 1
+（試樣到直接斑點的距離）。
+當光束打到偵測器時使用。</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
+    <value>在尋找／精修光束中心時忽略遮罩
+像素，使遮罩斑點與不良區域
+不會使結果產生偏差。</value>
+  </data>
+  <data name="numericBoxTest.ToolTip" xml:space="preserve">
+    <value>用於 Kα2 移除校正的 Kα2/Kα1
+強度比（範圍 0-2，通常約 0.5）。
+越高扣除越多 Kα2。</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
+    <value>展開影像水平軸的結束值（0-180），
+以所選單位表示。cake 影像的右緣。</value>
+  </data>
+  <data name="buttonMaskAll.ToolTip" xml:space="preserve">
+    <value>遮罩整張影像（每個像素都從積分中
+排除）。通常用於手動只取消遮罩
+關注區域之前。</value>
+  </data>
+  <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
+    <value>以 GSAS 格式儲存圖譜供 Rietveld
+精修；請注意此格式不提供
+「單一檔案」選項。</value>
+  </data>
+  <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
+    <value>條帶寬度，以像素表示（最大 10000）：
+橫跨光束中心線的矩形積分條帶之
+半厚度；越寬 = 平均的像素越多。</value>
+  </data>
+  <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
+    <value>每次「取得圖譜」後，自動將擷取的
+1D 圖譜儲存到檔案。啟用下方的
+檔案格式與目錄選項。</value>
+  </data>
+  <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
+    <value>遮罩（從積分中排除）影像的整個
+下半部。會加入既有遮罩。</value>
+  </data>
+  <data name="checkBoxTest.ToolTip" xml:space="preserve">
+    <value>當選取 Kα1 管線時，從圖譜中剝除
+Kα2 貢獻（Rachinger 校正），
+留下僅含 Kα1 的圖樣。</value>
+  </data>
+  <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
+    <value>手動遮罩工具：多邊形。點擊新增頂點，
+按兩下封閉並遮罩所圍區域。</value>
+  </data>
+  <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>像素非正交角 ξ (deg)：偵測器 X 與 Y
+軸之間的剪切／傾斜。0 = 完全矩形
+像素；可校正畸變的偵測器。</value>
+  </data>
+  <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
+    <value>相機長度 1：試樣到直接斑點的距離
+(mm)。設定像素半徑對 2θ 的縮放；
+長度越大，環會展開到較小的 2θ。</value>
+  </data>
+  <data name="radioButton3.ToolTip" xml:space="preserve">
+    <value>展開影像的水平軸使用晶格
+d 間距 (Å)。</value>
+  </data>
+  <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>偵測器沿 Y 方向的像素大小 (mm/pixel)。
+與 X 大小一起定義幾何中使用的像素長寬比。</value>
+  </data>
+  <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
+    <value>樣條遮罩條帶寬度，以像素表示（1-50）：
+沿樣條曲線繪製的遮罩條帶厚度。</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
+    <value>將方位角 χ 定義為在影像上
+逆時針增加（與順時針慣例相反）。</value>
+  </data>
+  <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
+    <value>遮罩影像邊框：積分時從每個邊緣
+排除 N 像素（於右方設定）的條帶，
+以去除偵測器邊緣假影。</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
+    <value>載入下一張影像時保持目前的強度
+對比（最小／最大顯示縮放），
+而非自動重新縮放每張影像。</value>
+  </data>
+  <data name="radioButton4.ToolTip" xml:space="preserve">
+    <value>展開影像的水平軸使用散射角
+2θ（度）。</value>
+  </data>
+  <data name="buttonInvertMask.ToolTip" xml:space="preserve">
+    <value>反轉遮罩：先前遮罩的像素變為作用，
+作用的像素變為遮罩。</value>
+  </data>
+  <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
+    <value>手動遮罩工具：樣條曲線。點擊新增
+控制點（右鍵刪除）；按兩下沿曲線
+遮罩所設寬度的條帶。</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
+    <value>以晶格 d 間距 (Å) 作為圖譜 x 軸；
+起點／終點／步進以 Å 表示。
+d = 波長 / (2 sin θ)。</value>
+  </data>
+  <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
+    <value>傾斜角 τ (deg)：偵測器平面偏離
+垂直於光束的程度。0 = 無傾斜；
+非零會使環呈橢圓，直到校正為止。</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>以垂線的基底（試樣法線投影到
+傾斜偵測器上）與相機長度 2
+（試樣到基底）定義幾何。
+用於傾斜的平板。</value>
+  </data>
+  <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
+    <value>清除所有遮罩：將每個像素重新
+納入積分。可復原全部遮罩／
+半遮罩／斑點遮罩。</value>
+  </data>
+  <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
+    <value>將方位角原點 (χ =
+0) 置於影像左側。</value>
+  </data>
+  <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
+    <value>同心積分：藉由繞完整 Debye 環積分，
+產生標準 1D 圖譜（強度對 2θ、
+d 間距或長度）。</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
+    <value>扇形結束角度（deg，方位角 χ）。
+積分的扇形方位角範圍終點；
+必須大於起始角度。</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
+    <value>針對線性（同步輻射）X 射線偏振
+校正強度，將量測圖樣轉換為
+非偏振等效；會影響峰高相對於
+方位角 χ 的變化。</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
+    <value>中心搜尋區域（像素／步進，整數）：
+自動中心搜尋器在目前中心周圍
+搜尋的半徑。越大 = 搜尋範圍越廣
+但越慢。</value>
+  </data>
+  <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
+    <value>以晶格 d 間距 (Å) 指定
+徑向環半徑。</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
+    <value>強度上限閾值（計數）。高於此值的
+像素會從積分中排除；僅在勾選
+「強度高於」時生效。</value>
+  </data>
+  <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
+    <value>手動遮罩工具：矩形。在兩個對角
+之間拖曳以遮罩矩形區域。</value>
+  </data>
+  <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
+    <value>設定影像上疊加的方位角 (χ)
+比例尺線顏色。</value>
+  </data>
+  <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
+    <value>以偵測器弧長 (mm) 作為圖譜 x 軸；
+起點／終點／步進以毫米表示。</value>
+  </data>
+  <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
+    <value>在每個方位角積分的所選半徑周圍
+環（甜甜圈）半寬度，以 2θ deg 或
+d 間距 Å 表示。越寬 = 計數越多、
+角度解析度越低。</value>
+  </data>
+  <data name="pictureBox1.ToolTip" xml:space="preserve">
+    <value>方位角 (χ) 軸預覽：顯示 χ = 0 的
+位置，以及在目前方向與旋轉設定下
+χ 朝哪個方向增加。</value>
+  </data>
+  <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>產生的手動斑點直徑，以像素表示
+(= 2^大小)。多為唯讀；對應大小滑桿
+與主工具列的斑點大小選擇器。</value>
+  </data>
+  <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
+    <value>將方位角原點 (χ = 0)
+置於影像底端。</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
+    <value>在光束中心兩側對稱積分條帶
+（中心對稱），使取樣區域加倍。
+供垂直／水平預設使用。</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>在矩形條帶上積分而非整環；
+為條狀區域啟用方向、角度與
+條帶寬度控制項。</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
+    <value>自動「遮罩斑點」的斑點偵測閾值，
+以高於區域平均的標準差表示。越低
+= 遮罩越多斑點；越高 = 僅遮罩最強者。</value>
+  </data>
+  <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
+    <value>以散射角 2θ（度）指定
+徑向環半徑。</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
+    <value>展開影像水平軸的起始值（0-180），
+依單位選擇以 2θ deg／長度／d 間距
+表示。cake 影像的左緣。</value>
+  </data>
+  <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
+    <value>將圖譜儲存為 CSV（逗號分隔值）
+供試算表使用。</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
+    <value>每次儲存圖譜時詢問輸出目錄。</value>
+  </data>
+  <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
+    <value>圖譜範圍終點，以目前所選單位表示
+（2θ deg／mm／Å）。
+輸出 1D 圖譜的上限。</value>
+  </data>
+  <data name="buttonMaskTop.ToolTip" xml:space="preserve">
+    <value>遮罩（從積分中排除）影像的整個
+上半部。會加入既有遮罩。</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
+    <value>每次積分後，透過剪貼簿將擷取的
+1D 圖譜傳送至 PDIndexer（搭配應用程式）。</value>
+  </data>
+  <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
+    <value>在尋找／精修中心期間固定光束中心
+位置，使其只最佳化其他參數。
+會停用搜尋區域選項。</value>
+  </data>
+  <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
+    <value>將方位角 χ 定義為在影像上順時針
+增加。設定方位角展開與扇形
+角度的正負號慣例。</value>
+  </data>
+  <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
+    <value>手動遮罩工具：圓形。從中心向外
+拖曳以遮罩圓形區域
+（中心與半徑由拖曳設定）。</value>
+  </data>
+  <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
+    <value>僅以檔名（不含路徑）標示儲存／顯示的影像。</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
+    <value>將連續／方位角系列的所有圖譜儲存
+至單一檔案（GSAS 格式不可用）。</value>
+  </data>
+  <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
+    <value>將圖譜儲存為 TSV（Tab 分隔值）。</value>
+  </data>
+  <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
+    <value>將目前載入的影像用作背景，
+從後續影像中扣除
+（依係數縮放）。</value>
+  </data>
+</root>

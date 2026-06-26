@@ -1,0 +1,126 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>「取得圖譜」的目標</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.Text" xml:space="preserve">
+    <value>僅最上層影像</value>
+  </data>
+  <data name="checkBoxAverage.Text" xml:space="preserve">
+    <value>平均</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
+    <value>所有影像（不受目前選取影響）</value>
+  </data>
+  <data name="checkBoxMultiSelection.Text" xml:space="preserve">
+    <value>多重選取</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.Text" xml:space="preserve">
+    <value>選取的影像</value>
+  </data>
+  <data name="checkBoxSummation.Text" xml:space="preserve">
+    <value>加總</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>連續影像選項</value>
+  </data>
+  <data name="trackBar1.ToolTip" xml:space="preserve">
+    <value>在影像堆疊的各影格之間拖曳瀏覽；
+跳至選取的影格，重新計算其 1D 圖譜
+並重繪。範圍 0..(影格數-1)。
+在多重選取模式下停用。</value>
+  </data>
+  <data name="listBox.ToolTip" xml:space="preserve">
+    <value>堆疊中所有影格的清單。按一下可顯示某個
+影格；在多重選取模式下，使用 Ctrl/Shift
+(Ctrl+A = 全部) 挑選多個影格進行平均或加總。
+HDF5 影格會以 3 位數索引作為前綴。</value>
+  </data>
+  <data name="checkBoxMultiSelection.ToolTip" xml:space="preserve">
+    <value>允許一次選取多個影格 (啟用平均／加總
+選項，並停用影格滑桿)。關閉 = 一次
+檢視一個影格。</value>
+  </data>
+  <data name="checkBoxAverage.ToolTip" xml:space="preserve">
+    <value>顯示所選影格的逐像素平均值 (強度總和
+除以影格數)。與加總互斥。
+需要多重選取。</value>
+  </data>
+  <data name="checkBoxSummation.ToolTip" xml:space="preserve">
+    <value>顯示所選影格的逐像素總和 (強度相加，
+不除)；可提高統計量並改善弱影格的
+計數。與平均互斥。需要多重選取。</value>
+  </data>
+  <data name="radioButtonGetProfileSelectedImages.ToolTip" xml:space="preserve">
+    <value>僅對上方清單中目前選取的影格執行
+「取得圖譜」(徑向積分為 1D 的
+I-對-2θ/d/q 曲線)。</value>
+  </data>
+  <data name="radioButtonGetProfileOnlyTopmost.ToolTip" xml:space="preserve">
+    <value>僅對目前顯示在最上層的單一影格執行
+「取得圖譜」(徑向積分為 1D 圖譜)。</value>
+  </data>
+  <data name="radioButtonGetProfileAllImages.ToolTip" xml:space="preserve">
+    <value>對堆疊中的每個影格執行「取得圖譜」
+(徑向積分為 1D)，忽略目前的清單選取；
+每個影格產生一份圖譜。</value>
+  </data>
+</root>

@@ -1,0 +1,1077 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxScaleLabel.Text" xml:space="preserve">
+    <value>라벨 표시</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>계수</value>
+  </data>
+  <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
+    <value>수동 마스크 모드</value>
+  </data>
+  <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
+    <value>TSV</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
+    <value>이미지 대비 유지 </value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>검출기 종류</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>눈금선 옵션</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
+    <value>지우기</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>직사각형</value>
+  </data>
+  <data name="radioButtonChiClockwise.Text" xml:space="preserve">
+    <value>시계 방향</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>섹터 각도 스텝 (스윕 스텝)</value>
+  </data>
+  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
+    <value>"프로파일 가져오기" 후</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
+    <value>마지막 폴더 + 파일 이름</value>
+  </data>
+  <data name="buttonMaskAll.Text" xml:space="preserve">
+    <value>전체 마스크</value>
+  </data>
+  <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>간돌피 반지름</value>
+  </data>
+  <data name="tabPageIP.Text" xml:space="preserve">
+    <value>검출기 조건</value>
+  </data>
+  <data name="radioButtonRadialDspacing.Text" xml:space="preserve">
+    <value>d-간격</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>(시료에서 다이렉트 스폿까지)</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>도넛 폭</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>마스크 설정 이어받기</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>각도</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>직사각형</value>
+  </data>
+  <data name="buttonMaskRight.Text" xml:space="preserve">
+    <value>오른쪽</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>수평 (다이렉트 스폿으로부터의 거리) 단위 및 범위</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>출력 패턴</value>
+  </data>
+  <data name="radioButton3.Text" xml:space="preserve">
+    <value>d-간격</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
+    <value>펼친 이미지도 전송</value>
+  </data>
+  <data name="radioButtonGandlfi.Text" xml:space="preserve">
+    <value>간돌피</value>
+  </data>
+  <data name="radioButtonAsCSVformat.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
+    <value>적분 영역</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>수직 (섹터 각도) 스텝 </value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>펼친 이미지 옵션</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
+    <value>양면</value>
+  </data>
+  <data name="groupBox18.Text" xml:space="preserve">
+    <value>이미지 불러오기 옵션</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>좌표</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>스폿 마스크 옵션</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>분할</value>
+  </data>
+  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
+    <value>마스크 옵션</value>
+  </data>
+  <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
+    <value>파일 이름</value>
+  </data>
+  <data name="groupBoxCameaLength.Text" xml:space="preserve">
+    <value>카메라 길이 1</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
+    <value>표시 범위 유지</value>
+  </data>
+  <data name="buttonMaskLeft.Text" xml:space="preserve">
+    <value>왼쪽</value>
+  </data>
+  <data name="radioButtonManualRectangle.Text" xml:space="preserve">
+    <value>직사각형 (드래그: 대각 꼭짓점 설정)</value>
+  </data>
+  <data name="radioButtonChiRight.Text" xml:space="preserve">
+    <value>오른쪽</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>다이렉트 스폿</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>도넛 반지름</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>(시료에서 푸트까지)</value>
+  </data>
+  <data name="buttonUnmaskAll.Text" xml:space="preserve">
+    <value>모두 마스크 해제</value>
+  </data>
+  <data name="radioButtonManualCircle.Text" xml:space="preserve">
+    <value>원 (드래그: 중심 &amp;amp;&amp;amp; 반지름 설정)</value>
+  </data>
+  <data name="radioButtonRadialAngle.Text" xml:space="preserve">
+    <value>각도</value>
+  </data>
+  <data name="buttonInvertMask.Text" xml:space="preserve">
+    <value>마스크 반전</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>시작 각도</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
+    <value>선편광 보정 (즉, 선편광 → 무편광)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>"스폿 마스크"용
+ 기준 편차</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>방향</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>(참고: χ는 기타 탭에서 정의된 방위각입니다)</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>배경 옵션</value>
+  </data>
+  <data name="radioButtonCircle.Text" xml:space="preserve">
+    <value>원</value>
+  </data>
+  <data name="radioButtonRadial.Text" xml:space="preserve">
+    <value>방사 적분 (케이크 패턴)</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
+    <value>매번 선택한 디렉터리에</value>
+  </data>
+  <data name="groupBox17.Text" xml:space="preserve">
+    <value>연속 이미지 또는 방위 분할 저장 옵션</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>참조 이미지 설정</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>회전:</value>
+  </data>
+  <data name="radioButtonManualSpot.Text" xml:space="preserve">
+    <value>스폿 (좌/우 클릭: 스폿 추가/제거)</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
+    <value>d-간격</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>가장자리로부터의 픽셀</value>
+  </data>
+  <data name="radioButtonManualPolygon.Text" xml:space="preserve">
+    <value>다각형 (클릭: 꼭짓점 추가,
+                 더블 클릭: 완료)</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="comboBoxRectangleDirection.Text" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>선 폭</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>푸트 위치</value>
+  </data>
+  <data name="checkBoxThresholdMax.Text" xml:space="preserve">
+    <value>다음 강도 초과</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>적분 스텝 &amp;amp;&amp;amp; 범위</value>
+  </data>
+  <data name="checkBoxSaveFile.Text" xml:space="preserve">
+    <value>프로파일 저장 </value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
+    <value>마스크된 픽셀 제외</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>반쪽 마스크</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>섹터</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>필름 거리</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value> (좌/우 클릭: 점 추가/삭제,
+ 더블 클릭: 마스크 설정)</value>
+  </data>
+  <data name="checkBoxOmitSpots.Text" xml:space="preserve">
+    <value>마스크된 스폿</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>예외 픽셀</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>카메라 길이 2 </value>
+  </data>
+  <data name="radioButtonChiTop.Text" xml:space="preserve">
+    <value>위</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.Text" xml:space="preserve">
+    <value>하나의 파일에 
+(GSAS 제외)</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>끝</value>
+  </data>
+  <data name="radioButtonConcentricLength.Text" xml:space="preserve">
+    <value>길이</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(보통 0)</value>
+  </data>
+  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
+    <value>적분 속성</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.Text" xml:space="preserve">
+    <value>디바이-셰러</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>끝</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>끝 각도</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>선 폭</value>
+  </data>
+  <data name="radioButtonConcentric.Text" xml:space="preserve">
+    <value>동심 적분 (산란각 분산)</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
+    <value>개별 파일로</value>
+  </data>
+  <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
+    <value>다이렉트 스폿 위치</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>길이</value>
+  </data>
+  <data name="radioButtonChiLeft.Text" xml:space="preserve">
+    <value>왼쪽</value>
+  </data>
+  <data name="checkBoxFixCenter.Text" xml:space="preserve">
+    <value>중심 고정</value>
+  </data>
+  <data name="groupBox16.Text" xml:space="preserve">
+    <value>저장할 디렉터리</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
+    <value>전체 경로</value>
+  </data>
+  <data name="buttonMaskTop.Text" xml:space="preserve">
+    <value>위</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
+    <value>현재 이미지를 배경으로 설정</value>
+  </data>
+  <data name="radioButtonChiBottom.Text" xml:space="preserve">
+    <value>아래</value>
+  </data>
+  <data name="groupBox19.Text" xml:space="preserve">
+    <value>이미지 이름 옵션</value>
+  </data>
+  <data name="radioButtonFlatPanel.Text" xml:space="preserve">
+    <value>평판</value>
+  </data>
+  <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
+    <value>기울기</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
+    <value>반시계 방향</value>
+  </data>
+  <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
+    <value>각도</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>클립보드를 통해 프로파일 데이터를 PDIndexer로 전송</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
+    <value>이미지와 같은 디렉터리에</value>
+  </data>
+  <data name="radioButtonBraggBrentano.Text" xml:space="preserve">
+    <value>브래그-브렌타노</value>
+  </data>
+  <data name="groupBoxPixelShape.Text" xml:space="preserve">
+    <value>픽셀 모양</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
+    <value>마스크 파일 이어받기</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
+    <value>GSAS</value>
+  </data>
+  <data name="radioButtonAsPDIformat.Text" xml:space="preserve">
+    <value>PDI</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>중심 찾기 옵션</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>밴드 폭</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>구면 보정</value>
+  </data>
+  <data name="groupBox15.Text" xml:space="preserve">
+    <value>파일 형식</value>
+  </data>
+  <data name="radioButtonManualSpline.Text" xml:space="preserve">
+    <value>스플라인 곡선</value>
+  </data>
+  <data name="tabPageXRay.Text" xml:space="preserve">
+    <value>파원</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>스텝</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>속성</value>
+  </data>
+  <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
+    <value>현재 마스크 상태 이어받기</value>
+  </data>
+  <data name="buttonMaskBottom.Text" xml:space="preserve">
+    <value>아래</value>
+  </data>
+  <data name="checkBoxTest.Text" xml:space="preserve">
+    <value>Kα2 제거 (Kα1 선이 선택된 경우)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>파장</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>카이 (χ) 축 옵션</value>
+  </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>각도</value>
+  </data>
+  <data name="checkBoxThresholdMin.Text" xml:space="preserve">
+    <value>다음 강도 미만</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>푸트</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
+    <value>반지름의 역수</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.HeaderText" xml:space="preserve">
+    <value>피크 피팅 범위 (2θ)</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.HeaderText" xml:space="preserve">
+    <value>검색 영역 　±</value>
+  </data>
+  <data name="numericBoxTest.HeaderText" xml:space="preserve">
+    <value>Kα2/Kα1</value>
+  </data>
+  <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>간돌피 카메라 반지름 (mm): 곡면/원통형
+검출기의 반지름. 간돌피 모드에서만 픽셀 위치를
+2theta로 변환하는 데 사용됩니다.</value>
+  </data>
+  <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
+    <value>출력 1D 패턴에 Bragg-Brentano(반사, 준집속)
+강도 규약을 적용합니다. 예: 실험실 회절계와의
+비교용.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
+    <value>선택한 단위로 펼친 이미지 가로축 스텝(빈
+폭)입니다. 케이크 이미지 전체의 2theta/d
+분해능을 설정합니다.</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
+    <value>출력 1D 패턴에 Debye-Scherrer(투과 분말링)
+강도 규약을 적용합니다. 2D 면 검출기 데이터에
+일반적으로 사용하는 모드입니다.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>수동 스폿 마스크에 직사각형(정사각형) 모양을
+사용합니다.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>펼친 이미지의 가로축에 검출기 길이(mm)를
+사용합니다.</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
+    <value>프로파일을 원본 이미지와 동일한 폴더에
+묻지 않고 자동으로 저장합니다.</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
+    <value>같은 이름의 파일을 구별하기 위해 상위
+폴더 이름과 파일 이름(예: run3/img001.tif)으로
+이미지에 라벨을 붙입니다.</value>
+  </data>
+  <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
+    <value>저장된 배경 이미지를 지워 배경 빼기가
+적용되지 않도록 합니다.</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
+    <value>이미지에 전체 파일 경로로 라벨을 붙입니다.</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
+    <value>펼친 케이크 이미지의 방위각(χ) 빈 개수
+(1-2048, 기본값 720)입니다. 방위각 축을
+따라 세로 분해능을 설정합니다.</value>
+  </data>
+  <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
+    <value>간돌피(원통형/곡면 필름) 카메라
+기하구조입니다. 간돌피 반지름 입력란을
+표시하고 푸트 모드를 비활성화합니다.</value>
+  </data>
+  <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
+    <value>방사 적분의 방위각 스윕 스텝(도)입니다. 링
+주위 출력점 사이의 각도 간격입니다. 작을수록
+χ 분해능이 세밀해집니다.</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
+    <value>1D 프로파일뿐 아니라 펼친(케이크 /
+방위각으로 펼친 2theta 대 χ) 이미지도
+PDIndexer로 보냅니다.</value>
+  </data>
+  <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
+    <value>프로파일을 PDI 형식(PDIndexer의 기본
+형식)으로 저장합니다.</value>
+  </data>
+  <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
+    <value>현재 빼기 배경으로 사용 중인 이미지의
+경로(읽기 전용)입니다. 배경이 설정되지 않으면
+비어 있습니다.</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
+    <value>섹터 시작 각도(도, 방위각 χ)입니다. 적분되는
+부채꼴 방위각 범위의 시작점이며, 끝 각도와
+짝을 이룹니다.</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
+    <value>순차/방위각 시리즈의 각 프로파일을
+개별 파일로 저장합니다.</value>
+  </data>
+  <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
+    <value>선택한 단위로 표현된 프로파일 빈 폭(스텝)
+입니다. 스텝이 작을수록 분해능이 세밀해지고
+점이 많아지지만 빈의 잡음이 커집니다.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
+    <value>검출기 픽셀 단위의 빔 중심 Y(직접 스폿)
+입니다. 링 패턴의 원점을 설정하며, 이를
+이동하면 적분 중심이 함께 이동합니다.</value>
+  </data>
+  <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
+    <value>방위각 원점(χ = 0)을 이미지의 오른쪽에 둡니다.
+방위각 적분이 시작되는 위치를 설정합니다.</value>
+  </data>
+  <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
+    <value>이미지의 왼쪽 절반 전체를 마스크(적분에서
+제외)합니다. 기존 마스크에 추가되며, 지우려면
+모두 마스크 해제를 사용하세요.</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
+    <value>중심을 정밀화할 때 각 디바이 링 주위에서
+사용하는 피크 피팅 범위(2theta 도)입니다. 피크가
+넓으면 넓히고, 이웃 피크를 피하려면 좁히세요.</value>
+  </data>
+  <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
+    <value>카메라 길이 2: 시료-푸트 거리(mm)로, 기울어진
+검출기 평면까지의 수직 거리(= CL1·cos tau)입니다.
+시료-직접 스폿 거리가 아닙니다.</value>
+  </data>
+  <data name="radioButtonCircle.ToolTip" xml:space="preserve">
+    <value>수동 스폿 마스크에 원 모양을 사용합니다.</value>
+  </data>
+  <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
+    <value>이미지에 겹친 눈금선 옆에 숫자 값 라벨
+(2theta / 방위각)을 표시합니다.</value>
+  </data>
+  <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
+    <value>수동 마스크 도구: 스폿. 왼쪽 클릭은 추가, 오른쪽
+클릭은 커서 위치에 선택한 크기의 스폿 마스크를
+제거합니다.</value>
+  </data>
+  <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>X 방향 검출기 픽셀 크기(mm/pixel)입니다. 픽셀
+위치를 실제 거리로 변환하며, 검출기 사양과
+일치해야 2theta 스케일이 올바릅니다.</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
+    <value>2의 거듭제곱으로 표현된 수동 스폿 크기: 스폿
+지름 = 2^값 픽셀 (0-10 -&amp;gt; 1..1024 px). 값이
+클수록 클릭당 더 큰 스폿을 마스크합니다.</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
+    <value>다음 이미지를 불러올 때 새 이미지마다 화면을
+맞추는 대신 현재 확대 / 표시 범위(이동 &amp;amp;
+확대)를 유지합니다.</value>
+  </data>
+  <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
+    <value>방위각 원점(χ = 0)을 이미지의
+위쪽에 둡니다.</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
+    <value>다음 이미지를 불러올 때 마스크 없이
+시작합니다(현재 마스크를 모두 버립니다).</value>
+  </data>
+  <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
+    <value>현재 선택한 단위(2theta 도, 길이 mm, 또는 d-간격
+Å)로 표현된 프로파일 범위 시작값입니다. 출력 1D
+프로파일의 하한입니다.</value>
+  </data>
+  <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
+    <value>곡면 이미징 플레이트에 대한 구면 휨 보정(보통
+0)입니다. IP가 평평하지 않을 때 반지름에 따른
+왜곡을 보정합니다.</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
+    <value>이미지에 겹쳐지는 2theta/방위각 눈금선의 밀도:
+없음, 거침, 보통, 세밀(선이 많을수록 격자가
+세밀해짐).</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>직사각형 대신 시작 방위각과 끝 방위각 사이의
+링 각도 섹터(부채꼴) 영역에 걸쳐 적분합니다.</value>
+  </data>
+  <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
+    <value>산란각 2theta(도)를 프로파일 x축으로 사용합니다.
+시작/끝/스텝은 도 단위로 해석됩니다.</value>
+  </data>
+  <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
+    <value>픽셀 단위의 가장자리 마스크 폭(0-256): 'pixels
+from edges'가 활성화된 경우 적분에서 제외되는
+테두리 띠의 두께입니다.</value>
+  </data>
+  <data name="radioButtonRadial.ToolTip" xml:space="preserve">
+    <value>방사(케이크) 적분: 고정된 링 반지름에서 방위각을
+스윕해 방위각 χ에 대한 강도를 얻습니다. 한 링
+주위의 집합조직/우선 배향을 드러냅니다.</value>
+  </data>
+  <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
+    <value>다음 이미지를 불러올 때 현재 메모리에 있는
+마스크를 유지합니다(동일한 마스크 픽셀을 재사용).</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
+    <value>밴드 회전 각도(도, 0-360)입니다. 직사각형 적분
+띠의 방위각 방향이며, 방향 = 자유일 때만 편집할
+수 있습니다.</value>
+  </data>
+  <data name="buttonMaskRight.ToolTip" xml:space="preserve">
+    <value>이미지의 오른쪽 절반 전체를 마스크(적분에서
+제외)합니다. 기존 마스크에 추가됩니다.</value>
+  </data>
+  <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
+    <value>2θ 눈금선의 색을 설정합니다.</value>
+  </data>
+  <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
+    <value>겹친 눈금선의 펜 폭(픽셀 단위)입니다. 오른쪽으로
+끌면 더 두껍고 잘 보이는 격자선이 됩니다.</value>
+  </data>
+  <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
+    <value>수동 마스킹 모드로 들어가 마우스로 이미지에 직접
+마스크 영역(스폿/원/직사각형/다각형/스플라인)을
+그릴 수 있습니다.</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
+    <value>다음 이미지를 불러올 때 메모리의 마스크 대신
+저장된 마스크 파일에 저장된 마스크를 적용합니다.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
+    <value>검출기 픽셀 단위의 빔 중심 X(직접 스폿)입니다.
+모든 2theta/d/q 링 계산의 원점을 설정하며, 이를
+이동하면 적분 중심이 함께 이동합니다.</value>
+  </data>
+  <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
+    <value>평판 / 이미징 플레이트 검출기 기하구조(빔에
+거의 수직인 평면 검출기)입니다. 기울기 및 푸트
+모드 옵션을 활성화합니다.</value>
+  </data>
+  <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
+    <value>직사각형 적분 밴드의 방향: 전체 링, 한쪽(위/아래
+/왼쪽/오른쪽), 대칭 수직/수평, 또는 자유(사용자
+지정 각도).</value>
+  </data>
+  <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
+    <value>방사(케이크) 적분에서 스윕할 링 반지름입니다.
+각도/d-간격 토글에 따라 2theta(도) 또는
+d-간격(Å)으로 지정됩니다.</value>
+  </data>
+  <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
+    <value>픽셀 단위의 푸트점 X: 시료의 수선이 기울어진
+검출기와 만나는 위치입니다. 기울기 각도를 통해
+직접 스폿 X와 연결됩니다.</value>
+  </data>
+  <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
+    <value>낮은 카운트 픽셀 제외: 강도가 오른쪽 값보다
+낮은 픽셀을 무시합니다. 불량/배경 전용 픽셀을
+제거하는 데 사용합니다.</value>
+  </data>
+  <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
+    <value>픽셀 단위의 푸트점 Y: 시료의 수선이 기울어진
+검출기와 만나는 위치입니다. 기울기 각도를 통해
+직접 스폿 Y와 연결됩니다.</value>
+  </data>
+  <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
+    <value>배경 스케일링 계수(0-10, 기본값 1): 표시 =
+이미지 - 계수 x 배경. 높이면 배경을 더 많이,
+낮추면 더 적게 뺍니다.</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
+    <value>낮은 강도 임계값(카운트)입니다. 이 값보다 낮은
+픽셀은 적분에서 제외되며, 'Under intensity of'가
+체크된 경우에만 활성화됩니다.</value>
+  </data>
+  <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
+    <value>포화 픽셀 제외: 적분 중 카운트가 오른쪽 값을
+초과하는 픽셀을 무시합니다. 블루밍/불량 핫
+픽셀을 제거하는 데 사용합니다.</value>
+  </data>
+  <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
+    <value>마스크된 스폿을 적분에서 제외: 스폿으로 표시된
+픽셀(예: 단결정 반사, 먼지)을 건너뛰어 분말
+프로파일을 오염시키지 않도록 합니다.</value>
+  </data>
+  <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
+    <value>기울기 방위각 phi(도): 검출기 기울기 축의
+면내 방향입니다. tau와 결합하여 빔에 수직이
+아닌 검출기를 보정합니다.</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>직접 빔 스폿으로 검출기 기하구조를 정의합니다:
+직접 스폿 픽셀과 카메라 길이 1(시료-직접 스폿
+거리)을 입력합니다. 빔이 검출기에 닿을 때
+사용합니다.</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
+    <value>빔 중심을 찾거나 정밀화할 때 마스크된 픽셀을
+무시하여 마스크된 스폿과 불량 영역이 결과를
+왜곡하지 않도록 합니다.</value>
+  </data>
+  <data name="numericBoxTest.ToolTip" xml:space="preserve">
+    <value>Kα2 제거 보정에 사용되는 Kα2/Kα1 강도
+비율(범위 0-2, 일반적으로 ~0.5)입니다. 높을수록
+Kα2를 더 많이 뺍니다.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
+    <value>선택한 단위로 표현된 펼친 이미지 가로축 끝값
+(0-180)입니다. 케이크 이미지의 오른쪽 가장자리입니다.</value>
+  </data>
+  <data name="buttonMaskAll.ToolTip" xml:space="preserve">
+    <value>이미지 전체를 마스크합니다(모든 픽셀을 적분에서
+제외). 일반적으로 관심 영역만 수동으로 마스크
+해제하기 전에 사용합니다.</value>
+  </data>
+  <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
+    <value>리트벨트 정밀화를 위해 프로파일을 GSAS
+형식으로 저장합니다. 이 형식에서는 '하나의 파일'
+옵션을 사용할 수 없습니다.</value>
+  </data>
+  <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
+    <value>픽셀 단위의 밴드 폭(최대 10000): 빔 중심선을
+가로지르는 직사각형 적분 띠의 절반 두께입니다.
+넓을수록 더 많은 픽셀이 평균됩니다.</value>
+  </data>
+  <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
+    <value>각 'Get Profile' 후에 추출된 1D 프로파일을
+파일로 자동 저장합니다. 아래의 파일 형식 및
+디렉터리 옵션을 활성화합니다.</value>
+  </data>
+  <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
+    <value>이미지의 아래쪽 절반 전체를 마스크(적분에서
+제외)합니다. 기존 마스크에 추가됩니다.</value>
+  </data>
+  <data name="checkBoxTest.ToolTip" xml:space="preserve">
+    <value>Kα1 관 선이 선택된 경우 프로파일에서 Kα2
+기여를 제거(Rachinger 보정)하여 Kα1 전용 패턴을
+남깁니다.</value>
+  </data>
+  <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
+    <value>수동 마스크 도구: 다각형. 클릭하여 꼭짓점을
+추가하고, 더블 클릭하여 닫고 둘러싸인 영역을
+마스크합니다.</value>
+  </data>
+  <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>픽셀 비직교각 ksi(도): 검출기 X축과 Y축 사이의
+전단/기울임입니다. 0 = 완전한 직사각형 픽셀이며,
+왜곡된 검출기를 보정합니다.</value>
+  </data>
+  <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
+    <value>카메라 길이 1: 시료-직접 스폿 거리(mm)입니다.
+픽셀 반지름-2theta 스케일을 설정하며, 길이가
+클수록 링이 더 작은 2theta로 퍼집니다.</value>
+  </data>
+  <data name="radioButton3.ToolTip" xml:space="preserve">
+    <value>펼친 이미지의 가로축에 격자 d-간격(Å)을
+사용합니다.</value>
+  </data>
+  <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Y 방향 검출기 픽셀 크기(mm/pixel)입니다. X 크기와
+함께 기하구조에 사용되는 픽셀 종횡비를 정의합니다.</value>
+  </data>
+  <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
+    <value>픽셀 단위의 스플라인 마스크 밴드 폭(1-50):
+스플라인 곡선을 따라 그려지는 마스크 띠의
+두께입니다.</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
+    <value>이미지에서 방위각 χ가 반시계 방향으로
+증가하도록 정의합니다(시계 방향 규약의 반대).</value>
+  </data>
+  <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
+    <value>이미지 테두리 마스크: 적분 중 모든 가장자리에서
+N 픽셀(오른쪽에서 설정) 띠를 제외하여 검출기
+가장자리 아티팩트를 제거합니다.</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
+    <value>다음 이미지를 불러올 때 각 이미지를 자동으로
+재조정하는 대신 현재 강도 대비(최소/최대 표시
+스케일)를 유지합니다.</value>
+  </data>
+  <data name="radioButton4.ToolTip" xml:space="preserve">
+    <value>펼친 이미지의 가로축에 산란각 2theta(도)를
+사용합니다.</value>
+  </data>
+  <data name="buttonInvertMask.ToolTip" xml:space="preserve">
+    <value>마스크 반전: 이전에 마스크된 픽셀은 활성화되고
+활성 픽셀은 마스크됩니다.</value>
+  </data>
+  <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
+    <value>수동 마스크 도구: 스플라인 곡선. 클릭하여 제어점
+추가(오른쪽 클릭은 삭제), 더블 클릭하면 곡선을
+따라 설정한 폭의 밴드를 마스크합니다.</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
+    <value>격자 d-간격(Å)을 프로파일 x축으로 사용합니다.
+시작/끝/스텝은 Å 단위입니다. d = 파장 /
+(2 sin theta).</value>
+  </data>
+  <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
+    <value>기울기 각도 tau(도): 검출기 평면이 빔에 수직인
+상태에서 얼마나 벗어났는지입니다. 0 = 기울기
+없음. 0이 아니면 보정 전까지 링이 타원이 됩니다.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>수선의 발(기울어진 검출기에 대한 시료 법선
+투영)과 카메라 길이 2(시료-푸트)로 기하구조를
+정의합니다. 기울어진 평판용입니다.</value>
+  </data>
+  <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
+    <value>모든 마스크 지우기: 모든 픽셀을 다시 적분에
+포함합니다. 전체 마스크 / 절반 마스크 / 스폿
+마스킹을 취소합니다.</value>
+  </data>
+  <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
+    <value>방위각 원점(χ = 0)을 이미지의
+왼쪽에 둡니다.</value>
+  </data>
+  <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
+    <value>동심 적분: 전체 디바이 링 주위를 적분하여 표준
+1D 프로파일(강도 대 2theta, d-간격 또는 길이)을
+생성합니다.</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
+    <value>섹터 끝 각도(도, 방위각 χ)입니다. 적분되는
+부채꼴 방위각 범위의 끝이며, 시작 각도보다
+커야 합니다.</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
+    <value>선형(싱크로트론) X선 편광에 대해 강도를
+보정하여 측정 패턴을 비편광 등가로 변환합니다.
+방위각 χ에 따른 상대 피크 높이에 영향을 줍니다.</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
+    <value>중심 검색 영역(픽셀/스텝, 정수): 자동 중심
+검색기가 탐색하는 현재 중심 주변의 반지름입니다.
+클수록 검색이 넓어지지만 느려집니다.</value>
+  </data>
+  <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
+    <value>방사 링 반지름을 격자 d-간격(Å)으로
+지정합니다.</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
+    <value>높은 강도 임계값(카운트)입니다. 이 값보다 높은
+픽셀은 적분에서 제외되며, 'Over intensity of'가
+체크된 경우에만 활성화됩니다.</value>
+  </data>
+  <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
+    <value>수동 마스크 도구: 직사각형. 두 대각 모서리
+사이를 끌어 직사각형 영역을 마스크합니다.</value>
+  </data>
+  <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
+    <value>이미지에 겹쳐진 방위각(χ) 눈금선의
+색을 설정합니다.</value>
+  </data>
+  <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
+    <value>검출기 호 길이(mm)를 프로파일 x축으로
+사용합니다. 시작/끝/스텝은 밀리미터 단위입니다.</value>
+  </data>
+  <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
+    <value>각 방위각에서 적분되는, 선택한 반지름 주위의
+링(도넛) 절반 폭입니다(2theta 도 또는 d-간격 Å).
+넓을수록 카운트가 많아지고 각도 분해능이
+낮아집니다.</value>
+  </data>
+  <data name="pictureBox1.ToolTip" xml:space="preserve">
+    <value>방위각(χ) 축 미리보기: 현재 방향 및 회전
+설정에서 χ = 0이 어디에 있고 χ가 어느 방향으로
+증가하는지 보여줍니다.</value>
+  </data>
+  <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>결과 수동 스폿 지름(픽셀, = 2^크기)입니다. 대부분
+읽기 전용이며, 크기 슬라이더와 기본 도구 모음
+스폿 크기 선택기를 반영합니다.</value>
+  </data>
+  <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
+    <value>방위각 원점(χ = 0)을 이미지의
+아래쪽에 둡니다.</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
+    <value>빔 중심의 양쪽에 대칭으로(중심 대칭) 밴드를
+적분하여 샘플링 영역을 두 배로 늘립니다. 수직/수평
+프리셋에서 사용됩니다.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>전체 링 대신 직사각형 밴드에 걸쳐 적분합니다.
+띠 모양 영역에 대한 방향, 각도, 밴드 폭 컨트롤을
+활성화합니다.</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
+    <value>자동 '스폿 마스크'의 스폿 검출 임계값으로, 국소
+평균 위의 표준편차 단위입니다. 낮으면 더 많은
+스폿을, 높으면 가장 강한 스폿만 마스크합니다.</value>
+  </data>
+  <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
+    <value>방사 링 반지름을 산란각 2theta(도)로
+지정합니다.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
+    <value>펼친 이미지 가로축 시작값(0-180)으로, 단위 선택에
+따라 2theta 도 / 길이 / d-간격입니다. 케이크
+이미지의 왼쪽 가장자리입니다.</value>
+  </data>
+  <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
+    <value>스프레드시트용으로 프로파일을 CSV(쉼표로 구분된
+값) 형식으로 저장합니다.</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
+    <value>프로파일을 저장할 때마다 출력 디렉터리를
+묻습니다.</value>
+  </data>
+  <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
+    <value>현재 선택한 단위(2theta 도 / mm / Å)로 표현된
+프로파일 범위 끝값입니다. 출력 1D 프로파일의
+상한입니다.</value>
+  </data>
+  <data name="buttonMaskTop.ToolTip" xml:space="preserve">
+    <value>이미지의 위쪽 절반 전체를 마스크(적분에서
+제외)합니다. 기존 마스크에 추가됩니다.</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
+    <value>각 적분 후에 추출된 1D 프로파일을 클립보드를
+통해 PDIndexer(보조 앱)로 보냅니다.</value>
+  </data>
+  <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
+    <value>중심 찾기/정밀화 중 빔 중심 위치를 고정하여 다른
+매개변수만 최적화합니다. 검색 영역 옵션을
+비활성화합니다.</value>
+  </data>
+  <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
+    <value>이미지에서 방위각 χ가 시계 방향으로 증가하도록
+정의합니다. 방위각 펼치기 및 섹터 각도의 부호
+규약을 설정합니다.</value>
+  </data>
+  <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
+    <value>수동 마스크 도구: 원. 중심에서 바깥쪽으로 끌어
+원형 영역을 마스크합니다(중심과 반지름은 드래그로
+설정).</value>
+  </data>
+  <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
+    <value>저장/표시되는 이미지에 파일 이름만으로 라벨을
+붙입니다(경로 없음).</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
+    <value>순차/방위각 시리즈의 모든 프로파일을 하나의
+파일로 저장합니다(GSAS 형식에서는 사용 불가).</value>
+  </data>
+  <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
+    <value>프로파일을 TSV(탭으로 구분된 값) 형식으로
+저장합니다.</value>
+  </data>
+  <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
+    <value>현재 불러온 이미지를 이후 이미지에서 뺄 배경으로
+사용합니다(계수로 스케일됨).</value>
+  </data>
+</root>

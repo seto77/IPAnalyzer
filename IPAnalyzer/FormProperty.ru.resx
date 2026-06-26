@@ -1,0 +1,1131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxScaleLabel.Text" xml:space="preserve">
+    <value>Показать метки</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Коэффициент</value>
+  </data>
+  <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
+    <value>Режим ручной маски</value>
+  </data>
+  <data name="radioButtonAsTSVformat.Text" xml:space="preserve">
+    <value>TSV</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
+    <value>Сохранять контраст изображения </value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Тип детектора</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Параметры масштабной линии</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Прямоугольник</value>
+  </data>
+  <data name="radioButtonChiClockwise.Text" xml:space="preserve">
+    <value>По часовой стрелке</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Шаг угла сектора (шаг развёртки)</value>
+  </data>
+  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
+    <value>После «Получить профиль»</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
+    <value>Последняя папка + имя файла</value>
+  </data>
+  <data name="buttonMaskAll.Text" xml:space="preserve">
+    <value>Маскировать всё</value>
+  </data>
+  <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
+    <value>Радиус Гандольфи</value>
+  </data>
+  <data name="tabPageIP.Text" xml:space="preserve">
+    <value>Условия детектора</value>
+  </data>
+  <data name="radioButtonRadialDspacing.Text" xml:space="preserve">
+    <value>Межплоскостное расстояние</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>(от образца до прямого пятна)</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Ширина кольца</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Перенести настройку маски</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Угол</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>Прямоугольник</value>
+  </data>
+  <data name="buttonMaskRight.Text" xml:space="preserve">
+    <value>Справа</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Горизонталь (расстояние от прямого пятна): единица и диапазон</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Выходная картина</value>
+  </data>
+  <data name="radioButton3.Text" xml:space="preserve">
+    <value>Межплоскостное расстояние</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
+    <value>Отправить также развёрнутое изображение</value>
+  </data>
+  <data name="radioButtonGandlfi.Text" xml:space="preserve">
+    <value>Гандольфи</value>
+  </data>
+  <data name="radioButtonAsCSVformat.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
+    <value>Область интегрирования</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Шаг по вертикали (угол сектора) </value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Параметры развёрнутого изображения</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
+    <value>Обе стороны</value>
+  </data>
+  <data name="groupBox18.Text" xml:space="preserve">
+    <value>Параметры загрузки изображения</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Координаты</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Старт</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Параметры маскирования рефлексов</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Деление</value>
+  </data>
+  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
+    <value>Параметры маски</value>
+  </data>
+  <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="groupBoxCameaLength.Text" xml:space="preserve">
+    <value>Длина камеры 1</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
+    <value>Сохранять диапазон отображения</value>
+  </data>
+  <data name="buttonMaskLeft.Text" xml:space="preserve">
+    <value>Слева</value>
+  </data>
+  <data name="radioButtonManualRectangle.Text" xml:space="preserve">
+    <value>Прямоугольник (перетаскивание: задать диагональные вершины)</value>
+  </data>
+  <data name="radioButtonChiRight.Text" xml:space="preserve">
+    <value>Справа</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
+    <value>Прямое пятно</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Радиус кольца</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>(от образца до подножия)</value>
+  </data>
+  <data name="buttonUnmaskAll.Text" xml:space="preserve">
+    <value>Снять все маски</value>
+  </data>
+  <data name="radioButtonManualCircle.Text" xml:space="preserve">
+    <value>Окружность (перетаскивание: задать центр и радиус)</value>
+  </data>
+  <data name="radioButtonRadialAngle.Text" xml:space="preserve">
+    <value>Угол</value>
+  </data>
+  <data name="buttonInvertMask.Text" xml:space="preserve">
+    <value>Инвертировать маску</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Начальный угол</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
+    <value>Коррекция линейной поляризации (т.е. линейно поляризованное → неполяризованное)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Критерий отклонения
+ для «Маскировать рефлексы»</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Направление</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>(прим.: χ — азимутальный угол, заданный на вкладке «Разное»)</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Параметры фона</value>
+  </data>
+  <data name="radioButtonCircle.Text" xml:space="preserve">
+    <value>Окружность</value>
+  </data>
+  <data name="radioButtonRadial.Text" xml:space="preserve">
+    <value>Радиальное интегрирование (картина «торта»)</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
+    <value>Каждый раз в выбранном каталоге</value>
+  </data>
+  <data name="groupBox17.Text" xml:space="preserve">
+    <value>Параметры сохранения для серии изображений или азимутального деления</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Настройка эталонного изображения</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Поворот:</value>
+  </data>
+  <data name="radioButtonManualSpot.Text" xml:space="preserve">
+    <value>Рефлекс (Л/П клик: добавить/удалить рефлексы)</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
+    <value>Межплоскостное расстояние</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Шаг</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Старт</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>пикселей от краёв</value>
+  </data>
+  <data name="radioButtonManualPolygon.Text" xml:space="preserve">
+    <value>Многоугольник (клик: добавить вершины,
+                 двойной клик: завершить)</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="comboBoxRectangleDirection.Text" xml:space="preserve">
+    <value>Полностью</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>Ширина линии</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Положение подножия</value>
+  </data>
+  <data name="checkBoxThresholdMax.Text" xml:space="preserve">
+    <value>С интенсивностью выше</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Шаг и диапазон интегрирования</value>
+  </data>
+  <data name="checkBoxSaveFile.Text" xml:space="preserve">
+    <value>Сохранить профиль </value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
+    <value>Исключить маскированные пиксели</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Половинная маска</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>Сектор</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Расстояние плёнки</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value> (Л/П клик: добавить/удалить точки,
+ двойной клик: задать маску)</value>
+  </data>
+  <data name="checkBoxOmitSpots.Text" xml:space="preserve">
+    <value>Маскированные рефлексы</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Исключительные пиксели</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Длина камеры 2 </value>
+  </data>
+  <data name="radioButtonChiTop.Text" xml:space="preserve">
+    <value>Сверху</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.Text" xml:space="preserve">
+    <value>В один файл 
+(кроме GSAS)</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Конец</value>
+  </data>
+  <data name="radioButtonConcentricLength.Text" xml:space="preserve">
+    <value>Длина</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(обычно ноль)</value>
+  </data>
+  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
+    <value>Свойства интегрирования</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.Text" xml:space="preserve">
+    <value>Дебая — Шеррера</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Конец</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Конечный угол</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Ширина линии</value>
+  </data>
+  <data name="radioButtonConcentric.Text" xml:space="preserve">
+    <value>Концентрическое интегрирование (с дисперсией по углу рассеяния)</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
+    <value>В отдельные файлы</value>
+  </data>
+  <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
+    <value>Положение прямого пятна</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Длина</value>
+  </data>
+  <data name="radioButtonChiLeft.Text" xml:space="preserve">
+    <value>Слева</value>
+  </data>
+  <data name="checkBoxFixCenter.Text" xml:space="preserve">
+    <value>Зафиксировать центр</value>
+  </data>
+  <data name="groupBox16.Text" xml:space="preserve">
+    <value>Каталог для сохранения</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
+    <value>Полный путь</value>
+  </data>
+  <data name="buttonMaskTop.Text" xml:space="preserve">
+    <value>Сверху</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
+    <value>Задать текущее изображение как фон</value>
+  </data>
+  <data name="radioButtonChiBottom.Text" xml:space="preserve">
+    <value>Снизу</value>
+  </data>
+  <data name="groupBox19.Text" xml:space="preserve">
+    <value>Параметры имени изображения</value>
+  </data>
+  <data name="radioButtonFlatPanel.Text" xml:space="preserve">
+    <value>Плоская панель</value>
+  </data>
+  <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
+    <value>Наклон</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
+    <value>Против часовой стрелки</value>
+  </data>
+  <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
+    <value>Угол</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
+    <value>Отправить данные профиля в PDIndexer через буфер обмена</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
+    <value>В том же каталоге, что и изображение</value>
+  </data>
+  <data name="radioButtonBraggBrentano.Text" xml:space="preserve">
+    <value>Брэгга — Брентано</value>
+  </data>
+  <data name="groupBoxPixelShape.Text" xml:space="preserve">
+    <value>Форма пикселя</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
+    <value>Перенести файл маски</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Text" xml:space="preserve">
+    <value>GSAS</value>
+  </data>
+  <data name="radioButtonAsPDIformat.Text" xml:space="preserve">
+    <value>PDI</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Разное</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Параметры поиска центра</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ширина полосы</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>Сферическая коррекция</value>
+  </data>
+  <data name="groupBox15.Text" xml:space="preserve">
+    <value>Формат файла</value>
+  </data>
+  <data name="radioButtonManualSpline.Text" xml:space="preserve">
+    <value>Сплайн-кривая</value>
+  </data>
+  <data name="tabPageXRay.Text" xml:space="preserve">
+    <value>Источник волн</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Шаг</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
+    <value>Перенести текущее состояние маски</value>
+  </data>
+  <data name="buttonMaskBottom.Text" xml:space="preserve">
+    <value>Снизу</value>
+  </data>
+  <data name="checkBoxTest.Text" xml:space="preserve">
+    <value>Удалить Kα2 (если выбрана линия Kα1)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Длина волны</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Параметры оси хи (χ)</value>
+  </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>Угол</value>
+  </data>
+  <data name="checkBoxThresholdMin.Text" xml:space="preserve">
+    <value>С интенсивностью ниже</value>
+  </data>
+  <data name="radioButtonFootMode.Text" xml:space="preserve">
+    <value>Подножие</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
+    <value>Обратный радиус</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.HeaderText" xml:space="preserve">
+    <value>Диапазон подгонки пика (2θ)</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.HeaderText" xml:space="preserve">
+    <value>Область поиска 　±</value>
+  </data>
+  <data name="numericBoxTest.HeaderText" xml:space="preserve">
+    <value>Kα2/Kα1</value>
+  </data>
+  <data name="numericBoxGandlfiRadius.ToolTip" xml:space="preserve">
+    <value>Радиус камеры Гандольфи (mm): радиус
+изогнутого/цилиндрического детектора. Используется
+только в режиме Гандольфи для пересчёта позиции
+пикселя в 2θ.</value>
+  </data>
+  <data name="radioButtonBraggBrentano.ToolTip" xml:space="preserve">
+    <value>Применить интенсивностное соглашение
+Брэгга-Брентано (отражение, парафокусировка)
+к выходной 1D-картине, например для сравнения
+с лабораторным дифрактометром.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.ToolTip" xml:space="preserve">
+    <value>Шаг горизонтальной оси (ширина бина)
+развёрнутого изображения в выбранной единице;
+задаёт разрешение по 2θ/d на cake-изображении.</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.ToolTip" xml:space="preserve">
+    <value>Применить интенсивностное соглашение
+Дебая-Шеррера (просвечивание, порошковые кольца)
+к выходной 1D-картине — обычный режим для данных
+2D-плоского детектора.</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>Использовать прямоугольную (квадратную) форму
+для ручных масок рефлексов.</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>Использовать длину на детекторе (mm) для
+горизонтальной оси развёрнутого изображения.</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
+    <value>Автоматически сохранять профили в ту же
+папку, что и исходное изображение, без запроса.</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.ToolTip" xml:space="preserve">
+    <value>Подписывать изображения именем родительской
+папки и именем файла (например, run3/img001.tif),
+чтобы различать одноимённые файлы.</value>
+  </data>
+  <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Очистить сохранённое фоновое изображение,
+чтобы вычитание фона не применялось.</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
+    <value>Подписывать изображения их полным путём к файлу.</value>
+  </data>
+  <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
+    <value>Число азимутальных (χ) бинов для развёрнутого
+cake-изображения (1-2048, по умолчанию 720); задаёт
+вертикальное разрешение вдоль оси азимута.</value>
+  </data>
+  <data name="radioButtonGandlfi.ToolTip" xml:space="preserve">
+    <value>Геометрия камеры Гандольфи (цилиндрическая/
+изогнутая плёнка); открывает ввод радиуса
+Гандольфи и отключает режим подножия.</value>
+  </data>
+  <data name="numericBoxRadialStep.ToolTip" xml:space="preserve">
+    <value>Шаг азимутальной развёртки (°) для радиального
+интегрирования: угловой интервал между выходными
+точками вокруг кольца. Меньше = тоньше разрешение по χ.</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
+    <value>Отправлять в PDIndexer также развёрнутое
+(cake / азимутально развёрнутое 2θ–χ) изображение,
+а не только 1D-профиль.</value>
+  </data>
+  <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
+    <value>Сохранять профиль в формате PDI (собственный
+формат PDIndexer).</value>
+  </data>
+  <data name="textBoxBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Путь изображения, используемого сейчас как
+вычитаемый фон (только для чтения); пусто, когда
+фон не задан.</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.ToolTip" xml:space="preserve">
+    <value>Начальный угол сектора (°, азимут χ).
+Начало интегрируемого азимутального диапазона
+«сектора»; работает в паре с конечным углом.</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.ToolTip" xml:space="preserve">
+    <value>Сохранять каждый профиль последовательной/
+азимутальной серии в отдельный файл.</value>
+  </data>
+  <data name="numericBoxConcentricStep.ToolTip" xml:space="preserve">
+    <value>Ширина бина профиля (шаг) в выбранной единице.
+Меньше шаг = тоньше разрешение и больше точек,
+но более шумные бины.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionY.ToolTip" xml:space="preserve">
+    <value>Центр пучка Y (прямой рефлекс) в пикселях
+детектора. Задаёт начало координат картины колец;
+его сдвиг перемещает центр интегрирования.</value>
+  </data>
+  <data name="radioButtonChiRight.ToolTip" xml:space="preserve">
+    <value>Поместить начало азимута (χ = 0) к правому краю
+изображения. Задаёт точку начала азимутального
+интегрирования.</value>
+  </data>
+  <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
+    <value>Маскировать (исключить из интегрирования)
+всю левую половину изображения. Добавляется к
+существующей маске; для очистки используйте
+«Снять все маски».</value>
+  </data>
+  <data name="numericBoxFindCenterPeakFittingRange.ToolTip" xml:space="preserve">
+    <value>Диапазон подгонки пика (° 2θ) вокруг каждого
+кольца Дебая при уточнении центра; расширьте
+для широких пиков, сузьте, чтобы не задеть соседние.</value>
+  </data>
+  <data name="numericBoxCameraLength2.ToolTip" xml:space="preserve">
+    <value>Длина камеры 2: расстояние образец–подножие (mm),
+перпендикулярное расстояние до наклонённой плоскости
+детектора (= CL1·cos τ). Это не длина образец–прямой
+рефлекс.</value>
+  </data>
+  <data name="radioButtonCircle.ToolTip" xml:space="preserve">
+    <value>Использовать круглую форму для ручных масок
+рефлексов.</value>
+  </data>
+  <data name="checkBoxScaleLabel.ToolTip" xml:space="preserve">
+    <value>Показывать числовые подписи значений (2θ / азимут)
+рядом с наложенными масштабными линиями на изображении.</value>
+  </data>
+  <data name="radioButtonManualSpot.ToolTip" xml:space="preserve">
+    <value>Инструмент ручной маски: Рефлекс. Левый клик
+добавляет, правый — удаляет маску рефлекса
+выбранного размера у курсора.</value>
+  </data>
+  <data name="numericBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>Размер пикселя детектора по X (mm/пиксель).
+Переводит позиции пикселей в реальное расстояние;
+должен соответствовать спецификации детектора,
+иначе масштабирование 2θ будет ошибочным.</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Размер ручного рефлекса как степень двойки:
+диаметр рефлекса = 2^значение пикселей
+(0-10 -&amp;gt; 1..1024 px). Большее значение маскирует
+рефлекс крупнее за один клик.</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
+    <value>Сохранять текущий масштаб / область отображения
+(панорама &amp;amp; масштаб) при загрузке следующего
+изображения, вместо подгонки вида под каждое
+новое изображение.</value>
+  </data>
+  <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
+    <value>Поместить начало азимута (χ =
+0) к верхнему краю изображения.</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.ToolTip" xml:space="preserve">
+    <value>При загрузке следующего изображения начинать
+без маски (сбросить любую текущую маску).</value>
+  </data>
+  <data name="numericBoxConcentricStart.ToolTip" xml:space="preserve">
+    <value>Начало диапазона профиля в выбранной единице
+(2θ °, длина mm или межплоскостное расстояние d,
+Å). Нижняя граница выходного 1D-профиля.</value>
+  </data>
+  <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
+    <value>Поправка на сферический изгиб для изогнутой
+imaging plate (обычно 0). Компенсирует зависящее
+от радиуса искажение, когда IP не плоская.</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
+    <value>Плотность наложенных масштабных линий
+2θ/азимута на изображении: Нет, Грубо, Средне
+или Тонко (больше линий = мельче сетка).</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>Интегрировать по угловому сектору («дольке»)
+колец между начальным и конечным азимутальными
+углами вместо прямоугольника.</value>
+  </data>
+  <data name="radioButtonConcentricAngle.ToolTip" xml:space="preserve">
+    <value>Использовать угол рассеяния 2θ (градусы) как
+ось x профиля; Начало/Конец/Шаг трактуются
+в градусах.</value>
+  </data>
+  <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
+    <value>Ширина краевой маски в пикселях (0-256):
+толщина граничной полосы, исключаемой из
+интегрирования, когда включён режим «пиксели
+от краёв».</value>
+  </data>
+  <data name="radioButtonRadial.ToolTip" xml:space="preserve">
+    <value>Радиальное (cake) интегрирование: развёртка
+по азимуту при фиксированном радиусе кольца даёт
+интенсивность в зависимости от азимутального угла χ —
+выявляет текстуру/преимущественную ориентацию
+вокруг одного кольца.</value>
+  </data>
+  <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
+    <value>При загрузке следующего изображения сохранять
+маску, находящуюся в памяти (повторно использовать
+те же маскированные пиксели).</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.ToolTip" xml:space="preserve">
+    <value>Угол поворота полосы (°, 0-360). Азимутальная
+ориентация прямоугольной полосы интегрирования;
+редактируется только при Направление = Свободно.</value>
+  </data>
+  <data name="buttonMaskRight.ToolTip" xml:space="preserve">
+    <value>Маскировать (исключить из интегрирования)
+всю правую половину изображения. Добавляется
+к существующей маске.</value>
+  </data>
+  <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
+    <value>Задать цвет масштабных линий 2θ</value>
+  </data>
+  <data name="trackBarScaleLineWidth.ToolTip" xml:space="preserve">
+    <value>Толщина пера (в пикселях) наложенных масштабных
+линий; тяните вправо для более толстых, заметных
+линий сетки.</value>
+  </data>
+  <data name="checkBoxManualMaskMode.ToolTip" xml:space="preserve">
+    <value>Войти в режим ручного маскирования, чтобы рисовать
+области маски (рефлекс/окружность/прямоугольник/
+многоугольник/сплайн) прямо на изображении мышью.</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.ToolTip" xml:space="preserve">
+    <value>При загрузке следующего изображения применять
+маску из сохранённого файла маски вместо маски
+в памяти.</value>
+  </data>
+  <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
+    <value>Центр пучка X (прямой рефлекс) в пикселях детектора.
+Задаёт начало координат для всех расчётов колец
+2θ/d/q; его сдвиг перемещает центр интегрирования.</value>
+  </data>
+  <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
+    <value>Геометрия плоскопанельного детектора / imaging
+plate (плоский детектор, примерно перпендикулярный
+пучку). Включает опции наклона и режима подножия.</value>
+  </data>
+  <data name="comboBoxRectangleDirection.ToolTip" xml:space="preserve">
+    <value>Ориентация прямоугольной полосы интегрирования:
+Полное кольцо, одна сторона (Верх/Низ/Лево/Право),
+симметрично Вертикально/Горизонтально или Свободно
+(произвольный угол).</value>
+  </data>
+  <data name="numericBoxRadialRadius.ToolTip" xml:space="preserve">
+    <value>Радиус кольца для развёртки при радиальном (cake)
+интегрировании, задаётся как 2θ (°) или
+межплоскостное расстояние d (Å) согласно
+переключателю Угол/d.</value>
+  </data>
+  <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
+    <value>Точка подножия X в пикселях: где перпендикуляр
+от образца встречает наклонённый детектор. Связана
+с X прямого рефлекса через углы наклона.</value>
+  </data>
+  <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
+    <value>Исключать пиксели с малым счётом: игнорировать
+пиксели, интенсивность которых ниже значения
+справа. Используйте, чтобы отбросить мёртвые/
+только фоновые пиксели.</value>
+  </data>
+  <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
+    <value>Точка подножия Y в пикселях: где перпендикуляр
+от образца встречает наклонённый детектор. Связана
+с Y прямого рефлекса через углы наклона.</value>
+  </data>
+  <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
+    <value>Коэффициент масштабирования фона (0-10, по
+умолчанию 1): отображаемое = изображение −
+коэффициент × фон. Увеличьте, чтобы вычитать
+больше фона, уменьшите — меньше.</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
+    <value>Нижний порог интенсивности (отсчёты). Пиксели
+ниже этого значения исключаются из интегрирования;
+активен, только когда отмечено «Ниже интенсивности».</value>
+  </data>
+  <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
+    <value>Исключать насыщенные пиксели: игнорировать при
+интегрировании пиксели, счёт которых превышает
+значение справа. Используйте, чтобы отбросить
+расплывшиеся/«горячие» пиксели.</value>
+  </data>
+  <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
+    <value>Исключать маскированные рефлексы из интегрирования:
+пиксели, помеченные как рефлексы (например,
+монокристаллические отражения, пыль), пропускаются,
+чтобы они не загрязняли порошковый профиль.</value>
+  </data>
+  <data name="numericBoxTiltPhi.ToolTip" xml:space="preserve">
+    <value>Азимут наклона φ (°): направление в плоскости
+оси наклона детектора. В сочетании с τ исправляет
+детектор, не перпендикулярный пучку.</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.ToolTip" xml:space="preserve">
+    <value>Задать геометрию детектора по рефлексу прямого
+пучка: введите пиксель прямого рефлекса и Длину
+камеры 1 (расстояние образец–прямой рефлекс).
+Используйте, когда пучок попадает на детектор.</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.ToolTip" xml:space="preserve">
+    <value>Игнорировать маскированные пиксели при поиске/
+уточнении центра пучка, чтобы маскированные
+рефлексы и плохие области не искажали результат.</value>
+  </data>
+  <data name="numericBoxTest.ToolTip" xml:space="preserve">
+    <value>Отношение интенсивностей Kα2/Kα1, используемое
+для поправки на удаление Kα2 (диапазон 0-2,
+обычно ~0.5). Больше — вычитается больше Kα2.</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.ToolTip" xml:space="preserve">
+    <value>Конечное значение горизонтальной оси развёрнутого
+изображения (0-180) в выбранной единице. Правый
+край cake-изображения.</value>
+  </data>
+  <data name="buttonMaskAll.ToolTip" xml:space="preserve">
+    <value>Маскировать всё изображение (каждый пиксель
+исключён из интегрирования). Обычно используется
+перед ручным снятием маски только с интересующей
+области.</value>
+  </data>
+  <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
+    <value>Сохранять профиль в формате GSAS для уточнения
+по Ритвельду; обратите внимание, что опция «один
+файл» недоступна в этом формате.</value>
+  </data>
+  <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
+    <value>Ширина полосы в пикселях (макс. 10000):
+полутолщина прямоугольной полосы интегрирования
+поперёк линии центра пучка; шире = усредняется
+больше пикселей.</value>
+  </data>
+  <data name="checkBoxSaveFile.ToolTip" xml:space="preserve">
+    <value>Автоматически сохранять извлечённый 1D-профиль
+в файл после каждого «Получить профиль». Включает
+расположенные ниже опции формата файла и папки.</value>
+  </data>
+  <data name="buttonMaskBottom.ToolTip" xml:space="preserve">
+    <value>Маскировать (исключить из интегрирования)
+всю нижнюю половину изображения. Добавляется
+к существующей маске.</value>
+  </data>
+  <data name="checkBoxTest.ToolTip" xml:space="preserve">
+    <value>Удалить вклад Kα2 из профиля (поправка
+Рачингера), когда выбрана трубочная линия Kα1,
+оставляя картину только из Kα1.</value>
+  </data>
+  <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
+    <value>Инструмент ручной маски: Многоугольник. Кликайте,
+чтобы добавлять вершины, двойной клик замыкает
+и маскирует охваченную область.</value>
+  </data>
+  <data name="numericBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>Угол неортогональности пикселя ξ (°): сдвиг/перекос
+между осями X и Y детектора. 0 = идеально
+прямоугольные пиксели; исправляет искажённые
+детекторы.</value>
+  </data>
+  <data name="numericBoxCameraLength1.ToolTip" xml:space="preserve">
+    <value>Длина камеры 1: расстояние образец–прямой
+рефлекс (mm). Задаёт масштаб пересчёта радиуса
+в пикселях в 2θ; большая длина смещает кольца
+к меньшим 2θ.</value>
+  </data>
+  <data name="radioButton3.ToolTip" xml:space="preserve">
+    <value>Использовать межплоскостное расстояние d решётки
+(Å) для горизонтальной оси развёрнутого изображения.</value>
+  </data>
+  <data name="numericBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Размер пикселя детектора по Y (mm/пиксель).
+Вместе с размером по X задаёт соотношение сторон
+пикселя, используемое в геометрии.</value>
+  </data>
+  <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
+    <value>Ширина полосы сплайновой маски в пикселях (1-50):
+толщина маскированной полосы, проводимой вдоль
+сплайновой кривой.</value>
+  </data>
+  <data name="radioButtonChiCounterclockwise.ToolTip" xml:space="preserve">
+    <value>Определить азимутальный угол χ как возрастающий
+против часовой стрелки на изображении (противоположно
+соглашению «по часовой стрелке»).</value>
+  </data>
+  <data name="checkBoxMaskEdge.ToolTip" xml:space="preserve">
+    <value>Маскировать границу изображения: исключать при
+интегрировании полосу из N пикселей (задаётся
+справа) с каждого края, убирая артефакты края
+детектора.</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.ToolTip" xml:space="preserve">
+    <value>Сохранять текущий контраст интенсивности
+(масштаб отображения min/max) при загрузке
+следующего изображения, вместо авто-перемасштабирования
+каждого изображения.</value>
+  </data>
+  <data name="radioButton4.ToolTip" xml:space="preserve">
+    <value>Использовать угол рассеяния 2θ (градусы)
+для горизонтальной оси развёрнутого изображения.</value>
+  </data>
+  <data name="buttonInvertMask.ToolTip" xml:space="preserve">
+    <value>Инвертировать маску: ранее маскированные
+пиксели становятся активными, а активные —
+маскированными.</value>
+  </data>
+  <data name="radioButtonManualSpline.ToolTip" xml:space="preserve">
+    <value>Инструмент ручной маски: Сплайновая кривая.
+Кликайте, чтобы добавлять контрольные точки
+(правый клик удаляет); двойной клик маскирует
+полосу заданной ширины вдоль кривой.</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
+    <value>Использовать межплоскостное расстояние d решётки
+(Å) как ось x профиля; Начало/Конец/Шаг в
+ангстремах. d = длина волны / (2 sin θ).</value>
+  </data>
+  <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
+    <value>Угол наклона τ (°): насколько плоскость детектора
+отклоняется от перпендикуляра к пучку. 0 = без
+наклона; ненулевое значение делает кольца
+эллиптическими до внесения поправки.</value>
+  </data>
+  <data name="radioButtonFootMode.ToolTip" xml:space="preserve">
+    <value>Задать геометрию по подножию перпендикуляра
+(проекция нормали образца на наклонённый детектор)
+и Длине камеры 2 (образец–подножие). Для
+наклонённых плоских панелей.</value>
+  </data>
+  <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
+    <value>Снять все маски: снова включить каждый пиксель
+в интегрирование. Отменяет «Маскировать всё» /
+полумаску / маскирование рефлексов.</value>
+  </data>
+  <data name="radioButtonChiLeft.ToolTip" xml:space="preserve">
+    <value>Поместить начало азимута (χ =
+0) к левому краю изображения.</value>
+  </data>
+  <data name="radioButtonConcentric.ToolTip" xml:space="preserve">
+    <value>Концентрическое интегрирование: получить
+стандартный 1D-профиль (интенсивность от 2θ,
+межплоскостного расстояния d или длины) путём
+интегрирования по полным кольцам Дебая.</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.ToolTip" xml:space="preserve">
+    <value>Конечный угол сектора (°, азимут χ). Конец
+интегрируемого азимутального диапазона «сектора»;
+должен превышать начальный угол.</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
+    <value>Корректировать интенсивности на линейную
+(синхротронную) поляризацию рентгеновского
+излучения, приводя измеренную картину к
+неполяризованному эквиваленту; влияет на
+относительные высоты пиков по азимуту χ.</value>
+  </data>
+  <data name="numericBoxFindCenterSearchArea.ToolTip" xml:space="preserve">
+    <value>Область поиска центра (пиксели/шаги, целое):
+радиус вокруг текущего центра, в пределах которого
+ищет автопоиск центра. Больше = шире, но медленнее
+поиск.</value>
+  </data>
+  <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
+    <value>Задать радиус радиального кольца как
+межплоскостное расстояние d решётки (Å).</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
+    <value>Верхний порог интенсивности (отсчёты). Пиксели
+выше этого значения исключаются из интегрирования;
+активен, только когда отмечено «Выше интенсивности».</value>
+  </data>
+  <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
+    <value>Инструмент ручной маски: Прямоугольник. Протяните
+между двумя диагональными углами, чтобы маскировать
+прямоугольную область.</value>
+  </data>
+  <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
+    <value>Задать цвет масштабных линий азимута (χ),
+наложенных на изображение.</value>
+  </data>
+  <data name="radioButtonConcentricLength.ToolTip" xml:space="preserve">
+    <value>Использовать длину дуги на детекторе (mm) как
+ось x профиля; Начало/Конец/Шаг в миллиметрах.</value>
+  </data>
+  <data name="numericBoxRadialRange.ToolTip" xml:space="preserve">
+    <value>Полуширина кольца (donut) вокруг выбранного
+радиуса, интегрируемая на каждом азимуте, в
+° 2θ или Å межплоскостного расстояния d. Шире =
+больше отсчётов, ниже угловое разрешение.</value>
+  </data>
+  <data name="pictureBox1.ToolTip" xml:space="preserve">
+    <value>Предпросмотр оси азимута (χ): показывает, где
+расположен χ = 0 и в какую сторону χ возрастает
+при текущих настройках направления и поворота.</value>
+  </data>
+  <data name="textBoxManualSpotSize.ToolTip" xml:space="preserve">
+    <value>Результирующий диаметр ручного рефлекса в
+пикселях (= 2^размер). В основном для чтения;
+отражает ползунок размера и выбор размера рефлекса
+на основной панели инструментов.</value>
+  </data>
+  <data name="radioButtonChiBottom.ToolTip" xml:space="preserve">
+    <value>Поместить начало азимута (χ = 0)
+к нижнему краю изображения.</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.ToolTip" xml:space="preserve">
+    <value>Интегрировать полосу симметрично с обеих сторон
+от центра пучка (центросимметрично), удваивая
+выбираемую область. Используется пресетами
+Вертикально/Горизонтально.</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>Интегрировать по прямоугольной полосе вместо
+полного кольца; включает элементы управления
+направлением, углом и шириной полосы для
+области в виде полосы.</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.ToolTip" xml:space="preserve">
+    <value>Порог обнаружения рефлексов для авто «Маскировать
+рефлексы», в стандартных отклонениях выше
+локального среднего. Меньше = маскирует больше
+рефлексов; больше = только сильнейшие.</value>
+  </data>
+  <data name="radioButtonRadialAngle.ToolTip" xml:space="preserve">
+    <value>Задать радиус радиального кольца как
+угол рассеяния 2θ (градусы).</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.ToolTip" xml:space="preserve">
+    <value>Начальное значение горизонтальной оси развёрнутого
+изображения (0-180), в ° 2θ / длине / межплоскостном
+расстоянии d согласно выбору единицы. Левый край
+cake-изображения.</value>
+  </data>
+  <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
+    <value>Сохранять профиль как CSV (значения, разделённые
+запятыми) для электронных таблиц.</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
+    <value>Запрашивать выходную папку каждый раз при
+сохранении профиля.</value>
+  </data>
+  <data name="numericBoxConcentricEnd.ToolTip" xml:space="preserve">
+    <value>Конец диапазона профиля в выбранной единице
+(2θ ° / mm / Å). Верхняя граница выходного
+1D-профиля.</value>
+  </data>
+  <data name="buttonMaskTop.ToolTip" xml:space="preserve">
+    <value>Маскировать (исключить из интегрирования)
+всю верхнюю половину изображения. Добавляется
+к существующей маске.</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
+    <value>Отправлять извлечённый 1D-профиль в PDIndexer
+(сопутствующее приложение) через буфер обмена
+после каждого интегрирования.</value>
+  </data>
+  <data name="checkBoxFixCenter.ToolTip" xml:space="preserve">
+    <value>Удерживать позицию центра пучка фиксированной
+при поиске/уточнении центра, чтобы оптимизировались
+только прочие параметры. Отключает опции области
+поиска.</value>
+  </data>
+  <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
+    <value>Определить азимутальный угол χ как возрастающий
+по часовой стрелке на изображении. Задаёт
+соглашение о знаке для азимутальной развёртки
+и углов сектора.</value>
+  </data>
+  <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
+    <value>Инструмент ручной маски: Окружность. Протяните
+от центра наружу, чтобы маскировать круглую область
+(центр и радиус задаются протягиванием).</value>
+  </data>
+  <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
+    <value>Подписывать сохранённые/отображаемые изображения
+только именем файла (без пути).</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
+    <value>Сохранять все профили последовательной/азимутальной
+серии в один файл (недоступно для формата GSAS).</value>
+  </data>
+  <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
+    <value>Сохранять профиль как TSV (значения, разделённые
+табуляцией).</value>
+  </data>
+  <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
+    <value>Использовать загруженное сейчас изображение как
+фон для вычитания из последующих изображений
+(с масштабированием на коэффициент).</value>
+  </data>
+</root>

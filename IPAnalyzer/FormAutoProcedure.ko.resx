@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>새 이미지 자동 불러오기</value>
+  </data>
+  <data name="radioButtonNotEqual.Text" xml:space="preserve">
+    <value>≠</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>자동 절차</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.Text" xml:space="preserve">
+    <value>새 이미지를 불러오면,
+ 다음 시퀀스를 수행</value>
+  </data>
+  <data name="checkBoxNumberMatching.Text" xml:space="preserve">
+    <value>패턴 매칭</value>
+  </data>
+  <data name="checkBoxKeywords.Text" xml:space="preserve">
+    <value>키워드</value>
+  </data>
+  <data name="buttonSetDirectory.Text" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>감시할 디렉터리</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>매크로</value>
+  </data>
+  <data name="numericBoxDivisor.HeaderText" xml:space="preserve">
+    <value>파일 이름의 번호 %</value>
+  </data>
+  <data name="checkBoxAutoLoad.ToolTip" xml:space="preserve">
+    <value>선택한 디렉터리에서 새로 추가되는 이미지
+파일의 감시를 시작/중지하고, 새 파일이 나타날
+때마다 자동으로 불러옵니다 (먼저 유효한
+디렉터리를 설정해야 합니다).</value>
+  </data>
+  <data name="textBoxDiectory.ToolTip" xml:space="preserve">
+    <value>새 회절 이미지 파일을 감시할 폴더의 전체
+경로입니다. Set 버튼으로 찾아보거나 경로를
+직접 입력하세요. 하위 폴더도 재귀적으로
+감시됩니다.</value>
+  </data>
+  <data name="buttonSetDirectory.ToolTip" xml:space="preserve">
+    <value>감시할 폴더를 찾아 그 경로를
+디렉터리 상자에 입력합니다.</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>새 회절 이미지 파일을 감시할 폴더의 전체
+경로입니다. Set 버튼으로 찾아보거나 경로를
+직접 입력하세요. 하위 폴더도 재귀적으로
+감시됩니다.</value>
+  </data>
+  <data name="checkBoxNumberMatching.ToolTip" xml:space="preserve">
+    <value>파일 이름 끝의 숫자로 자동 로드 파일을
+필터링합니다: =/= 토글에 따라 (숫자 mod
+제수)가 나머지와 같을 때/같지 않을 때만
+불러옵니다.</value>
+  </data>
+  <data name="radioButtonEqual.ToolTip" xml:space="preserve">
+    <value>같음 모드: (끝 숫자 mod 제수)가 나머지와
+같을 때만 파일을 불러옵니다.</value>
+  </data>
+  <data name="radioButtonNotEqual.ToolTip" xml:space="preserve">
+    <value>같지 않음 모드: (끝 숫자 mod 제수)가 나머지와
+같지 않을 때만 파일을 불러옵니다.</value>
+  </data>
+  <data name="numericBoxDivisor.ToolTip" xml:space="preserve">
+    <value>파일 이름 숫자 판정의 제수입니다: (끝 숫자 mod
+이 제수)가 나머지와 같으면 통과합니다. 0보다
+큰 정수이며, 0은 절대 일치하지 않습니다. 기본값 3.</value>
+  </data>
+  <data name="numericBoxRemainder.ToolTip" xml:space="preserve">
+    <value>파일 이름 숫자 판정의 목표 나머지입니다: (끝 숫자
+mod 제수)가 이 값과 같으면 통과합니다. 0..제수-1
+범위의 정수입니다. 기본값 2.</value>
+  </data>
+  <data name="checkBoxKeywords.ToolTip" xml:space="preserve">
+    <value>이름으로 자동 로드 파일을 필터링합니다:
+파일 이름에 오른쪽에 입력한 키워드 텍스트가
+포함된 파일만 불러옵니다.</value>
+  </data>
+  <data name="textBoxKeyword.ToolTip" xml:space="preserve">
+    <value>자동 로드되려면 파일 이름에 포함되어야 하는
+부분 문자열입니다 (대소문자 구분). 키워드 필터
+체크박스가 켜져 있을 때만 사용됩니다.</value>
+  </data>
+  <data name="checkBoxAutoAfterLoad.ToolTip" xml:space="preserve">
+    <value>체크하면 새 이미지가 로드될 때마다 아래의
+체크된 단계(자동 대비, 중심 찾기, 스폿 마스크,
+프로파일 가져오기, 매크로)를 자동으로
+실행합니다.</value>
+  </data>
+  <data name="checkedListBoxAuto.ToolTip" xml:space="preserve">
+    <value>각 이미지가 로드된 후 실행되는 단계(위에서
+아래로): 자동 대비(자동 밝기), 중심 찾기(빔
+중심 검출), 스폿 마스크(단결정 스폿 제거),
+프로파일 가져오기(링을 1D 2θ 프로파일로 적분),
+매크로 실행.</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>자동 절차의 마지막 단계로 실행할 매크로를
+선택합니다 ('매크로 실행'이 체크된 경우에만).</value>
+  </data>
+  <data name="comboBoxMacro.ToolTip" xml:space="preserve">
+    <value>시퀀스의 마지막 단계로 실행할 저장된 매크로를
+선택합니다. 위 목록에서 '매크로 실행'이 체크된
+경우에만 활성화됩니다.</value>
+  </data>
+</root>

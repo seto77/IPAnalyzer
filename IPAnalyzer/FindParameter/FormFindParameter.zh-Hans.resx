@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label64.Text" xml:space="preserve">
+    <value>次</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>环中心 (主)</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.Text" xml:space="preserve">
+    <value>倾斜校正</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.Text" xml:space="preserve">
+    <value>来自主窗体</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>主</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>重复次数</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>平均相对残差</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>倾斜 τ (次)</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>波长</value>
+  </data>
+  <data name="checkBoxMouseOperation.Text" xml:space="preserve">
+    <value>精修期间启用鼠标操作
+ (不稳定 !)</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.Text" xml:space="preserve">
+    <value>像素畸变</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>初始</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>中心位置 (像素)</value>
+  </data>
+  <data name="buttonExecuteRefinements.Text" xml:space="preserve">
+    <value>精修!</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>球面半径 
+(1/R)</value>
+  </data>
+  <data name="groupBoxParameter.Text" xml:space="preserve">
+    <value>参数</value>
+  </data>
+  <data name="buttonSchematicDiagram.Text" xml:space="preserve">
+    <value>示意图</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.Text" xml:space="preserve">
+    <value>相机长度</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.Text" xml:space="preserve">
+    <value>像素大小</value>
+  </data>
+  <data name="checkUncheckToolStripMenuItem.Text" xml:space="preserve">
+    <value>勾选/取消勾选</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>拟合范围
+(主)</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.Text" xml:space="preserve">
+    <value>获取波长</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.Text" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>阈值</value>
+  </data>
+  <data name="checkBoxCenterPosition.Text" xml:space="preserve">
+    <value>中心位置</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>相机长度
+ (主)</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>IP 倾斜</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>查找参数</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>像素畸变</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>倾斜 τ (主)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>带宽</value>
+  </data>
+  <data name="buttonSetInitioalParam.Text" xml:space="preserve">
+    <value>主窗体参数 =&amp;gt; 初始参数 </value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.Text" xml:space="preserve">
+    <value>使用标准晶体</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>环中心 (次)</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.Text" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>次</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>像素大小 (X)</value>
+  </data>
+  <data name="groupBoxPeakList.Text" xml:space="preserve">
+    <value>峰列表</value>
+  </data>
+  <data name="groupBoxPrimaryImage.Text" xml:space="preserve">
+    <value>主图像</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>像素畸变 (ξ)</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>倾斜 φ (主)</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>像素大小 (Y)</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>倾斜 φ (次)</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.Text" xml:space="preserve">
+    <value>球面校正</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
+    <value>峰分解</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="buttonCheckPeaks.Text" xml:space="preserve">
+    <value>勾选满足以下条件的峰</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>相机长度 (主)</value>
+  </data>
+  <data name="buttonClearPrimaryImage.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.Text" xml:space="preserve">
+    <value>获取相机长度</value>
+  </data>
+  <data name="buttonClearSecondaryImage.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="radioButtonRectangle.Text" xml:space="preserve">
+    <value>矩形</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>误差</value>
+  </data>
+  <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
+    <value>设置晶体</value>
+  </data>
+  <data name="buttonStopRefinements.Text" xml:space="preserve">
+    <value>停止!</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.Text" xml:space="preserve">
+    <value>获取图谱</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>像素大小</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>次</value>
+  </data>
+  <data name="checkBoxRefleshMainform.Text" xml:space="preserve">
+    <value>精修期间刷新主窗体</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>中心位置 (像素)</value>
+  </data>
+  <data name="groupBoxSecondaryImage.Text" xml:space="preserve">
+    <value>次图像</value>
+  </data>
+  <data name="radioButtonSector.Text" xml:space="preserve">
+    <value>扇形</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>精修后</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.Text" xml:space="preserve">
+    <value>获取图谱</value>
+  </data>
+  <data name="buttonSendMainForm.Text" xml:space="preserve">
+    <value>精修参数 =&amp;gt; 主窗体</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>相机长度</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>IP 倾斜</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.Text" xml:space="preserve">
+    <value>波长</value>
+  </data>
+  <data name="groupBoxOption.Text" xml:space="preserve">
+    <value>精修参数</value>
+  </data>
+  <data name="buttonCopyToClipboard.Text" xml:space="preserve">
+    <value>精修参数 =&amp;gt; 剪贴板</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>主</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>相机长度</value>
+  </data>
+  <data name="buttonClearGraphs.Text" xml:space="preserve">
+    <value>清除所有图</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>分割数</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.Text" xml:space="preserve">
+    <value>显示各个峰</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>波长</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.Text" xml:space="preserve">
+    <value>来自主窗体</value>
+  </data>
+  <data name="numericBoxLowerThan.HeaderText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="ColumnHKL.HeaderText" xml:space="preserve">
+    <value>hkl</value>
+  </data>
+  <data name="ColumnNo.HeaderText" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="ColumnPrimary.HeaderText" xml:space="preserve">
+    <value>主</value>
+  </data>
+  <data name="ColumnSecondary.HeaderText" xml:space="preserve">
+    <value>次</value>
+  </data>
+  <data name="numericBoxAwayFrom.HeaderText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.ToolTip" xml:space="preserve">
+    <value>将主窗口的束中心（直射斑）位置
+复制到次图像的中心 X/Y 字段。</value>
+  </data>
+  <data name="buttonSendMainForm.ToolTip" xml:space="preserve">
+    <value>将精修后的参数（相机长度、像素大小/
+畸变、倾斜、波长、球面校正、束中心）
+应用到主窗口。</value>
+  </data>
+  <data name="label76.ToolTip" xml:space="preserve">
+    <value>次图像拟合环中心的散布；若呈现
+方向性趋势，说明次图像的倾斜校正
+不足。</value>
+  </data>
+  <data name="checkBoxRefleshMainform.ToolTip" xml:space="preserve">
+    <value>在精修过程中刷新主窗口图像。
+取消勾选可抑制重绘，
+从而略微提速。</value>
+  </data>
+  <data name="radioButton1.ToolTip" xml:space="preserve">
+    <value>在手动添加或拖动德拜环时（灵活模式）
+以主图像为对象。</value>
+  </data>
+  <data name="checkBoxMouseOperation.ToolTip" xml:space="preserve">
+    <value>在精修运行时允许对各峰图形进行
+鼠标交互（拖动）。可能不稳定；
+如需可靠运行请保持关闭。</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi1.ToolTip" xml:space="preserve">
+    <value>各次迭代中主图像精修倾斜方位角 phi
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="pictureBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>各次迭代中精修像素大小（Y）
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="pictureBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>各次迭代中精修像素大小（X）
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="pictureBoxResidual.ToolTip" xml:space="preserve">
+    <value>所选德拜环峰的平均相对残差
+（计算峰位与观测峰位之比较），
+按每次迭代绘制。随着精修收敛，
+它单调下降；最新值附加在右侧。</value>
+  </data>
+  <data name="pictureBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>各次迭代中精修波长的历史记录
+（最新在右侧）。纵向刻度自动调整。</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.ToolTip" xml:space="preserve">
+    <value>将主图像的二维图像径向积分为
+一维图谱（强度对径向距离），
+用于峰拟合。</value>
+  </data>
+  <data name="textBoxPixelSizeY.ToolTip" xml:space="preserve">
+    <value>Y 方向的初始探测器像素大小，单位 mm。
+作为精修起始值；用于缩放图像的
+纵向像素到 mm 的换算。</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>主图像拟合环中心的散布；若呈现
+方向性趋势，说明倾斜校正不足。</value>
+  </data>
+  <data name="checkBoxShowEachPeaks.ToolTip" xml:space="preserve">
+    <value>为每个所选德拜环峰显示单独的
+拟合图形（观测图谱、拟合曲线、
+背景），而非合并图谱。</value>
+  </data>
+  <data name="textBoxPixelSizeX.ToolTip" xml:space="preserve">
+    <value>X 方向的初始探测器像素大小，单位 mm。
+作为精修起始值；用于缩放图像的
+横向像素到 mm 的换算。</value>
+  </data>
+  <data name="buttonExecuteRefinements.ToolTip" xml:space="preserve">
+    <value>对上方勾选的几何参数启动最小二乘
+精修，拟合所选德拜环峰。
+按 Stop 可中途终止。</value>
+  </data>
+  <data name="buttonStopRefinements.ToolTip" xml:space="preserve">
+    <value>停止并取消正在运行的精修，
+保留迄今达到的参数值。</value>
+  </data>
+  <data name="label50.ToolTip" xml:space="preserve">
+    <value>X 方向的探测器像素大小，单位 mm。</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value>预测的德拜环峰。勾选主/次复选框
+以选择用于精修的峰；mm 列显示
+拟合位置。双击某行可将图形缩放
+到该峰。</value>
+  </data>
+  <data name="buttonSetStandardCrystal.ToolTip" xml:space="preserve">
+    <value>打开晶体编辑器以选择/编辑标准样品
+（默认 CeO2），其晶面间距定义了
+预期的德拜环位置。</value>
+  </data>
+  <data name="numericUpDownBandWidth.ToolTip" xml:space="preserve">
+    <value>积分带短边的宽度，以图像宽度的
+百分比表示（默认 4%）。较宽会平均
+更多像素，但会模糊间距很近的环。</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.ToolTip" xml:space="preserve">
+    <value>根据整个图样中主/次环位置的差异
+估算相机长度，并将其载入为
+精修值。</value>
+  </data>
+  <data name="label60.ToolTip" xml:space="preserve">
+    <value>主探测器倾斜量 tau
+（与垂直方向的夹角），单位度。</value>
+  </data>
+  <data name="textBoxWaveLength.ToolTip" xml:space="preserve">
+    <value>初始辐射波长，单位 0.1 nm（埃）。
+用作精修时的起始值；波长越大，
+所有德拜环越向外移。</value>
+  </data>
+  <data name="label57.ToolTip" xml:space="preserve">
+    <value>主图像的相机长度（样品到探测器
+的距离），单位 mm。</value>
+  </data>
+  <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
+    <value>只读：当前载入的主图像的文件名
+（若为序列图像，还包括帧索引）。</value>
+  </data>
+  <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>各次迭代中精修像素畸变角 ksi
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的精修球面弯曲
+校正，以曲率半径倒数 1/R（每 mm）表示。</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>次图像束中心（直射斑）的 Y 位置，
+单位像素。双击可从主窗口复制中心；
+主窗口的“Find Center”也会更新它。</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionPhi2.ToolTip" xml:space="preserve">
+    <value>各次迭代中次图像精修倾斜方位角 phi
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="buttonCheckPeaks.ToolTip" xml:space="preserve">
+    <value>自动勾选（选定用于拟合）满足下列
+条件的峰：以“away from”相互隔离，
+且在“lower than”距离之内。</value>
+  </data>
+  <data name="label16.ToolTip" xml:space="preserve">
+    <value>辐射波长，单位 0.1 nm（埃）。</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.ToolTip" xml:space="preserve">
+    <value>使用已知的标准晶体：德拜环位置
+由标准样的晶面间距计算得到。取消
+勾选可手动放置/拖动环（灵活模式）。</value>
+  </data>
+  <data name="label74.ToolTip" xml:space="preserve">
+    <value>像素畸变角 ksi（X/Y 剪切），单位度。</value>
+  </data>
+  <data name="numericUpDownThresholdOfPeak.ToolTip" xml:space="preserve">
+    <value>峰接受阈值（0-1）。当
+积分强度 /（积分强度 + 背景）
+低于此值时，该峰将从精修中
+排除。</value>
+  </data>
+  <data name="label22.ToolTip" xml:space="preserve">
+    <value>成像板（IP）倾斜：探测器与束
+不垂直，以方位角 phi 和倾斜量 tau 表示。</value>
+  </data>
+  <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
+    <value>清除已载入的主图像及其提取的
+图谱，重置主图像槽位。</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.ToolTip" xml:space="preserve">
+    <value>勾选时，精修探测器倾斜校正
+（方位角 phi 和倾斜量 tau）。由于二者
+耦合，这会强制开启束中心精修。</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.ToolTip" xml:space="preserve">
+    <value>将主窗口的束中心（直射斑）位置
+复制到主图像的中心 X/Y 字段。</value>
+  </data>
+  <data name="numericTextBoxPrimaryCenterPositionY.ToolTip" xml:space="preserve">
+    <value>主图像束中心（直射斑）的 Y 位置，
+单位像素。双击可从主窗口复制中心；
+主窗口的“Find Center”也会更新它。</value>
+  </data>
+  <data name="pictureBoxMain.ToolTip" xml:space="preserve">
+    <value>距离-强度图谱。左键拖动放大，
+右键单击缩小；拖动衍射线可移动它
+（这会调整相机长度，或在灵活模式下
+调整晶面间距）。</value>
+  </data>
+  <data name="label51.ToolTip" xml:space="preserve">
+    <value>主图像的束中心（直射斑）位置，
+单位像素。</value>
+  </data>
+  <data name="pictureBoxTiltCorrection2.ToolTip" xml:space="preserve">
+    <value>次图像拟合德拜环中心的散布（mm），
+按从最旧到最新着色。若呈现单一
+方向趋势，说明次探测器的倾斜校正不足。</value>
+  </data>
+  <data name="numericUpDownDivision.ToolTip" xml:space="preserve">
+    <value>围绕每个环采样的方位方向数
+（扇区，8-360）。方向越多，对倾斜/
+中心的灵敏度越高，但计算越慢。</value>
+  </data>
+  <data name="label80.ToolTip" xml:space="preserve">
+    <value>次探测器倾斜量 tau
+（与垂直方向的夹角），单位度。</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryTau.ToolTip" xml:space="preserve">
+    <value>主成像板（IP）的初始倾斜量 tau，
+单位度：探测器偏离与束垂直方向的
+倾斜程度。</value>
+  </data>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value>主图像的相机长度（样品到探测器
+的距离），单位 mm。</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.ToolTip" xml:space="preserve">
+    <value>打开并载入次衍射图像文件
+（用于双距离几何精修的可选
+第二图样）。</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
+    <value>次成像板（IP）的初始倾斜方位角 phi，
+单位度：第二图像探测器倾斜的
+面内方向。</value>
+  </data>
+  <data name="checkBoxCenterPosition.ToolTip" xml:space="preserve">
+    <value>勾选时，精修束中心（直射斑）位置。
+启用倾斜校正时会自动强制开启。</value>
+  </data>
+  <data name="numericBoxAwayFrom.ToolTip" xml:space="preserve">
+    <value>最小间隔，单位 mm。“Check peaks”
+会自动选定与相邻峰隔离距离
+大于此值的峰。</value>
+  </data>
+  <data name="label71.ToolTip" xml:space="preserve">
+    <value>次成像板（IP）倾斜：探测器与束
+不垂直，以方位角 phi 和倾斜量 tau 表示。</value>
+  </data>
+  <data name="textBoxRefinedPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的精修相机长度
+（mm）。</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.ToolTip" xml:space="preserve">
+    <value>勾选时，相机长度（样品到探测器
+的距离）将作为自由参数纳入精修。</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau1.ToolTip" xml:space="preserve">
+    <value>各次迭代中主图像精修倾斜量 tau
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="pictureBoxTiltCorrectionTau2.ToolTip" xml:space="preserve">
+    <value>各次迭代中次图像精修倾斜量 tau
+的历史记录（最新在右侧）。
+纵向刻度自动调整。</value>
+  </data>
+  <data name="pictureBoxPattern1.ToolTip" xml:space="preserve">
+    <value>主图样的颜色样块。点击可选择
+用于绘制主图谱及其环的颜色。</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.ToolTip" xml:space="preserve">
+    <value>将次图像的二维图像径向积分为
+一维图谱（强度对径向距离），
+用于峰拟合。</value>
+  </data>
+  <data name="numericBoxPrimaryImageNum.ToolTip" xml:space="preserve">
+    <value>主图像在序列（多帧）图像堆栈中的
+帧编号。</value>
+  </data>
+  <data name="numericTextBoxPrimaryFilmDistance.ToolTip" xml:space="preserve">
+    <value>主图像的初始相机长度（样品到探测器
+的距离），单位 mm。请输入接近真实值
+的数值，以便精修更快收敛。</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.ToolTip" xml:space="preserve">
+    <value>打开并载入主衍射图像文件
+（用作精修主参考的标准样品
+图样）。</value>
+  </data>
+  <data name="pictureBoxTiltCorrection1.ToolTip" xml:space="preserve">
+    <value>拟合德拜环中心的散布（mm），
+从最旧到最新的迭代按红-&amp;gt;绿-&amp;gt;蓝
+着色。若呈现单一方向趋势，表明
+探测器倾斜校正仍不足。</value>
+  </data>
+  <data name="textBoxRefinedWaveLength.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的精修波长
+（0.1 nm / 埃）。</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的主探测器
+精修倾斜方位角 phi（度）。</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.ToolTip" xml:space="preserve">
+    <value>勾选时，探测器像素大小（X 和 Y）
+将作为自由参数纳入精修。</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.ToolTip" xml:space="preserve">
+    <value>分解重叠的德拜环峰：间距小于
+约 2 倍拟合范围的峰将作为一组
+同时拟合，以更好地分离。</value>
+  </data>
+  <data name="textBoxPixelKsi.ToolTip" xml:space="preserve">
+    <value>初始像素畸变角 ksi（X 与 Y 像素轴
+之间的剪切/非正交），单位度。
+用于校正倾斜的像素网格。</value>
+  </data>
+  <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
+    <value>次图像在序列（多帧）图像堆栈中的
+帧编号。</value>
+  </data>
+  <data name="label79.ToolTip" xml:space="preserve">
+    <value>次探测器倾斜方位角 phi
+（倾斜轴方向），单位度。</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeX.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的 X 方向
+精修像素大小（mm）。</value>
+  </data>
+  <data name="radioButtonSector.ToolTip" xml:space="preserve">
+    <value>对环的角扇区（楔形）区域进行积分。
+沿环的曲率走向；更适用于短相机长度/
+强倾斜的情形。</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
+    <value>勾选时，精修球面弯曲校正
+（曲率半径倒数 1/R），用于考虑
+弯曲的成像板。</value>
+  </data>
+  <data name="buttonCopyToClipboard.ToolTip" xml:space="preserve">
+    <value>将所有精修参数及其 +/- 误差以制表符
+分隔文本形式复制到剪贴板（波长、
+相机长度、像素大小、ksi、倾斜、中心）。</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.ToolTip" xml:space="preserve">
+    <value>勾选时，辐射波长将作为自由参数
+纳入精修。</value>
+  </data>
+  <data name="pictureBoxCameraLength.ToolTip" xml:space="preserve">
+    <value>各次迭代中精修相机长度的历史记录
+（最新在右侧）。纵向刻度自动调整，
+故应判断趋势，而非绝对高度。</value>
+  </data>
+  <data name="label44.ToolTip" xml:space="preserve">
+    <value>像素畸变角 ksi（X/Y 非正交），
+单位度。</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeY.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的 Y 方向
+精修像素大小（mm）。</value>
+  </data>
+  <data name="textBoxFilmDistanceDiscrepancy.ToolTip" xml:space="preserve">
+    <value>次图像相机长度相对于主图像的偏移，
+单位 mm（允许为负）。定义第二探测器
+位置远近的程度。</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.ToolTip" xml:space="preserve">
+    <value>使用两幅图像中已勾选的德拜环峰，
+从整个图样估算波长，并将其载入为
+精修值。</value>
+  </data>
+  <data name="pictureBoxPattern2.ToolTip" xml:space="preserve">
+    <value>次图样的颜色样块。点击可选择
+用于绘制次图谱及其环的颜色。</value>
+  </data>
+  <data name="numericUpDownSearchRange.ToolTip" xml:space="preserve">
+    <value>每个预测峰周围的峰拟合窗口半宽，
+单位 mm（0.01-10）。越大捕获越多，
+但可能受相邻峰干扰且拟合更慢；
+过小则降低精度。</value>
+  </data>
+  <data name="buttonClearGraphs.ToolTip" xml:space="preserve">
+    <value>清除当前绘制的所有参数历史
+图形和残差图形。</value>
+  </data>
+  <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
+    <value>对横跨环的矩形带状区域进行积分。
+更简单/更快，但当环强烈弯曲时
+精度较低。</value>
+  </data>
+  <data name="label37.ToolTip" xml:space="preserve">
+    <value>主探测器倾斜方位角 phi
+（倾斜轴方向），单位度。</value>
+  </data>
+  <data name="textBoxRefinedPixelKsi.ToolTip" xml:space="preserve">
+    <value>只读：上次优化得到的精修像素
+畸变角 ksi（度）。</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>次图像束中心（直射斑）的 X 位置，
+单位像素。双击可从主窗口复制中心；
+主窗口的“Find Center”也会更新它。</value>
+  </data>
+  <data name="label52.ToolTip" xml:space="preserve">
+    <value>Y 方向的探测器像素大小，单位 mm。</value>
+  </data>
+  <data name="label45.ToolTip" xml:space="preserve">
+    <value>峰接受阈值（0-1）：强度比低于此值
+的峰将从精修中排除。</value>
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value>围绕每个环采样的方位方向数
+（扇区，8-360）。</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
+    <value>只读：主图像相机长度（mm）的副本，
+显示在次图像偏移旁以供参考。</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.ToolTip" xml:space="preserve">
+    <value>勾选时，像素畸变角 ksi（X/Y 剪切）
+将作为自由参数纳入精修。</value>
+  </data>
+  <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
+    <value>初始球面弯曲校正，以曲率半径倒数
+1/R（每 mm）表示。用于校正弯曲的
+探测器/IP；0 表示平面。</value>
+  </data>
+  <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
+    <value>只读：当前载入的次图像的文件名
+（若为序列图像，还包括帧索引）。</value>
+  </data>
+  <data name="label67.ToolTip" xml:space="preserve">
+    <value>要运行的精修迭代次数。</value>
+  </data>
+  <data name="label58.ToolTip" xml:space="preserve">
+    <value>次图像的束中心（直射斑）位置，
+单位像素。</value>
+  </data>
+  <data name="label42.ToolTip" xml:space="preserve">
+    <value>每个精修参数的估计标准误差（+/-）。</value>
+  </data>
+  <data name="buttonSetInitioalParam.ToolTip" xml:space="preserve">
+    <value>将主窗口当前的几何参数载入到
+初始参数字段，作为精修起点。</value>
+  </data>
+  <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
+    <value>清除已载入的次图像及其提取的
+图谱，重置次图像槽位。</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip" xml:space="preserve">
+    <value>主成像板（IP）的初始倾斜方位角 phi，
+单位度：探测器相对于束倾斜所绕的
+面内方向。</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip" xml:space="preserve">
+    <value>主图像束中心（直射斑）的 X 位置，
+单位像素。双击可从主窗口复制中心；
+主窗口的“Find Center”也会更新它。</value>
+  </data>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>每个预测峰周围的峰拟合窗口半宽
+（主图像），单位 mm。</value>
+  </data>
+  <data name="label28.ToolTip" xml:space="preserve">
+    <value>积分带宽度（短边），
+以图像宽度的百分比表示。</value>
+  </data>
+  <data name="radioButton2.ToolTip" xml:space="preserve">
+    <value>在手动添加或拖动德拜环时（灵活模式）
+以次图像为对象。</value>
+  </data>
+  <data name="label72.ToolTip" xml:space="preserve">
+    <value>每次迭代的平均相对残差
+（计算峰位与观测峰位之比较）；
+随拟合收敛而下降。</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryTau.ToolTip" xml:space="preserve">
+    <value>次成像板（IP）的初始倾斜量 tau，
+单位度：第二图像偏离与束垂直方向的
+倾斜。</value>
+  </data>
+  <data name="numericBoxLowerThan.ToolTip" xml:space="preserve">
+    <value>距离上限，单位 mm。“Check peaks”
+仅自动选定径向距离小于此值的峰。</value>
+  </data>
+  <data name="textBoxCameraLengthDev.ToolTip" xml:space="preserve">
+    <value>只读：精修相机长度（mm）的
+估计标准误差（+/-）。</value>
+  </data>
+  <data name="numericUpDownRepitition.ToolTip" xml:space="preserve">
+    <value>要执行的精修迭代次数（默认 12）。
+迭代越多，拟合收敛得越充分，
+但耗时也越长。</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>单位：波长以埃（0.1 nm）为单位。</value>
+  </data>
+  <data name="label75.ToolTip" xml:space="preserve">
+    <value>球面弯曲校正，以曲率半径倒数
+1/R（每 mm）表示；0 = 平面探测器。</value>
+  </data>
+  <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
+    <value>显示一张示意图，说明各几何参数
+（相机长度、束中心、探测器倾斜、
+像素大小、畸变）。</value>
+  </data>
+</root>
