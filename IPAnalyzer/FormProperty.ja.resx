@@ -1284,13 +1284,31 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>差し引く背景として現在使用している画像の
 パス(読み取り専用)。背景未設定時は空欄。</value>
   </data>
+  <data name="buttonClearBackgroundImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 25</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
+    <value>クリア</value>
+  </data>
   <data name="buttonClearBackgroundImage.ToolTip" xml:space="preserve">
     <value>登録した背景画像を消去し、背景差し
 引きを行わないようにします。</value>
   </data>
+  <data name="buttonSetBackgroundImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 25</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
+    <value>現在の画像をバックグラウンドに設定</value>
+  </data>
   <data name="buttonSetBackgroundImage.ToolTip" xml:space="preserve">
     <value>現在読み込んでいる画像を、以降の画像から差し
 引く背景として登録します(係数で倍率調整)。</value>
+  </data>
+  <data name="numericBoxFootPositionY.FooterPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
+  </data>
+  <data name="numericBoxFootPositionY.HeaderPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
   </data>
   <data name="numericBoxFootPositionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 38</value>
@@ -1301,6 +1319,12 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="numericBoxFootPositionX.FooterPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
+  </data>
+  <data name="numericBoxFootPositionX.HeaderPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
+  </data>
   <data name="numericBoxFootPositionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 17</value>
   </data>
@@ -1309,6 +1333,12 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="numericBoxFootPositionX.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="numericBoxCameraLength2.FooterPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
+  </data>
+  <data name="numericBoxCameraLength2.HeaderPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
   </data>
   <data name="numericBoxCameraLength2.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 26</value>
@@ -1336,6 +1366,12 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="numericBoxDirectSpotPositionX.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="numericBoxCameraLength1.FooterPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
+  </data>
+  <data name="numericBoxCameraLength1.HeaderPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
   </data>
   <data name="numericBoxCameraLength1.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 26</value>
@@ -1385,8 +1421,14 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="numericBoxSphericalCorections.FooterFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
+  <data name="numericBoxSphericalCorections.FooterPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
+  </data>
   <data name="numericBoxSphericalCorections.HeaderFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
+  </data>
+  <data name="numericBoxSphericalCorections.HeaderPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
   </data>
   <data name="numericBoxSphericalCorections.HeaderText" xml:space="preserve">
     <value>半径の逆数</value>
@@ -1484,11 +1526,14 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="numericBoxSplineWidth.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="numericBoxTest.FooterPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
   <data name="numericBoxTest.HeaderFont" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
   <data name="numericBoxTest.HeaderPadding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>0, 4, 0, 0</value>
   </data>
   <data name="numericBoxTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>202, 5</value>
@@ -1529,32 +1574,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 181</value>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 15</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>2θは散乱角.  χ は方位角 (その他タブを参照).</value>
-  </data>
-  <data name="label15.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 165</value>
-  </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="waveLengthControl.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>176, 0</value>
-  </data>
-  <data name="waveLengthControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 106</value>
-  </data>
-  <data name="waveLengthControl.ToolTip" xml:space="preserve">
-    <value />
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 261</value>
   </data>
   <data name="tabPageXRay.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1565,8 +1589,41 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="tabPageXRay.Text" xml:space="preserve">
     <value>線源の設定</value>
   </data>
-  <data name="tabPageXRay.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 181</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 15</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>2θは散乱角.  χ は方位角 (その他タブを参照).</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 165</value>
+  </data>
+  <data name="waveLengthControl.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>176, 0</value>
+  </data>
+  <data name="waveLengthControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 106</value>
+  </data>
+  <data name="tabPageIP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="tabPageIP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 253</value>
+  </data>
+  <data name="tabPageIP.Text" xml:space="preserve">
+    <value>検出器の設定</value>
+  </data>
+  <data name="flowLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="flowLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 1, 4, 1</value>
+  </data>
+  <data name="flowLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 23</value>
   </data>
   <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1583,20 +1640,8 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label22.Text" xml:space="preserve">
     <value>座標の基準</value>
   </data>
-  <data name="label22.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
-  </data>
-  <data name="flowLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 1, 4, 1</value>
-  </data>
-  <data name="flowLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 23</value>
-  </data>
-  <data name="flowLayoutPanel8.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 23</value>
   </data>
   <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1613,14 +1658,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label19.Text" xml:space="preserve">
     <value>検出器のタイプ</value>
   </data>
-  <data name="label19.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanelFootMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 54</value>
   </data>
-  <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 23</value>
-  </data>
-  <data name="flowLayoutPanel7.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanelFootMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 122</value>
   </data>
   <data name="groupBox9.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1630,24 +1672,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="groupBox9.Text" xml:space="preserve">
     <value>垂線の足の位置</value>
-  </data>
-  <data name="groupBox9.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
-    <value>BIZ UDPゴシック, 6.75pt</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 16</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 9</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>(試料から垂線の足までの距離)</value>
-  </data>
-  <data name="label17.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBox10.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1661,17 +1685,23 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>カメラ長2</value>
   </data>
-  <data name="groupBox10.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>BIZ UDPゴシック, 6.75pt</value>
   </data>
-  <data name="flowLayoutPanelFootMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 54</value>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 16</value>
   </data>
-  <data name="flowLayoutPanelFootMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 122</value>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 9</value>
   </data>
-  <data name="flowLayoutPanelFootMode.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label17.Text" xml:space="preserve">
+    <value>(試料から垂線の足までの距離)</value>
+  </data>
+  <data name="flowLayoutPanelDirectSpotMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 55</value>
+  </data>
+  <data name="flowLayoutPanelDirectSpotMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 122</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1681,24 +1711,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
     <value>ダイレクトスポット位置</value>
-  </data>
-  <data name="groupBoxDirectSpotPosition.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>BIZ UDPゴシック, 6.75pt</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 17</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 9</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>(試料からダイレクトスポットの距離)</value>
-  </data>
-  <data name="label18.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBoxCameaLength.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1712,17 +1724,17 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBoxCameaLength.Text" xml:space="preserve">
     <value>カメラ長1</value>
   </data>
-  <data name="groupBoxCameaLength.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>BIZ UDPゴシック, 6.75pt</value>
   </data>
-  <data name="flowLayoutPanelDirectSpotMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 55</value>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 17</value>
   </data>
-  <data name="flowLayoutPanelDirectSpotMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 122</value>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 9</value>
   </data>
-  <data name="flowLayoutPanelDirectSpotMode.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label18.Text" xml:space="preserve">
+    <value>(試料からダイレクトスポットの距離)</value>
   </data>
   <data name="groupBoxPixelShape.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1736,9 +1748,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBoxPixelShape.Text" xml:space="preserve">
     <value>ピクセル形状</value>
   </data>
-  <data name="groupBoxPixelShape.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBoxGandlfiRadius.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1750,24 +1759,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
     <value>Gandolfi 半径</value>
-  </data>
-  <data name="groupBoxGandlfiRadius.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
-    <value>BIZ UDPゴシック, 6.75pt</value>
-  </data>
-  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 27</value>
-  </data>
-  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 9</value>
-  </data>
-  <data name="label26.Text" xml:space="preserve">
-    <value>(通常ゼロ)</value>
-  </data>
-  <data name="label26.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBoxSphericalCorrection.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1781,8 +1772,17 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
     <value>球面補正</value>
   </data>
-  <data name="groupBoxSphericalCorrection.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>BIZ UDPゴシック, 6.75pt</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 27</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 9</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>(通常ゼロ)</value>
   </data>
   <data name="groupBoxTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1796,35 +1796,14 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
     <value>検出器の傾き</value>
   </data>
-  <data name="groupBoxTiltCorrection.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPageIP.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="tabPageIntegralRegion.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="tabPageIP.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageIntegralRegion.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPageIP.Text" xml:space="preserve">
-    <value>検出器の設定</value>
-  </data>
-  <data name="tabPageIP.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 48</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 18</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ピクセル分の画像端</value>
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
+    <value>画像範囲の設定</value>
   </data>
   <data name="groupBox8.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1838,8 +1817,20 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>積算除外ピクセル</value>
   </data>
-  <data name="groupBox8.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 48</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 18</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ピクセル分の画像端</value>
+  </data>
+  <data name="groupBoxRectangle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 4</value>
   </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1850,9 +1841,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label8.Text" xml:space="preserve">
     <value>角度</value>
   </data>
-  <data name="label8.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1861,9 +1849,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>バンド幅</value>
-  </data>
-  <data name="label7.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1874,14 +1859,8 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label9.Text" xml:space="preserve">
     <value>方向</value>
   </data>
-  <data name="label9.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBoxRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 4</value>
-  </data>
-  <data name="groupBoxRectangle.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxSector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
   </data>
   <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1892,9 +1871,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label10.Text" xml:space="preserve">
     <value>開始角度</value>
   </data>
-  <data name="label10.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1904,26 +1880,20 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label11.Text" xml:space="preserve">
     <value>終了角度</value>
   </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBoxSector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="groupBoxSector.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPageIntegralRegion.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="tabPageIntegralProperty.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="tabPageIntegralRegion.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageIntegralProperty.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPageIntegralRegion.Text" xml:space="preserve">
-    <value>画像範囲の設定</value>
+  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
+    <value>1次元化の条件</value>
   </data>
-  <data name="tabPageIntegralRegion.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxRadial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 141</value>
+  </data>
+  <data name="groupBoxRadial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 84</value>
   </data>
   <data name="label46.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1937,9 +1907,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label46.Text" xml:space="preserve">
     <value>リング幅</value>
   </data>
-  <data name="label46.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label40.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -1952,20 +1919,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label40.Text" xml:space="preserve">
     <value>リング半径</value>
   </data>
-  <data name="label40.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="labelDimensionRadial2.Location" type="System.Drawing.Point, System.Drawing">
     <value>399, 30</value>
   </data>
-  <data name="labelDimensionRadial2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
     <value>302, 55</value>
-  </data>
-  <data name="label37.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label36.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -1979,23 +1937,23 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label36.Text" xml:space="preserve">
     <value>ステップ</value>
   </data>
-  <data name="label36.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="labelDimensionRadial1.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 27</value>
   </data>
-  <data name="labelDimensionRadial1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxConcentric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 133</value>
   </data>
-  <data name="groupBoxRadial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 141</value>
+  <data name="groupBox4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
   </data>
-  <data name="groupBoxRadial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 84</value>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 19</value>
   </data>
-  <data name="groupBoxRadial.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 108</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>積算単位と積算範囲/ステップ</value>
   </data>
   <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2008,9 +1966,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>終了</value>
-  </data>
-  <data name="label13.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2027,9 +1982,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label14.Text" xml:space="preserve">
     <value>ステップ</value>
   </data>
-  <data name="label14.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -2042,24 +1994,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label12.Text" xml:space="preserve">
     <value>開始</value>
   </data>
-  <data name="label12.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 19</value>
-  </data>
-  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 108</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>積算単位と積算範囲/ステップ</value>
-  </data>
-  <data name="groupBox4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox5.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -2069,26 +2003,14 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>光学系</value>
   </data>
-  <data name="groupBox5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBoxConcentric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 133</value>
-  </data>
-  <data name="groupBoxConcentric.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPageIntegralProperty.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="tabPageSpotsAndCenter.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="tabPageIntegralProperty.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageSpotsAndCenter.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPageIntegralProperty.Text" xml:space="preserve">
-    <value>1次元化の条件</value>
-  </data>
-  <data name="tabPageIntegralProperty.ToolTip" xml:space="preserve">
-    <value />
+  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
+    <value>マスク条件</value>
   </data>
   <data name="groupBox13.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2102,8 +2024,20 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox13.Text" xml:space="preserve">
     <value>半分マスク</value>
   </data>
-  <data name="groupBox13.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxManualMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="groupBoxManualMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 0</value>
+  </data>
+  <data name="groupBoxManualMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 231</value>
+  </data>
+  <data name="groupBoxManualSpot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 177</value>
+  </data>
+  <data name="groupBoxManualSpot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 46</value>
   </data>
   <data name="label31.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2113,9 +2047,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 18</value>
-  </data>
-  <data name="label31.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2129,17 +2060,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label30.Text" xml:space="preserve">
     <value>ピクセル</value>
   </data>
-  <data name="label30.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxSpline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 104</value>
   </data>
-  <data name="groupBoxManualSpot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 177</value>
-  </data>
-  <data name="groupBoxManualSpot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 46</value>
-  </data>
-  <data name="groupBoxManualSpot.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxSpline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 63</value>
   </data>
   <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2153,9 +2078,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label29.Text" xml:space="preserve">
     <value>線幅</value>
   </data>
-  <data name="label29.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label27.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 7pt</value>
   </data>
@@ -2168,45 +2090,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label27.Text" xml:space="preserve">
     <value>(右/左クリック: 制御点の追加/削除  
 ダブルクリック: マスク域確定)</value>
-  </data>
-  <data name="label27.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBoxSpline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 104</value>
-  </data>
-  <data name="groupBoxSpline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 63</value>
-  </data>
-  <data name="groupBoxSpline.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBoxManualMode.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="groupBoxManualMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 0</value>
-  </data>
-  <data name="groupBoxManualMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 231</value>
-  </data>
-  <data name="groupBoxManualMode.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel5.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="flowLayoutPanel5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
-  <data name="flowLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 18</value>
-  </data>
-  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 64</value>
-  </data>
-  <data name="flowLayoutPanel5.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBox7.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2223,8 +2106,29 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>マスクの引継ぎ</value>
   </data>
-  <data name="groupBox7.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel5.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanel5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 8pt</value>
+  </data>
+  <data name="flowLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 18</value>
+  </data>
+  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 64</value>
+  </data>
+  <data name="groupBox12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="groupBox12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 92</value>
+  </data>
+  <data name="groupBox12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 55</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>スポット検出</value>
   </data>
   <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 8pt</value>
@@ -2239,44 +2143,20 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>標準偏差の何倍ずれた
 時スポットとみなすか</value>
   </data>
-  <data name="label28.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox12.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="tabPageAfterGetProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="groupBox12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 92</value>
-  </data>
-  <data name="groupBox12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 55</value>
-  </data>
-  <data name="groupBox12.Text" xml:space="preserve">
-    <value>スポット検出</value>
-  </data>
-  <data name="groupBox12.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPageSpotsAndCenter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="tabPageSpotsAndCenter.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageAfterGetProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
-    <value>マスク条件</value>
+  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
+    <value>１次元化後の処理</value>
   </data>
-  <data name="tabPageSpotsAndCenter.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 37</value>
   </data>
-  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 34</value>
-  </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 42</value>
-  </data>
-  <data name="flowLayoutPanel4.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBoxSaveProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>431, 135</value>
   </data>
   <data name="groupBox17.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2290,17 +2170,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox17.Text" xml:space="preserve">
     <value>シーケンシャル画像あるいは方位角分割解析の時</value>
   </data>
-  <data name="groupBox17.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 34</value>
   </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 16</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
-  </data>
-  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 42</value>
   </data>
   <data name="groupBox16.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2314,17 +2188,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox16.Text" xml:space="preserve">
     <value>保存場所</value>
   </data>
-  <data name="groupBox16.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 16</value>
   </data>
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 18</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 23</value>
-  </data>
-  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 42</value>
   </data>
   <data name="groupBox15.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2338,17 +2206,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox15.Text" xml:space="preserve">
     <value>ファイル形式</value>
   </data>
-  <data name="groupBox15.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 18</value>
   </data>
-  <data name="groupBoxSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 37</value>
-  </data>
-  <data name="groupBoxSaveProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 135</value>
-  </data>
-  <data name="groupBoxSaveProfile.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 23</value>
   </data>
   <data name="groupBoxSendPDI.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 180</value>
@@ -2356,20 +2218,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBoxSendPDI.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 42</value>
   </data>
-  <data name="groupBoxSendPDI.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPageAfterGetProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="tabPageAfterGetProfile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
-    <value>１次元化後の処理</value>
-  </data>
-  <data name="tabPageAfterGetProfile.ToolTip" xml:space="preserve">
-    <value />
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>切り開き画像の設定</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 115</value>
@@ -2380,14 +2233,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>画像垂直方向のピクセル数</value>
   </data>
-  <data name="groupBox3.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, -1</value>
   </data>
-  <data name="label38.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label39.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>画像水平方向の単位とステップ</value>
   </data>
   <data name="label25.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2401,12 +2251,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label25.Text" xml:space="preserve">
     <value>ステップ</value>
   </data>
-  <data name="label25.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label41.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label24.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -2415,9 +2259,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>終了</value>
-  </data>
-  <data name="label24.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2428,26 +2269,23 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label42.Text" xml:space="preserve">
     <value>開始</value>
   </data>
-  <data name="label42.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, -1</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>画像水平方向の単位とステップ</value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>切り開き画像の設定</value>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>その他</value>
   </data>
-  <data name="tabPage1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 165</value>
+  </data>
+  <data name="groupBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 88</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>目盛線のオプション</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2461,9 +2299,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label5.Text" xml:space="preserve">
     <value>目盛線の細かさ</value>
   </data>
-  <data name="label5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label23.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -2475,9 +2310,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>線の太さ</value>
-  </data>
-  <data name="label23.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="colorControlScaleAzimuth.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2500,9 +2332,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
     <value>画像に重ねる方位角(χ)スケール線の色を設定します。</value>
   </data>
-  <data name="colorControlScaleAzimuth.ToolTip1" xml:space="preserve">
-    <value />
-  </data>
   <data name="colorControlScale2Theta.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -2524,24 +2353,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
     <value>2θ scale lines</value>
   </data>
-  <data name="colorControlScale2Theta.ToolTip1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 165</value>
-  </data>
-  <data name="groupBox14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 88</value>
-  </data>
-  <data name="groupBox14.Text" xml:space="preserve">
-    <value>目盛線のオプション</value>
-  </data>
-  <data name="groupBox14.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox19.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
@@ -2553,9 +2364,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="groupBox19.Text" xml:space="preserve">
     <value>画像名のオプション</value>
-  </data>
-  <data name="groupBox19.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBox18.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2575,8 +2383,17 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox18.Text" xml:space="preserve">
     <value>画像読み込みのオプション</value>
   </data>
-  <data name="groupBox18.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>メイリオ, 9pt</value>
+  </data>
+  <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 72</value>
+  </data>
+  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 92</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>カイ (χ) 設定</value>
   </data>
   <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2590,9 +2407,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="label50.Text" xml:space="preserve">
     <value>回転方向と始点</value>
   </data>
-  <data name="label50.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 42</value>
   </data>
@@ -2601,36 +2415,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 44</value>
-  </data>
-  <data name="flowLayoutPanel3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 72</value>
-  </data>
-  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 92</value>
-  </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>カイ (χ) 設定</value>
-  </data>
-  <data name="groupBox11.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanelFindCenterOption.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 16</value>
-  </data>
-  <data name="flowLayoutPanelFindCenterOption.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="flowLayoutPanelFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 24</value>
-  </data>
-  <data name="flowLayoutPanelFindCenterOption.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
@@ -2641,62 +2425,38 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>中心位置</value>
   </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="flowLayoutPanelFindCenterOption.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 16</value>
   </data>
-  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="flowLayoutPanelFindCenterOption.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanelFindCenterOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 24</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 253</value>
   </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>その他</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>バックグラウンドオプション</value>
   </data>
-  <data name="tabPage5.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>参照画像の設定</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
     <value>234, 72</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 18</value>
+    <value>32, 18</value>
   </data>
-  <data name="label16.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label16.Text" xml:space="preserve">
+    <value>係数</value>
   </data>
-  <data name="groupBox6.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label3.Text" xml:space="preserve">
+    <value>波長</value>
   </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 253</value>
-  </data>
-  <data name="tabPage3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 261</value>
-  </data>
-  <data name="tabControl.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label20.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label21.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="numericUpDownMaskEdge.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label4.Text" xml:space="preserve">
+    <value>フィルム距離</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>596, 261</value>
@@ -2766,31 +2526,7 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>係数</value>
-  </data>
-  <data name="buttonClearBackgroundImage.Text" xml:space="preserve">
-    <value>クリア</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>バックグラウンドオプション</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>参照画像の設定</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>フィルム距離</value>
-  </data>
-  <data name="buttonSetBackgroundImage.Text" xml:space="preserve">
-    <value>現在の画像をバックグラウンドに設定</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>プロパティ</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>波長</value>
   </data>
 </root>

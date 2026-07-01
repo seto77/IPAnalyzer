@@ -661,8 +661,9 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
 
     private void radioButtonManualSpot_CheckedChanged(object sender, EventArgs e)
     {
-        groupBoxManualSpot.Enabled = radioButtonManualSpot.Checked;
-        groupBoxSpline.Enabled = radioButtonManualSpline.Checked;
+        flowLayoutPanelManualSpot.Enabled = radioButtonManualSpot.Checked;
+        // groupBoxSpline.Enabled = radioButtonManualSpline.Checked; //260701Cl groupBoxSpline は flowLayoutPanelSpline に置換済みで未初期化のため NullReferenceException
+        flowLayoutPanelSpline.Enabled = radioButtonManualSpline.Checked;
         numericBoxSplineWidth.Enabled = radioButtonManualSpline.Checked;
         formMain.toolStripComboBoxManualSpotSize.Visible = radioButtonManualSpot.Checked;
         formMain.manualMaskPoints.Clear();

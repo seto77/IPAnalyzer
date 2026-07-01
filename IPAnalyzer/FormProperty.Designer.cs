@@ -167,9 +167,10 @@
             groupBox8 = new System.Windows.Forms.GroupBox();
             label2 = new System.Windows.Forms.Label();
             groupBoxRectangle = new System.Windows.Forms.GroupBox();
+            flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
             groupBoxSector = new System.Windows.Forms.GroupBox();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
@@ -190,12 +191,9 @@
             tabPageSpotsAndCenter = new System.Windows.Forms.TabPage();
             groupBox13 = new System.Windows.Forms.GroupBox();
             groupBoxManualMode = new System.Windows.Forms.GroupBox();
-            groupBoxManualSpot = new System.Windows.Forms.GroupBox();
-            label31 = new System.Windows.Forms.Label();
+            flowLayoutPanelManualSpot = new System.Windows.Forms.FlowLayoutPanel();
             label30 = new System.Windows.Forms.Label();
-            groupBoxSpline = new System.Windows.Forms.GroupBox();
-            label29 = new System.Windows.Forms.Label();
-            label27 = new System.Windows.Forms.Label();
+            flowLayoutPanelSpline = new System.Windows.Forms.FlowLayoutPanel();
             groupBox7 = new System.Windows.Forms.GroupBox();
             flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             groupBox12 = new System.Windows.Forms.GroupBox();
@@ -240,6 +238,9 @@
             label21 = new System.Windows.Forms.Label();
             numericUpDownMaskEdge = new System.Windows.Forms.NumericUpDown();
             label1 = new System.Windows.Forms.Label();
+            flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
+            label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDownThresholdOfIntensityMax).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownThresholdOfIntensityMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownEdge).BeginInit();
@@ -273,6 +274,7 @@
             tabPageIntegralRegion.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBoxRectangle.SuspendLayout();
+            flowLayoutPanel6.SuspendLayout();
             groupBoxSector.SuspendLayout();
             tabPageIntegralProperty.SuspendLayout();
             groupBoxRadial.SuspendLayout();
@@ -282,8 +284,8 @@
             tabPageSpotsAndCenter.SuspendLayout();
             groupBox13.SuspendLayout();
             groupBoxManualMode.SuspendLayout();
-            groupBoxManualSpot.SuspendLayout();
-            groupBoxSpline.SuspendLayout();
+            flowLayoutPanelManualSpot.SuspendLayout();
+            flowLayoutPanelSpline.SuspendLayout();
             groupBox7.SuspendLayout();
             flowLayoutPanel5.SuspendLayout();
             groupBox12.SuspendLayout();
@@ -310,6 +312,8 @@
             tabPage3.SuspendLayout();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMaskEdge).BeginInit();
+            flowLayoutPanel9.SuspendLayout();
+            flowLayoutPanel10.SuspendLayout();
             SuspendLayout();
             // 
             // toolTip
@@ -456,8 +460,8 @@
             // 
             // numericUpDownRectangleAngle
             // 
-            resources.ApplyResources(numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
             numericUpDownRectangleAngle.DecimalPlaces = 3;
+            resources.ApplyResources(numericUpDownRectangleAngle, "numericUpDownRectangleAngle");
             numericUpDownRectangleAngle.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
             numericUpDownRectangleAngle.Name = "numericUpDownRectangleAngle";
             toolTip.SetToolTip(numericUpDownRectangleAngle, resources.GetString("numericUpDownRectangleAngle.ToolTip"));
@@ -471,8 +475,8 @@
             // 
             // numericUpDownSectorStartAngle
             // 
-            resources.ApplyResources(numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
             numericUpDownSectorStartAngle.DecimalPlaces = 2;
+            resources.ApplyResources(numericUpDownSectorStartAngle, "numericUpDownSectorStartAngle");
             numericUpDownSectorStartAngle.Maximum = new decimal(new int[] { 720, 0, 0, 0 });
             numericUpDownSectorStartAngle.Minimum = new decimal(new int[] { 720, 0, 0, int.MinValue });
             numericUpDownSectorStartAngle.Name = "numericUpDownSectorStartAngle";
@@ -481,8 +485,8 @@
             // 
             // numericUpDownSectorEndAngle
             // 
-            resources.ApplyResources(numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
             numericUpDownSectorEndAngle.DecimalPlaces = 2;
+            resources.ApplyResources(numericUpDownSectorEndAngle, "numericUpDownSectorEndAngle");
             numericUpDownSectorEndAngle.Maximum = new decimal(new int[] { 720, 0, 0, 0 });
             numericUpDownSectorEndAngle.Name = "numericUpDownSectorEndAngle";
             toolTip.SetToolTip(numericUpDownSectorEndAngle, resources.GetString("numericUpDownSectorEndAngle.ToolTip"));
@@ -696,8 +700,8 @@
             // 
             // numericUpDownFindSpotsDeviation
             // 
-            resources.ApplyResources(numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
             numericUpDownFindSpotsDeviation.DecimalPlaces = 2;
+            resources.ApplyResources(numericUpDownFindSpotsDeviation, "numericUpDownFindSpotsDeviation");
             numericUpDownFindSpotsDeviation.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             numericUpDownFindSpotsDeviation.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownFindSpotsDeviation.Name = "numericUpDownFindSpotsDeviation";
@@ -833,8 +837,8 @@
             // 
             // numericUpDownUnrolledImageXend
             // 
-            resources.ApplyResources(numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
             numericUpDownUnrolledImageXend.DecimalPlaces = 3;
+            resources.ApplyResources(numericUpDownUnrolledImageXend, "numericUpDownUnrolledImageXend");
             numericUpDownUnrolledImageXend.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
             numericUpDownUnrolledImageXend.Name = "numericUpDownUnrolledImageXend";
             toolTip.SetToolTip(numericUpDownUnrolledImageXend, resources.GetString("numericUpDownUnrolledImageXend.ToolTip"));
@@ -842,8 +846,8 @@
             // 
             // numericUpDownUnrolledImageXstart
             // 
-            resources.ApplyResources(numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
             numericUpDownUnrolledImageXstart.DecimalPlaces = 4;
+            resources.ApplyResources(numericUpDownUnrolledImageXstart, "numericUpDownUnrolledImageXstart");
             numericUpDownUnrolledImageXstart.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             numericUpDownUnrolledImageXstart.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
             numericUpDownUnrolledImageXstart.Name = "numericUpDownUnrolledImageXstart";
@@ -852,8 +856,8 @@
             // 
             // numericUpDownUnrolledImageXstep
             // 
-            resources.ApplyResources(numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
             numericUpDownUnrolledImageXstep.DecimalPlaces = 4;
+            resources.ApplyResources(numericUpDownUnrolledImageXstep, "numericUpDownUnrolledImageXstep");
             numericUpDownUnrolledImageXstep.Increment = new decimal(new int[] { 1, 0, 0, 196608 });
             numericUpDownUnrolledImageXstep.Minimum = new decimal(new int[] { 1, 0, 0, 196608 });
             numericUpDownUnrolledImageXstep.Name = "numericUpDownUnrolledImageXstep";
@@ -882,8 +886,8 @@
             // 
             // comboBoxScaleLineDivisions
             // 
-            resources.ApplyResources(comboBoxScaleLineDivisions, "comboBoxScaleLineDivisions");
             comboBoxScaleLineDivisions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBoxScaleLineDivisions, "comboBoxScaleLineDivisions");
             comboBoxScaleLineDivisions.FormattingEnabled = true;
             comboBoxScaleLineDivisions.Items.AddRange(new object[] { resources.GetString("comboBoxScaleLineDivisions.Items"), resources.GetString("comboBoxScaleLineDivisions.Items1"), resources.GetString("comboBoxScaleLineDivisions.Items2"), resources.GetString("comboBoxScaleLineDivisions.Items3") });
             comboBoxScaleLineDivisions.Name = "comboBoxScaleLineDivisions";
@@ -973,8 +977,8 @@
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Image = Properties.Resources.chi;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             toolTip.SetToolTip(pictureBox1, resources.GetString("pictureBox1.ToolTip"));
@@ -1054,8 +1058,8 @@
             // 
             // numericBoxFootPositionY
             // 
-            resources.ApplyResources(numericBoxFootPositionY, "numericBoxFootPositionY");
             numericBoxFootPositionY.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxFootPositionY, "numericBoxFootPositionY");
             numericBoxFootPositionY.Name = "numericBoxFootPositionY";
             numericBoxFootPositionY.RadianValue = 26.179938779914945D;
             numericBoxFootPositionY.RoundErrorAccuracy = 8;
@@ -1069,8 +1073,8 @@
             // 
             // numericBoxFootPositionX
             // 
-            resources.ApplyResources(numericBoxFootPositionX, "numericBoxFootPositionX");
             numericBoxFootPositionX.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxFootPositionX, "numericBoxFootPositionX");
             numericBoxFootPositionX.Name = "numericBoxFootPositionX";
             numericBoxFootPositionX.RadianValue = 26.179938779914945D;
             numericBoxFootPositionX.RoundErrorAccuracy = 8;
@@ -1084,8 +1088,8 @@
             // 
             // numericBoxCameraLength2
             // 
-            resources.ApplyResources(numericBoxCameraLength2, "numericBoxCameraLength2");
             numericBoxCameraLength2.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxCameraLength2, "numericBoxCameraLength2");
             numericBoxCameraLength2.Name = "numericBoxCameraLength2";
             numericBoxCameraLength2.RadianValue = 7.7667151713747664D;
             numericBoxCameraLength2.RoundErrorAccuracy = 8;
@@ -1099,8 +1103,8 @@
             // 
             // numericBoxDirectSpotPositionY
             // 
-            resources.ApplyResources(numericBoxDirectSpotPositionY, "numericBoxDirectSpotPositionY");
             numericBoxDirectSpotPositionY.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxDirectSpotPositionY, "numericBoxDirectSpotPositionY");
             numericBoxDirectSpotPositionY.Name = "numericBoxDirectSpotPositionY";
             numericBoxDirectSpotPositionY.RadianValue = 26.179938779914945D;
             numericBoxDirectSpotPositionY.RoundErrorAccuracy = 8;
@@ -1114,8 +1118,8 @@
             // 
             // numericBoxDirectSpotPositionX
             // 
-            resources.ApplyResources(numericBoxDirectSpotPositionX, "numericBoxDirectSpotPositionX");
             numericBoxDirectSpotPositionX.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxDirectSpotPositionX, "numericBoxDirectSpotPositionX");
             numericBoxDirectSpotPositionX.Name = "numericBoxDirectSpotPositionX";
             numericBoxDirectSpotPositionX.RadianValue = 26.179938779914945D;
             numericBoxDirectSpotPositionX.RoundErrorAccuracy = 8;
@@ -1129,8 +1133,8 @@
             // 
             // numericBoxCameraLength1
             // 
-            resources.ApplyResources(numericBoxCameraLength1, "numericBoxCameraLength1");
             numericBoxCameraLength1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxCameraLength1, "numericBoxCameraLength1");
             numericBoxCameraLength1.Name = "numericBoxCameraLength1";
             numericBoxCameraLength1.RadianValue = 7.7667151713747664D;
             numericBoxCameraLength1.RoundErrorAccuracy = 8;
@@ -1144,8 +1148,8 @@
             // 
             // numericBoxPixelKsi
             // 
-            resources.ApplyResources(numericBoxPixelKsi, "numericBoxPixelKsi");
             numericBoxPixelKsi.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxPixelKsi, "numericBoxPixelKsi");
             numericBoxPixelKsi.Name = "numericBoxPixelKsi";
             numericBoxPixelKsi.RoundErrorAccuracy = 8;
             numericBoxPixelKsi.SmartIncrement = true;
@@ -1156,8 +1160,8 @@
             // 
             // numericBoxPixelSizeY
             // 
-            resources.ApplyResources(numericBoxPixelSizeY, "numericBoxPixelSizeY");
             numericBoxPixelSizeY.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxPixelSizeY, "numericBoxPixelSizeY");
             numericBoxPixelSizeY.Name = "numericBoxPixelSizeY";
             numericBoxPixelSizeY.RadianValue = 0.0017453292519943296D;
             numericBoxPixelSizeY.RoundErrorAccuracy = 10;
@@ -1170,8 +1174,8 @@
             // 
             // numericBoxPixelSizeX
             // 
-            resources.ApplyResources(numericBoxPixelSizeX, "numericBoxPixelSizeX");
             numericBoxPixelSizeX.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxPixelSizeX, "numericBoxPixelSizeX");
             numericBoxPixelSizeX.Name = "numericBoxPixelSizeX";
             numericBoxPixelSizeX.RadianValue = 0.0017453292519943296D;
             numericBoxPixelSizeX.RoundErrorAccuracy = 10;
@@ -1184,8 +1188,8 @@
             // 
             // numericBoxGandlfiRadius
             // 
-            resources.ApplyResources(numericBoxGandlfiRadius, "numericBoxGandlfiRadius");
             numericBoxGandlfiRadius.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxGandlfiRadius, "numericBoxGandlfiRadius");
             numericBoxGandlfiRadius.Name = "numericBoxGandlfiRadius";
             numericBoxGandlfiRadius.RoundErrorAccuracy = 8;
             numericBoxGandlfiRadius.SmartIncrement = true;
@@ -1196,48 +1200,55 @@
             // 
             // numericBoxSphericalCorections
             // 
-            resources.ApplyResources(numericBoxSphericalCorections, "numericBoxSphericalCorections");
             numericBoxSphericalCorections.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxSphericalCorections, "numericBoxSphericalCorections");
             numericBoxSphericalCorections.Name = "numericBoxSphericalCorections";
             numericBoxSphericalCorections.RoundErrorAccuracy = 8;
             numericBoxSphericalCorections.SkipEventDuringInput = false;
             numericBoxSphericalCorections.SmartIncrement = true;
             numericBoxSphericalCorections.ThousandsSeparator = true;
             toolTip.SetToolTip(numericBoxSphericalCorections, resources.GetString("numericBoxSphericalCorections.ToolTip"));
+            numericBoxSphericalCorections.ValueBoxWidth = 60;
             numericBoxSphericalCorections.ValueFontSize = 9F;
             numericBoxSphericalCorections.ValueChanged += DetectorParameters_Changed;
             // 
             // numericBoxTiltTau
             // 
-            resources.ApplyResources(numericBoxTiltTau, "numericBoxTiltTau");
             numericBoxTiltTau.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxTiltTau, "numericBoxTiltTau");
+            numericBoxTiltTau.Maximum = 180D;
+            numericBoxTiltTau.Minimum = -180D;
             numericBoxTiltTau.Name = "numericBoxTiltTau";
             numericBoxTiltTau.RoundErrorAccuracy = 9;
             numericBoxTiltTau.SkipEventDuringInput = false;
             numericBoxTiltTau.SmartIncrement = true;
             numericBoxTiltTau.ThousandsSeparator = true;
             toolTip.SetToolTip(numericBoxTiltTau, resources.GetString("numericBoxTiltTau.ToolTip"));
+            numericBoxTiltTau.ValueBoxWidth = 80;
             numericBoxTiltTau.ValueFontSize = 9F;
             numericBoxTiltTau.ValueChanged += DetectorParameters_Changed;
             // 
             // numericBoxTiltPhi
             // 
-            resources.ApplyResources(numericBoxTiltPhi, "numericBoxTiltPhi");
             numericBoxTiltPhi.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxTiltPhi, "numericBoxTiltPhi");
+            numericBoxTiltPhi.Maximum = 360D;
+            numericBoxTiltPhi.Minimum = -360D;
             numericBoxTiltPhi.Name = "numericBoxTiltPhi";
             numericBoxTiltPhi.RoundErrorAccuracy = 8;
             numericBoxTiltPhi.SkipEventDuringInput = false;
             numericBoxTiltPhi.SmartIncrement = true;
             numericBoxTiltPhi.ThousandsSeparator = true;
             toolTip.SetToolTip(numericBoxTiltPhi, resources.GetString("numericBoxTiltPhi.ToolTip"));
+            numericBoxTiltPhi.ValueBoxWidth = 80;
             numericBoxTiltPhi.ValueFontSize = 9F;
             numericBoxTiltPhi.ValueChanged += DetectorParameters_Changed;
             // 
             // numericBoxRadialRange
             // 
-            resources.ApplyResources(numericBoxRadialRange, "numericBoxRadialRange");
             numericBoxRadialRange.BackColor = System.Drawing.SystemColors.Control;
             numericBoxRadialRange.DecimalPlaces = 3;
+            resources.ApplyResources(numericBoxRadialRange, "numericBoxRadialRange");
             numericBoxRadialRange.Name = "numericBoxRadialRange";
             numericBoxRadialRange.RadianValue = 0.0017453292519943296D;
             numericBoxRadialRange.SkipEventDuringInput = false;
@@ -1250,9 +1261,9 @@
             // 
             // numericBoxRadialRadius
             // 
-            resources.ApplyResources(numericBoxRadialRadius, "numericBoxRadialRadius");
             numericBoxRadialRadius.BackColor = System.Drawing.SystemColors.Control;
             numericBoxRadialRadius.DecimalPlaces = 4;
+            resources.ApplyResources(numericBoxRadialRadius, "numericBoxRadialRadius");
             numericBoxRadialRadius.Name = "numericBoxRadialRadius";
             numericBoxRadialRadius.RadianValue = 0.3490658503988659D;
             numericBoxRadialRadius.SkipEventDuringInput = false;
@@ -1265,9 +1276,9 @@
             // 
             // numericBoxRadialStep
             // 
-            resources.ApplyResources(numericBoxRadialStep, "numericBoxRadialStep");
             numericBoxRadialStep.BackColor = System.Drawing.SystemColors.Control;
             numericBoxRadialStep.DecimalPlaces = 3;
+            resources.ApplyResources(numericBoxRadialStep, "numericBoxRadialStep");
             numericBoxRadialStep.Name = "numericBoxRadialStep";
             numericBoxRadialStep.RadianValue = 0.0008726646259971648D;
             numericBoxRadialStep.SkipEventDuringInput = false;
@@ -1280,9 +1291,9 @@
             // 
             // numericBoxConcentricStep
             // 
-            resources.ApplyResources(numericBoxConcentricStep, "numericBoxConcentricStep");
             numericBoxConcentricStep.BackColor = System.Drawing.SystemColors.Control;
             numericBoxConcentricStep.DecimalPlaces = 4;
+            resources.ApplyResources(numericBoxConcentricStep, "numericBoxConcentricStep");
             numericBoxConcentricStep.Name = "numericBoxConcentricStep";
             numericBoxConcentricStep.RadianValue = 8.7266462599716482E-05D;
             numericBoxConcentricStep.ShowUpDown = true;
@@ -1295,9 +1306,9 @@
             // 
             // numericBoxConcentricEnd
             // 
-            resources.ApplyResources(numericBoxConcentricEnd, "numericBoxConcentricEnd");
             numericBoxConcentricEnd.BackColor = System.Drawing.SystemColors.Control;
             numericBoxConcentricEnd.DecimalPlaces = 4;
+            resources.ApplyResources(numericBoxConcentricEnd, "numericBoxConcentricEnd");
             numericBoxConcentricEnd.Name = "numericBoxConcentricEnd";
             numericBoxConcentricEnd.RadianValue = 0.52359877559829882D;
             numericBoxConcentricEnd.ShowUpDown = true;
@@ -1310,9 +1321,9 @@
             // 
             // numericBoxConcentricStart
             // 
-            resources.ApplyResources(numericBoxConcentricStart, "numericBoxConcentricStart");
             numericBoxConcentricStart.BackColor = System.Drawing.SystemColors.Control;
             numericBoxConcentricStart.DecimalPlaces = 4;
+            resources.ApplyResources(numericBoxConcentricStart, "numericBoxConcentricStart");
             numericBoxConcentricStart.Name = "numericBoxConcentricStart";
             numericBoxConcentricStart.RadianValue = 0.017453292519943295D;
             numericBoxConcentricStart.ShowUpDown = true;
@@ -1325,8 +1336,8 @@
             // 
             // numericBoxSplineWidth
             // 
-            resources.ApplyResources(numericBoxSplineWidth, "numericBoxSplineWidth");
             numericBoxSplineWidth.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(numericBoxSplineWidth, "numericBoxSplineWidth");
             numericBoxSplineWidth.Maximum = 50D;
             numericBoxSplineWidth.Minimum = 1D;
             numericBoxSplineWidth.Name = "numericBoxSplineWidth";
@@ -1334,13 +1345,14 @@
             numericBoxSplineWidth.ShowUpDown = true;
             toolTip.SetToolTip(numericBoxSplineWidth, resources.GetString("numericBoxSplineWidth.ToolTip"));
             numericBoxSplineWidth.Value = 5D;
+            numericBoxSplineWidth.ValueBoxWidth = 25;
             numericBoxSplineWidth.ValueFontSize = 9F;
             numericBoxSplineWidth.ValueChanged += numericUpDownSplineWidth_ValueChanged;
             // 
             // numericBoxTest
             // 
-            resources.ApplyResources(numericBoxTest, "numericBoxTest");
             numericBoxTest.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(numericBoxTest, "numericBoxTest");
             numericBoxTest.Maximum = 2D;
             numericBoxTest.Minimum = 0D;
             numericBoxTest.Name = "numericBoxTest";
@@ -1354,9 +1366,9 @@
             // 
             // numericBoxFindCenterPeakFittingRange
             // 
-            resources.ApplyResources(numericBoxFindCenterPeakFittingRange, "numericBoxFindCenterPeakFittingRange");
             numericBoxFindCenterPeakFittingRange.BackColor = System.Drawing.Color.Transparent;
             numericBoxFindCenterPeakFittingRange.DecimalPlaces = 3;
+            resources.ApplyResources(numericBoxFindCenterPeakFittingRange, "numericBoxFindCenterPeakFittingRange");
             numericBoxFindCenterPeakFittingRange.Minimum = 0D;
             numericBoxFindCenterPeakFittingRange.Name = "numericBoxFindCenterPeakFittingRange";
             numericBoxFindCenterPeakFittingRange.RadianValue = 0.0017453292519943296D;
@@ -1369,9 +1381,9 @@
             // 
             // numericBoxFindCenterSearchArea
             // 
-            resources.ApplyResources(numericBoxFindCenterSearchArea, "numericBoxFindCenterSearchArea");
             numericBoxFindCenterSearchArea.BackColor = System.Drawing.Color.Transparent;
             numericBoxFindCenterSearchArea.DecimalPlaces = 0;
+            resources.ApplyResources(numericBoxFindCenterSearchArea, "numericBoxFindCenterSearchArea");
             numericBoxFindCenterSearchArea.Name = "numericBoxFindCenterSearchArea";
             numericBoxFindCenterSearchArea.RadianValue = 0.13962634015954636D;
             numericBoxFindCenterSearchArea.SkipEventDuringInput = false;
@@ -1383,9 +1395,9 @@
             // 
             // numericBoxBackgroundCoeff
             // 
-            resources.ApplyResources(numericBoxBackgroundCoeff, "numericBoxBackgroundCoeff");
             numericBoxBackgroundCoeff.BackColor = System.Drawing.SystemColors.Control;
             numericBoxBackgroundCoeff.DecimalPlaces = 3;
+            resources.ApplyResources(numericBoxBackgroundCoeff, "numericBoxBackgroundCoeff");
             numericBoxBackgroundCoeff.Maximum = 10D;
             numericBoxBackgroundCoeff.Minimum = 0D;
             numericBoxBackgroundCoeff.Name = "numericBoxBackgroundCoeff";
@@ -1416,31 +1428,27 @@
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
             tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            toolTip.SetToolTip(tabControl, resources.GetString("tabControl.ToolTip"));
             tabControl.DrawItem += tabControl1_DrawItem;
             // 
             // tabPageXRay
             // 
-            resources.ApplyResources(tabPageXRay, "tabPageXRay");
             tabPageXRay.BackColor = System.Drawing.SystemColors.Control;
             tabPageXRay.Controls.Add(label15);
             tabPageXRay.Controls.Add(label6);
             tabPageXRay.Controls.Add(checkBoxCorrectPolarization);
             tabPageXRay.Controls.Add(waveLengthControl);
+            resources.ApplyResources(tabPageXRay, "tabPageXRay");
             tabPageXRay.Name = "tabPageXRay";
-            toolTip.SetToolTip(tabPageXRay, resources.GetString("tabPageXRay.ToolTip"));
             // 
             // label15
             // 
             resources.ApplyResources(label15, "label15");
             label15.Name = "label15";
-            toolTip.SetToolTip(label15, resources.GetString("label15.ToolTip"));
             // 
             // label6
             // 
             resources.ApplyResources(label6, "label6");
             label6.Name = "label6";
-            toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip"));
             // 
             // waveLengthControl
             // 
@@ -1449,14 +1457,12 @@
             waveLengthControl.DirectionWhole = System.Windows.Forms.FlowDirection.LeftToRight;
             waveLengthControl.Energy = 17.44419672D;
             waveLengthControl.Name = "waveLengthControl";
-            toolTip.SetToolTip(waveLengthControl, resources.GetString("waveLengthControl.ToolTip"));
             waveLengthControl.WaveLength = 0.07107471D;
             waveLengthControl.XrayWaveSourceElementNumber = 42;
             waveLengthControl.XrayWaveSourceLine = Crystallography.XrayLine.Ka;
             // 
             // tabPageIP
             // 
-            resources.ApplyResources(tabPageIP, "tabPageIP");
             tabPageIP.BackColor = System.Drawing.SystemColors.Control;
             tabPageIP.Controls.Add(flowLayoutPanel8);
             tabPageIP.Controls.Add(flowLayoutPanel7);
@@ -1466,8 +1472,8 @@
             tabPageIP.Controls.Add(groupBoxGandlfiRadius);
             tabPageIP.Controls.Add(groupBoxSphericalCorrection);
             tabPageIP.Controls.Add(groupBoxTiltCorrection);
+            resources.ApplyResources(tabPageIP, "tabPageIP");
             tabPageIP.Name = "tabPageIP";
-            toolTip.SetToolTip(tabPageIP, resources.GetString("tabPageIP.ToolTip"));
             // 
             // flowLayoutPanel8
             // 
@@ -1476,13 +1482,11 @@
             flowLayoutPanel8.Controls.Add(radioButtonDirectSpotMode);
             flowLayoutPanel8.Controls.Add(radioButtonFootMode);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
-            toolTip.SetToolTip(flowLayoutPanel8, resources.GetString("flowLayoutPanel8.ToolTip"));
             // 
             // label22
             // 
             resources.ApplyResources(label22, "label22");
             label22.Name = "label22";
-            toolTip.SetToolTip(label22, resources.GetString("label22.ToolTip"));
             // 
             // flowLayoutPanel7
             // 
@@ -1491,13 +1495,11 @@
             flowLayoutPanel7.Controls.Add(radioButtonFlatPanel);
             flowLayoutPanel7.Controls.Add(radioButtonGandlfi);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
-            toolTip.SetToolTip(flowLayoutPanel7, resources.GetString("flowLayoutPanel7.ToolTip"));
             // 
             // label19
             // 
             resources.ApplyResources(label19, "label19");
             label19.Name = "label19";
-            toolTip.SetToolTip(label19, resources.GetString("label19.ToolTip"));
             // 
             // flowLayoutPanelFootMode
             // 
@@ -1505,31 +1507,27 @@
             flowLayoutPanelFootMode.Controls.Add(groupBox9);
             flowLayoutPanelFootMode.Controls.Add(groupBox10);
             flowLayoutPanelFootMode.Name = "flowLayoutPanelFootMode";
-            toolTip.SetToolTip(flowLayoutPanelFootMode, resources.GetString("flowLayoutPanelFootMode.ToolTip"));
             // 
             // groupBox9
             // 
-            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Controls.Add(numericBoxFootPositionY);
             groupBox9.Controls.Add(numericBoxFootPositionX);
+            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Name = "groupBox9";
             groupBox9.TabStop = false;
-            toolTip.SetToolTip(groupBox9, resources.GetString("groupBox9.ToolTip"));
             // 
             // groupBox10
             // 
-            resources.ApplyResources(groupBox10, "groupBox10");
-            groupBox10.Controls.Add(label17);
             groupBox10.Controls.Add(numericBoxCameraLength2);
+            groupBox10.Controls.Add(label17);
+            resources.ApplyResources(groupBox10, "groupBox10");
             groupBox10.Name = "groupBox10";
             groupBox10.TabStop = false;
-            toolTip.SetToolTip(groupBox10, resources.GetString("groupBox10.ToolTip"));
             // 
             // label17
             // 
             resources.ApplyResources(label17, "label17");
             label17.Name = "label17";
-            toolTip.SetToolTip(label17, resources.GetString("label17.ToolTip"));
             // 
             // flowLayoutPanelDirectSpotMode
             // 
@@ -1537,49 +1535,43 @@
             flowLayoutPanelDirectSpotMode.Controls.Add(groupBoxDirectSpotPosition);
             flowLayoutPanelDirectSpotMode.Controls.Add(groupBoxCameaLength);
             flowLayoutPanelDirectSpotMode.Name = "flowLayoutPanelDirectSpotMode";
-            toolTip.SetToolTip(flowLayoutPanelDirectSpotMode, resources.GetString("flowLayoutPanelDirectSpotMode.ToolTip"));
             // 
             // groupBoxDirectSpotPosition
             // 
-            resources.ApplyResources(groupBoxDirectSpotPosition, "groupBoxDirectSpotPosition");
             groupBoxDirectSpotPosition.Controls.Add(numericBoxDirectSpotPositionY);
             groupBoxDirectSpotPosition.Controls.Add(numericBoxDirectSpotPositionX);
+            resources.ApplyResources(groupBoxDirectSpotPosition, "groupBoxDirectSpotPosition");
             groupBoxDirectSpotPosition.Name = "groupBoxDirectSpotPosition";
             groupBoxDirectSpotPosition.TabStop = false;
-            toolTip.SetToolTip(groupBoxDirectSpotPosition, resources.GetString("groupBoxDirectSpotPosition.ToolTip"));
             // 
             // groupBoxCameaLength
             // 
-            resources.ApplyResources(groupBoxCameaLength, "groupBoxCameaLength");
-            groupBoxCameaLength.Controls.Add(label18);
             groupBoxCameaLength.Controls.Add(numericBoxCameraLength1);
+            groupBoxCameaLength.Controls.Add(label18);
+            resources.ApplyResources(groupBoxCameaLength, "groupBoxCameaLength");
             groupBoxCameaLength.Name = "groupBoxCameaLength";
             groupBoxCameaLength.TabStop = false;
-            toolTip.SetToolTip(groupBoxCameaLength, resources.GetString("groupBoxCameaLength.ToolTip"));
             // 
             // label18
             // 
             resources.ApplyResources(label18, "label18");
             label18.Name = "label18";
-            toolTip.SetToolTip(label18, resources.GetString("label18.ToolTip"));
             // 
             // groupBoxPixelShape
             // 
-            resources.ApplyResources(groupBoxPixelShape, "groupBoxPixelShape");
             groupBoxPixelShape.Controls.Add(numericBoxPixelKsi);
             groupBoxPixelShape.Controls.Add(numericBoxPixelSizeY);
             groupBoxPixelShape.Controls.Add(numericBoxPixelSizeX);
+            resources.ApplyResources(groupBoxPixelShape, "groupBoxPixelShape");
             groupBoxPixelShape.Name = "groupBoxPixelShape";
             groupBoxPixelShape.TabStop = false;
-            toolTip.SetToolTip(groupBoxPixelShape, resources.GetString("groupBoxPixelShape.ToolTip"));
             // 
             // groupBoxGandlfiRadius
             // 
-            resources.ApplyResources(groupBoxGandlfiRadius, "groupBoxGandlfiRadius");
             groupBoxGandlfiRadius.Controls.Add(numericBoxGandlfiRadius);
+            resources.ApplyResources(groupBoxGandlfiRadius, "groupBoxGandlfiRadius");
             groupBoxGandlfiRadius.Name = "groupBoxGandlfiRadius";
             groupBoxGandlfiRadius.TabStop = false;
-            toolTip.SetToolTip(groupBoxGandlfiRadius, resources.GetString("groupBoxGandlfiRadius.ToolTip"));
             groupBoxGandlfiRadius.Enter += groupBoxGandlfiRadius_Enter;
             // 
             // groupBoxSphericalCorrection
@@ -1589,39 +1581,34 @@
             groupBoxSphericalCorrection.Controls.Add(label26);
             groupBoxSphericalCorrection.Name = "groupBoxSphericalCorrection";
             groupBoxSphericalCorrection.TabStop = false;
-            toolTip.SetToolTip(groupBoxSphericalCorrection, resources.GetString("groupBoxSphericalCorrection.ToolTip"));
             // 
             // label26
             // 
             resources.ApplyResources(label26, "label26");
             label26.BackColor = System.Drawing.Color.Transparent;
             label26.Name = "label26";
-            toolTip.SetToolTip(label26, resources.GetString("label26.ToolTip"));
             // 
             // groupBoxTiltCorrection
             // 
-            resources.ApplyResources(groupBoxTiltCorrection, "groupBoxTiltCorrection");
-            groupBoxTiltCorrection.Controls.Add(numericBoxTiltTau);
             groupBoxTiltCorrection.Controls.Add(numericBoxTiltPhi);
+            groupBoxTiltCorrection.Controls.Add(numericBoxTiltTau);
+            resources.ApplyResources(groupBoxTiltCorrection, "groupBoxTiltCorrection");
             groupBoxTiltCorrection.Name = "groupBoxTiltCorrection";
             groupBoxTiltCorrection.TabStop = false;
-            toolTip.SetToolTip(groupBoxTiltCorrection, resources.GetString("groupBoxTiltCorrection.ToolTip"));
             // 
             // tabPageIntegralRegion
             // 
-            resources.ApplyResources(tabPageIntegralRegion, "tabPageIntegralRegion");
             tabPageIntegralRegion.BackColor = System.Drawing.SystemColors.Control;
             tabPageIntegralRegion.Controls.Add(groupBox8);
             tabPageIntegralRegion.Controls.Add(radioButtonRectangle);
             tabPageIntegralRegion.Controls.Add(groupBoxRectangle);
             tabPageIntegralRegion.Controls.Add(radioButtonSector);
             tabPageIntegralRegion.Controls.Add(groupBoxSector);
+            resources.ApplyResources(tabPageIntegralRegion, "tabPageIntegralRegion");
             tabPageIntegralRegion.Name = "tabPageIntegralRegion";
-            toolTip.SetToolTip(tabPageIntegralRegion, resources.GetString("tabPageIntegralRegion.ToolTip"));
             // 
             // groupBox8
             // 
-            resources.ApplyResources(groupBox8, "groupBox8");
             groupBox8.Controls.Add(numericUpDownThresholdOfIntensityMax);
             groupBox8.Controls.Add(label2);
             groupBox8.Controls.Add(numericUpDownThresholdOfIntensityMin);
@@ -1630,85 +1617,81 @@
             groupBox8.Controls.Add(checkBoxMaskEdge);
             groupBox8.Controls.Add(checkBoxThresholdMax);
             groupBox8.Controls.Add(checkBoxThresholdMin);
+            resources.ApplyResources(groupBox8, "groupBox8");
             groupBox8.Name = "groupBox8";
             groupBox8.TabStop = false;
-            toolTip.SetToolTip(groupBox8, resources.GetString("groupBox8.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // groupBoxRectangle
             // 
-            resources.ApplyResources(groupBoxRectangle, "groupBoxRectangle");
-            groupBoxRectangle.Controls.Add(checkBoxRectangleIsBothSide);
-            groupBoxRectangle.Controls.Add(comboBoxRectangleDirection);
+            groupBoxRectangle.Controls.Add(flowLayoutPanel6);
             groupBoxRectangle.Controls.Add(label8);
             groupBoxRectangle.Controls.Add(label7);
             groupBoxRectangle.Controls.Add(numericUpDownRectangleBand);
             groupBoxRectangle.Controls.Add(numericUpDownRectangleAngle);
-            groupBoxRectangle.Controls.Add(label9);
+            resources.ApplyResources(groupBoxRectangle, "groupBoxRectangle");
             groupBoxRectangle.Name = "groupBoxRectangle";
             groupBoxRectangle.TabStop = false;
-            toolTip.SetToolTip(groupBoxRectangle, resources.GetString("groupBoxRectangle.ToolTip"));
             // 
-            // label8
+            // flowLayoutPanel6
             // 
-            resources.ApplyResources(label8, "label8");
-            label8.Name = "label8";
-            toolTip.SetToolTip(label8, resources.GetString("label8.ToolTip"));
-            // 
-            // label7
-            // 
-            resources.ApplyResources(label7, "label7");
-            label7.Name = "label7";
-            toolTip.SetToolTip(label7, resources.GetString("label7.ToolTip"));
+            resources.ApplyResources(flowLayoutPanel6, "flowLayoutPanel6");
+            flowLayoutPanel6.Controls.Add(label9);
+            flowLayoutPanel6.Controls.Add(comboBoxRectangleDirection);
+            flowLayoutPanel6.Controls.Add(checkBoxRectangleIsBothSide);
+            flowLayoutPanel6.Name = "flowLayoutPanel6";
             // 
             // label9
             // 
             resources.ApplyResources(label9, "label9");
             label9.Name = "label9";
-            toolTip.SetToolTip(label9, resources.GetString("label9.ToolTip"));
+            // 
+            // label8
+            // 
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
             // 
             // groupBoxSector
             // 
-            resources.ApplyResources(groupBoxSector, "groupBoxSector");
             groupBoxSector.Controls.Add(numericUpDownSectorStartAngle);
             groupBoxSector.Controls.Add(numericUpDownSectorEndAngle);
             groupBoxSector.Controls.Add(label10);
             groupBoxSector.Controls.Add(label11);
+            resources.ApplyResources(groupBoxSector, "groupBoxSector");
             groupBoxSector.Name = "groupBoxSector";
             groupBoxSector.TabStop = false;
-            toolTip.SetToolTip(groupBoxSector, resources.GetString("groupBoxSector.ToolTip"));
             // 
             // label10
             // 
             resources.ApplyResources(label10, "label10");
             label10.Name = "label10";
-            toolTip.SetToolTip(label10, resources.GetString("label10.ToolTip"));
             // 
             // label11
             // 
             resources.ApplyResources(label11, "label11");
             label11.Name = "label11";
-            toolTip.SetToolTip(label11, resources.GetString("label11.ToolTip"));
             // 
             // tabPageIntegralProperty
             // 
-            resources.ApplyResources(tabPageIntegralProperty, "tabPageIntegralProperty");
             tabPageIntegralProperty.BackColor = System.Drawing.SystemColors.Control;
             tabPageIntegralProperty.Controls.Add(radioButtonRadial);
             tabPageIntegralProperty.Controls.Add(groupBoxRadial);
             tabPageIntegralProperty.Controls.Add(radioButtonConcentric);
             tabPageIntegralProperty.Controls.Add(groupBoxConcentric);
+            resources.ApplyResources(tabPageIntegralProperty, "tabPageIntegralProperty");
             tabPageIntegralProperty.Name = "tabPageIntegralProperty";
-            toolTip.SetToolTip(tabPageIntegralProperty, resources.GetString("tabPageIntegralProperty.ToolTip"));
             // 
             // groupBoxRadial
             // 
-            resources.ApplyResources(groupBoxRadial, "groupBoxRadial");
             groupBoxRadial.Controls.Add(label46);
             groupBoxRadial.Controls.Add(label40);
             groupBoxRadial.Controls.Add(numericBoxRadialRange);
@@ -1720,58 +1703,50 @@
             groupBoxRadial.Controls.Add(label37);
             groupBoxRadial.Controls.Add(label36);
             groupBoxRadial.Controls.Add(labelDimensionRadial1);
+            resources.ApplyResources(groupBoxRadial, "groupBoxRadial");
             groupBoxRadial.Name = "groupBoxRadial";
             groupBoxRadial.TabStop = false;
-            toolTip.SetToolTip(groupBoxRadial, resources.GetString("groupBoxRadial.ToolTip"));
             // 
             // label46
             // 
             resources.ApplyResources(label46, "label46");
             label46.Name = "label46";
-            toolTip.SetToolTip(label46, resources.GetString("label46.ToolTip"));
             // 
             // label40
             // 
             resources.ApplyResources(label40, "label40");
             label40.Name = "label40";
-            toolTip.SetToolTip(label40, resources.GetString("label40.ToolTip"));
             // 
             // labelDimensionRadial2
             // 
             resources.ApplyResources(labelDimensionRadial2, "labelDimensionRadial2");
             labelDimensionRadial2.Name = "labelDimensionRadial2";
-            toolTip.SetToolTip(labelDimensionRadial2, resources.GetString("labelDimensionRadial2.ToolTip"));
             // 
             // label37
             // 
             resources.ApplyResources(label37, "label37");
             label37.Name = "label37";
-            toolTip.SetToolTip(label37, resources.GetString("label37.ToolTip"));
             // 
             // label36
             // 
             resources.ApplyResources(label36, "label36");
             label36.Name = "label36";
-            toolTip.SetToolTip(label36, resources.GetString("label36.ToolTip"));
             // 
             // labelDimensionRadial1
             // 
             resources.ApplyResources(labelDimensionRadial1, "labelDimensionRadial1");
             labelDimensionRadial1.Name = "labelDimensionRadial1";
-            toolTip.SetToolTip(labelDimensionRadial1, resources.GetString("labelDimensionRadial1.ToolTip"));
             // 
             // groupBoxConcentric
             // 
-            resources.ApplyResources(groupBoxConcentric, "groupBoxConcentric");
             groupBoxConcentric.Controls.Add(groupBox4);
             groupBoxConcentric.Controls.Add(groupBox5);
+            resources.ApplyResources(groupBoxConcentric, "groupBoxConcentric");
             groupBoxConcentric.Name = "groupBoxConcentric";
             groupBoxConcentric.TabStop = false;
-            toolTip.SetToolTip(groupBoxConcentric, resources.GetString("groupBoxConcentric.ToolTip"));
             // 
             // groupBox4
             // 
-            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Controls.Add(numericBoxConcentricStep);
             groupBox4.Controls.Add(radioButtonConcentricLength);
             groupBox4.Controls.Add(numericBoxConcentricEnd);
@@ -1781,132 +1756,98 @@
             groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(label14);
             groupBox4.Controls.Add(label12);
+            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Name = "groupBox4";
             groupBox4.TabStop = false;
-            toolTip.SetToolTip(groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // label13
             // 
             resources.ApplyResources(label13, "label13");
             label13.Name = "label13";
-            toolTip.SetToolTip(label13, resources.GetString("label13.ToolTip"));
             // 
             // label14
             // 
             resources.ApplyResources(label14, "label14");
             label14.Name = "label14";
-            toolTip.SetToolTip(label14, resources.GetString("label14.ToolTip"));
             // 
             // label12
             // 
             resources.ApplyResources(label12, "label12");
             label12.Name = "label12";
-            toolTip.SetToolTip(label12, resources.GetString("label12.ToolTip"));
             // 
             // groupBox5
             // 
             resources.ApplyResources(groupBox5, "groupBox5");
-            groupBox5.Controls.Add(radioButtonBraggBrentano);
             groupBox5.Controls.Add(radioButtonDebyeScherrer);
+            groupBox5.Controls.Add(radioButtonBraggBrentano);
             groupBox5.Name = "groupBox5";
             groupBox5.TabStop = false;
-            toolTip.SetToolTip(groupBox5, resources.GetString("groupBox5.ToolTip"));
             // 
             // tabPageSpotsAndCenter
             // 
-            resources.ApplyResources(tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
+            tabPageSpotsAndCenter.Controls.Add(flowLayoutPanel9);
             tabPageSpotsAndCenter.Controls.Add(groupBox13);
             tabPageSpotsAndCenter.Controls.Add(checkBoxManualMaskMode);
             tabPageSpotsAndCenter.Controls.Add(groupBoxManualMode);
             tabPageSpotsAndCenter.Controls.Add(groupBox7);
             tabPageSpotsAndCenter.Controls.Add(groupBox12);
-            tabPageSpotsAndCenter.Controls.Add(buttonMaskAll);
-            tabPageSpotsAndCenter.Controls.Add(buttonInvertMask);
-            tabPageSpotsAndCenter.Controls.Add(buttonUnmaskAll);
+            resources.ApplyResources(tabPageSpotsAndCenter, "tabPageSpotsAndCenter");
             tabPageSpotsAndCenter.Name = "tabPageSpotsAndCenter";
-            toolTip.SetToolTip(tabPageSpotsAndCenter, resources.GetString("tabPageSpotsAndCenter.ToolTip"));
             tabPageSpotsAndCenter.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
-            resources.ApplyResources(groupBox13, "groupBox13");
             groupBox13.Controls.Add(buttonMaskLeft);
             groupBox13.Controls.Add(buttonMaskTop);
             groupBox13.Controls.Add(buttonMaskBottom);
             groupBox13.Controls.Add(buttonMaskRight);
+            resources.ApplyResources(groupBox13, "groupBox13");
             groupBox13.Name = "groupBox13";
             groupBox13.TabStop = false;
-            toolTip.SetToolTip(groupBox13, resources.GetString("groupBox13.ToolTip"));
             // 
             // groupBoxManualMode
             // 
-            resources.ApplyResources(groupBoxManualMode, "groupBoxManualMode");
-            groupBoxManualMode.Controls.Add(radioButtonManualCircle);
+            groupBoxManualMode.Controls.Add(flowLayoutPanelManualSpot);
+            groupBoxManualMode.Controls.Add(radioButtonManualSpot);
+            groupBoxManualMode.Controls.Add(flowLayoutPanelSpline);
             groupBoxManualMode.Controls.Add(radioButtonManualSpline);
             groupBoxManualMode.Controls.Add(radioButtonManualPolygon);
             groupBoxManualMode.Controls.Add(radioButtonManualRectangle);
-            groupBoxManualMode.Controls.Add(radioButtonManualSpot);
-            groupBoxManualMode.Controls.Add(groupBoxManualSpot);
-            groupBoxManualMode.Controls.Add(groupBoxSpline);
+            groupBoxManualMode.Controls.Add(radioButtonManualCircle);
+            resources.ApplyResources(groupBoxManualMode, "groupBoxManualMode");
             groupBoxManualMode.Name = "groupBoxManualMode";
             groupBoxManualMode.TabStop = false;
-            toolTip.SetToolTip(groupBoxManualMode, resources.GetString("groupBoxManualMode.ToolTip"));
             groupBoxManualMode.Enter += groupBoxManualMode_Enter;
             // 
-            // groupBoxManualSpot
+            // flowLayoutPanelManualSpot
             // 
-            resources.ApplyResources(groupBoxManualSpot, "groupBoxManualSpot");
-            groupBoxManualSpot.Controls.Add(textBoxManualSpotSize);
-            groupBoxManualSpot.Controls.Add(label31);
-            groupBoxManualSpot.Controls.Add(radioButton1);
-            groupBoxManualSpot.Controls.Add(numericUpDownManualSpotSize);
-            groupBoxManualSpot.Controls.Add(label30);
-            groupBoxManualSpot.Controls.Add(radioButtonCircle);
-            groupBoxManualSpot.Name = "groupBoxManualSpot";
-            groupBoxManualSpot.TabStop = false;
-            toolTip.SetToolTip(groupBoxManualSpot, resources.GetString("groupBoxManualSpot.ToolTip"));
-            // 
-            // label31
-            // 
-            resources.ApplyResources(label31, "label31");
-            label31.Name = "label31";
-            toolTip.SetToolTip(label31, resources.GetString("label31.ToolTip"));
+            resources.ApplyResources(flowLayoutPanelManualSpot, "flowLayoutPanelManualSpot");
+            flowLayoutPanelManualSpot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            flowLayoutPanelManualSpot.Controls.Add(radioButtonCircle);
+            flowLayoutPanelManualSpot.Controls.Add(radioButton1);
+            flowLayoutPanelManualSpot.Controls.Add(textBoxManualSpotSize);
+            flowLayoutPanelManualSpot.Controls.Add(numericUpDownManualSpotSize);
+            flowLayoutPanelManualSpot.Controls.Add(label30);
+            flowLayoutPanelManualSpot.Name = "flowLayoutPanelManualSpot";
             // 
             // label30
             // 
             resources.ApplyResources(label30, "label30");
             label30.Name = "label30";
-            toolTip.SetToolTip(label30, resources.GetString("label30.ToolTip"));
             // 
-            // groupBoxSpline
+            // flowLayoutPanelSpline
             // 
-            resources.ApplyResources(groupBoxSpline, "groupBoxSpline");
-            groupBoxSpline.Controls.Add(label29);
-            groupBoxSpline.Controls.Add(numericBoxSplineWidth);
-            groupBoxSpline.Controls.Add(label27);
-            groupBoxSpline.Name = "groupBoxSpline";
-            groupBoxSpline.TabStop = false;
-            toolTip.SetToolTip(groupBoxSpline, resources.GetString("groupBoxSpline.ToolTip"));
-            // 
-            // label29
-            // 
-            resources.ApplyResources(label29, "label29");
-            label29.Name = "label29";
-            toolTip.SetToolTip(label29, resources.GetString("label29.ToolTip"));
-            // 
-            // label27
-            // 
-            resources.ApplyResources(label27, "label27");
-            label27.Name = "label27";
-            toolTip.SetToolTip(label27, resources.GetString("label27.ToolTip"));
+            resources.ApplyResources(flowLayoutPanelSpline, "flowLayoutPanelSpline");
+            flowLayoutPanelSpline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            flowLayoutPanelSpline.Controls.Add(numericBoxSplineWidth);
+            flowLayoutPanelSpline.Name = "flowLayoutPanelSpline";
             // 
             // groupBox7
             // 
-            resources.ApplyResources(groupBox7, "groupBox7");
             groupBox7.Controls.Add(flowLayoutPanel5);
+            resources.ApplyResources(groupBox7, "groupBox7");
             groupBox7.Name = "groupBox7";
             groupBox7.TabStop = false;
-            toolTip.SetToolTip(groupBox7, resources.GetString("groupBox7.ToolTip"));
             // 
             // flowLayoutPanel5
             // 
@@ -1915,54 +1856,48 @@
             flowLayoutPanel5.Controls.Add(radioButtonTakeoverMask);
             flowLayoutPanel5.Controls.Add(radioButtonTakeOverMaskfile);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            toolTip.SetToolTip(flowLayoutPanel5, resources.GetString("flowLayoutPanel5.ToolTip"));
             // 
             // groupBox12
             // 
-            resources.ApplyResources(groupBox12, "groupBox12");
             groupBox12.Controls.Add(numericUpDownFindSpotsDeviation);
             groupBox12.Controls.Add(label28);
+            resources.ApplyResources(groupBox12, "groupBox12");
             groupBox12.Name = "groupBox12";
             groupBox12.TabStop = false;
-            toolTip.SetToolTip(groupBox12, resources.GetString("groupBox12.ToolTip"));
             // 
             // label28
             // 
             resources.ApplyResources(label28, "label28");
             label28.Name = "label28";
-            toolTip.SetToolTip(label28, resources.GetString("label28.ToolTip"));
             // 
             // tabPageAfterGetProfile
             // 
-            resources.ApplyResources(tabPageAfterGetProfile, "tabPageAfterGetProfile");
-            tabPageAfterGetProfile.Controls.Add(numericBoxTest);
-            tabPageAfterGetProfile.Controls.Add(checkBoxTest);
+            tabPageAfterGetProfile.Controls.Add(flowLayoutPanel10);
             tabPageAfterGetProfile.Controls.Add(checkBoxSendProfileToPDIndexer);
             tabPageAfterGetProfile.Controls.Add(checkBoxSaveFile);
             tabPageAfterGetProfile.Controls.Add(groupBoxSaveProfile);
             tabPageAfterGetProfile.Controls.Add(groupBoxSendPDI);
+            resources.ApplyResources(tabPageAfterGetProfile, "tabPageAfterGetProfile");
             tabPageAfterGetProfile.Name = "tabPageAfterGetProfile";
-            toolTip.SetToolTip(tabPageAfterGetProfile, resources.GetString("tabPageAfterGetProfile.ToolTip"));
             tabPageAfterGetProfile.UseVisualStyleBackColor = true;
             // 
             // groupBoxSaveProfile
             // 
-            resources.ApplyResources(groupBoxSaveProfile, "groupBoxSaveProfile");
             groupBoxSaveProfile.Controls.Add(groupBox17);
             groupBoxSaveProfile.Controls.Add(groupBox16);
             groupBoxSaveProfile.Controls.Add(groupBox15);
+            resources.ApplyResources(groupBoxSaveProfile, "groupBoxSaveProfile");
             groupBoxSaveProfile.Name = "groupBoxSaveProfile";
             groupBoxSaveProfile.TabStop = false;
-            toolTip.SetToolTip(groupBoxSaveProfile, resources.GetString("groupBoxSaveProfile.ToolTip"));
             groupBoxSaveProfile.Enter += groupBoxSaveProfile_Enter;
             // 
             // groupBox17
             // 
-            resources.ApplyResources(groupBox17, "groupBox17");
             groupBox17.Controls.Add(flowLayoutPanel4);
+            groupBox17.Controls.Add(label27);
+            resources.ApplyResources(groupBox17, "groupBox17");
             groupBox17.Name = "groupBox17";
             groupBox17.TabStop = false;
-            toolTip.SetToolTip(groupBox17, resources.GetString("groupBox17.ToolTip"));
             // 
             // flowLayoutPanel4
             // 
@@ -1970,15 +1905,13 @@
             flowLayoutPanel4.Controls.Add(radioButtonSaveInOneFile);
             flowLayoutPanel4.Controls.Add(radioButtonSaveInSeparateFiles);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            toolTip.SetToolTip(flowLayoutPanel4, resources.GetString("flowLayoutPanel4.ToolTip"));
             // 
             // groupBox16
             // 
-            resources.ApplyResources(groupBox16, "groupBox16");
             groupBox16.Controls.Add(flowLayoutPanel1);
+            resources.ApplyResources(groupBox16, "groupBox16");
             groupBox16.Name = "groupBox16";
             groupBox16.TabStop = false;
-            toolTip.SetToolTip(groupBox16, resources.GetString("groupBox16.ToolTip"));
             // 
             // flowLayoutPanel1
             // 
@@ -1986,7 +1919,6 @@
             flowLayoutPanel1.Controls.Add(radioButtonSetDirectoryEachTime);
             flowLayoutPanel1.Controls.Add(radioButtonSaveAtImageDirectory);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            toolTip.SetToolTip(flowLayoutPanel1, resources.GetString("flowLayoutPanel1.ToolTip"));
             // 
             // groupBox15
             // 
@@ -1994,7 +1926,6 @@
             groupBox15.Controls.Add(flowLayoutPanel2);
             groupBox15.Name = "groupBox15";
             groupBox15.TabStop = false;
-            toolTip.SetToolTip(groupBox15, resources.GetString("groupBox15.ToolTip"));
             // 
             // flowLayoutPanel2
             // 
@@ -2004,36 +1935,31 @@
             flowLayoutPanel2.Controls.Add(radioButtonAsTSVformat);
             flowLayoutPanel2.Controls.Add(radioButtonAsGSASformat);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            toolTip.SetToolTip(flowLayoutPanel2, resources.GetString("flowLayoutPanel2.ToolTip"));
             // 
             // groupBoxSendPDI
             // 
-            resources.ApplyResources(groupBoxSendPDI, "groupBoxSendPDI");
             groupBoxSendPDI.Controls.Add(checkBoxSendUnrolledImageToPDIndexer);
+            resources.ApplyResources(groupBoxSendPDI, "groupBoxSendPDI");
             groupBoxSendPDI.Name = "groupBoxSendPDI";
             groupBoxSendPDI.TabStop = false;
-            toolTip.SetToolTip(groupBoxSendPDI, resources.GetString("groupBoxSendPDI.ToolTip"));
             // 
             // tabPage1
             // 
-            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Controls.Add(groupBox3);
             tabPage1.Controls.Add(groupBox1);
+            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Name = "tabPage1";
-            toolTip.SetToolTip(tabPage1, resources.GetString("tabPage1.ToolTip"));
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(numericUpDownUnrollChiDivision);
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
-            toolTip.SetToolTip(groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // groupBox1
             // 
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(numericUpDownUnrolledImageXend);
             groupBox1.Controls.Add(numericUpDownUnrolledImageXstart);
             groupBox1.Controls.Add(label38);
@@ -2046,61 +1972,53 @@
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton4);
             groupBox1.Controls.Add(radioButton3);
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
-            toolTip.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // label38
             // 
             resources.ApplyResources(label38, "label38");
             label38.Name = "label38";
-            toolTip.SetToolTip(label38, resources.GetString("label38.ToolTip"));
             // 
             // label39
             // 
             resources.ApplyResources(label39, "label39");
             label39.Name = "label39";
-            toolTip.SetToolTip(label39, resources.GetString("label39.ToolTip"));
             // 
             // label25
             // 
             resources.ApplyResources(label25, "label25");
             label25.Name = "label25";
-            toolTip.SetToolTip(label25, resources.GetString("label25.ToolTip"));
             // 
             // label41
             // 
             resources.ApplyResources(label41, "label41");
             label41.Name = "label41";
-            toolTip.SetToolTip(label41, resources.GetString("label41.ToolTip"));
             // 
             // label24
             // 
             resources.ApplyResources(label24, "label24");
             label24.Name = "label24";
-            toolTip.SetToolTip(label24, resources.GetString("label24.ToolTip"));
             // 
             // label42
             // 
             resources.ApplyResources(label42, "label42");
             label42.Name = "label42";
-            toolTip.SetToolTip(label42, resources.GetString("label42.ToolTip"));
             // 
             // tabPage5
             // 
-            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Controls.Add(groupBox14);
             tabPage5.Controls.Add(groupBox19);
             tabPage5.Controls.Add(groupBox18);
             tabPage5.Controls.Add(groupBox11);
             tabPage5.Controls.Add(groupBox2);
+            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Name = "tabPage5";
-            toolTip.SetToolTip(tabPage5, resources.GetString("tabPage5.ToolTip"));
             tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
-            resources.ApplyResources(groupBox14, "groupBox14");
             groupBox14.Controls.Add(comboBoxScaleLineDivisions);
             groupBox14.Controls.Add(checkBoxScaleLabel);
             groupBox14.Controls.Add(trackBarScaleLineWidth);
@@ -2108,21 +2026,19 @@
             groupBox14.Controls.Add(label23);
             groupBox14.Controls.Add(colorControlScaleAzimuth);
             groupBox14.Controls.Add(colorControlScale2Theta);
+            resources.ApplyResources(groupBox14, "groupBox14");
             groupBox14.Name = "groupBox14";
             groupBox14.TabStop = false;
-            toolTip.SetToolTip(groupBox14, resources.GetString("groupBox14.ToolTip"));
             // 
             // label5
             // 
             resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            toolTip.SetToolTip(label5, resources.GetString("label5.ToolTip"));
             // 
             // label23
             // 
             resources.ApplyResources(label23, "label23");
             label23.Name = "label23";
-            toolTip.SetToolTip(label23, resources.GetString("label23.ToolTip"));
             // 
             // colorControlScaleAzimuth
             // 
@@ -2131,7 +2047,6 @@
             colorControlScaleAzimuth.BoxSize = new System.Drawing.Size(20, 20);
             colorControlScaleAzimuth.Color = System.Drawing.Color.FromArgb(119, 68, 70);
             colorControlScaleAzimuth.Name = "colorControlScaleAzimuth";
-            toolTip.SetToolTip(colorControlScaleAzimuth, resources.GetString("colorControlScaleAzimuth.ToolTip1"));
             colorControlScaleAzimuth.Load += colorControlScale2Theta_Load;
             // 
             // colorControlScale2Theta
@@ -2141,65 +2056,58 @@
             colorControlScale2Theta.BoxSize = new System.Drawing.Size(20, 20);
             colorControlScale2Theta.Color = System.Drawing.Color.FromArgb(68, 68, 120);
             colorControlScale2Theta.Name = "colorControlScale2Theta";
-            toolTip.SetToolTip(colorControlScale2Theta, resources.GetString("colorControlScale2Theta.ToolTip1"));
             colorControlScale2Theta.Load += colorControlScale2Theta_Load;
             // 
             // groupBox19
             // 
-            resources.ApplyResources(groupBox19, "groupBox19");
             groupBox19.Controls.Add(radioButtonImageName_FullPath);
             groupBox19.Controls.Add(radioButtonImageName_LastFolderPlusFilename);
             groupBox19.Controls.Add(radioButtonImageName_FileName);
+            resources.ApplyResources(groupBox19, "groupBox19");
             groupBox19.Name = "groupBox19";
             groupBox19.TabStop = false;
-            toolTip.SetToolTip(groupBox19, resources.GetString("groupBox19.ToolTip"));
             // 
             // groupBox18
             // 
-            resources.ApplyResources(groupBox18, "groupBox18");
             groupBox18.Controls.Add(checkBoxMaintainImageContrast);
             groupBox18.Controls.Add(checkBoxMaintainImageRange);
+            resources.ApplyResources(groupBox18, "groupBox18");
             groupBox18.Name = "groupBox18";
             groupBox18.TabStop = false;
-            toolTip.SetToolTip(groupBox18, resources.GetString("groupBox18.ToolTip"));
             // 
             // groupBox11
             // 
-            resources.ApplyResources(groupBox11, "groupBox11");
-            groupBox11.Controls.Add(label50);
             groupBox11.Controls.Add(flowLayoutPanel3);
             groupBox11.Controls.Add(pictureBox1);
             groupBox11.Controls.Add(radioButtonChiLeft);
             groupBox11.Controls.Add(radioButtonChiRight);
             groupBox11.Controls.Add(radioButtonChiBottom);
             groupBox11.Controls.Add(radioButtonChiTop);
+            resources.ApplyResources(groupBox11, "groupBox11");
             groupBox11.Name = "groupBox11";
             groupBox11.TabStop = false;
-            toolTip.SetToolTip(groupBox11, resources.GetString("groupBox11.ToolTip"));
             // 
             // label50
             // 
             resources.ApplyResources(label50, "label50");
             label50.Name = "label50";
-            toolTip.SetToolTip(label50, resources.GetString("label50.ToolTip"));
             // 
             // flowLayoutPanel3
             // 
             resources.ApplyResources(flowLayoutPanel3, "flowLayoutPanel3");
+            flowLayoutPanel3.Controls.Add(label50);
             flowLayoutPanel3.Controls.Add(radioButtonChiClockwise);
             flowLayoutPanel3.Controls.Add(radioButtonChiCounterclockwise);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            toolTip.SetToolTip(flowLayoutPanel3, resources.GetString("flowLayoutPanel3.ToolTip"));
             // 
             // groupBox2
             // 
-            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(checkBoxFixCenter);
             groupBox2.Controls.Add(numericBoxFindCenterPeakFittingRange);
             groupBox2.Controls.Add(flowLayoutPanelFindCenterOption);
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
-            toolTip.SetToolTip(groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // flowLayoutPanelFindCenterOption
             // 
@@ -2207,71 +2115,81 @@
             flowLayoutPanelFindCenterOption.Controls.Add(numericBoxFindCenterSearchArea);
             flowLayoutPanelFindCenterOption.Controls.Add(checkBoxExcludeMaskedPixels);
             flowLayoutPanelFindCenterOption.Name = "flowLayoutPanelFindCenterOption";
-            toolTip.SetToolTip(flowLayoutPanelFindCenterOption, resources.GetString("flowLayoutPanelFindCenterOption.ToolTip"));
             // 
             // tabPage3
             // 
-            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Controls.Add(groupBox6);
+            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Name = "tabPage3";
-            toolTip.SetToolTip(tabPage3, resources.GetString("tabPage3.ToolTip"));
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
-            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Controls.Add(label16);
             groupBox6.Controls.Add(textBoxBackgroundImage);
             groupBox6.Controls.Add(buttonClearBackgroundImage);
             groupBox6.Controls.Add(buttonSetBackgroundImage);
             groupBox6.Controls.Add(numericBoxBackgroundCoeff);
+            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Name = "groupBox6";
             groupBox6.TabStop = false;
-            toolTip.SetToolTip(groupBox6, resources.GetString("groupBox6.ToolTip"));
             // 
             // label16
             // 
             resources.ApplyResources(label16, "label16");
             label16.Name = "label16";
-            toolTip.SetToolTip(label16, resources.GetString("label16.ToolTip"));
             // 
             // label20
             // 
             resources.ApplyResources(label20, "label20");
             label20.Name = "label20";
-            toolTip.SetToolTip(label20, resources.GetString("label20.ToolTip"));
             // 
             // label3
             // 
             resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
-            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip"));
             // 
             // label21
             // 
             resources.ApplyResources(label21, "label21");
             label21.Name = "label21";
-            toolTip.SetToolTip(label21, resources.GetString("label21.ToolTip"));
             // 
             // numericUpDownMaskEdge
             // 
             resources.ApplyResources(numericUpDownMaskEdge, "numericUpDownMaskEdge");
             numericUpDownMaskEdge.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
             numericUpDownMaskEdge.Name = "numericUpDownMaskEdge";
-            toolTip.SetToolTip(numericUpDownMaskEdge, resources.GetString("numericUpDownMaskEdge.ToolTip"));
             numericUpDownMaskEdge.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // label1
             // 
             resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip"));
+            // 
+            // flowLayoutPanel9
+            // 
+            flowLayoutPanel9.Controls.Add(buttonMaskAll);
+            flowLayoutPanel9.Controls.Add(buttonUnmaskAll);
+            flowLayoutPanel9.Controls.Add(buttonInvertMask);
+            resources.ApplyResources(flowLayoutPanel9, "flowLayoutPanel9");
+            flowLayoutPanel9.Name = "flowLayoutPanel9";
+            // 
+            // flowLayoutPanel10
+            // 
+            resources.ApplyResources(flowLayoutPanel10, "flowLayoutPanel10");
+            flowLayoutPanel10.Controls.Add(checkBoxTest);
+            flowLayoutPanel10.Controls.Add(numericBoxTest);
+            flowLayoutPanel10.Name = "flowLayoutPanel10";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(label27, "label27");
+            label27.Name = "label27";
             // 
             // FormProperty
             // 
@@ -2281,7 +2199,6 @@
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Name = "FormProperty";
             ShowIcon = false;
-            toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             FormClosing += FormProperty_FormClosing;
             ((System.ComponentModel.ISupportInitialize)numericUpDownThresholdOfIntensityMax).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownThresholdOfIntensityMin).EndInit();
@@ -2326,6 +2243,8 @@
             groupBox8.PerformLayout();
             groupBoxRectangle.ResumeLayout(false);
             groupBoxRectangle.PerformLayout();
+            flowLayoutPanel6.ResumeLayout(false);
+            flowLayoutPanel6.PerformLayout();
             groupBoxSector.ResumeLayout(false);
             groupBoxSector.PerformLayout();
             tabPageIntegralProperty.ResumeLayout(false);
@@ -2333,6 +2252,7 @@
             groupBoxRadial.ResumeLayout(false);
             groupBoxRadial.PerformLayout();
             groupBoxConcentric.ResumeLayout(false);
+            groupBoxConcentric.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox5.ResumeLayout(false);
@@ -2342,10 +2262,10 @@
             groupBox13.ResumeLayout(false);
             groupBoxManualMode.ResumeLayout(false);
             groupBoxManualMode.PerformLayout();
-            groupBoxManualSpot.ResumeLayout(false);
-            groupBoxManualSpot.PerformLayout();
-            groupBoxSpline.ResumeLayout(false);
-            groupBoxSpline.PerformLayout();
+            flowLayoutPanelManualSpot.ResumeLayout(false);
+            flowLayoutPanelManualSpot.PerformLayout();
+            flowLayoutPanelSpline.ResumeLayout(false);
+            flowLayoutPanelSpline.PerformLayout();
             groupBox7.ResumeLayout(false);
             groupBox7.PerformLayout();
             flowLayoutPanel5.ResumeLayout(false);
@@ -2392,6 +2312,10 @@
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMaskEdge).EndInit();
+            flowLayoutPanel9.ResumeLayout(false);
+            flowLayoutPanel9.PerformLayout();
+            flowLayoutPanel10.ResumeLayout(false);
+            flowLayoutPanel10.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2509,7 +2433,6 @@
         public Crystallography.Controls.NumericBox numericBoxSphericalCorections;
         public System.Windows.Forms.Label label46;
         private System.Windows.Forms.TabPage tabPage5;
-        public System.Windows.Forms.GroupBox groupBoxManualSpot;
         private System.Windows.Forms.Button buttonMaskAll;
         private System.Windows.Forms.Button buttonUnmaskAll;
         public System.Windows.Forms.RadioButton radioButtonManualCircle;
@@ -2553,7 +2476,6 @@
         public Crystallography.Controls.NumericBox numericBoxBackgroundCoeff;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.RadioButton radioButtonAsTSVformat;
-        private System.Windows.Forms.GroupBox groupBoxSpline;
         public System.Windows.Forms.GroupBox groupBox7;
         public System.Windows.Forms.RadioButton radioButtonTakeOverMaskfile;
         public System.Windows.Forms.RadioButton radioButtonTakeoverMask;
@@ -2598,9 +2520,7 @@
         public System.Windows.Forms.RadioButton radioButtonSaveInSeparateFiles;
         private System.Windows.Forms.GroupBox groupBox16;
         public System.Windows.Forms.RadioButton radioButtonManualPolygon;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label27;
         public Crystallography.Controls.NumericBox numericBoxSplineWidth;
         private System.Windows.Forms.Button buttonInvertMask;
         public System.Windows.Forms.GroupBox groupBox18;
@@ -2612,5 +2532,11 @@
         private System.Windows.Forms.RadioButton radioButtonImageName_LastFolderPlusFilename;
     private System.Windows.Forms.ToolTip toolTip; // 260531Cl 追加
         private System.ComponentModel.IContainer components;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelManualSpot;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSpline;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
+        private System.Windows.Forms.Label label27;
     }
 }

@@ -373,9 +373,9 @@ namespace IPAnalyzer
             // textBoxInformation
             // 
             resources.ApplyResources(textBoxInformation, "textBoxInformation");
-            toolTip.SetToolTip(textBoxInformation, resources.GetString("textBoxInformation.ToolTip")); // 260531Cl 追加
             textBoxInformation.Name = "textBoxInformation";
             textBoxInformation.ReadOnly = true;
+            toolTip.SetToolTip(textBoxInformation, resources.GetString("textBoxInformation.ToolTip"));
             // 
             // label11
             // 
@@ -395,17 +395,8 @@ namespace IPAnalyzer
             scalablePictureBoxThumbnail.BackColor = SystemColors.ActiveCaption;
             scalablePictureBoxThumbnail.BorderStyle = BorderStyle.Fixed3D;
             resources.ApplyResources(scalablePictureBoxThumbnail, "scalablePictureBoxThumbnail");
-            scalablePictureBoxThumbnail.FixZoomAndCenter = false;
-            scalablePictureBoxThumbnail.FocusEventEnabled = false;
-            scalablePictureBoxThumbnail.HorizontalFlip = false;
-            scalablePictureBoxThumbnail.ManualSpotMode = false;
             scalablePictureBoxThumbnail.MouseScaling = true;
-            scalablePictureBoxThumbnail.MouseTranslation = false;
             scalablePictureBoxThumbnail.Name = "scalablePictureBoxThumbnail";
-            scalablePictureBoxThumbnail.ShowAreaRectangle = false;
-            scalablePictureBoxThumbnail.ShowRimRentangle = false;
-            scalablePictureBoxThumbnail.TitleVisible = false;
-            scalablePictureBoxThumbnail.VerticalFlip = false;
             scalablePictureBoxThumbnail.Zoom = 128D;
             scalablePictureBoxThumbnail.MouseDown2 += scalablePictureBoxThumbnail_MouseDown2;
             scalablePictureBoxThumbnail.Draw += scalablePictureBoxThumbnail_Draw;
@@ -413,17 +404,17 @@ namespace IPAnalyzer
             // radioButtonNearCenter
             // 
             resources.ApplyResources(radioButtonNearCenter, "radioButtonNearCenter");
-            toolTip.SetToolTip(radioButtonNearCenter, resources.GetString("radioButtonNearCenter.ToolTip")); // 260531Cl 追加
             radioButtonNearCenter.Checked = true;
             radioButtonNearCenter.Name = "radioButtonNearCenter";
             radioButtonNearCenter.TabStop = true;
+            toolTip.SetToolTip(radioButtonNearCenter, resources.GetString("radioButtonNearCenter.ToolTip"));
             radioButtonNearCenter.UseVisualStyleBackColor = true;
             // 
             // radioButtonWhole
             // 
             resources.ApplyResources(radioButtonWhole, "radioButtonWhole");
-            toolTip.SetToolTip(radioButtonWhole, resources.GetString("radioButtonWhole.ToolTip")); // 260531Cl 追加
             radioButtonWhole.Name = "radioButtonWhole";
+            toolTip.SetToolTip(radioButtonWhole, resources.GetString("radioButtonWhole.ToolTip"));
             radioButtonWhole.UseVisualStyleBackColor = true;
             radioButtonWhole.CheckedChanged += radioButton1_CheckedChanged;
             // 
@@ -443,11 +434,11 @@ namespace IPAnalyzer
             // comboBoxScaleLine
             // 
             resources.ApplyResources(comboBoxScaleLine, "comboBoxScaleLine");
-            toolTip.SetToolTip(comboBoxScaleLine, resources.GetString("comboBoxScaleLine.ToolTip")); // 260531Cl 追加
             comboBoxScaleLine.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxScaleLine.FormattingEnabled = true;
             comboBoxScaleLine.Items.AddRange(new object[] { resources.GetString("comboBoxScaleLine.Items"), resources.GetString("comboBoxScaleLine.Items1"), resources.GetString("comboBoxScaleLine.Items2"), resources.GetString("comboBoxScaleLine.Items3") });
             comboBoxScaleLine.Name = "comboBoxScaleLine";
+            toolTip.SetToolTip(comboBoxScaleLine, resources.GetString("comboBoxScaleLine.ToolTip"));
             comboBoxScaleLine.SelectedIndexChanged += comboBoxScaleLine_SelectedIndexChanged;
             // 
             // label1
@@ -458,11 +449,11 @@ namespace IPAnalyzer
             // comboBoxScale2
             // 
             resources.ApplyResources(comboBoxScale2, "comboBoxScale2");
-            toolTip.SetToolTip(comboBoxScale2, resources.GetString("comboBoxScale2.ToolTip")); // 260531Cl 追加
             comboBoxScale2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxScale2.FormattingEnabled = true;
             comboBoxScale2.Items.AddRange(new object[] { resources.GetString("comboBoxScale2.Items"), resources.GetString("comboBoxScale2.Items1"), resources.GetString("comboBoxScale2.Items2"), resources.GetString("comboBoxScale2.Items3") });
             comboBoxScale2.Name = "comboBoxScale2";
+            toolTip.SetToolTip(comboBoxScale2, resources.GetString("comboBoxScale2.ToolTip"));
             comboBoxScale2.SelectedIndexChanged += toolStripComboBoxScale2_SelectedIndexChanged;
             // 
             // label9
@@ -505,17 +496,9 @@ namespace IPAnalyzer
             scalablePictureBox.BackColor = SystemColors.ActiveCaption;
             scalablePictureBox.BorderStyle = BorderStyle.Fixed3D;
             resources.ApplyResources(scalablePictureBox, "scalablePictureBox");
-            scalablePictureBox.FixZoomAndCenter = false;
-            scalablePictureBox.FocusEventEnabled = false;
-            scalablePictureBox.HorizontalFlip = false;
-            scalablePictureBox.ManualSpotMode = false;
             scalablePictureBox.MouseScaling = true;
             scalablePictureBox.MouseTranslation = true;
             scalablePictureBox.Name = "scalablePictureBox";
-            scalablePictureBox.ShowAreaRectangle = false;
-            scalablePictureBox.ShowRimRentangle = false;
-            scalablePictureBox.TitleVisible = false;
-            scalablePictureBox.VerticalFlip = false;
             scalablePictureBox.Zoom = 128D;
             scalablePictureBox.MouseMove2 += scalablePictureBox_MouseMove2;
             scalablePictureBox.MouseUp2 += scalablePictureBox_MouseUp2;
@@ -540,68 +523,68 @@ namespace IPAnalyzer
             // label14
             // 
             resources.ApplyResources(label14, "label14");
-            toolTip.SetToolTip(label14, resources.GetString("label14.ToolTip")); // 260531Cl 追加
             label14.Name = "label14";
+            toolTip.SetToolTip(label14, resources.GetString("label14.ToolTip"));
             // 
             // labelResolution
             // 
             resources.ApplyResources(labelResolution, "labelResolution");
-            toolTip.SetToolTip(labelResolution, resources.GetString("labelResolution.ToolTip")); // 260531Cl 追加
             labelResolution.Name = "labelResolution";
+            toolTip.SetToolTip(labelResolution, resources.GetString("labelResolution.ToolTip"));
             // 
             // buttonMag1
             // 
             resources.ApplyResources(buttonMag1, "buttonMag1");
-            toolTip.SetToolTip(buttonMag1, resources.GetString("buttonMag1.ToolTip")); // 260531Cl 追加
             buttonMag1.Name = "buttonMag1";
+            toolTip.SetToolTip(buttonMag1, resources.GetString("buttonMag1.ToolTip"));
             buttonMag1.UseVisualStyleBackColor = true;
             buttonMag1.Click += buttonMag_Click;
             // 
             // buttonMag2
             // 
             resources.ApplyResources(buttonMag2, "buttonMag2");
-            toolTip.SetToolTip(buttonMag2, resources.GetString("buttonMag2.ToolTip")); // 260531Cl 追加
             buttonMag2.Name = "buttonMag2";
+            toolTip.SetToolTip(buttonMag2, resources.GetString("buttonMag2.ToolTip"));
             buttonMag2.UseVisualStyleBackColor = true;
             buttonMag2.Click += buttonMag_Click;
             // 
             // buttonMag4
             // 
             resources.ApplyResources(buttonMag4, "buttonMag4");
-            toolTip.SetToolTip(buttonMag4, resources.GetString("buttonMag4.ToolTip")); // 260531Cl 追加
             buttonMag4.Name = "buttonMag4";
+            toolTip.SetToolTip(buttonMag4, resources.GetString("buttonMag4.ToolTip"));
             buttonMag4.UseVisualStyleBackColor = true;
             buttonMag4.Click += buttonMag_Click;
             // 
             // buttonMag_2
             // 
             resources.ApplyResources(buttonMag_2, "buttonMag_2");
-            toolTip.SetToolTip(buttonMag_2, resources.GetString("buttonMag_2.ToolTip")); // 260531Cl 追加
             buttonMag_2.Name = "buttonMag_2";
+            toolTip.SetToolTip(buttonMag_2, resources.GetString("buttonMag_2.ToolTip"));
             buttonMag_2.UseVisualStyleBackColor = true;
             buttonMag_2.Click += buttonMag_Click;
             // 
             // buttonMag_4
             // 
             resources.ApplyResources(buttonMag_4, "buttonMag_4");
-            toolTip.SetToolTip(buttonMag_4, resources.GetString("buttonMag_4.ToolTip")); // 260531Cl 追加
             buttonMag_4.Name = "buttonMag_4";
+            toolTip.SetToolTip(buttonMag_4, resources.GetString("buttonMag_4.ToolTip"));
             buttonMag_4.UseVisualStyleBackColor = true;
             buttonMag_4.Click += buttonMag_Click;
             // 
             // buttonMag_8
             // 
             resources.ApplyResources(buttonMag_8, "buttonMag_8");
-            toolTip.SetToolTip(buttonMag_8, resources.GetString("buttonMag_8.ToolTip")); // 260531Cl 追加
             buttonMag_8.Name = "buttonMag_8";
+            toolTip.SetToolTip(buttonMag_8, resources.GetString("buttonMag_8.ToolTip"));
             buttonMag_8.UseVisualStyleBackColor = true;
             buttonMag_8.Click += buttonMag_Click;
             // 
             // buttonMag_16
             // 
             resources.ApplyResources(buttonMag_16, "buttonMag_16");
-            toolTip.SetToolTip(buttonMag_16, resources.GetString("buttonMag_16.ToolTip")); // 260531Cl 追加
             buttonMag_16.Name = "buttonMag_16";
+            toolTip.SetToolTip(buttonMag_16, resources.GetString("buttonMag_16.ToolTip"));
             buttonMag_16.UseVisualStyleBackColor = true;
             buttonMag_16.Click += buttonMag_Click;
             // 
@@ -623,63 +606,63 @@ namespace IPAnalyzer
             // labelMousePointChi
             // 
             resources.ApplyResources(labelMousePointChi, "labelMousePointChi");
-            toolTip.SetToolTip(labelMousePointChi, resources.GetString("labelMousePointChi.ToolTip")); // 260531Cl 追加
             labelMousePointChi.Name = "labelMousePointChi";
+            toolTip.SetToolTip(labelMousePointChi, resources.GetString("labelMousePointChi.ToolTip"));
             labelMousePointChi.Click += toolStripMenuItemMiscellaneous_Click;
             // 
             // labelMousePointD
             // 
             resources.ApplyResources(labelMousePointD, "labelMousePointD");
-            toolTip.SetToolTip(labelMousePointD, resources.GetString("labelMousePointD.ToolTip")); // 260531Cl 追加
             labelMousePointD.Name = "labelMousePointD";
+            toolTip.SetToolTip(labelMousePointD, resources.GetString("labelMousePointD.ToolTip"));
             // 
             // labelMousePointTheta
             // 
             resources.ApplyResources(labelMousePointTheta, "labelMousePointTheta");
-            toolTip.SetToolTip(labelMousePointTheta, resources.GetString("labelMousePointTheta.ToolTip")); // 260531Cl 追加
             labelMousePointTheta.Name = "labelMousePointTheta";
+            toolTip.SetToolTip(labelMousePointTheta, resources.GetString("labelMousePointTheta.ToolTip"));
             // 
             // labelMousePointR
             // 
             resources.ApplyResources(labelMousePointR, "labelMousePointR");
-            toolTip.SetToolTip(labelMousePointR, resources.GetString("labelMousePointR.ToolTip")); // 260531Cl 追加
             labelMousePointR.Name = "labelMousePointR";
+            toolTip.SetToolTip(labelMousePointR, resources.GetString("labelMousePointR.ToolTip"));
             // 
             // labelMousePointIntensity
             // 
             resources.ApplyResources(labelMousePointIntensity, "labelMousePointIntensity");
-            toolTip.SetToolTip(labelMousePointIntensity, resources.GetString("labelMousePointIntensity.ToolTip")); // 260531Cl 追加
             labelMousePointIntensity.Name = "labelMousePointIntensity";
+            toolTip.SetToolTip(labelMousePointIntensity, resources.GetString("labelMousePointIntensity.ToolTip"));
             // 
             // label6
             // 
             resources.ApplyResources(label6, "label6");
-            toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip")); // 260531Cl 追加
             label6.Name = "label6";
+            toolTip.SetToolTip(label6, resources.GetString("label6.ToolTip"));
             // 
             // label8
             // 
             resources.ApplyResources(label8, "label8");
-            toolTip.SetToolTip(label8, resources.GetString("label8.ToolTip")); // 260531Cl 追加
             label8.Name = "label8";
+            toolTip.SetToolTip(label8, resources.GetString("label8.ToolTip"));
             // 
             // label10
             // 
             resources.ApplyResources(label10, "label10");
-            toolTip.SetToolTip(label10, resources.GetString("label10.ToolTip")); // 260531Cl 追加
             label10.Name = "label10";
+            toolTip.SetToolTip(label10, resources.GetString("label10.ToolTip"));
             // 
             // label12
             // 
             resources.ApplyResources(label12, "label12");
-            toolTip.SetToolTip(label12, resources.GetString("label12.ToolTip")); // 260531Cl 追加
             label12.Name = "label12";
+            toolTip.SetToolTip(label12, resources.GetString("label12.ToolTip"));
             // 
             // label13
             // 
             resources.ApplyResources(label13, "label13");
-            toolTip.SetToolTip(label13, resources.GetString("label13.ToolTip")); // 260531Cl 追加
             label13.Name = "label13";
+            toolTip.SetToolTip(label13, resources.GetString("label13.ToolTip"));
             label13.Click += toolStripMenuItemMiscellaneous_Click;
             // 
             // tableLayoutPanel3
@@ -694,26 +677,26 @@ namespace IPAnalyzer
             // labelMousePointReal
             // 
             resources.ApplyResources(labelMousePointReal, "labelMousePointReal");
-            toolTip.SetToolTip(labelMousePointReal, resources.GetString("labelMousePointReal.ToolTip")); // 260531Cl 追加
             labelMousePointReal.Name = "labelMousePointReal";
+            toolTip.SetToolTip(labelMousePointReal, resources.GetString("labelMousePointReal.ToolTip"));
             // 
             // label3
             // 
             resources.ApplyResources(label3, "label3");
-            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip")); // 260531Cl 追加
             label3.Name = "label3";
+            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
-            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip")); // 260531Cl 追加
             label4.Name = "label4";
+            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip"));
             // 
             // labelMousePointPixel
             // 
             resources.ApplyResources(labelMousePointPixel, "labelMousePointPixel");
-            toolTip.SetToolTip(labelMousePointPixel, resources.GetString("labelMousePointPixel.ToolTip")); // 260531Cl 追加
             labelMousePointPixel.Name = "labelMousePointPixel";
+            toolTip.SetToolTip(labelMousePointPixel, resources.GetString("labelMousePointPixel.ToolTip"));
             // 
             // tableLayoutPanel2
             // 
@@ -727,48 +710,35 @@ namespace IPAnalyzer
             // buttonAutoLevel
             // 
             resources.ApplyResources(buttonAutoLevel, "buttonAutoLevel");
-            toolTip.SetToolTip(buttonAutoLevel, resources.GetString("buttonAutoLevel.ToolTip")); // 260531Cl 追加
             buttonAutoLevel.Name = "buttonAutoLevel";
+            toolTip.SetToolTip(buttonAutoLevel, resources.GetString("buttonAutoLevel.ToolTip"));
             buttonAutoLevel.Click += buttonAutoLevel_Click;
             // 
             // buttonReset
             // 
             resources.ApplyResources(buttonReset, "buttonReset");
-            toolTip.SetToolTip(buttonReset, resources.GetString("buttonReset.ToolTip")); // 260531Cl 追加
             buttonReset.Name = "buttonReset";
+            toolTip.SetToolTip(buttonReset, resources.GetString("buttonReset.ToolTip"));
             buttonReset.Click += buttonReset_Click;
             // 
             // trackBarAdvancedMinInt
             // 
             resources.ApplyResources(trackBarAdvancedMinInt, "trackBarAdvancedMinInt");
-            trackBarAdvancedMinInt.ControlHeight = 27;
             trackBarAdvancedMinInt.DecimalPlaces = 0;
-            trackBarAdvancedMinInt.LogScrollBar = false;
             trackBarAdvancedMinInt.Maximum = 65535D;
             trackBarAdvancedMinInt.Minimum = 0D;
             trackBarAdvancedMinInt.Name = "trackBarAdvancedMinInt";
             trackBarAdvancedMinInt.NumericBoxSize = 120;
-            trackBarAdvancedMinInt.Orientation = Orientation.Vertical;
-            trackBarAdvancedMinInt.Smart_Increment = true;
-            trackBarAdvancedMinInt.TickStyle = TickStyle.BottomRight;
-            trackBarAdvancedMinInt.UpDown_Increment = 1D;
-            trackBarAdvancedMinInt.Value = 0D;
             trackBarAdvancedMinInt.ValueChanged += trackBarAdvancedMinInt_ValueChanged;
             // 
             // trackBarAdvancedMaxInt
             // 
             resources.ApplyResources(trackBarAdvancedMaxInt, "trackBarAdvancedMaxInt");
-            trackBarAdvancedMaxInt.ControlHeight = 27;
             trackBarAdvancedMaxInt.DecimalPlaces = 0;
-            trackBarAdvancedMaxInt.LogScrollBar = false;
             trackBarAdvancedMaxInt.Maximum = 65535D;
             trackBarAdvancedMaxInt.Minimum = 0D;
             trackBarAdvancedMaxInt.Name = "trackBarAdvancedMaxInt";
             trackBarAdvancedMaxInt.NumericBoxSize = 120;
-            trackBarAdvancedMaxInt.Orientation = Orientation.Vertical;
-            trackBarAdvancedMaxInt.Smart_Increment = true;
-            trackBarAdvancedMaxInt.TickStyle = TickStyle.BottomRight;
-            trackBarAdvancedMaxInt.UpDown_Increment = 1D;
             trackBarAdvancedMaxInt.Value = 65534D;
             trackBarAdvancedMaxInt.ValueChanged += trackBarAdvancedMaxInt_ValueChanged;
             // 
@@ -801,44 +771,12 @@ namespace IPAnalyzer
             // 
             // graphControlFrequency
             // 
-            graphControlFrequency.AllowMouseOperation = true;
-            graphControlFrequency.AxisLineColor = Color.Gray;
-            graphControlFrequency.AxisTextColor = Color.Black;
-            graphControlFrequency.AxisTextFont = new Font("Segoe UI", 9F);
-            graphControlFrequency.AxisXTextVisible = true;
-            graphControlFrequency.AxisYTextVisible = true;
-            graphControlFrequency.BackgroundColor = Color.White;
-            graphControlFrequency.DivisionLineColor = Color.LightGray;
-            graphControlFrequency.DivisionLineXVisible = true;
-            graphControlFrequency.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlFrequency, "graphControlFrequency");
-            graphControlFrequency.FixRangeHorizontal = false;
-            graphControlFrequency.FixRangeVertical = false;
-            graphControlFrequency.GraphTitle = "";
             graphControlFrequency.IsIntegerX = true;
             graphControlFrequency.IsIntegerY = true;
-            graphControlFrequency.LabelX = "Intensity:";
-            graphControlFrequency.LabelY = "Frequency:";
-            graphControlFrequency.LineWidth = 1F;
-            graphControlFrequency.LowerX = 0D;
-            graphControlFrequency.LowerY = 0D;
-            graphControlFrequency.MaximalX = 1D;
-            graphControlFrequency.MaximalY = 1D;
-            graphControlFrequency.MinimalX = 0D;
-            graphControlFrequency.MinimalY = 0D;
             graphControlFrequency.Mode = GraphControl.DrawingMode.Histogram;
-            graphControlFrequency.MousePositionVisible = false;
-            graphControlFrequency.MousePositionXDigit = -1;
-            graphControlFrequency.MousePositionYDigit = -1;
             graphControlFrequency.Name = "graphControlFrequency";
-            graphControlFrequency.OriginPosition = new Point(40, 20);
-            graphControlFrequency.UnitX = "";
-            graphControlFrequency.UnitY = "";
             graphControlFrequency.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlFrequency.UpperX = 1D;
-            graphControlFrequency.UpperY = 1D;
-            graphControlFrequency.UseLineWidth = true;
-            graphControlFrequency.VerticalLineColor = Color.Red;
             graphControlFrequency.XLog = true;
             graphControlFrequency.YLog = true;
             graphControlFrequency.LinePositionChanged += graphControlFrequency_LinePositionChanged;
@@ -852,46 +790,9 @@ namespace IPAnalyzer
             // 
             // graphControlProfile
             // 
-            graphControlProfile.AllowMouseOperation = true;
-            graphControlProfile.AxisLineColor = Color.Gray;
-            graphControlProfile.AxisTextColor = Color.Black;
-            graphControlProfile.AxisTextFont = new Font("Segoe UI", 9F);
-            graphControlProfile.AxisXTextVisible = true;
-            graphControlProfile.AxisYTextVisible = true;
-            graphControlProfile.BackgroundColor = Color.White;
-            graphControlProfile.DivisionLineColor = Color.LightGray;
-            graphControlProfile.DivisionLineXVisible = true;
-            graphControlProfile.DivisionLineYVisible = true;
             resources.ApplyResources(graphControlProfile, "graphControlProfile");
-            graphControlProfile.FixRangeHorizontal = false;
-            graphControlProfile.FixRangeVertical = false;
-            graphControlProfile.GraphTitle = "";
-            graphControlProfile.IsIntegerX = false;
-            graphControlProfile.IsIntegerY = false;
-            graphControlProfile.LabelX = "Angle:";
-            graphControlProfile.LabelY = "Intensity:";
-            graphControlProfile.LineWidth = 1F;
-            graphControlProfile.LowerX = 0D;
-            graphControlProfile.LowerY = 0D;
-            graphControlProfile.MaximalX = 1D;
-            graphControlProfile.MaximalY = 1D;
-            graphControlProfile.MinimalX = 0D;
-            graphControlProfile.MinimalY = 0D;
-            graphControlProfile.Mode = GraphControl.DrawingMode.Line;
-            graphControlProfile.MousePositionVisible = false;
-            graphControlProfile.MousePositionXDigit = -1;
-            graphControlProfile.MousePositionYDigit = -1;
             graphControlProfile.Name = "graphControlProfile";
-            graphControlProfile.OriginPosition = new Point(40, 20);
-            graphControlProfile.UnitX = "";
-            graphControlProfile.UnitY = "";
             graphControlProfile.UpperPanelFont = new Font("Segoe UI Symbol", 9F);
-            graphControlProfile.UpperX = 1D;
-            graphControlProfile.UpperY = 1D;
-            graphControlProfile.UseLineWidth = true;
-            graphControlProfile.VerticalLineColor = Color.Red;
-            graphControlProfile.XLog = false;
-            graphControlProfile.YLog = false;
             // 
             // tabPageStasticalInfo
             // 
@@ -919,9 +820,9 @@ namespace IPAnalyzer
             // textBoxStatisticsSelectedArea
             // 
             resources.ApplyResources(textBoxStatisticsSelectedArea, "textBoxStatisticsSelectedArea");
-            toolTip.SetToolTip(textBoxStatisticsSelectedArea, resources.GetString("textBoxStatisticsSelectedArea.ToolTip")); // 260531Cl 追加
             textBoxStatisticsSelectedArea.Name = "textBoxStatisticsSelectedArea";
             textBoxStatisticsSelectedArea.ReadOnly = true;
+            toolTip.SetToolTip(textBoxStatisticsSelectedArea, resources.GetString("textBoxStatisticsSelectedArea.ToolTip"));
             // 
             // label16
             // 
@@ -931,9 +832,9 @@ namespace IPAnalyzer
             // textBoxStatisticsSelectedAreaSequential
             // 
             resources.ApplyResources(textBoxStatisticsSelectedAreaSequential, "textBoxStatisticsSelectedAreaSequential");
-            toolTip.SetToolTip(textBoxStatisticsSelectedAreaSequential, resources.GetString("textBoxStatisticsSelectedAreaSequential.ToolTip")); // 260531Cl 追加
             textBoxStatisticsSelectedAreaSequential.Name = "textBoxStatisticsSelectedAreaSequential";
             textBoxStatisticsSelectedAreaSequential.ReadOnly = true;
+            toolTip.SetToolTip(textBoxStatisticsSelectedAreaSequential, resources.GetString("textBoxStatisticsSelectedAreaSequential.ToolTip"));
             // 
             // label15
             // 
@@ -958,15 +859,15 @@ namespace IPAnalyzer
             // label17
             // 
             resources.ApplyResources(label17, "label17");
-            toolTip.SetToolTip(label17, resources.GetString("label17.ToolTip")); // 260531Cl 追加
             label17.Name = "label17";
+            toolTip.SetToolTip(label17, resources.GetString("label17.ToolTip"));
             // 
             // numericUpDownSelectedAreaX1
             // 
             resources.ApplyResources(numericUpDownSelectedAreaX1, "numericUpDownSelectedAreaX1");
-            toolTip.SetToolTip(numericUpDownSelectedAreaX1, resources.GetString("numericUpDownSelectedAreaX1.ToolTip")); // 260531Cl 追加
             numericUpDownSelectedAreaX1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownSelectedAreaX1.Name = "numericUpDownSelectedAreaX1";
+            toolTip.SetToolTip(numericUpDownSelectedAreaX1, resources.GetString("numericUpDownSelectedAreaX1.ToolTip"));
             numericUpDownSelectedAreaX1.ValueChanged += numericUpDownSelectedArea_ValueChanged;
             // 
             // label18
@@ -977,9 +878,9 @@ namespace IPAnalyzer
             // numericUpDownSelectedAreaY1
             // 
             resources.ApplyResources(numericUpDownSelectedAreaY1, "numericUpDownSelectedAreaY1");
-            toolTip.SetToolTip(numericUpDownSelectedAreaY1, resources.GetString("numericUpDownSelectedAreaY1.ToolTip")); // 260531Cl 追加
             numericUpDownSelectedAreaY1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownSelectedAreaY1.Name = "numericUpDownSelectedAreaY1";
+            toolTip.SetToolTip(numericUpDownSelectedAreaY1, resources.GetString("numericUpDownSelectedAreaY1.ToolTip"));
             numericUpDownSelectedAreaY1.ValueChanged += numericUpDownSelectedArea_ValueChanged;
             // 
             // label19
@@ -990,9 +891,9 @@ namespace IPAnalyzer
             // numericUpDownSelectedAreaX2
             // 
             resources.ApplyResources(numericUpDownSelectedAreaX2, "numericUpDownSelectedAreaX2");
-            toolTip.SetToolTip(numericUpDownSelectedAreaX2, resources.GetString("numericUpDownSelectedAreaX2.ToolTip")); // 260531Cl 追加
             numericUpDownSelectedAreaX2.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownSelectedAreaX2.Name = "numericUpDownSelectedAreaX2";
+            toolTip.SetToolTip(numericUpDownSelectedAreaX2, resources.GetString("numericUpDownSelectedAreaX2.ToolTip"));
             numericUpDownSelectedAreaX2.ValueChanged += numericUpDownSelectedArea_ValueChanged;
             // 
             // label20
@@ -1003,9 +904,9 @@ namespace IPAnalyzer
             // numericUpDownSelectedAreaY2
             // 
             resources.ApplyResources(numericUpDownSelectedAreaY2, "numericUpDownSelectedAreaY2");
-            toolTip.SetToolTip(numericUpDownSelectedAreaY2, resources.GetString("numericUpDownSelectedAreaY2.ToolTip")); // 260531Cl 追加
             numericUpDownSelectedAreaY2.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownSelectedAreaY2.Name = "numericUpDownSelectedAreaY2";
+            toolTip.SetToolTip(numericUpDownSelectedAreaY2, resources.GetString("numericUpDownSelectedAreaY2.ToolTip"));
             numericUpDownSelectedAreaY2.ValueChanged += numericUpDownSelectedArea_ValueChanged;
             // 
             // label21
@@ -1016,8 +917,8 @@ namespace IPAnalyzer
             // label2
             // 
             resources.ApplyResources(label2, "label2");
-            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip")); // 260531Cl 追加
             label2.Name = "label2";
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // toolStrip1
             // 
@@ -1380,7 +1281,6 @@ namespace IPAnalyzer
             toolStripComboBoxRotate.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxRotate.Items"), resources.GetString("toolStripComboBoxRotate.Items1"), resources.GetString("toolStripComboBoxRotate.Items2"), resources.GetString("toolStripComboBoxRotate.Items3") });
             toolStripComboBoxRotate.Name = "toolStripComboBoxRotate";
             resources.ApplyResources(toolStripComboBoxRotate, "toolStripComboBoxRotate");
-            toolStripComboBoxRotate.ToolTipText = resources.GetString("toolStripComboBoxRotate.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             toolStripComboBoxRotate.SelectedIndexChanged += toolStripComboBoxRotate_SelectedIndexChanged;
             // 
             // toolStripSeparator28
@@ -1530,7 +1430,6 @@ namespace IPAnalyzer
             toolStripComboBoxBackgroundLower.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxBackgroundLower.Items"), resources.GetString("toolStripComboBoxBackgroundLower.Items1"), resources.GetString("toolStripComboBoxBackgroundLower.Items2"), resources.GetString("toolStripComboBoxBackgroundLower.Items3"), resources.GetString("toolStripComboBoxBackgroundLower.Items4"), resources.GetString("toolStripComboBoxBackgroundLower.Items5") });
             toolStripComboBoxBackgroundLower.Name = "toolStripComboBoxBackgroundLower";
             resources.ApplyResources(toolStripComboBoxBackgroundLower, "toolStripComboBoxBackgroundLower");
-            toolStripComboBoxBackgroundLower.ToolTipText = resources.GetString("toolStripComboBoxBackgroundLower.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             // 
             // toolStripMenuItem7
             // 
@@ -1542,7 +1441,6 @@ namespace IPAnalyzer
             toolStripComboBoxBackgroundUpper.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxBackgroundUpper.Items"), resources.GetString("toolStripComboBoxBackgroundUpper.Items1"), resources.GetString("toolStripComboBoxBackgroundUpper.Items2"), resources.GetString("toolStripComboBoxBackgroundUpper.Items3"), resources.GetString("toolStripComboBoxBackgroundUpper.Items4") });
             toolStripComboBoxBackgroundUpper.Name = "toolStripComboBoxBackgroundUpper";
             resources.ApplyResources(toolStripComboBoxBackgroundUpper, "toolStripComboBoxBackgroundUpper");
-            toolStripComboBoxBackgroundUpper.ToolTipText = resources.GetString("toolStripComboBoxBackgroundUpper.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             // 
             // fourierToolStripMenuItem
             // 
@@ -1659,7 +1557,6 @@ namespace IPAnalyzer
             // toolStripComboBoxManualSpotSize
             // 
             resources.ApplyResources(toolStripComboBoxManualSpotSize, "toolStripComboBoxManualSpotSize");
-            toolStripComboBoxManualSpotSize.ToolTipText = resources.GetString("toolStripComboBoxManualSpotSize.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             toolStripComboBoxManualSpotSize.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxManualSpotSize.Items"), resources.GetString("toolStripComboBoxManualSpotSize.Items1"), resources.GetString("toolStripComboBoxManualSpotSize.Items2"), resources.GetString("toolStripComboBoxManualSpotSize.Items3"), resources.GetString("toolStripComboBoxManualSpotSize.Items4"), resources.GetString("toolStripComboBoxManualSpotSize.Items5"), resources.GetString("toolStripComboBoxManualSpotSize.Items6"), resources.GetString("toolStripComboBoxManualSpotSize.Items7"), resources.GetString("toolStripComboBoxManualSpotSize.Items8") });
             toolStripComboBoxManualSpotSize.Name = "toolStripComboBoxManualSpotSize";
             toolStripComboBoxManualSpotSize.TextChanged += toolStripComboBoxManualSpotSize_TextChanged;
@@ -1771,7 +1668,6 @@ namespace IPAnalyzer
             // toolStripComboBoxAzimuthalDivisionNumber
             // 
             resources.ApplyResources(toolStripComboBoxAzimuthalDivisionNumber, "toolStripComboBoxAzimuthalDivisionNumber");
-            toolStripComboBoxAzimuthalDivisionNumber.ToolTipText = resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.ToolTip"); // 260531Cl ToolStripItem は SetToolTip 不可のため ToolTipText を使用
             toolStripComboBoxAzimuthalDivisionNumber.Items.AddRange(new object[] { resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items1"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items2"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items3"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items4"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items5"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items6"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items7"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items8"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items9"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items10"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items11"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items12"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items13"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items14"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items15"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items16"), resources.GetString("toolStripComboBoxAzimuthalDivisionNumber.Items17") });
             toolStripComboBoxAzimuthalDivisionNumber.Name = "toolStripComboBoxAzimuthalDivisionNumber";
             // 
@@ -1806,8 +1702,10 @@ namespace IPAnalyzer
             // 
             // toolTip
             // 
+            toolTip.AutoPopDelay = 10000;
+            toolTip.InitialDelay = 500;
             toolTip.IsBalloon = true;
-            toolTip.AutoPopDelay = 10000; // 260531Cl 追加: 長文ツールチップ用に表示時間を10秒へ延長
+            toolTip.ReshowDelay = 100;
             // 
             // FormMain
             // 
