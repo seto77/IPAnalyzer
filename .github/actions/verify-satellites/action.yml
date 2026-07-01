@@ -1,0 +1,28 @@
+# 260701Cl 追加: release.yml / build-arm64-portable.yml / validate-wix-msi.yml の 6 箇所に散在していた
+#   satellite (Crystallography.Controls.resources.dll + IPAnalyzer.resources.dll、全10カルチャ) 存在検査を
+#   composite action に集約。今後カルチャ追加/削除・アサーション変更が発生してもここ1箇所を直せば全ワークフローに伝播する。
+name: 'Verify satellite resources'
+description: 'Assert Crystallography.Controls.resources.dll and IPAnalyzer.resources.dll exist for all 10 non-English cultures in a staging/publish directory'
+
+inputs:
+  staging-dir:
+    description: 'Path to the staged/published output to check (contains per-culture subfolders, e.g. de\, ja\, ...)'
+    required: true
+  label:
+    description: 'Label used in the success log line (e.g. "x64 staging", "arm64 publish")'
+    required: false
+    default: 'satellite'
+
+runs:
+  using: composite
+  steps:
+    - shell: pwsh
+      run: |
+        $stagingDir = '${{ inputs.staging-dir }}'
+        $cultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
+        $assemblies = @('Crystallography.Controls.resources.dll','IPAnalyzer.resources.dll')
+        foreach ($asm in $assemblies) {
+          $missing = $cultures | Where-Object { -not (Test-Path (Join-Path $stagingDir "$_\$asm")) }
+          if ($missing) { throw "$asm satellite missing for culture(s): $($missing -join ', ')" }
+        }
+        Write-Host "${{ inputs.label }}: satellite check OK ($($cultures.Count) cultures x $($assemblies.Count) assemblies)"

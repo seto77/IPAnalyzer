@@ -137,12 +137,14 @@ jobs:
           $m = Get-PEMachine (Join-Path $publishDir "IPAnalyzer.exe")
           "IPAnalyzer.exe: machine=0x{0:X4}" -f $m
           if ($m -ne 0xAA64) { throw "IPAnalyzer.exe is not ARM64 (machine=0x$($m.ToString('X4')))" }
-          # satellite: Crystallography.Controls は 10 カルチャ、IPAnalyzer 本体は ja のみ (en は neutral)。
-          $controlsCultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
-          $missing = $controlsCultures | Where-Object { -not (Test-Path "$publishDir\$_\Crystallography.Controls.resources.dll") }
-          if ($missing) { throw "Crystallography.Controls satellite missing for culture(s): $($missing -join ', ')" }
-          if (-not (Test-Path "$publishDir\ja\IPAnalyzer.resources.dll")) { throw "IPAnalyzer ja satellite missing" }
-          Write-Host "arm64 publish verified: exe ARM64, no glfw/native, satellites present ($((Get-ChildItem $publishDir -Recurse -File).Count) files)."
+          Write-Host "arm64 publish verified: exe ARM64, no glfw/native ($((Get-ChildItem $publishDir -Recurse -File).Count) files)."
+
+      # 260701Cl 追加: satellite 検査 (10 カルチャ x 2 アセンブリ) を composite action に集約 (旧: インライン $controlsCultures チェック、3ワークフロー6箇所に重複していた)
+      - name: Verify satellites (arm64 portable)
+        uses: ./.github/actions/verify-satellites
+        with:
+          staging-dir: ${{ steps.publish.outputs.dir }}
+          label: arm64 portable
 
       - name: Prepare portable folder
         id: portable
@@ -187,11 +189,13 @@ jobs:
           }
           $m = Get-PEMachine (Join-Path $PWD "$s\IPAnalyzer.exe")
           if ($m -ne 0xAA64) { throw ("IPAnalyzer.exe: PE machine 0x{0:X4} != 0xAA64" -f $m) }
-          $controlsCultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
-          $missing = $controlsCultures | Where-Object { -not (Test-Path "$s\$_\Crystallography.Controls.resources.dll") }
-          if ($missing) { throw "Crystallography.Controls satellite missing for culture(s): $($missing -join ', ')" }
-          if (-not (Test-Path "$s\ja\IPAnalyzer.resources.dll")) { throw "IPAnalyzer ja satellite missing" }
           Write-Host "arm64 MSI staging OK: $((Get-ChildItem $s -Recurse -File).Count) files"
+
+      - name: Verify satellites (arm64 MSI staging)
+        uses: ./.github/actions/verify-satellites
+        with:
+          staging-dir: artifacts\staging-msi-arm64
+          label: arm64 MSI staging
 
       - name: Build arm64 MSI with WiX
         shell: pwsh

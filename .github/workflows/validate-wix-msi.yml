@@ -6,7 +6,7 @@
 #   PDIndexer\.github\workflows\validate-wix-msi.yml を IPAnalyzer 用に移植。IPAnalyzer 固有:
 #     * native 依存ゼロ (libxrl も Crystallography.Native も同梱しない) → 「必須」ではなく「禁止」アサートに反転
 #     * glfw3.dll は OpenTK 透過の死荷物で実行時未使用 (--capture で全フォーム構築を実証済) → staging から除外
-#     * satellite は Crystallography.Controls が 10 カルチャ、IPAnalyzer 本体は ja のみ
+#     * satellite は Crystallography.Controls / IPAnalyzer 本体ともに10カルチャ (260701Cl: IPAnalyzer 側も全カルチャ検査に拡張)
 name: Validate WiX MSI (Phase A)
 
 on:
@@ -77,12 +77,14 @@ jobs:
           # IPAnalyzer は native 依存ゼロ。これらが現れたら供給経路の意図しない変化なので止める
           if (Test-Path "$s\libxrl-11.dll") { throw "libxrl-11.dll appeared (IPAnalyzer does not bundle xraylib)" }
           if (Get-ChildItem $s -Filter "Crystallography.Native*" -ErrorAction SilentlyContinue) { throw "Crystallography.Native* appeared (IPAnalyzer does not bundle it)" }
-          # satellite: 10 カルチャに Crystallography.Controls.resources.dll / ja のみ IPAnalyzer.resources.dll (en は neutral)
-          $controlsCultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
-          $missing = $controlsCultures | Where-Object { -not (Test-Path "$s\$_\Crystallography.Controls.resources.dll") }
-          if ($missing) { throw "Crystallography.Controls satellite missing for culture(s): $($missing -join ', ')" }
-          if (-not (Test-Path "$s\ja\IPAnalyzer.resources.dll")) { throw "IPAnalyzer ja satellite missing" }
           Write-Host "x64 staging OK: $((Get-ChildItem $s -Recurse -File).Count) files"
+
+      # 260701Cl 追加: satellite 検査 (10 カルチャ x 2 アセンブリ) を composite action に集約 (旧: インライン $controlsCultures チェック、3ワークフロー6箇所に重複していた)
+      - name: Verify satellites (x64 staging)
+        uses: ./.github/actions/verify-satellites
+        with:
+          staging-dir: artifacts\staging-msi-x64
+          label: x64 staging
 
       - name: Stage arm64 MSI payload (framework-dependent publish)
         shell: pwsh
@@ -108,11 +110,13 @@ jobs:
           }
           $m = Get-PEMachine (Join-Path $PWD "$s\IPAnalyzer.exe")
           if ($m -ne 0xAA64) { throw ("IPAnalyzer.exe: PE machine 0x{0:X4} != 0xAA64" -f $m) }
-          $controlsCultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
-          $missing = $controlsCultures | Where-Object { -not (Test-Path "$s\$_\Crystallography.Controls.resources.dll") }
-          if ($missing) { throw "Crystallography.Controls satellite missing for culture(s): $($missing -join ', ')" }
-          if (-not (Test-Path "$s\ja\IPAnalyzer.resources.dll")) { throw "IPAnalyzer ja satellite missing" }
           Write-Host "arm64 staging OK: $((Get-ChildItem $s -Recurse -File).Count) files"
+
+      - name: Verify satellites (arm64 staging)
+        uses: ./.github/actions/verify-satellites
+        with:
+          staging-dir: artifacts\staging-msi-arm64
+          label: arm64 staging
 
       - name: Build WiX x64 MSI (bumped version for upgrade test)
         shell: pwsh

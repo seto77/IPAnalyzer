@@ -136,13 +136,14 @@ jobs:
           if (Test-Path "$s\libxrl-11.dll") { throw "libxrl-11.dll appeared (IPAnalyzer does not bundle xraylib)" }
           if (Get-ChildItem $s -Filter "Crystallography.Native*" -ErrorAction SilentlyContinue) { throw "Crystallography.Native* appeared (IPAnalyzer does not bundle it)" }
           if (-not (Test-Path "$s\IPAnalyzer.exe")) { throw "IPAnalyzer.exe missing from staging" }
-          $controlsCultures = @('de','es','fr','it','ja','ko','pt','ru','zh-Hans','zh-Hant')
-          $missing = $controlsCultures | Where-Object { -not (Test-Path "$s\$_\Crystallography.Controls.resources.dll") }
-          if ($missing) { throw "Crystallography.Controls satellite missing for culture(s): $($missing -join ', ')" }
-          # 260627Cl: IPAnalyzer 自身も全 10 カルチャの satellite を出すようになった (Phase 3 多言語化: en/ja/de/fr/es/it/ru/pt/zh-Hans/zh-Hant/ko)。ja だけでなく全カルチャを検査する。
-          $ipaMissing = $controlsCultures | Where-Object { -not (Test-Path "$s\$_\IPAnalyzer.resources.dll") }
-          if ($ipaMissing) { throw "IPAnalyzer satellite missing for culture(s): $($ipaMissing -join ', ')" }
           Write-Host "MSI staging OK: $((Get-ChildItem $s -Recurse -File).Count) files"
+
+      # 260701Cl 追加: satellite 検査 (10 カルチャ x 2 アセンブリ) を composite action に集約 (旧: インライン $controlsCultures チェック、3ワークフロー6箇所に重複していた)
+      - name: Verify satellites (x64 staging)
+        uses: ./.github/actions/verify-satellites
+        with:
+          staging-dir: artifacts\staging-msi-x64
+          label: x64 staging
 
       - name: Build installer with WiX
         id: build_installer
