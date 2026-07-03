@@ -169,7 +169,6 @@
             this.Controls.Add(this.textBoxD);
             this.Controls.Add(this.textBoxTwoTheta);
             this.Controls.Add(this.textBoxR);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

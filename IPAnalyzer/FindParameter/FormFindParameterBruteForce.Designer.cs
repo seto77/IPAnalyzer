@@ -1023,7 +1023,6 @@
             resources.ApplyResources(graphControl1, "graphControl1");
             graphControl1.AxisLineColor = System.Drawing.Color.Gray;
             graphControl1.AxisTextColor = System.Drawing.Color.Black;
-            graphControl1.AxisTextFont = new System.Drawing.Font("Segoe UI", 9F);
             graphControl1.AxisXTextVisible = true;
             graphControl1.AxisYTextVisible = true;
             graphControl1.BackgroundColor = System.Drawing.Color.White;

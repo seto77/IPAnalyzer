@@ -1911,7 +1911,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         dataGridView.AllowUserToDeleteRows = false;
         dataGridView.AllowUserToResizeColumns = false;
         dataGridView.AllowUserToResizeRows = false;
-        dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
         dataGridView.BorderStyle = BorderStyle.Fixed3D;
         dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -1920,7 +1919,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         dataGridView.Name = "dataGridView";
         dataGridView.RowHeadersVisible = false;
         dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-        dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
         dataGridView.RowTemplate.Height = 21;
         toolTip.SetToolTip(dataGridView, resources.GetString("dataGridView.ToolTip"));
@@ -1930,7 +1928,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         // 
         ColumnNo.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.TopCenter;
-        dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F);
         ColumnNo.DefaultCellStyle = dataGridViewCellStyle10;
         resources.ApplyResources(ColumnNo, "ColumnNo");
         ColumnNo.Name = "ColumnNo";
@@ -1941,7 +1938,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         // ColumnHKL
         // 
         ColumnHKL.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridViewCellStyle11.NullValue = null;
         ColumnHKL.DefaultCellStyle = dataGridViewCellStyle11;
         resources.ApplyResources(ColumnHKL, "ColumnHKL");
@@ -1955,7 +1951,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         ColumnPrimaryCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
         dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
-        dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
         dataGridViewCellStyle12.NullValue = false;
         dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(128, 128, 255);
@@ -1970,7 +1965,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         ColumnPrimary.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         ColumnPrimary.ContextMenuStrip = contextMenuStrip1;
         dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
-        dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
         dataGridViewCellStyle13.NullValue = null;
         dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(64, 64, 128);
@@ -2015,7 +2009,6 @@ partial class FormFindParameter //260604Cl 基底クラス宣言は FormFindPara
         ColumnSecondary.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         ColumnSecondary.ContextMenuStrip = contextMenuStrip1;
         dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
-        dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F);
         dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
         dataGridViewCellStyle14.NullValue = null;
         dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(128, 64, 64);

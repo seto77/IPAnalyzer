@@ -137,7 +137,6 @@
             graphControl1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             graphControl1.AxisLineColor = System.Drawing.Color.Gray;
             graphControl1.AxisTextColor = System.Drawing.Color.Black;
-            graphControl1.AxisTextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             graphControl1.AxisXTextVisible = true;
             graphControl1.AxisYTextVisible = true;
             graphControl1.BackgroundColor = System.Drawing.Color.White;
@@ -208,7 +207,6 @@
             Controls.Add(textBoxFile3);
             Controls.Add(textBoxFile2);
             Controls.Add(textBoxFile1);
-            Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Name = "FormCalibrateRAxisImage";
             Text = "FormCalibrateRAxisImage";
             ResumeLayout(false);
