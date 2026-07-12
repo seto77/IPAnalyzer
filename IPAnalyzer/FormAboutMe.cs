@@ -29,7 +29,8 @@ namespace IPAnalyzer
         {
             try
             {
-                System.Diagnostics.Process.Start("mailto:" + linkLabelMail.Text);
+                //260712Cl .NET Core以降 Process.Start(string) は UseShellExecute=false 既定で mailto を実行ファイル扱いし Win32Exception→catch{}で無反応だった
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("mailto:" + linkLabelMail.Text) { UseShellExecute = true });
             }
             catch { }
         }
@@ -37,7 +38,8 @@ namespace IPAnalyzer
         {
             try
             {
-                System.Diagnostics.Process.Start(linkLabelHomePage.Text);
+                //260712Cl 同上: URL 起動は UseShellExecute=true が必要
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(linkLabelHomePage.Text) { UseShellExecute = true });
             }
             catch { }
         }
@@ -46,17 +48,15 @@ namespace IPAnalyzer
         {
             labelVersion.Text = "IPAnalyzer  " + Version.VersionAndDate;
 
-            string str = "";
-
-            str += Version.Introduction + "\r\n\r\n";//はじめに
-            str += Version.CopyRight + "\r\n\r\n";//著作権
-            str += Version.Condition + "\r\n\r\n";//実行条件
-            str += Version.Exemption + "\r\n\r\n";//免責
-            str += Version.Adress + "\r\n\r\n";//連絡先
-            str += Version.Acknowledge + "\r\n\r\n";//謝辞
-            str += Version.History;//履歴
-
-            textBoxReadMe.Text += str;
+            //260712Cl str += の連鎖 (7個の中間文字列) を string.Join 1式に。区切りは要素間のみで出力は同一
+            textBoxReadMe.Text += string.Join("\r\n\r\n",
+                Version.Introduction,  //はじめに
+                Version.CopyRight,     //著作権
+                Version.Condition,     //実行条件
+                Version.Exemption,     //免責
+                Version.Adress,        //連絡先
+                Version.Acknowledge,   //謝辞
+                Version.History);      //履歴
         }
 
         public int n = 0;

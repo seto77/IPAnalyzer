@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks; //260712Cl 追加: Parallel.For 使用のため
 using System.Windows.Forms;
 using System.Xml;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
@@ -431,8 +432,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             if (mode == Reg.Mode.Read)
             {
-                FormProperty.radioButtonAngleMode_CheckedChanged(new object(), EventArgs.Empty);
-                FormProperty.radioButtonRadialAngle_CheckedChanged(new object(), EventArgs.Empty);
+                FormProperty.radioButtonAngleMode_CheckedChanged(this, EventArgs.Empty);
+                FormProperty.radioButtonRadialAngle_CheckedChanged(this, EventArgs.Empty);
             }
         }
         #endregion
@@ -590,9 +591,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Initializing Macro function.", ja: "読み込み中...マクロ機能を初期化中。", de: "Wird geladen... Makrofunktion wird initialisiert.", fr: "Chargement en cours... Initialisation de la fonction Macro.", es: "Cargando...Inicializando la función Macro.", pt: "Carregando...Inicializando a função de macro.", it: "Caricamento in corso...Inizializzazione della funzione Macro.", ru: "Загрузка...Инициализация функции макросов.", zhHans: "正在加载…正在初始化宏功能。", zhHant: "載入中...正在初始化巨集功能。", ko: "로딩 중...매크로 기능 초기화 중.");
 
         FormMacro = new FormMacro(Python.CreateEngine(), new Macro(this)) { Visible = false };
-        Type t = typeof(Macro);
-        MemberInfo[] members = t.GetMembers();
-        var methods = t.GetMethods();
+        //260712Cl 削除: 戻り値未使用のデッドコード (旧デバッグ残骸)
+        //Type t = typeof(Macro);
+        //MemberInfo[] members = t.GetMembers();
+        //var methods = t.GetMethods();
 
 
         InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Reading registries", ja: "読み込み中...レジストリを読み込み中", de: "Wird geladen... Registry wird gelesen", fr: "Chargement en cours... Lecture du registre", es: "Cargando...Leyendo el registro", pt: "Carregando...Lendo os registros", it: "Caricamento in corso...Lettura del registro di sistema", ru: "Загрузка...Чтение реестра", zhHans: "正在加载…正在读取注册表", zhHant: "載入中...正在讀取登錄", ko: "로딩 중...레지스트리 읽는 중");
@@ -614,9 +616,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         InitialDialog.Text = Crystallography.Localization.Loc(en: "Now Loading...Checking command line options.", ja: "読み込み中...コマンドライン引数を確認中。", de: "Wird geladen... Kommandozeilenoptionen werden geprüft.", fr: "Chargement en cours... Vérification des options de ligne de commande.", es: "Cargando...Comprobando las opciones de línea de comandos.", pt: "Carregando...Verificando as opções de linha de comando.", it: "Caricamento in corso...Controllo delle opzioni della riga di comando.", ru: "Загрузка...Проверка параметров командной строки.", zhHans: "正在加载…正在检查命令行选项。", zhHant: "載入中...正在檢查命令列選項。", ko: "로딩 중...명령줄 옵션 확인 중.");
         var s = Environment.GetCommandLineArgs();
-        var fileName = "";
-        for (int i = 1; i < s.Length; i++)
-            fileName += (i == 1 ? "" : " ") + s[i];
+        //260712Cl ループ内 string 連結を string.Join 化
+        //var fileName = "";
+        //for (int i = 1; i < s.Length; i++)
+        //    fileName += (i == 1 ? "" : " ") + s[i];
+        var fileName = string.Join(' ', s.Skip(1));
         if (s.Length > 1)
         {
             if (fileName.EndsWith("img") || fileName.EndsWith("stl") || fileName.EndsWith("ccd") || fileName.EndsWith("ipf"))
@@ -638,7 +642,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             InitialDialog.Visible = false;
 
         Directory.Delete(Application.UserAppDataPath, true);
-        if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
+        //260712Cl 条件反転バグ修正: 「存在しない時だけ削除」の no-op になっていた
+        //if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
+        if (File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
             File.Delete(UserAppDataPath + "IPAnalyzerSetup.msi");
 
     }
@@ -705,22 +711,34 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (SkipDrawing || !IsImageReady) return;
         if (!toolStripButtonUnroll.Checked)
         {
-            pseudoBitmap.Filter1 = [.. Ring.IsThresholdOver];
-            pseudoBitmap.Filter2 = [.. Ring.IsThresholdUnder];
-            pseudoBitmap.Filter3 = [.. Ring.IsSpots];
-            pseudoBitmap.Filter4 = [.. Ring.IsOutsideOfIntegralRegion];
-            pseudoBitmap.Filter5 = [.. Ring.IsOutsideOfIntegralProperty];
+            //260712Cl 毎フレームの List 再生成 (旧: pseudoBitmap.Filter1 = [.. Ring.IsThresholdOver]; 等) をやめ、
+            //サイズ一致時は in-place コピーで割り当てゼロに。Filter1〜5 は Draw() 以外で参照保持されない。
+            static void copyFilter(bool[] src, List<bool> dst)
+            {
+                if (dst.Count == src.Length)
+                    src.AsSpan().CopyTo(CollectionsMarshal.AsSpan(dst));
+                else
+                {
+                    dst.Clear();
+                    dst.AddRange(src);
+                }
+            }
+            copyFilter(Ring.IsThresholdOver, pseudoBitmap.Filter1);
+            copyFilter(Ring.IsThresholdUnder, pseudoBitmap.Filter2);
+            copyFilter(Ring.IsSpots, pseudoBitmap.Filter3);
+            copyFilter(Ring.IsOutsideOfIntegralRegion, pseudoBitmap.Filter4);
+            copyFilter(Ring.IsOutsideOfIntegralProperty, pseudoBitmap.Filter5);
         }
 
         var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
         if (bmp == null) return;
-        var g = Graphics.FromImage(bmp);
+        using var g = Graphics.FromImage(bmp); //260712Cl using化 (毎フレームの GDI ハンドル滞留を防止)
         g.SmoothingMode = SmoothingMode.AntiAlias;
 
         //メイン中に水色の枠(SaveImageの範囲)を表示
         if (FormSaveImage.Visible)
         {
-            var pen = new Pen(Brushes.LightBlue);
+            //260712Cl 毎フレームの Pen 生成 (旧: var pen = new Pen(Brushes.LightBlue);) をやめキャッシュ済み Pens.* を使用
             //傾きを考慮していないので、正確ではないが、とりあえず。
             var upperLeft = new PointD(
                 FormProperty.DirectSpotPosition.X - FormSaveImage.ImageCenter.X * FormSaveImage.ImageResolution / FormProperty.numericBoxPixelSizeX.Value,
@@ -732,7 +750,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             var rect = scalablePictureBox.ConvertToClientRect(new RectangleD(upperLeft.X, upperLeft.Y, lowerRight.X - upperLeft.X, lowerRight.Y - upperLeft.Y)).ToRectangleF();
 
-            g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
+            g.DrawRectangle(Pens.LightBlue, rect.X, rect.Y, rect.Width, rect.Height); //260712Cl
         }
 
         //マウスで一秒以上長押しした点にペケ
@@ -741,9 +759,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             if (!selectedSpot.IsNaN)
             {
                 var pt = scalablePictureBox.ConvertToClientPt(selectedSpot);
-                var pen = new Pen(Brushes.Orange);
-                g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
-                g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
+                //260712Cl 旧: var pen = new Pen(Brushes.Orange); (毎フレーム生成・未Dispose)
+                g.DrawLine(Pens.Orange, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
+                g.DrawLine(Pens.Orange, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
             }
         }
         catch { }
@@ -756,9 +774,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 foreach (PointD p in manualMaskPoints)
                 {
                     var pt = scalablePictureBox.ConvertToClientPt(p);
-                    var pen = new Pen(Brushes.HotPink);
-                    g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
-                    g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
+                    //260712Cl 旧: var pen = new Pen(Brushes.HotPink); (点数×毎フレーム生成・未Dispose)
+                    g.DrawLine(Pens.HotPink, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
+                    g.DrawLine(Pens.HotPink, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
                 }
             }
         }
@@ -776,8 +794,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                 (var OffSet, var EllipseWidth, var EllipseHeight, var Cos, var Sin) = Geometry.GetEllipseRectangleAndRot(FormDrawRing.R, cameraLength1, Phi, Tau);
 
-                g = Graphics.FromImage(bmp);
-                g.SmoothingMode = SmoothingMode.AntiAlias;
+                //260712Cl 削除: 同一 bmp への Graphics 二重生成 (メソッド先頭で生成済み。transform も未変更のため等価)
+                //g = Graphics.FromImage(bmp);
+                //g.SmoothingMode = SmoothingMode.AntiAlias;
 
                 //まずビーム中心を原点に持ってくる
 
@@ -821,7 +840,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                 g.Transform = new Matrix((float)m.E11, (float)m.E21, (float)m.E12, (float)m.E22, (float)m.E13, (float)m.E23);
 
-                g.DrawEllipse(new Pen(Brushes.Yellow, 0.01f), RectangleOfEllipse);
+                //260712Cl 旧: g.DrawEllipse(new Pen(Brushes.Yellow, 0.01f), RectangleOfEllipse); (未Dispose)
+                using var ringPen = new Pen(Color.Yellow, 0.01f);
+                g.DrawEllipse(ringPen, RectangleOfEllipse);
 
                 g.Transform = new Matrix(1, 0, 0, 1, 0, 0);
             }
@@ -838,13 +859,15 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         try
         {
             PointD pt = scalablePictureBox.ConvertToClientPt(FormProperty.DirectSpotPosition);
-            Pen pen = new Pen(Brushes.Fuchsia);
-            g.DrawLine(pen, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
-            g.DrawLine(pen, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
+            //260712Cl 旧: Pen pen = new Pen(Brushes.Fuchsia); (毎フレーム生成・未Dispose)
+            g.DrawLine(Pens.Fuchsia, new PointF((float)pt.X + 4, (float)pt.Y + 4), new PointF((float)pt.X - 4, (float)pt.Y - 4));
+            g.DrawLine(Pens.Fuchsia, new PointF((float)pt.X - 4, (float)pt.Y + 4), new PointF((float)pt.X + 4, (float)pt.Y - 4));
         }
         catch { }
 
+        var oldImage = scalablePictureBox.pictureBox.Image; //260712Cl 旧 Bitmap を明示解放 (毎フレームの GDI/ネイティブメモリ滞留防止)
         scalablePictureBox.pictureBox.Image = bmp;
+        if (!ReferenceEquals(oldImage, bmp)) oldImage?.Dispose(); //GetImage が destBmp をキャッシュ再利用する将来実装でも、同一インスタンスは破棄しない
         scalablePictureBox.Refresh();
 
         //サムネイルに画像転送
@@ -877,8 +900,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         //Azimuthのスケールライン ここから
         int azimuthStep = comboBoxScaleLine.SelectedIndex switch { 1 => 30, 2 => 15, 3 => 5, _ => 30 };
-        var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom * (pixelSizeX + pixelSizeY) / 2));
-        var font = new Font("Tahoma", (float)(15 / zoom * (pixelSizeX + pixelSizeY) / 2));
+        //260712Cl Pen/Font を using 化し、ラベル描画ごとの SolidBrush 生成 (旧 L933/972/993) を 2 個の事前生成に集約
+        using var pen = new Pen(FormProperty.colorControlScaleAzimuth.Color, (float)(FormProperty.trackBarScaleLineWidth.Value / zoom * (pixelSizeX + pixelSizeY) / 2));
+        using var font = new Font("Tahoma", (float)(15 / zoom * (pixelSizeX + pixelSizeY) / 2));
+        using var azimuthBrush = new SolidBrush(FormProperty.colorControlScaleAzimuth.Color);
+        using var twoThetaBrush = new SolidBrush(FormProperty.colorControlScale2Theta.Color);
 
         var length = new[] { (cornerReals[0]- cornerReals[1]).Length, (cornerReals[1] - cornerReals[2]).Length,
             (cornerReals[2] - cornerReals[3]).Length, (cornerReals[3] - cornerReals[0]).Length };
@@ -925,7 +951,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         {
                             var shift = new PointD(crossPts[k].index == 1 ? -3 : 0, crossPts[k].index == 2 ? -2 : 0) * font.Size;
                             if (skip != k)
-                                g.DrawString(str[k] + "°", font, new SolidBrush(FormProperty.colorControlScaleAzimuth.Color), (crossPts[k].pt + shift).ToPointF());
+                                g.DrawString(str[k] + "°", font, azimuthBrush, (crossPts[k].pt + shift).ToPointF()); //260712Cl 事前生成ブラシを再利用
                         }
                     }
                     break;
@@ -938,14 +964,28 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         //2θの最大/最小値
         double max2Theta = 0, min2Theta = 0.0;
-        var edges = new List<Vector3DBase>();
-        edges.AddRange(Enumerable.Range(0, width).Select(w => convertScreenToReal(w, 0)));
-        edges.AddRange(Enumerable.Range(0, width).Select(w => convertScreenToReal(w, height)));
-        edges.AddRange(Enumerable.Range(0, height).Select(h => convertScreenToReal(0, h)));
-        edges.AddRange(Enumerable.Range(0, height).Select(h => convertScreenToReal(width, h)));
+        //260712Cl 全縁ピクセルの List 構築 + Select().Min()/Max() の二重 Atan2 走査を単一パス化 (走査点集合・数値結果は旧コードと同一)
+        //旧:
+        //var edges = new List<Vector3DBase>();
+        //edges.AddRange(Enumerable.Range(0, width).Select(w => convertScreenToReal(w, 0)));
+        //edges.AddRange(Enumerable.Range(0, width).Select(w => convertScreenToReal(w, height)));
+        //edges.AddRange(Enumerable.Range(0, height).Select(h => convertScreenToReal(0, h)));
+        //edges.AddRange(Enumerable.Range(0, height).Select(h => convertScreenToReal(width, h)));
+        //if (!originInside)
+        //    min2Theta = edges.Select(p => Math.Atan2(Math.Sqrt(p.X2Y2), p.Z)).Min() / Math.PI * 180.0;
+        //max2Theta = edges.Select(p => Math.Atan2(Math.Sqrt(p.X2Y2), p.Z)).Max() / Math.PI * 180.0;
+        double minTheta = double.PositiveInfinity, maxTheta = double.NegativeInfinity;
+        void accumulateTheta(Vector3DBase v)
+        {
+            var t = Math.Atan2(Math.Sqrt(v.X2Y2), v.Z);
+            if (t < minTheta) minTheta = t;
+            if (t > maxTheta) maxTheta = t;
+        }
+        for (int w = 0; w < width; w++) { accumulateTheta(convertScreenToReal(w, 0)); accumulateTheta(convertScreenToReal(w, height)); }
+        for (int h = 0; h < height; h++) { accumulateTheta(convertScreenToReal(0, h)); accumulateTheta(convertScreenToReal(width, h)); }
         if (!originInside)
-            min2Theta = edges.Select(p => Math.Atan2(Math.Sqrt(p.X2Y2), p.Z)).Min() / Math.PI * 180.0;
-        max2Theta = edges.Select(p => Math.Atan2(Math.Sqrt(p.X2Y2), p.Z)).Max() / Math.PI * 180.0;
+            min2Theta = minTheta / Math.PI * 180.0;
+        max2Theta = maxTheta / Math.PI * 180.0;
         //2θの最大/最小値　ここまで
 
         //分割幅をきめる　ここから
@@ -964,7 +1004,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         int startN = (int)(min2Theta / stepInteger / Math.Pow(10, stepPow));
         int endN = (int)(max2Theta / stepInteger / Math.Pow(10, stepPow)) + 1;
 
-        pen.Brush = new SolidBrush(FormProperty.colorControlScale2Theta.Color);
+        pen.Brush = twoThetaBrush; //260712Cl 旧: new SolidBrush(FormProperty.colorControlScale2Theta.Color); (未Dispose)
 
 
         for (double n = Math.Max(1, startN); n < endN; n++)
@@ -979,40 +1019,42 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             foreach (var pts in ptsArray)
                 g.DrawLines(pen, pts.ToArray());
 
-            var labelPosition = getLabelPosition(ptsArray.SelectMany(p => p).Where(e =>
-            {
-                var p = scalablePictureBox.ConvertToClientPt(e);
-                return p.X > 20 && p.Y > 20 && p.X < width - 20 && p.Y < height - 20;
-            }), originSrc, 0);
+            //260712Cl 削除: labelPosition は下行で未使用 (ptsArray[0][Count/4] を使用) なのに、2θ線ごとに全点の座標変換走査が走っていた
+            //var labelPosition = getLabelPosition(ptsArray.SelectMany(p => p).Where(e =>
+            //{
+            //    var p = scalablePictureBox.ConvertToClientPt(e);
+            //    return p.X > 20 && p.Y > 20 && p.X < width - 20 && p.Y < height - 20;
+            //}), originSrc, 0);
             if (FormProperty.checkBoxScaleLabel.Checked && ptsArray.Count != 0 && ptsArray[0].Count != 0)
-                g.DrawString(twoTheta.ToString("g12") + "°", font, new SolidBrush(FormProperty.colorControlScale2Theta.Color), ptsArray[0][ptsArray[0].Count / 4].ToPointF());// labelPosition.ToPointF());
+                g.DrawString(twoTheta.ToString("g12") + "°", font, twoThetaBrush, ptsArray[0][ptsArray[0].Count / 4].ToPointF());// labelPosition.ToPointF()); //260712Cl ブラシ再利用
         }
 
 
         g.Transform = new Matrix(1, 0, 0, 1, 0, 0);
     }
 
-    /// <summary>
-    /// 与えられた点集合 pts の中から、もっとも指定した方向に近い点を返す. deg 0 : 右, deg 90: 下, deg 180: 左, deg -90:上
-    /// </summary>
-    /// <param name="list"></param>
-    /// <param name="origin"></param>
-    /// <returns></returns>
-    private static PointD getLabelPosition(IEnumerable<PointD> list, PointD origin, double deg)
-    {
-        var residual = double.PositiveInfinity;
-        var result = new PointD(float.NaN, float.NaN);
-        foreach (var p in list)
-        {
-            var dev = Math.Abs((deg / 180) * Math.PI - Math.Atan2(p.Y - origin.Y, p.X - origin.X));
-            if (residual > dev)
-            {
-                residual = dev;
-                result = p;
-            }
-        }
-        return result;
-    }
+    //260712Cl 削除: 唯一の呼び出し元 (DrawScale 内の labelPosition) が未使用のため呼び出しごと削除した
+    ///// <summary>
+    ///// 与えられた点集合 pts の中から、もっとも指定した方向に近い点を返す. deg 0 : 右, deg 90: 下, deg 180: 左, deg -90:上
+    ///// </summary>
+    ///// <param name="list"></param>
+    ///// <param name="origin"></param>
+    ///// <returns></returns>
+    //private static PointD getLabelPosition(IEnumerable<PointD> list, PointD origin, double deg)
+    //{
+    //    var residual = double.PositiveInfinity;
+    //    var result = new PointD(float.NaN, float.NaN);
+    //    foreach (var p in list)
+    //    {
+    //        var dev = Math.Abs((deg / 180) * Math.PI - Math.Atan2(p.Y - origin.Y, p.X - origin.X));
+    //        if (residual > dev)
+    //        {
+    //            residual = dev;
+    //            result = p;
+    //        }
+    //    }
+    //    return result;
+    //}
 
     /// <summary>
     /// 座標変換 画面(Screen)上の点(pixel)を検出器(Detector)上の座標 (mm, Foot原点)に変換
@@ -1084,28 +1126,31 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
 
         var bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
-        var g = Graphics.FromImage(bmp);
+        if (bmp == null) return; //260712Cl Draw() と同様の null ガード (パネル折り畳み等でクライアントサイズ 0 の場合)
+        using var g = Graphics.FromImage(bmp); //260712Cl using化
         g.SmoothingMode = SmoothingMode.AntiAlias;
         if (thumbnailmode)
         {
             //サムネイル中に黄色い枠を表示
-            var pen = new Pen(Brushes.Yellow);
+            //260712Cl 旧: var pen = new Pen(Brushes.Yellow); (毎フレーム生成・未Dispose)
             var rect = scalablePictureBoxThumbnail.ConvertToClientRect(scalablePictureBox.ConvertToSrcRect(scalablePictureBox.pictureBox.ClientRectangle)).ToRectangleF();
-            g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
+            g.DrawRectangle(Pens.Yellow, rect.X, rect.Y, rect.Width, rect.Height);
         }
         else
         {
             try
             {
                 var pt = scalablePictureBoxThumbnail.ConvertToClientPt(new PointD(FormProperty.numericBoxDirectSpotPositionX.Value, FormProperty.numericBoxDirectSpotPositionY.Value)).ToPointF();
-                var pen = new Pen(Brushes.Fuchsia);
-                g.DrawLine(pen, new PointF(pt.X + 4, pt.Y + 3), new PointF(pt.X - 4, pt.Y - 4));
-                g.DrawLine(pen, new PointF(pt.X - 4, pt.Y + 3), new PointF(pt.X + 4, pt.Y - 4));
+                //260712Cl 旧: var pen = new Pen(Brushes.Fuchsia); (毎フレーム生成・未Dispose)
+                g.DrawLine(Pens.Fuchsia, new PointF(pt.X + 4, pt.Y + 3), new PointF(pt.X - 4, pt.Y - 4));
+                g.DrawLine(Pens.Fuchsia, new PointF(pt.X - 4, pt.Y + 3), new PointF(pt.X + 4, pt.Y - 4));
             }
             catch { }
         }
 
+        var oldImage = scalablePictureBoxThumbnail.pictureBox.Image; //260712Cl 旧 Bitmap を明示解放
         scalablePictureBoxThumbnail.pictureBox.Image = bmp;
+        if (!ReferenceEquals(oldImage, bmp)) oldImage?.Dispose(); //GetImage のキャッシュ再利用でも同一インスタンスは破棄しない
     }
 
     #endregion
@@ -1131,7 +1176,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             //    FormIntTable.SetData((int)(pt.X + 0.5), (int)(pt.Y + 0.5));
             //さらに真ん中ボタンクリックであればFindCenterもする　
             if (e.Button == MouseButtons.Middle)
-                toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
+                toolStripSplitButtonFindCenter_ButtonClick(this, EventArgs.Empty);
             Draw();
         }
 
@@ -1203,10 +1248,16 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     {
                         var (xMax, xMin) = ((int)(manualMaskPoints.Max(p => p.X) + 0.5), (int)(manualMaskPoints.Min(p => p.X) + 0.5));
                         var (yMax, yMin) = ((int)(manualMaskPoints.Max(p => p.Y) + 0.5), (int)(manualMaskPoints.Min(p => p.Y) + 0.5));
-                        for (int j = Math.Max(yMin, 0); j <= Math.Min(yMax, SrcImgSize.Height - 1); j++)
-                            for (int i = Math.Max(xMin, 0); i <= Math.Min(xMax, SrcImgSize.Width - 1); i++)
+                        //260712Cl 行単位で並列化。InsidePolygonalArea は純粋関数、manualMaskPoints は読み取りのみ、
+                        //         書き込み先 Ring.IsSpots は行ごとに互いに異なる要素なので競合なし (大きなポリゴンでの UI フリーズ解消)
+                        var mask = e.Button == MouseButtons.Left;
+                        int xLo = Math.Max(xMin, 0), xHi = Math.Min(xMax, SrcImgSize.Width - 1), width = SrcImgSize.Width;
+                        Parallel.For(Math.Max(yMin, 0), Math.Min(yMax, SrcImgSize.Height - 1) + 1, j =>
+                        {
+                            for (int i = xLo; i <= xHi; i++)
                                 if (Geometry.InsidePolygonalArea(manualMaskPoints, new PointD(i, j)))
-                                    Ring.IsSpots[j * SrcImgSize.Width + i] = e.Button == MouseButtons.Left;
+                                    Ring.IsSpots[j * width + i] = mask;
+                        });
                     }
                     manualMaskPoints.Clear();
                 }
@@ -1218,11 +1269,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             {
                 if (e.Clicks == 1 && e.Button == MouseButtons.Left)//追加
                 {
-                    bool flag = true;
-                    foreach (PointD p in manualMaskPoints)
-                        if (p.X == pt.X && p.Y == pt.Y)
-                            flag = false;
-                    if (flag)
+                    //260712Cl flag+foreach 全走査を Any 化 (一致発見で打ち切り)
+                    if (!manualMaskPoints.Any(p => p.X == pt.X && p.Y == pt.Y))
                         manualMaskPoints.Add(pt);
                     Draw();
                     return true;//マウスイベント終了
@@ -1235,9 +1283,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     for (int i = 0; i < manualMaskPoints.Count; i++)
                     {
                         PointD p = scalablePictureBox.ConvertToClientPt(manualMaskPoints[i]);
-                        if ((p.X - e.X) * (p.X - e.X) + (p.X - e.X) * (p.X - e.X) < minDistance)
+                        //260712Cl Y項のコピペバグ修正 (旧: 第2項も (p.X - e.X) で X距離の二重加算になっており、Y方向に離れた点を誤削除していた)
+                        var d2 = (p.X - e.X) * (p.X - e.X) + (p.Y - e.Y) * (p.Y - e.Y);
+                        if (d2 < minDistance)
                         {
-                            minDistance = (p.X - e.X) * (p.X - e.X) + (p.X - e.X) * (p.X - e.X);
+                            minDistance = d2;
                             index = i;
                         }
                     }
@@ -1322,7 +1372,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 //    FormIntTable.SetData(x, y);
 
                 if (e.Button == MouseButtons.Middle)
-                    toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
+                    toolStripSplitButtonFindCenter_ButtonClick(this, EventArgs.Empty);
                 Draw();
 
                 sw.Stop();
@@ -1386,7 +1436,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         catch { r = 0; }
 
         # region 画面にマウス座標を表示
-        if (X >= 0 && Ring.Intensity != null && X + Y * SrcImgSize.Width > -1 && X + Y * SrcImgSize.Width < Ring.Intensity.Length)
+        //260712Cl 範囲判定を正確化 (旧: 線形インデックスのみ検査で、X>=幅 のとき次行のピクセルを誤表示していた)
+        if (Ring.Intensity != null && X >= 0 && X < SrcImgSize.Width && Y >= 0 && Y < SrcImgSize.Height)
         {
             labelMousePointPixel.Text = $"{X,5},{Y,5}";
             labelMousePointReal.Text = $"{newX,7:f3}, {newY,7:f3}";
@@ -1598,7 +1649,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     #region リサイズ イベント
     public void FormMain_Resize(object sender, EventArgs e) => Draw();
 
-    private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e) => FormMain_Resize(new object(), new EventArgs());
+    private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e) => FormMain_Resize(this, EventArgs.Empty);
     #endregion
 
     #region 輝度調節関係
@@ -1615,7 +1666,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
             trackBarAdvancedMinInt.Value = trackBarAdvancedMaxInt.Value - 1;
 
-        if (graphControlFrequency.VerticalLines != null && graphControlFrequency.VerticalLines.Length == 2)
+        if (graphControlFrequency.VerticalLines is { Length: 2 }) //260712Cl プロパティパターン化
         {
             graphControlFrequency.VerticalLines = [new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
             graphControlFrequency.Draw();
@@ -1636,7 +1687,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (pseudoBitmap.MaxValue <= pseudoBitmap.MinValue)
             trackBarAdvancedMaxInt.Value = trackBarAdvancedMinInt.Value + 1;
 
-        if (graphControlFrequency.VerticalLines != null && graphControlFrequency.VerticalLines.Length == 2)
+        if (graphControlFrequency.VerticalLines is { Length: 2 }) //260712Cl プロパティパターン化
         {
             graphControlFrequency.VerticalLines = [new PointD(trackBarAdvancedMinInt.Value, double.NaN), new PointD(trackBarAdvancedMaxInt.Value, double.NaN)];
             graphControlFrequency.Draw();
@@ -1691,7 +1742,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //ListBoxに追加する
         if (fileName.Length == 1)
         {
-            string ext = Path.GetExtension(fileName[0]).TrimStart(['.']);
+            string ext = Path.GetExtension(fileName[0]).TrimStart('.'); //260712Cl 配列割り当て回避
             if (ImageIO.IsReadable(ext))
                 ReadImage(fileName[0]);
             else if (fileName[0].EndsWith("prm"))
@@ -1703,7 +1754,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 var files = Directory.GetFiles(fileName[0]);
                 if (files != null && files.Length > 0)
                 {
-                    ext = Path.GetExtension(files[0]).TrimStart(['.']);
+                    ext = Path.GetExtension(files[0]).TrimStart('.'); //260712Cl 配列割り当て回避
                     if (ImageIO.IsReadable(ext))
                         ReadImage(files[0]);
                     initialImageDirectory = Path.GetDirectoryName(files[0]);
@@ -1739,7 +1790,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
     }
 
-    delegate void ReadImageCallBack(string fileName, bool? flag = null);
+    //260712Cl 削除: ラムダ Invoke 化に伴い不要 (旧: delegate void ReadImageCallBack(string fileName, bool? flag = null);)
     /// <summary>
     /// 画像を読み込む
     /// </summary>
@@ -1747,18 +1798,20 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     /// <param name="flag"></param>
     public void ReadImage(string fn, bool? flag = null)
     {
-        SkipDrawing = true;
-
+        //260712Cl SkipDrawing 設定より前にファイル有無を判定 (旧: SkipDrawing=true の後だったため、
+        //         不存在 return で SkipDrawing が true のまま残り以降の Draw() が全て無効化されていた)
         if (fn != "ClipBoard.ipa" && !File.Exists(fn)) return;  // ファイルの有無をチェック
+
+        SkipDrawing = true;
 
         //改行文字が含まれている場合は、それを削除
         fn = fn.TrimEnd('\n');
         fn = fn.TrimEnd('\r');
 
-        if (this.InvokeRequired)//別スレッド(ファイル更新監視スレッド)から呼び出されたとき
+        if (InvokeRequired)//別スレッド(ファイル更新監視スレッド)から呼び出されたとき
         {
-            ReadImageCallBack d = new ReadImageCallBack(ReadImage);
-            this.Invoke(d, [fn, flag]);
+            //260712Cl カスタムデリゲート ReadImageCallBack + object[] ボックス化をラムダ Invoke に近代化
+            Invoke(() => ReadImage(fn, flag));
             return;
         }
 
@@ -1784,9 +1837,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
 
         if (!ImageIO.ReadImage(fn, flag))
+        {
+            SkipDrawing = false; //260712Cl 読込失敗時も描画を再開できるよう復帰 (旧: SkipDrawing が true のまま残っていた)
             return;
+        }
 
-        string ext = Path.GetExtension(fn).TrimStart(['.']).ToLower();
+        string ext = Path.GetExtension(fn).TrimStart('.').ToLower(); //260712Cl TrimStart(char[])→TrimStart(char) で配列割り当て回避
         if (ext == "ipa")
         {
             FormProperty.waveLengthControl.Property = Ring.IP.WaveProperty;
@@ -1808,9 +1864,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         initializeFilter();
         setScale();
-        FormProperty.checkBoxThreshold_CheckedChanged(new object(), new EventArgs());
+        FormProperty.checkBoxThreshold_CheckedChanged(this, EventArgs.Empty);
         IsImageReady = true;
-        //IntegralArea_Changed(new object(), new EventArgs());
+        //IntegralArea_Changed(this, EventArgs.Empty);
 
 
         Ring.CalcFreq();
@@ -1828,11 +1884,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         {
             //マスクの引継ぎ処理
             if (FormProperty.radioButtonTakeoverMask.Checked)
-            {
-                for (int i = 0; i < Ring.IsSpots.Length; i++)
-                    if (Ring.IsSpots[i] != justBeforeMask[i])
-                        Ring.IsSpots[i] = justBeforeMask[i];
-            }
+                Array.Copy(justBeforeMask, Ring.IsSpots, Ring.IsSpots.Length); //260712Cl 比較付きループを一括コピー化 (IslastImageSameSize で長さ一致は保証済み)
             else if (FormProperty.radioButtonTakeOverMaskfile.Checked && justBeforeMaskFile != "")
                 ReadMask(justBeforeMaskFile);
 
@@ -1940,7 +1992,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         var (min, max) = Ring.Intensity.MinMax();
         textBoxInformation.Text =
-            $"Fine name:\r\n {FileName}\r\n" +
+            $"File name:\r\n {FileName}\r\n" + //260712Cl typo修正 (Fine→File)
             $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n" +
             $"Dynamic range:\r\n {min} - {max:#,#}\r\n" +
             $"Max Intensity:\r\n {maxIntensity:#,#}\r\n" +
@@ -1959,9 +2011,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
     public void initializeFilter()
     {
+        //260712Cl Enumerable.Repeat 経由の生成・逐次代入を Array.Fill/Array.Clear (ベクトル化 memset) 化
         if (Ring.IsValid.Length != Ring.Intensity.Length)
         {
-            Ring.IsValid = [.. Enumerable.Repeat(true, Ring.Intensity.Length)];
+            Ring.IsValid = new bool[Ring.Intensity.Length];
+            Array.Fill(Ring.IsValid, true);
             Ring.IsOutsideOfIntegralRegion = new bool[Ring.Intensity.Length];
             Ring.IsSpots = new bool[Ring.Intensity.Length];
             Ring.IsThresholdOver = new bool[Ring.Intensity.Length];
@@ -1970,15 +2024,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         else
         {
-            for (int i = 0; i < Ring.Intensity.Length; i++)
-            {
-                Ring.IsValid[i] = true;
-                Ring.IsOutsideOfIntegralRegion[i] = false;
-                Ring.IsOutsideOfIntegralProperty[i] = false;
-                Ring.IsSpots[i] = false;
-                Ring.IsThresholdOver[i] = false;
-                Ring.IsThresholdUnder[i] = false;
-            }
+            Array.Fill(Ring.IsValid, true);
+            Array.Clear(Ring.IsOutsideOfIntegralRegion);
+            Array.Clear(Ring.IsOutsideOfIntegralProperty);
+            Array.Clear(Ring.IsSpots);
+            Array.Clear(Ring.IsThresholdOver);
+            Array.Clear(Ring.IsThresholdUnder);
         }
         pseudoBitmap = new PseudoBitmap(Ring.Intensity.ToArray(), SrcImgSize.Width)
         {
@@ -2000,7 +2051,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         br.Close();
         br = new BinaryReader(new FileStream(str, FileMode.Open, FileAccess.Read));
-        br.ReadBytes(count);
+        br.BaseStream.Seek(count, SeekOrigin.Begin); //260712Cl 位置合わせの捨て読み (旧: br.ReadBytes(count)) を Seek 化し捨て配列を回避
     }
 
     //画像を保存する
@@ -2039,29 +2090,32 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 {
                     //d[i] = Ring.SequentialImageIntensities[i].ToArray();
 
+                    //260712Cl FlipAndRotate/SubtractBackground/CorrectPolarization は常に新規 double[] を返す (Ring.cs) ため
+                    //         戻り値をさらに [.. ] で再コピーするのは無駄。直接代入に変更。
                     //Flip and Rotate
-                    d[i] = [.. Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                    d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
                             flipVerticallyToolStripMenuItem.Checked,
                             flipHorizontallyToolStripMenuItem.Checked,
-                            toolStripComboBoxRotate.SelectedIndex)];
+                            toolStripComboBoxRotate.SelectedIndex);
 
                     //Background
                     if (Ring.Background != null && Ring.Background.Length == d[i].Length)
-                        d[i] = [.. Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value)];
+                        d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
 
                     //偏光補正
                     if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                        d[i] = [.. Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i])];
+                        d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]);
                 }
                 if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                 {//各画像にエネルギー値があるとき(h5ファイルの時)
-                    var ifdEnergy = new List<Tiff.IFD>();
-                    var ifdName = new List<Tiff.IFD>();
-                    var ifdPulsePower = new List<Tiff.IFD>();
+                    //260712Cl 削除: ifdEnergy/ifdName は Writer への受け渡しが恒久的にコメントアウトされており構築が無駄
+                    //var ifdEnergy = new List<Tiff.IFD>();
+                    //var ifdName = new List<Tiff.IFD>();
+                    var ifdPulsePower = new List<Tiff.IFD>(Ring.SequentialImageEnergy.Count);
                     for (int i = 0; i < Ring.SequentialImageEnergy.Count; i++)
                     {
-                        ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), [Ring.SequentialImageEnergy[i]]));
-                        ifdName.Add(new Tiff.IFD(60001, typeof(string), [Ring.SequentialImageNames[i]]));
+                        //ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), [Ring.SequentialImageEnergy[i]]));
+                        //ifdName.Add(new Tiff.IFD(60001, typeof(string), [Ring.SequentialImageNames[i]]));
                         if (Ring.PulsePowerNormarized)
                             ifdPulsePower.Add(new Tiff.IFD(60002, typeof(float), [-1.0]));
                         else
@@ -2108,38 +2162,43 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (toolStripButtonUnroll.Checked) //UnrolledImageの目盛を付ける
         {
             var bmpWithAxis = new Bitmap(bmp.Width + 40, bmp.Height + 40);
-            var g = Graphics.FromImage(bmpWithAxis);
-            g.SmoothingMode = SmoothingMode.HighQuality;
-            g.Clear(Color.White);
             var upper = (double)FormProperty.numericUpDownUnrolledImageXend.Value;
             var lower = (double)FormProperty.numericUpDownUnrolledImageXstart.Value;
 
-            float gradiation;//ここより角度目盛りの描画
+            //ここより角度目盛りの描画
+            //260712Cl 共通式 Math.Pow(10, Log10-1) をくくり出し if-else 連鎖を switch 式化 (数値は旧コードと同一)
+            var pow = Math.Pow(10, (int)Math.Log10(upper - lower) - 1);
             var d = (upper - lower) / Math.Pow(10, (int)Math.Log10(upper - lower));
-            if (d < 1.6) gradiation = (float)(Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
-            else if (d < 3.2) gradiation = (float)(2 * Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
-            else if (d < 8.0) gradiation = (float)(5 * Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
-            else gradiation = (float)(10 * Math.Pow(10, (int)Math.Log10(upper - lower) - 1));
-            var pen = new Pen(Color.LightBlue, 1);
-            var strFont = new Font(new FontFamily("tahoma"), 8);
-            for (int i = (int)(lower / gradiation) + 1; i <= upper / gradiation; i++)
-            {
-                g.DrawLine(pen, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height + 5);
-                g.DrawString(Math.Round(i * gradiation, 5).ToString("#,#.###############"), strFont, Brushes.LightBlue,
-                   new PointF(40 + bmp.Width * (float)(i * gradiation - lower) / (float)(upper - lower), bmp.Height + 5));
-            }
+            float gradiation = (float)(pow * (d switch { < 1.6 => 1, < 3.2 => 2, < 8.0 => 5, _ => 10 }));
 
-            for (int i = 0; i <= 360; i += 30)
+            //260712Cl Graphics/Pen/Font を using 化 (旧: 未Dispose で保存ごとに GDI リーク)。Font も string オーバーロードで FontFamily リーク回避
+            using (var g = Graphics.FromImage(bmpWithAxis))
+            using (var pen = new Pen(Color.LightBlue, 1))
+            using (var strFont = new Font("tahoma", 8))
             {
-                g.DrawLine(pen, 35, ((360 - i) / 360.0) * bmp.Height, 40, ((360 - i) / 360.0) * bmp.Height);
-                g.DrawString(i.ToString("#,#.###############"), strFont, Brushes.LightBlue, new PointF(0, (float)((360 - i) / 360.0) * bmp.Height));
-            }
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.Clear(Color.White);
+                for (int i = (int)(lower / gradiation) + 1; i <= upper / gradiation; i++)
+                {
+                    g.DrawLine(pen, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height + 5);
+                    g.DrawString(Math.Round(i * gradiation, 5).ToString("#,#.###############"), strFont, Brushes.LightBlue,
+                       new PointF(40 + bmp.Width * (float)(i * gradiation - lower) / (float)(upper - lower), bmp.Height + 5));
+                }
 
-            g.DrawImage(bmp, new Point(40, 0));
+                for (int i = 0; i <= 360; i += 30)
+                {
+                    g.DrawLine(pen, 35, ((360 - i) / 360.0) * bmp.Height, 40, ((360 - i) / 360.0) * bmp.Height);
+                    g.DrawString(i.ToString("#,#.###############"), strFont, Brushes.LightBlue, new PointF(0, (float)((360 - i) / 360.0) * bmp.Height));
+                }
+
+                g.DrawImage(bmp, new Point(40, 0));
+            }
+            bmp.Dispose(); //260712Cl 元の GetImage 結果を解放してから差し替え
             bmp = bmpWithAxis;
         }
 
         bmp.Save(filename, ImageFormat.Png);
+        bmp.Dispose(); //260712Cl 保存後に解放
     }
 
     private void csvToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2174,21 +2233,20 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         var d = new double[Ring.SequentialImageIntensities.Count][];
                         for (int i = 0; i < d.Length; i++)
                         {
-                            var intensity = Ring.SequentialImageIntensities[i];
-
+                            //260712Cl 未使用ローカル intensity を削除。FlipAndRotate 等は新規 double[] を返すため [.. ] 再コピーも不要。
                             // Flip and Rotate
-                            d[i] = [.. Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                            d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
                                 flipVerticallyToolStripMenuItem.Checked,
                                 flipHorizontallyToolStripMenuItem.Checked,
-                                toolStripComboBoxRotate.SelectedIndex)];
+                                toolStripComboBoxRotate.SelectedIndex);
 
                             // Background
                             if (Ring.Background != null && Ring.Background.Length == d[i].Length)
-                                d[i] = [.. Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value)];
+                                d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
 
                             // 偏光補正
                             if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                                d[i] = [.. Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i])];
+                                d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]);
 
                             // CSVに書き出し
                             writer.WriteLine($"# Image {i + 1}");
@@ -2198,7 +2256,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     // 単一画像モードの時
                     else
                     {
-                        WriteIntensityToCSV(writer, [.. Ring.Intensity], Ring.IP.SrcWidth);
+                        WriteIntensityToCSV(writer, Ring.Intensity, Ring.IP.SrcWidth); //260712Cl 読み取り専用なので [.. ] 全コピー不要
                     }
                 }
                 // Unrolled Imageのとき
@@ -2217,10 +2275,17 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     // 強度データをCSV形式で書き出すヘルパーメソッド
     private void WriteIntensityToCSV(StreamWriter writer, double[] intensity, int width)
     {
+        //260712Cl 行ごとの Skip/Take/Select+string.Join (イテレータ3個+中間文字列を毎行生成) を StringBuilder 再利用に置換
+        var sb = new StringBuilder();
         for (int i = 0; i < intensity.Length; i += width)
         {
-            var row = intensity.Skip(i).Take(width).Select(value => value.ToString("G"));
-            writer.WriteLine(string.Join(",", row));
+            sb.Clear();
+            for (int j = i; j < i + width && j < intensity.Length; j++)
+            {
+                if (j != i) sb.Append(',');
+                sb.Append(intensity[j].ToString("G"));
+            }
+            writer.WriteLine(sb);
         }
     }
 
@@ -2263,7 +2328,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (filename == "")
         {
-            var dlg = new OpenFileDialog() { Filter = "*.prm[Parameter File]|*.prm", Title = "Save parameter file" };
+            //260712Cl 保存なのに OpenFileDialog を使っていたバグを修正 (CheckFileExists=true で新規ファイル名を入力できなかった)
+            using var dlg = new SaveFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title = "Save parameter file" };
             if (dlg.ShowDialog() == DialogResult.OK)
                 filename = dlg.FileName;
             else
@@ -2365,7 +2431,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (filename == "")
         {
-            var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title = "Read parameter file" };
+            using var dlg = new OpenFileDialog { Filter = "*.prm[Parameter File]|*.prm", Title = "Read parameter file" }; //260712Cl using化
             if (dlg.ShowDialog() == DialogResult.OK)
                 filename = dlg.FileName;
             else
@@ -2543,7 +2609,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //イベントスキップを解除
         skipSelectedAreaChangedEvent = false;
         Skip = false;
-        IntegralArea_Changed(new object(), new EventArgs());
+        IntegralArea_Changed(this, EventArgs.Empty);
 
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
     }
@@ -2650,7 +2716,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (filename == "")
         {
-            var dlg = new SaveFileDialog { Filter = "*.mas|*.mas" };
+            //260712Cl 読込なのに SaveFileDialog を使っていたバグを修正 (既存マスク選択時に上書き確認が出ていた)
+            using var dlg = new OpenFileDialog { Filter = "*.mas|*.mas", Title = "Read mask file" };
             if (dlg.ShowDialog() == DialogResult.OK)
                 filename = dlg.FileName;
             else
@@ -2659,7 +2726,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         try
         {
-            var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.ReadWrite));
+            //260712Cl using化 + 読み取り専用 (旧: 未Disposeでファイルロック残留、FileAccess.ReadWrite で読み取り専用メディア上のマスクを開けなかった)
+            using var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
             var mask = new bool[br.ReadInt32()];
             int n = 0;
             for (int i = 0; i < mask.Length / 8; i++)
@@ -2671,18 +2739,19 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     b >>= 1;
                 }
             }
-            br.Close();
             if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Length)
             {
-                for (int i = 0; i < mask.Length; i++)
-                    Ring.IsSpots[i] = mask[i];
+                Array.Copy(mask, Ring.IsSpots, mask.Length); //260712Cl 要素ループを一括コピー化
 
                 SetMask();
                 Draw();
                 justBeforeMaskFile = filename;
             }
         }
-        catch { }
+        catch (Exception ex) //260712Cl 全例外黙殺をやめ、失敗をユーザーに通知 (同ファイル内の他読込は通知済みで不整合だった)
+        {
+            MessageBox.Show(Crystallography.Localization.Loc(en: $"Failed to read the mask file: {ex.Message}", ja: $"マスクファイルの読み込みに失敗しました: {ex.Message}"));
+        }
     }
 
 
@@ -2698,7 +2767,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (fileName == "")
         {
-            var dlg = new OpenFileDialog { Filter = "*.mas|*.mas" };
+            //260712Cl 保存なのに OpenFileDialog を使っていたバグを修正 (新規ファイル名で保存できなかった)
+            using var dlg = new SaveFileDialog { Filter = "*.mas|*.mas", Title = "Save mask file" };
             if (dlg.ShowDialog() == DialogResult.OK)
                 fileName = dlg.FileName;
             else
@@ -2707,7 +2777,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 fileName += ".mas";
         }
 
-        var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite));
+        //260712Cl using化 + 書き込み専用 (旧: 未Disposeで例外時ファイルロック残留、FileAccess.ReadWrite は不要)
+        using var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.Write));
         br.Write(Ring.IsSpots.Length);
         int n = 0;
         for (int i = 0; i < Ring.IsSpots.Length / 8; i++)
@@ -2723,8 +2794,6 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             br.Write(b);
 
         }
-        br.Close();
-
     }
 
     private void clearMaskToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2837,9 +2906,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         {
             // 260625Cl 変更: japaneseToolStripMenuItem は言語メニュー動的化で DropDownItems から外れ Checked が当てにならないため、現在カルチャで判定する。
             // 旧: var fn = "\\doc\\IPAnalyzerManual(" + (japaneseToolStripMenuItem.Checked ? "ja" : "en") + ").pdf";
-            var fn = "\\doc\\IPAnalyzerManual(" + (Crystallography.SupportedCultures.Current.Name == "ja" ? "ja" : "en") + ").pdf";
-            var appPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var f = new FormPDF(appPath + fn) { Text = "IPAnalyzer manual" };
+            //260712Cl 補間文字列化 + AppContext.BaseDirectory 化 (Assembly.GetExecutingAssembly().Location は single-file 発行で空になる非推奨パターン)
+            var fn = $"IPAnalyzerManual({(Crystallography.SupportedCultures.Current.Name == "ja" ? "ja" : "en")}).pdf";
+            var f = new FormPDF(Path.Combine(AppContext.BaseDirectory, "doc", fn)) { Text = "IPAnalyzer manual" };
             f.Show();
 
         }
@@ -3100,11 +3169,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             IP.phi = FormProperty.numericBoxTiltPhi.RadianValue; //IPの角度Tilt
             IP.tau = FormProperty.numericBoxTiltTau.RadianValue; ;//IPの角度Azumuth;
 
-            if (FormProperty.radioButtonRectangle.Checked) IP.IsRectangle = true;//RectangleかSectorか
-            else IP.IsRectangle = false;
+            IP.IsRectangle = FormProperty.radioButtonRectangle.Checked;//RectangleかSectorか 260712Cl 条件をそのまま代入
 
             //Rectangleモードのとき
-            if ((string)FormProperty.comboBoxRectangleDirection.SelectedItem == "Full") IP.IsFull = true; else IP.IsFull = false;
+            IP.IsFull = (string)FormProperty.comboBoxRectangleDirection.SelectedItem == "Full"; //260712Cl 条件をそのまま代入
             IP.RectangleBand = (double)FormProperty.numericUpDownRectangleBand.Value;//バンドの太さ
             IP.RectangleAngle = (double)FormProperty.numericUpDownRectangleAngle.Value * Math.PI / 180.0; //角度
             IP.RectangleIsBothSide = FormProperty.checkBoxRectangleIsBothSide.Checked;//半直線かどうか 
@@ -3134,14 +3202,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (!IsImageReady) return;
         SetIntegralProperty();
-        try
-        {
-            double upper = Convert.ToDouble(toolStripComboBoxBackgroundUpper.Text) * 0.01;
-            double lower = Convert.ToDouble(toolStripComboBoxBackgroundLower.Text) * 0.01;
-            Draw();
-        }
-        catch
-        { return; }
+        //260712Cl 未使用の upper/lower (計算結果は未使用で Convert.ToDouble の例外だけを入力検証に使っていた) を TryParse に置換
+        if (!double.TryParse(toolStripComboBoxBackgroundUpper.Text, out _) ||
+            !double.TryParse(toolStripComboBoxBackgroundLower.Text, out _))
+            return;
+        Draw();
 
     }
 
@@ -3157,7 +3222,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (!FormDrawRing.Visible)//通常モードの時
         {
             toolStripSplitButtonFindCenter.Enabled = false;
-            for (int i = 0; i < 1; i++)
+            //260712Cl 早期return/例外時もボタンを復帰させるため try/finally 化。無意味な for(i<1) ループは削除
+            try
             {
                 SetIntegralProperty();
                 if (IP.CenterX < 0 || IP.CenterX > IP.SrcWidth || IP.CenterY < 0 || IP.CenterY > IP.SrcHeight)
@@ -3166,7 +3232,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 PointD center = Ring.FindCenter(IP, (int)FormProperty.numericBoxFindCenterSearchArea.Value, FormProperty.checkBoxExcludeMaskedPixels.Checked ? Ring.IsSpots : null);
                 FormProperty.DirectSpotPosition = center;
             }
-            toolStripSplitButtonFindCenter.Enabled = true;
+            finally { toolStripSplitButtonFindCenter.Enabled = true; }
             this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Find Center):  ", ja: "計算時間 (中心検出):  ", de: "Berechnungszeit (Zentrum finden):  ", fr: "Temps de calcul (Rechercher le centre) :  ", es: "Tiempo de cálculo (Buscar centro):  ", pt: "Tempo de cálculo (Encontrar centro):  ", it: "Tempo di calcolo (Trova centro):  ", ru: "Время вычисления (Поиск центра):  ", zhHans: "计算时间（查找中心）：  ", zhHant: "計算時間 (尋找中心):  ", ko: "계산 시간 (Find Center):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
 
             FormProperty.ImageTypeParameters[(int)Ring.ImageType].CenterPosX = FormProperty.DirectSpotPosition.X;
@@ -3300,8 +3366,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     public void ClearMask()
     {
         if (!IsImageReady) return;
-        for (int i = 0; i < Ring.IsSpots.Length; i++)
-            Ring.IsSpots[i] = false;
+        Array.Clear(Ring.IsSpots); //260712Cl 逐次代入を一括クリア化
 
         Draw();
     }
@@ -3327,8 +3392,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     public void MaskAll()
     {
         if (!IsImageReady) return;
-        for (int i = 0; i < Ring.IsSpots.Length; i++)
-            Ring.IsSpots[i] = true;
+        Array.Fill(Ring.IsSpots, true); //260712Cl 逐次代入を一括フィル化
         Draw();
     }
 
@@ -3402,16 +3466,16 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
 
         //中心位置検索の必要があれば
-        if (findCenterBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonFixCenter.Checked == false)
+        if (findCenterBeforeGetProfileToolStripMenuItem.Checked && !toolStripButtonFixCenter.Checked) //260712Cl == true/== false を除去
         {
             FormProperty.SkipEvent = true;
-            toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
+            toolStripSplitButtonFindCenter_ButtonClick(this, EventArgs.Empty);
             FormProperty.SkipEvent = false;
-            toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());
+            toolStripSplitButtonFindCenter_ButtonClick(this, EventArgs.Empty);
         }
         //スポット検出の必要があれば
-        if (maskSpotsBeforeGetProfileToolStripMenuItem.Checked == true && toolStripButtonManualSpotMode.Checked == false)
-            toolStripSplitButtonMaskSpots_ButtonClick(new object(), new EventArgs());
+        if (maskSpotsBeforeGetProfileToolStripMenuItem.Checked && !toolStripButtonManualSpotMode.Checked) //260712Cl == true/== false を除去
+            toolStripSplitButtonMaskSpots_ButtonClick(this, EventArgs.Empty);
 
         IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d;
         try
@@ -3546,22 +3610,18 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             //PDindexerへの送信
             if (FormProperty.checkBoxSendProfileToPDIndexer.Checked)
             {
+                //260712Cl 未使用の result 変数と、using と重複する finally { mutex.Close(); } を削除
                 using var mutex = new Mutex(false, "PDIndexer");
-                bool result = false;
-                try
+                if (mutex.WaitOne(azimuthalDivMode ? 5000 : 500, true))
                 {
-                    if (result = mutex.WaitOne(azimuthalDivMode ? 5000 : 500, true))
-                    {
-                        mutex.ReleaseMutex();
-                        //Clipboard.SetDataObject(dpList.ToArray());
-                        Clipboard.SetDataObject(MemoryPackEx.Serialize(DiffractionProfile2.ID, dpList.ToArray()));
-                    }
-                    Thread.Sleep(500);
-
-                    if (mutex.WaitOne(azimuthalDivMode ? 5000 : 500, false))
-                        mutex.ReleaseMutex();
+                    mutex.ReleaseMutex();
+                    //Clipboard.SetDataObject(dpList.ToArray());
+                    Clipboard.SetDataObject(MemoryPackEx.Serialize(DiffractionProfile2.ID, dpList.ToArray()));
                 }
-                finally { mutex.Close(); }
+                Thread.Sleep(500);
+
+                if (mutex.WaitOne(azimuthalDivMode ? 5000 : 500, false))
+                    mutex.ReleaseMutex();
             }
         }
         catch (Exception ex)
@@ -3608,7 +3668,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //ファイル名を決定する
         if (FormProperty.radioButtonSetDirectoryEachTime.Checked)
         {
-            var dialog = new SaveFileDialog { Filter = extension + "|" + extension, FileName = FileName[..FileName.LastIndexOf('.')] };
+            using var dialog = new SaveFileDialog { Filter = $"{extension}|{extension}", FileName = FileName[..FileName.LastIndexOf('.')] }; //260712Cl using化+補間文字列
             if (dialog.ShowDialog() == DialogResult.OK)
                 filename = dialog.FileName;
             else return;
@@ -3718,7 +3778,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
     private void toolStripButtonCircumferentialBlur_Click(object sender, EventArgs e)
     {
-        var formBlurAngle = new FormBlurAngle();
+        using var formBlurAngle = new FormBlurAngle(); //260712Cl ShowDialog は自動 Dispose しないため using化
         if (formBlurAngle.ShowDialog() == DialogResult.OK)
         {
             Ring.CircumferentialBlur(formBlurAngle.BlurAngle);
@@ -3796,16 +3856,17 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             byte[] scale = new byte[256];
             for (int i = 0; i < 256; i++)
                 scale[i] = (byte)i;
+            //260712Cl 同一引数で3個生成していた PseudoBitmap を1個に集約し共有 (通常経路の initializeFilter と同じパターン。
+            //         Draw() は field pseudoBitmap を使い、各コントロールは repaint 用に参照を保持するだけなので挙動は不変)
             pseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
-
-            scalablePictureBox.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
-            scalablePictureBoxThumbnail.PseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
+            scalablePictureBox.PseudoBitmap = pseudoBitmap;
+            scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
             Draw();
         }
         else
         {
             initializeFilter();
-            IntegralArea_Changed(new object(), new EventArgs());
+            IntegralArea_Changed(this, EventArgs.Empty);
             Draw();
         }
     }
@@ -3881,13 +3942,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             if (e.Shift)//シフトキーが押されているとき
             {
                 if (e.KeyCode == Keys.F)
-                    toolStripSplitButtonFindCenter_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + F
+                    toolStripSplitButtonFindCenter_ButtonClick(this, EventArgs.Empty);//CTRL + SHIFT + F
                 else if (e.KeyCode == Keys.S)
-                    toolStripSplitButtonMaskSpots_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + S
+                    toolStripSplitButtonMaskSpots_ButtonClick(this, EventArgs.Empty);//CTRL + SHIFT + S
                 else if (e.KeyCode == Keys.G)
-                    toolStripSplitButtonGetProfileButtonClick(new object(), new EventArgs());//CTRL + SHIFT + G
+                    toolStripSplitButtonGetProfileButtonClick(this, EventArgs.Empty);//CTRL + SHIFT + G
                 else if (e.KeyCode == Keys.B)
-                    toolStripSplitButtonBackground_ButtonClick(new object(), new EventArgs());//CTRL + SHIFT + B
+                    toolStripSplitButtonBackground_ButtonClick(this, EventArgs.Empty);//CTRL + SHIFT + B
                 else if (e.KeyCode == Keys.M)
                     FormProperty.checkBoxManualMaskMode.Checked = !FormProperty.checkBoxManualMaskMode.Checked;//CTRL + SHIFT + M
                 else if (e.KeyCode == Keys.C)
@@ -3934,14 +3995,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     }
                     else //現在読み込んでいる画像が存在するフォルダで、ファイル名順に画像を移動する
                     {
-                        var files = Directory.GetFiles(FilePath).ToList();//まずフォルダ中の同じ拡張子のファイルを全部取得
-                        if (files.Count > 0)
+                        var files = Directory.GetFiles(FilePath);//まずフォルダ中の同じ拡張子のファイルを全部取得 260712Cl 配列のまま処理 (ToList コピー除去)
+                        if (files.Length > 0)
                         {
-                            files.Sort();
-                            var i = files.IndexOf(FilePath + FileName);
+                            Array.Sort(files);
+                            var i = Array.IndexOf(files, FilePath + FileName);
                             if (i != -1)
                             {
-                                if (i < files.Count - 1 && (right || down))
+                                if (i < files.Length - 1 && (right || down)) //260712Cl 配列化に伴い .Count→.Length
                                     ReadImage(files[i + 1]);
                                 else if (i > 0 && (left || up))
                                     ReadImage(files[i - 1]);
@@ -3981,7 +4042,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         maxIntensity = uint.MinValue;
         sumOfIntensity = 0;
         double sumOfSquare = 0;
-        frequencyProfile = new Profile { Pt = [] };
+        frequencyProfile = new Profile { Pt = new List<PointD>(Ring.Frequency.Count) }; //260712Cl 容量指定で再確保回避
         for (int i = 0; i < Ring.Intensity.Length; i++)
         {
             double intensity = Ring.Intensity[i];
@@ -3991,7 +4052,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
 
         for (int i = 0; i < Ring.Frequency.Count; i++)
-            frequencyProfile.Pt.Add(new PointD(Ring.Frequency.Keys[i], Ring.Frequency[Ring.Frequency.Keys[i]]));
+            frequencyProfile.Pt.Add(new PointD(Ring.Frequency.Keys[i], Ring.Frequency.Values[i])); //260712Cl 値を Values[i] で O(1) 参照 (旧: キー指定インデクサは毎回二分探索)
         graphControlFrequency.Profile = frequencyProfile;
         variance = Math.Sqrt((Ring.Intensity.Length * sumOfSquare - sumOfIntensity * sumOfIntensity) / Ring.Intensity.Length / (Ring.Intensity.Length - 1));
     }
@@ -4041,8 +4102,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             sw.Restart();
             try
             {
-                var progress = new Progress<(long Current, long Total, long ElapsedMilliseconds, string Message)>(p => ip.Report(p));
-                await ProgramUpdates.DownloadFileWithProgressAsync(URL, Path, progress, sw);
+                //260712Cl ip 自体が IProgress<同型タプル> なので、Progress でラップし直す二重間接とクロージャを除去
+                await ProgramUpdates.DownloadFileWithProgressAsync(URL, Path, ip, sw);
                 if (ProgramUpdates.Execute(Path))
                     Close();
                 else
@@ -4093,10 +4154,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             if (sleep != 0) Thread.Sleep(sleep);
         }
-        catch (Exception e)
-        {
-
-        }
+        catch (Exception ex) { Debug.WriteLine($"reportProgress failed: {ex}"); } //260712Cl 全例外黙殺をやめ最低限記録 (未使用変数警告も解消)
         skipProgressEvent = false;
     }
     private void reportProgress((long current, long total, long elapsedMilliseconds, string message) o)
@@ -4218,7 +4276,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         pseudoBitmap.SrcValuesGray = [.. Ring.Intensity];
         pseudoBitmap.SrcValuesGrayOriginal = [.. Ring.Intensity];
 
-        IntegralArea_Changed(new object(), new EventArgs());
+        IntegralArea_Changed(this, EventArgs.Empty);
         if (zoomReset)
             scalablePictureBox.Zoom = 0;
     }

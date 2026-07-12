@@ -56,10 +56,7 @@ namespace IPAnalyzer
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dlg = new() { Filter = "*.ipa|*.ipa" };
-            if (dlg.ShowDialog() == DialogResult.OK)
-                SaveImageAsIPA(dlg.FileName, ImageResolution, ImageSize, ImageCenter);
-
+            SaveImageAsIPA(); //260712Cl SaveImageAsIPA("") が同一のダイアログ〜保存処理を持つため重複を解消
             this.Visible = false;
         }
 
@@ -72,7 +69,7 @@ namespace IPAnalyzer
         {
             if (filename == "")
             {
-                SaveFileDialog dlg = new() { Filter = "*.ipa|*.ipa" };
+                using SaveFileDialog dlg = new() { Filter = "*.ipa|*.ipa" }; //260712Cl using宣言化
                 if (dlg.ShowDialog() == DialogResult.OK)
                     filename = dlg.FileName;
                 else
@@ -82,9 +79,8 @@ namespace IPAnalyzer
                 filename += ".ipa";
 
             double[] imageArray = Ring.GetCorrectedImageArray(FormMain.IP, imageResolution, imageSize, imageCenter);
-            ImageIO.IPAImage ipaImage = new();
-
-            ImageIO.IPAImageWriter(filename, imageArray, ImageResolution, ImageSize, ImageCenter, FormMain.IP.FilmDistance, FormMain.FormProperty.waveLengthControl.Property);
+            //260712Cl 未使用の ipaImage 生成を削除。IPAImageWriter へは配列生成に使った引数を渡す (プロパティ直読みだと引数と食い違いヘッダ不整合になる)
+            ImageIO.IPAImageWriter(filename, imageArray, imageResolution, imageSize, imageCenter, FormMain.IP.FilmDistance, FormMain.FormProperty.waveLengthControl.Property);
 
             FormMain.Draw();
 

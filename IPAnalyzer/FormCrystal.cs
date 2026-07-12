@@ -52,7 +52,7 @@ namespace IPAnalyzer
 
         private void FormCrystal_Load(object sender, EventArgs e)
         {
-            crystalControl.CrystalChanged += new EventHandler(crystalForm_CrystalChanged);
+            crystalControl.CrystalChanged += crystalForm_CrystalChanged; //260712Cl メソッドグループ変換 (new EventHandler 冗長)
         }
 
         private void FormCrystal_FormClosing(object sender, FormClosingEventArgs e)

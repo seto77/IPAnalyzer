@@ -5,7 +5,7 @@ static class Version
     static public string Software =
         "IPAnalyzer"
         ;
-    static public string VersionAndDate { get => History[10..][..20]; }
+    static public string VersionAndDate => History[10..30]; //260712Cl 旧: { get => History[10..][..20]; } (二重スライスの中間文字列を排除)
 
     static public string History =
         "History" +
@@ -28,7 +28,7 @@ static class Version
         "\r\n ver3.965(2025/05/20) Fixe minor bugs." +
         "\r\n ver3.964(2025/05/17) Compatible with NeXus Data Format (*.nxs)." +
         "\r\n ver3.963(2025/05/04) Fixed minor bugs (see https://github.com/seto77/IPAnalyzer/issues/6)" +
-        "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/3) (thx to Tsuruoka-san!)." +
+        "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/5) (thx to Tsuruoka-san!)." + //260712Cl 2つ目のリンクを pull/3→pull/5 に修正 (重複誤記)
         "\r\n ver3.961(2025/04/16) Compatible with Rad-icon detectors with a resolution of 2080 x 2238." +
         "\r\n ver3.960(2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +
         "\r\n ver3.959(2024/11/04) Improved the stability of the 'Auto Procedure' function." +
@@ -405,10 +405,10 @@ static class Version
         ;
 
 
-    static public string[] Hint = new string[]{
+    static public string[] Hint = [ //260712Cl 旧: new string[]{...} コレクション式化
            "'Manual Spot'では左クリックでスポット選択、右クリックでスポット消去ができます。スポットのサイズはマウスホイールで変更できます",
            "マウス中クリックすると、クリック点付近を2次元PseudoVoigtフィッティングし、中心点を検索することができます。",
            "GetProfileするとClipboard経由でPDIndexerに自動的に積算プロファイルが転送されます。",
-           "表示画像の輝度反転、スケール変更は「View]オプションから変更できます。"
-        };
+           "表示画像の輝度反転、スケール変更は「View」オプションから変更できます。" //260712Cl 括弧不一致修正 「View]→「View」
+        ];
 }

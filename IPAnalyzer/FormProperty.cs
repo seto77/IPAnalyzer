@@ -3,6 +3,7 @@ using MemoryPack;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks; //260712Cl 追加: Parallel.For 使用のため
 using System.Windows.Forms;
 
 namespace IPAnalyzer;
@@ -19,7 +20,7 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     {
         set
         {
-            try { numericBoxCameraLength1.Value = Convert.ToDouble(value); } catch { }
+            if (double.TryParse(value, out var d)) numericBoxCameraLength1.Value = d; //260712Cl try/catch{} を TryParse に
         }
         get => numericBoxCameraLength1.Value.ToString();
     }
@@ -129,13 +130,14 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     public bool ImageName_FullPath { set => radioButtonImageName_FullPath.Checked = value; get => radioButtonImageName_FullPath.Checked; }
 
 
-    public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues(typeof(Ring.ImageTypeEnum)).Length];
+    public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues<Ring.ImageTypeEnum>().Length]; //260712Cl ジェネリック版に
     #endregion
 
     #region コンストラクタ、オープン、クローズ
     public FormProperty()
     {
-        PerformAutoScale();
+        //260712Cl 削除: InitializeComponent 前はコントロール未生成・AutoScaleDimensions 未設定で無効な呼び出し
+        //PerformAutoScale();
 
         InitializeComponent();
         HelpPage = "2-property-windows"; //260604Cl 追加
@@ -162,28 +164,27 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
 
         //StringFormatを作成
         //水平垂直方向の中央に、行が完全に表示されるようにする
-        var sf = new StringFormat { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Center };
+        //260712Cl StringFormat と選択タブ用 new Font (旧: 未Dispose で毎描画リーク) を using 化。非選択時に無駄生成していた
+        //         selectedBrush も選択時のみ生成に整理。
+        using var sf = new StringFormat { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Center };
         sf.FormatFlags |= StringFormatFlags.LineLimit;
 
         //背景の描画
-        var backBrush = tabControl.SelectedIndex == e.Index ? new SolidBrush(page.BackColor) : new SolidBrush(Color.DarkGray);
-
+        using var backBrush = new SolidBrush(tabControl.SelectedIndex == e.Index ? page.BackColor : Color.DarkGray);
         e.Graphics.FillRectangle(backBrush, e.Bounds);
-        backBrush.Dispose();
-
-        var selectedBrush = new SolidBrush(Color.SteelBlue);
 
         //Textの描画
-        var foreBrush = new SolidBrush(page.ForeColor);
-
-
         if (tabControl.SelectedIndex == e.Index)
-            e.Graphics.DrawString(txt, new Font(page.Font.FontFamily, page.Font.Size, FontStyle.Bold), selectedBrush, e.Bounds, sf);
+        {
+            using var boldFont = new Font(page.Font, FontStyle.Bold);
+            using var selectedBrush = new SolidBrush(Color.SteelBlue);
+            e.Graphics.DrawString(txt, boldFont, selectedBrush, e.Bounds, sf);
+        }
         else
+        {
+            using var foreBrush = new SolidBrush(page.ForeColor);
             e.Graphics.DrawString(txt, page.Font, foreBrush, e.Bounds, sf);
-
-        selectedBrush.Dispose();
-        foreBrush.Dispose();
+        }
     }
     #endregion
 
@@ -347,19 +348,19 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
 
     private void numericUpDownThresholdOfIntensityMin_ValueChanged(object sender, EventArgs e)
     {
-        var n = (uint)numericUpDownThresholdOfIntensityMin.Value + 1;
-        for (int i = 0; i < Ring.IsValid.Length; i++)
-            Ring.IsThresholdUnder[i] = n > Ring.Intensity[i];
+        //260712Cl double 化 (Ring.Intensity は double[])。全ピクセル走査を行独立の Parallel.For 化 (各要素は自 index の bool を書くだけ、Draw はループ後)
+        var n = (double)numericUpDownThresholdOfIntensityMin.Value + 1;
+        Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdUnder[i] = n > Ring.Intensity[i]);
 
         formMain.Draw();
     }
 
     private void numericUpDownThresholdOfIntensityMax_ValueChanged(object sender, EventArgs e)
     {
-        uint n = Math.Min(uint.MaxValue, (uint)numericUpDownThresholdOfIntensityMax.Value - 1);
-
-        for (int i = 0; i < Ring.IsValid.Length; i++)
-            Ring.IsThresholdOver[i] = n < Ring.Intensity[i];
+        //260712Cl Math.Min(uint.MaxValue, x) は恒等の死んだガード。かつ Value=0 のとき (uint)0-1 が uint.MaxValue に
+        //         ラップし閾値超え検出が全滅していた。double 化で -1 を正しく表現し、行独立の Parallel.For 化。
+        double n = (double)numericUpDownThresholdOfIntensityMax.Value - 1;
+        Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdOver[i] = n < Ring.Intensity[i]);
 
         formMain.Draw();
     }
@@ -423,15 +424,14 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
 
     private void textBoxManualSpotSize_TextChanged(object sender, EventArgs e)
     {
-        try
+        //260712Cl キーストローク毎に例外を投げ得る try/catch を float.TryParse に置換 (失敗時 64 のフォールバックは維持)
+        if (float.TryParse(textBoxManualSpotSize.Text, out var size))
         {
-            formMain.SpotsSize = Convert.ToSingle(textBoxManualSpotSize.Text);
+            formMain.SpotsSize = size;
             formMain.toolStripComboBoxManualSpotSize.Text = textBoxManualSpotSize.Text;
         }
-        catch
-        {
+        else
             formMain.SpotsSize = 64;
-        }
     }
 
     #region 読み込まれたイメージごとのPropertyの設定、保存
@@ -442,8 +442,7 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     /// <param name="s"></param>
     public void SetParameterFromImageType(Ring.ImageTypeEnum imageType, bool resetZooom=true, bool renewWavelength = true)
     {
-        formMain.Skip = true;
-
+        //260712Cl 重複していた formMain.Skip = true; の1回目を削除
         int i = (int)imageType;
         ImageTypeParameter p = ImageTypeParameters[i];
         formMain.Skip = true;
@@ -674,7 +673,7 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     {
         formMain.setSpline();
         formMain.pseudoBitmap.FilterTemporary.Clear();
-        formMain.pseudoBitmap.FilterTemporary.AddRange(formMain.splineTemp.ToArray());
+        formMain.pseudoBitmap.FilterTemporary.AddRange(formMain.splineTemp); //260712Cl List→List の AddRange は ToArray コピー不要
         formMain.Draw();
     }
 
@@ -686,8 +685,7 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         var text = (sender as Button).Name;
 
         if (text.Contains("All"))
-            for (int i = 0; i < Ring.IsSpots.Length; i++)
-                Ring.IsSpots[i] = true;
+            Array.Fill(Ring.IsSpots, true); //260712Cl 逐次代入を一括フィル化
         else if (text.Contains("Top"))
             MaskTop();
         else if (text.Contains("Bottom"))
@@ -708,35 +706,32 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     public void MaskTop()
     {
         if (Ring.IsSpots.Length == 0) return;
-        for (int i = 0; i < Ring.IsSpots.Length / 2; i++)
-            Ring.IsSpots[i] = true;
+        Array.Fill(Ring.IsSpots, true, 0, Ring.IsSpots.Length / 2); //260712Cl 一括フィル化
     }
     public void MaskBottom()
     {
         if (Ring.IsSpots.Length == 0) return;
-        for (int i = Ring.IsSpots.Length / 2; i < Ring.IsSpots.Length; i++)
-            Ring.IsSpots[i] = true;
+        Array.Fill(Ring.IsSpots, true, Ring.IsSpots.Length / 2, Ring.IsSpots.Length - Ring.IsSpots.Length / 2); //260712Cl 一括フィル化
     }
     public void MaskLeft()
     {
         if (Ring.IsSpots.Length == 0) return;
-        for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-            for (int w = 0; w < Ring.SrcImgSize.Width / 2; w++)
-                Ring.IsSpots[h * Ring.SrcImgSize.Width + w] = true;
+        int width = Ring.SrcImgSize.Width;
+        for (int h = 0; h < Ring.SrcImgSize.Height; h++) //260712Cl 内側ループを行ごとの一括フィルに
+            Array.Fill(Ring.IsSpots, true, h * width, width / 2);
     }
     public void MaskRight()
     {
         if (Ring.IsSpots.Length == 0) return;
-        for (int h = 0; h < Ring.SrcImgSize.Height; h++)
-            for (int w = Ring.SrcImgSize.Width / 2; w < Ring.SrcImgSize.Width; w++)
-                Ring.IsSpots[h * Ring.SrcImgSize.Width + w] = true;
+        int width = Ring.SrcImgSize.Width;
+        for (int h = 0; h < Ring.SrcImgSize.Height; h++) //260712Cl 内側ループを行ごとの一括フィルに
+            Array.Fill(Ring.IsSpots, true, h * width + width / 2, width - width / 2);
     }
 
     private void buttonUnmaskAll_Click(object sender, EventArgs e)
     {
         if (Ring.IsSpots.Length > 0)
-            for (int i = 0; i < Ring.IsSpots.Length; i++)
-                Ring.IsSpots[i] = false;
+            Array.Clear(Ring.IsSpots); //260712Cl 逐次代入を一括クリア化
         formMain.Draw();
     }
 
@@ -771,7 +766,9 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
                 temp.RotateFlip(RotateFlipType.Rotate270FlipNone);
 
         }
+        var oldImage = pictureBox1.Image; //260712Cl 旧 Image を破棄 (ラジオ切替のたびに Clone した Bitmap がリークしていた。chiImage は別インスタンスなので安全)
         pictureBox1.Image = temp;
+        oldImage?.Dispose();
         pictureBox1.Refresh();
 
         Ring.ChiRotation = radioButtonChiClockwise.Checked ? Ring.Rotation.Clockwise : Ring.Rotation.Counterclockwise;

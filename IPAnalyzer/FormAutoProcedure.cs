@@ -26,8 +26,7 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
         {
             comboBoxMacro.Items.Clear();
             if (value != null)
-                foreach (var item in value)
-                    comboBoxMacro.Items.Add(item);
+                comboBoxMacro.Items.AddRange(value); //260712Cl foreach+Add を一括 AddRange に
         }
     }
     #endregion
@@ -109,7 +108,9 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
                 var temp = Directory.GetFiles(targetFolder, "*", SearchOption.AllDirectories);
                 if (temp.Length != FileList.Length)
                 {
-                    foreach (var f in temp.Where(e => !FileList.Contains(e)))
+                    var known = new HashSet<string>(FileList); //260712Cl 線形探索を O(1) 化 (比較子は既定=Ordinal のまま。挙動不変)
+                    //foreach (var f in temp.Where(e => !FileList.Contains(e))) //260712Cl HashSet 化前のコード
+                    foreach (var f in temp.Where(x => !known.Contains(x)))
                     {
                         for(int i=0; i<1000 && Miscellaneous.isFileExistsAndLocked(f) && !backgroundWorker.CancellationPending; i++)
                             Thread.Sleep(50);
@@ -170,7 +171,8 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
                 }
             }
 
-            catch { Thread.Sleep(1000); }
+            //260712Cl 監視ループの堅牢性のため全例外は従来どおり吸収+リトライするが、無言の握りつぶしをやめ最低限記録する
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"AutoProcedure watch loop: {ex}"); Thread.Sleep(1000); }
             Thread.Sleep(100);
         }
     }

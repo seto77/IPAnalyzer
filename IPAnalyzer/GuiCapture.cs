@@ -44,11 +44,11 @@ internal static class GuiCapture
         var culture = ForcedUICulture ?? System.Threading.Thread.CurrentThread.CurrentUICulture;
         // 260625Cl 変更: en/ja 二択固定から SupportedCultures 駆動へ (cap-{culture}-auto。将来 de 等もそのまま出力先が決まる)。
         // 旧: var langDir = culture.Name == "ja" ? "cap-ja-auto" : "cap-en-auto";
-        var langDir = "cap-" + Crystallography.SupportedCultures.Resolve(culture.Name).Name + "-auto";
+        var langDir = $"cap-{Crystallography.SupportedCultures.Resolve(culture.Name).Name}-auto"; //260712Cl 補間文字列化
         var repoRoot = RepoRoot();
         return repoRoot != null
             ? Path.Combine(repoRoot, "docs", "src", "assets", langDir)
-            : Path.Combine(Path.GetTempPath(), "ipanalyzer-capture-" + langDir);
+            : Path.Combine(Path.GetTempPath(), $"ipanalyzer-capture-{langDir}"); //260712Cl 補間文字列化
     }
 
     /// <summary>
@@ -62,22 +62,24 @@ internal static class GuiCapture
         var dir = Path.Combine(root, "references", "ImageExample");
         if (!Directory.Exists(dir)) return null;
 
-        IEnumerable<string> files;
-        try { files = Directory.EnumerateFiles(dir, "*.*", SearchOption.AllDirectories); }
-        catch { return null; }
-
+        //260712Cl try を列挙ループ全体に広げる。EnumerateFiles は遅延評価で foreach 中に IO 例外が出るため、
+        //         旧コード (try が EnumerateFiles 呼び出しのみを囲む) では列挙途中の例外が保護されずフォールバックが機能しなかった。
         string firstReadable = null;
-        foreach (var file in files)
+        try
         {
-            FileInfo fi;
-            try { fi = new FileInfo(file); } catch { continue; }
-            if (fi.Length > 32L * 1024 * 1024) continue; // 32MB 超は読込が重いので避ける
-            var ext = fi.Extension.TrimStart('.');
-            if (!Crystallography.ImageIO.IsReadable(ext)) continue;
-            if (fi.Name.Contains("CeO2", StringComparison.OrdinalIgnoreCase))
-                return file; // 代表画像: CeO2 を最優先
-            firstReadable ??= file;
+            foreach (var file in Directory.EnumerateFiles(dir, "*.*", SearchOption.AllDirectories))
+            {
+                FileInfo fi;
+                try { fi = new FileInfo(file); } catch { continue; }
+                if (fi.Length > 32L * 1024 * 1024) continue; // 32MB 超は読込が重いので避ける
+                var ext = fi.Extension.TrimStart('.');
+                if (!Crystallography.ImageIO.IsReadable(ext)) continue;
+                if (fi.Name.Contains("CeO2", StringComparison.OrdinalIgnoreCase))
+                    return file; // 代表画像: CeO2 を最優先
+                firstReadable ??= file;
+            }
         }
+        catch { /* 列挙途中の IO 例外は打ち切り、それまでに見つかった firstReadable を返す */ }
         return firstReadable;
     }
 
@@ -266,12 +268,13 @@ internal static class GuiCapture
     private static void Settle(Form form, int ms, Action<string> trace)
     {
         try { form.Refresh(); } catch { /* Refresh 時例外は無視 */ }
-        var until = Environment.TickCount + Math.Max(ms, 0);
+        //260712Cl TickCount(int) は約24.9日でオーバーフローし待機がスキップされ得るため TickCount64 化
+        var until = Environment.TickCount64 + Math.Max(ms, 0);
         do
         {
             Application.DoEvents();
             System.Threading.Thread.Sleep(15);
-        } while (Environment.TickCount < until);
+        } while (Environment.TickCount64 < until);
     }
 
     private const int CaptureMaxAttempts = 5; // CopyFromScreen 失敗時の最大試行回数
@@ -507,9 +510,7 @@ internal static class GuiCapture
     /// <summary>フォーム内の全 ToolStripItem を列挙する (Controls 配下の ToolStrip + designer field の ContextMenuStrip 等。ドロップダウン項目も再帰)。</summary>
     private static IEnumerable<ToolStripItem> EnumerateToolStripItems(Form form)
     {
-        var toolStrips = new HashSet<ToolStrip>();
-        foreach (var toolStrip in EnumerateControls(form).OfType<ToolStrip>())
-            toolStrips.Add(toolStrip);
+        var toolStrips = EnumerateControls(form).OfType<ToolStrip>().ToHashSet(); //260712Cl new+foreach+Add を ToHashSet 化
         // Controls 配下にない ToolStrip (ContextMenuStrip 等) を designer field から拾う
         for (var type = form.GetType(); type != null; type = type.BaseType)
             foreach (var field in type.GetFields(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.DeclaredOnly))
@@ -562,7 +563,7 @@ internal static class GuiCapture
             return contextMenuStrip;
         }
 
-        return item.Owner is ToolStripDropDown toolStripDropDown ? toolStripDropDown : item.Owner;
+        return item.Owner; //260712Cl 旧: item.Owner is ToolStripDropDown td ? td : item.Owner (両分岐同値の no-op 三項)
     }
 
     /// <summary>対象項目の祖先ドロップダウンを順に開く (ネストしたサブメニュー対応)。</summary>
@@ -672,7 +673,7 @@ internal static class GuiCapture
         var segments = new List<string>();
         for (var c = control; c != null && !ReferenceEquals(c, form); c = c.Parent)
         {
-            if (string.IsNullOrEmpty(c.Name) || c is SplitterPanel || c is ToolStripPanel || c is ToolStripContentPanel)
+            if (string.IsNullOrEmpty(c.Name) || c is SplitterPanel or ToolStripPanel or ToolStripContentPanel) //260712Cl or パターン化
                 continue; // SplitContainer/ToolStripContainer の入れ物パネルと無名コントロールはパスに出さない
             segments.Add(c.Name);
         }
@@ -681,10 +682,12 @@ internal static class GuiCapture
         return string.Join(".", segments);
     }
 
+    private static readonly char[] InvalidFileNameChars = Path.GetInvalidFileNameChars(); //260712Cl 追加: 呼び出しごとの配列複製を回避
+
     /// <summary>ファイル名に使えない文字を '_' へ置換する (FormCaptureGUI と同一規則)。</summary>
     private static string SanitizeFileName(string name)
     {
-        foreach (var ch in Path.GetInvalidFileNameChars())
+        foreach (var ch in InvalidFileNameChars) //260712Cl キャッシュ済み配列を使用
             name = name.Replace(ch, '_');
         return name;
     }

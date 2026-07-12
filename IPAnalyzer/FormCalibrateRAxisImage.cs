@@ -24,12 +24,9 @@ namespace IPAnalyzer
         uint[] rawTable = new uint[65536];
         private void buttonReadFile1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "*.img,*.stl|*.img;*.stl";
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
+            using var dlg = new OpenFileDialog { Filter = "*.img,*.stl|*.img;*.stl" }; //260712Cl using宣言+ターゲット型new+初期化子
+            if (dlg.ShowDialog() == DialogResult.OK)
                 ImageIO.Raxis4(dlg.FileName, rawTable);
-            }
         }
     }
 }

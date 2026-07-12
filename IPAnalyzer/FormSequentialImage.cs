@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic; //260712Cl 追加: HashSet 使用のため
 using System.Drawing;
 using System.Linq;
+using System.Text; //260712Cl 追加: StringBuilder 使用のため
+using System.Threading.Tasks; //260712Cl 追加: Parallel.For 使用のため
 using System.Windows.Forms;
 using Crystallography;
 
@@ -16,7 +19,7 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
             if (checkBoxMultiSelection.Checked != value)
                 checkBoxMultiSelection.Checked = value;
             checkBoxAverage.Enabled = checkBoxSummation.Enabled = checkBoxMultiSelection.Checked;
-            listBox_SelectedIndexChanged(new object(), new EventArgs());
+            //listBox_SelectedIndexChanged(new object(), new EventArgs()); //260712Cl skipEvent=true 中は先頭ガードで即 return する no-op のため削除
 
             listBox.SelectionMode = checkBoxMultiSelection.Checked ? SelectionMode.MultiExtended : SelectionMode.One;
             trackBar1.Enabled = !value;
@@ -93,7 +96,7 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
         }
     }
 
-    private int[] selectedIndices = new int[] { };
+    private int[] selectedIndices = []; //260712Cl new int[]{} → [] (Array.Empty<int>() 共有)
     public int[] SelectedIndices
     {
         set
@@ -101,33 +104,46 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
             skipEvent = true;
             int selectedIndex = listBox.SelectedIndex;
             //valueに含まれているものだけを選択状態にする
-            foreach (var i in Enumerable.Range(0, listBox.Items.Count).Where(n => !value.Contains(n) && listBox.GetSelected(n)))
-                listBox.SetSelected(i, false);
-            foreach (var i in value.Where(n => !listBox.GetSelected(n)))
-                listBox.SetSelected(i, true);
-            if (value.Contains(selectedIndex))
+            //260712Cl value.Contains の線形探索 (O(n×m)) と Enumerable.Range/Where のイテレータ割り当てを HashSet+for に置換
+            var newSelection = new HashSet<int>(value);
+            for (int i = 0; i < listBox.Items.Count; i++)
+                if (!newSelection.Contains(i) && listBox.GetSelected(i))
+                    listBox.SetSelected(i, false);
+            foreach (var i in value)
+                if (!listBox.GetSelected(i))
+                    listBox.SetSelected(i, true);
+            if (newSelection.Contains(selectedIndex))
                 listBox.SelectedIndex = selectedIndex;
             skipEvent = false;
 
-            for (int i = 0; i < value.Length; i++)
-                if (Ring.SequentialImageIntensities == null || value[i] < 0 || value[i] >= Ring.Intensity.Length)
+            //260712Cl 範囲ガードの比較対象を修正 (旧: Ring.Intensity.Length=ピクセル数 と比較しており事実上素通り。value はイメージ番号)
+            if (Ring.SequentialImageIntensities == null)
+                return;
+            foreach (var v in value)
+                if (v < 0 || v >= Ring.SequentialImageIntensities.Count)
                     return;
             selectedIndices = value;
 
             if (AverageMode || SummationMode)
             {
                 checkBoxMultiSelection.Checked = true;
+                //260712Cl 除数と double[] 参照をループ外へ巻き上げ + ピクセル単位で並列化。
+                //各ピクセル i の j 昇順加算は単一スレッド内で保持されるため浮動小数点結果は元コードとビット一致 (0.0+x==x)。
+                //エネルギー加算は別の直列ループに分離。
                 double energy = 0;
-                for (int j = 0; j < selectedIndices.Length; j++)
-                {
-                    if (Ring.ImageType == Ring.ImageTypeEnum.HDF5 && Ring.SequentialImageEnergy != null )
+                if (Ring.ImageType == Ring.ImageTypeEnum.HDF5 && Ring.SequentialImageEnergy != null)
+                    for (int j = 0; j < selectedIndices.Length; j++)
                         energy += Ring.SequentialImageEnergy[selectedIndices[j]] / selectedIndices.Length;
-                    for (int i = 0; i < Ring.Intensity.Length; i++)
-                        if (j == 0)
-                            Ring.IntensityOriginal[i] = Ring.SequentialImageIntensities[selectedIndices[j]][i] / (AverageMode ? selectedIndices.Length : 1);
-                        else
-                            Ring.IntensityOriginal[i] += Ring.SequentialImageIntensities[selectedIndices[j]][i] / (AverageMode ? selectedIndices.Length : 1);
-                }
+
+                double divisor = AverageMode ? selectedIndices.Length : 1;
+                var srcs = Array.ConvertAll(selectedIndices, n => Ring.SequentialImageIntensities[n]);
+                Parallel.For(0, Ring.Intensity.Length, i =>
+                {
+                    double sum = 0;
+                    for (int j = 0; j < srcs.Length; j++)
+                        sum += srcs[j][i] / divisor;
+                    Ring.IntensityOriginal[i] = sum;
+                });
 
                 formMain.FlipRotate_Pollalization_Background(false);
 
@@ -180,10 +196,14 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
             else if (value > 3)
                 trackBar1.LargeChange = 2;
 
+            //260712Cl BeginUpdate/EndUpdate + AddRange で一括追加 (オーナードローの Items.Add ループは数千枚で O(n²) 的に遅い)
+            listBox.BeginUpdate();
             listBox.Items.Clear();
+            var items = new object[value];
             for (int i = 0; i < value; i++)
-                listBox.Items.Add(formMain.FileName + "  #" + Ring.SequentialImageNames[i]);
-
+                items[i] = $"{formMain.FileName}  #{Ring.SequentialImageNames[i]}";
+            listBox.Items.AddRange(items);
+            listBox.EndUpdate();
         }
 
         get => trackBar1.Maximum + 1;
@@ -225,14 +245,14 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
 
     private void checkBoxAverage_CheckedChanged(object sender, EventArgs e)
     {
-        listBox_SelectedIndexChanged(new object(), new EventArgs());
+        listBox_SelectedIndexChanged(this, EventArgs.Empty); //260712Cl new object(),new EventArgs() を this,EventArgs.Empty に
         if (checkBoxAverage.Checked && checkBoxSummation.Checked)
             checkBoxSummation.Checked = false;
-            
+
     }
     private void checkBoxSummation_CheckedChanged(object sender, EventArgs e)
     {
-        listBox_SelectedIndexChanged(new object(), new EventArgs());
+        listBox_SelectedIndexChanged(this, EventArgs.Empty); //260712Cl
         if (checkBoxAverage.Checked && checkBoxSummation.Checked)
             checkBoxAverage.Checked = false;
     }
@@ -243,8 +263,7 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
 
         skipEvent = true;
         int[] temp = new int[listBox.SelectedIndices.Count];
-        for (int i = 0; i < listBox.SelectedIndices.Count; i++)
-            temp[i] = listBox.SelectedIndices[i];
+        listBox.SelectedIndices.CopyTo(temp, 0); //260712Cl 手動ループを CopyTo に
         SelectedIndices = temp;
 
         skipEvent = false;
@@ -266,14 +285,16 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
                 num = e.Index.ToString("000") + ":  ";
 
             //文字列の描画
-
-            var numFont = new Font(listBox.Font.FontFamily, listBox.Font.Size, FontStyle.Italic);
+            //260712Cl Font/SolidBrush×2 を using 化 (旧: 未Dispose で描画のたびに GDI+ ハンドルをリークしていた)
+            using var numFont = new Font(listBox.Font, FontStyle.Italic);
             var numWidth = e.Graphics.MeasureString(num, numFont).Width;
 
-            Color c = ((e.State & DrawItemState.Selected) != DrawItemState.Selected) ? Color.Blue : Color.LightGreen ;
+            Color c = ((e.State & DrawItemState.Selected) != DrawItemState.Selected) ? Color.Blue : Color.LightGreen;
 
-            e.Graphics.DrawString(num, numFont, new SolidBrush(c), new RectangleF(e.Bounds.X, e.Bounds.Y, numWidth, e.Bounds.Height));
-            e.Graphics.DrawString(txt, listBox.Font, new SolidBrush(e.ForeColor), new RectangleF(e.Bounds.X + numWidth, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+            using var numBrush = new SolidBrush(c);
+            using var foreBrush = new SolidBrush(e.ForeColor);
+            e.Graphics.DrawString(num, numFont, numBrush, new RectangleF(e.Bounds.X, e.Bounds.Y, numWidth, e.Bounds.Height));
+            e.Graphics.DrawString(txt, listBox.Font, foreBrush, new RectangleF(e.Bounds.X + numWidth, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
             //後始末
         }
 
@@ -290,7 +311,7 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
             for (int i = 0; i < listBox.Items.Count; i++)
                 listBox.SetSelected(i, true);
             skipEvent = false;
-            listBox_SelectedIndexChanged(selectedIndex, new EventArgs());
+            listBox_SelectedIndexChanged(listBox, EventArgs.Empty); //260712Cl int の box 化と EventArgs 割り当てを回避
         }
     }
 

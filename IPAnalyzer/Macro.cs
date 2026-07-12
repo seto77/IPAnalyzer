@@ -370,7 +370,7 @@ public class Macro : MacroBase
         public bool Debug { get; set; } = false;
 
         [Help("Set/get timeout second for macro operation. Default value is 30 sec.")]
-        public int Timeout { get; set; }
+        public int Timeout { get; set; } = 30; //260712Cl Help 文言どおり既定 30 秒に (旧: 初期化子なし=0 で mutex.WaitOne(0) となり PDIndexer 連携が不安定だった)
 
         [Help("Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "params object[] obj")]
         public void RunMacro(params object[] obj)
@@ -382,22 +382,20 @@ public class Macro : MacroBase
         public void RunMacroName(string name, params object[] obj)
         {
             //Mutexを作成
+            //260712Cl using 宣言がスコープ末尾で Dispose するため try/finally { Close() } は冗長 → 撤去
             using Mutex mutex = new(false, "PDIndexer");
-            try
+            //Mutexを取得 最大WaitSeconds秒待つ
+            if (mutex.WaitOne(Timeout * 1000, true))
             {
-                //Mutexを取得 最大WaitSeconds秒待つ
-                if (mutex.WaitOne(Timeout * 1000, true))
-                {
-                    mutex.ReleaseMutex();
-                    Clipboard.SetDataObject(new MacroTrigger("PDI", Debug, obj, name));
-                    Thread.Sleep(500);
-                }
-
-                //再びMutexを取得できるまで最大WaitSeconds秒待つ
-                if (mutex.WaitOne(Timeout * 1000, true))
-                    mutex.ReleaseMutex();
+                mutex.ReleaseMutex();
+                Clipboard.SetDataObject(new MacroTrigger("PDI", Debug, obj, name));
+                Thread.Sleep(500);
             }
-            finally { mutex.Close(); }
+
+            //再びMutexを取得できるまで最大WaitSeconds秒待つ
+            if (mutex.WaitOne(Timeout * 1000, true))
+                mutex.ReleaseMutex();
+            //finally { mutex.Close(); } ← using 宣言と重複する二重 Dispose のため撤去
         }
     }
     #endregion
@@ -677,9 +675,12 @@ public class Macro : MacroBase
                 SaveProfileAfterGetProfile = true;
             p.main.GetProfile(filename);
 
+            //260712Cl WaitOne がタイムアウト(false)のとき ReleaseMutex は所有していないため ApplicationException を投げる。
+            //         所有できたときのみ解放するようガード。using が Dispose するので finally { Close() } も撤去。
+            //旧: try { mutex.WaitOne(10000, false); mutex.ReleaseMutex(); } finally { mutex.Close(); }
             using var mutex = new Mutex(false, "PDIndexer");
-            try { mutex.WaitOne(10000, false); mutex.ReleaseMutex(); }
-            finally { mutex.Close(); }
+            if (mutex.WaitOne(10000, false))
+                mutex.ReleaseMutex();
         }));
     }
     #endregion
@@ -872,22 +873,31 @@ public class Macro : MacroBase
         [Help("Get a directory path. \r\n Returned string is a full path to the directory. \r\n If filename is omitted, a selection dialog will open.", "string filename")]
         public string GetDirectoryPath(string filename = "") => Execute<string>(new Func<string>(() =>
         {
-            var path = "";
+            //260712Cl キャンセル時に ""+"\\"="\\" (カレントドライブのルート相当) を返す不具合を修正。
+            //         GetFileName/GetFileNames と同様にキャンセル時は "" を返す。dlg は using で破棄。
+            //旧:
+            //var path = "";
+            //if (filename == "")
+            //{
+            //    var dlg = new FolderBrowserDialog();
+            //    path = dlg.ShowDialog() == DialogResult.OK ? dlg.SelectedPath : "";
+            //}
+            //else
+            //    path = Path.GetDirectoryName(filename);
+            //return path + "\\";
             if (filename == "")
             {
-                var dlg = new FolderBrowserDialog();
-                path = dlg.ShowDialog() == DialogResult.OK ? dlg.SelectedPath : "";
+                using var dlg = new FolderBrowserDialog();
+                return dlg.ShowDialog() == DialogResult.OK ? dlg.SelectedPath + "\\" : "";
             }
-            else
-                path = Path.GetDirectoryName(filename);
-            return path + "\\";
+            return Path.GetDirectoryName(filename) + "\\";
         }));
 
 
         [Help("Get a file name. \r\n Returned string is a full path of the selected file.", "string message")]
         public string GetFileName(string message = "") => Execute<string>(new Func<string>(() =>
         {
-            var dlg = new OpenFileDialog() { Title = message };
+            using var dlg = new OpenFileDialog() { Title = message }; //260712Cl using化 (CommonDialog は IDisposable)
             return dlg.ShowDialog() == DialogResult.OK ? dlg.FileName : "";
         }));
 
@@ -895,19 +905,19 @@ public class Macro : MacroBase
         [Help("Get file names (multi-select). \r\n Returned value is a string array, \r\n each of which is a full path of a selected file.", "string message")]
         public string[] GetFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
         {
-            var dlg = new OpenFileDialog { Multiselect = true, Title = message };
+            using var dlg = new OpenFileDialog { Multiselect = true, Title = message }; //260712Cl using化
             return dlg.ShowDialog() == DialogResult.OK ? dlg.FileNames : [];
         }));
 
         [Help("Get all file names in the selected directory (recursive). \r\n Returned value is a string array of full paths.", "string message")]
         public string[] GetAllFileNames(string message = "") => Execute<string[]>(new Func<string[]>(() =>
         {
-            var dlg = new FolderBrowserDialog() { Description = message };
+            using var dlg = new FolderBrowserDialog() { Description = message }; //260712Cl using化
             if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                var dir = Path.GetDirectoryName(dlg.SelectedPath);
-                return Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
-            }
+                //260712Cl SelectedPath はディレクトリパスそのもの。Path.GetDirectoryName を通すと「親」を列挙し
+                //         (ルート選択時は null で例外)、Help「選択ディレクトリを列挙」と食い違うため直接渡す。
+                //旧: var dir = Path.GetDirectoryName(dlg.SelectedPath); return Directory.GetFiles(dir, ...);
+                return Directory.GetFiles(dlg.SelectedPath, "*", SearchOption.AllDirectories);
             else
                 return [];
         }));
@@ -925,7 +935,16 @@ public class Macro : MacroBase
         public void SaveImageAsCSV(string fileName = "") => Execute(() => p.main.saveImageAsCSV(fileName));
 
         [Help("Read HDF5 image file. \r\n 'flag' toggles normalization. \r\n If filename is omitted, a selection dialog will open.", "string fileName, bool? flag")]
-        public void ReadImageHDF(string _fileName, bool? flag) => Execute(() => p.main.ReadImage(_fileName, flag));
+        //260712Cl Help 文言(省略時ダイアログ)に合わせデフォルト引数を付与。ダイアログは空文字時のみ開き、
+        //         パス指定時は従来どおり p.main.ReadImage へ渡す (存在しないパスの黙って return と "ClipBoard.ipa" 特例を維持)。
+        //旧: public void ReadImageHDF(string _fileName, bool? flag) => Execute(() => p.main.ReadImage(_fileName, flag));
+        public void ReadImageHDF(string _fileName = "", bool? flag = null) => Execute(() =>
+        {
+            if (_fileName == "")
+                p.main.OpenImageDialog();
+            else
+                p.main.ReadImage(_fileName, flag);
+        });
 
         /// <summary>
         /// Read image file. if filename is omitted, dialog will open.
@@ -1067,11 +1086,17 @@ public class Macro : MacroBase
             if (start < end && start >= 0 && end < p.main.FormSequentialImage.MaximumNumber)
             {
                 MultiSelection = true;
-                List<int> list = [];
-                for (int i = start; i <= end; i++)
-                    if (!list.Contains(i))
-                        list.Add(i);
-                p.main.FormSequentialImage.SelectedIndices = [.. list];
+                //260712Cl 連番(start..end)に重複はあり得ず Contains は常に false の無駄な O(n²) 走査だった。直接配列を構築。
+                //旧:
+                //List<int> list = [];
+                //for (int i = start; i <= end; i++)
+                //    if (!list.Contains(i))
+                //        list.Add(i);
+                //p.main.FormSequentialImage.SelectedIndices = [.. list];
+                var indices = new int[end - start + 1];
+                for (int i = 0; i < indices.Length; i++)
+                    indices[i] = start + i;
+                p.main.FormSequentialImage.SelectedIndices = indices;
                 //    SelectedIndex = end;
             }
         }));
@@ -1088,8 +1113,10 @@ public class Macro : MacroBase
             {
                 MultiSelection = true;
                 List<int> list = [.. p.main.FormSequentialImage.SelectedIndices];
+                var seen = new HashSet<int>(list); //260712Cl O(n·m) の List.Contains を HashSet で O(1) 化
                 for (int i = start; i <= end; i++)
-                    if (!list.Contains(i))
+                    //if (!list.Contains(i)) //260712Cl HashSet 判定に置換
+                    if (seen.Add(i))
                         list.Add(i);
                 p.main.FormSequentialImage.SelectedIndices = [.. list];
                 SelectedIndex = end;

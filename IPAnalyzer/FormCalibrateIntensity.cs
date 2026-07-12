@@ -23,8 +23,7 @@ namespace IPAnalyzer
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Fuji[*.img]; R-AXIS4[*.stl]; Bruker CCD[*.ccd]; IP Display(PF Bl4b1)[*.ipf]|*.img;*.stl;*.ccd;*.ipf";
+            using var dlg = new OpenFileDialog { Filter = "Fuji[*.img]; R-AXIS4[*.stl]; Bruker CCD[*.ccd]; IP Display(PF Bl4b1)[*.ipf]|*.img;*.stl;*.ccd;*.ipf" }; //260712Cl using宣言+初期化子
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 if (((Button)sender).Name == buttonOpenFile1.Name)
@@ -38,26 +37,30 @@ namespace IPAnalyzer
         {
             if (str.EndsWith("stl"))
             {//Rigaku R-Axis4
-                BinaryReader br = new BinaryReader(new FileStream(str, FileMode.Open, FileAccess.Read));
-                FormMain.SetBytePosition(str, ref br, 288);
-                string target = new string(br.ReadChars(4));//Target  
-                float wl = ImageIO.convertToSingle(br);//Wavelength (A)
-                br.ReadBytes(48);
-                float camera_len = br.ReadSingle();//Camera length (mm)
-                br.ReadBytes(420);
-                int num_x_pixs = ImageIO.convertToInt(br);//Number of pixel X
-                int num_y_pixs = ImageIO.convertToInt(br);//Number of pixel Y
-                int length = num_x_pixs * num_y_pixs;
-                FormMain.SetBytePosition(str, ref br, num_x_pixs * 2);
-                ushort[] intensity = new ushort[length];
-                for (int y = 0; y < num_y_pixs; y++)
-                    for (int x = 0; x < num_x_pixs; x++)
-                    {
-                        int i = (num_y_pixs - y - 1) * num_x_pixs + x;
-                        intensity[i] = (ushort)(256 * br.ReadByte() + br.ReadByte());
-                    }
-                br.Close();
-                return intensity;
+                //260712Cl SetBytePosition が ref br を Close→再生成するため using 宣言不可。try/finally で例外時のリークを防止
+                var br = new BinaryReader(new FileStream(str, FileMode.Open, FileAccess.Read));
+                try
+                {
+                    FormMain.SetBytePosition(str, ref br, 288);
+                    string target = new string(br.ReadChars(4));//Target
+                    float wl = ImageIO.convertToSingle(br);//Wavelength (A)
+                    br.ReadBytes(48);
+                    float camera_len = br.ReadSingle();//Camera length (mm)
+                    br.ReadBytes(420);
+                    int num_x_pixs = ImageIO.convertToInt(br);//Number of pixel X
+                    int num_y_pixs = ImageIO.convertToInt(br);//Number of pixel Y
+                    int length = num_x_pixs * num_y_pixs;
+                    FormMain.SetBytePosition(str, ref br, num_x_pixs * 2);
+                    ushort[] intensity = new ushort[length];
+                    for (int y = 0; y < num_y_pixs; y++)
+                        for (int x = 0; x < num_x_pixs; x++)
+                        {
+                            int i = (num_y_pixs - y - 1) * num_x_pixs + x;
+                            intensity[i] = (ushort)(256 * br.ReadByte() + br.ReadByte());
+                        }
+                    return intensity;
+                }
+                finally { br.Close(); }
             }
             else return [];
         }
@@ -88,12 +91,17 @@ namespace IPAnalyzer
 
         private void buttonCalibrate_Click(object sender, EventArgs e)
         {
+            total = 0; //260712Cl 実行毎にリセット (フィールドのため前回実行の合計値へ正規化されるバグを防止)
             ushort[] image1 = getRawIntensity(textBoxFile1.Text);
             ushort[] image2 = getRawIntensity(textBoxFile2.Text);
-            int length = image1.Length;
-            ushort maxRawIntensity= ushort.MinValue;
-            for(int i= 0 ; i< length;i++)
-                maxRawIntensity=Math.Max(maxRawIntensity,Math.Max( image1[i],image2[i]));
+            //260712Cl 空配列(.stl以外)・サイズ不一致のガードを追加 (旧: image2[i] のインデックスで IndexOutOfRange か、空配列で 300 反復空回り)
+            if (image1.Length == 0 || image1.Length != image2.Length)
+            {
+                MessageBox.Show(Crystallography.Localization.Loc(en: "Please specify two .stl images of the same size.", ja: "同一サイズの 2 つの .stl イメージを指定してください。"));
+                return;
+            }
+            //260712Cl 手動ループを SimdLinq の Max に (ushort[] は SIMD 化。空配列ガード済みで例外なし)
+            ushort maxRawIntensity = Math.Max(image1.Max(), image2.Max());
 
             double[] convertTableCurrent = new double[maxRawIntensity+1];
             Profile initialProfile = new Profile();
