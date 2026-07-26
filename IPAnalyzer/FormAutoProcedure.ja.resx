@@ -17,15 +17,6 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
 
     There are any number of "resheader" rows that contain simple
     name/value pairs.
@@ -136,30 +127,15 @@
   <data name="checkedListBoxAuto.Items4" xml:space="preserve">
     <value>マクロ実行</value>
   </data>
-  <data name="checkedListBoxAuto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 104</value>
-  </data>
   <data name="checkBoxAutoAfterLoad.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="checkBoxAutoAfterLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 193</value>
-  </data>
-  <data name="checkBoxAutoAfterLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 40</value>
   </data>
   <data name="checkBoxAutoAfterLoad.Text" xml:space="preserve">
     <value>新しい画像が読み込まれたら
 以下の一連の操作を実行</value>
   </data>
-  <data name="textBoxDiectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 23</value>
-  </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 18</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>監視するディレクトリ</value>
@@ -167,62 +143,23 @@
   <data name="buttonSetDirectory.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="buttonSetDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 41</value>
-  </data>
-  <data name="buttonSetDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 28</value>
-  </data>
   <data name="buttonSetDirectory.Text" xml:space="preserve">
     <value>設定</value>
   </data>
   <data name="checkBoxAutoLoad.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
   </data>
-  <data name="checkBoxAutoLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
-  </data>
-  <data name="checkBoxAutoLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>新しい画像を自動で読み込む</value>
   </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 90</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 178</value>
-  </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 145</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 18</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>マクロ</value>
   </data>
   <data name="comboBoxMacro.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
-  </data>
-  <data name="comboBoxMacro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 142</value>
-  </data>
-  <data name="comboBoxMacro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 26</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 205</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 174</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>259, 383</value>
   </data>
   <data name="checkBoxAutoLoad.ToolTip" xml:space="preserve">
     <value>選択したディレクトリを監視し、新しく追加された
