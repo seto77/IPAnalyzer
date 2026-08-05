@@ -5,206 +5,208 @@ static class Version
     static public string Software =
         "IPAnalyzer"
         ;
-    static public string VersionAndDate => History[10..30]; //260712Cl 旧: { get => History[10..][..20]; } (二重スライスの中間文字列を排除)
+    //static public string VersionAndDate => History[10..30]; //260712Cl 旧: { get => History[10..][..20]; } (二重スライスの中間文字列を排除) //260805Cl 変更前: 括弧前スペース無し前提の20文字固定長
+    static public string VersionAndDate => History[10..(History.IndexOf(')') + 1)]; //260805Cl 版番と日付括弧の間のスペース挿入に伴い ')' までを取り出す (長さ非依存)
 
+    //260805Cl 表記統一: 版番と日付括弧の間にスペースを1つ入れる。⚠この行より上の行(このコメント含む)に半角スペース直後の『ver』を書かない (CI と旧版の更新チェックが History 先頭行より先に拾う)
     static public string History =
         "History" +
-        "\r\n ver3.981(2026/06/25) GUIのバグ修正。多言語対応." +
-        "\r\n ver3.980(2026/06/08) Added support for the new image format: Rigaku 2D-PXD Image Header Format / d*TREK extended." +
-        "\r\n ver3.979(2026/06/02) Added a portable ZIP distribution (no-install, self-contained) in addition to the installer." +
-        "\r\n ver3.978(2026/05/29) Enhanced the Auto Procedure feature (added keyword matching support). " +
-        "\r\n ver3.977(2026/04/14) Refactored Macro class with encapsulated FormMain API and migrated help to [Help] attributes. " +
-        "\r\n ver3.976(2026/04/13) Fixed bugs in the Find Parameter feature. " +
-        "\r\n ver3.975(2026/04/10) Added support for FlatPanel Rad-Xcam3030 and fixed bugs on Radicon1520. " +
-        "\r\n ver3.974(2026/04/06) Reduced the size of the installer package. " +
-        "\r\n ver3.973(2026/01/21) Fixed bugs on loading *.nxs files." +
-        "\r\n ver3.972(2026/01/16) Fixed bugs on loading *.nxs files." +
-        "\r\n ver3.971(2025/12/12) Fixed bugs on program update and crysta database functions." +
-        "\r\n ver3.970(2025/11/26) The framework has been changed to .Net Desktop Runtime 10.0." +
-        "\r\n ver3.969(2025/11/06) Fixed minor bugs of 'Find Parameter (geometrically)'." +
-        "\r\n ver3.968(2025/10/23) Fixed minor bugs. Added file name options." +
-        "\r\n ver3.967(2025/09/26) Fixed a minor bug on load/save registry." +
-        "\r\n ver3.966(2025/08/29) Fixed a bug on NeXus Data Format (*.nxs)." +
-        "\r\n ver3.965(2025/05/20) Fixe minor bugs." +
-        "\r\n ver3.964(2025/05/17) Compatible with NeXus Data Format (*.nxs)." +
-        "\r\n ver3.963(2025/05/04) Fixed minor bugs (see https://github.com/seto77/IPAnalyzer/issues/6)" +
-        "\r\n ver3.962(2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/5) (thx to Tsuruoka-san!)." + //260712Cl 2つ目のリンクを pull/3→pull/5 に修正 (重複誤記)
-        "\r\n ver3.961(2025/04/16) Compatible with Rad-icon detectors with a resolution of 2080 x 2238." +
-        "\r\n ver3.960(2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +
-        "\r\n ver3.959(2024/11/04) Improved the stability of the 'Auto Procedure' function." +
-        "\r\n ver3.957(2024/11/01) Improved the stability of the 'Auto Procedure' function." +
-        "\r\n ver3.956(2024/02/27) Minor change: The data of Rad-icon1520 (*.raw) is treated as 16-bit signed integer." +
-        "\r\n ver3.955(2023/12/13) Fixed bugs on loading Rad-icon1520 files (*.raw)." +
-        "\r\n ver3.953(2023/11/29) Fixed bugs on 'Azimuthal Division Analysis' mode." +
-        "\r\n ver3.952(2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san!)." +
-        "\r\n ver3.951(2023/10/07) The drawing range of the previous image can be inherited." +
-        "\r\n ver3.950(2023/10/05) Improved 'Auto Procedure'." +
-        "\r\n ver3.948(2023/07/18) Fixed a minor bug." +
-        "\r\n ver3.947(2023/06/28) Improved compatibility for *.img file output from ADXV" +
-        "\r\n ver3.946(2023/04/22) Changed profile format to '*.pdi2'." +
-        "\r\n ver3.945(2023/03/18) Fixed a minor bug." +
-        "\r\n ver3.944(2023/03/07) Fixed a minor bug." +
-        "\r\n ver3.943(2023/03/07) Fixed bugs on the 'Macro function'." +
-        "\r\n ver3.942(2023/02/06) Improved 'Auto Procedure'" +
-        "\r\n ver3.941(2023/01/30) Added: Polygon mask mode for the mask option." +
-        "\r\n ver3.940(2023/01/27) Improved azimuthal division analysis functionality." +
-        "\r\n ver3.939(2023/01/23) Fixed minor bugs on 'Auto Procedure'. " +
-        "\r\n ver3.938(2022/11/28) Fixed a minor bug on 'Find Parameter'. " +
-        "\r\n ver3.937(2022/11/16) Target framework has been changed to .Net Desktop Runtime 7.0." +
-        "\r\n ver3.936(2022/11/07) Supported reading '*.img' files output from ADXV." +
-        "\r\n ver3.935(2022/10/15) Fixed a bug when saving Tiff file that contains multiple images." +
-        "\r\n ver3.933(2022/07/20) Fixed a bug on Find Parameter (brute force)." +
-        "\r\n ver3.932(2022/06/29) Improved a sequential image loading. " +
-        "\r\n ver3.931(2022/06/26) Improved macro function and top form design. " +
-        "\r\n ver3.930(2021/12/01) Fixed a bug on generating unrolled images." +
-        "\r\n ver3.929(2021/11/30) Added color scales and scale line drawing." +
-        "\r\n ver3.928(2021/11/23) Fixed a minor bug." +
-        "\r\n ver3.927(2021/11/22) Fixed bugs on a GUI design." +
-        "\r\n ver3.926(2021/11/18) Fixed bugs on loading a parameter file (*.prm)." +
-        "\r\n ver3.920(2021/11/12) Target framework has been changed to .Net 6.0." +
-        "\r\n ver3.918(2021/11/03) Fixed a minor bug on reading parameter files." +
-        "\r\n ver3.917(2021/10/15) Fixed the problem on the Macro function." +
-        "\r\n ver3.916(2021/10/12) Fixed the problem of broken design at high DPI." +
-        "\r\n ver3.915(2021/10/11) Added the exporting function as GSAS format." +
-        "\r\n ver3.914(2021/09/21) Fixed minor bugs about the sequential image mode." +
-        "\r\n ver3.913(2021/09/08) Improved mask options. Fixed a bug on 'd-spacing mode'. Improved compatibility of HDF5." +
-        "\r\n ver3.912(2021/08/17) Improved compatibility when importing HDF5 files." +
-        "\r\n ver3.911(2021/08/10) Renewed 'Find parameter (brute force)'." +
-        "\r\n ver3.910(2021/07/19) Fixed a minor bug on 'Fitting parameter' " +
-        "\r\n ver3.909(2021/07/10) Fixed a minor bug on 'Fitting parameter' " +
-        "\r\n ver3.908(2021/07/01) Target framework has been changed to .Net 5.0" +
-        "\r\n ver3.907(2021/05/02) Improved: Image rendering speed and processing speed of 'Find center'" +
-        "\r\n ver3.906(2021/05/01) Improved: Speeding up 'Get Profile' and GUI response. Added: mask options." +
-        "\r\n ver3.904(2020/12/18) Improved macro functions." +
-        "\r\n ver3.903(2020/12/11) Fixed a bug when loading TIFF format." +
-        "\r\n ver3.902(2020/12/02) Fixed minor bugs." +
-        "\r\n ver3.901(2020/11/17) Added a new image format (*.raw file used in PF)" +
-        "\r\n ver3.900(2020/11/16) Fixed a bug when loading Rad-icon file." +
-        "\r\n ver3.899(2020/10/31) Improved: Speeding up 'Get Profile'." +
-        "\r\n ver3.898(2020/10/25) Fixed a bug on loading ITEX image." +
-        "\r\n ver3.897(2020/10/25) Improved SACLA EH5 mode." +
-        "\r\n ver3.896(2020/10/15) Fixed minor bugs (Find Center, Correction of polarization, etc.)." +
-        "\r\n ver3.895(2020/08/13) Fixed bugs on Macro functions." +
-        "\r\n ver3.894(2020/08/08) Improved SACLA EH5 mode." +
-        "\r\n ver3.893(2020/07/28) Improved SACLA EH5 mode." +
-        "\r\n ver3.892(2020/06/24) Added 'Summation' mode for a sequential image" +
-        "\r\n ver3.891(2020/04/10) Fixed a minor bug on 'Program update function'" +
-        "\r\n ver3.890(2020/04/09) Added an image format: 32 bit signed Tiff (output of PILATUS CdSe detector)." +
-        "\r\n ver3.889(2020/03/11) Minor improvements to the macro functions." +
-        "\r\n ver3.888(2020/03/03) Fixed a minor bug on distribution problem." +
-        "\r\n ver3.887(2020/03/01) Changed: Distribution site is changed to GitHub." +
-        "\r\n ver3.886(2020/02/28) Improved: Sacla XFEL option." +
-        "\r\n ver3.885(2019/11/11) Fixed a minor bug on loading sequential image." +
-        "\r\n ver3.884(2019/11/07) Fixed a minor bug on the ’Find parameter' function." +
-        "\r\n ver3.881(2019/10/06) Fixed a minor bug on the ’Find parameter' function." +
+        "\r\n ver3.981 (2026/06/25) GUIのバグ修正。多言語対応." +
+        "\r\n ver3.980 (2026/06/08) Added support for the new image format: Rigaku 2D-PXD Image Header Format / d*TREK extended." +
+        "\r\n ver3.979 (2026/06/02) Added a portable ZIP distribution (no-install, self-contained) in addition to the installer." +
+        "\r\n ver3.978 (2026/05/29) Enhanced the Auto Procedure feature (added keyword matching support). " +
+        "\r\n ver3.977 (2026/04/14) Refactored Macro class with encapsulated FormMain API and migrated help to [Help] attributes. " +
+        "\r\n ver3.976 (2026/04/13) Fixed bugs in the Find Parameter feature. " +
+        "\r\n ver3.975 (2026/04/10) Added support for FlatPanel Rad-Xcam3030 and fixed bugs on Radicon1520. " +
+        "\r\n ver3.974 (2026/04/06) Reduced the size of the installer package. " +
+        "\r\n ver3.973 (2026/01/21) Fixed bugs on loading *.nxs files." +
+        "\r\n ver3.972 (2026/01/16) Fixed bugs on loading *.nxs files." +
+        "\r\n ver3.971 (2025/12/12) Fixed bugs on program update and crysta database functions." +
+        "\r\n ver3.970 (2025/11/26) The framework has been changed to .Net Desktop Runtime 10.0." +
+        "\r\n ver3.969 (2025/11/06) Fixed minor bugs of 'Find Parameter (geometrically)'." +
+        "\r\n ver3.968 (2025/10/23) Fixed minor bugs. Added file name options." +
+        "\r\n ver3.967 (2025/09/26) Fixed a minor bug on load/save registry." +
+        "\r\n ver3.966 (2025/08/29) Fixed a bug on NeXus Data Format (*.nxs)." +
+        "\r\n ver3.965 (2025/05/20) Fixe minor bugs." +
+        "\r\n ver3.964 (2025/05/17) Compatible with NeXus Data Format (*.nxs)." +
+        "\r\n ver3.963 (2025/05/04) Fixed minor bugs (see https://github.com/seto77/IPAnalyzer/issues/6)" +
+        "\r\n ver3.962 (2025/04/25) Merged the two pull requests (https://github.com/seto77/IPAnalyzer/pull/3 and https://github.com/seto77/IPAnalyzer/pull/5) (thx to Tsuruoka-san!)." + //260712Cl 2つ目のリンクを pull/3→pull/5 に修正 (重複誤記)
+        "\r\n ver3.961 (2025/04/16) Compatible with Rad-icon detectors with a resolution of 2080 x 2238." +
+        "\r\n ver3.960 (2024/12/07) The framework has been changed to .Net Desktop Runtime 9.0." +
+        "\r\n ver3.959 (2024/11/04) Improved the stability of the 'Auto Procedure' function." +
+        "\r\n ver3.957 (2024/11/01) Improved the stability of the 'Auto Procedure' function." +
+        "\r\n ver3.956 (2024/02/27) Minor change: The data of Rad-icon1520 (*.raw) is treated as 16-bit signed integer." +
+        "\r\n ver3.955 (2023/12/13) Fixed bugs on loading Rad-icon1520 files (*.raw)." +
+        "\r\n ver3.953 (2023/11/29) Fixed bugs on 'Azimuthal Division Analysis' mode." +
+        "\r\n ver3.952 (2023/11/27) The target framework has been changed to .Net Desktop Runtime 8.0. Fixed a minor bug (thx to Okazaki-san!)." +
+        "\r\n ver3.951 (2023/10/07) The drawing range of the previous image can be inherited." +
+        "\r\n ver3.950 (2023/10/05) Improved 'Auto Procedure'." +
+        "\r\n ver3.948 (2023/07/18) Fixed a minor bug." +
+        "\r\n ver3.947 (2023/06/28) Improved compatibility for *.img file output from ADXV" +
+        "\r\n ver3.946 (2023/04/22) Changed profile format to '*.pdi2'." +
+        "\r\n ver3.945 (2023/03/18) Fixed a minor bug." +
+        "\r\n ver3.944 (2023/03/07) Fixed a minor bug." +
+        "\r\n ver3.943 (2023/03/07) Fixed bugs on the 'Macro function'." +
+        "\r\n ver3.942 (2023/02/06) Improved 'Auto Procedure'" +
+        "\r\n ver3.941 (2023/01/30) Added: Polygon mask mode for the mask option." +
+        "\r\n ver3.940 (2023/01/27) Improved azimuthal division analysis functionality." +
+        "\r\n ver3.939 (2023/01/23) Fixed minor bugs on 'Auto Procedure'. " +
+        "\r\n ver3.938 (2022/11/28) Fixed a minor bug on 'Find Parameter'. " +
+        "\r\n ver3.937 (2022/11/16) Target framework has been changed to .Net Desktop Runtime 7.0." +
+        "\r\n ver3.936 (2022/11/07) Supported reading '*.img' files output from ADXV." +
+        "\r\n ver3.935 (2022/10/15) Fixed a bug when saving Tiff file that contains multiple images." +
+        "\r\n ver3.933 (2022/07/20) Fixed a bug on Find Parameter (brute force)." +
+        "\r\n ver3.932 (2022/06/29) Improved a sequential image loading. " +
+        "\r\n ver3.931 (2022/06/26) Improved macro function and top form design. " +
+        "\r\n ver3.930 (2021/12/01) Fixed a bug on generating unrolled images." +
+        "\r\n ver3.929 (2021/11/30) Added color scales and scale line drawing." +
+        "\r\n ver3.928 (2021/11/23) Fixed a minor bug." +
+        "\r\n ver3.927 (2021/11/22) Fixed bugs on a GUI design." +
+        "\r\n ver3.926 (2021/11/18) Fixed bugs on loading a parameter file (*.prm)." +
+        "\r\n ver3.920 (2021/11/12) Target framework has been changed to .Net 6.0." +
+        "\r\n ver3.918 (2021/11/03) Fixed a minor bug on reading parameter files." +
+        "\r\n ver3.917 (2021/10/15) Fixed the problem on the Macro function." +
+        "\r\n ver3.916 (2021/10/12) Fixed the problem of broken design at high DPI." +
+        "\r\n ver3.915 (2021/10/11) Added the exporting function as GSAS format." +
+        "\r\n ver3.914 (2021/09/21) Fixed minor bugs about the sequential image mode." +
+        "\r\n ver3.913 (2021/09/08) Improved mask options. Fixed a bug on 'd-spacing mode'. Improved compatibility of HDF5." +
+        "\r\n ver3.912 (2021/08/17) Improved compatibility when importing HDF5 files." +
+        "\r\n ver3.911 (2021/08/10) Renewed 'Find parameter (brute force)'." +
+        "\r\n ver3.910 (2021/07/19) Fixed a minor bug on 'Fitting parameter' " +
+        "\r\n ver3.909 (2021/07/10) Fixed a minor bug on 'Fitting parameter' " +
+        "\r\n ver3.908 (2021/07/01) Target framework has been changed to .Net 5.0" +
+        "\r\n ver3.907 (2021/05/02) Improved: Image rendering speed and processing speed of 'Find center'" +
+        "\r\n ver3.906 (2021/05/01) Improved: Speeding up 'Get Profile' and GUI response. Added: mask options." +
+        "\r\n ver3.904 (2020/12/18) Improved macro functions." +
+        "\r\n ver3.903 (2020/12/11) Fixed a bug when loading TIFF format." +
+        "\r\n ver3.902 (2020/12/02) Fixed minor bugs." +
+        "\r\n ver3.901 (2020/11/17) Added a new image format (*.raw file used in PF)" +
+        "\r\n ver3.900 (2020/11/16) Fixed a bug when loading Rad-icon file." +
+        "\r\n ver3.899 (2020/10/31) Improved: Speeding up 'Get Profile'." +
+        "\r\n ver3.898 (2020/10/25) Fixed a bug on loading ITEX image." +
+        "\r\n ver3.897 (2020/10/25) Improved SACLA EH5 mode." +
+        "\r\n ver3.896 (2020/10/15) Fixed minor bugs (Find Center, Correction of polarization, etc.)." +
+        "\r\n ver3.895 (2020/08/13) Fixed bugs on Macro functions." +
+        "\r\n ver3.894 (2020/08/08) Improved SACLA EH5 mode." +
+        "\r\n ver3.893 (2020/07/28) Improved SACLA EH5 mode." +
+        "\r\n ver3.892 (2020/06/24) Added 'Summation' mode for a sequential image" +
+        "\r\n ver3.891 (2020/04/10) Fixed a minor bug on 'Program update function'" +
+        "\r\n ver3.890 (2020/04/09) Added an image format: 32 bit signed Tiff (output of PILATUS CdSe detector)." +
+        "\r\n ver3.889 (2020/03/11) Minor improvements to the macro functions." +
+        "\r\n ver3.888 (2020/03/03) Fixed a minor bug on distribution problem." +
+        "\r\n ver3.887 (2020/03/01) Changed: Distribution site is changed to GitHub." +
+        "\r\n ver3.886 (2020/02/28) Improved: Sacla XFEL option." +
+        "\r\n ver3.885 (2019/11/11) Fixed a minor bug on loading sequential image." +
+        "\r\n ver3.884 (2019/11/07) Fixed a minor bug on the ’Find parameter' function." +
+        "\r\n ver3.881 (2019/10/06) Fixed a minor bug on the ’Find parameter' function." +
         "\r\n ver3.88 (2019/04/10) Changed the installer. ClickOnce version will be not maintained in the future." +
-        "\r\n ver3.875(2019/03/21) Fixed a minor bug on a background subtraction option." +
-        "\r\n ver3.874(2019/03/19) Added a background subtraction option." +
-        "\r\n ver3.873(2019/03/18) Minor improvements for sequential image mode." +
-        "\r\n ver3.872(2019/03/15) Added a new image format (Dexlea co, *.smv file.)." +
-        "\r\n ver3.871(2019/03/03) Minor bug fixed: the definition of sector angle is modified correctly." +
-        "\r\n ver3.870(2019/02/20) Changed .Net framework version to 4.7.2." +
-        "\r\n ver3.869(2018/11/20) Modified some incosistensies." +
-        "\r\n ver3.868(2018/09/04) Renewed libraries." +
-        "\r\n ver3.867(2018/09/04) Fixed a minor bug." +
-        "\r\n ver3.866(2018/08/21) Fixed a minor bug." +
-        "\r\n ver3.865(2017/12/14) Fixed a minor bug." +
-        "\r\n ver3.864(2017/12/03) Fixed a minor bug." +
-        "\r\n ver3.863(2017/07/18) Added a new image format." +
-        "\r\n ver3.862(2017/04/26) Fix a bug related with a change on 2016/12/28. Improved a SACLA EH5 optimization." +
-        "\r\n ver3.861(2017/01/13) Fix a bug related with a change on 2016/12/28." +
+        "\r\n ver3.875 (2019/03/21) Fixed a minor bug on a background subtraction option." +
+        "\r\n ver3.874 (2019/03/19) Added a background subtraction option." +
+        "\r\n ver3.873 (2019/03/18) Minor improvements for sequential image mode." +
+        "\r\n ver3.872 (2019/03/15) Added a new image format (Dexlea co, *.smv file.)." +
+        "\r\n ver3.871 (2019/03/03) Minor bug fixed: the definition of sector angle is modified correctly." +
+        "\r\n ver3.870 (2019/02/20) Changed .Net framework version to 4.7.2." +
+        "\r\n ver3.869 (2018/11/20) Modified some incosistensies." +
+        "\r\n ver3.868 (2018/09/04) Renewed libraries." +
+        "\r\n ver3.867 (2018/09/04) Fixed a minor bug." +
+        "\r\n ver3.866 (2018/08/21) Fixed a minor bug." +
+        "\r\n ver3.865 (2017/12/14) Fixed a minor bug." +
+        "\r\n ver3.864 (2017/12/03) Fixed a minor bug." +
+        "\r\n ver3.863 (2017/07/18) Added a new image format." +
+        "\r\n ver3.862 (2017/04/26) Fix a bug related with a change on 2016/12/28. Improved a SACLA EH5 optimization." +
+        "\r\n ver3.861 (2017/01/13) Fix a bug related with a change on 2016/12/28." +
         "\r\n ver3.86 (2016/12/28) Fix a bug on 'Get Profile' for diffraction patterns which include 2 theta > 90 deg." +
-        "\r\n ver3.851(2016/12/16) Bug fix for a function of rotate image. Improved a SACLA EH5 optimization." +
+        "\r\n ver3.851 (2016/12/16) Bug fix for a function of rotate image. Improved a SACLA EH5 optimization." +
         "\r\n ver3.85 (2016/12/04) Added options to rotate image. A rotation angle was automatically saved for each image format" +
         "\r\n ver3.84 (2016/12/02) Added readable image format: '*.raw' file from RadIcon 2064x1548 detectors. " +
-        "\r\n ver3.837(2016/07/09) Improved: A color tiff format (RGB and ARGB) is possible to be read as a gray scale image, where red channel is only used. " +
-        "\r\n ver3.836(2016/07/06) Fixed a minor bug." +
-        "\r\n ver3.835(2016/06/13) Fixed a problem on *.h5 file loading, and improved saving/loading SACLA EH5 parameters." +
-        "\r\n ver3.834(2016/05/31) Minor bug fixed." +
-        "\r\n ver3.832(2016/05/31) Minor bug fixed." +
+        "\r\n ver3.837 (2016/07/09) Improved: A color tiff format (RGB and ARGB) is possible to be read as a gray scale image, where red channel is only used. " +
+        "\r\n ver3.836 (2016/07/06) Fixed a minor bug." +
+        "\r\n ver3.835 (2016/06/13) Fixed a problem on *.h5 file loading, and improved saving/loading SACLA EH5 parameters." +
+        "\r\n ver3.834 (2016/05/31) Minor bug fixed." +
+        "\r\n ver3.832 (2016/05/31) Minor bug fixed." +
         "\r\n ver3.83 (2016/05/21) Improved the unrolled image function for Gandolfi images." +
         "\r\n ver3.82 (2016/04/18) Improved the save parameter option." +
         "\r\n ver3.81 (2016/02/24) Added a 'Polarization Correction' option." +
         "\r\n ver3.80 (2016/01/15) Fixed a major bug on the 'Get Profile' algorithm where cos^3 correction had been not made. The present version fixed this problem." +
         "\r\n ver3.79 (2016/01/06) Added gandolfi camera options." +
-        "\r\n ver3.784(2015/12/23) Fixed minor bugs on initial loading." +
-        "\r\n ver3.782(2015/12/18) Fixed minor bugs." +
-        "\r\n ver3.781(2015/11/30) Fixed minor bugs." +
+        "\r\n ver3.784 (2015/12/23) Fixed minor bugs on initial loading." +
+        "\r\n ver3.782 (2015/12/18) Fixed minor bugs." +
+        "\r\n ver3.781 (2015/11/30) Fixed minor bugs." +
         "\r\n ver3.78 (2015/11/16) Added a new image format (*.img) for CCD detector made by ADSC." +
-        "\r\n ver3.776(2015/10/31) Fixed a minor bug on reading his (Perkin Elmer co.) files." +
-        "\r\n ver3.775(2015/09/24) Fixed a minor bug on reading his (Perkin Elmer co.) files." +
-        "\r\n ver3.774(2015/09/16) Fixed a minor bug on reading/writing TIFF files." +
-        "\r\n ver3.773(2015/08/28) Fixed a minor bug on reading/writing TIFF files." +
-        "\r\n ver3.772(2015/08/22) Fixed a minor bug on reading/writing TIFF files." +
-        "\r\n ver3.771(2015/08/19) Fixed a minor bug on reading HDF5 files." +
+        "\r\n ver3.776 (2015/10/31) Fixed a minor bug on reading his (Perkin Elmer co.) files." +
+        "\r\n ver3.775 (2015/09/24) Fixed a minor bug on reading his (Perkin Elmer co.) files." +
+        "\r\n ver3.774 (2015/09/16) Fixed a minor bug on reading/writing TIFF files." +
+        "\r\n ver3.773 (2015/08/28) Fixed a minor bug on reading/writing TIFF files." +
+        "\r\n ver3.772 (2015/08/22) Fixed a minor bug on reading/writing TIFF files." +
+        "\r\n ver3.771 (2015/08/19) Fixed a minor bug on reading HDF5 files." +
         "\r\n ver3.77 (2015/08/09) Added: Enabled to read multipule-image tiff file." +
         "\r\n ver3.76 (2015/04/12) Improved 'Find Center' function." +
-        "\r\n ver3.753(2015/04/05) Fixed a minor bug on 'Find Center'." +
-        "\r\n ver3.752(2015/01/27) Added built-in functions to macro." +
-        "\r\n ver3.751(2015/01/15) Fixed minor bugs on a calculation of the selected sector region." +
+        "\r\n ver3.753 (2015/04/05) Fixed a minor bug on 'Find Center'." +
+        "\r\n ver3.752 (2015/01/27) Added built-in functions to macro." +
+        "\r\n ver3.751 (2015/01/15) Fixed minor bugs on a calculation of the selected sector region." +
         "\r\n ver3.75 (2014/12/26) Improved macro functions (still under construction)." +
-        "\r\n ver3.742(2014/12/17) Improved macro functions (still under construction)." +
-        "\r\n ver3.741(2014/12/09) Added macro function (under construction)." +
+        "\r\n ver3.742 (2014/12/17) Improved macro functions (still under construction)." +
+        "\r\n ver3.741 (2014/12/09) Added macro function (under construction)." +
         "\r\n ver3.74 (2014/12/03) Improved SACLA EH5 option." +
-        "\r\n ver3.732(2014/12/02) Fixed a minor bug on 'Draw Ring'." +
-        "\r\n ver3.731(2014/11/14) Improved: Enabled to translate image by mouse right drag." +
+        "\r\n ver3.732 (2014/12/02) Fixed a minor bug on 'Draw Ring'." +
+        "\r\n ver3.731 (2014/11/14) Improved: Enabled to translate image by mouse right drag." +
         "\r\n ver3.73 (2014/11/13) Added: Statistical information for selected area." +
-        "\r\n ver3.724(2014/11/12) Fixed minor bugs." +
-        "\r\n ver3.723(2014/11/11) Fixed minor bugs." +
-        "\r\n ver3.722(2014/11/11) Inproved input form for SACLA EH5 beamline." +
-        "\r\n ver3.721(2014/11/10) Fixed minor bugs." +
+        "\r\n ver3.724 (2014/11/12) Fixed minor bugs." +
+        "\r\n ver3.723 (2014/11/11) Fixed minor bugs." +
+        "\r\n ver3.722 (2014/11/11) Inproved input form for SACLA EH5 beamline." +
+        "\r\n ver3.721 (2014/11/10) Fixed minor bugs." +
         "\r\n ver3.72 (2014/10/08) Added readable image format: HDF5 (*.h5) from SACLA EH5 beamline" +
-        "\r\n ver3.712(2014/10/06) Added options for sequential image mode: Getting sequential or average profiles options" +
-        "\r\n ver3.711(2014/10/04) Improved for sequential image mode: serial number is displayed on menu and is also sent to PDIndexer" +
+        "\r\n ver3.712 (2014/10/06) Added options for sequential image mode: Getting sequential or average profiles options" +
+        "\r\n ver3.711 (2014/10/04) Improved for sequential image mode: serial number is displayed on menu and is also sent to PDIndexer" +
         "\r\n ver3.71 (2014/09/30) Added readable image format: tiff with 32-bit floating value." +
         "\r\n ver3.70 (2014/09/29) Added Sequential Image mode (for *.his image)." +
         "\r\n ver3.61 (2014/07/02) Added a new image format: '*.his' file(Perkin Elmer co., Flat panel CCD)." +
-        "\r\n ver3.603(2014/03/13) Fixed a minor bug on 'Find Parameter'." +
-        "\r\n ver3.602(2013/12/17) Improved language option." +
-        "\r\n ver3.601(2013/12/14) Fixed minor bugs." +
+        "\r\n ver3.603 (2014/03/13) Fixed a minor bug on 'Find Parameter'." +
+        "\r\n ver3.602 (2013/12/17) Improved language option." +
+        "\r\n ver3.601 (2013/12/14) Fixed minor bugs." +
         "\r\n ver3.60 (2013/12/08) Inproved stabilities and speed of 'Find Parameter'" +
-        "\r\n ver3.595(2013/11/11) Fixed a minor bug on 'Find Parameter'" +
-        "\r\n ver3.594(2013/11/10) Fixed a minor bug on whole design" +
-        "\r\n ver3.593(2013/11/06) Fixed a minor bug on clipboard operation" +
-        "\r\n ver3.592(2013/07/06) Fixed a minor bug in Find Parameter" +
-        "\r\n ver3.591(2013/02/26) Changed adress of help page." +
+        "\r\n ver3.595 (2013/11/11) Fixed a minor bug on 'Find Parameter'" +
+        "\r\n ver3.594 (2013/11/10) Fixed a minor bug on whole design" +
+        "\r\n ver3.593 (2013/11/06) Fixed a minor bug on clipboard operation" +
+        "\r\n ver3.592 (2013/07/06) Fixed a minor bug in Find Parameter" +
+        "\r\n ver3.591 (2013/02/26) Changed adress of help page." +
         "\r\n ver3.59 (2013/02/25) Added: Update check function." +
-        "\r\n ver3.582(2012/12/27) Fixed minor bugs" +
-        "\r\n ver3.581(2012/12/05) Fixed minor bugs" +
+        "\r\n ver3.582 (2012/12/27) Fixed minor bugs" +
+        "\r\n ver3.581 (2012/12/05) Fixed minor bugs" +
         "\r\n ver3.58 (2012/11/12) Improved 'Find Parameter' appearance" +
         "\r\n ver3.57 (2012/11/11) Improved 'Find Parameter' stability (maybe)" +
         "\r\n ver3.56 (2012/09/24) Added a new image format: *.mccd file (from SX-165 ccd camera)" +
-        "\r\n ver3.551(2012/08/21) Fixed: a minor bug." +
+        "\r\n ver3.551 (2012/08/21) Fixed: a minor bug." +
         "\r\n ver3.55 (2012/08/21) Added: Chi-axis option." +
-        "\r\n ver3.542(2012/08/20) Fixed: save the concentric/radial mode properly" +
-        "\r\n ver3.541(2012/08/12) Fixed: Unrolled image is now correctly calculated by a spherical correction parameter" +
+        "\r\n ver3.542 (2012/08/20) Fixed: save the concentric/radial mode properly" +
+        "\r\n ver3.541 (2012/08/12) Fixed: Unrolled image is now correctly calculated by a spherical correction parameter" +
         "\r\n ver3.54 (2012/08/11) Added: Circle, rectangle and spline curve mask mode" +
-        "\r\n ver3.534(2012/07/25) Fixed: Dtring size for customized setting" +
-        "\r\n ver3.533(2012/07/25) Fixed: Design of 'Find parameter' form" +
-        "\r\n ver3.532(2012/07/24) Improved: Design of 'Property' form" +
-        "\r\n ver3.531(2012/06/29) Fixed: Small problems on the 'Get Intensity' function." +
+        "\r\n ver3.534 (2012/07/25) Fixed: Dtring size for customized setting" +
+        "\r\n ver3.533 (2012/07/25) Fixed: Design of 'Find parameter' form" +
+        "\r\n ver3.532 (2012/07/24) Improved: Design of 'Property' form" +
+        "\r\n ver3.531 (2012/06/29) Fixed: Small problems on the 'Get Intensity' function." +
         "\r\n ver3.53 (2012/06/05) Added: Spherical Correction parameter to the 'Find Parameter' function" +
-        "\r\n ver3.522(2012/05/15) Fixed a bug on 'FindParameter'" +
-        "\r\n ver3.521(2012/05/15) Fixed an error on reading MarCCD format." +
+        "\r\n ver3.522 (2012/05/15) Fixed a bug on 'FindParameter'" +
+        "\r\n ver3.521 (2012/05/15) Fixed an error on reading MarCCD format." +
         "\r\n ver3.52 (2012/02/10) Fixed a problem on inteinsity value on GEL format. (linear => square)" +
-        "\r\n ver3.512(2011/12/19) Fixed bugs on find parameter on japanese mode." +
-        "\r\n ver3.511(2011/10/20) Draw ring function was fixed." +
+        "\r\n ver3.512 (2011/12/19) Fixed bugs on find parameter on japanese mode." +
+        "\r\n ver3.511 (2011/10/20) Draw ring function was fixed." +
         "\r\n ver3.51 (2011/10/12) Fixed problems on the FindParameter in Japanese language mode." +
         "\r\n ver3.50 (2011/10/05) Supported language option (English or Japanese). Fixed the file-foemat problem on the FindParameter form." +
         "\r\n ver3.43 (2011/08/30) supported mar345 IP format (*.mar*)" +
         "\r\n ver3.42 (2011/07/22) 入射線源部分の改良" +
-        "\r\n ver3.412(2011/07/12) Unrollled Imageの左端の部分が切れてしまう問題を解消。" +
-        "\r\n ver3.411(2011/07/12) 下の更新のバグ(横軸目盛がずれる)を修正しました。" +
+        "\r\n ver3.412 (2011/07/12) Unrollled Imageの左端の部分が切れてしまう問題を解消。" +
+        "\r\n ver3.411 (2011/07/12) 下の更新のバグ(横軸目盛がずれる)を修正しました。" +
         "\r\n ver3.41 (2011/07/12) Unrolled Imageを保存できるようにしました(Save Imageからtifまたはpng, pngの場合は目盛つき)。また、Unroll imageをBB光学系と一致するように強度補正しました。" +
-        "\r\n ver3.401(2011/07/06) 自動保存したプロファイルのファイル名から、元画像の拡張子を削除" +
+        "\r\n ver3.401 (2011/07/06) 自動保存したプロファイルのファイル名から、元画像の拡張子を削除" +
         "\r\n ver3.40 (2011/07/05) 揺動したRAxisIVファイル(*.osc)の読み込みに対応 && DrawRingのバグ修正" +
-        "\r\n ver3.391(2011/06/23) FindParameter部分のバグを修正(中野さま、有難うございます)" +
+        "\r\n ver3.391 (2011/06/23) FindParameter部分のバグを修正(中野さま、有難うございます)" +
         "\r\n ver3.39 (2011/05/10) 画像を円周方向に沿ってにじませる機能(Circumferentialblur)を付けました。" +
         "\r\n ver3.38 (2011/04/01) 入射X線のエネルギーを入力できるようにしました。" +
         "\r\n ver3.37 (2011/03/24) Tiff形式、Png形式で保存できるようにしました。" +
         "\r\n ver3.36 (2011/03/22) GEヘルスケア社のFLA7000ファイル形式(gel)に対応。" +
-        "\r\n ver3.352(2011/01/24) デザインを再度変更" +
-        "\r\n ver3.351(2010/12/08) デザインを若干変更" +
+        "\r\n ver3.352 (2011/01/24) デザインを再度変更" +
+        "\r\n ver3.351 (2010/12/08) デザインを若干変更" +
         "\r\n ver3.35 (2010/12/06) PDIndexerにUnrolled Imageを送信する機能を追加。Property=>After GetProfileでSend also Unrolled Imageをチェックすると有効になります。" +
         "\r\n ver3.34 (2010/12/05) 拡張子の関連付けに対応(PropertyからAssociated Extensions)。AutoProcedureの改善。" +
         "\r\n ver3.33 (2010/11/29) MainFormのデザイン変更。パラメータファイルに中心位置を保存/読出。FixCenter機能(中心位置を固定する)を追加。" +
@@ -212,19 +214,19 @@ static class Version
         "\r\n ver3.31 (2010/11/15) 終了時のレジストリ操作で例外が発生するバグを修正＆メイン画面上部にchi角を表示" +
         "\r\n ver3.30 (2010/11/08) 初回起動時にバックグラウンドでネイティブコードを生成するように変更。二回目以降の起動が早くなります。" +
         "\r\n ver3.20 (2010/11/05) Rayonix社SX-200 (CCDカメラ) のファイル形式に対応しました。" +
-        "\r\n ver3.192(2010/11/02) 画像拡大縮小のオーバーヘッドを減らして処理を高速化" +
-        "\r\n ver3.191(2010/11/02) 画像読み込み時の処理を高速化" +
+        "\r\n ver3.192 (2010/11/02) 画像拡大縮小のオーバーヘッドを減らして処理を高速化" +
+        "\r\n ver3.191 (2010/11/02) 画像読み込み時の処理を高速化" +
         "\r\n ver3.19 (2010/11/01) 浜ホトCCDの形式(ITEX形式)に対応しました。" +
         "\r\n ver3.18 (2010/10/29) 切り開きイメージ(Unrolled Image ?)の作成に対応。フォーム下の「Unroll」ボタンを押すと実行できます。" +
         "\r\n ver3.17 (2010/09/09) FujiのFDLを読み込めるように改良 + さまざまな媒体ごとの実験条件(波長、カメラ長など)を保存・読み込みするように修正" +
-        "\r\n ver3.163(2010/08/25) FindParameter からCopyToClipboardする時の表記間違いを修正(阪大・下堂さんありがとう)" +
-        "\r\n ver3.162(2010/05/29) FindParameter画面が開いているとき、メイン画面のGetProfileが距離モードになってしまう問題を修正" +
-        "\r\n ver3.161(2010/05/18) ver3.16の機能追加でFindParameterがうまく動いていなかったバグを修正 (阪大 下堂さん、ご指摘ありがとうございます。" +
+        "\r\n ver3.163 (2010/08/25) FindParameter からCopyToClipboardする時の表記間違いを修正(阪大・下堂さんありがとう)" +
+        "\r\n ver3.162 (2010/05/29) FindParameter画面が開いているとき、メイン画面のGetProfileが距離モードになってしまう問題を修正" +
+        "\r\n ver3.161 (2010/05/18) ver3.16の機能追加でFindParameterがうまく動いていなかったバグを修正 (阪大 下堂さん、ご指摘ありがとうございます。" +
         "\r\n ver3.16 (2010/05/09) Cake (あるいはRadial) Pattern の計算に対応しました。" +
-        "\r\n ver3.152(2010/04/19) ver3.151で送信データが最後に取得したパターンになってしまっていたバグを修正(久保さん、ご指摘有難うございます)" +
-        "\r\n ver3.151(2010/04/18) LPO(セクター)データを送信時、最後にまとめて送信するように仕様変更。PDIndexerが安定して受け取れると思います。" +
+        "\r\n ver3.152 (2010/04/19) ver3.151で送信データが最後に取得したパターンになってしまっていたバグを修正(久保さん、ご指摘有難うございます)" +
+        "\r\n ver3.151 (2010/04/18) LPO(セクター)データを送信時、最後にまとめて送信するように仕様変更。PDIndexerが安定して受け取れると思います。" +
         "\r\n ver3.15 (2010/04/13) FindParameterの部分を久々に改良。IP Tiltパラメータや中心位置の誤差を表示できるようにしました。" +
-        "\r\n ver3.141(2010/03/31) GetProfile後にファイル保存する機能がLPOオン時にうまく動いていなかった問題を修正" +
+        "\r\n ver3.141 (2010/03/31) GetProfile後にファイル保存する機能がLPOオン時にうまく動いていなかった問題を修正" +
         "\r\n ver3.14 (2010/03/31) FindParameter部分で標準結晶の回折線が消滅則を考慮していなかった問題を修正 + GetProfile後にファイル保存する機能を修正" +
         "\r\n ver3.13 (2010/03/29) LPO解析時、データをうまく送信できなかったバグを修正 (佐藤さん、ご指摘ありがとうございます)" +
         "\r\n ver3.12 (2010/02/23) FujiBAS2000の10bitデータを読み込めなかったバグを修正 (鍵様、ご迷惑をおかけしました)" +
