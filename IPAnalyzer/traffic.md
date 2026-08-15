@@ -1,12 +1,13 @@
 # Traffic Data: IPAnalyzer
 
-Last updated: 2026-08-14
+Last updated: 2026-08-15
 
 ## Views
 
 ### Daily (最大14日保持)
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-08-14 | 1 | 1 |
 | 2026-08-13 | 0 | 0 |
 | 2026-08-12 | 4 | 3 |
 | 2026-08-11 | 7 | 3 |
@@ -19,12 +20,11 @@ Last updated: 2026-08-14
 | 2026-08-04 | 2 | 1 |
 | 2026-08-03 | 3 | 3 |
 | 2026-08-02 | 1 | 1 |
-| 2026-08-01 | 0 | 0 |
 
 ### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-W33 | 11 | 6 |
+| 2026-W33 | 12 | 7 |
 | 2026-W32 | 22 | 15 |
 | 2026-W31 | 12 | 11 |
 | 2026-W30 | 24 | 14 |
@@ -42,7 +42,7 @@ Last updated: 2026-08-14
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-08 | 34 | 22 |
+| 2026-08 | 35 | 23 |
 | 2026-07 | 83 | 56 |
 | 2026-06 | 97 | 47 |
 | 2026-05 | 200 | 59 |
@@ -52,13 +52,14 @@ Last updated: 2026-08-14
 ### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 594 | 275 |
+| 2026 | 595 | 276 |
 
 ## Clones
 
 ### Daily (最大14日保持)
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-08-14 | 4 | 3 |
 | 2026-08-13 | 9 | 5 |
 | 2026-08-12 | 13 | 8 |
 | 2026-08-11 | 13 | 10 |
@@ -71,12 +72,11 @@ Last updated: 2026-08-14
 | 2026-08-04 | 13 | 9 |
 | 2026-08-03 | 6 | 4 |
 | 2026-08-02 | 3 | 2 |
-| 2026-08-01 | 4 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-W33 | 43 | 28 |
+| 2026-W33 | 47 | 31 |
 | 2026-W32 | 61 | 39 |
 | 2026-W31 | 45 | 29 |
 | 2026-W30 | 98 | 51 |
@@ -94,7 +94,7 @@ Last updated: 2026-08-14
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-08 | 111 | 72 |
+| 2026-08 | 115 | 75 |
 | 2026-07 | 250 | 145 |
 | 2026-06 | 614 | 232 |
 | 2026-05 | 581 | 293 |
@@ -104,18 +104,18 @@ Last updated: 2026-08-14
 ### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 2102 | 978 |
+| 2026 | 2106 | 981 |
 
 ## Referrers
 
 ### Weekly (最大2週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-W33 | yseto.net | 67 | 56 |
-| 2026-W33 | seto77.github.io | 23 | 8 |
-| 2026-W33 | github.com | 19 | 17 |
-| 2026-W33 | Google | 17 | 5 |
-| 2026-W33 | Bing | 11 | 8 |
+| 2026-W33 | yseto.net | 77 | 64 |
+| 2026-W33 | seto77.github.io | 28 | 10 |
+| 2026-W33 | github.com | 25 | 22 |
+| 2026-W33 | Google | 20 | 6 |
+| 2026-W33 | Bing | 13 | 9 |
 | 2026-W32 | yseto.net | 110 | 94 |
 | 2026-W32 | Baidu | 14 | 6 |
 | 2026-W32 | seto77.github.io | 12 | 3 |
@@ -127,12 +127,12 @@ Last updated: 2026-08-14
 ### Monthly (最大3か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-08 | yseto.net | 211 | 178 |
-| 2026-08 | seto77.github.io | 35 | 11 |
-| 2026-08 | Google | 30 | 13 |
-| 2026-08 | github.com | 30 | 28 |
+| 2026-08 | yseto.net | 221 | 186 |
+| 2026-08 | seto77.github.io | 40 | 13 |
+| 2026-08 | github.com | 36 | 33 |
+| 2026-08 | Google | 33 | 14 |
 | 2026-08 | Baidu | 24 | 10 |
-| 2026-08 | Bing | 19 | 16 |
+| 2026-08 | Bing | 21 | 17 |
 | 2026-08 | github-wiki-see.page | 4 | 4 |
 | 2026-07 | yseto.net | 317 | 263 |
 | 2026-07 | Baidu | 44 | 17 |
@@ -154,13 +154,13 @@ Last updated: 2026-08-14
 ### Yearly (無制限)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026 | yseto.net | 2410 | 1420 |
-| 2026 | github.com | 588 | 319 |
-| 2026 | Google | 543 | 198 |
-| 2026 | seto77.github.io | 88 | 50 |
+| 2026 | yseto.net | 2420 | 1428 |
+| 2026 | github.com | 594 | 324 |
+| 2026 | Google | 546 | 199 |
+| 2026 | seto77.github.io | 93 | 52 |
 | 2026 | kyoiku-kenkyudb.omu.ac.jp | 69 | 27 |
 | 2026 | Baidu | 68 | 27 |
-| 2026 | Bing | 61 | 44 |
+| 2026 | Bing | 63 | 45 |
 | 2026 | DuckDuckGo | 18 | 9 |
 | 2026 | github-wiki-see.page | 14 | 14 |
 | 2026 | chatgpt.com | 13 | 13 |
@@ -170,12 +170,13 @@ Last updated: 2026-08-14
 ### Weekly (最大2週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-W33 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 80 | 64 |
-| 2026-W33 | /seto77/IPAnalyzer | Overview | 72 | 38 |
-| 2026-W33 | /seto77/IPAnalyzer/releases | /releases | 8 | 8 |
-| 2026-W33 | /seto77/IPanalyzer | Overview | 8 | 5 |
-| 2026-W33 | /seto77/IPAnalyzer/blob/master/README-PORTABLE.txt | /blob/master/README-PORTABLE.txt | 5 | 5 |
-| 2026-W33 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 3 | 3 |
+| 2026-W33 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 92 | 74 |
+| 2026-W33 | /seto77/IPAnalyzer | Overview | 88 | 47 |
+| 2026-W33 | /seto77/IPanalyzer | Overview | 11 | 7 |
+| 2026-W33 | /seto77/IPAnalyzer/releases | /releases | 9 | 9 |
+| 2026-W33 | /seto77/IPAnalyzer/blob/master/README-PORTABLE.txt | /blob/master/README-PORTABLE.txt | 6 | 6 |
+| 2026-W33 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 4 | 4 |
+| 2026-W33 | /seto77/IPAnalyzer/issues | /issues | 1 | 1 |
 | 2026-W32 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 124 | 102 |
 | 2026-W32 | /seto77/IPAnalyzer | Overview | 47 | 35 |
 | 2026-W32 | /seto77/IPAnalyzer/releases | /releases | 11 | 11 |
@@ -191,18 +192,19 @@ Last updated: 2026-08-14
 ### Monthly (最大3か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-08 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 244 | 198 |
-| 2026-08 | /seto77/IPAnalyzer | Overview | 131 | 83 |
-| 2026-08 | /seto77/IPAnalyzer/releases | /releases | 23 | 23 |
-| 2026-08 | /seto77/IPAnalyzer/blob/master/README-PORTABLE.txt | /blob/master/README-PORTABLE.txt | 18 | 18 |
-| 2026-08 | /seto77/IPanalyzer | Overview | 8 | 5 |
+| 2026-08 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 256 | 208 |
+| 2026-08 | /seto77/IPAnalyzer | Overview | 147 | 92 |
+| 2026-08 | /seto77/IPAnalyzer/releases | /releases | 24 | 24 |
+| 2026-08 | /seto77/IPAnalyzer/blob/master/README-PORTABLE.txt | /blob/master/README-PORTABLE.txt | 19 | 19 |
+| 2026-08 | /seto77/IPanalyzer | Overview | 11 | 7 |
+| 2026-08 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 8 | 8 |
 | 2026-08 | /seto77/IPAnalyzer/wiki | /wiki | 7 | 7 |
-| 2026-08 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 7 | 7 |
 | 2026-08 | /seto77/IPAnalyzer/blob/master/LICENSE.rtf | /blob/master/LICENSE.rtf | 6 | 6 |
 | 2026-08 | /seto77/IPAnalyzer/commit/8a86eda545f6eabbe5f922c17ff0fe270a5b1f52 | /commit/8a86eda545f6eabbe5f922c17ff0fe270a5b1f52 | 4 | 4 |
 | 2026-08 | /seto77/IPAnalyzer/tree/master/IPAnalyzer/Properties | /tree/master/IPAnalyzer/Properties | 4 | 4 |
 | 2026-08 | /seto77/IPAnalyzer/tree/master/docs | /tree/master/docs | 4 | 4 |
 | 2026-08 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 3 | 3 |
+| 2026-08 | /seto77/IPAnalyzer/issues | /issues | 1 | 1 |
 | 2026-07 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 387 | 313 |
 | 2026-07 | /seto77/IPAnalyzer | Overview | 111 | 94 |
 | 2026-07 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 20 | 20 |
@@ -248,25 +250,25 @@ Last updated: 2026-08-14
 ### Yearly (無制限)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026 | /seto77/IPAnalyzer | Overview | 953 | 630 |
+| 2026 | /seto77/IPAnalyzer | Overview | 969 | 639 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 808 | 583 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 631 | 511 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 643 | 521 |
 | 2026 | /seto77/IPAnalyzer/tags | /tags | 489 | 26 |
-| 2026 | /seto77/IPAnalyzer/releases | /releases | 274 | 145 |
+| 2026 | /seto77/IPAnalyzer/releases | /releases | 275 | 146 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.980 | /releases/tag/v.3.980 | 242 | 180 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.979 | /releases/tag/v.3.979 | 193 | 166 |
-| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 148 | 117 |
+| 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 149 | 118 |
 | 2026 | /seto77/IPAnalyzer/tree/master | /tree/master | 86 | 64 |
-| 2026 | /seto77/IPAnalyzer/issues | /issues | 76 | 52 |
+| 2026 | /seto77/IPAnalyzer/issues | /issues | 77 | 53 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 75 | 42 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.978 | /releases/tag/v.3.978 | 70 | 56 |
+| 2026 | /seto77/IPanalyzer | Overview | 63 | 49 |
 | 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 62 | 59 |
-| 2026 | /seto77/IPanalyzer | Overview | 60 | 47 |
 | 2026 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 57 | 27 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 45 | 24 |
 | 2026 | /seto77/IPAnalyzer/wiki | /wiki | 44 | 44 |
 | 2026 | /seto77/IPAnalyzer/actions | /actions | 35 | 35 |
-| 2026 | /seto77/IPAnalyzer/blob/master/README-PORTABLE.txt | /blob/master/README-PORTABLE.txt | 32 | 32 |
+| 2026 | /seto77/IPAnalyzer/blob/master/README-PORTABLE.txt | /blob/master/README-PORTABLE.txt | 33 | 33 |
 | 2026 | /seto77/IPAnalyzer/commits | /commits | 28 | 12 |
 | 2026 | /seto77/IPAnalyzer/wiki/List-of-macro-functions | /wiki/List-of-macro-functions | 25 | 13 |
 | 2026 | /seto77/IPAnalyzer/stargazers | /stargazers | 24 | 24 |
@@ -359,6 +361,7 @@ Last updated: 2026-08-14
 ### Daily (最大14日保持)
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-08-15 | 12 | 3 | 0 | 3 |
 | 2026-08-14 | 12 | 3 | 0 | 3 |
 | 2026-08-13 | 12 | 3 | 0 | 3 |
 | 2026-08-12 | 12 | 3 | 0 | 3 |
@@ -371,7 +374,6 @@ Last updated: 2026-08-14
 | 2026-08-04 | 12 | 3 | 0 | 3 |
 | 2026-08-03 | 12 | 3 | 0 | 3 |
 | 2026-08-02 | 12 | 3 | 0 | 3 |
-| 2026-08-01 | 12 | 3 | 0 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Stars | Forks | Open Issues | Watchers |
@@ -403,4 +405,4 @@ Last updated: 2026-08-14
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
 
-<!-- meta: last_collected_paths=2026-08-14 last_collected_referrers=2026-08-14 -->
+<!-- meta: last_collected_paths=2026-08-15 last_collected_referrers=2026-08-15 -->
