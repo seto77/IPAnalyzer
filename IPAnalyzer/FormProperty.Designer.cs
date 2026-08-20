@@ -1208,7 +1208,7 @@
             numericBoxSphericalCorections.SmartIncrement = true;
             numericBoxSphericalCorections.ThousandsSeparator = true;
             toolTip.SetToolTip(numericBoxSphericalCorections, resources.GetString("numericBoxSphericalCorections.ToolTip"));
-            numericBoxSphericalCorections.ValueBoxWidth = 60;
+            numericBoxSphericalCorections.ValueBoxWidth = -1;                                                                                         // 260726Cl 変更 (旧 60): Dock=Top のため従来は ValueBoxWidth が無視され数値欄が伸縮していた。NumericBox 側で >=0 が Dock 時に「フッタ伸縮」を意味する仕様になったので、見た目維持のため -1 にする
             numericBoxSphericalCorections.ValueFontSize = 9F;
             numericBoxSphericalCorections.ValueChanged += DetectorParameters_Changed;
             // 
@@ -1224,7 +1224,7 @@
             numericBoxTiltTau.SmartIncrement = true;
             numericBoxTiltTau.ThousandsSeparator = true;
             toolTip.SetToolTip(numericBoxTiltTau, resources.GetString("numericBoxTiltTau.ToolTip"));
-            numericBoxTiltTau.ValueBoxWidth = 80;
+            numericBoxTiltTau.ValueBoxWidth = -1;                                                                                                     // 260726Cl 変更 (旧 80): 同上 (Dock=Top のため見た目維持で -1)
             numericBoxTiltTau.ValueFontSize = 9F;
             numericBoxTiltTau.ValueChanged += DetectorParameters_Changed;
             // 
@@ -1240,7 +1240,7 @@
             numericBoxTiltPhi.SmartIncrement = true;
             numericBoxTiltPhi.ThousandsSeparator = true;
             toolTip.SetToolTip(numericBoxTiltPhi, resources.GetString("numericBoxTiltPhi.ToolTip"));
-            numericBoxTiltPhi.ValueBoxWidth = 80;
+            numericBoxTiltPhi.ValueBoxWidth = -1;                                                                                                     // 260726Cl 変更 (旧 80): 同上 (Dock=Top のため見た目維持で -1)
             numericBoxTiltPhi.ValueFontSize = 9F;
             numericBoxTiltPhi.ValueChanged += DetectorParameters_Changed;
             // 
