@@ -1,6 +1,6 @@
 # Traffic Data: IPAnalyzer
 
-Last updated: 2026-09-06
+Last updated: 2026-09-07
 
 ## Views
 
@@ -19,7 +19,6 @@ Last updated: 2026-09-06
 | 2026-08-27 | 4 | 3 |
 | 2026-08-26 | 9 | 4 |
 | 2026-08-25 | 1 | 1 |
-| 2026-08-24 | 4 | 4 |
 
 ### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
@@ -37,7 +36,6 @@ Last updated: 2026-09-06
 | 2026-W26 | 2 | 2 |
 | 2026-W25 | 40 | 16 |
 | 2026-W24 | 19 | 14 |
-| 2026-W23 | 36 | 15 |
 
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
@@ -72,7 +70,6 @@ Last updated: 2026-09-06
 | 2026-08-27 | 9 | 4 |
 | 2026-08-26 | 11 | 8 |
 | 2026-08-25 | 2 | 2 |
-| 2026-08-24 | 4 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
@@ -90,7 +87,6 @@ Last updated: 2026-09-06
 | 2026-W26 | 21 | 8 |
 | 2026-W25 | 122 | 50 |
 | 2026-W24 | 205 | 77 |
-| 2026-W23 | 266 | 97 |
 
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
@@ -113,26 +109,23 @@ Last updated: 2026-09-06
 ### Weekly (最大2週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
+| 2026-W37 | yseto.net | 11 | 9 |
+| 2026-W37 | Google | 6 | 4 |
+| 2026-W37 | github.com | 6 | 3 |
+| 2026-W37 | DuckDuckGo | 1 | 1 |
 | 2026-W36 | yseto.net | 87 | 70 |
 | 2026-W36 | Google | 43 | 29 |
 | 2026-W36 | github.com | 39 | 19 |
 | 2026-W36 | DuckDuckGo | 7 | 7 |
 | 2026-W36 | kyoiku-kenkyudb.omu.ac.jp | 6 | 6 |
-| 2026-W35 | yseto.net | 49 | 40 |
-| 2026-W35 | github.com | 23 | 17 |
-| 2026-W35 | Google | 18 | 13 |
-| 2026-W35 | DuckDuckGo | 6 | 6 |
-| 2026-W35 | kyoiku-kenkyudb.omu.ac.jp | 6 | 6 |
-| 2026-W35 | Bing | 4 | 2 |
-| 2026-W35 | seto77.github.io | 2 | 2 |
 
 ### Monthly (最大3か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-09 | yseto.net | 75 | 60 |
-| 2026-09 | Google | 37 | 25 |
-| 2026-09 | github.com | 36 | 17 |
-| 2026-09 | DuckDuckGo | 6 | 6 |
+| 2026-09 | yseto.net | 86 | 69 |
+| 2026-09 | Google | 43 | 29 |
+| 2026-09 | github.com | 42 | 20 |
+| 2026-09 | DuckDuckGo | 7 | 7 |
 | 2026-09 | kyoiku-kenkyudb.omu.ac.jp | 5 | 5 |
 | 2026-08 | yseto.net | 333 | 275 |
 | 2026-08 | github.com | 107 | 89 |
@@ -157,14 +150,14 @@ Last updated: 2026-09-06
 ### Yearly (無制限)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026 | yseto.net | 2607 | 1577 |
-| 2026 | github.com | 701 | 397 |
-| 2026 | Google | 631 | 251 |
+| 2026 | yseto.net | 2618 | 1586 |
+| 2026 | github.com | 707 | 400 |
+| 2026 | Google | 637 | 255 |
 | 2026 | seto77.github.io | 121 | 67 |
 | 2026 | Bing | 83 | 55 |
 | 2026 | kyoiku-kenkyudb.omu.ac.jp | 82 | 40 |
 | 2026 | Baidu | 68 | 27 |
-| 2026 | DuckDuckGo | 31 | 22 |
+| 2026 | DuckDuckGo | 32 | 23 |
 | 2026 | github-wiki-see.page | 14 | 14 |
 | 2026 | chatgpt.com | 13 | 13 |
 
@@ -173,6 +166,13 @@ Last updated: 2026-09-06
 ### Weekly (最大2週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-W37 | /seto77/IPAnalyzer | Overview | 15 | 9 |
+| 2026-W37 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 13 | 11 |
+| 2026-W37 | /seto77/IPAnalyzer/releases | /releases | 2 | 2 |
+| 2026-W37 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 1 | 1 |
+| 2026-W37 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 1 | 1 |
+| 2026-W37 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 1 | 1 |
+| 2026-W37 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 1 | 1 |
 | 2026-W36 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 117 | 100 |
 | 2026-W36 | /seto77/IPAnalyzer | Overview | 101 | 61 |
 | 2026-W36 | /seto77/IPAnalyzer/releases | /releases | 12 | 12 |
@@ -187,36 +187,24 @@ Last updated: 2026-09-06
 | 2026-W36 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 2 | 2 |
 | 2026-W36 | /seto77/IPAnalyzer/pulls | /pulls | 1 | 1 |
 | 2026-W36 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 1 | 1 |
-| 2026-W35 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 72 | 63 |
-| 2026-W35 | /seto77/IPAnalyzer | Overview | 55 | 41 |
-| 2026-W35 | /seto77/IPanalyzer | Overview | 6 | 4 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.Designer.cs | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.Designer.cs | 6 | 6 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.cs | 6 | 6 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.ja.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.ja.resx | 6 | 6 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | 6 | 6 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | 6 | 6 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | 5 | 5 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 5 | 5 |
-| 2026-W35 | /seto77/IPAnalyzer/releases | /releases | 4 | 4 |
-| 2026-W35 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 4 | 4 |
 
 ### Monthly (最大3か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 101 | 86 |
-| 2026-09 | /seto77/IPAnalyzer | Overview | 90 | 54 |
-| 2026-09 | /seto77/IPAnalyzer/releases | /releases | 12 | 12 |
-| 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 6 | 6 |
+| 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 114 | 97 |
+| 2026-09 | /seto77/IPAnalyzer | Overview | 105 | 63 |
+| 2026-09 | /seto77/IPAnalyzer/releases | /releases | 14 | 14 |
+| 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 7 | 7 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.Designer.cs | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.Designer.cs | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.cs | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.ja.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.ja.resx | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | 4 | 4 |
-| 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 2 | 2 |
-| 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 2 | 2 |
+| 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 3 | 3 |
+| 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 3 | 3 |
+| 2026-09 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 2 | 2 |
 | 2026-09 | /seto77/IPAnalyzer/pulls | /pulls | 1 | 1 |
-| 2026-09 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 1 | 1 |
 | 2026-08 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 410 | 339 |
 | 2026-08 | /seto77/IPAnalyzer | Overview | 319 | 206 |
 | 2026-08 | /seto77/IPanalyzer | Overview | 41 | 27 |
@@ -264,11 +252,11 @@ Last updated: 2026-09-06
 ### Yearly (無制限)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026 | /seto77/IPAnalyzer | Overview | 1231 | 807 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 898 | 738 |
+| 2026 | /seto77/IPAnalyzer | Overview | 1246 | 816 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 911 | 749 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 808 | 583 |
 | 2026 | /seto77/IPAnalyzer/tags | /tags | 489 | 26 |
-| 2026 | /seto77/IPAnalyzer/releases | /releases | 297 | 168 |
+| 2026 | /seto77/IPAnalyzer/releases | /releases | 299 | 170 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.980 | /releases/tag/v.3.980 | 242 | 180 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.979 | /releases/tag/v.3.979 | 193 | 166 |
 | 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 155 | 124 |
@@ -303,20 +291,20 @@ Last updated: 2026-09-06
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.ja.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.ja.resx | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | 13 | 13 |
+| 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 12 | 12 |
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | 12 | 12 |
-| 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 12 | 12 |
 | 2026 | /seto77/IPAnalyzer/network/dependencies | /network/dependencies | 11 | 11 |
 | 2026 | /seto77/IPAnalyzer/tree/master/Crystallography | /tree/master/Crystallography | 10 | 10 |
 | 2026 | /seto77/IPAnalyzer/commit/2e69f58567700927ccf3e9eb43445555b41832f2 | /commit/2e69f58567700927ccf3e9eb43445555b41832f2 | 9 | 9 |
 | 2026 | /seto77/IPAnalyzer/blob/v.3.980/IPAnalyzer/FormSequentialImage.cs | /blob/v.3.980/IPAnalyzer/FormSequentialImage.cs | 8 | 4 |
 | 2026 | /seto77/IPAnalyzer/commit/f30d0a85e85aa45fb8b0c44fc82e61b8b7c146d9 | /commit/f30d0a85e85aa45fb8b0c44fc82e61b8b7c146d9 | 8 | 8 |
+| 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 8 | 8 |
 | 2026 | /seto77/IPAnalyzer/commit/d90a89e187bd2d09e38a8e2e5d7e51060fb43aca | /commit/d90a89e187bd2d09e38a8e2e5d7e51060fb43aca | 7 | 7 |
 | 2026 | /seto77/IPAnalyzer/tree/master/Crystallography/Atom | /tree/master/Crystallography/Atom | 7 | 7 |
 | 2026 | /seto77/IPAnalyzer/compare/v.3.979...v.3.980 | /compare/v.3.979...v.3.980 | 7 | 7 |
 | 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer/Properties | /tree/master/IPAnalyzer/Properties | 7 | 7 |
 | 2026 | /seto77/IPAnalyzer/tree/master/docs | /tree/master/docs | 7 | 7 |
-| 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 7 | 7 |
 | 2026 | /seto77/ipanalyzer/pulls | /pulls | 6 | 6 |
 | 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/LICENSE.rtf | /blob/master/IPAnalyzerSetup/LICENSE.rtf | 6 | 6 |
 | 2026 | /seto77/IPAnalyzer/tree/d156a569d0b674c324785333f62c1c53adf362d0/.github/workflows | /tree/d156a569d0b674c324785333f62c1c53adf362d0/.github/workflows | 6 | 6 |
@@ -325,6 +313,7 @@ Last updated: 2026-09-06
 | 2026 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.cs | /blob/master/Crystallography.Controls/Macro/FormMacro.cs | 4 | 2 |
 | 2026 | /seto77/IPAnalyzer/issues/7 | /issues/7 | 4 | 4 |
 | 2026 | /seto77/IPAnalyzer/tree/5cca65c2b969c6dfc8fd409ccf43563e37c6a773 | /tree/5cca65c2b969c6dfc8fd409ccf43563e37c6a773 | 4 | 4 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 3 | 3 |
 | 2026 | /seto77/IPAnalyzer/commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | /commit/ae73adbc89acbabdb78c7a591074542a065fcc56 | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/commit/688d6b975e519fda7c87b7a12b289dc3cebd635f | /commit/688d6b975e519fda7c87b7a12b289dc3cebd635f | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/tree/master/.github | /tree/master/.github | 2 | 2 |
@@ -332,10 +321,9 @@ Last updated: 2026-09-06
 | 2026 | /seto77/IPAnalyzer/tree/v.3.977 | /tree/v.3.977 | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/FormMacro.ja.resx | /blob/master/Crystallography.Controls/Macro/FormMacro.ja.resx | 2 | 1 |
 | 2026 | /seto77/IPAnalyzer/blob/master/Crystallography.Controls/Macro/Macro.cs | /blob/master/Crystallography.Controls/Macro/Macro.cs | 2 | 1 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 2 | 2 |
+| 2026 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 2 | 2 |
 | 2026 | /seto77/IPAnalyzer/tree/master/.github/workflows | /tree/master/.github/workflows | 1 | 1 |
 | 2026 | /seto77/IPAnalyzer/projects | /projects | 1 | 1 |
-| 2026 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 1 | 1 |
 
 ## Downloads
 
@@ -387,6 +375,7 @@ Last updated: 2026-09-06
 ### Daily (最大14日保持)
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-09-07 | 12 | 3 | 0 | 3 |
 | 2026-09-06 | 12 | 3 | 0 | 3 |
 | 2026-09-05 | 12 | 3 | 0 | 3 |
 | 2026-09-04 | 12 | 3 | 0 | 3 |
@@ -399,11 +388,11 @@ Last updated: 2026-09-06
 | 2026-08-28 | 12 | 3 | 0 | 3 |
 | 2026-08-26 | 12 | 3 | 0 | 3 |
 | 2026-08-25 | 12 | 3 | 0 | 3 |
-| 2026-08-24 | 12 | 3 | 0 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-W37 | 12 | 3 | 0 | 3 |
 | 2026-W36 | 12 | 3 | 0 | 3 |
 | 2026-W35 | 12 | 3 | 0 | 3 |
 | 2026-W34 | 12 | 3 | 0 | 3 |
@@ -415,7 +404,6 @@ Last updated: 2026-09-06
 | 2026-W26 | 12 | 3 | 0 | 3 |
 | 2026-W25 | 12 | 3 | 0 | 3 |
 | 2026-W24 | 12 | 3 | 0 | 3 |
-| 2026-W23 | 12 | 3 | 0 | 3 |
 
 ### Monthly (最大12か月保持)
 | Period | Stars | Forks | Open Issues | Watchers |
@@ -432,4 +420,4 @@ Last updated: 2026-09-06
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
 
-<!-- meta: last_collected_paths=2026-09-06 last_collected_referrers=2026-09-06 -->
+<!-- meta: last_collected_paths=2026-09-07 last_collected_referrers=2026-09-07 -->
