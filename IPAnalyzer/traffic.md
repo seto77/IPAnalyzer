@@ -1,12 +1,13 @@
 # Traffic Data: IPAnalyzer
 
-Last updated: 2026-09-17
+Last updated: 2026-09-18
 
 ## Views
 
 ### Daily (最大14日保持)
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-09-17 | 1 | 1 |
 | 2026-09-16 | 2 | 1 |
 | 2026-09-15 | 1 | 1 |
 | 2026-09-14 | 5 | 5 |
@@ -19,12 +20,11 @@ Last updated: 2026-09-17
 | 2026-09-07 | 1 | 1 |
 | 2026-09-06 | 1 | 1 |
 | 2026-09-05 | 2 | 2 |
-| 2026-09-04 | 0 | 0 |
 
 ### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-W38 | 8 | 7 |
+| 2026-W38 | 9 | 8 |
 | 2026-W37 | 14 | 8 |
 | 2026-W36 | 14 | 11 |
 | 2026-W35 | 19 | 13 |
@@ -42,7 +42,7 @@ Last updated: 2026-09-17
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-09 | 32 | 24 |
+| 2026-09 | 33 | 25 |
 | 2026-08 | 79 | 57 |
 | 2026-07 | 83 | 56 |
 | 2026-06 | 97 | 47 |
@@ -53,13 +53,14 @@ Last updated: 2026-09-17
 ### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 671 | 334 |
+| 2026 | 672 | 335 |
 
 ## Clones
 
 ### Daily (最大14日保持)
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-09-17 | 13 | 8 |
 | 2026-09-16 | 15 | 9 |
 | 2026-09-15 | 13 | 7 |
 | 2026-09-14 | 2 | 2 |
@@ -72,12 +73,11 @@ Last updated: 2026-09-17
 | 2026-09-07 | 12 | 9 |
 | 2026-09-06 | 10 | 10 |
 | 2026-09-05 | 7 | 6 |
-| 2026-09-04 | 9 | 5 |
 
 ### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-W38 | 30 | 18 |
+| 2026-W38 | 43 | 26 |
 | 2026-W37 | 66 | 52 |
 | 2026-W36 | 51 | 42 |
 | 2026-W35 | 38 | 26 |
@@ -95,7 +95,7 @@ Last updated: 2026-09-17
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-09 | 142 | 108 |
+| 2026-09 | 155 | 116 |
 | 2026-08 | 232 | 141 |
 | 2026-07 | 250 | 145 |
 | 2026-06 | 614 | 232 |
@@ -106,17 +106,17 @@ Last updated: 2026-09-17
 ### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 2365 | 1155 |
+| 2026 | 2378 | 1163 |
 
 ## Referrers
 
 ### Weekly (最大2週保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-W38 | github.com | 24 | 14 |
-| 2026-W38 | yseto.net | 17 | 15 |
-| 2026-W38 | Google | 10 | 10 |
-| 2026-W38 | seto77.github.io | 8 | 4 |
+| 2026-W38 | github.com | 29 | 17 |
+| 2026-W38 | yseto.net | 24 | 21 |
+| 2026-W38 | Google | 12 | 12 |
+| 2026-W38 | seto77.github.io | 10 | 5 |
 | 2026-W37 | github.com | 46 | 23 |
 | 2026-W37 | yseto.net | 44 | 34 |
 | 2026-W37 | Google | 31 | 24 |
@@ -126,10 +126,10 @@ Last updated: 2026-09-17
 ### Monthly (最大3か月保持)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026-09 | yseto.net | 136 | 109 |
-| 2026-09 | github.com | 106 | 54 |
-| 2026-09 | Google | 78 | 59 |
-| 2026-09 | seto77.github.io | 10 | 5 |
+| 2026-09 | yseto.net | 143 | 115 |
+| 2026-09 | github.com | 111 | 57 |
+| 2026-09 | Google | 80 | 61 |
+| 2026-09 | seto77.github.io | 12 | 6 |
 | 2026-09 | DuckDuckGo | 7 | 7 |
 | 2026-09 | kyoiku-kenkyudb.omu.ac.jp | 5 | 5 |
 | 2026-08 | yseto.net | 333 | 275 |
@@ -155,10 +155,10 @@ Last updated: 2026-09-17
 ### Yearly (無制限)
 | Period | Referrer | Total Count | Unique |
 | ---- | ---- | ---- | ---- |
-| 2026 | yseto.net | 2668 | 1626 |
-| 2026 | github.com | 771 | 434 |
-| 2026 | Google | 672 | 285 |
-| 2026 | seto77.github.io | 131 | 72 |
+| 2026 | yseto.net | 2675 | 1632 |
+| 2026 | github.com | 776 | 437 |
+| 2026 | Google | 674 | 287 |
+| 2026 | seto77.github.io | 133 | 73 |
 | 2026 | Bing | 83 | 55 |
 | 2026 | kyoiku-kenkyudb.omu.ac.jp | 82 | 40 |
 | 2026 | Baidu | 68 | 27 |
@@ -171,13 +171,13 @@ Last updated: 2026-09-17
 ### Weekly (最大2週保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-W38 | /seto77/IPAnalyzer | Overview | 46 | 38 |
-| 2026-W38 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 31 | 25 |
-| 2026-W38 | /seto77/IPAnalyzer/pulls | /pulls | 16 | 12 |
-| 2026-W38 | /seto77/IPAnalyzer/releases | /releases | 5 | 5 |
-| 2026-W38 | /seto77/IPAnalyzer/issues | /issues | 4 | 4 |
-| 2026-W38 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 4 | 4 |
-| 2026-W38 | /seto77/IPanalyzer | Overview | 3 | 3 |
+| 2026-W38 | /seto77/IPAnalyzer | Overview | 54 | 45 |
+| 2026-W38 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 41 | 33 |
+| 2026-W38 | /seto77/IPAnalyzer/pulls | /pulls | 20 | 15 |
+| 2026-W38 | /seto77/IPAnalyzer/releases | /releases | 6 | 6 |
+| 2026-W38 | /seto77/IPAnalyzer/issues | /issues | 5 | 5 |
+| 2026-W38 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 5 | 5 |
+| 2026-W38 | /seto77/IPanalyzer | Overview | 4 | 4 |
 | 2026-W37 | /seto77/IPAnalyzer | Overview | 99 | 66 |
 | 2026-W37 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 59 | 48 |
 | 2026-W37 | /seto77/IPAnalyzer/releases | /releases | 11 | 11 |
@@ -191,12 +191,12 @@ Last updated: 2026-09-17
 ### Monthly (最大3か月保持)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026-09 | /seto77/IPAnalyzer | Overview | 235 | 158 |
-| 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 191 | 159 |
-| 2026-09 | /seto77/IPAnalyzer/releases | /releases | 28 | 28 |
-| 2026-09 | /seto77/IPAnalyzer/pulls | /pulls | 26 | 22 |
-| 2026-09 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 12 | 12 |
-| 2026-09 | /seto77/IPAnalyzer/issues | /issues | 8 | 8 |
+| 2026-09 | /seto77/IPAnalyzer | Overview | 243 | 165 |
+| 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 201 | 167 |
+| 2026-09 | /seto77/IPAnalyzer/pulls | /pulls | 30 | 25 |
+| 2026-09 | /seto77/IPAnalyzer/releases | /releases | 29 | 29 |
+| 2026-09 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 13 | 13 |
+| 2026-09 | /seto77/IPAnalyzer/issues | /issues | 9 | 9 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 7 | 7 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.Designer.cs | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.Designer.cs | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.cs | 4 | 4 |
@@ -205,8 +205,8 @@ Last updated: 2026-09-17
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/releases/tag/v.3.969 | /releases/tag/v.3.969 | 4 | 4 |
+| 2026-09 | /seto77/IPanalyzer | Overview | 4 | 4 |
 | 2026-09 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | /blob/621aafb5/Crystallography.Controls/ScalablePictureBoxAdvanced.cs | 3 | 3 |
-| 2026-09 | /seto77/IPanalyzer | Overview | 3 | 3 |
 | 2026-08 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 410 | 339 |
 | 2026-08 | /seto77/IPAnalyzer | Overview | 319 | 206 |
 | 2026-08 | /seto77/IPanalyzer | Overview | 41 | 27 |
@@ -254,22 +254,22 @@ Last updated: 2026-09-17
 ### Yearly (無制限)
 | Period | Path | Title | Total Count | Unique |
 | ---- | ---- | ---- | ---- | ---- |
-| 2026 | /seto77/IPAnalyzer | Overview | 1376 | 911 |
-| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 988 | 811 |
+| 2026 | /seto77/IPAnalyzer | Overview | 1384 | 918 |
+| 2026 | /seto77/IPAnalyzer/releases/tag/v.3.981 | /releases/tag/v.3.981 | 998 | 819 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.977 | /releases/tag/v.3.977 | 808 | 583 |
 | 2026 | /seto77/IPAnalyzer/tags | /tags | 489 | 26 |
-| 2026 | /seto77/IPAnalyzer/releases | /releases | 313 | 184 |
+| 2026 | /seto77/IPAnalyzer/releases | /releases | 314 | 185 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.980 | /releases/tag/v.3.980 | 242 | 180 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.979 | /releases/tag/v.3.979 | 193 | 166 |
 | 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzer | /tree/master/IPAnalyzer | 155 | 124 |
-| 2026 | /seto77/IPanalyzer | Overview | 96 | 72 |
-| 2026 | /seto77/IPAnalyzer/issues | /issues | 93 | 69 |
+| 2026 | /seto77/IPanalyzer | Overview | 97 | 73 |
+| 2026 | /seto77/IPAnalyzer/issues | /issues | 94 | 70 |
 | 2026 | /seto77/IPAnalyzer/tree/master | /tree/master | 86 | 64 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.974 | /releases/tag/v.3.974 | 75 | 42 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.978 | /releases/tag/v.3.978 | 70 | 56 |
 | 2026 | /seto77/IPAnalyzer/tree/master/IPAnalyzerSetup | /tree/master/IPAnalyzerSetup | 62 | 59 |
 | 2026 | /seto77/IPAnalyzer/wiki/Macro-examples | /wiki/Macro-examples | 57 | 27 |
-| 2026 | /seto77/IPAnalyzer/pulls | /pulls | 46 | 37 |
+| 2026 | /seto77/IPAnalyzer/pulls | /pulls | 50 | 40 |
 | 2026 | /seto77/IPAnalyzer/releases/tag/v.3.973 | /releases/tag/v.3.973 | 45 | 24 |
 | 2026 | /seto77/IPAnalyzer/wiki | /wiki | 44 | 44 |
 | 2026 | /seto77/IPAnalyzer/actions | /actions | 35 | 35 |
@@ -294,9 +294,9 @@ Last updated: 2026-09-17
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/CrystalControl.resx | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.cs | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | /blob/621aafb5/Crystallography.Controls/Crystal/PoleFigureControl.cs | 13 | 13 |
+| 2026 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 13 | 13 |
 | 2026 | /seto77/IPAnalyzer/blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | /blob/master/IPAnalyzerSetup/IPAnalyzerSetup.vdproj | 12 | 12 |
 | 2026 | /seto77/IPAnalyzer/blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | /blob/621aafb5/Crystallography.Controls/Crystal/SymmetryControl.resx | 12 | 12 |
-| 2026 | /seto77/IPAnalyzer/wiki/Find-parameter-(brute-force) | /wiki/Find-parameter-(brute-force) | 12 | 12 |
 | 2026 | /seto77/IPAnalyzer/network/dependencies | /network/dependencies | 11 | 11 |
 | 2026 | /seto77/IPAnalyzer/tree/master/Crystallography | /tree/master/Crystallography | 10 | 10 |
 | 2026 | /seto77/IPAnalyzer/commit/2e69f58567700927ccf3e9eb43445555b41832f2 | /commit/2e69f58567700927ccf3e9eb43445555b41832f2 | 9 | 9 |
@@ -331,7 +331,7 @@ Last updated: 2026-09-17
 
 | Release Tag | Release Date | Asset Name | Download Count |
 | ---- | ---- | ---- | ---- |
-| v.3.981 | 2026-06-25 | IPAnalyzer-setup.msi | 176 |
+| v.3.981 | 2026-06-25 | IPAnalyzer-setup.msi | 178 |
 | v.3.981 | 2026-06-25 | IPAnalyzer-setup_arm64.msi | 15 |
 | v.3.981 | 2026-06-25 | IPAnalyzer-v.3.981.zip | 38 |
 | v.3.981 | 2026-06-25 | IPAnalyzer-v.3.981_arm64.zip | 10 |
@@ -370,13 +370,14 @@ Last updated: 2026-09-17
 | v.3.951 | 2023-10-07 | IPAnalyzerSetup.msi | 85 |
 | v.3.950 | 2023-10-03 | IPAnalyzerSetup.msi | 7 |
 
-**TOTAL: 1947**
+**TOTAL: 1949**
 
 ## Stats
 
 ### Daily (最大14日保持)
 | Date | Stars | Forks | Open Issues | Watchers |
 | ---- | ---- | ---- | ---- | ---- |
+| 2026-09-18 | 12 | 3 | 0 | 3 |
 | 2026-09-17 | 12 | 3 | 0 | 3 |
 | 2026-09-16 | 12 | 3 | 0 | 3 |
 | 2026-09-15 | 12 | 3 | 0 | 3 |
@@ -390,7 +391,6 @@ Last updated: 2026-09-17
 | 2026-09-07 | 12 | 3 | 0 | 3 |
 | 2026-09-06 | 12 | 3 | 0 | 3 |
 | 2026-09-05 | 12 | 3 | 0 | 3 |
-| 2026-09-04 | 12 | 3 | 0 | 3 |
 
 ### Weekly (最大14週保持)
 | Period | Stars | Forks | Open Issues | Watchers |
@@ -423,4 +423,4 @@ Last updated: 2026-09-17
 | ---- | ---- | ---- | ---- | ---- |
 | 2026 | 12 | 3 | 0 | 3 |
 
-<!-- meta: last_collected_paths=2026-09-17 last_collected_referrers=2026-09-17 -->
+<!-- meta: last_collected_paths=2026-09-18 last_collected_referrers=2026-09-18 -->
