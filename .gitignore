@@ -1,0 +1,10 @@
+# 261105Cl 追加: リポジトリに .gitignore が無く、ビルド出力が未追跡ファイルとして出るため最小限を定義
+# ビルド出力
+bin/
+obj/
+# Visual Studio のユーザー固有ファイル
+.vs/
+*.user
+*.suo
+# LibreOffice のロックファイル (traffic.xlsx を開いたときに生成)
+.~lock.*#
