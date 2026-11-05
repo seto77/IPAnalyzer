@@ -631,7 +631,9 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
   </data>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>プロファイルをリートベルト解析用のGSAS形式で保存し
-ます。この形式では「1ファイル」保存は使えません。</value>
+ます。この形式では「1ファイル」保存は使えません。
+横軸が2θのとき(「散乱角(2θ)積算」の「角度」)
+だけ保存できます。</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>

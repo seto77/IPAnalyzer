@@ -2561,7 +2561,9 @@ values) for spreadsheets.</value>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>Save the profile in GSAS format for
 Rietveld refinement; note 'one file'
-option is unavailable in this format.</value>
+option is unavailable in this format.
+Available only when the x-axis is 2θ
+('Concentric integration' with 'Angle').</value>
   </data>
   <data name="&gt;&gt;radioButtonAsGSASformat.Name" xml:space="preserve">
     <value>radioButtonAsGSASformat</value>

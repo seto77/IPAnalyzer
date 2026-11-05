@@ -830,7 +830,9 @@ desenmascarar manualmente solo la región de interés.</value>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>Guarda el perfil en formato GSAS para
 refinamiento Rietveld; ten en cuenta que la opción
-'un archivo' no está disponible en este formato.</value>
+'un archivo' no está disponible en este formato.
+Solo disponible cuando el eje x es 2θ
+('Integración concéntrica' con 'Ángulo').</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>Ancho de banda en píxeles (máx. 10000): semigrosor

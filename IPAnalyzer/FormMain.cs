@@ -3667,6 +3667,26 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (dpList == null || dpList.Count == 0) return;
 
+        // 261105Cl 追加: GSAS 形式 (BANK … CONST 2θ×100 … FXYE) は横軸が 2θ のとき (Concentric の角度モード) だけ書く。
+        //   ToGSAS は横軸を常に 2θ として書くので、d 値・Length・Radial (χ) の横軸では誤ったファイルになっていた。保存せずに知らせる
+        if (FormProperty.radioButtonAsGSASformat.Checked && !(IP.ConcentricMode && IP.Mode == HorizontalAxis.Angle)) // 261105Cl 追加
+        {
+            MessageBox.Show(this, Crystallography.Localization.Loc( // 261105Cl 追加
+                en: "The GSAS format can be saved only when the x-axis is 2θ ('Concentric integration' with 'Angle').\nThe profile was not saved. Choose PDI, CSV or TSV, or set the x-axis to 2θ.", // 261105Cl 追加
+                ja: "GSAS 形式で保存できるのは、横軸が 2θ のとき (「散乱角(2θ)積算」の「角度」) だけです。\nプロファイルは保存されていません。PDI・CSV・TSV を選ぶか、横軸を 2θ にしてください。", // 261105Cl 追加
+                de: "Das GSAS-Format kann nur gespeichert werden, wenn die x-Achse 2θ ist (\"Konzentrische Integration\" mit \"Winkel\").\nDas Profil wurde nicht gespeichert. Wählen Sie PDI, CSV oder TSV oder stellen Sie die x-Achse auf 2θ.", // 261105Cl 追加
+                fr: "Le format GSAS ne peut être enregistré que si l'axe x est 2θ (« Intégration concentrique » avec « Angle »).\nLe profil n'a pas été enregistré. Choisissez PDI, CSV ou TSV, ou passez l'axe x en 2θ.", // 261105Cl 追加
+                es: "El formato GSAS solo se puede guardar cuando el eje x es 2θ ('Integración concéntrica' con 'Ángulo').\nEl perfil no se ha guardado. Elija PDI, CSV o TSV, o cambie el eje x a 2θ.", // 261105Cl 追加
+                pt: "O formato GSAS só pode ser salvo quando o eixo x é 2θ ('Integração concêntrica' com 'Ângulo').\nO perfil não foi salvo. Escolha PDI, CSV ou TSV, ou mude o eixo x para 2θ.", // 261105Cl 追加
+                it: "Il formato GSAS può essere salvato solo quando l'asse x è 2θ ('Integrazione concentrica' con 'Angolo').\nIl profilo non è stato salvato. Scegli PDI, CSV o TSV, oppure imposta l'asse x su 2θ.", // 261105Cl 追加
+                ru: "Формат GSAS можно сохранить, только если ось x — 2θ («Концентрическое интегрирование», «Угол»).\nПрофиль не сохранён. Выберите PDI, CSV или TSV либо переключите ось x на 2θ.", // 261105Cl 追加
+                zhHans: "仅当 x 轴为 2θ 时（“同心积分”中选择“角度”）才能保存为 GSAS 格式。\n图谱未保存。请选择 PDI、CSV 或 TSV，或将 x 轴切换为 2θ。", // 261105Cl 追加
+                zhHant: "僅當 x 軸為 2θ 時（「同心積分」中選取「角度」）才能儲存為 GSAS 格式。\n圖譜未儲存。請選擇 PDI、CSV 或 TSV，或將 x 軸切換為 2θ。", // 261105Cl 追加
+                ko: "GSAS 형식은 x축이 2θ일 때('동심 적분'에서 '각도' 선택)만 저장할 수 있습니다.\n프로파일이 저장되지 않았습니다. PDI, CSV 또는 TSV를 선택하거나 x축을 2θ로 바꾸십시오."), // 261105Cl 追加
+                "GSAS", MessageBoxButtons.OK, MessageBoxIcon.Warning); // 261105Cl 追加
+            return; // 261105Cl 追加
+        }
+
         string extension;
         #region 拡張子を設定
         if (FormProperty.radioButtonAsPDIformat.Checked) extension = ".pdi2";

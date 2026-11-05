@@ -879,7 +879,9 @@ Bereich demaskiert wird.</value>
     <value>Speichert das Profil im GSAS-Format für die
 Rietveld-Verfeinerung; Hinweis: Die Option
 "eine Datei" ist in diesem Format nicht
-verfügbar.</value>
+verfügbar.
+Nur verfügbar, wenn die x-Achse 2θ ist
+("Konzentrische Integration" mit "Winkel").</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>Bandbreite in Pixeln (max. 10000): halbe Dicke

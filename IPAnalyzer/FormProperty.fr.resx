@@ -857,7 +857,9 @@ démasquer manuellement la seule région d'intérêt.</value>
     <value>Enregistrer le profil au format GSAS pour
 l'affinement de Rietveld ; noter que l'option
 « un seul fichier » n'est pas disponible dans ce
-format.</value>
+format.
+Disponible uniquement si l'axe x est 2θ
+(« Intégration concentrique » avec « Angle »).</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>Largeur de bande en pixels (max 10000) : demi-épaisseur
