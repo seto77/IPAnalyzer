@@ -375,7 +375,8 @@ public class Macro : MacroBase
         [Help("Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "params object[] obj")]
         public void RunMacro(params object[] obj)
         {
-            RunMacro("", obj);
+            //RunMacro("", obj); // 261105Cl 変更前: "" と obj を params object[] に詰めて自分自身を呼ぶ無限再帰 (StackOverflow) だった
+            RunMacroName("", obj); // 261105Cl 変更: 名前なしで送ると PDIndexer 側はエディタ中のマクロを実行する (PDIndexer FormMain の MacroTrigger 受信処理)
         }
 
         [Help("Execute a macro code in PDIndexer. \r\n 'name' is the macro name on PDI. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "string name, params object[] obj")]
