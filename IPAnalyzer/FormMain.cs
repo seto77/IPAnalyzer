@@ -3479,7 +3479,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (maskSpotsBeforeGetProfileToolStripMenuItem.Checked && !toolStripButtonManualSpotMode.Checked) //260712Cl == true/== false を除去
             toolStripSplitButtonMaskSpots_ButtonClick(this, EventArgs.Empty);
 
-        IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d;
+        // 261105Cl 削除: 横軸モードは SetIntegralProperty() が Concentric/Radial と各単位のラジオボタンから決める (Length・Radial 側も含む)。
+        //   この行は Concentric の「角度」ボタンだけを見て Angle/d に上書きしていた (Length が d になり、Radial も Concentric 側のボタンに従う)。
+        //   2019 年の初版からあり (2023 の 307fc48 で if/else を三項演算子にしただけ)、直後の SetMask() → SetIntegralProperty() で毎回上書き
+        //   し直されるので実害は出ていなかったが、SetIntegralProperty() の決定と食い違う誤った代入なので外す。
+        //IP.Mode = FormProperty.radioButtonConcentricAngle.Checked ? HorizontalAxis.Angle : HorizontalAxis.d; // 261105Cl 削除
         try
         {
             toolStripSplitButtonGetProfile.Enabled = false;
