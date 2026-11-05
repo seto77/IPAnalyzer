@@ -3703,6 +3703,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             {
                 using var sw = new StreamWriter(filename + extension);
                 var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
+                // 261105Cl 追加: 数値は地域設定 (CurrentCulture) に依らず InvariantCulture で書く。コンマ小数の地域設定 (de, fr など) では
+                //   "12,5" が CSV の区切りと混ざって列が崩れていた。en/ja の地域設定での出力は従来と同じ
+                var inv = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加
 
                 //1行目
                 for (int j = 0; j < dpList.Count; j++)
@@ -3716,7 +3719,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     for (int j = 0; j < dpList.Count; j++)
                     {
                         if (i < dpList[j].SourceProfile.Pt.Count)
-                            sw.Write($"{dpList[j].SourceProfile.Pt[i].X}{s}{dpList[j].SourceProfile.Pt[i].Y}{s}");
+                            //sw.Write($"{dpList[j].SourceProfile.Pt[i].X}{s}{dpList[j].SourceProfile.Pt[i].Y}{s}"); // 261105Cl 変更前 (CurrentCulture で書式化)
+                            sw.Write(string.Create(inv, $"{dpList[j].SourceProfile.Pt[i].X}{s}{dpList[j].SourceProfile.Pt[i].Y}{s}")); // 261105Cl 変更
                         else
                             sw.Write($"{s}{s}");
                         sw.Write(j == dpList.Count - 1 ? "\r\n" : s);
@@ -3741,7 +3745,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     using var sw = new StreamWriter(fn + extension);
                     if (FormProperty.radioButtonAsGSASformat.Checked)
                     {
-                        var lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle);
+                        //var lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); // 261105Cl 変更前
+                        // 261105Cl 変更: Profile.ToGSAS (Crystallography) は数値を CurrentCulture で書式化する ("f2", "g12") ので、コンマ小数の
+                        //   地域設定では "12,34" が出て GSAS 形式が壊れる。呼び出しの間だけ CurrentCulture を InvariantCulture にする
+                        var culture = System.Globalization.CultureInfo.CurrentCulture; // 261105Cl 追加
+                        System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加
+                        string[] lines; // 261105Cl 追加
+                        try { lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); } // 261105Cl 変更
+                        finally { System.Globalization.CultureInfo.CurrentCulture = culture; } // 261105Cl 追加
                         for (int i = 0; i < lines.Length; i++)
                             sw.WriteLine(lines[i]);
                     }
@@ -3753,8 +3764,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         // 261105Cl 変更: 3 列目を誤差 σ に戻す。Kα2 除去も誤差を保つようになった (Crystallography e13402f)。誤差が無いプロファイルでは空欄
                         var src = dp.SourceProfile; // 261105Cl
                         var hasErr = src.Err.Count == src.Pt.Count; // 261105Cl
+                        var inv = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加: 数値は地域設定に依らず InvariantCulture で書く (コンマ小数の地域設定で列が崩れていた)
                         for (int i = 0; i < src.Pt.Count; i++) // 261105Cl
-                            sw.WriteLine($"{src.Pt[i].X}{s}{src.Pt[i].Y}{s}{(hasErr ? src.Err[i].Y.ToString() : "")}"); // 261105Cl
+                            sw.WriteLine(string.Create(inv, $"{src.Pt[i].X}{s}{src.Pt[i].Y}{s}{(hasErr ? src.Err[i].Y.ToString(inv) : "")}")); // 261105Cl 変更: InvariantCulture で書式化
                     }
                 }
             }
