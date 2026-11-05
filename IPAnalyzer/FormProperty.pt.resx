@@ -256,7 +256,7 @@
     <value>Remover toda a máscara</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>Círculo (arrastar: definir centro &amp;amp;&amp;amp; raio)</value>
+    <value>Círculo (arrastar: definir centro &amp;&amp; raio)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>Ângulo</value>
@@ -336,7 +336,7 @@
     <value>Acima da intensidade de</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>Passo &amp;amp;&amp;amp; intervalo de integração</value>
+    <value>Passo &amp;&amp; intervalo de integração</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>Salvar perfil </value>
@@ -670,7 +670,7 @@ Valor maior mascara um ponto maior por clique.</value>
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
     <value>Manter o zoom / intervalo de exibição atual
-(deslocamento &amp;amp; zoom) ao carregar a próxima imagem,
+(deslocamento &amp; zoom) ao carregar a próxima imagem,
 em vez de ajustar a vista a cada nova imagem.</value>
   </data>
   <data name="radioButtonChiTop.ToolTip" xml:space="preserve">

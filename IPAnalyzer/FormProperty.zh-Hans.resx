@@ -256,7 +256,7 @@
     <value>取消所有掩模</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>圆 (拖动：设置中心 &amp;amp;&amp;amp; 半径)</value>
+    <value>圆 (拖动：设置中心 &amp;&amp; 半径)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>角度</value>
@@ -336,7 +336,7 @@
     <value>强度高于</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>积分步长 &amp;amp;&amp;amp; 范围</value>
+    <value>积分步长 &amp;&amp; 范围</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>保存图谱 </value>
@@ -658,7 +658,7 @@
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
     <value>加载下一幅图像时保持当前缩放/显示范围
-（平移 &amp;amp; 缩放），而不是让视图适应每幅
+（平移 &amp; 缩放），而不是让视图适应每幅
 新图像。</value>
   </data>
   <data name="radioButtonChiTop.ToolTip" xml:space="preserve">

@@ -256,7 +256,7 @@
     <value>Rimuovi tutte le maschere</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>Cerchio (trascina: imposta centro &amp;amp;&amp;amp; raggio)</value>
+    <value>Cerchio (trascina: imposta centro &amp;&amp; raggio)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>Angolo</value>
@@ -336,7 +336,7 @@
     <value>Oltre l'intensità di</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>Passo &amp;amp;&amp;amp; intervallo di integrazione</value>
+    <value>Passo &amp;&amp; intervallo di integrazione</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>Salva profilo </value>
@@ -682,7 +682,7 @@ clic.</value>
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
     <value>Mantieni lo zoom / intervallo di visualizzazione
-corrente (pan &amp;amp; zoom) al caricamento
+corrente (pan &amp; zoom) al caricamento
 dell'immagine successiva, invece di adattare la
 vista a ogni nuova immagine.</value>
   </data>

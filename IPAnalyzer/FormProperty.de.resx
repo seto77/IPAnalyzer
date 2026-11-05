@@ -256,7 +256,7 @@
     <value>Alle Maskierungen aufheben</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>Kreis (Ziehen: Zentrum &amp;amp;&amp;amp; Radius setzen)</value>
+    <value>Kreis (Ziehen: Zentrum &amp;&amp; Radius setzen)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>Winkel</value>
@@ -336,7 +336,7 @@
     <value>Über Intensität von</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>Integralschritt &amp;amp;&amp;amp; -bereich</value>
+    <value>Integralschritt &amp;&amp; -bereich</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>Profil speichern </value>
@@ -688,7 +688,7 @@ maskiert pro Klick einen größeren Punkt.</value>
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
     <value>Behält den aktuellen Zoom-/Anzeigebereich
-(Verschieben &amp;amp; Zoom) beim Laden des nächsten
+(Verschieben &amp; Zoom) beim Laden des nächsten
 Bildes bei, statt die Ansicht an jedes neue
 Bild anzupassen.</value>
   </data>

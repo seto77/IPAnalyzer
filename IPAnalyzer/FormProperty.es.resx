@@ -256,7 +256,7 @@
     <value>Desenmascarar todo</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>Círculo (arrastrar: definir centro &amp;amp;&amp;amp; radio)</value>
+    <value>Círculo (arrastrar: definir centro &amp;&amp; radio)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>Ángulo</value>
@@ -336,7 +336,7 @@
     <value>Por encima de la intensidad de</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>Paso &amp;amp;&amp;amp; intervalo de integración</value>
+    <value>Paso &amp;&amp; intervalo de integración</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>Guardar perfil </value>

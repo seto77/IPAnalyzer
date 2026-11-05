@@ -256,7 +256,7 @@
     <value>Tout démasquer</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>Cercle (glisser : définir un centre &amp;amp;&amp;amp; un rayon)</value>
+    <value>Cercle (glisser : définir un centre &amp;&amp; un rayon)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>Angle</value>
@@ -336,7 +336,7 @@
     <value>Au-dessus de l'intensité de</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>Pas &amp;amp;&amp;amp; plage d'intégration</value>
+    <value>Pas &amp;&amp; plage d'intégration</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>Enregistrer le profil </value>
@@ -672,7 +672,7 @@ par clic.</value>
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
     <value>Conserver le zoom / la plage d'affichage actuels
-(panoramique &amp;amp; zoom) au chargement de l'image
+(panoramique &amp; zoom) au chargement de l'image
 suivante, au lieu d'ajuster la vue à chaque
 nouvelle image.</value>
   </data>

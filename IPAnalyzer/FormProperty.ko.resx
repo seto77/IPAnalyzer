@@ -256,7 +256,7 @@
     <value>모두 마스크 해제</value>
   </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
-    <value>원 (드래그: 중심 &amp;amp;&amp;amp; 반지름 설정)</value>
+    <value>원 (드래그: 중심 &amp;&amp; 반지름 설정)</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>각도</value>
@@ -336,7 +336,7 @@
     <value>다음 강도 초과</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>적분 스텝 &amp;amp;&amp;amp; 범위</value>
+    <value>적분 스텝 &amp;&amp; 범위</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>프로파일 저장 </value>
@@ -667,7 +667,7 @@ PDIndexer로 보냅니다.</value>
   </data>
   <data name="checkBoxMaintainImageRange.ToolTip" xml:space="preserve">
     <value>다음 이미지를 불러올 때 새 이미지마다 화면을
-맞추는 대신 현재 확대 / 표시 범위(이동 &amp;amp;
+맞추는 대신 현재 확대 / 표시 범위(이동 &amp;
 확대)를 유지합니다.</value>
   </data>
   <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
