@@ -2104,7 +2104,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                     //偏光補正
                     if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                        d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]);
+                        //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
+                        d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
                 }
                 if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                 {//各画像にエネルギー値があるとき(h5ファイルの時)
@@ -2246,7 +2247,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                             // 偏光補正
                             if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                                d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]);
+                                //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
+                                d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
 
                             // CSVに書き出し
                             writer.WriteLine($"# Image {i + 1}");
