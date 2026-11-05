@@ -2360,43 +2360,70 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             prm.FootMode = FormProperty.DetectorCoordinates == FormProperty.DetectorCoordinatesEnum.Foot ? "True" : "False";
 
-            prm.CameraLength1 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength1Text : null;
-            prm.DirectSpotX = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionX.Text : null;
-            prm.DirectSpotY = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionY.Text : null;
+            // 261105Cl 追加: 数値は地域設定 (CurrentCulture) に依らず InvariantCulture ("." 小数) で書く。旧版はコンマ小数の地域設定で
+            //   "0,1" と書いていたため、別の地域設定の PC では読めないか、桁区切りとみなされて黙って 1 になっていた。読み込みは DiffractionOptics.ParseNumber
+            //   (Crystallography) が旧形式も受け付ける。以下の NumericBox.Text / CameraLength1Text / WaveLengthText は中身が Value.ToString() なので、Value を直接書式化する
+            var inv = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加
 
-            prm.CameraLength2 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength2.ToString() : null;
-            prm.FootX = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.X.ToString() : null;
-            prm.FootY = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.Y.ToString() : null;
+            //prm.CameraLength1 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength1Text : null; // 261105Cl 変更前
+            //prm.DirectSpotX = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionX.Text : null; // 261105Cl 変更前
+            //prm.DirectSpotY = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionY.Text : null; // 261105Cl 変更前
+            prm.CameraLength1 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength1.ToString(inv) : null; // 261105Cl 変更
+            prm.DirectSpotX = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionX.Value.ToString(inv) : null; // 261105Cl 変更
+            prm.DirectSpotY = FormParameterOption.CenterPositionChecked ? FormProperty.numericBoxDirectSpotPositionY.Value.ToString(inv) : null; // 261105Cl 変更
 
-            prm.waveSource = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.WaveSource).ToString() : null;
-            prm.waveLength = FormParameterOption.WaveLengthChecked ? FormProperty.WaveLengthText : null;
+            //prm.CameraLength2 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength2.ToString() : null; // 261105Cl 変更前
+            //prm.FootX = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.X.ToString() : null; // 261105Cl 変更前
+            //prm.FootY = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.Y.ToString() : null; // 261105Cl 変更前
+            prm.CameraLength2 = FormParameterOption.CameraLengthChecked ? FormProperty.CameraLength2.ToString(inv) : null; // 261105Cl 変更
+            prm.FootX = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.X.ToString(inv) : null; // 261105Cl 変更
+            prm.FootY = FormParameterOption.CenterPositionChecked ? FormProperty.FootPosition.Y.ToString(inv) : null; // 261105Cl 変更
 
-            prm.xRayElement = FormParameterOption.WaveLengthChecked ? FormProperty.waveLengthControl.XrayWaveSourceElementNumber.ToString() : null;
-            prm.xRayLine = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.XrayWaveSourceLine).ToString() : null;
+            //prm.waveSource = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.WaveSource).ToString() : null; // 261105Cl 変更前
+            //prm.waveLength = FormParameterOption.WaveLengthChecked ? FormProperty.WaveLengthText : null; // 261105Cl 変更前
+            prm.waveSource = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.WaveSource).ToString(inv) : null; // 261105Cl 変更
+            prm.waveLength = FormParameterOption.WaveLengthChecked ? (FormProperty.waveLengthControl.WaveLength * 10.0).ToString(inv) : null; // 261105Cl 変更: WaveLengthText の中身 (nm → Å) と同じ式
 
-            prm.pixSizeX = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeX.Text : null;
-            prm.pixSizeY = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeY.Text : null;
-            prm.pixKsi = !FormParameterOption.PixelShapeChecked ? null : FormProperty.numericBoxPixelKsi.Text;
+            //prm.xRayElement = FormParameterOption.WaveLengthChecked ? FormProperty.waveLengthControl.XrayWaveSourceElementNumber.ToString() : null; // 261105Cl 変更前
+            //prm.xRayLine = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.XrayWaveSourceLine).ToString() : null; // 261105Cl 変更前
+            prm.xRayElement = FormParameterOption.WaveLengthChecked ? FormProperty.waveLengthControl.XrayWaveSourceElementNumber.ToString(inv) : null; // 261105Cl 変更
+            prm.xRayLine = FormParameterOption.WaveLengthChecked ? ((int)FormProperty.waveLengthControl.XrayWaveSourceLine).ToString(inv) : null; // 261105Cl 変更
 
-            prm.tiltPhi = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltPhi.Text : null;
-            prm.tiltTau = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltTau.Text : null;
+            //prm.pixSizeX = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeX.Text : null; // 261105Cl 変更前
+            //prm.pixSizeY = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeY.Text : null; // 261105Cl 変更前
+            //prm.pixKsi = !FormParameterOption.PixelShapeChecked ? null : FormProperty.numericBoxPixelKsi.Text; // 261105Cl 変更前
+            prm.pixSizeX = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeX.Value.ToString(inv) : null; // 261105Cl 変更
+            prm.pixSizeY = FormParameterOption.PixelShapeChecked ? FormProperty.numericBoxPixelSizeY.Value.ToString(inv) : null; // 261105Cl 変更
+            prm.pixKsi = !FormParameterOption.PixelShapeChecked ? null : FormProperty.numericBoxPixelKsi.Value.ToString(inv); // 261105Cl 変更
 
-            prm.sphericalRadiusInverse = FormParameterOption.SphericalCorrectionChecked ? FormProperty.numericBoxSphericalCorections.Text : null;
+            //prm.tiltPhi = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltPhi.Text : null; // 261105Cl 変更前
+            //prm.tiltTau = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltTau.Text : null; // 261105Cl 変更前
+            prm.tiltPhi = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltPhi.Value.ToString(inv) : null; // 261105Cl 変更
+            prm.tiltTau = FormParameterOption.TiltCorrectionChecked ? FormProperty.numericBoxTiltTau.Value.ToString(inv) : null; // 261105Cl 変更
 
-            prm.GandolfiRadius = FormParameterOption.GandolfiRadiusChecked ? FormProperty.numericBoxGandlfiRadius.Text : null;
+            //prm.sphericalRadiusInverse = FormParameterOption.SphericalCorrectionChecked ? FormProperty.numericBoxSphericalCorections.Text : null; // 261105Cl 変更前
+            prm.sphericalRadiusInverse = FormParameterOption.SphericalCorrectionChecked ? FormProperty.numericBoxSphericalCorections.Value.ToString(inv) : null; // 261105Cl 変更
+
+            //prm.GandolfiRadius = FormParameterOption.GandolfiRadiusChecked ? FormProperty.numericBoxGandlfiRadius.Text : null; // 261105Cl 変更前
+            prm.GandolfiRadius = FormParameterOption.GandolfiRadiusChecked ? FormProperty.numericBoxGandlfiRadius.Value.ToString(inv) : null; // 261105Cl 変更
 
             //IntegralRegion
             if (FormParameterOption.IntegralRegionChecked)
             {
                 prm.RegionMode = FormProperty.radioButtonRectangle.Checked ? "Rectangle" : "Sector";
 
-                prm.RectangleDirection = FormProperty.comboBoxRectangleDirection.SelectedIndex.ToString();
+                //prm.RectangleDirection = FormProperty.comboBoxRectangleDirection.SelectedIndex.ToString(); // 261105Cl 変更前
+                prm.RectangleDirection = FormProperty.comboBoxRectangleDirection.SelectedIndex.ToString(inv); // 261105Cl 変更
                 prm.RectangleBothSide = FormProperty.checkBoxRectangleIsBothSide.Checked ? "True" : "False";
-                prm.RectangleBandWidth = FormProperty.numericUpDownRectangleBand.Value.ToString();
-                prm.RectangleAngle = FormProperty.numericUpDownRectangleAngle.Value.ToString();
+                //prm.RectangleBandWidth = FormProperty.numericUpDownRectangleBand.Value.ToString(); // 261105Cl 変更前
+                //prm.RectangleAngle = FormProperty.numericUpDownRectangleAngle.Value.ToString(); // 261105Cl 変更前
+                prm.RectangleBandWidth = FormProperty.numericUpDownRectangleBand.Value.ToString(inv); // 261105Cl 変更
+                prm.RectangleAngle = FormProperty.numericUpDownRectangleAngle.Value.ToString(inv); // 261105Cl 変更
 
-                prm.SectorStart = FormProperty.numericUpDownSectorStartAngle.Value.ToString();
-                prm.SectorEnd = FormProperty.numericUpDownSectorEndAngle.Value.ToString();
+                //prm.SectorStart = FormProperty.numericUpDownSectorStartAngle.Value.ToString(); // 261105Cl 変更前
+                //prm.SectorEnd = FormProperty.numericUpDownSectorEndAngle.Value.ToString(); // 261105Cl 変更前
+                prm.SectorStart = FormProperty.numericUpDownSectorStartAngle.Value.ToString(inv); // 261105Cl 変更
+                prm.SectorEnd = FormProperty.numericUpDownSectorEndAngle.Value.ToString(inv); // 261105Cl 変更
             }
 
             //IntegralRegion
@@ -2405,14 +2432,20 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 prm.IntegrationMode = FormProperty.radioButtonConcentric.Checked ? "Concentric" : "Radial";
 
                 prm.ConcentricUnit = FormProperty.radioButtonConcentricAngle.Checked ? "Angle" : FormProperty.radioButtonConcentricLength.Checked ? "Length" : "d-spacing";
-                prm.ConcentricStart = FormProperty.numericBoxConcentricStart.Text;
-                prm.ConcentricEnd = FormProperty.numericBoxConcentricEnd.Text;
-                prm.ConcentricStep = FormProperty.numericBoxConcentricStep.Text;
+                //prm.ConcentricStart = FormProperty.numericBoxConcentricStart.Text; // 261105Cl 変更前
+                //prm.ConcentricEnd = FormProperty.numericBoxConcentricEnd.Text; // 261105Cl 変更前
+                //prm.ConcentricStep = FormProperty.numericBoxConcentricStep.Text; // 261105Cl 変更前
+                prm.ConcentricStart = FormProperty.numericBoxConcentricStart.Value.ToString(inv); // 261105Cl 変更
+                prm.ConcentricEnd = FormProperty.numericBoxConcentricEnd.Value.ToString(inv); // 261105Cl 変更
+                prm.ConcentricStep = FormProperty.numericBoxConcentricStep.Value.ToString(inv); // 261105Cl 変更
 
                 prm.RadialUnit = FormProperty.radioButtonRadialAngle.Checked ? "Angle" : "d-spacing";
-                prm.RadialRadius = FormProperty.numericBoxRadialRadius.Text;
-                prm.RadialWidth = FormProperty.numericBoxRadialRange.Text;
-                prm.RadialStep = FormProperty.numericBoxRadialStep.Text;
+                //prm.RadialRadius = FormProperty.numericBoxRadialRadius.Text; // 261105Cl 変更前
+                //prm.RadialWidth = FormProperty.numericBoxRadialRange.Text; // 261105Cl 変更前
+                //prm.RadialStep = FormProperty.numericBoxRadialStep.Text; // 261105Cl 変更前
+                prm.RadialRadius = FormProperty.numericBoxRadialRadius.Value.ToString(inv); // 261105Cl 変更
+                prm.RadialWidth = FormProperty.numericBoxRadialRange.Value.ToString(inv); // 261105Cl 変更
+                prm.RadialStep = FormProperty.numericBoxRadialStep.Value.ToString(inv); // 261105Cl 変更
             }
 
             System.Xml.Serialization.XmlSerializer serializer = new(typeof(DiffractionOptics.Parameter));
@@ -2465,11 +2498,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                 //カメラ長1
                 if (FormParameterOption.CameraLengthChecked && prm.CameraLength1 != null)
-                    FormProperty.CameraLength1Text = prm.CameraLength1;
+                    //FormProperty.CameraLength1Text = prm.CameraLength1; // 261105Cl 変更前
+                    FormProperty.CameraLength1 = DiffractionOptics.ParseNumber(prm.CameraLength1); // 261105Cl 変更
 
                 //Direct Spot Position
                 if (FormParameterOption.CenterPositionChecked && prm.DirectSpotX != null)
-                    FormProperty.DirectSpotPosition = new PointD(Convert.ToDouble(prm.DirectSpotX), Convert.ToDouble(prm.DirectSpotY));
+                    //FormProperty.DirectSpotPosition = new PointD(Convert.ToDouble(prm.DirectSpotX), Convert.ToDouble(prm.DirectSpotY)); // 261105Cl 変更前
+                    FormProperty.DirectSpotPosition = new PointD(DiffractionOptics.ParseNumber(prm.DirectSpotX), DiffractionOptics.ParseNumber(prm.DirectSpotY)); // 261105Cl 変更
             }
             else
             {
@@ -2477,11 +2512,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                 //カメラ長2
                 if (FormParameterOption.CameraLengthChecked && prm.CameraLength2 != null)
-                    FormProperty.CameraLength2 = Convert.ToDouble(prm.CameraLength2);
+                    //FormProperty.CameraLength2 = Convert.ToDouble(prm.CameraLength2); // 261105Cl 変更前
+                    FormProperty.CameraLength2 = DiffractionOptics.ParseNumber(prm.CameraLength2); // 261105Cl 変更
 
                 //Foot Position
                 if (FormParameterOption.CenterPositionChecked && prm.FootX != null)
-                    FormProperty.FootPosition = new PointD(Convert.ToDouble(prm.FootX), Convert.ToDouble(prm.FootY));
+                    //FormProperty.FootPosition = new PointD(Convert.ToDouble(prm.FootX), Convert.ToDouble(prm.FootY)); // 261105Cl 変更前
+                    FormProperty.FootPosition = new PointD(DiffractionOptics.ParseNumber(prm.FootX), DiffractionOptics.ParseNumber(prm.FootY)); // 261105Cl 変更
             }
 
             //Camera Mode
@@ -2503,15 +2540,19 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             if (FormParameterOption.WaveLengthChecked)
             {
                 if (prm.waveSource != null)
-                    FormProperty.waveLengthControl.WaveSource = (WaveSource)Convert.ToInt32(prm.waveSource);
+                    //FormProperty.waveLengthControl.WaveSource = (WaveSource)Convert.ToInt32(prm.waveSource); // 261105Cl 変更前
+                    FormProperty.waveLengthControl.WaveSource = (WaveSource)(int)DiffractionOptics.ParseNumber(prm.waveSource); // 261105Cl 変更
 
                 if (prm.xRayElement != null)
-                    FormProperty.waveLengthControl.XrayWaveSourceElementNumber = Convert.ToInt32(prm.xRayElement);
+                    //FormProperty.waveLengthControl.XrayWaveSourceElementNumber = Convert.ToInt32(prm.xRayElement); // 261105Cl 変更前
+                    FormProperty.waveLengthControl.XrayWaveSourceElementNumber = (int)DiffractionOptics.ParseNumber(prm.xRayElement); // 261105Cl 変更
                 if (prm.xRayLine != null)
-                    FormProperty.waveLengthControl.XrayWaveSourceLine = (XrayLine)Convert.ToInt32(prm.xRayLine);
+                    //FormProperty.waveLengthControl.XrayWaveSourceLine = (XrayLine)Convert.ToInt32(prm.xRayLine); // 261105Cl 変更前
+                    FormProperty.waveLengthControl.XrayWaveSourceLine = (XrayLine)(int)DiffractionOptics.ParseNumber(prm.xRayLine); // 261105Cl 変更
 
                 if (prm.waveLength != null && (FormProperty.waveLengthControl.WaveSource == WaveSource.Electron || FormProperty.waveLengthControl.XrayWaveSourceElementNumber == 0))
-                    FormProperty.WaveLengthText = prm.waveLength;
+                    //FormProperty.WaveLengthText = prm.waveLength; // 261105Cl 変更前
+                    FormProperty.WaveLengthText = DiffractionOptics.ParseNumber(prm.waveLength).ToString(); // 261105Cl 変更: WaveLengthText は CurrentCulture で読む (Convert.ToDouble) ので、解釈した値を CurrentCulture の文字列で渡す
             }
 
             //PixelShape
@@ -2519,32 +2560,41 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             {
                 if (prm.pixSizeX != null)
                 {
-                    FormProperty.numericBoxPixelSizeX.Text = prm.pixSizeX;
-                    FormProperty.numericBoxPixelSizeY.Text = prm.pixSizeY;
+                    //FormProperty.numericBoxPixelSizeX.Text = prm.pixSizeX; // 261105Cl 変更前
+                    FormProperty.numericBoxPixelSizeX.Value = DiffractionOptics.ParseNumber(prm.pixSizeX); // 261105Cl 変更
+                    //FormProperty.numericBoxPixelSizeY.Text = prm.pixSizeY; // 261105Cl 変更前
+                    FormProperty.numericBoxPixelSizeY.Value = DiffractionOptics.ParseNumber(prm.pixSizeY); // 261105Cl 変更
                 }
                 else if (prm.pixSize != null)
                 {
-                    FormProperty.numericBoxPixelSizeX.Text = prm.pixSize;
-                    FormProperty.numericBoxPixelSizeY.Text = (Convert.ToDouble(prm.pixSize) * Convert.ToDouble(prm.aspectRatio)).ToString();
+                    //FormProperty.numericBoxPixelSizeX.Text = prm.pixSize; // 261105Cl 変更前
+                    FormProperty.numericBoxPixelSizeX.Value = DiffractionOptics.ParseNumber(prm.pixSize); // 261105Cl 変更
+                    //FormProperty.numericBoxPixelSizeY.Text = (Convert.ToDouble(prm.pixSize) * Convert.ToDouble(prm.aspectRatio)).ToString(); // 261105Cl 変更前
+                    FormProperty.numericBoxPixelSizeY.Value = DiffractionOptics.ParseNumber(prm.pixSize) * DiffractionOptics.ParseNumber(prm.aspectRatio); // 261105Cl 変更
                 }
                 if (prm.pixKsi != null)
-                    FormProperty.numericBoxPixelKsi.Text = prm.pixKsi;
+                    //FormProperty.numericBoxPixelKsi.Text = prm.pixKsi; // 261105Cl 変更前
+                    FormProperty.numericBoxPixelKsi.Value = DiffractionOptics.ParseNumber(prm.pixKsi); // 261105Cl 変更
             }
 
             //TiltCorrection
             if (FormParameterOption.TiltCorrectionChecked && prm.tiltPhi != null)
             {
-                FormProperty.numericBoxTiltPhi.Text = prm.tiltPhi;
-                FormProperty.numericBoxTiltTau.Text = prm.tiltTau;
+                //FormProperty.numericBoxTiltPhi.Text = prm.tiltPhi; // 261105Cl 変更前
+                FormProperty.numericBoxTiltPhi.Value = DiffractionOptics.ParseNumber(prm.tiltPhi); // 261105Cl 変更
+                //FormProperty.numericBoxTiltTau.Text = prm.tiltTau; // 261105Cl 変更前
+                FormProperty.numericBoxTiltTau.Value = DiffractionOptics.ParseNumber(prm.tiltTau); // 261105Cl 変更
             }
 
             //SphericalRadius
             if (FormParameterOption.TiltCorrectionChecked && prm.sphericalRadiusInverse != null)
-                FormProperty.numericBoxSphericalCorections.Text = prm.sphericalRadiusInverse;
+                //FormProperty.numericBoxSphericalCorections.Text = prm.sphericalRadiusInverse; // 261105Cl 変更前
+                FormProperty.numericBoxSphericalCorections.Value = DiffractionOptics.ParseNumber(prm.sphericalRadiusInverse); // 261105Cl 変更
 
             //GandolfiRadius
             if (FormParameterOption.GandolfiRadiusChecked && prm.GandolfiRadius != null)
-                FormProperty.numericBoxGandlfiRadius.Text = prm.GandolfiRadius;
+                //FormProperty.numericBoxGandlfiRadius.Text = prm.GandolfiRadius; // 261105Cl 変更前
+                FormProperty.numericBoxGandlfiRadius.Value = DiffractionOptics.ParseNumber(prm.GandolfiRadius); // 261105Cl 変更
 
             //IntegralRegion
             if (FormParameterOption.IntegralRegionChecked)
@@ -2556,18 +2606,23 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 }
 
                 if (prm.RectangleDirection != null)
-                    FormProperty.comboBoxRectangleDirection.SelectedIndex = Convert.ToInt32(prm.RectangleDirection);
+                    //FormProperty.comboBoxRectangleDirection.SelectedIndex = Convert.ToInt32(prm.RectangleDirection); // 261105Cl 変更前
+                    FormProperty.comboBoxRectangleDirection.SelectedIndex = (int)DiffractionOptics.ParseNumber(prm.RectangleDirection); // 261105Cl 変更
                 if (prm.RectangleBothSide != null)
                     FormProperty.checkBoxRectangleIsBothSide.Checked = prm.RectangleBothSide == "True";
                 if (prm.RectangleBandWidth != null)
-                    FormProperty.numericUpDownRectangleBand.Value = Convert.ToDecimal(prm.RectangleBandWidth);
+                    //FormProperty.numericUpDownRectangleBand.Value = Convert.ToDecimal(prm.RectangleBandWidth); // 261105Cl 変更前
+                    FormProperty.numericUpDownRectangleBand.Value = (decimal)DiffractionOptics.ParseNumber(prm.RectangleBandWidth); // 261105Cl 変更
                 if (prm.RectangleAngle != null)
-                    FormProperty.numericUpDownRectangleAngle.Value = Convert.ToDecimal(prm.RectangleAngle);
+                    //FormProperty.numericUpDownRectangleAngle.Value = Convert.ToDecimal(prm.RectangleAngle); // 261105Cl 変更前
+                    FormProperty.numericUpDownRectangleAngle.Value = (decimal)DiffractionOptics.ParseNumber(prm.RectangleAngle); // 261105Cl 変更
 
                 if (prm.SectorStart != null)
-                    FormProperty.numericUpDownSectorStartAngle.Value = Convert.ToDecimal(prm.SectorStart);
+                    //FormProperty.numericUpDownSectorStartAngle.Value = Convert.ToDecimal(prm.SectorStart); // 261105Cl 変更前
+                    FormProperty.numericUpDownSectorStartAngle.Value = (decimal)DiffractionOptics.ParseNumber(prm.SectorStart); // 261105Cl 変更
                 if (prm.SectorEnd != null)
-                    FormProperty.numericUpDownSectorEndAngle.Value = Convert.ToDecimal(prm.SectorEnd);
+                    //FormProperty.numericUpDownSectorEndAngle.Value = Convert.ToDecimal(prm.SectorEnd); // 261105Cl 変更前
+                    FormProperty.numericUpDownSectorEndAngle.Value = (decimal)DiffractionOptics.ParseNumber(prm.SectorEnd); // 261105Cl 変更
             }
 
             //IntegralProperty
@@ -2586,11 +2641,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     FormProperty.radioButtonConcentricDspacing.Checked = prm.ConcentricUnit == "d-spacing";
                 }
                 if (prm.ConcentricStart != null)
-                    FormProperty.numericBoxConcentricStart.Text = prm.ConcentricStart;
+                    //FormProperty.numericBoxConcentricStart.Text = prm.ConcentricStart; // 261105Cl 変更前
+                    FormProperty.numericBoxConcentricStart.Value = DiffractionOptics.ParseNumber(prm.ConcentricStart); // 261105Cl 変更
                 if (prm.ConcentricEnd != null)
-                    FormProperty.numericBoxConcentricEnd.Text = prm.ConcentricEnd;
+                    //FormProperty.numericBoxConcentricEnd.Text = prm.ConcentricEnd; // 261105Cl 変更前
+                    FormProperty.numericBoxConcentricEnd.Value = DiffractionOptics.ParseNumber(prm.ConcentricEnd); // 261105Cl 変更
                 if (prm.ConcentricStep != null)
-                    FormProperty.numericBoxConcentricStep.Text = prm.ConcentricStep;
+                    //FormProperty.numericBoxConcentricStep.Text = prm.ConcentricStep; // 261105Cl 変更前
+                    FormProperty.numericBoxConcentricStep.Value = DiffractionOptics.ParseNumber(prm.ConcentricStep); // 261105Cl 変更
 
                 if (prm.RadialUnit != null)
                 {
@@ -2599,11 +2657,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 }
 
                 if (prm.RadialRadius != null)
-                    FormProperty.numericBoxRadialRadius.Text = prm.RadialRadius;
+                    //FormProperty.numericBoxRadialRadius.Text = prm.RadialRadius; // 261105Cl 変更前
+                    FormProperty.numericBoxRadialRadius.Value = DiffractionOptics.ParseNumber(prm.RadialRadius); // 261105Cl 変更
                 if (prm.RadialWidth != null)
-                    FormProperty.numericBoxRadialRange.Text = prm.RadialWidth;
+                    //FormProperty.numericBoxRadialRange.Text = prm.RadialWidth; // 261105Cl 変更前
+                    FormProperty.numericBoxRadialRange.Value = DiffractionOptics.ParseNumber(prm.RadialWidth); // 261105Cl 変更
                 if (prm.RadialStep != null)
-                    FormProperty.numericBoxRadialStep.Text = prm.RadialStep;
+                    //FormProperty.numericBoxRadialStep.Text = prm.RadialStep; // 261105Cl 変更前
+                    FormProperty.numericBoxRadialStep.Value = DiffractionOptics.ParseNumber(prm.RadialStep); // 261105Cl 変更
             }
 
 
