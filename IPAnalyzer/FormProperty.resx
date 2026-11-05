@@ -2158,7 +2158,10 @@ Mask All / half-mask / spot masking.</value>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>Strip the Kα2 contribution from the profile
 (Rachinger correction) when a Kα1 tube line
-is selected, leaving a Kα1-only pattern.</value>
+is selected, leaving a Kα1-only pattern.
+Applied only when the x-axis is 2θ
+('Concentric integration' with 'Angle'); not
+applied with 'd-spacing' or 'Radial integration'.</value>
   </data>
   <data name="&gt;&gt;checkBoxTest.Name" xml:space="preserve">
     <value>checkBoxTest</value>

@@ -844,7 +844,9 @@ d 間距 (Å) 表示。</value>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>當選取 Kα1 管線時，從圖譜中剝除
 Kα2 貢獻（Rachinger 校正），
-留下僅含 Kα1 的圖樣。</value>
+留下僅含 Kα1 的圖樣。
+僅在 x 軸為 2θ 時（「同心積分」中選取「角度」）
+適用；選取「d 間距」或「徑向積分」時不適用。</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>手動遮罩工具：多邊形。點擊新增頂點，

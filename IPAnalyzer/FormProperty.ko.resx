@@ -847,7 +847,9 @@ Kα2를 더 많이 뺍니다.</value>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>Kα1 관 선이 선택된 경우 프로파일에서 Kα2
 기여를 제거(Rachinger 보정)하여 Kα1 전용 패턴을
-남깁니다.</value>
+남깁니다.
+x축이 2θ일 때('동심 적분'에서 '각도' 선택)만 적용되며,
+'d-간격'이나 '방사 적분'에서는 적용되지 않습니다.</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>수동 마스크 도구: 다각형. 클릭하여 꼭짓점을

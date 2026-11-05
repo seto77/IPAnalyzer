@@ -892,7 +892,10 @@ esistente.</value>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>Rimuovi il contributo Kα2 dal profilo (correzione di
 Rachinger) quando è selezionata una riga Kα1 del
-tubo, lasciando un pattern solo-Kα1.</value>
+tubo, lasciando un pattern solo-Kα1.
+Si applica solo quando l'asse x è 2θ
+('Integrazione concentrica' con 'Angolo'); non si
+applica con 'distanza d' né con 'Integrazione radiale'.</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>Strumento maschera manuale: Poligono. Clicca per

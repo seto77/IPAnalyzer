@@ -823,7 +823,9 @@ Kα2 越多。</value>
   </data>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>选择 Kα1 管线时，从图谱中剥离 Kα2 贡献
-（Rachinger 校正），留下仅含 Kα1 的图样。</value>
+（Rachinger 校正），留下仅含 Kα1 的图样。
+仅在 x 轴为 2θ 时（“同心积分”中选择“角度”）适用；
+选择“d 间距”或“径向积分”时不适用。</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>手动掩模工具：多边形。单击添加顶点，

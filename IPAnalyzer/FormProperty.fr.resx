@@ -880,7 +880,11 @@ existant.</value>
     <value>Retirer la contribution Kα2 du profil
 (correction de Rachinger) lorsqu'une raie de tube
 Kα1 est sélectionnée, laissant un diagramme
-Kα1 seul.</value>
+Kα1 seul.
+Ne s'applique que si l'axe x est 2θ
+(« Intégration concentrique » avec « Angle ») ;
+sans effet avec « Distance interréticulaire » ou
+« Intégration radiale ».</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>Outil de masque manuel : Polygone. Cliquez pour

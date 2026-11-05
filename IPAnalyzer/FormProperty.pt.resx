@@ -864,7 +864,10 @@ inferior da imagem. Soma-se à máscara existente.</value>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>Remover a contribuição de Kα2 do perfil
 (correção de Rachinger) quando uma linha de tubo
-Kα1 está selecionada, deixando um padrão só de Kα1.</value>
+Kα1 está selecionada, deixando um padrão só de Kα1.
+Só se aplica quando o eixo x é 2θ
+('Integração concêntrica' com 'Ângulo'); não se
+aplica com 'distância d' nem com 'Integração radial'.</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>Ferramenta de máscara manual: Polígono. Clique para

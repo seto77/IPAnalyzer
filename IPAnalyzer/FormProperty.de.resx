@@ -902,7 +902,11 @@ bestehenden Maske hinzugefügt.</value>
     <value>Entfernt den Kα2-Beitrag aus dem Profil
 (Rachinger-Korrektur), wenn eine Kα1-Röhrenlinie
 gewählt ist, sodass ein reines Kα1-Muster
-übrig bleibt.</value>
+übrig bleibt.
+Nur aktiv, wenn die x-Achse 2θ ist
+("Konzentrische Integration" mit "Winkel");
+bei "d-Wert" und "Radiale Integration" wird
+Kα2 nicht entfernt.</value>
   </data>
   <data name="radioButtonManualPolygon.ToolTip" xml:space="preserve">
     <value>Manuelles Maskenwerkzeug: Polygon. Klicken,

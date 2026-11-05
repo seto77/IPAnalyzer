@@ -546,7 +546,9 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
   </data>
   <data name="checkBoxTest.ToolTip" xml:space="preserve">
     <value>Kα1管球線を選択している場合、プロファイルからKα2成分を
-除去(Rachinger補正)し、Kα1のみのパターンにします。</value>
+除去(Rachinger補正)し、Kα1のみのパターンにします。
+横軸が2θのとき(「散乱角(2θ)積算」の「角度」)のみ有効。
+「d値」や「偏角 (sector angle) 積算」では除去しません。</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
     <value>メイリオ, 9pt</value>
