@@ -1771,18 +1771,6 @@ in the other images of the loaded sequence.</value>
     <value>Read-only image information: file header and
 acquisition metadata of the loaded image.</value>
   </data>
-  <data name="&gt;&gt;textBoxInformation.Name" xml:space="preserve">
-    <value>textBoxInformation</value>
-  </data>
-  <data name="&gt;&gt;textBoxInformation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxInformation.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;textBoxInformation.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1807,18 +1795,6 @@ acquisition metadata of the loaded image.</value>
   <data name="label11.Text" xml:space="preserve">
     <value>Image Information</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="scalablePictureBoxThumbnail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1832,18 +1808,6 @@ acquisition metadata of the loaded image.</value>
     <value>134, 133</value>
   </data>
   <data name="scalablePictureBoxThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;scalablePictureBoxThumbnail.Name" xml:space="preserve">
-    <value>scalablePictureBoxThumbnail</value>
-  </data>
-  <data name="&gt;&gt;scalablePictureBoxThumbnail.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ScalablePictureBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;scalablePictureBoxThumbnail.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;scalablePictureBoxThumbnail.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="radioButtonNearCenter.AutoSize" type="System.Boolean, mscorlib">
@@ -1874,18 +1838,6 @@ acquisition metadata of the loaded image.</value>
     <value>Show only the region near the beam
 center in the thumbnail/preview.</value>
   </data>
-  <data name="&gt;&gt;radioButtonNearCenter.Name" xml:space="preserve">
-    <value>radioButtonNearCenter</value>
-  </data>
-  <data name="&gt;&gt;radioButtonNearCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonNearCenter.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;radioButtonNearCenter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="radioButtonWhole.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1912,18 +1864,6 @@ center in the thumbnail/preview.</value>
   </data>
   <data name="radioButtonWhole.ToolTip" xml:space="preserve">
     <value>Show the whole image in the thumbnail/preview.</value>
-  </data>
-  <data name="&gt;&gt;radioButtonWhole.Name" xml:space="preserve">
-    <value>radioButtonWhole</value>
-  </data>
-  <data name="&gt;&gt;radioButtonWhole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonWhole.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;radioButtonWhole.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="comboBoxScaleLine.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1956,18 +1896,6 @@ center in the thumbnail/preview.</value>
     <value>Density of the overlaid scale (grid) lines
 on the image: None, Coarse, Medium or Fine.</value>
   </data>
-  <data name="&gt;&gt;comboBoxScaleLine.Name" xml:space="preserve">
-    <value>comboBoxScaleLine</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScaleLine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScaleLine.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScaleLine.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1991,18 +1919,6 @@ on the image: None, Coarse, Medium or Fine.</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Scale line</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="comboBoxScale2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2035,18 +1951,6 @@ on the image: None, Coarse, Medium or Fine.</value>
     <value>Color palette for intensity: Gray, Cold-Warm, Spectrum
 or Fire. Changes only display colors, not the data.</value>
   </data>
-  <data name="&gt;&gt;comboBoxScale2.Name" xml:space="preserve">
-    <value>comboBoxScale2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScale2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScale2.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScale2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2070,18 +1974,6 @@ or Fire. Changes only display colors, not the data.</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Color scale</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="comboBoxScale1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2109,18 +2001,6 @@ or Fire. Changes only display colors, not the data.</value>
 mapping of intensity to brightness. Log
 compresses high values to reveal weak rings.</value>
   </data>
-  <data name="&gt;&gt;comboBoxScale1.Name" xml:space="preserve">
-    <value>comboBoxScale1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScale1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScale1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxScale1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2144,18 +2024,6 @@ compresses high values to reveal weak rings.</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Brightness scale</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="comboBoxGradient.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2183,18 +2051,6 @@ compresses high values to reveal weak rings.</value>
 display. Negative inverts the gray/color
 mapping so high intensity appears dark.</value>
   </data>
-  <data name="&gt;&gt;comboBoxGradient.Name" xml:space="preserve">
-    <value>comboBoxGradient</value>
-  </data>
-  <data name="&gt;&gt;comboBoxGradient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxGradient.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxGradient.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2218,18 +2074,6 @@ mapping so high intensity appears dark.</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Gradient</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2260,18 +2104,6 @@ mapping so high intensity appears dark.</value>
   </data>
   <data name="label14.ToolTip" xml:space="preserve">
     <value>Magnification: current image zoom factor and resolution.</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="labelResolution.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2304,18 +2136,6 @@ mapping so high intensity appears dark.</value>
     <value>Current display resolution (screen pixels
 per image pixel) at the active zoom.</value>
   </data>
-  <data name="&gt;&gt;labelResolution.Name" xml:space="preserve">
-    <value>labelResolution</value>
-  </data>
-  <data name="&gt;&gt;labelResolution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelResolution.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;labelResolution.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="buttonMag1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2343,18 +2163,6 @@ per image pixel) at the active zoom.</value>
   <data name="buttonMag1.ToolTip" xml:space="preserve">
     <value>Set image zoom to 1x (100%, one
 screen pixel per image pixel).</value>
-  </data>
-  <data name="&gt;&gt;buttonMag1.Name" xml:space="preserve">
-    <value>buttonMag1</value>
-  </data>
-  <data name="&gt;&gt;buttonMag1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="buttonMag2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2386,18 +2194,6 @@ screen pixel per image pixel).</value>
   <data name="buttonMag2.ToolTip" xml:space="preserve">
     <value>Set image zoom to 2x.</value>
   </data>
-  <data name="&gt;&gt;buttonMag2.Name" xml:space="preserve">
-    <value>buttonMag2</value>
-  </data>
-  <data name="&gt;&gt;buttonMag2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="buttonMag4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2427,18 +2223,6 @@ screen pixel per image pixel).</value>
   </data>
   <data name="buttonMag4.ToolTip" xml:space="preserve">
     <value>Set image zoom to 4x.</value>
-  </data>
-  <data name="&gt;&gt;buttonMag4.Name" xml:space="preserve">
-    <value>buttonMag4</value>
-  </data>
-  <data name="&gt;&gt;buttonMag4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag4.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag4.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="buttonMag_2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2470,18 +2254,6 @@ screen pixel per image pixel).</value>
   <data name="buttonMag_2.ToolTip" xml:space="preserve">
     <value>Set image zoom to 1/2x (50%).</value>
   </data>
-  <data name="&gt;&gt;buttonMag_2.Name" xml:space="preserve">
-    <value>buttonMag_2</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="buttonMag_4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2511,18 +2283,6 @@ screen pixel per image pixel).</value>
   </data>
   <data name="buttonMag_4.ToolTip" xml:space="preserve">
     <value>Set image zoom to 1/4x (25%).</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_4.Name" xml:space="preserve">
-    <value>buttonMag_4</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_4.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_4.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="buttonMag_8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2554,18 +2314,6 @@ screen pixel per image pixel).</value>
   <data name="buttonMag_8.ToolTip" xml:space="preserve">
     <value>Set image zoom to 1/8x.</value>
   </data>
-  <data name="&gt;&gt;buttonMag_8.Name" xml:space="preserve">
-    <value>buttonMag_8</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_8.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_8.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="buttonMag_16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2595,18 +2343,6 @@ screen pixel per image pixel).</value>
   </data>
   <data name="buttonMag_16.ToolTip" xml:space="preserve">
     <value>Set image zoom to 1/16x (fit large images).</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_16.Name" xml:space="preserve">
-    <value>buttonMag_16</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_16.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonMag_16.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="labelMousePointChi.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2639,18 +2375,6 @@ screen pixel per image pixel).</value>
     <value>Azimuthal angle chi (degrees) of the
 cursor around the beam center / Debye ring.</value>
   </data>
-  <data name="&gt;&gt;labelMousePointChi.Name" xml:space="preserve">
-    <value>labelMousePointChi</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointChi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointChi.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointChi.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="labelMousePointD.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2681,18 +2405,6 @@ cursor around the beam center / Debye ring.</value>
   <data name="labelMousePointD.ToolTip" xml:space="preserve">
     <value>Lattice d-spacing (angstrom) at the cursor, derived
 from 2-theta and the wavelength via Bragg's law.</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointD.Name" xml:space="preserve">
-    <value>labelMousePointD</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointD.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointD.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="labelMousePointTheta.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2725,18 +2437,6 @@ from 2-theta and the wavelength via Bragg's law.</value>
     <value>Diffraction angle 2-theta (degrees) at the cursor,
 from the current camera length and beam center.</value>
   </data>
-  <data name="&gt;&gt;labelMousePointTheta.Name" xml:space="preserve">
-    <value>labelMousePointTheta</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointTheta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointTheta.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointTheta.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="labelMousePointR.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2767,18 +2467,6 @@ from the current camera length and beam center.</value>
   <data name="labelMousePointR.ToolTip" xml:space="preserve">
     <value>Radial distance R (mm) from the
 beam center to the cursor position.</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointR.Name" xml:space="preserve">
-    <value>labelMousePointR</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointR.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointR.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="labelMousePointIntensity.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2811,18 +2499,6 @@ beam center to the cursor position.</value>
     <value>Intensity (counts) of the image
 pixel under the mouse cursor.</value>
   </data>
-  <data name="&gt;&gt;labelMousePointIntensity.Name" xml:space="preserve">
-    <value>labelMousePointIntensity</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointIntensity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointIntensity.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointIntensity.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2852,18 +2528,6 @@ pixel under the mouse cursor.</value>
   </data>
   <data name="label6.ToolTip" xml:space="preserve">
     <value>Intensity (counts) at the cursor pixel.</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2896,18 +2560,6 @@ pixel under the mouse cursor.</value>
     <value>R: radial distance from the beam
 center to the cursor, in millimetres.</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2938,18 +2590,6 @@ center to the cursor, in millimetres.</value>
   <data name="label10.ToolTip" xml:space="preserve">
     <value>2-theta: diffraction (scattering)
 angle at the cursor, in degrees.</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2982,18 +2622,6 @@ angle at the cursor, in degrees.</value>
     <value>d: lattice plane spacing (d-spacing)
 at the cursor, in angstroms.</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3024,18 +2652,6 @@ at the cursor, in angstroms.</value>
   <data name="label13.ToolTip" xml:space="preserve">
     <value>Chi: azimuthal angle around the
 ring at the cursor, in degrees.</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="labelMousePointReal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3068,18 +2684,6 @@ ring at the cursor, in degrees.</value>
     <value>Cursor position in real detector-plane
 coordinates (mm), origin at the beam center.</value>
   </data>
-  <data name="&gt;&gt;labelMousePointReal.Name" xml:space="preserve">
-    <value>labelMousePointReal</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointReal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointReal.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointReal.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3110,18 +2714,6 @@ coordinates (mm), origin at the beam center.</value>
   <data name="label3.ToolTip" xml:space="preserve">
     <value>Real-space detector coordinates (mm) of the cursor.</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3151,18 +2743,6 @@ coordinates (mm), origin at the beam center.</value>
   </data>
   <data name="label4.ToolTip" xml:space="preserve">
     <value>Image pixel coordinates (x, y) of the cursor.</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="labelMousePointPixel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3195,18 +2775,6 @@ coordinates (mm), origin at the beam center.</value>
     <value>Cursor position in image pixel
 coordinates (column x, row y).</value>
   </data>
-  <data name="&gt;&gt;labelMousePointPixel.Name" xml:space="preserve">
-    <value>labelMousePointPixel</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointPixel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointPixel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;labelMousePointPixel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="buttonAutoLevel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
@@ -3233,18 +2801,6 @@ coordinates (column x, row y).</value>
 display range to mean plus/minus 2 standard
 deviations. Does not alter the data.</value>
   </data>
-  <data name="&gt;&gt;buttonAutoLevel.Name" xml:space="preserve">
-    <value>buttonAutoLevel</value>
-  </data>
-  <data name="&gt;&gt;buttonAutoLevel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAutoLevel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;buttonAutoLevel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonReset.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
@@ -3269,18 +2825,6 @@ deviations. Does not alter the data.</value>
   <data name="buttonReset.ToolTip" xml:space="preserve">
     <value>Reset the intensity display
 range to full scale (0 to 65535).</value>
-  </data>
-  <data name="&gt;&gt;buttonReset.Name" xml:space="preserve">
-    <value>buttonReset</value>
-  </data>
-  <data name="&gt;&gt;buttonReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonReset.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;buttonReset.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="trackBarAdvancedMinInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -3307,18 +2851,6 @@ range to full scale (0 to 65535).</value>
     <value>477, 27</value>
   </data>
   <data name="trackBarAdvancedMinInt.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMinInt.Name" xml:space="preserve">
-    <value>trackBarAdvancedMinInt</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMinInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMinInt.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMinInt.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="trackBarAdvancedMaxInt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -3348,18 +2880,6 @@ range to full scale (0 to 65535).</value>
   <data name="trackBarAdvancedMaxInt.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;trackBarAdvancedMaxInt.Name" xml:space="preserve">
-    <value>trackBarAdvancedMaxInt</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMaxInt.Type" xml:space="preserve">
-    <value>Crystallography.Controls.TrackBarAdvanced, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMaxInt.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;trackBarAdvancedMaxInt.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="graphControlFrequency.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -3375,18 +2895,6 @@ range to full scale (0 to 65535).</value>
   <data name="graphControlFrequency.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;graphControlFrequency.Name" xml:space="preserve">
-    <value>graphControlFrequency</value>
-  </data>
-  <data name="&gt;&gt;graphControlFrequency.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;graphControlFrequency.Parent" xml:space="preserve">
-    <value>tabPageFrequeicyOfIntensity</value>
-  </data>
-  <data name="&gt;&gt;graphControlFrequency.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="graphControlProfile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -3400,18 +2908,6 @@ range to full scale (0 to 65535).</value>
     <value>603, 165</value>
   </data>
   <data name="graphControlProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;graphControlProfile.Name" xml:space="preserve">
-    <value>graphControlProfile</value>
-  </data>
-  <data name="&gt;&gt;graphControlProfile.Type" xml:space="preserve">
-    <value>Crystallography.Controls.GraphControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;graphControlProfile.Parent" xml:space="preserve">
-    <value>tabPageConvertedProfile</value>
-  </data>
-  <data name="&gt;&gt;graphControlProfile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
@@ -3439,18 +2935,6 @@ range to full scale (0 to 65535).</value>
     <value>Selected rectangular area for statistics, given
 as two corner points (x, y) in image pixels.</value>
   </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="numericUpDownSelectedAreaX1.Location" type="System.Drawing.Point, System.Drawing">
     <value>98, 3</value>
   </data>
@@ -3467,18 +2951,6 @@ as two corner points (x, y) in image pixels.</value>
     <value>X (column, pixels) of the first
 corner of the statistics rectangle;
 clamped to image width. Max 10000.</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX1.Name" xml:space="preserve">
-    <value>numericUpDownSelectedAreaX1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3501,18 +2973,6 @@ clamped to image width. Max 10000.</value>
   <data name="label18.Text" xml:space="preserve">
     <value>,</value>
   </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="numericUpDownSelectedAreaY1.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 3</value>
   </data>
@@ -3528,18 +2988,6 @@ clamped to image width. Max 10000.</value>
   <data name="numericUpDownSelectedAreaY1.ToolTip" xml:space="preserve">
     <value>Y (row, pixels) of the first corner of the statistics
 rectangle; clamped to image height. Max 10000.</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY1.Name" xml:space="preserve">
-    <value>numericUpDownSelectedAreaY1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY1.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3562,18 +3010,6 @@ rectangle; clamped to image height. Max 10000.</value>
   <data name="label19.Text" xml:space="preserve">
     <value>) ~ (</value>
   </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="numericUpDownSelectedAreaX2.Location" type="System.Drawing.Point, System.Drawing">
     <value>262, 3</value>
   </data>
@@ -3589,18 +3025,6 @@ rectangle; clamped to image height. Max 10000.</value>
   <data name="numericUpDownSelectedAreaX2.ToolTip" xml:space="preserve">
     <value>X (column, pixels) of the opposite corner of the
 statistics rectangle; clamped to image width.</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX2.Name" xml:space="preserve">
-    <value>numericUpDownSelectedAreaX2</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaX2.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="label20.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3623,18 +3047,6 @@ statistics rectangle; clamped to image width.</value>
   <data name="label20.Text" xml:space="preserve">
     <value>,</value>
   </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="numericUpDownSelectedAreaY2.Location" type="System.Drawing.Point, System.Drawing">
     <value>333, 3</value>
   </data>
@@ -3650,18 +3062,6 @@ statistics rectangle; clamped to image width.</value>
   <data name="numericUpDownSelectedAreaY2.ToolTip" xml:space="preserve">
     <value>Y (row, pixels) of the opposite corner of the
 statistics rectangle; clamped to image height.</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY2.Name" xml:space="preserve">
-    <value>numericUpDownSelectedAreaY2</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownSelectedAreaY2.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="label21.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3684,18 +3084,6 @@ statistics rectangle; clamped to image height.</value>
   <data name="label21.Text" xml:space="preserve">
     <value>) </value>
   </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
-  </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3717,18 +3105,6 @@ statistics rectangle; clamped to image height.</value>
   <data name="label2.ToolTip" xml:space="preserve">
     <value>You can also select the statistics rectangle directly
 on the image by holding CTRL and right-dragging.</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="toolStripButtonIntensityTable.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>

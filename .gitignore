@@ -1,0 +1,15 @@
+# 261105Cl 追加: Crystallography / Crystallography.Controls の .gitignore と同じ内容に揃える
+.vs/
+bin/
+obj/
+x64/
+ARM64/
+Debug/
+Release/
+*.user
+*.suo
+*.csproj.lscache
+*.VC.db
+*.opendb
+# IPAnalyzer 固有: LibreOffice のロックファイル (traffic.xlsx を開いたときに生成)
+.~lock.*#

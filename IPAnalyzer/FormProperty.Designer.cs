@@ -2520,7 +2520,6 @@
         public System.Windows.Forms.RadioButton radioButtonSaveInSeparateFiles;
         private System.Windows.Forms.GroupBox groupBox16;
         public System.Windows.Forms.RadioButton radioButtonManualPolygon;
-        private System.Windows.Forms.Label label29;
         public Crystallography.Controls.NumericBox numericBoxSplineWidth;
         private System.Windows.Forms.Button buttonInvertMask;
         public System.Windows.Forms.GroupBox groupBox18;

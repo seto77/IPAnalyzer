@@ -1,7 +1,8 @@
 <!-- 260625Cl 追加: WiX v7 による MSI ビルド (vdproj 置換、計画は codex 相談済み・PDIndexer_WiX移行計画.md を IPAnalyzer 用に具体化)。
      PDIndexer\PDIndexerSetup.Wix\PDIndexerSetup.wixproj を IPAnalyzer 用に移植。
      IPAnalyzer 固有の簡素化: native 依存ゼロ (libxrl/Crystallography.Native を同梱しない) のため staging は純粋に managed publish。 -->
-<Project Sdk="WixToolset.Sdk/7.0.0">
+<!-- 261105Cl WiX 7.0.0 → 7.0.1 (Sdk / UI / Util を一括更新。バグ修正と依存パッケージの CVE 対応のみ) -->
+<Project Sdk="WixToolset.Sdk/7.0.1">
   <PropertyGroup>
     <!-- OSMF EULA 受諾 (収益$10k未満の無償OSSは支払い免除、受諾操作のみ必須) -->
     <AcceptEula>wix7</AcceptEula>
@@ -22,8 +23,8 @@
     <SuppressIces>ICE38;ICE64;ICE91;ICE61;ICE69</SuppressIces>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0" />
-    <PackageReference Include="WixToolset.Util.wixext" Version="7.0.0" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.1" />
+    <PackageReference Include="WixToolset.Util.wixext" Version="7.0.1" />
   </ItemGroup>
   <ItemGroup>
     <!-- ハーベスト元 = framework-dependent publish + 後処理済みの staging フォルダ (-p:StagingDir で注入) -->

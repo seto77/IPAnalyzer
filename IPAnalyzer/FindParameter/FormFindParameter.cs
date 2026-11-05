@@ -872,7 +872,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
     }
 
     //260413Cl delegate FittingCallBack 廃止 → Action に置換
-    double initialHK = -1;
+    //double initialHK = -1; //261105Cl 未使用 (CS0414) のためコメントアウト。参照は Fitting() 内の旧コメントアウトコードのみ
 
     /// <summary>
     /// Fitting時に使用する半値幅のパラメーター
