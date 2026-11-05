@@ -67,7 +67,7 @@
 
   <ItemGroup>
     <PackageReference Include="MemoryPack" Version="1.21.4" />
-    <PackageReference Include="PureHDF" Version="2.1.4" /><!-- 260820Cl: Crystallography submodule (7a435ee) が 2.1.4 を要求 (NU1605 回避)。旧 2.1.2 -->
+    <PackageReference Include="PureHDF" Version="2.2.0" /><!-- 261105Cl: Crystallography main (e13402f) が 2.2.0 を要求 (NU1605 回避)。旧 2.1.4 (260820Cl: 7a435ee が 2.1.4 を要求。その前は 2.1.2) -->
     <PackageReference Include="SimdLinq" Version="1.3.2" />
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="10.0.14" /><!-- 261105Cl .NET 10 サービシング更新 (パッチのみ)。旧 10.0.5 -->
   </ItemGroup>
