@@ -5860,18 +5860,6 @@ or azimuthal division)</value>
   <data name="label15.Text" xml:space="preserve">
     <value>(note: χ is azimuth angle defined by miscellaneous tab)</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5892,18 +5880,6 @@ or azimuthal division)</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Icorr(2θ,χ)  =I(2θ,χ) / ( sin(χ)^2 + cos(χ)^2 * cos(2θ)^2) × 1/2 × (1 +  cos(2θ)^2)</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="waveLengthControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5935,18 +5911,6 @@ or azimuthal division)</value>
   <data name="waveLengthControl.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;waveLengthControl.Name" xml:space="preserve">
-    <value>waveLengthControl</value>
-  </data>
-  <data name="&gt;&gt;waveLengthControl.Type" xml:space="preserve">
-    <value>Crystallography.Controls.WaveLengthControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;waveLengthControl.Parent" xml:space="preserve">
-    <value>tabPageXRay</value>
-  </data>
-  <data name="&gt;&gt;waveLengthControl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="flowLayoutPanel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5977,18 +5941,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Name" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6012,18 +5964,6 @@ or azimuthal division)</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>Coordinates</value>
-  </data>
-  <data name="&gt;&gt;label22.Name" xml:space="preserve">
-    <value>label22</value>
-  </data>
-  <data name="&gt;&gt;label22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="flowLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6055,18 +5995,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6087,18 +6015,6 @@ or azimuthal division)</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
     <value>Detector type</value>
-  </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="flowLayoutPanelFootMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6148,18 +6064,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanelFootMode.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.Name" xml:space="preserve">
-    <value>flowLayoutPanelFootMode</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFootMode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="groupBox9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
@@ -6180,18 +6084,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBox9.Text" xml:space="preserve">
     <value>Foot position</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.Name" xml:space="preserve">
-    <value>groupBox9</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
-    <value>flowLayoutPanelFootMode</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
@@ -6226,18 +6118,6 @@ or azimuthal division)</value>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Camera Length 2 </value>
   </data>
-  <data name="&gt;&gt;groupBox10.Name" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Parent" xml:space="preserve">
-    <value>flowLayoutPanelFootMode</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6261,18 +6141,6 @@ or azimuthal division)</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>(sample to foot)</value>
-  </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="flowLayoutPanelDirectSpotMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6319,18 +6187,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanelDirectSpotMode.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.Name" xml:space="preserve">
-    <value>flowLayoutPanelDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelDirectSpotMode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="groupBoxDirectSpotPosition.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
@@ -6351,18 +6207,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
     <value>Direct spot position</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.Name" xml:space="preserve">
-    <value>groupBoxDirectSpotPosition</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.Parent" xml:space="preserve">
-    <value>flowLayoutPanelDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDirectSpotPosition.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
@@ -6397,18 +6241,6 @@ or azimuthal division)</value>
   <data name="groupBoxCameaLength.Text" xml:space="preserve">
     <value>Camera Length 1</value>
   </data>
-  <data name="&gt;&gt;groupBoxCameaLength.Name" xml:space="preserve">
-    <value>groupBoxCameaLength</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCameaLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCameaLength.Parent" xml:space="preserve">
-    <value>flowLayoutPanelDirectSpotMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCameaLength.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6436,18 +6268,6 @@ or azimuthal division)</value>
   <data name="label18.Text" xml:space="preserve">
     <value>(sample to direct spot)</value>
   </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>groupBoxCameaLength</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="groupBoxPixelShape.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
@@ -6468,18 +6288,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBoxPixelShape.Text" xml:space="preserve">
     <value>Pixel Shape</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.Name" xml:space="preserve">
-    <value>groupBoxPixelShape</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPixelShape.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="groupBoxGandlfiRadius.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
@@ -6504,18 +6312,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBoxGandlfiRadius.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.Name" xml:space="preserve">
-    <value>groupBoxGandlfiRadius</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxGandlfiRadius.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="groupBoxSphericalCorrection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6553,18 +6349,6 @@ or azimuthal division)</value>
   <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
     <value>Spherical correction</value>
   </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.Name" xml:space="preserve">
-    <value>groupBoxSphericalCorrection</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSphericalCorrection.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="label26.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6592,18 +6376,6 @@ or azimuthal division)</value>
   <data name="label26.Text" xml:space="preserve">
     <value>(normally zero)</value>
   </data>
-  <data name="&gt;&gt;label26.Name" xml:space="preserve">
-    <value>label26</value>
-  </data>
-  <data name="&gt;&gt;label26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
-    <value>groupBoxSphericalCorrection</value>
-  </data>
-  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="groupBoxTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -6624,18 +6396,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
     <value>Tilt</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.Name" xml:space="preserve">
-    <value>groupBoxTiltCorrection</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.Parent" xml:space="preserve">
-    <value>tabPageIP</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTiltCorrection.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -6670,18 +6430,6 @@ or azimuthal division)</value>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>Exceptional pixels</value>
   </data>
-  <data name="&gt;&gt;groupBox8.Name" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6705,18 +6453,6 @@ or azimuthal division)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>pixels from edges</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox8</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
     <value>flowLayoutPanel6</value>
@@ -6772,18 +6508,6 @@ or azimuthal division)</value>
   <data name="groupBoxRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;groupBoxRectangle.Name" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRectangle.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRectangle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="flowLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6814,18 +6538,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanel6.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6849,18 +6561,6 @@ or azimuthal division)</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Direction</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6886,18 +6586,6 @@ or azimuthal division)</value>
   <data name="label8.Text" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6921,18 +6609,6 @@ or azimuthal division)</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Band Width</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>groupBoxRectangle</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -6979,18 +6655,6 @@ or azimuthal division)</value>
   <data name="groupBoxSector.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupBoxSector.Name" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSector.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSector.Parent" xml:space="preserve">
-    <value>tabPageIntegralRegion</value>
-  </data>
-  <data name="&gt;&gt;groupBoxSector.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7015,18 +6679,6 @@ or azimuthal division)</value>
   <data name="label10.Text" xml:space="preserve">
     <value>Start Angle</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7050,18 +6702,6 @@ or azimuthal division)</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>End Angle</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>groupBoxSector</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;label46.Name" xml:space="preserve">
     <value>label46</value>
@@ -7153,18 +6793,6 @@ or azimuthal division)</value>
   <data name="groupBoxRadial.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupBoxRadial.Name" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRadial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRadial.Parent" xml:space="preserve">
-    <value>tabPageIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;groupBoxRadial.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label46.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7188,18 +6816,6 @@ or azimuthal division)</value>
   </data>
   <data name="label46.Text" xml:space="preserve">
     <value>Donut radius</value>
-  </data>
-  <data name="&gt;&gt;label46.Name" xml:space="preserve">
-    <value>label46</value>
-  </data>
-  <data name="&gt;&gt;label46.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label46.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label46.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label40.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7225,18 +6841,6 @@ or azimuthal division)</value>
   <data name="label40.Text" xml:space="preserve">
     <value>Donut width</value>
   </data>
-  <data name="&gt;&gt;label40.Name" xml:space="preserve">
-    <value>label40</value>
-  </data>
-  <data name="&gt;&gt;label40.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label40.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label40.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="labelDimensionRadial2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7261,18 +6865,6 @@ or azimuthal division)</value>
   <data name="labelDimensionRadial2.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;labelDimensionRadial2.Name" xml:space="preserve">
-    <value>labelDimensionRadial2</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial2.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="label37.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7296,18 +6888,6 @@ or azimuthal division)</value>
   </data>
   <data name="label37.Text" xml:space="preserve">
     <value>°</value>
-  </data>
-  <data name="&gt;&gt;label37.Name" xml:space="preserve">
-    <value>label37</value>
-  </data>
-  <data name="&gt;&gt;label37.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label37.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label37.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="label36.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7339,18 +6919,6 @@ or azimuthal division)</value>
   <data name="label36.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label36.Name" xml:space="preserve">
-    <value>label36</value>
-  </data>
-  <data name="&gt;&gt;label36.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label36.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;label36.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="labelDimensionRadial1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7374,18 +6942,6 @@ or azimuthal division)</value>
   </data>
   <data name="labelDimensionRadial1.Text" xml:space="preserve">
     <value>°</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.Name" xml:space="preserve">
-    <value>labelDimensionRadial1</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.Parent" xml:space="preserve">
-    <value>groupBoxRadial</value>
-  </data>
-  <data name="&gt;&gt;labelDimensionRadial1.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
@@ -7425,18 +6981,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBoxConcentric.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.Name" xml:space="preserve">
-    <value>groupBoxConcentric</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.Parent" xml:space="preserve">
-    <value>tabPageIntegralProperty</value>
-  </data>
-  <data name="&gt;&gt;groupBoxConcentric.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -7495,18 +7039,6 @@ or azimuthal division)</value>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Integral Step &amp;&amp; Range</value>
   </data>
-  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>groupBoxConcentric</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7530,18 +7062,6 @@ or azimuthal division)</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>End</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7573,18 +7093,6 @@ or azimuthal division)</value>
   <data name="label14.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7608,18 +7116,6 @@ or azimuthal division)</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Start</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="groupBox5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7645,18 +7141,6 @@ or azimuthal division)</value>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Output pattern</value>
   </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>groupBoxConcentric</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="groupBox13.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9pt</value>
   </data>
@@ -7677,18 +7161,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBox13.Text" xml:space="preserve">
     <value>Half mask</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Name" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelManualSpot.Name" xml:space="preserve">
     <value>flowLayoutPanelManualSpot</value>
@@ -7735,18 +7207,6 @@ or azimuthal division)</value>
   <data name="groupBoxManualMode.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;groupBoxManualMode.Name" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualMode.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBoxManualMode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="flowLayoutPanelManualSpot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7783,18 +7243,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanelManualSpot.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelManualSpot.Name" xml:space="preserve">
-    <value>flowLayoutPanelManualSpot</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelManualSpot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelManualSpot.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelManualSpot.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label30.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7819,18 +7267,6 @@ or azimuthal division)</value>
   <data name="label30.Text" xml:space="preserve">
     <value>pt</value>
   </data>
-  <data name="&gt;&gt;label30.Name" xml:space="preserve">
-    <value>label30</value>
-  </data>
-  <data name="&gt;&gt;label30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label30.Parent" xml:space="preserve">
-    <value>flowLayoutPanelManualSpot</value>
-  </data>
-  <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="flowLayoutPanelSpline.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7854,18 +7290,6 @@ or azimuthal division)</value>
   </data>
   <data name="flowLayoutPanelSpline.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelSpline.Name" xml:space="preserve">
-    <value>flowLayoutPanelSpline</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelSpline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelSpline.Parent" xml:space="preserve">
-    <value>groupBoxManualMode</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelSpline.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
     <value>flowLayoutPanel5</value>
@@ -7900,18 +7324,6 @@ or azimuthal division)</value>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Take over mask setting</value>
   </data>
-  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="flowLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7935,18 +7347,6 @@ or azimuthal division)</value>
   </data>
   <data name="flowLayoutPanel5.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;label28.Name" xml:space="preserve">
     <value>label28</value>
@@ -7981,18 +7381,6 @@ or azimuthal division)</value>
   <data name="groupBox12.Text" xml:space="preserve">
     <value>Mask spots option</value>
   </data>
-  <data name="&gt;&gt;groupBox12.Name" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="label28.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8017,18 +7405,6 @@ or azimuthal division)</value>
   <data name="label28.Text" xml:space="preserve">
     <value>Criterial deviation
  for "Mask Spots"</value>
-  </data>
-  <data name="&gt;&gt;label28.Name" xml:space="preserve">
-    <value>label28</value>
-  </data>
-  <data name="&gt;&gt;label28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8060,18 +7436,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>groupBox16</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8096,18 +7460,6 @@ or azimuthal division)</value>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>groupBox15</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 120</value>
   </data>
@@ -8125,18 +7477,6 @@ or azimuthal division)</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Vertical (sector angle) step </value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;label38.Name" xml:space="preserve">
     <value>label38</value>
@@ -8228,18 +7568,6 @@ or azimuthal division)</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Horizontal (distance from direct spot) unit and range</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label38.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8264,18 +7592,6 @@ or azimuthal division)</value>
   <data name="label38.Text" xml:space="preserve">
     <value>°</value>
   </data>
-  <data name="&gt;&gt;label38.Name" xml:space="preserve">
-    <value>label38</value>
-  </data>
-  <data name="&gt;&gt;label38.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label38.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label38.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label39.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8299,18 +7615,6 @@ or azimuthal division)</value>
   </data>
   <data name="label39.Text" xml:space="preserve">
     <value>°</value>
-  </data>
-  <data name="&gt;&gt;label39.Name" xml:space="preserve">
-    <value>label39</value>
-  </data>
-  <data name="&gt;&gt;label39.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label39.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label39.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="label25.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8342,18 +7646,6 @@ or azimuthal division)</value>
   <data name="label25.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label25.Name" xml:space="preserve">
-    <value>label25</value>
-  </data>
-  <data name="&gt;&gt;label25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label41.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8377,18 +7669,6 @@ or azimuthal division)</value>
   </data>
   <data name="label41.Text" xml:space="preserve">
     <value>°</value>
-  </data>
-  <data name="&gt;&gt;label41.Name" xml:space="preserve">
-    <value>label41</value>
-  </data>
-  <data name="&gt;&gt;label41.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label41.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label41.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="label24.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8414,18 +7694,6 @@ or azimuthal division)</value>
   <data name="label24.Text" xml:space="preserve">
     <value>End</value>
   </data>
-  <data name="&gt;&gt;label24.Name" xml:space="preserve">
-    <value>label24</value>
-  </data>
-  <data name="&gt;&gt;label24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="label42.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8449,18 +7717,6 @@ or azimuthal division)</value>
   </data>
   <data name="label42.Text" xml:space="preserve">
     <value>Start</value>
-  </data>
-  <data name="&gt;&gt;label42.Name" xml:space="preserve">
-    <value>label42</value>
-  </data>
-  <data name="&gt;&gt;label42.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label42.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label42.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -8531,18 +7787,6 @@ or azimuthal division)</value>
   <data name="groupBox14.Text" xml:space="preserve">
     <value>Scale line options</value>
   </data>
-  <data name="&gt;&gt;groupBox14.Name" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;groupBox14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox14.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox14.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8564,18 +7808,6 @@ or azimuthal division)</value>
   <data name="label5.Text" xml:space="preserve">
     <value>Division</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="label23.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8596,18 +7828,6 @@ or azimuthal division)</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>Line Width</value>
-  </data>
-  <data name="&gt;&gt;label23.Name" xml:space="preserve">
-    <value>label23</value>
-  </data>
-  <data name="&gt;&gt;label23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="colorControlScaleAzimuth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8643,18 +7863,6 @@ or azimuthal division)</value>
     <value>Set the color of the azimuth (χ)
 scale lines overlaid on the image.</value>
   </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.Name" xml:space="preserve">
-    <value>colorControlScaleAzimuth</value>
-  </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ColorControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;colorControlScaleAzimuth.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="colorControlScale2Theta.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8688,18 +7896,6 @@ scale lines overlaid on the image.</value>
   <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
     <value>Set a color of 2θ scale lines</value>
   </data>
-  <data name="&gt;&gt;colorControlScale2Theta.Name" xml:space="preserve">
-    <value>colorControlScale2Theta</value>
-  </data>
-  <data name="&gt;&gt;colorControlScale2Theta.Type" xml:space="preserve">
-    <value>Crystallography.Controls.ColorControl, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;colorControlScale2Theta.Parent" xml:space="preserve">
-    <value>groupBox14</value>
-  </data>
-  <data name="&gt;&gt;colorControlScale2Theta.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="groupBox19.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
@@ -8715,18 +7911,6 @@ scale lines overlaid on the image.</value>
   <data name="groupBox19.Text" xml:space="preserve">
     <value>Image name options</value>
   </data>
-  <data name="&gt;&gt;groupBox19.Name" xml:space="preserve">
-    <value>groupBox19</value>
-  </data>
-  <data name="&gt;&gt;groupBox19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox19.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox19.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="groupBox18.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
   </data>
@@ -8741,18 +7925,6 @@ scale lines overlaid on the image.</value>
   </data>
   <data name="groupBox18.Text" xml:space="preserve">
     <value>Image loading options</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.Name" xml:space="preserve">
-    <value>groupBox18</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox18.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
     <value>flowLayoutPanel3</value>
@@ -8786,18 +7958,6 @@ scale lines overlaid on the image.</value>
   </data>
   <data name="groupBox11.Text" xml:space="preserve">
     <value>Chi (χ) axis options</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.Name" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="label50.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8841,18 +8001,6 @@ scale lines overlaid on the image.</value>
   <data name="flowLayoutPanel3.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="&gt;&gt;label50.Name" xml:space="preserve">
-    <value>label50</value>
-  </data>
-  <data name="&gt;&gt;label50.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label50.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;label50.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="flowLayoutPanel3.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
   </data>
@@ -8867,18 +8015,6 @@ scale lines overlaid on the image.</value>
   </data>
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Name" xml:space="preserve">
     <value>flowLayoutPanelFindCenterOption</value>
@@ -8913,18 +8049,6 @@ scale lines overlaid on the image.</value>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Find center options</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="flowLayoutPanelFindCenterOption.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8942,18 +8066,6 @@ scale lines overlaid on the image.</value>
   </data>
   <data name="flowLayoutPanelFindCenterOption.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Name" xml:space="preserve">
-    <value>flowLayoutPanelFindCenterOption</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelFindCenterOption.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>
@@ -8985,18 +8097,6 @@ scale lines overlaid on the image.</value>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Reference image setting</value>
   </data>
-  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9014,18 +8114,6 @@ scale lines overlaid on the image.</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Coefficient</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
@@ -9182,18 +8270,6 @@ scale lines overlaid on the image.</value>
   </data>
   <data name="flowLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Name" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Parent" xml:space="preserve">
-    <value>tabPageSpotsAndCenter</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
