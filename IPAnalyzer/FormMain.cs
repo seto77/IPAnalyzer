@@ -2285,7 +2285,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             for (int j = i; j < i + width && j < intensity.Length; j++)
             {
                 if (j != i) sb.Append(',');
-                sb.Append(intensity[j].ToString("G"));
+                //sb.Append(intensity[j].ToString("G")); // 261105Cl 変更前 (CurrentCulture: コンマ小数の地域設定では "12,5" が区切りの ',' と混ざり列が崩れる)
+                sb.Append(intensity[j].ToString("G", System.Globalization.CultureInfo.InvariantCulture)); // 261105Cl 変更
             }
             writer.WriteLine(sb);
         }
