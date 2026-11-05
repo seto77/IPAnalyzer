@@ -1,12 +1,15 @@
-# 261105Cl 追加: リポジトリに .gitignore が無く、ビルド出力が未追跡ファイルとして出るため最小限を定義
-# ビルド出力
+# 261105Cl 追加: Crystallography / Crystallography.Controls の .gitignore と同じ内容に揃える
+.vs/
 bin/
 obj/
-# Visual Studio のユーザー固有ファイル
-.vs/
+x64/
+ARM64/
+Debug/
+Release/
 *.user
 *.suo
-# LibreOffice のロックファイル (traffic.xlsx を開いたときに生成)
-.~lock.*#
-# C# Dev Kit の言語サービスキャッシュ (Crystallography 側の .gitignore と同じ)
 *.csproj.lscache
+*.VC.db
+*.opendb
+# IPAnalyzer 固有: LibreOffice のロックファイル (traffic.xlsx を開いたときに生成)
+.~lock.*#
