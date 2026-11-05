@@ -8,3 +8,5 @@ obj/
 *.suo
 # LibreOffice のロックファイル (traffic.xlsx を開いたときに生成)
 .~lock.*#
+# C# Dev Kit の言語サービスキャッシュ (Crystallography 側の .gitignore と同じ)
+*.csproj.lscache
