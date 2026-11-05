@@ -3531,7 +3531,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                     //必要であればKα2を除去
                     #region
-                    if (FormProperty.checkBoxTest.Checked)
+                    // 261105Cl 変更: RemoveKalpha2 は横軸を 2θ[°] とみなすので、横軸が 2θ のとき (Concentric の角度モード) だけ適用する。
+                    //   旧条件では d 値モードで親 (Kα1) ピークを d·λ2/λ1 でなく ≈d·λ1/λ2 側に取って逆向きに引き、Radial モードでは χ を 2θ とみなして引いていた。
+                    //if (FormProperty.checkBoxTest.Checked) // 261105Cl 変更前
+                    if (FormProperty.checkBoxTest.Checked && IP.ConcentricMode && IP.Mode == HorizontalAxis.Angle) // 261105Cl 変更
                     {
                         if (FormProperty.waveLengthControl.XrayWaveSourceElementNumber > 10 && FormProperty.waveLengthControl.XrayWaveSourceLine == XrayLine.Ka1)
                         {
