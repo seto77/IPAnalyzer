@@ -3744,8 +3744,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     else
                     {
                         var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
-                        foreach (var p in dp.SourceProfile.Pt)
-                            sw.WriteLine($"{p.X}{s}{p.Y}{s}{p.Y}");
+                        //foreach (var p in dp.SourceProfile.Pt)
+                        //    sw.WriteLine($"{p.X}{s}{p.Y}{s}{p.Y}"); // 261105Cl 変更前: 3 列目が Y の重複になっていた (2023-01 の書き換えで Err[i].Y から p.Y に)
+                        // 261105Cl 変更: 3 列目を誤差 σ に戻す。Kα2 除去も誤差を保つようになった (Crystallography e13402f)。誤差が無いプロファイルでは空欄
+                        var src = dp.SourceProfile; // 261105Cl
+                        var hasErr = src.Err.Count == src.Pt.Count; // 261105Cl
+                        for (int i = 0; i < src.Pt.Count; i++) // 261105Cl
+                            sw.WriteLine($"{src.Pt[i].X}{s}{src.Pt[i].Y}{s}{(hasErr ? src.Err[i].Y.ToString() : "")}"); // 261105Cl
                     }
                 }
             }
