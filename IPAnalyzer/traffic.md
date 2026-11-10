@@ -7,6 +7,7 @@ Last updated: 2026-11-10
 ### Daily (最大14日保持)
 | Date | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-11-09 | 2 | 2 |
 | 2026-11-08 | 0 | 0 |
 | 2026-11-07 | 0 | 0 |
 | 2026-11-06 | 3 | 2 |
@@ -23,6 +24,7 @@ Last updated: 2026-11-10
 ### Weekly (最大14週保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
+| 2026-W46 | 2 | 2 |
 | 2026-W45 | 22 | 10 |
 | 2026-W44 | 26 | 21 |
 | 2026-W43 | 28 | 25 |
@@ -40,7 +42,7 @@ Last updated: 2026-11-10
 ### Monthly (最大12か月保持)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026-11 | 25 | 12 |
+| 2026-11 | 27 | 14 |
 | 2026-10 | 87 | 67 |
 | 2026-09 | 71 | 55 |
 | 2026-08 | 79 | 57 |
@@ -53,13 +55,14 @@ Last updated: 2026-11-10
 ### Yearly (無制限)
 | Period | Total Views | Unique Visitors |
 | ---- | ---- | ---- |
-| 2026 | 822 | 444 |
+| 2026 | 824 | 446 |
 
 ## Clones
 
 ### Daily (最大14日保持)
 | Date | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-11-09 | 2 | 2 |
 | 2026-11-08 | 19 | 11 |
 | 2026-11-07 | 11 | 7 |
 | 2026-11-06 | 29 | 13 |
@@ -76,6 +79,7 @@ Last updated: 2026-11-10
 ### Weekly (最大14週保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
+| 2026-W46 | 2 | 2 |
 | 2026-W45 | 135 | 73 |
 | 2026-W44 | 86 | 59 |
 | 2026-W43 | 69 | 52 |
@@ -93,7 +97,7 @@ Last updated: 2026-11-10
 ### Monthly (最大12か月保持)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026-11 | 142 | 79 |
+| 2026-11 | 144 | 81 |
 | 2026-10 | 353 | 247 |
 | 2026-09 | 253 | 183 |
 | 2026-08 | 232 | 141 |
@@ -106,7 +110,7 @@ Last updated: 2026-11-10
 ### Yearly (無制限)
 | Period | Total Clones | Unique Cloners |
 | ---- | ---- | ---- |
-| 2026 | 2971 | 1556 |
+| 2026 | 2973 | 1558 |
 
 ## Referrers
 
@@ -352,7 +356,7 @@ Last updated: 2026-11-10
 | v.3.981 | 2026-06-25 | IPAnalyzer-setup_arm64.msi | 21 |
 | v.3.981 | 2026-06-25 | IPAnalyzer-v.3.981.zip | 54 |
 | v.3.981 | 2026-06-25 | IPAnalyzer-v.3.981_arm64.zip | 14 |
-| v.3.981 | 2026-06-25 | IPAnalyzerSetup.msi | 35 |
+| v.3.981 | 2026-06-25 | IPAnalyzerSetup.msi | 36 |
 | v.3.980 | 2026-06-08 | IPAnalyzer-v.3.980-win-x64-portable.zip | 18 |
 | v.3.980 | 2026-06-08 | IPAnalyzerSetup.msi | 33 |
 | v.3.980 | 2026-06-08 | SHA256SUMS.txt | 0 |
@@ -387,7 +391,7 @@ Last updated: 2026-11-10
 | v.3.951 | 2023-10-07 | IPAnalyzerSetup.msi | 85 |
 | v.3.950 | 2023-10-03 | IPAnalyzerSetup.msi | 7 |
 
-**TOTAL: 2095**
+**TOTAL: 2096**
 
 ## Stats
 
