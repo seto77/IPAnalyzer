@@ -127,6 +127,11 @@ namespace IPAnalyzer
             }
             //260712Cl 手動ループを SimdLinq の Max に (ushort[] は SIMD 化。空配列ガード済みで例外なし)
             ushort maxRawIntensity = Math.Max(image1.Max(), image2.Max());
+            // 261112Cl 追加 (作者判断): 飽和画素 (2 枚を通じた最大の画素値) を含む組は残差から除く。真の強度が分からず当てはめを偏らせるため
+            //   (合成データで真の変換との隔たり 0.0405→約 0.009)。表 (getConvertTable) は従来どおり最大値まで作る。除くと組が残らないときは除かない
+            bool skipSaturated = false;
+            for (int i = 0; i < image1.Length && !skipSaturated; i++)
+                skipSaturated = image1[i] != maxRawIntensity && image2[i] != maxRawIntensity;
 
             double[] convertTableCurrent = new double[maxRawIntensity+1];
             Profile initialProfile = new Profile();
@@ -150,6 +155,7 @@ namespace IPAnalyzer
             double temp1=0,temp2=0;
             for (int i = 0; i < image1.Length; i++)
                 {
+                    if (skipSaturated && (image1[i] == maxRawIntensity || image2[i] == maxRawIntensity)) continue; // 261112Cl 追加: 飽和の組を除く
                     temp1 += convertTableCurrent[image1[i]] * convertTableCurrent[image2[i]];
                     temp2 +=  convertTableCurrent[image1[i]] * convertTableCurrent[image1[i]];
                 }
@@ -157,6 +163,7 @@ namespace IPAnalyzer
             double ResidualSquareCurrent = 0, ResidualSquareNew = 0;
             for (int i = 0; i < image1.Length; i++)
                 {
+                    if (skipSaturated && (image1[i] == maxRawIntensity || image2[i] == maxRawIntensity)) continue; // 261112Cl 追加: 飽和の組を除く
                     double temp = A*convertTableCurrent[image1[i]] -convertTableCurrent[image2[i]];
                     ResidualSquareCurrent += temp*temp;
                 }
@@ -175,7 +182,7 @@ namespace IPAnalyzer
             // 最適化の間、制御点の X は変わらず Y だけが動く。getConvertTable の表は、区間 k (画素値 v が X_k ≤ v < X_{k+1} かつ v ≤ max。最後の区間は v = X_{k+1} も含む) で
             //   t(v) = s·(Y_k + β_k·(v − X_k)),  β_k = (Y_{k+1} − Y_k)/(X_{k+1} − X_k),  s = 表の合計を total に揃える係数
             // の一次式になる (261111Cl 変更: 旧は v < max で、v = max は t = 0 だった)。よって S₁ = Σt(a)², S₁₂ = Σt(a)t(b), S₂ = Σt(b)²
-            // (和は全画素。a = image1, b = image2) は、区間ごと・区間の組ごとの 画素数, Σda, Σdb, Σda², Σdb², Σda·db (da = a − X_σ, db = b − X_τ)
+            // (和は全画素 (261112Cl: 飽和の組を除く)。a = image1, b = image2) は、区間ごと・区間の組ごとの 画素数, Σda, Σdb, Σda², Σdb², Σda·db (da = a − X_σ, db = b − X_τ)
             // から求まる。これらは整数なので、全画素を 1 回だけ走査して long で正確に集計しておく。
             // 残差は旧の Σ(A·t(a) − t(b))² を展開した A²S₁ − 2A·S₁₂ + S₂ (A = S₁₂/S₁)。
             int nSeg = controlPoints.Count - 1;
@@ -205,6 +212,7 @@ namespace IPAnalyzer
             var cnt12 = new long[nSeg * nSeg]; var sumA12 = new long[nSeg * nSeg]; var sumB12 = new long[nSeg * nSeg]; var prod12 = new long[nSeg * nSeg];
             for (int i = 0; i < image1.Length; i++)
             {
+                if (skipSaturated && (image1[i] == maxRawIntensity || image2[i] == maxRawIntensity)) continue; // 261112Cl 追加: 飽和の組を除く (上の初期残差と同じ)
                 int sa = segOf[image1[i]], sb = segOf[image2[i]];
                 long da = 0, db = 0;
                 if (sa >= 0) { da = image1[i] - segX[sa]; cnt1[sa]++; sum1[sa] += da; sq1[sa] += da * da; }
