@@ -2597,8 +2597,9 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         //260413Cl Max/Min を LINQ に変更
         if (SeriesValue.Length == 0)
             return new Bitmap(Math.Max(1, width), Math.Max(1, height));
-        double max = SeriesValue.Max();
-        double min = SeriesValue.Min();
+        // double max = SeriesValue.Max(); // 261111Cl 変更前 (SimdLinq。NaN の扱いが位置で変わっていた)
+        // double min = SeriesValue.Min();
+        var (min, max) = SeriesValue.MinMaxIgnoreNaN(); // 261111Cl 変更: NaN を除いた最小・最大 (作者判断)
 
         if (max - min < 10E-8)
         {

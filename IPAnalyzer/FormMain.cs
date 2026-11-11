@@ -1882,7 +1882,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         SetFrequencyProfile();//強度頻度グラフを作成
         graphControlProfile.Profile = new Profile();//プロファイルは初期化
 
-        var (min, max) = Ring.Intensity.MinMax();
+        // var (min, max) = Ring.Intensity.MinMax(); // 261111Cl 変更前
+        var (min, max) = Ring.Intensity.MinMaxIgnoreNaN(); // 261111Cl 変更: NaN を除いた最小・最大 (作者判断。SimdLinq を外したため)
         trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
         trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
@@ -1932,7 +1933,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //SetInformation(); // 261111Cl コメントアウト: ここでは反転・背景・偏光の補正前 (上の CalcFreq/SetFrequencyProfile の値) を表示していた → 補正の後 (下の SkipDrawing = false の直前) へ移動
 
         //SP8-BL43LXUのような32bit signed tiffの場合は、負の値をマスク
-        if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0)
+        // if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0) // 261111Cl 変更前
+        if (ext.StartsWith("tif") && Ring.Intensity.MinMaxIgnoreNaN().Min <= 0) // 261111Cl 変更: NaN を除いた最小 (作者判断。標準の Min は NaN を返し、負の画素のマスクが効かなくなるため)
         {
             for (int i = 0; i < Ring.Intensity.Length; i++)
                 if (Ring.Intensity[i] < 0)
@@ -2004,7 +2006,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
     public void SetInformation()
     {
-        var (min, max) = Ring.Intensity.MinMax();
+        // var (min, max) = Ring.Intensity.MinMax(); // 261111Cl 変更前
+        var (min, max) = Ring.Intensity.MinMaxIgnoreNaN(); // 261111Cl 変更: NaN を除いた最小・最大 (作者判断。SimdLinq を外したため)
         textBoxInformation.Text =
             $"File name:\r\n {FileName}\r\n" + //260712Cl typo修正 (Fine→File)
             $"Size:\r\n {SrcImgSize.Width}*{SrcImgSize.Height}\r\n" +
