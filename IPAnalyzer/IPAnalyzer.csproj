@@ -14,7 +14,7 @@
     <DebugType>embedded</DebugType>
     <Version>1.1.1.1</Version>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <!-- <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization> --><!-- 261111Cl 削除: BinaryFormatter を使わなくなった (保存形式・クリップボードは使用なし。resx の埋め込み値は System.Resources.Extensions の NRBF 読み取りで読む) -->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Platforms>x64</Platforms>
     <!-- 260625Cl: design-time ビルド (WinForms デザイナーが参照を集める background build) では RID を外す。
@@ -74,7 +74,8 @@
     <PackageReference Include="SimdLinq" Version="1.3.2" />
     <!-- 261106Ch: Preserve legacy BinaryFormatter compatibility with the .NET 11 package. -->
     <!-- <PackageReference Include="System.Runtime.Serialization.Formatters" Version="10.0.14" /> -->
-    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="11.0.0" /><!-- 261111Cl: .NET 11 GA (was 11.0.0-rc.3.26522.148) -->
+    <!-- <PackageReference Include="System.Runtime.Serialization.Formatters" Version="11.0.0" /> --><!-- 261111Cl: .NET 11 GA (was 11.0.0-rc.3.26522.148) -->
+    <!-- 261111Cl 削除: 上の互換パッケージ (脆弱性あり・Microsoft は非推奨) は不要になった。EnableUnsafeBinaryFormatterSerialization と同じ理由 -->
   </ItemGroup>
 
   <ItemGroup>
