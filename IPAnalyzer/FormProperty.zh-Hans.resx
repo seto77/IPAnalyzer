@@ -805,7 +805,8 @@ Kα2 越多。</value>
   </data>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>以 GSAS 格式保存图谱供 Rietveld 精修；
-注意此格式不支持“单个文件”选项。</value>
+注意此格式不支持“单个文件”选项。
+仅当 x 轴为 2θ 时（“同心积分”中选择“角度”）可用。</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>带宽，以像素表示（最大 10000）：横跨束

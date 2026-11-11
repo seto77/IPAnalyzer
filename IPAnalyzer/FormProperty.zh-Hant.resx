@@ -825,7 +825,9 @@ d 間距 (Å) 表示。</value>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>以 GSAS 格式儲存圖譜供 Rietveld
 精修；請注意此格式不提供
-「單一檔案」選項。</value>
+「單一檔案」選項。
+僅在 x 軸為 2θ 時（「同心積分」中
+選取「角度」）可用。</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>條帶寬度，以像素表示（最大 10000）：

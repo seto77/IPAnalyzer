@@ -871,7 +871,9 @@ di interesse.</value>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>Salva il profilo in formato GSAS per l'affinamento
 Rietveld; nota che l'opzione 'un solo file' non è
-disponibile in questo formato.</value>
+disponibile in questo formato.
+Disponibile solo quando l'asse x è 2θ
+('Integrazione concentrica' con 'Angolo').</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>Larghezza della banda in pixel (max 10000):

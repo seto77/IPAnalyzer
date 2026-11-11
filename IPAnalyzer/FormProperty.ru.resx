@@ -855,7 +855,9 @@ plate (плоский детектор, примерно перпендикул�
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>Сохранять профиль в формате GSAS для уточнения
 по Ритвельду; обратите внимание, что опция «один
-файл» недоступна в этом формате.</value>
+файл» недоступна в этом формате.
+Доступно, только если ось x — 2θ
+(«Концентрическое интегрирование», «Угол»).</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>Ширина полосы в пикселях (макс. 10000):

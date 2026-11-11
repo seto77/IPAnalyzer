@@ -844,7 +844,9 @@ manualmente a máscara apenas da região de interesse.</value>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>Salvar o perfil no formato GSAS para refinamento
 de Rietveld; observe que a opção 'um arquivo'
-não está disponível neste formato.</value>
+não está disponível neste formato.
+Disponível apenas quando o eixo x é 2θ
+('Integração concêntrica' com 'Ângulo').</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>Largura da banda em pixels (máx. 10000): meia

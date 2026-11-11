@@ -109,9 +109,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxCorrectPolarization.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxCorrectPolarization.Text" xml:space="preserve">
     <value>偏光補正を行う (チェックすると、以下の式に従って無偏光の
 入射光を仮定した強度分布が計算されます)</value>
@@ -119,9 +116,6 @@
   <data name="checkBoxCorrectPolarization.ToolTip" xml:space="preserve">
     <value>直線偏光(放射光)X線の偏光補正を行い、無偏光相当の強度に
 変換します。方位角χによる相対ピーク強度が変化します。</value>
-  </data>
-  <data name="radioButtonDirectSpotMode.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="radioButtonDirectSpotMode.Text" xml:space="preserve">
@@ -132,9 +126,6 @@
 ピクセル位置とカメラ長1(試料-ダイレクトスポット
 距離)を入力します。ビームが検出器に当たる場合に使用。</value>
   </data>
-  <data name="radioButtonFootMode.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="radioButtonFootMode.Text" xml:space="preserve">
     <value>垂線の足</value>
   </data>
@@ -143,18 +134,12 @@
 垂線の足)とカメラ長2(試料-垂線の足距離)で
 幾何を定義します。傾いたフラットパネル用。</value>
   </data>
-  <data name="radioButtonFlatPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="radioButtonFlatPanel.Text" xml:space="preserve">
     <value>フラットパネル</value>
   </data>
   <data name="radioButtonFlatPanel.ToolTip" xml:space="preserve">
     <value>フラットパネル/イメージングプレート(平面検出器)の
 幾何。傾き補正と垂線の足モードが有効になります。</value>
-  </data>
-  <data name="radioButtonGandlfi.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <data name="radioButtonGandlfi.Text" xml:space="preserve">
     <value>ガンドルフィ</value>
@@ -178,9 +163,6 @@
     <value>端マスク幅(ピクセル, 0-256): 「ピクセル分の
 画像端」が有効なとき積算から除外する縁取りの厚さ。</value>
   </data>
-  <data name="checkBoxOmitSpots.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>マスクされたピクセル</value>
   </data>
@@ -193,9 +175,6 @@
     <value>画像端をマスク: 積算時に各端からNピクセル(右で設定)の
 帯を除外し、検出器端のアーティファクトを取り除きます。</value>
   </data>
-  <data name="checkBoxThresholdMax.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxThresholdMax.Text" xml:space="preserve">
     <value>強度が右値以上</value>
   </data>
@@ -203,9 +182,6 @@
     <value>飽和ピクセルを除外: 右の値を超える強度の
 ピクセルを積算から除外します。ブルーミング
 や異常高強度ピクセルの除去に使用します。</value>
-  </data>
-  <data name="checkBoxThresholdMin.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxThresholdMin.Text" xml:space="preserve">
     <value>強度が右値以下</value>
@@ -215,18 +191,12 @@
 ピクセルを無視します。デッドピクセルや
 背景のみのピクセルの除去に使用します。</value>
   </data>
-  <data name="radioButtonRectangle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonRectangle.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
   <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
     <value>全リングではなく矩形バンドで積算します。方向・
 角度・バンド幅で帯状の領域を指定できます。</value>
-  </data>
-  <data name="checkBoxRectangleIsBothSide.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxRectangleIsBothSide.Text" xml:space="preserve">
     <value>中心対称</value>
@@ -249,9 +219,6 @@
     <value>バンド回転角(度, 0-360)。矩形積算帯の方位方向。
 Direction が Free のときのみ編集可能。</value>
   </data>
-  <data name="radioButtonSector.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonSector.Text" xml:space="preserve">
     <value>扇形</value>
   </data>
@@ -267,9 +234,6 @@ Direction が Free のときのみ編集可能。</value>
     <value>扇形の終了角度(度, 方位角χ)。積算する円弧セクター
 の方位範囲の終点。開始角度より大きくします。</value>
   </data>
-  <data name="radioButtonRadial.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonRadial.Text" xml:space="preserve">
     <value>偏角 (sector angle) 積算</value>
   </data>
@@ -277,9 +241,6 @@ Direction が Free のときのみ編集可能。</value>
     <value>放射状(ケーキ)積算: 固定半径のリング上で
 方位を走査し、強度 vs 方位角χを得ます。1本の
 リング周りの集合組織/配向を調べられます。</value>
-  </data>
-  <data name="radioButtonRadialAngle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonRadialAngle.Text" xml:space="preserve">
     <value>角度</value>
@@ -290,9 +251,6 @@ Direction が Free のときのみ編集可能。</value>
   <data name="radioButtonRadialDspacing.ToolTip" xml:space="preserve">
     <value>放射状リング半径を格子面間隔d値(Å)で指定します。</value>
   </data>
-  <data name="radioButtonConcentric.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonConcentric.Text" xml:space="preserve">
     <value>散乱角(2θ)積算</value>
   </data>
@@ -301,9 +259,6 @@ Direction が Free のときのみ編集可能。</value>
 積算して、標準的な1次元プロファイル
 (強度 vs 2θ/d値/長さ)を作成します。</value>
   </data>
-  <data name="radioButtonConcentricLength.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonConcentricLength.Text" xml:space="preserve">
     <value>長さ</value>
   </data>
@@ -311,18 +266,12 @@ Direction が Free のときのみ編集可能。</value>
     <value>プロファイルの横軸に検出器上の弧長(mm)を
 使用します。開始/終了/ステップはmm単位。</value>
   </data>
-  <data name="radioButtonConcentricDspacing.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonConcentricDspacing.Text" xml:space="preserve">
     <value>d値</value>
   </data>
   <data name="radioButtonConcentricDspacing.ToolTip" xml:space="preserve">
     <value>プロファイルの横軸に格子面間隔d値(Å)を使用します。
 開始/終了/ステップはÅ単位。d = 波長/(2 sinθ)。</value>
-  </data>
-  <data name="radioButtonConcentricAngle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonConcentricAngle.Text" xml:space="preserve">
     <value>角度</value>
@@ -339,18 +288,12 @@ Direction が Free のときのみ編集可能。</value>
     <value>出力1次元パターンにDebye-Scherrer(透過・粉末環)の
 強度規約を適用します。2次元検出器データの通常モード。</value>
   </data>
-  <data name="buttonMaskLeft.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="buttonMaskLeft.Text" xml:space="preserve">
     <value>左</value>
   </data>
   <data name="buttonMaskLeft.ToolTip" xml:space="preserve">
     <value>画像の左半分全体をマスク(積算から除外)します。
 既存マスクに追加されます。解除はUnmask All。</value>
-  </data>
-  <data name="buttonMaskTop.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <data name="buttonMaskTop.Text" xml:space="preserve">
     <value>上</value>
@@ -359,9 +302,6 @@ Direction が Free のときのみ編集可能。</value>
     <value>画像の上半分全体をマスク(積算から
 除外)します。既存マスクに追加されます。</value>
   </data>
-  <data name="buttonMaskBottom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="buttonMaskBottom.Text" xml:space="preserve">
     <value>下</value>
   </data>
@@ -369,18 +309,12 @@ Direction が Free のときのみ編集可能。</value>
     <value>画像の下半分全体をマスク(積算から
 除外)します。既存マスクに追加されます。</value>
   </data>
-  <data name="buttonMaskRight.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="buttonMaskRight.Text" xml:space="preserve">
     <value>右</value>
   </data>
   <data name="buttonMaskRight.ToolTip" xml:space="preserve">
     <value>画像の右半分全体をマスク(積算から
 除外)します。既存マスクに追加されます。</value>
-  </data>
-  <data name="checkBoxManualMaskMode.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxManualMaskMode.Text" xml:space="preserve">
     <value>マニュアルモード</value>
@@ -390,18 +324,12 @@ Direction が Free のときのみ編集可能。</value>
 マスク領域(スポット/円/矩形/多角形/
 スプライン)を直接描けるようにします。</value>
   </data>
-  <data name="radioButtonManualCircle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonManualCircle.Text" xml:space="preserve">
     <value>円 (ドラッグ: 中心と半径を設定)</value>
   </data>
   <data name="radioButtonManualCircle.ToolTip" xml:space="preserve">
     <value>手動マスクツール: 円。中心からドラッグして円形領域を
 マスクします(中心と半径をドラッグで設定)。</value>
-  </data>
-  <data name="radioButtonManualSpline.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonManualSpline.Text" xml:space="preserve">
     <value>スプライン
@@ -412,9 +340,6 @@ Direction が Free のときのみ編集可能。</value>
 制御点追加(右クリックで削除)、ダブルクリック
 で指定幅の帯を曲線に沿ってマスクします。</value>
   </data>
-  <data name="radioButtonManualPolygon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonManualPolygon.Text" xml:space="preserve">
     <value>多角形 (クリック: 頂点の追加,
 　　　　ダブルクリック: 確定)</value>
@@ -423,18 +348,12 @@ Direction が Free のときのみ編集可能。</value>
     <value>手動マスクツール: 多角形。クリックで頂点を追加、
 ダブルクリックで閉じて内部をマスクします。</value>
   </data>
-  <data name="radioButtonManualRectangle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonManualRectangle.Text" xml:space="preserve">
     <value>矩形 (ドラッグ: 対角線を設定)</value>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>手動マスクツール: 矩形。対角の2点を
 ドラッグして矩形領域をマスクします。</value>
-  </data>
-  <data name="radioButtonManualSpot.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonManualSpot.Text" xml:space="preserve">
     <value>スポット (右/左クリック: 追加/削除))</value>
@@ -449,9 +368,6 @@ Direction が Free のときのみ編集可能。</value>
 主にサイズスライダーとメインツールバー
 のスポットサイズ選択と連動表示します。</value>
   </data>
-  <data name="radioButton1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButton1.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
@@ -463,17 +379,11 @@ Direction が Free のときのみ編集可能。</value>
 = 2^値 ピクセル(0-10 → 1..1024px)。大きい
 ほど1クリックで広い範囲をマスクします。</value>
   </data>
-  <data name="radioButtonCircle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonCircle.Text" xml:space="preserve">
     <value>円形</value>
   </data>
   <data name="radioButtonCircle.ToolTip" xml:space="preserve">
     <value>手動スポットマスクの形状を円にします。</value>
-  </data>
-  <data name="radioButtonTakeoverNothing.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="radioButtonTakeoverNothing.Text" xml:space="preserve">
@@ -483,18 +393,12 @@ Direction が Free のときのみ編集可能。</value>
     <value>次の画像を読み込む際、マスクを引き
 継がず空の状態から開始します。</value>
   </data>
-  <data name="radioButtonTakeoverMask.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="radioButtonTakeoverMask.Text" xml:space="preserve">
     <value>マスク状態を引き継ぐ</value>
   </data>
   <data name="radioButtonTakeoverMask.ToolTip" xml:space="preserve">
     <value>次の画像を読み込む際、現在メモリ上の
 マスク状態をそのまま引き継ぎます。</value>
-  </data>
-  <data name="radioButtonTakeOverMaskfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <data name="radioButtonTakeOverMaskfile.Text" xml:space="preserve">
     <value>マスクファイルを引き継ぐ</value>
@@ -508,18 +412,12 @@ Direction が Free のときのみ編集可能。</value>
 らの標準偏差倍数)。小さいほど多くのスポットを、大き
 いほど強いスポットのみをマスクします。</value>
   </data>
-  <data name="buttonMaskAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="buttonMaskAll.Text" xml:space="preserve">
     <value>全てマスク</value>
   </data>
   <data name="buttonMaskAll.ToolTip" xml:space="preserve">
     <value>画像全体をマスクします(全ピクセルを積算から除外)。
 通常は手動で関心領域だけを解除する前に使用します。</value>
-  </data>
-  <data name="buttonInvertMask.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="buttonInvertMask.Text" xml:space="preserve">
     <value>反転</value>
@@ -528,18 +426,12 @@ Direction が Free のときのみ編集可能。</value>
     <value>マスクを反転: マスク済みピクセルを有効に、
 有効ピクセルをマスク済みに入れ替えます。</value>
   </data>
-  <data name="buttonUnmaskAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="buttonUnmaskAll.Text" xml:space="preserve">
     <value>解除</value>
   </data>
   <data name="buttonUnmaskAll.ToolTip" xml:space="preserve">
     <value>すべてのマスクを解除: 全ピクセルを積算に戻します。
 Mask All・半分マスク・スポットマスクを取り消します。</value>
-  </data>
-  <data name="checkBoxTest.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxTest.Text" xml:space="preserve">
     <value>Kα2を除去 (線源が Kα1 の場合)</value>
@@ -550,18 +442,12 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
 横軸が2θのとき(「散乱角(2θ)積算」の「角度」)のみ有効。
 「d値」や「偏角 (sector angle) 積算」では除去しません。</value>
   </data>
-  <data name="checkBoxSendProfileToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxSendProfileToPDIndexer.Text" xml:space="preserve">
     <value>クリップボードを介してプロファイルをPDIndexerに送信</value>
   </data>
   <data name="checkBoxSendProfileToPDIndexer.ToolTip" xml:space="preserve">
     <value>積算のたびに抽出した1次元プロファイルをクリップボード
 経由でPDIndexer(連携アプリ)へ送ります。</value>
-  </data>
-  <data name="checkBoxSaveFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxSaveFile.Text" xml:space="preserve">
     <value>１次元化したプロファイルをファイルとして保存</value>
@@ -571,18 +457,12 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
 1次元プロファイルをファイルへ自動保存します。
 下の形式・保存先オプションが有効になります。</value>
   </data>
-  <data name="radioButtonSaveInOneFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="radioButtonSaveInOneFile.Text" xml:space="preserve">
     <value>一つのファイルにまとめる</value>
   </data>
   <data name="radioButtonSaveInOneFile.ToolTip" xml:space="preserve">
     <value>連続/方位分割の一連のプロファイルを1つの
 ファイルにまとめて保存します(GSAS形式は不可)。</value>
-  </data>
-  <data name="radioButtonSaveInSeparateFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <data name="radioButtonSaveInSeparateFiles.Text" xml:space="preserve">
     <value>個別のファイルに保存</value>
@@ -591,17 +471,11 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
     <value>連続/方位分割の各プロファイルを
 個別のファイルとして保存します。</value>
   </data>
-  <data name="radioButtonSetDirectoryEachTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
   <data name="radioButtonSetDirectoryEachTime.Text" xml:space="preserve">
     <value>保存の度に指定</value>
   </data>
   <data name="radioButtonSetDirectoryEachTime.ToolTip" xml:space="preserve">
     <value>プロファイル保存のたびに保存先フォルダを尋ねます。</value>
-  </data>
-  <data name="radioButtonSaveAtImageDirectory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <data name="radioButtonSaveAtImageDirectory.Text" xml:space="preserve">
     <value>イメージファイルと同じ</value>
@@ -609,15 +483,9 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
   <data name="radioButtonSaveAtImageDirectory.ToolTip" xml:space="preserve">
     <value>確認せずに、元画像と同じフォルダへプロファイルを保存します。</value>
   </data>
-  <data name="radioButtonAsPDIformat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonAsPDIformat.ToolTip" xml:space="preserve">
     <value>プロファイルをPDI形式(PDIndexer
 のネイティブ形式)で保存します。</value>
-  </data>
-  <data name="radioButtonAsCSVformat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonAsCSVformat.ToolTip" xml:space="preserve">
     <value>プロファイルをCSV(カンマ区切り)で
@@ -626,15 +494,11 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
   <data name="radioButtonAsTSVformat.ToolTip" xml:space="preserve">
     <value>プロファイルをTSV(タブ区切り)で保存します。</value>
   </data>
-  <data name="radioButtonAsGSASformat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>プロファイルをリートベルト解析用のGSAS形式で保存し
-ます。この形式では「1ファイル」保存は使えません。</value>
-  </data>
-  <data name="checkBoxSendUnrolledImageToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
+ます。この形式では「1ファイル」保存は使えません。
+横軸が2θのとき(「散乱角(2θ)積算」の「角度」)
+だけ保存できます。</value>
   </data>
   <data name="checkBoxSendUnrolledImageToPDIndexer.Text" xml:space="preserve">
     <value>切り開き画像も一緒に送る</value>
@@ -642,9 +506,6 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
   <data name="checkBoxSendUnrolledImageToPDIndexer.ToolTip" xml:space="preserve">
     <value>1次元プロファイルだけでなく、切り開き画像(ケーキ
 /方位展開した2θ-χ画像)もPDIndexerへ送ります。</value>
-  </data>
-  <data name="numericUpDownUnrollChiDivision.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="numericUpDownUnrollChiDivision.ToolTip" xml:space="preserve">
@@ -663,17 +524,11 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
     <value>切り開き画像の横軸ステップ(ビン幅, 選択中の
 単位)。ケーキ画像の横方向(2θ/d)分解能を決めます。</value>
   </data>
-  <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButton2.Text" xml:space="preserve">
     <value>長さ</value>
   </data>
   <data name="radioButton2.ToolTip" xml:space="preserve">
     <value>切り開き画像の横軸に検出器上の長さ(mm)を使用します。</value>
-  </data>
-  <data name="radioButton4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButton4.Text" xml:space="preserve">
     <value>角度</value>
@@ -681,17 +536,11 @@ Mask All・半分マスク・スポットマスクを取り消します。</valu
   <data name="radioButton4.ToolTip" xml:space="preserve">
     <value>切り開き画像の横軸に散乱角2θ(度)を使用します。</value>
   </data>
-  <data name="radioButton3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButton3.Text" xml:space="preserve">
     <value>d値</value>
   </data>
   <data name="radioButton3.ToolTip" xml:space="preserve">
     <value>切り開き画像の横軸に格子面間隔d値(Å)を使用します。</value>
-  </data>
-  <data name="comboBoxScaleLineDivisions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 8pt</value>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>画像に重ねる2θ/方位スケール線の密度:
@@ -708,17 +557,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>重ねたスケール線の太さ(ピクセル)。右へ
 ドラッグすると線が太く見やすくなります。</value>
   </data>
-  <data name="radioButtonImageName_FullPath.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonImageName_FullPath.Text" xml:space="preserve">
     <value>フルパス</value>
   </data>
   <data name="radioButtonImageName_FullPath.ToolTip" xml:space="preserve">
     <value>画像名にファイルのフルパスを使用します。</value>
-  </data>
-  <data name="radioButtonImageName_LastFolderPlusFilename.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonImageName_LastFolderPlusFilename.Text" xml:space="preserve">
     <value>最後のフォルダー名
@@ -728,18 +571,12 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>画像名に親フォルダ名+ファイル名(例: run3/img001.tif)
 を使用し、同名ファイルを区別します。</value>
   </data>
-  <data name="radioButtonImageName_FileName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonImageName_FileName.Text" xml:space="preserve">
     <value>ファイル名</value>
   </data>
   <data name="radioButtonImageName_FileName.ToolTip" xml:space="preserve">
     <value>保存/表示する画像の名前にファイル
 名のみを使用します(パスなし)。</value>
-  </data>
-  <data name="checkBoxMaintainImageContrast.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxMaintainImageContrast.Text" xml:space="preserve">
     <value>画像のコントラストを維持</value>
@@ -748,9 +585,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>次の画像を読み込む際、毎回自動再スケールせず現在の
 強度コントラスト(表示の最小/最大スケール)を維持します。</value>
   </data>
-  <data name="checkBoxMaintainImageRange.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxMaintainImageRange.Text" xml:space="preserve">
     <value>画像描画範囲を維持</value>
   </data>
@@ -758,18 +592,12 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>次の画像を読み込む際、毎回ビューを合わせ直さず
 現在のズーム/表示範囲(パン・ズーム)を維持します。</value>
   </data>
-  <data name="radioButtonChiClockwise.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButtonChiClockwise.Text" xml:space="preserve">
     <value>時計回り</value>
   </data>
   <data name="radioButtonChiClockwise.ToolTip" xml:space="preserve">
     <value>方位角χを画像上で時計回りに増加するよう定義しま
 す。方位展開やセクター角度の符号規約を決めます。</value>
-  </data>
-  <data name="radioButtonChiCounterclockwise.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButtonChiCounterclockwise.Text" xml:space="preserve">
     <value>反時計回り</value>
@@ -807,9 +635,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="radioButtonChiTop.ToolTip" xml:space="preserve">
     <value>方位角の原点(χ=0)を画像の上方向に設定します。</value>
   </data>
-  <data name="checkBoxFixCenter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxFixCenter.Text" xml:space="preserve">
     <value>中心固定</value>
   </data>
@@ -817,9 +642,6 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>中心検出/精密化の際、ビーム中心位置を
 固定し、他のパラメータのみを最適化しま
 す。探索範囲オプションは無効になります。</value>
-  </data>
-  <data name="checkBoxExcludeMaskedPixels.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxExcludeMaskedPixels.Text" xml:space="preserve">
     <value>マスク領域は除外</value>
@@ -925,283 +747,139 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="numericBoxBackgroundCoeff.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="tabPageXRay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="tabPageXRay.Text" xml:space="preserve">
     <value>線源の設定</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>2θは散乱角.  χ は方位角 (その他タブを参照).</value>
   </data>
-  <data name="tabPageIP.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="tabPageIP.Text" xml:space="preserve">
     <value>検出器の設定</value>
-  </data>
-  <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>座標の基準</value>
   </data>
-  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label19.Text" xml:space="preserve">
     <value>検出器のタイプ</value>
-  </data>
-  <data name="groupBox9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox9.Text" xml:space="preserve">
     <value>垂線の足の位置</value>
   </data>
-  <data name="groupBox10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>カメラ長2</value>
-  </data>
-  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
-    <value>BIZ UDPゴシック, 6.75pt</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>(試料から垂線の足までの距離)</value>
   </data>
-  <data name="groupBoxDirectSpotPosition.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBoxDirectSpotPosition.Text" xml:space="preserve">
     <value>ダイレクトスポット位置</value>
-  </data>
-  <data name="groupBoxCameaLength.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBoxCameaLength.Text" xml:space="preserve">
     <value>カメラ長1</value>
   </data>
-  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>BIZ UDPゴシック, 6.75pt</value>
-  </data>
   <data name="label18.Text" xml:space="preserve">
     <value>(試料からダイレクトスポットの距離)</value>
-  </data>
-  <data name="groupBoxPixelShape.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBoxPixelShape.Text" xml:space="preserve">
     <value>ピクセル形状</value>
   </data>
-  <data name="groupBoxGandlfiRadius.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBoxGandlfiRadius.Text" xml:space="preserve">
     <value>Gandolfi 半径</value>
-  </data>
-  <data name="groupBoxSphericalCorrection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBoxSphericalCorrection.Text" xml:space="preserve">
     <value>球面補正</value>
   </data>
-  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
-    <value>BIZ UDPゴシック, 6.75pt</value>
-  </data>
   <data name="label26.Text" xml:space="preserve">
     <value>(通常ゼロ)</value>
-  </data>
-  <data name="groupBoxTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBoxTiltCorrection.Text" xml:space="preserve">
     <value>検出器の傾き</value>
   </data>
-  <data name="tabPageIntegralRegion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="tabPageIntegralRegion.Text" xml:space="preserve">
     <value>画像範囲の設定</value>
-  </data>
-  <data name="groupBox8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>積算除外ピクセル</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>ピクセル分の画像端</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>角度</value>
   </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>バンド幅</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>方向</value>
   </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>開始角度</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>終了角度</value>
   </data>
-  <data name="tabPageIntegralProperty.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="tabPageIntegralProperty.Text" xml:space="preserve">
     <value>1次元化の条件</value>
-  </data>
-  <data name="label46.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label46.Text" xml:space="preserve">
     <value>リング幅</value>
   </data>
-  <data name="label40.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label40.Text" xml:space="preserve">
     <value>リング半径</value>
-  </data>
-  <data name="label36.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label36.Text" xml:space="preserve">
     <value>ステップ</value>
   </data>
-  <data name="groupBox4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>積算単位と積算範囲/ステップ</value>
-  </data>
-  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>終了</value>
   </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label14.Text" xml:space="preserve">
     <value>ステップ</value>
-  </data>
-  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>開始</value>
   </data>
-  <data name="groupBox5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>光学系</value>
-  </data>
-  <data name="tabPageSpotsAndCenter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="tabPageSpotsAndCenter.Text" xml:space="preserve">
     <value>マスク条件</value>
   </data>
-  <data name="groupBox13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox13.Text" xml:space="preserve">
     <value>半分マスク</value>
-  </data>
-  <data name="groupBoxManualMode.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label31.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
-  <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label30.Text" xml:space="preserve">
     <value>ピクセル</value>
   </data>
-  <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label29.Text" xml:space="preserve">
     <value>線幅</value>
-  </data>
-  <data name="label27.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 7pt</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
     <value>(右/左クリック: 制御点の追加/削除  
 ダブルクリック: マスク域確定)</value>
   </data>
-  <data name="groupBox7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>マスクの引継ぎ</value>
   </data>
-  <data name="flowLayoutPanel5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
-  </data>
-  <data name="groupBox12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox12.Text" xml:space="preserve">
     <value>スポット検出</value>
-  </data>
-  <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8pt</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
     <value>標準偏差の何倍ずれた
 時スポットとみなすか</value>
   </data>
-  <data name="tabPageAfterGetProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="tabPageAfterGetProfile.Text" xml:space="preserve">
     <value>１次元化後の処理</value>
-  </data>
-  <data name="groupBox17.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox17.Text" xml:space="preserve">
     <value>シーケンシャル画像あるいは方位角分割解析の時</value>
   </data>
-  <data name="groupBox16.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox16.Text" xml:space="preserve">
     <value>保存場所</value>
-  </data>
-  <data name="groupBox15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox15.Text" xml:space="preserve">
     <value>ファイル形式</value>
@@ -1215,20 +893,11 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>画像水平方向の単位とステップ</value>
   </data>
-  <data name="label25.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label25.Text" xml:space="preserve">
     <value>ステップ</value>
   </data>
-  <data name="label24.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label24.Text" xml:space="preserve">
     <value>終了</value>
-  </data>
-  <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label42.Text" xml:space="preserve">
     <value>開始</value>
@@ -1236,26 +905,14 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>その他</value>
   </data>
-  <data name="groupBox14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox14.Text" xml:space="preserve">
     <value>目盛線のオプション</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>目盛線の細かさ</value>
   </data>
-  <data name="label23.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label23.Text" xml:space="preserve">
     <value>線の太さ</value>
-  </data>
-  <data name="colorControlScaleAzimuth.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="colorControlScaleAzimuth.FooterText" xml:space="preserve">
     <value>方位角線の色</value>
@@ -1263,41 +920,23 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   <data name="colorControlScaleAzimuth.ToolTip" xml:space="preserve">
     <value>画像に重ねる方位角(χ)スケール線の色を設定します。</value>
   </data>
-  <data name="colorControlScale2Theta.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="colorControlScale2Theta.FooterText" xml:space="preserve">
     <value>散乱角(2θ) 線の色</value>
   </data>
   <data name="colorControlScale2Theta.ToolTip" xml:space="preserve">
     <value>2θ scale lines</value>
   </data>
-  <data name="groupBox19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox19.Text" xml:space="preserve">
     <value>画像名のオプション</value>
-  </data>
-  <data name="groupBox18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox18.Text" xml:space="preserve">
     <value>画像読み込みのオプション</value>
   </data>
-  <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="groupBox11.Text" xml:space="preserve">
     <value>カイ (χ) 設定</value>
   </data>
-  <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="label50.Text" xml:space="preserve">
     <value>回転方向と始点</value>
-  </data>
-  <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>中心位置</value>
@@ -1319,5 +958,482 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>プロパティ</value>
+  </data>
+  <data name="checkBoxCorrectPolarization.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonDirectSpotMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonFootMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonFlatPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonGandlfi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMax.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownThresholdOfIntensityMin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownEdge.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="checkBoxOmitSpots.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="checkBoxMaskEdge.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="checkBoxThresholdMax.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="checkBoxThresholdMin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="radioButtonRectangle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="checkBoxRectangleIsBothSide.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="comboBoxRectangleDirection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="numericUpDownRectangleBand.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownRectangleAngle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="radioButtonSector.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="numericUpDownSectorStartAngle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownSectorEndAngle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="radioButtonRadialAngle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="radioButtonRadialDspacing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="radioButtonConcentricLength.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonConcentricDspacing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonConcentricAngle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonBraggBrentano.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonDebyeScherrer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="buttonMaskLeft.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="buttonMaskTop.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="buttonMaskBottom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="buttonMaskRight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="checkBoxManualMaskMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonManualCircle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonManualSpline.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonManualPolygon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonManualRectangle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonManualSpot.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="textBoxManualSpotSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="radioButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="numericUpDownManualSpotSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="radioButtonCircle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonTakeoverNothing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="radioButtonTakeoverMask.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="radioButtonTakeOverMaskfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="numericUpDownFindSpotsDeviation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="buttonMaskAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="buttonInvertMask.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="buttonUnmaskAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="checkBoxTest.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="checkBoxSendProfileToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="checkBoxSaveFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonSaveInOneFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonSaveInSeparateFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonSetDirectoryEachTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonSaveAtImageDirectory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonAsPDIformat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonAsCSVformat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonAsTSVformat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="radioButtonAsGSASformat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="checkBoxSendUnrolledImageToPDIndexer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXend.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownUnrolledImageXstep.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="radioButton4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="radioButton3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="comboBoxScaleLineDivisions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonImageName_FullPath.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonImageName_LastFolderPlusFilename.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonImageName_FileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="checkBoxMaintainImageContrast.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="checkBoxMaintainImageRange.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonChiLeft.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonChiRight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonChiBottom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="radioButtonChiTop.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="checkBoxFixCenter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="checkBoxExcludeMaskedPixels.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="buttonClearBackgroundImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="buttonSetBackgroundImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="tabPageXRay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="tabPageIP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="tabPageIntegralRegion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="tabPageIntegralProperty.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="tabPageSpotsAndCenter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="flowLayoutPanel4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="label27.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBox17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="groupBox16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="groupBox15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="groupBoxSaveProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="tabPageAfterGetProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="waveLengthControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBox9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBox10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="groupBoxDirectSpotPosition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBoxCameaLength.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="groupBoxPixelShape.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBoxGandlfiRadius.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBoxSphericalCorrection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8pt</value>
+  </data>
+  <data name="groupBoxTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="groupBox8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="groupBoxRectangle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="groupBoxSector.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Yu Gothic UI, 9pt</value>
+  </data>
+  <data name="label46.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label40.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="labelDimensionRadial2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label37.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label36.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="labelDimensionRadial1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="groupBox4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="groupBox5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="groupBox13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBoxManualMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="groupBox7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="groupBox12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="flowLayoutPanel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 10pt</value>
+  </data>
+  <data name="label38.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label39.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label25.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label41.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label24.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="groupBox14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label23.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="colorControlScaleAzimuth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="colorControlScale2Theta.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="groupBox19.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="groupBox18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericUpDownMaskEdge.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
   </data>
 </root>

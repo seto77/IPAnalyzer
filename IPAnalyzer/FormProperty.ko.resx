@@ -828,7 +828,9 @@ Kα2를 더 많이 뺍니다.</value>
   <data name="radioButtonAsGSASformat.ToolTip" xml:space="preserve">
     <value>리트벨트 정밀화를 위해 프로파일을 GSAS
 형식으로 저장합니다. 이 형식에서는 '하나의 파일'
-옵션을 사용할 수 없습니다.</value>
+옵션을 사용할 수 없습니다.
+x축이 2θ일 때('동심 적분'에서 '각도' 선택)만
+저장할 수 있습니다.</value>
   </data>
   <data name="numericUpDownRectangleBand.ToolTip" xml:space="preserve">
     <value>픽셀 단위의 밴드 폭(최대 10000): 빔 중심선을
