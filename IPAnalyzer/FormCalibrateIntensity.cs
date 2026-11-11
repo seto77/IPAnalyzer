@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Buffers.Binary; // 261111Cl 追加
+using System.Runtime.InteropServices; // 261111Cl 追加
 using Crystallography;
 
 namespace IPAnalyzer
@@ -52,12 +54,26 @@ namespace IPAnalyzer
                     int length = num_x_pixs * num_y_pixs;
                     FormMain.SetBytePosition(str, ref br, num_x_pixs * 2);
                     ushort[] intensity = new ushort[length];
+                    //for (int y = 0; y < num_y_pixs; y++)
+                    //    for (int x = 0; x < num_x_pixs; x++)
+                    //    {
+                    //        int i = (num_y_pixs - y - 1) * num_x_pixs + x;
+                    //        intensity[i] = (ushort)(256 * br.ReadByte() + br.ReadByte());
+                    //    }
+                    // 261111Cl 変更: 1 画素ごとに ReadByte を 2 回 → 全画素を ReadBytes で一括して読み、行ごとにビッグエンディアンから変換する (上下反転の並びは旧と同じ)
+                    byte[] raw = br.ReadBytes(length * 2);
+                    if (raw.Length < length * 2)
+                        throw new EndOfStreamException(); // 旧の ReadByte と同じく、データが足りなければ例外
+                    var src = MemoryMarshal.Cast<byte, ushort>(raw.AsSpan());
                     for (int y = 0; y < num_y_pixs; y++)
-                        for (int x = 0; x < num_x_pixs; x++)
-                        {
-                            int i = (num_y_pixs - y - 1) * num_x_pixs + x;
-                            intensity[i] = (ushort)(256 * br.ReadByte() + br.ReadByte());
-                        }
+                    {
+                        var srcRow = src.Slice(y * num_x_pixs, num_x_pixs);
+                        var dstRow = intensity.AsSpan((num_y_pixs - y - 1) * num_x_pixs, num_x_pixs);
+                        if (BitConverter.IsLittleEndian)
+                            BinaryPrimitives.ReverseEndianness(srcRow, dstRow);
+                        else
+                            srcRow.CopyTo(dstRow);
+                    }
                     return intensity;
                 }
                 finally { br.Close(); }
@@ -146,6 +162,51 @@ namespace IPAnalyzer
             controlPoints.Add(new PointD(32768,0));
             controlPoints.Sort();
 
+            #region 261111Cl 追加: 区間モーメントの集計 (残差の計算を画素数に依存しない形にする)
+            // 最適化の間、制御点の X は変わらず Y だけが動く。getConvertTable の表は、区間 k (画素値 v が X_k ≤ v < X_{k+1} かつ v < max) で
+            //   t(v) = s·(Y_k + β_k·(v − X_k)),  β_k = (Y_{k+1} − Y_k)/(X_{k+1} − X_k),  s = 表の合計を total に揃える係数
+            // の一次式になる (どの区間にも入らない画素値、つまり v = max は t = 0)。よって S₁ = Σt(a)², S₁₂ = Σt(a)t(b), S₂ = Σt(b)²
+            // (和は全画素。a = image1, b = image2) は、区間ごと・区間の組ごとの 画素数, Σda, Σdb, Σda², Σdb², Σda·db (da = a − X_σ, db = b − X_τ)
+            // から求まる。これらは整数なので、全画素を 1 回だけ走査して long で正確に集計しておく。
+            // 残差は旧の Σ(A·t(a) − t(b))² を展開した A²S₁ − 2A·S₁₂ + S₂ (A = S₁₂/S₁)。
+            int nSeg = controlPoints.Count - 1;
+            var segX = new int[nSeg];
+            var segOf = new int[maxRawIntensity + 1]; // 画素値 → 区間の番号 (-1 は表の値が 0)
+            Array.Fill(segOf, -1);
+            for (int k = 0; k < nSeg; k++)
+            {
+                segX[k] = (int)controlPoints[k].X;
+                for (int j = (int)controlPoints[k].X; j < (int)controlPoints[k + 1].X && j < maxRawIntensity; j++) // getConvertTable と同じ範囲・同じ上書き順
+                    segOf[j] = k;
+            }
+            // 表の合計 (getConvertTable の total / tempTotal) 用: 区間ごとの画素値の個数と Σ(v − X_k)
+            var tabCount = new long[nSeg];
+            var tabSum = new long[nSeg];
+            for (int j = 0; j <= maxRawIntensity; j++)
+            {
+                int s = segOf[j];
+                if (s >= 0) { tabCount[s]++; tabSum[s] += j - segX[s]; }
+            }
+            // 画素のモーメント (image1 と image2 の区間ごと、および区間の組ごと)
+            var cnt1 = new long[nSeg]; var sum1 = new long[nSeg]; var sq1 = new long[nSeg];
+            var cnt2 = new long[nSeg]; var sum2 = new long[nSeg]; var sq2 = new long[nSeg];
+            var cnt12 = new long[nSeg * nSeg]; var sumA12 = new long[nSeg * nSeg]; var sumB12 = new long[nSeg * nSeg]; var prod12 = new long[nSeg * nSeg];
+            for (int i = 0; i < image1.Length; i++)
+            {
+                int sa = segOf[image1[i]], sb = segOf[image2[i]];
+                long da = 0, db = 0;
+                if (sa >= 0) { da = image1[i] - segX[sa]; cnt1[sa]++; sum1[sa] += da; sq1[sa] += da * da; }
+                if (sb >= 0) { db = image2[i] - segX[sb]; cnt2[sb]++; sum2[sb] += db; sq2[sb] += db * db; }
+                if (sa >= 0 && sb >= 0)
+                {
+                    int idx = sa * nSeg + sb;
+                    cnt12[idx]++; sumA12[idx] += da; sumB12[idx] += db; prod12[idx] += da * db;
+                }
+            }
+            var yk = new double[nSeg];
+            var bk = new double[nSeg];
+            #endregion
+
             double bestY=0;
 
             List<double> residualRecorder = [];
@@ -161,21 +222,49 @@ namespace IPAnalyzer
 
                         //controlPoints[n].Y = y;
                         controlPoints[n] = new PointD(controlPoints[n].X, y);
-                        convertTableNew = getConvertTable(controlPoints, maxRawIntensity);
-
-                        temp1 = 0; temp2 = 0;
-                        for (int i = 0; i < image1.Length; i++)
+                        #region 261111Cl 変更前: 試行ごとに表を作り、全画素を 2 パス走査 (300 反復 × 制御点 × 5 試行)
+                        //convertTableNew = getConvertTable(controlPoints, maxRawIntensity);
+                        //
+                        //temp1 = 0; temp2 = 0;
+                        //for (int i = 0; i < image1.Length; i++)
+                        //{
+                        //    temp1 += convertTableNew[image1[i]] * convertTableNew[image2[i]];
+                        //    temp2 += convertTableNew[image1[i]] * convertTableNew[image1[i]];
+                        //}
+                        //A = temp1 / temp2;
+                        //ResidualSquareNew = 0;
+                        //for (int i = 0; i < image1.Length; i++)
+                        //{
+                        //    double temp = A * convertTableNew[image1[i]] - convertTableNew[image2[i]];
+                        //    ResidualSquareNew += temp * temp;
+                        //}
+                        #endregion
+                        // 261111Cl 変更: 上で集計した区間モーメントから残差を計算する (区間数² の計算。画素数に依存しない)。結果は丸め誤差の範囲で旧と一致
+                        double tableSum = 0, s1 = 0, s2 = 0, s12 = 0;
+                        for (int k = 0; k < nSeg; k++)
                         {
-                            temp1 += convertTableNew[image1[i]] * convertTableNew[image2[i]];
-                            temp2 += convertTableNew[image1[i]] * convertTableNew[image1[i]];
+                            double dx = controlPoints[k + 1].X - controlPoints[k].X;
+                            yk[k] = controlPoints[k].Y;
+                            bk[k] = dx != 0 ? (controlPoints[k + 1].Y - controlPoints[k].Y) / dx : 0; // 幅 0 の区間は画素を含まない (NaN を持ち込まない)
+                            tableSum += tabCount[k] * yk[k] + tabSum[k] * bk[k];
+                            s1 += yk[k] * yk[k] * cnt1[k] + 2 * yk[k] * bk[k] * sum1[k] + bk[k] * bk[k] * sq1[k];
+                            s2 += yk[k] * yk[k] * cnt2[k] + 2 * yk[k] * bk[k] * sum2[k] + bk[k] * bk[k] * sq2[k];
                         }
-                        A = temp1 / temp2;
-                        ResidualSquareNew = 0;
-                        for (int i = 0; i < image1.Length; i++)
-                        {
-                            double temp = A * convertTableNew[image1[i]] - convertTableNew[image2[i]];
-                            ResidualSquareNew += temp * temp;
-                        }
+                        for (int sa = 0; sa < nSeg; sa++)
+                            for (int sb = 0; sb < nSeg; sb++)
+                            {
+                                int idx = sa * nSeg + sb;
+                                if (cnt12[idx] != 0)
+                                    s12 += yk[sa] * yk[sb] * cnt12[idx] + yk[sa] * bk[sb] * sumB12[idx] + bk[sa] * yk[sb] * sumA12[idx] + bk[sa] * bk[sb] * prod12[idx];
+                            }
+                        // getConvertTable と同じく、最初の 1 回で total を決め (このときは s = 1)、以降は表の合計を total に揃える
+                        double scale = 1;
+                        if (total == 0)
+                            total = tableSum;
+                        else
+                            scale = total / tableSum;
+                        A = s12 / s1; // s 倍しても変わらない
+                        ResidualSquareNew = scale * scale * (A * A * s1 - 2 * A * s12 + s2);
 
                         if (ResidualSquareNew < ResidualSquareCurrent)
                         {

@@ -1929,7 +1929,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         SetText(FileName);
 
-        SetInformation();
+        //SetInformation(); // 261111Cl コメントアウト: ここでは反転・背景・偏光の補正前 (上の CalcFreq/SetFrequencyProfile の値) を表示していた → 補正の後 (下の SkipDrawing = false の直前) へ移動
 
         //SP8-BL43LXUのような32bit signed tiffの場合は、負の値をマスク
         if (ext.StartsWith("tif") && Ring.Intensity.Min() <= 0)
@@ -1988,6 +1988,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             if (Math.Abs((FormProperty.CameraLength1 - length) / length) > 0.2)
                 FormProperty.CameraLength1 = length;
         }
+
+        // 261111Cl 追加 (上から移動): 情報欄の最大・合計強度とダイナミックレンジを、反転・背景・偏光の補正後の値で表示する。
+        //   補正は SetParameterFromImageType → FlipRotate_Pollalization_Background で行われ、その中の CalcFreq + SetFrequencyProfile が
+        //   maxIntensity / sumOfIntensity を更新する (CalcFreq の呼び出し回数は変えない)。補正が走らない場合 (ipa など) は上の CalcFreq の値のまま
+        SetInformation();
 
         SkipDrawing = false;
         Draw();
