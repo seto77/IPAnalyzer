@@ -86,9 +86,18 @@ namespace IPAnalyzer
         {
             double[] convertTable = new double[max+1];
 
-            for(int i = 0 ; i< controlPoint.Count-1 ; i++)
-                for(int j= (int)controlPoint[i].X ; j < (int)controlPoint[i+1].X && j < max ; j++)
-                    convertTable[j] = (j - controlPoint[i].X) / (controlPoint[i + 1].X - controlPoint[i].X) * (controlPoint[i + 1].Y - controlPoint[i].Y) + controlPoint[i].Y;
+            //for(int i = 0 ; i< controlPoint.Count-1 ; i++)
+            //    for(int j= (int)controlPoint[i].X ; j < (int)controlPoint[i+1].X && j < max ; j++)
+            //        convertTable[j] = (j - controlPoint[i].X) / (controlPoint[i + 1].X - controlPoint[i].X) * (controlPoint[i + 1].Y - controlPoint[i].Y) + controlPoint[i].Y;
+            // 261111Cl 変更: 旧は j < max のため、最大の画素値 (飽和画素であることが多い) の表が 0 のままになり、その画素に大きな罰が付いて制御点が動かなかった。
+            // 最大値まで表を作る。各区間は [X_i, X_{i+1}) で、最後の区間だけ右端 X_{i+1} も含める (高ビット画素があると最大値が最後の制御点になるため)
+            for (int i = 0; i < controlPoint.Count - 1; i++)
+            {
+                int end = (int)controlPoint[i + 1].X + (i == controlPoint.Count - 2 ? 1 : 0);
+                for (int j = (int)controlPoint[i].X; j < end && j <= max; j++)
+                    convertTable[j] = controlPoint[i + 1].X == controlPoint[i].X ? controlPoint[i].Y // 幅 0 の最後の区間 (最後の制御点が重複) は 0/0 を避ける
+                        : (j - controlPoint[i].X) / (controlPoint[i + 1].X - controlPoint[i].X) * (controlPoint[i + 1].Y - controlPoint[i].Y) + controlPoint[i].Y;
+            }
             if (total == 0)
                 for (int i = 0; i < convertTable.Length; i++)
                     total += convertTable[i];
@@ -163,9 +172,9 @@ namespace IPAnalyzer
             controlPoints.Sort();
 
             #region 261111Cl 追加: 区間モーメントの集計 (残差の計算を画素数に依存しない形にする)
-            // 最適化の間、制御点の X は変わらず Y だけが動く。getConvertTable の表は、区間 k (画素値 v が X_k ≤ v < X_{k+1} かつ v < max) で
+            // 最適化の間、制御点の X は変わらず Y だけが動く。getConvertTable の表は、区間 k (画素値 v が X_k ≤ v < X_{k+1} かつ v ≤ max。最後の区間は v = X_{k+1} も含む) で
             //   t(v) = s·(Y_k + β_k·(v − X_k)),  β_k = (Y_{k+1} − Y_k)/(X_{k+1} − X_k),  s = 表の合計を total に揃える係数
-            // の一次式になる (どの区間にも入らない画素値、つまり v = max は t = 0)。よって S₁ = Σt(a)², S₁₂ = Σt(a)t(b), S₂ = Σt(b)²
+            // の一次式になる (261111Cl 変更: 旧は v < max で、v = max は t = 0 だった)。よって S₁ = Σt(a)², S₁₂ = Σt(a)t(b), S₂ = Σt(b)²
             // (和は全画素。a = image1, b = image2) は、区間ごと・区間の組ごとの 画素数, Σda, Σdb, Σda², Σdb², Σda·db (da = a − X_σ, db = b − X_τ)
             // から求まる。これらは整数なので、全画素を 1 回だけ走査して long で正確に集計しておく。
             // 残差は旧の Σ(A·t(a) − t(b))² を展開した A²S₁ − 2A·S₁₂ + S₂ (A = S₁₂/S₁)。
@@ -176,7 +185,10 @@ namespace IPAnalyzer
             for (int k = 0; k < nSeg; k++)
             {
                 segX[k] = (int)controlPoints[k].X;
-                for (int j = (int)controlPoints[k].X; j < (int)controlPoints[k + 1].X && j < maxRawIntensity; j++) // getConvertTable と同じ範囲・同じ上書き順
+                //for (int j = (int)controlPoints[k].X; j < (int)controlPoints[k + 1].X && j < maxRawIntensity; j++) // getConvertTable と同じ範囲・同じ上書き順
+                // 261111Cl 変更: getConvertTable の修正に合わせ、最大値まで (最後の区間は右端も含めて) 区間に入れる
+                int end = (int)controlPoints[k + 1].X + (k == nSeg - 1 ? 1 : 0);
+                for (int j = (int)controlPoints[k].X; j < end && j <= maxRawIntensity; j++) // getConvertTable と同じ範囲・同じ上書き順
                     segOf[j] = k;
             }
             // 表の合計 (getConvertTable の total / tempTotal) 用: 区間ごとの画素値の個数と Σ(v − X_k)
@@ -206,6 +218,10 @@ namespace IPAnalyzer
             var yk = new double[nSeg];
             var bk = new double[nSeg];
             #endregion
+
+            // 261111Cl 追加: 表の合計の基準 total を、ずらす前の制御点の表から決める (getConvertTable は total == 0 のとき表の合計を total に入れる)。
+            // 旧は最初の試行 (制御点 0 を −100 ずらした表) の合計が total になり、初期の残差 (ずらさない表) と尺度がずれていた
+            getConvertTable(controlPoints, maxRawIntensity);
 
             double bestY=0;
 
@@ -258,6 +274,7 @@ namespace IPAnalyzer
                                     s12 += yk[sa] * yk[sb] * cnt12[idx] + yk[sa] * bk[sb] * sumB12[idx] + bk[sa] * yk[sb] * sumA12[idx] + bk[sa] * bk[sb] * prod12[idx];
                             }
                         // getConvertTable と同じく、最初の 1 回で total を決め (このときは s = 1)、以降は表の合計を total に揃える
+                        // (261111Cl: total は反復の前に決めてあるので、total == 0 の分岐は表の合計が 0 になる退化した場合だけ)
                         double scale = 1;
                         if (total == 0)
                             total = tableSum;
