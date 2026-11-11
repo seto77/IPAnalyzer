@@ -115,9 +115,6 @@
   <data name="label7.ToolTip" xml:space="preserve">
     <value>単位: オングストローム(0.1 nm), 波長用。</value>
   </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label14.Text" xml:space="preserve">
     <value>カメラ長
  (primary)</value>
@@ -137,17 +134,11 @@
   <data name="label26.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label28.Text" xml:space="preserve">
     <value>バンド幅</value>
   </data>
   <data name="label28.ToolTip" xml:space="preserve">
     <value>積算バンド幅(短辺)を画像横幅に対する割合(%)で指定。</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>フィッティング範囲</value>
@@ -157,9 +148,6 @@
   </data>
   <data name="label27.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="checkBoxUseStandardCrystal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxUseStandardCrystal.Text" xml:space="preserve">
     <value>標準試料を使っている</value>
@@ -173,17 +161,11 @@
   <data name="label46.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label48.Text" xml:space="preserve">
     <value>波長</value>
   </data>
   <data name="label48.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="groupBoxPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBoxPrimaryImage.Text" xml:space="preserve">
     <value>プライマリ(Primary)画像</value>
@@ -205,9 +187,6 @@ Primaryプロファイルとリングの描画色を選択できます。</value
   <data name="label2.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label43.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label43.Text" xml:space="preserve">
     <value>カメラ長</value>
   </data>
@@ -216,9 +195,6 @@ Primaryプロファイルとリングの描画色を選択できます。</value
   </data>
   <data name="label10.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="label51.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label51.Text" xml:space="preserve">
     <value>中心ピクセル</value>
@@ -230,23 +206,14 @@ Primaryプロファイルとリングの描画色を選択できます。</value
     <value>メインウィンドウのビーム中心(ダイレクトスポット)
 座標をPrimaryの中心X/Y欄にコピーします。</value>
   </data>
-  <data name="buttonPrimaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonPrimaryGetProfile.Text" xml:space="preserve">
     <value>一次元化</value>
-  </data>
-  <data name="buttonClearPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonClearPrimaryImage.ToolTip" xml:space="preserve">
     <value>読み込んだPrimary画像と抽出済みプロファイル
 を消去し、Primaryを初期化します。</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonOpenPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonOpenPrimaryImage.Text" xml:space="preserve">
     <value>開く</value>
   </data>
@@ -259,17 +226,11 @@ Primaryプロファイルとリングの描画色を選択できます。</value
   <data name="label23.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label53.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label53.Text" xml:space="preserve">
     <value>ファイル名</value>
   </data>
   <data name="label53.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="groupBoxSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="groupBoxSecondaryImage.Text" xml:space="preserve">
     <value>セカンダリ(sencondary)画像</value>
@@ -280,9 +241,6 @@ Primaryプロファイルとリングの描画色を選択できます。</value
   <data name="numericBoxSecondaryImageNum.ToolTip" xml:space="preserve">
     <value>連続(マルチフレーム)画像スタック
 内で、Secondaryに用いるフレーム番号。</value>
-  </data>
-  <data name="buttonOpenSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonOpenSecondaryImage.Text" xml:space="preserve">
     <value>開く</value>
@@ -312,15 +270,9 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value>メインウィンドウのビーム中心(ダイレクトスポット)
 座標をSecondaryの中心X/Y欄にコピーします。</value>
   </data>
-  <data name="buttonClearSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonClearSecondaryImage.ToolTip" xml:space="preserve">
     <value>読み込んだSecondary画像と抽出済みプロファイル
 を消去し、Secondaryを初期化します。</value>
-  </data>
-  <data name="buttonSecondaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonSecondaryGetProfile.Text" xml:space="preserve">
     <value>一次元化</value>
@@ -334,9 +286,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   <data name="label4.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label56.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label56.Text" xml:space="preserve">
     <value>ファイル名</value>
   </data>
@@ -346,17 +295,11 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   <data name="label31.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>カメラ長</value>
   </data>
   <data name="label3.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="label58.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label58.Text" xml:space="preserve">
     <value>中心ピクセル</value>
@@ -368,41 +311,23 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   <data name="label29.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="checkBoxRefineTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="checkBoxRefineTiltCorrection.Text" xml:space="preserve">
     <value>傾き補正</value>
-  </data>
-  <data name="checkBoxRefinePixelSize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxRefinePixelSize.Text" xml:space="preserve">
     <value>ピクセルサイズ</value>
   </data>
-  <data name="checkBoxRefineFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="checkBoxRefineFilmDistance.Text" xml:space="preserve">
     <value>カメラ長</value>
   </data>
-  <data name="checkBoxRefineWaveLength.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="checkBoxRefineWaveLength.Text" xml:space="preserve">
     <value>波長</value>
-  </data>
-  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>(primary)</value>
   </data>
   <data name="label18.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="label35.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
     <value>ピクセルサイズ</value>
@@ -414,29 +339,17 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value />
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="groupBoxOption.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="groupBoxOption.Text" xml:space="preserve">
     <value>オプション</value>
   </data>
   <data name="groupBoxOption.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="buttonSchematicDiagram.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonSchematicDiagram.Text" xml:space="preserve">
     <value>模式図</value>
   </data>
-  <data name="buttonClearGraphs.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonClearGraphs.Text" xml:space="preserve">
     <value>グラフリセット</value>
-  </data>
-  <data name="buttonSetStandardCrystal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonSetStandardCrystal.Text" xml:space="preserve">
     <value>設定</value>
@@ -445,28 +358,16 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value>標準試料(既定はCeO2)を選択/編集するダイアログを開きま
 す。そのd値から期待されるデバイリング位置が決まります。</value>
   </data>
-  <data name="checkBoxRefinePixelDistortion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="checkBoxRefinePixelDistortion.Text" xml:space="preserve">
     <value>ピクセル歪み</value>
   </data>
-  <data name="buttonExecuteRefinements.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonExecuteRefinements.Text" xml:space="preserve">
     <value>実行!</value>
-  </data>
-  <data name="checkBoxSphericalCorrection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxSphericalCorrection.Text" xml:space="preserve">
     <value>球面補正</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="checkBoxPeakDecomposition.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="checkBoxPeakDecomposition.Text" xml:space="preserve">
     <value>ピーク分離を行う</value>
   </data>
@@ -475,14 +376,8 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
 フィッティング範囲の約2倍以内に近接するピークを
 1グループとして同時にフィットし、分離精度を高めます。</value>
   </data>
-  <data name="checkBoxMouseOperation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="checkBoxMouseOperation.Text" xml:space="preserve">
     <value>最適化中にマウス操作を許可</value>
-  </data>
-  <data name="checkBoxRefleshMainform.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="checkBoxRefleshMainform.Text" xml:space="preserve">
     <value>校正中にメイン画面を描画</value>
@@ -492,9 +387,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
 (セクター)の数(8-360)。多いほど傾き・中心の
 感度が上がりますが計算は遅くなります。</value>
   </data>
-  <data name="label45.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label45.Text" xml:space="preserve">
     <value>ピーク閾値</value>
   </data>
@@ -502,26 +394,17 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value>ピーク採用閾値(0-1)。この強度比を
 下回るピークは最適化から除外。</value>
   </data>
-  <data name="label21.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label21.Text" xml:space="preserve">
     <value>分割数</value>
   </data>
   <data name="label21.ToolTip" xml:space="preserve">
     <value>各リング周りでサンプリングする方位方向(セクター)数(8-360)。</value>
   </data>
-  <data name="label73.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label73.Text" xml:space="preserve">
     <value>回</value>
   </data>
   <data name="label73.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="label67.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label67.Text" xml:space="preserve">
     <value>繰り返し</value>
@@ -535,18 +418,12 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   <data name="label17.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="radioButtonRectangle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="radioButtonRectangle.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
   <data name="radioButtonRectangle.ToolTip" xml:space="preserve">
     <value>リングを横切る矩形バンド領域で積算します。単純で
 高速ですが、リングの曲率が大きいと精度が落ちます。</value>
-  </data>
-  <data name="radioButtonSector.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="radioButtonSector.Text" xml:space="preserve">
     <value>セクター</value>
@@ -556,14 +433,8 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
 ます。リングの曲率に沿うため、カメラ
 長が短い/傾きが大きい場合に適します。</value>
   </data>
-  <data name="buttonStopRefinements.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonStopRefinements.Text" xml:space="preserve">
     <value>停止!</value>
-  </data>
-  <data name="buttonSetInitioalParam.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonSetInitioalParam.Text" xml:space="preserve">
     <value>初期パラメータをメインフォームから取得</value>
@@ -572,9 +443,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value>メインウィンドウの現在のジオメトリパラメータを、
 最適化の初期値としてInitial欄に読み込みます。</value>
   </data>
-  <data name="buttonSendMainForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="buttonSendMainForm.Text" xml:space="preserve">
     <value>校正パラメータをメインフォームに送信</value>
   </data>
@@ -582,9 +450,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value>最適化されたパラメータ(カメラ長,
 ピクセルサイズ/歪み, 傾き, 波長, 球面補正,
 ビーム中心)をメインウィンドウに反映します。</value>
-  </data>
-  <data name="groupBoxParameter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="groupBoxParameter.Text" xml:space="preserve">
     <value>パラメータ</value>
@@ -609,9 +474,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   </data>
   <data name="label68.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="buttonCopyToClipboard.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="buttonCopyToClipboard.Text" xml:space="preserve">
     <value>クリップボードにコピー</value>
@@ -689,9 +551,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   <data name="textBoxRefinedSecondaryTau.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label20.Text" xml:space="preserve">
     <value>校正後</value>
   </data>
@@ -704,17 +563,11 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   <data name="textBoxRefinedPrimaryTau.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label44.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label44.Text" xml:space="preserve">
     <value>ピクセル歪み</value>
   </data>
   <data name="label44.ToolTip" xml:space="preserve">
     <value>ピクセル歪み角ξ(X/Yの非直交, 度)。</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>初期</value>
@@ -744,9 +597,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
     <value>読み取り専用。最適化で得られた
 カメラ長の推定標準誤差(±, mm)。</value>
   </data>
-  <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label22.Text" xml:space="preserve">
     <value>傾き補正項</value>
   </data>
@@ -756,9 +606,6 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   </data>
   <data name="textBoxRefinedSecondaryPhi.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label42.Text" xml:space="preserve">
     <value>誤差</value>
@@ -785,9 +632,6 @@ Primary検出器の傾き方位角φ(度)の結果値。</value>
   <data name="label65.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label64.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label64.Text" xml:space="preserve">
     <value>(secondary)</value>
   </data>
@@ -796,9 +640,6 @@ Primary検出器の傾き方位角φ(度)の結果値。</value>
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
     <value>球面湾曲補正(曲率半径の逆数 1/R, 1/mm)。0で平面検出器。</value>
-  </data>
-  <data name="label71.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label71.Text" xml:space="preserve">
     <value>傾き補正項</value>
@@ -810,18 +651,12 @@ Primary検出器の傾き方位角φ(度)の結果値。</value>
   <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="radioButton1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="radioButton1.Text" xml:space="preserve">
     <value>プライマリ</value>
   </data>
   <data name="radioButton1.ToolTip" xml:space="preserve">
     <value>フレキシブルモードでデバイリングを手動追加・
 移動する際、Primary画像を対象にします。</value>
-  </data>
-  <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="radioButton2.Text" xml:space="preserve">
     <value>セカンダリ</value>
@@ -858,17 +693,11 @@ click: the check/unchek selected peaks.</value>
 分布(mm)を表示します。古い順に着色。一方向の相関が
 あるとSecondary検出器の傾き補正が不十分です。</value>
   </data>
-  <data name="label74.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label74.Text" xml:space="preserve">
     <value>ピクセル歪み (ξ)</value>
   </data>
   <data name="label74.ToolTip" xml:space="preserve">
     <value>ピクセル歪み角ξ(X/Yせん断, 度)。</value>
-  </data>
-  <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label80.Text" xml:space="preserve">
     <value>傾き補正項 φ (サブ)</value>
@@ -876,17 +705,11 @@ click: the check/unchek selected peaks.</value>
   <data name="label80.ToolTip" xml:space="preserve">
     <value>Secondary検出器の傾き角τ(垂直からの角度, 度)。</value>
   </data>
-  <data name="label57.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label57.Text" xml:space="preserve">
     <value>カメラ長 (メイン画像)</value>
   </data>
   <data name="label57.ToolTip" xml:space="preserve">
     <value>Primary画像のカメラ長(試料-検出器間距離, mm)。</value>
-  </data>
-  <data name="label60.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label60.Text" xml:space="preserve">
     <value>傾き補正項 τ (サブ)</value>
@@ -894,17 +717,11 @@ click: the check/unchek selected peaks.</value>
   <data name="label60.ToolTip" xml:space="preserve">
     <value>Primary検出器の傾き角τ(垂直からの角度, 度)。</value>
   </data>
-  <data name="label79.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label79.Text" xml:space="preserve">
     <value>傾き補正項 τ (メイン)</value>
   </data>
   <data name="label79.ToolTip" xml:space="preserve">
     <value>Secondary検出器の傾き方位角φ(傾き軸方向, 度)。</value>
-  </data>
-  <data name="label72.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label72.Text" xml:space="preserve">
     <value>残差二乗和</value>
@@ -913,17 +730,11 @@ click: the check/unchek selected peaks.</value>
     <value>反復ごとの平均相対残差(計算値と実測ピーク
 位置の差)。収束に伴い減少します。</value>
   </data>
-  <data name="label37.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label37.Text" xml:space="preserve">
     <value>傾き補正項 φ (メイン)</value>
   </data>
   <data name="label37.ToolTip" xml:space="preserve">
     <value>Primary検出器の傾き方位角φ(傾き軸方向, 度)。</value>
-  </data>
-  <data name="label76.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label76.Text" xml:space="preserve">
     <value>リング中心 (サブ画像)</value>
@@ -932,17 +743,11 @@ click: the check/unchek selected peaks.</value>
     <value>Secondaryのフィット済みリング中心分布。偏った
 相関があるとSecondaryの傾き補正が不十分です。</value>
   </data>
-  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label16.Text" xml:space="preserve">
     <value>波長</value>
   </data>
   <data name="label16.ToolTip" xml:space="preserve">
     <value>放射線波長(0.1 nm = Å)。</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>リング中心 (メイン画像)</value>
@@ -951,17 +756,11 @@ click: the check/unchek selected peaks.</value>
     <value>Primaryのフィット済みリング中心分布。
 偏った相関があると傾き補正が不十分です。</value>
   </data>
-  <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
-  </data>
   <data name="label50.Text" xml:space="preserve">
     <value>ピクセルサイズ (X)</value>
   </data>
   <data name="label50.ToolTip" xml:space="preserve">
     <value>検出器のX方向ピクセルサイズ(mm)。</value>
-  </data>
-  <data name="label52.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 8.25pt</value>
   </data>
   <data name="label52.Text" xml:space="preserve">
     <value>ピクセルサイズ (Y)</value>
@@ -993,9 +792,6 @@ than』以内の距離)を満たすピークを自動的に
   </data>
   <data name="flowLayoutPanelEachPeaks.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="checkBoxShowEachPeaks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxShowEachPeaks.Text" xml:space="preserve">
     <value>ピークを拡大</value>
@@ -1260,5 +1056,497 @@ Y)を最適化の自由パラメータに含めます。</value>
   </data>
   <data name="buttonGetCameraLenghtFromWholePattern.Text" xml:space="preserve">
     <value>カメラ長を取得</value>
+  </data>
+  <data name="checkBoxRefineWaveLength.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label23.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericBoxLowerThan.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxRefinedPrimaryTau.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="label44.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionYDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedPixelKsiDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionX.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonOpenPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxWaveLength.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label56.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label64.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="numericalTextBoxSphericalRadius.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonClearSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedSecondaryTauDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxPixelKsi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label70.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label40.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="textBoxRefinedWaveLength.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="groupBoxPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="label54.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonSendMainForm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="label72.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxPeakDecomposition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label34.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label31.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxRefineFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label49.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label79.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8.25pt</value>
+  </data>
+  <data name="label74.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxPixelSizeXDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhiDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label45.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonClearPrimaryImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label25.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonCheckPeaks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonGetCenterPositionFromMainForm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label32.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryTau.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonSetStandardCrystal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonGetWaveLengthFromWholePattern.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label67.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="radioButtonSector.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label36.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label35.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxRefinedPrimaryTauDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="numericalTextBoxRadiusInverseDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="radioButtonRectangle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label51.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label65.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionX.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label52.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxCenterPosition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label43.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label75.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label60.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8.25pt</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonOpenSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label24.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericBoxPrimaryImageNum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="buttonSecondaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedPrimaryFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonPrimaryGetProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedPrimaryPhi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxPixelSizeY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericalTextBoxRefinedSphericalRadius.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="numericUpDownBandWidth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="checkBoxRefleshMainform.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericUpDownDivision.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label81.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionYDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxPrimaryFileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxPrimaryFilmDistanceCopy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericTextBoxPrimaryFilmDistance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label50.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label76.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedPixelKsi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label82.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label69.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label55.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericalTextBoxPrimaryCenterPositionXDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryTau.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label58.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label46.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label41.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxSphericalCorrection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxMouseOperation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonExecuteRefinements.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 11pt, style=Bold, Italic</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="numericBoxAwayFrom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="checkBoxRefinePixelDistortion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label27.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label39.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxTiltCorrectionPrimaryPhi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label62.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label42.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonCopyToClipboard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="textBoxRefinedSecondaryPhiDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonGetCameraLenghtFromWholePattern.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label37.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8.25pt</value>
+  </data>
+  <data name="numericTextBoxSecondaryCenterPositionXDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxRefinedSecondaryTau.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxTiltCorrectionSecondaryPhi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxRefineTiltCorrection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label53.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxPixelSizeYDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label57.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label61.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonSetInitioalParam.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="checkBoxUseStandardCrystal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedSecondaryPhi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="buttonSchematicDiagram.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericUpDownRepitition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxRefinedPixelSizeX.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxWaveLengthDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxSecondaryFileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label66.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericBoxSecondaryImageNum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonStopRefinements.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 11pt, style=Bold, Italic</value>
+  </data>
+  <data name="label68.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="textBoxCameraLengthDev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericUpDownSearchRange.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label38.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="buttonClearGraphs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="numericUpDownThresholdOfPeak.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label71.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="textBoxFilmDistanceDiscrepancy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="numericTextBoxPrimaryCenterPositionY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label63.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="checkBoxRefinePixelSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="label33.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="groupBoxSecondaryImage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="textBoxPixelSizeX.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="label73.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
   </data>
 </root>

@@ -58,14 +58,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxMultiSelection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxMultiSelection.Text" xml:space="preserve">
     <value>複数選択</value>
-  </data>
-  <data name="checkBoxAverage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="checkBoxAverage.Text" xml:space="preserve">
     <value>平均</value>
@@ -84,14 +78,8 @@
   <data name="radioButtonGetProfileAllImages.Text" xml:space="preserve">
     <value>全画像</value>
   </data>
-  <data name="checkBoxSummation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
-  </data>
   <data name="checkBoxSummation.Text" xml:space="preserve">
     <value>積算</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>メイリオ, 9pt</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>シーケンシャル画像 オプション</value>
@@ -137,5 +125,20 @@
     <value>「プロファイル取得」(1次元への放射方向積分)を、
 リストの選択に関係なくスタック内の全フレームに対して
 実行します(フレームごとに1本のプロファイルを生成)。</value>
+  </data>
+  <data name="listBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="checkBoxSummation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="checkBoxAverage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="checkBoxMultiSelection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9.75pt</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
   </data>
 </root>
