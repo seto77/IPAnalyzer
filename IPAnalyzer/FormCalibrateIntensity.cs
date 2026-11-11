@@ -25,7 +25,8 @@ namespace IPAnalyzer
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
-            using var dlg = new OpenFileDialog { Filter = "Fuji[*.img]; R-AXIS4[*.stl]; Bruker CCD[*.ccd]; IP Display(PF Bl4b1)[*.ipf]|*.img;*.stl;*.ccd;*.ipf" }; //260712Cl using宣言+初期化子
+            //using var dlg = new OpenFileDialog { Filter = "Fuji[*.img]; R-AXIS4[*.stl]; Bruker CCD[*.ccd]; IP Display(PF Bl4b1)[*.ipf]|*.img;*.stl;*.ccd;*.ipf" }; //260712Cl using宣言+初期化子
+            using var dlg = new OpenFileDialog { Filter = "R-AXIS4[*.stl]|*.stl" }; //261112Cl 変更: 較正で読めるのは .stl だけ (getRawIntensity)。旧は読めない形式も選べ、選ぶと「.stl を指定」のメッセージになった
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 if (((Button)sender).Name == buttonOpenFile1.Name)

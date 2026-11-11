@@ -1811,7 +1811,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //         不存在 return で SkipDrawing が true のまま残り以降の Draw() が全て無効化されていた)
         if (fn != "ClipBoard.ipa" && !File.Exists(fn)) return;  // ファイルの有無をチェック
 
-        SkipDrawing = true;
+        //SkipDrawing = true;// 261112Cl 変更前: InvokeRequired の判定より前だったため、監視スレッドから UI のプロパティを書いていた (下の Invoke の後へ移動)
 
         //改行文字が含まれている場合は、それを削除
         fn = fn.TrimEnd('\n');
@@ -1823,6 +1823,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             Invoke(() => ReadImage(fn, flag));
             return;
         }
+        SkipDrawing = true;// 261112Cl 変更: UI スレッドに移ってから設定する
 
         //直前に読み込まれている画像が存在するかどうか
         var lastImageExist = scalablePictureBox.PseudoBitmap.Height != 0;
