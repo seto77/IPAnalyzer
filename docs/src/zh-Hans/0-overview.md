@@ -15,8 +15,10 @@ IPAnalyzer 能将成像板 (IP) 或 CCD/CMOS 探测器记录的 Debye–Scherrer
 
 ### 要求
 
+以下要求适用于由此源代码构建的 .NET 11 版本。对于已发布的版本，请遵循该版本注明的运行时要求。
+
 - 操作系统: Windows (推荐 Windows 11)
-- 必需运行时: .NET Desktop Runtime 10.0
+- 必需运行时: .NET Desktop Runtime 11.0
 - 推荐内存: 16 GB 或以上
 - 推荐 CPU: 8 核或以上
 
@@ -26,7 +28,7 @@ IPAnalyzer 能将成像板 (IP) 或 CCD/CMOS 探测器记录的 Debye–Scherrer
 
 ### 安装
 
-1. 预先安装 [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0)。
+1. 预先安装 [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0)。
 2. 从 GitHub [releases page](https://github.com/seto77/IPAnalyzer/releases) 下载 `IPAnalyzerSetup.msi`。
 3. 运行 `IPAnalyzerSetup.msi` 进行安装。
 

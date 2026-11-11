@@ -350,7 +350,15 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     {
         //260712Cl double 化 (Ring.Intensity は double[])。全ピクセル走査を行独立の Parallel.For 化 (各要素は自 index の bool を書くだけ、Draw はループ後)
         var n = (double)numericUpDownThresholdOfIntensityMin.Value + 1;
-        Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdUnder[i] = n > Ring.Intensity[i]);
+        //Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdUnder[i] = n > Ring.Intensity[i]);
+        // 261111Cl 変更: 画素ごとにデリゲートを呼ぶ Parallel.For → 区間 (Partitioner.Create) ごとの並列 + 内側の素のループ (結果は同じ)
+        var under = Ring.IsThresholdUnder;
+        var intensity = Ring.Intensity;
+        Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
+        {
+            for (int i = range.Item1; i < range.Item2; i++)
+                under[i] = n > intensity[i];
+        });
 
         formMain.Draw();
     }
@@ -360,7 +368,15 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         //260712Cl Math.Min(uint.MaxValue, x) は恒等の死んだガード。かつ Value=0 のとき (uint)0-1 が uint.MaxValue に
         //         ラップし閾値超え検出が全滅していた。double 化で -1 を正しく表現し、行独立の Parallel.For 化。
         double n = (double)numericUpDownThresholdOfIntensityMax.Value - 1;
-        Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdOver[i] = n < Ring.Intensity[i]);
+        //Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdOver[i] = n < Ring.Intensity[i]);
+        // 261111Cl 変更: 上の Min と同じ (区間ごとの並列 + 内側の素のループ)
+        var over = Ring.IsThresholdOver;
+        var intensity = Ring.Intensity;
+        Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
+        {
+            for (int i = range.Item1; i < range.Item2; i++)
+                over[i] = n < intensity[i];
+        });
 
         formMain.Draw();
     }

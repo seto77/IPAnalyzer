@@ -32,9 +32,11 @@
 
 ## 시스템 요구 사항
 
+아래 요구 사항은 이 소스 코드에서 빌드한 .NET 11 버전에 적용됩니다. 이미 배포된 릴리스는 해당 릴리스에 명시된 런타임 요구 사항을 따르세요.
+
 | 항목 | 최소 | 권장 |
 |------|---------|-------------|
-| OS | [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) 이 설치된 Windows | Windows 11 |
+| OS | [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) 이 설치된 Windows | Windows 11 |
 | 메모리 | - | 16 GB 이상 |
 | CPU | - | 8코어 이상 (이미지 강도는 배정밀도로 보관되며 처리는 멀티스레드로 수행됩니다) |
 

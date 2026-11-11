@@ -65,13 +65,15 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
                 
                 Ring.IntensityOriginal = [.. Ring.SequentialImageIntensities[selectedIndex]] ;
 
-                formMain.FlipRotate_Pollalization_Background(false);
+                //formMain.FlipRotate_Pollalization_Background(false);
+                // 261111Cl 変更: FlipRotate の中と下の if で CalcFreq + SetFrequencyProfile を 2 回ずつ計算していた → FlipRotate の中の 1 回だけに。SkipCalcFreq のときは計算しない
+                formMain.FlipRotate_Pollalization_Background(false, calcFreq: !SkipCalcFreq);
 
 
                 if (!SkipCalcFreq)
                 {
-                    Ring.CalcFreq();
-                    formMain.SetFrequencyProfile();
+                    //Ring.CalcFreq();
+                    //formMain.SetFrequencyProfile();
                     formMain.SetStasticalInformation(false);
                 }
                 formMain.SetText(formMain.FileName, "#" + Ring.SequentialImageNames[selectedIndex]);
@@ -96,6 +98,8 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
         }
     }
 
+    #region (261106Ch) 変更前: selectedIndices
+    /*
     private int[] selectedIndices = []; //260712Cl new int[]{} → [] (Array.Empty<int>() 共有)
     public int[] SelectedIndices
     {
@@ -137,15 +141,30 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
 
                 double divisor = AverageMode ? selectedIndices.Length : 1;
                 var srcs = Array.ConvertAll(selectedIndices, n => Ring.SequentialImageIntensities[n]);
-                Parallel.For(0, Ring.Intensity.Length, i =>
+                //Parallel.For(0, Ring.Intensity.Length, i =>
+                //{
+                //    double sum = 0;
+                //    for (int j = 0; j < srcs.Length; j++)
+                //        sum += srcs[j][i] / divisor;
+                //    Ring.IntensityOriginal[i] = sum;
+                //});
+                // 261111Cl 変更: 画素ごとに N 枚の画像をまたぐストライドアクセス → 画素を区間に分けて並列にし、区間の中では画像ごとに連続領域で加算。
+                //   各画素は元と同じく +0.0 から j の昇順に srcs[j][i] / divisor を足す (演算の順序と種類が同じなのでビット一致)。IntensityOriginal は常に複製なので srcs と重ならない
+                var dst = Ring.IntensityOriginal;
+                Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.Intensity.Length, 1 << 16), range =>
                 {
-                    double sum = 0;
-                    for (int j = 0; j < srcs.Length; j++)
-                        sum += srcs[j][i] / divisor;
-                    Ring.IntensityOriginal[i] = sum;
+                    var d = dst.AsSpan(range.Item1, range.Item2 - range.Item1);
+                    d.Clear();
+                    foreach (var src in srcs)
+                    {
+                        var sr = src.AsSpan(range.Item1, d.Length);
+                        for (int i = 0; i < d.Length; i++)
+                            d[i] += sr[i] / divisor;
+                    }
                 });
 
-                formMain.FlipRotate_Pollalization_Background(false);
+                //formMain.FlipRotate_Pollalization_Background(false);
+                formMain.FlipRotate_Pollalization_Background(false, calcFreq: false); // 261111Cl 変更: 下の Ring.CalcFreq() と末尾の SetFrequencyProfile() で計算するので、FlipRotate の中では省く (二重計算の解消)
 
                 if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
                     formMain.FormProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(energy);
@@ -184,6 +203,112 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
         }
         get => selectedIndices;
     }
+    */
+    #endregion
+
+    // (261106Ch) C# 14 field-backed property; retain the original initialization and setter behavior.
+    public int[] SelectedIndices
+    {
+        set
+        {
+            skipEvent = true;
+            int selectedIndex = listBox.SelectedIndex;
+            //valueに含まれているものだけを選択状態にする
+            //260712Cl value.Contains の線形探索 (O(n×m)) と Enumerable.Range/Where のイテレータ割り当てを HashSet+for に置換
+            var newSelection = new HashSet<int>(value);
+            for (int i = 0; i < listBox.Items.Count; i++)
+                if (!newSelection.Contains(i) && listBox.GetSelected(i))
+                    listBox.SetSelected(i, false);
+            foreach (var i in value)
+                if (!listBox.GetSelected(i))
+                    listBox.SetSelected(i, true);
+            if (newSelection.Contains(selectedIndex))
+                listBox.SelectedIndex = selectedIndex;
+            skipEvent = false;
+
+            //260712Cl 範囲ガードの比較対象を修正 (旧: Ring.Intensity.Length=ピクセル数 と比較しており事実上素通り。value はイメージ番号)
+            if (Ring.SequentialImageIntensities == null)
+                return;
+            foreach (var v in value)
+                if (v < 0 || v >= Ring.SequentialImageIntensities.Count)
+                    return;
+            field = value;
+
+            if (AverageMode || SummationMode)
+            {
+                checkBoxMultiSelection.Checked = true;
+                //260712Cl 除数と double[] 参照をループ外へ巻き上げ + ピクセル単位で並列化。
+                //各ピクセル i の j 昇順加算は単一スレッド内で保持されるため浮動小数点結果は元コードとビット一致 (0.0+x==x)。
+                //エネルギー加算は別の直列ループに分離。
+                double energy = 0;
+                if (Ring.ImageType == Ring.ImageTypeEnum.HDF5 && Ring.SequentialImageEnergy != null)
+                    for (int j = 0; j < field.Length; j++)
+                        energy += Ring.SequentialImageEnergy[field[j]] / field.Length;
+
+                double divisor = AverageMode ? field.Length : 1;
+                var srcs = Array.ConvertAll(field, n => Ring.SequentialImageIntensities[n]);
+                //Parallel.For(0, Ring.Intensity.Length, i =>
+                //{
+                //    double sum = 0;
+                //    for (int j = 0; j < srcs.Length; j++)
+                //        sum += srcs[j][i] / divisor;
+                //    Ring.IntensityOriginal[i] = sum;
+                //});
+                // 261111Cl 変更: 画素ごとに N 枚の画像をまたぐストライドアクセス → 画素を区間に分けて並列にし、区間の中では画像ごとに連続領域で加算。
+                //   各画素は元と同じく +0.0 から j の昇順に srcs[j][i] / divisor を足す (演算の順序と種類が同じなのでビット一致)。IntensityOriginal は常に複製なので srcs と重ならない
+                var dst = Ring.IntensityOriginal;
+                Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.Intensity.Length, 1 << 16), range =>
+                {
+                    var d = dst.AsSpan(range.Item1, range.Item2 - range.Item1);
+                    d.Clear();
+                    foreach (var src in srcs)
+                    {
+                        var sr = src.AsSpan(range.Item1, d.Length);
+                        for (int i = 0; i < d.Length; i++)
+                            d[i] += sr[i] / divisor;
+                    }
+                });
+
+                //formMain.FlipRotate_Pollalization_Background(false);
+                formMain.FlipRotate_Pollalization_Background(false, calcFreq: false); // 261111Cl 変更: 下の Ring.CalcFreq() と末尾の SetFrequencyProfile() で計算するので、FlipRotate の中では省く (二重計算の解消)
+
+                if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
+                    formMain.FormProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(energy);
+
+                Ring.CalcFreq();
+
+                string text = "";
+
+
+                for (int i = 0; i < field.Length; i++)
+                {
+                    if (i == 0)
+                        text += Ring.SequentialImageNames[field[i]];
+                    else if (field[i] == field[i - 1] + 1)
+                    {
+                        if (!text.EndsWith("-"))
+                            text += "-";
+                        if (i == field.Length - 1)
+                            text += Ring.SequentialImageNames[field[i]];
+                    }
+                    else
+                    {
+                        if (text.EndsWith("-"))
+                            text += Ring.SequentialImageNames[field[i - 1]];
+                        text += ", " + Ring.SequentialImageNames[field[i]];
+                    }
+                }
+                formMain.SetText(formMain.FileName, (AverageMode ? Crystallography.Localization.Loc(en: "Ave. of #", ja: "平均 #", de: "Mittelw. von #", fr: "Moy. de #", es: "Prom. de #", pt: "Méd. de #", it: "Media di #", ru: "Сред. по #", zhHans: "# 的平均值", zhHant: "# 的平均", ko: "# 평균") : Crystallography.Localization.Loc(en: "Sum. of #", ja: "積算 #", de: "Summe von #", fr: "Somme de #", es: "Suma de #", pt: "Soma de #", it: "Somma di #", ru: "Сумма по #", zhHans: "# 的总和", zhHant: "# 的總和", ko: "# 합계")) + text); // 260626Cl Loc化
+                formMain.SetStasticalInformation(false);
+                formMain.SetFrequencyProfile();
+                formMain.Draw();
+            }
+            else
+                SelectedIndex = listBox.SelectedIndex;
+
+        }
+        get;
+    } = []; // (261106Ch) Preserve the initial empty array; the setter still keeps the caller array by reference after validation.
 
 
     public int MaximumNumber

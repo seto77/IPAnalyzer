@@ -163,11 +163,15 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
                 crystal.SetPlanes(d_max, d_min, true, true, true, false, HorizontalAxis.Angle, 0, wave);
                 crystal.SetPeakIntensity(WaveSource.Xray, WaveColor.Monochrome, wave, null);
 
-                for (int i = 0; i < crystal.Plane.Count; i++)
-                    if (crystal.Plane[i].Intensity < 0.001)
-                        crystal.Plane.RemoveAt(i);
-                    else
-                        crystal.Plane[i].XCalc = 2 * Math.Asin(wave / 2 / crystal.Plane[i].d) / Math.PI * 180;
+                //for (int i = 0; i < crystal.Plane.Count; i++)
+                //    if (crystal.Plane[i].Intensity < 0.001)
+                //        crystal.Plane.RemoveAt(i);
+                //    else
+                //        crystal.Plane[i].XCalc = 2 * Math.Asin(wave / 2 / crystal.Plane[i].d) / Math.PI * 180;
+                // 261111Cl 変更: RemoveAt(i) の後に i を戻さず、消した面の次の面を飛ばしていた (飛ばされた面は弱い面でも残り、XCalc もラジアンのままだった) → RemoveAll してから全部の XCalc を設定
+                crystal.Plane.RemoveAll(p => p.Intensity < 0.001);
+                foreach (var p in crystal.Plane)
+                    p.XCalc = 2 * Math.Asin(wave / 2 / p.d) / Math.PI * 180;
 
                 planes.AddRange(crystal.Plane);
             }
@@ -246,15 +250,20 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
             var pt = profile.Pt;
             //いったん初期化
 
+            // 261111Cl 追加: 並列ループの中から UI (波長・数値欄) を読んでいた → ループの前にローカルへ取得 (値は同じ)
+            double waveLength = WaveLength, mainWaveLength = FormMain.FormProperty.WaveLength, fittingRange = numericBoxFittingRange.Value;
             Parallel.ForEach(planes, p =>
             //for (int j = 0; j < planes.Count; j++)
             {
-                p.XCalc = Math.Asin(WaveLength / 2 / p.d) / Math.PI * 360;
+                //p.XCalc = Math.Asin(WaveLength / 2 / p.d) / Math.PI * 360;
+                p.XCalc = Math.Asin(waveLength / 2 / p.d) / Math.PI * 360; // 261111Cl
 
                 p.peakFunction = new PeakFunction();
                 p.peakFunction.Option = PeakFunctionForm.PseudoVoigt;
-                var twoTheta = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / p.d);
-                p.peakFunction.range = /*(double)numericUpDownSearchRange.Value*/ numericBoxFittingRange.Value / Math.Cos(twoTheta / 2);
+                //var twoTheta = 2 * Math.Asin(FormMain.FormProperty.WaveLength / 2 / p.d);
+                //p.peakFunction.range = /*(double)numericUpDownSearchRange.Value*/ numericBoxFittingRange.Value / Math.Cos(twoTheta / 2);
+                var twoTheta = 2 * Math.Asin(mainWaveLength / 2 / p.d); // 261111Cl
+                p.peakFunction.range = fittingRange / Math.Cos(twoTheta / 2); // 261111Cl
                 p.peakFunction.Hk = p.peakFunction.range / 2;
                 p.peakFunction.X = p.XCalc;
                 var pf = new[] { p.peakFunction };

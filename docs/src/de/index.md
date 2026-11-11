@@ -32,9 +32,11 @@
 
 ## Systemvoraussetzungen
 
+Diese Anforderungen gelten für .NET-11-Builds aus diesem Quellstand. Beachten Sie bei veröffentlichten Versionen die jeweils angegebene Laufzeitanforderung.
+
 | Punkt | Minimum | Empfohlen |
 |------|---------|-------------|
-| Betriebssystem | Windows mit [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) | Windows 11 |
+| Betriebssystem | Windows mit [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) | Windows 11 |
 | Arbeitsspeicher | - | 16 GB oder mehr |
 | CPU | - | 8+ Kerne (Bildintensitäten werden in doppelter Genauigkeit gehalten und die Verarbeitung erfolgt mehrfädig) |
 

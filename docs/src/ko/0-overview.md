@@ -15,8 +15,10 @@ IPAnalyzer는 이미징 플레이트 (IP)나 CCD/CMOS 검출기로 기록한 Deb
 
 ### 요구 사항
 
+아래 요구 사항은 이 소스 코드에서 빌드한 .NET 11 버전에 적용됩니다. 이미 배포된 릴리스는 해당 릴리스에 명시된 런타임 요구 사항을 따르세요.
+
 - OS: Windows (Windows 11 권장)
-- 필수 런타임: .NET Desktop Runtime 10.0
+- 필수 런타임: .NET Desktop Runtime 11.0
 - 권장 메모리: 16 GB 이상
 - 권장 CPU: 8코어 이상
 
@@ -26,7 +28,7 @@ IPAnalyzer는 이미징 플레이트 (IP)나 CCD/CMOS 검출기로 기록한 Deb
 
 ### 설치
 
-1. 사전에 [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0)을 설치합니다.
+1. 사전에 [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0)을 설치합니다.
 2. GitHub [releases page](https://github.com/seto77/IPAnalyzer/releases)에서 `IPAnalyzerSetup.msi`를 다운로드합니다.
 3. `IPAnalyzerSetup.msi`를 실행하여 설치합니다.
 

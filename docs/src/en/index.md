@@ -32,9 +32,11 @@
 
 ## System requirements
 
+These requirements apply to .NET 11 builds from this source tree. For published releases, follow the runtime requirement stated for that release.
+
 | Item | Minimum | Recommended |
 |------|---------|-------------|
-| OS | Windows with [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) | Windows 11 |
+| OS | Windows with [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) | Windows 11 |
 | Memory | - | 16 GB or more |
 | CPU | - | 8+ cores (image intensities are held as double precision and processing is multi-threaded) |
 

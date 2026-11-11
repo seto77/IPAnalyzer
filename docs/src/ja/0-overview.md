@@ -15,8 +15,10 @@ IPAnalyzer は、イメージングプレート (IP) や CCD/CMOS 検出器で�
 
 ### 動作環境
 
+以下は、このソースツリーから作成する .NET 11 ビルドの要件です。公開済みリリースについては、そのリリースに記載されたランタイム要件に従ってください。
+
 - OS: Windows（Windows 11 を推奨）
-- 必須ランタイム: .NET デスクトップランタイム 10.0
+- 必須ランタイム: .NET デスクトップランタイム 11.0
 - 推奨メモリ: 16 GB 以上
 - 推奨 CPU: 8 コア以上
 
@@ -26,7 +28,7 @@ IPAnalyzer は、イメージングプレート (IP) や CCD/CMOS 検出器で�
 
 ### インストール
 
-1. あらかじめ [.NET デスクトップランタイム 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) をインストールしておきます。
+1. あらかじめ [.NET デスクトップランタイム 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) をインストールしておきます。
 2. GitHub の [releases ページ](https://github.com/seto77/IPAnalyzer/releases) から `IPAnalyzerSetup.msi` をダウンロードします。
 3. `IPAnalyzerSetup.msi` を実行してインストールします。
 

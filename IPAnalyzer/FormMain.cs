@@ -30,8 +30,9 @@ namespace IPAnalyzer;
 public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 {
     #region DllImport
-    [LibraryImport("user32")]
-    private static partial short GetAsyncKeyState(int nVirtKey);
+    //[LibraryImport("user32")]
+    //private static partial short GetAsyncKeyState(int nVirtKey);
+    // 261111Cl コメントアウト: FormMain_KeyDown で e.KeyCode を見るようにしたので不要
     #endregion
 
     #region Macro 公開 API  260414Cl 追加
@@ -653,7 +654,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     // 起動スプラッシュ (InitialDialog) を隠し、代表的な回折画像を読み込んで、画像依存フォームを典型例に近づける。
     internal bool PrepareCaptureState()
     {
-        try { if (InitialDialog != null) InitialDialog.Visible = false; } catch { /* スプラッシュ非表示失敗は無視 */ }
+        // try { if (InitialDialog != null) InitialDialog.Visible = false; } catch { /* スプラッシュ非表示失敗は無視 */ } // (261106Ch) Previous explicit null guard.
+        try { InitialDialog?.Visible = false; } catch { /* スプラッシュ非表示失敗は無視 */ } // (261106Ch) Null-conditional assignment; retain the existing exception handling.
         try
         {
             var sample = GuiCapture.FindSampleImage();
@@ -1649,6 +1651,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     #region リサイズ イベント
     public void FormMain_Resize(object sender, EventArgs e) => Draw();
 
+    // 261106Ch: Designer partial の既存ハンドラーを移動 (WFO3001)。実装・イベント接続は変更しない。
+    // 261111Cl コメントアウト: どこからも接続されていない (Designer が接続しているのは小文字始まりの splitContainer1_SplitterMoved)。呼ばれると例外を投げるだけの残骸
+    //private void SplitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+    //{
+    //    throw new NotImplementedException();
+    //}
+
     private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e) => FormMain_Resize(this, EventArgs.Empty);
     #endregion
 
@@ -2129,7 +2138,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             }
             //単一画像モードの時
             else
-                Tiff.Writer(filename, [[.. Ring.Intensity]], 0, Ring.SrcImgSize.Width);
+                //Tiff.Writer(filename, [[.. Ring.Intensity]], 0, Ring.SrcImgSize.Width);
+                Tiff.Writer(filename, [Ring.Intensity], 0, Ring.SrcImgSize.Width); // 261111Cl 変更: 画像全体のコピーをやめる (Tiff.Writer は srcData を読むだけで書き換えない)
         }
         //Unrolled Imageのとき
         else
@@ -2286,7 +2296,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             {
                 if (j != i) sb.Append(',');
                 //sb.Append(intensity[j].ToString("G")); // 261105Cl 変更前 (CurrentCulture: コンマ小数の地域設定では "12,5" が区切りの ',' と混ざり列が崩れる)
-                sb.Append(intensity[j].ToString("G", System.Globalization.CultureInfo.InvariantCulture)); // 261105Cl 変更
+                //sb.Append(intensity[j].ToString("G", System.Globalization.CultureInfo.InvariantCulture)); // 261105Cl 変更
+                sb.Append(System.Globalization.CultureInfo.InvariantCulture, $"{intensity[j]:G}"); // 261111Cl 変更: 画素ごとの一時文字列を作らず StringBuilder へ直接書式化 (出力は同じ)
             }
             writer.WriteLine(sb);
         }
@@ -2732,16 +2743,21 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             //260712Cl using化 + 読み取り専用 (旧: 未Disposeでファイルロック残留、FileAccess.ReadWrite で読み取り専用メディア上のマスクを開けなかった)
             using var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
             var mask = new bool[br.ReadInt32()];
-            int n = 0;
-            for (int i = 0; i < mask.Length / 8; i++)
-            {
-                byte b = br.ReadByte();
-                for (int j = 0; j < 8; j++)
-                {
-                    mask[n++] = (b & 1) == 1;
-                    b >>= 1;
-                }
-            }
+            //int n = 0;
+            //for (int i = 0; i < mask.Length / 8; i++)
+            //{
+            //    byte b = br.ReadByte();
+            //    for (int j = 0; j < 8; j++)
+            //    {
+            //        mask[n++] = (b & 1) == 1;
+            //        b >>= 1;
+            //    }
+            //}
+            // 261111Cl 変更: 1 バイトずつ読んでループでビット展開 → まとめて読み、BitArray で展開 (各バイトの LSB が先頭で同じ並び)。末尾の Length % 8 画素は従来どおり false
+            var maskBytes = br.ReadBytes(mask.Length / 8);
+            if (maskBytes.Length < mask.Length / 8)
+                throw new EndOfStreamException(); // 261111Cl 従来の ReadByte と同じく、途中で切れたファイルは失敗として通知
+            new System.Collections.BitArray(maskBytes).CopyTo(mask, 0);
             if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Length)
             {
                 Array.Copy(mask, Ring.IsSpots, mask.Length); //260712Cl 要素ループを一括コピー化
@@ -2783,20 +2799,24 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //260712Cl using化 + 書き込み専用 (旧: 未Disposeで例外時ファイルロック残留、FileAccess.ReadWrite は不要)
         using var br = new BinaryWriter(new FileStream(fileName, FileMode.Create, FileAccess.Write));
         br.Write(Ring.IsSpots.Length);
-        int n = 0;
-        for (int i = 0; i < Ring.IsSpots.Length / 8; i++)
-        {
-            byte b = 0;
-            byte m = 1;
-            for (int j = 0; j < 8; j++)
-            {
-                if (Ring.IsSpots[n++])
-                    b += m;
-                m *= 2;
-            }
-            br.Write(b);
-
-        }
+        //int n = 0;
+        //for (int i = 0; i < Ring.IsSpots.Length / 8; i++)
+        //{
+        //    byte b = 0;
+        //    byte m = 1;
+        //    for (int j = 0; j < 8; j++)
+        //    {
+        //        if (Ring.IsSpots[n++])
+        //            b += m;
+        //        m *= 2;
+        //    }
+        //    br.Write(b);
+        //
+        //}
+        // 261111Cl 変更: 1 バイトずつのビット詰めと書き込み → BitArray でまとめて詰めて (各バイトの LSB が先頭) 1 回で書く。従来どおり Length / 8 バイトだけ書く (端数の画素は書かない)
+        var maskBytes = new byte[(Ring.IsSpots.Length + 7) / 8];
+        new System.Collections.BitArray(Ring.IsSpots).CopyTo(maskBytes, 0);
+        br.Write(maskBytes, 0, Ring.IsSpots.Length / 8);
     }
 
     private void clearMaskToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3962,7 +3982,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     #region KeyDown, KeyUpイベント
     private void FormMain_KeyDown(object sender, KeyEventArgs e)
     {
-        bool left = GetAsyncKeyState(37) != 0, up = GetAsyncKeyState(38) != 0, right = GetAsyncKeyState(39) != 0, down = GetAsyncKeyState(40) != 0;
+        //bool left = GetAsyncKeyState(37) != 0, up = GetAsyncKeyState(38) != 0, right = GetAsyncKeyState(39) != 0, down = GetAsyncKeyState(40) != 0;
+        // 261111Cl 変更: KeyDown の中で GetAsyncKeyState を P/Invoke していた → このイベントのキー (e.KeyCode) で判定。
+        //   GetAsyncKeyState は「前回の問い合わせ以降に押された」ビットも拾うため、Ctrl を押しただけで以前の矢印キー操作に反応することがあった。
+        //   矢印キーを 2 つ同時に押したときは、最後に押したキーだけが効く (旧: ↑ > ↓ > → > ← の優先で押されている全部を見ていた)
+        bool left = e.KeyCode is Keys.Left, up = e.KeyCode is Keys.Up, right = e.KeyCode is Keys.Right, down = e.KeyCode is Keys.Down;
 
         if (e.Control)//コントロールが押されているとき
         {
@@ -4177,7 +4201,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
             toolStripStatusLabel.Text = message;
 
-            Application.DoEvents();
+            //Application.DoEvents(); // 261111Cl コメントアウト: reportProgress は ip (コンストラクタで生成した Progress<T>) 経由でしか呼ばれず、UI スレッドへ非同期に Post 済み。再入の原因になるだけなので不要
 
             if (sleep != 0) Thread.Sleep(sleep);
         }
@@ -4207,7 +4231,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     #endregion
 
     #region Rotate, Pollalization処理
-    public void FlipRotate_Pollalization_Background(bool zoomReset = true)
+    //public void FlipRotate_Pollalization_Background(bool zoomReset = true)
+    /// <param name="calcFreq">261111Cl 追加: false なら強度頻度 (Ring.CalcFreq + SetFrequencyProfile) を計算しない。呼び出し側が直後に自分で計算する場合の二重計算を避ける</param>
+    public void FlipRotate_Pollalization_Background(bool zoomReset = true, bool calcFreq = true) // 261111Cl 変更: calcFreq を追加
     {
         if (Skip) return;
 
@@ -4297,11 +4323,21 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         //偏光補正ここまで
 
-        Ring.CalcFreq();
-        SetFrequencyProfile();//
+        //Ring.CalcFreq();
+        //SetFrequencyProfile();//
+        if (calcFreq) // 261111Cl 変更: 全画素を処理する重い計算なので、呼び出し側が後で計算するときは省く
+        {
+            Ring.CalcFreq();
+            SetFrequencyProfile();
+        }
 
-        pseudoBitmap.SrcValuesGray = [.. Ring.Intensity];
-        pseudoBitmap.SrcValuesGrayOriginal = [.. Ring.Intensity];
+        //pseudoBitmap.SrcValuesGray = [.. Ring.Intensity];
+        //pseudoBitmap.SrcValuesGrayOriginal = [.. Ring.Intensity];
+        // 261111Cl 変更: 全画素のコピーを 2 回 → 1 回にして両方に代入。どちらの配列も要素の書き換えは無い (PseudoBitmap のフィルタは新しい配列を返し、
+        //   SetOriginalGray は参照を戻すだけ。コンストラクタも同じ配列を両方に入れる設計)。Ring.Intensity とは別の配列のまま
+        double[] gray = [.. Ring.Intensity];
+        pseudoBitmap.SrcValuesGray = gray;
+        pseudoBitmap.SrcValuesGrayOriginal = gray;
 
         IntegralArea_Changed(this, EventArgs.Empty);
         if (zoomReset)
@@ -4318,71 +4354,149 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     }
     public void SetStasticalInformation(bool renewArea = true)
     {
+        #region 261111Cl 変更前
+        ////矩形の大きさ情報
+        //int left = Math.Max((int)(scalablePictureBox.AreaRectangle.X + 1), 0);
+        //int top = Math.Max((int)(scalablePictureBox.AreaRectangle.Y + 1), 0);
+        //int right = Math.Min((int)(scalablePictureBox.AreaRectangle.X + scalablePictureBox.AreaRectangle.Width), Ring.SrcImgSize.Width - 1);
+        //int bottom = Math.Min((int)(scalablePictureBox.AreaRectangle.Y + scalablePictureBox.AreaRectangle.Height), Ring.SrcImgSize.Height - 1);
+        //
+        //var sb = new StringBuilder();
+        //
+        //var data = new List<double>();
+        //for (int y = top; y <= bottom; y++)
+        //    for (int x = left; x <= right; x++)
+        //        data.Add(Ring.Intensity[Ring.SrcImgSize.Width * y + x]);
+        //
+        //if (data.Count == 0)
+        //{
+        //    textBoxStatisticsSelectedArea.Text = textBoxStatisticsSelectedAreaSequential.Text = "";
+        //    return;
+        //}
+        //
+        //sb.AppendLine($"Area:\t{data.Count.ToString()} pixels");
+        //
+        //double sumValue = data.Sum();
+        //sb.AppendLine($"Sum:\t{sumValue.ToString("g9")}");
+        //
+        //double averageValue = data.Average();
+        //sb.AppendLine($"Average:\t{averageValue.ToString("g9")}");
+        //
+        //double maxValue = data.Max();
+        //int maxIndex = data.FindIndex(d1 => d1 == maxValue);
+        //
+        //Point maxValuePoint = new(maxIndex % (right - left + 1) + left, maxIndex / (right - left + 1) + top);
+        //sb.AppendLine($"Max.:\t{maxValue.ToString("g9")} @ ({maxValuePoint.X}, {maxValuePoint.Y})");
+        //
+        //double minValue = data.Min();
+        //int minIndex = data.FindIndex(d1 => d1 == minValue);
+        //Point minValuePoint = new(minIndex % (right - left + 1) + left, minIndex / (right - left + 1) + top);
+        //sb.AppendLine($"Min.:\t{minValue.ToString("g9")} @ ({minValuePoint.X}, {minValuePoint.Y})");
+        //
+        //double variance = data.Average(d => d * d) - sumValue * sumValue / data.Count / data.Count;
+        //sb.AppendLine("Variance:\t" + variance.ToString("g9"));
+        //
+        //textBoxStatisticsSelectedArea.Text = sb.ToString();
+        //
+        //if (SequentialImageMode && renewArea)
+        //{
+        //    var dataList = new List<List<double>>();
+        //    sb.Clear();
+        //    for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
+        //    {
+        //        dataList.Add([]);
+        //        for (int y = top; y <= bottom; y++)
+        //            for (int x = left; x <= right; x++)
+        //                dataList[i].Add(Ring.SequentialImageIntensities[i][Ring.SrcImgSize.Width * y + x]);
+        //    }
+        //    sb.AppendLine("No.\tAverage\tMax.\tMin\tVariance");
+        //    for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
+        //    {
+        //        sumValue = dataList[i].Sum();
+        //        averageValue = dataList[i].Average();
+        //        variance = dataList[i].Average(d => d * d) - sumValue * sumValue / dataList[i].Count / dataList[i].Count;
+        //        maxValue = dataList[i].Max();
+        //        minValue = dataList[i].Min();
+        //        sb.AppendLine($"#{i.ToString("000")}\t{averageValue.ToString("g6")}\t{maxValue.ToString("g6")}\t{minValue.ToString("g6")}\t{variance.ToString("g6")}");
+        //
+        //
+        //    }
+        //    textBoxStatisticsSelectedAreaSequential.Text = sb.ToString();
+        //}
+        #endregion
+        // 261111Cl 変更: 矩形内を List<double> にコピーしてから LINQ を 7 パス (Sum/Average/Max/FindIndex/Min/FindIndex/Average) 回していた
+        //   → 行の span を 1 パスで走査して、和・二乗和・最大・最小と、それぞれ最初に現れた位置を集計 (FindIndex と同じく最初の位置)。
+        //   コピー (最大で画像全体 × 8 バイト) も無くなる。二乗和は元 (Average(selector) = 逐次和) と同じ順でビット一致。
+        //   和は元が SimdLinq の SIMD 和だったので、逐次和とは丸め誤差の範囲で異なりうる (表示は g9)。NaN は最大・最小の候補から除く
+        var area = scalablePictureBox.AreaRectangle;
+        if (!double.IsFinite(area.X) || !double.IsFinite(area.Y) || !double.IsFinite(area.Width) || !double.IsFinite(area.Height)) // 261111Cl 追加: NaN の矩形が (int) 変換で 0 になり、画素 (0,0) の統計を出していた
+        {
+            textBoxStatisticsSelectedArea.Text = textBoxStatisticsSelectedAreaSequential.Text = "";
+            return;
+        }
         //矩形の大きさ情報
-        int left = Math.Max((int)(scalablePictureBox.AreaRectangle.X + 1), 0);
-        int top = Math.Max((int)(scalablePictureBox.AreaRectangle.Y + 1), 0);
-        int right = Math.Min((int)(scalablePictureBox.AreaRectangle.X + scalablePictureBox.AreaRectangle.Width), Ring.SrcImgSize.Width - 1);
-        int bottom = Math.Min((int)(scalablePictureBox.AreaRectangle.Y + scalablePictureBox.AreaRectangle.Height), Ring.SrcImgSize.Height - 1);
+        int left = Math.Max((int)(area.X + 1), 0);
+        int top = Math.Max((int)(area.Y + 1), 0);
+        int right = Math.Min((int)(area.X + area.Width), Ring.SrcImgSize.Width - 1);
+        int bottom = Math.Min((int)(area.Y + area.Height), Ring.SrcImgSize.Height - 1);
+        int areaWidth = right - left + 1;
+
+        // 矩形内を行の順 (元の List への Add と同じ順) に 1 パスで集計する
+        (int count, double sum, double sumSq, double max, int maxIndex, double min, int minIndex) areaStatistics(double[] src)
+        {
+            int count = 0, maxIndex = -1, minIndex = -1;
+            double sum = 0, sumSq = 0, max = double.NaN, min = double.NaN;
+            if (areaWidth <= 0) return (0, 0, 0, max, maxIndex, min, minIndex);
+            for (int y = top; y <= bottom; y++)
+                foreach (var v in src.AsSpan(Ring.SrcImgSize.Width * y + left, areaWidth))
+                {
+                    sum += v;
+                    sumSq += v * v;
+                    if (maxIndex < 0 ? !double.IsNaN(v) : v > max) { max = v; maxIndex = count; }
+                    if (minIndex < 0 ? !double.IsNaN(v) : v < min) { min = v; minIndex = count; }
+                    count++;
+                }
+            return (count, sum, sumSq, max, maxIndex, min, minIndex);
+        }
 
         var sb = new StringBuilder();
 
-        var data = new List<double>();
-        for (int y = top; y <= bottom; y++)
-            for (int x = left; x <= right; x++)
-                data.Add(Ring.Intensity[Ring.SrcImgSize.Width * y + x]);
+        var (dataCount, sumValue, sumOfSquares, maxValue, maxIndex, minValue, minIndex) = areaStatistics(Ring.Intensity);
 
-        if (data.Count == 0)
+        if (dataCount == 0)
         {
             textBoxStatisticsSelectedArea.Text = textBoxStatisticsSelectedAreaSequential.Text = "";
             return;
         }
 
-        sb.AppendLine($"Area:\t{data.Count.ToString()} pixels");
+        sb.AppendLine($"Area:\t{dataCount.ToString()} pixels");
 
-        double sumValue = data.Sum();
         sb.AppendLine($"Sum:\t{sumValue.ToString("g9")}");
 
-        double averageValue = data.Average();
+        double averageValue = sumValue / dataCount;
         sb.AppendLine($"Average:\t{averageValue.ToString("g9")}");
 
-        double maxValue = data.Max();
-        int maxIndex = data.FindIndex(d1 => d1 == maxValue);
-
-        Point maxValuePoint = new(maxIndex % (right - left + 1) + left, maxIndex / (right - left + 1) + top);
+        Point maxValuePoint = new(maxIndex % areaWidth + left, maxIndex / areaWidth + top);
         sb.AppendLine($"Max.:\t{maxValue.ToString("g9")} @ ({maxValuePoint.X}, {maxValuePoint.Y})");
 
-        double minValue = data.Min();
-        int minIndex = data.FindIndex(d1 => d1 == minValue);
-        Point minValuePoint = new(minIndex % (right - left + 1) + left, minIndex / (right - left + 1) + top);
+        Point minValuePoint = new(minIndex % areaWidth + left, minIndex / areaWidth + top);
         sb.AppendLine($"Min.:\t{minValue.ToString("g9")} @ ({minValuePoint.X}, {minValuePoint.Y})");
 
-        double variance = data.Average(d => d * d) - sumValue * sumValue / data.Count / data.Count;
+        double variance = sumOfSquares / dataCount - sumValue * sumValue / dataCount / dataCount;
         sb.AppendLine("Variance:\t" + variance.ToString("g9"));
 
         textBoxStatisticsSelectedArea.Text = sb.ToString();
 
         if (SequentialImageMode && renewArea)
         {
-            var dataList = new List<List<double>>();
             sb.Clear();
-            for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
-            {
-                dataList.Add([]);
-                for (int y = top; y <= bottom; y++)
-                    for (int x = left; x <= right; x++)
-                        dataList[i].Add(Ring.SequentialImageIntensities[i][Ring.SrcImgSize.Width * y + x]);
-            }
             sb.AppendLine("No.\tAverage\tMax.\tMin\tVariance");
             for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
             {
-                sumValue = dataList[i].Sum();
-                averageValue = dataList[i].Average();
-                variance = dataList[i].Average(d => d * d) - sumValue * sumValue / dataList[i].Count / dataList[i].Count;
-                maxValue = dataList[i].Max();
-                minValue = dataList[i].Min();
+                (dataCount, sumValue, sumOfSquares, maxValue, _, minValue, _) = areaStatistics(Ring.SequentialImageIntensities[i]);
+                averageValue = sumValue / dataCount;
+                variance = sumOfSquares / dataCount - sumValue * sumValue / dataCount / dataCount;
                 sb.AppendLine($"#{i.ToString("000")}\t{averageValue.ToString("g6")}\t{maxValue.ToString("g6")}\t{minValue.ToString("g6")}\t{variance.ToString("g6")}");
-
-
             }
             textBoxStatisticsSelectedAreaSequential.Text = sb.ToString();
         }

@@ -15,8 +15,10 @@ IPAnalyzer преобразует кольца Дебая–Шеррера, за
 
 ### Требования
 
+Эти требования относятся к сборкам .NET 11 из данного исходного кода. Для опубликованных выпусков используйте требования к среде выполнения, указанные для соответствующего выпуска.
+
 - ОС: Windows (рекомендуется Windows 11)
-- Необходимая среда выполнения: .NET Desktop Runtime 10.0
+- Необходимая среда выполнения: .NET Desktop Runtime 11.0
 - Рекомендуемая память: 16 GB или более
 - Рекомендуемый процессор: 8 ядер или более
 
@@ -26,7 +28,7 @@ IPAnalyzer преобразует кольца Дебая–Шеррера, за
 
 ### Установка
 
-1. Заранее установите [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0).
+1. Заранее установите [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0).
 2. Скачайте `IPAnalyzerSetup.msi` со [страницы релизов](https://github.com/seto77/IPAnalyzer/releases) на GitHub.
 3. Запустите `IPAnalyzerSetup.msi` для установки.
 

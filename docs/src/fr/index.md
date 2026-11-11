@@ -32,9 +32,11 @@
 
 ## Configuration requise
 
+Ces exigences concernent les builds .NET 11 issus de ces sources. Pour les versions publiées, suivez les exigences de runtime indiquées pour la version concernée.
+
 | Élément | Minimum | Recommandé |
 |------|---------|-------------|
-| OS | Windows avec [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) | Windows 11 |
+| OS | Windows avec [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) | Windows 11 |
 | Mémoire | - | 16 Go ou plus |
 | CPU | - | 8 cœurs ou plus (les intensités d'image sont conservées en double précision et le traitement est multithreadé) |
 

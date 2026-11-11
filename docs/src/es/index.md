@@ -32,9 +32,11 @@
 
 ## Requisitos del sistema
 
+Estos requisitos se aplican a las compilaciones .NET 11 de este código fuente. Para las versiones publicadas, siga los requisitos de runtime indicados para esa versión.
+
 | Elemento | Mínimo | Recomendado |
 |------|---------|-------------|
-| OS | Windows con [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) | Windows 11 |
+| OS | Windows con [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) | Windows 11 |
 | Memoria | - | 16 GB o más |
 | CPU | - | 8+ núcleos (las intensidades de imagen se almacenan en doble precisión y el procesamiento es multihilo) |
 

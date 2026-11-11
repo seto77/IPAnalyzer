@@ -15,8 +15,10 @@ Main features:
 
 ### Requirements
 
+These requirements apply to .NET 11 builds from this source tree. For published releases, follow the runtime requirement stated for that release.
+
 - OS: Windows (Windows 11 recommended)
-- Required runtime: .NET Desktop Runtime 10.0
+- Required runtime: .NET Desktop Runtime 11.0
 - Recommended memory: 16 GB or more
 - Recommended CPU: 8 cores or more
 
@@ -26,7 +28,7 @@ The software is distributed under the MIT License.
 
 ### Installation
 
-1. Install [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) in advance.
+1. Install [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) in advance.
 2. Download `IPAnalyzerSetup.msi` from the GitHub [releases page](https://github.com/seto77/IPAnalyzer/releases).
 3. Run `IPAnalyzerSetup.msi` to install.
 

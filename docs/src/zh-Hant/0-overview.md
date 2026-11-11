@@ -15,8 +15,10 @@ IPAnalyzer 能將以成像板 (IP) 或 CCD/CMOS 偵測器記錄的 Debye–Scher
 
 ### 需求
 
+以下要求適用於由此原始碼建置的 .NET 11 版本。對於已發布的版本，請遵循該版本註明的執行階段要求。
+
 - 作業系統：Windows（建議使用 Windows 11）
-- 必要執行階段：.NET Desktop Runtime 10.0
+- 必要執行階段：.NET Desktop Runtime 11.0
 - 建議記憶體：16 GB 以上
 - 建議 CPU：8 核心以上
 
@@ -26,7 +28,7 @@ IPAnalyzer 能將以成像板 (IP) 或 CCD/CMOS 偵測器記錄的 Debye–Scher
 
 ### 安裝
 
-1. 請先安裝 [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0)。
+1. 請先安裝 [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0)。
 2. 從 GitHub [releases page](https://github.com/seto77/IPAnalyzer/releases) 下載 `IPAnalyzerSetup.msi`。
 3. 執行 `IPAnalyzerSetup.msi` 進行安裝。
 

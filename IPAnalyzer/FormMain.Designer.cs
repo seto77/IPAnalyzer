@@ -1785,10 +1785,11 @@ namespace IPAnalyzer
             ResumeLayout(false);
         }
 
-        private void SplitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        // 261106Ch: WFO3001 対応で既存ハンドラーを FormMain.cs へ移動。旧実装を記録。
+        // private void SplitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        // {
+        //     throw new NotImplementedException();
+        // }
         #endregion
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem toolStripMenuItemSaveImage;

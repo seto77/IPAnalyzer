@@ -31,9 +31,11 @@
 
 ## 動作環境
 
+以下は、このソースツリーから作成する .NET 11 ビルドの要件です。公開済みリリースについては、そのリリースに記載されたランタイム要件に従ってください。
+
 | 項目 | 最低 | 推奨 |
 |------|------|------|
-| OS | [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) が動作する Windows | Windows 11 |
+| OS | [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) が動作する Windows | Windows 11 |
 | メモリ | - | 16 GB 以上 |
 | CPU | - | 8 コア以上（強度は倍精度で保持され、処理はマルチスレッド化されています） |
 

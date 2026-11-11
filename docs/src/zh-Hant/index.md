@@ -32,9 +32,11 @@
 
 ## 系統需求
 
+以下要求適用於由此原始碼建置的 .NET 11 版本。對於已發布的版本，請遵循該版本註明的執行階段要求。
+
 | 項目 | 最低需求 | 建議需求 |
 |------|---------|-------------|
-| OS | 安裝 [.NET Desktop Runtime 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) 的 Windows | Windows 11 |
+| OS | 安裝 [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) 的 Windows | Windows 11 |
 | 記憶體 | - | 16 GB 以上 |
 | CPU | - | 8 核心以上（影像強度以雙精度保存，且處理採多執行緒） |
 

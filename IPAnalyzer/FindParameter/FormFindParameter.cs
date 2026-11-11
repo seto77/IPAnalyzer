@@ -502,7 +502,11 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
 
         //260413Cl 前回の gMain を破棄
         gMain?.Dispose();
+        var previousBmp = BmpMain; // 261111Cl 追加
         BmpMain = new Bitmap(pictureBoxMain.Width, pictureBoxMain.Height);
+        // 261111Cl 追加: 描画のたびに作る Bitmap の古いものを破棄していなかった。PictureBox が表示中のものは、DrawPictureBoxes で差し替えた後に破棄する
+        if (previousBmp != null && !ReferenceEquals(previousBmp, pictureBoxMain.Image))
+            previousBmp.Dispose();
         gMain = Graphics.FromImage(BmpMain);
         gMain.SmoothingMode = SmoothingMode.AntiAlias;
         gMain.Clear(Color.White);
@@ -520,7 +524,11 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
             DrawProfile_Fitting();//フィッティング曲線
             DrawGradiation();//目盛りの描画
 
+            //pictureBoxMain.Image = BmpMain;
+            var shownImage = pictureBoxMain.Image; // 261111Cl 変更: 差し替えた後に、それまで表示していた (この画面で作った) Bitmap を破棄
             pictureBoxMain.Image = BmpMain;
+            if (shownImage != null && !ReferenceEquals(shownImage, BmpMain))
+                shownImage.Dispose();
         }
         else
         {
@@ -641,8 +649,16 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
             if (dp[n].SourceProfile == null) continue;
             using var pen = new Pen(Color.FromArgb(dp[n].ColorARGB.Value), 1);
             var pt = dp[n].SourceProfile.Pt;
-            for (int i = 0; i < pt.Count - 1; i++)
-                gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
+            //for (int i = 0; i < pt.Count - 1; i++)
+            //    gMain.DrawLine(pen, ConvToPicBoxCoord(pt[i]), ConvToPicBoxCoord(pt[i + 1]));
+            // 261111Cl 変更: 点ごとの DrawLine → 点列を 1 回変換して DrawLines (線の継ぎ目は Pen の LineJoin で結ばれる)
+            if (pt.Count > 1)
+            {
+                var points = new PointF[pt.Count];
+                for (int i = 0; i < points.Length; i++)
+                    points[i] = ConvToPicBoxCoord(pt[i]);
+                gMain.DrawLines(pen, points);
+            }
         }
     }
 
@@ -1645,7 +1661,8 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         //まず各楕円の中心位置および各楕円の平均半径を求める。
         if (ellipses == null) return;
         List<PointD> EllipseCenter = [];
-        List<double> Radius = [];
+        // List<double> Radius = []; // (261106Ch) Previous growable empty list.
+        List<double> Radius = [with(capacity: ellipses.Count)]; // (261106Ch) One radius is appended for every input ellipse.
         PointD p = new PointD();
         for (int i = 0; i < ellipses.Count; i++)
         {
