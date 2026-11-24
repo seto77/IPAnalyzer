@@ -498,7 +498,7 @@ mm 열은 피팅된 위치를 표시합니다. 행을 더블클릭
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
     <value>읽기 전용: 마지막 최적화에서 얻은 구면 휨
-보정을 역반지름 1/R(per mm)로 표시.</value>
+보정을 역반지름 1/R(per m)로 표시.</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
     <value>Secondary 빔 중심(직접 스폿) Y 위치(픽셀)
@@ -788,7 +788,7 @@ Secondary 오프셋 옆에 참고용으로 표시됩니다.</value>
 정밀화에서 자유 매개변수로 포함됩니다.</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
-    <value>초기 구면 휨 보정을 역반지름 1/R(per mm)로
+    <value>초기 구면 휨 보정을 역반지름 1/R(per m)로
 표시합니다. 휘어진 검출기/IP를 보정하며,
 0은 평평함을 의미합니다.</value>
   </data>
@@ -864,7 +864,7 @@ Secondary 이미지를 대상으로 합니다(유연 모드).</value>
     <value>단위: 파장은 Å(0.1 nm).</value>
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
-    <value>구면 휨 보정을 역반지름 1/R(per mm)로 표시,
+    <value>구면 휨 보정을 역반지름 1/R(per m)로 표시,
 0 = 평평한 검출기.</value>
   </data>
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">

@@ -863,8 +863,8 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>線幅</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value>(右/左クリック: 制御点の追加/削除  
-ダブルクリック: マスク域確定)</value>
+    <value>(シーケンシャル画像・方位角分割解析のとき)</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(右/左クリック: 制御点の追加/削除   ダブルクリック: マスク域確定)…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>マスクの引継ぎ</value>

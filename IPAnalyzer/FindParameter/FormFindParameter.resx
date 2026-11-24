@@ -2425,7 +2425,7 @@ the right). Vertical scale auto-adjusts.</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
     <value>Read-only: refined spherical-bending correction as
-inverse radius 1/R (per mm) from the last optimization.</value>
+inverse radius 1/R (per m) from the last optimization.</value>
   </data>
   <data name="&gt;&gt;label82.Parent" xml:space="preserve">
     <value>groupBoxOption</value>
@@ -6549,7 +6549,7 @@ a free parameter in the refinement.</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
     <value>Initial spherical-bending correction as
-inverse radius 1/R (per mm). Corrects
+inverse radius 1/R (per m). Corrects
 for a curved detector/IP; 0 means flat.</value>
   </data>
   <data name="label66.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -7309,7 +7309,7 @@ converge further at the cost of time.</value>
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
     <value>Spherical-bending correction as inverse
-radius 1/R (per mm); 0 = flat detector.</value>
+radius 1/R (per m); 0 = flat detector.</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

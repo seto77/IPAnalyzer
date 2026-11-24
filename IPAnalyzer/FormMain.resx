@@ -3129,8 +3129,14 @@ on the image by holding CTRL and right-dragging.</value>
     <value>Intensity table: show a grid of the numeric intensity
 values of the pixels around the current beam center.</value>
   </data>
+  <data name="toolStripButtonIntensityTable.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 6</value>
+  </data>
+  <data name="toolStripSeparator16.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripButtonAutoProcedure.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 9.75pt</value>
@@ -3598,6 +3604,9 @@ or 270 degrees before analysis.</value>
   </data>
   <data name="ngenCompileToolStripMenuItem.Text" xml:space="preserve">
     <value>Ngen Compile</value>
+  </data>
+  <data name="ngenCompileToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="clearRegistrycheckAndRestartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 24</value>

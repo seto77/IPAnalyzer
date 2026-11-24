@@ -354,8 +354,8 @@
     <value>Distanza pellicola</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (clic sx/dx: aggiungi/elimina punti,
- doppio clic: imposta maschera)</value>
+    <value>(per immagine sequenziale o divisione azimutale)</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(clic sx/dx: aggiungi/elimina punti,  do…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>Spot mascherati</value>

@@ -354,8 +354,8 @@
     <value>底片距離</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (左/右鍵：新增/刪除點，
- 雙擊：設定遮罩)</value>
+    <value>（用於連續影像或方位角分割）</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(左/右鍵：新增/刪除點，  雙擊：設定遮罩)…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>遮罩斑點</value>

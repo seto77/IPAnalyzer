@@ -354,8 +354,8 @@
     <value>胶片距离</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (左/右击：添加/删除点，
- 双击：设置掩模)</value>
+    <value>（用于连续图像或方位角分割）</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(左/右击：添加/删除点，  双击：设置掩模)…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>已掩蔽斑点</value>

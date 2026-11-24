@@ -528,7 +528,7 @@ ajusta automaticamente.</value>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
     <value>Somente leitura: correção de curvatura
 esférica refinada como raio inverso 1/R (por
-mm) da última otimização.</value>
+m) da última otimização.</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
     <value>Posição Y do centro do feixe (ponto direto)
@@ -871,7 +871,7 @@ parâmetro livre no refinamento.</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
     <value>Correção de curvatura esférica inicial como
-raio inverso 1/R (por mm). Corrige um
+raio inverso 1/R (por m). Corrige um
 detector/IP curvo; 0 significa plano.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
@@ -957,7 +957,7 @@ de onda.</value>
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
     <value>Correção de curvatura esférica como raio
-inverso 1/R (por mm); 0 = detector plano.</value>
+inverso 1/R (por m); 0 = detector plano.</value>
   </data>
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
     <value>Mostra um diagrama esquemático ilustrando cada

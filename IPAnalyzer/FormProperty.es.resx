@@ -354,8 +354,8 @@
     <value>Distancia de película</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (clic izq./der.: añadir/eliminar puntos,
- doble clic: definir máscara)</value>
+    <value>(para imagen secuencial o división azimutal)</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(clic izq./der.: añadir/eliminar puntos,…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>Puntos enmascarados</value>

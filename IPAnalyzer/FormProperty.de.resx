@@ -354,8 +354,8 @@
     <value>Filmabstand</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (L/R-Klick: Punkte hinzufügen/löschen,
- Doppelklick: Maske setzen)</value>
+    <value>(bei Bildserie oder azimutaler Unterteilung)</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(L/R-Klick: Punkte hinzufügen/löschen,  …") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>Maskierte Spots</value>

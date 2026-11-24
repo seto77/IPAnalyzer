@@ -354,8 +354,8 @@
     <value>Расстояние плёнки</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (Л/П клик: добавить/удалить точки,
- двойной клик: задать маску)</value>
+    <value>(для серии изображений или азимутального деления)</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(Л/П клик: добавить/удалить точки,  двой…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>Маскированные рефлексы</value>

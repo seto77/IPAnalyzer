@@ -524,7 +524,7 @@ automatiquement.</value>
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
     <value>Lecture seule : correction de courbure sphérique
-affinée sous forme de rayon inverse 1/R (par mm)
+affinée sous forme de rayon inverse 1/R (par m)
 issue de la dernière optimisation.</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
@@ -853,7 +853,7 @@ dans l'affinement.</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
     <value>Correction de courbure sphérique initiale sous
-forme de rayon inverse 1/R (par mm). Corrige un
+forme de rayon inverse 1/R (par m). Corrige un
 détecteur/IP courbé ; 0 signifie plat.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
@@ -938,7 +938,7 @@ temps.</value>
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
     <value>Correction de courbure sphérique sous forme de
-rayon inverse 1/R (par mm) ; 0 = détecteur plat.</value>
+rayon inverse 1/R (par m) ; 0 = détecteur plat.</value>
   </data>
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
     <value>Affiche un schéma de principe illustrant chaque

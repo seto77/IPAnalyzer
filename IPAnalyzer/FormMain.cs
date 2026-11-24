@@ -1870,6 +1870,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         //ファイルを読み込む前に直前のイメージタイプの情報を保存
         FormProperty.SaveParameterForEachImageType(Ring.ImageType);
+        // 261124Cl 追加 (C19): 読込に失敗したとき前の画像で作業を続けられるよう、読込前の状態を退避する
+        var justBeforeIsImageReady = IsImageReady;
+        var justBeforeSequenceEnabled = toolStripButtonImageSequence.Enabled;
+        var justBeforeSequenceChecked = toolStripButtonImageSequence.Checked;
         IsImageReady = false;
         toolStripButtonImageSequence.Enabled = false;
         toolStripButtonImageSequence.Checked = false;
@@ -1890,6 +1894,11 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (!ImageIO.ReadImage(fn, flag))
         {
             SkipDrawing = false; //260712Cl 読込失敗時も描画を再開できるよう復帰 (旧: SkipDrawing が true のまま残っていた)
+            // 261124Cl 追加 (C19): 共有側 (Crystallography 620d8f2) は失敗時に Ring (連番データなど) を読込前へ戻すので、
+            //   アプリ側で変えた IsImageReady と連番ボタンも読込前の値へ戻す (旧: false / 無効のまま残り、積分などが動かなかった)
+            IsImageReady = justBeforeIsImageReady;
+            toolStripButtonImageSequence.Enabled = justBeforeSequenceEnabled;
+            toolStripButtonImageSequence.Checked = justBeforeSequenceChecked;
             return;
         }
 
@@ -3112,17 +3121,50 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
     private void webPageToolStripMenuItem_Click(object sender, EventArgs e)
     {
+        #region 261124Cl 変更前 (同梱 PDF を FormPDF で開いていた。失敗は黙殺)
+        //try
+        //{
+        //    // 260625Cl 変更: japaneseToolStripMenuItem は言語メニュー動的化で DropDownItems から外れ Checked が当てにならないため、現在カルチャで判定する。
+        //    // 旧: var fn = "\\doc\\IPAnalyzerManual(" + (japaneseToolStripMenuItem.Checked ? "ja" : "en") + ").pdf";
+        //    //260712Cl 補間文字列化 + AppContext.BaseDirectory 化 (Assembly.GetExecutingAssembly().Location は single-file 発行で空になる非推奨パターン)
+        //    var fn = $"IPAnalyzerManual({(Crystallography.SupportedCultures.Current.Name == "ja" ? "ja" : "en")}).pdf";
+        //    var f = new FormPDF(Path.Combine(AppContext.BaseDirectory, "doc", fn)) { Text = "IPAnalyzer manual" };
+        //    f.Show();
+        //
+        //}
+        //catch { }
+        #endregion
+
+        // 261124Cl 変更 (作者判断 2026-11-24, マニュアル M7): F1 と同じオンラインマニュアルを既定のブラウザで開く。
+        //   主画面の HelpPage ("1-main-window") ではなくマニュアルのトップを開きたいので、HelpPage を一時的に空にして
+        //   HelpUrlResolver (コンストラクタで登録) の「HelpPage が空」の分岐の URL (https://seto77.github.io/IPAnalyzer/ または /<lang>/) を得る
+        string url = null;
+        var helpPage = HelpPage;
         try
         {
-            // 260625Cl 変更: japaneseToolStripMenuItem は言語メニュー動的化で DropDownItems から外れ Checked が当てにならないため、現在カルチャで判定する。
-            // 旧: var fn = "\\doc\\IPAnalyzerManual(" + (japaneseToolStripMenuItem.Checked ? "ja" : "en") + ").pdf";
-            //260712Cl 補間文字列化 + AppContext.BaseDirectory 化 (Assembly.GetExecutingAssembly().Location は single-file 発行で空になる非推奨パターン)
-            var fn = $"IPAnalyzerManual({(Crystallography.SupportedCultures.Current.Name == "ja" ? "ja" : "en")}).pdf";
-            var f = new FormPDF(Path.Combine(AppContext.BaseDirectory, "doc", fn)) { Text = "IPAnalyzer manual" };
-            f.Show();
-
+            HelpPage = "";
+            url = FormBase.HelpUrlResolver?.Invoke(this);
         }
-        catch { }
+        finally { HelpPage = helpPage; }
+        if (string.IsNullOrEmpty(url)) return;
+
+        try { Process.Start(new ProcessStartInfo(url) { UseShellExecute = true }); }
+        catch (Exception ex)
+        {
+            MessageBox.Show(Crystallography.Localization.Loc(
+                en: "Could not open the online manual in the web browser.\n",
+                ja: "オンラインマニュアルを Web ブラウザで開けませんでした。\n",
+                de: "Das Online-Handbuch konnte nicht im Webbrowser geöffnet werden.\n",
+                fr: "Impossible d'ouvrir le manuel en ligne dans le navigateur web.\n",
+                es: "No se pudo abrir el manual en línea en el navegador web.\n",
+                pt: "Não foi possível abrir o manual online no navegador da web.\n",
+                it: "Impossibile aprire il manuale online nel browser web.\n",
+                ru: "Не удалось открыть онлайн-руководство в веб-браузере.\n",
+                zhHans: "无法在网页浏览器中打开在线手册。\n",
+                zhHant: "無法在網頁瀏覽器中開啟線上手冊。\n",
+                ko: "웹 브라우저에서 온라인 매뉴얼을 열 수 없습니다.\n") + url + "\n\n" + ex.Message,
+                "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
     #endregion
 
@@ -3669,6 +3711,29 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         Cursor = Cursors.WaitCursor;
         toolStripSplitButtonGetProfile.Enabled = false;
         SetIntegralProperty();
+
+        // 261124Cl 追加 (C16, 作者判断 2026-11-24 推奨案 A): 方位角分割解析の扇形ごとのプロファイル (Ring.GetConcenrticProfilesBySector) は常に 2θ で
+        //   計算されるが、全体 (-whole) は今の設定 (Radial・d 値なども) で計算されるので、横軸が食い違っていた。
+        //   同心円積分 (Concentric) かつ横軸が角度 (2θ) のときだけ実行し、それ以外は知らせて中止する (中心検索・スポット検出の前に判定する)
+        if (toolStripMenuItemAzimuthalDivisionAnalysis.Checked && !(IP.ConcentricMode && IP.Mode == HorizontalAxis.Angle))
+        {
+            MessageBox.Show(Crystallography.Localization.Loc(
+                en: "Azimuthal Division Analysis can be run only with 'Concentric integration' and the 'Angle' (2θ) x-axis, because the sector profiles are always calculated in 2θ.\nThe analysis was not run. Choose 'Concentric integration' and 'Angle', or turn off Azimuthal Division Analysis.",
+                ja: "方位角分割解析は、「散乱角(2θ)積算」で横軸が「角度」のときだけ実行できます (扇形ごとのプロファイルは常に 2θ で計算されるため)。\n解析は実行されていません。「散乱角(2θ)積算」と「角度」を選ぶか、方位角分割解析をオフにしてください。",
+                de: "Die Azimutale Unterteilungsanalyse kann nur mit \"Konzentrische Integration\" und der x-Achse \"Winkel\" (2θ) ausgeführt werden, da die Sektorprofile immer in 2θ berechnet werden.\nDie Analyse wurde nicht ausgeführt. Wählen Sie \"Konzentrische Integration\" und \"Winkel\" oder schalten Sie die Azimutale Unterteilungsanalyse aus.",
+                fr: "L'Analyse par division azimutale ne peut être exécutée qu'avec « Intégration concentrique » et l'axe x « Angle » (2θ), car les profils par secteur sont toujours calculés en 2θ.\nL'analyse n'a pas été exécutée. Choisissez « Intégration concentrique » et « Angle », ou désactivez l'Analyse par division azimutale.",
+                es: "El Análisis de división azimutal solo se puede ejecutar con 'Integración concéntrica' y el eje x en 'Ángulo' (2θ), porque los perfiles por sector siempre se calculan en 2θ.\nEl análisis no se ha ejecutado. Elija 'Integración concéntrica' y 'Ángulo', o desactive el Análisis de división azimutal.",
+                pt: "A Análise de divisão azimutal só pode ser executada com 'Integração concêntrica' e o eixo x em 'Ângulo' (2θ), pois os perfis por setor são sempre calculados em 2θ.\nA análise não foi executada. Escolha 'Integração concêntrica' e 'Ângulo', ou desative a Análise de divisão azimutal.",
+                it: "L'Analisi a divisione azimutale può essere eseguita solo con 'Integrazione concentrica' e l'asse x su 'Angolo' (2θ), perché i profili per settore sono sempre calcolati in 2θ.\nL'analisi non è stata eseguita. Scegli 'Integrazione concentrica' e 'Angolo', oppure disattiva l'Analisi a divisione azimutale.",
+                ru: "«Анализ с азимутальным делением» можно выполнить только при «Концентрическое интегрирование» и оси x «Угол» (2θ), так как профили по секторам всегда вычисляются в 2θ.\nАнализ не выполнен. Выберите «Концентрическое интегрирование» и «Угол» или отключите «Анализ с азимутальным делением».",
+                zhHans: "“方位角分割分析”仅能在“同心积分”且 x 轴为“角度”(2θ) 时执行，因为各扇区的图谱始终按 2θ 计算。\n分析未执行。请选择“同心积分”和“角度”，或关闭“方位角分割分析”。",
+                zhHant: "「方位角分割分析」僅能在「同心積分」且 x 軸為「角度」(2θ) 時執行，因為各扇區的圖譜一律以 2θ 計算。\n分析未執行。請選擇「同心積分」和「角度」，或關閉「方位角分割分析」。",
+                ko: "'방위각 분할 분석'은 '동심 적분'에서 x축이 '각도'(2θ)일 때만 실행할 수 있습니다. 섹터별 프로파일은 항상 2θ로 계산되기 때문입니다.\n분석이 실행되지 않았습니다. '동심 적분'과 '각도'를 선택하거나 '방위각 분할 분석'을 끄십시오."),
+                toolStripMenuItemAzimuthalDivisionAnalysis.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            Cursor = Cursors.Default;
+            toolStripSplitButtonGetProfile.Enabled = true;
+            return;
+        }
 
         sw.Restart();
 
@@ -4596,6 +4661,18 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         double[] gray = [.. Ring.Intensity];
         pseudoBitmap.SrcValuesGray = gray;
         pseudoBitmap.SrcValuesGrayOriginal = gray;
+
+        // 261124Cl 追加 (C05, 作者判断 2026-11-24 推奨案 A): しきい値マスク (Ring.IsThresholdOver/Under) を、補正の済んだ Ring.Intensity で作り直す。
+        //   旧: しきい値欄の変更時と読込時 (反転・回転・補正の前の強度) にしか計算されず、連続画像でフレームを替えても前のフレームのマスクのままだった。
+        //   読込・反転・回転・背景・偏光の変更・フレーム切替はすべてここを通る。偏光補正オンのときは補正後の強度で判定するのでマスクが従来と少し変わる (作者了承済み)。
+        //   描画は直後の IntegralArea_Changed (SetMask → Draw) で 1 回だけ行うので、しきい値の計算の中の Draw は SkipDrawing で止める
+        if (FormProperty != null && (FormProperty.checkBoxThresholdMax.Checked || FormProperty.checkBoxThresholdMin.Checked))
+        {
+            var skipDrawing = SkipDrawing;
+            SkipDrawing = true;
+            try { FormProperty.checkBoxThreshold_CheckedChanged(this, EventArgs.Empty); }
+            finally { SkipDrawing = skipDrawing; }
+        }
 
         IntegralArea_Changed(this, EventArgs.Empty);
         if (zoomReset)

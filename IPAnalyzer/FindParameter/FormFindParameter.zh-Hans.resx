@@ -498,7 +498,7 @@
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
     <value>只读：上次优化得到的精修球面弯曲
-校正，以曲率半径倒数 1/R（每 mm）表示。</value>
+校正，以曲率半径倒数 1/R（每 m）表示。</value>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionY.ToolTip" xml:space="preserve">
     <value>次图像束中心（直射斑）的 Y 位置，
@@ -786,7 +786,7 @@
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
     <value>初始球面弯曲校正，以曲率半径倒数
-1/R（每 mm）表示。用于校正弯曲的
+1/R（每 m）表示。用于校正弯曲的
 探测器/IP；0 表示平面。</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
@@ -861,7 +861,7 @@
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
     <value>球面弯曲校正，以曲率半径倒数
-1/R（每 mm）表示；0 = 平面探测器。</value>
+1/R（每 m）表示；0 = 平面探测器。</value>
   </data>
   <data name="buttonSchematicDiagram.ToolTip" xml:space="preserve">
     <value>显示一张示意图，说明各几何参数

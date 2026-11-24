@@ -462,7 +462,7 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
 初期値。2枚目画像の検出器のビーム垂直からの傾き量です。</value>
   </data>
   <data name="numericalTextBoxSphericalRadius.ToolTip" xml:space="preserve">
-    <value>球面湾曲補正の初期値で、曲率半径の逆数 1/R (1/mm)で
+    <value>球面湾曲補正の初期値で、曲率半径の逆数 1/R (1/m)で
 入力します。湾曲した検出器/IPを補正し、0で平面です。</value>
   </data>
   <data name="textBoxTiltCorrectionSecondaryPhi.ToolTip" xml:space="preserve">
@@ -546,7 +546,7 @@ Secondaryプロファイルとリングの描画色を選択できます。</val
   </data>
   <data name="numericalTextBoxRefinedSphericalRadius.ToolTip" xml:space="preserve">
     <value>読み取り専用。直近の最適化で得られた
-球面湾曲補正(曲率半径の逆数1/R, 1/mm)の結果値。</value>
+球面湾曲補正(曲率半径の逆数1/R, 1/m)の結果値。</value>
   </data>
   <data name="textBoxRefinedSecondaryTau.ToolTip" xml:space="preserve">
     <value />
@@ -639,7 +639,7 @@ Primary検出器の傾き方位角φ(度)の結果値。</value>
     <value />
   </data>
   <data name="label75.ToolTip" xml:space="preserve">
-    <value>球面湾曲補正(曲率半径の逆数 1/R, 1/mm)。0で平面検出器。</value>
+    <value>球面湾曲補正(曲率半径の逆数 1/R, 1/m)。0で平面検出器。</value>
   </data>
   <data name="label71.Text" xml:space="preserve">
     <value>傾き補正項</value>

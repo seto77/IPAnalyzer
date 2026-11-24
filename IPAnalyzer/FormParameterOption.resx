@@ -152,7 +152,7 @@ when saving or loading this parameter file.</value>
   </data>
   <data name="checkBoxSphericalCorrection.ToolTip" xml:space="preserve">
     <value>Include the spherical-bending correction (inverse
-radius, 1/mm) when saving or loading. Corrects
+radius, 1/m) when saving or loading. Corrects
 for a curved/bent imaging plate that is not flat.</value>
   </data>
   <data name="checkBoxGandolfiRadius.ToolTip" xml:space="preserve">

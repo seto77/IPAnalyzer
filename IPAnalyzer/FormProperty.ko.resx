@@ -354,8 +354,8 @@
     <value>필름 거리</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
-    <value> (좌/우 클릭: 점 추가/삭제,
- 더블 클릭: 마스크 설정)</value>
+    <value>(연속 이미지 또는 방위 분할의 경우)</value>
+    <comment>261124Cl 変更: 旧値はスプライン曲線の操作説明 ("(좌/우 클릭: 점 추가/삭제,  더블 클릭: 마스크 설정)…") になっていた (保存オプション枠の補足ラベル。英語は "(for sequential image or azimuthal division)")</comment>
   </data>
   <data name="checkBoxOmitSpots.Text" xml:space="preserve">
     <value>마스크된 스폿</value>

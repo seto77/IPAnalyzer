@@ -138,7 +138,7 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
     /// <summary>261111Cl 追加: フォルダ (サブフォルダ込み) に新しく現れたファイルを読み込む。ワーカースレッドで動き、UI は読まない</summary>
     private async Task WatchFolderAsync(string folder, WatchSettings settings, CancellationToken token)
     {
-        // FileSystemWatcher からの通知 (スレッドプールで来る)。(パス, 消えたか)。known (既知のファイル) はこのループだけが触る
+        // FileSystemWatcher からの通知 (スレッドプールで来る)。(パス, 消えたか)。known (既知のファイル) と retry (ロック中で再試行するファイル, 261124Cl) はこのループだけが触る
         var events = new ConcurrentQueue<(string path, bool removed)>();
         int rescanRequested = 0;
         using var signal = new SemaphoreSlim(0);
@@ -183,6 +183,10 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
 
             // 開始時点のファイルは読み込まない (旧と同じ)。通知と一覧でパスの大文字小文字が食い違っても二重に読まないよう、大文字小文字を区別しない
             var known = new HashSet<string>(Directory.GetFiles(folder, "*", SearchOption.AllDirectories), StringComparer.OrdinalIgnoreCase);
+            // 261124Cl 追加 (C35, 作者判断 2026-11-24 推奨案 B): 書き込み待ち (約 50 秒) の後もロック中で読めなかったファイル → 初めて扱った時刻 (UTC)。
+            //   既知 (known) には入れず、次の走査で再試行する。retryLimit を過ぎてもロック中なら諦めて既知に入れる (永久にロックされたファイルを延々と試さない)
+            var retry = new Dictionary<string, DateTime>(StringComparer.OrdinalIgnoreCase);
+            var retryLimit = TimeSpan.FromMinutes(10);
             var pollInterval = TimeSpan.FromSeconds(watcher != null ? 5 : 1);
             var sincePoll = Stopwatch.StartNew();
 
@@ -199,6 +203,7 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
                         if (ev.removed)
                         {
                             known.Remove(ev.path);
+                            retry.Remove(ev.path); // 261124Cl 追加 (C35): 消えたファイルは再試行しない
                             if (targetSet.Remove(ev.path))
                                 targets.RemoveAll(p => string.Equals(p, ev.path, StringComparison.OrdinalIgnoreCase));
                         }
@@ -213,21 +218,46 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
                             if (!known.Contains(f) && targetSet.Add(f))
                                 targets.Add(f);
                     }
+                    // 261124Cl 追加 (C35): 前の走査でロック中だったファイルも再試行する (通知も一覧も無い回でも試す)
+                    foreach (var f in retry.Keys)
+                        if (!known.Contains(f) && targetSet.Add(f))
+                            targets.Add(f);
 
                     foreach (var f in targets)
                     {
                         token.ThrowIfCancellationRequested();
-                        try { await LoadNewFileAsync(f, settings, token); }
+                        //try { await LoadNewFileAsync(f, settings, token); } // 261124Cl 変更前
+                        // 261124Cl 変更 (C35): 再試行のときは書き込み待ち (約 50 秒) をせず 1 回だけロックを確かめる (他の新しいファイルを待たせない)
+                        var isRetry = retry.TryGetValue(f, out var firstSeen);
+                        if (!isRetry) firstSeen = DateTime.UtcNow;
+                        var handled = true; // 例外で終わったファイルは従来どおり扱い済みとする
+                        try { handled = await LoadNewFileAsync(f, settings, token, waitForUnlock: !isRetry); }
                         catch (OperationCanceledException) when (token.IsCancellationRequested) { throw; }
                         catch (Exception ex) { Debug.WriteLine($"AutoProcedure load {f}: {ex}"); } // 1 つの失敗で他のファイルを止めない
-                        known.Add(f); // 旧と同じく、新しいファイルは (読めたかどうかによらず) 1 回だけ扱う
+                        //known.Add(f); // 旧と同じく、新しいファイルは (読めたかどうかによらず) 1 回だけ扱う // 261124Cl 変更前
+                        // 261124Cl 変更 (C35, 作者判断 2026-11-24 推奨案 B): 旧は「新しいファイルは (読めたかどうかによらず) 1 回だけ扱う」で、
+                        //   約 50 秒待ってもロック中だったファイルを既知に入れて以後読まなかった (書き込みの遅い検出器などで取りこぼす)。
+                        //   読み込んだ・条件 (番号・キーワード) に合わなかった・読めない形式・例外のファイルは従来どおり既知に入れて 1 回だけ扱う。
+                        //   ロック中で読めなかったファイルだけは再試行用 (retry) に残し、初めて扱ってから retryLimit (10 分) を過ぎたら諦めて既知に入れる
+                        if (handled || DateTime.UtcNow - firstSeen >= retryLimit)
+                        {
+                            retry.Remove(f);
+                            known.Add(f);
+                            if (!handled) Debug.WriteLine($"AutoProcedure: gave up {f} (still locked after {retryLimit.TotalMinutes} min)");
+                        }
+                        else
+                            retry[f] = firstSeen;
                     }
 
                     // 一覧をとったときは、旧の FileList = temp と同じく既知のファイルを一覧で置き換える (消えたファイルを忘れる)
                     if (listing != null)
                     {
                         known = new HashSet<string>(listing, StringComparer.OrdinalIgnoreCase);
+                        // 261124Cl 追加 (C35): 一覧から消えたファイルは再試行しない (targets を足す前の、一覧だけの known で判定する)
+                        foreach (var f in retry.Keys.Where(k => !known.Contains(k)).ToList())
+                            retry.Remove(f);
                         known.UnionWith(targets);
+                        known.ExceptWith(retry.Keys); // 261124Cl 追加 (C35): 再試行中のファイルは一覧にあっても既知に入れない
                     }
 
                     // 監視が止まっていたら (エラーの後など) 付け直しを試みる
@@ -249,14 +279,22 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
         }
     }
 
-    /// <summary>261111Cl 追加: 新しいファイル 1 つを、書き込みが終わるのを待ってから条件を確かめて読み込む (旧の DoWork の中身と同じ手順)</summary>
-    private async Task LoadNewFileAsync(string f, WatchSettings settings, CancellationToken token)
+    /// <summary>261111Cl 追加: 新しいファイル 1 つを、書き込みが終わるのを待ってから条件を確かめて読み込む (旧の DoWork の中身と同じ手順)。
+    ///   261124Cl 変更: ファイル名だけで決まる条件 (形式・番号・キーワード) を先に確かめてから、書き込みの終わりを待つ順にした</summary>
+    /// <param name="waitForUnlock">261124Cl 追加: false なら書き込み待ち (約 50 秒) をせず、ロックを 1 回だけ確かめる (再試行用)</param>
+    /// <returns>261124Cl 追加: ロック中で読めなかったときだけ false (呼び出し側が再試行する)。読み込んだとき・条件に合わず読まなかったときは true</returns>
+    //private async Task LoadNewFileAsync(string f, WatchSettings settings, CancellationToken token) // 261124Cl 変更前
+    private async Task<bool> LoadNewFileAsync(string f, WatchSettings settings, CancellationToken token, bool waitForUnlock = true) // 261124Cl 変更 (C35): 戻り値と waitForUnlock を追加
     {
-        for (int i = 0; i < 1000 && Miscellaneous.isFileExistsAndLocked(f); i++)
-            await Task.Delay(50, token);
-
-        if (Miscellaneous.isFileExistsAndLocked(f) || !ImageIO.IsReadable(Path.GetExtension(f)))
-            return;
+        // 261124Cl 変更 (C35): 読めない形式 (拡張子) と条件 (番号・キーワード) はファイル名だけで決まるので、ロックを待つ前に判定する。
+        //   ロック中のまま条件に合わないファイルを再試行に回さず、従来どおり 1 回で既知に入れるため。ロックの待ち・判定は下 (キーワードの判定の後) へ移した
+        //for (int i = 0; i < 1000 && Miscellaneous.isFileExistsAndLocked(f); i++)
+        //    await Task.Delay(50, token);
+        //
+        //if (Miscellaneous.isFileExistsAndLocked(f) || !ImageIO.IsReadable(Path.GetExtension(f)))
+        //    return;
+        if (!ImageIO.IsReadable(Path.GetExtension(f)))
+            return true;
 
         var filename = Path.GetFileNameWithoutExtension(f);
         if (settings.NumberMatching)//ナンバーマッチングの場合
@@ -273,10 +311,17 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
 
             //等号: 一致したら正解 / 不等号: 不一致なら正解。正解でなければ読み込まない
             if ((settings.Equal && !matched) || (settings.NotEqual && matched))
-                return;
+                return true; // 261124Cl 変更: 戻り値 (条件不一致は扱い済み)
         }
         if (settings.KeywordEnabled && !filename.Contains(settings.Keyword))
-            return;
+            return true; // 261124Cl 変更: 戻り値 (条件不一致は扱い済み)
+
+        // 261124Cl 変更 (C35, 上から移動): 書き込みが終わる (ロックが外れる) のを待つ。再試行 (waitForUnlock = false) のときは待たずに 1 回だけ確かめる。
+        //   ロック中のままなら false を返し、呼び出し側が再試行用に残す
+        for (int i = 0; waitForUnlock && i < 1000 && Miscellaneous.isFileExistsAndLocked(f); i++)
+            await Task.Delay(50, token);
+        if (Miscellaneous.isFileExistsAndLocked(f))
+            return false;
 
         //260529Cl 読み込み前にファイルサイズの変動が無くなるまで待機する
         long fileSize = -1, current;
@@ -288,6 +333,7 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
 
         token.ThrowIfCancellationRequested();
         formMain.ReadImage(f); // 別スレッドから呼ばれると、ReadImage の中で UI スレッドへ Invoke される
+        return true; // 261124Cl 追加
     }
 
     //string[] FileList = []; // 261111Cl コメントアウト: 旧の監視ループ (下) でだけ使っていた
