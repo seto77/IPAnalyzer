@@ -1,10 +1,10 @@
-<!-- 260601Cl: Reflected from ja/1-main-window.md (lead language: Japanese). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
 
 # Fenêtre principale
 
-La fenêtre principale est le premier écran affiché au démarrage d'IPAnalyzer. Elle réunit l'affichage de l'image de diffraction chargée, les opérations principales (recherche du centre, masquage des taches, unidimensionnalisation) ainsi que les points d'accès aux réglages des paramètres du détecteur.
+La fenêtre principale est le premier écran affiché au démarrage d'IPAnalyzer. Elle regroupe l'affichage de l'image de diffraction chargée, les opérations principales (recherche du centre, masquage des taches, réduction en une dimension) et les points d'accès aux réglages des paramètres du détecteur.
 
-La fenêtre se compose, grossièrement, des menus et de la barre d'outils en haut, de la zone d'affichage de l'image au centre, de la barre d'outils verticale à droite et de la zone de graphique en bas.
+La fenêtre se compose, en gros, des menus et de la barre d'outils en haut, de la zone d'affichage de l'image au centre, de la barre d'outils verticale à droite et de la zone des graphiques en bas.
 
 ![La fenêtre principale d'IPAnalyzer](../assets/cap-en-auto/FormMain.png)
 
@@ -12,114 +12,118 @@ La fenêtre se compose, grossièrement, des menus et de la barre d'outils en hau
 
 ### Affichage de l'image
 
-L'image chargée est affichée ici. Selon la position du pointeur de la souris, la zone située au-dessus de l'image indique les coordonnées réelles (mm), les coordonnées image (pix), la distance au centre R (mm), l'angle de diffusion 2θ, la valeur d, l'azimut χ et l'intensité. La marque × magenta indique la position de la tache directe (centre).
+L'image chargée est affichée ici. Selon la position du pointeur de la souris, la zone au-dessus de l'image indique les coordonnées réelles (mm), les coordonnées image (pix), la distance au centre R (mm), l'angle de diffusion 2θ, la valeur d, l'azimut χ et l'intensité. La croix × magenta indique la position du spot direct (centre).
 
-Les états des pixels sont indiqués par des couleurs distinctes.
+Les états des pixels sont affichés avec des couleurs distinctes.
 
 | Couleur | Signification |
 | --- | --- |
-| Cyan | Tache masquée |
-| Vert | Région exclue de l'intégration (définie dans Integral Region) |
-| Magenta | Région angulaire exclue de l'intégration (définie dans Integral Property) |
-| Bleu | Pixel sous le seuil d'intensité (défini dans Integral Region) |
+| Cyan | Tache (spot) masquée |
+| Vert | Région exclue de l'intégration (réglée dans Région d'intégration (Integral Region)) |
+| Magenta | Région angulaire exclue de l'intégration (réglée dans Propriété d'intégration (Integral Property)) |
+| Bleu | Pixel sous le seuil d'intensité (réglé dans Région d'intégration (Integral Region)) |
 | Rouge | Pixel au-dessus du seuil d'intensité |
 
 ### Opérations à la souris
 
 En mode normal :
 
-- Maintenir le bouton gauche enfoncé : recherche le centre de la tache à proximité.
-- Double-clic gauche : met à jour la position du centre vers le point cliqué.
-- Glisser avec le bouton droit : effectue un zoom sur la région sélectionnée.
-- Clic droit : effectue un zoom arrière.
+- Double-clic gauche : place le centre au point cliqué.
+- Clic du milieu : recherche le centre en partant du point cliqué.
+- Glisser droit : agrandit la région délimitée.
+- Clic droit : réduit l'affichage.
+- Ctrl + glisser droit : sélectionne la région rectangulaire utilisée pour les informations statistiques.
 
-En **Manual spot mode**, le clic gauche masque et le clic droit démasque. La forme et la taille du masque se règlent dans la barre d'outils et dans les propriétés.
+Le double-clic gauche et le clic du milieu ne fonctionnent que lorsque **Fixer le centre (Fix Center)** est désactivé.
+
+En **Mode manuel (Manual Mode)**, le clic gauche masque et le clic droit démasque. La forme et la taille du masque se règlent dans la barre d'outils et dans les propriétés.
 
 ### Vues auxiliaires et informations sur l'image
 
-À côté de la vue centrale se trouvent des affichages auxiliaires. Vous pouvez basculer entre **Whole image** et **Near center** : la vue de l'image entière marque la plage d'affichage actuelle par un cadre jaune, et la vue près du centre montre une image agrandie.
+À côté de la vue centrale se trouvent des affichages auxiliaires. Vous pouvez basculer entre **Image entière (Whole image)** et **Près du centre (Near center)** : la vue de l'image entière indique la plage d'affichage actuelle par un cadre jaune, et la vue près du centre montre une image agrandie.
 
-**Image Information** affiche la résolution de l'image, l'intensité maximale, l'intensité totale, les données d'en-tête, etc.
+**Informations sur l'image (Image Information)** indique la résolution de l'image, l'intensité maximale, l'intensité totale, les données d'en-tête, etc.
 
 ### Commandes de réglage de l'affichage
 
-Commandes qui ajustent l'apparence de l'image :
+Commandes qui règlent l'apparence de l'image :
 
-- **Gradient** : inverse la tonalité.
-- **Brightness scale** : logarithmique / linéaire.
-- **Color scale** : niveaux de gris / couleur.
-- **Scale line** : affichage des lignes d'échelle (aucune / grossière / moyenne / fine).
-- **Auto Contrast** / **Reset Contrast**, ainsi que l'intensité minimale/maximale explicite.
-- Boutons d'agrandissement (×1, ×2, ×4, ×1/2, ×1/4, ×1/8, ×1/16).
+- **Dégradé (Gradient)** : inverse les tons.
+- **Échelle de luminosité (Brightness scale)** : logarithmique / linéaire.
+- **Échelle de couleur (Color scale)** : niveaux de gris / couleur.
+- **Ligne d'échelle (Scale line)** : affichage des lignes d'échelle (aucune / grossière / moyenne / fine).
+- **Contraste auto. (Auto Contrast)** / **Réinit. contraste (Reset Contrast)**, et intensités minimale/maximale explicites.
+- Boutons de grossissement (×1, ×2, ×4, ×1/2, ×1/4, ×1/8, ×1/16).
 
 ## Vue inférieure
 
 La zone inférieure comporte trois graphiques/vues à onglets.
 
-- **Frequency of Intensity** : la distribution d'intensité de tous les pixels, en axes log–log. Zoomable à la souris.
-- **Converted Profile** : le profil de diffraction après unidimensionnalisation (Get Profile). Zoomable à la souris.
-- **Statistical Information** : statistiques pour une région rectangulaire sélectionnée (X1,Y1)–(X2,Y2). Lorsqu'une image séquentielle est chargée, les statistiques de la même région dans d'autres trames peuvent également être comparées.
+- **Fréquence d'intensité (Frequency of Intensity)** : la distribution des intensités de tous les pixels, en axes log–log. Agrandissable à la souris.
+- **Profil converti (Converted Profile)** : le profil de diffraction produit par **Obtenir le profil (Get Profile)**. Agrandissable à la souris.
+- **Informations statistiques (Statistical Information)** : statistiques de la région rectangulaire (X1,Y1)–(X2,Y2) sélectionnée par Ctrl + glisser droit sur l'image. Lorsqu'une image séquentielle est chargée, les statistiques de la même région dans les autres trames peuvent aussi être comparées.
 
 ## Menus
 
-La barre de menus se compose de **File / Tool / Property / Option / Language / Macro / Help**.
+La barre de menus se compose de **Fichier / Outil / Propriété / Option / Langue / Macro / Aide** (File / Tool / Property / Option / Language / Macro / Help).
 
-### File
+### Fichier (File)
 
-- **Read image** : ouvre une image de diffraction. Voir [Aperçu](0-overview.md) pour les formats pris en charge.
-- **Save image** : enregistre au format TIFF, PNG, CSV ou IPA. Le TIFF conserve les intensités de pixel d'origine, le PNG conserve l'affichage (luminosité, contraste, masque), et l'IPA est un format propriétaire corrigé de la distorsion (avec métadonnées).
-- **Read / Save parameter** : importe/exporte la longueur d'onde, la longueur de caméra, la taille de pixel, la correction d'inclinaison, la position du centre, etc. sous forme de fichier `.prm`.
-- **Read / Save / Clear mask** : importe/exporte un masque sous forme de fichier `.mas`, ou l'efface (le masque doit correspondre à la résolution de l'image courante).
-- **Close**.
+- **Lire l'image (Read image)** : ouvre une image de diffraction. Voir [Aperçu](0-overview.md) pour les formats pris en charge.
+- **Enregistrer l'image (Save image)** : enregistre au format TIFF, PNG, CSV ou IPA. Le TIFF stocke les intensités de pixel actuelles après traitement (après retournement/rotation, soustraction du fond et correction de polarisation), le PNG conserve l'affichage (luminosité, contraste, masque) et l'IPA est un format propriétaire corrigé des distorsions (avec métadonnées).
+- **Lire le paramètre / Enregistrer le paramètre (Read / Save parameter)** : importe/exporte la longueur d'onde, la longueur de caméra, la taille de pixel, la correction d'inclinaison, la position du centre, etc. sous forme de fichier `.prm`.
+- **Lire le masque / Enregistrer le masque / Effacer le masque (Read / Save / Clear mask)** : importe/exporte un masque sous forme de fichier `.mas`, ou l'efface (le masque doit avoir la même résolution que l'image actuelle).
+- **Fermer (Close)**.
 
-Les fichiers d'image, de paramètres et de masque peuvent également être chargés par glisser-déposer sur la fenêtre.
+Les fichiers d'image, de paramètres et de masque peuvent aussi être chargés par glisser-déposer sur la fenêtre.
 
-### Tool
+### Outil (Tool)
 
-- **Reset Frequency Profile** : efface le graphique de fréquence d'intensité (l'image est conservée).
-- **Calibrate Raxis Image**.
+- **Réinit. le profil de fréquence (Reset Frequency Profile)** : reconstruit le graphique de fréquence d'intensité de l'image actuelle avec la plage par défaut (l'image est conservée).
+- **Étalonner l'image R-AXIS (Calibrate Raxis Image)** : détermine une table de conversion d'intensité à partir de deux images R-AXIS (voir [Outils](3-tools.md)).
 
-### Property
+### Propriété (Property)
 
-Wave Source / Imaging Plate Condition / Integral Region / Integral Property / Manual Mask Mode / After "Get Profile" / Unrolled Image Option / Miscellaneous. Ces éléments ouvrent directement les onglets correspondants de la [fenêtre de propriétés](2-property-windows.md).
+Source de rayonnement (Wave Source) / Condition de l'écran photostimulable (Imaging Plate Condition) / Région d'intégration (Integral Region) / Propriété d'intégration (Integral Property) / Mode masque manuel (Manual Mask Mode) / Après « Obtenir le profil » (After "Get Profile") / Option d'image déroulée (Unrolled Image Option) / Divers (Miscellaneous). Ces éléments ouvrent directement les onglets correspondants de la [fenêtre de propriétés](2-property-windows.md).
 
 ### Option
 
-- **ToolTip** : active ou désactive les infobulles sur les boutons et les menus.
-- **Flip** : horizontalement / verticalement. **Rotate** : choisit un angle de rotation. Tous deux n'affectent que l'affichage ; les données de l'image chargée elles-mêmes ne sont pas modifiées.
-- **Ngen Compile** et **Clear registry** sont destinés au développement et au dépannage.
+- **Info-bulle (ToolTip)** : active ou désactive les info-bulles des boutons et des menus.
+- **Retourner (Flip)** : horizontalement / verticalement. **Pivoter (Rotate)** : choix d'un angle de rotation. Le retournement et la rotation s'appliquent aux données de l'image de travail et affectent donc aussi l'intégration et l'enregistrement d'image qui suivent (le fichier source sur le disque n'est pas modifié).
+- **Effacer le registre (Clear registry)** : élément de dépannage qui efface les réglages enregistrés. **Compilation Ngen (Ngen Compile)** n'a aucune fonction dans la version actuelle.
 
-### Language
+### Langue (Language)
 
-- Bascule entre **English** et **Japanese** (le réglage est enregistré dans le registre).
+- Sélectionne la langue d'affichage (11 langues). Après confirmation, l'application redémarre. Le réglage est enregistré dans le registre.
 
 ### Macro
 
-- **Editor** : ouvre l'éditeur de macros (voir [Outils](3-tools.md) / [Macro](5-macro/index.md)).
+- **Éditeur (Editor)** : ouvre l'éditeur de macros (voir [Outils](3-tools.md) / [Macro](5-macro/index.md)).
 
-### Help
+### Aide (Help)
 
-- **Program Updates**, **Hint**, **License**, **Version History**, **Web Page**.
+- **Mises à jour du programme (Program Updates)**, **Astuce (Hint)**, **Licence (License)**, **Historique des versions (Version History)**, **Aide (Help)** (ouvre le manuel PDF fourni).
+- Appuyez sur **F1** dans n'importe quelle fenêtre pour ouvrir la page correspondante de ce manuel en ligne.
 
 ## Barre d'outils d'opération
 
 Les principales opérations de traitement d'image (avec des options détaillées dans les menus déroulants) :
 
-- **Background** : soustraction d'une image de fond (configurée dans Background Option).
-- **Find Center** : détecte le centre du faisceau par ajustement Pseudo-Voigt 2D (plage de recherche de 8 px par défaut, définie dans Miscellaneous). Le menu déroulant propose également une détection du centre basée sur les anneaux.
-- **Fix center** : fixe la position du centre.
-- **Mask Spots** : détecte et masque les taches selon le critère moyenne ± écart-type × Deviation. Le menu déroulant inclut tout masquer, masque inverse, manuel, etc.
-- **Manual** : le mode de masquage manuel. Vous pouvez choisir la forme (cercle / rectangle) et la taille (8–256 px).
-- **Get Profile** : intègre l'image en un profil unidimensionnel. Prend en charge Concentric (basé sur 2θ) et Radial (basé sur l'azimut). Le menu déroulant configure la sélection Integral Property/Region, l'exécution ou non de la recherche du centre et du masquage des taches avant l'intégration, l'envoi vers PDIndexer, l'analyse par division azimutale, le traitement d'images séquentielles, etc.
+- **Fond (Background)** : ce bouton est désactivé dans la version actuelle. La soustraction d'une image de fond se règle dans l'onglet **Option de fond (Background Option)** de la fenêtre de propriétés.
+- **Trouver le centre (Find Center)** : détecte le centre du faisceau par ajustement d'une fonction Pseudo-Voigt 2D (la plage de recherche est de ±8 px autour du centre par défaut, réglée dans l'onglet Divers (Miscellaneous)). Lorsque des anneaux sont affichés avec **Tracer l'anneau (Draw ring)**, le centre est alors déterminé à partir de l'anneau.
+- **Fixer le centre (Fix Center)** : fixe la position du centre.
+- **Masquer les taches (Mask Spots)** : dans chaque bande radiale, les pixels dont l'intensité dépasse moyenne + écart-type × Deviation sont détectés comme taches et masqués avec leur voisinage. Le menu déroulant comprend notamment le masquage total, l'inversion du masque et le mode manuel.
+- **Mode manuel (Manual Mode)** : le mode de masquage manuel. Vous pouvez choisir la forme du masque (spot (cercle/rectangle) / cercle / rectangle / polygone / spline) et la taille du spot (demi-largeur).
+- **Obtenir le profil (Get Profile)** : intègre l'image en un profil unidimensionnel. Prend en charge l'intégration concentrique (Concentric, basée sur 2θ) et l'intégration radiale (Radial, basée sur l'azimut). Le menu déroulant règle notamment le choix de Propriété d'intégration/Région d'intégration (Integral Property/Region), la recherche du centre et le masquage des taches avant l'intégration, l'envoi vers PDIndexer, l'analyse par division azimutale et le traitement des images séquentielles.
 
 ## Barre d'outils (autres outils)
 
-La barre d'outils verticale à droite lance les différents outils. Voir [Outils](3-tools.md) pour les détails.
+La barre d'outils verticale de droite lance les différents outils. Voir [Outils](3-tools.md) pour plus de détails.
 
-- **Intensity Table**
-- **Auto Procedure**
-- **Draw ring**
-- **Find parameter** / **Find parameter (brute force)**
-- **Unroll**
-- **Circumferential Blur**
-- **Sequential**
+- **Table d'intensités (Intensity table)** (aucune fonction n'est attribuée à ce bouton dans la version actuelle ; pour la calibration de l'intensité R-AXIS, utilisez **Outil → Étalonner l'image R-AXIS (Tool → Calibrate Raxis Image)**)
+- **Procédure auto. (Auto procedure)**
+- **Tracer l'anneau (Draw ring)**
+- **Trouver paramètre (géométriquement) (Find parameter (geometrically))** / **Trouver paramètre (force brute) (Find parameter (brute force))**
+- **Dérouler l'image (Unroll image)**
+- **Flou circonférentiel (Circumferential blur)**
+- **Image séquentielle (Sequential image)**

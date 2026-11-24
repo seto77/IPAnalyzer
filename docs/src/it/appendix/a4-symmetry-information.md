@@ -1,30 +1,30 @@
-<!-- 260605Cl: Ported from ReciPro docs/src/en/2-symmetry-information.md into the IPAnalyzer appendix (reflected from ja/appendix/a4). The Symmetry Information window is a shared Crystallography.Controls component, identical to ReciPro. -->
+<!-- 261124Cl: Retranslated from en/appendix/a4-symmetry-information.md (UI labels follow the localized GUI). -->
 
-# Appendice A4. Symmetry Information
+# Appendice A4. Informazioni di simmetria
 
-**Symmetry Information** mostra informazioni dettagliate sulla simmetria del gruppo spaziale del cristallo selezionato e, inoltre, disegna i diagrammi schematici degli elementi di simmetria e delle posizioni generali nello stile delle *International Tables for Crystallography* Vol. A.
+**Informazioni di simmetria (Symmetry Information)** mostra informazioni dettagliate sulla simmetria del gruppo spaziale del cristallo selezionato, e inoltre disegna i diagrammi schematici degli elementi di simmetria e delle posizioni generali nello stile delle *International Tables for Crystallography* Vol. A.
 
-In IPAnalyzer, questa finestra secondaria si apre dalla **Crystal window** (il CrystalControl utilizzato in [4. Procedure pratiche](../4-procedures.md) per la calibrazione geometrica e in [6. Trova parametri (forza bruta)](../6-find-parameter.md)).
+In IPAnalyzer questa sottofinestra si apre dalla **finestra del cristallo** (il CrystalControl usato in [4. Procedure](../4-procedures.md) per la calibrazione geometrica e in [6. Trova parametri (forza bruta)](../6-find-parameter.md)).
 
-![Symmetry Information](../../assets/cap-en-auto/FormSymmetryInformation.png)
+![Informazioni di simmetria](../../assets/cap-en-auto/FormSymmetryInformation.png)
 
-La finestra è suddivisa in un'area di identità del gruppo spaziale (in alto a sinistra), un'area di calcolo/tabella con schede (in alto a destra) e due diagrammi schematici (in basso).
+La finestra è suddivisa in un'area di identificazione del gruppo spaziale (in alto a sinistra), un'area di calcolo/tabelle a schede (in alto a destra) e due diagrammi schematici (in basso).
 
 ---
 
 ## Scorciatoie da tastiera e mouse
 
-Questa finestra non ha combinazioni di tasti o mouse speciali. <kbd>F1</kbd> apre questa pagina del manuale e i due pulsanti **Copy** copiano negli appunti il diagramma degli elementi di simmetria e il diagramma delle posizioni generali (come bitmap, oppure come EMF vettoriale quando **EMF** è selezionato).
+Questa finestra non ha combinazioni speciali di tasti o mouse. <kbd>F1</kbd> apre questa pagina del manuale, e i due pulsanti **Copy** copiano negli appunti il diagramma degli elementi di simmetria e il diagramma delle posizioni generali (come bitmap, oppure come EMF vettoriale quando **EMF** è selezionato).
 
 ---
 
-## Identità del gruppo spaziale
+## Identificazione del gruppo spaziale
 
 Il pannello in alto a sinistra elenca, per il gruppo spaziale corrente:
 
 - **Number** (1–230) e l'indice di setting
-- **Crystal System**
-- **Point Group** : simboli di Hermann–Mauguin (HM) e Schoenflies (SF)
+- **Crystal System** (sistema cristallino)
+- **Point Group** : simboli di Hermann–Mauguin (HM) e di Schoenflies (SF)
 - **Space Group** : simbolo HM breve, simbolo HM completo, simbolo SF e **Hall symbol**
 
 ---
@@ -33,13 +33,13 @@ Il pannello in alto a sinistra elenca, per il gruppo spaziale corrente:
 
 ![Geometrics Calculation](../../assets/cap-en-auto/FormSymmetryInformation.panel2.tabControl.tabPageGeometrics.png)
 
-Inserire due piani cristallini \((h_1, k_1, l_1)\), \((h_2, k_2, l_2)\) oppure due indici di direzione \([u_1, v_1, w_1]\), \([u_2, v_2, w_2]\) per ottenere:
+Inserendo due piani cristallini \((h_1, k_1, l_1)\), \((h_2, k_2, l_2)\) o due indici di direzione \([u_1, v_1, w_1]\), \([u_2, v_2, w_2]\) si ottengono:
 
-- il d-spacing di ciascun piano / la lunghezza di ciascun asse,
+- la distanza interplanare di ciascun piano / la lunghezza di ciascun asse,
 - l'angolo tra i due piani (o i due assi),
-- **l'indice di direzione normale a entrambi i piani** e **l'indice di piano normale a entrambi gli assi**.
+- **l'asse di zona comune a entrambi i piani** (la direzione della loro intersezione) e **il piano che contiene entrambe le direzioni**.
 
-Questi calcoli rispettano la metrica della cella elementare corrente.
+Questi calcoli tengono conto della metrica della cella elementare corrente.
 
 ---
 
@@ -47,7 +47,7 @@ Questi calcoli rispettano la metrica della cella elementare corrente.
 
 ![Wyckoff Positions](../../assets/cap-en-auto/FormSymmetryInformation.panel2.tabControl.tabPageWyckoff.png)
 
-Elenca ogni posizione di Wyckoff con la sua molteplicità, lettera di Wyckoff, simmetria del sito e se si tratta di una posizione generale o speciale. Per i reticoli centrati, i vettori di traslazione del reticolo sono mostrati nella riga di intestazione.
+Elenca ogni posizione di Wyckoff con la sua molteplicità, la lettera di Wyckoff, la simmetria del sito e se si tratta di una posizione generale o speciale. Per i reticoli centrati, i vettori di traslazione del reticolo sono mostrati nella riga di intestazione.
 
 ---
 
@@ -55,30 +55,30 @@ Elenca ogni posizione di Wyckoff con la sua molteplicità, lettera di Wyckoff, s
 
 ![Conditions](../../assets/cap-en-auto/FormSymmetryInformation.panel2.tabControl.tabPageConditions.png)
 
-Le condizioni di riflessione derivanti dalla centratura del reticolo e dagli operatori di simmetria glide/screw.
+Le condizioni di riflessione derivanti dalla centratura del reticolo e dagli operatori di simmetria di slittamento/elicoidali.
 
 ---
 
 ## Diagrammi degli elementi di simmetria e delle posizioni generali
 
-![Symmetry-element & general-position diagrams](../../assets/cap-en-auto/FormSymmetryInformation.tableLayoutPanel1.png)
+![Diagrammi degli elementi di simmetria e delle posizioni generali](../../assets/cap-en-auto/FormSymmetryInformation.tableLayoutPanel1.png)
 
 I due pannelli in basso riproducono i diagrammi schematici di simmetria del gruppo spaziale nella notazione delle *International Tables for Crystallography* Vol. A.
 
-- **Symmetry elements (a sinistra)**: assi di rotazione/screw, piani di specchio/glide e centri di inversione/punti di rotoinversione sono disegnati con i simboli grafici convenzionali.
-  - Per il reticolo \(F\) del sistema cubico, viene mostrato solo un ottavo della cella elementare (solo il quadrante in alto a sinistra).
-- **General positions (a destra)**: le posizioni equivalenti generali sono rappresentate come cerchi (una virgola indica un'immagine speculare), annotate con le loro coordinate frazionarie.
-  - Solo per il sistema cubico, linee ausiliarie collegano i tre cerchi correlati da un asse di rotazione ternario.
+- **Elementi di simmetria (a sinistra)**: assi di rotazione/elicoidali, piani di specchio/di slittamento e centri di inversione/punti di rotoinversione sono disegnati con i simboli grafici convenzionali.
+  - Per il reticolo \(F\) del sistema cubico, viene mostrato solo un ottavo della cella elementare (solo il quadrante superiore sinistro).
+- **Posizioni generali (a destra)**: le posizioni equivalenti generali sono rappresentate come cerchi (una virgola indica un'immagine speculare), annotati con le loro coordinate frazionarie.
+  - Solo per il sistema cubico, linee ausiliarie collegano i tre cerchi legati da un asse di rotazione ternario.
 
 Controlli sotto i diagrammi:
 
-- **Direction** (`a` / `b` / `c`) : scegliere l'asse cristallino lungo cui proiettare.
-- **Copy** ciascun diagramma negli appunti come immagine vettoriale (**EMF**) o immagine raster (**BMP**); l'EMF può essere separato e modificato in PowerPoint.
+- **Direction** (`a` / `b` / `c`) : sceglie l'asse cristallino lungo il quale proiettare.
+- **Copy** copia ciascun diagramma negli appunti come immagine vettoriale (**EMF**) o immagine raster (**BMP**); l'EMF si può separare e modificare in PowerPoint.
 
 ---
 
-## Vedi anche
+## Vedere anche
 
-- [Inizio appendice](index.md)
-- [4. Procedure pratiche](../4-procedures.md) — calibrazione dei parametri geometrici tramite un cristallo di riferimento.
+- [Pagina iniziale dell'appendice](index.md)
+- [4. Procedure](../4-procedures.md) — calibrazione geometrica dei parametri mediante un cristallo di riferimento.
 - [6. Trova parametri (forza bruta)](../6-find-parameter.md)

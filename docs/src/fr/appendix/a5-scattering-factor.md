@@ -1,42 +1,44 @@
-<!-- 260605Cl: Ported from ReciPro docs/src/en/3-scattering-factor.md into the IPAnalyzer appendix (reflected from ja/appendix/a5). The Scattering Factor window is a shared Crystallography.Controls component, identical to ReciPro. -->
+<!-- 261124Cl: Retranslated from en/appendix/a5-scattering-factor.md (UI labels follow the localized GUI). -->
 
-# Annexe A5. Scattering Factor
+# Annexe A5. Facteur de diffusion
 
-**Scattering Factor** liste les plans cristallins autorisés (réflexions) du cristal sélectionné et calcule le **facteur de structure** ainsi que l'intensité de diffraction de chacun. Le type de rayonnement (rayons X, électrons ou neutrons) peut être commuté, de sorte que les facteurs de structure d'un même cristal peuvent être comparés entre différentes techniques de diffraction.
+**Scattering Factor** liste les plans cristallins autorisés (réflexions) du cristal sélectionné et calcule le **facteur de structure** et l'intensité de diffraction de chacun. Le type de rayonnement (rayons X, électrons ou neutrons) peut être changé, ce qui permet de comparer les facteurs de structure d'un même cristal entre techniques de diffraction.
 
-Dans IPAnalyzer, cette sous-fenêtre s'ouvre depuis la **Crystal window** (le CrystalControl utilisé dans [4. Practical procedures](../4-procedures.md) pour la calibration géométrique et dans [6. Find Parameter (brute force)](../6-find-parameter.md)).
+Dans la version actuelle, cette liste se trouve dans l'onglet **Réflexions (Reflections)** de **Interaction du faisceau (Beam interaction)** dans la fenêtre du cristal (les facteurs de diffusion atomique eux-mêmes se trouvent dans l'onglet **Facteurs de diffusion (Scattering factors)** de la même fenêtre). Les écrans et éléments décrits ci-dessous sont ceux de l'ancienne fenêtre Scattering Factor.
+
+Dans IPAnalyzer, cette sous-fenêtre s'ouvre depuis la **fenêtre Crystal (Crystal window)** (le CrystalControl utilisé dans [4. Procédures](../4-procedures.md) pour la calibration géométrique et dans [6. Recherche de paramètres (force brute)](../6-find-parameter.md)).
 
 ![Scattering Factor](../../assets/cap-en-auto/FormScatteringFactor.png)
 
-Les conditions de calcul se trouvent en haut de la fenêtre et la liste des réflexions en bas. La liste est recalculée immédiatement dès qu'une condition change.
+Les conditions de calcul se trouvent en haut de la fenêtre et la liste des réflexions en bas. La liste est recalculée immédiatement chaque fois qu'une condition change.
 
 ---
 
 ## Raccourcis clavier et souris
 
-Cette fenêtre n'a pas de combinaison de touches ou de souris particulière. <kbd>F1</kbd> ouvre cette page de manuel, et **Copy to clipboard** exporte la totalité du tableau des réflexions sous forme de texte collable dans un tableur.
+Cette fenêtre n'a pas de combinaison de touches ou de souris particulière. <kbd>F1</kbd> ouvre cette page du manuel, et **Copy to clipboard** exporte l'ensemble du tableau des réflexions sous forme de texte collable dans un tableur.
 
 ---
 
 ## Wave Length Control
 
-- **X-ray / Electron / Neutron** : les facteurs de diffusion atomique diffèrent selon le type de faisceau incident, ils se commutent donc ici.
-- Pour les **X-ray**, le choix de l'**Element** (matériau de l'anode) et de la raie caractéristique (Kα, etc.) règle automatiquement la longueur d'onde de ce rayonnement X caractéristique.
+- **X-ray / Electron / Neutron** : les facteurs de diffusion atomique diffèrent selon le type de faisceau incident ; on les change donc ici.
+- Pour **X-ray**, le choix de l'**Element** (matériau de l'anode) et de la raie caractéristique (Kα, etc.) règle automatiquement la longueur d'onde de ce rayonnement X caractéristique.
 
 ![Wave Length Control](../../assets/cap-en-auto/FormScatteringFactor.panel3.waveLengthControl1.png)
 
-- **Energy (keV)** et **Wavelength (Å)** sont liés l'un à l'autre.
-- Cette énergie ou cette longueur d'onde sert à calculer 2θ (l'angle de diffraction). Pour les rayons X, elle peut aussi être définie via la sélection de l'élément et du type de raie.
+- **Energy (keV)** et **Wavelength (Å)** sont liées l'une à l'autre.
+- Cette énergie ou cette longueur d'onde sert à calculer 2θ (l'angle de diffraction). Pour les rayons X, elle peut aussi être réglée par le choix de l'élément et du type de raie.
 
 ---
 
 ## Options d'affichage et de calcul
 
-- **Powder Diffraction Intensities (Bragg-Brentano Optics)** : calcule l'intensité relative en tant qu'intensité de diffraction de poudre (Bragg–Brentano), en incluant la multiplicité et le facteur de Lorentz–polarisation. Lorsque cette option est désactivée, l'intensité du facteur de structure est affichée.
-- **Hide equivalent planes** : regroupe les plans cristallographiquement équivalents en une seule entrée.
-- **Hide prohibited planes** : exclut les plans dont l'intensité est nulle selon les règles d'extinction.
-- **Unit (Å / nm)** : commute l'unité de longueur pour la distance d-spacing, etc.
-- **d-Spacing Cutoff** : exclut les réflexions dont la distance d-spacing est inférieure à cette valeur.
+- **Intensités de diffraction des poudres (optique de Bragg-Brentano) (Powder diffraction intensities (Bragg-Brentano optics))** : calcule l'intensité relative comme une intensité de diffraction de poudre (Bragg–Brentano), en incluant la multiplicité et le facteur de Lorentz-polarisation. Désactivée, elle affiche l'intensité du facteur de structure.
+- **Masquer les plans équivalents (Hide equivalent planes)** : regroupe en une seule entrée les plans cristallographiquement équivalents.
+- **Masquer les plans interdits (Hide prohibited planes)** : exclut les plans dont l'intensité est nulle d'après les règles d'extinction.
+- **Unit (Å / nm)** : change l'unité de longueur des distances interréticulaires, etc.
+- **d-Spacing Cutoff** : exclut les réflexions dont la distance interréticulaire est inférieure à cette valeur.
 
 ---
 
@@ -55,7 +57,7 @@ Chaque ligne correspond à une réflexion (ou à un groupe de plans équivalents
 | **F_inv** | partie imaginaire du facteur de structure |
 | **\|F\|** | amplitude du facteur de structure ($= \sqrt{F_\text{real}^2 + F_\text{inv}^2}$) |
 | **F^2** | intensité du facteur de structure ($\lvert F\rvert^2$) |
-| **Rel. Int. (%)** | intensité relative, la réflexion la plus forte étant fixée à 100 |
+| **Rel. Int. (%)** | intensité relative, la réflexion la plus forte valant 100 |
 
 ---
 
@@ -67,6 +69,6 @@ Chaque ligne correspond à une réflexion (ou à un groupe de plans équivalents
 
 ## Voir aussi
 
-- [Haut de l'annexe](index.md)
-- [4. Practical procedures](../4-procedures.md) — définition du cristal de référence dont les facteurs de structure sont calculés.
-- [6. Find Parameter (brute force)](../6-find-parameter.md)
+- [Page d'accueil de l'annexe](index.md)
+- [4. Procédures](../4-procedures.md) — définition du cristal de référence dont les facteurs de structure sont calculés.
+- [6. Recherche de paramètres (force brute)](../6-find-parameter.md)

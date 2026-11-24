@@ -1,45 +1,45 @@
-<!-- 260601Cl: Reflected from ja/5-macro/index.md (lead language: Japanese). Migrated from the wiki macro pages. -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
 
 # Macro
 
-IPAnalyzer offre una funzione **macro** che automatizza sequenze di operazioni tramite script in stile Python. È utile per lavori ripetitivi come la unidimensionalizzazione in blocco di molti file, la conversione di formato e l'analisi a divisione azimutale.
+IPAnalyzer offre una funzionalità di **macro** che automatizza sequenze di operazioni con script simili a Python. È utile per lavori ripetitivi come la riduzione a una dimensione in batch di molti file, la conversione di formato e l'analisi a divisione azimutale.
 
-## Apertura dell'editor
+## Aprire l'editor
 
-Apri l'editor di macro dal menu **Macro** → **Editor** nella finestra principale. Lì puoi modificare il codice ed eseguirlo, inclusa l'esecuzione passo dopo passo.
+Aprire l'editor delle macro dal menu **Macro** → **Editor** della finestra principale. Lì si può modificare il codice ed eseguirlo, anche passo passo.
 
-![Macro editor](../../assets/cap-en-auto/FormMacro.png)
+![Editor delle macro](../../assets/cap-en-auto/FormMacro.png)
 
 ## Linguaggio
 
-- Sono disponibili istruzioni di controllo come `for` / `if` / `while` / `def` / `class`, nonché le operazioni aritmetiche.
-- Il modulo `math` è preimportato, quindi puoi usare direttamente `math.pi` o `math.sin(...)` senza un'istruzione `import`.
-- `print()` non è disponibile. Per ispezionare i valori, usa l'**esecuzione passo passo** (Step by step) e osserva il cambiamento delle variabili nel pannello di debug.
-- Ogni operazione di IPAnalyzer viene chiamata da uno spazio dei nomi sotto l'oggetto radice `IPA` (ad es. `IPA.File`).
+- Sono disponibili istruzioni di controllo come `for` / `if` / `while` / `def` / `class`, e l'aritmetica.
+- Il modulo `math` è preimportato, quindi si possono usare direttamente `math.pi` o `math.sin(...)` senza un'istruzione `import`.
+- `print()` non è disponibile. Per ispezionare i valori, usare l'**esecuzione passo passo** (Step by step) e osservare la variazione delle variabili nel pannello di debug.
+- Ogni operazione di IPAnalyzer si richiama da uno spazio dei nomi sotto l'oggetto radice `IPA` (ad es. `IPA.File`).
 
 ## Spazi dei nomi IPA
 
 | Spazio dei nomi | Ruolo |
 |------|------|
-| `IPA.File` | Lettura/scrittura di file di immagine, parametri e maschere; finestre di dialogo per la selezione dei file |
-| `IPA.Wave` | Imposta la sorgente incidente e la lunghezza d'onda |
-| `IPA.Detector` | Imposta la geometria del rivelatore: centro, lunghezza di camera, dimensione del pixel, inclinazione |
-| `IPA.Image` | Controlla la scala di visualizzazione, il contrasto e l'area di vista |
-| `IPA.Mask` | Maschera spot e regioni |
-| `IPA.Profile` | Esegue la unidimensionalizzazione (Get Profile) e configura il salvataggio/invio |
-| `IPA.IntegralProperty` | Imposta l'intervallo, il passo e l'unità dell'integrazione concentrica / radiale |
-| `IPA.Sequential` | Seleziona / media / individua i frame di un'immagine multiframe |
-| `IPA.PDI` | Richiama macro su PDIndexer (integrazione tramite appunti) |
+| `IPA.File` | Lettura/scrittura di file di immagine, di parametri e di maschera; finestre di selezione dei file |
+| `IPA.Wave` | Impostazione della sorgente incidente e della lunghezza d'onda |
+| `IPA.Detector` | Impostazione della geometria del rivelatore: centro, lunghezza di camera, dimensione del pixel, inclinazione |
+| `IPA.Image` | Controllo della scala di visualizzazione, del contrasto e dell'area visualizzata |
+| `IPA.Mask` | Mascheratura di spot e regioni |
+| `IPA.Profile` | Esecuzione della riduzione a una dimensione (Ottieni profilo, Get Profile) e configurazione di salvataggio/invio |
+| `IPA.IntegralProperty` | Impostazione di intervallo, passo e unità dell'integrazione concentrica / radiale |
+| `IPA.Sequential` | Selezione / media / destinazione dei frame di un'immagine multiframe |
+| `IPA.PDI` | Richiamo di macro in PDIndexer (integrazione tramite appunti) |
 
-Consulta [Funzioni integrate](1-built-in-functions.md) per l'elenco dei membri e [Esempi](2-examples.md) per script concreti.
+Per l'elenco dei membri vedere [Funzioni integrate](1-built-in-functions.md), e per script concreti [Esempi](2-examples.md).
 
 !!! tip "La guida nell'editor è il riferimento autorevole"
-    La descrizione di ciascuna funzione/proprietà è mostrata nella guida dell'editor di macro ed è la fonte di verità aggiornata e allineata alla versione. Se questa pagina è in disaccordo con la guida nell'editor, fidati di quest'ultima.
+    La descrizione di ciascuna funzione/proprietà è mostrata nella guida dell'editor delle macro ed è la fonte aggiornata, che segue la versione. Se questa pagina non concorda con la guida nell'editor, fidarsi di quest'ultima.
 
 ## Macro di esempio
 
-Quando l'elenco delle macro salvate dell'editor è vuoto, vengono inserite automaticamente macro di esempio (loop di base, funzioni matematiche, impostazione della geometria, elaborazione in blocco, divisione azimutale, mascheratura, invio a PDIndexer, ecc.). Sono un punto di partenza facile da adattare.
+Attivare **Mostra esempi (Show samples)** nell'editor per elencare le macro di esempio in sola lettura (cicli di base, funzioni matematiche, impostazione della geometria, elaborazione batch, divisione azimutale, mascheratura, invio a PDIndexer, ecc.); disattivarlo per tornare alle proprie macro salvate. Sono un comodo punto di partenza da adattare.
 
-## Utilizzo con Auto Procedure
+## Uso con la Procedura automatica
 
-Le macro che scrivi possono essere salvate con un nome ed essere anche richiamate dall'elenco "execute after loading" di [Auto Procedure](../3-tools.md), in modo che una macro venga applicata automaticamente a ciascuna immagine in arrivo durante un esperimento.
+Le macro scritte si possono salvare con un nome e richiamare anche dall'elenco "da eseguire dopo il caricamento" della [Procedura automatica (Auto Procedure)](../3-tools.md), così che una macro venga applicata automaticamente a ogni immagine che arriva durante un esperimento.

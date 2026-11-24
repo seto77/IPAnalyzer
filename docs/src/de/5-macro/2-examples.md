@@ -1,11 +1,11 @@
-<!-- 260601Cl: Reflected from ja/5-macro/2-examples.md. Migrated from the wiki; updated the stale API name FindSpotsBeforeGetProfile -> MaskSpotsBeforeGetProfile. -->
+<!-- 261124Cl: Retranslated from en/5-macro/2-examples.md (UI labels follow the localized GUI). -->
 
 # Beispiele
 
-Die folgenden Beispiele können direkt in den Makro-Editor kopiert und eingefügt werden. Funktionen, die einen Dialog beinhalten, wie etwa `IPA.File.GetFileNames()`, öffnen beim Ausführen einen Dateiauswahl-Bildschirm. Einzelheiten zu den jeweiligen Mitgliedern finden Sie unter [Integrierte Funktionen](1-built-in-functions.md).
+Die folgenden Beispiele lassen sich direkt in den Makro-Editor kopieren und einfügen. Funktionen mit Dialog, etwa `IPA.File.GetFileNames()`, öffnen bei der Ausführung einen Dateiauswahlbildschirm. Einzelheiten zu den einzelnen Membern finden Sie unter [Integrierte Funktionen](1-built-in-functions.md).
 
 !!! tip
-    Wenn die Liste der gespeicherten Makros im Editor leer ist, wird automatisch eine umfangreichere Sammlung von Beispielen eingefügt (einfache Schleifen, mathematische Funktionen, Geometrie-Einrichtung, azimutale Unterteilung, Maskieren, Senden an PDIndexer usw.). Diese zuerst durchzusehen ist eine gute Möglichkeit, sich mit dem Stil vertraut zu machen.
+    Schalten Sie im Makro-Editor **Beispiele anzeigen (Show samples)** ein, um eine umfangreichere Sammlung schreibgeschützter Beispiele anzuzeigen (einfache Schleifen, mathematische Funktionen, Geometrieeinstellung, azimutale Unterteilung, Maskieren, Senden an PDIndexer usw.). Sie zuerst durchzusehen, ist ein guter Weg, den Stil kennenzulernen.
 
 ## Mehrere Dateien in 1D-Profile umwandeln und speichern (Einzelbild-Dateien)
 
@@ -29,7 +29,7 @@ for filename in filelist:
         IPA.Profile.SaveProfileAfterGetProfile = True
         # Set True to save as CSV (also SaveProfileAsTSV, SaveProfileAsPDI, ...)
         IPA.Profile.SaveProfileAsCSV = True
-        # Run Get Profile and save to the given file name
+        # Run Get Profile; the profile is saved as filename plus the format extension (.csv etc.)
         IPA.Profile.GetProfile(filename)
 ```
 
@@ -51,10 +51,12 @@ for filename in filelist:
         IPA.Profile.MaskSpotsBeforeGetProfile = True
         IPA.Profile.SaveProfileAfterGetProfile = True
         IPA.Profile.SaveProfileAsCSV = True
+        # Integrate one frame at a time (with the 'all images' setting every frame would be processed on each pass)
+        IPA.Sequential.Target_TopmostImage = True
         # Loop over the number of contained images (IPA.Sequential.Count)
         for num in range(IPA.Sequential.Count):
             # Select the frame
-            IPA.Sequential.SelectedIndex = num
+            IPA.Sequential.SelectIndex(num)
             # Run Get Profile and save with the frame number appended
             IPA.Profile.GetProfile(filename + '_' + str(num))
 ```

@@ -1,85 +1,81 @@
-<!-- 260601Cl: Reflected from ja/3-tools.md (lead language: Japanese). 260601Cl: auto-capture images embedded. -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
 
 # Outils
 
 Cette page décrit les outils auxiliaires lancés depuis la barre d'outils verticale à droite de la fenêtre principale, ou depuis les menus. Pour des procédures concrètes utilisant la calibration des paramètres et les macros, voir [Procédures](4-procedures.md).
 
-## Intensity Table
+## Étalonner l'image R-AXIS (Calibrate Raxis Image)
 
-Un outil qui compare les distributions d'intensité de deux images et optimise une table de conversion d'intensité. Il optimise 16 points de contrôle sur 300 itérations afin de faire correspondre les deux intensités tout en préservant l'intensité intégrée totale. Il est utilisé, par exemple, pour calibrer la réponse en intensité d'un détecteur.
+Ouvrez-le avec **Outil → Étalonner l'image R-AXIS (Tool → Calibrate Raxis Image)**. Indiquez deux images R-AXIS IV `.stl` de même taille ; l'outil optimise une table de conversion d'intensité de sorte que les deux intensités concordent. La table est représentée par des points de contrôle, et la somme de ses éléments est maintenue constante pendant l'optimisation. Le résultat est affiché sous forme de graphique. Il sert, par exemple, à calibrer la réponse en intensité d'un détecteur.
 
-![Intensity Table](../assets/cap-en-auto/FormCalibrateIntensity.png)
+Le bouton **Table d'intensités (Intensity table)** de la barre d'outils n'a aucune fonction attribuée dans la version actuelle.
 
-## Auto Procedure
+![Étalonner l'image R-AXIS (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
-Un outil qui surveille un dossier, charge automatiquement les nouvelles images et exécute une séquence d'opérations après le chargement.
+## Procédure auto. (Auto procedure)
 
-- **Watch and auto-load** : surveille le dossier spécifié (y compris les sous-dossiers) et lit un fichier une fois son écriture terminée. Les fichiers peuvent être filtrés par nom (correspondance de numéro, mot-clé).
-- **Auto execution** : exécute les étapes cochées, dans l'ordre, parmi Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro.
+Outil qui surveille un dossier, charge automatiquement les nouvelles images et exécute une séquence d'opérations après le chargement.
 
-Cela permet des usages tels que surveiller un dossier de sortie pendant une expérience et intégrer automatiquement chaque image à mesure qu'elle arrive. Voir [Procédures](4-procedures.md) pour les détails.
+- **Surveillance et chargement automatique** : surveille le dossier indiqué (sous-dossiers compris) et lit un fichier une fois son écriture terminée. Les fichiers peuvent être filtrés par nom (correspondance de numéro, mot-clé).
+- **Exécution automatique** : exécute dans l'ordre les étapes cochées parmi Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro.
 
-![Auto Procedure](../assets/cap-en-auto/FormAutoProcedure.png)
+Cela permet par exemple de surveiller un dossier de sortie pendant une expérience et d'intégrer automatiquement chaque image dès son arrivée. Voir [Procédures](4-procedures.md) pour plus de détails.
 
-## Draw Ring
+![Procédure auto. (Auto procedure)](../assets/cap-en-auto/FormAutoProcedure.png)
 
-Dessine un anneau à une distance, un angle ou une valeur d spécifiés sur l'image, en tenant compte de l'inclinaison de l'IP et de la distorsion des pixels. Cliquez sur l'un des **R (mm)** / **2θ (°)** / **d (Å)** pour choisir quelle valeur éditer ; les autres sont calculées automatiquement à partir de la longueur d'onde et de la longueur de caméra.
+## Tracer l'anneau (Draw Ring)
 
-![Draw Ring](../assets/cap-en-auto/FormDrawRing.png)
+Trace sur l'image un anneau à une distance, un angle ou une valeur d donnés, en tenant compte de l'inclinaison de l'IP et de la distorsion des pixels. Cliquez sur l'un des champs **R (mm)** / **2θ (°)** / **d (Å)** pour choisir la valeur à modifier ; les autres sont calculées automatiquement à partir de la longueur d'onde et de la longueur de caméra.
 
-## Unroll
+![Tracer l'anneau (Draw Ring)](../assets/cap-en-auto/FormDrawRing.png)
 
-Déplie l'image de diffraction depuis des coordonnées polaires centrées sur le spot direct vers des coordonnées cartésiennes (axe horizontal = angle, distance ou valeur d ; axe vertical = azimut). Cela se configure désormais non pas avec une fenêtre dédiée, mais avec le bouton **Unroll** de la barre d'outils et l'onglet **Unrolled Image Option** des propriétés. Le dépliage utilise le même algorithme de distribution d'intensité sous-pixel que l'unidimensionnalisation.
+## Dérouler l'image (Unroll)
 
-## Circumferential Blur
+Déplie l'image de diffraction, des coordonnées polaires centrées sur le spot direct vers des coordonnées cartésiennes (axe horizontal = angle de diffusion 2θ ; axe vertical = azimut). Ce déroulement se règle désormais non pas dans une fenêtre dédiée, mais avec le bouton **Dérouler l'image (Unroll image)** de la barre d'outils et l'onglet **Option d'image déroulée (Unrolled Image Option)** des propriétés. Le déroulement utilise le même algorithme de répartition d'intensité en sous-pixels que la réduction en une dimension.
 
-Un outil qui floute le motif d'anneaux le long de la direction circonférentielle (azimutale). Spécifiez un seul angle de flou et appliquez-le.
+## Flou circonférentiel (Circumferential Blur)
 
-![Circumferential Blur](../assets/cap-en-auto/FormBlurAngle.png)
+Outil qui floute le motif des anneaux dans la direction circonférentielle (azimutale). Indiquez un angle de flou unique et appliquez-le.
 
-## Sequential Image
+![Flou circonférentiel (Circumferential Blur)](../assets/cap-en-auto/FormBlurAngle.png)
 
-Un outil pour traiter les images multi-trames (HDF5 et similaires ; séries temporelles, séries de température, balayages en énergie synchrotron).
+## Image séquentielle (Sequential Image)
 
-- Sélectionnez une seule trame dans la liste des trames pour l'afficher, ou parcourez-les avec la trackbar.
-- Avec la **multi-sélection**, sélectionnez plusieurs trames et calculez leur **average** ou **sum**.
-- La cible de l'unidimensionnalisation peut être choisie parmi « toutes les trames / trames sélectionnées / uniquement la plus haute ».
-- Si chaque trame porte une information d'énergie, la longueur d'onde est mise à jour automatiquement.
+Outil de traitement des images multi-trames (NeXus (`.nxs`), TIFF multipages et similaires ; séries temporelles, séries en température, balayages en énergie au synchrotron).
 
-![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)
+- Sélectionnez une trame dans la liste pour l'afficher, ou parcourez-les avec le curseur.
+- Avec **Sélection multiple (Multi selection)**, sélectionnez plusieurs trames et calculez leur **Moyenne (Average)** ou leur **Sommation (Summation)**.
+- La cible de la réduction en une dimension peut être choisie parmi « toutes les trames / trames sélectionnées / seulement celle du premier plan ».
+- Si une trame contient une information d'énergie, la longueur d'onde est mise à jour lorsque cette trame est sélectionnée seule.
 
-## Save Image (IPA format)
+![Image séquentielle (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)
 
-Corrige l'inclinaison de l'IP φ, τ et la distorsion des pixels ξ, et enregistre l'image avec des pixels carrés à une résolution spécifiée. Des métadonnées telles que la longueur de caméra, la longueur d'onde et la position du centre sont également écrites, de sorte que l'image peut être transmise à d'autres traitements d'image tout en préservant l'information géométrique.
+## Enregistrer l'image (Save Image, format IPA)
 
-![Save Image](../assets/cap-en-auto/FormSaveImage.png)
+Corrige l'inclinaison de l'IP φ, τ et la distorsion des pixels ξ, et enregistre l'image avec des pixels carrés à une résolution donnée. Des métadonnées telles que la longueur de caméra, la longueur d'onde et la position du centre sont également écrites, si bien que l'image peut être transmise à d'autres traitements d'image en conservant l'information géométrique.
 
-## Find Parameter (Geometric)
+![Enregistrer l'image (Save Image)](../assets/cap-en-auto/FormSaveImage.png)
 
-Un outil qui optimise la longueur d'onde, la longueur de caméra, la taille de pixel, la distorsion des pixels et l'inclinaison (φ, τ) à partir des anneaux de diffraction d'un matériau de référence. Il utilise deux motifs, Primary et Secondary, et vous sélectionnez les pics et optimisez avec **Refine!**. La convergence (centre de l'ellipse, résidus) peut être vérifiée sur les graphiques. Voir [Procédures](4-procedures.md) pour les étapes concrètes.
+## Trouver paramètre (géométriquement) (Find parameter (geometrically))
 
-![Find Parameter (Geometric)](../assets/cap-en-auto/FormFindParameter.png)
+Outil qui optimise la longueur d'onde, la longueur de caméra, la taille de pixel, la distorsion de pixel et l'inclinaison (φ, τ) à partir des anneaux de diffraction d'un matériau de référence. Il utilise une image d'un échantillon de référence (Primaire (Primary)), ou deux images prises à des longueurs de caméra différentes (Primaire et Secondaire (Primary et Secondary)) ; vous sélectionnez les pics et optimisez avec **Affiner ! (Refine!)**. La convergence (centre des ellipses, résidus) peut être vérifiée sur les graphiques. Voir [Procédures](4-procedures.md) pour les étapes concrètes.
 
-## Find Parameter (Brute force)
+![Trouver paramètre (géométriquement) (Find parameter (geometrically))](../assets/cap-en-auto/FormFindParameter.png)
 
-Un outil qui trouve la longueur de caméra et la longueur d'onde par une recherche exhaustive sur grille plutôt que par une méthode de gradient. Il est efficace lorsque l'optimisation géométrique peine à converger, par exemple avec des anneaux incomplets ou des données bruitées. Le CrystalControl est utilisé pour saisir les paramètres du cristal. Voir [Recherche de paramètres (force brute)](6-find-parameter.md) pour les étapes détaillées, et [Procédures](4-procedures.md) pour le flux de travail.
+## Trouver paramètre (force brute) (Find parameter (brute force))
 
-![Find Parameter (Brute force)](../assets/cap-en-auto/FormFindParameterBruteForce.png)
+Outil qui détermine la longueur de caméra, la position du centre, l'inclinaison (φ, τ) et, en option, la longueur d'onde (désactivée par défaut) par une recherche exhaustive sur grille plutôt que par une méthode de gradient. Il utilise l'unique image d'un échantillon de référence chargée dans la fenêtre principale. Il est efficace lorsque l'optimisation géométrique converge difficilement, par exemple avec des anneaux incomplets ou des données bruitées. Choisissez le matériau de référence parmi Au / CeO₂ / LaB₆ / Al₂O₃, ou sélectionnez **Autre (Other)** et saisissez le cristal. Voir [Recherche de paramètres (force brute)](6-find-parameter.md) pour les étapes détaillées, et [Procédures](4-procedures.md) pour le déroulement général.
+
+![Trouver paramètre (force brute) (Find parameter (brute force))](../assets/cap-en-auto/FormFindParameterBruteForce.png)
 
 ## Macro
 
-Une fonctionnalité qui automatise les opérations à l'aide de scripts de type Python. Ouvrez l'éditeur de macros depuis le menu **Macro → Editor** de la fenêtre principale.
+Fonction qui automatise les opérations avec des scripts de type Python. Ouvrez l'éditeur de macros depuis le menu **Macro → Éditeur (Macro → Editor)** de la fenêtre principale.
 
 - `for` / `if` / `while` / `def` / `class`, l'arithmétique et le module `math` sont disponibles.
 - Des API telles que `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` permettent d'appeler chaque opération.
-- Des macros d'exemple (boucles de base, configuration de la géométrie, traitement par lots, division azimutale, masquage, envoi vers PDIndexer, etc.) sont fournies, et vous pouvez inspecter les variables avec l'exécution pas à pas.
+- Activez **Afficher les exemples (Show samples)** pour voir les macros d'exemple en lecture seule (boucles de base, réglage de la géométrie, traitement par lots, division azimutale, masquage, envoi vers PDIndexer, etc.). Vous pouvez inspecter les variables avec l'exécution pas à pas.
 
-Voir [Macro](5-macro/index.md) pour la référence complète des fonctions et des exemples, et [Procédures](4-procedures.md) pour les flux de travail basés sur les macros.
+Voir [Macro](5-macro/index.md) pour la référence complète des fonctions et les exemples, et [Procédures](4-procedures.md) pour les déroulements fondés sur les macros.
 
-![Macro editor](../assets/cap-en-auto/FormMacro.png)
-
-## Calibrate R-Axis Image
-
-Un outil destiné à la correction d'intensité spécifique aux détecteurs R-Axis ; pour l'instant il ne fait que lire le fichier, et la correction elle-même n'est pas encore implémentée.
-
-![Calibrate R-Axis Image](../assets/cap-en-auto/FormCalibrateRAxisImage.png)
+![Éditeur de macros](../assets/cap-en-auto/FormMacro.png)

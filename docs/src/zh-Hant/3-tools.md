@@ -1,85 +1,81 @@
-<!-- 260601Cl: Reflected from ja/3-tools.md (lead language: Japanese). 260601Cl: auto-capture images embedded. -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
 
-# Tools
+# 工具
 
-本頁說明從主視窗右側垂直工具列或從選單啟動的輔助工具。關於使用參數校正與巨集的具體操作步驟，請參閱 [Procedures](4-procedures.md)。
+本頁說明從主視窗右側的垂直工具列或選單啟動的輔助工具。使用參數校正與巨集的具體步驟，請參見[操作步驟](4-procedures.md)。
 
-## Intensity Table
+## 校正 R-AXIS 影像 (Calibrate Raxis Image)
 
-比較兩張影像的強度分布並最佳化強度轉換表的工具。它在 300 次迭代中最佳化 16 個控制點，使兩個強度互相匹配，同時保留總積分強度。例如可用於校正偵測器的強度響應。
+以 **工具 (Tool) → 校正 R-AXIS 影像 (Calibrate Raxis Image)** 開啟。指定兩張相同尺寸的 R-AXIS IV `.stl` 影像後，本工具會最佳化強度轉換表，使兩者的強度一致。轉換表以控制點表示，最佳化過程中其元素總和保持不變。結果以圖表顯示。可用於例如校正偵測器的強度響應。
 
-![Intensity Table](../assets/cap-en-auto/FormCalibrateIntensity.png)
+工具列上的 **強度表格 (Intensity table)** 按鈕在目前版本中未指派任何功能。
 
-## Auto Procedure
+![校正 R-AXIS 影像](../assets/cap-en-auto/FormCalibrateIntensity.png)
+
+## 自動程序 (Auto procedure)
 
 監看資料夾、自動載入新影像，並在載入後執行一連串操作的工具。
 
-- **Watch and auto-load**: 監看指定的資料夾（含子資料夾），並在檔案寫入完成後讀取該檔案。可依檔名（數字匹配、關鍵字）篩選檔案。
-- **Auto execution**: 依序執行 Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro 中所勾選的步驟。
+- **監看與自動載入**：監看指定的資料夾（含子資料夾），並在檔案寫入完成後讀取。可依檔名篩選檔案（數字比對、關鍵字）。
+- **自動執行**：從 自動對比 (Auto Contrast) → 尋找中心 (Find Center) → 遮罩斑點 (Mask Spots) → 取得圖譜 (Get Profile) → Execute Macro 中，依序執行已勾選的步驟。
 
-如此一來，便可在實驗期間監看輸出資料夾，並在每張影像送達時自動積分。詳情請參閱 [Procedures](4-procedures.md)。
+如此便能在實驗期間監看輸出資料夾，於每張影像產生時自動進行積分。詳細內容請參見[操作步驟](4-procedures.md)。
 
-![Auto Procedure](../assets/cap-en-auto/FormAutoProcedure.png)
+![自動程序](../assets/cap-en-auto/FormAutoProcedure.png)
 
-## Draw Ring
+## 繪製環 (Draw Ring)
 
-在影像上以指定的距離、角度或 d 值繪製圓環，並計入 IP 傾斜與像素變形。點擊 **R (mm)** / **2θ (°)** / **d (Å)** 之一以選擇要編輯哪個數值；其餘各值會依波長與相機長度自動計算。
+考慮 IP 傾斜與像素畸變，在影像上以指定的距離、角度或 d 值繪製圓環。點選 **R (mm)** / **2θ (°)** / **d (Å)** 其中之一以選擇要編輯的值；其餘的值會依波長與相機長度自動計算。
 
-![Draw Ring](../assets/cap-en-auto/FormDrawRing.png)
+![繪製環](../assets/cap-en-auto/FormDrawRing.png)
 
-## Unroll
+## 展開 (Unroll)
 
-將以直射斑點為中心的繞射影像，從極座標展開為笛卡兒座標（橫軸 = 角度、距離或 d 值；縱軸 = 方位角）。它現在不再使用專屬視窗設定，而是透過 **Unroll** 工具列按鈕與屬性中的 **Unrolled Image Option** 分頁來設定。展開時使用與一維化相同的次像素強度分布演算法。
+將繞射影像從以直射點為中心的極座標，展開為直角座標（橫軸 = 散射角 2θ；縱軸 = 方位角）。目前已不使用專用視窗，而是以工具列的 **展開影像 (Unroll image)** 按鈕與屬性的 **展開影像選項 (Unrolled Image Option)** 分頁進行設定。展開使用與一維化相同的次像素強度分配演算法。
 
-## Circumferential Blur
+## 周向模糊 (Circumferential Blur)
 
-沿周向（方位角）方向模糊圓環圖樣的工具。指定單一模糊角度並套用。
+沿圓周（方位角）方向模糊圓環圖樣的工具。指定一個模糊角度後套用。
 
-![Circumferential Blur](../assets/cap-en-auto/FormBlurAngle.png)
+![周向模糊](../assets/cap-en-auto/FormBlurAngle.png)
 
-## Sequential Image
+## 連續影像 (Sequential Image)
 
-用於處理多影格影像（HDF5 及類似格式；時間序列、溫度序列、同步輻射能量掃描）的工具。
+處理多影格影像（NeXus（`.nxs`）、多頁 TIFF 等；時間序列、溫度序列、同步輻射能量掃描）的工具。
 
-- 從影格清單選取單一影格以顯示，或以軌道列逐一切換。
-- 透過 **multi-selection** 選取多個影格，並計算其 **average** 或 **sum**。
-- 一維化的對象可從「all frames / selected frames / topmost only」中選擇。
-- 若每個影格皆帶有能量資訊，波長會自動更新。
+- 從影格清單中選取單一影格加以顯示，或以滑桿逐格切換。
+- 使用 **多重選取 (Multi selection)** 可選取多個影格，並計算其 **平均 (Average)** 或 **加總 (Summation)**。
+- 一維化的對象可從「所有影像（不受目前選取影響）(All images irrespective of current selections) / 選取的影像 (The selected image(s)) / 僅最上層影像 (Only the topmost image)」中選擇。
+- 若影格帶有能量資訊，選取該單一影格時會更新波長。
 
-![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)
+![連續影像](../assets/cap-en-auto/FormSequentialImage.png)
 
-## Save Image (IPA format)
+## 儲存影像 (Save Image)（IPA 格式）
 
-校正 IP 傾斜 φ、τ 與像素變形 ξ，並以指定解析度將影像存為正方形像素。相機長度、波長、中心位置等中繼資料也會一併寫入，因此可在保留幾何資訊的同時，將影像傳遞給其他影像處理。
+校正 IP 傾斜 φ、τ 與像素畸變 ξ，並以指定解析度、正方形像素儲存影像。相機長度、波長與中心位置等中繼資料也會一併寫入，因此能在保留幾何資訊的情況下，將影像交給其他影像處理使用。
 
-![Save Image](../assets/cap-en-auto/FormSaveImage.png)
+![儲存影像](../assets/cap-en-auto/FormSaveImage.png)
 
-## Find Parameter (Geometric)
+## 尋找參數（幾何法）(Find Parameter (Geometric))
 
-從標準物質的繞射環最佳化波長、相機長度、像素尺寸、像素變形與傾斜 (φ, τ) 的工具。它使用 Primary 與 Secondary 兩個圖樣，由您選取波峰並以 **Refine!** 進行最佳化。收斂情形（橢圓中心、殘差）可在圖表上檢查。具體步驟請參閱 [Procedures](4-procedures.md)。
+從標準物質的繞射環最佳化波長、相機長度、像素尺寸、像素畸變與傾斜 (φ, τ) 的工具。使用一張標準試料影像（**主要 (Primary)**），或在不同相機長度下拍攝的兩張影像（**主要 (Primary)** 與 **次要 (Secondary)**）；選取峰之後以 **精修! (Refine!)** 進行最佳化。收斂情形（橢圓中心、殘差）可在圖表上確認。具體步驟請參見[操作步驟](4-procedures.md)。
 
-![Find Parameter (Geometric)](../assets/cap-en-auto/FormFindParameter.png)
+![尋找參數（幾何法）](../assets/cap-en-auto/FormFindParameter.png)
 
-## Find Parameter (Brute force)
+## 尋找參數（暴力法）(Find Parameter (Brute force))
 
-以窮舉式網格搜尋（而非梯度法）尋找相機長度與波長的工具。當幾何最佳化難以收斂時（例如圓環不完整或資料含雜訊），此工具特別有效。使用 CrystalControl 輸入晶體參數。詳細步驟請參閱 [Find Parameter (brute force)](6-find-parameter.md)，工作流程請參閱 [Procedures](4-procedures.md)。
+以窮舉的網格搜尋而非梯度法，求出相機長度、中心位置、傾斜 (φ, τ)，以及可選的波長（預設關閉）的工具。使用主視窗中載入的單張標準試料影像。在圓環不完整或雜訊較多等幾何最佳化難以收斂的情況下特別有效。標準物質可從 Au / CeO₂ / LaB₆ / Al₂O₃ 中選擇，或選擇 **其他 (Other)** 並輸入晶體。詳細步驟請參見[尋找參數（暴力搜尋）](6-find-parameter.md)，工作流程請參見[操作步驟](4-procedures.md)。
 
-![Find Parameter (Brute force)](../assets/cap-en-auto/FormFindParameterBruteForce.png)
+![尋找參數（暴力法）](../assets/cap-en-auto/FormFindParameterBruteForce.png)
 
-## Macro
+## 巨集 (Macro)
 
-以類 Python 腳本自動化操作的功能。從主視窗的 **Macro → Editor** 選單開啟巨集編輯器。
+以類 Python 腳本將操作自動化的功能。從主視窗的 **巨集 (Macro) → 編輯器 (Editor)** 選單開啟巨集編輯器。
 
 - 可使用 `for` / `if` / `while` / `def` / `class`、算術運算，以及 `math` 模組。
-- `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` 等 API 可讓您呼叫各項操作。
-- 內附範例巨集（基本迴圈、幾何設定、批次處理、方位角分割、遮蔽、傳送至 PDIndexer 等），並可透過單步執行檢查變數。
+- 透過 `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` 等 API，即可呼叫各項操作。
+- 開啟 **顯示範例 (Show samples)** 可檢視唯讀的範例巨集（基本迴圈、幾何設定、批次處理、方位角分割、遮罩、傳送至 PDIndexer 等）。可藉由逐步執行檢查變數。
 
-完整的函式參考與範例請參閱 [Macro](5-macro/index.md)，基於巨集的工作流程請參閱 [Procedures](4-procedures.md)。
+完整的函式參考與範例請參見[巨集](5-macro/index.md)，以巨集為基礎的工作流程請參見[操作步驟](4-procedures.md)。
 
-![Macro editor](../assets/cap-en-auto/FormMacro.png)
-
-## Calibrate R-Axis Image
-
-針對 R-Axis 偵測器特有的強度校正而設計的工具；目前僅會讀取檔案，校正本身尚未實作。
-
-![Calibrate R-Axis Image](../assets/cap-en-auto/FormCalibrateRAxisImage.png)
+![巨集編輯器](../assets/cap-en-auto/FormMacro.png)

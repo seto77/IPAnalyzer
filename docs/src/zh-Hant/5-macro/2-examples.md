@@ -1,13 +1,13 @@
-<!-- 260601Cl: Reflected from ja/5-macro/2-examples.md. Migrated from the wiki; updated the stale API name FindSpotsBeforeGetProfile -> MaskSpotsBeforeGetProfile. -->
+<!-- 261124Cl: Retranslated from en/5-macro/2-examples.md (UI labels follow the localized GUI). -->
 
-# Examples
+# 範例
 
-以下的範例可以直接複製並貼上到巨集編輯器中。像 `IPA.File.GetFileNames()` 這類會牽涉到對話視窗的函式，在執行時會開啟檔案選取畫面。各成員的詳細說明請參閱[內建函式](1-built-in-functions.md)。
+以下的範例可以直接複製並貼上到巨集編輯器中。像 `IPA.File.GetFileNames()` 這類會開啟對話框的函式，在執行時會顯示檔案選擇畫面。各成員的詳細說明請參見[內建函式](1-built-in-functions.md)。
 
-!!! tip
-    當編輯器的已儲存巨集清單為空時，會自動插入一組更豐富的範例（基本迴圈、數學函式、幾何設定、方位角分割、遮罩、傳送到 PDIndexer 等）。先瀏覽這些範例是學習此風格的好方法。
+!!! tip "提示"
+    在巨集編輯器中開啟 **顯示範例 (Show samples)**，即可檢視一組更豐富的唯讀範例（基本迴圈、數學函式、幾何設定、方位角分割、遮罩、傳送至 PDIndexer 等）。先瀏覽這些範例是熟悉寫法的好方法。
 
-## Convert several files to 1D profiles and save them (single-image files)
+## 將多個檔案轉換為一維曲線並儲存（單一影像的檔案）
 
 ```python
 # Convert several files in the same folder into 1D profiles and save them
@@ -29,11 +29,11 @@ for filename in filelist:
         IPA.Profile.SaveProfileAfterGetProfile = True
         # Set True to save as CSV (also SaveProfileAsTSV, SaveProfileAsPDI, ...)
         IPA.Profile.SaveProfileAsCSV = True
-        # Run Get Profile and save to the given file name
+        # Run Get Profile; the profile is saved as filename plus the format extension (.csv etc.)
         IPA.Profile.GetProfile(filename)
 ```
 
-## Convert several files to 1D profiles and save them (multi-image files)
+## 將多個檔案轉換為一維曲線並儲存（含多張影像的檔案）
 
 ```python
 # Convert several files in the same folder into 1D profiles and save them
@@ -51,15 +51,17 @@ for filename in filelist:
         IPA.Profile.MaskSpotsBeforeGetProfile = True
         IPA.Profile.SaveProfileAfterGetProfile = True
         IPA.Profile.SaveProfileAsCSV = True
+        # Integrate one frame at a time (with the 'all images' setting every frame would be processed on each pass)
+        IPA.Sequential.Target_TopmostImage = True
         # Loop over the number of contained images (IPA.Sequential.Count)
         for num in range(IPA.Sequential.Count):
             # Select the frame
-            IPA.Sequential.SelectedIndex = num
+            IPA.Sequential.SelectIndex(num)
             # Run Get Profile and save with the frame number appended
             IPA.Profile.GetProfile(filename + '_' + str(num))
 ```
 
-## Batch-convert several files (stl, his, ...) to TIFF
+## 將多個檔案（stl、his 等）批次轉換為 TIFF
 
 ```python
 # Batch-convert several files (stl, his, ...) in the same folder to TIFF

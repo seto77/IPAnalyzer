@@ -1,125 +1,129 @@
-<!-- 260601Cl: Reflected from ja/1-main-window.md (lead language: Japanese). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
 
 # 主視窗
 
-主視窗是 IPAnalyzer 啟動時最先顯示的畫面。它整合了已載入繞射影像的顯示、主要操作（尋找中心、遮蔽斑點、一維化），以及偵測器參數設定的進入點。
+主視窗是啟動 IPAnalyzer 時最先顯示的畫面。它集中了已載入繞射影像的顯示、主要操作（尋找中心、遮蔽斑點、一維化），以及偵測器參數設定的入口。
 
-此視窗大致由頂部的選單與工具列、中央的影像顯示區、右側的垂直工具列，以及底部的圖表區所構成。
+視窗大致由上方的選單與工具列、中央的影像顯示區、右側的垂直工具列，以及下方的圖表區所構成。
 
-![The IPAnalyzer main window](../assets/cap-en-auto/FormMain.png)
+![IPAnalyzer 主視窗](../assets/cap-en-auto/FormMain.png)
 
-## 中央檢視區
+## 中央畫面
 
 ### 影像顯示
 
-已載入的影像會顯示於此。依照滑鼠指標的位置，影像上方的區域會顯示實際座標 (mm)、影像座標 (pix)、距中心的距離 R (mm)、散射角 2θ、d 值、方位角 χ 及強度。洋紅色的 × 標記代表直射斑點（中心）位置。
+此處顯示已載入的影像。影像上方會依滑鼠指標的位置，顯示實際座標 (mm)、影像座標 (pix)、與中心的距離 R (mm)、散射角 2θ、d 值、方位角 χ 與強度。洋紅色的 × 記號表示直射點（中心）位置。
 
-像素狀態會以不同顏色顯示。
+像素的狀態以不同顏色區分顯示。
 
 | 顏色 | 意義 |
 | --- | --- |
-| Cyan | 已遮蔽的斑點 |
-| Green | 排除於積分之外的區域（於 Integral Region 中設定） |
-| Magenta | 排除於積分之外的角度區域（於 Integral Property 中設定） |
-| Blue | 低於強度閾值的像素（於 Integral Region 中設定） |
-| Red | 高於強度閾值的像素 |
+| 青色 | 已遮罩的斑點 |
+| 綠色 | 排除於積分之外的區域（在積分區域 (Integral Region) 中設定） |
+| 洋紅色 | 排除於積分之外的角度區域（在積分性質 (Integral Property) 中設定） |
+| 藍色 | 低於強度閾值的像素（在積分區域中設定） |
+| 紅色 | 高於強度閾值的像素 |
 
 ### 滑鼠操作
 
-於一般模式下：
+一般模式下：
 
-- 按住左鍵：搜尋附近的斑點中心。
-- 左鍵雙擊：將中心位置更新至點擊處。
+- 左鍵雙擊：將中心位置更新為點選的位置。
+- 中鍵點選：以點選的位置為起點搜尋中心。
 - 右鍵拖曳：放大拖曳的區域。
-- 右鍵點擊：縮小。
+- 右鍵點選：縮小顯示。
+- Ctrl + 右鍵拖曳：選取用於統計資訊的矩形區域。
 
-於 **Manual spot mode** 下，左鍵點擊進行遮蔽，右鍵點擊解除遮蔽。遮罩的形狀與大小可於工具列及屬性中設定。
+左鍵雙擊與中鍵點選僅在 **固定中心 (Fix Center)** 關閉時有效。
 
-### 輔助檢視與影像資訊
+在 **手動模式 (Manual Mode)** 下，左鍵點選為遮罩、右鍵點選為取消遮罩。遮罩的形狀與大小在工具列及屬性中設定。
 
-中央檢視區旁有輔助顯示。您可在 **Whole image** 與 **Near center** 之間切換：whole-image 檢視會以黃色邊框標示目前的顯示範圍，near-center 檢視則顯示放大的影像。
+### 輔助畫面與影像資訊
 
-**Image Information** 會顯示影像解析度、最大強度、總強度、標頭資料等。
+中央畫面旁有輔助顯示。可在 **整張影像 (Whole image)** 與 **中心附近 (Near center)** 之間切換：整張影像會以黃色框標示目前的顯示範圍，中心附近則顯示放大的影像。
+
+**影像資訊 (Image Information)** 會顯示影像解析度、最大強度、總強度、標頭資料等。
 
 ### 顯示調整控制項
 
-調整影像呈現方式的控制項：
+用來調整影像外觀的控制項：
 
-- **Gradient**：反轉色調。
-- **Brightness scale**：對數 / 線性。
-- **Color scale**：灰階 / 彩色。
-- **Scale line**：刻度線顯示（無 / 粗 / 中 / 細）。
-- **Auto Contrast** / **Reset Contrast**，以及明確指定的最小 / 最大強度。
+- **漸層 (Gradient)**：反轉色調。
+- **亮度刻度 (Brightness scale)**：對數 / 線性。
+- **色階 (Color scale)**：灰階 / 彩色。
+- **比例尺線 (Scale line)**：比例尺線的顯示（無 / 粗 / 中 / 細）。
+- **自動對比 (Auto Contrast)** / **重設對比 (Reset Contrast)**，以及明確指定最小／最大強度。
 - 放大倍率按鈕（×1, ×2, ×4, ×1/2, ×1/4, ×1/8, ×1/16）。
 
-## 下方檢視區
+## 下方畫面
 
-底部區域有三個分頁的圖表 / 檢視。
+下方區域有三個以分頁切換的圖表／檢視。
 
-- **Frequency of Intensity**：所有像素的強度分布，以對數–對數軸顯示。可用滑鼠縮放。
-- **Converted Profile**：一維化（Get Profile）後的繞射曲線。可用滑鼠縮放。
-- **Statistical Information**：選定矩形區域 (X1,Y1)–(X2,Y2) 的統計資訊。載入序列影像時，亦可比較其他影格中相同區域的統計資訊。
+- **強度頻率 (Frequency of Intensity)**：以雙對數座標顯示所有像素的強度分布。可用滑鼠縮放。
+- **轉換後圖譜 (Converted Profile)**：顯示由 **取得圖譜 (Get Profile)** 產生的繞射曲線。可用滑鼠縮放。
+- **統計資訊 (Statistical Information)**：顯示在影像上以 Ctrl + 右鍵拖曳所選取之矩形區域 (X1,Y1)–(X2,Y2) 的統計量。載入連續影像時，也可比較其他影格中相同區域的統計。
 
 ## 選單
 
-選單列由 **File / Tool / Property / Option / Language / Macro / Help** 構成。
+選單列由 **檔案 (File) / 工具 (Tool) / 性質 (Property) / 選項 (Option) / 語言 (Language) / 巨集 (Macro) / 說明 (Help)** 構成。
 
-### File
+### 檔案 (File)
 
-- **Read image**：開啟繞射影像。支援的格式請參閱 [Overview](0-overview.md)。
-- **Save image**：儲存為 TIFF、PNG、CSV 或 IPA 格式。TIFF 保留原始像素強度，PNG 保留顯示狀態（亮度、對比、遮罩），IPA 則為經失真校正的專有格式（含中繼資料）。
-- **Read / Save parameter**：將波長、相機長度、像素尺寸、傾斜校正、中心位置等以 `.prm` 檔匯入／匯出。
-- **Read / Save / Clear mask**：將遮罩以 `.mas` 檔匯入／匯出，或清除之（遮罩必須與目前影像的解析度相符）。
-- **Close**。
+- **讀取影像 (Read image)**：開啟繞射影像。支援的格式請參見[概觀](0-overview.md)。
+- **儲存影像 (Save image)**：以 TIFF、PNG、CSV 或 IPA 格式儲存。TIFF 會儲存目前處理後的像素強度（套用翻轉／旋轉、背景扣除與偏振校正之後的值），PNG 會保留顯示狀態（亮度、對比、遮罩），IPA 則是經畸變校正的原生格式（含中繼資料）。
+- **讀取參數 / 儲存參數 (Read / Save parameter)**：以 `.prm` 檔案匯入／匯出波長、相機長度、像素尺寸、傾斜校正、中心位置等。
+- **讀取遮罩 / 儲存遮罩 / 清除遮罩 (Read / Save / Clear mask)**：以 `.mas` 檔案匯入／匯出遮罩，或將其清除（遮罩必須與目前影像的解析度相同）。
+- **關閉 (Close)**。
 
-影像、參數及遮罩檔亦可透過拖放至視窗來載入。
+影像、參數與遮罩檔案也可以拖放到視窗上載入。
 
-### Tool
+### 工具 (Tool)
 
-- **Reset Frequency Profile**：清除強度頻率圖（影像會保留）。
-- **Calibrate Raxis Image**。
+- **重設頻率圖譜 (Reset Frequency Profile)**：以預設範圍重建目前影像的強度頻率圖表（影像保持不變）。
+- **校正 R-AXIS 影像 (Calibrate Raxis Image)**：從兩張 R-AXIS 影像求出強度轉換表（參見[工具](3-tools.md)）。
 
-### Property
+### 性質 (Property)
 
-Wave Source / Imaging Plate Condition / Integral Region / Integral Property / Manual Mask Mode / After "Get Profile" / Unrolled Image Option / Miscellaneous。這些會直接開啟[屬性視窗](2-property-windows.md)的對應分頁。
+波源 (Wave Source) / 成像板條件 (Imaging Plate Condition) / 積分區域 (Integral Region) / 積分性質 (Integral Property) / 手動遮罩模式 (Manual Mask Mode) / 「取得圖譜」之後 (After "Get Profile") / 展開影像選項 (Unrolled Image Option) / 其他 (Miscellaneous)。這些項目會直接開啟[屬性視窗](2-property-windows.md)中對應的分頁。
 
-### Option
+### 選項 (Option)
 
-- **ToolTip**：切換按鈕與選單上的工具提示。
-- **Flip**：水平／垂直。**Rotate**：選擇旋轉角度。兩者僅影響顯示；已載入的影像資料本身不會改變。
-- **Ngen Compile** 與 **Clear registry** 用於開發及疑難排解。
+- **工具提示 (ToolTip)**：切換按鈕與選單的工具提示顯示。
+- **翻轉 (Flip)**：水平 (Horizontally) / 垂直 (Vertically)。**旋轉 (Rotate)**：選擇旋轉角度。翻轉與旋轉會套用到作業中的影像資料，因此也會影響之後的積分與影像儲存（磁碟上的原始檔案不會變更）。
+- **清除登錄檔 (Clear registry)**：用於疑難排解的項目，會清除已儲存的設定。**Ngen 編譯 (Ngen Compile)** 在目前版本中沒有作用。
 
-### Language
+### 語言 (Language)
 
-- 於 **English** 與 **Japanese** 之間切換（此設定會儲存於登錄檔）。
+- 選擇顯示語言（11 種語言）。確認後應用程式會重新啟動。此設定會儲存在登錄檔中。
 
-### Macro
+### 巨集 (Macro)
 
-- **Editor**：開啟巨集編輯器（參閱 [Tools](3-tools.md) / [Macro](5-macro/index.md)）。
+- **編輯器 (Editor)**：開啟巨集編輯器（參見[工具](3-tools.md) / [巨集](5-macro/index.md)）。
 
-### Help
+### 說明 (Help)
 
-- **Program Updates**、**Hint**、**License**、**Version History**、**Web Page**。
+- **程式更新 (Program Updates)**、**提示 (Hint)**、**授權 (License)**、**版本歷程 (Version History)**、**說明 (Help)**（開啟隨附的 PDF 手冊）。
+- 在任何視窗中按 **F1**，即可開啟本線上手冊的對應頁面。
 
 ## 操作工具列
 
-主要的影像處理操作（下拉選單中提供詳細選項）：
+主要的影像處理操作（下拉選單中有詳細選項）：
 
-- **Background**：減去背景影像（於 Background Option 中設定）。
-- **Find Center**：以二維 Pseudo-Voigt 擬合偵測束流中心（搜尋範圍預設為 8 px，於 Miscellaneous 中設定）。下拉選單亦提供以圓環為基礎的中心偵測。
-- **Fix center**：固定中心位置。
-- **Mask Spots**：以「平均值 ± 標準差 × Deviation」為準則偵測並遮蔽斑點。下拉選單包含 mask-all、inverse-mask、manual 等。
-- **Manual**：手動遮罩模式。您可選擇形狀（circle / rectangle）與大小（8–256 px）。
-- **Get Profile**：將影像積分為一維曲線。支援 Concentric（以 2θ 為基準）與 Radial（以方位角為基準）。下拉選單可設定 Integral Property/Region 的選擇、積分前是否尋找中心並遮蔽斑點、傳送至 PDIndexer、方位角分割分析、序列影像處理等。
+- **背景 (Background)**：此按鈕在目前版本中無作用。背景影像的扣除請在屬性視窗的 **背景選項 (Background Option)** 分頁中設定。
+- **尋找中心 (Find Center)**：以二維 Pseudo-Voigt 擬合偵測束流中心（搜尋範圍預設為中心周圍 ±8 px，在 **其他項目 (Miscellaneous)** 分頁中設定）。若以 **繪製環 (Draw ring)** 顯示圓環，則改為依據該圓環決定中心。
+- **固定中心 (Fix Center)**：固定中心位置。
+- **遮罩斑點 (Mask Spots)**：在每個徑向環帶內，將強度超過「平均值 + 標準差 × Deviation」的像素偵測為斑點，並連同其周圍一併遮罩。下拉選單中包含全部遮罩、反轉遮罩、手動等功能。
+- **手動模式 (Manual Mode)**：手動遮罩模式。可選擇遮罩形狀（斑點（圓形／矩形）／圓形／矩形／多邊形／雲線 (spline)）與斑點大小（半寬）。
+- **取得圖譜 (Get Profile)**：將影像積分為一維曲線。支援 Concentric（以 2θ 為基準）與 Radial（以方位角為基準）。下拉選單可設定積分性質／積分區域 (Integral Property/Region) 的選擇、積分前是否尋找中心與遮罩斑點、傳送至 PDIndexer、方位角分割分析、連續影像處理等。
 
 ## 工具列（其他工具）
 
-右側的垂直工具列可啟動各種工具。詳情請參閱 [Tools](3-tools.md)。
+右側的垂直工具列可啟動各種工具。詳細內容請參見[工具](3-tools.md)。
 
-- **Intensity Table**
-- **Auto Procedure**
-- **Draw ring**
-- **Find parameter** / **Find parameter (brute force)**
-- **Unroll**
-- **Circumferential Blur**
-- **Sequential**
+- **強度表格 (Intensity table)**（目前版本中此按鈕未指派任何功能；R-AXIS 強度校正請使用 **工具 (Tool) → 校正 R-AXIS 影像 (Calibrate Raxis Image)**）
+- **自動程序 (Auto procedure)**
+- **繪製環 (Draw ring)**
+- **尋找參數 (幾何法) (Find parameter (geometrically))** / **尋找參數 (暴力法) (Find parameter (brute force))**
+- **展開影像 (Unroll image)**
+- **周向模糊 (Circumferential blur)**
+- **連續影像 (Sequential image)**

@@ -1,45 +1,45 @@
-<!-- 260601Cl: Reflected from ja/5-macro/index.md (lead language: Japanese). Migrated from the wiki macro pages. -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
 
 # Makro
 
-IPAnalyzer bietet eine **macro**-Funktion, die Abfolgen von Operationen mit Python-ähnlichen Skripten automatisiert. Sie ist nützlich für wiederkehrende Arbeiten wie die Stapel-Eindimensionalisierung vieler Dateien, die Formatkonvertierung und die azimutal aufgeteilte Analyse.
+IPAnalyzer bietet eine **Makro**-Funktion, die Abfolgen von Operationen mit Python-ähnlichen Skripten automatisiert. Sie ist nützlich für wiederkehrende Arbeiten wie die stapelweise Eindimensionalisierung vieler Dateien, Formatumwandlungen und azimutale Unterteilungsanalysen.
 
 ## Den Editor öffnen
 
-Öffnen Sie den Makro-Editor über das Menü **Macro** → **Editor** im Hauptfenster. Dort können Sie Code bearbeiten und ausführen, einschließlich schrittweiser Ausführung.
+Öffnen Sie den Makro-Editor im Hauptfenster über das Menü **Makro (Macro)** → **Editor**. Dort können Sie Code bearbeiten und ausführen, auch schrittweise.
 
-![Macro editor](../../assets/cap-en-auto/FormMacro.png)
+![Makro-Editor](../../assets/cap-en-auto/FormMacro.png)
 
 ## Sprache
 
-- Kontrollanweisungen wie `for` / `if` / `while` / `def` / `class` sowie Arithmetik stehen zur Verfügung.
-- Das Modul `math` ist bereits importiert, sodass Sie `math.pi` oder `math.sin(...)` direkt ohne `import`-Anweisung verwenden können.
-- `print()` ist nicht verfügbar. Um Werte zu prüfen, verwenden Sie die **Schrittausführung** (Step by step) und beobachten Sie die Veränderung der Variablen im Debug-Panel.
-- Jede IPAnalyzer-Operation wird aus einem Namensraum unterhalb des Wurzelobjekts `IPA` aufgerufen (z. B. `IPA.File`).
+- Steueranweisungen wie `for` / `if` / `while` / `def` / `class` sowie Arithmetik stehen zur Verfügung.
+- Das Modul `math` ist bereits importiert, sodass Sie `math.pi` oder `math.sin(...)` ohne `import`-Anweisung direkt verwenden können.
+- `print()` ist nicht verfügbar. Um Werte zu untersuchen, verwenden Sie die **schrittweise Ausführung** (Step by step) und beobachten die Änderungen der Variablen im Debug-Bereich.
+- Jede IPAnalyzer-Operation wird über einen Namensraum unterhalb des Wurzelobjekts `IPA` aufgerufen (z. B. `IPA.File`).
 
 ## IPA-Namensräume
 
-| Namensraum | Rolle |
+| Namensraum | Aufgabe |
 |------|------|
-| `IPA.File` | Lesen/Schreiben von Bild-, Parameter- und Maskendateien; Dateiauswahl-Dialoge |
-| `IPA.Wave` | Einfallende Quelle und Wellenlänge festlegen |
-| `IPA.Detector` | Detektorgeometrie festlegen: Zentrum, Kameralänge, Pixelgröße, Verkippung |
-| `IPA.Image` | Anzeigemaßstab, Kontrast und Ansichtsbereich steuern |
-| `IPA.Mask` | Reflexe und Bereiche maskieren |
-| `IPA.Profile` | Eindimensionalisierung ausführen (Get Profile) und Speichern/Senden konfigurieren |
-| `IPA.IntegralProperty` | Bereich, Schrittweite und Einheit der konzentrischen / radialen Integration festlegen |
-| `IPA.Sequential` | Frames eines Multiframe-Bildes auswählen / mitteln / als Ziel setzen |
-| `IPA.PDI` | Makros auf PDIndexer aufrufen (Integration über die Zwischenablage) |
+| `IPA.File` | Bild-, Parameter- und Maskendateien lesen/schreiben; Dateiauswahldialoge |
+| `IPA.Wave` | Einfallende Strahlung und Wellenlänge einstellen |
+| `IPA.Detector` | Detektorgeometrie einstellen: Zentrum, Kameralänge, Pixelgröße, Verkippung |
+| `IPA.Image` | Anzeigeskala, Kontrast und Anzeigebereich steuern |
+| `IPA.Mask` | Spots und Bereiche maskieren |
+| `IPA.Profile` | Eindimensionalisierung (Profil abrufen / Get Profile) ausführen und Speichern/Senden einstellen |
+| `IPA.IntegralProperty` | Bereich, Schritt und Einheit der konzentrischen / radialen Integration einstellen |
+| `IPA.Sequential` | Frames eines Multiframe-Bildes auswählen / mitteln / als Ziel festlegen |
+| `IPA.PDI` | Makros in PDIndexer aufrufen (Zusammenarbeit über die Zwischenablage) |
 
-Siehe [Integrierte Funktionen](1-built-in-functions.md) für die Mitgliederliste und [Beispiele](2-examples.md) für konkrete Skripte.
+Die Liste der Member finden Sie unter [Integrierte Funktionen](1-built-in-functions.md), konkrete Skripte unter [Beispiele](2-examples.md).
 
 !!! tip "Die Hilfe im Editor ist die maßgebliche Referenz"
-    Die Beschreibung jeder Funktion/Eigenschaft wird in der Hilfe des Makro-Editors angezeigt und ist die aktuelle, versionsverfolgende Quelle der Wahrheit. Falls diese Seite der Editor-Hilfe widerspricht, vertrauen Sie Letzterer.
+    Die Beschreibung jeder Funktion/Eigenschaft wird in der Hilfe des Makro-Editors angezeigt; sie ist aktuell, folgt der jeweiligen Version und ist maßgeblich. Weicht diese Seite von der Hilfe im Editor ab, vertrauen Sie Letzterer.
 
-## Beispiel-Makros
+## Beispielmakros
 
-Wenn die Liste der gespeicherten Makros im Editor leer ist, werden automatisch Beispiel-Makros eingefügt (einfache Schleifen, mathematische Funktionen, Geometrie-Einrichtung, Stapelverarbeitung, azimutale Aufteilung, Maskierung, Senden an PDIndexer usw.). Sie sind ein bequemer Ausgangspunkt zum Anpassen.
+Schalten Sie im Editor **Beispiele anzeigen (Show samples)** ein, um die schreibgeschützten Beispielmakros aufzulisten (einfache Schleifen, mathematische Funktionen, Geometrieeinstellung, Stapelverarbeitung, azimutale Unterteilung, Maskieren, Senden an PDIndexer usw.); schalten Sie es aus, um zu Ihren eigenen gespeicherten Makros zurückzukehren. Sie sind ein bequemer Ausgangspunkt zum Anpassen.
 
-## Zusammenspiel mit Auto Procedure
+## Zusammenspiel mit der automatischen Prozedur
 
-Von Ihnen geschriebene Makros können unter einem Namen gespeichert und außerdem aus der Liste „nach dem Laden ausführen" der [Auto Procedure](../3-tools.md) aufgerufen werden, sodass ein Makro automatisch auf jedes während eines Experiments eintreffende Bild angewendet wird.
+Selbst geschriebene Makros lassen sich unter einem Namen speichern und auch aus der Liste „nach dem Laden ausführen“ der [Automatischen Prozedur (Auto Procedure)](../3-tools.md) aufrufen, sodass ein Makro während eines Experiments automatisch auf jedes eintreffende Bild angewendet wird.

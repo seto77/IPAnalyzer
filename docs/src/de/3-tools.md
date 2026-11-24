@@ -1,85 +1,81 @@
-<!-- 260601Cl: Reflected from ja/3-tools.md (lead language: Japanese). 260601Cl: auto-capture images embedded. -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
 
 # Werkzeuge
 
-Diese Seite beschreibt die Hilfswerkzeuge, die über die vertikale Symbolleiste am rechten Rand des Hauptfensters oder über die Menüs gestartet werden. Konkrete Vorgehensweisen zur Parameterkalibrierung und zu Makros finden Sie unter [Arbeitsabläufe](4-procedures.md).
+Diese Seite beschreibt die Hilfswerkzeuge, die über die vertikale Symbolleiste rechts im Hauptfenster oder über die Menüs gestartet werden. Konkrete Abläufe mit Parameterkalibrierung und Makros finden Sie unter [Arbeitsabläufe](4-procedures.md).
 
-## Intensity Table
+## R-AXIS-Bild kalibrieren (Calibrate Raxis Image)
 
-Ein Werkzeug, das die Intensitätsverteilungen zweier Bilder vergleicht und eine Tabelle zur Intensitätsumrechnung optimiert. Es optimiert 16 Kontrollpunkte über 300 Iterationen, um die beiden Intensitäten aneinander anzugleichen, während die gesamte integrierte Intensität erhalten bleibt. Es wird beispielsweise verwendet, um die Intensitätsantwort eines Detektors zu kalibrieren.
+Öffnen Sie das Werkzeug mit **Werkzeuge → R-AXIS-Bild kalibrieren (Tool → Calibrate Raxis Image)**. Geben Sie zwei gleich große R-AXIS-IV-Bilder (`.stl`) an; das Werkzeug optimiert eine Intensitätsumrechnungstabelle so, dass die beiden Intensitäten übereinstimmen. Die Tabelle wird durch Stützpunkte dargestellt, und die Summe ihrer Elemente bleibt während der Optimierung konstant. Das Ergebnis wird als Diagramm angezeigt. Es dient beispielsweise zur Kalibrierung des Intensitätsverhaltens eines Detektors.
 
-![Intensity Table](../assets/cap-en-auto/FormCalibrateIntensity.png)
+Der Schaltfläche **Intensitätstabelle (Intensity table)** in der Symbolleiste ist in der aktuellen Version keine Funktion zugewiesen.
 
-## Auto Procedure
+![R-AXIS-Bild kalibrieren (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
-Ein Werkzeug, das einen Ordner überwacht, neue Bilder automatisch lädt und nach dem Laden eine Folge von Operationen ausführt.
+## Automatische Prozedur (Auto procedure)
 
-- **Watch and auto-load**: überwacht den angegebenen Ordner (einschließlich Unterordner) und liest eine Datei, nachdem ihr Schreibvorgang abgeschlossen ist. Dateien können nach Name gefiltert werden (Zahlenabgleich, Schlüsselwort).
-- **Auto execution**: führt die angehakten Schritte der Reihe nach aus, aus Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro.
+Ein Werkzeug, das einen Ordner überwacht, neue Bilder automatisch lädt und nach dem Laden eine Abfolge von Operationen ausführt.
 
-Dies ermöglicht Anwendungen wie das Überwachen eines Ausgabeordners während eines Experiments und das automatische Integrieren jedes Bildes, sobald es eintrifft. Einzelheiten finden Sie unter [Arbeitsabläufe](4-procedures.md).
+- **Überwachen und automatisch laden**: überwacht den angegebenen Ordner (einschließlich Unterordnern) und liest eine Datei ein, sobald ihr Schreibvorgang abgeschlossen ist. Dateien lassen sich nach Namen filtern (Nummernabgleich, Stichwort).
+- **Automatische Ausführung**: führt die angehakten Schritte aus Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro der Reihe nach aus.
 
-![Auto Procedure](../assets/cap-en-auto/FormAutoProcedure.png)
+So lässt sich beispielsweise während eines Experiments ein Ausgabeordner überwachen und jedes eintreffende Bild automatisch integrieren. Einzelheiten finden Sie unter [Arbeitsabläufe](4-procedures.md).
 
-## Draw Ring
+![Automatische Prozedur (Auto Procedure)](../assets/cap-en-auto/FormAutoProcedure.png)
 
-Zeichnet einen Ring in einem angegebenen Abstand, Winkel oder d-Wert auf dem Bild und berücksichtigt dabei die IP-Verkippung und die Pixelverzerrung. Klicken Sie auf eines der Felder **R (mm)** / **2θ (°)** / **d (Å)**, um zu wählen, welcher Wert bearbeitet werden soll; die übrigen werden automatisch aus der Wellenlänge und der Kameralänge berechnet.
+## Ring zeichnen (Draw Ring)
 
-![Draw Ring](../assets/cap-en-auto/FormDrawRing.png)
+Zeichnet unter Berücksichtigung der IP-Verkippung und der Pixelverzerrung einen Ring in einem angegebenen Abstand, Winkel oder d-Wert in das Bild. Klicken Sie auf **R (mm)** / **2θ (°)** / **d (Å)**, um den zu bearbeitenden Wert zu wählen; die übrigen Werte werden aus Wellenlänge und Kameralänge automatisch berechnet.
 
-## Unroll
+![Ring zeichnen (Draw Ring)](../assets/cap-en-auto/FormDrawRing.png)
 
-Wickelt das Beugungsbild aus Polarkoordinaten, die auf den Durchstrahlfleck zentriert sind, in kartesische Koordinaten ab (horizontale Achse = Winkel, Abstand oder d-Wert; vertikale Achse = Azimut). Es wird inzwischen nicht über ein eigenes Fenster, sondern über die Symbolleisten-Schaltfläche **Unroll** und die Registerkarte **Unrolled Image Option** der Eigenschaften konfiguriert. Das Abwickeln verwendet denselben Subpixel-Algorithmus zur Intensitätsverteilung wie die Eindimensionalisierung.
+## Abwickeln (Unroll)
 
-## Circumferential Blur
+Wickelt das Beugungsbild von Polarkoordinaten um den Direktstrahl in kartesische Koordinaten ab (horizontale Achse = Streuwinkel 2θ; vertikale Achse = Azimut). Eingestellt wird dies heute nicht in einem eigenen Fenster, sondern über die Symbolleisten-Schaltfläche **Bild abrollen (Unroll image)** und die Registerkarte **Abgewickeltes Bild – Optionen (Unrolled Image Option)** der Eigenschaften. Das Abwickeln verwendet denselben subpixelgenauen Intensitätsverteilungs-Algorithmus wie die Eindimensionalisierung.
 
-Ein Werkzeug, das das Ringmuster entlang der Umfangsrichtung (azimutal) weichzeichnet. Geben Sie einen einzelnen Unschärfewinkel an und wenden Sie ihn an.
+## Umfangsunschärfe (Circumferential Blur)
 
-![Circumferential Blur](../assets/cap-en-auto/FormBlurAngle.png)
+Ein Werkzeug, das das Ringmuster in Umfangsrichtung (azimutal) weichzeichnet. Geben Sie einen einzelnen Unschärfewinkel an und wenden Sie ihn an.
 
-## Sequential Image
+![Umfangsunschärfe (Circumferential Blur)](../assets/cap-en-auto/FormBlurAngle.png)
 
-Ein Werkzeug zur Handhabung von Multiframe-Bildern (HDF5 und ähnliche; Zeitreihen, Temperaturreihen, Synchrotron-Energiescans).
+## Bildsequenz (Sequential Image)
 
-- Wählen Sie ein einzelnes Frame aus der Frame-Liste aus, um es anzuzeigen, oder schalten Sie mit dem Schieberegler durch.
-- Mit **multi-selection** wählen Sie mehrere Frames aus und berechnen deren **average** oder **sum**.
-- Das Ziel der Eindimensionalisierung kann aus „alle Frames / ausgewählte Frames / nur oberstes" gewählt werden.
-- Wenn jedes Frame Energieinformationen enthält, wird die Wellenlänge automatisch aktualisiert.
+Ein Werkzeug für Multiframe-Bilder (NeXus (`.nxs`), mehrseitige TIFF-Dateien und Ähnliches; Zeitreihen, Temperaturreihen, Energiescans am Synchrotron).
 
-![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)
+- Wählen Sie in der Frame-Liste einen einzelnen Frame aus, um ihn anzuzeigen, oder blättern Sie mit dem Schieberegler durch die Frames.
+- Mit **Mehrfachauswahl (Multi selection)** wählen Sie mehrere Frames aus und berechnen deren **Mittelwert (Average)** oder **Summierung (Summation)**.
+- Das Ziel der Eindimensionalisierung lässt sich aus „Alle Bilder unabhängig von der aktuellen Auswahl / Die ausgewählten Bilder / Nur das oberste Bild“ wählen.
+- Enthält ein Frame Energieinformationen, wird die Wellenlänge aktualisiert, sobald dieser einzelne Frame ausgewählt wird.
 
-## Save Image (IPA format)
+![Bildsequenz (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)
 
-Korrigiert die IP-Verkippung φ, τ und die Pixelverzerrung ξ und speichert das Bild mit quadratischen Pixeln in einer angegebenen Auflösung. Metadaten wie Kameralänge, Wellenlänge und Zentrumsposition werden ebenfalls geschrieben, sodass das Bild unter Beibehaltung der geometrischen Informationen an andere Bildverarbeitung übergeben werden kann.
+## Bild speichern (Save Image) im IPA-Format
 
-![Save Image](../assets/cap-en-auto/FormSaveImage.png)
+Korrigiert die IP-Verkippung φ, τ und die Pixelverzerrung ξ und speichert das Bild mit quadratischen Pixeln in einer angegebenen Auflösung. Metadaten wie Kameralänge, Wellenlänge und Zentrumsposition werden ebenfalls geschrieben, sodass das Bild unter Erhalt der geometrischen Informationen an andere Bildverarbeitungen übergeben werden kann.
 
-## Find Parameter (Geometric)
+![Bild speichern (Save Image)](../assets/cap-en-auto/FormSaveImage.png)
 
-Ein Werkzeug, das die Wellenlänge, Kameralänge, Pixelgröße, Pixelverzerrung und Verkippung (φ, τ) aus den Beugungsringen eines Standardmaterials optimiert. Es verwendet zwei Muster, Primary und Secondary, und Sie wählen Peaks aus und optimieren mit **Refine!**. Die Konvergenz (Ellipsenmittelpunkt, Residuen) kann in den Diagrammen überprüft werden. Die konkreten Schritte finden Sie unter [Arbeitsabläufe](4-procedures.md).
+## Parameter finden (geometrisch)
 
-![Find Parameter (Geometric)](../assets/cap-en-auto/FormFindParameter.png)
+**Parameter finden (geometrisch) (Find parameter (geometrically))** ist ein Werkzeug, das Wellenlänge, Kameralänge, Pixelgröße, Pixelverzerrung und Verkippung (φ, τ) anhand der Beugungsringe eines Standardmaterials optimiert. Es verwendet ein Bild einer Standardprobe (Primär, Primary) oder zwei bei unterschiedlichen Kameralängen aufgenommene Bilder (Primär und Sekundär, Primary und Secondary); Sie wählen Peaks aus und optimieren mit **Verfeinern! (Refine!)**. Die Konvergenz (Ellipsenzentrum, Residuen) lässt sich in den Diagrammen prüfen. Die konkreten Schritte finden Sie unter [Arbeitsabläufe](4-procedures.md).
 
-## Find Parameter (Brute force)
+![Parameter finden (geometrisch)](../assets/cap-en-auto/FormFindParameter.png)
 
-Ein Werkzeug, das die Kameralänge und Wellenlänge durch eine erschöpfende Rastersuche statt durch ein Gradientenverfahren findet. Es ist wirksam, wenn die geometrische Optimierung Schwierigkeiten mit der Konvergenz hat, etwa bei unvollständigen Ringen oder verrauschten Daten. Das CrystalControl wird zur Eingabe der Kristallparameter verwendet. Die detaillierten Schritte finden Sie unter [Parameter finden (Brute-Force)](6-find-parameter.md) und den Arbeitsablauf unter [Arbeitsabläufe](4-procedures.md).
+## Parameter finden (Brute Force)
 
-![Find Parameter (Brute force)](../assets/cap-en-auto/FormFindParameterBruteForce.png)
+**Parameter finden (Brute Force) (Find parameter (brute force))** ist ein Werkzeug, das Kameralänge, Zentrumsposition, Verkippung (φ, τ) und optional die Wellenlänge (standardmäßig aus) nicht mit einem Gradientenverfahren, sondern durch eine erschöpfende Rastersuche bestimmt. Es verwendet das im Hauptfenster geladene einzelne Bild einer Standardprobe. Es ist wirksam, wenn die geometrische Optimierung schlecht konvergiert, etwa bei unvollständigen Ringen oder verrauschten Daten. Wählen Sie den Standard aus Au / CeO₂ / LaB₆ / Al₂O₃ oder wählen Sie **Andere (Other)** und geben Sie den Kristall ein. Ausführliche Schritte finden Sie unter [Parameter finden (Brute Force)](6-find-parameter.md), den Ablauf unter [Arbeitsabläufe](4-procedures.md).
 
-## Macro
+![Parameter finden (Brute Force)](../assets/cap-en-auto/FormFindParameterBruteForce.png)
 
-Eine Funktion, die Operationen mit Python-ähnlichen Skripten automatisiert. Öffnen Sie den Makro-Editor über das Menü **Macro → Editor** im Hauptfenster.
+## Makro
+
+Eine Funktion, die Operationen mit Python-ähnlichen Skripten automatisiert. Öffnen Sie den Makro-Editor im Hauptfenster über das Menü **Makro → Editor (Macro → Editor)**.
 
 - `for` / `if` / `while` / `def` / `class`, Arithmetik und das Modul `math` stehen zur Verfügung.
-- APIs wie `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` ermöglichen den Aufruf jeder Operation.
-- Beispielmakros (grundlegende Schleifen, Geometrie-Einrichtung, Stapelverarbeitung, azimutale Unterteilung, Maskieren, Senden an PDIndexer usw.) sind enthalten, und Sie können Variablen mit schrittweiser Ausführung untersuchen.
+- Über APIs wie `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` lassen sich die einzelnen Operationen aufrufen.
+- Schalten Sie **Beispiele anzeigen (Show samples)** ein, um die schreibgeschützten Beispielmakros anzuzeigen (einfache Schleifen, Geometrieeinstellung, Stapelverarbeitung, azimutale Unterteilung, Maskieren, Senden an PDIndexer usw.). Mit der schrittweisen Ausführung lassen sich Variablen untersuchen.
 
-Die vollständige Funktionsreferenz und Beispiele finden Sie unter [Makro](5-macro/index.md) und makrobasierte Arbeitsabläufe unter [Arbeitsabläufe](4-procedures.md).
+Die vollständige Funktionsreferenz und Beispiele finden Sie unter [Makro](5-macro/index.md), makrobasierte Abläufe unter [Arbeitsabläufe](4-procedures.md).
 
-![Macro editor](../assets/cap-en-auto/FormMacro.png)
-
-## Calibrate R-Axis Image
-
-Ein Werkzeug, das für die spezifische Intensitätskorrektur von R-Axis-Detektoren vorgesehen ist; derzeit liest es nur die Datei, die Korrektur selbst ist noch nicht implementiert.
-
-![Calibrate R-Axis Image](../assets/cap-en-auto/FormCalibrateRAxisImage.png)
+![Makro-Editor](../assets/cap-en-auto/FormMacro.png)

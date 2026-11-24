@@ -1,85 +1,81 @@
-<!-- 260601Cl: Reflected from ja/3-tools.md (lead language: Japanese). 260601Cl: auto-capture images embedded. -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
 
 # Herramientas
 
-Esta página describe las herramientas auxiliares que se abren desde la barra de herramientas vertical a la derecha de la ventana principal, o desde los menús. Para procedimientos concretos que usan la calibración de parámetros y las macros, consulte [Procedimientos](4-procedures.md).
+Esta página describe las herramientas auxiliares que se inician desde la barra de herramientas vertical situada a la derecha de la ventana principal, o desde los menús. Para procedimientos concretos con calibración de parámetros y macros, véase [Procedimientos](4-procedures.md).
 
-## Intensity Table
+## Calibrar imagen R-AXIS (Calibrate Raxis Image)
 
-Una herramienta que compara las distribuciones de intensidad de dos imágenes y optimiza una tabla de conversión de intensidad. Optimiza 16 puntos de control a lo largo de 300 iteraciones para igualar ambas intensidades preservando la intensidad integrada total. Se utiliza, por ejemplo, para calibrar la respuesta de intensidad de un detector.
+Ábrela con **Herramienta (Tool) → Calibrar imagen R-AXIS (Calibrate Raxis Image)**. Especifica dos imágenes R-AXIS IV `.stl` del mismo tamaño; la herramienta optimiza una tabla de conversión de intensidad para que las dos intensidades coincidan. La tabla se representa mediante puntos de control, y la suma de sus elementos se mantiene constante durante la optimización. El resultado se muestra como un gráfico. Se usa, por ejemplo, para calibrar la respuesta en intensidad de un detector.
 
-![Intensity Table](../assets/cap-en-auto/FormCalibrateIntensity.png)
+El botón **Tabla de intensidad (Intensity table)** de la barra de herramientas no tiene ninguna función asignada en la versión actual.
 
-## Auto Procedure
+![Calibrar imagen R-AXIS (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
-Una herramienta que supervisa una carpeta, carga imágenes nuevas automáticamente y ejecuta una secuencia de operaciones tras la carga.
+## Procedimiento automático (Auto procedure)
 
-- **Watch and auto-load**: supervisa la carpeta especificada (incluidas las subcarpetas) y lee un archivo una vez que su escritura ha finalizado. Los archivos se pueden filtrar por nombre (coincidencia numérica, palabra clave).
-- **Auto execution**: ejecuta los pasos marcados, en orden, entre Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro.
+Una herramienta que supervisa una carpeta, carga automáticamente las imágenes nuevas y ejecuta una secuencia de operaciones tras la carga.
 
-Esto permite usos como supervisar una carpeta de salida durante un experimento e integrar automáticamente cada imagen a medida que llega. Consulte [Procedimientos](4-procedures.md) para más detalles.
+- **Watch and auto-load** (supervisión y carga automática): supervisa la carpeta indicada (incluidas las subcarpetas) y lee cada archivo cuando termina de escribirse. Los archivos se pueden filtrar por nombre (coincidencia numérica, palabra clave).
+- **Auto execution** (ejecución automática): ejecuta en orden los pasos marcados de entre Contraste automático → Buscar centro → Enmascarar puntos → Obtener perfil → Execute Macro (Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro).
 
-![Auto Procedure](../assets/cap-en-auto/FormAutoProcedure.png)
+Esto permite usos como supervisar una carpeta de salida durante un experimento e integrar automáticamente cada imagen a medida que llega. Véase [Procedimientos](4-procedures.md) para más detalles.
 
-## Draw Ring
+![Procedimiento automático (Auto Procedure)](../assets/cap-en-auto/FormAutoProcedure.png)
 
-Dibuja un anillo a una distancia, ángulo o valor d especificados sobre la imagen, teniendo en cuenta la inclinación de la IP y la distorsión de píxel. Haga clic en uno de **R (mm)** / **2θ (°)** / **d (Å)** para elegir qué valor editar; los demás se calculan automáticamente a partir de la longitud de onda y la longitud de cámara.
+## Dibujar anillo (Draw Ring)
 
-![Draw Ring](../assets/cap-en-auto/FormDrawRing.png)
+Dibuja un anillo a una distancia, un ángulo o un valor d especificados sobre la imagen, teniendo en cuenta la inclinación de la IP y la distorsión del píxel. Haz clic en **R (mm)** / **2θ (°)** / **d (Å)** para elegir qué valor editar; los demás se calculan automáticamente a partir de la longitud de onda y la longitud de cámara.
 
-## Unroll
+![Dibujar anillo (Draw Ring)](../assets/cap-en-auto/FormDrawRing.png)
 
-Despliega la imagen de difracción desde coordenadas polares centradas en el punto directo (direct spot) hacia coordenadas cartesianas (eje horizontal = ángulo, distancia o valor d; eje vertical = azimut). Ahora se configura no mediante una ventana dedicada, sino con el botón **Unroll** de la barra de herramientas y la pestaña **Unrolled Image Option** de las propiedades. El desenrollado utiliza el mismo algoritmo de distribución de intensidad a nivel de subpíxel que la unidimensionalización.
+## Desplegar (Unroll)
 
-## Circumferential Blur
+Despliega la imagen de difracción desde coordenadas polares centradas en el punto directo a coordenadas cartesianas (eje horizontal = ángulo de dispersión 2θ; eje vertical = azimut). Actualmente no se configura con una ventana propia, sino con el botón **Desplegar imagen (Unroll image)** de la barra de herramientas y la pestaña **Opciones de imagen desplegada (Unrolled Image Option)** de las propiedades. El despliegue usa el mismo algoritmo de distribución de intensidad subpíxel que la conversión a una dimensión.
 
-Una herramienta que difumina el patrón de anillos a lo largo de la dirección circunferencial (azimutal). Especifique un único ángulo de desenfoque y aplíquelo.
+## Desenfoque circunferencial (Circumferential Blur)
 
-![Circumferential Blur](../assets/cap-en-auto/FormBlurAngle.png)
+Una herramienta que difumina el patrón de anillos en la dirección circunferencial (azimutal). Especifica un único ángulo de desenfoque y aplícalo.
 
-## Sequential Image
+![Desenfoque circunferencial (Circumferential Blur)](../assets/cap-en-auto/FormBlurAngle.png)
 
-Una herramienta para manejar imágenes multifotograma (HDF5 y similares; series temporales, series de temperatura, barridos de energía de sincrotrón).
+## Imagen secuencial (Sequential Image)
 
-- Seleccione un único fotograma de la lista de fotogramas para mostrarlo, o recórralos con la barra de desplazamiento.
-- Con **multi-selección**, seleccione varios fotogramas y calcule su **promedio** o **suma**.
-- El objetivo de la unidimensionalización se puede elegir entre "todos los fotogramas / fotogramas seleccionados / solo el superior".
-- Si cada fotograma incluye información de energía, la longitud de onda se actualiza automáticamente.
+Una herramienta para manejar imágenes multifotograma (NeXus (`.nxs`), TIFF multipágina y similares; series temporales, series de temperatura, barridos de energía en sincrotrón).
 
-![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)
+- Selecciona un único fotograma de la lista de fotogramas para mostrarlo, o recórrelos con la barra deslizante.
+- Con **Selección múltiple (Multi selection)**, selecciona varios fotogramas y calcula su **Promedio (Average)** o **Suma (Summation)**.
+- El objetivo de la conversión a una dimensión se puede elegir entre "todas las imágenes / imágenes seleccionadas / solo la imagen superior" ("Todas las imágenes sin importar las selecciones actuales" (All images irrespective of current selections) / "La(s) imagen(es) seleccionada(s)" (The selected image(s)) / "Solo la imagen superior" (Only the topmost image)).
+- Si un fotograma contiene información de energía, la longitud de onda se actualiza al seleccionar ese único fotograma.
 
-## Save Image (IPA format)
+![Imagen secuencial (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)
 
-Corrige la inclinación φ, τ de la IP y la distorsión de píxel ξ, y guarda la imagen con píxeles cuadrados a una resolución especificada. También se escriben metadatos como la longitud de cámara, la longitud de onda y la posición del centro, de modo que la imagen se puede pasar a otro procesamiento de imágenes conservando la información geométrica.
+## Guardar imagen (formato IPA) (Save Image (IPA format))
 
-![Save Image](../assets/cap-en-auto/FormSaveImage.png)
+Corrige la inclinación de la IP φ, τ y la distorsión del píxel ξ, y guarda la imagen con píxeles cuadrados a una resolución especificada. También se escriben metadatos como la longitud de cámara, la longitud de onda y la posición del centro, de modo que la imagen se puede pasar a otros procesamientos de imagen conservando la información geométrica.
 
-## Find Parameter (Geometric)
+![Guardar imagen (Save Image)](../assets/cap-en-auto/FormSaveImage.png)
 
-Una herramienta que optimiza la longitud de onda, la longitud de cámara, el tamaño de píxel, la distorsión de píxel y la inclinación (φ, τ) a partir de los anillos de difracción de un material de referencia. Utiliza dos patrones, Primary y Secondary, y usted selecciona los picos y optimiza con **Refine!**. La convergencia (centro de la elipse, residuos) se puede comprobar en las gráficas. Consulte [Procedimientos](4-procedures.md) para los pasos concretos.
+## Buscar parámetro (geométricamente) (Find Parameter (Geometric))
 
-![Find Parameter (Geometric)](../assets/cap-en-auto/FormFindParameter.png)
+Una herramienta que optimiza la longitud de onda, la longitud de cámara, el tamaño de píxel, la distorsión del píxel y la inclinación (φ, τ) a partir de los anillos de difracción de un material de referencia. Usa una imagen de una muestra de referencia (**Primario (Primary)**), o dos imágenes tomadas a longitudes de cámara distintas (**Primario (Primary)** y **Secundario (Secondary)**); se seleccionan los picos y se optimiza con **¡Refinar! (Refine!)**. La convergencia (centro de la elipse, residuos) se puede comprobar en los gráficos. Véase [Procedimientos](4-procedures.md) para los pasos concretos.
 
-## Find Parameter (Brute force)
+![Buscar parámetro (geométricamente) (Find Parameter (Geometric))](../assets/cap-en-auto/FormFindParameter.png)
 
-Una herramienta que halla la longitud de cámara y la longitud de onda mediante una búsqueda exhaustiva en cuadrícula en lugar de un método de gradiente. Resulta eficaz cuando la optimización geométrica tiene dificultades para converger, como con anillos incompletos o datos ruidosos. El CrystalControl se utiliza para introducir los parámetros del cristal. Consulte [Buscar parámetros (fuerza bruta)](6-find-parameter.md) para los pasos detallados, y [Procedimientos](4-procedures.md) para el flujo de trabajo.
+## Buscar parámetro (fuerza bruta) (Find Parameter (Brute force))
 
-![Find Parameter (Brute force)](../assets/cap-en-auto/FormFindParameterBruteForce.png)
+Una herramienta que determina la longitud de cámara, la posición del centro, la inclinación (φ, τ) y, opcionalmente, la longitud de onda (desactivada por defecto) mediante una búsqueda exhaustiva en cuadrícula en lugar de un método de gradiente. Usa la única imagen de una muestra de referencia cargada en la ventana principal. Es eficaz cuando la optimización geométrica tiene dificultades para converger, como con anillos incompletos o datos ruidosos. Elige el material de referencia entre Au / CeO₂ / LaB₆ / Al₂O₃, o selecciona **Otro (Other)** e introduce el cristal. Véase [Buscar parámetros (fuerza bruta)](6-find-parameter.md) para los pasos detallados, y [Procedimientos](4-procedures.md) para el flujo de trabajo.
+
+![Buscar parámetro (fuerza bruta) (Find Parameter (Brute force))](../assets/cap-en-auto/FormFindParameterBruteForce.png)
 
 ## Macro
 
-Una función que automatiza operaciones con scripts de tipo Python. Abra el editor de macros desde el menú **Macro → Editor** en la ventana principal.
+Una función que automatiza operaciones con scripts de estilo Python. Abre el editor de macros desde el menú **Macro → Editor** de la ventana principal.
 
 - Están disponibles `for` / `if` / `while` / `def` / `class`, la aritmética y el módulo `math`.
-- APIs como `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` le permiten invocar cada operación.
-- Se incluyen macros de ejemplo (bucles básicos, configuración de la geometría, procesamiento por lotes, división azimutal, enmascaramiento, envío a PDIndexer, etc.), y puede inspeccionar las variables con la ejecución paso a paso.
+- APIs como `IPA.File` / `IPA.Wave` / `IPA.Detector` / `IPA.Profile` / `IPA.Sequential` / `IPA.Image` / `IPA.Mask` / `IPA.PDI` / `IPA.IntegralProperty` permiten invocar cada operación.
+- Activa **Mostrar ejemplos (Show samples)** para ver las macros de ejemplo de solo lectura (bucles básicos, configuración de la geometría, procesamiento por lotes, división azimutal, enmascaramiento, envío a PDIndexer, etc.). Puedes inspeccionar las variables con la ejecución paso a paso.
 
-Consulte [Macro](5-macro/index.md) para la referencia completa de funciones y ejemplos, y [Procedimientos](4-procedures.md) para los flujos de trabajo basados en macros.
+Véase [Macro](5-macro/index.md) para la referencia completa de funciones y los ejemplos, y [Procedimientos](4-procedures.md) para los flujos de trabajo basados en macros.
 
-![Macro editor](../assets/cap-en-auto/FormMacro.png)
-
-## Calibrate R-Axis Image
-
-Una herramienta destinada a la corrección de intensidad específica de los detectores R-Axis; en la actualidad solo lee el archivo, y la corrección en sí aún no está implementada.
-
-![Calibrate R-Axis Image](../assets/cap-en-auto/FormCalibrateRAxisImage.png)
+![Editor de macros](../assets/cap-en-auto/FormMacro.png)

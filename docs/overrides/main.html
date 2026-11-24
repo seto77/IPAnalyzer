@@ -4,7 +4,10 @@
        その場合に「このページはまだ翻訳されておらず英語版を表示しています」と知らせる。
    (2) 翻訳済みの非 en/ja ページでは、本文は訳されているが IPAnalyzer の GUI は en/ja のみ
        ローカライズ済みのため、スクリーンショットは英語で表示される。その旨を注記する。
-   各言語の文面はここに 1 分岐ずつ足す (未対応言語は英語の文面にフォールバック)。 #}
+   各言語の文面はここに 1 分岐ずつ足す (未対応言語は英語の文面にフォールバック)。
+   261124Cl 変更: (2) の文面を書き換え。旧文面「GUI は en/ja のみローカライズ」は、GUI が 11 言語化されて事実でなくなった。
+     作者判断 (2026-11-24) で各言語の本文の UI ラベルをその言語の表示名 (括弧に英語名) にしたので、
+     「スクリーンショットは英語 UI・本文のラベルは各言語 UI の表示名」と案内する (旧文面は commit 3e6ec78 以前の履歴にある)。 #}
 {% extends "base.html" %}
 
 {% block content %}
@@ -60,34 +63,34 @@
     <div class="admonition info" markdown="0">
       {% if i18n_page_locale == "de" %}
       <p class="admonition-title">Screenshots auf Englisch</p>
-      <p>Die Benutzeroberfläche von IPAnalyzer ist derzeit nur auf Englisch und Japanisch lokalisiert. Die Screenshots auf dieser Seite werden daher auf Englisch angezeigt, auch wenn der Text übersetzt ist.</p>
+      <p>Die Screenshots auf dieser Seite zeigen die englische Oberfläche. IPAnalyzer selbst ist auch auf Deutsch verfügbar (Menü „Sprache“); die Bezeichnungen im Text entsprechen der deutschen Oberfläche, die englischen Namen stehen in Klammern.</p>
       {% elif i18n_page_locale == "fr" %}
       <p class="admonition-title">Captures d'écran en anglais</p>
-      <p>L'interface d'IPAnalyzer n'est actuellement localisée qu'en anglais et en japonais. Les captures d'écran de cette page sont donc affichées en anglais, même si le texte est traduit.</p>
+      <p>Les captures d'écran de cette page montrent l'interface anglaise. IPAnalyzer est également disponible en français (menu Langue) ; les libellés du texte sont ceux de l'interface française, avec les noms anglais entre parenthèses.</p>
       {% elif i18n_page_locale == "es" %}
       <p class="admonition-title">Capturas de pantalla en inglés</p>
-      <p>La interfaz de IPAnalyzer solo está localizada actualmente en inglés y japonés, por lo que las capturas de pantalla de esta página se muestran en inglés aunque el texto esté traducido.</p>
+      <p>Las capturas de pantalla de esta página muestran la interfaz en inglés. IPAnalyzer también está disponible en español (menú Idioma); las etiquetas del texto son las de la interfaz en español, con los nombres en inglés entre paréntesis.</p>
       {% elif i18n_page_locale == "it" %}
       <p class="admonition-title">Screenshot in inglese</p>
-      <p>L'interfaccia di IPAnalyzer è attualmente localizzata solo in inglese e giapponese, quindi gli screenshot di questa pagina sono mostrati in inglese anche se il testo è tradotto.</p>
+      <p>Gli screenshot di questa pagina mostrano l'interfaccia inglese. IPAnalyzer è disponibile anche in italiano (menu Lingua); le etichette nel testo sono quelle dell'interfaccia italiana, con i nomi inglesi tra parentesi.</p>
       {% elif i18n_page_locale == "ru" %}
       <p class="admonition-title">Снимки экрана на английском</p>
-      <p>Интерфейс IPAnalyzer в настоящее время локализован только на английский и японский языки, поэтому снимки экрана на этой странице показаны на английском, даже если текст переведён.</p>
+      <p>Снимки экрана на этой странице показывают английский интерфейс. IPAnalyzer доступен и на русском языке (меню «Язык»); названия элементов в тексте соответствуют русскому интерфейсу, английские названия указаны в скобках.</p>
       {% elif i18n_page_locale == "zh-Hans" %}
       <p class="admonition-title">屏幕截图为英文</p>
-      <p>IPAnalyzer 的界面目前仅本地化为英文和日文，因此本页的屏幕截图以英文显示，即使正文已翻译。</p>
+      <p>本页的屏幕截图显示的是英文界面。IPAnalyzer 本身也提供简体中文界面（“语言”菜单）；正文中的界面名称采用简体中文界面的显示名称，括号内为英文名称。</p>
       {% elif i18n_page_locale == "zh-Hant" %}
       <p class="admonition-title">螢幕截圖為英文</p>
-      <p>IPAnalyzer 的介面目前僅在地化為英文與日文，因此本頁的螢幕截圖以英文顯示，即使內文已翻譯。</p>
+      <p>本頁的螢幕截圖顯示的是英文介面。IPAnalyzer 本身也提供繁體中文介面（「語言」選單）；內文中的介面名稱採用繁體中文介面的顯示名稱，括號內為英文名稱。</p>
       {% elif i18n_page_locale == "ko" %}
       <p class="admonition-title">스크린샷은 영어로 표시됩니다</p>
-      <p>IPAnalyzer 인터페이스는 현재 영어와 일본어로만 현지화되어 있으므로, 본문이 번역되어 있더라도 이 페이지의 스크린샷은 영어로 표시됩니다.</p>
+      <p>이 페이지의 스크린샷은 영어 인터페이스입니다. IPAnalyzer는 한국어 인터페이스도 제공합니다(언어 메뉴). 본문의 메뉴·버튼 이름은 한국어 인터페이스의 표시 이름이며, 괄호 안은 영어 이름입니다.</p>
       {% elif i18n_page_locale == "pt" %}
       <p class="admonition-title">Capturas de tela em inglês</p>
-      <p>A interface do IPAnalyzer está atualmente localizada apenas em inglês e japonês, portanto as capturas de tela desta página são exibidas em inglês, mesmo que o texto esteja traduzido.</p>
+      <p>As capturas de tela desta página mostram a interface em inglês. O IPAnalyzer também está disponível em português (menu Idioma); os rótulos no texto são os da interface em português, com os nomes em inglês entre parênteses.</p>
       {% else %}
       <p class="admonition-title">Screenshots are in English</p>
-      <p>The IPAnalyzer interface is currently localized only in English and Japanese, so the screenshots on this page are shown in English even though the text is translated.</p>
+      <p>The screenshots on this page show the English interface. IPAnalyzer is also available in other languages (Language menu); the labels in the text are those of the localized interface, with the English names in parentheses.</p>
       {% endif %}
     </div>
   {% endif %}

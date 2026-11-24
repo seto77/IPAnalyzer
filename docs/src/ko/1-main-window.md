@@ -1,125 +1,129 @@
-<!-- 260601Cl: Reflected from ja/1-main-window.md (lead language: Japanese). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
 
-# Main Window
+# 메인 창
 
-메인 창은 IPAnalyzer를 시작했을 때 처음 표시되는 화면입니다. 불러온 회절 이미지의 표시, 주요 작업(중심 찾기, 스폿 마스킹, 1차원화), 그리고 검출기 매개변수 설정으로 들어가는 진입점을 한곳에 모아 둡니다.
+메인 창은 IPAnalyzer 를 시작하면 처음 표시되는 화면입니다. 불러온 회절 이미지의 표시, 주요 조작 (중심 찾기, 스폿 마스크, 1차원화), 검출기 매개변수 설정으로 들어가는 입구가 이곳에 모여 있습니다.
 
-이 창은 대략 상단의 메뉴와 툴바, 중앙의 이미지 표시 영역, 오른쪽의 세로 툴바, 하단의 그래프 영역으로 구성됩니다.
+창은 대략 위쪽의 메뉴와 도구 모음, 가운데의 이미지 표시 영역, 오른쪽의 세로 도구 모음, 아래쪽의 그래프 영역으로 구성됩니다.
 
-![The IPAnalyzer main window](../assets/cap-en-auto/FormMain.png)
+![IPAnalyzer 메인 창](../assets/cap-en-auto/FormMain.png)
 
-## Central View
+## 중앙 화면
 
-### Image display
+### 이미지 표시
 
-불러온 이미지가 여기에 표시됩니다. 마우스 포인터 위치에 따라 이미지 위쪽 영역에는 실좌표(mm), 이미지 좌표(pix), 중심으로부터의 거리 R(mm), 산란각 2θ, d-value, 방위각 χ, 강도가 표시됩니다. 마젠타색 × 표시는 직접 스폿(중심) 위치를 나타냅니다.
+불러온 이미지가 여기에 표시됩니다. 이미지 위쪽 영역에는 마우스 포인터 위치에 따라 실좌표 (mm), 이미지 좌표 (pix), 중심으로부터의 거리 R (mm), 산란각 2θ, d 값, 방위각 χ, 강도가 표시됩니다. 자홍색 × 표시는 다이렉트 스폿 (중심) 위치를 나타냅니다.
 
-픽셀 상태는 구분되는 색으로 표시됩니다.
+픽셀 상태는 서로 다른 색으로 표시됩니다.
 
-| Color | Meaning |
+| 색 | 의미 |
 | --- | --- |
-| Cyan | 마스킹된 스폿 |
-| Green | 적분에서 제외된 영역(**Integral Region**에서 설정) |
-| Magenta | 적분에서 제외된 각도 영역(**Integral Property**에서 설정) |
-| Blue | 강도 하한값 미만의 픽셀(**Integral Region**에서 설정) |
-| Red | 강도 상한값 초과의 픽셀 |
+| 하늘색 (Cyan) | 마스크된 스폿 |
+| 녹색 | 적분에서 제외되는 영역 (적분 영역 (Integral Region) 에서 설정) |
+| 자홍색 (Magenta) | 적분에서 제외되는 각도 영역 (적분 속성 (Integral Property) 에서 설정) |
+| 파란색 | 강도 임계값 미만의 픽셀 (적분 영역 (Integral Region) 에서 설정) |
+| 빨간색 | 강도 임계값을 넘는 픽셀 |
 
-### Mouse operations
+### 마우스 조작
 
-일반 모드에서:
+일반 모드에서는 다음과 같습니다.
 
-- 왼쪽 버튼을 누른 채 유지: 근처의 스폿 중심을 검색합니다.
 - 왼쪽 더블 클릭: 클릭한 지점으로 중심 위치를 갱신합니다.
-- 오른쪽 드래그: 드래그한 영역으로 확대합니다.
+- 가운데 클릭: 클릭한 지점을 시작점으로 중심을 찾습니다.
+- 오른쪽 드래그: 드래그한 영역을 확대합니다.
 - 오른쪽 클릭: 축소합니다.
+- Ctrl + 오른쪽 드래그: 통계 정보에 사용할 직사각형 영역을 선택합니다.
 
-**Manual spot mode**에서는 왼쪽 클릭으로 마스킹하고 오른쪽 클릭으로 마스킹을 해제합니다. 마스크 모양과 크기는 툴바와 속성에서 설정합니다.
+왼쪽 더블 클릭과 가운데 클릭은 **중심 고정 (Fix Center)** 이 꺼져 있을 때만 동작합니다.
 
-### Auxiliary views and image information
+**수동 모드 (Manual Mode)** 에서는 왼쪽 클릭으로 마스크하고 오른쪽 클릭으로 마스크를 해제합니다. 마스크 모양과 크기는 도구 모음과 속성에서 설정합니다.
 
-중앙 뷰 옆에는 보조 표시가 있습니다. **Whole image**와 **Near center**를 전환할 수 있는데, 전체 이미지 뷰는 현재 표시 범위를 노란색 프레임으로 표시하고, 중심 근처 뷰는 확대 이미지를 표시합니다.
+### 보조 화면과 이미지 정보
 
-**Image Information**은 이미지 해상도, 최대 강도, 총 강도, 헤더 데이터 등을 표시합니다.
+중앙 화면 옆에 보조 표시가 있습니다. **전체 이미지 (Whole image)** 와 **중심 부근 (Near center)** 을 전환할 수 있으며, 전체 이미지 보기에서는 현재 표시 범위를 노란색 테두리로 나타내고, 중심 부근 보기에서는 확대된 이미지를 보여 줍니다.
 
-### Display adjustment controls
+**이미지 정보 (Image Information)** 에는 이미지 해상도, 최대 강도, 총 강도, 헤더 데이터 등이 표시됩니다.
 
-이미지가 보이는 방식을 조정하는 컨트롤:
+### 표시 조정 컨트롤
 
-- **Gradient**: 색조를 반전합니다.
-- **Brightness scale**: 로그 / 선형.
-- **Color scale**: 그레이스케일 / 컬러.
-- **Scale line**: 눈금선 표시(없음 / 거침 / 중간 / 미세함).
-- **Auto Contrast** / **Reset Contrast**, 그리고 명시적인 최소/최대 강도.
-- 배율 버튼(×1, ×2, ×4, ×1/2, ×1/4, ×1/8, ×1/16).
+이미지가 보이는 방식을 조정하는 컨트롤입니다.
 
-## Lower View
+- **그라데이션 (Gradient)**: 계조를 반전합니다.
+- **밝기 스케일 (Brightness scale)**: 로그 / 선형.
+- **컬러 스케일 (Color scale)**: 그레이스케일 / 컬러.
+- **눈금선 (Scale line)**: 눈금선 표시 (없음 / 거칠게 / 보통 / 세밀하게).
+- **자동 대비 (Auto Contrast)** / **대비 초기화 (Reset Contrast)**, 그리고 최소·최대 강도의 직접 지정.
+- 배율 버튼 (×1, ×2, ×4, ×1/2, ×1/4, ×1/8, ×1/16).
 
-하단 영역에는 탭으로 구분된 세 개의 그래프/뷰가 있습니다.
+## 하단 화면
 
-- **Frequency of Intensity**: 모든 픽셀의 강도 분포를 log–log 축으로 표시합니다. 마우스로 확대할 수 있습니다.
-- **Converted Profile**: 1차원화(**Get Profile**) 후의 회절 프로파일입니다. 마우스로 확대할 수 있습니다.
-- **Statistical Information**: 선택한 직사각형 영역 (X1,Y1)–(X2,Y2)의 통계입니다. 순차 이미지를 불러온 경우, 다른 프레임에서 동일 영역의 통계도 비교할 수 있습니다.
+아래쪽 영역에는 탭으로 전환되는 세 가지 그래프/보기가 있습니다.
 
-## Menus
+- **강도 빈도 (Frequency of Intensity)**: 모든 픽셀의 강도 분포를 양대수 축으로 표시합니다. 마우스로 확대할 수 있습니다.
+- **변환된 프로파일 (Converted Profile)**: **프로파일 가져오기 (Get Profile)** 로 만든 회절 프로파일을 표시합니다. 마우스로 확대할 수 있습니다.
+- **통계 정보 (Statistical Information)**: 이미지 위에서 Ctrl + 오른쪽 드래그로 선택한 직사각형 영역 (X1,Y1)–(X2,Y2) 의 통계를 표시합니다. 연속 이미지를 불러온 경우, 다른 프레임의 같은 영역 통계와도 비교할 수 있습니다.
 
-메뉴 막대는 **File / Tool / Property / Option / Language / Macro / Help**로 구성됩니다.
+## 메뉴
 
-### File
+메뉴 모음은 **파일 (File) / 도구 (Tool) / 속성 (Property) / 옵션 (Option) / 언어 (Language) / 매크로 (Macro) / 도움말 (Help)** 로 구성됩니다.
 
-- **Read image**: 회절 이미지를 엽니다. 지원되는 형식은 [Overview](0-overview.md)를 참조하십시오.
-- **Save image**: TIFF, PNG, CSV 또는 IPA 형식으로 저장합니다. TIFF는 원본 픽셀 강도를 보존하고, PNG는 표시(밝기, 명암, 마스크)를 보존하며, IPA는 왜곡 보정된 독자 형식(메타데이터 포함)입니다.
-- **Read / Save parameter**: 파장, 카메라 길이, 픽셀 크기, 기울기 보정, 중심 위치 등을 `.prm` 파일로 가져오거나 내보냅니다.
-- **Read / Save / Clear mask**: 마스크를 `.mas` 파일로 가져오거나 내보내거나, 마스크를 지웁니다(마스크는 현재 이미지의 해상도와 일치해야 합니다).
-- **Close**.
+### 파일 (File)
+
+- **이미지 읽기 (Read image)**: 회절 이미지를 엽니다. 지원 포맷은 [개요](0-overview.md)를 참조하십시오.
+- **이미지 저장 (Save image)**: TIFF, PNG, CSV, IPA 형식으로 저장합니다. TIFF 는 현재 처리된 픽셀 강도 (뒤집기/회전, 배경 차감, 편광 보정을 적용한 값) 를 저장하고, PNG 는 표시 상태 (밝기, 대비, 마스크) 를 보존하며, IPA 는 왜곡이 보정된 독자 형식 (메타데이터 포함) 입니다.
+- **매개변수 읽기 / 매개변수 저장 (Read / Save parameter)**: 파장, 카메라 길이, 픽셀 크기, 기울기 보정, 중심 위치 등을 `.prm` 파일로 가져오거나 내보냅니다.
+- **마스크 읽기 / 마스크 저장 / 마스크 지우기 (Read / Save / Clear mask)**: 마스크를 `.mas` 파일로 가져오거나 내보내거나, 마스크를 지웁니다 (마스크는 현재 이미지와 해상도가 같아야 합니다).
+- **닫기 (Close)**.
 
 이미지, 매개변수, 마스크 파일은 창에 드래그 앤 드롭하여 불러올 수도 있습니다.
 
-### Tool
+### 도구 (Tool)
 
-- **Reset Frequency Profile**: 강도-빈도 그래프를 지웁니다(이미지는 유지됩니다).
-- **Calibrate Raxis Image**.
+- **빈도 프로파일 초기화 (Reset Frequency Profile)**: 현재 이미지의 강도 빈도 그래프를 기본 범위로 다시 만듭니다 (이미지는 그대로 유지됩니다).
+- **R-AXIS 이미지 보정 (Calibrate Raxis Image)**: R-AXIS 이미지 두 장으로부터 강도 변환 테이블을 구합니다 ([도구](3-tools.md) 참조).
 
-### Property
+### 속성 (Property)
 
-Wave Source / Imaging Plate Condition / Integral Region / Integral Property / Manual Mask Mode / After "Get Profile" / Unrolled Image Option / Miscellaneous. 이들은 [속성 창](2-property-windows.md)의 해당 탭을 직접 엽니다.
+선원 (Wave Source) / 이미징 플레이트 조건 (Imaging Plate Condition) / 적분 영역 (Integral Region) / 적분 속성 (Integral Property) / 수동 마스크 모드 (Manual Mask Mode) / "프로파일 가져오기" 후 (After "Get Profile") / 펼친 이미지 옵션 (Unrolled Image Option) / 기타 (Miscellaneous). 이 항목들은 [속성 창](2-property-windows.md)의 해당 탭을 바로 엽니다.
 
-### Option
+### 옵션 (Option)
 
-- **ToolTip**: 버튼과 메뉴의 툴팁을 켜고 끕니다.
-- **Flip**: 좌우 / 상하. **Rotate**: 회전 각도를 선택합니다. 둘 다 표시에만 영향을 주며, 불러온 이미지 데이터 자체는 변경되지 않습니다.
-- **Ngen Compile**과 **Clear registry**는 개발 및 문제 해결용입니다.
+- **툴팁 (ToolTip)**: 버튼과 메뉴의 툴팁 표시를 켜고 끕니다.
+- **뒤집기 (Flip)**: 수평 (Horizontally) / 수직 (Vertically). **회전 (Rotate)**: 회전 각도를 선택합니다. 뒤집기와 회전은 작업 중인 이미지 데이터에 적용되므로, 이후의 적분과 이미지 저장에도 영향을 줍니다 (디스크의 원본 파일은 바뀌지 않습니다).
+- **레지스트리 지우기 (Clear registry)**: 저장된 설정을 지우는 문제 해결용 항목입니다. **Ngen 컴파일 (Ngen Compile)** 은 현재 버전에서는 기능이 없습니다.
 
-### Language
+### 언어 (Language)
 
-- **English**와 **Japanese**를 전환합니다(설정은 레지스트리에 저장됩니다).
+- 표시 언어 (11개 언어) 를 선택합니다. 확인 후 애플리케이션이 다시 시작됩니다. 설정은 레지스트리에 저장됩니다.
 
-### Macro
+### 매크로 (Macro)
 
-- **Editor**: 매크로 편집기를 엽니다([Tools](3-tools.md) / [Macro](5-macro/index.md) 참조).
+- **편집기 (Editor)**: 매크로 편집기를 엽니다 ([도구](3-tools.md) / [매크로](5-macro/index.md) 참조).
 
-### Help
+### 도움말 (Help)
 
-- **Program Updates**, **Hint**, **License**, **Version History**, **Web Page**.
+- **프로그램 업데이트 (Program Updates)**, **힌트 (Hint)**, **라이선스 (License)**, **버전 기록 (Version History)**, **도움말 (Help)** (동봉된 PDF 매뉴얼을 엽니다).
+- 어느 창에서든 **F1** 을 누르면 이 온라인 매뉴얼의 해당 페이지가 열립니다.
 
-## Operation toolbar
+## 연산 도구 모음
 
-주요 이미지 처리 작업(드롭다운에 세부 옵션 있음):
+주요 이미지 처리 조작입니다 (드롭다운에 상세 옵션이 있습니다).
 
-- **Background**: 배경 이미지의 차감(**Background Option**에서 구성).
-- **Find Center**: 2D Pseudo-Voigt 피팅으로 빔 중심을 검출합니다(검색 범위는 기본 8 px, **Miscellaneous**에서 설정). 드롭다운에서는 고리 기반 중심 검출도 제공합니다.
-- **Fix center**: 중심 위치를 고정합니다.
-- **Mask Spots**: 평균 ± 표준편차 × Deviation 기준으로 스폿을 검출하여 마스킹합니다. 드롭다운에는 전체 마스킹, 반전 마스킹, 수동 등이 포함됩니다.
-- **Manual**: 수동 마스크 모드입니다. 모양(원 / 직사각형)과 크기(8–256 px)를 선택할 수 있습니다.
-- **Get Profile**: 이미지를 1차원 프로파일로 적분합니다. Concentric(2θ 기준)과 Radial(방위각 기준)을 지원합니다. 드롭다운에서는 Integral Property/Region 선택, 적분 전 중심 찾기 및 스폿 마스킹 여부, PDIndexer로 전송, 방위각 분할 분석, 순차 이미지 처리 등을 구성합니다.
+- **배경 (Background)**: 현재 버전에서는 이 버튼이 비활성화되어 있습니다. 배경 이미지 차감은 속성 창의 **배경 옵션 (Background Option)** 탭에서 설정합니다.
+- **중심 찾기 (Find Center)**: 2D Pseudo-Voigt 피팅으로 빔 중심을 검출합니다 (검색 범위는 기본적으로 중심 주위 ±8 px 이며, 기타 (Miscellaneous) 탭에서 설정합니다). **링 그리기 (Draw ring)** 로 링을 표시하고 있을 때는 링을 기준으로 중심을 구합니다.
+- **중심 고정 (Fix Center)**: 중심 위치를 고정합니다.
+- **스폿 마스크 (Mask Spots)**: 각 반경 띠 안에서 강도가 평균 + 표준편차 × Deviation 을 넘는 픽셀을 스폿으로 검출하고, 그 주변과 함께 마스크합니다. 드롭다운에는 전체 마스크, 마스크 반전, 수동 등이 있습니다.
+- **수동 모드 (Manual Mode)**: 수동 마스크 모드입니다. 마스크 모양 (스폿 (원/직사각형) / 원 / 직사각형 / 다각형 / 스플라인) 과 스폿 크기 (반폭) 를 선택할 수 있습니다.
+- **프로파일 가져오기 (Get Profile)**: 이미지를 적분하여 1차원 프로파일로 만듭니다. 동심 (Concentric, 2θ 기준) 과 방사 (Radial, 방위각 기준) 를 지원합니다. 드롭다운에서는 적분 속성/적분 영역 (Integral Property/Region) 선택, 적분 전에 중심 찾기와 스폿 마스크를 할지 여부, PDIndexer 로 전송, 방위각 분할 분석, 연속 이미지 처리 등을 설정합니다.
 
-## Toolbar (other tools)
+## 도구 모음 (기타 도구)
 
-오른쪽의 세로 툴바는 여러 도구를 실행합니다. 자세한 내용은 [Tools](3-tools.md)를 참조하십시오.
+오른쪽의 세로 도구 모음에서 여러 도구를 실행합니다. 자세한 내용은 [도구](3-tools.md)를 참조하십시오.
 
-- **Intensity Table**
-- **Auto Procedure**
-- **Draw ring**
-- **Find parameter** / **Find parameter (brute force)**
-- **Unroll**
-- **Circumferential Blur**
-- **Sequential**
+- **강도 테이블 (Intensity table)** (현재 버전에서는 이 버튼에 기능이 할당되어 있지 않습니다. R-AXIS 강도 보정에는 **도구 (Tool) → R-AXIS 이미지 보정 (Calibrate Raxis Image)** 을 사용합니다)
+- **자동 절차 (Auto procedure)**
+- **링 그리기 (Draw ring)**
+- **매개변수 찾기 (기하학적) (Find parameter (geometrically))** / **매개변수 찾기 (전수 탐색) (Find parameter (brute force))**
+- **이미지 펼치기 (Unroll image)**
+- **원주 블러 (Circumferential blur)**
+- **연속 이미지 (Sequential image)**

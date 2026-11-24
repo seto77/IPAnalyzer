@@ -1,64 +1,67 @@
-<!-- 260601Cl: Reflected from ja/4-procedures.md (lead language: Japanese). -->
+<!-- 261124Cl: Retranslated from en/4-procedures.md (UI labels follow the localized GUI). -->
 
 # Procédures
 
-Cette page présente le déroulement des tâches typiques. Pour la description des différents outils, voir [Outils](3-tools.md).
+Cette page présente le déroulement des tâches typiques. Pour la description de chaque outil, voir [Outils](3-tools.md).
 
 ## Déroulement de base (intégration concentrique)
 
-1. **Charger une image** : File → Read image (ou glisser-déposer).
-2. **Définir la source** : définissez l'élément/la transition ou la longueur d'onde sous **Wave source** dans les propriétés.
-3. **Définir la condition du détecteur** : définissez la longueur de caméra, la taille de pixel, la position du centre (approximative) et, si nécessaire, l'inclinaison φ, τ sous **Detector condition**.
-4. **Trouver le centre** : détectez automatiquement le centre du faisceau avec **Find Center** dans la barre d'outils (la plage de recherche se définit sous Miscellaneous).
-5. **Masquer les taches** : supprimez les réflexions de monocristal et similaires avec **Mask Spots**. Si nécessaire, masquez manuellement avec **Manual**.
-6. **Unidimensionnaliser** : obtenez le profil avec **Get Profile**. L'enregistrement et l'envoi se configurent dans l'onglet **After "Get Profile"** (enregistrement CSV, envoi vers PDIndexer, etc.).
+1. **Charger une image** : Fichier → Lire l'image (File → Read image) (ou glisser-déposer).
+2. **Régler la source** : réglez l'élément/la transition ou la longueur d'onde dans **Source d'onde (Wave source)** des propriétés.
+3. **Régler la condition du détecteur** : réglez la longueur de caméra, la taille de pixel, la position du centre (approximative) et, si nécessaire, l'inclinaison φ, τ dans **Condition du détecteur (Detector condition)**.
+4. **Trouver le centre** : détectez automatiquement le centre du faisceau avec **Trouver le centre (Find Center)** dans la barre d'outils (la plage de recherche se règle dans l'onglet Divers (Miscellaneous)).
+5. **Masquer les taches** : supprimez les réflexions de monocristal et autres avec **Masquer les taches (Mask Spots)**. Si nécessaire, masquez manuellement avec **Mode manuel (Manual Mode)**.
+6. **Vérifier les réglages d'intégration** : sélectionnez la région cible dans **Région d'intégration (Integral Region)**, et choisissez **Intégration concentrique (Concentric integration)** avec l'unité de l'axe et **Début / Fin / Pas (Start / End / Step)** dans **Propriété d'intégration (Integral Property)**.
+7. **Intégrer l'image** : obtenez le profil avec **Obtenir le profil (Get Profile)**. L'enregistrement et l'envoi se règlent dans l'onglet **Après « Obtenir le profil » (After "Get Profile")** (enregistrement CSV, envoi vers PDIndexer, etc.).
 
-Pour les images séquentielles, sélectionnez une trame dans [Sequential](3-tools.md) avant les étapes 5–6. Pour une analyse par azimut, utilisez l'intégration radiale dans **Integral Property**.
+Pour les images séquentielles, sélectionnez une trame dans [Image séquentielle (Sequential image)](3-tools.md) avant les étapes 5 à 7. Pour une analyse par azimut, utilisez **Analyse par division azimutale (Azimuthal Division Analysis)** dans le menu déroulant de **Obtenir le profil (Get Profile)** (les anneaux sont découpés en secteurs et chaque secteur est intégré), ou **Intégration radiale (Radial integration)** dans **Propriété d'intégration (Integral Property)** (un profil azimut–intensité).
+
+Si la longueur de caméra, la longueur d'onde ou l'inclinaison sont inconnues, calibrez-les d'abord à partir d'une image d'un échantillon de référence comme décrit dans la section suivante, appliquez les valeurs obtenues, puis intégrez les images de l'échantillon.
 
 ## Détermination des paramètres : calibration géométrique avec un échantillon de référence (double cassette)
 
-Lorsque la longueur de caméra ou la longueur d'onde est inconnue, optimisez les paramètres géométriques à partir des anneaux de diffraction d'un matériau de référence (CeO2 par défaut, etc.), en utilisant [Find Parameter (Geometric)](3-tools.md).
+Lorsque la longueur de caméra ou la longueur d'onde est inconnue, optimisez les paramètres géométriques à partir des anneaux de diffraction d'un matériau de référence (CeO2 par défaut, etc.), à l'aide de [Trouver paramètre (géométriquement) (Find parameter (geometrically))](3-tools.md).
 
-1. Chargez la **Primary image** (échantillon de référence, à une longueur de caméra) avec Open, trouvez le centre et affichez les pics avec **Get Profile**.
-2. Faire glisser un marqueur de ligne de diffraction dans la Profile View met à jour automatiquement l'estimation de la longueur de caméra.
-3. Chargez de la même manière la **Secondary image** (le même échantillon de référence, à une longueur de caméra différente) et saisissez la **différence de longueur de caméra** par rapport à Primary.
-4. Dans la **Peak List**, sélectionnez les valeurs d des pics qui apparaissent dans les deux images (au moins un par image, idéalement trois ou plus).
-5. Sous **Refinement Option**, choisissez les paramètres à optimiser (longueur d'onde, distance du film, inclinaison, taille de pixel, distorsion de pixel).
-6. Lancez **Refine!** et, une fois le résidu stabilisé, recopiez les résultats optimisés dans le formulaire principal.
+1. Chargez l'**Image primaire (Primary image)** (échantillon de référence, à une longueur de caméra) avec **Ouvrir (Open)**, trouvez le centre et affichez les pics avec **Obtenir le profil (Get Profile)**.
+2. Faire glisser un marqueur de raie de diffraction dans la Profile View met automatiquement à jour l'estimation de la longueur de caméra.
+3. Chargez de la même façon l'**Image secondaire (Secondary image)** (le même échantillon de référence, à une autre longueur de caméra), et saisissez la **différence de longueur de caméra** \(\Delta L = L_\mathrm{Secondary} - L_\mathrm{Primary}\) (mm) (par ex. +20 si l'image primaire est à 100 mm et l'image secondaire à 120 mm). L'image secondaire est facultative ; la calibration fonctionne aussi avec l'image primaire seule.
+4. Dans la **Liste des pics (Peak List)**, sélectionnez les valeurs d des pics qui apparaissent dans les deux images (normalement trois ou plus par image ; avec deux images, au moins un doit être commun aux deux. Sauf si seule la longueur de caméra est affinée, **Affiner ! (Refine!)** ne fait rien avec moins de trois pics).
+5. Choisissez les paramètres à optimiser (longueur d'onde, distance du film, inclinaison, taille de pixel, distorsion de pixel, position du centre, correction sphérique).
+6. Lancez **Affiner ! (Refine!)**. L'affinement s'arrête automatiquement après le nombre de répétitions réglé (12 par défaut). Après avoir vérifié le résultat, copiez-le vers la fenêtre principale avec **Paramètres affinés => Fenêtre principale (Refined parameters => Main form)**.
 
 !!! note
-    L'utilisation de deux images (une « double cassette ») facilite la détermination séparée de la longueur de caméra et de la longueur d'onde.
+    L'utilisation de deux images (une « double cassette ») permet de déterminer plus facilement la longueur de caméra et la longueur d'onde séparément.
 
-## Détermination des paramètres : optimisation par force brute (échantillon arbitraire)
+## Détermination des paramètres : optimisation par force brute (échantillon de référence)
 
-Lorsque l'optimisation géométrique peine à converger, recherchez la longueur de caméra et la longueur d'onde de façon exhaustive avec [Find Parameter (Brute force)](3-tools.md). Voir [Recherche de paramètres (force brute)](6-find-parameter.md) pour un guide détaillé avec captures d'écran.
+Lorsque l'optimisation géométrique converge difficilement, recherchez de façon exhaustive la longueur de caméra, la position du centre, l'inclinaison et, en option, la longueur d'onde avec [Trouver paramètre (force brute) (Find parameter (brute force))](3-tools.md). Voir [Recherche de paramètres (force brute)](6-find-parameter.md) pour une présentation détaillée avec captures d'écran.
 
-1. Chargez les Primary et Secondary images (deux images, avec des anneaux en commun, à des longueurs de caméra différentes).
-2. Alignez grossièrement la position du centre dans le formulaire principal (Find Center est utile).
-3. Saisissez les **plages de recherche (min, max, step)** pour la longueur de caméra, la longueur d'onde, etc. Laissez désactivés au début les paramètres inconnus (taille de pixel, inclinaison).
-4. Régler **Integral Region** en mode fente (Rectangle) avec une bande étroite aide à supprimer le bruit.
-5. Lancez la recherche et recopiez la combinaison ayant le plus petit résidu dans le formulaire principal.
+1. Chargez une image d'un échantillon de référence dans la fenêtre principale, ouvrez Trouver paramètre (force brute) (Find parameter (brute force)) et sélectionnez le matériau de référence correspondant.
+2. Alignez grossièrement la position du centre dans la fenêtre principale (Trouver le centre (Find Center) est utile).
+3. Choisissez les éléments à optimiser, et saisissez le pas **Pas initial (Initial step)** (centré sur la valeur actuelle) et le nombre de pas de chaque côté (**Plage de recherche (Search range)**). Pour un détecteur plan, la taille de pixel n'est pas une cible de la recherche. Voir [Recherche de paramètres (force brute)](6-find-parameter.md) pour des exemples numériques.
+4. Régler **Région d'intégration (Integral Region)** en mode fente (**Rectangle**) avec une faible largeur de bande aide à réduire le bruit.
+5. Lancez la recherche avec **Optimiser (Optimize)**. À chaque cycle, la combinaison donnant la plus petite valeur d'évaluation R est retenue et écrite automatiquement dans les paramètres de la fenêtre principale.
 
-## Traitement automatisé (Auto Procedure)
+## Traitement automatisé (Procédure auto.)
 
-Traitez automatiquement les images qui arrivent dans un dossier, par exemple pendant une expérience. Voir [Outils](3-tools.md) pour les détails.
+Traitez automatiquement les images qui arrivent dans un dossier, par exemple pendant une expérience. Voir [Outils](3-tools.md) pour plus de détails.
 
-1. Activez **Automatically load new images** et choisissez le dossier surveillé avec **Set**.
-2. Si nécessaire, filtrez les fichiers par **number matching** (le numéro à la fin du nom de fichier) ou par **keyword**.
-3. Activez **After Loading Image, Execute "Auto"** et choisissez dans la liste : Auto Contrast / Find Center / Mask Spots / Get Profile / Execute Macro.
-4. Une fois la surveillance démarrée, la séquence s'exécute automatiquement à chaque arrivée d'une image correspondante.
+1. Choisissez le dossier à surveiller avec **Définir (Set)**.
+2. Si nécessaire, filtrez les fichiers par **correspondance de numéro** (number matching ; le numéro à la fin du nom de fichier) ou par **mot-clé** (keyword).
+3. Activez **Une fois la nouvelle image chargée, exécuter la séquence suivante (Once the new image is loaded, perform the following sequence)**, et choisissez dans la liste : Auto Contrast / Find Center / Mask Spots / Get Profile / Execute Macro.
+4. Enfin, activez **Charger automatiquement les nouvelles images (Automatically load new images)** pour lancer la surveillance (cette option ne peut pas être activée sans dossier ; les conditions de numéro/mot-clé en vigueur au démarrage de la surveillance sont utilisées). La séquence s'exécute alors automatiquement à chaque arrivée d'une image correspondante.
 
 ## Procédures scriptées (macros basées sur Python)
 
-Les traitements avec boucles et conditions peuvent s'écrire sous forme de [macro](5-macro/index.md). Les exemples de macros fournis constituent un bon point de départ.
+Les traitements comportant des boucles et des conditions peuvent être écrits sous forme de [macro](5-macro/index.md). Les macros d'exemple affichées avec **Afficher les exemples (Show samples)** dans l'éditeur de macros constituent un bon point de départ.
 
-- Charger une image, définir la source et le détecteur (centre, longueur de caméra, pixels) et ajuster l'affichage.
-- Définir les conditions d'intégration concentrique (start, end, step, unité), unidimensionnaliser et enregistrer en CSV.
+- Charger une image, régler la source et le détecteur (centre, longueur de caméra, pixels) et ajuster l'affichage.
+- Régler les conditions de l'intégration concentrique (début, fin, pas, unité), réduire en une dimension et enregistrer au format CSV.
 - Traiter par lots plusieurs fichiers, en enregistrant un CSV à côté de chaque image.
 - Traiter une image multi-trames trame par trame.
-- Diviser un anneau de Debye en N secteurs et analyser la dépendance azimutale.
-- Masquer (tout effacer → masquer les taches → masquer la région du beam-stop → enregistrer le masque) et unidimensionnaliser.
-- Sortir l'azimut en fonction de l'intensité avec une intégration radiale (cake).
-- Activer l'envoi vers le presse-papiers, unidimensionnaliser et appeler une macro nommée dans PDIndexer (par exemple un ajustement de pics).
+- Découper un anneau de Debye en N secteurs et analyser la dépendance azimutale.
+- Masquer (tout effacer → masquer les taches → masquer la région du beam-stop → enregistrer le masque) et réduire en une dimension.
+- Produire l'intensité en fonction de l'azimut avec l'intégration radiale (cake).
+- Activer l'envoi par le presse-papiers, réduire en une dimension et appeler une macro nommée dans PDIndexer (par ex. ajustement de pics).
 
-Les macros que vous écrivez peuvent être enregistrées, appelées par leur nom et également exécutées depuis Auto Procedure.
+Les macros que vous écrivez peuvent être enregistrées, appelées par leur nom et aussi exécutées depuis la Procédure auto. (Auto procedure).

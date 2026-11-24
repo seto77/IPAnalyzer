@@ -1,72 +1,74 @@
-<!-- 260605Cl: Ported from ReciPro docs/src/en/3-scattering-factor.md into the IPAnalyzer appendix (reflected from ja/appendix/a5). The Scattering Factor window is a shared Crystallography.Controls component, identical to ReciPro. -->
+<!-- 261124Cl: Retranslated from en/appendix/a5-scattering-factor.md (UI labels follow the localized GUI). -->
 
-# Appendix A5. Fattore di diffusione
+# Appendice A5. Fattore di diffusione
 
-**Scattering Factor** elenca i piani cristallini consentiti (riflessioni) del cristallo selezionato e ne calcola il **fattore di struttura** e l'intensità di diffrazione per ciascuno. Il tipo di radiazione (raggi X, elettroni o neutroni) può essere commutato, in modo da poter confrontare i fattori di struttura dello stesso cristallo tra le diverse tecniche di diffrazione.
+**Scattering Factor** elenca i piani cristallini permessi (riflessioni) del cristallo selezionato e calcola il **fattore di struttura** e l'intensità di diffrazione di ciascuno. Il tipo di radiazione (raggi X, elettroni o neutroni) si può cambiare, così da confrontare i fattori di struttura dello stesso cristallo tra diverse tecniche di diffrazione.
 
-In IPAnalyzer, questa sotto-finestra si apre dalla **Crystal window** (il CrystalControl utilizzato in [4. Practical procedures](../4-procedures.md) per la calibrazione geometrica e in [6. Find Parameter (brute force)](../6-find-parameter.md)).
+Nella versione attuale questo elenco si trova nella scheda **Riflessioni (Reflections)** di **Interazione del fascio (Beam interaction)** nella finestra del cristallo (i fattori di diffusione atomici veri e propri si trovano nella scheda **Fattori di diffusione (Scattering factors)** della stessa finestra). Le schermate e le voci descritte di seguito si basano sulla precedente finestra Scattering Factor.
+
+In IPAnalyzer questa sottofinestra si apre dalla **finestra del cristallo** (il CrystalControl usato in [4. Procedure](../4-procedures.md) per la calibrazione geometrica e in [6. Trova parametri (forza bruta)](../6-find-parameter.md)).
 
 ![Scattering Factor](../../assets/cap-en-auto/FormScatteringFactor.png)
 
-Le condizioni di calcolo si trovano nella parte superiore della finestra e l'elenco delle riflessioni in quella inferiore. L'elenco viene ricalcolato immediatamente ogni volta che una condizione cambia.
+Le condizioni di calcolo si trovano nella parte superiore della finestra e l'elenco delle riflessioni nella parte inferiore. L'elenco viene ricalcolato immediatamente ogni volta che una condizione cambia.
 
 ---
 
 ## Scorciatoie da tastiera e mouse
 
-Questa finestra non ha combinazioni speciali di tasti o mouse. <kbd>F1</kbd> apre questa pagina del manuale e **Copy to clipboard** esporta l'intera tabella delle riflessioni come testo incollabile in un foglio di calcolo.
+Questa finestra non ha combinazioni speciali di tasti o mouse. <kbd>F1</kbd> apre questa pagina del manuale, e **Copy to clipboard** esporta l'intera tabella delle riflessioni come testo incollabile in un foglio di calcolo.
 
 ---
 
 ## Wave Length Control
 
-- **X-ray / Electron / Neutron** : i fattori di diffusione atomici differiscono a seconda del tipo di fascio incidente, quindi vengono commutati qui.
-- Per **X-ray**, la scelta dell'**Element** (materiale dell'anodo) e della linea caratteristica (Kα, ecc.) imposta automaticamente la lunghezza d'onda di quel raggio X caratteristico.
+- **X-ray / Electron / Neutron** : i fattori di diffusione atomici differiscono a seconda del tipo di fascio incidente, quindi si cambiano qui.
+- Per **X-ray**, scegliendo l'**Element** (materiale dell'anodo) e la riga caratteristica (Kα, ecc.) si imposta automaticamente la lunghezza d'onda di quei raggi X caratteristici.
 
 ![Wave Length Control](../../assets/cap-en-auto/FormScatteringFactor.panel3.waveLengthControl1.png)
 
 - **Energy (keV)** e **Wavelength (Å)** sono collegati tra loro.
-- Questa energia o lunghezza d'onda viene utilizzata per calcolare 2θ (l'angolo di diffrazione). Per i raggi X può anche essere impostata tramite la selezione dell'elemento e del tipo di linea.
+- Questa energia o lunghezza d'onda è usata per calcolare 2θ (l'angolo di diffrazione). Per i raggi X si può impostare anche tramite la scelta dell'elemento e del tipo di riga.
 
 ---
 
-## Opzioni di visualizzazione e calcolo
+## Opzioni di visualizzazione e di calcolo
 
-- **Powder Diffraction Intensities (Bragg-Brentano Optics)** : calcola l'intensità relativa come intensità di diffrazione di polveri (Bragg–Brentano), includendo la molteplicità e il fattore di Lorentz–polarizzazione. Quando è disattivata, visualizza l'intensità del fattore di struttura.
-- **Hide equivalent planes** : raggruppa i piani cristallograficamente equivalenti in un'unica voce.
-- **Hide prohibited planes** : esclude i piani la cui intensità è zero per le regole di estinzione.
-- **Unit (Å / nm)** : commuta l'unità di lunghezza per il d-spacing, ecc.
-- **d-Spacing Cutoff** : esclude le riflessioni con un d-spacing inferiore a questo valore.
+- **Intensità di diffrazione da polveri (ottica Bragg-Brentano) (Powder Diffraction Intensities (Bragg-Brentano Optics))** : calcola l'intensità relativa come intensità di diffrazione di polveri (Bragg–Brentano), includendo la molteplicità e il fattore di Lorentz-polarizzazione. Quando è disattivata, mostra l'intensità del fattore di struttura.
+- **Nascondi piani equivalenti (Hide equivalent planes)** : raggruppa in un'unica voce i piani cristallograficamente equivalenti.
+- **Nascondi piani proibiti (Hide prohibited planes)** : esclude i piani la cui intensità è nulla per le regole di estinzione.
+- **Unit (Å / nm)** : cambia l'unità di lunghezza per la distanza interplanare, ecc.
+- **d-Spacing Cutoff** : esclude le riflessioni con distanza interplanare minore di questo valore.
 
 ---
 
 ## Elenco delle riflessioni
 
-Ogni riga corrisponde a una riflessione (o a un gruppo di piani simmetricamente equivalenti).
+Ogni riga corrisponde a una riflessione (o a un gruppo di piani equivalenti per simmetria).
 
-| Column | Significato |
+| Colonna | Significato |
 |------|------|
 | **h, k, l** | indici di Miller |
-| **Multi.** | molteplicità (numero di piani simmetricamente equivalenti) |
+| **Multi.** | molteplicità (numero di piani equivalenti per simmetria) |
 | **d (Å)** | distanza interplanare |
-| **q (2π/d)** | modulo del vettore di diffusione |
+| **q (2π/d)** | modulo del vettore di scattering |
 | **2θ (°)** | angolo di diffrazione per la lunghezza d'onda selezionata |
 | **F_real** | parte reale del fattore di struttura |
 | **F_inv** | parte immaginaria del fattore di struttura |
 | **\|F\|** | ampiezza del fattore di struttura ($= \sqrt{F_\text{real}^2 + F_\text{inv}^2}$) |
 | **F^2** | intensità del fattore di struttura ($\lvert F\rvert^2$) |
-| **Rel. Int. (%)** | intensità relativa, con la riflessione più intensa impostata a 100 |
+| **Rel. Int. (%)** | intensità relativa, con la riflessione più intensa posta a 100 |
 
 ---
 
 ## Copy to Clipboard
 
-**Copy to Clipboard** copia l'elenco negli appunti come testo che può essere incollato in un foglio di calcolo come Excel.
+**Copy to Clipboard** copia l'elenco negli appunti come testo che si può incollare in un foglio di calcolo come Excel.
 
 ---
 
-## Vedi anche
+## Vedere anche
 
-- [Appendix top](index.md)
-- [4. Practical procedures](../4-procedures.md) — definizione del cristallo di riferimento di cui vengono calcolati i fattori di struttura.
-- [6. Find Parameter (brute force)](../6-find-parameter.md)
+- [Pagina iniziale dell'appendice](index.md)
+- [4. Procedure](../4-procedures.md) — definizione del cristallo di riferimento di cui si calcolano i fattori di struttura.
+- [6. Trova parametri (forza bruta)](../6-find-parameter.md)

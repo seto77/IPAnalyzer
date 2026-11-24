@@ -110,6 +110,7 @@ plugins:
             5.1. Built-in functions: 5.1. Integrierte Funktionen
             5.2. Examples: 5.2. Beispiele
             6. Find Parameter (brute force): 6. Parameter finden (Brute-Force)
+            7. Q&A: 7. Fragen und Antworten  # 261124Cl 追加
             Appendix: Anhang
             A1. Detector geometry: A1. Detektorgeometrie
             A2. Parameter determination: A2. Parameterbestimmung
@@ -131,6 +132,7 @@ plugins:
             5.1. Built-in functions: 5.1. Fonctions intégrées
             5.2. Examples: 5.2. Exemples
             6. Find Parameter (brute force): 6. Recherche de paramètres (force brute)
+            7. Q&A: 7. Questions et réponses  # 261124Cl 追加
             Appendix: Annexe
             A1. Detector geometry: A1. Géométrie du détecteur
             A2. Parameter determination: A2. Détermination des paramètres
@@ -152,6 +154,7 @@ plugins:
             5.1. Built-in functions: 5.1. Funciones integradas
             5.2. Examples: 5.2. Ejemplos
             6. Find Parameter (brute force): 6. Buscar parámetros (fuerza bruta)
+            7. Q&A: 7. Preguntas y respuestas  # 261124Cl 追加
             Appendix: Apéndice
             A1. Detector geometry: A1. Geometría del detector
             A2. Parameter determination: A2. Determinación de parámetros
@@ -173,6 +176,7 @@ plugins:
             5.1. Built-in functions: 5.1. Funzioni integrate
             5.2. Examples: 5.2. Esempi
             6. Find Parameter (brute force): 6. Trova parametri (forza bruta)
+            7. Q&A: 7. Domande e risposte  # 261124Cl 追加
             Appendix: Appendice
             A1. Detector geometry: A1. Geometria del rivelatore
             A2. Parameter determination: A2. Determinazione dei parametri
@@ -194,6 +198,7 @@ plugins:
             5.1. Built-in functions: 5.1. Встроенные функции
             5.2. Examples: 5.2. Примеры
             6. Find Parameter (brute force): 6. Поиск параметров (полный перебор)
+            7. Q&A: 7. Вопросы и ответы  # 261124Cl 追加
             Appendix: Приложение
             A1. Detector geometry: A1. Геометрия детектора
             A2. Parameter determination: A2. Определение параметров
@@ -216,6 +221,7 @@ plugins:
             5.1. Built-in functions: 5.1. 内置函数
             5.2. Examples: 5.2. 示例
             6. Find Parameter (brute force): 6. 查找参数（暴力搜索）
+            7. Q&A: 7. 常见问题  # 261124Cl 追加
             Appendix: 附录
             A1. Detector geometry: A1. 探测器几何
             A2. Parameter determination: A2. 参数确定
@@ -238,6 +244,7 @@ plugins:
             5.1. Built-in functions: 5.1. 內建函式
             5.2. Examples: 5.2. 範例
             6. Find Parameter (brute force): 6. 尋找參數（暴力搜尋）
+            7. Q&A: 7. 常見問題  # 261124Cl 追加
             Appendix: 附錄
             A1. Detector geometry: A1. 偵測器幾何
             A2. Parameter determination: A2. 參數決定
@@ -259,6 +266,7 @@ plugins:
             5.1. Built-in functions: 5.1. 내장 함수
             5.2. Examples: 5.2. 예제
             6. Find Parameter (brute force): 6. 매개변수 찾기 (전수 탐색)
+            7. Q&A: 7. 자주 묻는 질문  # 261124Cl 追加
             Appendix: 부록
             A1. Detector geometry: A1. 검출기 기하
             A2. Parameter determination: A2. 매개변수 결정
@@ -280,6 +288,7 @@ plugins:
             5.1. Built-in functions: 5.1. Funções integradas
             5.2. Examples: 5.2. Exemplos
             6. Find Parameter (brute force): 6. Encontrar parâmetros (força bruta)
+            7. Q&A: 7. Perguntas e respostas  # 261124Cl 追加
             Appendix: Apêndice
             A1. Detector geometry: A1. Geometria do detector
             A2. Parameter determination: A2. Determinação de parâmetros
@@ -344,7 +353,7 @@ nav:
       - 5.1. Built-in functions: 5-macro/1-built-in-functions.md
       - 5.2. Examples: 5-macro/2-examples.md
   - 6. Find Parameter (brute force): 6-find-parameter.md
-  - 7. Q&A: 7-qa.md   # 261124Cl 追加: 問い合わせ (issue・メール) から作った Q&A。現状 en/ja のみ、他言語は英語フォールバック
+  - 7. Q&A: 7-qa.md   # 261124Cl 追加: 問い合わせ (issue・メール) から作った Q&A (11 言語)
   - Appendix:
       - appendix/index.md
       - A1. Detector geometry: appendix/a1-geometry.md

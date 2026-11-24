@@ -1,111 +1,109 @@
-<!-- 260601Cl: Reflected from ja/2-property-windows.md (lead language: Japanese). 260601Cl: per-tab auto-capture images embedded. -->
+<!-- 261124Cl: Retranslated from en/2-property-windows.md (UI labels follow the localized GUI). -->
 
 # Fenêtres de propriétés
 
-La fenêtre de propriétés est l'endroit où vous configurez la source, les conditions du détecteur et les diverses conditions d'unidimensionnalisation. Chaque onglet peut également être ouvert directement depuis le menu **Property** de la fenêtre principale.
+La fenêtre de propriétés permet de configurer la source, les conditions du détecteur et les diverses conditions de réduction en une dimension. Chaque onglet peut aussi être ouvert directement depuis le menu **Propriété (Property)** de la fenêtre principale.
 
-L'interface de cette fenêtre est en anglais. Les titres ci-dessous reprennent les noms réels des onglets et des contrôles.
+Les libellés ci-dessous sont ceux affichés par l'interface en français, suivis du nom anglais entre parenthèses. Les titres reprennent les noms réels des onglets et des contrôles.
 
-## Wave source
+## Source d'onde (Wave source)
 
-Définit le type de faisceau incident et la longueur d'onde. La source peut être des rayons X, des électrons ou des neutrons. Pour les rayons X, le choix d'un élément et d'une transition (raie K, raie L, etc.) renseigne automatiquement la longueur d'onde ; pour le rayonnement synchrotron, saisissez directement la longueur d'onde. Pour les faisceaux d'électrons et de neutrons, saisissez l'énergie ou la longueur d'onde (la longueur d'onde des électrons est corrigée de façon relativiste).
+Règle le type de faisceau incident et la longueur d'onde. La source peut être des rayons X, des électrons ou des neutrons. Pour les rayons X, le choix d'un élément et d'une transition (raie K, raie L, etc.) renseigne automatiquement la longueur d'onde ; pour le rayonnement synchrotron, saisissez directement la longueur d'onde. Pour les faisceaux d'électrons et de neutrons, saisissez l'énergie ou la longueur d'onde (la longueur d'onde des électrons est corrigée des effets relativistes).
 
-- **Correct linear polarization** : corrige une intensité polarisée linéairement vers l'équivalent non polarisé (pour les données synchrotron). La formule de correction ci-dessous dépend de l'azimut χ (défini dans l'onglet Miscellaneous) et de l'angle de diffusion 2θ.
+- **Corriger la polarisation linéaire (Correct linear polarization)** : corrige une intensité polarisée linéairement en son équivalent non polarisé (pour les données synchrotron). La formule de correction ci-dessous dépend de l'azimut χ et de l'angle de diffusion 2θ. Si la direction de référence de χ (réglée dans l'onglet Divers (Miscellaneous)) est Gauche/Droite (Left/Right), le faisceau est traité comme polarisé horizontalement ; si elle est Haut/Bas (Top/Bottom), comme polarisé verticalement.
 
 $$
 I_\text{corr}(2\theta,\chi) = \frac{I(2\theta,\chi)}{\sin^2\chi + \cos^2\chi\,\cos^2 2\theta} \times \frac{1}{2}\left(1 + \cos^2 2\theta\right)
 $$
 
-![Wave source tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageXRay.png)
+![Onglet Source d'onde (Wave source)](../assets/cap-en-auto/FormProperty.tabControl.tabPageXRay.png)
 
-## Detector condition
+## Condition du détecteur (Detector condition)
 
-Définit les conditions géométriques du détecteur. Cela correspond à l'ancien « IP Condition », avec l'ajout de sélecteurs de système de coordonnées et de forme du détecteur.
+Règle les conditions géométriques du détecteur. Cet onglet correspond à l'ancien « IP Condition », avec en plus des sélecteurs de système de coordonnées et de forme du détecteur.
 
-- **Coordinates** : **Direct spot** (référence du spot direct) / **Foot** (référence du pied de la perpendiculaire).
-- **Detector type** : **Flat panel** / **Gandolfi**.
-- **Direct spot position** et **Camera Length 1** : la position du spot direct (X, Y pix) et la distance de l'échantillon au spot direct (mm).
-- **Foot position** et **Camera Length 2** : en mode Foot, la position du pied de la perpendiculaire et la distance de l'échantillon au pied.
-- **Pixel Shape** : taille de pixel X, Y (mm) et ξ (Ksi, l'angle d'inclinaison du parallélogramme).
-- **Gandolfi Radius** : le rayon, lorsque la forme Gandolfi est sélectionnée.
-- **Spherical correction** : correction sphérique (normalement zéro).
-- **Tilt** : l'inclinaison de l'IP φ (Phi) et τ (Tau).
+- **Coordonnées (Coordinates)** : **Spot direct (Direct spot)** (référence au spot direct) / **Pied (Foot)** (référence au pied de la perpendiculaire).
+- **Type de détecteur (Detector type)** : **Panneau plat (Flat panel)** / **Gandolfi**.
+- **Position du spot direct (Direct spot position)** et **Longueur de caméra 1 (Camera Length 1)** : la position du spot direct (X, Y pix) et la distance de l'échantillon au spot direct (mm).
+- **Position du pied (Foot position)** et **Longueur de caméra 2 (Camera Length 2)** : en mode Pied (Foot), la position du pied de la perpendiculaire et la distance de l'échantillon au pied.
+- **Forme du pixel (Pixel Shape)** : taille de pixel X, Y (mm) et ξ (Ksi, l'angle d'inclinaison du parallélogramme).
+- **Rayon Gandolfi (Gandolfi Radius)** : le rayon, lorsque la forme Gandolfi est sélectionnée.
+- **Correction sphérique (Spherical correction)** : pour un détecteur courbé, saisissez l'inverse du rayon de courbure, 1/R (mm⁻¹). Utilisez 0 pour un détecteur plan.
+- **Inclinaison (Tilt)** : l'inclinaison de l'IP φ (Phi) et τ (Tau).
 
-Voir [Aperçu](0-overview.md) pour les définitions de l'inclinaison φ, τ et du ξ du pixel.
+Voir [Aperçu](0-overview.md) pour les définitions de l'inclinaison φ, τ et du ξ des pixels.
 
-![Detector condition tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageIP.png)
+![Onglet Condition du détecteur (Detector condition)](../assets/cap-en-auto/FormProperty.tabControl.tabPageIP.png)
 
-## Integral Region
+## Région d'intégration (Integral Region)
 
-Spécifie la région de l'image à unidimensionnaliser.
+Indique la région de l'image à réduire en une dimension.
 
-- **Rectangle** : choisissez la **Direction** (Full / Top / Bottom / Left / Right / Vertical / Horizontal / Free) et réglez la **Band Width**, l'**Angle** (en mode Free) et **Both Side**.
-- **Sector** : spécifiez la plage angulaire avec **Start Angle** / **End Angle**.
-- **Exceptional pixels** : excluez les **Masked Spots**, les pixels **Under intensity of** / **Over intensity of** les seuils donnés, et un certain nombre de **pixels from edges**.
+- **Rectangle** : choisissez la **Direction** (Complet (Full) / Haut (Top) / Bas (Bottom) / Gauche (Left) / Droite (Right) / Vertical / Horizontal / Free), et réglez la **Largeur de bande (Band Width)**, l'**Angle** (en mode Free) et **Les deux côtés (Both Side)**.
+- **Secteur (Sector)** : indiquez la plage angulaire avec **Angle de début (Start Angle)** / **Angle de fin (End Angle)**.
+- **Pixels exceptionnels (Exceptional pixels)** : excluez les **Spots masqués (Masked Spots)**, les pixels **En dessous de l'intensité de (Under intensity of)** / **Au-dessus de l'intensité de (Over intensity of)** des seuils donnés, et un certain nombre de **pixels depuis les bords (pixels from edges)**.
 
-![Integral Region tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageIntegralRegion.png)
+![Onglet Région d'intégration (Integral Region)](../assets/cap-en-auto/FormProperty.tabControl.tabPageIntegralRegion.png)
 
-## Integral Property
+## Propriété d'intégration (Integral Property)
 
-Définit la méthode et le pas d'intégration.
+Règle la méthode et le pas d'intégration.
 
-- **Concentric integration (scattering-angle dispersive)** : choisissez l'unité de l'axe horizontal parmi **Angle** (2θ, °) / **Length** (mm) / **d-spacing** (Å), et réglez **Start / End / Step**. L'**Output pattern** peut être **Bragg - Brentano** ou **Debye - Scherrer**.
-- **Radial integration (cake pattern)** : analyse une région en forme d'anneau dans la direction azimutale. Choisissez l'axe horizontal parmi **Angle** / **d-spacing**, et réglez le **Donut radius** (rayon central), la **Donut width** (largeur de l'anneau) et le **Sector angle step** (pas de balayage).
+- **Intégration concentrique (dispersive en angle de diffusion) (Concentric integration (scattering angle dispersive))** : choisissez l'unité de l'axe horizontal parmi **Angle** (2θ, °) / **Distance interréticulaire (d-spacing)** (Å), et réglez **Début / Fin / Pas (Start / End / Step)**. Le choix **Motif de sortie (Output pattern)** (Bragg - Brentano / Debye - Scherrer) n'a aucun effet sur le résultat dans la version actuelle.
+- **Intégration radiale (motif en parts de gâteau) (Radial integration (cake pattern))** : somme l'intensité d'une région annulaire pour chaque azimut. Indiquez le centre de l'anneau (**Rayon de l'anneau (Donut radius)**) et sa demi-largeur (**Largeur de l'anneau (Donut width)**) en angle de diffusion 2θ (**Angle**) ou en distance interréticulaire (**Distance interréticulaire (d-spacing)**), et réglez le **Pas d'angle de secteur (Sector angle step)** (pas azimutal). L'axe horizontal du profil obtenu est l'azimut χ (°).
 
-![Integral Property tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageIntegralProperty.png)
+![Onglet Propriété d'intégration (Integral Property)](../assets/cap-en-auto/FormProperty.tabControl.tabPageIntegralProperty.png)
 
-## Mask Option
+## Option de masque (Mask Option)
 
-Définit les conditions de masquage et de détection du centre/des taches (une extension de l'ancien « Find Center & Spots »).
+Règle les conditions de masquage et de détection des taches (une extension de l'ancien « Find Center & Spots »). Les réglages de détection du centre se trouvent dans l'onglet Divers (Miscellaneous).
 
-- **Half mask** : boutons qui masquent rapidement la moitié supérieure, inférieure, gauche ou droite de l'image.
-- **Manual mask mode** : active le masquage interactif sur l'image principale. Les formes sont **Circle** (glisser pour définir le centre et le rayon), **Polygon** (cliquer pour ajouter des sommets), **Rectangle** (glisser les sommets diagonaux), **Spline curve** et **Spot** (clic gauche/droit pour ajouter/supprimer des taches).
-- **Takeover** : la manière dont le masque est traité lorsqu'une nouvelle image est chargée (**None** / **Take over the current mask state** / **Take over the mask file**).
-- **Find Spots** → **Deviation** : le seuil statistique pour la détection des taches.
-- **Find Center** : la plage de recherche pour la détection du centre, et ainsi de suite.
+- **Demi-masque (Half mask)** : boutons qui masquent rapidement la moitié supérieure, inférieure, gauche ou droite de l'image.
+- **Mode masque manuel (Manual mask mode)** : active le masquage interactif sur l'image principale. Les formes sont **Cercle (Circle)** (glisser pour définir le centre et le rayon), **Polygone (Polygon)** (cliquer pour ajouter des sommets), **Rectangle** (glisser les sommets diagonaux), **Courbe spline (Spline curve)** et **Spot** (clic gauche/droit pour ajouter/supprimer des spots).
+- **Reprendre le réglage de masque (Take over mask setting)** : traitement du masque lors du chargement d'une nouvelle image (**Aucun (None)** / **Reprendre l'état actuel du masque (Take over the current mask state)** / **Reprendre le fichier de masque (Take over the mask file)**).
+- **Option de masquage des spots (Mask spots option)** → **Écart critère pour « Masquer les spots » (Criterial deviation for "Mask Spots")** : le seuil statistique de la détection des taches.
 
-![Mask Option tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageSpotsAndCenter.png)
+![Onglet Option de masque (Mask Option)](../assets/cap-en-auto/FormProperty.tabControl.tabPageSpotsAndCenter.png)
 
-## After "Get Profile"
+## Après « Obtenir le profil » (After "Get Profile")
 
-Définit l'enregistrement et l'envoi après l'unidimensionnalisation.
+Règle l'enregistrement et l'envoi après la réduction en une dimension.
 
-- **Save File** : choisissez la destination (« le même répertoire que l'image » ou « un répertoire choisi à chaque fois ») et le format parmi **PDI** / **CSV** / **TSV** / **GSAS**.
-- **Send PDIndexer** : envoie le profil, via le presse-papiers, à une instance en cours d'exécution de PDIndexer.
+- **Enregistrer le profil (Save Profiles)** : choisissez la destination (« Dans le même dossier que l'image (At the same directory of the image) » ou « Dans le dossier choisi à chaque fois (At the chosen directory each time) ») et le format parmi **PDI** / **CSV** / **TSV** / **GSAS**. La sortie GSAS n'est possible que pour l'intégration concentrique avec un axe horizontal en 2θ. Lorsque plusieurs profils doivent être enregistrés dans un seul fichier, le GSAS n'est pas écrit ; enregistrez-les plutôt dans des fichiers séparés.
+- **Envoyer les données de profil à PDIndexer via le presse-papiers (Send profile data to PDIndexer through Clipboard)** : envoie le profil, via le presse-papiers, à une instance de PDIndexer en cours d'exécution.
 
-![After "Get Profile" tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageAfterGetProfile.png)
+![Onglet Après « Obtenir le profil » (After "Get Profile")](../assets/cap-en-auto/FormProperty.tabControl.tabPageAfterGetProfile.png)
 
-## Unrolled Image Option
+## Option d'image déroulée (Unrolled Image Option)
 
-Définit les paramètres de l'image déroulée (Unroll).
+Règle les paramètres de l'image déroulée (Unroll).
 
-- **Horizontal** : l'unité (Angle / Length / d-spacing) et **Start / End / Step**. La largeur de l'image de sortie ≈ (End − Start) / Step.
-- **Vertical** : le pas azimutal (°/pixel). La hauteur de l'image de sortie ≈ 360 / step.
+- **Unité et plage horizontales (distance au spot direct) (Horizontal (distance from direct spot) unit and range)** : **Début / Fin / Pas (Start / End / Step)** en angle de diffusion 2θ (°) (des options d'unité sont affichées, mais la version actuelle traite toujours les valeurs comme des 2θ). La largeur de l'image produite ≈ (Fin − Début) / Pas.
+- **Pas vertical (angle de secteur) (Vertical (sector angle) step)** : le nombre de divisions N en azimut (**Division**). L'image produite a une hauteur de N pixels, et chaque ligne couvre 360°/N (0,5° pour la valeur par défaut 720).
 
-Le déroulement transforme l'image de diffraction polaire centrée sur le spot direct en une image cartésienne (angle vs. distance).
+Le déroulement transforme l'image de diffraction polaire centrée sur le spot direct en une image cartésienne (angle en fonction de la distance).
 
-![Unrolled Image Option tab](../assets/cap-en-auto/FormProperty.tabControl.tabPage1.png)
+![Onglet Option d'image déroulée (Unrolled Image Option)](../assets/cap-en-auto/FormProperty.tabControl.tabPage1.png)
 
-## Miscellaneous
+## Divers (Miscellaneous)
 
-Un onglet qui rassemble les réglages plus fins d'affichage et de coordonnées.
+Onglet qui regroupe les réglages fins d'affichage et de coordonnées.
 
-- **Image name display** : nom de fichier seul / dossier parent + nom de fichier / chemin complet.
-- **Contrast / intensity-range persistence** : si les réglages d'affichage sont conservés lorsqu'une nouvelle image est chargée.
-- **Azimuth χ (Chi) orientation** : la position de référence (Top / Bottom / Left / Right) et le sens de rotation (Clockwise / Counterclockwise). χ est référencé par la correction de polarisation et l'intégration radiale.
-- **Scale line** : couleur, épaisseur, nombre de divisions et affichage des étiquettes.
-- **Find Center** : plage de recherche, plage d'ajustement de pic, fixer le centre et exclure les pixels masqués.
+- **Options de nom d'image (Image name options)** : nom de fichier seul / dernier dossier + nom de fichier / chemin complet.
+- **Maintenir la plage d'affichage (Maintain display range)** : indique si le zoom et la position d'affichage (plage d'affichage) sont conservés lors du chargement d'une nouvelle image.
+- **Options de l'axe Chi (χ) (Chi (χ) axis options)** : la position de référence (Haut / Bas / Gauche / Droite (Top / Bottom / Left / Right)) et le sens de rotation (Sens horaire (Clockwise) / Sens antihoraire (Counterclockwise)). χ est utilisé par la correction de polarisation et par l'intégration radiale.
+- **Options de ligne d'échelle (Scale line options)** : couleur, largeur, nombre de divisions et affichage des étiquettes.
+- **Options de recherche du centre (Find center options)** : plage de recherche, plage d'ajustement des pics, fixation du centre et exclusion des pixels masqués.
 
-![Miscellaneous tab](../assets/cap-en-auto/FormProperty.tabControl.tabPage5.png)
+![Onglet Divers (Miscellaneous)](../assets/cap-en-auto/FormProperty.tabControl.tabPage5.png)
 
-## Background Option
+## Option de fond (Background Option)
 
-Définit la correction par une image de fond.
+Règle la correction par une image de fond.
 
-- **Background image** : définit l'image actuellement affichée comme fond (**Set the current image as background**) ou l'efface (**Clear**).
+- **Réglage de l'image de référence (Reference image setting)** : définissez l'image actuellement affichée comme fond (**Définir l'image actuelle comme fond (Set the current image as background)**), ou effacez-la (**Effacer (Clear)**).
 - **Coefficient** : le facteur appliqué à l'image de fond.
-- **Edge mask** : une marge de masque supplémentaire (px) appliquée aux bords lors de la correction.
 
-Utilisé pour la correction de champ plat, la suppression de la diffusion par l'air, et autres opérations similaires.
+Sert à soustraire un fond additif tel que la diffusion par l'air. Pour chaque pixel, \(I_\mathrm{out} = I - cB\) est calculé (\(B\) : image de fond, \(c\) : coefficient). Pour exclure les pixels proches des bords de l'image, utilisez **pixels depuis les bords (pixels from edges)** dans l'onglet Région d'intégration (Integral Region).
 
-![Background Option tab](../assets/cap-en-auto/FormProperty.tabControl.tabPage3.png)
+![Onglet Option de fond (Background Option)](../assets/cap-en-auto/FormProperty.tabControl.tabPage3.png)

@@ -1,125 +1,129 @@
-<!-- 260601Cl: Reflected from ja/1-main-window.md (lead language: Japanese). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
 
 # Finestra principale
 
-La finestra principale è la prima schermata mostrata all'avvio di IPAnalyzer. Riunisce la visualizzazione dell'immagine di diffrazione caricata, le operazioni principali (ricerca del centro, mascheratura degli spot, monodimensionalizzazione) e i punti di accesso alle impostazioni dei parametri del rivelatore.
+La finestra principale è la prima schermata mostrata all'avvio di IPAnalyzer. Riunisce la visualizzazione dell'immagine di diffrazione caricata, le operazioni principali (ricerca del centro, mascheratura degli spot, riduzione a una dimensione) e i punti di accesso alle impostazioni dei parametri del rivelatore.
 
-La finestra è costituita, a grandi linee, dai menu e dalla barra degli strumenti in alto, dall'area di visualizzazione dell'immagine al centro, dalla barra degli strumenti verticale a destra e dall'area del grafico in basso.
+La finestra è composta, a grandi linee, dai menu e dalla barra degli strumenti in alto, dall'area di visualizzazione dell'immagine al centro, dalla barra degli strumenti verticale a destra e dall'area dei grafici in basso.
 
-![The IPAnalyzer main window](../assets/cap-en-auto/FormMain.png)
+![La finestra principale di IPAnalyzer](../assets/cap-en-auto/FormMain.png)
 
 ## Vista centrale
 
 ### Visualizzazione dell'immagine
 
-L'immagine caricata viene visualizzata qui. A seconda della posizione del puntatore del mouse, l'area sopra l'immagine mostra le coordinate reali (mm), le coordinate dell'immagine (pix), la distanza dal centro R (mm), l'angolo di diffusione 2θ, il valore d, l'azimut χ e l'intensità. Il segno × magenta indica la posizione dello spot diretto (centro).
+Qui viene visualizzata l'immagine caricata. In base alla posizione del puntatore del mouse, l'area sopra l'immagine mostra le coordinate reali (mm), le coordinate dell'immagine (pix), la distanza dal centro R (mm), l'angolo di scattering 2θ, il valore d, l'azimut χ e l'intensità. Il simbolo × magenta indica la posizione dello spot diretto (centro).
 
 Gli stati dei pixel sono mostrati con colori distinti.
 
 | Colore | Significato |
 | --- | --- |
 | Ciano | Spot mascherato |
-| Verde | Regione esclusa dall'integrazione (impostata in Integral Region) |
-| Magenta | Regione angolare esclusa dall'integrazione (impostata in Integral Property) |
-| Blu | Pixel sotto la soglia di intensità (impostata in Integral Region) |
+| Verde | Regione esclusa dall'integrazione (impostata in Regione di integrazione (Integral Region)) |
+| Magenta | Regione angolare esclusa dall'integrazione (impostata in Proprietà di integrazione (Integral Property)) |
+| Blu | Pixel sotto la soglia di intensità (impostata in Regione di integrazione) |
 | Rosso | Pixel sopra la soglia di intensità |
 
 ### Operazioni con il mouse
 
-In modalità normale:
+Nella modalità normale:
 
-- Premere e tenere premuto il pulsante sinistro: cerca il centro dello spot nelle vicinanze.
-- Doppio clic sinistro: aggiorna la posizione del centro al punto cliccato.
-- Trascinamento con il destro: ingrandisce la regione trascinata.
-- Clic destro: riduce lo zoom.
+- Doppio clic sinistro: sposta la posizione del centro nel punto cliccato.
+- Clic centrale: cerca il centro partendo dal punto cliccato.
+- Trascinamento con il tasto destro: ingrandisce la regione trascinata.
+- Clic destro: riduce l'ingrandimento.
+- Ctrl + trascinamento con il tasto destro: seleziona la regione rettangolare usata per le informazioni statistiche.
 
-In **Manual spot mode**, il clic sinistro maschera e il clic destro rimuove la maschera. La forma e la dimensione della maschera si impostano nella barra degli strumenti e nelle proprietà.
+Il doppio clic sinistro e il clic centrale funzionano solo quando **Fissa centro (Fix Center)** è disattivato.
+
+In **Modalità manuale (Manual Mode)**, il clic sinistro maschera e il clic destro rimuove la maschera. La forma e la dimensione della maschera si impostano nella barra degli strumenti e nelle proprietà.
 
 ### Viste ausiliarie e informazioni sull'immagine
 
-Accanto alla vista centrale ci sono visualizzazioni ausiliarie. È possibile passare tra **Whole image** e **Near center**: la vista dell'immagine intera evidenzia l'intervallo di visualizzazione corrente con un riquadro giallo, mentre la vista vicino al centro mostra un'immagine ingrandita.
+Accanto alla vista centrale si trovano delle visualizzazioni ausiliarie. Si può passare da **Immagine intera (Whole image)** a **Vicino al centro (Near center)** e viceversa: la vista dell'immagine intera indica con un riquadro giallo l'intervallo attualmente visualizzato, mentre la vista vicino al centro mostra un'immagine ingrandita.
 
-**Image Information** mostra la risoluzione dell'immagine, l'intensità massima, l'intensità totale, i dati dell'header e così via.
+**Informazioni immagine (Image Information)** mostra la risoluzione dell'immagine, l'intensità massima, l'intensità totale, i dati dell'intestazione e così via.
 
 ### Controlli di regolazione della visualizzazione
 
 Controlli che regolano l'aspetto dell'immagine:
 
-- **Gradient**: inverte il tono.
-- **Brightness scale**: logaritmica / lineare.
-- **Color scale**: scala di grigi / colore.
-- **Scale line**: visualizzazione delle linee di scala (nessuna / grossolana / media / fine).
-- **Auto Contrast** / **Reset Contrast**, e intensità minima/massima esplicite.
+- **Gradiente (Gradient)**: inverte la tonalità.
+- **Scala di luminosità (Brightness scale)**: logaritmica / lineare.
+- **Scala di colore (Color scale)**: scala di grigi / colori.
+- **Linea di scala (Scale line)**: visualizzazione delle linee di scala (nessuna / grossolana / media / fine).
+- **Contrasto automatico (Auto Contrast)** / **Reimposta contrasto (Reset Contrast)**, e intensità minima/massima esplicite.
 - Pulsanti di ingrandimento (×1, ×2, ×4, ×1/2, ×1/4, ×1/8, ×1/16).
 
 ## Vista inferiore
 
-L'area inferiore presenta tre grafici/viste a schede.
+L'area inferiore contiene tre grafici/viste a schede.
 
-- **Frequency of Intensity**: la distribuzione di intensità di tutti i pixel, su assi log–log. Ingrandibile con il mouse.
-- **Converted Profile**: il profilo di diffrazione dopo la monodimensionalizzazione (Get Profile). Ingrandibile con il mouse.
-- **Statistical Information**: statistiche per una regione rettangolare selezionata (X1,Y1)–(X2,Y2). Quando è caricata un'immagine sequenziale, è possibile confrontare anche le statistiche della stessa regione in altri frame.
+- **Frequenza dell'intensità (Frequency of Intensity)**: la distribuzione delle intensità di tutti i pixel, su assi log–log. Si può ingrandire con il mouse.
+- **Profilo convertito (Converted Profile)**: il profilo di diffrazione prodotto da **Ottieni profilo (Get Profile)**. Si può ingrandire con il mouse.
+- **Informazioni statistiche (Statistical Information)**: le statistiche della regione rettangolare (X1,Y1)–(X2,Y2) selezionata con Ctrl + trascinamento con il tasto destro sull'immagine. Quando è caricata un'immagine sequenziale, si possono confrontare anche le statistiche della stessa regione negli altri frame.
 
 ## Menu
 
-La barra dei menu è costituita da **File / Tool / Property / Option / Language / Macro / Help**.
+La barra dei menu è composta da **File / Strumenti / Proprietà / Opzioni / Lingua / Macro / Guida** (File / Tool / Property / Option / Language / Macro / Help).
 
 ### File
 
-- **Read image**: apre un'immagine di diffrazione. Vedere [Panoramica](0-overview.md) per i formati supportati.
-- **Save image**: salva in formato TIFF, PNG, CSV o IPA. TIFF conserva le intensità dei pixel originali, PNG conserva la visualizzazione (luminosità, contrasto, maschera) e IPA è un formato proprietario con correzione della distorsione (con metadati).
-- **Read / Save parameter**: importa/esporta la lunghezza d'onda, la lunghezza di camera, la dimensione del pixel, la correzione dell'inclinazione, la posizione del centro, ecc. come file `.prm`.
-- **Read / Save / Clear mask**: importa/esporta una maschera come file `.mas`, oppure la cancella (la maschera deve corrispondere alla risoluzione dell'immagine corrente).
-- **Close**.
+- **Leggi immagine (Read image)**: apre un'immagine di diffrazione. Per i formati supportati vedere [Panoramica](0-overview.md).
+- **Salva immagine (Save image)**: salva in formato TIFF, PNG, CSV o IPA. TIFF memorizza le intensità dei pixel elaborate correnti (dopo capovolgimento/rotazione, sottrazione dello sfondo e correzione della polarizzazione), PNG conserva la visualizzazione (luminosità, contrasto, maschera) e IPA è un formato proprietario con correzione della distorsione (con metadati).
+- **Leggi parametro / Salva parametro (Read / Save parameter)**: importa/esporta in un file `.prm` la lunghezza d'onda, la lunghezza di camera, la dimensione del pixel, la correzione dell'inclinazione, la posizione del centro, ecc.
+- **Leggi maschera / Salva maschera / Cancella maschera (Read / Save / Clear mask)**: importa/esporta una maschera in un file `.mas`, oppure la cancella (la maschera deve avere la stessa risoluzione dell'immagine corrente).
+- **Chiudi (Close)**.
 
-I file di immagine, parametro e maschera possono essere caricati anche trascinandoli e rilasciandoli sulla finestra.
+I file di immagine, di parametri e di maschera si possono caricare anche trascinandoli e rilasciandoli sulla finestra.
 
-### Tool
+### Strumenti (Tool)
 
-- **Reset Frequency Profile**: cancella il grafico della frequenza di intensità (l'immagine viene mantenuta).
-- **Calibrate Raxis Image**.
+- **Reimposta profilo di frequenza (Reset Frequency Profile)**: ricostruisce con l'intervallo predefinito il grafico della frequenza delle intensità dell'immagine corrente (l'immagine viene mantenuta).
+- **Calibra immagine R-AXIS (Calibrate Raxis Image)**: ricava una tabella di conversione delle intensità da due immagini R-AXIS (vedere [Strumenti](3-tools.md)).
 
-### Property
+### Proprietà (Property)
 
-Wave Source / Imaging Plate Condition / Integral Region / Integral Property / Manual Mask Mode / After "Get Profile" / Unrolled Image Option / Miscellaneous. Questi aprono direttamente le schede corrispondenti della [finestra delle proprietà](2-property-windows.md).
+Sorgente di radiazione (Wave Source) / Condizione dell'imaging plate (Imaging Plate Condition) / Regione di integrazione (Integral Region) / Proprietà di integrazione (Integral Property) / Modalità maschera manuale (Manual Mask Mode) / Dopo "Ottieni profilo" (After "Get Profile") / Opzione immagine srotolata (Unrolled Image Option) / Varie (Miscellaneous). Queste voci aprono direttamente le schede corrispondenti della [finestra delle proprietà](2-property-windows.md).
 
-### Option
+### Opzioni (Option)
 
-- **ToolTip**: attiva/disattiva i tooltip su pulsanti e menu.
-- **Flip**: orizzontale / verticale. **Rotate**: scegli un angolo di rotazione. Entrambi influiscono solo sulla visualizzazione; i dati dell'immagine caricata non vengono modificati.
-- **Ngen Compile** e **Clear registry** sono per lo sviluppo e la risoluzione dei problemi.
+- **Suggerimento (ToolTip)**: attiva/disattiva i suggerimenti su pulsanti e menu.
+- **Capovolgi (Flip)**: orizzontalmente / verticalmente. **Ruota (Rotate)**: sceglie un angolo di rotazione. Il capovolgimento e la rotazione vengono applicati ai dati dell'immagine in lavorazione e quindi influiscono anche sulla successiva integrazione e sul salvataggio dell'immagine (il file di origine su disco non viene modificato).
+- **Cancella registro (Clear registry)**: una voce per la risoluzione dei problemi che cancella le impostazioni salvate. **Compilazione Ngen (Ngen Compile)** non ha alcuna funzione nella versione attuale.
 
-### Language
+### Lingua (Language)
 
-- Passa tra **English** e **Japanese** (l'impostazione è salvata nel registro).
+- Seleziona la lingua di visualizzazione (11 lingue). Dopo la conferma l'applicazione si riavvia. L'impostazione viene salvata nel registro.
 
 ### Macro
 
-- **Editor**: apre l'editor di macro (vedere [Strumenti](3-tools.md) / [Macro](5-macro/index.md)).
+- **Editor**: apre l'editor delle macro (vedere [Strumenti](3-tools.md) / [Macro](5-macro/index.md)).
 
-### Help
+### Guida (Help)
 
-- **Program Updates**, **Hint**, **License**, **Version History**, **Web Page**.
+- **Aggiornamenti del programma (Program Updates)**, **Suggerimento (Hint)**, **Licenza (License)**, **Cronologia versioni (Version History)**, **Guida (Help)** (apre il manuale PDF incluso).
+- Premendo **F1** in qualsiasi finestra si apre la pagina corrispondente di questo manuale online.
 
 ## Barra degli strumenti delle operazioni
 
 Le principali operazioni di elaborazione dell'immagine (con opzioni dettagliate nei menu a discesa):
 
-- **Background**: sottrazione di un'immagine di fondo (configurata in Background Option).
-- **Find Center**: rileva il centro del fascio mediante fitting Pseudo-Voigt 2D (intervallo di ricerca 8 px per impostazione predefinita, impostato in Miscellaneous). Il menu a discesa offre anche il rilevamento del centro basato sugli anelli.
-- **Fix center**: fissa la posizione del centro.
-- **Mask Spots**: rileva e maschera gli spot usando il criterio media ± deviazione standard × Deviation. Il menu a discesa include mask-all, inverse-mask, manual e così via.
-- **Manual**: la modalità di mascheratura manuale. È possibile scegliere la forma (cerchio / rettangolo) e la dimensione (8–256 px).
-- **Get Profile**: integra l'immagine in un profilo unidimensionale. Supporta Concentric (basata su 2θ) e Radial (basata sull'azimut). Il menu a discesa configura la selezione di Integral Property/Region, se eseguire la ricerca del centro e la mascheratura degli spot prima dell'integrazione, l'invio a PDIndexer, l'analisi per divisione azimutale, l'elaborazione di immagini sequenziali e così via.
+- **Sfondo (Background)**: questo pulsante è disattivato nella versione attuale. La sottrazione di un'immagine di sfondo si configura nella scheda **Opzioni sfondo (Background Option)** della finestra delle proprietà.
+- **Trova centro (Find Center)**: rileva il centro del fascio mediante un fitting Pseudo-Voigt 2D (l'intervallo di ricerca è per impostazione predefinita ±8 px attorno al centro, impostato nella scheda Varie). Quando gli anelli sono mostrati con **Disegna anello (Draw ring)**, il centro viene invece determinato dall'anello.
+- **Fissa centro (Fix Center)**: fissa la posizione del centro.
+- **Maschera spot (Mask Spots)**: all'interno di ciascuna banda radiale, i pixel la cui intensità supera media + deviazione standard × Deviation vengono rilevati come spot e mascherati insieme ai pixel circostanti. Il menu a discesa include maschera tutto, maschera inversa, manuale e così via.
+- **Modalità manuale (Manual Mode)**: la modalità di mascheratura manuale. Si può scegliere la forma della maschera (spot (cerchio/rettangolo) / cerchio / rettangolo / poligono / spline) e la dimensione dello spot (semilarghezza).
+- **Ottieni profilo (Get Profile)**: integra l'immagine in un profilo unidimensionale. Supporta l'integrazione concentrica (Concentric, basata su 2θ) e radiale (Radial, basata sull'azimut). Il menu a discesa configura la scelta di Proprietà di integrazione/Regione di integrazione, se cercare il centro e mascherare gli spot prima dell'integrazione, l'invio a PDIndexer, l'analisi a divisione azimutale, l'elaborazione delle immagini sequenziali e così via.
 
 ## Barra degli strumenti (altri strumenti)
 
-La barra degli strumenti verticale a destra avvia i vari strumenti. Vedere [Strumenti](3-tools.md) per i dettagli.
+La barra degli strumenti verticale a destra avvia i vari strumenti. Per i dettagli vedere [Strumenti](3-tools.md).
 
-- **Intensity Table**
-- **Auto Procedure**
-- **Draw ring**
-- **Find parameter** / **Find parameter (brute force)**
-- **Unroll**
-- **Circumferential Blur**
-- **Sequential**
+- **Tabella intensità (Intensity table)** (nella versione attuale a questo pulsante non è assegnata alcuna funzione; per la calibrazione delle intensità R-AXIS usare **Strumenti → Calibra immagine R-AXIS** (Tool → Calibrate Raxis Image))
+- **Procedura automatica (Auto procedure)**
+- **Disegna anello (Draw ring)**
+- **Trova parametro (geometricamente) (Find parameter (geometrically))** / **Trova parametro (forza bruta) (Find parameter (brute force))**
+- **Srotola immagine (Unroll image)**
+- **Sfocatura circonferenziale (Circumferential blur)**
+- **Immagine sequenziale (Sequential image)**

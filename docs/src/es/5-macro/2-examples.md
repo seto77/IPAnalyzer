@@ -1,13 +1,13 @@
-<!-- 260601Cl: Reflected from ja/5-macro/2-examples.md. Migrated from the wiki; updated the stale API name FindSpotsBeforeGetProfile -> MaskSpotsBeforeGetProfile. -->
+<!-- 261124Cl: Retranslated from en/5-macro/2-examples.md (UI labels follow the localized GUI). -->
 
 # Ejemplos
 
-Los ejemplos siguientes pueden copiarse y pegarse directamente en el editor de macros. Las funciones que implican un cuadro de diálogo, como `IPA.File.GetFileNames()`, abren una pantalla de selección de archivos al ejecutarse. Consulte [Funciones integradas](1-built-in-functions.md) para conocer los detalles de cada miembro.
+Los ejemplos siguientes se pueden copiar y pegar directamente en el editor de macros. Las funciones que implican un diálogo, como `IPA.File.GetFileNames()`, abren una pantalla de selección de archivos al ejecutarse. Véase [Funciones integradas](1-built-in-functions.md) para los detalles de cada miembro.
 
 !!! tip
-    Cuando la lista de macros guardadas del editor está vacía, se inserta automáticamente un conjunto más completo de ejemplos (bucles básicos, funciones matemáticas, configuración de la geometría, división azimutal, enmascaramiento, envío a PDIndexer, etc.). Explorarlos primero es una buena manera de aprender el estilo.
+    Activa **Mostrar ejemplos (Show samples)** en el editor de macros para ver un conjunto más amplio de ejemplos de solo lectura (bucles básicos, funciones matemáticas, configuración de la geometría, división azimutal, enmascaramiento, envío a PDIndexer, etc.). Recorrerlos primero es una buena manera de aprender el estilo.
 
-## Convertir varios archivos a perfiles 1D y guardarlos (archivos de una sola imagen)
+## Convertir varios archivos en perfiles 1D y guardarlos (archivos de una sola imagen)
 
 ```python
 # Convert several files in the same folder into 1D profiles and save them
@@ -29,11 +29,11 @@ for filename in filelist:
         IPA.Profile.SaveProfileAfterGetProfile = True
         # Set True to save as CSV (also SaveProfileAsTSV, SaveProfileAsPDI, ...)
         IPA.Profile.SaveProfileAsCSV = True
-        # Run Get Profile and save to the given file name
+        # Run Get Profile; the profile is saved as filename plus the format extension (.csv etc.)
         IPA.Profile.GetProfile(filename)
 ```
 
-## Convertir varios archivos a perfiles 1D y guardarlos (archivos de varias imágenes)
+## Convertir varios archivos en perfiles 1D y guardarlos (archivos con varias imágenes)
 
 ```python
 # Convert several files in the same folder into 1D profiles and save them
@@ -51,10 +51,12 @@ for filename in filelist:
         IPA.Profile.MaskSpotsBeforeGetProfile = True
         IPA.Profile.SaveProfileAfterGetProfile = True
         IPA.Profile.SaveProfileAsCSV = True
+        # Integrate one frame at a time (with the 'all images' setting every frame would be processed on each pass)
+        IPA.Sequential.Target_TopmostImage = True
         # Loop over the number of contained images (IPA.Sequential.Count)
         for num in range(IPA.Sequential.Count):
             # Select the frame
-            IPA.Sequential.SelectedIndex = num
+            IPA.Sequential.SelectIndex(num)
             # Run Get Profile and save with the frame number appended
             IPA.Profile.GetProfile(filename + '_' + str(num))
 ```

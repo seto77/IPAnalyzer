@@ -1,64 +1,67 @@
-<!-- 260601Cl: Reflected from ja/4-procedures.md (lead language: Japanese). -->
+<!-- 261124Cl: Retranslated from en/4-procedures.md (UI labels follow the localized GUI). -->
 
 # Arbeitsabläufe
 
-Diese Seite zeigt den Ablauf typischer Aufgaben. Beschreibungen der einzelnen Werkzeuge finden Sie unter [Tools](3-tools.md).
+Diese Seite zeigt den Ablauf typischer Aufgaben. Beschreibungen der einzelnen Werkzeuge finden Sie unter [Werkzeuge](3-tools.md).
 
 ## Grundablauf (konzentrische Integration)
 
-1. **Bild laden**: File → Read image (oder per Drag & Drop).
-2. **Quelle einstellen**: Legen Sie das Element/den Übergang oder die Wellenlänge unter **Wave source** in den Eigenschaften fest.
-3. **Detektorbedingung einstellen**: Legen Sie die Kameralänge, die Pixelgröße, die Zentrumsposition (näherungsweise) und bei Bedarf die Verkippung φ, τ unter **Detector condition** fest.
-4. **Zentrum finden**: Erkennen Sie das Strahlzentrum automatisch mit **Find Center** in der Symbolleiste (der Suchbereich wird unter Miscellaneous eingestellt).
-5. **Reflexe maskieren**: Entfernen Sie Einkristall-Reflexe und dergleichen mit **Mask Spots**. Bei Bedarf maskieren Sie manuell mit **Manual**.
-6. **Eindimensionalisieren**: Erhalten Sie das Profil mit **Get Profile**. Das Speichern und Versenden wird auf der Registerkarte **After "Get Profile"** konfiguriert (CSV speichern, an PDIndexer senden usw.).
+1. **Bild laden**: **Datei → Bild einlesen (File → Read image)** (oder per Drag & Drop).
+2. **Quelle einstellen**: Stellen Sie in den Eigenschaften unter **Wellenquelle (Wave source)** Element/Übergang oder die Wellenlänge ein.
+3. **Detektorbedingung einstellen**: Stellen Sie unter **Detektorbedingung (Detector condition)** Kameralänge, Pixelgröße, (ungefähre) Zentrumsposition und bei Bedarf die Verkippung φ, τ ein.
+4. **Zentrum finden**: Ermitteln Sie das Strahlzentrum automatisch mit **Zentrum finden (Find Center)** in der Symbolleiste (der Suchbereich wird auf der Registerkarte Sonstiges (Miscellaneous) eingestellt).
+5. **Spots maskieren**: Entfernen Sie Einkristall-Reflexe und Ähnliches mit **Spots maskieren (Mask Spots)**. Bei Bedarf maskieren Sie manuell mit **Manueller Modus (Manual Mode)**.
+6. **Integrationseinstellungen prüfen**: Wählen Sie unter **Integralbereich (Integral Region)** den Zielbereich und unter **Integraleigenschaft (Integral Property)** die **Konzentrische Integration (Concentric integration)** mit Achseneinheit und **Start / Ende / Schritt (Start / End / Step)**.
+7. **Bild integrieren**: Erhalten Sie das Profil mit **Profil abrufen (Get Profile)**. Speichern und Senden werden auf der Registerkarte **Nach "Profil abrufen" (After "Get Profile")** eingestellt (CSV-Speicherung, Senden an PDIndexer usw.).
 
-Wählen Sie bei sequenziellen Bildern vor den Schritten 5–6 einen Frame unter [Sequential](3-tools.md) aus. Für die Analyse pro Azimut verwenden Sie die Radial integration in der **Integral Property**.
+Bei Bildsequenzen wählen Sie vor den Schritten 5–7 einen Frame unter [Bildsequenz (Sequential image)](3-tools.md) aus. Für eine azimutabhängige Analyse verwenden Sie **Azimutale Unterteilungsanalyse (Azimuthal Division Analysis)** im Dropdown-Menü von **Profil abrufen** (die Ringe werden in Sektoren geteilt und jeder Sektor wird integriert) oder **Radiale Integration (Radial integration)** in **Integraleigenschaft** (ein Azimut–Intensitäts-Profil).
+
+Sind Kameralänge, Wellenlänge oder Verkippung unbekannt, kalibrieren Sie sie zuerst wie im nächsten Abschnitt beschrieben anhand des Bildes einer Standardprobe, übernehmen die Werte und integrieren erst dann die Probenbilder.
 
 ## Parameterbestimmung: Geometriekalibrierung mit einer Standardprobe (Doppelkassette)
 
-Wenn die Kameralänge oder die Wellenlänge unbekannt ist, optimieren Sie die geometrischen Parameter aus den Beugungsringen eines Standardmaterials (standardmäßig CeO2 usw.) mit [Find Parameter (Geometric)](3-tools.md).
+Sind Kameralänge oder Wellenlänge unbekannt, optimieren Sie die geometrischen Parameter anhand der Beugungsringe eines Standardmaterials (standardmäßig CeO2 usw.) mit [Parameter finden (geometrisch)](3-tools.md).
 
-1. Laden Sie das **Primary image** (Standardprobe, bei einer Kameralänge) mit Open, finden Sie das Zentrum und zeigen Sie die Peaks mit **Get Profile** an.
-2. Das Ziehen einer Beugungslinien-Markierung in der Profile View aktualisiert die Schätzung der Kameralänge automatisch.
-3. Laden Sie das **Secondary image** (dieselbe Standardprobe, bei einer anderen Kameralänge) auf dieselbe Weise und geben Sie die **camera-length difference** relativ zu Primary ein.
-4. Wählen Sie in der **Peak List** die d-spacing-Werte von Peaks aus, die in beiden Bildern erscheinen (mindestens einer pro Bild, idealerweise drei oder mehr).
-5. Wählen Sie unter **Refinement Option** die zu optimierenden Parameter aus (Wellenlänge, Filmabstand, Verkippung, Pixelgröße, Pixelverzerrung).
-6. Führen Sie **Refine!** aus, und sobald sich das Residuum stabilisiert hat, kopieren Sie die optimierten Ergebnisse zurück in das Hauptformular.
+1. Laden Sie das **Primärbild (Primary image)** (Standardprobe bei einer Kameralänge) mit **Öffnen (Open)**, suchen Sie das Zentrum und zeigen Sie die Peaks mit **Profil abrufen (Get Profile)** an.
+2. Wenn Sie in der Profilansicht (Profile View) eine Beugungslinienmarke ziehen, wird die Schätzung der Kameralänge automatisch aktualisiert.
+3. Laden Sie das **Sekundärbild (Secondary image)** (dieselbe Standardprobe bei einer anderen Kameralänge) auf dieselbe Weise und geben Sie die **Kameralängendifferenz** \(\Delta L = L_\mathrm{Secondary} - L_\mathrm{Primary}\) (mm) ein (z. B. +20, wenn Primary bei 100 mm und Secondary bei 120 mm liegt). Das Sekundärbild ist optional; die Kalibrierung funktioniert auch mit dem Primärbild allein.
+4. Wählen Sie in der **Peak-Liste (Peak List)** die d-Werte von Peaks, die in beiden Bildern auftreten (normalerweise drei oder mehr pro Bild; bei zwei Bildern muss mindestens einer beiden gemeinsam sein. Sofern nicht nur die Kameralänge verfeinert wird, tut **Verfeinern! (Refine!)** bei weniger als drei Peaks nichts).
+5. Wählen Sie die zu optimierenden Parameter (Wellenlänge, Filmabstand, Verkippung, Pixelgröße, Pixelverzerrung, Zentrumsposition, Kugelkorrektur).
+6. Führen Sie **Verfeinern!** aus. Es stoppt automatisch nach der eingestellten Anzahl von Wiederholungen (standardmäßig 12). Übertragen Sie das Ergebnis nach der Prüfung mit **Verfeinerte Parameter => Hauptformular (Refined parameters => Main form)** in das Hauptformular.
 
 !!! note
-    Die Verwendung zweier Bilder (eine „Doppelkassette") erleichtert es, die Kameralänge und die Wellenlänge getrennt zu bestimmen.
+    Mit zwei Bildern (einer „Doppelkassette“) lassen sich Kameralänge und Wellenlänge leichter getrennt bestimmen.
 
-## Parameterbestimmung: Brute-Force-Optimierung (beliebige Probe)
+## Parameterbestimmung: Brute-Force-Optimierung (Standardprobe)
 
-Wenn die geometrische Optimierung Schwierigkeiten hat zu konvergieren, durchsuchen Sie die Kameralänge und die Wellenlänge erschöpfend mit [Find Parameter (Brute force)](3-tools.md). Eine ausführliche Anleitung mit Screenshots finden Sie unter [Find Parameter (brute force)](6-find-parameter.md).
+Konvergiert die geometrische Optimierung schlecht, durchsuchen Sie Kameralänge, Zentrumsposition, Verkippung und optional die Wellenlänge erschöpfend mit [Parameter finden (Brute Force)](3-tools.md). Eine ausführliche Anleitung mit Bildschirmfotos finden Sie unter [Parameter finden (Brute Force)](6-find-parameter.md).
 
-1. Laden Sie das Primary- und das Secondary-Bild (zwei Bilder mit gemeinsamen Ringen, bei unterschiedlichen Kameralängen).
-2. Richten Sie die Zentrumsposition im Hauptformular grob aus (Find Center hilft dabei).
-3. Geben Sie die **search ranges (min, max, step)** für die Kameralänge, die Wellenlänge usw. ein. Lassen Sie unbekannte Parameter (Pixelgröße, Verkippung) zunächst ausgeschaltet.
-4. Das Setzen der **Integral Region** auf einen Schlitzmodus (Rectangle) mit schmaler Bandbreite hilft, Rauschen zu unterdrücken.
-5. Starten Sie die Suche und kopieren Sie die Kombination mit dem kleinsten Residuum zurück in das Hauptformular.
+1. Laden Sie im Hauptformular ein Bild einer Standardprobe, öffnen Sie **Parameter finden (Brute Force) (Find parameter (brute force))** und wählen Sie den entsprechenden Standard.
+2. Richten Sie die Zentrumsposition im Hauptformular grob aus (**Zentrum finden (Find Center)** hilft dabei).
+3. Wählen Sie die zu optimierenden Größen und geben Sie die Schrittweite **Anfangsschritt (Initial step)** (um den aktuellen Wert zentriert) und die Anzahl der Schritte auf jeder Seite (**Suchbereich (Search range)**) ein. Bei einem Flachdetektor ist die Pixelgröße kein Suchziel. Zahlenbeispiele finden Sie unter [Parameter finden (Brute Force)](6-find-parameter.md).
+4. Wird **Integralbereich (Integral Region)** auf einen Schlitzmodus (**Rechteck (Rectangle)**) mit schmaler Bandbreite gestellt, lässt sich das Rauschen unterdrücken.
+5. Starten Sie die Suche mit **Optimieren (Optimize)**. In jedem Zyklus wird die Kombination mit dem kleinsten Bewertungswert R übernommen und automatisch in die Parameter des Hauptformulars geschrieben.
 
-## Automatisierte Verarbeitung (Auto Procedure)
+## Automatisierte Verarbeitung (Automatische Prozedur)
 
-Verarbeiten Sie Bilder, die in einem Ordner eintreffen, automatisch, zum Beispiel während eines Experiments. Einzelheiten finden Sie unter [Tools](3-tools.md).
+Bilder, die in einem Ordner eintreffen, werden automatisch verarbeitet, beispielsweise während eines Experiments. Einzelheiten finden Sie unter [Werkzeuge](3-tools.md).
 
-1. Aktivieren Sie **Automatically load new images** und wählen Sie den Überwachungsordner mit **Set** aus.
-2. Filtern Sie bei Bedarf Dateien nach **number matching** (der Zahl am Ende des Dateinamens) oder nach **keyword**.
+1. Wählen Sie den Überwachungsordner mit **Festlegen (Set)**.
+2. Filtern Sie bei Bedarf Dateien nach **number matching** (der Zahl am Ende des Dateinamens) oder nach **Stichwort (keyword)**.
 3. Aktivieren Sie **After Loading Image, Execute "Auto"** und wählen Sie aus der Liste: Auto Contrast / Find Center / Mask Spots / Get Profile / Execute Macro.
-4. Sobald die Überwachung gestartet ist, läuft die Sequenz jedes Mal automatisch ab, wenn ein passendes Bild eintrifft.
+4. Schalten Sie zuletzt **Neue Bilder automatisch laden (Automatically load new images)** ein, um die Überwachung zu starten (ohne Ordner lässt es sich nicht einschalten; verwendet werden die Nummern-/Stichwortbedingungen, die beim Start der Überwachung gelten). Die Abfolge läuft dann jedes Mal automatisch ab, wenn ein passendes Bild eintrifft.
 
 ## Skriptgesteuerte Abläufe (Python-basierte Makros)
 
-Eine Verarbeitung mit Schleifen und Bedingungen kann als [Makro](5-macro/index.md) geschrieben werden. Die mitgelieferten Beispielmakros sind ein guter Ausgangspunkt.
+Verarbeitungen mit Schleifen und Bedingungen lassen sich als [Makro](5-macro/index.md) schreiben. Die Beispielmakros, die im Makro-Editor mit **Beispiele anzeigen (Show samples)** angezeigt werden, sind ein guter Ausgangspunkt.
 
-- Ein Bild laden, die Quelle und den Detektor einstellen (Zentrum, Kameralänge, Pixel) und die Anzeige einpassen.
-- Die Bedingungen der konzentrischen Integration festlegen (Start, Ende, Schrittweite, Einheit), eindimensionalisieren und als CSV speichern.
-- Mehrere Dateien stapelweise verarbeiten und jeweils eine CSV neben dem Bild speichern.
+- Ein Bild laden, Quelle und Detektor (Zentrum, Kameralänge, Pixel) einstellen und die Anzeige einpassen.
+- Die Bedingungen der konzentrischen Integration (Start, Ende, Schritt, Einheit) einstellen, eindimensionalisieren und als CSV speichern.
+- Mehrere Dateien stapelweise verarbeiten und neben jedem Bild eine CSV-Datei speichern.
 - Ein Multiframe-Bild Frame für Frame verarbeiten.
-- Einen Debye-Ring in N Sektoren aufteilen und die azimutale Abhängigkeit analysieren.
-- Maskieren (alles löschen → Reflexe maskieren → den Beam-Stop-Bereich maskieren → die Maske speichern) und eindimensionalisieren.
-- Azimut gegen Intensität mit radialer (Cake-)Integration ausgeben.
-- Das Senden an die Zwischenablage aktivieren, eindimensionalisieren und ein benanntes Makro in PDIndexer aufrufen (z. B. Peak-Fitting).
+- Einen Debye-Ring in N Sektoren teilen und die Azimutabhängigkeit analysieren.
+- Maskieren (alles löschen → Spots maskieren → Bereich des Primärstrahlfängers maskieren → Maske speichern) und eindimensionalisieren.
+- Mit radialer (Cake-)Integration Azimut gegen Intensität ausgeben.
+- Das Senden über die Zwischenablage aktivieren, eindimensionalisieren und in PDIndexer ein benanntes Makro aufrufen (z. B. Peak-Anpassung).
 
-Selbst geschriebene Makros können gespeichert, namentlich aufgerufen und auch aus Auto Procedure ausgeführt werden.
+Selbst geschriebene Makros lassen sich speichern, über ihren Namen aufrufen und auch aus der automatischen Prozedur (Auto Procedure) heraus ausführen.

@@ -1,64 +1,70 @@
-<!-- 260601Cl: Reflected from ja/6-find-parameter.md. Migrated from the wiki; screenshots reuse the original wiki uploads (user-images). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
 
-# Find Parameter (Brute force)
+# 매개변수 찾기 (전수 탐색)
 
-전수 탐색 모드는 각 매개변수를 빠짐없이 변화시켜(격자 전수 탐색) 다음 조건을 가장 잘 만족하는 값을 찾습니다.
+전수 탐색 모드는 각 매개변수를 빠짐없이 바꿔 가며 (격자 탐색) 다음 조건을 가장 잘 만족하는 값을 찾습니다.
 
-- 날카로운 피크(즉, 작은 FWHM), 그리고
-- 작은 d-값 편차.
+- 계산한 피크 위치와 피팅으로 얻은 피크 위치의 (2θ) 차이가 작을 것, 그리고
+- 피크가 높을 (날카로울) 것.
 
-이 모드는 기하 최적화가 수렴하기 어려운 불완전한 고리나 잡음이 많은 데이터에 효과적입니다. 도구의 개요는 [도구](3-tools.md), 기본 흐름은 [작업 절차](4-procedures.md)를 참조하십시오.
+고리가 불완전하거나 잡음이 많은 데이터처럼 기하학적 최적화가 잘 수렴하지 않는 경우에 효과적입니다. 도구의 개요는 [도구](3-tools.md)를, 기본 흐름은 [작업 절차](4-procedures.md)를 참조하십시오.
 
-## Steps
+## 절차
 
-1. 이미지 데이터와 매개변수를 불러온 뒤 **Find Parameter (brute force)**를 클릭합니다.
+1. 이미지 데이터와 매개변수를 불러온 다음, **매개변수 찾기 (전수 탐색) (Find Parameter (brute force))** 를 클릭합니다.
 
-    ![Launching Find Parameter (brute force)](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
-    ![Brute-force calibration window](../assets/cap-en-auto/FormFindParameterBruteForce.png)
+    ![매개변수 찾기 (전수 탐색) 실행](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
+    ![전수 탐색 보정 창](../assets/cap-en-auto/FormFindParameterBruteForce.png)
 
-2. **standard material**을 선택합니다. 목록에 없으면 **Others**를 선택하여 직접 입력합니다.
-3. **Get profile**로 프로파일을 표시합니다.
-4. 최적화에 사용하고 싶지 않은 피크 선을 더블 클릭하여 제외합니다.
-5. 옵션을 설정하고 **Optimize**를 눌러 최적화를 시작합니다.
+2. **표준 물질**을 선택합니다. 목록에 없으면 **기타 (Other)** 를 선택하여 직접 입력합니다.
+3. **프로파일 가져오기 (Get Profile)** 로 프로파일을 표시합니다.
+4. 최적화에 사용하고 싶지 않은 피크 선이 있으면 더블 클릭하여 제외합니다.
+5. 옵션을 설정하고 **최적화 (Optimize)** 를 눌러 최적화를 시작합니다.
 
-## Options
+## 옵션
 
-![Option settings](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
+![옵션 설정](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Fitting range
+### 피팅 범위
 
 각 피크에 대해 피팅할 각도 범위를 지정합니다.
 
-### Number of repetitions
+### 반복 횟수
 
 최적화 사이클의 횟수를 지정합니다.
 
-### Per-parameter options
+### 매개변수별 옵션
 
-체크된 항목에 대해 최적화가 수행됩니다. 각 매개변수는 지정된 단계(**Initial step**)로 지정된 범위(**Search range**)에 걸쳐 이동합니다.
+체크한 항목에 대해 최적화가 수행됩니다. 각 매개변수는 지정한 범위 (**검색 범위 (Search range)**) 를 지정한 스텝 (**초기 스텝 (Initial step)**) 으로 움직입니다.
 
-예를 들어 카메라 길이가 100 mm에서 시작하고 Initial step이 0.05 mm, Search range가 4이면, 9 (= Search range × 2 + 1)개의 카메라 길이가 시도됩니다: 99.80, 99.85, 99.90, 99.95, 100.00, 100.05, 100.10, 100.15, 100.20 mm.
+예를 들어 카메라 길이가 100 mm 에서 시작하고 초기 스텝이 0.05 mm, 검색 범위가 4 이면, 9개 (= 검색 범위 × 2 + 1) 의 카메라 길이 99.80, 99.85, 99.90, 99.95, 100.00, 100.05, 100.10, 100.15, 100.20 mm 를 시도합니다.
 
-매개변수의 시도 횟수가 N1, N2, N3, …일 때, 사이클당 총 시도 횟수는 N1 × N2 × N3 × …입니다. 위 예에서 네 개의 매개변수가 Search range 4, 4, 3, 6을 가지면, 이는 (4×2+1) × (4×2+1) × (3×2+1) × (6×2+1) = 7371회의 시도가 됩니다. 다시 말해 7371개의 매개변수 집합이 시도되고, 가장 날카로운 피크와 가장 작은 d-값 편차를 갖는 조합이 선택됩니다.
+매개변수들의 시도 횟수가 N1, N2, N3, … 일 때, 사이클당 총 시도 횟수는 N1 × N2 × N3 × … 입니다. 위의 예에서 네 매개변수의 검색 범위가 4, 4, 3, 6 이면 (4×2+1) × (4×2+1) × (3×2+1) × (6×2+1) = 7371 회입니다. 즉, 7371 개의 매개변수 세트를 시도하고, 그중 평가값 R (아래 참조) 이 가장 작은 조합을 선택합니다.
 
 !!! warning
-    **Search range**를 늘리면 시도 횟수가 급격히 증가하고 각 사이클이 길어집니다. 주의하여 사용하십시오.
+    **검색 범위 (Search range)** 를 늘리면 시도 횟수가 급격히 늘어나 각 사이클이 길어집니다. 주의해서 사용하십시오.
 
-## Status screen
+## 상태 화면
 
-![Status screen](https://user-images.githubusercontent.com/44538886/180197340-efeb9fd5-4e38-4845-939e-1352903502d0.png)
+![상태 화면](https://user-images.githubusercontent.com/44538886/180197340-efeb9fd5-4e38-4845-939e-1352903502d0.png)
 
-보정 중에는 위와 같은 상태 화면이 표시됩니다.
+보정하는 동안 위와 같은 상태 화면이 표시됩니다.
 
-- **Cycle**: 현재 사이클 번호. 한 사이클이 끝나면 그 안에서 찾은 최적의 매개변수 집합이 다음 사이클의 시작점이 됩니다. 최적 매개변수가 이전 사이클과 동일하면 다음 사이클을 위해 단계에 0.8을 곱합니다.
-- **Current best values**: 그 시점의 최적 매개변수.
-- **Current steps**: 그 시점의 각 매개변수 단계.
-- **No1, No2, …**: 사이클 내 상위 5개 평가값. 처음에는 빠르게 떨어지다가 최적점에 가까워질수록 수렴합니다.
+- **Cycle**: 현재 사이클 번호입니다. 사이클이 끝나면, 그 사이클에서 찾은 가장 좋은 매개변수 세트가 다음 사이클의 출발점이 됩니다. 가장 좋은 매개변수가 사이클 시작 시의 값과 같으면, 다음 사이클에서는 스텝을 미리 정해진 수열 (1, 1.3, 1.8, 2.4, 3.2, 4.2, 5.6, 7.5 × 10ⁿ) 에서 한 단계 작은 값으로 줄입니다 (예: 0.05 mm → 0.042 mm).
+- **Current best values**: 그 시점에서 가장 좋은 매개변수입니다.
+- **Current steps**: 그 시점에서 각 매개변수의 스텝입니다.
+- **No1, No2, …**: 탐색을 시작한 이후 상위 4개의 평가값입니다 (서로 다른 값이 5개 이상 모인 뒤에 표시됩니다). 처음에는 빠르게 내려가다가 최적값에 가까워지면 수렴합니다.
 
-## Evaluation value R
+## 평가값 R
 
-평가값 R은 다음과 같이 계산됩니다.
+평가값 R 은 다음과 같이 계산합니다.
 
-![Formula for the evaluation value R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
+![평가값 R 의 식](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-여기서 *H*는 배경을 뺀 피크 높이입니다.
+여기서 \(2\theta_{\mathrm{calc},i}\) 는 현재 매개변수로 계산한 피크 \(i\) 의 위치, \(2\theta_{\mathrm{fit},i}\) 는 프로파일을 피팅하여 얻은 위치 (모두 도 단위), *H* 는 배경을 뺀 피크 높이, *W* 는 가중치 (**Weight**, 기본값 100) 입니다. 평판 검출기의 경우 식은 다음과 같습니다.
+
+$$
+R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]
+$$
+
+위치 차이가 작을수록, 그리고 피크가 높을수록 (날카로울수록) R 은 작아집니다. 반치폭 (FWHM) 자체는 평가에 사용되지 않습니다.

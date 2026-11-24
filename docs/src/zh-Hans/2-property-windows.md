@@ -1,16 +1,16 @@
-<!-- 260601Cl: Reflected from ja/2-property-windows.md (lead language: Japanese). 260601Cl: per-tab auto-capture images embedded. -->
+<!-- 261124Cl: Retranslated from en/2-property-windows.md (UI labels follow the localized GUI). -->
 
-# Property Windows
+# 属性窗口
 
-属性窗口用于配置波源、探测器条件以及各种一维化条件。每个选项卡也可从主窗口的 **Property** 菜单直接打开。
+属性窗口用于设置射线源、探测器条件以及一维化的各种条件。各选项卡也可以从主窗口的 **属性 (Property)** 菜单直接打开。
 
-本窗口的界面为英文。下面的标题采用实际的选项卡名和控件名。
+以下标签为简体中文界面中显示的名称，括号内为英文名称。各标题使用实际的选项卡和控件名称。
 
-## Wave source
+## 波源 (Wave source)
 
-设置入射束的类型和波长。波源可以是 X 射线、电子或中子。对于 X 射线，选择一个元素和一个跃迁（K line、L line 等）会自动填入波长；对于同步辐射，请直接输入波长。对于电子束和中子束，请输入能量或波长（电子波长经过相对论修正）。
+设置入射束的种类和波长。射线源可选择 X 射线、电子或中子。对于 X 射线，选择元素和跃迁（K 线、L 线等）后会自动填入波长；对于同步辐射，请直接输入波长。对于电子束和中子束，请输入能量或波长（电子波长已作相对论校正）。
 
-- **Correct linear polarization**：将线偏振强度修正为非偏振等效值（用于同步辐射数据）。下面的修正公式取决于方位角 χ（在 Miscellaneous 选项卡上定义）和散射角 2θ。
+- **校正线偏振 (Correct linear polarization)**：将线偏振的强度校正为等效的非偏振强度（用于同步辐射数据）。下面的校正公式取决于方位角 χ 和散射角 2θ。若 χ 的基准方向（在杂项 (Miscellaneous) 选项卡中设置）为左 (Left) / 右 (Right)，则将束流视为水平偏振；若为上 (Top) / 下 (Bottom)，则视为垂直偏振。
 
 $$
 I_\text{corr}(2\theta,\chi) = \frac{I(2\theta,\chi)}{\sin^2\chi + \cos^2\chi\,\cos^2 2\theta} \times \frac{1}{2}\left(1 + \cos^2 2\theta\right)
@@ -18,94 +18,92 @@ $$
 
 ![Wave source tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageXRay.png)
 
-## Detector condition
+## 探测器条件 (Detector condition)
 
-设置探测器的几何条件。这对应于旧版的 "IP Condition"，并增加了坐标系和探测器形状的选择器。
+设置探测器的几何条件。它对应于旧版的 “IP Condition”，并增加了坐标系和探测器形状的选择项。
 
-- **Coordinates**：**Direct spot**（直射斑参考） / **Foot**（垂足参考）。
-- **Detector type**：**Flat panel** / **Gandolfi**。
-- **Direct spot position** 和 **Camera Length 1**：直射斑位置（X、Y pix）以及从样品到直射斑的距离（mm）。
-- **Foot position** 和 **Camera Length 2**：在 Foot 模式下，垂足的位置以及从样品到垂足的距离。
-- **Pixel Shape**：像素尺寸 X、Y（mm）以及 ξ（Ksi，平行四边形倾斜角）。
-- **Gandolfi Radius**：当选择 Gandolfi 形状时的半径。
-- **Spherical correction**：球面修正（通常为零）。
-- **Tilt**：IP 倾斜 φ（Phi）和 τ（Tau）。
+- **坐标 (Coordinates)**：**直射斑 (Direct spot)**（以直射斑点为基准）/ **底部 (Foot)**（以垂足为基准）。
+- **探测器类型 (Detector type)**：**平板 (Flat panel)** / **Gandolfi**。
+- **直射斑位置 (Direct spot position)** 和 **相机长度 1 (Camera Length 1)**：直射斑点的位置 (X, Y pix) 以及样品到直射斑点的距离 (mm)。
+- **底部位置 (Foot position)** 和 **相机长度 2 (Camera Length 2)**：在底部 (Foot) 模式下，垂足的位置以及样品到垂足的距离。
+- **像素形状 (Pixel Shape)**：像素尺寸 X、Y (mm) 以及 ξ (Ksi，平行四边形的倾斜角)。
+- **Gandolfi 半径 (Gandolfi Radius)**：选择 Gandolfi 形状时的半径。
+- **球面校正 (Spherical correction)**：对于弯曲的探测器，输入曲率半径的倒数 1/R (mm⁻¹)。平板探测器请输入 0。
+- **倾斜 (Tilt)**：IP 的倾斜 φ (Phi) 和 τ (Tau)。
 
-关于倾斜 φ、τ 和像素 ξ 的定义，请参阅 [概述](0-overview.md)。
+倾斜 φ、τ 和像素 ξ 的定义请参见[概述](0-overview.md)。
 
 ![Detector condition tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageIP.png)
 
-## Integral Region
+## 积分区域 (Integral Region)
 
-指定要进行一维化的图像区域。
+指定要一维化的图像区域。
 
-- **Rectangle**：选择 **Direction**（Full / Top / Bottom / Left / Right / Vertical / Horizontal / Free），并设置 **Band Width**、**Angle**（在 Free 模式下）以及 **Both Side**。
-- **Sector**：用 **Start Angle** / **End Angle** 指定角度范围。
-- **Exceptional pixels**：排除 **Masked Spots**、强度 **Under intensity of** / **Over intensity of** 给定阈值的像素，以及距边缘若干 **pixels from edges** 的像素。
+- **矩形 (Rectangle)**：选择 **方向 (Direction)**（完整 (Full) / 上 (Top) / 下 (Bottom) / 左 (Left) / 右 (Right) / Vertical / Horizontal / Free），并设置 **带宽 (Band Width)**、**角度 (Angle)**（Free 模式下）以及 **双侧 (Both Side)**。
+- **扇区 (Sector)**：用 **起始角度 (Start Angle)** / **终止角度 (End Angle)** 指定角度范围。
+- **异常像素 (Exceptional pixels)**：排除 **已掩蔽斑点 (Masked Spots)**、**强度低于 (Under intensity of)** / **强度高于 (Over intensity of)** 给定阈值的像素，以及 **距边缘像素数 (pixels from edges)** 指定的边缘像素。
 
 ![Integral Region tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageIntegralRegion.png)
 
-## Integral Property
+## 积分属性 (Integral Property)
 
 设置积分方法和步长。
 
-- **Concentric integration (scattering-angle dispersive)**：从 **Angle**（2θ，°） / **Length**（mm） / **d-spacing**（Å）中选择横轴单位，并设置 **Start / End / Step**。**Output pattern** 可以是 **Bragg - Brentano** 或 **Debye - Scherrer**。
-- **Radial integration (cake pattern)**：沿方位角方向分析环形区域。从 **Angle** / **d-spacing** 中选择横轴，并设置 **Donut radius**（中心半径）、**Donut width**（环宽）以及 **Sector angle step**（扫描步长）。
+- **同心积分 (散射角色散) (Concentric integration (scattering-angle dispersive))**：从 **角度 (Angle)** (2θ, °) / **d 间距 (d-spacing)** (Å) 中选择横轴单位，并设置 **开始 / 结束 / 步长 (Start / End / Step)**。在当前版本中，**输出图样 (Output pattern)** 的选择（Bragg - Brentano / Debye - Scherrer）对结果没有影响。
+- **径向积分 (饼状图样) (Radial integration (cake pattern))**：对每个方位角求环形区域的强度总和。以散射角 2θ（**角度 (Angle)**）或 d 间距（**d 间距 (d-spacing)**）指定圆环中心（**圆环半径 (Donut radius)**）和半宽（**圆环宽度 (Donut width)**），并设置 **扇区角度步长 (Sector angle step)**（方位角步长）。所得谱线的横轴为方位角 χ (°)。
 
 ![Integral Property tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageIntegralProperty.png)
 
-## Mask Option
+## 掩模选项 (Mask Option)
 
-设置掩蔽以及中心/斑点检测的条件（旧版 "Find Center & Spots" 的扩展）。
+设置掩蔽和斑点检测的条件（由旧版的 “Find Center & Spots” 扩展而来）。中心检测的设置位于杂项 (Miscellaneous) 选项卡。
 
-- **Half mask**：用于快速掩蔽图像上半、下半、左半或右半的按钮。
-- **Manual mask mode**：在主图像上启用交互式掩蔽。形状有 **Circle**（拖动以设置中心和半径）、**Polygon**（点击以添加顶点）、**Rectangle**（拖动对角顶点）、**Spline curve** 以及 **Spot**（左键/右键点击以添加/移除斑点）。
-- **Takeover**：加载新图像时如何处理掩模（**None** / **Take over the current mask state** / **Take over the mask file**）。
+- **半掩模 (Half mask)**：快速掩蔽图像上、下、左、右一半的按钮。
+- **手动掩模模式 (Manual mask mode)**：在主图像上启用交互式掩蔽。形状有 **圆 (Circle)**（拖动设置中心和半径）、**多边形 (Polygon)**（单击添加顶点）、**矩形 (Rectangle)**（拖动设置对角顶点）、**样条曲线 (Spline curve)** 以及 **斑点 (Spot)**（左键 / 右键单击添加 / 移除斑点）。
+- **Takeover**：载入新图像时掩模的处理方式（**无 (None)** / **沿用当前掩模状态 (Take over the current mask state)** / **沿用掩模文件 (Take over the mask file)**）。
 - **Find Spots** → **Deviation**：斑点检测的统计阈值。
-- **Find Center**：中心检测的搜索范围，等等。
 
 ![Mask Option tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageSpotsAndCenter.png)
 
-## After "Get Profile"
+## "获取图谱"之后 (After "Get Profile")
 
-设置一维化之后的保存与发送。
+设置一维化之后的保存和发送。
 
-- **Save File**：选择目标位置（"与图像相同的目录" 或 "每次选择的目录"）以及格式 **PDI** / **CSV** / **TSV** / **GSAS**。
-- **Send PDIndexer**：通过剪贴板将谱线发送到正在运行的 PDIndexer 实例。
+- **Save File**：选择保存位置（“在图像所在的同一目录 (At the same directory of the image)” 或 “每次在所选目录 (At the chosen directory each time)”），并从 **PDI** / **CSV** / **TSV** / **GSAS** 中选择格式。只有横轴为 2θ 的同心积分才能输出 GSAS。当多条谱线要保存到一个文件中时，不会写出 GSAS；请改为保存到多个文件。
+- **Send PDIndexer**：通过剪贴板将谱线发送到正在运行的 PDIndexer。
 
 ![After "Get Profile" tab](../assets/cap-en-auto/FormProperty.tabControl.tabPageAfterGetProfile.png)
 
-## Unrolled Image Option
+## 展开图像选项 (Unrolled Image Option)
 
-设置展开（Unroll）图像的参数。
+设置展开 (Unroll) 图像的参数。
 
-- **Horizontal**：单位（Angle / Length / d-spacing）以及 **Start / End / Step**。输出图像宽度 ≈ (End − Start) / Step。
-- **Vertical**：方位角步长（°/pixel）。输出图像高度 ≈ 360 / step。
+- **Horizontal**：以散射角 2θ (°) 表示的 **开始 / 结束 / 步长 (Start / End / Step)**（界面上显示了单位选项，但当前版本始终将这些值视为 2θ）。输出图像宽度 ≈ (End − Start) / Step。
+- **Vertical**：方位角的 **分割数 (number of divisions)** N。输出图像高 N 像素，每一行覆盖 360°/N（默认值 720 时为 0.5°）。
 
-展开会将以直射斑为中心的极坐标衍射图像映射为笛卡尔（角度对距离）图像。
+展开是将以直射斑点为中心的极坐标衍射图像映射为直角坐标（角度 vs. 距离）图像。
 
 ![Unrolled Image Option tab](../assets/cap-en-auto/FormProperty.tabControl.tabPage1.png)
 
-## Miscellaneous
+## 杂项 (Miscellaneous)
 
-汇集较细的显示和坐标设置的选项卡。
+汇集了较细的显示和坐标设置的选项卡。
 
-- **Image name display**：仅文件名 / 父文件夹 + 文件名 / 完整路径。
-- **Contrast / intensity-range persistence**：加载新图像时是否沿用显示设置。
-- **Azimuth χ (Chi) orientation**：参考位置（Top / Bottom / Left / Right）以及旋转方向（Clockwise / Counterclockwise）。χ 被偏振修正和径向积分所引用。
-- **Scale line**：颜色、宽度、分度数以及标签显示。
-- **Find Center**：搜索范围、峰拟合范围、固定中心，以及排除掩蔽像素。
+- **Image name display**：仅文件名 / 末级文件夹 + 文件名 / 完整路径。
+- **保持显示范围 (Maintain display range)**：载入新图像时是否沿用缩放和显示位置（显示范围）。
+- **Azimuth χ (Chi) orientation**：基准位置（上 (Top) / 下 (Bottom) / 左 (Left) / 右 (Right)）和旋转方向（顺时针 (Clockwise) / 逆时针 (Counterclockwise)）。偏振校正和径向积分都会参照 χ。
+- **比例尺 (Scale line)**：颜色、线宽、分割数以及标签显示。
+- **查找中心 (Find Center)**：搜索范围、峰拟合范围、固定中心以及排除已掩蔽像素。
 
 ![Miscellaneous tab](../assets/cap-en-auto/FormProperty.tabControl.tabPage5.png)
 
-## Background Option
+## 背景选项 (Background Option)
 
-设置用背景图像进行的修正。
+设置用背景图像进行的校正。
 
-- **Background image**：将当前显示的图像设为背景（**Set the current image as background**），或清除它（**Clear**）。
-- **Coefficient**：施加到背景图像上的系数。
-- **Edge mask**：在修正时于边缘施加的额外掩模余量（px）。
+- **Background image**：将当前显示的图像设为背景（**将当前图像设为背景 (Set the current image as background)**），或将其清除（**清除 (Clear)**）。
+- **系数 (Coefficient)**：施加于背景图像的系数。
 
-用于平场修正、去除空气散射等。
+用于扣除空气散射等加性背景。对每个像素计算 \(I_\mathrm{out} = I - cB\)（\(B\)：背景图像，\(c\)：系数）。若要排除图像边缘附近的像素，请使用积分区域 (Integral Region) 选项卡中的 **距边缘像素数 (pixels from edges)**。
 
 ![Background Option tab](../assets/cap-en-auto/FormProperty.tabControl.tabPage3.png)
