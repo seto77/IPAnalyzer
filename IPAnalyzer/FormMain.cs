@@ -430,9 +430,37 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             // ImageTypeParameter は [MemoryPackable] partial 化済み。フィールド順の変更で
             // 保存済み registry blob がバイナリ互換を失うので、並び替えは破壊的変更扱い。
             rw(() => FormProperty.ImageTypeParameters);
+            rw(() => FormProperty.ImageTypeParametersPxdGelMigrated); // 261124Cl 追加
 
             if (mode == Reg.Mode.Read)
             {
+                // 261124Cl 追加: 列挙 ImageTypeEnum が増える前 (例: PXD を足す前) に保存した配列は短いので、足りない分を初期値で埋める
+                //   (Reg.RW は保存された配列でそのまま差し替えるため、旧版の設定のまま新しい形式を開くと範囲外参照になっていた)
+                var nTypes = Enum.GetValues<Ring.ImageTypeEnum>().Length;
+                if (FormProperty.ImageTypeParameters == null || FormProperty.ImageTypeParameters.Length < nTypes)
+                {
+                    var old = FormProperty.ImageTypeParameters ?? [];
+                    FormProperty.ImageTypeParameters = [.. old, .. Enumerable.Range(0, nTypes - old.Length).Select(_ => new ImageTypeParameter())];
+                }
+                for (int i = 0; i < FormProperty.ImageTypeParameters.Length; i++)
+                    FormProperty.ImageTypeParameters[i] ??= new ImageTypeParameter();
+
+                // 261124Cl 追加: 所見 7 の設定の移行 (作者決定 2026-11-24「一度だけ写す」)。
+                //   Crystallography 620d8f2 から Rigaku PXD は PXD (旧 SMV)、GE gel は FLA7000 (旧 MCCD) を返す。旧版の設定を読んだ最初の 1 回だけ、
+                //   SMV→PXD、MCCD→FLA7000 へ値を写す。写す先が既に設定済み (初期値のままでない) なら上書きしない。写したことはフラグで記録する
+                if (!FormProperty.ImageTypeParametersPxdGelMigrated)
+                {
+                    var defaultBytes = MemoryPack.MemoryPackSerializer.Serialize(new ImageTypeParameter());
+                    foreach (var (from, to) in new[] { (Ring.ImageTypeEnum.SMV, Ring.ImageTypeEnum.PXD), (Ring.ImageTypeEnum.MCCD, Ring.ImageTypeEnum.FLA7000) })
+                    {
+                        var dst = FormProperty.ImageTypeParameters[(int)to];
+                        if (MemoryPack.MemoryPackSerializer.Serialize(dst).AsSpan().SequenceEqual(defaultBytes)) // 写す先が初期値のままのときだけ
+                            FormProperty.ImageTypeParameters[(int)to] = MemoryPack.MemoryPackSerializer.Deserialize<ImageTypeParameter>(
+                                MemoryPack.MemoryPackSerializer.Serialize(FormProperty.ImageTypeParameters[(int)from])); // 深いコピー (SourceParameters 配列も別物にする)
+                    }
+                    FormProperty.ImageTypeParametersPxdGelMigrated = true;
+                }
+
                 FormProperty.radioButtonAngleMode_CheckedChanged(this, EventArgs.Empty);
                 FormProperty.radioButtonRadialAngle_CheckedChanged(this, EventArgs.Empty);
             }
@@ -738,7 +766,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             copyFilter(Ring.IsOutsideOfIntegralProperty, pseudoBitmap.Filter5);
         }
 
-        var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
+        //var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
+        // 261124Cl 変更 (所見 11): GetImage は PseudoBitmap 内部のキャッシュ destBmp を返し、別の大きさで呼ばれると Dispose する (主画面とサムネイルで共有)。
+        //   表示・保存に使う前に Clone して呼び出し側で所有する (キャッシュは Dispose しない)。旧: キャッシュをそのまま pictureBox に渡していた
+        var bmp = (Bitmap)pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize)?.Clone();
         if (bmp == null) return;
         using var g = Graphics.FromImage(bmp); //260712Cl using化 (毎フレームの GDI ハンドル滞留を防止)
         g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -875,7 +906,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         var oldImage = scalablePictureBox.pictureBox.Image; //260712Cl 旧 Bitmap を明示解放 (毎フレームの GDI/ネイティブメモリ滞留防止)
         scalablePictureBox.pictureBox.Image = bmp;
-        if (!ReferenceEquals(oldImage, bmp)) oldImage?.Dispose(); //GetImage が destBmp をキャッシュ再利用する将来実装でも、同一インスタンスは破棄しない
+        if (!ReferenceEquals(oldImage, bmp)) oldImage?.Dispose(); //GetImage が destBmp をキャッシュ再利用する将来実装でも、同一インスタンスは破棄しない (261124Cl: bmp は Clone した自前の Bitmap なので、oldImage も前回の自前の複製)
         scalablePictureBox.Refresh();
 
         //サムネイルに画像転送
@@ -1133,7 +1164,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             scalablePictureBoxThumbnail.Center = new PointD(FormProperty.numericBoxDirectSpotPositionX.Value, FormProperty.numericBoxDirectSpotPositionY.Value);
         }
 
-        var bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
+        //var bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
+        // 261124Cl 変更 (所見 11): GetImage は PseudoBitmap 内部のキャッシュ destBmp を返し、別の大きさで呼ばれると Dispose する (主画面とサムネイルで共有)。
+        //   表示・保存に使う前に Clone して呼び出し側で所有する (キャッシュは Dispose しない)。旧: キャッシュをそのまま pictureBox に渡していた
+        var bmp = (Bitmap)pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize)?.Clone();
         if (bmp == null) return; //260712Cl Draw() と同様の null ガード (パネル折り畳み等でクライアントサイズ 0 の場合)
         using var g = Graphics.FromImage(bmp); //260712Cl using化
         g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -2028,12 +2062,21 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             $"Ave. Intensity:\r\n {sumOfIntensity / Ring.Intensity.Length:#,#.####}\r\n\r\n" +
             $"{Ring.Comments}";
 
-        if (Ring.SequentialImagePulsePower != null && Ring.SequentialImagePulsePower.Count == Ring.SequentialImageIntensities.Count)//イメージごとにエネルギーが設定されているとき
+        //if (Ring.SequentialImagePulsePower != null && Ring.SequentialImagePulsePower.Count == Ring.SequentialImageIntensities.Count)//イメージごとにエネルギーが設定されているとき
+        //{
+        //    if (Ring.SequentialImageIntensities.Count == 1)
+        //        textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[0]}";
+        //    else if (FormSequentialImage.SelectedIndex > -1)
+        //        textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[FormSequentialImage.SelectedIndex]}";
+        //}
+        // 261124Cl 変更 (所見 8): Crystallography 620d8f2 から PulsePower はフレーム番号と添字が揃い、欠けたフレームは NaN になった。
+        //   Count と添字を確かめてから読み、NaN は "n/a" と出す
+        var pulsePower = Ring.SequentialImagePulsePower;
+        if (pulsePower != null && Ring.SequentialImageIntensities != null && pulsePower.Count == Ring.SequentialImageIntensities.Count)
         {
-            if (Ring.SequentialImageIntensities.Count == 1)
-                textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[0]}";
-            else if (FormSequentialImage.SelectedIndex > -1)
-                textBoxInformation.Text += $"\r\nPulse Power: {Ring.SequentialImagePulsePower[FormSequentialImage.SelectedIndex]}";
+            var idx = Ring.SequentialImageIntensities.Count == 1 ? 0 : FormSequentialImage.SelectedIndex;
+            if (idx > -1 && idx < pulsePower.Count)
+                textBoxInformation.Text += $"\r\nPulse Power: {(double.IsNaN(pulsePower[idx]) ? "n/a" : pulsePower[idx])}";
         }
     }
 
@@ -2154,13 +2197,23 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
                         d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
                 }
-                if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
-                {//各画像にエネルギー値があるとき(h5ファイルの時)
+                //if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
+                // 261124Cl 変更 (所見 8): PulsePower は Count が枚数と同じときだけ書く (旧: XrayEnergy の件数で判定し、PulsePower[i] を範囲外まで読みえた)。
+                //   PulsePower はフレーム番号と添字が揃い、欠けは NaN。共有の Tiff.Writer は追加タグの数を全フレームで同じにする作りなので、
+                //   NaN のフレームだけタグを省くことはできない → 一部でも NaN があれば PulsePower タグは書かない (誤った値を残さないため)。
+                //   正規化済み (PulsePowerNormarized) のときは従来どおり全フレームに -1 を書く (正規化は全フレームに値があるときだけ行われる)
+                var pulsePowerAll = Ring.SequentialImagePulsePower;
+                bool writePulsePower = pulsePowerAll != null && pulsePowerAll.Count == d.Length
+                    && (Ring.PulsePowerNormarized || pulsePowerAll.All(double.IsFinite));
+                if (writePulsePower)
+                {//各画像にパルス強度があるとき
                     //260712Cl 削除: ifdEnergy/ifdName は Writer への受け渡しが恒久的にコメントアウトされており構築が無駄
                     //var ifdEnergy = new List<Tiff.IFD>();
                     //var ifdName = new List<Tiff.IFD>();
-                    var ifdPulsePower = new List<Tiff.IFD>(Ring.SequentialImageEnergy.Count);
-                    for (int i = 0; i < Ring.SequentialImageEnergy.Count; i++)
+                    //var ifdPulsePower = new List<Tiff.IFD>(Ring.SequentialImageEnergy.Count);
+                    //for (int i = 0; i < Ring.SequentialImageEnergy.Count; i++)
+                    var ifdPulsePower = new List<Tiff.IFD>(d.Length); // 261124Cl 変更: ループの上限を Energy.Count に頼らず、書くフレーム数にする
+                    for (int i = 0; i < d.Length; i++)
                     {
                         //ifdEnergy.Add(new Tiff.IFD(60000, typeof(float), [Ring.SequentialImageEnergy[i]]));
                         //ifdName.Add(new Tiff.IFD(60001, typeof(string), [Ring.SequentialImageNames[i]]));
@@ -2205,8 +2258,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         else if (!filename.ToLower().EndsWith(".png"))
             filename += ".png";
 
-        var bmp = pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
-            , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height));
+        //var bmp = pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
+        //    , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height));
+        // 261124Cl 変更 (所見 11): GetImage は PseudoBitmap 内部のキャッシュ destBmp を返し、別の大きさで呼ばれると Dispose する (主画面とサムネイルで共有)。
+        //   表示・保存に使う前に Clone して呼び出し側で所有する (キャッシュは Dispose しない)。旧: キャッシュをそのまま pictureBox に渡していた
+        //   この後の bmp.Dispose() は自分の複製だけを破棄する (旧: キャッシュそのものを破棄し、次の GetImage が破棄済み Bitmap を使いえた)
+        var bmp = (Bitmap)pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
+            , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))?.Clone();
+        if (bmp == null) return;
 
         if (toolStripButtonUnroll.Checked) //UnrolledImageの目盛を付ける
         {
@@ -3910,6 +3969,24 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         sw.Write(j == dpList.Count - 1 ? "\r\n" : s);
                     }
             }
+            // 261124Cl 追加 (所見 12): GSAS 形式で複数プロファイルを 1 ファイルにまとめる場合は、旧は何も書かずに黙って終わっていた。
+            //   今は未対応であることを知らせる (複数 BANK への対応は、PDIndexer 側の読込とあわせて後で考える)
+            else
+            {
+                MessageBox.Show(this, Crystallography.Localization.Loc(
+                    en: "Saving several profiles together in one GSAS file is not supported yet.\nThe profiles were not saved. Choose 'In separate files' to save one profile per file.",
+                    ja: "GSAS 形式の 1 ファイルへのまとめ保存には、まだ対応していません。\nプロファイルは保存されていません。「個別のファイルに保存」を選び、1 プロファイル 1 ファイルで保存してください。",
+                    de: "Das Speichern mehrerer Profile in einer GSAS-Datei wird noch nicht unterstützt.\nDie Profile wurden nicht gespeichert. Wählen Sie das Speichern in getrennten Dateien (ein Profil pro Datei).",
+                    fr: "L'enregistrement de plusieurs profils dans un seul fichier GSAS n'est pas encore pris en charge.\nLes profils n'ont pas été enregistrés. Choisissez l'enregistrement en fichiers séparés (un profil par fichier).",
+                    es: "Todavía no se admite guardar varios perfiles juntos en un solo archivo GSAS.\nLos perfiles no se han guardado. Elija guardar en archivos separados (un perfil por archivo).",
+                    pt: "Ainda não é possível salvar vários perfis juntos em um único arquivo GSAS.\nOs perfis não foram salvos. Escolha salvar em arquivos separados (um perfil por arquivo).",
+                    it: "Il salvataggio di più profili in un unico file GSAS non è ancora supportato.\nI profili non sono stati salvati. Scegli il salvataggio in file separati (un profilo per file).",
+                    ru: "Сохранение нескольких профилей в одном файле GSAS пока не поддерживается.\nПрофили не сохранены. Выберите сохранение в отдельные файлы (один профиль на файл).",
+                    zhHans: "尚不支持将多个剖面合并保存到一个 GSAS 文件中。\n剖面未保存。请选择保存为单独的文件（每个文件一个剖面）。",
+                    zhHant: "尚不支援將多個剖面合併儲存到一個 GSAS 檔案中。\n剖面未儲存。請選擇儲存為個別檔案（每個檔案一個剖面）。",
+                    ko: "여러 프로파일을 하나의 GSAS 파일로 묶어 저장하는 기능은 아직 지원되지 않습니다.\n프로파일이 저장되지 않았습니다. 개별 파일로 저장(파일당 프로파일 하나)을 선택하세요."));
+                return;
+            }
         }
         //個別のファイルに分けて保存する場合
         else
@@ -4177,11 +4254,17 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         double _bottom = Math.Min((double)Math.Max(numericUpDownSelectedAreaY1.Value, numericUpDownSelectedAreaY2.Value), Ring.SrcImgSize.Height - 1);
                         //scalablePictureBox.AreaRectangle
                         var rec = new RectangleD(_left, _top, _right - _left + 1, _bottom - _top + 1);
-                        Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize()), true);
+                        //Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize()), true);
+                        // 261124Cl 変更 (所見 11): キャッシュを直接渡さず複製を渡す (copy=true なのでクリップボードへ移した後は破棄してよい)
+                        using var clip = (Bitmap)scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize())?.Clone();
+                        if (clip != null) Clipboard.SetDataObject(clip, true);
                     }
                     else
                     {
-                        Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(), true);
+                        //Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(), true);
+                        // 261124Cl 変更 (所見 11): 上と同じく複製を渡す
+                        using var clip = (Bitmap)scalablePictureBox.PseudoBitmap.GetImage()?.Clone();
+                        if (clip != null) Clipboard.SetDataObject(clip, true);
                     }
                 }
                 else

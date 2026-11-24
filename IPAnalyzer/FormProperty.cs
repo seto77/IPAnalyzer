@@ -131,6 +131,13 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
 
 
     public ImageTypeParameter[] ImageTypeParameters = new ImageTypeParameter[Enum.GetValues<Ring.ImageTypeEnum>().Length]; //260712Cl ジェネリック版に
+
+    /// <summary>
+    /// 261124Cl 追加: 形式ごとのパラメータを SMV→PXD、MCCD→FLA7000 へ一度だけ写したかどうか (レジストリに保存)。
+    /// Crystallography 620d8f2 から Rigaku PXD は ImageTypeEnum.PXD (旧 SMV)、GE gel は FLA7000 (旧 MCCD) を返すようになったため、
+    /// 旧版で保存した設定を新しい形式の欄へ引き継ぐ (作者決定 2026-11-24「一度だけ写す」)。FormMain.Registry の Read で行う。
+    /// </summary>
+    public bool ImageTypeParametersPxdGelMigrated = false;
     #endregion
 
     #region コンストラクタ、オープン、クローズ
