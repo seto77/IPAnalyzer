@@ -1,4 +1,5 @@
 <!-- 261124Cl: Added. Q&A distilled from past enquiries (GitHub issues and e-mail): what users struggled with and what is easily misunderstood. Reflected from ja/7-qa.md. No personal or institutional information is included. -->
+<!-- 261124Cl: Renamed labels to the actual English GUI (Save Profiles, Concentric integration (scattering angle dispersive), Radial integration (cake pattern), Correct linear polarization (i.e., linear polarized → unpolarized)); set the spherical-correction unit to the on-screen m⁻¹; added that a failed load keeps the previous image, that Azimuthal Division Analysis needs concentric integration with a 2θ axis, and that Auto procedure retries locked files. -->
 
 # Q&A (Frequently asked questions)
 
@@ -32,7 +33,7 @@ IPAnalyzer keeps the intensity of every pixel in double precision (8 bytes), wha
 
 ### My detector's files cannot be read
 
-The format may not be supported yet. Please contact us through [Issues](https://github.com/seto77/IPAnalyzer/issues) or the author with an actual file (preferably one with a diffraction pattern, not only a dark image). The correctness of the intensities and the orientation of the image can only be checked with an image that shows a pattern.
+The format may not be supported yet. Please contact us through [Issues](https://github.com/seto77/IPAnalyzer/issues) or the author with an actual file (preferably one with a diffraction pattern, not only a dark image). The correctness of the intensities and the orientation of the image can only be checked with an image that shows a pattern. If loading fails, the previously loaded image stays, so you can continue working with it.
 
 !!! note "When a raw image has the wrong width and height"
     For headerless raw files, the detector model and pixel count are inferred from the file size. The actual pixel count often differs from the catalogue value, so please send the file if the detection fails.
@@ -88,7 +89,7 @@ They are determined differently. **Find Center** fits the direct spot near the c
 
 ### What is the spherical correction?
 
-A correction for a detector that is bent like a sphere. Enter the inverse of the radius of curvature, 1/R (mm⁻¹). Use 0 for a flat detector. It helps when the high-angle rings do not match, for example with a large detector placed close to the sample.
+A correction for a detector that is bent like a sphere. Enter the inverse of the radius of curvature, 1/R, in m⁻¹ (shown as /m on screen). Use 0 for a flat detector. It helps when the high-angle rings do not match, for example with a large detector placed close to the sample.
 
 ### How do I convert tilt values from other software (such as PIP)?
 
@@ -98,11 +99,11 @@ PIP's (β, Φ) converts to IPAnalyzer's (φ, τ) = (270° − β, Φ). See the [
 
 ### The horizontal axis of the result looks wrong / the intensity looks almost constant
 
-Check whether **Radial integration** is selected on the **Integral Property** tab of the property window. In this mode the profile has the azimuth χ as its horizontal axis. The usual 2θ–intensity profile is obtained with **Concentric integration**.
+Check whether **Radial integration (cake pattern)** is selected on the **Integral Property** tab of the property window. In this mode the profile has the azimuth χ as its horizontal axis. The usual 2θ–intensity profile is obtained with **Concentric integration (scattering angle dispersive)**.
 
 ### I want to save the profile to a file without PDIndexer
 
-On the **After "Get Profile"** tab of the property window, set the destination (same folder as the image / choose each time) and the format (PDI / CSV / TSV / GSAS) under **Save File**. The profile is then saved every time you integrate.
+On the **After "Get Profile"** tab of the property window, set the destination (same folder as the image / choose each time) and the format (PDI / CSV / TSV / GSAS) under **Save Profiles**. The profile is then saved every time you integrate.
 
 ### What is the third column of the CSV?
 
@@ -118,7 +119,7 @@ The S/N ratio is the same either way. **Summation** gives a correct estimate of 
 
 ### I want to integrate for each azimuth (each sector)
 
-Turn on **Azimuthal Division Analysis** on the **Get Profile** dropdown, set **Number of divisions**, and integrate. A whole profile (name ending in `-whole`) and one profile per sector (with the start angle appended, such as `-000`, `-010`, …) are created. With too many divisions, the data sent to PDIndexer can become too large.
+Turn on **Azimuthal Division Analysis** on the **Get Profile** dropdown, set **Number of divisions**, and integrate. A whole profile (name ending in `-whole`) and one profile per sector (with the start angle appended, such as `-000`, `-010`, …) are created. This works only with **Concentric integration (scattering angle dispersive)** and the **Angle** (2θ) axis; with radial integration or a d-spacing axis a warning is shown and nothing is run. With too many divisions, the data sent to PDIndexer can become too large.
 
 ### I want a two-dimensional map of 2θ and the azimuth χ (unrolled image)
 
@@ -130,7 +131,7 @@ Select a rectangle by Ctrl + right-dragging on the image. The statistics appear 
 
 ### A dark image becomes brighter towards the high-angle edges
 
-If **Correct linear polarization** is on under **Wave source** in the property window, the correction is also applied to signals that do not come from X-rays (dark current, electronic noise), and the high-angle side becomes brighter. Turn it off for dark images.
+If **Correct linear polarization (i.e., linear polarized → unpolarized)** is on under **Wave source** in the property window, the correction is also applied to signals that do not come from X-rays (dark current, electronic noise), and the high-angle side becomes brighter. Turn it off for dark images.
 
 ### I want to subtract a dark (background) image
 
@@ -148,7 +149,7 @@ Give the macro a name and add it in the macro editor; it can then be called from
 
 ### I want to integrate images as they arrive during a measurement
 
-Watch the folder with [Auto procedure](3-tools.md#auto-procedure). Files still being written are read after writing has finished. If reading fails for a folder on the network, save to the measurement PC's local disk and watch that folder.
+Watch the folder with [Auto procedure](3-tools.md#auto-procedure). Files still being written are read after writing has finished; a file that is still locked after about 50 s is retried in later scans and given up 10 minutes after it was first found. If reading fails for a folder on the network, save to the measurement PC's local disk and watch that folder.
 
 ## Reporting a bug
 

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Herramientas
 
@@ -8,16 +8,14 @@ Esta página describe las herramientas auxiliares que se inician desde la barra 
 
 Ábrela con **Herramienta (Tool) → Calibrar imagen R-AXIS (Calibrate Raxis Image)**. Especifica dos imágenes R-AXIS IV `.stl` del mismo tamaño; la herramienta optimiza una tabla de conversión de intensidad para que las dos intensidades coincidan. La tabla se representa mediante puntos de control, y la suma de sus elementos se mantiene constante durante la optimización. El resultado se muestra como un gráfico. Se usa, por ejemplo, para calibrar la respuesta en intensidad de un detector.
 
-El botón **Tabla de intensidad (Intensity table)** de la barra de herramientas no tiene ninguna función asignada en la versión actual.
-
 ![Calibrar imagen R-AXIS (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## Procedimiento automático (Auto procedure)
 
 Una herramienta que supervisa una carpeta, carga automáticamente las imágenes nuevas y ejecuta una secuencia de operaciones tras la carga.
 
-- **Watch and auto-load** (supervisión y carga automática): supervisa la carpeta indicada (incluidas las subcarpetas) y lee cada archivo cuando termina de escribirse. Los archivos se pueden filtrar por nombre (coincidencia numérica, palabra clave).
-- **Auto execution** (ejecución automática): ejecuta en orden los pasos marcados de entre Contraste automático → Buscar centro → Enmascarar puntos → Obtener perfil → Execute Macro (Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro).
+- **Watch and auto-load** (supervisión y carga automática): supervisa la carpeta indicada (**Directorio a supervisar (Directory to be monitored)**, incluidas las subcarpetas) y lee cada archivo cuando termina de escribirse. Los archivos se pueden filtrar por nombre (**Coincidencia de patrones (Pattern matching)** sobre el número del nombre de archivo, **Palabra clave (Keyword)**); los archivos que no cumplen la condición se descartan sin esperar. Si un archivo sigue bloqueado tras esperar a que termine la escritura (unos 50 s), no se descarta, sino que se vuelve a intentar en exploraciones posteriores; solo se abandona si sigue bloqueado 10 minutos después de detectarse por primera vez.
+- **Auto execution** (ejecución automática): cuando **Una vez cargada la imagen nueva, ejecutar la siguiente secuencia (Once the new image is loaded, perform the following sequence)** está activado, ejecuta en orden los pasos marcados de entre **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro**.
 
 Esto permite usos como supervisar una carpeta de salida durante un experimento e integrar automáticamente cada imagen a medida que llega. Véase [Procedimientos](4-procedures.md) para más detalles.
 
@@ -31,7 +29,7 @@ Dibuja un anillo a una distancia, un ángulo o un valor d especificados sobre la
 
 ## Desplegar (Unroll)
 
-Despliega la imagen de difracción desde coordenadas polares centradas en el punto directo a coordenadas cartesianas (eje horizontal = ángulo de dispersión 2θ; eje vertical = azimut). Actualmente no se configura con una ventana propia, sino con el botón **Desplegar imagen (Unroll image)** de la barra de herramientas y la pestaña **Opciones de imagen desplegada (Unrolled Image Option)** de las propiedades. El despliegue usa el mismo algoritmo de distribución de intensidad subpíxel que la conversión a una dimensión.
+Despliega la imagen de difracción desde coordenadas polares centradas en el punto directo a coordenadas cartesianas (eje horizontal = ángulo de dispersión 2θ; eje vertical = azimut). Actualmente no se configura con una ventana propia, sino con el botón **Desplegar imagen (Unroll image)** de la barra de herramientas y la pestaña **Opciones de imagen desplegada (Unrolled Image Option)** de las propiedades. El despliegue usa el mismo algoritmo de distribución de intensidad subpíxel que la integración en un perfil 1D.
 
 ## Desenfoque circunferencial (Circumferential Blur)
 
@@ -45,7 +43,7 @@ Una herramienta para manejar imágenes multifotograma (NeXus (`.nxs`), TIFF mult
 
 - Selecciona un único fotograma de la lista de fotogramas para mostrarlo, o recórrelos con la barra deslizante.
 - Con **Selección múltiple (Multi selection)**, selecciona varios fotogramas y calcula su **Promedio (Average)** o **Suma (Summation)**.
-- El objetivo de la conversión a una dimensión se puede elegir entre "todas las imágenes / imágenes seleccionadas / solo la imagen superior" ("Todas las imágenes sin importar las selecciones actuales" (All images irrespective of current selections) / "La(s) imagen(es) seleccionada(s)" (The selected image(s)) / "Solo la imagen superior" (Only the topmost image)).
+- Los fotogramas que integra **Obtener perfil (Get Profile)** se eligen en **Objetivo(s) de "Obtener perfil" (Target(s) of "Get Profile")**: **Todas las imágenes sin importar las selecciones actuales (All images irrespective of current selections)** / **La(s) imagen(es) seleccionada(s) (The selected image(s))** / **Solo la imagen superior (Only the topmost image)**.
 - Si un fotograma contiene información de energía, la longitud de onda se actualiza al seleccionar ese único fotograma.
 
 ![Imagen secuencial (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)

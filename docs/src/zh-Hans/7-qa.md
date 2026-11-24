@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Q&A（常见问题）
 
@@ -32,7 +32,7 @@
 
 ### 无法读取我所用探测器的文件
 
-可能尚未支持该格式。请通过 [Issues](https://github.com/seto77/IPAnalyzer/issues) 或直接联系作者，并附上实际文件（最好是带有衍射图样的文件，而不仅仅是暗图像）。只有带图样的图像才能确认强度是否正确以及图像方向是否正确。
+可能尚未支持该格式。请通过 [Issues](https://github.com/seto77/IPAnalyzer/issues) 或直接联系作者，并附上实际文件（最好是带有衍射图样的文件，而不仅仅是暗图像）。只有带图样的图像才能确认强度是否正确以及图像方向是否正确。若载入失败，之前载入的图像会保留，因此可以继续使用它进行工作。
 
 !!! note "raw 图像的宽度和高度不正确时"
     对于没有文件头的 raw 文件，探测器型号和像素数是根据文件大小推断的。实际像素数往往与产品目录值不同，因此若识别失败，请发送该文件。
@@ -88,7 +88,7 @@ IPAnalyzer **会按图像格式分别记忆相机长度、波长和像素尺寸�
 
 ### 什么是球面校正 (Spherical correction)？
 
-这是针对弯曲成球面状的探测器的校正。请输入曲率半径的倒数 1/R (mm⁻¹)。平板探测器请输入 0。当高角度圆环不吻合时（例如大型探测器放置在离样品很近的位置）会有帮助。
+这是针对弯曲成球面状的探测器的校正。请输入曲率半径的倒数 1/R，单位为 m⁻¹（界面上显示为 /m）。平板探测器请输入 0。当高角度圆环不吻合时（例如大型探测器放置在离样品很近的位置）会有帮助。
 
 ### 如何换算其他软件（如 PIP）的倾斜值？
 
@@ -98,11 +98,11 @@ PIP 的 (β, Φ) 换算为 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定义
 
 ### 结果的横轴看起来不对 / 强度看起来几乎恒定
 
-请检查属性窗口的 **积分属性 (Integral Property)** 选项卡中是否选择了 **径向积分 (Radial integration)**。在该模式下，谱线的横轴为方位角 χ。通常的 2θ–强度谱线需选择 **同心积分 (Concentric integration)** 获得。
+请检查属性窗口的 **积分属性 (Integral Property)** 选项卡中是否选择了 **径向积分 (饼状图样) (Radial integration (cake pattern))**。在该模式下，谱线的横轴为方位角 χ。通常的 2θ–强度谱线需选择 **同心积分 (散射角色散) (Concentric integration (scattering angle dispersive))** 获得。
 
 ### 不使用 PDIndexer，想将谱线保存到文件
 
-在属性窗口的 **"获取图谱"之后 (After "Get Profile")** 选项卡中，于 **Save File** 下设置保存位置（与图像相同的文件夹 / 每次选择）和格式（PDI / CSV / TSV / GSAS）。这样每次积分时都会保存谱线。
+在属性窗口的 **"获取图谱"之后 (After "Get Profile")** 选项卡中，于 **保存图谱 (Save Profiles)** 下设置保存位置（与图像相同的文件夹 / 每次选择）和格式（PDI / CSV / TSV / GSAS）。这样每次积分时都会保存谱线。
 
 ### CSV 的第三列是什么？
 
@@ -118,7 +118,7 @@ PIP 的 (β, Φ) 换算为 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定义
 
 ### 想按方位角（按扇区）进行积分
 
-打开 **获取图谱 (Get Profile)** 下拉菜单中的 **方位角分割分析 (Azimuthal Division Analysis)**，设置 **分割数 (Number of divisions)**，然后进行积分。会生成一条整体谱线（名称以 `-whole` 结尾）以及每个扇区各一条谱线（附加起始角度，如 `-000`、`-010`、…）。分割数过多时，发送到 PDIndexer 的数据可能会过大。
+打开 **获取图谱 (Get Profile)** 下拉菜单中的 **方位角分割分析 (Azimuthal Division Analysis)**，设置 **分割数 (Number of divisions)**，然后进行积分。会生成一条整体谱线（名称以 `-whole` 结尾）以及每个扇区各一条谱线（附加起始角度，如 `-000`、`-010`、…）。此功能仅适用于 **同心积分 (散射角色散) (Concentric integration (scattering angle dispersive))** 且横轴为 **角度 (Angle)** (2θ) 的情况；使用径向积分或 d 间距横轴时会显示警告且不执行。分割数过多时，发送到 PDIndexer 的数据可能会过大。
 
 ### 想要 2θ 与方位角 χ 的二维图（展开图像）
 
@@ -130,7 +130,7 @@ PIP 的 (β, Φ) 换算为 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定义
 
 ### 暗图像在高角度边缘变亮
 
-若在属性窗口的 **波源 (Wave source)** 中打开了 **校正线偏振 (Correct linear polarization)**，该校正也会作用于并非来自 X 射线的信号（暗电流、电子噪声），使高角度一侧变亮。对暗图像请将其关闭。
+若在属性窗口的 **波源 (Wave source)** 中打开了 **校正线偏振 (即线偏振 → 非偏振) (Correct linear polarization (i.e., linear polarized → unpolarized))**，该校正也会作用于并非来自 X 射线的信号（暗电流、电子噪声），使高角度一侧变亮。对暗图像请将其关闭。
 
 ### 想扣除暗图像（背景）
 
@@ -148,7 +148,7 @@ PIP 的 (β, Φ) 换算为 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定义
 
 ### 想在测量过程中对到达的图像即时进行积分
 
-用[自动流程 (Auto procedure)](3-tools.md#自动流程-auto-procedure) 监视文件夹。仍在写入中的文件会在写入完成后读取。若网络上的文件夹读取失败，请保存到测量电脑的本地磁盘并监视该文件夹。
+用[自动流程 (Auto procedure)](3-tools.md#自动流程-auto-procedure) 监视文件夹。仍在写入中的文件会在写入完成后读取；约 50 秒后仍被锁定的文件会在之后的扫描中重试，并在首次发现 10 分钟后放弃。若网络上的文件夹读取失败，请保存到测量电脑的本地磁盘并监视该文件夹。
 
 ## 报告错误
 

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 내장 함수
 
@@ -100,7 +100,7 @@
 | `SaveProfileAsGSAS` | True/False. GSAS 형식으로 저장합니다. 가로축이 2θ 인 동심 적분에서만 가능하며, 여러 프로파일을 한 파일에 저장할 때는 쓰이지 않습니다. |
 | `SaveProfileInOneFile` | True/False. 연속 이미지/방위각 분할 프로파일을 한 파일에 저장합니다. |
 | `SaveProfileAtImageDirectory` | True/False. 이미지와 같은 디렉터리에 저장합니다. |
-| `GetProfile(filename="")` | 1차원화를 실행합니다. `filename` 을 주면 그것을 기본 이름으로 사용하고 형식의 확장자를 덧붙입니다 (예: `GetProfile("sample.stl")` 을 CSV 로 저장하면 `sample.stl.csv`). 저장 위치가 "매번 선택" 으로 설정되어 있으면 저장 대화 상자가 표시됩니다. |
+| `GetProfile(filename="")` | 이미지를 적분하여 1차원 프로파일로 만듭니다 (**프로파일 가져오기 (Get Profile)** 와 같습니다). `filename` 을 주면 그것을 기본 이름으로 사용하고 형식의 확장자를 덧붙입니다 (예: `GetProfile("sample.stl")` 을 CSV 로 저장하면 `sample.stl.csv`). 저장 위치가 "매번 선택" 으로 설정되어 있으면 저장 대화 상자가 표시됩니다. |
 
 ## IPA.IntegralProperty
 

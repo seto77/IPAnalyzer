@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 概觀
 
-IPAnalyzer 能將以成像板 (IP) 或 CCD/CMOS 偵測器記錄的 Debye–Scherrer 環，高精度且快速地轉換為一維繞射曲線。其設計與功能以日本產業技術綜合研究所 (AIST) 的藤久裕司 (Hiroshi Fujihisa) 所開發的 PIP 為範本。
+IPAnalyzer 能將以成像板 (IP) 或 CCD/CMOS 偵測器記錄的 Debye–Scherrer 環，高精度且快速地轉換為一維 (1D) 繞射曲線。其設計與功能以日本產業技術綜合研究所 (AIST) 的藤久裕司 (Hiroshi Fujihisa) 所開發的 PIP 為範本。
 
 主要功能：
 
@@ -53,7 +53,7 @@ IPAnalyzer 採用右手座標系，原點與各軸方向定義如下。
 
 ## 像素強度積分方法
 
-一維化的核心問題在於：當一個像素所涵蓋的散射角範圍跨越不只一個 2θ 步進時（步進越細越常發生），如何將這個跨越數個步進之像素的強度分配至各積分步進。
+影像積分的核心問題在於：當一個像素所涵蓋的散射角範圍跨越不只一個 2θ 步進時（步進越細越常發生），如何將這個跨越數個步進之像素的強度分配至各積分步進。
 
 本軟體會計算劃分各步進的直線與像素之間的交點，並求出各步進內所含的像素面積來分配強度。為了處理像素並非恰為正方形的情形——因 IP 傾斜或像素形狀畸變所致——會依序計算各像素四個角的座標，以決定其四邊形形狀。原則上，這使得不論步進設得多小，像素強度都能平滑地分配至各步進。
 

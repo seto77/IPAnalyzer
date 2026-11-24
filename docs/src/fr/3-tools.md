@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Outils
 
@@ -8,16 +8,14 @@ Cette page décrit les outils auxiliaires lancés depuis la barre d'outils verti
 
 Ouvrez-le avec **Outil → Étalonner l'image R-AXIS (Tool → Calibrate Raxis Image)**. Indiquez deux images R-AXIS IV `.stl` de même taille ; l'outil optimise une table de conversion d'intensité de sorte que les deux intensités concordent. La table est représentée par des points de contrôle, et la somme de ses éléments est maintenue constante pendant l'optimisation. Le résultat est affiché sous forme de graphique. Il sert, par exemple, à calibrer la réponse en intensité d'un détecteur.
 
-Le bouton **Table d'intensités (Intensity table)** de la barre d'outils n'a aucune fonction attribuée dans la version actuelle.
-
 ![Étalonner l'image R-AXIS (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## Procédure auto. (Auto procedure)
 
 Outil qui surveille un dossier, charge automatiquement les nouvelles images et exécute une séquence d'opérations après le chargement.
 
-- **Surveillance et chargement automatique** : surveille le dossier indiqué (sous-dossiers compris) et lit un fichier une fois son écriture terminée. Les fichiers peuvent être filtrés par nom (correspondance de numéro, mot-clé).
-- **Exécution automatique** : exécute dans l'ordre les étapes cochées parmi Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro.
+- **Surveillance et chargement automatique** : surveille le dossier indiqué (**Répertoire à surveiller (Directory to be monitored)**, sous-dossiers compris) et lit un fichier une fois son écriture terminée. Les fichiers peuvent être filtrés par nom (**Correspondance de motifs (Pattern matching)** sur le numéro du nom de fichier, **Mot-clé (Keyword)**) ; les fichiers qui ne correspondent pas sont ignorés sans attente. Si un fichier est encore verrouillé après l'attente de la fin de l'écriture (environ 50 s), il n'est pas abandonné mais retenté lors des balayages suivants ; il n'est abandonné que s'il est toujours verrouillé 10 minutes après sa première détection.
+- **Exécution automatique** : lorsque **Une fois la nouvelle image chargée, exécuter la séquence suivante (Once the new image is loaded, perform the following sequence)** est activé, exécute dans l'ordre les étapes cochées parmi **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro**.
 
 Cela permet par exemple de surveiller un dossier de sortie pendant une expérience et d'intégrer automatiquement chaque image dès son arrivée. Voir [Procédures](4-procedures.md) pour plus de détails.
 
@@ -31,7 +29,7 @@ Trace sur l'image un anneau à une distance, un angle ou une valeur d donnés, e
 
 ## Dérouler l'image (Unroll)
 
-Déplie l'image de diffraction, des coordonnées polaires centrées sur le spot direct vers des coordonnées cartésiennes (axe horizontal = angle de diffusion 2θ ; axe vertical = azimut). Ce déroulement se règle désormais non pas dans une fenêtre dédiée, mais avec le bouton **Dérouler l'image (Unroll image)** de la barre d'outils et l'onglet **Option d'image déroulée (Unrolled Image Option)** des propriétés. Le déroulement utilise le même algorithme de répartition d'intensité en sous-pixels que la réduction en une dimension.
+Déplie l'image de diffraction, des coordonnées polaires centrées sur le spot direct vers des coordonnées cartésiennes (axe horizontal = angle de diffusion 2θ ; axe vertical = azimut). Ce déroulement se règle désormais non pas dans une fenêtre dédiée, mais avec le bouton **Dérouler l'image (Unroll image)** de la barre d'outils et l'onglet **Option d'image déroulée (Unrolled Image Option)** des propriétés. Le déroulement utilise le même algorithme de répartition d'intensité en sous-pixels que l'intégration en un profil 1D.
 
 ## Flou circonférentiel (Circumferential Blur)
 
@@ -45,7 +43,7 @@ Outil de traitement des images multi-trames (NeXus (`.nxs`), TIFF multipages et 
 
 - Sélectionnez une trame dans la liste pour l'afficher, ou parcourez-les avec le curseur.
 - Avec **Sélection multiple (Multi selection)**, sélectionnez plusieurs trames et calculez leur **Moyenne (Average)** ou leur **Sommation (Summation)**.
-- La cible de la réduction en une dimension peut être choisie parmi « toutes les trames / trames sélectionnées / seulement celle du premier plan ».
+- Les trames intégrées par **Obtenir le profil (Get Profile)** se choisissent sous **Cible(s) de « Get Profile » (Target(s) of "Get Profile")** : **Toutes les images indépendamment des sélections actuelles (All images irrespective of current selections)** / **La ou les images sélectionnées (The selected image(s))** / **Uniquement l'image au premier plan (Only the topmost image)**.
 - Si une trame contient une information d'énergie, la longueur d'onde est mise à jour lorsque cette trame est sélectionnée seule.
 
 ![Image séquentielle (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/appendix/a3-image-integration.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/a3-image-integration.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Appendice A3. Integrazione dell'immagine
 
@@ -23,12 +23,23 @@ Con questo schema, in linea di principio, per quanto fine si renda il passo ango
 
 ## Ambito di applicazione
 
-Lo stesso algoritmo di distribuzione basato sulle aree è usato per tutti e tre i seguenti tipi di integrazione.
+Lo stesso algoritmo di distribuzione basato sulle aree è usato per tutti e tre i seguenti tipi di integrazione. Essi differiscono per la coordinata che rimane sull'asse orizzontale dell'output e per i pixel che vengono riuniti in un unico punto dell'output.
 
-| Funzione | Direzione di integrazione | Uso |
-|------|-----------|------|
-| **Integrazione concentrica (Concentric Integration)** | Angolo di diffrazione (direzione concentrica) | Creazione di un normale profilo $2\theta$-intensità. |
-| **Integrazione radiale (Radial Integration)** | Direzione circonferenziale (azimutale) | Valutazione della dipendenza azimutale di un anello (orientazione, distorsione). |
-| **Unrolled Image** | Angolo di diffrazione × azimut | Creazione di un'immagine srotolata 2D con l'anello tagliato e aperto. |
+| Funzione | Asse orizzontale dell'output | Pixel riuniti in un punto dell'output | Uso |
+|------|------|------|------|
+| **Integrazione concentrica (Concentric integration)** | Angolo di diffrazione $2\theta$ (o distanza d) | Quelli entro un passo di $2\theta$ (o di d), su tutti gli azimut all'interno della regione di integrazione | Creazione di un normale profilo $2\theta$-intensità. |
+| **Integrazione radiale (Radial integration)** | Azimut $\chi$ | Quelli entro un passo azimutale (**Passo angolo settore (passo scansione) (Sector angle step (Sweep step))**), all'interno dell'anello dato da **Raggio ciambella (Donut radius)** ± **Larghezza ciambella (Donut width)** | Valutazione della dipendenza azimutale di un anello (orientazione, distorsione). |
+| **Unrolled image** | $2\theta$ (orizzontale) × azimut $\chi$ (verticale) | Quelli entro un passo di $2\theta$ e un settore azimutale ($360^\circ/N$) | Creazione di un'immagine srotolata 2D con l'anello tagliato e aperto. |
+
+In ogni caso vengono usati solo i pixel validi: i pixel mascherati e quelli esclusi nella scheda **Regione di integrazione (Integral Region)** non contribuiscono.
+
+---
+
+## Normalizzazione dopo l'integrazione
+
+Le intensità distribuite vengono normalizzate in modo diverso a seconda della funzione.
+
+- **Integrazione concentrica** (rivelatore a pannello piatto, asse $2\theta$ o distanza d) e **Unrolled image** (immagine srotolata): per ciascun passo (ciascun pixel dell'immagine srotolata), le intensità distribuite vengono sommate e la somma viene divisa per la quantità che ha contribuito a quel passo. Il contributo di ciascuna parte di un pixel è misurato dalla sua area proiettata sul piano perpendicolare al raggio diffuso alla distanza della lunghezza di camera, cioè dall'angolo solido che sottende, contato in unità di un pixel visto frontalmente alla lunghezza di camera. Il risultato è quindi un'intensità media per unità di angolo solido: non dipende dall'ampiezza del passo né da quanti pixel ricadono in un passo, e la diminuzione dell'angolo solido per pixel verso gli alti angoli su un rivelatore piano viene compensata. Un passo che non riceve alcun pixel vale 0.
+- **Integrazione radiale**: le intensità distribuite vengono semplicemente sommate per ciascun passo azimutale e non vengono divise. I valori crescono quindi con la larghezza dell'anello (**Larghezza ciambella (Donut width)**) e con il passo azimutale.
 
 Per l'uso di ciascuna funzione, vedere [3. Strumenti](../3-tools.md).

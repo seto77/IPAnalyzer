@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Überblick
 
-IPAnalyzer wandelt Debye–Scherrer-Ringe, die mit Imaging Plates (IP) oder CCD/CMOS-Detektoren aufgenommen wurden, schnell und mit hoher Präzision in eindimensionale Beugungsprofile um. Aufbau und Funktionsumfang orientieren sich an PIP, das von Hiroshi Fujihisa am National Institute of Advanced Industrial Science and Technology (AIST) entwickelt wurde.
+IPAnalyzer wandelt Debye–Scherrer-Ringe, die mit Imaging Plates (IP) oder CCD/CMOS-Detektoren aufgenommen wurden, schnell und mit hoher Präzision in 1D-Beugungsprofile um. Aufbau und Funktionsumfang orientieren sich an PIP, das von Hiroshi Fujihisa am National Institute of Advanced Industrial Science and Technology (AIST) entwickelt wurde.
 
 Hauptfunktionen:
 
@@ -53,7 +53,7 @@ In IPAnalyzer wird die X-Achse (die Richtung nach rechts im IP-Bild) um \( \varp
 
 ## Methode der Pixelintensitätsintegration
 
-Das zentrale Problem der Eindimensionalisierung ist, wie die Intensität eines Pixels, das mehrere Integrationsschritte überdeckt, auf diese Schritte verteilt wird — das tritt immer dann auf, wenn der von einem Pixel abgedeckte Streuwinkelbereich mehr als einen 2θ-Schritt umfasst (umso häufiger, je feiner der Schritt ist).
+Das zentrale Problem bei der Integration des Bildes ist, wie die Intensität eines Pixels, das mehrere Integrationsschritte überdeckt, auf diese Schritte verteilt wird — das tritt immer dann auf, wenn der von einem Pixel abgedeckte Streuwinkelbereich mehr als einen 2θ-Schritt umfasst (umso häufiger, je feiner der Schritt ist).
 
 Die Software berechnet die Schnittpunkte zwischen den Linien, die die einzelnen Schritte begrenzen, und dem Pixel und verteilt die Intensität entsprechend der Pixelfläche, die in jedem Schritt liegt. Damit auch Fälle erfasst werden, in denen das Pixel wegen der IP-Verkippung oder einer Verzerrung der Pixelform nicht genau quadratisch ist, werden die Koordinaten der vier Ecken jedes Pixels nacheinander berechnet, um seine Vierecksform zu bestimmen. Prinzipiell lässt sich die Pixelintensität so glatt auf die Schritte verteilen, wie klein die Schritte auch gewählt werden.
 

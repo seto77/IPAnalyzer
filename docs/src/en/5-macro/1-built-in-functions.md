@@ -1,4 +1,5 @@
 <!-- 260601Cl: Reflected from ja/5-macro/1-built-in-functions.md. Regenerated from the live code (Macro.cs [Help] attributes, ver3.977). -->
+<!-- 261124Cl: Replaced "one-dimensionalization" with "integrates the image into a 1D profile". -->
 
 # Built-in functions
 
@@ -100,7 +101,7 @@ For all read/save methods, omitting or giving an invalid file name opens a selec
 | `SaveProfileAsGSAS` | True/False. Save as GSAS format. Only possible for concentric integration with a 2θ axis; not written when several profiles are saved in one file. |
 | `SaveProfileInOneFile` | True/False. Save sequential/azimuthal-division profiles in one file. |
 | `SaveProfileAtImageDirectory` | True/False. Save in the same directory as the image. |
-| `GetProfile(filename="")` | Runs one-dimensionalization. If `filename` is given, it is used as the base name and the format extension is appended (e.g. `GetProfile("sample.stl")` saved as CSV gives `sample.stl.csv`). If the destination is set to "choose each time", the save dialog is shown. |
+| `GetProfile(filename="")` | Integrates the image into a 1D profile (same as **Get Profile**). If `filename` is given, it is used as the base name and the format extension is appended (e.g. `GetProfile("sample.stl")` saved as CSV gives `sample.stl.csv`). If the destination is set to "choose each time", the save dialog is shown. |
 
 ## IPA.IntegralProperty
 

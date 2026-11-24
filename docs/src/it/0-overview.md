@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Panoramica
 
-IPAnalyzer converte gli anelli di Debye–Scherrer registrati con imaging plate (IP) o rivelatori CCD/CMOS in profili di diffrazione unidimensionali, con alta precisione e velocità. Il suo design e le sue funzionalità sono modellati su PIP, sviluppato da Hiroshi Fujihisa presso il National Institute of Advanced Industrial Science and Technology (AIST).
+IPAnalyzer converte gli anelli di Debye–Scherrer registrati con imaging plate (IP) o rivelatori CCD/CMOS in profili di diffrazione 1D, con alta precisione e velocità. Il suo design e le sue funzionalità sono modellati su PIP, sviluppato da Hiroshi Fujihisa presso il National Institute of Advanced Industrial Science and Technology (AIST).
 
 Funzionalità principali:
 
@@ -53,7 +53,7 @@ In IPAnalyzer, l'asse X (la direzione verso destra dell'immagine IP) viene ruota
 
 ## Metodo di integrazione dell'intensità dei pixel
 
-Il problema centrale della riduzione a una dimensione è come distribuire, tra i passi di integrazione, l'intensità di un pixel che si estende su più passi — cosa che accade ogni volta che l'intervallo di angoli di scattering coperto da un pixel abbraccia più di un passo in 2θ (tanto più spesso quanto più fine è il passo).
+Il problema centrale nell'integrazione dell'immagine è come distribuire, tra i passi di integrazione, l'intensità di un pixel che si estende su più passi — cosa che accade ogni volta che l'intervallo di angoli di scattering coperto da un pixel abbraccia più di un passo in 2θ (tanto più spesso quanto più fine è il passo).
 
 Il software calcola le intersezioni tra le linee che delimitano ciascun passo e il pixel, e distribuisce l'intensità determinando l'area del pixel contenuta in ciascun passo. Per gestire i casi in cui il pixel non è esattamente quadrato — a causa dell'inclinazione dell'IP o della distorsione della forma del pixel — le coordinate dei quattro vertici di ogni pixel vengono calcolate in successione per determinarne la forma quadrilatera. In linea di principio, ciò permette di distribuire uniformemente l'intensità del pixel tra i passi, per quanto piccoli essi siano.
 

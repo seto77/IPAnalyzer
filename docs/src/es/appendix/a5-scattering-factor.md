@@ -1,44 +1,38 @@
-<!-- 261124Cl: Retranslated from en/appendix/a5-scattering-factor.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/a5-scattering-factor.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Apéndice A5. Factor de dispersión
 
-**Scattering Factor** (factor de dispersión) enumera los planos cristalinos permitidos (reflexiones) del cristal seleccionado y calcula el **factor de estructura** y la intensidad de difracción de cada uno. El tipo de radiación (rayos X, electrones o neutrones) se puede cambiar, de modo que los factores de estructura de un mismo cristal se pueden comparar entre técnicas de difracción.
+En la versión actual, las reflexiones y los factores de estructura de un cristal se muestran en la pestaña **Reflexiones (Reflections)** de la ventana **Interacción del haz (Beam Interaction)** (que ha sustituido a la antigua ventana Scattering Factor). La pestaña enumera los planos cristalinos permitidos (reflexiones) del cristal seleccionado y calcula el **factor de estructura** y la intensidad de difracción de cada uno. El tipo de radiación (rayos X, electrones o neutrones) se puede cambiar, de modo que los factores de estructura de un mismo cristal se pueden comparar entre técnicas de difracción.
 
-En la versión actual, esta lista está en la pestaña **Reflexiones (Reflections)** de **Interacción del haz (Beam interaction)** en la ventana de cristal (los factores de dispersión atómicos propiamente dichos están en la pestaña **Factores de dispersión (Scattering factors)** de la misma ventana). Las pantallas y los elementos descritos a continuación se basan en la antigua ventana Scattering Factor.
+En IPAnalyzer, se abre desde la ventana de cristal que define el cristal de referencia usado para la calibración de parámetros (la ventana de cristal que se abre con **Definir cristal (Set crystal)** en [Buscar parámetro (geométricamente)](../3-tools.md), o el panel de cristal de [6. Buscar parámetros (fuerza bruta)](../6-find-parameter.md)): pulsa el botón **Interacción del haz (Beam interaction)** o elige **Interacción del haz (Beam Interaction)** en el menú contextual (clic derecho) del panel de cristal.
 
-En IPAnalyzer, esta subventana se abre desde la **ventana de cristal** (Crystal window; el CrystalControl que se usa en [4. Procedimientos](../4-procedures.md) para la calibración geométrica y en [6. Buscar parámetros (fuerza bruta)](../6-find-parameter.md)).
+![Ventana Interacción del haz (Beam Interaction), pestaña Reflexiones (Reflections)](../../assets/references/beam-interaction-reflections-en.png)
 
-![Factor de dispersión (Scattering Factor)](../../assets/cap-en-auto/FormScatteringFactor.png)
-
-Las condiciones de cálculo están en la parte superior de la ventana y la lista de reflexiones en la parte inferior. La lista se recalcula inmediatamente cada vez que cambia una condición.
+La franja superior selecciona el haz incidente, y la pestaña **Reflexiones (Reflections)** de debajo muestra la lista de reflexiones (parte superior) y un diagrama de barras de las mismas reflexiones (parte inferior). La lista se recalcula inmediatamente cada vez que cambia una condición. Las demás pestañas (**Atenuación & Transporte (Attenuations & transport)**, **Factores de dispersión (Scattering factors)**, **Fluorescencia (Fluorescence)**) no son necesarias para IPAnalyzer; para ellas, véase [Interacción del haz en el manual de ReciPro](https://seto77.github.io/ReciPro/3-beam-interaction/).
 
 ---
 
 ## Atajos de teclado y ratón
 
-Esta ventana no tiene combinaciones especiales de teclas ni de ratón. <kbd>F1</kbd> abre esta página del manual, y **Copy to clipboard** exporta toda la tabla de reflexiones como texto que se puede pegar en una hoja de cálculo.
+Esta ventana no tiene combinaciones especiales de teclas ni de ratón. <kbd>F1</kbd> abre esta página del manual, y **Copiar (Copy)** exporta la tabla de reflexiones como texto que se puede pegar en una hoja de cálculo.
 
 ---
 
-## Control de longitud de onda (Wave Length Control)
+## Haz y longitud de onda
 
 - **X-ray / Electron / Neutron**: los factores de dispersión atómicos difieren según el tipo de haz incidente, por lo que se cambian aquí.
 - Para **X-ray**, al elegir el **Element** (material del ánodo) y la línea característica (Kα, etc.), la longitud de onda de esos rayos X característicos se define automáticamente.
-
-![Control de longitud de onda (Wave Length Control)](../../assets/cap-en-auto/FormScatteringFactor.panel3.waveLengthControl1.png)
-
-- **Energy (keV)** y **Wavelength (Å)** están vinculados entre sí.
-- Esta energía o longitud de onda se usa para calcular 2θ (el ángulo de difracción). Para rayos X también se puede definir mediante la selección del elemento y del tipo de línea.
+- **Energy** (keV) y **Wavelength** (Å) están vinculados: al definir uno se actualiza el otro, y ambos se usan para calcular el 2θ de cada reflexión.
+- **Unit** (**Å** / **nm**) cambia la unidad de longitud que se usa para el espaciado d y magnitudes similares.
 
 ---
 
-## Opciones de visualización y de cálculo
+## Opciones de la pestaña Reflexiones (Reflections)
 
-- **Intensidades de difracción de polvo (óptica Bragg-Brentano) (Powder Diffraction Intensities (Bragg-Brentano Optics))**: calcula la intensidad relativa como intensidad de difracción de polvo (Bragg–Brentano), incluidos la multiplicidad y el factor de Lorentz–polarización. Si está desactivada, muestra la intensidad del factor de estructura.
-- **Ocultar planos equivalentes (Hide equivalent planes)**: agrupa en una sola entrada los planos cristalográficamente equivalentes.
-- **Ocultar planos prohibidos (Hide prohibited planes)**: excluye los planos cuya intensidad es cero por las reglas de extinción.
-- **Unit (Å / nm)**: cambia la unidad de longitud del espaciado d, etc.
-- **d-Spacing Cutoff**: excluye las reflexiones con un espaciado d menor que este valor.
+- **Intensidades de difracción de polvo (óptica Bragg-Brentano) (Powder diffraction intensities (Bragg-Brentano optics))**: calcula la intensidad relativa como intensidad de difracción de polvo (Bragg–Brentano), $I \propto m\,\lvert F\rvert^2 / V^2 \times L$, donde $m$ es la multiplicidad, $V$ el volumen de la celda y $L = (1+\cos^2 2\theta)/(\sin 2\theta\,\sin\theta)$ (factor de Lorentz–polarización) para rayos X o $L = 1/(\sin 2\theta\,\sin\theta)$ (solo el factor de Lorentz) para electrones y neutrones. Las reflexiones que el haz no puede alcanzar (d < λ/2) reciben una intensidad de 0. Si está desactivada, se muestra la intensidad del factor de estructura $\lvert F\rvert^2$. Al activarla también se activan **Ocultar planos equivalentes (Hide equivalent planes)** y **Ocultar planos prohibidos (Hide prohibited planes)**, que quedan atenuados (no editables).
+- **Ocultar planos equivalentes (Hide equivalent planes)** (activada por defecto): agrupa en una sola entrada los planos cristalográficamente equivalentes. La columna **Multi.** solo se muestra mientras está activada.
+- **Ocultar planos prohibidos (Hide prohibited planes)** (activada por defecto): excluye los planos sistemáticamente ausentes por las reglas de extinción. Mientras está desactivada, una columna **Condition** muestra la(s) condición(es) de reflexión que prohíben cada plano ausente.
+- **d-spacing cutoff >** (1 Å por defecto): excluye las reflexiones con un espaciado d menor que este valor (la unidad de longitud sigue a **Unit**).
 
 ---
 
@@ -58,12 +52,15 @@ Cada fila corresponde a una reflexión (o a un grupo de planos equivalentes por 
 | **\|F\|** | amplitud del factor de estructura ($= \sqrt{F_\text{real}^2 + F_\text{inv}^2}$) |
 | **F^2** | intensidad del factor de estructura ($\lvert F\rvert^2$) |
 | **Rel. Int. (%)** | intensidad relativa, con la reflexión más intensa fijada en 100 |
+| **Condition** | condición(es) de extinción que incumple el plano (solo se muestra cuando **Ocultar planos prohibidos (Hide prohibited planes)** está desactivada) |
+
+Debajo de la tabla, las mismas reflexiones se dibujan como un diagrama de barras, con los picos más intensos etiquetados con su *hkl*. El selector elige el eje horizontal entre **2θ**, **d** y **Q** ($= 4\pi\sin\theta/\lambda$), **Log I** cambia el eje de intensidad entre lineal y logarítmico, y las casillas **Range** definen el intervalo representado.
 
 ---
 
 ## Copiar al portapapeles
 
-**Copy to Clipboard** copia la lista al portapapeles como texto que se puede pegar en una hoja de cálculo como Excel.
+**Copiar (Copy)** copia la lista de reflexiones al portapapeles como texto que se puede pegar en una hoja de cálculo como Excel.
 
 ---
 
@@ -72,3 +69,4 @@ Cada fila corresponde a una reflexión (o a un grupo de planos equivalentes por 
 - [Página principal del apéndice](index.md)
 - [4. Procedimientos](../4-procedures.md) — definición del cristal de referencia cuyos factores de estructura se calculan.
 - [6. Buscar parámetros (fuerza bruta)](../6-find-parameter.md)
+- [Interacción del haz en el manual de ReciPro](https://seto77.github.io/ReciPro/3-beam-interaction/) — las cuatro pestañas de la misma ventana.

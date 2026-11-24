@@ -1,8 +1,9 @@
 <!-- 260601Cl: Reflected from ja/0-overview.md (lead language: Japanese). -->
+<!-- 261124Cl: Replaced "one-dimensional / one-dimensionalization" with "1D profile" / "integrating the image". -->
 
 # Overview
 
-IPAnalyzer converts Debye–Scherrer rings recorded with imaging plates (IP) or CCD/CMOS detectors into one-dimensional diffraction profiles, with high precision and speed. Its design and features are modeled after PIP, developed by Hiroshi Fujihisa at the National Institute of Advanced Industrial Science and Technology (AIST).
+IPAnalyzer converts Debye–Scherrer rings recorded with imaging plates (IP) or CCD/CMOS detectors into 1D diffraction profiles, with high precision and speed. Its design and features are modeled after PIP, developed by Hiroshi Fujihisa at the National Institute of Advanced Industrial Science and Technology (AIST).
 
 Main features:
 
@@ -55,7 +56,7 @@ In IPAnalyzer, the X axis (the rightward direction of the IP image) is rotated c
 
 ## Pixel intensity integration method
 
-The central problem in one-dimensionalization is how to distribute, among the integration steps, the intensity of a pixel that straddles several steps — which happens whenever the range of scattering angles covered by one pixel spans more than one 2θ step (more often the finer the step).
+The central problem in integrating the image is how to distribute, among the integration steps, the intensity of a pixel that straddles several steps — which happens whenever the range of scattering angles covered by one pixel spans more than one 2θ step (more often the finer the step).
 
 The software computes the intersections between the lines that delimit each step and the pixel, and distributes the intensity by finding the pixel area contained in each step. To handle cases where the pixel is not exactly square — because of IP tilt or pixel-shape distortion — the coordinates of the four corners of each pixel are computed successively to determine its quadrilateral shape. In principle, this lets the pixel intensity be distributed smoothly across the steps no matter how small the steps are made.
 

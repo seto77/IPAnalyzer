@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Apêndice
 
-Este apêndice resume o **fundamento teórico da geometria e dos algoritmos** que o IPAnalyzer usa ao converter uma imagem de difração bidimensional (anéis de Debye–Scherrer) em um perfil unidimensional de alta exatidão. Para os procedimentos de operação e o uso de cada funcionalidade, consulte o manual principal ([0. Visão geral](../0-overview.md), [4. Procedimentos](../4-procedures.md) etc.). Aqui explicamos, com equações, as definições do sistema de coordenadas, as transformações de coordenadas, os métodos de determinação de parâmetros e o algoritmo de integração por trás deles.
+Este apêndice resume o **fundamento teórico da geometria e dos algoritmos** que o IPAnalyzer usa ao converter uma imagem de difração bidimensional (anéis de Debye–Scherrer) em um perfil 1D de alta exatidão. Para os procedimentos de operação e o uso de cada funcionalidade, consulte o manual principal ([0. Visão geral](../0-overview.md), [4. Procedimentos](../4-procedures.md) etc.). Aqui explicamos, com equações, as definições do sistema de coordenadas, as transformações de coordenadas, os métodos de determinação de parâmetros e o algoritmo de integração por trás deles.
 
 O conteúdo baseia-se no documento antigo `doc/IPAnalyzerAlgorithm.pdf`, incluído no pacote de distribuição, e na implementação atual.
 
@@ -10,9 +10,9 @@ O conteúdo baseia-se no documento antigo `doc/IPAnalyzerAlgorithm.pdf`, incluí
 
 - **[A1. Geometria do detector e transformações de coordenadas](a1-geometry.md)** — definição do sistema de coordenadas dextrógiro, as matrizes de rotação que descrevem a inclinação do IP ($\varphi,\ \tau$) e a correção da forma do pixel ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$).
 - **[A2. Determinação de parâmetros](a2-calibration.md)** — calibração do comprimento de câmara, do comprimento de onda, do tamanho do pixel e da inclinação do IP usando um material de referência (método das duas distâncias, método das duas linhas, ajuste de elipse).
-- **[A3. Integração da imagem](a3-image-integration.md)** — o algoritmo de partição de área que distribui as intensidades dos pixels entre os passos angulares.
+- **[A3. Integração da imagem](a3-image-integration.md)** — o algoritmo de partição de área que distribui as intensidades dos pixels entre os passos angulares, e a normalização após a integração.
 - **[A4. Informação de simetria](a4-symmetry-information.md)** — simetria do grupo espacial, cálculos geométricos, posições de Wyckoff, condições de reflexão e diagramas dos elementos de simetria do cristal padrão (uma subjanela da janela Crystal).
-- **[A5. Fator de espalhamento](a5-scattering-factor.md)** — fatores de estrutura e a lista de reflexões do cristal padrão (raios X, elétrons, nêutrons) (uma subjanela da janela Crystal).
+- **[A5. Fator de espalhamento](a5-scattering-factor.md)** — fatores de estrutura e a lista de reflexões do cristal padrão (raios X, elétrons, nêutrons) (a aba **Reflexões (Reflections)** de **Interação do feixe (Beam interaction)** na janela Crystal).
 
 ## Sistema de coordenadas (figura de referência comum)
 

@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Visión general
 
-IPAnalyzer convierte, con alta precisión y rapidez, los anillos de Debye–Scherrer registrados con Imaging Plates (IP) o detectores CCD/CMOS en perfiles de difracción unidimensionales. Su diseño y funciones se inspiran en PIP, desarrollado por Hiroshi Fujihisa en el National Institute of Advanced Industrial Science and Technology (AIST).
+IPAnalyzer convierte, con alta precisión y rapidez, los anillos de Debye–Scherrer registrados con Imaging Plates (IP) o detectores CCD/CMOS en perfiles de difracción 1D. Su diseño y funciones se inspiran en PIP, desarrollado por Hiroshi Fujihisa en el National Institute of Advanced Industrial Science and Technology (AIST).
 
 Funciones principales:
 
@@ -53,7 +53,7 @@ En IPAnalyzer, el eje X (la dirección hacia la derecha de la imagen de la IP) s
 
 ## Método de integración de la intensidad de los píxeles
 
-El problema central de la conversión a una dimensión es cómo repartir entre los pasos de integración la intensidad de un píxel que abarca varios pasos — lo que ocurre siempre que el intervalo de ángulos de dispersión que cubre un píxel se extiende sobre más de un paso de 2θ (con más frecuencia cuanto más fino es el paso).
+El problema central de la integración de la imagen es cómo repartir entre los pasos de integración la intensidad de un píxel que abarca varios pasos — lo que ocurre siempre que el intervalo de ángulos de dispersión que cubre un píxel se extiende sobre más de un paso de 2θ (con más frecuencia cuanto más fino es el paso).
 
 El programa calcula las intersecciones entre las líneas que delimitan cada paso y el píxel, y reparte la intensidad hallando el área del píxel contenida en cada paso. Para tratar los casos en que el píxel no es exactamente cuadrado — debido a la inclinación de la IP o a la distorsión de la forma del píxel — se calculan sucesivamente las coordenadas de las cuatro esquinas de cada píxel para determinar su forma cuadrilátera. En principio, esto permite repartir la intensidad del píxel de forma suave entre los pasos, por pequeños que sean.
 

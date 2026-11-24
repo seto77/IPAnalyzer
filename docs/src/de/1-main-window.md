@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Hauptfenster
 
-Das Hauptfenster ist der erste Bildschirm, der beim Start von IPAnalyzer erscheint. Hier sind die Anzeige des geladenen Beugungsbildes, die wichtigsten Operationen (Zentrum finden, Spots maskieren, Eindimensionalisierung) und die Zugänge zu den Einstellungen der Detektorparameter zusammengefasst.
+Das Hauptfenster ist der erste Bildschirm, der beim Start von IPAnalyzer erscheint. Hier sind die Anzeige des geladenen Beugungsbildes, die wichtigsten Operationen (Zentrum finden, Spots maskieren, Integration zu einem 1D-Profil) und die Zugänge zu den Einstellungen der Detektorparameter zusammengefasst.
 
 Das Fenster besteht grob aus Menüs und Symbolleiste oben, dem Bildanzeigebereich in der Mitte, der vertikalen Symbolleiste rechts und dem Diagrammbereich unten.
 
@@ -90,7 +90,7 @@ Strahlungsart (Wave Source) / Imaging-Plate-Bedingung (Imaging Plate Condition) 
 
 - **QuickInfo (ToolTip)**: schaltet die QuickInfos an Schaltflächen und Menüs ein oder aus.
 - **Spiegeln (Flip)**: **Horizontal (Horizontally)** / **Vertikal (Vertically)**. **Drehen (Rotate)**: wählt einen Drehwinkel. Spiegeln und Drehen werden auf die Arbeitsbilddaten angewendet und wirken sich daher auch auf die anschließende Integration und das Speichern des Bildes aus (die Quelldatei auf dem Datenträger wird nicht verändert).
-- **Registry löschen (Clear registry)**: ein Eintrag zur Fehlerbehebung, der die gespeicherten Einstellungen löscht. **Ngen-Kompilierung (Ngen Compile)** hat in der aktuellen Version keine Funktion.
+- **Registry löschen (prüfen und neu starten) (Clear registry (check and restart))**: ein Eintrag zur Fehlerbehebung, der die gespeicherten Einstellungen löscht.
 
 ### Sprache (Language)
 
@@ -102,7 +102,8 @@ Strahlungsart (Wave Source) / Imaging-Plate-Bedingung (Imaging Plate Condition) 
 
 ### Hilfe (Help)
 
-- **Programm-Updates (Program Updates)**, **Hinweis (Hint)**, **Lizenz (License)**, **Versionsverlauf (Version History)**, **Hilfe (Help)** (öffnet das mitgelieferte PDF-Handbuch).
+- **Programm-Updates (Program Updates)**, **Hinweis (Hint)**, **Lizenz (License)**, **Versionsverlauf (Version history)**, **Hilfe (Help)**.
+- **Hilfe (Help)** öffnet dieses Online-Handbuch im Standard-Webbrowser, genau wie das Drücken von **F1**.
 - Drücken Sie in einem beliebigen Fenster **F1**, um die zugehörige Seite dieses Online-Handbuchs zu öffnen.
 
 ## Bedienungs-Symbolleiste
@@ -112,15 +113,14 @@ Die wichtigsten Bildverarbeitungsoperationen (mit ausführlichen Optionen in den
 - **Hintergrund (Background)**: Diese Schaltfläche ist in der aktuellen Version deaktiviert. Der Abzug eines Hintergrundbildes wird auf der Registerkarte **Hintergrundoptionen (Background Option)** des Eigenschaftsfensters eingestellt.
 - **Zentrum finden (Find Center)**: ermittelt das Strahlzentrum durch eine 2D-Pseudo-Voigt-Anpassung (der Suchbereich beträgt standardmäßig ±8 px um das Zentrum und wird auf der Registerkarte Sonstiges (Miscellaneous) eingestellt). Werden mit **Ring zeichnen (Draw ring)** Ringe angezeigt, wird das Zentrum stattdessen aus dem Ring bestimmt.
 - **Zentrum fixieren (Fix Center)**: fixiert die Zentrumsposition.
-- **Spots maskieren (Mask Spots)**: Innerhalb jedes radialen Bandes werden Pixel, deren Intensität Mittelwert + Standardabweichung × Deviation übersteigt, als Spots erkannt und zusammen mit ihrer Umgebung maskiert. Das Dropdown-Menü enthält u. a. Gesamten Bereich maskieren (Mask all area), Maske umkehren (Invert mask) und den manuellen Modus.
+- **Spots maskieren (Mask Spots)**: Innerhalb jedes radialen Bandes werden Pixel, deren Intensität Mittelwert + Standardabweichung × **Kriteriumsabweichung für "Spots maskieren" (Criterial deviation for "Mask Spots")** (Registerkarte Maskenoptionen (Mask Option)) übersteigt, als Spots erkannt und zusammen mit ihrer Umgebung maskiert. Das Dropdown-Menü enthält u. a. **Gesamten Bereich maskieren (Mask all area)**, **Maske umkehren (Invert mask)** und **Manueller Modus (Manual Mode)**.
 - **Manueller Modus (Manual Mode)**: der manuelle Maskenmodus. Sie können die Maskenform (Spot (Kreis/Rechteck) / Kreis / Rechteck / Polygon / Spline) und die Spotgröße (Halbwertsbreite) wählen.
-- **Profil abrufen (Get Profile)**: integriert das Bild zu einem eindimensionalen Profil. Unterstützt konzentrische (2θ-basierte) und radiale (azimutbasierte) Integration. Im Dropdown-Menü werden u. a. die Auswahl von Integraleigenschaft/Integralbereich, das Finden des Zentrums und Maskieren von Spots vor der Integration, das Senden an PDIndexer, die azimutale Unterteilungsanalyse und die Verarbeitung von Bildsequenzen eingestellt.
+- **Profil abrufen (Get Profile)**: integriert das Bild zu einem 1D-Profil. Unterstützt **Konzentrische Integration (Concentric Integration)** (2θ-basiert) und **Radiale Integration (Radial integration)** (azimutbasiert). Im Dropdown-Menü werden u. a. die Auswahl von Integraleigenschaft/Integralbereich, das Finden des Zentrums und Maskieren von Spots vor der Integration, das Senden an PDIndexer, die **Azimutale Unterteilungsanalyse (Azimuthal Division Analysis)** (nur bei konzentrischer Integration mit der Achse **Winkel (Angle)** (2θ); andernfalls erscheint eine Warnung und es wird nichts ausgeführt) und die Verarbeitung von Bildsequenzen eingestellt.
 
 ## Symbolleiste (weitere Werkzeuge)
 
 Die vertikale Symbolleiste rechts startet die verschiedenen Werkzeuge. Einzelheiten finden Sie unter [Werkzeuge](3-tools.md).
 
-- **Intensitätstabelle (Intensity table)** (dieser Schaltfläche ist in der aktuellen Version keine Funktion zugewiesen; verwenden Sie für die Intensitätskalibrierung von R-AXIS-Bildern **Werkzeuge → R-AXIS-Bild kalibrieren (Tool → Calibrate Raxis Image)**)
 - **Autoprozedur (Auto procedure)**
 - **Ring zeichnen (Draw ring)**
 - **Parameter finden (geometrisch) (Find parameter (geometrically))** / **Parameter finden (Brute Force) (Find parameter (brute force))**

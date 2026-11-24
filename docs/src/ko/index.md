@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # IPAnalyzer 매뉴얼
 

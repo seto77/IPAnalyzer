@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Macro
 
-IPAnalyzer propose une fonction **macro** qui automatise des séquences d'opérations avec des scripts de type Python. Elle est utile pour les tâches répétitives telles que la réduction en une dimension par lots de nombreux fichiers, la conversion de formats et l'analyse par division azimutale.
+IPAnalyzer propose une fonction **macro** qui automatise des séquences d'opérations avec des scripts de type Python. Elle est utile pour les tâches répétitives telles que l'intégration par lots de nombreux fichiers en profils 1D, la conversion de formats et l'analyse par division azimutale.
 
 ## Ouvrir l'éditeur
 
@@ -26,7 +26,7 @@ Ouvrez l'éditeur de macros depuis le menu **Macro** → **Éditeur (Editor)** d
 | `IPA.Detector` | Régler la géométrie du détecteur : centre, longueur de caméra, taille de pixel, inclinaison |
 | `IPA.Image` | Contrôler l'échelle d'affichage, le contraste et la zone affichée |
 | `IPA.Mask` | Masquer des taches et des régions |
-| `IPA.Profile` | Lancer la réduction en une dimension (Obtenir le profil (Get Profile)) et configurer l'enregistrement/l'envoi |
+| `IPA.Profile` | Intégrer l'image (Obtenir le profil (Get Profile)) et configurer l'enregistrement/l'envoi |
 | `IPA.IntegralProperty` | Régler la plage, le pas et l'unité de l'intégration concentrique / radiale |
 | `IPA.Sequential` | Sélectionner / moyenner / cibler les trames d'une image multi-trames |
 | `IPA.PDI` | Appeler des macros dans PDIndexer (intégration par le presse-papiers) |
@@ -42,4 +42,4 @@ Activez **Afficher les exemples (Show samples)** dans l'éditeur pour lister les
 
 ## Utilisation avec la procédure automatique
 
-Les macros que vous écrivez peuvent être enregistrées sous un nom et aussi appelées depuis la liste « exécuter après le chargement » de la [Procédure auto. (Auto procedure)](../3-tools.md), de sorte qu'une macro soit appliquée automatiquement à chaque image arrivant pendant une expérience.
+Les macros que vous écrivez peuvent être enregistrées sous un nom et aussi exécutées depuis la [Procédure auto. (Auto procedure)](../3-tools.md) (choisissez-la sous **Macro** et cochez **Execute macro**), de sorte qu'une macro soit appliquée automatiquement à chaque image arrivant pendant une expérience.

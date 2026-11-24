@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 매개변수 찾기 (전수 탐색)
 
@@ -11,7 +11,7 @@
 
 ## 절차
 
-1. 이미지 데이터와 매개변수를 불러온 다음, **매개변수 찾기 (전수 탐색) (Find Parameter (brute force))** 를 클릭합니다.
+1. 이미지 데이터와 매개변수를 불러온 다음, **매개변수 찾기 (전수 탐색) (Find parameter (brute force))** 를 클릭합니다.
 
     ![매개변수 찾기 (전수 탐색) 실행](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![전수 탐색 보정 창](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -25,11 +25,11 @@
 
 ![옵션 설정](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### 피팅 범위
+### 피팅 범위 (Fitting Range)
 
 각 피크에 대해 피팅할 각도 범위를 지정합니다.
 
-### 반복 횟수
+### 반복 (Iteration)
 
 최적화 사이클의 횟수를 지정합니다.
 
@@ -61,7 +61,7 @@
 
 ![평가값 R 의 식](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-여기서 \(2\theta_{\mathrm{calc},i}\) 는 현재 매개변수로 계산한 피크 \(i\) 의 위치, \(2\theta_{\mathrm{fit},i}\) 는 프로파일을 피팅하여 얻은 위치 (모두 도 단위), *H* 는 배경을 뺀 피크 높이, *W* 는 가중치 (**Weight**, 기본값 100) 입니다. 평판 검출기의 경우 식은 다음과 같습니다.
+여기서 \(2\theta_{\mathrm{calc},i}\) 는 현재 매개변수로 계산한 피크 \(i\) 의 위치, \(2\theta_{\mathrm{fit},i}\) 는 프로파일을 피팅하여 얻은 위치 (모두 도 단위), *H* 는 배경을 뺀 피크 높이, *W* 는 가중치 (100. 현재 버전에서는 이 설정이 화면에 표시되지 않습니다) 입니다. 평판 검출기의 경우 식은 다음과 같습니다.
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

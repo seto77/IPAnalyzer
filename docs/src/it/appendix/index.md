@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Appendice
 
-Questa appendice riassume il **fondamento teorico della geometria e degli algoritmi** che IPAnalyzer usa per convertire un'immagine di diffrazione bidimensionale (anelli di Debye–Scherrer) in un profilo unidimensionale ad alta precisione. Per le procedure operative e l'uso di ciascuna funzionalità, fare riferimento al manuale principale ([0. Panoramica](../0-overview.md), [4. Procedure](../4-procedures.md), ecc.). Qui si spiegano, con le equazioni, le definizioni del sistema di coordinate, le trasformazioni di coordinate, i metodi di determinazione dei parametri e l'algoritmo di integrazione che ne stanno alla base.
+Questa appendice riassume il **fondamento teorico della geometria e degli algoritmi** che IPAnalyzer usa per convertire un'immagine di diffrazione bidimensionale (anelli di Debye–Scherrer) in un profilo 1D ad alta precisione. Per le procedure operative e l'uso di ciascuna funzionalità, fare riferimento al manuale principale ([0. Panoramica](../0-overview.md), [4. Procedure](../4-procedures.md), ecc.). Qui si spiegano, con le equazioni, le definizioni del sistema di coordinate, le trasformazioni di coordinate, i metodi di determinazione dei parametri e l'algoritmo di integrazione che ne stanno alla base.
 
 Il contenuto si basa sul vecchio documento `doc/IPAnalyzerAlgorithm.pdf` incluso nel pacchetto di distribuzione e sull'implementazione attuale.
 
@@ -10,9 +10,9 @@ Il contenuto si basa sul vecchio documento `doc/IPAnalyzerAlgorithm.pdf` incluso
 
 - **[A1. Geometria del rivelatore e trasformazioni di coordinate](a1-geometry.md)** — definizione del sistema di coordinate destrorso, matrici di rotazione che descrivono l'inclinazione dell'IP ($\varphi,\ \tau$) e correzione della forma del pixel ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$).
 - **[A2. Determinazione dei parametri](a2-calibration.md)** — calibrazione della lunghezza di camera, della lunghezza d'onda, della dimensione del pixel e dell'inclinazione dell'IP mediante un materiale di riferimento (metodo delle due distanze, metodo delle due linee, fitting di ellissi).
-- **[A3. Integrazione dell'immagine](a3-image-integration.md)** — l'algoritmo di ripartizione delle aree che distribuisce le intensità dei pixel nei passi angolari.
+- **[A3. Integrazione dell'immagine](a3-image-integration.md)** — l'algoritmo di ripartizione delle aree che distribuisce le intensità dei pixel nei passi angolari, e la normalizzazione dopo l'integrazione.
 - **[A4. Informazioni di simmetria](a4-symmetry-information.md)** — simmetria del gruppo spaziale, calcoli geometrici, posizioni di Wyckoff, condizioni di riflessione e diagrammi degli elementi di simmetria del cristallo di riferimento (una sottofinestra della finestra del cristallo).
-- **[A5. Fattore di diffusione](a5-scattering-factor.md)** — fattori di struttura ed elenco delle riflessioni del cristallo di riferimento (raggi X, elettroni, neutroni) (una sottofinestra della finestra del cristallo).
+- **[A5. Fattore di diffusione](a5-scattering-factor.md)** — fattori di struttura ed elenco delle riflessioni del cristallo di riferimento (raggi X, elettroni, neutroni) (la scheda **Riflessioni (Reflections)** di **Interazione del fascio (Beam interaction)** nella finestra del cristallo).
 
 ## Sistema di coordinate (figura di riferimento comune)
 

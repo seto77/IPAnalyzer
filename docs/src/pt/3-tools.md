@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Ferramentas
 
@@ -8,16 +8,14 @@ Esta página descreve as ferramentas auxiliares iniciadas pela barra de ferramen
 
 Abra-a com **Ferramenta → Calibrar imagem R-AXIS (Tool → Calibrate Raxis Image)**. Especifique duas imagens R-AXIS IV `.stl` do mesmo tamanho; a ferramenta otimiza uma tabela de conversão de intensidade para que as duas intensidades coincidam. A tabela é representada por pontos de controle, e a soma de seus elementos é mantida constante durante a otimização. O resultado é mostrado em um gráfico. É usada, por exemplo, para calibrar a resposta em intensidade de um detector.
 
-O botão **Tabela de intensidade (Intensity table)** da barra de ferramentas não tem função atribuída na versão atual.
-
 ![Calibrate Raxis Image](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## Procedimento automático (Auto procedure)
 
 Uma ferramenta que monitora uma pasta, carrega automaticamente as novas imagens e executa uma sequência de operações após o carregamento.
 
-- **Monitoramento e carregamento automático**: monitora a pasta especificada (incluindo as subpastas) e lê um arquivo depois que sua gravação termina. Os arquivos podem ser filtrados pelo nome (correspondência de números, palavra-chave).
-- **Execução automática**: executa, em ordem, as etapas marcadas entre **Contraste automático (Auto Contrast)** → **Localizar centro (Find Center)** → **Mascarar pontos (Mask Spots)** → **Obter perfil (Get Profile)** → Execute Macro.
+- **Monitoramento e carregamento automático**: monitora a pasta especificada (**Diretório a ser monitorado (Directory to be monitored)**, incluindo as subpastas) e lê um arquivo depois que sua gravação termina. Os arquivos podem ser filtrados pelo nome (**Correspondência de padrões (Pattern matching)** sobre o número no nome do arquivo, **Palavra-chave (Keyword)**); os arquivos que não correspondem são ignorados sem espera. Se um arquivo ainda estiver bloqueado depois da espera pela gravação (cerca de 50 s), ele não é descartado, mas tentado novamente nas varreduras seguintes; só se desiste dele se ainda estiver bloqueado 10 minutos depois de ter sido encontrado pela primeira vez.
+- **Execução automática**: quando **Após carregar a nova imagem, executar a seguinte sequência (Once the new image is loaded, perform the following sequence)** está ativado, executa, em ordem, as etapas marcadas entre **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro**.
 
 Isso permite usos como monitorar a pasta de saída durante um experimento e integrar automaticamente cada imagem assim que ela chega. Veja [Procedimentos](4-procedures.md) para mais detalhes.
 
@@ -31,7 +29,7 @@ Desenha um anel a uma distância, um ângulo ou um valor d especificado sobre a 
 
 ## Desenrolar (Unroll)
 
-Desdobra a imagem de difração das coordenadas polares centradas no ponto direto para coordenadas cartesianas (eixo horizontal = ângulo de espalhamento 2θ; eixo vertical = azimute). Atualmente, isso não é configurado em uma janela própria, mas com o botão **Desenrolar imagem (Unroll image)** da barra de ferramentas e com a aba **Opção de imagem desenrolada (Unrolled Image Option)** das propriedades. O desenrolamento usa o mesmo algoritmo de distribuição de intensidade sub-pixel da conversão para uma dimensão.
+Desdobra a imagem de difração das coordenadas polares centradas no ponto direto para coordenadas cartesianas (eixo horizontal = ângulo de espalhamento 2θ; eixo vertical = azimute). Atualmente, isso não é configurado em uma janela própria, mas com o botão **Desenrolar imagem (Unroll image)** da barra de ferramentas e com a aba **Opção de imagem desenrolada (Unrolled Image Option)** das propriedades. O desenrolamento usa o mesmo algoritmo de distribuição de intensidade sub-pixel da integração em um perfil 1D.
 
 ## Desfoque circunferencial (Circumferential Blur)
 
@@ -45,7 +43,7 @@ Uma ferramenta para lidar com imagens multiquadro (NeXus (`.nxs`), TIFF de vári
 
 - Selecione um único quadro na lista de quadros para exibi-lo, ou percorra-os com a barra deslizante.
 - Com **Seleção múltipla (Multi selection)**, selecione vários quadros e calcule a **Média (Average)** ou a **Soma (Summation)**.
-- O alvo da conversão para uma dimensão pode ser escolhido entre "todos os quadros / quadros selecionados / somente o superior".
+- Os quadros integrados por **Obter perfil (Get Profile)** são escolhidos em **Alvo(s) de "Obter perfil" (Target(s) of "Get Profile")**: **Todas as imagens independentemente das seleções atuais (All images irrespective of current selections)** / **A(s) imagem(ns) selecionada(s) (The selected image(s))** / **Apenas a imagem superior (Only the topmost image)**.
 - Se um quadro contém informação de energia, o comprimento de onda é atualizado quando esse quadro é selecionado sozinho.
 
 ![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)

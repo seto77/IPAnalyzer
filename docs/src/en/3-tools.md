@@ -1,5 +1,5 @@
 <!-- 260601Cl: Reflected from ja/3-tools.md (lead language: Japanese). 260601Cl: auto-capture images embedded. -->
-<!-- 261124Cl: Merged the Intensity Table and Calibrate R-Axis sections into the actual entry point (Tool → Calibrate Raxis Image); corrected labels, brute-force search targets and the sample-macro description. -->
+<!-- 261124Cl: Merged the Intensity Table and Calibrate R-Axis sections into the actual entry point (Tool → Calibrate Raxis Image); corrected labels, brute-force search targets and the sample-macro description. Removed the Intensity table button (hidden in the current version); renamed labels to the actual English GUI (Auto procedure steps, Pattern matching / Keyword, Multi selection / Average / Summation, Target(s) of "Get Profile"); described the retry of locked files in Auto procedure; replaced "one-dimensionalization" with "integration". -->
 
 # Tools
 
@@ -9,16 +9,14 @@ This page describes the auxiliary tools launched from the vertical toolbar on th
 
 Open it with **Tool → Calibrate Raxis Image**. Specify two R-AXIS IV `.stl` images of the same size; the tool optimizes an intensity-conversion table so that the two intensities match. The table is represented by control points, and the sum of its elements is kept constant during the optimization. The result is shown as a graph. It is used, for example, to calibrate the intensity response of a detector.
 
-The **Intensity table** toolbar button has no function assigned in the current version.
-
 ![Calibrate Raxis Image](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## Auto procedure
 
 A tool that watches a folder, loads new images automatically, and runs a sequence of operations after loading.
 
-- **Watch and auto-load**: monitors the specified folder (including subfolders) and reads a file after its write completes. Files can be filtered by name (number matching, keyword).
-- **Auto execution**: runs the checked steps, in order, out of Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro.
+- **Watch and auto-load**: monitors the specified folder (**Directory to be monitored**, including subfolders) and reads a file after its write completes. Files can be filtered by name (**Pattern matching** on the number in the filename, **Keyword**); files that do not match are skipped without waiting. If a file is still locked after waiting for the write (about 50 s), it is not dropped but retried in later scans; it is given up only if it is still locked 10 minutes after it was first found.
+- **Auto execution**: when **Once the new image is loaded, perform the following sequence** is on, runs the checked steps, in order, out of **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro**.
 
 This allows uses such as watching an output folder during an experiment and integrating each image automatically as it arrives. See [Procedures](4-procedures.md) for details.
 
@@ -32,7 +30,7 @@ Draws a ring at a specified distance, angle, or d-value on the image, accounting
 
 ## Unroll
 
-Unfolds the diffraction image from polar coordinates centered on the direct spot into Cartesian coordinates (horizontal axis = scattering angle 2θ; vertical axis = azimuth). It is now configured not with a dedicated window but with the **Unroll image** toolbar button and the **Unrolled Image Option** tab of the properties. Unrolling uses the same sub-pixel intensity-distribution algorithm as one-dimensionalization.
+Unfolds the diffraction image from polar coordinates centered on the direct spot into Cartesian coordinates (horizontal axis = scattering angle 2θ; vertical axis = azimuth). It is now configured not with a dedicated window but with the **Unroll image** toolbar button and the **Unrolled Image Option** tab of the properties. Unrolling uses the same sub-pixel intensity-distribution algorithm as the integration into a 1D profile.
 
 ## Circumferential Blur
 
@@ -45,8 +43,8 @@ A tool that blurs the ring pattern along the circumferential (azimuthal) directi
 A tool for handling multi-frame images (NeXus (`.nxs`), multi-page TIFF and similar; time series, temperature series, synchrotron energy scans).
 
 - Select a single frame from the frame list to display it, or step through with the trackbar.
-- With **multi-selection**, select several frames and compute their **average** or **sum**.
-- The target of one-dimensionalization can be chosen from "all frames / selected frames / topmost only".
+- With **Multi selection**, select several frames and compute their **Average** or **Summation**.
+- The frames integrated by **Get Profile** are chosen under **Target(s) of "Get Profile"**: **All images irrespective of current selections** / **The selected image(s)** / **Only the topmost image**.
 - If a frame carries energy information, the wavelength is updated when that single frame is selected.
 
 ![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)

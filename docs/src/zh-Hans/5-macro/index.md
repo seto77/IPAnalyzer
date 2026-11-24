@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 宏
 
-IPAnalyzer 提供 **宏** 功能，可用类似 Python 的脚本自动执行一系列操作。它适用于对大量文件批量一维化、格式转换以及方位角分割分析等重复性工作。
+IPAnalyzer 提供 **宏** 功能，可用类似 Python 的脚本自动执行一系列操作。它适用于将大量文件批量积分为一维谱线、格式转换以及方位角分割分析等重复性工作。
 
 ## 打开编辑器
 
@@ -26,7 +26,7 @@ IPAnalyzer 提供 **宏** 功能，可用类似 Python 的脚本自动执行一�
 | `IPA.Detector` | 设置探测器几何：中心、相机长度、像素尺寸、倾斜 |
 | `IPA.Image` | 控制显示刻度、对比度和视图区域 |
 | `IPA.Mask` | 掩蔽斑点和区域 |
-| `IPA.Profile` | 执行一维化（获取图谱 (Get Profile)）并设置保存 / 发送 |
+| `IPA.Profile` | 对图像进行积分（获取图谱 (Get Profile)）并设置保存 / 发送 |
 | `IPA.IntegralProperty` | 设置同心 / 径向积分的范围、步长和单位 |
 | `IPA.Sequential` | 多帧图像的帧选择 / 平均 / 目标设置 |
 | `IPA.PDI` | 调用 PDIndexer 上的宏（剪贴板联动） |
@@ -42,4 +42,4 @@ IPAnalyzer 提供 **宏** 功能，可用类似 Python 的脚本自动执行一�
 
 ## 与自动流程 (Auto Procedure) 配合使用
 
-编写的宏可以按名称保存，也可以从[自动流程 (Auto Procedure)](../3-tools.md) 的“载入后执行”列表中调用，从而将宏自动应用于实验中到达的每幅图像。
+编写的宏可以按名称保存，也可以从[自动流程 (Auto Procedure)](../3-tools.md) 中运行（在 **宏 (Macro)** 中选择该宏并勾选 **Execute macro**），从而将宏自动应用于实验中到达的每幅图像。

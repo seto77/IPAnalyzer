@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Fonctions intégrées
 
@@ -100,7 +100,7 @@ Pour toutes les méthodes de lecture/enregistrement, omettre le nom de fichier o
 | `SaveProfileAsGSAS` | True/False. Enregistre au format GSAS. Possible uniquement pour l'intégration concentrique avec un axe en 2θ ; non écrit lorsque plusieurs profils sont enregistrés dans un seul fichier. |
 | `SaveProfileInOneFile` | True/False. Enregistre dans un seul fichier les profils séquentiels/de division azimutale. |
 | `SaveProfileAtImageDirectory` | True/False. Enregistre dans le même dossier que l'image. |
-| `GetProfile(filename="")` | Lance la réduction en une dimension. Si `filename` est donné, il sert de nom de base et l'extension du format y est ajoutée (par ex. `GetProfile("sample.stl")` enregistré en CSV donne `sample.stl.csv`). Si la destination est réglée sur « Dans le dossier choisi à chaque fois » (At the chosen directory each time), la boîte de dialogue d'enregistrement s'affiche. |
+| `GetProfile(filename="")` | Intègre l'image en un profil 1D (identique à **Obtenir le profil (Get Profile)**). Si `filename` est donné, il sert de nom de base et l'extension du format y est ajoutée (par ex. `GetProfile("sample.stl")` enregistré en CSV donne `sample.stl.csv`). Si la destination est réglée sur « Dans le dossier choisi à chaque fois » (At the chosen directory each time), la boîte de dialogue d'enregistrement s'affiche. |
 
 ## IPA.IntegralProperty
 

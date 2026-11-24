@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 工具
 
@@ -8,16 +8,14 @@
 
 通过 **工具 (Tool) → 校准 R-AXIS 图像 (Calibrate Raxis Image)** 打开。指定两幅尺寸相同的 R-AXIS IV `.stl` 图像，该工具会优化强度换算表，使两者的强度一致。换算表用控制点表示，优化过程中其各元素之和保持不变。结果以图表显示。例如可用于校准探测器的强度响应。
 
-工具栏上的 **强度表 (Intensity table)** 按钮在当前版本中未分配功能。
-
 ![Calibrate Raxis Image](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## 自动流程 (Auto procedure)
 
 监视文件夹、自动载入新图像并在载入后执行一系列操作的工具。
 
-- **监视与自动载入**：监视指定的文件夹（包括子文件夹），并在文件写入完成后读取该文件。可按文件名筛选文件（编号匹配、关键字）。
-- **自动执行**：按顺序执行 自动对比度 (Auto Contrast) → 查找中心 (Find Center) → 掩蔽斑点 (Mask Spots) → 获取图谱 (Get Profile) → Execute Macro 中已勾选的步骤。
+- **监视与自动载入**：监视指定的文件夹（**要监视的目录 (Directory to be monitored)**，包括子文件夹），并在文件写入完成后读取该文件。可按文件名筛选文件（对文件名中的编号进行 **模式匹配 (Pattern matching)**、**关键字 (Keyword)**）；不符合条件的文件会直接跳过，不再等待。若等待写入（约 50 秒）后文件仍被锁定，它不会被丢弃，而是在之后的扫描中重试；只有在首次发现该文件 10 分钟后仍被锁定时才会放弃。
+- **自动执行**：当 **加载新图像后, 执行以下序列 (Once the new image is loaded, perform the following sequence)** 打开时，按顺序执行 **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro** 中已勾选的步骤。
 
 这样就可以在实验中监视输出文件夹，并在每幅图像到达时自动进行积分。详情请参见[操作步骤](4-procedures.md)。
 
@@ -31,7 +29,7 @@
 
 ## 展开 (Unroll)
 
-将以直射斑点为中心的极坐标衍射图像展开为直角坐标（横轴 = 散射角 2θ；纵轴 = 方位角）。现在不再使用专用窗口，而是通过工具栏的 **展开图像 (Unroll image)** 按钮和属性中的 **展开图像选项 (Unrolled Image Option)** 选项卡进行设置。展开使用与一维化相同的亚像素强度分配算法。
+将以直射斑点为中心的极坐标衍射图像展开为直角坐标（横轴 = 散射角 2θ；纵轴 = 方位角）。现在不再使用专用窗口，而是通过工具栏的 **展开图像 (Unroll image)** 按钮和属性中的 **展开图像选项 (Unrolled Image Option)** 选项卡进行设置。展开使用与积分为一维谱线时相同的亚像素强度分配算法。
 
 ## 周向模糊 (Circumferential Blur)
 
@@ -45,7 +43,7 @@
 
 - 从帧列表中选择单帧进行显示，或用滑动条逐帧切换。
 - 使用 **多选 (Multi selection)** 可选择多帧并计算其 **平均 (Average)** 或 **求和 (Summation)**。
-- 一维化的对象可从“全部图像（忽略当前选择）/ 选中的图像 / 仅最上层图像”中选择。
+- 由 **获取图谱 (Get Profile)** 积分的帧在 **“获取图谱”的目标 (Target(s) of "Get Profile")** 中选择：**全部图像（忽略当前选择） (All images irrespective of current selections)** / **选中的图像 (The selected image(s))** / **仅最上层图像 (Only the topmost image)**。
 - 若帧带有能量信息，选择该单帧时会更新波长。
 
 ![Sequential Image](../assets/cap-en-auto/FormSequentialImage.png)

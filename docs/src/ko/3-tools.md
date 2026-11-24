@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 도구
 
@@ -8,16 +8,14 @@
 
 **도구 (Tool) → R-AXIS 이미지 보정 (Calibrate Raxis Image)** 으로 엽니다. 크기가 같은 R-AXIS IV `.stl` 이미지 두 장을 지정하면, 두 강도가 일치하도록 강도 변환 테이블을 최적화합니다. 테이블은 제어점으로 표현되며, 최적화하는 동안 요소의 합은 일정하게 유지됩니다. 결과는 그래프로 표시됩니다. 예를 들어 검출기의 강도 응답을 보정하는 데 사용합니다.
 
-**강도 테이블 (Intensity table)** 도구 모음 버튼에는 현재 버전에서 기능이 할당되어 있지 않습니다.
-
 ![R-AXIS 이미지 보정 (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## 자동 절차 (Auto procedure)
 
 폴더를 감시하여 새 이미지를 자동으로 불러오고, 불러온 뒤 일련의 조작을 실행하는 도구입니다.
 
-- **감시 및 자동 불러오기**: 지정한 폴더 (하위 폴더 포함) 를 감시하고, 파일 쓰기가 끝난 뒤 그 파일을 읽습니다. 파일 이름으로 걸러낼 수 있습니다 (번호 일치, 키워드).
-- **자동 실행**: 자동 대비 (Auto Contrast) → 중심 찾기 (Find Center) → 스폿 마스크 (Mask Spots) → 프로파일 가져오기 (Get Profile) → Execute Macro 중에서 체크한 단계를 차례로 실행합니다.
+- **감시 및 자동 불러오기**: 지정한 폴더 (**감시할 디렉터리 (Directory to be monitored)**, 하위 폴더 포함) 를 감시하고, 파일 쓰기가 끝난 뒤 그 파일을 읽습니다. 파일 이름으로 걸러낼 수 있으며 (파일 이름의 번호에 대한 **패턴 매칭 (Pattern matching)**, **키워드 (Keyword)**), 조건에 맞지 않는 파일은 기다리지 않고 건너뜁니다. 쓰기를 기다린 뒤 (약 50 초) 에도 파일이 잠겨 있으면 버리지 않고 이후의 검사에서 다시 시도하며, 처음 발견된 지 10 분이 지나도 잠겨 있을 때에만 포기합니다.
+- **자동 실행**: **새 이미지를 불러오면, 다음 시퀀스를 수행 (Once the new image is loaded, perform the following sequence)** 이 켜져 있으면, **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro** 중에서 체크한 단계를 차례로 실행합니다.
 
 이를 이용하면 실험 중에 출력 폴더를 감시하여, 이미지가 도착할 때마다 자동으로 적분하는 식으로 사용할 수 있습니다. 자세한 내용은 [작업 절차](4-procedures.md)를 참조하십시오.
 
@@ -31,7 +29,7 @@ IP 기울기와 픽셀 왜곡을 고려하여, 지정한 거리, 각도, 또는 
 
 ## 펼치기 (Unroll)
 
-다이렉트 스폿을 중심으로 하는 극좌표의 회절 이미지를 직교 좌표 (가로축 = 산란각 2θ, 세로축 = 방위각) 로 펼칩니다. 현재는 전용 창이 아니라 **이미지 펼치기 (Unroll image)** 도구 모음 버튼과 속성 창의 **펼친 이미지 옵션 (Unrolled Image Option)** 탭으로 설정합니다. 펼치기에는 1차원화와 같은 서브픽셀 강도 분배 알고리즘이 사용됩니다.
+다이렉트 스폿을 중심으로 하는 극좌표의 회절 이미지를 직교 좌표 (가로축 = 산란각 2θ, 세로축 = 방위각) 로 펼칩니다. 현재는 전용 창이 아니라 **이미지 펼치기 (Unroll image)** 도구 모음 버튼과 속성 창의 **펼친 이미지 옵션 (Unrolled Image Option)** 탭으로 설정합니다. 펼치기에는 1차원 프로파일로의 적분과 같은 서브픽셀 강도 분배 알고리즘이 사용됩니다.
 
 ## 원주 블러 (Circumferential Blur)
 
@@ -45,7 +43,7 @@ IP 기울기와 픽셀 왜곡을 고려하여, 지정한 거리, 각도, 또는 
 
 - 프레임 목록에서 프레임 하나를 선택하여 표시하거나, 트랙바로 차례로 넘겨 볼 수 있습니다.
 - **다중 선택 (Multi selection)** 으로 여러 프레임을 선택하고 그 **평균 (Average)** 또는 **합산 (Summation)** 을 계산합니다.
-- 1차원화의 대상은 "모든 프레임 / 선택한 프레임 / 최상단 프레임만" 중에서 고를 수 있습니다.
+- **프로파일 가져오기 (Get Profile)** 로 적분할 프레임은 **"프로파일 가져오기" 대상 (Target(s) of "Get Profile")** 에서 고릅니다: **현재 선택과 무관하게 모든 이미지 (All images irrespective of current selections)** / **선택된 이미지 (The selected image(s))** / **최상단 이미지만 (Only the topmost image)**.
 - 프레임에 에너지 정보가 있으면, 그 프레임 하나를 선택했을 때 파장이 갱신됩니다.
 
 ![연속 이미지 (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)

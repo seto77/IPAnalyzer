@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Preguntas y respuestas (preguntas frecuentes)
 
@@ -32,7 +32,7 @@ IPAnalyzer guarda la intensidad de cada píxel en doble precisión (8 bytes), se
 
 ### No se pueden leer los archivos de mi detector
 
-Puede que el formato aún no esté admitido. Ponte en contacto a través de [Issues](https://github.com/seto77/IPAnalyzer/issues) o con el autor y envía un archivo real (preferiblemente uno con un patrón de difracción, no solo una imagen oscura). La corrección de las intensidades y la orientación de la imagen solo se pueden comprobar con una imagen que muestre un patrón.
+Puede que el formato aún no esté admitido. Ponte en contacto a través de [Issues](https://github.com/seto77/IPAnalyzer/issues) o con el autor y envía un archivo real (preferiblemente uno con un patrón de difracción, no solo una imagen oscura). La corrección de las intensidades y la orientación de la imagen solo se pueden comprobar con una imagen que muestre un patrón. Si la carga falla, se conserva la imagen cargada anteriormente, de modo que puedes seguir trabajando con ella.
 
 !!! note "Cuando una imagen raw tiene una anchura y una altura incorrectas"
     En los archivos raw sin cabecera, el modelo de detector y el número de píxeles se deducen del tamaño del archivo. El número real de píxeles difiere a menudo del valor de catálogo, así que envía el archivo si la detección falla.
@@ -88,7 +88,7 @@ Se determinan de forma distinta. **Buscar centro (Find Center)** ajusta el punto
 
 ### ¿Qué es la corrección esférica?
 
-Una corrección para un detector curvado como una esfera. Introduce el inverso del radio de curvatura, 1/R (mm⁻¹). Usa 0 para un detector plano. Ayuda cuando los anillos de ángulo alto no coinciden, por ejemplo con un detector grande colocado cerca de la muestra.
+Una corrección para un detector curvado como una esfera. Introduce el inverso del radio de curvatura, 1/R, en m⁻¹ (en pantalla se muestra como /m). Usa 0 para un detector plano. Ayuda cuando los anillos de ángulo alto no coinciden, por ejemplo con un detector grande colocado cerca de la muestra.
 
 ### ¿Cómo convierto los valores de inclinación de otros programas (como PIP)?
 
@@ -98,11 +98,11 @@ Una corrección para un detector curvado como una esfera. Introduce el inverso d
 
 ### El eje horizontal del resultado parece incorrecto / la intensidad parece casi constante
 
-Comprueba si está seleccionada **Integración radial (Radial integration)** en la pestaña **Propiedad de integración (Integral Property)** de la ventana de propiedades. En este modo, el perfil tiene el azimut χ como eje horizontal. El perfil habitual 2θ–intensidad se obtiene con **Integración concéntrica (Concentric integration)**.
+Comprueba si está seleccionada **Integración radial (patrón de pastel) (Radial integration (cake pattern))** en la pestaña **Propiedad de integración (Integral Property)** de la ventana de propiedades. En este modo, el perfil tiene el azimut χ como eje horizontal. El perfil habitual 2θ–intensidad se obtiene con **Integración concéntrica (dispersiva en ángulo de dispersión) (Concentric integration (scattering angle dispersive))**.
 
 ### Quiero guardar el perfil en un archivo sin PDIndexer
 
-En la pestaña **Después de "Obtener perfil" (After "Get Profile")** de la ventana de propiedades, define en **Save File** el destino (la misma carpeta que la imagen / elegir cada vez) y el formato (PDI / CSV / TSV / GSAS). A partir de entonces, el perfil se guarda cada vez que integras.
+En la pestaña **Después de "Obtener perfil" (After "Get Profile")** de la ventana de propiedades, define en **Guardar perfil (Save Profiles)** el destino (la misma carpeta que la imagen / elegir cada vez) y el formato (PDI / CSV / TSV / GSAS). A partir de entonces, el perfil se guarda cada vez que integras.
 
 ### ¿Qué es la tercera columna del CSV?
 
@@ -118,7 +118,7 @@ La relación S/N es la misma en ambos casos. **Suma (Summation)** da una estimac
 
 ### Quiero integrar para cada azimut (cada sector)
 
-Activa **Análisis de división azimutal (Azimuthal Division Analysis)** en el menú desplegable de **Obtener perfil (Get Profile)**, define **Número de divisiones (Number of divisions)** e integra. Se crean un perfil completo (con nombre terminado en `-whole`) y un perfil por sector (con el ángulo inicial añadido, como `-000`, `-010`, …). Con demasiadas divisiones, los datos enviados a PDIndexer pueden resultar demasiado grandes.
+Activa **Análisis de división azimutal (Azimuthal Division Analysis)** en el menú desplegable de **Obtener perfil (Get Profile)**, define **Número de divisiones (Number of divisions)** e integra. Se crean un perfil completo (con nombre terminado en `-whole`) y un perfil por sector (con el ángulo inicial añadido, como `-000`, `-010`, …). Esto solo funciona con **Integración concéntrica (dispersiva en ángulo de dispersión) (Concentric integration (scattering angle dispersive))** y el eje **Ángulo (Angle)** (2θ); con la integración radial o con un eje de espaciado d se muestra una advertencia y no se ejecuta nada. Con demasiadas divisiones, los datos enviados a PDIndexer pueden resultar demasiado grandes.
 
 ### Quiero un mapa bidimensional de 2θ y el azimut χ (imagen desplegada)
 
@@ -130,7 +130,7 @@ Selecciona un rectángulo con Ctrl + arrastrar con el botón derecho sobre la im
 
 ### Una imagen oscura se vuelve más brillante hacia los bordes de ángulo alto
 
-Si **Corregir polarización lineal (Correct linear polarization)** está activada en **Fuente de ondas (Wave source)** de la ventana de propiedades, la corrección también se aplica a las señales que no proceden de los rayos X (corriente oscura, ruido electrónico), y el lado de ángulo alto se vuelve más brillante. Desactívala para las imágenes oscuras.
+Si **Corregir polarización lineal (es decir, polarizado lineal → no polarizado) (Correct linear polarization (i.e., linear polarized → unpolarized))** está activada en **Fuente de ondas (Wave source)** de la ventana de propiedades, la corrección también se aplica a las señales que no proceden de los rayos X (corriente oscura, ruido electrónico), y el lado de ángulo alto se vuelve más brillante. Desactívala para las imágenes oscuras.
 
 ### Quiero restar una imagen oscura (de fondo)
 
@@ -148,7 +148,7 @@ Da un nombre a la macro y añádela en el editor de macros; así se puede invoca
 
 ### Quiero integrar las imágenes a medida que llegan durante una medición
 
-Supervisa la carpeta con el [Procedimiento automático](3-tools.md#procedimiento-automático-auto-procedure). Los archivos que aún se están escribiendo se leen cuando termina la escritura. Si la lectura falla en una carpeta de red, guarda en el disco local del PC de medición y supervisa esa carpeta.
+Supervisa la carpeta con el [Procedimiento automático](3-tools.md#procedimiento-automático-auto-procedure). Los archivos que aún se están escribiendo se leen cuando termina la escritura; un archivo que sigue bloqueado tras unos 50 s se vuelve a intentar en exploraciones posteriores y se abandona 10 minutos después de detectarse por primera vez. Si la lectura falla en una carpeta de red, guarda en el disco local del PC de medición y supervisa esa carpeta.
 
 ## Informar de un error
 

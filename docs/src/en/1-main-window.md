@@ -1,9 +1,9 @@
 <!-- 260601Cl: Reflected from ja/1-main-window.md (lead language: Japanese). -->
-<!-- 261124Cl: Corrected mouse operations, labels, flip/rotate, TIFF saving and the spot-detection criterion to match the current implementation. -->
+<!-- 261124Cl: Corrected mouse operations, labels, flip/rotate, TIFF saving and the spot-detection criterion to match the current implementation. Renamed labels to the actual English GUI (Clear registry (check and restart), Version history, Criterial deviation for "Mask Spots"); Help → Help now opens this online manual; removed Ngen Compile and the Intensity table button (hidden in the current version); noted that Azimuthal Division Analysis needs concentric integration with a 2θ axis; replaced "one-dimensionalization" with "integration". -->
 
 # Main Window
 
-The main window is the first screen shown when IPAnalyzer starts. It brings together the display of the loaded diffraction image, the main operations (find center, mask spots, one-dimensionalization), and the entry points to the detector-parameter settings.
+The main window is the first screen shown when IPAnalyzer starts. It brings together the display of the loaded diffraction image, the main operations (find center, mask spots, integration into a 1D profile), and the entry points to the detector-parameter settings.
 
 The window consists, roughly, of the menus and toolbar at the top, the image display area in the center, the vertical toolbar on the right, and the graph area at the bottom.
 
@@ -90,8 +90,8 @@ Wave Source / Imaging Plate Condition / Integral Region / Integral Property / Ma
 ### Option
 
 - **ToolTip**: toggles the tooltips on buttons and menus.
-- **Flip**: horizontally / vertically. **Rotate**: choose a rotation angle. Flip and rotation are applied to the working image data and therefore also affect subsequent integration and image saving (the source file on disk is not changed).
-- **Clear registry**: a troubleshooting item that erases the saved settings. **Ngen Compile** has no function in the current version.
+- **Flip**: **Horizontally** / **Vertically**. **Rotate**: choose a rotation angle. Flip and rotation are applied to the working image data and therefore also affect subsequent integration and image saving (the source file on disk is not changed).
+- **Clear registry (check and restart)**: a troubleshooting item that erases the saved settings.
 
 ### Language
 
@@ -103,7 +103,8 @@ Wave Source / Imaging Plate Condition / Integral Region / Integral Property / Ma
 
 ### Help
 
-- **Program Updates**, **Hint**, **License**, **Version History**, **Help** (opens the bundled PDF manual).
+- **Program Updates**, **Hint**, **License**, **Version history**, **Help**.
+- **Help** opens this online manual in the default web browser, like pressing **F1**.
 - Press **F1** in any window to open the corresponding page of this online manual.
 
 ## Operation toolbar
@@ -113,15 +114,14 @@ The main image-processing operations (with detailed options on the dropdowns):
 - **Background**: this button is disabled in the current version. Background-image subtraction is configured on the **Background Option** tab of the property window.
 - **Find Center**: detects the beam center by 2D Pseudo-Voigt fitting (the search range is ±8 px around the center by default, set on the Miscellaneous tab). When rings are shown with **Draw ring**, the center is determined from the ring instead.
 - **Fix Center**: fixes the center position.
-- **Mask Spots**: within each radial band, pixels whose intensity exceeds mean + standard deviation × Deviation are detected as spots and masked together with their surroundings. The dropdown includes mask-all, inverse-mask, manual, and so on.
+- **Mask Spots**: within each radial band, pixels whose intensity exceeds mean + standard deviation × **Criterial deviation for "Mask Spots"** (Mask Option tab) are detected as spots and masked together with their surroundings. The dropdown includes **Mask all area**, **Invert mask**, **Manual Mode**, and so on.
 - **Manual Mode**: the manual mask mode. You can choose the mask shape (spot (circle/rectangle) / circle / rectangle / polygon / spline) and the spot size (half-width).
-- **Get Profile**: integrates the image into a one-dimensional profile. Supports Concentric (2θ-based) and Radial (azimuth-based). The dropdown configures the Integral Property/Region selection, whether to find center and mask spots before integration, sending to PDIndexer, azimuthal-division analysis, sequential-image processing, and so on.
+- **Get Profile**: integrates the image into a 1D profile. Supports **Concentric Integration** (2θ-based) and **Radial integration** (azimuth-based). The dropdown configures the Integral Property/Region selection, whether to find center and mask spots before integration, sending to PDIndexer, **Azimuthal Division Analysis** (only with concentric integration and the **Angle** (2θ) axis; otherwise a warning is shown and nothing is run), sequential-image processing, and so on.
 
 ## Toolbar (other tools)
 
 The vertical toolbar on the right launches the various tools. See [Tools](3-tools.md) for details.
 
-- **Intensity table** (no function is assigned to this button in the current version; use **Tool → Calibrate Raxis Image** for R-AXIS intensity calibration)
 - **Auto procedure**
 - **Draw ring**
 - **Find parameter (geometrically)** / **Find parameter (brute force)**

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 內建函式
 
@@ -100,7 +100,7 @@
 | `SaveProfileAsGSAS` | True/False。儲存為 GSAS 格式。僅適用於橫軸為 2θ 的同心積分；將多條曲線存於單一檔案時不會寫出。 |
 | `SaveProfileInOneFile` | True/False。將連續影像／方位角分割的曲線存於單一檔案。 |
 | `SaveProfileAtImageDirectory` | True/False。儲存於與影像相同的目錄。 |
-| `GetProfile(filename="")` | 執行一維化。若給定 `filename`，會以它作為基底名稱並附加格式的副檔名（例如以 CSV 儲存 `GetProfile("sample.stl")` 時會得到 `sample.stl.csv`）。若儲存位置設為「每次選擇」，則會顯示儲存對話框。 |
+| `GetProfile(filename="")` | 將影像積分為一維曲線（與 **取得圖譜 (Get Profile)** 相同）。若給定 `filename`，會以它作為基底名稱並附加格式的副檔名（例如以 CSV 儲存 `GetProfile("sample.stl")` 時會得到 `sample.stl.csv`）。若儲存位置設為「每次選擇」，則會顯示儲存對話框。 |
 
 ## IPA.IntegralProperty
 

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Q&A（常見問題）
 
@@ -32,7 +32,7 @@
 
 ### 無法讀取我的偵測器的檔案
 
-可能尚未支援該格式。請透過 [Issues](https://github.com/seto77/IPAnalyzer/issues) 或直接與作者聯繫，並附上實際的檔案（最好是有繞射圖樣的影像，而不只是暗影像）。強度是否正確以及影像的方向，只能以顯示出圖樣的影像來確認。
+可能尚未支援該格式。請透過 [Issues](https://github.com/seto77/IPAnalyzer/issues) 或直接與作者聯繫，並附上實際的檔案（最好是有繞射圖樣的影像，而不只是暗影像）。強度是否正確以及影像的方向，只能以顯示出圖樣的影像來確認。若載入失敗，先前載入的影像會保留下來，因此可以繼續以該影像作業。
 
 !!! note "raw 影像的寬度與高度錯誤時"
     對於沒有標頭的 raw 檔案，會依檔案大小推斷偵測器型號與像素數。實際的像素數常與型錄值不同，因此若偵測失敗，請將檔案寄給我們。
@@ -88,7 +88,7 @@ IPAnalyzer **會依影像格式記住相機長度、波長、像素尺寸等參�
 
 ### 什麼是球面校正？
 
-這是針對彎曲成球面狀之偵測器的校正。請輸入曲率半徑的倒數 1/R (mm⁻¹)。平面偵測器請設為 0。當高角度的圓環對不上時（例如將大型偵測器放在靠近試料的位置），此校正會有幫助。
+這是針對彎曲成球面狀之偵測器的校正。請以 m⁻¹ 為單位輸入曲率半徑的倒數 1/R（畫面上顯示為 /m）。平面偵測器請設為 0。當高角度的圓環對不上時（例如將大型偵測器放在靠近試料的位置），此校正會有幫助。
 
 ### 如何換算其他軟體（如 PIP）的傾斜值？
 
@@ -98,11 +98,11 @@ PIP 的 (β, Φ) 換算為 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定義
 
 ### 結果的橫軸看起來不對／強度看起來幾乎是定值
 
-請確認屬性視窗的 **積分性質 (Integral Property)** 分頁中是否選擇了 **徑向積分 (Radial integration)**。此模式下曲線的橫軸為方位角 χ。一般的 2θ–強度曲線請以 **同心積分 (Concentric integration)** 取得。
+請確認屬性視窗的 **積分性質 (Integral Property)** 分頁中是否選擇了 **徑向積分 (蛋糕圖樣) (Radial integration (cake pattern))**。此模式下曲線的橫軸為方位角 χ。一般的 2θ–強度曲線請以 **同心積分 (散射角色散) (Concentric integration (scattering angle dispersive))** 取得。
 
 ### 不使用 PDIndexer，想將曲線儲存為檔案
 
-在屬性視窗的 **「取得圖譜」之後 (After "Get Profile")** 分頁中，於 **Save File** 下設定儲存位置（與影像相同的資料夾／每次選擇）與格式（PDI / CSV / TSV / GSAS）。之後每次積分時都會儲存曲線。
+在屬性視窗的 **「取得圖譜」之後 (After "Get Profile")** 分頁中，於 **儲存圖譜 (Save Profiles)** 下設定儲存位置（與影像相同的資料夾／每次選擇）與格式（PDI / CSV / TSV / GSAS）。之後每次積分時都會儲存曲線。
 
 ### CSV 的第三欄是什麼？
 
@@ -118,7 +118,7 @@ PIP 的 (β, Φ) 換算為 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定義
 
 ### 想依各方位角（各扇形）進行積分
 
-開啟 **取得圖譜 (Get Profile)** 下拉選單中的 **方位角分割分析 (Azimuthal Division Analysis)**，設定 **分割數 (Number of divisions)** 後進行積分。會產生一條整體曲線（名稱以 `-whole` 結尾），以及每個扇形各一條曲線（附加起始角度，如 `-000`、`-010`、…）。分割數過多時，傳送至 PDIndexer 的資料可能會過大。
+開啟 **取得圖譜 (Get Profile)** 下拉選單中的 **方位角分割分析 (Azimuthal Division Analysis)**，設定 **分割數 (Number of divisions)** 後進行積分。會產生一條整體曲線（名稱以 `-whole` 結尾），以及每個扇形各一條曲線（附加起始角度，如 `-000`、`-010`、…）。此功能僅在 **同心積分 (散射角色散) (Concentric integration (scattering angle dispersive))** 且橫軸為 **角度 (Angle)**（2θ）時可用；若為徑向積分或橫軸為 d 間距，會顯示警告且不執行。分割數過多時，傳送至 PDIndexer 的資料可能會過大。
 
 ### 想取得 2θ 與方位角 χ 的二維對應圖（展開影像）
 
@@ -130,7 +130,7 @@ PIP 的 (β, Φ) 換算為 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定義
 
 ### 暗影像越靠近高角度的邊緣越亮
 
-若屬性視窗的 **波源 (Wave source)** 中開啟了 **校正線偏振 (Correct linear polarization)**，校正也會套用到非來自 X 射線的訊號（暗電流、電子雜訊），使高角度側變亮。處理暗影像時請將其關閉。
+若屬性視窗的 **波源 (Wave source)** 中開啟了 **校正線偏振 (即線偏振 → 非偏振) (Correct linear polarization (i.e., linear polarized → unpolarized))**，校正也會套用到非來自 X 射線的訊號（暗電流、電子雜訊），使高角度側變亮。處理暗影像時請將其關閉。
 
 ### 想扣除暗（背景）影像
 
@@ -148,7 +148,7 @@ PIP 的 (β, Φ) 換算為 IPAnalyzer 的 (φ, τ) = (270° − β, Φ)。定義
 
 ### 想在量測期間於影像產生時即進行積分
 
-請以[自動程序 (Auto procedure)](3-tools.md#自動程序-auto-procedure) 監看資料夾。仍在寫入中的檔案會在寫入完成後才讀取。若網路上的資料夾讀取失敗，請將資料儲存到量測電腦的本機磁碟，並監看該資料夾。
+請以[自動程序 (Auto procedure)](3-tools.md#自動程序-auto-procedure) 監看資料夾。仍在寫入中的檔案會在寫入完成後才讀取；若約 50 秒後檔案仍被鎖定，會在之後的掃描中重試，並在首次發現後 10 分鐘時放棄。若網路上的資料夾讀取失敗，請將資料儲存到量測電腦的本機磁碟，並監看該資料夾。
 
 ## 回報錯誤
 

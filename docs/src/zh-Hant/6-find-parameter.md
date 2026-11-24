@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 尋找參數（暴力搜尋）
 
@@ -11,7 +11,7 @@
 
 ## 步驟
 
-1. 載入影像資料與參數，然後點選 **尋找參數 (暴力法) (Find Parameter (brute force))**。
+1. 載入影像資料與參數，然後點選 **尋找參數 (暴力法) (Find parameter (brute force))**。
 
     ![啟動尋找參數（暴力法）](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![暴力法校正視窗](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -25,11 +25,11 @@
 
 ![選項設定](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### 擬合範圍
+### 擬合範圍 (Fitting Range)
 
 指定每個峰進行擬合的角度範圍。
 
-### 重複次數
+### 反覆運算 (Iteration)
 
 指定最佳化的循環次數。
 
@@ -61,7 +61,7 @@
 
 ![評估值 R 的公式](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-其中 \(2\theta_{\mathrm{calc},i}\) 為依目前參數計算的峰 \(i\) 位置，\(2\theta_{\mathrm{fit},i}\) 為擬合曲線所得的位置（皆以度為單位），*H* 為扣除背景後的峰高，*W* 為權重（**Weight**，預設 100）。對於平面偵測器，公式為：
+其中 \(2\theta_{\mathrm{calc},i}\) 為依目前參數計算的峰 \(i\) 位置，\(2\theta_{\mathrm{fit},i}\) 為擬合曲線所得的位置（皆以度為單位），*H* 為扣除背景後的峰高，*W* 為權重（100；目前版本中此設定不會顯示於畫面上）。對於平面偵測器，公式為：
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

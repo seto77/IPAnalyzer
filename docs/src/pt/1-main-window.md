@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Janela principal
 
-A janela principal é a primeira tela exibida quando o IPAnalyzer é iniciado. Ela reúne a exibição da imagem de difração carregada, as operações principais (localizar o centro, mascarar pontos, conversão para uma dimensão) e os pontos de acesso às configurações dos parâmetros do detector.
+A janela principal é a primeira tela exibida quando o IPAnalyzer é iniciado. Ela reúne a exibição da imagem de difração carregada, as operações principais (localizar o centro, mascarar pontos, integração em um perfil 1D) e os pontos de acesso às configurações dos parâmetros do detector.
 
 A janela é composta, de forma geral, pelos menus e pela barra de ferramentas na parte superior, pela área de exibição da imagem no centro, pela barra de ferramentas vertical à direita e pela área de gráficos na parte inferior.
 
@@ -90,7 +90,7 @@ Arquivos de imagem, de parâmetros e de máscara também podem ser carregados ar
 
 - **Dica de ferramenta (ToolTip)**: ativa/desativa as dicas nos botões e menus.
 - **Inverter (Flip)**: **Horizontalmente (Horizontally)** / **Verticalmente (Vertically)**. **Girar (Rotate)**: escolhe um ângulo de rotação. A inversão e a rotação são aplicadas aos dados da imagem em trabalho e, portanto, também afetam a integração e o salvamento da imagem posteriores (o arquivo de origem no disco não é alterado).
-- **Limpar registro (Clear registry)**: um item de solução de problemas que apaga as configurações salvas. **Compilar Ngen (Ngen Compile)** não tem função na versão atual.
+- **Limpar registro (verificar e reiniciar) (Clear registry (check and restart))**: um item de solução de problemas que apaga as configurações salvas.
 
 ### Idioma (Language)
 
@@ -102,7 +102,8 @@ Arquivos de imagem, de parâmetros e de máscara também podem ser carregados ar
 
 ### Ajuda (Help)
 
-- **Atualizações do programa (Program Updates)**, **Dica (Hint)**, **Licença (License)**, **Histórico de versões (Version History)**, **Ajuda (Help)** (abre o manual em PDF incluído).
+- **Atualizações do programa (Program Updates)**, **Dica (Hint)**, **Licença (License)**, **Histórico de versões (Version history)**, **Ajuda (Help)**.
+- **Ajuda (Help)** abre este manual on-line no navegador padrão, assim como pressionar **F1**.
 - Pressione **F1** em qualquer janela para abrir a página correspondente deste manual on-line.
 
 ## Barra de ferramentas de operação
@@ -112,15 +113,14 @@ As principais operações de processamento de imagem (com opções detalhadas no
 - **Fundo (Background)**: este botão está desativado na versão atual. A subtração de uma imagem de fundo é configurada na aba **Opção de fundo (Background Option)** da janela de propriedades.
 - **Localizar centro (Find Center)**: detecta o centro do feixe por ajuste de uma Pseudo-Voigt 2D (por padrão, o intervalo de busca é de ±8 px em torno do centro, definido na aba **Diversos (Miscellaneous)**). Quando há anéis exibidos com **Desenhar anel (Draw ring)**, o centro passa a ser determinado a partir do anel.
 - **Fixar centro (Fix Center)**: fixa a posição do centro.
-- **Mascarar pontos (Mask Spots)**: dentro de cada faixa radial, os pixels cuja intensidade excede média + desvio-padrão × Deviation são detectados como pontos e mascarados junto com seus arredores. O menu suspenso inclui mascarar tudo, inverter a máscara, modo manual etc.
+- **Mascarar pontos (Mask Spots)**: dentro de cada faixa radial, os pixels cuja intensidade excede média + desvio-padrão × **Desvio de critério para "Mascarar pontos" (Criterial deviation for "Mask Spots")** (aba **Opção de máscara (Mask Option)**) são detectados como pontos e mascarados junto com seus arredores. O menu suspenso inclui **Mascarar toda a área (Mask all area)**, **Inverter máscara (Invert mask)**, **Modo manual (Manual Mode)** etc.
 - **Modo manual (Manual Mode)**: o modo de máscara manual. É possível escolher a forma da máscara (ponto (círculo/retângulo) / círculo / retângulo / polígono / spline) e o tamanho do ponto (meia largura).
-- **Obter perfil (Get Profile)**: integra a imagem em um perfil unidimensional. Suporta a integração concêntrica (baseada em 2θ) e a radial (baseada no azimute). O menu suspenso configura a escolha de **Propriedade de integração** / **Região de integração**, se o centro deve ser localizado e os pontos mascarados antes da integração, o envio ao PDIndexer, a análise de divisão azimutal, o processamento de imagens sequenciais etc.
+- **Obter perfil (Get Profile)**: integra a imagem em um perfil 1D. Suporta a **Integração concêntrica (Concentric Integration)** (baseada em 2θ) e a **Integração radial (Radial integration)** (baseada no azimute). O menu suspenso configura a escolha de **Propriedade de integração** / **Região de integração**, se o centro deve ser localizado e os pontos mascarados antes da integração, o envio ao PDIndexer, a **Análise de divisão azimutal (Azimuthal Division Analysis)** (somente com a integração concêntrica e o eixo **Ângulo (Angle)** (2θ); caso contrário, é exibido um aviso e nada é executado), o processamento de imagens sequenciais etc.
 
 ## Barra de ferramentas (outras ferramentas)
 
 A barra de ferramentas vertical à direita inicia as diversas ferramentas. Veja [Ferramentas](3-tools.md) para mais detalhes.
 
-- **Tabela de intensidade (Intensity table)** (nenhuma função está atribuída a este botão na versão atual; use **Ferramenta → Calibrar imagem R-AXIS (Tool → Calibrate Raxis Image)** para a calibração de intensidade de R-AXIS)
 - **Procedimento automático (Auto procedure)**
 - **Desenhar anel (Draw ring)**
 - **Localizar parâmetro (geometricamente) (Find parameter (geometrically))** / **Localizar parâmetro (força bruta) (Find parameter (brute force))**

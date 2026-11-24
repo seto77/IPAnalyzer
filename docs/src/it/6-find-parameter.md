@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Trova parametri (forza bruta)
 
@@ -11,7 +11,7 @@ La modalità a forza bruta varia ciascun parametro in modo esaustivo (una ricerc
 
 ## Passi
 
-1. Caricare i dati dell'immagine e i parametri, poi fare clic su **Trova parametro (forza bruta) (Find Parameter (brute force))**.
+1. Caricare i dati dell'immagine e i parametri, poi fare clic su **Trova parametro (forza bruta) (Find parameter (brute force))**.
 
     ![Avvio di Trova parametro (forza bruta)](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![Finestra di calibrazione a forza bruta](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -25,11 +25,11 @@ La modalità a forza bruta varia ciascun parametro in modo esaustivo (una ricerc
 
 ![Impostazioni delle opzioni](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Intervallo di fitting
+### Fitting Range
 
 Specifica l'intervallo angolare sottoposto a fitting per ciascun picco.
 
-### Numero di ripetizioni
+### Iterazione (Iteration)
 
 Specifica il numero di cicli di ottimizzazione.
 
@@ -61,7 +61,7 @@ Il valore di valutazione R si calcola come segue.
 
 ![Formula del valore di valutazione R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-Qui \(2\theta_{\mathrm{calc},i}\) è la posizione del picco \(i\) calcolata dai parametri correnti, \(2\theta_{\mathrm{fit},i}\) la posizione ottenuta dal fitting del profilo (entrambe in gradi), *H* l'altezza del picco al netto dello sfondo e *W* il peso (**Weight**, predefinito 100). Per un rivelatore piano la formula è:
+Qui \(2\theta_{\mathrm{calc},i}\) è la posizione del picco \(i\) calcolata dai parametri correnti, \(2\theta_{\mathrm{fit},i}\) la posizione ottenuta dal fitting del profilo (entrambe in gradi), *H* l'altezza del picco al netto dello sfondo e *W* il peso (100; questa impostazione non è mostrata a schermo nella versione attuale). Per un rivelatore piano la formula è:
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

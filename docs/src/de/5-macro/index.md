@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Makro
 
-IPAnalyzer bietet eine **Makro**-Funktion, die Abfolgen von Operationen mit Python-ähnlichen Skripten automatisiert. Sie ist nützlich für wiederkehrende Arbeiten wie die stapelweise Eindimensionalisierung vieler Dateien, Formatumwandlungen und azimutale Unterteilungsanalysen.
+IPAnalyzer bietet eine **Makro**-Funktion, die Abfolgen von Operationen mit Python-ähnlichen Skripten automatisiert. Sie ist nützlich für wiederkehrende Arbeiten wie die stapelweise Integration vieler Dateien zu 1D-Profilen, Formatumwandlungen und azimutale Unterteilungsanalysen.
 
 ## Den Editor öffnen
 
@@ -26,7 +26,7 @@ IPAnalyzer bietet eine **Makro**-Funktion, die Abfolgen von Operationen mit Pyth
 | `IPA.Detector` | Detektorgeometrie einstellen: Zentrum, Kameralänge, Pixelgröße, Verkippung |
 | `IPA.Image` | Anzeigeskala, Kontrast und Anzeigebereich steuern |
 | `IPA.Mask` | Spots und Bereiche maskieren |
-| `IPA.Profile` | Eindimensionalisierung (Profil abrufen / Get Profile) ausführen und Speichern/Senden einstellen |
+| `IPA.Profile` | Das Bild integrieren (Profil abrufen / Get Profile) und Speichern/Senden einstellen |
 | `IPA.IntegralProperty` | Bereich, Schritt und Einheit der konzentrischen / radialen Integration einstellen |
 | `IPA.Sequential` | Frames eines Multiframe-Bildes auswählen / mitteln / als Ziel festlegen |
 | `IPA.PDI` | Makros in PDIndexer aufrufen (Zusammenarbeit über die Zwischenablage) |
@@ -42,4 +42,4 @@ Schalten Sie im Editor **Beispiele anzeigen (Show samples)** ein, um die schreib
 
 ## Zusammenspiel mit der automatischen Prozedur
 
-Selbst geschriebene Makros lassen sich unter einem Namen speichern und auch aus der Liste „nach dem Laden ausführen“ der [Automatischen Prozedur (Auto Procedure)](../3-tools.md) aufrufen, sodass ein Makro während eines Experiments automatisch auf jedes eintreffende Bild angewendet wird.
+Selbst geschriebene Makros lassen sich unter einem Namen speichern und auch aus der [Automatischen Prozedur (Auto Procedure)](../3-tools.md) heraus ausführen (wählen Sie es unter **Makro (Macro)** und haken Sie **Execute macro** an), sodass ein Makro während eines Experiments automatisch auf jedes eintreffende Bild angewendet wird.

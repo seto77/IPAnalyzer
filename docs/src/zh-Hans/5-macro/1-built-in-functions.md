@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 内置函数
 
@@ -100,7 +100,7 @@
 | `SaveProfileAsGSAS` | True/False。保存为 GSAS 格式。仅适用于横轴为 2θ 的同心积分；多条谱线保存到一个文件中时不会写出。 |
 | `SaveProfileInOneFile` | True/False。将序列 / 方位角分割的谱线保存到一个文件中。 |
 | `SaveProfileAtImageDirectory` | True/False。保存到图像所在的同一目录。 |
-| `GetProfile(filename="")` | 执行一维化。若给出 `filename`，则将其用作基本名并附加格式扩展名（例如以 CSV 保存 `GetProfile("sample.stl")` 时得到 `sample.stl.csv`）。若保存位置设为“每次选择”，则显示保存对话框。 |
+| `GetProfile(filename="")` | 将图像积分为一维谱线（与 **获取图谱 (Get Profile)** 相同）。若给出 `filename`，则将其用作基本名并附加格式扩展名（例如以 CSV 保存 `GetProfile("sample.stl")` 时得到 `sample.stl.csv`）。若保存位置设为“每次选择”，则显示保存对话框。 |
 
 ## IPA.IntegralProperty
 

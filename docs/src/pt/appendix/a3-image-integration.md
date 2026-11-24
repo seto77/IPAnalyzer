@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/appendix/a3-image-integration.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/a3-image-integration.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Apêndice A3. Integração da imagem
 
@@ -23,12 +23,23 @@ Com esse esquema, em princípio, por mais fino que seja o passo angular, a inten
 
 ## Âmbito de aplicação
 
-O mesmo algoritmo de distribuição por área é usado nos três tipos de integração a seguir.
+O mesmo algoritmo de distribuição por área é usado nos três tipos de integração a seguir. Eles diferem quanto à coordenada que permanece no eixo horizontal da saída e quanto aos pixels que são reunidos em um ponto da saída.
 
-| Função | Direção da integração | Uso |
-|------|-----------|------|
-| **Integração concêntrica (Concentric Integration)** | Ângulo de difração (direção concêntrica) | Criar um perfil $2\theta$-intensidade comum. |
-| **Integração radial (Radial Integration)** | Direção circunferencial (azimutal) | Avaliar a dependência azimutal de um anel (orientação, distorção). |
-| **Unrolled Image** | Ângulo de difração × azimute | Criar uma imagem desenrolada 2D, com o anel cortado e aberto. |
+| Função | Eixo horizontal da saída | Pixels reunidos em um ponto da saída | Uso |
+|------|------|------|------|
+| **Integração concêntrica (Concentric integration)** | Ângulo de difração $2\theta$ (ou distância d) | Os que estão dentro de um passo de $2\theta$ (ou de d), em todos os azimutes dentro da região de integração | Criar um perfil $2\theta$-intensidade comum. |
+| **Integração radial (Radial integration)** | Azimute $\chi$ | Os que estão dentro de um passo azimutal (**Passo do ângulo do setor (passo de varredura) (Sector angle step (Sweep step))**), no anel dado por **Raio do anel (Donut radius)** ± **Largura do anel (Donut width)** | Avaliar a dependência azimutal de um anel (orientação, distorção). |
+| **Unrolled image** | $2\theta$ (horizontal) × azimute $\chi$ (vertical) | Os que estão dentro de um passo de $2\theta$ e de um setor azimutal ($360^\circ/N$) | Criar uma imagem desenrolada 2D, com o anel cortado e aberto. |
+
+Em todos os casos, só são usados os pixels válidos: os pixels mascarados e os pixels excluídos na aba **Região de integração (Integral Region)** não contribuem.
+
+---
+
+## Normalização após a integração
+
+As intensidades distribuídas são normalizadas de maneira diferente conforme a função.
+
+- **Integração concêntrica** (detector de painel plano, eixo $2\theta$ ou distância d) e a **imagem desenrolada**: para cada passo (cada pixel da imagem desenrolada), as intensidades distribuídas são somadas, e a soma é dividida pela quantidade que contribuiu para esse passo. A contribuição de cada parte de um pixel é medida pela sua área projetada no plano perpendicular ao raio espalhado, à distância do comprimento de câmara, ou seja, pelo ângulo sólido que ela subtende, contado em unidades de um pixel visto de frente à distância do comprimento de câmara. O resultado é, portanto, uma intensidade média por unidade de ângulo sólido: não depende da largura do passo nem de quantos pixels caem em um passo, e a diminuição do ângulo sólido por pixel em direção aos ângulos altos em um detector plano é compensada. Um passo que não recebe nenhum pixel vale 0.
+- **Integração radial**: as intensidades distribuídas são simplesmente somadas para cada passo azimutal e não são divididas. Os valores, portanto, crescem com a largura do anel (**Largura do anel (Donut width)**) e com o passo azimutal.
 
 Para saber como operar cada função, veja [3. Ferramentas](../3-tools.md).

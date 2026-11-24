@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Q&A (Perguntas frequentes)
 
@@ -32,7 +32,7 @@ O IPAnalyzer guarda a intensidade de cada pixel em precisão dupla (8 bytes), qu
 
 ### Os arquivos do meu detector não podem ser lidos
 
-O formato pode ainda não ser suportado. Entre em contato pelo [Issues](https://github.com/seto77/IPAnalyzer/issues) ou com o autor, enviando um arquivo real (de preferência um com padrão de difração, e não apenas uma imagem escura). A exatidão das intensidades e a orientação da imagem só podem ser verificadas com uma imagem que mostre um padrão.
+O formato pode ainda não ser suportado. Entre em contato pelo [Issues](https://github.com/seto77/IPAnalyzer/issues) ou com o autor, enviando um arquivo real (de preferência um com padrão de difração, e não apenas uma imagem escura). A exatidão das intensidades e a orientação da imagem só podem ser verificadas com uma imagem que mostre um padrão. Se o carregamento falhar, a imagem carregada anteriormente permanece, de modo que é possível continuar trabalhando com ela.
 
 !!! note "Quando uma imagem bruta tem a largura e a altura erradas"
     Para arquivos brutos sem cabeçalho, o modelo do detector e o número de pixels são inferidos a partir do tamanho do arquivo. O número real de pixels muitas vezes difere do valor de catálogo; por isso, envie o arquivo se a detecção falhar.
@@ -88,7 +88,7 @@ Eles são determinados de maneiras diferentes. **Localizar centro (Find Center)*
 
 ### O que é a correção esférica?
 
-Uma correção para um detector curvado como uma esfera. Digite o inverso do raio de curvatura, 1/R (mm⁻¹). Use 0 para um detector plano. Ajuda quando os anéis de alto ângulo não coincidem, por exemplo com um detector grande colocado perto da amostra.
+Uma correção para um detector curvado como uma esfera. Digite o inverso do raio de curvatura, 1/R, em m⁻¹ (exibido como /m na tela). Use 0 para um detector plano. Ajuda quando os anéis de alto ângulo não coincidem, por exemplo com um detector grande colocado perto da amostra.
 
 ### Como converto valores de inclinação de outros softwares (como o PIP)?
 
@@ -98,11 +98,11 @@ O (β, Φ) do PIP converte-se no (φ, τ) do IPAnalyzer como (φ, τ) = (270° �
 
 ### O eixo horizontal do resultado parece errado / a intensidade parece quase constante
 
-Verifique se **Integração radial (Radial integration)** está selecionada na aba **Propriedade de integração (Integral Property)** da janela de propriedades. Nesse modo, o perfil tem o azimute χ como eixo horizontal. O perfil usual 2θ–intensidade é obtido com **Integração concêntrica (Concentric integration)**.
+Verifique se **Integração radial (padrão em fatias) (Radial integration (cake pattern))** está selecionada na aba **Propriedade de integração (Integral Property)** da janela de propriedades. Nesse modo, o perfil tem o azimute χ como eixo horizontal. O perfil usual 2θ–intensidade é obtido com **Integração concêntrica (dispersiva em ângulo de espalhamento) (Concentric integration (scattering angle dispersive))**.
 
 ### Quero salvar o perfil em um arquivo sem o PDIndexer
 
-Na aba **Após "Obter perfil" (After "Get Profile")** da janela de propriedades, defina em **Save File** o destino (mesma pasta da imagem / escolher a cada vez) e o formato (PDI / CSV / TSV / GSAS). O perfil passa então a ser salvo toda vez que você integra.
+Na aba **Após "Obter perfil" (After "Get Profile")** da janela de propriedades, defina em **Salvar perfil (Save Profiles)** o destino (mesma pasta da imagem / escolher a cada vez) e o formato (PDI / CSV / TSV / GSAS). O perfil passa então a ser salvo toda vez que você integra.
 
 ### O que é a terceira coluna do CSV?
 
@@ -118,7 +118,7 @@ A relação S/N é a mesma nos dois casos. **Soma (Summation)** dá uma estimati
 
 ### Quero integrar para cada azimute (cada setor)
 
-Ative **Análise de divisão azimutal (Azimuthal Division Analysis)** no menu suspenso de **Obter perfil (Get Profile)**, defina o **Número de divisões (Number of divisions)** e integre. São criados um perfil completo (nome terminado em `-whole`) e um perfil por setor (com o ângulo inicial acrescentado, como `-000`, `-010`, …). Com divisões demais, os dados enviados ao PDIndexer podem ficar grandes demais.
+Ative **Análise de divisão azimutal (Azimuthal Division Analysis)** no menu suspenso de **Obter perfil (Get Profile)**, defina o **Número de divisões (Number of divisions)** e integre. São criados um perfil completo (nome terminado em `-whole`) e um perfil por setor (com o ângulo inicial acrescentado, como `-000`, `-010`, …). Isso só funciona com **Integração concêntrica (dispersiva em ângulo de espalhamento) (Concentric integration (scattering angle dispersive))** e o eixo **Ângulo (Angle)** (2θ); com a integração radial ou um eixo em distância d, é exibido um aviso e nada é executado. Com divisões demais, os dados enviados ao PDIndexer podem ficar grandes demais.
 
 ### Quero um mapa bidimensional de 2θ e do azimute χ (imagem desenrolada)
 
@@ -130,7 +130,7 @@ Selecione um retângulo com Ctrl + arrastar com o botão direito sobre a imagem.
 
 ### Uma imagem escura fica mais clara em direção às bordas de alto ângulo
 
-Se **Corrigir polarização linear (Correct linear polarization)** estiver ativado em **Fonte de ondas (Wave source)** na janela de propriedades, a correção também é aplicada a sinais que não vêm dos raios X (corrente escura, ruído eletrônico), e o lado de alto ângulo fica mais claro. Desative-a para imagens escuras.
+Se **Corrigir polarização linear (ou seja, polarizado linear → não polarizado) (Correct linear polarization (i.e., linear polarized → unpolarized))** estiver ativado em **Fonte de ondas (Wave source)** na janela de propriedades, a correção também é aplicada a sinais que não vêm dos raios X (corrente escura, ruído eletrônico), e o lado de alto ângulo fica mais claro. Desative-a para imagens escuras.
 
 ### Quero subtrair uma imagem escura (de fundo)
 
@@ -148,7 +148,7 @@ Dê um nome à macro e adicione-a no editor de macros; ela poderá então ser ch
 
 ### Quero integrar as imagens à medida que chegam durante uma medição
 
-Monitore a pasta com o [Procedimento automático (Auto procedure)](3-tools.md#procedimento-automático-auto-procedure). Os arquivos que ainda estão sendo gravados são lidos depois que a gravação termina. Se a leitura falhar para uma pasta na rede, salve no disco local do PC de medição e monitore essa pasta.
+Monitore a pasta com o [Procedimento automático (Auto procedure)](3-tools.md#procedimento-automático-auto-procedure). Os arquivos que ainda estão sendo gravados são lidos depois que a gravação termina; um arquivo que ainda esteja bloqueado após cerca de 50 s é tentado novamente nas varreduras seguintes, e se desiste dele 10 minutos depois de ter sido encontrado pela primeira vez. Se a leitura falhar para uma pasta na rede, salve no disco local do PC de medição e monitore essa pasta.
 
 ## Relatar um erro
 

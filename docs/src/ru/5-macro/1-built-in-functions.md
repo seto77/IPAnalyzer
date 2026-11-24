@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Встроенные функции
 
@@ -100,7 +100,7 @@
 | `SaveProfileAsGSAS` | True/False. Сохранять в формате GSAS. Возможно только для концентрического интегрирования с осью 2θ; не записывается, если несколько профилей сохраняются в один файл. |
 | `SaveProfileInOneFile` | True/False. Сохранять профили последовательных изображений / азимутального деления в один файл. |
 | `SaveProfileAtImageDirectory` | True/False. Сохранять в том же каталоге, что и изображение. |
-| `GetProfile(filename="")` | Выполняет одномерное преобразование. Если задан `filename`, он используется как базовое имя, к которому добавляется расширение формата (например, `GetProfile("sample.stl")` при сохранении в CSV даёт `sample.stl.csv`). Если место сохранения задано как «выбирать каждый раз», показывается диалог сохранения. |
+| `GetProfile(filename="")` | Интегрирует изображение в одномерный (1D) профиль (то же, что **Получить профиль (Get Profile)**). Если задан `filename`, он используется как базовое имя, к которому добавляется расширение формата (например, `GetProfile("sample.stl")` при сохранении в CSV даёт `sample.stl.csv`). Если место сохранения задано как «выбирать каждый раз», показывается диалог сохранения. |
 
 ## IPA.IntegralProperty
 

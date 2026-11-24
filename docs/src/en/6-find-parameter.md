@@ -1,5 +1,5 @@
 <!-- 260601Cl: Reflected from ja/6-find-parameter.md. Migrated from the wiki; screenshots reuse the original wiki uploads (user-images). -->
-<!-- 261124Cl: Corrected the criteria, the formula for R, the step-update rule, the number of displayed results and the button names to match FormFindParameterBruteForce. -->
+<!-- 261124Cl: Corrected the criteria, the formula for R, the step-update rule, the number of displayed results and the button names to match FormFindParameterBruteForce. Renamed labels to the actual English GUI (Find parameter (brute force), Fitting Range, Iteration) and noted that the weight W is not shown on screen. -->
 
 # Find Parameter (Brute force)
 
@@ -12,7 +12,7 @@ It is effective for incomplete rings or noisy data, where geometric optimization
 
 ## Steps
 
-1. Load the image data and parameters, then click **Find Parameter (brute force)**.
+1. Load the image data and parameters, then click **Find parameter (brute force)**.
 
     ![Launching Find Parameter (brute force)](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![Brute-force calibration window](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -26,11 +26,11 @@ It is effective for incomplete rings or noisy data, where geometric optimization
 
 ![Option settings](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Fitting range
+### Fitting Range
 
 Specifies the angular range fitted for each peak.
 
-### Number of repetitions
+### Iteration
 
 Specifies the number of optimization cycles.
 
@@ -62,7 +62,7 @@ The evaluation value R is computed as follows.
 
 ![Formula for the evaluation value R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-Here \(2\theta_{\mathrm{calc},i}\) is the position of peak \(i\) calculated from the current parameters, \(2\theta_{\mathrm{fit},i}\) the position obtained by fitting the profile (both in degrees), *H* the background-subtracted peak height, and *W* the weight (**Weight**, default 100). For a flat detector the formula is:
+Here \(2\theta_{\mathrm{calc},i}\) is the position of peak \(i\) calculated from the current parameters, \(2\theta_{\mathrm{fit},i}\) the position obtained by fitting the profile (both in degrees), *H* the background-subtracted peak height, and *W* the weight (100; this setting is not shown on screen in the current version). For a flat detector the formula is:
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

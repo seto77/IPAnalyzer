@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 附錄
 
-本附錄彙整 IPAnalyzer 在將二維繞射影像（Debye–Scherrer 環）轉換為高精度一維曲線時所使用的 **幾何與演算法的理論背景**。關於操作步驟與各功能的使用方式，請參見主手冊（[0. 概觀](../0-overview.md)、[4. 操作步驟](../4-procedures.md) 等）。在此以方程式說明其背後的座標系定義、座標轉換、參數決定方法以及積分演算法。
+本附錄彙整 IPAnalyzer 在將二維繞射影像（Debye–Scherrer 環）轉換為高精度一維 (1D) 曲線時所使用的 **幾何與演算法的理論背景**。關於操作步驟與各功能的使用方式，請參見主手冊（[0. 概觀](../0-overview.md)、[4. 操作步驟](../4-procedures.md) 等）。在此以方程式說明其背後的座標系定義、座標轉換、參數決定方法以及積分演算法。
 
 內容係根據隨發行套件附帶的舊版文件 `doc/IPAnalyzerAlgorithm.pdf` 以及目前的實作。
 
@@ -10,9 +10,9 @@
 
 - **[A1. 偵測器幾何與座標轉換](a1-geometry.md)** — 右手座標系的定義、描述 IP 傾斜 ($\varphi,\ \tau$) 的旋轉矩陣，以及像素形狀 ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$) 的校正。
 - **[A2. 參數決定](a2-calibration.md)** — 使用標準物質校正相機長度、波長、像素尺寸與 IP 傾斜（雙距離法、雙譜線法、橢圓擬合）。
-- **[A3. 影像積分](a3-image-integration.md)** — 將像素強度分配至各角度步進的面積分割演算法。
+- **[A3. 影像積分](a3-image-integration.md)** — 將像素強度分配至各角度步進的面積分割演算法，以及積分後的正規化。
 - **[A4. 對稱性資訊](a4-symmetry-information.md)** — 標準晶體的空間群對稱性、幾何計算、Wyckoff 位置、繞射條件，以及對稱元素圖（Crystal 視窗的子視窗）。
-- **[A5. 散射因子](a5-scattering-factor.md)** — 標準晶體的結構因子與繞射清單（X 射線、電子、中子）（Crystal 視窗的子視窗）。
+- **[A5. 散射因子](a5-scattering-factor.md)** — 標準晶體的結構因子與繞射清單（X 射線、電子、中子）（晶體視窗中 **電子束交互作用 (Beam interaction)** 的 **繞射 (Reflections)** 分頁）。
 
 ## 座標系（共通參考圖）
 

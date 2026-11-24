@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 主視窗
 
-主視窗是啟動 IPAnalyzer 時最先顯示的畫面。它集中了已載入繞射影像的顯示、主要操作（尋找中心、遮蔽斑點、一維化），以及偵測器參數設定的入口。
+主視窗是啟動 IPAnalyzer 時最先顯示的畫面。它集中了已載入繞射影像的顯示、主要操作（尋找中心、遮蔽斑點、將影像積分為一維曲線），以及偵測器參數設定的入口。
 
 視窗大致由上方的選單與工具列、中央的影像顯示區、右側的垂直工具列，以及下方的圖表區所構成。
 
@@ -89,8 +89,8 @@
 ### 選項 (Option)
 
 - **工具提示 (ToolTip)**：切換按鈕與選單的工具提示顯示。
-- **翻轉 (Flip)**：水平 (Horizontally) / 垂直 (Vertically)。**旋轉 (Rotate)**：選擇旋轉角度。翻轉與旋轉會套用到作業中的影像資料，因此也會影響之後的積分與影像儲存（磁碟上的原始檔案不會變更）。
-- **清除登錄檔 (Clear registry)**：用於疑難排解的項目，會清除已儲存的設定。**Ngen 編譯 (Ngen Compile)** 在目前版本中沒有作用。
+- **翻轉 (Flip)**：**水平 (Horizontally)** / **垂直 (Vertically)**。**旋轉 (Rotate)**：選擇旋轉角度。翻轉與旋轉會套用到作業中的影像資料，因此也會影響之後的積分與影像儲存（磁碟上的原始檔案不會變更）。
+- **清除登錄檔 (檢查並重新啟動) (Clear registry (check and restart))**：用於疑難排解的項目，會清除已儲存的設定。
 
 ### 語言 (Language)
 
@@ -102,7 +102,8 @@
 
 ### 說明 (Help)
 
-- **程式更新 (Program Updates)**、**提示 (Hint)**、**授權 (License)**、**版本歷程 (Version History)**、**說明 (Help)**（開啟隨附的 PDF 手冊）。
+- **程式更新 (Program Updates)**、**提示 (Hint)**、**授權 (License)**、**版本歷程 (Version history)**、**說明 (Help)**。
+- **說明 (Help)** 會以預設的網頁瀏覽器開啟本線上手冊，與按下 **F1** 相同。
 - 在任何視窗中按 **F1**，即可開啟本線上手冊的對應頁面。
 
 ## 操作工具列
@@ -112,15 +113,14 @@
 - **背景 (Background)**：此按鈕在目前版本中無作用。背景影像的扣除請在屬性視窗的 **背景選項 (Background Option)** 分頁中設定。
 - **尋找中心 (Find Center)**：以二維 Pseudo-Voigt 擬合偵測束流中心（搜尋範圍預設為中心周圍 ±8 px，在 **其他項目 (Miscellaneous)** 分頁中設定）。若以 **繪製環 (Draw ring)** 顯示圓環，則改為依據該圓環決定中心。
 - **固定中心 (Fix Center)**：固定中心位置。
-- **遮罩斑點 (Mask Spots)**：在每個徑向環帶內，將強度超過「平均值 + 標準差 × Deviation」的像素偵測為斑點，並連同其周圍一併遮罩。下拉選單中包含全部遮罩、反轉遮罩、手動等功能。
+- **遮罩斑點 (Mask Spots)**：在每個徑向環帶內，將強度超過 平均值 + 標準差 × **「遮罩斑點」的判定偏差 (Criterial deviation for "Mask Spots")**（**遮罩選項 (Mask Option)** 分頁）的像素偵測為斑點，並連同其周圍一併遮罩。下拉選單中包含 **遮罩全部區域 (Mask all area)**、**反轉遮罩 (Invert mask)**、**手動模式 (Manual Mode)** 等功能。
 - **手動模式 (Manual Mode)**：手動遮罩模式。可選擇遮罩形狀（斑點（圓形／矩形）／圓形／矩形／多邊形／雲線 (spline)）與斑點大小（半寬）。
-- **取得圖譜 (Get Profile)**：將影像積分為一維曲線。支援 Concentric（以 2θ 為基準）與 Radial（以方位角為基準）。下拉選單可設定積分性質／積分區域 (Integral Property/Region) 的選擇、積分前是否尋找中心與遮罩斑點、傳送至 PDIndexer、方位角分割分析、連續影像處理等。
+- **取得圖譜 (Get Profile)**：將影像積分為一維曲線。支援 **同心積分 (Concentric Integration)**（以 2θ 為基準）與 **徑向積分 (Radial integration)**（以方位角為基準）。下拉選單可設定積分性質／積分區域 (Integral Property/Region) 的選擇、積分前是否尋找中心與遮罩斑點、傳送至 PDIndexer、**方位角分割分析 (Azimuthal Division Analysis)**（僅限同心積分且橫軸為 **角度 (Angle)**（2θ）時；其他情況會顯示警告且不執行）、連續影像處理等。
 
 ## 工具列（其他工具）
 
 右側的垂直工具列可啟動各種工具。詳細內容請參見[工具](3-tools.md)。
 
-- **強度表格 (Intensity table)**（目前版本中此按鈕未指派任何功能；R-AXIS 強度校正請使用 **工具 (Tool) → 校正 R-AXIS 影像 (Calibrate Raxis Image)**）
 - **自動程序 (Auto procedure)**
 - **繪製環 (Draw ring)**
 - **尋找參數 (幾何法) (Find parameter (geometrically))** / **尋找參數 (暴力法) (Find parameter (brute force))**

@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Visão geral
 
-O IPAnalyzer converte anéis de Debye–Scherrer registrados com Imaging Plates (IP) ou detectores CCD/CMOS em perfis de difração unidimensionais, com alta precisão e rapidez. Seu projeto e suas funcionalidades seguem o PIP, desenvolvido por Hiroshi Fujihisa no National Institute of Advanced Industrial Science and Technology (AIST).
+O IPAnalyzer converte anéis de Debye–Scherrer registrados com Imaging Plates (IP) ou detectores CCD/CMOS em perfis de difração 1D, com alta precisão e rapidez. Seu projeto e suas funcionalidades seguem o PIP, desenvolvido por Hiroshi Fujihisa no National Institute of Advanced Industrial Science and Technology (AIST).
 
 Principais funcionalidades:
 
@@ -53,7 +53,7 @@ No IPAnalyzer, o eixo X (a direção para a direita na imagem do IP) é girado n
 
 ## Método de integração da intensidade dos pixels
 
-O problema central da conversão para uma dimensão é como distribuir, entre os passos de integração, a intensidade de um pixel que abrange vários passos — o que acontece sempre que o intervalo de ângulos de espalhamento coberto por um pixel ultrapassa um passo de 2θ (e com mais frequência quanto mais fino o passo).
+O problema central da integração da imagem é como distribuir, entre os passos de integração, a intensidade de um pixel que abrange vários passos — o que acontece sempre que o intervalo de ângulos de espalhamento coberto por um pixel ultrapassa um passo de 2θ (e com mais frequência quanto mais fino o passo).
 
 O software calcula as interseções entre as retas que delimitam cada passo e o pixel, e distribui a intensidade determinando a área do pixel contida em cada passo. Para tratar os casos em que o pixel não é exatamente quadrado — por causa da inclinação do IP ou da distorção da forma do pixel — as coordenadas dos quatro cantos de cada pixel são calculadas sucessivamente para determinar sua forma quadrilátera. Em princípio, isso permite distribuir a intensidade do pixel de modo suave entre os passos, por menores que eles sejam.
 

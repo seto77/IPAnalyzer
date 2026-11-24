@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/4-procedures.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/4-procedures.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 작업 절차
 
@@ -11,10 +11,10 @@
 3. **검출기 조건 설정**: **검출기 조건 (Detector condition)** 에서 카메라 길이, 픽셀 크기, 중심 위치 (대략) 와 필요하면 기울기 φ, τ 를 설정합니다.
 4. **중심 찾기**: 도구 모음의 **중심 찾기 (Find Center)** 로 빔 중심을 자동으로 검출합니다 (검색 범위는 기타 (Miscellaneous) 탭에서 설정합니다).
 5. **스폿 마스크**: **스폿 마스크 (Mask Spots)** 로 단결정 반사 등을 제거합니다. 필요하면 **수동 모드 (Manual Mode)** 로 직접 마스크합니다.
-6. **적분 설정 확인**: **적분 영역 (Integral Region)** 에서 대상 영역을 선택하고, **적분 속성 (Integral Property)** 에서 **동심 적분 (Concentric integration)** 과 가로축 단위, **시작 / 끝 / 스텝 (Start / End / Step)** 을 설정합니다.
+6. **적분 설정 확인**: **적분 영역 (Integral Region)** 에서 대상 영역을 선택하고, **적분 속성 (Integral Property)** 에서 **동심 적분 (산란각 분산) (Concentric integration (scattering angle dispersive))** 과 가로축 단위, **시작 / 끝 / 스텝 (Start / End / Step)** 을 설정합니다.
 7. **이미지 적분**: **프로파일 가져오기 (Get Profile)** 로 프로파일을 얻습니다. 저장과 전송은 **"프로파일 가져오기" 후 (After "Get Profile")** 탭에서 설정합니다 (CSV 저장, PDIndexer 로 전송 등).
 
-연속 이미지의 경우, 5–7 단계 전에 [연속 이미지 (Sequential image)](3-tools.md)에서 프레임을 선택합니다. 방위각별 해석에는 **프로파일 가져오기 (Get Profile)** 드롭다운의 **방위각 분할 분석 (Azimuthal Division Analysis)** (고리를 섹터로 나누어 각 섹터를 적분) 이나, **적분 속성 (Integral Property)** 의 **방사 적분 (Radial integration)** (방위각–강도 프로파일) 을 사용합니다.
+연속 이미지의 경우, 5–7 단계 전에 [연속 이미지 (Sequential image)](3-tools.md)에서 프레임을 선택합니다. 방위각별 해석에는 **프로파일 가져오기 (Get Profile)** 드롭다운의 **방위각 분할 분석 (Azimuthal Division Analysis)** (고리를 섹터로 나누어 각 섹터를 적분. 동심 적분이고 가로축이 **각도 (Angle)** (2θ) 일 때만 사용할 수 있습니다) 이나, **적분 속성 (Integral Property)** 의 **방사 적분 (케이크 패턴) (Radial integration (cake pattern))** (방위각–강도 프로파일) 을 사용합니다.
 
 카메라 길이, 파장, 기울기를 모르는 경우, 먼저 다음 절의 방법으로 표준 시료 이미지에서 보정하고 그 값을 적용한 뒤 시료 이미지를 적분합니다.
 
@@ -26,7 +26,7 @@
 2. Profile View 에서 회절선 마커를 드래그하면 카메라 길이 추정값이 자동으로 갱신됩니다.
 3. **보조 이미지 (Secondary image)** (같은 표준 시료, 다른 카메라 길이) 를 같은 방법으로 불러오고, **카메라 길이 차이** \(\Delta L = L_\mathrm{Secondary} - L_\mathrm{Primary}\) (mm) 를 입력합니다 (예: Primary 가 100 mm, Secondary 가 120 mm 이면 +20). 보조 이미지는 생략할 수 있으며, 주 이미지 한 장만으로도 보정할 수 있습니다.
 4. **피크 목록 (Peak List)** 에서 두 이미지 모두에 나타나는 피크의 d 값을 선택합니다 (보통 이미지마다 3개 이상. 두 장을 사용할 때는 적어도 하나가 두 이미지에 공통이어야 합니다. 카메라 길이만 정밀화하는 경우를 제외하면, 3개 미만에서는 **정밀화! (Refine!)** 가 아무것도 하지 않습니다).
-5. 최적화할 매개변수 (파장, 필름 거리, 기울기, 픽셀 크기, 픽셀 왜곡, 중심 위치, 구면 보정) 를 선택합니다.
+5. 최적화할 매개변수 (**파장 (Wave Length)**, **카메라 길이 (Camera Length)**, **기울기 보정 (Tilt Correction)**, **픽셀 크기 (Pixel Size)**, **픽셀 왜곡 (Pixel Distortion)**, **중심 위치 (Center Position)**, **구면 보정 (Spherical Correction)**) 를 선택합니다.
 6. **정밀화! (Refine!)** 를 실행합니다. 설정한 반복 횟수 (기본값 12) 가 지나면 자동으로 멈춥니다. 결과를 확인한 뒤 **정밀화 매개변수 => 메인 폼 (Refined parameters => Main form)** 으로 메인 폼에 복사합니다.
 
 !!! note
@@ -47,21 +47,21 @@
 실험 중처럼 폴더에 도착하는 이미지를 자동으로 처리합니다. 자세한 내용은 [도구](3-tools.md)를 참조하십시오.
 
 1. **설정 (Set)** 으로 감시할 폴더를 고릅니다.
-2. 필요하면 **number matching** (파일 이름 끝의 번호) 이나 **키워드 (Keyword)** 로 파일을 걸러냅니다.
-3. **After Loading Image, Execute "Auto"** 를 켜고, 목록에서 자동 대비 (Auto Contrast) / 중심 찾기 (Find Center) / 스폿 마스크 (Mask Spots) / 프로파일 가져오기 (Get Profile) / Execute Macro 를 고릅니다.
-4. 마지막으로 **새 이미지 자동 불러오기 (Automatically load new images)** 를 켜서 감시를 시작합니다 (폴더가 없으면 켤 수 없으며, 감시를 시작한 시점의 번호/키워드 조건이 사용됩니다). 이후 조건에 맞는 이미지가 도착할 때마다 일련의 조작이 자동으로 실행됩니다.
+2. 필요하면 **패턴 매칭 (Pattern matching)** (파일 이름 끝의 번호) 이나 **키워드 (Keyword)** 로 파일을 걸러냅니다.
+3. **새 이미지를 불러오면, 다음 시퀀스를 수행 (Once the new image is loaded, perform the following sequence)** 을 켜고, 목록에서 **Auto contrast** / **Find center** / **Mask spots** / **Get profile** / **Execute macro** 를 고릅니다.
+4. 마지막으로 **새 이미지 자동 불러오기 (Automatically load new images)** 를 켜서 감시를 시작합니다 (폴더가 없으면 켤 수 없으며, 감시를 시작한 시점의 번호/키워드 조건이 사용됩니다). 이후 조건에 맞는 이미지가 도착할 때마다 일련의 조작이 자동으로 실행됩니다. 쓰기를 기다린 뒤 (약 50 초) 에도 잠겨 있는 파일은 이후의 검사에서 다시 시도되며, 처음 발견된 지 10 분이 지나면 포기됩니다.
 
 ## 스크립트를 이용한 절차 (Python 기반 매크로)
 
 반복문과 조건문을 포함하는 처리는 [매크로](5-macro/index.md)로 작성할 수 있습니다. 매크로 편집기에서 **예제 표시 (Show samples)** 로 볼 수 있는 예제 매크로가 좋은 출발점입니다.
 
 - 이미지를 불러오고, 선원과 검출기 (중심, 카메라 길이, 픽셀) 를 설정하고, 표시를 맞춥니다.
-- 동심 적분 조건 (시작, 끝, 스텝, 단위) 을 설정하고, 1차원화하여 CSV 로 저장합니다.
+- 동심 적분 조건 (시작, 끝, 스텝, 단위) 을 설정하고, 적분하여 CSV 로 저장합니다.
 - 여러 파일을 일괄 처리하여 각 이미지 옆에 CSV 를 저장합니다.
 - 다중 프레임 이미지를 프레임별로 처리합니다.
 - Debye 고리를 N 개의 섹터로 나누어 방위각 의존성을 해석합니다.
-- 마스크 (전체 해제 → 스폿 마스크 → 빔 스톱 영역 마스크 → 마스크 저장) 를 하고 1차원화합니다.
+- 마스크 (전체 해제 → 스폿 마스크 → 빔 스톱 영역 마스크 → 마스크 저장) 를 하고 적분합니다.
 - 방사 (cake) 적분으로 방위각 대 강도를 출력합니다.
-- 클립보드 전송을 켜고 1차원화한 뒤, PDIndexer 에서 이름이 지정된 매크로 (예: 피크 피팅) 를 호출합니다.
+- 클립보드 전송을 켜고 적분한 뒤, PDIndexer 에서 이름이 지정된 매크로 (예: 피크 피팅) 를 호출합니다.
 
 작성한 매크로는 저장하여 이름으로 호출할 수 있고, 자동 절차 (Auto Procedure) 에서 실행할 수도 있습니다.

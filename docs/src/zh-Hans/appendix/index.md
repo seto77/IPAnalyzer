@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 附录
 
@@ -10,9 +10,9 @@
 
 - **[A1. 探测器几何与坐标变换](a1-geometry.md)** —— 右手坐标系的定义、描述 IP 倾斜 ($\varphi,\ \tau$) 的旋转矩阵，以及像素形状 ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$) 的校正。
 - **[A2. 参数确定](a2-calibration.md)** —— 使用标准物质校准相机长度、波长、像素尺寸和 IP 倾斜（双距离法、双谱线法、椭圆拟合）。
-- **[A3. 图像积分](a3-image-integration.md)** —— 将像素强度分配到各角度步长的面积分割算法。
+- **[A3. 图像积分](a3-image-integration.md)** —— 将像素强度分配到各角度步长的面积分割算法，以及积分后的归一化。
 - **[A4. 对称性信息](a4-symmetry-information.md)** —— 标准晶体的空间群对称性、几何计算、Wyckoff 位置、衍射条件和对称元素图（Crystal 窗口的子窗口）。
-- **[A5. 散射因子](a5-scattering-factor.md)** —— 标准晶体的结构因子和衍射列表（X 射线、电子、中子）（Crystal 窗口的子窗口）。
+- **[A5. 散射因子](a5-scattering-factor.md)** —— 标准晶体的结构因子和衍射列表（X 射线、电子、中子）（晶体窗口中 **射束相互作用 (Beam interaction)** 的 **衍射 (Reflections)** 选项卡）。
 
 ## 坐标系（通用参考图）
 

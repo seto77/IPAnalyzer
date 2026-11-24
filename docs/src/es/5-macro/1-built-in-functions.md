@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Funciones integradas
 
@@ -100,7 +100,7 @@ En todos los métodos de lectura/guardado, si se omite el nombre de archivo o se
 | `SaveProfileAsGSAS` | True/False. Guarda en formato GSAS. Solo es posible para la integración concéntrica con eje en 2θ; no se escribe cuando se guardan varios perfiles en un único archivo. |
 | `SaveProfileInOneFile` | True/False. Guarda en un único archivo los perfiles secuenciales/de división azimutal. |
 | `SaveProfileAtImageDirectory` | True/False. Guarda en el mismo directorio que la imagen. |
-| `GetProfile(filename="")` | Ejecuta la conversión a una dimensión. Si se da `filename`, se usa como nombre base y se añade la extensión del formato (p. ej., `GetProfile("sample.stl")` guardado como CSV da `sample.stl.csv`). Si el destino está configurado como "elegir cada vez", se muestra el diálogo de guardado. |
+| `GetProfile(filename="")` | Integra la imagen en un perfil 1D (igual que **Obtener perfil (Get Profile)**). Si se da `filename`, se usa como nombre base y se añade la extensión del formato (p. ej., `GetProfile("sample.stl")` guardado como CSV da `sample.stl.csv`). Si el destino está configurado como "elegir cada vez", se muestra el diálogo de guardado. |
 
 ## IPA.IntegralProperty
 

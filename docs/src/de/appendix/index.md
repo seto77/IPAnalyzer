@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Anhang
 
-Dieser Anhang fasst den **theoretischen Hintergrund der Geometrie und der Algorithmen** zusammen, die IPAnalyzer bei der Umwandlung eines zweidimensionalen Beugungsbildes (Debye–Scherrer-Ringe) in ein hochgenaues eindimensionales Profil verwendet. Bedienabläufe und die Verwendung der einzelnen Funktionen finden Sie im Haupthandbuch ([0. Überblick](../0-overview.md), [4. Arbeitsabläufe](../4-procedures.md) usw.). Hier werden die Definitionen des Koordinatensystems, die Koordinatentransformationen, die Methoden der Parameterbestimmung und der zugrunde liegende Integrationsalgorithmus mit Gleichungen erläutert.
+Dieser Anhang fasst den **theoretischen Hintergrund der Geometrie und der Algorithmen** zusammen, die IPAnalyzer bei der Umwandlung eines zweidimensionalen Beugungsbildes (Debye–Scherrer-Ringe) in ein hochgenaues 1D-Profil verwendet. Bedienabläufe und die Verwendung der einzelnen Funktionen finden Sie im Haupthandbuch ([0. Überblick](../0-overview.md), [4. Arbeitsabläufe](../4-procedures.md) usw.). Hier werden die Definitionen des Koordinatensystems, die Koordinatentransformationen, die Methoden der Parameterbestimmung und der zugrunde liegende Integrationsalgorithmus mit Gleichungen erläutert.
 
 Der Inhalt beruht auf dem früheren Dokument `doc/IPAnalyzerAlgorithm.pdf`, das dem Distributionspaket beilag, sowie auf der aktuellen Implementierung.
 
@@ -10,9 +10,9 @@ Der Inhalt beruht auf dem früheren Dokument `doc/IPAnalyzerAlgorithm.pdf`, das 
 
 - **[A1. Detektorgeometrie und Koordinatentransformationen](a1-geometry.md)** — Definition des rechtshändigen Koordinatensystems, die Drehmatrizen, die die IP-Verkippung ($\varphi,\ \tau$) beschreiben, und die Korrektur der Pixelform ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$).
 - **[A2. Parameterbestimmung](a2-calibration.md)** — Kalibrierung von Kameralänge, Wellenlänge, Pixelgröße und IP-Verkippung mit einem Standardmaterial (Zwei-Abstands-Methode, Zwei-Linien-Methode, Ellipsenanpassung).
-- **[A3. Bildintegration](a3-image-integration.md)** — der Flächenaufteilungs-Algorithmus, der Pixelintensitäten auf Winkelschritte verteilt.
+- **[A3. Bildintegration](a3-image-integration.md)** — der Flächenaufteilungs-Algorithmus, der Pixelintensitäten auf Winkelschritte verteilt, sowie die Normierung nach der Integration.
 - **[A4. Symmetrieinformationen](a4-symmetry-information.md)** — Raumgruppensymmetrie, geometrische Berechnungen, Wyckoff-Lagen, Reflexionsbedingungen und Diagramme der Symmetrieelemente des Standardkristalls (ein Unterfenster des Kristallfensters).
-- **[A5. Streufaktor](a5-scattering-factor.md)** — Strukturfaktoren und Reflexliste des Standardkristalls (Röntgen, Elektronen, Neutronen) (ein Unterfenster des Kristallfensters).
+- **[A5. Streufaktor](a5-scattering-factor.md)** — Strukturfaktoren und Reflexliste des Standardkristalls (Röntgen, Elektronen, Neutronen) (die Registerkarte **Reflexe (Reflections)** von **Strahlwechselwirkung (Beam interaction)** im Kristallfenster).
 
 ## Koordinatensystem (gemeinsame Bezugsabbildung)
 

@@ -1,10 +1,10 @@
-<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # IPAnalyzer-Handbuch
 
 ## Kurze Einführung
 
-* **IPAnalyzer** ist eine MIT-lizenzierte freie Software, die zweidimensionale Pulverbeugungsbilder (Debye–Scherrer-Ringe), die mit Imaging Plates (IP) oder CCD/CMOS-Flachdetektoren aufgenommen wurden, in hochpräzise eindimensionale 2θ–Intensitätsprofile umwandelt.
+* **IPAnalyzer** ist eine MIT-lizenzierte freie Software, die zweidimensionale Pulverbeugungsbilder (Debye–Scherrer-Ringe), die mit Imaging Plates (IP) oder CCD/CMOS-Flachdetektoren aufgenommen wurden, in hochpräzise 1D-2θ–Intensitätsprofile umwandelt.
 * Sie kalibriert die Messgeometrie — Kameralänge, Wellenlänge, Detektorverkippung und Pixelform — anhand der Ringe von Standardmaterialien, unterstützt Röntgen-, Elektronen- und Neutronenquellen und arbeitet für die anschließende Peak-Analyse mit [PDIndexer](https://github.com/seto77/PDIndexer) zusammen.
 * Aufbau und Funktionsumfang orientieren sich an *PIP*, das von Hiroshi Fujihisa am AIST entwickelt wurde.
 

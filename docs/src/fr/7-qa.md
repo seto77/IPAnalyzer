@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Questions et réponses (foire aux questions)
 
@@ -32,7 +32,7 @@ IPAnalyzer conserve l'intensité de chaque pixel en double précision (8 octets)
 
 ### Les fichiers de mon détecteur ne peuvent pas être lus
 
-Le format n'est peut-être pas encore pris en charge. Veuillez nous contacter via [Issues](https://github.com/seto77/IPAnalyzer/issues) ou contacter l'auteur en joignant un fichier réel (de préférence un fichier avec un cliché de diffraction, et pas seulement une image d'obscurité). L'exactitude des intensités et l'orientation de l'image ne peuvent être vérifiées qu'avec une image qui montre un cliché.
+Le format n'est peut-être pas encore pris en charge. Veuillez nous contacter via [Issues](https://github.com/seto77/IPAnalyzer/issues) ou contacter l'auteur en joignant un fichier réel (de préférence un fichier avec un cliché de diffraction, et pas seulement une image d'obscurité). L'exactitude des intensités et l'orientation de l'image ne peuvent être vérifiées qu'avec une image qui montre un cliché. Si le chargement échoue, l'image chargée précédemment est conservée ; vous pouvez donc continuer à travailler avec elle.
 
 !!! note "Lorsqu'une image brute a une largeur et une hauteur erronées"
     Pour les fichiers bruts sans en-tête, le modèle de détecteur et le nombre de pixels sont déduits de la taille du fichier. Le nombre réel de pixels diffère souvent de la valeur du catalogue ; veuillez donc envoyer le fichier si la détection échoue.
@@ -88,7 +88,7 @@ Ils sont déterminés différemment. **Trouver le centre (Find Center)** ajuste 
 
 ### Qu'est-ce que la correction sphérique ?
 
-Une correction pour un détecteur courbé comme une sphère. Saisissez l'inverse du rayon de courbure, 1/R (mm⁻¹). Utilisez 0 pour un détecteur plan. Elle est utile lorsque les anneaux aux grands angles ne concordent pas, par exemple avec un grand détecteur placé près de l'échantillon.
+Une correction pour un détecteur courbé comme une sphère. Saisissez l'inverse du rayon de courbure, 1/R, en m⁻¹ (affiché /m à l'écran). Utilisez 0 pour un détecteur plan. Elle est utile lorsque les anneaux aux grands angles ne concordent pas, par exemple avec un grand détecteur placé près de l'échantillon.
 
 ### Comment convertir les valeurs d'inclinaison d'autres logiciels (comme PIP) ?
 
@@ -98,7 +98,7 @@ Les (β, Φ) de PIP se convertissent en (φ, τ) d'IPAnalyzer = (270° − β, �
 
 ### L'axe horizontal du résultat semble faux / l'intensité semble presque constante
 
-Vérifiez si **Intégration radiale (Radial integration)** est sélectionnée dans l'onglet **Propriété d'intégration (Integral Property)** de la fenêtre de propriétés. Dans ce mode, le profil a pour axe horizontal l'azimut χ. Le profil 2θ–intensité habituel s'obtient avec **Intégration concentrique (Concentric integration)**.
+Vérifiez si **Intégration radiale (motif en parts de gâteau) (Radial integration (cake pattern))** est sélectionnée dans l'onglet **Propriété d'intégration (Integral Property)** de la fenêtre de propriétés. Dans ce mode, le profil a pour axe horizontal l'azimut χ. Le profil 2θ–intensité habituel s'obtient avec **Intégration concentrique (dispersive en angle de diffusion) (Concentric integration (scattering angle dispersive))**.
 
 ### Je veux enregistrer le profil dans un fichier sans PDIndexer
 
@@ -118,7 +118,7 @@ Le rapport S/B est le même dans les deux cas. **Sommation (Summation)** donne u
 
 ### Je veux intégrer pour chaque azimut (chaque secteur)
 
-Activez **Analyse par division azimutale (Azimuthal Division Analysis)** dans le menu déroulant de **Obtenir le profil (Get Profile)**, réglez **Nombre de divisions (Number of divisions)** et intégrez. Un profil global (nom se terminant par `-whole`) et un profil par secteur (avec l'angle de début ajouté, comme `-000`, `-010`, …) sont créés. Avec trop de divisions, les données envoyées à PDIndexer peuvent devenir trop volumineuses.
+Activez **Analyse par division azimutale (Azimuthal Division Analysis)** dans le menu déroulant de **Obtenir le profil (Get Profile)**, réglez **Nombre de divisions (Number of divisions)** et intégrez. Un profil global (nom se terminant par `-whole`) et un profil par secteur (avec l'angle de début ajouté, comme `-000`, `-010`, …) sont créés. Cela ne fonctionne qu'avec **Intégration concentrique (dispersive en angle de diffusion) (Concentric integration (scattering angle dispersive))** et l'axe **Angle** (2θ) ; avec l'intégration radiale ou un axe en distance interréticulaire, un avertissement s'affiche et rien n'est exécuté. Avec trop de divisions, les données envoyées à PDIndexer peuvent devenir trop volumineuses.
 
 ### Je veux une carte bidimensionnelle de 2θ et de l'azimut χ (image déroulée)
 
@@ -130,7 +130,7 @@ Sélectionnez un rectangle par Ctrl + glisser droit sur l'image. Les statistique
 
 ### Une image d'obscurité devient plus claire vers les bords aux grands angles
 
-Si **Corriger la polarisation linéaire (Correct linear polarization)** est activé sous **Source d'onde (Wave source)** dans la fenêtre de propriétés, la correction est aussi appliquée aux signaux qui ne proviennent pas des rayons X (courant d'obscurité, bruit électronique), et le côté des grands angles devient plus clair. Désactivez-la pour les images d'obscurité.
+Si **Corriger la polarisation linéaire (c.-à-d. polarisée linéairement → non polarisée) (Correct linear polarization (i.e., linear polarized → unpolarized))** est activé sous **Source d'onde (Wave source)** dans la fenêtre de propriétés, la correction est aussi appliquée aux signaux qui ne proviennent pas des rayons X (courant d'obscurité, bruit électronique), et le côté des grands angles devient plus clair. Désactivez-la pour les images d'obscurité.
 
 ### Je veux soustraire une image d'obscurité (de fond)
 
@@ -148,7 +148,7 @@ Donnez un nom à la macro et ajoutez-la dans l'éditeur de macros ; elle peut al
 
 ### Je veux intégrer les images au fur et à mesure de leur arrivée pendant une mesure
 
-Surveillez le dossier avec la [Procédure auto. (Auto procedure)](3-tools.md#procédure-auto-auto-procedure). Les fichiers encore en cours d'écriture sont lus une fois l'écriture terminée. Si la lecture échoue pour un dossier situé sur le réseau, enregistrez sur le disque local du PC de mesure et surveillez ce dossier.
+Surveillez le dossier avec la [Procédure auto. (Auto procedure)](3-tools.md#procédure-auto-auto-procedure). Les fichiers encore en cours d'écriture sont lus une fois l'écriture terminée ; un fichier encore verrouillé après environ 50 s est retenté lors des balayages suivants et abandonné 10 minutes après sa première détection. Si la lecture échoue pour un dossier situé sur le réseau, enregistrez sur le disque local du PC de mesure et surveillez ce dossier.
 
 ## Signaler un bogue
 

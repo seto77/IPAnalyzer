@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/0-overview.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Aperçu
 
-IPAnalyzer convertit les anneaux de Debye–Scherrer enregistrés avec des Imaging Plates (IP) ou des détecteurs CCD/CMOS en profils de diffraction unidimensionnels, avec une grande précision et une grande rapidité. Sa conception et ses fonctionnalités s'inspirent de PIP, développé par Hiroshi Fujihisa au National Institute of Advanced Industrial Science and Technology (AIST).
+IPAnalyzer convertit les anneaux de Debye–Scherrer enregistrés avec des Imaging Plates (IP) ou des détecteurs CCD/CMOS en profils de diffraction 1D, avec une grande précision et une grande rapidité. Sa conception et ses fonctionnalités s'inspirent de PIP, développé par Hiroshi Fujihisa au National Institute of Advanced Industrial Science and Technology (AIST).
 
 Principales caractéristiques :
 
@@ -53,7 +53,7 @@ Dans IPAnalyzer, l'axe X (direction vers la droite de l'image IP) est tourné da
 
 ## Méthode d'intégration de l'intensité des pixels
 
-Le problème central de la réduction en une dimension est de savoir comment répartir, entre les pas d'intégration, l'intensité d'un pixel qui chevauche plusieurs pas — ce qui se produit dès que la plage d'angles de diffusion couverte par un pixel s'étend sur plus d'un pas en 2θ (d'autant plus souvent que le pas est fin).
+Le problème central de l'intégration de l'image est de savoir comment répartir, entre les pas d'intégration, l'intensité d'un pixel qui chevauche plusieurs pas — ce qui se produit dès que la plage d'angles de diffusion couverte par un pixel s'étend sur plus d'un pas en 2θ (d'autant plus souvent que le pas est fin).
 
 Le logiciel calcule les intersections entre les lignes qui délimitent chaque pas et le pixel, et répartit l'intensité en déterminant l'aire du pixel contenue dans chaque pas. Pour traiter les cas où le pixel n'est pas exactement carré — à cause de l'inclinaison de l'IP ou d'une distorsion de la forme du pixel — les coordonnées des quatre coins de chaque pixel sont calculées successivement afin de déterminer sa forme quadrilatère. En principe, cela permet de répartir l'intensité du pixel de façon continue entre les pas, aussi petits soient-ils.
 

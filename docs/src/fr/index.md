@@ -1,10 +1,10 @@
-<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Manuel d'IPAnalyzer
 
 ## Brève introduction
 
-* **IPAnalyzer** est un logiciel libre sous licence MIT qui convertit les images de diffraction de poudre bidimensionnelles (anneaux de Debye–Scherrer) enregistrées avec des Imaging Plates (IP) ou des détecteurs à panneau plat CCD/CMOS en profils 2θ–intensité unidimensionnels de haute précision.
+* **IPAnalyzer** est un logiciel libre sous licence MIT qui convertit les images de diffraction de poudre bidimensionnelles (anneaux de Debye–Scherrer) enregistrées avec des Imaging Plates (IP) ou des détecteurs à panneau plat CCD/CMOS en profils 2θ–intensité 1D de haute précision.
 * Il calibre la géométrie de mesure — longueur de caméra, longueur d'onde, inclinaison du détecteur et forme de pixel — à partir des anneaux de matériaux de référence, prend en charge les sources de rayons X, d'électrons et de neutrons, et s'intègre avec [PDIndexer](https://github.com/seto77/PDIndexer) pour l'analyse ultérieure des pics.
 * Sa conception et ses fonctionnalités suivent *PIP*, développé par Hiroshi Fujihisa à l'AIST.
 

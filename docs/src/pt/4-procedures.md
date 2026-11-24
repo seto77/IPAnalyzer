@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/4-procedures.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/4-procedures.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Procedimentos
 
@@ -11,10 +11,10 @@ Esta página mostra o fluxo das tarefas típicas. Para as descrições de cada f
 3. **Definir a condição do detector**: defina o comprimento de câmara, o tamanho do pixel, a posição do centro (aproximada) e, se necessário, a inclinação φ, τ em **Condição do detector (Detector condition)**.
 4. **Localizar o centro**: detecte automaticamente o centro do feixe com **Localizar centro (Find Center)** na barra de ferramentas (o intervalo de busca é definido na aba **Diversos (Miscellaneous)**).
 5. **Mascarar pontos**: remova reflexões de monocristal e similares com **Mascarar pontos (Mask Spots)**. Se necessário, mascare manualmente com **Modo manual (Manual Mode)**.
-6. **Verificar as configurações de integração**: selecione a região-alvo em **Região de integração (Integral Region)** e escolha **Integração concêntrica (Concentric integration)** com a unidade do eixo e **Início / Fim / Passo (Start / End / Step)** em **Propriedade de integração (Integral Property)**.
+6. **Verificar as configurações de integração**: selecione a região-alvo em **Região de integração (Integral Region)** e escolha **Integração concêntrica (dispersiva em ângulo de espalhamento) (Concentric integration (scattering angle dispersive))** com a unidade do eixo e **Início / Fim / Passo (Start / End / Step)** em **Propriedade de integração (Integral Property)**.
 7. **Integrar a imagem**: obtenha o perfil com **Obter perfil (Get Profile)**. O salvamento e o envio são configurados na aba **Após "Obter perfil" (After "Get Profile")** (salvar em CSV, enviar ao PDIndexer etc.).
 
-Para imagens sequenciais, selecione um quadro em [Imagem sequencial](3-tools.md) antes das etapas 5–7. Para a análise por azimute, use **Análise de divisão azimutal (Azimuthal Division Analysis)** no menu suspenso de **Obter perfil** (os anéis são divididos em setores e cada setor é integrado), ou **Integração radial (Radial integration)** em **Propriedade de integração** (um perfil azimute–intensidade).
+Para imagens sequenciais, selecione um quadro em [Imagem sequencial](3-tools.md) antes das etapas 5–7. Para a análise por azimute, use **Análise de divisão azimutal (Azimuthal Division Analysis)** no menu suspenso de **Obter perfil** (os anéis são divididos em setores e cada setor é integrado; disponível somente com a integração concêntrica e o eixo **Ângulo (Angle)** (2θ)), ou **Integração radial (padrão em fatias) (Radial integration (cake pattern))** em **Propriedade de integração** (um perfil azimute–intensidade).
 
 Se o comprimento de câmara, o comprimento de onda ou a inclinação forem desconhecidos, calibre-os primeiro a partir de uma imagem de uma amostra de referência, como descrito na próxima seção, aplique os valores e só então integre as imagens da amostra.
 
@@ -26,7 +26,7 @@ Quando o comprimento de câmara ou o comprimento de onda é desconhecido, otimiz
 2. Arrastar um marcador de linha de difração na Profile View atualiza automaticamente a estimativa do comprimento de câmara.
 3. Carregue da mesma forma a **Imagem secundária (Secondary image)** (a mesma amostra de referência, em outro comprimento de câmara) e digite a **diferença de comprimento de câmara** \(\Delta L = L_\mathrm{Secondary} - L_\mathrm{Primary}\) (mm) (por exemplo, +20 se a primária está a 100 mm e a secundária a 120 mm). A imagem secundária é opcional; a calibração também funciona só com a imagem primária.
 4. Na **Lista de picos (Peak List)**, selecione os valores d dos picos que aparecem em ambas as imagens (normalmente três ou mais por imagem; com duas imagens, pelo menos um deve ser comum às duas. A menos que só o comprimento de câmara seja refinado, **Refinar! (Refine!)** não faz nada com menos de três).
-5. Escolha os parâmetros a otimizar (comprimento de onda, distância do filme, inclinação, tamanho do pixel, distorção do pixel, posição do centro, correção esférica).
+5. Escolha os parâmetros a otimizar (**Comprimento de onda (Wave Length)**, **Comprimento da câmera (Camera Length)**, **Correção de inclinação (Tilt Correction)**, **Tamanho do pixel (Pixel Size)**, **Distorção do pixel (Pixel Distortion)**, **Posição do centro (Center Position)**, **Correção esférica (Spherical Correction)**).
 6. Execute **Refinar!**. Ele para automaticamente após o número de repetições definido (12 por padrão). Depois de verificar o resultado, copie-o para o formulário principal com **Parâmetros refinados => formulário principal (Refined parameters => Main form)**.
 
 !!! note "Nota"
@@ -47,21 +47,21 @@ Quando a otimização geométrica tem dificuldade em convergir, faça uma busca 
 Processe automaticamente as imagens que chegam a uma pasta, por exemplo durante um experimento. Veja [Ferramentas](3-tools.md) para mais detalhes.
 
 1. Escolha a pasta a monitorar com **Definir (Set)**.
-2. Se necessário, filtre os arquivos por **correspondência de números** (o número no final do nome do arquivo) ou por **palavra-chave (keyword)**.
-3. Ative **After Loading Image, Execute "Auto"** e escolha na lista: **Contraste automático (Auto Contrast)** / **Localizar centro (Find Center)** / **Mascarar pontos (Mask Spots)** / **Obter perfil (Get Profile)** / Execute Macro.
-4. Por fim, ative **Carregar novas imagens automaticamente (Automatically load new images)** para iniciar o monitoramento (não é possível ativá-lo sem uma pasta; são usadas as condições de número/palavra-chave vigentes no início do monitoramento). A sequência é então executada automaticamente cada vez que chega uma imagem correspondente.
+2. Se necessário, filtre os arquivos por **Correspondência de padrões (Pattern matching)** (o número no final do nome do arquivo) ou por **Palavra-chave (Keyword)**.
+3. Ative **Após carregar a nova imagem, executar a seguinte sequência (Once the new image is loaded, perform the following sequence)** e escolha na lista: **Auto contrast** / **Find center** / **Mask spots** / **Get profile** / **Execute macro**.
+4. Por fim, ative **Carregar novas imagens automaticamente (Automatically load new images)** para iniciar o monitoramento (não é possível ativá-lo sem uma pasta; são usadas as condições de número/palavra-chave vigentes no início do monitoramento). A sequência é então executada automaticamente cada vez que chega uma imagem correspondente. Um arquivo que ainda esteja bloqueado depois da espera pela gravação (cerca de 50 s) é tentado novamente nas varreduras seguintes, e se desiste dele 10 minutos depois de ter sido encontrado pela primeira vez.
 
 ## Procedimentos por script (macros baseadas em Python)
 
 Processamentos com laços e condicionais podem ser escritos como uma [macro](5-macro/index.md). As macros de exemplo exibidas com **Mostrar exemplos (Show samples)** no editor de macros são um bom ponto de partida.
 
 - Carregar uma imagem, definir a fonte e o detector (centro, comprimento de câmara, pixels) e ajustar a exibição.
-- Definir as condições de integração concêntrica (início, fim, passo, unidade), converter para uma dimensão e salvar em CSV.
+- Definir as condições de integração concêntrica (início, fim, passo, unidade), integrar e salvar em CSV.
 - Processar vários arquivos em lote, salvando um CSV ao lado de cada imagem.
 - Processar uma imagem multiquadro quadro a quadro.
 - Dividir um anel de Debye em N setores e analisar a dependência azimutal.
-- Mascarar (limpar tudo → mascarar pontos → mascarar a região do beam stop → salvar a máscara) e converter para uma dimensão.
+- Mascarar (limpar tudo → mascarar pontos → mascarar a região do beam stop → salvar a máscara) e integrar.
 - Gerar azimute vs. intensidade com a integração radial (cake).
-- Ativar o envio pela área de transferência, converter para uma dimensão e chamar uma macro nomeada no PDIndexer (por exemplo, ajuste de picos).
+- Ativar o envio pela área de transferência, integrar e chamar uma macro nomeada no PDIndexer (por exemplo, ajuste de picos).
 
 As macros que você escreve podem ser salvas, chamadas pelo nome e também executadas a partir do **Procedimento automático (Auto Procedure)**.

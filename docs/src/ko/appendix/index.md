@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/appendix/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 부록
 
@@ -10,9 +10,9 @@
 
 - **[A1. 검출기 기하와 좌표 변환](a1-geometry.md)** — 오른손 좌표계의 정의, IP 기울기 ($\varphi,\ \tau$) 를 나타내는 회전 행렬, 픽셀 모양 ($\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$) 의 보정.
 - **[A2. 매개변수 결정](a2-calibration.md)** — 표준 물질을 이용한 카메라 길이, 파장, 픽셀 크기, IP 기울기의 보정 (두 거리법, 두 회절선법, 타원 피팅).
-- **[A3. 이미지 적분](a3-image-integration.md)** — 픽셀 강도를 각도 스텝으로 분배하는 면적 분할 알고리즘.
+- **[A3. 이미지 적분](a3-image-integration.md)** — 픽셀 강도를 각도 스텝으로 분배하는 면적 분할 알고리즘과 적분 후의 규격화.
 - **[A4. 대칭 정보](a4-symmetry-information.md)** — 표준 결정의 공간군 대칭, 기하 계산, Wyckoff 위치, 반사 조건, 대칭 요소 도 (결정 창의 하위 창).
-- **[A5. 산란 인자](a5-scattering-factor.md)** — 표준 결정의 구조 인자와 반사 목록 (X선, 전자, 중성자) (결정 창의 하위 창).
+- **[A5. 산란 인자](a5-scattering-factor.md)** — 표준 결정의 구조 인자와 반사 목록 (X선, 전자, 중성자) (결정 창의 **빔 상호작용 (Beam interaction)** 에 있는 **반사 (Reflections)** 탭).
 
 ## 좌표계 (공통 참조 그림)
 

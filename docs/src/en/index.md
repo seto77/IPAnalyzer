@@ -1,11 +1,12 @@
 <!-- 260601Cl: Rewrote English home page into a richer landing page (Find by goal / Features / Quick start), modeled on the ReciPro manual home. -->
 <!-- 260625Cl: Moved from docs/src/index.md to docs/src/en/index.md for the mkdocs-static-i18n folder-mode migration (en is the default locale, output at the site root). Internal links de-prefixed from en/<slug> to <slug>. -->
+<!-- 261124Cl: Replaced "one-dimensional" with "1D". -->
 
 # IPAnalyzer Manual
 
 ## Brief introduction
 
-* **IPAnalyzer** is MIT-licensed free software that converts two-dimensional powder-diffraction images (Debye–Scherrer rings) recorded with imaging plates (IP) or CCD/CMOS flat-panel detectors into high-precision one-dimensional 2θ–intensity profiles.
+* **IPAnalyzer** is MIT-licensed free software that converts two-dimensional powder-diffraction images (Debye–Scherrer rings) recorded with imaging plates (IP) or CCD/CMOS flat-panel detectors into high-precision 1D 2θ–intensity profiles.
 * It calibrates the measurement geometry — camera length, wavelength, detector tilt, and pixel shape — from the rings of standard materials, supports X-ray, electron, and neutron sources, and integrates with [PDIndexer](https://github.com/seto77/PDIndexer) for subsequent peak analysis.
 * Its design and features follow *PIP*, developed by Hiroshi Fujihisa at AIST.
 

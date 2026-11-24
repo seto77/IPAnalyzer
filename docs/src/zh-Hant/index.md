@@ -1,10 +1,10 @@
-<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # IPAnalyzer 手冊
 
 ## 簡介
 
-* **IPAnalyzer** 是採用 MIT 授權的免費軟體，可將以成像板 (IP) 或 CCD/CMOS 平板偵測器記錄的二維粉末繞射影像（Debye–Scherrer 環）轉換為高精度的一維 2θ–強度曲線。
+* **IPAnalyzer** 是採用 MIT 授權的免費軟體，可將以成像板 (IP) 或 CCD/CMOS 平板偵測器記錄的二維粉末繞射影像（Debye–Scherrer 環）轉換為高精度的一維 (1D) 2θ–強度曲線。
 * 它能從標準物質的繞射環校正量測幾何——相機長度、波長、偵測器傾斜與像素形狀——支援 X 射線、電子與中子射源，並可與 [PDIndexer](https://github.com/seto77/PDIndexer) 整合以進行後續的峰分析。
 * 其設計與功能沿襲日本產業技術綜合研究所 (AIST) 的藤久裕司 (Hiroshi Fujihisa) 所開發的 *PIP*。
 

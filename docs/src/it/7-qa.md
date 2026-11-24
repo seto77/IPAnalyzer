@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Q&A (Domande frequenti)
 
@@ -32,7 +32,7 @@ IPAnalyzer conserva l'intensità di ogni pixel in doppia precisione (8 byte), qu
 
 ### I file del mio rivelatore non si possono leggere
 
-Il formato potrebbe non essere ancora supportato. Contattateci tramite [Issues](https://github.com/seto77/IPAnalyzer/issues) o scrivete all'autore allegando un file reale (preferibilmente uno con un pattern di diffrazione, non solo un'immagine di buio). La correttezza delle intensità e l'orientamento dell'immagine si possono verificare solo con un'immagine che mostri un pattern.
+Il formato potrebbe non essere ancora supportato. Contattateci tramite [Issues](https://github.com/seto77/IPAnalyzer/issues) o scrivete all'autore allegando un file reale (preferibilmente uno con un pattern di diffrazione, non solo un'immagine di buio). La correttezza delle intensità e l'orientamento dell'immagine si possono verificare solo con un'immagine che mostri un pattern. Se il caricamento non riesce, l'immagine caricata in precedenza resta, quindi si può continuare a lavorare con essa.
 
 !!! note "Quando un'immagine raw ha larghezza e altezza errate"
     Per i file raw senza intestazione, il modello di rivelatore e il numero di pixel vengono dedotti dalla dimensione del file. Il numero effettivo di pixel differisce spesso dal valore di catalogo, quindi inviate il file se il riconoscimento non riesce.
@@ -88,7 +88,7 @@ Sono determinati in modo diverso. **Trova centro (Find Center)** esegue il fitti
 
 ### Che cos'è la correzione sferica?
 
-Una correzione per un rivelatore curvato come una sfera. Inserire l'inverso del raggio di curvatura, 1/R (mm⁻¹). Usare 0 per un rivelatore piano. È utile quando gli anelli ad alto angolo non coincidono, ad esempio con un rivelatore grande posto vicino al campione.
+Una correzione per un rivelatore curvato come una sfera. Inserire l'inverso del raggio di curvatura, 1/R, in m⁻¹ (mostrato a schermo come /m). Usare 0 per un rivelatore piano. È utile quando gli anelli ad alto angolo non coincidono, ad esempio con un rivelatore grande posto vicino al campione.
 
 ### Come si convertono i valori di inclinazione di altri software (come PIP)?
 
@@ -98,11 +98,11 @@ Una correzione per un rivelatore curvato come una sfera. Inserire l'inverso del 
 
 ### L'asse orizzontale del risultato sembra sbagliato / l'intensità sembra quasi costante
 
-Verificare se nella scheda **Proprietà di integrazione (Integral Property)** della finestra delle proprietà è selezionata **Integrazione radiale (Radial integration)**. In questa modalità il profilo ha come asse orizzontale l'azimut χ. Il consueto profilo 2θ–intensità si ottiene con **Integrazione concentrica (Concentric integration)**.
+Verificare se nella scheda **Proprietà di integrazione (Integral Property)** della finestra delle proprietà è selezionata **Integrazione radiale (pattern a torta) (Radial integration (cake pattern))**. In questa modalità il profilo ha come asse orizzontale l'azimut χ. Il consueto profilo 2θ–intensità si ottiene con **Integrazione concentrica (dispersiva nell'angolo di scattering) (Concentric integration (scattering angle dispersive))**.
 
 ### Voglio salvare il profilo in un file senza PDIndexer
 
-Nella scheda **Dopo "Ottieni profilo" (After "Get Profile")** della finestra delle proprietà, impostare in **Save File** la destinazione (stessa cartella dell'immagine / scelta ogni volta) e il formato (PDI / CSV / TSV / GSAS). Il profilo viene quindi salvato a ogni integrazione.
+Nella scheda **Dopo "Ottieni profilo" (After "Get Profile")** della finestra delle proprietà, impostare in **Salva profilo (Save Profiles)** la destinazione (stessa cartella dell'immagine / scelta ogni volta) e il formato (PDI / CSV / TSV / GSAS). Il profilo viene quindi salvato a ogni integrazione.
 
 ### Che cos'è la terza colonna del CSV?
 
@@ -118,7 +118,7 @@ Il rapporto S/N è lo stesso in entrambi i casi. **Sommatoria (Summation)** dà 
 
 ### Voglio integrare per ciascun azimut (ciascun settore)
 
-Attivare **Analisi a divisione azimutale (Azimuthal Division Analysis)** nel menu a discesa di **Ottieni profilo (Get Profile)**, impostare **Numero di divisioni (Number of divisions)** e integrare. Vengono creati un profilo complessivo (nome che termina con `-whole`) e un profilo per ciascun settore (con l'angolo iniziale aggiunto, come `-000`, `-010`, …). Con troppe divisioni, i dati inviati a PDIndexer possono diventare troppo grandi.
+Attivare **Analisi a divisione azimutale (Azimuthal Division Analysis)** nel menu a discesa di **Ottieni profilo (Get Profile)**, impostare **Numero di divisioni (Number of divisions)** e integrare. Vengono creati un profilo complessivo (nome che termina con `-whole`) e un profilo per ciascun settore (con l'angolo iniziale aggiunto, come `-000`, `-010`, …). Funziona solo con **Integrazione concentrica (dispersiva nell'angolo di scattering) (Concentric integration (scattering angle dispersive))** e l'asse **Angolo (Angle)** (2θ); con l'integrazione radiale o con l'asse in distanza d viene mostrato un avviso e non viene eseguito nulla. Con troppe divisioni, i dati inviati a PDIndexer possono diventare troppo grandi.
 
 ### Voglio una mappa bidimensionale di 2θ e dell'azimut χ (immagine srotolata)
 
@@ -130,7 +130,7 @@ Selezionare un rettangolo con Ctrl + trascinamento con il tasto destro sull'imma
 
 ### Un'immagine di buio diventa più luminosa verso i bordi ad alto angolo
 
-Se in **Sorgente d'onda (Wave source)** nella finestra delle proprietà è attivo **Correggi polarizzazione lineare (Correct linear polarization)**, la correzione viene applicata anche ai segnali che non provengono dai raggi X (corrente di buio, rumore elettronico), e il lato ad alto angolo diventa più luminoso. Disattivarlo per le immagini di buio.
+Se in **Sorgente d'onda (Wave source)** nella finestra delle proprietà è attivo **Correggi polarizzazione lineare (cioè polarizzata linearmente → non polarizzata) (Correct linear polarization (i.e., linear polarized → unpolarized))**, la correzione viene applicata anche ai segnali che non provengono dai raggi X (corrente di buio, rumore elettronico), e il lato ad alto angolo diventa più luminoso. Disattivarlo per le immagini di buio.
 
 ### Voglio sottrarre un'immagine di buio (sfondo)
 
@@ -148,7 +148,7 @@ Dare un nome alla macro e aggiungerla nell'editor delle macro; si potrà poi ric
 
 ### Voglio integrare le immagini man mano che arrivano durante una misura
 
-Monitorare la cartella con la [Procedura automatica (Auto procedure)](3-tools.md#procedura-automatica-auto-procedure). I file ancora in scrittura vengono letti al termine della scrittura. Se la lettura non riesce per una cartella in rete, salvare sul disco locale del PC di misura e monitorare quella cartella.
+Monitorare la cartella con la [Procedura automatica (Auto procedure)](3-tools.md#procedura-automatica-auto-procedure). I file ancora in scrittura vengono letti al termine della scrittura; un file ancora bloccato dopo circa 50 s viene ritentato nelle scansioni successive e vi si rinuncia 10 minuti dopo che è stato trovato per la prima volta. Se la lettura non riesce per una cartella in rete, salvare sul disco locale del PC di misura e monitorare quella cartella.
 
 ## Segnalare un bug
 

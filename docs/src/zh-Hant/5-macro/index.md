@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 巨集
 
-IPAnalyzer 提供 **巨集** 功能，可使用類 Python 的腳本自動執行一連串操作。對於重複性工作非常實用，例如大量檔案的批次一維化、格式轉換以及方位角分割分析。
+IPAnalyzer 提供 **巨集** 功能，可使用類 Python 的腳本自動執行一連串操作。對於重複性工作非常實用，例如將大量檔案批次積分為一維曲線、格式轉換以及方位角分割分析。
 
 ## 開啟編輯器
 
@@ -26,7 +26,7 @@ IPAnalyzer 提供 **巨集** 功能，可使用類 Python 的腳本自動執行�
 | `IPA.Detector` | 設定偵測器幾何：中心、相機長度、像素尺寸、傾斜 |
 | `IPA.Image` | 控制顯示比例、對比與檢視區域 |
 | `IPA.Mask` | 遮蔽斑點與區域 |
-| `IPA.Profile` | 執行一維化（取得圖譜 (Get Profile)）並設定儲存／傳送 |
+| `IPA.Profile` | 積分影像（取得圖譜 (Get Profile)）並設定儲存／傳送 |
 | `IPA.IntegralProperty` | 設定同心／徑向積分的範圍、步進與單位 |
 | `IPA.Sequential` | 多影格影像的影格選取／平均／積分對象 |
 | `IPA.PDI` | 呼叫 PDIndexer 上的巨集（剪貼簿整合） |
@@ -42,4 +42,4 @@ IPAnalyzer 提供 **巨集** 功能，可使用類 Python 的腳本自動執行�
 
 ## 與自動程序搭配使用
 
-您撰寫的巨集可以依名稱儲存，也可以從[自動程序 (Auto Procedure)](../3-tools.md) 的「載入後執行」清單中呼叫，如此一來，實驗期間每張送入的影像都會自動套用該巨集。
+您撰寫的巨集可以依名稱儲存，也可以從[自動程序 (Auto Procedure)](../3-tools.md) 執行（在 **巨集 (Macro)** 中選擇它並勾選 **Execute macro**），如此一來，實驗期間每張送入的影像都會自動套用該巨集。

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Recherche de paramètres (force brute)
 
@@ -25,11 +25,11 @@ Il est efficace pour les anneaux incomplets ou les données bruitées, avec lesq
 
 ![Réglage des options](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Plage d'ajustement
+### Fitting Range
 
 Indique la plage angulaire ajustée pour chaque pic.
 
-### Nombre de répétitions
+### Itération (Iteration)
 
 Indique le nombre de cycles d'optimisation.
 
@@ -61,7 +61,7 @@ La valeur d'évaluation R est calculée comme suit.
 
 ![Formule de la valeur d'évaluation R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-Ici, \(2\theta_{\mathrm{calc},i}\) est la position du pic \(i\) calculée à partir des paramètres actuels, \(2\theta_{\mathrm{fit},i}\) la position obtenue par ajustement du profil (toutes deux en degrés), *H* la hauteur du pic après soustraction du fond, et *W* le poids (**Weight**, 100 par défaut). Pour un détecteur plan, la formule est :
+Ici, \(2\theta_{\mathrm{calc},i}\) est la position du pic \(i\) calculée à partir des paramètres actuels, \(2\theta_{\mathrm{fit},i}\) la position obtenue par ajustement du profil (toutes deux en degrés), *H* la hauteur du pic après soustraction du fond, et *W* le poids (100 ; ce réglage n'est pas affiché à l'écran dans la version actuelle). Pour un détecteur plan, la formule est :
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

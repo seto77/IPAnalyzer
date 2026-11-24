@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 主窗口
 
-主窗口是 IPAnalyzer 启动时显示的第一个界面。它集中了已载入衍射图像的显示、主要操作（查找中心、掩蔽斑点、一维化）以及探测器参数设置的入口。
+主窗口是 IPAnalyzer 启动时显示的第一个界面。它集中了已载入衍射图像的显示、主要操作（查找中心、掩蔽斑点、积分为一维谱线）以及探测器参数设置的入口。
 
 窗口大致由顶部的菜单和工具栏、中央的图像显示区、右侧的竖向工具栏以及底部的图表区组成。
 
@@ -89,8 +89,8 @@
 ### 选项 (Option)
 
 - **工具提示 (ToolTip)**：切换按钮和菜单上的工具提示。
-- **翻转 (Flip)**：水平 (Horizontally) / 垂直 (Vertically)。**旋转 (Rotate)**：选择旋转角度。翻转和旋转作用于工作中的图像数据，因此也会影响之后的积分和图像保存（磁盘上的源文件不会被修改）。
-- **清除注册表 (Clear registry)**：用于故障排除的项目，会清除已保存的设置。**Ngen 编译 (Ngen Compile)** 在当前版本中没有功能。
+- **翻转 (Flip)**：**水平 (Horizontally)** / **垂直 (Vertically)**。**旋转 (Rotate)**：选择旋转角度。翻转和旋转作用于工作中的图像数据，因此也会影响之后的积分和图像保存（磁盘上的源文件不会被修改）。
+- **清除注册表 (检查并重启) (Clear registry (check and restart))**：用于故障排除的项目，会清除已保存的设置。
 
 ### 语言 (Language)
 
@@ -102,7 +102,8 @@
 
 ### 帮助 (Help)
 
-- **程序更新 (Program Updates)**、**提示 (Hint)**、**许可 (License)**、**版本历史 (Version History)**、**帮助 (Help)**（打开随附的 PDF 手册）。
+- **程序更新 (Program Updates)**、**提示 (Hint)**、**许可 (License)**、**版本历史 (Version history)**、**帮助 (Help)**。
+- **帮助 (Help)** 与按 **F1** 一样，在默认的网页浏览器中打开本在线手册。
 - 在任意窗口中按 **F1** 可打开本在线手册的对应页面。
 
 ## 操作工具栏
@@ -112,15 +113,14 @@
 - **背景 (Background)**：此按钮在当前版本中不可用。背景图像扣除在属性窗口的 **背景选项 (Background Option)** 选项卡中设置。
 - **查找中心 (Find Center)**：通过二维 Pseudo-Voigt 拟合检测束流中心（默认搜索范围为中心周围 ±8 px，在杂项 (Miscellaneous) 选项卡中设置）。用 **绘制环 (Draw ring)** 显示圆环时，改为根据圆环确定中心。
 - **固定中心 (Fix Center)**：固定中心位置。
-- **掩蔽斑点 (Mask Spots)**：在每个径向带内，强度超过“平均值 + 标准差 × Deviation”的像素被检测为斑点，并连同其周围一起被掩蔽。下拉菜单中包括全部掩蔽、反转掩模、手动等。
+- **掩蔽斑点 (Mask Spots)**：在每个径向带内，强度超过 平均值 + 标准差 × **"掩蔽斑点"的判据偏差 (Criterial deviation for "Mask Spots")**（掩模选项 (Mask Option) 选项卡）的像素被检测为斑点，并连同其周围一起被掩蔽。下拉菜单中包括 **掩蔽全部区域 (Mask all area)**、**反转掩模 (Invert mask)**、**手动模式 (Manual Mode)** 等。
 - **手动模式 (Manual Mode)**：手动掩模模式。可选择掩模形状（斑点（圆 / 矩形）/ 圆 / 矩形 / 多边形 / 样条曲线）以及斑点大小（半宽）。
-- **获取图谱 (Get Profile)**：将图像积分为一维谱线。支持同心 (Concentric，基于 2θ) 和径向 (Radial，基于方位角) 两种方式。下拉菜单用于设置积分属性 / 积分区域的选择、积分前是否查找中心和掩蔽斑点、发送到 PDIndexer、方位角分割分析、序列图像处理等。
+- **获取图谱 (Get Profile)**：将图像积分为一维谱线。支持 **同心积分 (Concentric Integration)**（基于 2θ）和 **径向积分 (Radial integration)**（基于方位角）。下拉菜单用于设置积分属性 / 积分区域的选择、积分前是否查找中心和掩蔽斑点、发送到 PDIndexer、**方位角分割分析 (Azimuthal Division Analysis)**（仅适用于同心积分且横轴为 **角度 (Angle)** (2θ) 的情况；否则会显示警告且不执行）、序列图像处理等。
 
 ## 工具栏（其他工具）
 
 右侧的竖向工具栏用于启动各种工具。详情请参见[工具](3-tools.md)。
 
-- **强度表 (Intensity table)**（当前版本中此按钮未分配功能；R-AXIS 强度校准请使用 **工具 (Tool) → 校准 R-AXIS 图像 (Calibrate Raxis Image)**）
 - **自动流程 (Auto procedure)**
 - **绘制环 (Draw ring)**
 - **查找参数 (几何法) (Find parameter (geometrically))** / **查找参数 (穷举法) (Find parameter (brute force))**

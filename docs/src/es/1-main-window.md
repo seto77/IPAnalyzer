@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Ventana principal
 
-La ventana principal es la primera pantalla que aparece al iniciar IPAnalyzer. Reúne la visualización de la imagen de difracción cargada, las operaciones principales (búsqueda del centro, enmascaramiento de puntos, conversión a una dimensión) y los accesos a la configuración de los parámetros del detector.
+La ventana principal es la primera pantalla que aparece al iniciar IPAnalyzer. Reúne la visualización de la imagen de difracción cargada, las operaciones principales (búsqueda del centro, enmascaramiento de puntos, integración en un perfil 1D) y los accesos a la configuración de los parámetros del detector.
 
 A grandes rasgos, la ventana consta de los menús y la barra de herramientas en la parte superior, el área de visualización de la imagen en el centro, la barra de herramientas vertical a la derecha y el área de gráficos en la parte inferior.
 
@@ -89,8 +89,8 @@ Fuente de radiación (Wave Source) / Condición de la placa de imagen (Imaging P
 ### Opción (Option)
 
 - **Información sobre herramientas (ToolTip)**: activa o desactiva la información sobre herramientas de botones y menús.
-- **Voltear (Flip)**: horizontalmente / verticalmente. **Rotar (Rotate)**: elige un ángulo de rotación. El volteo y la rotación se aplican a los datos de imagen de trabajo y, por tanto, también afectan a la integración y al guardado de imagen posteriores (el archivo de origen en disco no se modifica).
-- **Borrar registro (Clear registry)**: elemento de resolución de problemas que borra la configuración guardada. **Compilar con Ngen (Ngen Compile)** no tiene función en la versión actual.
+- **Voltear (Flip)**: **Horizontalmente (Horizontally)** / **Verticalmente (Vertically)**. **Rotar (Rotate)**: elige un ángulo de rotación. El volteo y la rotación se aplican a los datos de imagen de trabajo y, por tanto, también afectan a la integración y al guardado de imagen posteriores (el archivo de origen en disco no se modifica).
+- **Borrar registro (comprobar y reiniciar) (Clear registry (check and restart))**: elemento de resolución de problemas que borra la configuración guardada.
 
 ### Idioma (Language)
 
@@ -102,7 +102,8 @@ Fuente de radiación (Wave Source) / Condición de la placa de imagen (Imaging P
 
 ### Ayuda (Help)
 
-- **Actualizaciones del programa (Program Updates)**, **Sugerencia (Hint)**, **Licencia (License)**, **Historial de versiones (Version History)**, **Ayuda (Help)** (abre el manual PDF incluido).
+- **Actualizaciones del programa (Program Updates)**, **Sugerencia (Hint)**, **Licencia (License)**, **Historial de versiones (Version history)**, **Ayuda (Help)**.
+- **Ayuda (Help)** abre este manual en línea en el navegador web predeterminado, igual que pulsar **F1**.
 - Pulsa **F1** en cualquier ventana para abrir la página correspondiente de este manual en línea.
 
 ## Barra de herramientas de operaciones
@@ -112,15 +113,14 @@ Las operaciones principales de procesamiento de imagen (con opciones detalladas 
 - **Fondo (Background)**: este botón está deshabilitado en la versión actual. La resta de una imagen de fondo se configura en la pestaña **Opciones de fondo (Background Option)** de la ventana de propiedades.
 - **Buscar centro (Find Center)**: detecta el centro del haz mediante un ajuste Pseudo-Voigt 2D (por defecto, el intervalo de búsqueda es de ±8 px alrededor del centro; se define en la pestaña Varios (Miscellaneous)). Cuando se muestran anillos con **Dibujar anillo (Draw ring)**, el centro se determina a partir del anillo.
 - **Fijar centro (Fix Center)**: fija la posición del centro.
-- **Enmascarar puntos (Mask Spots)**: dentro de cada banda radial, los píxeles cuya intensidad supera media + desviación estándar × Deviation se detectan como puntos y se enmascaran junto con su entorno. El menú desplegable incluye enmascarar todo, máscara inversa, modo manual, etc.
+- **Enmascarar puntos (Mask Spots)**: dentro de cada banda radial, los píxeles cuya intensidad supera media + desviación estándar × **Desviación de criterio para "Enmascarar puntos" (Criterial deviation for "Mask Spots")** (pestaña Opciones de máscara (Mask Option)) se detectan como puntos y se enmascaran junto con su entorno. El menú desplegable incluye **Enmascarar toda el área (Mask all area)**, **Invertir máscara (Invert mask)**, **Modo manual (Manual Mode)**, etc.
 - **Modo manual (Manual Mode)**: el modo de máscara manual. Puedes elegir la forma de la máscara (punto (círculo/rectángulo) / círculo / rectángulo / polígono / spline) y el tamaño del punto (semianchura).
-- **Obtener perfil (Get Profile)**: integra la imagen en un perfil unidimensional. Admite el modo concéntrico (basado en 2θ) y el radial (basado en el azimut). El menú desplegable configura la selección de Propiedad de integración/Región de integración (Integral Property/Region), si se busca el centro y se enmascaran los puntos antes de la integración, el envío a PDIndexer, el análisis de división azimutal, el procesamiento de imágenes secuenciales, etc.
+- **Obtener perfil (Get Profile)**: integra la imagen en un perfil 1D. Admite **Integración concéntrica (Concentric Integration)** (basada en 2θ) e **Integración radial (Radial integration)** (basada en el azimut). El menú desplegable configura la selección de Propiedad de integración/Región de integración (Integral Property/Region), si se busca el centro y se enmascaran los puntos antes de la integración, el envío a PDIndexer, el **Análisis de división azimutal (Azimuthal Division Analysis)** (solo con integración concéntrica y el eje **Ángulo (Angle)** (2θ); en otro caso se muestra una advertencia y no se ejecuta nada), el procesamiento de imágenes secuenciales, etc.
 
 ## Barra de herramientas (otras herramientas)
 
 La barra de herramientas vertical de la derecha inicia las distintas herramientas. Véase [Herramientas](3-tools.md) para más detalles.
 
-- **Tabla de intensidad (Intensity table)** (en la versión actual este botón no tiene ninguna función asignada; para la calibración de intensidad R-AXIS usa **Herramienta (Tool) → Calibrar imagen R-AXIS (Calibrate Raxis Image)**)
 - **Procedimiento automático (Auto procedure)**
 - **Dibujar anillo (Draw ring)**
 - **Buscar parámetro (geométricamente) (Find parameter (geometrically))** / **Buscar parámetro (fuerza bruta) (Find parameter (brute force))**

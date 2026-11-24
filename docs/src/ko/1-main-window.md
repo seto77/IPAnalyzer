@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 메인 창
 
-메인 창은 IPAnalyzer 를 시작하면 처음 표시되는 화면입니다. 불러온 회절 이미지의 표시, 주요 조작 (중심 찾기, 스폿 마스크, 1차원화), 검출기 매개변수 설정으로 들어가는 입구가 이곳에 모여 있습니다.
+메인 창은 IPAnalyzer 를 시작하면 처음 표시되는 화면입니다. 불러온 회절 이미지의 표시, 주요 조작 (중심 찾기, 스폿 마스크, 1차원 프로파일로의 적분), 검출기 매개변수 설정으로 들어가는 입구가 이곳에 모여 있습니다.
 
 창은 대략 위쪽의 메뉴와 도구 모음, 가운데의 이미지 표시 영역, 오른쪽의 세로 도구 모음, 아래쪽의 그래프 영역으로 구성됩니다.
 
@@ -89,8 +89,8 @@
 ### 옵션 (Option)
 
 - **툴팁 (ToolTip)**: 버튼과 메뉴의 툴팁 표시를 켜고 끕니다.
-- **뒤집기 (Flip)**: 수평 (Horizontally) / 수직 (Vertically). **회전 (Rotate)**: 회전 각도를 선택합니다. 뒤집기와 회전은 작업 중인 이미지 데이터에 적용되므로, 이후의 적분과 이미지 저장에도 영향을 줍니다 (디스크의 원본 파일은 바뀌지 않습니다).
-- **레지스트리 지우기 (Clear registry)**: 저장된 설정을 지우는 문제 해결용 항목입니다. **Ngen 컴파일 (Ngen Compile)** 은 현재 버전에서는 기능이 없습니다.
+- **뒤집기 (Flip)**: **수평 (Horizontally)** / **수직 (Vertically)**. **회전 (Rotate)**: 회전 각도를 선택합니다. 뒤집기와 회전은 작업 중인 이미지 데이터에 적용되므로, 이후의 적분과 이미지 저장에도 영향을 줍니다 (디스크의 원본 파일은 바뀌지 않습니다).
+- **레지스트리 지우기 (확인 후 재시작) (Clear registry (check and restart))**: 저장된 설정을 지우는 문제 해결용 항목입니다.
 
 ### 언어 (Language)
 
@@ -102,7 +102,8 @@
 
 ### 도움말 (Help)
 
-- **프로그램 업데이트 (Program Updates)**, **힌트 (Hint)**, **라이선스 (License)**, **버전 기록 (Version History)**, **도움말 (Help)** (동봉된 PDF 매뉴얼을 엽니다).
+- **프로그램 업데이트 (Program Updates)**, **힌트 (Hint)**, **라이선스 (License)**, **버전 기록 (Version history)**, **도움말 (Help)**.
+- **도움말 (Help)** 은 **F1** 을 누를 때와 마찬가지로 이 온라인 매뉴얼을 기본 웹 브라우저에서 엽니다.
 - 어느 창에서든 **F1** 을 누르면 이 온라인 매뉴얼의 해당 페이지가 열립니다.
 
 ## 연산 도구 모음
@@ -112,15 +113,14 @@
 - **배경 (Background)**: 현재 버전에서는 이 버튼이 비활성화되어 있습니다. 배경 이미지 차감은 속성 창의 **배경 옵션 (Background Option)** 탭에서 설정합니다.
 - **중심 찾기 (Find Center)**: 2D Pseudo-Voigt 피팅으로 빔 중심을 검출합니다 (검색 범위는 기본적으로 중심 주위 ±8 px 이며, 기타 (Miscellaneous) 탭에서 설정합니다). **링 그리기 (Draw ring)** 로 링을 표시하고 있을 때는 링을 기준으로 중심을 구합니다.
 - **중심 고정 (Fix Center)**: 중심 위치를 고정합니다.
-- **스폿 마스크 (Mask Spots)**: 각 반경 띠 안에서 강도가 평균 + 표준편차 × Deviation 을 넘는 픽셀을 스폿으로 검출하고, 그 주변과 함께 마스크합니다. 드롭다운에는 전체 마스크, 마스크 반전, 수동 등이 있습니다.
+- **스폿 마스크 (Mask Spots)**: 각 반경 띠 안에서 강도가 평균 + 표준편차 × **"스폿 마스크"용 기준 편차 (Criterial deviation for "Mask Spots")** (마스크 옵션 (Mask Option) 탭) 를 넘는 픽셀을 스폿으로 검출하고, 그 주변과 함께 마스크합니다. 드롭다운에는 **전체 영역 마스크 (Mask all area)**, **마스크 반전 (Invert mask)**, **수동 모드 (Manual Mode)** 등이 있습니다.
 - **수동 모드 (Manual Mode)**: 수동 마스크 모드입니다. 마스크 모양 (스폿 (원/직사각형) / 원 / 직사각형 / 다각형 / 스플라인) 과 스폿 크기 (반폭) 를 선택할 수 있습니다.
-- **프로파일 가져오기 (Get Profile)**: 이미지를 적분하여 1차원 프로파일로 만듭니다. 동심 (Concentric, 2θ 기준) 과 방사 (Radial, 방위각 기준) 를 지원합니다. 드롭다운에서는 적분 속성/적분 영역 (Integral Property/Region) 선택, 적분 전에 중심 찾기와 스폿 마스크를 할지 여부, PDIndexer 로 전송, 방위각 분할 분석, 연속 이미지 처리 등을 설정합니다.
+- **프로파일 가져오기 (Get Profile)**: 이미지를 적분하여 1차원 프로파일로 만듭니다. **동심 적분 (Concentric Integration)** (2θ 기준) 과 **방사 적분 (Radial integration)** (방위각 기준) 을 지원합니다. 드롭다운에서는 적분 속성/적분 영역 (Integral Property/Region) 선택, 적분 전에 중심 찾기와 스폿 마스크를 할지 여부, PDIndexer 로 전송, **방위각 분할 분석 (Azimuthal Division Analysis)** (동심 적분이고 가로축이 **각도 (Angle)** (2θ) 일 때만 실행됩니다. 그 밖의 경우에는 경고가 표시되고 아무것도 실행되지 않습니다), 연속 이미지 처리 등을 설정합니다.
 
 ## 도구 모음 (기타 도구)
 
 오른쪽의 세로 도구 모음에서 여러 도구를 실행합니다. 자세한 내용은 [도구](3-tools.md)를 참조하십시오.
 
-- **강도 테이블 (Intensity table)** (현재 버전에서는 이 버튼에 기능이 할당되어 있지 않습니다. R-AXIS 강도 보정에는 **도구 (Tool) → R-AXIS 이미지 보정 (Calibrate Raxis Image)** 을 사용합니다)
 - **자동 절차 (Auto procedure)**
 - **링 그리기 (Draw ring)**
 - **매개변수 찾기 (기하학적) (Find parameter (geometrically))** / **매개변수 찾기 (전수 탐색) (Find parameter (brute force))**

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Buscar parámetros (fuerza bruta)
 
@@ -11,7 +11,7 @@ Es eficaz con anillos incompletos o datos ruidosos, en los que la optimización 
 
 ## Pasos
 
-1. Carga los datos de imagen y los parámetros y, a continuación, haz clic en **Buscar parámetro (fuerza bruta) (Find Parameter (brute force))**.
+1. Carga los datos de imagen y los parámetros y, a continuación, haz clic en **Buscar parámetro (fuerza bruta) (Find parameter (brute force))**.
 
     ![Inicio de Buscar parámetro (fuerza bruta)](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![Ventana de calibración por fuerza bruta](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -25,11 +25,11 @@ Es eficaz con anillos incompletos o datos ruidosos, en los que la optimización 
 
 ![Configuración de las opciones](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Intervalo de ajuste
+### Fitting Range
 
 Especifica el intervalo angular que se ajusta para cada pico.
 
-### Número de repeticiones
+### Iteración (Iteration)
 
 Especifica el número de ciclos de optimización.
 
@@ -61,7 +61,7 @@ El valor de evaluación R se calcula como sigue.
 
 ![Fórmula del valor de evaluación R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-Aquí \(2\theta_{\mathrm{calc},i}\) es la posición del pico \(i\) calculada a partir de los parámetros actuales, \(2\theta_{\mathrm{fit},i}\) la posición obtenida ajustando el perfil (ambas en grados), *H* la altura del pico tras restar el fondo y *W* el peso (**Weight**, 100 por defecto). Para un detector plano, la fórmula es:
+Aquí \(2\theta_{\mathrm{calc},i}\) es la posición del pico \(i\) calculada a partir de los parámetros actuales, \(2\theta_{\mathrm{fit},i}\) la posición obtenida ajustando el perfil (ambas en grados), *H* la altura del pico tras restar el fondo y *W* el peso (100; este ajuste no se muestra en pantalla en la versión actual). Para un detector plano, la fórmula es:
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

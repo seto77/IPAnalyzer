@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/1-built-in-functions.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Integrierte Funktionen
 
@@ -100,7 +100,7 @@ Bei allen Lese-/Speichermethoden öffnet sich ein Auswahldialog, wenn der Datein
 | `SaveProfileAsGSAS` | True/False. Im GSAS-Format speichern. Nur bei konzentrischer Integration mit 2θ-Achse möglich; wird nicht geschrieben, wenn mehrere Profile in einer Datei gespeichert werden. |
 | `SaveProfileInOneFile` | True/False. Profile von Bildsequenzen/azimutaler Unterteilung in einer Datei speichern. |
 | `SaveProfileAtImageDirectory` | True/False. Im selben Verzeichnis wie das Bild speichern. |
-| `GetProfile(filename="")` | Führt die Eindimensionalisierung aus. Wird `filename` angegeben, dient er als Basisname, an den die Formaterweiterung angehängt wird (z. B. ergibt `GetProfile("sample.stl")` beim Speichern als CSV `sample.stl.csv`). Ist als Ziel „jedes Mal wählen“ eingestellt, wird der Speicherdialog angezeigt. |
+| `GetProfile(filename="")` | Integriert das Bild zu einem 1D-Profil (wie **Profil abrufen (Get Profile)**). Wird `filename` angegeben, dient er als Basisname, an den die Formaterweiterung angehängt wird (z. B. ergibt `GetProfile("sample.stl")` beim Speichern als CSV `sample.stl.csv`). Ist als Ziel „jedes Mal wählen“ eingestellt, wird der Speicherdialog angezeigt. |
 
 ## IPA.IntegralProperty
 

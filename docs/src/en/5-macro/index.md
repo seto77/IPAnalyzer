@@ -1,8 +1,9 @@
 <!-- 260601Cl: Reflected from ja/5-macro/index.md (lead language: Japanese). Migrated from the wiki macro pages. -->
+<!-- 261124Cl: Replaced "one-dimensionalization" with "integration"; named the actual Auto procedure controls (Macro, Execute macro). -->
 
 # Macro
 
-IPAnalyzer provides a **macro** feature that automates sequences of operations with Python-like scripts. It is useful for repetitive work such as batch one-dimensionalization of many files, format conversion, and azimuthal-division analysis.
+IPAnalyzer provides a **macro** feature that automates sequences of operations with Python-like scripts. It is useful for repetitive work such as integrating many files into 1D profiles in a batch, format conversion, and azimuthal-division analysis.
 
 ## Opening the editor
 
@@ -26,7 +27,7 @@ Open the macro editor from the **Macro** menu → **Editor** in the main window.
 | `IPA.Detector` | Set detector geometry: center, camera length, pixel size, tilt |
 | `IPA.Image` | Control display scale, contrast, and view area |
 | `IPA.Mask` | Mask spots and regions |
-| `IPA.Profile` | Run one-dimensionalization (Get Profile) and configure saving/sending |
+| `IPA.Profile` | Integrate the image (Get Profile) and configure saving/sending |
 | `IPA.IntegralProperty` | Set the range, step, and unit of concentric / radial integration |
 | `IPA.Sequential` | Select / average / target frames of a multi-frame image |
 | `IPA.PDI` | Call macros on PDIndexer (clipboard integration) |
@@ -42,4 +43,4 @@ Turn on **Show samples** in the editor to list the read-only sample macros (basi
 
 ## Working with Auto Procedure
 
-Macros you write can be saved by name and also called from the "execute after loading" list of [Auto Procedure](../3-tools.md), so that a macro is applied automatically to each image arriving during an experiment.
+Macros you write can be saved by name and also run from [Auto Procedure](../3-tools.md) (choose it under **Macro** and check **Execute macro**), so that a macro is applied automatically to each image arriving during an experiment.

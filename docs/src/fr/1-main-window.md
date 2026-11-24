@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/1-main-window.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Fenêtre principale
 
-La fenêtre principale est le premier écran affiché au démarrage d'IPAnalyzer. Elle regroupe l'affichage de l'image de diffraction chargée, les opérations principales (recherche du centre, masquage des taches, réduction en une dimension) et les points d'accès aux réglages des paramètres du détecteur.
+La fenêtre principale est le premier écran affiché au démarrage d'IPAnalyzer. Elle regroupe l'affichage de l'image de diffraction chargée, les opérations principales (recherche du centre, masquage des taches, intégration en un profil 1D) et les points d'accès aux réglages des paramètres du détecteur.
 
 La fenêtre se compose, en gros, des menus et de la barre d'outils en haut, de la zone d'affichage de l'image au centre, de la barre d'outils verticale à droite et de la zone des graphiques en bas.
 
@@ -89,8 +89,8 @@ Source de rayonnement (Wave Source) / Condition de l'écran photostimulable (Ima
 ### Option
 
 - **Info-bulle (ToolTip)** : active ou désactive les info-bulles des boutons et des menus.
-- **Retourner (Flip)** : horizontalement / verticalement. **Pivoter (Rotate)** : choix d'un angle de rotation. Le retournement et la rotation s'appliquent aux données de l'image de travail et affectent donc aussi l'intégration et l'enregistrement d'image qui suivent (le fichier source sur le disque n'est pas modifié).
-- **Effacer le registre (Clear registry)** : élément de dépannage qui efface les réglages enregistrés. **Compilation Ngen (Ngen Compile)** n'a aucune fonction dans la version actuelle.
+- **Retourner (Flip)** : **Horizontalement (Horizontally)** / **Verticalement (Vertically)**. **Pivoter (Rotate)** : choix d'un angle de rotation. Le retournement et la rotation s'appliquent aux données de l'image de travail et affectent donc aussi l'intégration et l'enregistrement d'image qui suivent (le fichier source sur le disque n'est pas modifié).
+- **Effacer le registre (vérifier et redémarrer) (Clear registry (check and restart))** : élément de dépannage qui efface les réglages enregistrés.
 
 ### Langue (Language)
 
@@ -102,7 +102,8 @@ Source de rayonnement (Wave Source) / Condition de l'écran photostimulable (Ima
 
 ### Aide (Help)
 
-- **Mises à jour du programme (Program Updates)**, **Astuce (Hint)**, **Licence (License)**, **Historique des versions (Version History)**, **Aide (Help)** (ouvre le manuel PDF fourni).
+- **Mises à jour du programme (Program Updates)**, **Astuce (Hint)**, **Licence (License)**, **Historique des versions (Version history)**, **Aide (Help)**.
+- **Aide (Help)** ouvre ce manuel en ligne dans le navigateur web par défaut, comme la touche **F1**.
 - Appuyez sur **F1** dans n'importe quelle fenêtre pour ouvrir la page correspondante de ce manuel en ligne.
 
 ## Barre d'outils d'opération
@@ -112,15 +113,14 @@ Les principales opérations de traitement d'image (avec des options détaillées
 - **Fond (Background)** : ce bouton est désactivé dans la version actuelle. La soustraction d'une image de fond se règle dans l'onglet **Option de fond (Background Option)** de la fenêtre de propriétés.
 - **Trouver le centre (Find Center)** : détecte le centre du faisceau par ajustement d'une fonction Pseudo-Voigt 2D (la plage de recherche est de ±8 px autour du centre par défaut, réglée dans l'onglet Divers (Miscellaneous)). Lorsque des anneaux sont affichés avec **Tracer l'anneau (Draw ring)**, le centre est alors déterminé à partir de l'anneau.
 - **Fixer le centre (Fix Center)** : fixe la position du centre.
-- **Masquer les taches (Mask Spots)** : dans chaque bande radiale, les pixels dont l'intensité dépasse moyenne + écart-type × Deviation sont détectés comme taches et masqués avec leur voisinage. Le menu déroulant comprend notamment le masquage total, l'inversion du masque et le mode manuel.
+- **Masquer les taches (Mask Spots)** : dans chaque bande radiale, les pixels dont l'intensité dépasse moyenne + écart-type × **Écart critère pour « Masquer les spots » (Criterial deviation for "Mask Spots")** (onglet Option de masque (Mask Option)) sont détectés comme taches et masqués avec leur voisinage. Le menu déroulant comprend notamment **Masquer toute la zone (Mask all area)**, **Inverser le masque (Invert mask)** et **Mode manuel (Manual Mode)**.
 - **Mode manuel (Manual Mode)** : le mode de masquage manuel. Vous pouvez choisir la forme du masque (spot (cercle/rectangle) / cercle / rectangle / polygone / spline) et la taille du spot (demi-largeur).
-- **Obtenir le profil (Get Profile)** : intègre l'image en un profil unidimensionnel. Prend en charge l'intégration concentrique (Concentric, basée sur 2θ) et l'intégration radiale (Radial, basée sur l'azimut). Le menu déroulant règle notamment le choix de Propriété d'intégration/Région d'intégration (Integral Property/Region), la recherche du centre et le masquage des taches avant l'intégration, l'envoi vers PDIndexer, l'analyse par division azimutale et le traitement des images séquentielles.
+- **Obtenir le profil (Get Profile)** : intègre l'image en un profil 1D. Prend en charge l'**Intégration concentrique (Concentric Integration)** (basée sur 2θ) et l'**Intégration radiale (Radial integration)** (basée sur l'azimut). Le menu déroulant règle notamment le choix de Propriété d'intégration/Région d'intégration (Integral Property/Region), la recherche du centre et le masquage des taches avant l'intégration, l'envoi vers PDIndexer, l'**Analyse par division azimutale (Azimuthal Division Analysis)** (uniquement avec l'intégration concentrique et l'axe **Angle** (2θ) ; sinon, un avertissement s'affiche et rien n'est exécuté) et le traitement des images séquentielles.
 
 ## Barre d'outils (autres outils)
 
 La barre d'outils verticale de droite lance les différents outils. Voir [Outils](3-tools.md) pour plus de détails.
 
-- **Table d'intensités (Intensity table)** (aucune fonction n'est attribuée à ce bouton dans la version actuelle ; pour la calibration de l'intensité R-AXIS, utilisez **Outil → Étalonner l'image R-AXIS (Tool → Calibrate Raxis Image)**)
 - **Procédure auto. (Auto procedure)**
 - **Tracer l'anneau (Draw ring)**
 - **Trouver paramètre (géométriquement) (Find parameter (geometrically))** / **Trouver paramètre (force brute) (Find parameter (brute force))**

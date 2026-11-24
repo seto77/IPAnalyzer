@@ -1,4 +1,5 @@
 <!-- 260602Cl: 旧 doc/IPAnalyzerAlgorithm.pdf と現行コードを基に付録を新規作成（リード言語: 日本語）。 -->
+<!-- 261124Cl: UI 名を日本語表示 (英語表示) の形にし、A3・A5 の説明を改訂後の内容に合わせた。 -->
 
 # 付録
 
@@ -10,9 +11,9 @@
 
 - **[A1. 検出器の幾何と座標変換](a1-geometry.md)** — 右手系座標の定義、IP の傾き（$\varphi,\ \tau$）を表す回転行列、画素形状（$\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$）の補正。
 - **[A2. パラメータの決定](a2-calibration.md)** — 標準物質を用いた、カメラ長・波長・画素サイズ・IP 傾きの校正法（2 距離法、2 線法、楕円フィット）。
-- **[A3. 画像の積算](a3-image-integration.md)** — 画素強度を角度ステップへ配分する面積分配アルゴリズム。
+- **[A3. 画像の積算](a3-image-integration.md)** — 画素強度を角度ステップへ配分する面積分配アルゴリズムと、積算後の規格化。
 - **[A4. 対称性情報](a4-symmetry-information.md)** — 標準結晶の空間群対称性・幾何計算・ワイコフ位置・反射条件・対称要素図（Crystal ウィンドウのサブウィンドウ）。
-- **[A5. 散乱因子](a5-scattering-factor.md)** — 標準結晶の構造因子と反射一覧（X 線・電子線・中性子線）（Crystal ウィンドウのサブウィンドウ）。
+- **[A5. 散乱因子](a5-scattering-factor.md)** — 標準結晶の構造因子と反射一覧（X 線・電子線・中性子線）（結晶ウィンドウの **ビーム相互作用 (Beam interaction)** → **反射 (Reflections)** タブ）。
 
 ## 座標系（共通の参照図）
 
@@ -25,8 +26,8 @@
 | 記号 | 名称 | 意味 |
 |------|------|------|
 | $\lambda$ | 波長 (Wave Length) | 線源の波長。特性 X 線では既知、放射光ではモノクロメータ位置で変わるため都度決定する。 |
-| $\mathrm{CL}$ | カメラ長 (Camera Length) | サンプルと原点（ダイレクトスポット）との距離。サンプル位置 $(0,0,-\mathrm{CL})$。画面の **Camera Length 1** に相当する。**Camera Length 2** は試料から検出器面までの垂直距離で、傾き $\tau$ があると値が異なる。 |
+| $\mathrm{CL}$ | カメラ長 (Camera Length) | サンプルと原点（ダイレクトスポット）との距離。サンプル位置 $(0,0,-\mathrm{CL})$。画面の **カメラ長1 (Camera Length 1)** に相当する。**カメラ長2 (Camera Length 2)** は試料から検出器面までの垂直距離で、傾き $\tau$ があると値が異なる。 |
 | $\varphi,\ \tau$ | 傾き (Tilt Correction) | IP の光軸（$Z$ 軸）に対する傾き。$\varphi$ は XY 平面内の傾き軸の方位、$\tau$ はその軸まわりの回転角。 |
 | $\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$ | 画素形状 (Pixel Size) | 画素を平行四辺形として表す。$\xi$ は読み取りレーザーのスキャン開始点のずれ（歪み角）。 |
 
-波長はプロパティウィンドウの **Wave source**（線源の設定）タブで、カメラ長・傾き・画素形状は **Detector condition**（検出器の設定）タブで設定します（[2. プロパティウィンドウ](../2-property-windows.md) を参照）。
+波長はプロパティウィンドウの **線源の設定 (Wave source)** タブで、カメラ長・傾き・画素形状は **検出器の設定 (Detector condition)** タブで設定します（[2. プロパティウィンドウ](../2-property-windows.md) を参照）。

@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 매크로
 
-IPAnalyzer 는 Python 과 비슷한 스크립트로 일련의 조작을 자동화하는 **매크로** 기능을 제공합니다. 많은 파일의 일괄 1차원화, 포맷 변환, 방위각 분할 해석 같은 반복 작업에 유용합니다.
+IPAnalyzer 는 Python 과 비슷한 스크립트로 일련의 조작을 자동화하는 **매크로** 기능을 제공합니다. 많은 파일을 일괄로 적분하여 1차원 프로파일로 만드는 작업, 포맷 변환, 방위각 분할 해석 같은 반복 작업에 유용합니다.
 
 ## 편집기 열기
 
@@ -26,7 +26,7 @@ IPAnalyzer 는 Python 과 비슷한 스크립트로 일련의 조작을 자동�
 | `IPA.Detector` | 검출기 기하 설정: 중심, 카메라 길이, 픽셀 크기, 기울기 |
 | `IPA.Image` | 표시 스케일, 대비, 표시 영역 제어 |
 | `IPA.Mask` | 스폿과 영역의 마스크 |
-| `IPA.Profile` | 1차원화 (Get Profile) 실행과 저장/전송 설정 |
+| `IPA.Profile` | 이미지 적분 (Get Profile) 실행과 저장/전송 설정 |
 | `IPA.IntegralProperty` | 동심 / 방사 적분의 범위, 스텝, 단위 설정 |
 | `IPA.Sequential` | 다중 프레임 이미지의 프레임 선택 / 평균 / 대상 지정 |
 | `IPA.PDI` | PDIndexer 의 매크로 호출 (클립보드 연동) |
@@ -42,4 +42,4 @@ IPAnalyzer 는 Python 과 비슷한 스크립트로 일련의 조작을 자동�
 
 ## 자동 절차와 함께 사용하기
 
-작성한 매크로는 이름을 붙여 저장할 수 있고, [자동 절차 (Auto Procedure)](../3-tools.md)의 "불러온 후 실행" 목록에서도 호출할 수 있습니다. 이렇게 하면 실험 중에 도착하는 각 이미지에 매크로가 자동으로 적용됩니다.
+작성한 매크로는 이름을 붙여 저장할 수 있고, [자동 절차 (Auto Procedure)](../3-tools.md)에서도 실행할 수 있습니다 (**매크로 (Macro)** 에서 고르고 **Execute macro** 를 체크합니다). 이렇게 하면 실험 중에 도착하는 각 이미지에 매크로가 자동으로 적용됩니다.

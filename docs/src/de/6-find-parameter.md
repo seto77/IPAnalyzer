@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Parameter finden (Brute Force)
 
@@ -11,7 +11,7 @@ Er ist wirksam bei unvollständigen Ringen oder verrauschten Daten, bei denen di
 
 ## Schritte
 
-1. Laden Sie die Bilddaten und Parameter und klicken Sie dann auf **Parameter finden (Brute Force) (Find Parameter (brute force))**.
+1. Laden Sie die Bilddaten und Parameter und klicken Sie dann auf **Parameter finden (Brute Force) (Find parameter (brute force))**.
 
     ![Starten von Parameter finden (Brute Force)](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![Fenster der Brute-Force-Kalibrierung](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -25,11 +25,11 @@ Er ist wirksam bei unvollständigen Ringen oder verrauschten Daten, bei denen di
 
 ![Optionseinstellungen](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Fitting range
+### Fitting Range
 
 Legt den Winkelbereich fest, der für jeden Peak angepasst wird.
 
-### Anzahl der Wiederholungen
+### Iteration
 
 Legt die Anzahl der Optimierungszyklen fest.
 
@@ -61,7 +61,7 @@ Der Bewertungswert R wird wie folgt berechnet.
 
 ![Formel für den Bewertungswert R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-Dabei ist \(2\theta_{\mathrm{calc},i}\) die aus den aktuellen Parametern berechnete Position von Peak \(i\), \(2\theta_{\mathrm{fit},i}\) die durch Anpassung des Profils erhaltene Position (beide in Grad), *H* die untergrundbereinigte Peakhöhe und *W* das Gewicht (**Weight**, Standard 100). Für einen Flachdetektor lautet die Formel:
+Dabei ist \(2\theta_{\mathrm{calc},i}\) die aus den aktuellen Parametern berechnete Position von Peak \(i\), \(2\theta_{\mathrm{fit},i}\) die durch Anpassung des Profils erhaltene Position (beide in Grad), *H* die untergrundbereinigte Peakhöhe und *W* das Gewicht (100; diese Einstellung wird in der aktuellen Version nicht auf dem Bildschirm angezeigt). Für einen Flachdetektor lautet die Formel:
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

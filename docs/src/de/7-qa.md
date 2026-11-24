@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/7-qa.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Fragen und Antworten (häufig gestellte Fragen)
 
@@ -32,7 +32,7 @@ IPAnalyzer hält die Intensität jedes Pixels unabhängig von der ursprüngliche
 
 ### Die Dateien meines Detektors lassen sich nicht einlesen
 
-Das Format wird möglicherweise noch nicht unterstützt. Bitte wenden Sie sich über [Issues](https://github.com/seto77/IPAnalyzer/issues) oder an den Autor und schicken Sie eine echte Datei mit (möglichst eine mit Beugungsmuster, nicht nur ein Dunkelbild). Die Richtigkeit der Intensitäten und die Orientierung des Bildes lassen sich nur an einem Bild prüfen, das ein Muster zeigt.
+Das Format wird möglicherweise noch nicht unterstützt. Bitte wenden Sie sich über [Issues](https://github.com/seto77/IPAnalyzer/issues) oder an den Autor und schicken Sie eine echte Datei mit (möglichst eine mit Beugungsmuster, nicht nur ein Dunkelbild). Die Richtigkeit der Intensitäten und die Orientierung des Bildes lassen sich nur an einem Bild prüfen, das ein Muster zeigt. Schlägt das Laden fehl, bleibt das zuvor geladene Bild erhalten, sodass Sie damit weiterarbeiten können.
 
 !!! note "Wenn ein Rohbild falsche Breite und Höhe hat"
     Bei Rohdateien ohne Header werden Detektormodell und Pixelzahl aus der Dateigröße abgeleitet. Die tatsächliche Pixelzahl weicht oft vom Katalogwert ab; schicken Sie die Datei daher bitte ein, wenn die Erkennung fehlschlägt.
@@ -88,7 +88,7 @@ Die beiden werden unterschiedlich bestimmt. **Zentrum finden (Find Center)** pas
 
 ### Was ist die sphärische Korrektur?
 
-Eine Korrektur für einen Detektor, der kugelförmig gekrümmt ist. Geben Sie den Kehrwert des Krümmungsradius 1/R (mm⁻¹) ein. Für einen Flachdetektor verwenden Sie 0. Sie hilft, wenn die Ringe bei großen Winkeln nicht übereinstimmen, etwa bei einem großen Detektor dicht an der Probe.
+Eine Korrektur für einen Detektor, der kugelförmig gekrümmt ist. Geben Sie den Kehrwert des Krümmungsradius 1/R in m⁻¹ ein (auf dem Bildschirm als /m angezeigt). Für einen Flachdetektor verwenden Sie 0. Sie hilft, wenn die Ringe bei großen Winkeln nicht übereinstimmen, etwa bei einem großen Detektor dicht an der Probe.
 
 ### Wie rechne ich Verkippungswerte aus anderer Software (etwa PIP) um?
 
@@ -98,11 +98,11 @@ PIPs (β, Φ) entspricht IPAnalyzers (φ, τ) = (270° − β, Φ). Die Definiti
 
 ### Die horizontale Achse des Ergebnisses sieht falsch aus / die Intensität wirkt nahezu konstant
 
-Prüfen Sie, ob auf der Registerkarte **Integraleigenschaft (Integral Property)** des Eigenschaftsfensters **Radiale Integration (Radial integration)** ausgewählt ist. In diesem Modus hat das Profil den Azimut χ als horizontale Achse. Das übliche 2θ–Intensitätsprofil erhalten Sie mit **Konzentrische Integration (Concentric integration)**.
+Prüfen Sie, ob auf der Registerkarte **Integraleigenschaft (Integral Property)** des Eigenschaftsfensters **Radiale Integration (Cake-Muster) (Radial integration (cake pattern))** ausgewählt ist. In diesem Modus hat das Profil den Azimut χ als horizontale Achse. Das übliche 2θ–Intensitätsprofil erhalten Sie mit **Konzentrische Integration (streuwinkeldispersiv) (Concentric integration (scattering angle dispersive))**.
 
 ### Ich möchte das Profil ohne PDIndexer in einer Datei speichern
 
-Stellen Sie auf der Registerkarte **Nach "Profil abrufen" (After "Get Profile")** des Eigenschaftsfensters unter **Save File** das Ziel (gleicher Ordner wie das Bild / jedes Mal wählen) und das Format (PDI / CSV / TSV / GSAS) ein. Das Profil wird dann bei jeder Integration gespeichert.
+Stellen Sie auf der Registerkarte **Nach "Profil abrufen" (After "Get Profile")** des Eigenschaftsfensters unter **Profil speichern (Save Profiles)** das Ziel (gleicher Ordner wie das Bild / jedes Mal wählen) und das Format (PDI / CSV / TSV / GSAS) ein. Das Profil wird dann bei jeder Integration gespeichert.
 
 ### Was steht in der dritten Spalte der CSV-Datei?
 
@@ -118,7 +118,7 @@ Das Signal-Rausch-Verhältnis ist in beiden Fällen gleich. **Summierung (Summat
 
 ### Ich möchte für jeden Azimut (jeden Sektor) integrieren
 
-Schalten Sie **Azimutale Unterteilungsanalyse (Azimuthal Division Analysis)** im Dropdown-Menü von **Profil abrufen (Get Profile)** ein, stellen Sie **Anzahl der Unterteilungen (Number of divisions)** ein und integrieren Sie. Es entstehen ein Gesamtprofil (Name endet auf `-whole`) und je ein Profil pro Sektor (mit angehängtem Startwinkel, etwa `-000`, `-010`, …). Bei zu vielen Unterteilungen können die an PDIndexer gesendeten Daten zu groß werden.
+Schalten Sie **Azimutale Unterteilungsanalyse (Azimuthal Division Analysis)** im Dropdown-Menü von **Profil abrufen (Get Profile)** ein, stellen Sie **Anzahl der Unterteilungen (Number of divisions)** ein und integrieren Sie. Es entstehen ein Gesamtprofil (Name endet auf `-whole`) und je ein Profil pro Sektor (mit angehängtem Startwinkel, etwa `-000`, `-010`, …). Dies funktioniert nur mit **Konzentrische Integration (streuwinkeldispersiv) (Concentric integration (scattering angle dispersive))** und der Achse **Winkel (Angle)** (2θ); bei radialer Integration oder einer d-Wert-Achse erscheint eine Warnung und es wird nichts ausgeführt. Bei zu vielen Unterteilungen können die an PDIndexer gesendeten Daten zu groß werden.
 
 ### Ich möchte eine zweidimensionale Karte aus 2θ und Azimut χ (abgewickeltes Bild)
 
@@ -130,7 +130,7 @@ Wählen Sie im Bild durch Strg + Rechts ziehen ein Rechteck aus. Die Statistik e
 
 ### Ein Dunkelbild wird zu den Rändern bei großen Winkeln hin heller
 
-Ist im Eigenschaftsfenster unter **Wellenquelle (Wave source)** die Option **Lineare Polarisation korrigieren (Correct linear polarization)** eingeschaltet, wird die Korrektur auch auf Signale angewendet, die nicht von Röntgenstrahlen stammen (Dunkelstrom, elektronisches Rauschen), und die Seite bei großen Winkeln wird heller. Schalten Sie sie für Dunkelbilder aus.
+Ist im Eigenschaftsfenster unter **Wellenquelle (Wave source)** die Option **Lineare Polarisation korrigieren (d. h. linear polarisiert → unpolarisiert) (Correct linear polarization (i.e., linear polarized → unpolarized))** eingeschaltet, wird die Korrektur auch auf Signale angewendet, die nicht von Röntgenstrahlen stammen (Dunkelstrom, elektronisches Rauschen), und die Seite bei großen Winkeln wird heller. Schalten Sie sie für Dunkelbilder aus.
 
 ### Ich möchte ein Dunkelbild (Hintergrund) abziehen
 
@@ -148,7 +148,7 @@ Geben Sie dem Makro einen Namen und fügen Sie es im Makro-Editor hinzu; es läs
 
 ### Ich möchte Bilder während einer Messung integrieren, sobald sie eintreffen
 
-Überwachen Sie den Ordner mit der [Automatischen Prozedur (Auto procedure)](3-tools.md#automatische-prozedur-auto-procedure). Dateien, die noch geschrieben werden, werden nach Abschluss des Schreibvorgangs eingelesen. Schlägt das Einlesen bei einem Netzwerkordner fehl, speichern Sie auf die lokale Festplatte des Mess-PCs und überwachen Sie diesen Ordner.
+Überwachen Sie den Ordner mit der [Automatischen Prozedur (Auto procedure)](3-tools.md#automatische-prozedur-auto-procedure). Dateien, die noch geschrieben werden, werden nach Abschluss des Schreibvorgangs eingelesen; eine Datei, die nach etwa 50 s noch gesperrt ist, wird bei späteren Durchläufen erneut versucht und 10 Minuten nach ihrem ersten Auffinden aufgegeben. Schlägt das Einlesen bei einem Netzwerkordner fehl, speichern Sie auf die lokale Festplatte des Mess-PCs und überwachen Sie diesen Ordner.
 
 ## Einen Fehler melden
 

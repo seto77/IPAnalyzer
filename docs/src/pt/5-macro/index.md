@@ -1,8 +1,8 @@
-<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/5-macro/index.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Macro
 
-O IPAnalyzer oferece uma funcionalidade de **macro** que automatiza sequências de operações com scripts no estilo Python. Ela é útil para trabalhos repetitivos, como a conversão em lote de muitos arquivos para uma dimensão, a conversão de formatos e a análise de divisão azimutal.
+O IPAnalyzer oferece uma funcionalidade de **macro** que automatiza sequências de operações com scripts no estilo Python. Ela é útil para trabalhos repetitivos, como a integração em lote de muitos arquivos em perfis 1D, a conversão de formatos e a análise de divisão azimutal.
 
 ## Abrir o editor
 
@@ -26,7 +26,7 @@ Abra o editor de macros pelo menu **Macro** → **Editor** da janela principal. 
 | `IPA.Detector` | Definir a geometria do detector: centro, comprimento de câmara, tamanho do pixel, inclinação |
 | `IPA.Image` | Controlar a escala de exibição, o contraste e a área visível |
 | `IPA.Mask` | Mascarar pontos e regiões |
-| `IPA.Profile` | Executar a conversão para uma dimensão (Obter perfil / Get Profile) e configurar o salvamento/envio |
+| `IPA.Profile` | Integrar a imagem (Obter perfil / Get Profile) e configurar o salvamento/envio |
 | `IPA.IntegralProperty` | Definir o intervalo, o passo e a unidade da integração concêntrica / radial |
 | `IPA.Sequential` | Selecionar / calcular a média / definir o alvo dos quadros de uma imagem multiquadro |
 | `IPA.PDI` | Chamar macros no PDIndexer (integração pela área de transferência) |
@@ -42,4 +42,4 @@ Ative **Mostrar exemplos (Show samples)** no editor para listar as macros de exe
 
 ## Uso com o Procedimento automático (Auto Procedure)
 
-As macros que você escreve podem ser salvas com um nome e também chamadas a partir da lista "executar após o carregamento" do [Procedimento automático (Auto Procedure)](../3-tools.md), de modo que uma macro seja aplicada automaticamente a cada imagem que chega durante um experimento.
+As macros que você escreve podem ser salvas com um nome e também executadas a partir do [Procedimento automático (Auto Procedure)](../3-tools.md) (escolha-a em **Macro** e marque **Execute macro**), de modo que uma macro seja aplicada automaticamente a cada imagem que chega durante um experimento.

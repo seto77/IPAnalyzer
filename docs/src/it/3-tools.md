@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Strumenti
 
@@ -8,16 +8,14 @@ Questa pagina descrive gli strumenti ausiliari avviati dalla barra degli strumen
 
 Si apre con **Strumenti → Calibra immagine R-AXIS** (Tool → Calibrate Raxis Image). Si specificano due immagini R-AXIS IV `.stl` della stessa dimensione; lo strumento ottimizza una tabella di conversione delle intensità in modo che le due intensità coincidano. La tabella è rappresentata da punti di controllo, e la somma dei suoi elementi è mantenuta costante durante l'ottimizzazione. Il risultato è mostrato come grafico. Si usa, ad esempio, per calibrare la risposta in intensità di un rivelatore.
 
-Il pulsante **Tabella intensità (Intensity table)** della barra degli strumenti non ha alcuna funzione assegnata nella versione attuale.
-
 ![Calibra immagine R-AXIS](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## Procedura automatica (Auto procedure)
 
 Uno strumento che monitora una cartella, carica automaticamente le nuove immagini ed esegue una sequenza di operazioni dopo il caricamento.
 
-- **Monitoraggio e caricamento automatico**: monitora la cartella specificata (sottocartelle comprese) e legge un file una volta completata la sua scrittura. I file si possono filtrare per nome (corrispondenza numerica, parola chiave).
-- **Esecuzione automatica**: esegue in ordine i passi selezionati tra Contrasto automatico (Auto Contrast) → Trova centro (Find Center) → Maschera spot (Mask Spots) → Ottieni profilo (Get Profile) → Execute Macro.
+- **Monitoraggio e caricamento automatico**: monitora la cartella specificata (**Cartella da monitorare (Directory to be monitored)**, sottocartelle comprese) e legge un file una volta completata la sua scrittura. I file si possono filtrare per nome (**Corrispondenza di pattern (Pattern matching)** sul numero nel nome del file, **Parola chiave (Keyword)**); i file che non corrispondono vengono saltati senza attendere. Se un file è ancora bloccato dopo l'attesa della scrittura (circa 50 s), non viene scartato ma viene ritentato nelle scansioni successive; vi si rinuncia solo se è ancora bloccato 10 minuti dopo essere stato trovato per la prima volta.
+- **Esecuzione automatica**: quando **Una volta caricata la nuova immagine, esegui la seguente sequenza (Once the new image is loaded, perform the following sequence)** è attivo, esegue in ordine i passi selezionati tra **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro**.
 
 Ciò consente, ad esempio, di monitorare una cartella di output durante un esperimento e di integrare automaticamente ogni immagine man mano che arriva. Per i dettagli vedere [Procedure](4-procedures.md).
 
@@ -31,7 +29,7 @@ Disegna sull'immagine un anello a una distanza, un angolo o un valore d specific
 
 ## Srotolamento (Unroll)
 
-Trasforma l'immagine di diffrazione dalle coordinate polari centrate sullo spot diretto in coordinate cartesiane (asse orizzontale = angolo di scattering 2θ; asse verticale = azimut). Ora non si configura con una finestra dedicata, ma con il pulsante **Srotola immagine (Unroll image)** della barra degli strumenti e con la scheda **Opzioni immagine srotolata (Unrolled Image Option)** delle proprietà. Lo srotolamento usa lo stesso algoritmo sub-pixel di distribuzione dell'intensità della riduzione a una dimensione.
+Trasforma l'immagine di diffrazione dalle coordinate polari centrate sullo spot diretto in coordinate cartesiane (asse orizzontale = angolo di scattering 2θ; asse verticale = azimut). Ora non si configura con una finestra dedicata, ma con il pulsante **Srotola immagine (Unroll image)** della barra degli strumenti e con la scheda **Opzioni immagine srotolata (Unrolled Image Option)** delle proprietà. Lo srotolamento usa lo stesso algoritmo sub-pixel di distribuzione dell'intensità dell'integrazione in un profilo 1D.
 
 ## Sfocatura circonferenziale (Circumferential Blur)
 
@@ -44,8 +42,8 @@ Uno strumento che sfoca il pattern ad anelli lungo la direzione circonferenziale
 Uno strumento per gestire le immagini multiframe (NeXus (`.nxs`), TIFF multipagina e simili; serie temporali, serie in temperatura, scansioni in energia al sincrotrone).
 
 - Selezionare un singolo frame dall'elenco dei frame per visualizzarlo, oppure scorrerli con la barra di scorrimento.
-- Con **Selezione multipla (multi-selection)**, selezionare più frame e calcolarne la **Media (average)** o la **Sommatoria (sum)**.
-- La destinazione della riduzione a una dimensione si può scegliere tra "Tutte le immagini indipendentemente dalle selezioni correnti / L'immagine/le immagini selezionate / Solo l'immagine in cima" (tutti i frame / frame selezionati / solo quello in cima).
+- Con **Selezione multipla (Multi selection)**, selezionare più frame e calcolarne la **Media (Average)** o la **Sommatoria (Summation)**.
+- I frame integrati da **Ottieni profilo (Get Profile)** si scelgono in **Destinazione/i di "Ottieni profilo" (Target(s) of "Get Profile")**: **Tutte le immagini indipendentemente dalle selezioni correnti (All images irrespective of current selections)** / **L'immagine/le immagini selezionate (The selected image(s))** / **Solo l'immagine in cima (Only the topmost image)**.
 - Se un frame contiene informazioni sull'energia, la lunghezza d'onda viene aggiornata quando si seleziona quel singolo frame.
 
 ![Immagine sequenziale](../assets/cap-en-auto/FormSequentialImage.png)

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # Werkzeuge
 
@@ -8,16 +8,14 @@ Diese Seite beschreibt die Hilfswerkzeuge, die über die vertikale Symbolleiste 
 
 Öffnen Sie das Werkzeug mit **Werkzeuge → R-AXIS-Bild kalibrieren (Tool → Calibrate Raxis Image)**. Geben Sie zwei gleich große R-AXIS-IV-Bilder (`.stl`) an; das Werkzeug optimiert eine Intensitätsumrechnungstabelle so, dass die beiden Intensitäten übereinstimmen. Die Tabelle wird durch Stützpunkte dargestellt, und die Summe ihrer Elemente bleibt während der Optimierung konstant. Das Ergebnis wird als Diagramm angezeigt. Es dient beispielsweise zur Kalibrierung des Intensitätsverhaltens eines Detektors.
 
-Der Schaltfläche **Intensitätstabelle (Intensity table)** in der Symbolleiste ist in der aktuellen Version keine Funktion zugewiesen.
-
 ![R-AXIS-Bild kalibrieren (Calibrate Raxis Image)](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## Automatische Prozedur (Auto procedure)
 
 Ein Werkzeug, das einen Ordner überwacht, neue Bilder automatisch lädt und nach dem Laden eine Abfolge von Operationen ausführt.
 
-- **Überwachen und automatisch laden**: überwacht den angegebenen Ordner (einschließlich Unterordnern) und liest eine Datei ein, sobald ihr Schreibvorgang abgeschlossen ist. Dateien lassen sich nach Namen filtern (Nummernabgleich, Stichwort).
-- **Automatische Ausführung**: führt die angehakten Schritte aus Auto Contrast → Find Center → Mask Spots → Get Profile → Execute Macro der Reihe nach aus.
+- **Überwachen und automatisch laden**: überwacht den angegebenen Ordner (**Zu überwachendes Verzeichnis (Directory to be monitored)**, einschließlich Unterordnern) und liest eine Datei ein, sobald ihr Schreibvorgang abgeschlossen ist. Dateien lassen sich nach Namen filtern (**Mustervergleich (Pattern matching)** anhand der Nummer im Dateinamen, **Stichwort (Keyword)**); nicht passende Dateien werden ohne Wartezeit übersprungen. Ist eine Datei nach dem Warten auf den Schreibvorgang (etwa 50 s) noch gesperrt, wird sie nicht verworfen, sondern bei späteren Durchläufen erneut versucht; aufgegeben wird sie erst, wenn sie 10 Minuten nach ihrem ersten Auffinden noch immer gesperrt ist.
+- **Automatische Ausführung**: Ist **Nach dem Laden des neuen Bildes folgende Sequenz ausführen (Once the new image is loaded, perform the following sequence)** eingeschaltet, werden die angehakten Schritte aus **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro** der Reihe nach ausgeführt.
 
 So lässt sich beispielsweise während eines Experiments ein Ausgabeordner überwachen und jedes eintreffende Bild automatisch integrieren. Einzelheiten finden Sie unter [Arbeitsabläufe](4-procedures.md).
 
@@ -31,7 +29,7 @@ Zeichnet unter Berücksichtigung der IP-Verkippung und der Pixelverzerrung einen
 
 ## Abwickeln (Unroll)
 
-Wickelt das Beugungsbild von Polarkoordinaten um den Direktstrahl in kartesische Koordinaten ab (horizontale Achse = Streuwinkel 2θ; vertikale Achse = Azimut). Eingestellt wird dies heute nicht in einem eigenen Fenster, sondern über die Symbolleisten-Schaltfläche **Bild abrollen (Unroll image)** und die Registerkarte **Abgewickeltes Bild – Optionen (Unrolled Image Option)** der Eigenschaften. Das Abwickeln verwendet denselben subpixelgenauen Intensitätsverteilungs-Algorithmus wie die Eindimensionalisierung.
+Wickelt das Beugungsbild von Polarkoordinaten um den Direktstrahl in kartesische Koordinaten ab (horizontale Achse = Streuwinkel 2θ; vertikale Achse = Azimut). Eingestellt wird dies heute nicht in einem eigenen Fenster, sondern über die Symbolleisten-Schaltfläche **Bild abrollen (Unroll image)** und die Registerkarte **Abgewickeltes Bild – Optionen (Unrolled Image Option)** der Eigenschaften. Das Abwickeln verwendet denselben subpixelgenauen Intensitätsverteilungs-Algorithmus wie die Integration zu einem 1D-Profil.
 
 ## Umfangsunschärfe (Circumferential Blur)
 
@@ -45,7 +43,7 @@ Ein Werkzeug für Multiframe-Bilder (NeXus (`.nxs`), mehrseitige TIFF-Dateien un
 
 - Wählen Sie in der Frame-Liste einen einzelnen Frame aus, um ihn anzuzeigen, oder blättern Sie mit dem Schieberegler durch die Frames.
 - Mit **Mehrfachauswahl (Multi selection)** wählen Sie mehrere Frames aus und berechnen deren **Mittelwert (Average)** oder **Summierung (Summation)**.
-- Das Ziel der Eindimensionalisierung lässt sich aus „Alle Bilder unabhängig von der aktuellen Auswahl / Die ausgewählten Bilder / Nur das oberste Bild“ wählen.
+- Welche Frames mit **Profil abrufen (Get Profile)** integriert werden, wählen Sie unter **Ziel(e) von "Profil abrufen" (Target(s) of "Get Profile")**: **Alle Bilder unabhängig von der aktuellen Auswahl (All images irrespective of current selections)** / **Die ausgewählten Bilder (The selected image(s))** / **Nur das oberste Bild (Only the topmost image)**.
 - Enthält ein Frame Energieinformationen, wird die Wellenlänge aktualisiert, sobald dieser einzelne Frame ausgewählt wird.
 
 ![Bildsequenz (Sequential Image)](../assets/cap-en-auto/FormSequentialImage.png)

@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/6-find-parameter.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 查找参数（暴力搜索）
 
@@ -11,7 +11,7 @@
 
 ## 步骤
 
-1. 载入图像数据和参数，然后单击 **查找参数 (穷举法) (Find Parameter (brute force))**。
+1. 载入图像数据和参数，然后单击 **查找参数 (穷举法) (Find parameter (brute force))**。
 
     ![Launching Find Parameter (brute force)](https://user-images.githubusercontent.com/44538886/180194930-bcefbf4f-7b61-4068-96d1-18bb29109411.png)
     ![Brute-force calibration window](../assets/cap-en-auto/FormFindParameterBruteForce.png)
@@ -25,11 +25,11 @@
 
 ![Option settings](https://user-images.githubusercontent.com/44538886/180196763-e707ea11-5594-4cfe-876b-6d7d28b775e8.png)
 
-### Fitting range
+### Fitting Range
 
 指定对每个峰进行拟合的角度范围。
 
-### 重复次数
+### 迭代 (Iteration)
 
 指定优化的循环次数。
 
@@ -61,7 +61,7 @@
 
 ![Formula for the evaluation value R](https://user-images.githubusercontent.com/44538886/180198715-04479da0-91dc-489b-b6b5-d80c2f88ea33.png)
 
-其中 \(2\theta_{\mathrm{calc},i}\) 是由当前参数计算出的峰 \(i\) 的位置，\(2\theta_{\mathrm{fit},i}\) 是通过拟合谱线得到的位置（均以度为单位），*H* 是扣除背景后的峰高，*W* 是权重（**Weight**，默认 100）。对于平板探测器，公式为：
+其中 \(2\theta_{\mathrm{calc},i}\) 是由当前参数计算出的峰 \(i\) 的位置，\(2\theta_{\mathrm{fit},i}\) 是通过拟合谱线得到的位置（均以度为单位），*H* 是扣除背景后的峰高，*W* 是权重（100；当前版本中此设置不在界面上显示）。对于平板探测器，公式为：
 
 $$
 R = 1000\left[\sum_i \left(2\theta_{\mathrm{calc},i} - 2\theta_{\mathrm{fit},i}\right)^2 + \frac{W}{\sum_i H_i}\right]

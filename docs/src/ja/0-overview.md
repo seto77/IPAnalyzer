@@ -1,4 +1,5 @@
 <!-- 260601Cl: 旧 doc マニュアルと現行 Web マニュアル(yseto.net)・現行コードを基に概要を再構成。 -->
+<!-- 261124Cl: UI 名を日本語表示 (英語表示) の形にした。 -->
 
 # 概要
 
@@ -47,7 +48,7 @@ IPAnalyzer は、イメージングプレート (IP) や CCD/CMOS 検出器で�
 
 <!-- TODO(図): 座標軸 (X / Y / Z) の定義図。旧 doc image040.png / image041.png 相当。現 GUI に合わせて後日作成。 -->
 
-カメラ長・\( \varphi \)・\( \tau \)・画素サイズ・\( \xi \) は、プロパティウィンドウの **Detector condition**（検出器の設定）タブで設定します（[2. プロパティウィンドウ](2-property-windows.md) を参照）。
+カメラ長・\( \varphi \)・\( \tau \)・画素サイズ・\( \xi \) は、プロパティウィンドウの **検出器の設定 (Detector condition)** タブで設定します（[2. プロパティウィンドウ](2-property-windows.md) を参照）。
 
 ### (WIN)PIP との関係
 

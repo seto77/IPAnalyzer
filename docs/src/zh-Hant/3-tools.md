@@ -1,4 +1,4 @@
-<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). -->
+<!-- 261124Cl: Retranslated from en/3-tools.md (UI labels follow the localized GUI). (2nd update: synced with en changes) -->
 
 # 工具
 
@@ -8,16 +8,14 @@
 
 以 **工具 (Tool) → 校正 R-AXIS 影像 (Calibrate Raxis Image)** 開啟。指定兩張相同尺寸的 R-AXIS IV `.stl` 影像後，本工具會最佳化強度轉換表，使兩者的強度一致。轉換表以控制點表示，最佳化過程中其元素總和保持不變。結果以圖表顯示。可用於例如校正偵測器的強度響應。
 
-工具列上的 **強度表格 (Intensity table)** 按鈕在目前版本中未指派任何功能。
-
 ![校正 R-AXIS 影像](../assets/cap-en-auto/FormCalibrateIntensity.png)
 
 ## 自動程序 (Auto procedure)
 
 監看資料夾、自動載入新影像，並在載入後執行一連串操作的工具。
 
-- **監看與自動載入**：監看指定的資料夾（含子資料夾），並在檔案寫入完成後讀取。可依檔名篩選檔案（數字比對、關鍵字）。
-- **自動執行**：從 自動對比 (Auto Contrast) → 尋找中心 (Find Center) → 遮罩斑點 (Mask Spots) → 取得圖譜 (Get Profile) → Execute Macro 中，依序執行已勾選的步驟。
+- **監看與自動載入**：監看指定的資料夾（**要監視的目錄 (Directory to be monitored)**，含子資料夾），並在檔案寫入完成後讀取。可依檔名篩選檔案（以 **圖樣比對 (Pattern matching)** 比對檔名中的數字、**關鍵字 (Keyword)**）；不符合條件的檔案會直接略過，不會等待。若等待寫入完成（約 50 秒）後檔案仍被鎖定，該檔案不會被捨棄，而是在之後的掃描中重試；只有在首次發現後 10 分鐘仍被鎖定時才會放棄。
+- **自動執行**：開啟 **載入新影像後, 執行下列程序 (Once the new image is loaded, perform the following sequence)** 時，會從 **Auto contrast** → **Find center** → **Mask spots** → **Get profile** → **Execute macro** 中，依序執行已勾選的步驟。
 
 如此便能在實驗期間監看輸出資料夾，於每張影像產生時自動進行積分。詳細內容請參見[操作步驟](4-procedures.md)。
 
@@ -31,7 +29,7 @@
 
 ## 展開 (Unroll)
 
-將繞射影像從以直射點為中心的極座標，展開為直角座標（橫軸 = 散射角 2θ；縱軸 = 方位角）。目前已不使用專用視窗，而是以工具列的 **展開影像 (Unroll image)** 按鈕與屬性的 **展開影像選項 (Unrolled Image Option)** 分頁進行設定。展開使用與一維化相同的次像素強度分配演算法。
+將繞射影像從以直射點為中心的極座標，展開為直角座標（橫軸 = 散射角 2θ；縱軸 = 方位角）。目前已不使用專用視窗，而是以工具列的 **展開影像 (Unroll image)** 按鈕與屬性的 **展開影像選項 (Unrolled Image Option)** 分頁進行設定。展開使用與積分為一維曲線時相同的次像素強度分配演算法。
 
 ## 周向模糊 (Circumferential Blur)
 
@@ -45,7 +43,7 @@
 
 - 從影格清單中選取單一影格加以顯示，或以滑桿逐格切換。
 - 使用 **多重選取 (Multi selection)** 可選取多個影格，並計算其 **平均 (Average)** 或 **加總 (Summation)**。
-- 一維化的對象可從「所有影像（不受目前選取影響）(All images irrespective of current selections) / 選取的影像 (The selected image(s)) / 僅最上層影像 (Only the topmost image)」中選擇。
+- 以 **取得圖譜 (Get Profile)** 積分的影格，在 **「取得圖譜」的目標 (Target(s) of "Get Profile")** 中選擇：**所有影像（不受目前選取影響） (All images irrespective of current selections)** / **選取的影像 (The selected image(s))** / **僅最上層影像 (Only the topmost image)**。
 - 若影格帶有能量資訊，選取該單一影格時會更新波長。
 
 ![連續影像](../assets/cap-en-auto/FormSequentialImage.png)
