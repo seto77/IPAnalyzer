@@ -22,8 +22,8 @@ Pixel states are shown in distinct colors.
 | Cyan | Masked spot |
 | Green | Region excluded from integration (set in Integral Region) |
 | Magenta | Angular region excluded from integration (set in Integral Property) |
-| Blue | Pixel below the intensity threshold (set in Integral Region) |
-| Red | Pixel above the intensity threshold |
+| Blue | Pixel at or below the intensity threshold (set in Integral Region) |
+| Red | Pixel at or above the intensity threshold |
 
 ### Mouse operations
 

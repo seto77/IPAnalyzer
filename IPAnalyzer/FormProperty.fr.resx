@@ -787,9 +787,10 @@ au spot direct X par les angles d'inclinaison.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
     <value>Exclure les pixels à faible comptage : ignorer les
-pixels dont l'intensité est inférieure à la valeur
-à droite. Utile pour écarter les pixels morts / de
-fond uniquement.</value>
+pixels dont l'intensité est inférieure ou égale à la
+valeur à droite. Utile pour écarter les pixels morts
+/ de fond uniquement.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>Pied Y en pixels : point où la perpendiculaire de
@@ -804,14 +805,17 @@ soustraire moins.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
     <value>Seuil d'intensité inférieur (coups). Les pixels
-sous cette valeur sont exclus de l'intégration ;
-actif seulement si « Sous l'intensité de » est coché.</value>
+de valeur inférieure ou égale à ce seuil sont exclus
+de l'intégration ; actif seulement si « En dessous de
+l'intensité de » est coché.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)。文中のチェックボックス名を Text の実際の値に合わせた</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Exclure les pixels saturés : ignorer les pixels
-dont le comptage dépasse la valeur à droite lors de
-l'intégration. Utile pour écarter les pixels de
-bavure / surchauffés.</value>
+dont le comptage est supérieur ou égal à la valeur
+à droite lors de l'intégration. Utile pour écarter
+les pixels de bavure / surchauffés.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>Exclure les points masqués de l'intégration : les
@@ -1009,9 +1013,10 @@ distance interréticulaire (Angstrom).</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
     <value>Seuil d'intensité supérieur (coups). Les pixels
-au-dessus de cette valeur sont exclus de
-l'intégration ; actif seulement si « Au-dessus de
+de valeur supérieure ou égale à ce seuil sont exclus
+de l'intégration ; actif seulement si « Au-dessus de
 l'intensité de » est coché.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>Outil de masque manuel : Rectangle. Glissez entre

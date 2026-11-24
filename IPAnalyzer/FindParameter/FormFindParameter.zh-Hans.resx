@@ -488,8 +488,10 @@
 的距离），单位 mm。</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>只读：当前载入的主图像的文件名
-（若为序列图像，还包括帧索引）。</value>
+    <value>只读：当前载入的主图像的文件路径。
+序列图像的帧编号显示在帧编号栏中，
+而不在此处。</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>各次迭代中精修像素畸变角 ksi
@@ -790,8 +792,10 @@
 探测器/IP；0 表示平面。</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>只读：当前载入的次图像的文件名
-（若为序列图像，还包括帧索引）。</value>
+    <value>只读：当前载入的次图像的文件路径。
+序列图像的帧编号显示在帧编号栏中，
+而不在此处。</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>要运行的精修迭代次数。</value>

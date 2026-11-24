@@ -511,9 +511,11 @@ los anillos de Debye hacia fuera.</value>
 de la imagen Primaria, en mm.</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>Solo lectura: nombre de archivo (e índice de
-fotograma, si es secuencial) de la imagen Primaria
-actualmente cargada.</value>
+    <value>Solo lectura: ruta de la imagen Primaria
+actualmente cargada. En una imagen secuencial, el
+número de fotograma se muestra en su propio campo,
+no aquí.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>Historial del ángulo de distorsión de píxel ksi
@@ -859,9 +861,11 @@ radio inverso 1/R (por m). Corrige un
 detector/IP curvado; 0 significa plano.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>Solo lectura: nombre de archivo (e índice de
-fotograma, si es secuencial) de la imagen
-Secundaria actualmente cargada.</value>
+    <value>Solo lectura: ruta de la imagen Secundaria
+actualmente cargada. En una imagen secuencial, el
+número de fotograma se muestra en su propio campo,
+no aquí.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>Número de iteraciones de refinamiento a ejecutar.</value>

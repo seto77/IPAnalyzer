@@ -806,9 +806,10 @@ gekoppelt.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
     <value>Schließt Pixel mit niedriger Zählrate aus:
-ignoriert Pixel, deren Intensität unter dem
-Wert rechts liegt. Zum Entfernen von toten
-oder reinen Hintergrundpixeln.</value>
+ignoriert Pixel, deren Intensität kleiner oder
+gleich dem Wert rechts ist. Zum Entfernen von
+toten oder reinen Hintergrundpixeln.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>Fußpunkt Y in Pixeln: wo das Lot der Probe
@@ -823,16 +824,18 @@ um mehr Hintergrund abzuziehen, verringern, um
 weniger abzuziehen.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>Untere Intensitätsschwelle (Counts). Pixel
-unter diesem Wert werden von der Integration
-ausgeschlossen; nur aktiv, wenn "Unter
-Intensität von" markiert ist.</value>
+    <value>Untere Intensitätsschwelle (Counts). Pixel mit
+diesem oder einem niedrigeren Wert werden von der
+Integration ausgeschlossen; nur aktiv, wenn
+"Unter Intensität von" markiert ist.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Schließt gesättigte Pixel aus: ignoriert
-bei der Integration Pixel, deren Zählrate den
-Wert rechts überschreitet. Zum Entfernen von
-Blooming- oder Hot-Pixeln.</value>
+bei der Integration Pixel, deren Zählrate größer
+oder gleich dem Wert rechts ist. Zum Entfernen
+von Blooming- oder Hot-Pixeln.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>Schließt maskierte Punkte von der Integration
@@ -1032,10 +1035,11 @@ Größer = weitere, aber langsamere Suche.</value>
 Netzebenenabstand (Å) an.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>Obere Intensitätsschwelle (Counts). Pixel
-über diesem Wert werden von der Integration
-ausgeschlossen; nur aktiv, wenn "Über
-Intensität von" markiert ist.</value>
+    <value>Obere Intensitätsschwelle (Counts). Pixel mit
+diesem oder einem höheren Wert werden von der
+Integration ausgeschlossen; nur aktiv, wenn
+"Über Intensität von" markiert ist.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>Manuelles Maskenwerkzeug: Rechteck. Zwischen

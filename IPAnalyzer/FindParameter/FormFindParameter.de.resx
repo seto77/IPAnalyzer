@@ -512,9 +512,10 @@ außen.</value>
 des primären Bildes, in mm.</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>Schreibgeschützt: Dateiname (und Bildindex,
-bei Sequenzen) des aktuell geladenen primären
-Bildes.</value>
+    <value>Schreibgeschützt: Pfad des aktuell geladenen
+primären Bildes. Bei Bildserien steht die
+Bildnummer nicht hier, sondern im Bildnummernfeld.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>Verlauf des verfeinerten
@@ -870,9 +871,10 @@ als inverser Radius 1/R (pro m). Korrigiert
 einen gekrümmten Detektor/IP; 0 bedeutet flach.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>Schreibgeschützt: Dateiname (und Bildindex,
-bei Sequenzen) des aktuell geladenen sekundären
-Bildes.</value>
+    <value>Schreibgeschützt: Pfad des aktuell geladenen
+sekundären Bildes. Bei Bildserien steht die
+Bildnummer nicht hier, sondern im Bildnummernfeld.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>Anzahl der auszuführenden

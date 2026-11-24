@@ -230,6 +230,21 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
                 if (v < 0 || v >= Ring.SequentialImageIntensities.Count || v >= listBox.Items.Count)
                     return;
 
+            //skipEvent = true;
+            //int selectedIndex = listBox.SelectedIndex;
+            ////valueに含まれているものだけを選択状態にする
+            ////260712Cl value.Contains の線形探索 (O(n×m)) と Enumerable.Range/Where のイテレータ割り当てを HashSet+for に置換
+            //var newSelection = new HashSet<int>(value);
+            //for (int i = 0; i < listBox.Items.Count; i++)
+            //    if (!newSelection.Contains(i) && listBox.GetSelected(i))
+            //        listBox.SetSelected(i, false);
+            //foreach (var i in value)
+            //    if (!listBox.GetSelected(i))
+            //        listBox.SetSelected(i, true);
+            //if (newSelection.Contains(selectedIndex))
+            //    listBox.SelectedIndex = selectedIndex;
+            //skipEvent = false;
+            // 261124Cl 変更: 例外時もイベント抑止を解除できるよう try/finally にする (処理内容は同じ) // 261125Cl 旧ブロックをコメントで残した (4bf883e の版)
             skipEvent = true;
             try // 261124Cl 追加: 例外時もイベント抑止を解除する
             {

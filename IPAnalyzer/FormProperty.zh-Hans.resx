@@ -751,8 +751,9 @@
 相交之处。通过倾斜角与直射斑 X 相耦合。</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
-    <value>排除低计数像素：忽略强度低于右侧数值的
-像素。用于剔除坏点/仅含背景的像素。</value>
+    <value>排除低计数像素：忽略强度小于或等于右侧
+数值的像素。用于剔除坏点/仅含背景的像素。</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>底点 Y，以像素表示：样品垂线与倾斜探测器
@@ -764,12 +765,14 @@
 背景，调低扣除更少。</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>强度下限阈值（计数）。低于此值的像素将
-从积分中排除；仅当勾选“强度低于”时生效。</value>
+    <value>强度下限阈值（计数）。小于或等于此值的像素
+将从积分中排除；仅当勾选“强度低于”时生效。</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
-    <value>排除饱和像素：积分时忽略计数超过右侧
-数值的像素。用于剔除溢出/坏热点像素。</value>
+    <value>排除饱和像素：积分时忽略计数大于或等于
+右侧数值的像素。用于剔除溢出/坏热点像素。</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>将掩蔽的斑点从积分中排除：被标记为斑点的
@@ -924,8 +927,9 @@ d = 波长 / (2 sin theta)。</value>
     <value>将径向环半径指定为晶格 d 值（Å）。</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>强度上限阈值（计数）。高于此值的像素将
-从积分中排除；仅当勾选“强度高于”时生效。</value>
+    <value>强度上限阈值（计数）。大于或等于此值的像素
+将从积分中排除；仅当勾选“强度高于”时生效。</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>手动掩模工具：矩形。在两个对角之间拖动

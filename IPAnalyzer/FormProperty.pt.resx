@@ -779,8 +779,10 @@ ao ponto direto X pelos ângulos de inclinação.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
     <value>Excluir pixels de baixa contagem: ignorar pixels
-cuja intensidade está abaixo do valor à direita.
-Use para descartar pixels mortos/apenas de fundo.</value>
+cuja intensidade é igual ou menor que o valor à
+direita. Use para descartar pixels mortos/apenas
+de fundo.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>Ponto-pé Y em pixels: onde a perpendicular da
@@ -794,15 +796,17 @@ subtrair mais fundo, diminua para subtrair menos.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
     <value>Limiar inferior de intensidade (contagens). Pixels
-abaixo deste valor são excluídos da integração;
-ativo apenas quando 'Abaixo da intensidade de'
-está marcado.</value>
+com valor igual ou abaixo deste são excluídos da
+integração; ativo apenas quando 'Abaixo da
+intensidade de' está marcado.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Excluir pixels saturados: ignorar pixels cuja
-contagem excede o valor à direita durante a
-integração. Use para descartar pixels com
-estouro/quentes-mortos.</value>
+contagem é igual ou maior que o valor à direita
+durante a integração. Use para descartar pixels
+com estouro/quentes-mortos.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>Excluir pontos mascarados da integração: pixels
@@ -986,9 +990,10 @@ como espaçamento-d da rede (Angstrom).</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
     <value>Limiar superior de intensidade (contagens). Pixels
-acima deste valor são excluídos da integração;
-ativo apenas quando 'Acima da intensidade de'
-está marcado.</value>
+com valor igual ou acima deste são excluídos da
+integração; ativo apenas quando 'Acima da
+intensidade de' está marcado.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>Ferramenta de máscara manual: Retângulo. Arraste

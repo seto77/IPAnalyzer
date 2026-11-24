@@ -274,17 +274,18 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //  ja など他言語は /IPAnalyzer/<lang>/<slug>/。旧 /en/ URL は legacy_en_redirects フックが互換維持する。
         //260625Cl 変更: マニュアルが整備済みの言語 (manualReadyCultures) のみ自言語へ向け、未整備言語は英語へ落とす。
         //  共有 SupportedCultures.HelpCulture は ReciPro/PDIndexer 基準で全言語整備済 (各言語コード) だが、IPAnalyzer の
-        //  マニュアルは現状 en/ja のみ。よって SupportedCultures.HelpCulture ではなく IPAnalyzer 専用の allow-list で判定する。
+        //  マニュアルは現状 en/ja のみ (261125Cl 注: 当時。今は manualReadyCultures の 11 言語)。よって SupportedCultures.HelpCulture ではなく IPAnalyzer 専用の allow-list で判定する。
         //旧: var lang = Thread.CurrentThread.CurrentUICulture.Name == "ja" ? "ja" : "en";
-        FormBase.HelpUrlResolver = f =>
-        {
-            var cur = Crystallography.SupportedCultures.Current.Name;
-            var lang = Array.IndexOf(manualReadyCultures, cur) >= 0 ? cur : "en";
-            //旧 (static-i18n 移行前・en も /en/ 配下だった): $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/"
-            return string.IsNullOrEmpty(f.HelpPage)
-                ? (lang == "en" ? "https://seto77.github.io/IPAnalyzer/" : $"https://seto77.github.io/IPAnalyzer/{lang}/")
-                : (lang == "en" ? $"https://seto77.github.io/IPAnalyzer/{f.HelpPage}/" : $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/");
-        };
+        //FormBase.HelpUrlResolver = f =>
+        //{
+        //    var cur = Crystallography.SupportedCultures.Current.Name;
+        //    var lang = Array.IndexOf(manualReadyCultures, cur) >= 0 ? cur : "en";
+        //    //旧 (static-i18n 移行前・en も /en/ 配下だった): $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/"
+        //    return string.IsNullOrEmpty(f.HelpPage)
+        //        ? (lang == "en" ? "https://seto77.github.io/IPAnalyzer/" : $"https://seto77.github.io/IPAnalyzer/{lang}/")
+        //        : (lang == "en" ? $"https://seto77.github.io/IPAnalyzer/{f.HelpPage}/" : $"https://seto77.github.io/IPAnalyzer/{lang}/{f.HelpPage}/");
+        //}; // 261125Cl 変更前
+        FormBase.HelpUrlResolver = f => manualUrl(f.HelpPage); // 261125Cl 変更: URL の組み立ては manualUrl に切り出し (ヘルプメニューと共用)
 
         ip = new Progress<(long, long, long, string)>(o => reportProgress(o));//IReport
 
@@ -437,13 +438,19 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 // 261124Cl 追加: 列挙 ImageTypeEnum が増える前 (例: PXD を足す前) に保存した配列は短いので、足りない分を初期値で埋める
                 //   (Reg.RW は保存された配列でそのまま差し替えるため、旧版の設定のまま新しい形式を開くと範囲外参照になっていた)
                 var nTypes = Enum.GetValues<Ring.ImageTypeEnum>().Length;
-                if (FormProperty.ImageTypeParameters == null || FormProperty.ImageTypeParameters.Length < nTypes)
-                {
-                    var old = FormProperty.ImageTypeParameters ?? [];
-                    FormProperty.ImageTypeParameters = [.. old, .. Enumerable.Range(0, nTypes - old.Length).Select(_ => new ImageTypeParameter())];
-                }
-                for (int i = 0; i < FormProperty.ImageTypeParameters.Length; i++)
-                    FormProperty.ImageTypeParameters[i] ??= new ImageTypeParameter();
+                //if (FormProperty.ImageTypeParameters == null || FormProperty.ImageTypeParameters.Length < nTypes)
+                //{
+                //    var old = FormProperty.ImageTypeParameters ?? [];
+                //    FormProperty.ImageTypeParameters = [.. old, .. Enumerable.Range(0, nTypes - old.Length).Select(_ => new ImageTypeParameter())];
+                //}
+                //for (int i = 0; i < FormProperty.ImageTypeParameters.Length; i++)
+                //    FormProperty.ImageTypeParameters[i] ??= new ImageTypeParameter(); // 261125Cl 変更前
+                // 261125Cl 変更: 長さの補填と null 要素の補填を 1 通りにまとめる
+                var p = FormProperty.ImageTypeParameters ?? [];
+                if (p.Length < nTypes) Array.Resize(ref p, nTypes);
+                for (int i = 0; i < p.Length; i++)
+                    p[i] ??= new ImageTypeParameter();
+                FormProperty.ImageTypeParameters = p;
 
                 // 261124Cl 追加: 所見 7 の設定の移行 (作者決定 2026-11-24「一度だけ写す」)。
                 //   Crystallography 620d8f2 から Rigaku PXD は PXD (旧 SMV)、GE gel は FLA7000 (旧 MCCD) を返す。旧版の設定を読んだ最初の 1 回だけ、
@@ -2090,6 +2097,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     }
 
     //public void initializeFilter()
+    /// <summary>261125Cl 追加: 今の Ring.Intensity からマスク配列 (画素数が変わったときは作り直し) と表示用の PseudoBitmap を作り直し、
+    ///   主画面とサムネイルに設定する</summary>
     /// <param name="clearMasks">261124Cl 追加: false なら、画素数が同じとき手動マスク (IsSpots) としきい値マスク (IsThresholdOver/Under) を消さずに残す。
     ///   画像を読み替えずに表示だけを作り直す場合 (展開表示から通常表示へ戻るとき) に使う</param>
     public void initializeFilter(bool clearMasks = true) // 261124Cl 変更: clearMasks を追加
@@ -2131,8 +2140,16 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         pseudoBitmap.FilterTemporary.AddRange(new bool[SrcImgSize.Width * SrcImgSize.Height]);
         pseudoBitmap.MaxValue = trackBarAdvancedMaxInt.Value;
         pseudoBitmap.MinValue = trackBarAdvancedMinInt.Value;
+        // 261125Cl 変更: pictureBox.Image には Draw/DrawThumnail が Clone した自前の Bitmap が入っている。PseudoBitmap の setter は
+        //   それを null にするだけで Dispose しないので、差し替え前に退避し、外れたものを Dispose する (同じインスタンスなら 1 回だけ)
+        var oldMain = scalablePictureBox.pictureBox.Image;
+        var oldThumb = scalablePictureBoxThumbnail.pictureBox.Image;
         scalablePictureBox.PseudoBitmap = pseudoBitmap;
         scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
+        if (oldMain != null && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
+            oldMain.Dispose();
+        if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
+            oldThumb.Dispose();
         setScale();
     }
 
@@ -2150,6 +2167,25 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     {
         if (SrcImgSize.Width == 0) return;
         saveImageAsTiff();
+    }
+
+    // 261125Cl 追加: 連番画像の 1 フレームを保存用に補正する (連番 TIFF 保存と連番 CSV 保存で共用)。
+    //   表示経路 (FlipRotate_Pollalization_Background) と同じく、Background は変換前の座標で引いてから反転・回転し、
+    //   FlipAndRotate には入力 (変換前) の行幅 Ring.SrcImgSizeOriginal.Width を渡す。偏光の式の番号は χ 基準方向から決める (左右=0, 上下=1)
+    private double[] correctFrame(double[] raw)
+    {
+        var frame = raw;
+        if (Ring.Background != null && Ring.Background.Length == frame.Length)
+            frame = Ring.SubtractBackground(frame, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+        frame = Ring.FlipAndRotate(frame, Ring.SrcImgSizeOriginal.Width,
+            flipVerticallyToolStripMenuItem.Checked,
+            flipHorizontallyToolStripMenuItem.Checked,
+            toolStripComboBoxRotate.SelectedIndex);
+
+        //偏光補正
+        if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
+            frame = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, frame);
+        return frame;
     }
 
     // 260414Cl Macro から呼び出すため private → public に昇格 (旧: private)
@@ -2193,22 +2229,25 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                     // 261124Cl 変更: 表示経路 (FlipRotate_Pollalization_Background) と同じく、Background は変換前の座標で引いてから反転・回転し、
                     //               FlipAndRotate には入力 (変換前) の行幅 Ring.SrcImgSizeOriginal.Width を渡す
-                    var src = Ring.SequentialImageIntensities[i];
-                    if (Ring.Background != null && Ring.Background.Length == src.Length)
-                        src = Ring.SubtractBackground(src, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
-                    d[i] = Ring.FlipAndRotate(src, Ring.SrcImgSizeOriginal.Width,
-                            flipVerticallyToolStripMenuItem.Checked,
-                            flipHorizontallyToolStripMenuItem.Checked,
-                            toolStripComboBoxRotate.SelectedIndex);
+                    //var src = Ring.SequentialImageIntensities[i];
+                    //if (Ring.Background != null && Ring.Background.Length == src.Length)
+                    //    src = Ring.SubtractBackground(src, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+                    //d[i] = Ring.FlipAndRotate(src, Ring.SrcImgSizeOriginal.Width,
+                    //        flipVerticallyToolStripMenuItem.Checked,
+                    //        flipHorizontallyToolStripMenuItem.Checked,
+                    //        toolStripComboBoxRotate.SelectedIndex);
 
                     //偏光補正
-                    if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                        //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
-                        d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
+                    //if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
+                    //    //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
+                    //    d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
+                    d[i] = correctFrame(Ring.SequentialImageIntensities[i]); // 261125Cl 変更: CSV 保存と同じ 1 フレームの補正手順を correctFrame にまとめた
                 }
                 //if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
                 // 261124Cl 変更 (所見 8): PulsePower は Count が枚数と同じときだけ書く (旧: XrayEnergy の件数で判定し、PulsePower[i] を範囲外まで読みえた)。
-                //   PulsePower はフレーム番号と添字が揃い、欠けは NaN。共有の Tiff.Writer は追加タグの数を全フレームで同じにする作りなので、
+                //   PulsePower はフレーム番号と添字が揃い、欠けは NaN。
+                //   (261125Cl 注: 以下 2 行は Crystallography 0fdc12c より前の判断。今は下の 261124Cl「所見 8 の残り」の説明のとおり、NaN のフレームだけタグを省く)
+                //   共有の Tiff.Writer は追加タグの数を全フレームで同じにする作りなので、
                 //   NaN のフレームだけタグを省くことはできない → 一部でも NaN があれば PulsePower タグは書かない (誤った値を残さないため)。
                 //   正規化済み (PulsePowerNormarized) のときは従来どおり全フレームに -1 を書く (正規化は全フレームに値があるときだけ行われる)
                 var pulsePowerAll = Ring.SequentialImagePulsePower;
@@ -2238,7 +2277,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     }
                     Tiff.Writer(filename, d, 0, Ring.SrcImgSize.Width, [/*ifdEnergy.ToArray(), ifdName.ToArray(), */[.. ifdPulsePower]]);
                 }
-                else//h5ファイルではないとき
+                //else//h5ファイルではないとき // 261125Cl 変更前
+                else//PulsePower が無いとき (どのフレームにも値が無い・枚数と件数が合わない) はタグなしで書く // 261125Cl 変更: コメントを実際の条件に合わせた
                     Tiff.Writer(filename, d, 0, Ring.SrcImgSize.Width);
             }
             //単一画像モードの時
@@ -2277,50 +2317,66 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         // 261124Cl 変更 (所見 11): GetImage は PseudoBitmap 内部のキャッシュ destBmp を返し、別の大きさで呼ばれると Dispose する (主画面とサムネイルで共有)。
         //   表示・保存に使う前に Clone して呼び出し側で所有する (キャッシュは Dispose しない)。旧: キャッシュをそのまま pictureBox に渡していた
         //   この後の bmp.Dispose() は自分の複製だけを破棄する (旧: キャッシュそのものを破棄し、次の GetImage が破棄済み Bitmap を使いえた)
-        var bmp = (Bitmap)pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
-            , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))?.Clone();
+        //var bmp = (Bitmap)pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
+        //    , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))?.Clone(); // 261125Cl 変更前
+        var bmp = (Bitmap)pseudoBitmap.GetImage()?.Clone(); // 261125Cl 変更: 引数なしの GetImage() は同じ全体範囲 (0, 0, Width, Height) を等倍で返す
         if (bmp == null) return;
 
-        if (toolStripButtonUnroll.Checked) //UnrolledImageの目盛を付ける
+        try // 261125Cl 変更: 目盛の描画や保存で例外が出ても、Clone した bmp (目盛付きなら bmpWithAxis) を必ず Dispose する
         {
-            var bmpWithAxis = new Bitmap(bmp.Width + 40, bmp.Height + 40);
-            var upper = (double)FormProperty.numericUpDownUnrolledImageXend.Value;
-            var lower = (double)FormProperty.numericUpDownUnrolledImageXstart.Value;
-
-            //ここより角度目盛りの描画
-            //260712Cl 共通式 Math.Pow(10, Log10-1) をくくり出し if-else 連鎖を switch 式化 (数値は旧コードと同一)
-            var pow = Math.Pow(10, (int)Math.Log10(upper - lower) - 1);
-            var d = (upper - lower) / Math.Pow(10, (int)Math.Log10(upper - lower));
-            float gradiation = (float)(pow * (d switch { < 1.6 => 1, < 3.2 => 2, < 8.0 => 5, _ => 10 }));
-
-            //260712Cl Graphics/Pen/Font を using 化 (旧: 未Dispose で保存ごとに GDI リーク)。Font も string オーバーロードで FontFamily リーク回避
-            using (var g = Graphics.FromImage(bmpWithAxis))
-            using (var pen = new Pen(Color.LightBlue, 1))
-            using (var strFont = new Font("tahoma", 8))
+            if (toolStripButtonUnroll.Checked) //UnrolledImageの目盛を付ける
             {
-                g.SmoothingMode = SmoothingMode.HighQuality;
-                g.Clear(Color.White);
-                for (int i = (int)(lower / gradiation) + 1; i <= upper / gradiation; i++)
+                var bmpWithAxis = new Bitmap(bmp.Width + 40, bmp.Height + 40);
+                try // 261125Cl 変更: bmp へ代入する前に例外が出たら bmpWithAxis もここで Dispose する
                 {
-                    g.DrawLine(pen, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height + 5);
-                    g.DrawString(Math.Round(i * gradiation, 5).ToString("#,#.###############"), strFont, Brushes.LightBlue,
-                       new PointF(40 + bmp.Width * (float)(i * gradiation - lower) / (float)(upper - lower), bmp.Height + 5));
-                }
+                    var upper = (double)FormProperty.numericUpDownUnrolledImageXend.Value;
+                    var lower = (double)FormProperty.numericUpDownUnrolledImageXstart.Value;
 
-                for (int i = 0; i <= 360; i += 30)
+                    //ここより角度目盛りの描画
+                    //260712Cl 共通式 Math.Pow(10, Log10-1) をくくり出し if-else 連鎖を switch 式化 (数値は旧コードと同一)
+                    var pow = Math.Pow(10, (int)Math.Log10(upper - lower) - 1);
+                    var d = (upper - lower) / Math.Pow(10, (int)Math.Log10(upper - lower));
+                    float gradiation = (float)(pow * (d switch { < 1.6 => 1, < 3.2 => 2, < 8.0 => 5, _ => 10 }));
+
+                    //260712Cl Graphics/Pen/Font を using 化 (旧: 未Dispose で保存ごとに GDI リーク)。Font も string オーバーロードで FontFamily リーク回避
+                    using (var g = Graphics.FromImage(bmpWithAxis))
+                    using (var pen = new Pen(Color.LightBlue, 1))
+                    using (var strFont = new Font("tahoma", 8))
+                    {
+                        g.SmoothingMode = SmoothingMode.HighQuality;
+                        g.Clear(Color.White);
+                        for (int i = (int)(lower / gradiation) + 1; i <= upper / gradiation; i++)
+                        {
+                            g.DrawLine(pen, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height, 40 + bmp.Width * (i * gradiation - lower) / (upper - lower), bmp.Height + 5);
+                            g.DrawString(Math.Round(i * gradiation, 5).ToString("#,#.###############"), strFont, Brushes.LightBlue,
+                               new PointF(40 + bmp.Width * (float)(i * gradiation - lower) / (float)(upper - lower), bmp.Height + 5));
+                        }
+
+                        for (int i = 0; i <= 360; i += 30)
+                        {
+                            g.DrawLine(pen, 35, ((360 - i) / 360.0) * bmp.Height, 40, ((360 - i) / 360.0) * bmp.Height);
+                            g.DrawString(i.ToString("#,#.###############"), strFont, Brushes.LightBlue, new PointF(0, (float)((360 - i) / 360.0) * bmp.Height));
+                        }
+
+                        g.DrawImage(bmp, new Point(40, 0));
+                    }
+                }
+                catch
                 {
-                    g.DrawLine(pen, 35, ((360 - i) / 360.0) * bmp.Height, 40, ((360 - i) / 360.0) * bmp.Height);
-                    g.DrawString(i.ToString("#,#.###############"), strFont, Brushes.LightBlue, new PointF(0, (float)((360 - i) / 360.0) * bmp.Height));
+                    bmpWithAxis.Dispose();
+                    throw;
                 }
-
-                g.DrawImage(bmp, new Point(40, 0));
+                bmp.Dispose(); //260712Cl 元の GetImage 結果を解放してから差し替え
+                bmp = bmpWithAxis;
             }
-            bmp.Dispose(); //260712Cl 元の GetImage 結果を解放してから差し替え
-            bmp = bmpWithAxis;
-        }
 
-        bmp.Save(filename, ImageFormat.Png);
-        bmp.Dispose(); //260712Cl 保存後に解放
+            bmp.Save(filename, ImageFormat.Png);
+            //bmp.Dispose(); //260712Cl 保存後に解放 // 261125Cl 変更前 (下の finally へ移した)
+        }
+        finally
+        {
+            bmp.Dispose(); // 261125Cl 変更: 保存後・例外時とも解放 (目盛付きのときは差し替え後の bmpWithAxis)
+        }
     }
 
     private void csvToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2370,19 +2426,20 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
                             // 261124Cl 変更: 表示経路と同じく、Background は変換前の座標で引いてから反転・回転し、
                             //               FlipAndRotate には入力 (変換前) の行幅 Ring.SrcImgSizeOriginal.Width を渡す
-                            var frame = Ring.SequentialImageIntensities[i];
-                            if (Ring.Background != null && Ring.Background.Length == frame.Length)
-                                frame = Ring.SubtractBackground(frame, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
-                            frame = Ring.FlipAndRotate(frame, Ring.SrcImgSizeOriginal.Width,
-                                flipVerticallyToolStripMenuItem.Checked,
-                                flipHorizontallyToolStripMenuItem.Checked,
-                                toolStripComboBoxRotate.SelectedIndex);
+                            //var frame = Ring.SequentialImageIntensities[i];
+                            //if (Ring.Background != null && Ring.Background.Length == frame.Length)
+                            //    frame = Ring.SubtractBackground(frame, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+                            //frame = Ring.FlipAndRotate(frame, Ring.SrcImgSizeOriginal.Width,
+                            //    flipVerticallyToolStripMenuItem.Checked,
+                            //    flipHorizontallyToolStripMenuItem.Checked,
+                            //    toolStripComboBoxRotate.SelectedIndex);
 
                             // 偏光補正
-                            if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
-                                //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
-                                //d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
-                                frame = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, frame); // 261124Cl 変更: d[i] → frame
+                            //if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
+                            //    //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
+                            //    //d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
+                            //    frame = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, frame); // 261124Cl 変更: d[i] → frame
+                            var frame = correctFrame(Ring.SequentialImageIntensities[i]); // 261125Cl 変更: TIFF 保存と同じ 1 フレームの補正手順を correctFrame にまとめた
 
                             // CSVに書き出し
                             writer.WriteLine($"# Image {i + 1}");
@@ -2934,7 +2991,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         {
             //260712Cl using化 + 読み取り専用 (旧: 未Disposeでファイルロック残留、FileAccess.ReadWrite で読み取り専用メディア上のマスクを開けなかった)
             using var br = new BinaryReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
-            var mask = new bool[br.ReadInt32()];
+            //var mask = new bool[br.ReadInt32()]; // 261125Cl 変更前
+            // 261125Cl 変更: ヘッダの画素数が今の画像と違えば、配列を確保せずに抜ける (従来も不一致なら下の if で黙って何もしなかったので、それに合わせる)
+            var nPixels = br.ReadInt32();
+            if (Ring.IsSpots == null || nPixels != Ring.IsSpots.Length)
+                return;
+            var mask = new bool[nPixels];
             //int n = 0;
             //for (int i = 0; i < mask.Length / 8; i++)
             //{
@@ -2945,15 +3007,19 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             //        b >>= 1;
             //    }
             //}
-            // 261111Cl 変更: 1 バイトずつ読んでループでビット展開 → まとめて読み、BitArray で展開 (各バイトの LSB が先頭で同じ並び)。末尾の Length % 8 画素は従来どおり false
-            var maskBytes = br.ReadBytes(mask.Length / 8);
+            // 261111Cl 変更: 1 バイトずつ読んでループでビット展開 → まとめて読み、BitArray で展開 (各バイトの LSB が先頭で同じ並び)。末尾の Length % 8 画素は従来どおり false (261124Cl 以降は端数の画素も読む)
+            //var maskBytes = br.ReadBytes(mask.Length / 8); // 261125Cl 変更前
+            // 261125Cl 変更: 端数の 1 バイトも含めて (Length + 7) / 8 バイトをまとめて読む。ReadBytes はファイル末尾で短く返すので、
+            //   旧版で保存した (最後の 1 バイトが無い) ファイルでは従来どおり端数の画素が false のままになる
+            //var maskBytes = br.ReadBytes((mask.Length + 7) / 8); // 261125Cl 変更前
+            var maskBytes = br.ReadBytes((int)(((long)mask.Length + 7) / 8)); // 261125Cl 変更: Length が int.MaxValue 近くでも + 7 で溢れないよう long で計算
             if (maskBytes.Length < mask.Length / 8)
                 throw new EndOfStreamException(); // 261111Cl 従来の ReadByte と同じく、途中で切れたファイルは失敗として通知
             //new System.Collections.BitArray(maskBytes).CopyTo(mask, 0);
             // 261124Cl 変更: 末尾の Length % 8 画素も読む (作者判断 2026-11-24 /ask, codex2 C28)。新しい SaveMask は (Length + 7) / 8 バイト書く。
             //   旧版で保存したファイルには最後の 1 バイトが無いので、その場合は従来どおり端数の画素を false のままにする
-            if (mask.Length % 8 != 0 && br.BaseStream.Position < br.BaseStream.Length)
-                maskBytes = [.. maskBytes, br.ReadByte()];
+            //if (mask.Length % 8 != 0 && br.BaseStream.Position < br.BaseStream.Length)
+            //    maskBytes = [.. maskBytes, br.ReadByte()]; // 261125Cl 変更前 (上の ReadBytes にまとめた)
             var bits = new System.Collections.BitArray(maskBytes) { Length = Math.Min(maskBytes.Length * 8, mask.Length) }; // CopyTo は配列より長い BitArray を受け付けないので画素数に切りそろえる
             bits.CopyTo(mask, 0);
             if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Length)
@@ -3011,7 +3077,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //    br.Write(b);
         //
         //}
-        // 261111Cl 変更: 1 バイトずつのビット詰めと書き込み → BitArray でまとめて詰めて (各バイトの LSB が先頭) 1 回で書く。従来どおり Length / 8 バイトだけ書く (端数の画素は書かない)
+        // 261111Cl 変更: 1 バイトずつのビット詰めと書き込み → BitArray でまとめて詰めて (各バイトの LSB が先頭) 1 回で書く。従来どおり Length / 8 バイトだけ書く (端数の画素は書かない) (261124Cl 以降は端数の画素も書く)
         var maskBytes = new byte[(Ring.IsSpots.Length + 7) / 8];
         new System.Collections.BitArray(Ring.IsSpots).CopyTo(maskBytes, 0);
         //br.Write(maskBytes, 0, Ring.IsSpots.Length / 8);
@@ -3143,15 +3209,16 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         // 261124Cl 変更 (作者判断 2026-11-24, マニュアル M7): F1 と同じオンラインマニュアルを既定のブラウザで開く。
         //   主画面の HelpPage ("1-main-window") ではなくマニュアルのトップを開きたいので、HelpPage を一時的に空にして
         //   HelpUrlResolver (コンストラクタで登録) の「HelpPage が空」の分岐の URL (https://seto77.github.io/IPAnalyzer/ または /<lang>/) を得る
-        string url = null;
-        var helpPage = HelpPage;
-        try
-        {
-            HelpPage = "";
-            url = FormBase.HelpUrlResolver?.Invoke(this);
-        }
-        finally { HelpPage = helpPage; }
-        if (string.IsNullOrEmpty(url)) return;
+        //string url = null;
+        //var helpPage = HelpPage;
+        //try
+        //{
+        //    HelpPage = "";
+        //    url = FormBase.HelpUrlResolver?.Invoke(this);
+        //}
+        //finally { HelpPage = helpPage; }
+        //if (string.IsNullOrEmpty(url)) return; // 261125Cl 変更前
+        var url = manualUrl(""); // 261125Cl 変更: HelpPage を一時的に空にせず、マニュアルのトップの URL を直接組み立てる
 
         try { Process.Start(new ProcessStartInfo(url) { UseShellExecute = true }); }
         catch (Exception ex)
@@ -3229,6 +3296,18 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     //   よって raw culture 名は来ず、cur をそのまま比較・URL ディレクトリ名に使ってよい (Codex レビュー確認済)。
     //   旧: { "en", "ja" }
     private static readonly string[] manualReadyCultures = { "en", "ja", "de", "fr", "es", "it", "ru", "zh-Hans", "zh-Hant", "ko", "pt" };
+
+    // 261125Cl 追加: オンラインマニュアルの URL を組み立てる (F1 の HelpUrlResolver とヘルプメニューで共用)。
+    //   page が空ならマニュアルのトップ。en はサイトルート、他言語は /<lang>/ 配下 (manualReadyCultures にない言語は en へ落とす)
+    private static string manualUrl(string page)
+    {
+        var cur = Crystallography.SupportedCultures.Current.Name;
+        var lang = Array.IndexOf(manualReadyCultures, cur) >= 0 ? cur : "en";
+        //旧 (static-i18n 移行前・en も /en/ 配下だった): $"https://seto77.github.io/IPAnalyzer/{lang}/{page}/" // 261125Cl 変更: 引数名に合わせた (旧: {f.HelpPage})
+        return string.IsNullOrEmpty(page)
+            ? (lang == "en" ? "https://seto77.github.io/IPAnalyzer/" : $"https://seto77.github.io/IPAnalyzer/{lang}/")
+            : (lang == "en" ? $"https://seto77.github.io/IPAnalyzer/{page}/" : $"https://seto77.github.io/IPAnalyzer/{lang}/{page}/");
+    }
 
     // 260625Cl 変更: english/japanese 二択固定 + ライブ切替(Language.Change) を廃止し、項目の Tag(CultureInfo 名) 駆動 +
     //   確認ダイアログ + 自動再起動方式へ (ReciPro/PDIndexer と統一)。ライブ切替は ApplyResources/コード側 Loc/フォント/
@@ -3799,12 +3878,22 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         FormSequentialImage.SkipCalcFreq = i != targets.Length - 1;
                         FormSequentialImage.AverageMode = false;
                         FormSequentialImage.SelectedIndex = targets[i];
-                        if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
-                            diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
+                        //if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
+                        //    diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
                         // 261124Cl 追加: HDF5 以外 (多ページ TIFF など) でもフレームごとのエネルギーがあれば、FormSequentialImage.SelectedIndex が波長欄に入れるのと同じ値を出力メタデータに入れる
                         //   (旧: HDF5 以外は開始時の IP.WaveLength のまま全フレームに付いていた)
-                        else if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
-                            diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
+                        //else if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
+                        //    diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]); // 261125Cl 変更前
+                        // 261125Cl 変更: 2 つの分岐の中身が同じなので 1 つの条件にまとめる (評価の順序・短絡は旧と同じ)
+                        if (Ring.ImageType == Ring.ImageTypeEnum.HDF5
+                            || (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count))
+                        {
+                            //diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]); // 261125Cl 変更前
+                            // 261125Cl 変更: 0 や負のエネルギーから求めた ±∞・負の波長は使わない (そのときは従来の値のまま。下の IP.WaveLength も同じ値になる)
+                            var λ = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
+                            if (double.IsFinite(λ) && λ > 0)
+                                diffractionProfile.SrcProperty.WaveLength = λ;
+                        }
                         // 261124Cl 追加: 積分に使う IP.WaveLength もこのフレームの波長にする (作者判断 2026-11-24 /ask)。
                         //   SelectedIndex は波長欄 (FormProperty.WaveLength) を更新するが、IP は SetIntegralProperty() まで 1 フレーム前の値のままで、
                         //   d 値モードの積分に前のフレームの λ が使われていた。エネルギー情報が無い場合は開始時の IP.WaveLength のまま (従来どおり)
@@ -4005,6 +4094,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (toolStripButtonImageSequence.Enabled)
             filename += FileNameSub;
 
+        // 261125Cl 追加: PDI 保存に失敗したときの文言 (まとめ保存と個別保存の 2 か所で使う)
+        var pdiSaveFailedMessage = Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n");
+
         //一つのファイルにまとめて保存する場合
         if (dpList.Count > 1 && FormProperty.radioButtonSaveInOneFile.Checked)
         {
@@ -4014,7 +4106,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 //XYFile.SavePdi2File([.. dpList], filename + extension);
                 // 261124Cl 変更: SavePdi2File は一時ファイルに書き切ってから置き換え、失敗すると false を返す (Crystallography 0fdc12c, C-03)。旧は戻り値を捨てていた
                 if (!XYFile.SavePdi2File([.. dpList], filename + extension))
-                    MessageBox.Show(this, Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n") + filename + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show(this, Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n") + filename + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning); // 261125Cl 変更前
+                    MessageBox.Show(this, pdiSaveFailedMessage + filename + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning); // 261125Cl 変更: 文言はローカル変数で 1 回だけ作る
             }
             //CSVかTSVの場合
             else if (!FormProperty.radioButtonAsGSASformat.Checked)
@@ -4083,7 +4176,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     //XYFile.SavePdi2File([dp], fn + extension);
                     // 261124Cl 変更: 戻り値 false (保存失敗。旧ファイルは残る) を知らせる (Crystallography 0fdc12c, C-03)
                     if (!XYFile.SavePdi2File([dp], fn + extension))
-                        MessageBox.Show(this, Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n") + fn + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //MessageBox.Show(this, Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n") + fn + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning); // 261125Cl 変更前
+                        MessageBox.Show(this, pdiSaveFailedMessage + fn + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning); // 261125Cl 変更: 文言はローカル変数で 1 回だけ作る
                 }
                 // 261124Cl 追加: GSAS は ToGSAS が成功してから StreamWriter を開く (旧: 先にファイルを開いて切り詰めてから ToGSAS が
                 //   2 点未満の入力で ArgumentException を投げ、既存ファイルを空にしていた)。共有の ToGSAS は不変カルチャで書くようになったので
@@ -4097,27 +4191,30 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         MessageBox.Show(this, Crystallography.Localization.Loc(en: "The GSAS file was not saved because the profile has fewer than two points:\n", ja: "点が 2 点未満のプロファイルなので、GSAS ファイルは保存されていません:\n", de: "Die GSAS-Datei wurde nicht gespeichert, weil das Profil weniger als zwei Punkte hat:\n", fr: "Le fichier GSAS n'a pas été enregistré car le profil compte moins de deux points :\n", es: "El archivo GSAS no se ha guardado porque el perfil tiene menos de dos puntos:\n", pt: "O arquivo GSAS não foi salvo porque o perfil tem menos de dois pontos:\n", it: "Il file GSAS non è stato salvato perché il profilo ha meno di due punti:\n", ru: "Файл GSAS не сохранён, так как в профиле меньше двух точек:\n", zhHans: "由于剖面少于两个点，未保存 GSAS 文件：\n", zhHant: "由於剖面少於兩個點，未儲存 GSAS 檔案：\n", ko: "프로파일의 점이 2개 미만이므로 GSAS 파일을 저장하지 않았습니다:\n") + fn + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         continue;
                     }
-                    using var gsw = new StreamWriter(fn + extension);
-                    foreach (var line in gsasLines)
-                        gsw.WriteLine(line);
+                    //using var gsw = new StreamWriter(fn + extension);
+                    //foreach (var line in gsasLines)
+                    //    gsw.WriteLine(line); // 261125Cl 変更前
+                    File.WriteAllLines(fn + extension, gsasLines); // 261125Cl 変更: 同じ UTF-8 (BOM なし)・同じ改行で書く
                 }
                 else
                 {
                     using var sw = new StreamWriter(fn + extension);
-                    if (FormProperty.radioButtonAsGSASformat.Checked) // 261124Cl 注: GSAS は上の分岐で処理するので、ここには来ない (旧コードを残すため条件ごと残置)
-                    {
-                        //var lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); // 261105Cl 変更前
-                        // 261105Cl 変更: Profile.ToGSAS (Crystallography) は数値を CurrentCulture で書式化する ("f2", "g12") ので、コンマ小数の
-                        //   地域設定では "12,34" が出て GSAS 形式が壊れる。呼び出しの間だけ CurrentCulture を InvariantCulture にする
-                        var culture = System.Globalization.CultureInfo.CurrentCulture; // 261105Cl 追加
-                        System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加
-                        string[] lines; // 261105Cl 追加
-                        try { lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); } // 261105Cl 変更
-                        finally { System.Globalization.CultureInfo.CurrentCulture = culture; } // 261105Cl 追加
-                        for (int i = 0; i < lines.Length; i++)
-                            sw.WriteLine(lines[i]);
-                    }
-                    else
+                    #region 261125Cl 変更前 (GSAS は上の分岐で処理するので到達しない分岐。CSV/TSV の中身だけを実行コードとして残す)
+                    //if (FormProperty.radioButtonAsGSASformat.Checked) // 261124Cl 注: GSAS は上の分岐で処理するので、ここには来ない (旧コードを残すため条件ごと残置)
+                    //{
+                    //    //var lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); // 261105Cl 変更前
+                    //    // 261105Cl 変更: Profile.ToGSAS (Crystallography) は数値を CurrentCulture で書式化する ("f2", "g12") ので、コンマ小数の
+                    //    //   地域設定では "12,34" が出て GSAS 形式が壊れる。呼び出しの間だけ CurrentCulture を InvariantCulture にする
+                    //    var culture = System.Globalization.CultureInfo.CurrentCulture; // 261105Cl 追加
+                    //    System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加
+                    //    string[] lines; // 261105Cl 追加
+                    //    try { lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); } // 261105Cl 変更
+                    //    finally { System.Globalization.CultureInfo.CurrentCulture = culture; } // 261105Cl 追加
+                    //    for (int i = 0; i < lines.Length; i++)
+                    //        sw.WriteLine(lines[i]);
+                    //}
+                    //else
+                    #endregion
                     {
                         var s = FormProperty.radioButtonAsCSVformat.Checked ? "," : "\t";
                         //foreach (var p in dp.SourceProfile.Pt)
@@ -4246,8 +4343,15 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             //260712Cl 同一引数で3個生成していた PseudoBitmap を1個に集約し共有 (通常経路の initializeFilter と同じパターン。
             //         Draw() は field pseudoBitmap を使い、各コントロールは repaint 用に参照を保持するだけなので挙動は不変)
             pseudoBitmap = new PseudoBitmap(imageArray, imageArray.Length / chiDivision, scale, scale, scale, false);
+            // 261125Cl 変更: initializeFilter と同じく、PseudoBitmap の setter が外すだけの旧 Image (Clone した自前の Bitmap) を Dispose する
+            var oldMain = scalablePictureBox.pictureBox.Image;
+            var oldThumb = scalablePictureBoxThumbnail.pictureBox.Image;
             scalablePictureBox.PseudoBitmap = pseudoBitmap;
             scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
+            if (oldMain != null && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
+                oldMain.Dispose();
+            if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
+                oldThumb.Dispose();
             Draw();
         }
         else
@@ -4700,13 +4804,15 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         // 261124Cl 追加 (C05, 作者判断 2026-11-24 推奨案 A): しきい値マスク (Ring.IsThresholdOver/Under) を、補正の済んだ Ring.Intensity で作り直す。
         //   旧: しきい値欄の変更時と読込時 (反転・回転・補正の前の強度) にしか計算されず、連続画像でフレームを替えても前のフレームのマスクのままだった。
         //   読込・反転・回転・背景・偏光の変更・フレーム切替はすべてここを通る。偏光補正オンのときは補正後の強度で判定するのでマスクが従来と少し変わる (作者了承済み)。
-        //   描画は直後の IntegralArea_Changed (SetMask → Draw) で 1 回だけ行うので、しきい値の計算の中の Draw は SkipDrawing で止める
+        //   描画は直後の IntegralArea_Changed (SetMask → Draw) で 1 回だけ行うので、しきい値の計算の中の Draw は SkipDrawing で止める (261125Cl 以前の説明)
+        //   261125Cl 変更: 今は描画しない計算 (FormProperty.RecalcThresholdMasks) だけを呼ぶ (描画は直後の IntegralArea_Changed で 1 回だけ)
         if (FormProperty != null && (FormProperty.checkBoxThresholdMax.Checked || FormProperty.checkBoxThresholdMin.Checked))
         {
-            var skipDrawing = SkipDrawing;
-            SkipDrawing = true;
-            try { FormProperty.checkBoxThreshold_CheckedChanged(this, EventArgs.Empty); }
-            finally { SkipDrawing = skipDrawing; }
+            //var skipDrawing = SkipDrawing;
+            //SkipDrawing = true;
+            //try { FormProperty.checkBoxThreshold_CheckedChanged(this, EventArgs.Empty); }
+            //finally { SkipDrawing = skipDrawing; } // 261125Cl 変更前
+            FormProperty.RecalcThresholdMasks(); // 261125Cl 変更: 描画しない計算だけを呼ぶので、SkipDrawing の一時切替は不要
         }
 
         IntegralArea_Changed(this, EventArgs.Empty);

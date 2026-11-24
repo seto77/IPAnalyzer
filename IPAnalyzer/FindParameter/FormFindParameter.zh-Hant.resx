@@ -487,8 +487,10 @@ Debye 環位置。</value>
 （試樣至偵測器距離），單位 mm。</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>唯讀：目前載入之 Primary 影像的檔名
-（若為連續影像則含影格索引）。</value>
+    <value>唯讀：目前載入之 Primary 影像的檔案路徑。
+連續影像的影格編號顯示在影格編號欄位，
+而非此處。</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>各次疊代中精修後的像素畸變角 ksi
@@ -789,8 +791,10 @@ phi，單位度：第二影像偵測器傾斜的
 IP；0 表示平坦。</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>唯讀：目前載入之 Secondary 影像的檔名
-（若為連續影像則含影格索引）。</value>
+    <value>唯讀：目前載入之 Secondary 影像的檔案路徑。
+連續影像的影格編號顯示在影格編號欄位，
+而非此處。</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>要執行的精修疊代次數。</value>

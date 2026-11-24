@@ -511,9 +511,11 @@ sposta tutti gli anelli di Debye verso l'esterno.</value>
 dell'immagine Primaria, in mm.</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>Sola lettura: nome file (e indice fotogramma,
-se sequenziale) dell'immagine Primaria
-attualmente caricata.</value>
+    <value>Sola lettura: percorso dell'immagine Primaria
+attualmente caricata. Per un'immagine sequenziale,
+il numero del fotogramma è nel relativo campo,
+non qui.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>Cronologia dell'angolo di distorsione pixel ksi
@@ -873,9 +875,11 @@ raggio inverso 1/R (per m). Corregge un
 rivelatore/IP curvo; 0 significa piatto.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>Sola lettura: nome file (e indice fotogramma,
-se sequenziale) dell'immagine Secondaria
-attualmente caricata.</value>
+    <value>Sola lettura: percorso dell'immagine Secondaria
+attualmente caricata. Per un'immagine sequenziale,
+il numero del fotogramma è nel relativo campo,
+non qui.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>Numero di iterazioni di affinamento da

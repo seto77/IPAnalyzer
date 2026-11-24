@@ -3,6 +3,7 @@ using MemoryPack;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq; // 261125Cl 追加: radioButtonChi_CheckedChanged で OfType/Any を使うため
 using System.Threading.Tasks; //260712Cl 追加: Parallel.For 使用のため
 using System.Windows.Forms;
 
@@ -326,72 +327,143 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
 
     public void checkBoxThreshold_CheckedChanged(object sender, EventArgs e)
     {
+        #region 261125Cl 変更前 (マスクの計算と Draw が混ざっていた。Draw は最大 2 回)
+        //if (checkBoxThresholdMax.Checked)
+        //{
+        //    numericUpDownThresholdOfIntensityMax.Enabled = true;
+        //    numericUpDownThresholdOfIntensityMax_ValueChanged(new object(), new EventArgs());
+        //}
+        //else
+        //{
+        //    numericUpDownThresholdOfIntensityMax.Enabled = false;
+        //    Ring.IsThresholdOver = new bool[Ring.Intensity.Length];
+        //    formMain.Draw();
+        //}
+        //
+        //if (checkBoxThresholdMin.Checked)
+        //{
+        //    numericUpDownThresholdOfIntensityMin.Enabled = true;
+        //    numericUpDownThresholdOfIntensityMin_ValueChanged(new object(), new EventArgs());
+        //}
+        //else
+        //{
+        //    numericUpDownThresholdOfIntensityMin.Enabled = false;
+        //    Ring.IsThresholdUnder  = new bool[Ring.Intensity.Length];
+        //    formMain.Draw();
+        //}
+        #endregion
+        // 261125Cl 変更: 入力欄の有効・無効を切り替え、マスクの計算 (RecalcThresholdMasks) の後に 1 回だけ描画する
+        numericUpDownThresholdOfIntensityMax.Enabled = checkBoxThresholdMax.Checked;
+        numericUpDownThresholdOfIntensityMin.Enabled = checkBoxThresholdMin.Checked;
+        RecalcThresholdMasks();
+        formMain.Draw();
+    }
+
+    /// <summary>
+    /// 261125Cl 追加: しきい値マスク (Ring.IsThresholdOver/Under) を今の Ring.Intensity から計算し直す (描画はしない)。
+    ///   上限・下限それぞれ、チェックがオンならマスクを計算し、オフなら全画素 false にする。
+    ///   FormMain.FlipRotate_Pollalization_Background (補正後の強度で作り直す) と、しきい値欄・チェックの変更から呼ぶ
+    /// </summary>
+    // 261125Cl 変更: 上の説明を // から XML doc (summary) へ移した
+    public void RecalcThresholdMasks()
+    {
+        var intensity = Ring.Intensity;
+
         if (checkBoxThresholdMax.Checked)
         {
-            numericUpDownThresholdOfIntensityMax.Enabled = true;
-            numericUpDownThresholdOfIntensityMax_ValueChanged(new object(), new EventArgs());
+            //260712Cl Math.Min(uint.MaxValue, x) は恒等の死んだガード。かつ Value=0 のとき (uint)0-1 が uint.MaxValue に
+            //         ラップし閾値超え検出が全滅していた。double 化で -1 を正しく表現し (当時の n = T − 1 の式の説明。今は ≥ T / ≤ T で判定)、行独立の Parallel.For 化。
+            // 261124Cl 変更: 判定を「強度 ≥ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n < I (n = T - 1) は整数強度なら同じだが、
+            //   小数の強度では T - 1 < I < T の画素まで除外していた。チェックボックスの表示「強度が右値以上」に合わせる
+            // 261111Cl 変更: 区間 (Partitioner.Create) ごとの並列 + 内側の素のループ
+            double n = (double)numericUpDownThresholdOfIntensityMax.Value;
+            // 261125Cl 変更: 読込途中で前の画像の長さのまま呼ばれても範囲外にならないよう、長さを intensity に合わせてから、intensity.Length まで回す
+            if (Ring.IsThresholdOver == null || Ring.IsThresholdOver.Length != intensity.Length)
+                Ring.IsThresholdOver = new bool[intensity.Length];
+            var over = Ring.IsThresholdOver;
+            //Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range => // 261125Cl 変更前
+            Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, intensity.Length), range =>
+            {
+                for (int i = range.Item1; i < range.Item2; i++)
+                    over[i] = intensity[i] >= n;
+            });
         }
+        else if (Ring.IsThresholdOver.Length == intensity.Length)
+            Array.Clear(Ring.IsThresholdOver);
         else
-        {
-            numericUpDownThresholdOfIntensityMax.Enabled = false;
-            Ring.IsThresholdOver = new bool[Ring.Intensity.Length];
-            formMain.Draw();
-        }
+            Ring.IsThresholdOver = new bool[intensity.Length];
 
         if (checkBoxThresholdMin.Checked)
         {
-            numericUpDownThresholdOfIntensityMin.Enabled = true;
-            numericUpDownThresholdOfIntensityMin_ValueChanged(new object(), new EventArgs());
+            //260712Cl double 化 (Ring.Intensity は double[])。全ピクセル走査を行独立の Parallel.For 化 (各要素は自 index の bool を書くだけ)
+            // 261124Cl 変更: 判定を「強度 ≤ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n > I (n = T + 1) は整数強度なら同じだが、
+            //   小数の強度では T < I < T + 1 の画素まで除外していた。チェックボックスの表示「強度が右値以下」に合わせる
+            // 261111Cl 変更: 区間 (Partitioner.Create) ごとの並列 + 内側の素のループ
+            var n = (double)numericUpDownThresholdOfIntensityMin.Value;
+            // 261125Cl 変更: 上の Max と同じく、長さを intensity に合わせてから intensity.Length まで回す
+            if (Ring.IsThresholdUnder == null || Ring.IsThresholdUnder.Length != intensity.Length)
+                Ring.IsThresholdUnder = new bool[intensity.Length];
+            var under = Ring.IsThresholdUnder;
+            //Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range => // 261125Cl 変更前
+            Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, intensity.Length), range =>
+            {
+                for (int i = range.Item1; i < range.Item2; i++)
+                    under[i] = intensity[i] <= n;
+            });
         }
+        else if (Ring.IsThresholdUnder.Length == intensity.Length)
+            Array.Clear(Ring.IsThresholdUnder);
         else
-        {
-            numericUpDownThresholdOfIntensityMin.Enabled = false;
-            Ring.IsThresholdUnder  = new bool[Ring.Intensity.Length];
-            formMain.Draw();
-        }
+            Ring.IsThresholdUnder = new bool[intensity.Length];
     }
 
     private void checkBoxMaskEdge_CheckedChanged_1(object sender, EventArgs e) => formMain.IntegralArea_Changed(sender, e);
 
     private void numericUpDownThresholdOfIntensityMin_ValueChanged(object sender, EventArgs e)
     {
-        //260712Cl double 化 (Ring.Intensity は double[])。全ピクセル走査を行独立の Parallel.For 化 (各要素は自 index の bool を書くだけ、Draw はループ後)
-        //var n = (double)numericUpDownThresholdOfIntensityMin.Value + 1;
-        // 261124Cl 変更: 判定を「強度 ≤ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n > I (n = T + 1) は整数強度なら同じだが、
-        //   小数の強度では T < I < T + 1 の画素まで除外していた。チェックボックスの表示「強度が右値以下」に合わせる
-        var n = (double)numericUpDownThresholdOfIntensityMin.Value;
-        //Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdUnder[i] = n > Ring.Intensity[i]);
-        // 261111Cl 変更: 画素ごとにデリゲートを呼ぶ Parallel.For → 区間 (Partitioner.Create) ごとの並列 + 内側の素のループ (結果は同じ)
-        var under = Ring.IsThresholdUnder;
-        var intensity = Ring.Intensity;
-        Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
-        {
-            for (int i = range.Item1; i < range.Item2; i++)
-                //under[i] = n > intensity[i];
-                under[i] = intensity[i] <= n; // 261124Cl 変更
-        });
+        #region 261125Cl 変更前 (計算は RecalcThresholdMasks へ移した)
+        ////260712Cl double 化 (Ring.Intensity は double[])。全ピクセル走査を行独立の Parallel.For 化 (各要素は自 index の bool を書くだけ、Draw はループ後)
+        ////var n = (double)numericUpDownThresholdOfIntensityMin.Value + 1;
+        //// 261124Cl 変更: 判定を「強度 ≤ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n > I (n = T + 1) は整数強度なら同じだが、
+        ////   小数の強度では T < I < T + 1 の画素まで除外していた。チェックボックスの表示「強度が右値以下」に合わせる
+        //var n = (double)numericUpDownThresholdOfIntensityMin.Value;
+        ////Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdUnder[i] = n > Ring.Intensity[i]);
+        //// 261111Cl 変更: 画素ごとにデリゲートを呼ぶ Parallel.For → 区間 (Partitioner.Create) ごとの並列 + 内側の素のループ (結果は同じ)
+        //var under = Ring.IsThresholdUnder;
+        //var intensity = Ring.Intensity;
+        //Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
+        //{
+        //    for (int i = range.Item1; i < range.Item2; i++)
+        //        //under[i] = n > intensity[i];
+        //        under[i] = intensity[i] <= n; // 261124Cl 変更
+        //});
+        #endregion
+        RecalcThresholdMasks(); // 261125Cl 変更
 
         formMain.Draw();
     }
 
     private void numericUpDownThresholdOfIntensityMax_ValueChanged(object sender, EventArgs e)
     {
-        //260712Cl Math.Min(uint.MaxValue, x) は恒等の死んだガード。かつ Value=0 のとき (uint)0-1 が uint.MaxValue に
-        //         ラップし閾値超え検出が全滅していた。double 化で -1 を正しく表現し、行独立の Parallel.For 化。
-        //double n = (double)numericUpDownThresholdOfIntensityMax.Value - 1;
-        // 261124Cl 変更: 判定を「強度 ≥ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n < I (n = T - 1) は整数強度なら同じだが、
-        //   小数の強度では T - 1 < I < T の画素まで除外していた。チェックボックスの表示「強度が右値以上」に合わせる
-        double n = (double)numericUpDownThresholdOfIntensityMax.Value;
-        //Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdOver[i] = n < Ring.Intensity[i]);
-        // 261111Cl 変更: 上の Min と同じ (区間ごとの並列 + 内側の素のループ)
-        var over = Ring.IsThresholdOver;
-        var intensity = Ring.Intensity;
-        Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
-        {
-            for (int i = range.Item1; i < range.Item2; i++)
-                //over[i] = n < intensity[i];
-                over[i] = intensity[i] >= n; // 261124Cl 変更
-        });
+        #region 261125Cl 変更前 (計算は RecalcThresholdMasks へ移した)
+        ////260712Cl Math.Min(uint.MaxValue, x) は恒等の死んだガード。かつ Value=0 のとき (uint)0-1 が uint.MaxValue に
+        ////         ラップし閾値超え検出が全滅していた。double 化で -1 を正しく表現し、行独立の Parallel.For 化。
+        ////double n = (double)numericUpDownThresholdOfIntensityMax.Value - 1;
+        //// 261124Cl 変更: 判定を「強度 ≥ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n < I (n = T - 1) は整数強度なら同じだが、
+        ////   小数の強度では T - 1 < I < T の画素まで除外していた。チェックボックスの表示「強度が右値以上」に合わせる
+        //double n = (double)numericUpDownThresholdOfIntensityMax.Value;
+        ////Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdOver[i] = n < Ring.Intensity[i]);
+        //// 261111Cl 変更: 上の Min と同じ (区間ごとの並列 + 内側の素のループ)
+        //var over = Ring.IsThresholdOver;
+        //var intensity = Ring.Intensity;
+        //Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
+        //{
+        //    for (int i = range.Item1; i < range.Item2; i++)
+        //        //over[i] = n < intensity[i];
+        //        over[i] = intensity[i] >= n; // 261124Cl 変更
+        //});
+        #endregion
+        RecalcThresholdMasks(); // 261125Cl 変更
 
         formMain.Draw();
     }
@@ -502,13 +574,19 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         formMain.flipHorizontallyToolStripMenuItem.Checked = ImageTypeParameters[i].FlipHorizontally;
         formMain.flipVerticallyToolStripMenuItem.Checked = ImageTypeParameters[i].FlipVertically;
         formMain.toolStripComboBoxRotate.SelectedIndex = ImageTypeParameters[i].Rotation;
-        
 
+        // 261125Cl 変更: 中心の設定を Skip の区間へ移した。旧は FlipRotate の後に設定していたので、偏光補正オンのときは
+        //   setter → DetectorParameters_Changed → FlipRotate_Pollalization_Background でもう 1 回補正が走っていた (1 回目は古い中心・古い IP で無駄)。
+        //   Skip 中は DetectorParameters_Changed の中の IntegralArea_Changed と FlipRotate_Pollalization_Background が何もせず戻り、足の位置の計算だけが行われる。
+        //   補正 (Ring.CorrectPolarization) は Ring.IP (= formMain.IP) の中心・カメラ長・ピクセルサイズ・傾きを使うので、
+        //   FlipRotate の前に SetIntegralProperty で IP を新しい値にしてから 1 回だけ補正する (旧の 2 回目と同じ結果)
+        DirectSpotPosition = new PointD(p.CenterPosX, p.CenterPosY);
 
         formMain.Skip = false;
+        formMain.SetIntegralProperty(); // 261125Cl 追加
         formMain.FlipRotate_Pollalization_Background(resetZooom);
 
-        DirectSpotPosition = new PointD(p.CenterPosX, p.CenterPosY);
+        //DirectSpotPosition = new PointD(p.CenterPosX, p.CenterPosY); // 261125Cl 変更前 (上の Skip の区間へ移動)
     }
 
     /// <summary>
@@ -778,8 +856,15 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     #endregion
 
     Image chiImage;
+    int lastChiPolarizationIndex = -1; // 261125Cl 追加: 前回の χ 基準方向での偏光補正の式の番号 (左右=0, 上下=1)。-1 は未計算 (初回は必ず再計算)
     private void radioButtonChi_CheckedChanged(object sender, EventArgs e)
     {
+        // 261125Cl 追加: ラジオの切替では外れた側と入った側の両方で CheckedChanged が来るので、外れた側は無視して 1 回にする。
+        //   外れた側の通知の時点で、入った側は既に Checked (WinForms は新しい側を Checked にしてから他を外す) なので、続けて入った側の通知が来る。
+        //   同じグループに Checked が 1 つも無いとき (レジストリ読込で false だけが設定された場合など) は、後続の通知が来ないので従来どおり処理する
+        if (sender is RadioButton { Checked: false } rb && rb.Parent != null && rb.Parent.Controls.OfType<RadioButton>().Any(r => r.Checked))
+            return;
+
         chiImage ??= (Image)pictureBox1.Image.Clone();
 
         Image temp = (Image)chiImage.Clone();
@@ -817,7 +902,17 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         //formMain.IntegralArea_Changed(new object(), new EventArgs());
         // 261124Cl 変更: 偏光補正は χ 基準方向 (左右か上下か) で式が変わるので、方向を変えたときは原画像から補正をやり直す
         //   (FlipRotate_Pollalization_Background の最後で IntegralArea_Changed も呼ばれる)。回転向き (時計/反時計) だけの変更は従来どおり
-        if (checkBoxCorrectPolarization.Checked && (sender == radioButtonChiRight || sender == radioButtonChiLeft || sender == radioButtonChiTop || sender == radioButtonChiBottom))
+        //if (checkBoxCorrectPolarization.Checked && (sender == radioButtonChiRight || sender == radioButtonChiLeft || sender == radioButtonChiTop || sender == radioButtonChiBottom))
+        //    formMain.FlipRotate_Pollalization_Background(false);
+        //else
+        //    formMain.IntegralArea_Changed(new object(), new EventArgs()); // 261125Cl 変更前
+        // 261125Cl 変更: 偏光補正の式の番号 (左右=0, 上下=1) が前回と同じ切替 (右↔左、上↔下) では補正をやり直さない (結果が同じ)。
+        //   番号は偏光補正がオフでも覚えておく (オンにしたときの補正は、その時点のラジオから番号を決めるので食い違わない)
+        int polarizationIndex = radioButtonChiRight.Checked || radioButtonChiLeft.Checked ? 0 : 1;
+        bool polarizationIndexChanged = polarizationIndex != lastChiPolarizationIndex;
+        lastChiPolarizationIndex = polarizationIndex;
+        if (checkBoxCorrectPolarization.Checked && polarizationIndexChanged
+            && (sender == radioButtonChiRight || sender == radioButtonChiLeft || sender == radioButtonChiTop || sender == radioButtonChiBottom))
             formMain.FlipRotate_Pollalization_Background(false);
         else
             formMain.IntegralArea_Changed(new object(), new EventArgs());

@@ -800,8 +800,9 @@ inclinazione.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
     <value>Escludi i pixel a basso conteggio: ignora i pixel
-la cui intensità è inferiore al valore a destra.
-Usalo per scartare i pixel morti/solo-sfondo.</value>
+la cui intensità è uguale o inferiore al valore a
+destra. Usalo per scartare i pixel morti/solo-sfondo.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>Punto coda Y in pixel: dove la perpendicolare del
@@ -816,16 +817,18 @@ per sottrarre più sfondo, diminuisci per sottrarne
 meno.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>Soglia di intensità inferiore (conteggi). I pixel al
-di sotto di questo valore sono esclusi
+    <value>Soglia di intensità inferiore (conteggi). I pixel con
+valore uguale o inferiore a questo sono esclusi
 dall'integrazione; attiva solo quando 'Sotto
 l'intensità di' è selezionato.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Escludi i pixel saturati: ignora i pixel il cui
-conteggio supera il valore a destra durante
-l'integrazione. Usalo per scartare i pixel
+conteggio è uguale o superiore al valore a destra
+durante l'integrazione. Usalo per scartare i pixel
 blooming/caldi-morti.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>Escludi gli spot mascherati dall'integrazione: i
@@ -1017,10 +1020,11 @@ ampia ma più lenta.</value>
 interplanare reticolare (Angstrom).</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>Soglia di intensità superiore (conteggi). I pixel al
-di sopra di questo valore sono esclusi
-dall'integrazione; attiva solo quando 'Sopra
+    <value>Soglia di intensità superiore (conteggi). I pixel con
+valore uguale o superiore a questo sono esclusi
+dall'integrazione; attiva solo quando 'Oltre
 l'intensità di' è selezionato.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)。文中のチェックボックス名を Text の実際の値に合わせた</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>Strumento maschera manuale: Rettangolo. Trascina tra

@@ -488,8 +488,10 @@ mm 열은 피팅된 위치를 표시합니다. 행을 더블클릭
 (시료-검출기 거리), 단위 mm.</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>읽기 전용: 현재 로드된 Primary 이미지의
-파일 이름(연속 이미지인 경우 프레임 번호 포함).</value>
+    <value>읽기 전용: 현재 로드된 Primary 이미지의 파일
+경로. 연속 이미지의 프레임 번호는 여기가 아니라
+프레임 번호 칸에 표시됩니다.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>반복에 따른 정밀화된 픽셀 왜곡 각도 ksi의
@@ -793,8 +795,10 @@ Secondary 오프셋 옆에 참고용으로 표시됩니다.</value>
 0은 평평함을 의미합니다.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>읽기 전용: 현재 로드된 Secondary 이미지의
-파일 이름(연속 이미지인 경우 프레임 번호 포함).</value>
+    <value>읽기 전용: 현재 로드된 Secondary 이미지의 파일
+경로. 연속 이미지의 프레임 번호는 여기가 아니라
+프레임 번호 칸에 표시됩니다.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>실행할 정밀화 반복 횟수.</value>

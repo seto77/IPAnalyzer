@@ -181,17 +181,19 @@
     <value>強度が右値以上</value>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
-    <value>飽和ピクセルを除外: 右の値を超える強度の
+    <value>飽和ピクセルを除外: 右の値以上の強度の
 ピクセルを積算から除外します。ブルーミング
 や異常高強度ピクセルの除去に使用します。</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMin.Text" xml:space="preserve">
     <value>強度が右値以下</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
-    <value>低強度ピクセルを除外: 右の値未満の強度の
+    <value>低強度ピクセルを除外: 右の値以下の強度の
 ピクセルを無視します。デッドピクセルや
 背景のみのピクセルの除去に使用します。</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonRectangle.Text" xml:space="preserve">
     <value>矩形</value>

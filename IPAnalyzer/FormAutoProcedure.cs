@@ -219,8 +219,13 @@ public partial class FormAutoProcedure : Crystallography.Controls.FormBase //260
                                 targets.Add(f);
                     }
                     // 261124Cl 追加 (C35): 前の走査でロック中だったファイルも再試行する (通知も一覧も無い回でも試す)
+                    //foreach (var f in retry.Keys)
+                    //    if (!known.Contains(f) && targetSet.Add(f))
+                    //        targets.Add(f); // 261124Cl 変更前
+                    // 261125Cl 変更: retry に入るのは known に無いファイルだけ (既知に入れるときは retry から外し、一覧で known を作り直すときも retry を除く) なので、
+                    //   !known.Contains(f) は常に真。重複だけを targetSet で除く
                     foreach (var f in retry.Keys)
-                        if (!known.Contains(f) && targetSet.Add(f))
+                        if (targetSet.Add(f))
                             targets.Add(f);
 
                     foreach (var f in targets)

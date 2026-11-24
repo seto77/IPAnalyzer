@@ -4226,7 +4226,10 @@ azimuthally-unrolled) image when sending the profile.</value>
   <data name="toolStripMenuItemAzimuthalDivisionAnalysis.ToolTipText" xml:space="preserve">
     <value>Azimuthal division analysis: integrate the
 rings in N azimuthal sectors (set Number
-of divisions) to study orientation/texture.</value>
+of divisions) to study orientation/texture.
+Runs only with Concentric integration and
+the Angle (2θ) x-axis.</value>
+    <comment>261125Cl 変更: 実行条件 (同心円積分かつ横軸が角度 2θ のときだけ) を追記</comment>
   </data>
   <data name="toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>

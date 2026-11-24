@@ -333,7 +333,8 @@
     <value>푸트 위치</value>
   </data>
   <data name="checkBoxThresholdMax.Text" xml:space="preserve">
-    <value>다음 강도 초과</value>
+    <value>다음 강도 이상</value>
+    <comment>261125Cl 変更: 旧「다음 강도 초과/미만」(より大きい/未満) → 「이상/이하」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>적분 스텝 &amp;&amp; 범위</value>
@@ -515,7 +516,8 @@
     <value>각도</value>
   </data>
   <data name="checkBoxThresholdMin.Text" xml:space="preserve">
-    <value>다음 강도 미만</value>
+    <value>다음 강도 이하</value>
+    <comment>261125Cl 変更: 旧「다음 강도 초과/미만」(より大きい/未満) → 「이상/이하」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonFootMode.Text" xml:space="preserve">
     <value>푸트</value>
@@ -766,9 +768,10 @@ d-간격(Å)으로 지정됩니다.</value>
 직접 스폿 X와 연결됩니다.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
-    <value>낮은 카운트 픽셀 제외: 강도가 오른쪽 값보다
-낮은 픽셀을 무시합니다. 불량/배경 전용 픽셀을
+    <value>낮은 카운트 픽셀 제외: 강도가 오른쪽 값
+이하인 픽셀을 무시합니다. 불량/배경 전용 픽셀을
 제거하는 데 사용합니다.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>픽셀 단위의 푸트점 Y: 시료의 수선이 기울어진
@@ -781,14 +784,16 @@ d-간격(Å)으로 지정됩니다.</value>
 낮추면 더 적게 뺍니다.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>낮은 강도 임계값(카운트)입니다. 이 값보다 낮은
-픽셀은 적분에서 제외되며, 'Under intensity of'가
+    <value>낮은 강도 임계값(카운트)입니다. 이 값 이하인
+픽셀은 적분에서 제외되며, '다음 강도 이하'가
 체크된 경우에만 활성화됩니다.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)。文中のチェックボックス名を Text の実際の値に合わせた</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
-    <value>포화 픽셀 제외: 적분 중 카운트가 오른쪽 값을
-초과하는 픽셀을 무시합니다. 블루밍/불량 핫
+    <value>포화 픽셀 제외: 적분 중 카운트가 오른쪽 값
+이상인 픽셀을 무시합니다. 블루밍/불량 핫
 픽셀을 제거하는 데 사용합니다.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>마스크된 스폿을 적분에서 제외: 스폿으로 표시된
@@ -957,9 +962,10 @@ N 픽셀(오른쪽에서 설정) 띠를 제외하여 검출기
 지정합니다.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>높은 강도 임계값(카운트)입니다. 이 값보다 높은
-픽셀은 적분에서 제외되며, 'Over intensity of'가
+    <value>높은 강도 임계값(카운트)입니다. 이 값 이상인
+픽셀은 적분에서 제외되며, '다음 강도 이상'이
 체크된 경우에만 활성화됩니다.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)。文中のチェックボックス名を Text の実際の値に合わせた</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>수동 마스크 도구: 직사각형. 두 대각 모서리

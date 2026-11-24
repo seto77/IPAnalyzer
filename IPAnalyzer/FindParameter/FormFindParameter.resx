@@ -2340,8 +2340,10 @@ distance) of the Primary image, in mm.</value>
     <value>numericUpDownSearchRange</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>Read-only: file name (and frame index, if
-sequential) of the currently loaded Primary image.</value>
+    <value>Read-only: path of the currently loaded Primary image
+file. For a sequential image, the frame number is
+shown in the frame-number box, not here.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="checkBoxCenterPosition.Text" xml:space="preserve">
     <value>Center Position</value>
@@ -6556,8 +6558,10 @@ for a curved detector/IP; 0 means flat.</value>
     <value>NoControl</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>Read-only: file name (and frame index, if
-sequential) of the currently loaded Secondary image.</value>
+    <value>Read-only: path of the currently loaded Secondary image
+file. For a sequential image, the frame number is
+shown in the frame-number box, not here.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="numericTextBoxSecondaryCenterPositionYDev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>

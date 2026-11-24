@@ -548,8 +548,9 @@ integration, removing detector-edge artifacts.</value>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Exclude saturated pixels: ignore pixels whose
-count exceeds the value at right during
+count is at or above the value at right during
 integration. Use to drop blooming/dead-hot pixels.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="&gt;&gt;checkBoxThresholdMax.Name" xml:space="preserve">
     <value>checkBoxThresholdMax</value>
@@ -589,8 +590,9 @@ integration. Use to drop blooming/dead-hot pixels.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
     <value>Exclude low-count pixels: ignore pixels
-whose intensity is below the value at right.
+whose intensity is at or below the value at right.
 Use to drop dead/background-only pixels.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="&gt;&gt;checkBoxThresholdMin.Name" xml:space="preserve">
     <value>checkBoxThresholdMin</value>

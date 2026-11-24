@@ -769,8 +769,10 @@ al punto directo X mediante los ángulos de inclinación.</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
     <value>Excluye píxeles con cuentas bajas: ignora los píxeles
-cuya intensidad está por debajo del valor de la derecha.
-Úsalo para descartar píxeles muertos/solo de fondo.</value>
+cuya intensidad es igual o inferior al valor de la
+derecha. Úsalo para descartar píxeles muertos/solo
+de fondo.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>Punto de pie Y en píxeles: donde la perpendicular
@@ -783,14 +785,18 @@ mostrado = imagen - factor x fondo. Auméntalo para
 sustraer más fondo, redúcelo para sustraer menos.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>Umbral de intensidad inferior (cuentas). Los píxeles por
-debajo de este valor se excluyen de la integración; solo
-activo cuando 'Por debajo de la intensidad de' está marcado.</value>
+    <value>Umbral de intensidad inferior (cuentas). Los píxeles
+con valor igual o inferior a este se excluyen de la
+integración; solo activo cuando 'Por debajo de la
+intensidad de' está marcado.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Excluye píxeles saturados: ignora los píxeles cuyas
-cuentas superan el valor de la derecha durante
-la integración. Úsalo para descartar píxeles con blooming/calientes.</value>
+cuentas son iguales o superiores al valor de la
+derecha durante la integración. Úsalo para descartar
+píxeles con blooming/calientes.</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>Excluye los puntos enmascarados de la integración: los píxeles
@@ -963,8 +969,10 @@ como espaciado d de la red (Angstrom).</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
     <value>Umbral de intensidad superior (cuentas). Los píxeles
-por encima de este valor se excluyen de la integración;
-solo activo cuando 'Por encima de la intensidad de' está marcado.</value>
+con valor igual o superior a este se excluyen de la
+integración; solo activo cuando 'Por encima de la
+intensidad de' está marcado.</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>Herramienta de máscara manual: Rectángulo. Arrastra entre dos

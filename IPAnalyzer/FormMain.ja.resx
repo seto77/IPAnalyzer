@@ -643,8 +643,10 @@ PDIndexer（ピーク指数付け・相同定）へ送ります。</value>
 （ケーキ）画像も併せて送ります。</value>
   </data>
   <data name="toolStripMenuItemAzimuthalDivisionAnalysis.ToolTipText" xml:space="preserve">
-    <value>方位分割解析：リングをN個の方位セクターに分けて
-積分し（分割数で設定）、配向・集合組織を調べます。</value>
+    <value>方位角分割解析：リングをN個の方位セクターに分けて
+積分し（分割数で設定）、配向・集合組織を調べます。
+「散乱角(2θ)積算」で横軸が「角度」のときのみ実行可。</value>
+    <comment>261125Cl 変更: 実行条件 (同心円積分かつ横軸が角度 2θ のときだけ) を追記。用語をメニュー名「方位角分割解析」に統一</comment>
   </data>
   <data name="toolStripComboBoxAzimuthalDivisionNumber.ToolTip" xml:space="preserve">
     <value>方位分割解析のセクター数（6〜360）。

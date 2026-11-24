@@ -836,27 +836,38 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
             }
 
             // 261124Cl 追加: 全候補でフィットに失敗したときは開始値に戻して中止する (results.Values[0] が範囲外になっていた)
+            //if (results.Count == 0)
+            //{
+            //    CameraLength1 = initialValue.CameraLength;
+            //    DirectSpotPosition = new PointD(initialValue.CenterX, initialValue.CenterY);
+            //    PixX = initialValue.PixelSizeX;
+            //    PixY = initialValue.PixelSizeY;
+            //    Tau = initialValue.Tau;
+            //    Phi = initialValue.Phi;
+            //    Radius = initialValue.Radius; // 261125Cl 変更前 (下の成功時と同じ並びの書き込みを 1 回にまとめた)
+            // 261125Cl 変更: 最良の候補 (全候補で失敗したときは開始値) を 1 回だけ書き込む。書き込む順序は旧と同じ
+            var best = results.Count > 0 ? results.Values[0] : initialValue;
+            CameraLength1 = best.CameraLength;
+            DirectSpotPosition = new PointD(best.CenterX, best.CenterY);
+            PixX = best.PixelSizeX;
+            PixY = best.PixelSizeY;
+            Tau = best.Tau;
+            Phi = best.Phi;
+            Radius = best.Radius;
             if (results.Count == 0)
             {
-                CameraLength1 = initialValue.CameraLength;
-                DirectSpotPosition = new PointD(initialValue.CenterX, initialValue.CenterY);
-                PixX = initialValue.PixelSizeX;
-                PixY = initialValue.PixelSizeY;
-                Tau = initialValue.Tau;
-                Phi = initialValue.Phi;
-                Radius = initialValue.Radius;
                 FormMain.SetIntegralProperty();
                 toolStripStatusLabel1.Text = Crystallography.Localization.Loc(en: "Fitting failed for all candidates. The starting values were restored.", ja: "全候補でフィッティングに失敗しました。開始値に戻しました。", de: "Die Anpassung ist für alle Kandidaten fehlgeschlagen. Die Startwerte wurden wiederhergestellt.", fr: "L'ajustement a échoué pour tous les candidats. Les valeurs initiales ont été restaurées.", es: "El ajuste falló para todos los candidatos. Se restauraron los valores iniciales.", pt: "O ajuste falhou para todos os candidatos. Os valores iniciais foram restaurados.", it: "Il fitting è fallito per tutti i candidati. I valori iniziali sono stati ripristinati.", ru: "Подгонка не удалась ни для одного кандидата. Начальные значения восстановлены.", zhHans: "所有候选的拟合均失败。已恢复初始值。", zhHant: "所有候選的擬合均失敗。已恢復初始值。", ko: "모든 후보에서 피팅에 실패했습니다. 시작값으로 되돌렸습니다.");
                 return;
             }
 
-            CameraLength1 = results.Values[0].CameraLength;
-            DirectSpotPosition = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
-            PixX = results.Values[0].PixelSizeX;
-            PixY = results.Values[0].PixelSizeY;
-            Tau = results.Values[0].Tau;
-            Phi = results.Values[0].Phi;
-            Radius = results.Values[0].Radius;
+            //CameraLength1 = results.Values[0].CameraLength;
+            //DirectSpotPosition = new PointD(results.Values[0].CenterX, results.Values[0].CenterY);
+            //PixX = results.Values[0].PixelSizeX;
+            //PixY = results.Values[0].PixelSizeY;
+            //Tau = results.Values[0].Tau;
+            //Phi = results.Values[0].Phi;
+            //Radius = results.Values[0].Radius; // 261125Cl 変更前 (上の best の書き込みにまとめた)
             if (CameraLength1 == initialValue.CameraLength &&
                 DirectSpotPosition.X == initialValue.CenterX && DirectSpotPosition.Y == initialValue.CenterY &&
                 PixX == initialValue.PixelSizeX && PixY == initialValue.PixelSizeY &&

@@ -247,7 +247,9 @@ Primaryプロファイルとリングの描画色を選択できます。</value
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
     <value>読み取り専用。現在読み込まれているSecondary画像の
-ファイル名(連続モードではフレーム番号も)。</value>
+ファイルパス。連続画像のフレーム番号は、ここではなく
+フレーム番号欄に表示されます。</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="textBoxPrimaryFilmDistanceCopy.ToolTip" xml:space="preserve">
     <value>読み取り専用。Primaryのカメラ長(mm)のコピー。
@@ -879,7 +881,9 @@ mm)の初期値。最適化の開始値で、画像の
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
     <value>読み取り専用。現在読み込まれているPrimary画像の
-ファイル名(連続モードではフレーム番号も)。</value>
+ファイルパス。連続画像のフレーム番号は、ここではなく
+フレーム番号欄に表示されます。</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>最適化反復ごとのピクセル歪み角ξの変化を表示します

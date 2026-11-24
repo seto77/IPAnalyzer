@@ -515,9 +515,10 @@ desloca todos os anéis de Debye para fora.</value>
 amostra-detector) da imagem Primária, em mm.</value>
   </data>
   <data name="textBoxPrimaryFileName.ToolTip" xml:space="preserve">
-    <value>Somente leitura: nome do arquivo (e índice do
-quadro, se sequencial) da imagem Primária
-atualmente carregada.</value>
+    <value>Somente leitura: caminho da imagem Primária
+atualmente carregada. Em uma imagem sequencial, o
+número do quadro aparece no campo próprio, não aqui.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="pictureBoxPixelKsi.ToolTip" xml:space="preserve">
     <value>Histórico do ângulo de distorção do pixel ksi
@@ -875,9 +876,10 @@ raio inverso 1/R (por m). Corrige um
 detector/IP curvo; 0 significa plano.</value>
   </data>
   <data name="textBoxSecondaryFileName.ToolTip" xml:space="preserve">
-    <value>Somente leitura: nome do arquivo (e índice do
-quadro, se sequencial) da imagem Secundária
-atualmente carregada.</value>
+    <value>Somente leitura: caminho da imagem Secundária
+atualmente carregada. Em uma imagem sequencial, o
+número do quadro aparece no campo próprio, não aqui.</value>
+    <comment>261125Cl 変更: 旧は「ファイル名 (連番ならフレーム番号も)」。フレーム番号は専用欄に入りここには出ないので、パスのみと明記</comment>
   </data>
   <data name="label67.ToolTip" xml:space="preserve">
     <value>Número de iterações de refinamento a executar.</value>

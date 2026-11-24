@@ -763,9 +763,10 @@ d 間距 (Å) 表示。</value>
 與直接斑點 X 相耦合。</value>
   </data>
   <data name="checkBoxThresholdMin.ToolTip" xml:space="preserve">
-    <value>排除低計數像素：忽略強度低於
+    <value>排除低計數像素：忽略強度小於或等於
 右方數值的像素。用於剔除
 死點／僅含背景的像素。</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="numericBoxFootPositionY.ToolTip" xml:space="preserve">
     <value>基底點 Y，以像素表示：試樣的垂線
@@ -778,14 +779,16 @@ d 間距 (Å) 表示。</value>
 扣除更多背景，調低可扣除較少。</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>強度下限閾值（計數）。低於此值的
+    <value>強度下限閾值（計數）。小於或等於此值的
 像素會從積分中排除；僅在勾選
 「強度低於」時生效。</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
-    <value>排除飽和像素：積分時忽略計數超過
+    <value>排除飽和像素：積分時忽略計數大於或等於
 右方數值的像素。用於剔除
 暈散／死亮像素。</value>
+    <comment>261125Cl 変更: 旧は「右の値を超える/未満」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="checkBoxOmitSpots.ToolTip" xml:space="preserve">
     <value>從積分中排除遮罩斑點：標記為斑點的
@@ -955,9 +958,10 @@ d 間距或長度）。</value>
 徑向環半徑。</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>強度上限閾值（計數）。高於此值的
+    <value>強度上限閾值（計數）。大於或等於此值的
 像素會從積分中排除；僅在勾選
 「強度高於」時生效。</value>
+    <comment>261125Cl 変更: 旧は「この値より上/下」相当 → 「以上/以下」(判定 ≥/≤ に合わせる)</comment>
   </data>
   <data name="radioButtonManualRectangle.ToolTip" xml:space="preserve">
     <value>手動遮罩工具：矩形。在兩個對角
