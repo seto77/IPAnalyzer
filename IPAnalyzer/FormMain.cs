@@ -2212,8 +2212,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 //   NaN のフレームだけタグを省くことはできない → 一部でも NaN があれば PulsePower タグは書かない (誤った値を残さないため)。
                 //   正規化済み (PulsePowerNormarized) のときは従来どおり全フレームに -1 を書く (正規化は全フレームに値があるときだけ行われる)
                 var pulsePowerAll = Ring.SequentialImagePulsePower;
+                //bool writePulsePower = pulsePowerAll != null && pulsePowerAll.Count == d.Length
+                //    && (Ring.PulsePowerNormarized || pulsePowerAll.All(double.IsFinite));
+                // 261124Cl 変更 (所見 8 の残り): Crystallography 0fdc12c から Tiff.Writer はフレームごとにタグを数え、値が NaN のタグはそのフレームでは書かない。
+                //   よって全フレームに値が揃っていなくてもよく、NaN のフレームは IFD を NaN のまま渡せばそのフレームだけ 60002 を書かない
+                //   (例 [1, NaN, 3] なら 1 枚目と 3 枚目に書く)。どのフレームにも値が無ければ従来どおりタグなしで書く
                 bool writePulsePower = pulsePowerAll != null && pulsePowerAll.Count == d.Length
-                    && (Ring.PulsePowerNormarized || pulsePowerAll.All(double.IsFinite));
+                    && (Ring.PulsePowerNormarized || pulsePowerAll.Any(double.IsFinite));
                 if (writePulsePower)
                 {//各画像にパルス強度があるとき
                     //260712Cl 削除: ifdEnergy/ifdName は Writer への受け渡しが恒久的にコメントアウトされており構築が無駄
@@ -4005,7 +4010,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         {
             //PDI形式の場合
             if (FormProperty.radioButtonAsPDIformat.Checked)
-                XYFile.SavePdi2File([.. dpList], filename + extension);
+            {
+                //XYFile.SavePdi2File([.. dpList], filename + extension);
+                // 261124Cl 変更: SavePdi2File は一時ファイルに書き切ってから置き換え、失敗すると false を返す (Crystallography 0fdc12c, C-03)。旧は戻り値を捨てていた
+                if (!XYFile.SavePdi2File([.. dpList], filename + extension))
+                    MessageBox.Show(this, Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n") + filename + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             //CSVかTSVの場合
             else if (!FormProperty.radioButtonAsGSASformat.Checked)
             {
@@ -4016,8 +4026,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 var inv = System.Globalization.CultureInfo.InvariantCulture; // 261105Cl 追加
 
                 //1行目
+                //for (int j = 0; j < dpList.Count; j++)
+                //    sw.Write(dpList[j].Name + (j == dpList.Count - 1 ? "\r\n" : s + s + s));
+                // 261124Cl 変更: CSV では試料名を二重引用符で囲み、中の " は "" にする (PDIndexer と同じ規則。共有の結合 CSV リーダーは対応済み)。
+                //   名前にコンマが入ると列がずれていた。TSV は従来どおり
                 for (int j = 0; j < dpList.Count; j++)
-                    sw.Write(dpList[j].Name + (j == dpList.Count - 1 ? "\r\n" : s + s + s));
+                    sw.Write((s == "," ? "\"" + dpList[j].Name.Replace("\"", "\"\"") + "\"" : dpList[j].Name) + (j == dpList.Count - 1 ? "\r\n" : s + s + s));
                 //2行目
                 for (int j = 0; j < dpList.Count; j++)
                     sw.Write($"x{s}y{s}" + (j == dpList.Count - 1 ? "\r\n" : s));
@@ -4065,11 +4079,32 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     fn += dp.Name[dp.Name.LastIndexOf('-')..].Replace(" ", "");
 
                 if (FormProperty.radioButtonAsPDIformat.Checked)
-                    XYFile.SavePdi2File([dp], fn + extension);
+                {
+                    //XYFile.SavePdi2File([dp], fn + extension);
+                    // 261124Cl 変更: 戻り値 false (保存失敗。旧ファイルは残る) を知らせる (Crystallography 0fdc12c, C-03)
+                    if (!XYFile.SavePdi2File([dp], fn + extension))
+                        MessageBox.Show(this, Crystallography.Localization.Loc(en: "Failed to save the PDI file:\n", ja: "PDI ファイルを保存できませんでした:\n", de: "Die PDI-Datei konnte nicht gespeichert werden:\n", fr: "Impossible d'enregistrer le fichier PDI :\n", es: "No se pudo guardar el archivo PDI:\n", pt: "Não foi possível salvar o arquivo PDI:\n", it: "Impossibile salvare il file PDI:\n", ru: "Не удалось сохранить файл PDI:\n", zhHans: "无法保存 PDI 文件：\n", zhHant: "無法儲存 PDI 檔案：\n", ko: "PDI 파일을 저장하지 못했습니다:\n") + fn + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                // 261124Cl 追加: GSAS は ToGSAS が成功してから StreamWriter を開く (旧: 先にファイルを開いて切り詰めてから ToGSAS が
+                //   2 点未満の入力で ArgumentException を投げ、既存ファイルを空にしていた)。共有の ToGSAS は不変カルチャで書くようになったので
+                //   CurrentCulture の一時切り替えも不要 (Crystallography 0fdc12c, C-11)。σ が欠けた行だけ √I で補う規則も共有側 (36851fd)
+                else if (FormProperty.radioButtonAsGSASformat.Checked)
+                {
+                    string[] gsasLines;
+                    try { gsasLines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); }
+                    catch (ArgumentException)
+                    {
+                        MessageBox.Show(this, Crystallography.Localization.Loc(en: "The GSAS file was not saved because the profile has fewer than two points:\n", ja: "点が 2 点未満のプロファイルなので、GSAS ファイルは保存されていません:\n", de: "Die GSAS-Datei wurde nicht gespeichert, weil das Profil weniger als zwei Punkte hat:\n", fr: "Le fichier GSAS n'a pas été enregistré car le profil compte moins de deux points :\n", es: "El archivo GSAS no se ha guardado porque el perfil tiene menos de dos puntos:\n", pt: "O arquivo GSAS não foi salvo porque o perfil tem menos de dois pontos:\n", it: "Il file GSAS non è stato salvato perché il profilo ha meno di due punti:\n", ru: "Файл GSAS не сохранён, так как в профиле меньше двух точек:\n", zhHans: "由于剖面少于两个点，未保存 GSAS 文件：\n", zhHant: "由於剖面少於兩個點，未儲存 GSAS 檔案：\n", ko: "프로파일의 점이 2개 미만이므로 GSAS 파일을 저장하지 않았습니다:\n") + fn + extension, "IPAnalyzer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        continue;
+                    }
+                    using var gsw = new StreamWriter(fn + extension);
+                    foreach (var line in gsasLines)
+                        gsw.WriteLine(line);
+                }
                 else
                 {
                     using var sw = new StreamWriter(fn + extension);
-                    if (FormProperty.radioButtonAsGSASformat.Checked)
+                    if (FormProperty.radioButtonAsGSASformat.Checked) // 261124Cl 注: GSAS は上の分岐で処理するので、ここには来ない (旧コードを残すため条件ごと残置)
                     {
                         //var lines = Profile.ToGSAS(fn, dp.SourceProfile, HorizontalAxis.Angle); // 261105Cl 変更前
                         // 261105Cl 変更: Profile.ToGSAS (Crystallography) は数値を CurrentCulture で書式化する ("f2", "g12") ので、コンマ小数の
