@@ -4686,10 +4686,160 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     /// <param name="calcFreq">261111Cl 追加: false なら強度頻度 (Ring.CalcFreq + SetFrequencyProfile) を計算しない。呼び出し側が直後に自分で計算する場合の二重計算を避ける</param>
     public void FlipRotate_Pollalization_Background(bool zoomReset = true, bool calcFreq = true) // 261111Cl 変更: calcFreq を追加
     {
-        if (Skip) return;
+        // 261125Cl 変更: 本体を TryApplyImageCorrections へ移した。外部 (マクロ・他フォーム) からの呼び出しはこのまま使えるよう、
+        //   public void の入口として残す (戻り値は使わない)
+        TryApplyImageCorrections(zoomReset, calcFreq);
+
+        #region 261125Cl 変更前 (TryApplyImageCorrections へ移動)
+        //if (Skip) return;
+
+        //if (Ring.IntensityOriginal == null || Ring.Intensity.Length == 0 || pseudoBitmap.SrcValuesGray == null)
+        //    return;
+
+        //int originalWidth = Ring.SrcImgSizeOriginal.Width;
+        //int originalHeight = Ring.SrcImgSizeOriginal.Height;
+
+        //if (toolStripComboBoxRotate.SelectedIndex == 0 || toolStripComboBoxRotate.SelectedIndex == 2)
+        //    Ring.SrcImgSize = new Size(Ring.SrcImgSizeOriginal.Width, Ring.SrcImgSizeOriginal.Height);
+        //else
+        //    Ring.SrcImgSize = new Size(Ring.SrcImgSizeOriginal.Height, Ring.SrcImgSizeOriginal.Width);
+
+        //Ring.IP.SrcWidth = Ring.SrcImgSize.Width;
+        //Ring.IP.SrcHeight = Ring.SrcImgSize.Height;
+        //pseudoBitmap.Width = Ring.SrcImgSize.Width;
+        //pseudoBitmap.Height = Ring.SrcImgSize.Height;
+        //SrcImgSize = Ring.SrcImgSize;
+        //scalablePictureBox.ResetMinimumZoomValue();
+
+        ////Flip & Rotate処理ここから
+
+        ////  Ring.Flip
+        ////Ring.Intensity = Ring.FlipAndRotate(Ring.IntensityOriginal, Ring.IP.SrcWidth,
+        ////    flipVerticallyToolStripMenuItem.Checked,
+        ////    flipHorizontallyToolStripMenuItem.Checked,
+        ////    toolStripComboBoxRotate.SelectedIndex);
+        //// 261124Cl 変更: (1) Ring.Background は Ring.IntensityOriginal (変換前の座標) から登録されるので、反転・回転の前に原画像座標のまま引く
+        ////               (2) FlipAndRotate の width は入力 (変換前) の行幅。90°/270°回転では Ring.IP.SrcWidth が既に交換済みなので originalWidth を渡す
+        ////   反転・回転なし、または正方形画像では結果は従来と同一
+        //var src = Ring.IntensityOriginal;
+        //if (Ring.Background != null && Ring.Background.Length == src.Length)
+        //    src = Ring.SubtractBackground(src, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+        //Ring.Intensity = Ring.FlipAndRotate(src, originalWidth,
+        //    flipVerticallyToolStripMenuItem.Checked,
+        //    flipHorizontallyToolStripMenuItem.Checked,
+        //    toolStripComboBoxRotate.SelectedIndex);
+
+        ////Flip & Rotate処理 ここまで
+
+        ////Background補正ここから
+
+        ////if (Ring.Background != null && Ring.Background.Length == Ring.Intensity.Length)
+        ////    Ring.Intensity = Ring.SubtractBackground(Ring.Intensity, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+        //// 261124Cl 変更: Background 補正は上で反転・回転の前に済ませた
+        ////Background補正ここまで
+
+        ////偏光補正ここから
+        //if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
+        //{
+        //    sw.Restart();
+        //    #region Ringのスタティック関数に移動
+        //    /*
+        //    double SinTau = Math.Sin(IP.tau), CosTau = Math.Cos(IP.tau);
+        //    double SinPhi = Math.Sin(IP.phi), CosPhi = Math.Cos(IP.phi), sinPhi2 = SinPhi * SinPhi, cosPhi2 = CosPhi * CosPhi, cosPhiSinPhi = CosPhi * SinPhi;
+        //    double tanKsi = Math.Tan(IP.ksi);//
+        //    double sinPhiSinTau = SinPhi * SinTau, cosPhiSinTau = CosPhi * SinTau;
+        //    double numer1 = (cosPhiSinPhi - CosPhi * CosTau * SinPhi);
+        //    double temp2 = (cosPhi2 + CosTau * sinPhi2);
+        //    double temp3 = (cosPhi2 * CosTau + sinPhi2);
+        //    double fd = IP.FilmDistance, fd2 = fd * fd;
+        //    double sizeX = IP.PixSizeX, sizeY = IP.PixSizeY;
+        //    double centX = IP.CenterX, centY = IP.CenterY;
+        //    Func<double, double, double> coeff;
+        //    if (FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked)
+        //        coeff = new Func<double, double, double>((x2, y2) => (1 - x2 / (x2 + y2 + fd2)));
+        //    else
+        //        coeff = new Func<double, double, double>((x2, y2) => (1 - y2 / (x2 + y2 + fd2)));
+
+        //    //Parallel.Forを使わないほうが早い
+        //    int i = 0;
+        //    for (int pixY = 0; pixY < Ring.SrcImgSize.Height; pixY++)
+        //    {
+        //        double tempY = (pixY - centY) * sizeY;
+        //        double temp4 = tempY * cosPhiSinTau + fd;
+        //        double temp5 = tempY * numer1;
+        //        double temp6 = tempY * temp3;
+        //        double temp7 = tempY * tanKsi;
+
+        //        for (int pixX = 0; pixX < Ring.SrcImgSize.Width; pixX++)
+        //        {
+        //            double tempX = (pixX - centX) * sizeX + temp7;
+        //            double temp8 = fd / (temp4 - tempX * sinPhiSinTau);
+        //            double x = (temp5 + tempX * temp2) * temp8;
+        //            double y = (tempX * numer1 + temp6) * temp8;
+        //            double x2 = x * x, y2 = y * y;
+        //            Ring.Intensity[i] /= coeff(x2, y2);
+        //            i++;
+        //        }
+        //    }
+        //    */
+        //    #endregion
+
+        //    int index = FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1;
+        //    Ring.Intensity = Ring.CorrectPolarization(index);
+        //    this.toolStripStatusLabel.Text = Crystallography.Localization.Loc(en: "Calculating Time (Polarization Correction):  ", ja: "計算時間 (偏光補正):  ", de: "Berechnungszeit (Polarisationskorrektur):  ", fr: "Temps de calcul (Correction de polarisation) :  ", es: "Tiempo de cálculo (Corrección de polarización):  ", pt: "Tempo de cálculo (Correção de polarização):  ", it: "Tempo di calcolo (Correzione di polarizzazione):  ", ru: "Время вычисления (Поляризационная коррекция):  ", zhHans: "计算时间（偏振校正）：  ", zhHant: "計算時間 (偏極化校正):  ", ko: "계산 시간 (Polarization Correction):  ") + (sw.ElapsedMilliseconds).ToString() + "ms";
+        //}
+        ////偏光補正ここまで
+
+        ////Ring.CalcFreq();
+        ////SetFrequencyProfile();//
+        //if (calcFreq) // 261111Cl 変更: 全画素を処理する重い計算なので、呼び出し側が後で計算するときは省く
+        //{
+        //    Ring.CalcFreq();
+        //    SetFrequencyProfile();
+        //}
+
+        ////pseudoBitmap.SrcValuesGray = [.. Ring.Intensity];
+        ////pseudoBitmap.SrcValuesGrayOriginal = [.. Ring.Intensity];
+        //// 261111Cl 変更: 全画素のコピーを 2 回 → 1 回にして両方に代入。どちらの配列も要素の書き換えは無い (PseudoBitmap のフィルタは新しい配列を返し、
+        ////   SetOriginalGray は参照を戻すだけ。コンストラクタも同じ配列を両方に入れる設計)。Ring.Intensity とは別の配列のまま
+        //double[] gray = [.. Ring.Intensity];
+        //pseudoBitmap.SrcValuesGray = gray;
+        //pseudoBitmap.SrcValuesGrayOriginal = gray;
+
+        //// 261124Cl 追加 (C05, 作者判断 2026-11-24 推奨案 A): しきい値マスク (Ring.IsThresholdOver/Under) を、補正の済んだ Ring.Intensity で作り直す。
+        ////   旧: しきい値欄の変更時と読込時 (反転・回転・補正の前の強度) にしか計算されず、連続画像でフレームを替えても前のフレームのマスクのままだった。
+        ////   読込・反転・回転・背景・偏光の変更・フレーム切替はすべてここを通る。偏光補正オンのときは補正後の強度で判定するのでマスクが従来と少し変わる (作者了承済み)。
+        ////   描画は直後の IntegralArea_Changed (SetMask → Draw) で 1 回だけ行うので、しきい値の計算の中の Draw は SkipDrawing で止める (261125Cl 以前の説明)
+        ////   261125Cl 変更: 今は描画しない計算 (FormProperty.RecalcThresholdMasks) だけを呼ぶ (描画は直後の IntegralArea_Changed で 1 回だけ)
+        //if (FormProperty != null && (FormProperty.checkBoxThresholdMax.Checked || FormProperty.checkBoxThresholdMin.Checked))
+        //{
+        //    //var skipDrawing = SkipDrawing;
+        //    //SkipDrawing = true;
+        //    //try { FormProperty.checkBoxThreshold_CheckedChanged(this, EventArgs.Empty); }
+        //    //finally { SkipDrawing = skipDrawing; } // 261125Cl 変更前
+        //    FormProperty.RecalcThresholdMasks(); // 261125Cl 変更: 描画しない計算だけを呼ぶので、SkipDrawing の一時切替は不要
+        //}
+
+        //IntegralArea_Changed(this, EventArgs.Empty);
+        //if (zoomReset)
+        //    scalablePictureBox.Zoom = 0;
+        #endregion
+    }
+
+    /// <summary>
+    /// 261125Cl 追加: 画像の補正 (背景・反転/回転・偏光補正・強度頻度・しきい値マスク) を行い、最後に積分領域を更新する (旧 FlipRotate_Pollalization_Background の本体)。
+    /// 戻り値は末尾の IntegralArea_Changed まで走ったかどうか。false は旧 FlipRotate の早期 return と同じ条件 (Skip 中、または画像データなし) で何もせず抜けたことを表す。
+    /// </summary>
+    /// <param name="zoomReset">true なら最後にズームを全体表示へ戻す</param>
+    /// <param name="calcFreq">261111Cl 追加: false なら強度頻度 (Ring.CalcFreq + SetFrequencyProfile) を計算しない。呼び出し側が直後に自分で計算する場合の二重計算を避ける</param>
+    /// <param name="syncDetectorParameters">true なら偏光補正の前に SetIntegralProperty で IP (中心・カメラ長・ピクセルサイズ・傾き) を FormProperty の値へ同期する (IsImageReady のときだけ)。
+    /// FormProperty.ApplyDetectorParameters から呼ぶとき用 (旧はその前の IntegralArea_Changed が同期していた)</param>
+    internal bool TryApplyImageCorrections(bool zoomReset = true, bool calcFreq = true, bool syncDetectorParameters = false)
+    {
+        if (Skip) return false; // 261125Cl 変更: 旧と同じ条件で、戻り値 false を返す
 
         if (Ring.IntensityOriginal == null || Ring.Intensity.Length == 0 || pseudoBitmap.SrcValuesGray == null)
-            return;
+            return false; // 261125Cl 変更: 旧と同じ条件で、戻り値 false を返す
 
         int originalWidth = Ring.SrcImgSizeOriginal.Width;
         int originalHeight = Ring.SrcImgSizeOriginal.Height;
@@ -4705,6 +4855,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         pseudoBitmap.Height = Ring.SrcImgSize.Height;
         SrcImgSize = Ring.SrcImgSize;
         scalablePictureBox.ResetMinimumZoomValue();
+
+        // 261125Cl 追加: 検出器パラメータの変更から呼ばれたときは、偏光補正 (Ring.CorrectPolarization が Ring.IP の幾何を読む) の前に IP を新しい値へ同期する。
+        //   SrcImgSize が上で確定した後に行う。旧は呼び出し側 (DetectorParameters_Changed) の先の IntegralArea_Changed が同期していたので、
+        //   その同期と同じく IsImageReady のときだけ行う (読込途中は従来どおり同期しない)
+        if (syncDetectorParameters && IsImageReady)
+            SetIntegralProperty();
 
         //Flip & Rotate処理ここから
 
@@ -4818,6 +4974,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         IntegralArea_Changed(this, EventArgs.Empty);
         if (zoomReset)
             scalablePictureBox.Zoom = 0;
+        return true; // 261125Cl 追加: 末尾の領域更新まで走った
     }
 
     #endregion

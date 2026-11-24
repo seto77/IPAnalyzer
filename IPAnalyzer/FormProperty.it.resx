@@ -701,9 +701,10 @@ o distanza interplanare Angstrom). Limite inferiore
 del profilo 1D di output.</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>Correzione di curvatura sferica per una imaging
-plate curva (normalmente 0). Compensa la distorsione
-dipendente dal raggio quando l'IP non è piana.</value>
+    <value>Correzione di curvatura sferica per un rivelatore
+curvo. Inserire l'inverso 1/R del raggio di curvatura
+R (m), in m⁻¹ (/m). Usare 0 per un rivelatore piano.</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>Densità delle linee di scala 2theta/azimut

@@ -707,10 +707,11 @@ Netzebenenabstand Å). Untere Grenze des
 ausgegebenen 1D-Profils.</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>Korrektur für sphärische Krümmung einer
-gebogenen Imaging Plate (normalerweise 0).
-Gleicht radiusabhängige Verzerrungen aus,
-wenn die IP nicht flach ist.</value>
+    <value>Korrektur der sphärischen Krümmung für einen
+gekrümmten Detektor. Geben Sie den Kehrwert 1/R
+des Krümmungsradius R (m) in m⁻¹ (/m) ein.
+Für einen Flachdetektor 0 verwenden.</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>Dichte der eingeblendeten 2theta-/Azimut-

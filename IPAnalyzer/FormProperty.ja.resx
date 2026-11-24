@@ -707,7 +707,10 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>半径の逆数</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value />
+    <value>湾曲した検出器の球面補正。検出器の曲率半径
+R (m) の逆数 1/R を m⁻¹ (/m) で入力します。
+平面検出器では 0 にします。</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 空 (&lt;value /&gt;))</comment>
   </data>
   <data name="numericBoxTiltTau.ToolTip" xml:space="preserve">
     <value />

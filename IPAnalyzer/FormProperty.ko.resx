@@ -686,9 +686,10 @@ PDIndexer로 보냅니다.</value>
 프로파일의 하한입니다.</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>곡면 이미징 플레이트에 대한 구면 휨 보정(보통
-0)입니다. IP가 평평하지 않을 때 반지름에 따른
-왜곡을 보정합니다.</value>
+    <value>휘어진 검출기에 대한 구면 휨 보정입니다. 곡률
+반지름 R (m) 의 역수 1/R 을 m⁻¹ (/m) 단위로
+입력합니다. 평판 검출기에서는 0 으로 합니다.</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>이미지에 겹쳐지는 2theta/방위각 눈금선의 밀도:

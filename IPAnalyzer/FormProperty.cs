@@ -651,6 +651,99 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     /// <param name="e"></param>
     public void DetectorParameters_Changed(object sender, EventArgs e)
     {
+        // 261125Cl 変更: 本体を ApplyDetectorParameters へ移した。ここでは「sender が偏光補正の係数に効くコントロールか」だけを判定する。
+        //   旧は領域更新 (IntegralArea_Changed) の後に偏光補正 (FlipRotate_Pollalization_Background) を呼び、補正の末尾でもう 1 回領域更新していたので、
+        //   偏光補正オンでは SetInsideArea・SetMask・Draw が 2 回走っていた。今は補正側が末尾の領域更新まで走ったら呼び出し側では呼ばない (1 回)
+        //   判定に使うコントロールは 261124Cl の判定と同じ 11 個
+        bool affectsPolarization = sender is Crystallography.Controls.NumericBox b
+            && (b == numericBoxDirectSpotPositionX || b == numericBoxDirectSpotPositionY
+             || b == numericBoxFootPositionX || b == numericBoxFootPositionY
+             || b == numericBoxCameraLength1 || b == numericBoxCameraLength2
+             || b == numericBoxPixelSizeX || b == numericBoxPixelSizeY || b == numericBoxPixelKsi
+             || b == numericBoxTiltTau || b == numericBoxTiltPhi);
+        ApplyDetectorParameters(refreshPolarization: affectsPolarization);
+
+        #region 261125Cl 変更前 (ApplyDetectorParameters へ移動)
+        //if (SkipEvent) return;
+
+        //#region 幾何学考察
+        ////検出器の回転行列は以下の行列である.
+        //// cosφ^2 (1-cosτ) + cosτ , cosφ sinφ (1-cosτ)     ,  sinφ sinτ
+        //// cosφ sinφ (1-cosτ)     , sinφ^2 (1-cosτ) + cosτ , -cosφ sinτ
+        //// -sinφ sinτ             , cosφ sinτ              , cosτ
+        ////ダイレクトスポット (0,0,0), サンプル位置 (0,0, C1)として、
+        ////検出器平面の方程式は
+        //// sinφ * sinτ * X - cosφ * sinτ * Y + cosτ * Z = 0 となる。
+        ////サンプルから検出器平面におろした垂線の足の空間座標をFとすれば
+        //// F =(C1 * cosτ * sinτ * sinφ, -C1 * cosτ * sinτ * cosφ, -C1 + C1 * cosτ * cosτ)
+        ////この垂線の足を逆回転して、傾いていないときの座標F'は、
+        //// F' = (C1 * sinφ * sinτ, -C1 * cosφ * sinτ)
+        //// これをdirect spotからのピクセル座標F''で考えれば、
+        //// F'' = C1 *( (sinφ * sinτ + cosφ * sinτ * tanξ) / PixX, - cosφ * sinτ / PixY)
+        //#endregion
+
+        //SkipEvent = true;
+        //double tau = numericBoxTiltTau.RadianValue, phi = numericBoxTiltPhi.RadianValue, ksi = numericBoxPixelKsi.RadianValue;
+
+        //double CosTau = Math.Cos(tau), SinTau = Math.Sin(tau);
+        //double CosPhi = Math.Cos(phi), CosPhiSquare = CosPhi * CosPhi;
+        //double SinPhi = Math.Sin(phi), SinPhiSquare = SinPhi * SinPhi;
+
+        //DetectorRotation = new Matrix3D(
+        // CosPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinPhi * (1 - CosTau), -SinPhi * SinTau,
+        // CosPhi * SinPhi * (1 - CosTau), SinPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinTau,
+        // SinPhi * SinTau, -CosPhi * SinTau, CosTau
+        // );
+
+        //DetectorRotationInv = DetectorRotation.Inverse();
+
+        //var c1 = radioButtonDirectSpotMode.Checked ? numericBoxCameraLength1.Value : numericBoxCameraLength2.Value / CosTau;
+        //double realX = c1 * SinPhi * SinTau, realY = -c1 * CosPhi * SinTau;
+        //var fx = (realX - realY * Math.Tan(ksi)) / numericBoxPixelSizeX.Value;
+        //var fy = realY / numericBoxPixelSizeY.Value;
+        //if (radioButtonDirectSpotMode.Checked)
+        //{
+        //    numericBoxCameraLength2.Value = c1 * CosTau;
+        //    FootPosition = DirectSpotPosition + new PointD(fx, fy);
+        //}
+        //else
+        //{
+        //    numericBoxCameraLength1.Value = c1;
+        //    DirectSpotPosition = FootPosition - new PointD(fx, fy);
+        //}
+        //SkipEvent = false;
+
+        //formMain.IntegralArea_Changed(new object(), new EventArgs());
+
+        ////偏光補正がチェックされており、再計算が必要な場合の対処
+        //if (checkBoxCorrectPolarization.Checked)
+        //    if (sender is Crystallography.Controls.NumericBox b)
+        //    {
+        //        //再計算が必要なパラメータかどうかを判断
+        //        //if (b.Name.Contains("Center") || b.Name.Contains("CameraLength") || b.Name.Contains("PixelSize")
+        //        //       || b.Name.Contains("PixelSize") || b.Name.Contains("TiltCorrection"))
+        //        // 261124Cl 変更: "Center" "TiltCorrection" はどのコントロール名にも一致せず、中心・傾斜・ξ を変えても偏光補正が更新されなかった。
+        //        //   名前の部分一致をやめ、補正係数 (Ring.CorrectPolarization) が使う量を持つ実コントロールで判定する
+        //        if (b == numericBoxDirectSpotPositionX || b == numericBoxDirectSpotPositionY
+        //            || b == numericBoxFootPositionX || b == numericBoxFootPositionY
+        //            || b == numericBoxCameraLength1 || b == numericBoxCameraLength2
+        //            || b == numericBoxPixelSizeX || b == numericBoxPixelSizeY || b == numericBoxPixelKsi
+        //            || b == numericBoxTiltTau || b == numericBoxTiltPhi)
+        //        {
+        //            formMain.FlipRotate_Pollalization_Background(false);
+        //        }
+        //    }
+        #endregion
+    }
+
+    /// <summary>
+    /// 261125Cl 追加: 検出器のパラメータ (回転行列・カメラ長・直接点/足の位置) を導出し、積分領域を更新する。
+    /// 個別の入力変更 (DetectorParameters_Changed) と、複数の値をまとめて書き込んだ後の一括反映 (Gandolfi の最適化など) で共用する。
+    /// SkipEvent が true のときは何もしない。
+    /// </summary>
+    /// <param name="refreshPolarization">true かつ偏光補正オンなら、新しい幾何で偏光補正をやり直す (補正の末尾で領域更新も 1 回行う)</param>
+    internal void ApplyDetectorParameters(bool refreshPolarization = false)
+    {
         if (SkipEvent) return;
 
         #region 幾何学考察
@@ -670,56 +763,49 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         #endregion
 
         SkipEvent = true;
-        double tau = numericBoxTiltTau.RadianValue, phi = numericBoxTiltPhi.RadianValue, ksi = numericBoxPixelKsi.RadianValue;
-
-        double CosTau = Math.Cos(tau), SinTau = Math.Sin(tau);
-        double CosPhi = Math.Cos(phi), CosPhiSquare = CosPhi * CosPhi;
-        double SinPhi = Math.Sin(phi), SinPhiSquare = SinPhi * SinPhi;
-
-        DetectorRotation = new Matrix3D(
-         CosPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinPhi * (1 - CosTau), -SinPhi * SinTau,
-         CosPhi * SinPhi * (1 - CosTau), SinPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinTau,
-         SinPhi * SinTau, -CosPhi * SinTau, CosTau
-         );
-
-        DetectorRotationInv = DetectorRotation.Inverse();
-
-        var c1 = radioButtonDirectSpotMode.Checked ? numericBoxCameraLength1.Value : numericBoxCameraLength2.Value / CosTau;
-        double realX = c1 * SinPhi * SinTau, realY = -c1 * CosPhi * SinTau;
-        var fx = (realX - realY * Math.Tan(ksi)) / numericBoxPixelSizeX.Value;
-        var fy = realY / numericBoxPixelSizeY.Value;
-        if (radioButtonDirectSpotMode.Checked)
+        try // 261125Cl 変更: 例外でも SkipEvent を戻す (旧は try/finally なし)
         {
-            numericBoxCameraLength2.Value = c1 * CosTau;
-            FootPosition = DirectSpotPosition + new PointD(fx, fy);
+            double tau = numericBoxTiltTau.RadianValue, phi = numericBoxTiltPhi.RadianValue, ksi = numericBoxPixelKsi.RadianValue;
+
+            double CosTau = Math.Cos(tau), SinTau = Math.Sin(tau);
+            double CosPhi = Math.Cos(phi), CosPhiSquare = CosPhi * CosPhi;
+            double SinPhi = Math.Sin(phi), SinPhiSquare = SinPhi * SinPhi;
+
+            DetectorRotation = new Matrix3D(
+             CosPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinPhi * (1 - CosTau), -SinPhi * SinTau,
+             CosPhi * SinPhi * (1 - CosTau), SinPhiSquare * (1 - CosTau) + CosTau, CosPhi * SinTau,
+             SinPhi * SinTau, -CosPhi * SinTau, CosTau
+             );
+
+            DetectorRotationInv = DetectorRotation.Inverse();
+
+            var c1 = radioButtonDirectSpotMode.Checked ? numericBoxCameraLength1.Value : numericBoxCameraLength2.Value / CosTau;
+            double realX = c1 * SinPhi * SinTau, realY = -c1 * CosPhi * SinTau;
+            var fx = (realX - realY * Math.Tan(ksi)) / numericBoxPixelSizeX.Value;
+            var fy = realY / numericBoxPixelSizeY.Value;
+            if (radioButtonDirectSpotMode.Checked)
+            {
+                numericBoxCameraLength2.Value = c1 * CosTau;
+                FootPosition = DirectSpotPosition + new PointD(fx, fy);
+            }
+            else
+            {
+                numericBoxCameraLength1.Value = c1;
+                DirectSpotPosition = FootPosition - new PointD(fx, fy);
+            }
         }
-        else
+        finally
         {
-            numericBoxCameraLength1.Value = c1;
-            DirectSpotPosition = FootPosition - new PointD(fx, fy);
+            SkipEvent = false;
         }
-        SkipEvent = false;
+
+        // 偏光補正をやり直す場合: 補正側が IP を新しい幾何に同期してから補正し、末尾で領域更新まで行ったら (true) ここでは呼ばない。
+        //   補正側が早期に抜けたとき (false: Skip 中・画像データなし) は、従来どおり下で領域更新を 1 回呼ぶ (領域側のガードはそのまま)
+        if (refreshPolarization && checkBoxCorrectPolarization.Checked
+            && formMain.TryApplyImageCorrections(zoomReset: false, syncDetectorParameters: true))
+            return;
 
         formMain.IntegralArea_Changed(new object(), new EventArgs());
-
-        //偏光補正がチェックされており、再計算が必要な場合の対処
-        if (checkBoxCorrectPolarization.Checked)
-            if (sender is Crystallography.Controls.NumericBox b)
-            {
-                //再計算が必要なパラメータかどうかを判断
-                //if (b.Name.Contains("Center") || b.Name.Contains("CameraLength") || b.Name.Contains("PixelSize")
-                //       || b.Name.Contains("PixelSize") || b.Name.Contains("TiltCorrection"))
-                // 261124Cl 変更: "Center" "TiltCorrection" はどのコントロール名にも一致せず、中心・傾斜・ξ を変えても偏光補正が更新されなかった。
-                //   名前の部分一致をやめ、補正係数 (Ring.CorrectPolarization) が使う量を持つ実コントロールで判定する
-                if (b == numericBoxDirectSpotPositionX || b == numericBoxDirectSpotPositionY
-                    || b == numericBoxFootPositionX || b == numericBoxFootPositionY
-                    || b == numericBoxCameraLength1 || b == numericBoxCameraLength2
-                    || b == numericBoxPixelSizeX || b == numericBoxPixelSizeY || b == numericBoxPixelKsi
-                    || b == numericBoxTiltTau || b == numericBoxTiltPhi)
-                {
-                    formMain.FlipRotate_Pollalization_Background(false);
-                }
-            }
     }
     #endregion
 

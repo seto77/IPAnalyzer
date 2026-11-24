@@ -598,10 +598,6 @@ converges; newest values append on the right.</value>
   <data name="&gt;&gt;textBoxTiltCorrectionSecondaryTau.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="numericTextBoxPrimaryFilmDistance.ToolTip1" xml:space="preserve">
-    <value>「Primary」のカメラ長を入力します。
-あらかじめ近い数値を入れておくと収束が速くなります</value>
-  </data>
   <data name="textBoxRefinedPrimaryTauDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 160</value>
   </data>
@@ -828,10 +824,6 @@ radial distance) used for peak fitting.</value>
   </data>
   <data name="label70.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="textBoxPixelSizeX.ToolTip1" xml:space="preserve">
-    <value>画像の1Pixelあたりの大きさ(X方向)の初期値を入力します。
-</value>
   </data>
   <data name="textBoxTiltCorrectionPrimaryPhi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -1136,11 +1128,6 @@ trend means tilt correction is insufficient.</value>
   </data>
   <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="numericalTextBoxPrimaryCenterPositionX.ToolTip1" xml:space="preserve">
-    <value>「Primary」の中心座標を設定します。
-ダブルクリックするとメインウィンドウの中心座標がコピーされます。
-メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -2173,9 +2160,6 @@ pattern and load it as the refined value.</value>
   <data name="buttonExecuteRefinements.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="textBoxPixelKsi.ToolTip1" xml:space="preserve">
-    <value>画像のPixelの歪み量の初期値を入力します。</value>
-  </data>
   <data name="&gt;&gt;label42.ZOrder" xml:space="preserve">
     <value>60</value>
   </data>
@@ -2265,9 +2249,6 @@ wavelength shifts all Debye rings outward.</value>
   </data>
   <data name="label30.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryPhi.ToolTip1" xml:space="preserve">
-    <value>IPの傾き量の初期値を入力します。</value>
   </data>
   <data name="&gt;&gt;buttonGetCenterPositionFromMainForm2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2384,11 +2365,6 @@ shown in the frame-number box, not here.</value>
   <data name="label14.Text" xml:space="preserve">
     <value>Camera Length
  (Pimary)</value>
-  </data>
-  <data name="numericTextBoxSecondaryCenterPositionX.ToolTip1" xml:space="preserve">
-    <value>「Secondary」の中心座標を設定します。
-ダブルクリックするとメインウィンドウの中心座標がコピーされます。
-メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
   <data name="textBoxRefinedSecondaryTauDev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -3956,9 +3932,6 @@ distance) of the Primary image, in mm.</value>
   <data name="buttonOpenPrimaryImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 19</value>
   </data>
-  <data name="textBoxPixelSizeY.ToolTip1" xml:space="preserve">
-    <value>画像の1Pixelあたりの大きさ(Y方向)の初期値を入力します。</value>
-  </data>
   <data name="&gt;&gt;label31.Parent" xml:space="preserve">
     <value>groupBoxSecondaryImage</value>
   </data>
@@ -4581,11 +4554,6 @@ resulting from the last optimization.</value>
   </data>
   <data name="&gt;&gt;label41.ZOrder" xml:space="preserve">
     <value>28</value>
-  </data>
-  <data name="numericTextBoxPrimaryCenterPositionY.ToolTip1" xml:space="preserve">
-    <value>「Primary」の中心座標を設定します。
-ダブルクリックするとメインウィンドウの中心座標がコピーされます。
-メインウィンドウで「Find Center」をしてもコピーされます。</value>
   </data>
   <data name="pictureBoxResidual.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 98</value>
@@ -5564,11 +5532,6 @@ a sequential (multi-frame) image stack.</value>
   <data name="&gt;&gt;label68.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="numericTextBoxSecondaryCenterPositionY.ToolTip1" xml:space="preserve">
-    <value>「Secondary」の中心座標を設定します。
-ダブルクリックするとメインウィンドウの中心座標がコピーされます。
-メインウィンドウで「Find Center」をしてもコピーされます。</value>
-  </data>
   <data name="&gt;&gt;label53.Name" xml:space="preserve">
     <value>label53</value>
   </data>
@@ -5982,9 +5945,6 @@ both images, and load it as the refined value.</value>
   <data name="&gt;&gt;numericTextBoxSecondaryCenterPositionX.Type" xml:space="preserve">
     <value>Crystallography.Controls.NumericBox, Crystallography.Controls, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="textBoxWaveLength.ToolTip1" xml:space="preserve">
-    <value>波長の初期値を入力します。</value>
-  </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Refined</value>
   </data>
@@ -6163,10 +6123,6 @@ accurate when rings are strongly curved.</value>
   </data>
   <data name="buttonSendMainForm.Text" xml:space="preserve">
     <value>Refined parameters =&gt; Main form</value>
-  </data>
-  <data name="textBoxFilmDistanceDiscrepancy.ToolTip1" xml:space="preserve">
-    <value>「Primary」とのカメラ長の差を入力します。
-負の値を入力することもできます。</value>
   </data>
   <data name="label43.Text" xml:space="preserve">
     <value>Camera Length</value>
@@ -6635,9 +6591,6 @@ of the Secondary image, in pixels.</value>
   </data>
   <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="textBoxTiltCorrectionPrimaryTau.ToolTip1" xml:space="preserve">
-    <value>IPの傾き量の初期値を入力します。</value>
   </data>
   <data name="label39.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

@@ -691,10 +691,10 @@ distance interréticulaire Angstrom). Borne inférieure
 du profil 1D produit.</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>Correction de courbure sphérique pour une plaque
-d'imagerie courbe (normalement 0). Compense la
-distorsion dépendant du rayon lorsque l'IP n'est
-pas plane.</value>
+    <value>Correction de courbure sphérique pour un détecteur
+courbé. Saisissez l'inverse 1/R du rayon de courbure
+R (m), en m⁻¹ (/m). Utilisez 0 pour un détecteur plan.</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>Densité des lignes d'échelle 2theta/azimut

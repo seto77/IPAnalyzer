@@ -675,8 +675,10 @@
 输出一维图谱的下界。</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>针对弯曲成像板的球面弯曲校正（通常为 0）。
-当成像板不平整时，补偿与半径相关的畸变。</value>
+    <value>针对弯曲探测器的球面弯曲校正。输入曲率半径
+R (m) 的倒数 1/R，单位为 m⁻¹（/m）。
+平板探测器请输入 0。</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>图像上叠加的 2theta/方位角比例尺线的密度：

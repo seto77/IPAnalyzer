@@ -847,13 +847,32 @@ public partial class FormFindParameterBruteForce : Crystallography.Controls.Form
             //    Radius = initialValue.Radius; // 261125Cl 変更前 (下の成功時と同じ並びの書き込みを 1 回にまとめた)
             // 261125Cl 変更: 最良の候補 (全候補で失敗したときは開始値) を 1 回だけ書き込む。書き込む順序は旧と同じ
             var best = results.Count > 0 ? results.Values[0] : initialValue;
-            CameraLength1 = best.CameraLength;
-            DirectSpotPosition = new PointD(best.CenterX, best.CenterY);
-            PixX = best.PixelSizeX;
-            PixY = best.PixelSizeY;
-            Tau = best.Tau;
-            Phi = best.Phi;
-            Radius = best.Radius;
+            //CameraLength1 = best.CameraLength;
+            //DirectSpotPosition = new PointD(best.CenterX, best.CenterY);
+            //PixX = best.PixelSizeX;
+            //PixY = best.PixelSizeY;
+            //Tau = best.Tau;
+            //Phi = best.Phi;
+            //Radius = best.Radius; // 261125Cl 変更前 (1 項目ごとに DetectorParameters_Changed が走り、領域更新 (偏光補正オンなら補正も) が最大 7 回走っていた)
+            // 261125Cl 変更: 7 項目を SkipEvent で抑止した区間でまとめて書き込み (順序は旧と同じ)、最後に ApplyDetectorParameters で 1 回だけ反映する。
+            //   元の SkipEvent を退避して finally で戻す。元から抑止中なら ApplyDetectorParameters の入口のガードで何もしない (旧の setter も抑止中は何もしなかった)
+            var skipEvent = FormMain.FormProperty.SkipEvent;
+            FormMain.FormProperty.SkipEvent = true;
+            try
+            {
+                CameraLength1 = best.CameraLength;
+                DirectSpotPosition = new PointD(best.CenterX, best.CenterY);
+                PixX = best.PixelSizeX;
+                PixY = best.PixelSizeY;
+                Tau = best.Tau;
+                Phi = best.Phi;
+                Radius = best.Radius;
+            }
+            finally
+            {
+                FormMain.FormProperty.SkipEvent = skipEvent;
+            }
+            FormMain.FormProperty.ApplyDetectorParameters(refreshPolarization: true); // 261125Cl 追加
             if (results.Count == 0)
             {
                 FormMain.SetIntegralProperty();

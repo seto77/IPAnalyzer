@@ -680,9 +680,10 @@
 輸出 1D 圖譜的下限。</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>彎曲影像板的球面彎曲校正
-（通常為 0）。在 IP 非平面時補償
-與半徑相關的畸變。</value>
+    <value>彎曲偵測器的球面彎曲校正。以 m⁻¹（/m）為單位
+輸入曲率半徑 R (m) 的倒數 1/R。
+平面偵測器請設為 0。</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="comboBoxScaleLineDivisions.ToolTip" xml:space="preserve">
     <value>影像上疊加的 2θ／方位角比例尺線

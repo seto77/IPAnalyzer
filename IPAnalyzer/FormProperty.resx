@@ -4257,9 +4257,10 @@ Gandolfi mode to map pixel position to 2theta.</value>
     <value>0</value>
   </data>
   <data name="numericBoxSphericalCorections.ToolTip" xml:space="preserve">
-    <value>Spherical-bending correction for a curved imaging
-plate (normally 0). Compensates radius-dependent
-distortion when the IP is not flat.</value>
+    <value>Spherical-bending correction for a curved detector.
+Enter 1/R in m⁻¹ (/m), where R is the radius of
+curvature in metres. Use 0 for a flat detector.</value>
+    <comment>261125Cl 変更: 入力単位 (1/R を m⁻¹) を明記 (旧: 湾曲したイメージングプレートの補正 (通常 0)。単位の記載なし)</comment>
   </data>
   <data name="&gt;&gt;numericBoxSphericalCorections.Name" xml:space="preserve">
     <value>numericBoxSphericalCorections</value>
