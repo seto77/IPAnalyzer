@@ -36,7 +36,8 @@ namespace IPAnalyzer
                 formMain.ReadImage(dlg.FileName);
             }
         }
-        private ushort[] getRawIntensity(string str)
+        //private ushort[] getRawIntensity(string str)
+        private (ushort[] intensity, Size size) getRawIntensity(string str) // 261124Cl 変更: 画素配列だけでなく幅・高さも返す (呼び出し側で両軸の一致を確かめるため)
         {
             if (str.EndsWith("stl"))
             {//Rigaku R-Axis4
@@ -75,11 +76,13 @@ namespace IPAnalyzer
                         else
                             srcRow.CopyTo(dstRow);
                     }
-                    return intensity;
+                    //return intensity;
+                    return (intensity, new Size(num_x_pixs, num_y_pixs)); // 261124Cl 変更
                 }
                 finally { br.Close(); }
             }
-            else return [];
+            //else return [];
+            else return ([], Size.Empty); // 261124Cl 変更
         }
 
         double total = 0;
@@ -118,10 +121,14 @@ namespace IPAnalyzer
         private void buttonCalibrate_Click(object sender, EventArgs e)
         {
             total = 0; //260712Cl 実行毎にリセット (フィールドのため前回実行の合計値へ正規化されるバグを防止)
-            ushort[] image1 = getRawIntensity(textBoxFile1.Text);
-            ushort[] image2 = getRawIntensity(textBoxFile2.Text);
+            //ushort[] image1 = getRawIntensity(textBoxFile1.Text);
+            //ushort[] image2 = getRawIntensity(textBoxFile2.Text);
+            var (image1, size1) = getRawIntensity(textBoxFile1.Text); // 261124Cl 変更: 幅・高さも受け取る
+            var (image2, size2) = getRawIntensity(textBoxFile2.Text); // 261124Cl 変更
             //260712Cl 空配列(.stl以外)・サイズ不一致のガードを追加 (旧: image2[i] のインデックスで IndexOutOfRange か、空配列で 300 反復空回り)
-            if (image1.Length == 0 || image1.Length != image2.Length)
+            //if (image1.Length == 0 || image1.Length != image2.Length)
+            // 261124Cl 変更: 総画素数だけでなく幅・高さも比べる (例えば 100×200 と 200×100 では image1[i] と image2[i] が別の位置の画素になる)
+            if (image1.Length == 0 || image1.Length != image2.Length || size1 != size2)
             {
                 MessageBox.Show(Crystallography.Localization.Loc(en: "Please specify two .stl images of the same size.", ja: "同一サイズの 2 つの .stl イメージを指定してください。"));
                 return;

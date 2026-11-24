@@ -642,7 +642,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         if (InitialDialog.AutomaticallyClose)
             InitialDialog.Visible = false;
 
-        Directory.Delete(Application.UserAppDataPath, true);
+        //Directory.Delete(Application.UserAppDataPath, true);
+        // 261124Cl 変更: 先頭の空フォルダ整理と同じく、空のときだけ非再帰で削除する (旧: 中身ごと再帰削除)。
+        //   Application.UserAppDataPath (…\バージョン) は参照しただけで作られる空フォルダで、現在アプリも共有ライブラリもここには保存しない
+        //   (保存先は親フォルダ = FormMain.UserAppDataPath 等)。将来ここへ何かが保存されても消さないようにする
+        var versionDataPath = Application.UserAppDataPath;
+        if (!Directory.EnumerateFileSystemEntries(versionDataPath).Any())
+            Directory.Delete(versionDataPath);
         //260712Cl 条件反転バグ修正: 「存在しない時だけ削除」の no-op になっていた
         //if (!File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
         if (File.Exists(UserAppDataPath + "IPAnalyzerSetup.msi"))
@@ -1836,6 +1842,7 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         //直前のマスク情報を保存
         var justBeforeImageSize = Ring.SrcImgSize;
+        var justBeforeImageSizeOriginal = Ring.SrcImgSizeOriginal; // 261124Cl 追加: 反転・回転前の寸法 (読込直後の新画像と同じ向きで比べるため)
         var justBeforeMask = Ring.IsSpots.ToArray();
 
         //直前の描画範囲を保存
@@ -1888,7 +1895,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         trackBarAdvancedMaxInt.Maximum = trackBarAdvancedMinInt.Maximum = max;
         trackBarAdvancedMinInt.Minimum = trackBarAdvancedMaxInt.Minimum = min;
 
-        bool IslastImageSameSize = lastImageExist && Ring.IsSpots.Length == justBeforeMask.Length;
+        //bool IslastImageSameSize = lastImageExist && Ring.IsSpots.Length == justBeforeMask.Length;
+        // 261124Cl 変更: 総画素数だけでなく幅・高さも比べる (100×200 と 200×100 では同じ添字が別の座標を指す)。
+        //   読込直後の Ring.SrcImgSize は反転・回転前なので、直前の画像も反転・回転前の寸法 (SrcImgSizeOriginal) で比べる
+        bool IslastImageSameSize = lastImageExist && Ring.IsSpots.Length == justBeforeMask.Length && Ring.SrcImgSizeOriginal == justBeforeImageSizeOriginal;
 
         //直前に画像が読み込まれていた場合、マスク、描画強度、描画範囲の引継ぎ
         if (IslastImageSameSize)
@@ -2027,7 +2037,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
     }
 
-    public void initializeFilter()
+    //public void initializeFilter()
+    /// <param name="clearMasks">261124Cl 追加: false なら、画素数が同じとき手動マスク (IsSpots) としきい値マスク (IsThresholdOver/Under) を消さずに残す。
+    ///   画像を読み替えずに表示だけを作り直す場合 (展開表示から通常表示へ戻るとき) に使う</param>
+    public void initializeFilter(bool clearMasks = true) // 261124Cl 変更: clearMasks を追加
     {
         //260712Cl Enumerable.Repeat 経由の生成・逐次代入を Array.Fill/Array.Clear (ベクトル化 memset) 化
         if (Ring.IsValid.Length != Ring.Intensity.Length)
@@ -2045,9 +2058,15 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             Array.Fill(Ring.IsValid, true);
             Array.Clear(Ring.IsOutsideOfIntegralRegion);
             Array.Clear(Ring.IsOutsideOfIntegralProperty);
-            Array.Clear(Ring.IsSpots);
-            Array.Clear(Ring.IsThresholdOver);
-            Array.Clear(Ring.IsThresholdUnder);
+            //Array.Clear(Ring.IsSpots);
+            //Array.Clear(Ring.IsThresholdOver);
+            //Array.Clear(Ring.IsThresholdUnder);
+            if (clearMasks) // 261124Cl 変更: 表示の作り直しだけのときは、ユーザーのマスクとしきい値マスクを残す
+            {
+                Array.Clear(Ring.IsSpots);
+                Array.Clear(Ring.IsThresholdOver);
+                Array.Clear(Ring.IsThresholdUnder);
+            }
         }
         pseudoBitmap = new PseudoBitmap(Ring.Intensity.ToArray(), SrcImgSize.Width)
         {
@@ -2111,14 +2130,24 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     //260712Cl FlipAndRotate/SubtractBackground/CorrectPolarization は常に新規 double[] を返す (Ring.cs) ため
                     //         戻り値をさらに [.. ] で再コピーするのは無駄。直接代入に変更。
                     //Flip and Rotate
-                    d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                    //d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                    //        flipVerticallyToolStripMenuItem.Checked,
+                    //        flipHorizontallyToolStripMenuItem.Checked,
+                    //        toolStripComboBoxRotate.SelectedIndex);
+
+                    //Background
+                    //if (Ring.Background != null && Ring.Background.Length == d[i].Length)
+                    //    d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+
+                    // 261124Cl 変更: 表示経路 (FlipRotate_Pollalization_Background) と同じく、Background は変換前の座標で引いてから反転・回転し、
+                    //               FlipAndRotate には入力 (変換前) の行幅 Ring.SrcImgSizeOriginal.Width を渡す
+                    var src = Ring.SequentialImageIntensities[i];
+                    if (Ring.Background != null && Ring.Background.Length == src.Length)
+                        src = Ring.SubtractBackground(src, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+                    d[i] = Ring.FlipAndRotate(src, Ring.SrcImgSizeOriginal.Width,
                             flipVerticallyToolStripMenuItem.Checked,
                             flipHorizontallyToolStripMenuItem.Checked,
                             toolStripComboBoxRotate.SelectedIndex);
-
-                    //Background
-                    if (Ring.Background != null && Ring.Background.Length == d[i].Length)
-                        d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
 
                     //偏光補正
                     if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
@@ -2250,28 +2279,42 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                     // 複数画像モードの時
                     if (Ring.SequentialImageIntensities != null && Ring.SequentialImageIntensities.Count > 1)
                     {
-                        var d = new double[Ring.SequentialImageIntensities.Count][];
-                        for (int i = 0; i < d.Length; i++)
+                        //var d = new double[Ring.SequentialImageIntensities.Count][];
+                        //for (int i = 0; i < d.Length; i++)
+                        // 261124Cl 変更: 書き終えたフレームの配列を保持し続けないよう、ジャグ配列 d をやめてループ内のローカル frame にする (出力順・演算は同一)
+                        for (int i = 0; i < Ring.SequentialImageIntensities.Count; i++)
                         {
                             //260712Cl 未使用ローカル intensity を削除。FlipAndRotate 等は新規 double[] を返すため [.. ] 再コピーも不要。
                             // Flip and Rotate
-                            d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                            //d[i] = Ring.FlipAndRotate(Ring.SequentialImageIntensities[i], Ring.IP.SrcWidth,
+                            //    flipVerticallyToolStripMenuItem.Checked,
+                            //    flipHorizontallyToolStripMenuItem.Checked,
+                            //    toolStripComboBoxRotate.SelectedIndex);
+
+                            // Background
+                            //if (Ring.Background != null && Ring.Background.Length == d[i].Length)
+                            //    d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+
+                            // 261124Cl 変更: 表示経路と同じく、Background は変換前の座標で引いてから反転・回転し、
+                            //               FlipAndRotate には入力 (変換前) の行幅 Ring.SrcImgSizeOriginal.Width を渡す
+                            var frame = Ring.SequentialImageIntensities[i];
+                            if (Ring.Background != null && Ring.Background.Length == frame.Length)
+                                frame = Ring.SubtractBackground(frame, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+                            frame = Ring.FlipAndRotate(frame, Ring.SrcImgSizeOriginal.Width,
                                 flipVerticallyToolStripMenuItem.Checked,
                                 flipHorizontallyToolStripMenuItem.Checked,
                                 toolStripComboBoxRotate.SelectedIndex);
 
-                            // Background
-                            if (Ring.Background != null && Ring.Background.Length == d[i].Length)
-                                d[i] = Ring.SubtractBackground(d[i], Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
-
                             // 偏光補正
                             if (FormProperty != null && FormProperty.checkBoxCorrectPolarization.Checked)
                                 //d[i] = Ring.CorrectPolarization(toolStripComboBoxRotate.SelectedIndex, d[i]); // 261105Cl 変更前
-                                d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
+                                //d[i] = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, d[i]); // 261105Cl 変更: 偏光方向は通常経路 (FlipRotate_Pollalization_Background) と同じく χ 基準方向から決める (回転コンボの番号ではない)
+                                frame = Ring.CorrectPolarization(FormProperty.radioButtonChiRight.Checked || FormProperty.radioButtonChiLeft.Checked ? 0 : 1, frame); // 261124Cl 変更: d[i] → frame
 
                             // CSVに書き出し
                             writer.WriteLine($"# Image {i + 1}");
-                            WriteIntensityToCSV(writer, d[i], Ring.IP.SrcWidth);
+                            //WriteIntensityToCSV(writer, d[i], Ring.IP.SrcWidth);
+                            WriteIntensityToCSV(writer, frame, Ring.IP.SrcWidth); // 261124Cl 変更: d[i] → frame
                         }
                     }
                     // 単一画像モードの時
@@ -2507,7 +2550,12 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                 FormParameterOption.Text = "Read checked parameters";
                 FormParameterOption.Location = new Point(this.Location.X + 100, this.Location.Y + 100);
                 if (FormParameterOption.ShowDialog() == DialogResult.Cancel)
+                {
+                    // 261124Cl 追加: キャンセルで抜けるときも、上で立てたイベントスキップを解除する (旧: Skip = true のまま残り、以後の領域更新や画像補正が止まっていた)
+                    skipSelectedAreaChangedEvent = false;
+                    Skip = false;
                     return;
+                }
             }
             else
                 FormParameterOption.AllCheck();
@@ -2607,7 +2655,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             }
 
             //SphericalRadius
-            if (FormParameterOption.TiltCorrectionChecked && prm.sphericalRadiusInverse != null)
+            //if (FormParameterOption.TiltCorrectionChecked && prm.sphericalRadiusInverse != null)
+            if (FormParameterOption.SphericalCorrectionChecked && prm.sphericalRadiusInverse != null) // 261124Cl 変更: 保存側 (SaveParameter) と同じく球面補正のチェックに従う (旧: 傾斜補正のチェックを見ていた)
                 //FormProperty.numericBoxSphericalCorections.Text = prm.sphericalRadiusInverse; // 261105Cl 変更前
                 FormProperty.numericBoxSphericalCorections.Value = DiffractionOptics.ParseNumber(prm.sphericalRadiusInverse); // 261105Cl 変更
 
@@ -2827,7 +2876,13 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             var maskBytes = br.ReadBytes(mask.Length / 8);
             if (maskBytes.Length < mask.Length / 8)
                 throw new EndOfStreamException(); // 261111Cl 従来の ReadByte と同じく、途中で切れたファイルは失敗として通知
-            new System.Collections.BitArray(maskBytes).CopyTo(mask, 0);
+            //new System.Collections.BitArray(maskBytes).CopyTo(mask, 0);
+            // 261124Cl 変更: 末尾の Length % 8 画素も読む (作者判断 2026-11-24 /ask, codex2 C28)。新しい SaveMask は (Length + 7) / 8 バイト書く。
+            //   旧版で保存したファイルには最後の 1 バイトが無いので、その場合は従来どおり端数の画素を false のままにする
+            if (mask.Length % 8 != 0 && br.BaseStream.Position < br.BaseStream.Length)
+                maskBytes = [.. maskBytes, br.ReadByte()];
+            var bits = new System.Collections.BitArray(maskBytes) { Length = Math.Min(maskBytes.Length * 8, mask.Length) }; // CopyTo は配列より長い BitArray を受け付けないので画素数に切りそろえる
+            bits.CopyTo(mask, 0);
             if (Ring.IsSpots != null && mask != null && mask.Length == Ring.IsSpots.Length)
             {
                 Array.Copy(mask, Ring.IsSpots, mask.Length); //260712Cl 要素ループを一括コピー化
@@ -2886,7 +2941,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         // 261111Cl 変更: 1 バイトずつのビット詰めと書き込み → BitArray でまとめて詰めて (各バイトの LSB が先頭) 1 回で書く。従来どおり Length / 8 バイトだけ書く (端数の画素は書かない)
         var maskBytes = new byte[(Ring.IsSpots.Length + 7) / 8];
         new System.Collections.BitArray(Ring.IsSpots).CopyTo(maskBytes, 0);
-        br.Write(maskBytes, 0, Ring.IsSpots.Length / 8);
+        //br.Write(maskBytes, 0, Ring.IsSpots.Length / 8);
+        // 261124Cl 変更: 末尾の Length % 8 画素を含む最後の 1 バイトも書く (作者判断 2026-11-24 /ask, codex2 C28)。
+        //   旧版の ReadMask は Length / 8 バイトだけ読むので、余分な 1 バイトは無視され、旧版でも読める
+        br.Write(maskBytes);
     }
 
     private void clearMaskToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3614,6 +3672,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         FormSequentialImage.SelectedIndex = targets[i];
                         if (Ring.ImageType == Ring.ImageTypeEnum.HDF5)
                             diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
+                        // 261124Cl 追加: HDF5 以外 (多ページ TIFF など) でもフレームごとのエネルギーがあれば、FormSequentialImage.SelectedIndex が波長欄に入れるのと同じ値を出力メタデータに入れる
+                        //   (旧: HDF5 以外は開始時の IP.WaveLength のまま全フレームに付いていた)
+                        else if (Ring.SequentialImageEnergy != null && Ring.SequentialImageEnergy.Count == Ring.SequentialImageIntensities.Count)
+                            diffractionProfile.SrcProperty.WaveLength = UniversalConstants.Convert.EnergyToXrayWaveLength(Ring.SequentialImageEnergy[targets[i]]);
+                        // 261124Cl 追加: 積分に使う IP.WaveLength もこのフレームの波長にする (作者判断 2026-11-24 /ask)。
+                        //   SelectedIndex は波長欄 (FormProperty.WaveLength) を更新するが、IP は SetIntegralProperty() まで 1 フレーム前の値のままで、
+                        //   d 値モードの積分に前のフレームの λ が使われていた。エネルギー情報が無い場合は開始時の IP.WaveLength のまま (従来どおり)
+                        IP.WaveLength = diffractionProfile.SrcProperty.WaveLength;
                     }
 
                     if (toolStripButtonImageSequence.Enabled)
@@ -3795,10 +3861,17 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         else if (filename == "")
         {
-            if (Path.GetExtension(FileName)[1..].StartsWith("0"))//Ryonixデータ(0###のような拡張子)に対応
-                filename = FilePath + FileName;
+            //if (Path.GetExtension(FileName)[1..].StartsWith("0"))//Ryonixデータ(0###のような拡張子)に対応
+            //    filename = FilePath + FileName;
+            //else
+            //    filename = FilePath + FileName[..FileName.LastIndexOf('.')];
+            // 261124Cl 変更: FileName は表示用で、画像名の表示方式が「フルパス」「親フォルダ\ファイル名」のときはフォルダを含むため、
+            //   FilePath と連結すると "C:\data\C:\data\run" のような壊れたパスになっていた。実際のファイル名部分だけを使う (「ファイル名」表示では従来と同一)
+            var imageFileName = Path.GetFileName(FileName);
+            if (Path.GetExtension(imageFileName)[1..].StartsWith("0"))//Ryonixデータ(0###のような拡張子)に対応
+                filename = FilePath + imageFileName;
             else
-                filename = FilePath + FileName[..FileName.LastIndexOf('.')];
+                filename = FilePath + imageFileName[..imageFileName.LastIndexOf('.')];
         }
         if (toolStripButtonImageSequence.Enabled)
             filename += FileNameSub;
@@ -4002,7 +4075,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         }
         else
         {
-            initializeFilter();
+            //initializeFilter();
+            initializeFilter(false); // 261124Cl 変更: 展開表示を閉じるだけで未保存の手動マスク・しきい値マスクが消えていた。画像は読み替えていないので残す
             IntegralArea_Changed(this, EventArgs.Empty);
             Draw();
         }
@@ -4348,7 +4422,17 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //Flip & Rotate処理ここから
 
         //  Ring.Flip
-        Ring.Intensity = Ring.FlipAndRotate(Ring.IntensityOriginal, Ring.IP.SrcWidth,
+        //Ring.Intensity = Ring.FlipAndRotate(Ring.IntensityOriginal, Ring.IP.SrcWidth,
+        //    flipVerticallyToolStripMenuItem.Checked,
+        //    flipHorizontallyToolStripMenuItem.Checked,
+        //    toolStripComboBoxRotate.SelectedIndex);
+        // 261124Cl 変更: (1) Ring.Background は Ring.IntensityOriginal (変換前の座標) から登録されるので、反転・回転の前に原画像座標のまま引く
+        //               (2) FlipAndRotate の width は入力 (変換前) の行幅。90°/270°回転では Ring.IP.SrcWidth が既に交換済みなので originalWidth を渡す
+        //   反転・回転なし、または正方形画像では結果は従来と同一
+        var src = Ring.IntensityOriginal;
+        if (Ring.Background != null && Ring.Background.Length == src.Length)
+            src = Ring.SubtractBackground(src, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+        Ring.Intensity = Ring.FlipAndRotate(src, originalWidth,
             flipVerticallyToolStripMenuItem.Checked,
             flipHorizontallyToolStripMenuItem.Checked,
             toolStripComboBoxRotate.SelectedIndex);
@@ -4357,8 +4441,9 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
 
         //Background補正ここから
 
-        if (Ring.Background != null && Ring.Background.Length == Ring.Intensity.Length)
-            Ring.Intensity = Ring.SubtractBackground(Ring.Intensity, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+        //if (Ring.Background != null && Ring.Background.Length == Ring.Intensity.Length)
+        //    Ring.Intensity = Ring.SubtractBackground(Ring.Intensity, Ring.Background, FormProperty.numericBoxBackgroundCoeff.Value);
+        // 261124Cl 変更: Background 補正は上で反転・回転の前に済ませた
         //Background補正ここまで
 
         //偏光補正ここから

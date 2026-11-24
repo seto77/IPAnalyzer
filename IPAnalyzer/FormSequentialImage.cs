@@ -53,16 +53,27 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
     {
         set
         {
-            if (Ring.SequentialImageIntensities != null && Ring.SequentialImageIntensities.Count > value)
+            //if (Ring.SequentialImageIntensities != null && Ring.SequentialImageIntensities.Count > value)
+            // 261124Cl 変更: 負の値 (-1 など) も通っていた (trackBar1.Value = -1 で例外になり skipEvent が true のまま残る)。下限も確かめる
+            if (Ring.SequentialImageIntensities != null && value >= 0 && Ring.SequentialImageIntensities.Count > value)
             {
                 selectedIndex = value;
 
+                //skipEvent = true;
+                //trackBar1.Value = selectedIndex;
+                //if(listBox.SelectionMode!= SelectionMode.MultiExtended)
+                //    listBox.SelectedIndex = selectedIndex;
+                //skipEvent = false;
+                // 261124Cl 変更: 例外時もイベント抑止を解除できるよう try/finally にする (処理内容は同じ)
                 skipEvent = true;
-                trackBar1.Value = selectedIndex;
-                if(listBox.SelectionMode!= SelectionMode.MultiExtended)
-                    listBox.SelectedIndex = selectedIndex;
-                skipEvent = false;
-                
+                try
+                {
+                    trackBar1.Value = selectedIndex;
+                    if (listBox.SelectionMode != SelectionMode.MultiExtended)
+                        listBox.SelectedIndex = selectedIndex;
+                }
+                finally { skipEvent = false; }
+
                 Ring.IntensityOriginal = [.. Ring.SequentialImageIntensities[selectedIndex]] ;
 
                 //formMain.FlipRotate_Pollalization_Background(false);
@@ -211,28 +222,44 @@ public partial class FormSequentialImage : Crystallography.Controls.FormBase //2
     {
         set
         {
-            skipEvent = true;
-            int selectedIndex = listBox.SelectedIndex;
-            //valueに含まれているものだけを選択状態にする
-            //260712Cl value.Contains の線形探索 (O(n×m)) と Enumerable.Range/Where のイテレータ割り当てを HashSet+for に置換
-            var newSelection = new HashSet<int>(value);
-            for (int i = 0; i < listBox.Items.Count; i++)
-                if (!newSelection.Contains(i) && listBox.GetSelected(i))
-                    listBox.SetSelected(i, false);
-            foreach (var i in value)
-                if (!listBox.GetSelected(i))
-                    listBox.SetSelected(i, true);
-            if (newSelection.Contains(selectedIndex))
-                listBox.SelectedIndex = selectedIndex;
-            skipEvent = false;
-
-            //260712Cl 範囲ガードの比較対象を修正 (旧: Ring.Intensity.Length=ピクセル数 と比較しており事実上素通り。value はイメージ番号)
-            if (Ring.SequentialImageIntensities == null)
+            // 261124Cl 追加: 範囲の検証を UI の変更より前に行う (旧: 範囲外の添字で listBox.GetSelected が例外になり、skipEvent が true のまま残っていた)。
+            //   マクロから直接渡される null・範囲外の値はここで弾く
+            if (value == null || Ring.SequentialImageIntensities == null)
                 return;
             foreach (var v in value)
-                if (v < 0 || v >= Ring.SequentialImageIntensities.Count)
+                if (v < 0 || v >= Ring.SequentialImageIntensities.Count || v >= listBox.Items.Count)
                     return;
+
+            skipEvent = true;
+            try // 261124Cl 追加: 例外時もイベント抑止を解除する
+            {
+                int selectedIndex = listBox.SelectedIndex;
+                //valueに含まれているものだけを選択状態にする
+                //260712Cl value.Contains の線形探索 (O(n×m)) と Enumerable.Range/Where のイテレータ割り当てを HashSet+for に置換
+                var newSelection = new HashSet<int>(value);
+                for (int i = 0; i < listBox.Items.Count; i++)
+                    if (!newSelection.Contains(i) && listBox.GetSelected(i))
+                        listBox.SetSelected(i, false);
+                foreach (var i in value)
+                    if (!listBox.GetSelected(i))
+                        listBox.SetSelected(i, true);
+                if (newSelection.Contains(selectedIndex))
+                    listBox.SelectedIndex = selectedIndex;
+            }
+            finally { skipEvent = false; } // 261124Cl 変更: 旧 skipEvent = false; を finally へ
+
+            //260712Cl 範囲ガードの比較対象を修正 (旧: Ring.Intensity.Length=ピクセル数 と比較しており事実上素通り。value はイメージ番号)
+            //if (Ring.SequentialImageIntensities == null)
+            //    return;
+            //foreach (var v in value)
+            //    if (v < 0 || v >= Ring.SequentialImageIntensities.Count)
+            //        return;
+            // 261124Cl 変更: 上の検証は UI の変更より前へ移した
             field = value;
+
+            // 261124Cl 追加: 空の選択ではフレームを参照しない (旧: 平均・積算では全画素 0 の画像になり、単一表示では SelectedIndex = -1 で例外になっていた)。表示中の画像はそのまま
+            if (value.Length == 0)
+                return;
 
             if (AverageMode || SummationMode)
             {

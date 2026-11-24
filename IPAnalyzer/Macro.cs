@@ -372,14 +372,18 @@ public class Macro : MacroBase
         [Help("Set/get timeout second for macro operation. Default value is 30 sec.")]
         public int Timeout { get; set; } = 30; //260712Cl Help 文言どおり既定 30 秒に (旧: 初期化子なし=0 で mutex.WaitOne(0) となり PDIndexer 連携が不安定だった)
 
-        [Help("Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "params object[] obj")]
+        //[Help("Execute a macro code in PDIndexer. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "params object[] obj")]
+        // 261124Cl 変更: PDIndexer 側は macro.Obj = trigger.Obj (object[]) なので第 1 引数は PDI.Obj[0]。実行されるのは PDIndexer のエディタで開いているコード
+        [Help("Execute the macro code currently open in PDIndexer's editor. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'PDI.Obj[0]', 'PDI.Obj[1]', ...", "params object[] obj")]
         public void RunMacro(params object[] obj)
         {
             //RunMacro("", obj); // 261105Cl 変更前: "" と obj を params object[] に詰めて自分自身を呼ぶ無限再帰 (StackOverflow) だった
             RunMacroName("", obj); // 261105Cl 変更: 名前なしで送ると PDIndexer 側はエディタ中のマクロを実行する (PDIndexer FormMain の MacroTrigger 受信処理)
         }
 
-        [Help("Execute a macro code in PDIndexer. \r\n 'name' is the macro name on PDI. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "string name, params object[] obj")]
+        //[Help("Execute a macro code in PDIndexer. \r\n 'name' is the macro name on PDI. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'Obj[1]', 'Obj[2]', ...", "string name, params object[] obj")]
+        // 261124Cl 変更: 第 1 引数は PDI.Obj[0] (PDIndexer は object[] をそのまま受け取る)
+        [Help("Execute the macro saved as 'name' in PDIndexer. \r\n Parameters (obj1, obj2, ...) can be read on PDI as 'PDI.Obj[0]', 'PDI.Obj[1]', ...", "string name, params object[] obj")]
         public void RunMacroName(string name, params object[] obj)
         {
             //Mutexを作成
@@ -1071,8 +1075,19 @@ public class Macro : MacroBase
             if (!SequentialImageMode) return;
             if (n >= 0 && n < p.main.FormSequentialImage.MaximumNumber)
             {
+                //MultiSelection = true;
+                //p.main.FormSequentialImage.SelectedIndex = n;
+                // 261124Cl 変更: 複数選択中の SelectedIndex setter はリストの選択を変えず表示強度だけを置き換えるので、n が選択に加わらなかった。
+                //   現在の選択 (単一選択中なら表示中の 1 件) に n を重複なく加え、SelectedIndices に一度だけ設定する (選択・平均・積算が同じ経路で更新される)
+                var form = p.main.FormSequentialImage;
+                int[] current = form.MultiSelection ? form.SelectedIndices : (form.SelectedIndex >= 0 ? [form.SelectedIndex] : []);
                 MultiSelection = true;
-                p.main.FormSequentialImage.SelectedIndex = n;
+                if (Array.IndexOf(current, n) < 0)
+                {
+                    int[] indices = [.. current, n];
+                    Array.Sort(indices);
+                    form.SelectedIndices = indices;
+                }
             }
         }));
         /// <summary>

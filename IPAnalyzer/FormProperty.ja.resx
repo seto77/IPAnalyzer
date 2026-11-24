@@ -150,14 +150,16 @@
 垂線の足モードは無効になります。</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
-    <value>上限強度しきい値(カウント)。この値を超え
-るピクセルは積算から除外されます。
+    <value>上限強度しきい値(カウント)。この値以上の
+ピクセルは積算から除外されます。
 「強度が右値以上」がオンのときのみ有効。</value>
+    <comment>261124Cl 変更: 「この値を超える」→「この値以上の」(判定式を ≥ に統一)</comment>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>下限強度しきい値(カウント)。この値未満の
+    <value>下限強度しきい値(カウント)。この値以下の
 ピクセルは積算から除外されます。「強度が
 右値以下」がオンのときのみ有効。</value>
+    <comment>261124Cl 変更: 「この値未満の」→「この値以下の」(判定式を ≤ に統一)</comment>
   </data>
   <data name="numericUpDownEdge.ToolTip" xml:space="preserve">
     <value>端マスク幅(ピクセル, 0-256): 「ピクセル分の
@@ -823,10 +825,12 @@ None/Coarse/Medium/Fine(線が多いほど細かい格子)。</value>
     <value>1次元化の条件</value>
   </data>
   <data name="label46.Text" xml:space="preserve">
-    <value>リング幅</value>
+    <value>リング半径</value>
+    <comment>261124Cl 変更: 旧「リング幅」(Donut radius と label40 が入れ替わっていた)</comment>
   </data>
   <data name="label40.Text" xml:space="preserve">
-    <value>リング半径</value>
+    <value>リング幅</value>
+    <comment>261124Cl 変更: 旧「リング半径」(Donut width と label46 が入れ替わっていた)</comment>
   </data>
   <data name="label36.Text" xml:space="preserve">
     <value>ステップ</value>

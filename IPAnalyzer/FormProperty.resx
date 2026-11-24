@@ -352,8 +352,9 @@ radius input and disables foot mode.</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMax.ToolTip" xml:space="preserve">
     <value>Upper intensity threshold (counts). Pixels
-above this value are excluded from integration;
+at or above this value are excluded from integration;
 only active when 'Over intensity of' is checked.</value>
+    <comment>261124Cl changed: "above" -> "at or above" (the test is now intensity &gt;= threshold)</comment>
   </data>
   <data name="&gt;&gt;numericUpDownThresholdOfIntensityMax.Name" xml:space="preserve">
     <value>numericUpDownThresholdOfIntensityMax</value>
@@ -389,9 +390,10 @@ only active when 'Over intensity of' is checked.</value>
     <value>Right</value>
   </data>
   <data name="numericUpDownThresholdOfIntensityMin.ToolTip" xml:space="preserve">
-    <value>Lower intensity threshold (counts). Pixels below
-this value are excluded from integration; only
+    <value>Lower intensity threshold (counts). Pixels at or
+below this value are excluded from integration; only
 active when 'Under intensity of' is checked.</value>
+    <comment>261124Cl changed: "below" -> "at or below" (the test is now intensity &lt;= threshold)</comment>
   </data>
   <data name="&gt;&gt;numericUpDownThresholdOfIntensityMin.Name" xml:space="preserve">
     <value>numericUpDownThresholdOfIntensityMin</value>

@@ -349,7 +349,10 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     private void numericUpDownThresholdOfIntensityMin_ValueChanged(object sender, EventArgs e)
     {
         //260712Cl double 化 (Ring.Intensity は double[])。全ピクセル走査を行独立の Parallel.For 化 (各要素は自 index の bool を書くだけ、Draw はループ後)
-        var n = (double)numericUpDownThresholdOfIntensityMin.Value + 1;
+        //var n = (double)numericUpDownThresholdOfIntensityMin.Value + 1;
+        // 261124Cl 変更: 判定を「強度 ≤ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n > I (n = T + 1) は整数強度なら同じだが、
+        //   小数の強度では T < I < T + 1 の画素まで除外していた。チェックボックスの表示「強度が右値以下」に合わせる
+        var n = (double)numericUpDownThresholdOfIntensityMin.Value;
         //Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdUnder[i] = n > Ring.Intensity[i]);
         // 261111Cl 変更: 画素ごとにデリゲートを呼ぶ Parallel.For → 区間 (Partitioner.Create) ごとの並列 + 内側の素のループ (結果は同じ)
         var under = Ring.IsThresholdUnder;
@@ -357,7 +360,8 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
         {
             for (int i = range.Item1; i < range.Item2; i++)
-                under[i] = n > intensity[i];
+                //under[i] = n > intensity[i];
+                under[i] = intensity[i] <= n; // 261124Cl 変更
         });
 
         formMain.Draw();
@@ -367,7 +371,10 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
     {
         //260712Cl Math.Min(uint.MaxValue, x) は恒等の死んだガード。かつ Value=0 のとき (uint)0-1 が uint.MaxValue に
         //         ラップし閾値超え検出が全滅していた。double 化で -1 を正しく表現し、行独立の Parallel.For 化。
-        double n = (double)numericUpDownThresholdOfIntensityMax.Value - 1;
+        //double n = (double)numericUpDownThresholdOfIntensityMax.Value - 1;
+        // 261124Cl 変更: 判定を「強度 ≥ しきい値」にする (作者判断 2026-11-24 /ask, codex2 C29)。旧式 n < I (n = T - 1) は整数強度なら同じだが、
+        //   小数の強度では T - 1 < I < T の画素まで除外していた。チェックボックスの表示「強度が右値以上」に合わせる
+        double n = (double)numericUpDownThresholdOfIntensityMax.Value;
         //Parallel.For(0, Ring.IsValid.Length, i => Ring.IsThresholdOver[i] = n < Ring.Intensity[i]);
         // 261111Cl 変更: 上の Min と同じ (区間ごとの並列 + 内側の素のループ)
         var over = Ring.IsThresholdOver;
@@ -375,7 +382,8 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         Parallel.ForEach(System.Collections.Concurrent.Partitioner.Create(0, Ring.IsValid.Length), range =>
         {
             for (int i = range.Item1; i < range.Item2; i++)
-                over[i] = n < intensity[i];
+                //over[i] = n < intensity[i];
+                over[i] = intensity[i] >= n; // 261124Cl 変更
         });
 
         formMain.Draw();
@@ -614,8 +622,15 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
             if (sender is Crystallography.Controls.NumericBox b)
             {
                 //再計算が必要なパラメータかどうかを判断
-                if (b.Name.Contains("Center") || b.Name.Contains("CameraLength") || b.Name.Contains("PixelSize")
-                       || b.Name.Contains("PixelSize") || b.Name.Contains("TiltCorrection"))
+                //if (b.Name.Contains("Center") || b.Name.Contains("CameraLength") || b.Name.Contains("PixelSize")
+                //       || b.Name.Contains("PixelSize") || b.Name.Contains("TiltCorrection"))
+                // 261124Cl 変更: "Center" "TiltCorrection" はどのコントロール名にも一致せず、中心・傾斜・ξ を変えても偏光補正が更新されなかった。
+                //   名前の部分一致をやめ、補正係数 (Ring.CorrectPolarization) が使う量を持つ実コントロールで判定する
+                if (b == numericBoxDirectSpotPositionX || b == numericBoxDirectSpotPositionY
+                    || b == numericBoxFootPositionX || b == numericBoxFootPositionY
+                    || b == numericBoxCameraLength1 || b == numericBoxCameraLength2
+                    || b == numericBoxPixelSizeX || b == numericBoxPixelSizeY || b == numericBoxPixelKsi
+                    || b == numericBoxTiltTau || b == numericBoxTiltPhi)
                 {
                     formMain.FlipRotate_Pollalization_Background(false);
                 }
@@ -792,7 +807,13 @@ public partial class FormProperty : Crystallography.Controls.FormBase //260604Cl
         if (radioButtonChiBottom.Checked) Ring.ChiDirection = Ring.Direction.Bottom;
         else if (radioButtonChiLeft.Checked) Ring.ChiDirection = Ring.Direction.Left;
         else if (radioButtonChiTop.Checked) Ring.ChiDirection = Ring.Direction.Top;
-        formMain.IntegralArea_Changed(new object(), new EventArgs());
+        //formMain.IntegralArea_Changed(new object(), new EventArgs());
+        // 261124Cl 変更: 偏光補正は χ 基準方向 (左右か上下か) で式が変わるので、方向を変えたときは原画像から補正をやり直す
+        //   (FlipRotate_Pollalization_Background の最後で IntegralArea_Changed も呼ばれる)。回転向き (時計/反時計) だけの変更は従来どおり
+        if (checkBoxCorrectPolarization.Checked && (sender == radioButtonChiRight || sender == radioButtonChiLeft || sender == radioButtonChiTop || sender == radioButtonChiBottom))
+            formMain.FlipRotate_Pollalization_Background(false);
+        else
+            formMain.IntegralArea_Changed(new object(), new EventArgs());
     }
 
     private void radioButtonFlatPanel_CheckedChanged(object sender, EventArgs e)

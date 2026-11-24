@@ -1310,6 +1310,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
 
 
     public bool[] IsSpotsPrimary = [], IsSpotsSecondary = [];//画像のSpots情報
+    private string isSpotsPrimaryKey = "", isSpotsSecondaryKey = ""; // 261124Cl 追加: IsSpotsPrimary/Secondary を退避したときの画像 ("実パス|フレーム番号")
 
     /// <summary>
     /// メインウィンドウにfilenameを読み込ませます。
@@ -1329,12 +1330,24 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         int num = isPrimary ? numPrimary : numSecondary;
 
         //読み込む前に現在のSpots情報を保存しておく
-        if (formMain.FileName != null && formMain.FileName != "")
+        //if (formMain.FileName != null && formMain.FileName != "")
+        //{
+        //    if (fileNamePrimary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
+        //        IsSpotsPrimary = [.. Ring.IsSpots];
+        //    else if (fileNameSecondary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
+        //        IsSpotsSecondary = [.. Ring.IsSpots];
+        //}
+        // 261124Cl 変更: 旧コードは「現在の」画像番号を「切替先」の num と比べていたため、同じ連番ファイルの別フレーム間では退避されず、
+        //   連番でないとき (SelectedIndex = -1, num = 0) も一致しなかった。現在読み込まれている実パスとフレーム番号で、primary/secondary のどちらかを判定する
+        //   退避したときの画像 (実パス + フレーム番号) も記録し、戻すときに同じ画像であることを確かめる (別の組の画像の古いマスクを戻さないため)
+        string currentPath = formMain.FilePath + Path.GetFileName(formMain.FileName); // 下の再読込判定と同じ式
+        int currentFrame = formMain.FormSequentialImage.SelectedIndex; // 連番でないときは -1
+        if (!string.IsNullOrEmpty(formMain.FileName))
         {
-            if (fileNamePrimary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
-                IsSpotsPrimary = [.. Ring.IsSpots];
-            else if (fileNameSecondary.EndsWith(formMain.FileName) && formMain.FormSequentialImage.SelectedIndex == num)
-                IsSpotsSecondary = [.. Ring.IsSpots];
+            if (currentPath == fileNamePrimary && (currentFrame < 0 || currentFrame == numPrimary))
+                (IsSpotsPrimary, isSpotsPrimaryKey) = ([.. Ring.IsSpots], $"{currentPath}|{currentFrame}");
+            else if (currentPath == fileNameSecondary && (currentFrame < 0 || currentFrame == numSecondary))
+                (IsSpotsSecondary, isSpotsSecondaryKey) = ([.. Ring.IsSpots], $"{currentPath}|{currentFrame}");
         }
 
         if (formMain.FilePath +  Path.GetFileName( formMain.FileName) != fileName)
@@ -1347,10 +1360,16 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         formMain.SetIntegralProperty();
 
         //IsSpotsが設定されたときだけ以下の処理をする
-        if (fileNamePrimary.EndsWith(formMain.FileNameSub) && IsSpotsPrimary != null && IsSpotsPrimary.Length == Ring.IsSpots.Length && formMain.FormSequentialImage.SelectedIndex == num)
-            Ring.IsSpots = [.. IsSpotsPrimary];
-        else if (fileNameSecondary.EndsWith(formMain.FileName) && IsSpotsSecondary != null && IsSpotsSecondary.Length == Ring.IsSpots.Length && formMain.FormSequentialImage.SelectedIndex == num)
-            Ring.IsSpots = [..IsSpotsSecondary];
+        //if (fileNamePrimary.EndsWith(formMain.FileNameSub) && IsSpotsPrimary != null && IsSpotsPrimary.Length == Ring.IsSpots.Length && formMain.FormSequentialImage.SelectedIndex == num)
+        //    Ring.IsSpots = [.. IsSpotsPrimary];
+        //else if (fileNameSecondary.EndsWith(formMain.FileName) && IsSpotsSecondary != null && IsSpotsSecondary.Length == Ring.IsSpots.Length && formMain.FormSequentialImage.SelectedIndex == num)
+        //    Ring.IsSpots = [..IsSpotsSecondary];
+        // 261124Cl 変更: 旧コードは primary 側だけ FileNameSub (連番時は "#" + フレーム名) と比べており、primary のマスクが戻らなかった。
+        //   ここで読み込まれているのは切替先 (isPrimary 側) なので、その側に退避したマスクを戻す
+        var (savedSpots, savedKey) = isPrimary ? (IsSpotsPrimary, isSpotsPrimaryKey) : (IsSpotsSecondary, isSpotsSecondaryKey);
+        if (savedSpots != null && savedSpots.Length == Ring.IsSpots.Length
+            && savedKey == $"{formMain.FilePath + Path.GetFileName(formMain.FileName)}|{formMain.FormSequentialImage.SelectedIndex}")
+            Ring.IsSpots = [.. savedSpots];
         formMain.SetMask();
 
         IP.SrcWidth = formMain.IP.SrcWidth;
@@ -1674,7 +1693,7 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
                     temp += ellipses[i].millimeters[j];
                     n++;
                 }
-            Radius.Add(temp / n);
+            //Radius.Add(temp / n); // 261124Cl 変更: 下の中心計算が成功したときだけ、中心と組で追加する
 
             List<PointD> pt = [];
             for (int j = 0; j < ellipses[i].points.Count; j++)
@@ -1684,18 +1703,28 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
             p = Geometry.GetEllipseCenter([.. pt]);
 
             if (!double.IsNaN(p.X) && !double.IsNaN(p.Y))
+            {
                 EllipseCenter.Add(p);
+                Radius.Add(temp / n); // 261124Cl 変更: 中心が求まらないリングの半径が次のリングの中心と組になり、添字がずれていた
+            }
         }
 
         PointD centerOffset = new PointD(0, 0);//このときのCenterOffsetはmillimeter単位
         SetRefinedIntegralProperty(IsPrimary);
 
+        if (EllipseCenter.Count < 2) return; // 261124Cl 追加: 傾斜は 2 組以上の中心と半径から求める。足りなければ更新しない
+
         double phiDev = 0, tauDev = 0;
         PointD centerOffsetDev = new PointD();
-        Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
+        //Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
+        // 261124Cl 変更: secondary では secondary のカメラ長 (FilmDistance[1] = primary + 差) を使う (SetSphericfalCorrection と同じ選び方)
+        Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], IsPrimary ? FilmDistance[0] : FilmDistance[1], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
 
         //center位置をPixel単位に変換
-        p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
+        //p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
+        // 261124Cl 変更: 順変換は x_mm = Δx_px * PixSizeX + y_mm * tan(ξ) (Ring.ConvertCoordinateFromDetectorToRealSpace、FormProperty の足位置計算と同じ)。
+        //   その逆は Δx_px = (x_mm - y_mm * tan(ξ)) / PixSizeX。旧式は y 由来の項を PixSizeY で割っていた (PixSizeX = PixSizeY または ξ = 0 なら同一)。誤差 (Dev) の式は据え置き
+        p.X = (centerOffset.X - centerOffset.Y * Math.Tan(IP.ksi)) / IP.PixSizeX;
         p.Y = centerOffset.Y / IP.PixSizeY;
         centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
         centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY;
@@ -1785,7 +1814,8 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         PointD centerOffsetDev= new PointD();
 
         //center位置をPixel単位に変換
-        p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
+        //p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
+        p.X = (centerOffset.X - centerOffset.Y * Math.Tan(IP.ksi)) / IP.PixSizeX; // 261124Cl 変更: SetTiltCorrection と同じく、順変換 x_mm = Δx_px * PixSizeX + y_mm * tan(ξ) の正しい逆変換にする
         p.Y = centerOffset.Y / IP.PixSizeY;
         centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
         centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY;
@@ -2869,29 +2899,39 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         var away = numericBoxAwayFrom.Value;
         if (dataGridView.Rows.Count > 1)
         {
-            var pos = new List<double>[] { [],[] };
+            //var pos = new List<double>[] { [],[] };
+            // 261124Cl 変更: 数値に変換できた値だけを詰めた添字 i を、そのまま dataGridView.Rows[i] に使っていたため、
+            //   途中に "-" などの行があると以降で別の反射にチェックが付いていた。元の行番号と値を組で保持する
+            var pos = new List<(int row, double val)>[] { [], [] };
 
             for (int i = 0; i < dataGridView.Rows.Count; i++)
                 for (int j = 0; j < 2; j++)
                     if (double.TryParse((string)dataGridView.Rows[i].Cells[3 + j * 2].Value, out double val))
-                        pos[j].Add(val);
+                        //pos[j].Add(val);
+                        pos[j].Add((i, val)); // 261124Cl 変更
+                    else
+                        dataGridView.Rows[i].Cells[2 + j * 2].Value = false; // 261124Cl 追加: 位置が数値でない (検出器外など) 反射は選ばない
 
             for (int j = 0; j < 2; j++)
             {
                 for(int i=0; i<pos[j].Count; i++)
                 {
-                    if (pos[j][i] < lower &&
-                         (
-                         (i == 0 && pos[j][i + 1] - pos[j][i] > away) ||
-                         (i == pos[j].Count-1 && pos[j][i] - pos[j][i-1] > away) ||
-                         (i != 0 && i != pos[j].Count - 1 && pos[j][i] - pos[j][i - 1] > away && pos[j][i+1] - pos[j][i] > away)
-                         )
-                      )
-                        dataGridView.Rows[i].Cells[2 + j * 2].Value = true;
-                    else
-                        dataGridView.Rows[i].Cells[2 + j * 2].Value = false;
-
-
+                    //if (pos[j][i] < lower &&
+                    //     (
+                    //     (i == 0 && pos[j][i + 1] - pos[j][i] > away) ||
+                    //     (i == pos[j].Count-1 && pos[j][i] - pos[j][i-1] > away) ||
+                    //     (i != 0 && i != pos[j].Count - 1 && pos[j][i] - pos[j][i - 1] > away && pos[j][i+1] - pos[j][i] > away)
+                    //     )
+                    //  )
+                    //    dataGridView.Rows[i].Cells[2 + j * 2].Value = true;
+                    //else
+                    //    dataGridView.Rows[i].Cells[2 + j * 2].Value = false;
+                    // 261124Cl 変更: 隣の候補が無い側は条件を満たすとみなす (候補が 1 件だけのとき pos[j][i + 1] が範囲外になっていた)。
+                    //   両側に候補がある通常の場合の判定は従来と同じ
+                    var v = pos[j][i].val;
+                    bool farFromPrev = i == 0 || v - pos[j][i - 1].val > away;
+                    bool farFromNext = i == pos[j].Count - 1 || pos[j][i + 1].val - v > away;
+                    dataGridView.Rows[pos[j][i].row].Cells[2 + j * 2].Value = v < lower && farFromPrev && farFromNext;
                 }
 
             }
@@ -3107,16 +3147,20 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         if (fileName.Length == 1)
         {
             string ext = Path.GetExtension(fileName[0]).TrimStart(['.']);
-            if (ext == "img" || ext == "stl" || ext == "ccd" || ext == "ipf"
-                || ext == "png" || ext == "tif" || ext == "jpg" || ext == "bmp" || ext == "gel" || ext == "osc" || ext.StartsWith("mar")
-                || ext == "ipa" || ext.StartsWith('0') || ext == "mccd" || ext == "his")
-                formMain.ReadImage(fileName[0]);
+            //if (ext == "img" || ext == "stl" || ext == "ccd" || ext == "ipf"
+            //    || ext == "png" || ext == "tif" || ext == "jpg" || ext == "bmp" || ext == "gel" || ext == "osc" || ext.StartsWith("mar")
+            //    || ext == "ipa" || ext.StartsWith('0') || ext == "mccd" || ext == "his")
+            //    formMain.ReadImage(fileName[0]);
+            // 261124Cl 変更: 手書きの拡張子一覧をやめ、メイン画面のドロップと同じ ImageIO.IsReadable で判定する。読めない形式なら何もしない
+            if (!ImageIO.IsReadable(ext)) return;
+            formMain.ReadImage(fileName[0]);
             textBoxPrimaryFileName.Text = fileName[0];
 
             if (formMain.SequentialImageMode && Ring.SequentialImageIntensities.Count >= 2)
             {
                 selectSequentialImageNumber();
-                textBoxPrimaryFileName.Text += $" {formMain.FormSequentialImage.SelectedIndex}";
+                //textBoxPrimaryFileName.Text += $" {formMain.FormSequentialImage.SelectedIndex}";
+                numericBoxPrimaryImageNum.Value = formMain.FormSequentialImage.SelectedIndex; // 261124Cl 変更: ファイル選択ボタンと同じく、フレーム番号はパスに付けず専用欄に入れる (SetImage がパスとして読むため)
             }
         }
     }
@@ -3128,16 +3172,20 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         if (fileName.Length == 1)
         {
             string ext = Path.GetExtension(fileName[0]).TrimStart(['.']);
-            if (ext == "img" || ext == "stl" || ext == "ccd" || ext == "ipf"
-                || ext == "png" || ext == "tif" || ext == "jpg" || ext == "bmp" || ext == "gel" || ext == "osc" || ext.StartsWith("mar")
-                || ext == "ipa" || ext.StartsWith('0') || ext == "mccd" || ext == "his")
-                formMain.ReadImage(fileName[0]);
+            //if (ext == "img" || ext == "stl" || ext == "ccd" || ext == "ipf"
+            //    || ext == "png" || ext == "tif" || ext == "jpg" || ext == "bmp" || ext == "gel" || ext == "osc" || ext.StartsWith("mar")
+            //    || ext == "ipa" || ext.StartsWith('0') || ext == "mccd" || ext == "his")
+            //    formMain.ReadImage(fileName[0]);
+            // 261124Cl 変更: primary のドロップと同じ (ImageIO.IsReadable で判定し、読めない形式なら何もしない)
+            if (!ImageIO.IsReadable(ext)) return;
+            formMain.ReadImage(fileName[0]);
             textBoxSecondaryFileName.Text = fileName[0];
 
             if (formMain.SequentialImageMode && Ring.SequentialImageIntensities.Count >= 2)
             {
                 selectSequentialImageNumber();
-                textBoxSecondaryFileName.Text += $" {formMain.FormSequentialImage.SelectedIndex}";
+                //textBoxSecondaryFileName.Text += $" {formMain.FormSequentialImage.SelectedIndex}";
+                numericBoxSecondaryImageNum.Value = formMain.FormSequentialImage.SelectedIndex; // 261124Cl 変更: フレーム番号は専用欄に入れる
             }
         }
     }
