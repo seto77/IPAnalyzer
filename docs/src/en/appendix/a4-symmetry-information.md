@@ -37,7 +37,7 @@ Enter two crystal planes \((h_1, k_1, l_1)\), \((h_2, k_2, l_2)\) or two directi
 
 - the d-spacing of each plane / the length of each axis,
 - the angle between the two planes (or two axes),
-- **the direction index normal to both planes** and **the plane index normal to both axes**.
+- **the zone axis common to both planes** (the direction of their intersection) and **the plane containing both directions**.
 
 These calculations respect the metric of the current unit cell.
 

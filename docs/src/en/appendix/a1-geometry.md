@@ -66,7 +66,7 @@ $$
 P_3 = \frac{\mathrm{CL}}{\mathrm{CL} + (P_2)_z}\,\big((P_2)_x,\ (P_2)_y,\ 0\big)
 $$
 
-results. Because the entire tilt correction is a linear (projective in homogeneous coordinates) transform, the position of each pixel can be computed quickly on a computer.
+results. Because the tilt correction, which includes the central projection, is a projective transform that can be written as a matrix in homogeneous coordinates, the position of each pixel can be computed quickly on a computer.
 
 ---
 
@@ -78,10 +78,10 @@ The actual coordinate $P$ of the pixel that is $\mathrm{PixNumX}$ away in the $X
 
 $$
 P =
-\begin{pmatrix} \mathrm{PixSizeX} & \mathrm{PixSizeY}\,\sin\xi & 0 \\ 0 & \mathrm{PixSizeY} & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\begin{pmatrix} \mathrm{PixSizeX} & \mathrm{PixSizeY}\,\tan\xi & 0 \\ 0 & \mathrm{PixSizeY} & 0 \\ 0 & 0 & 1 \end{pmatrix}
 \begin{pmatrix} \mathrm{PixNumX} \\ \mathrm{PixNumY} \\ 0 \end{pmatrix}
 =
-\begin{pmatrix} \mathrm{PixNumX}\cdot\mathrm{PixSizeX} + \mathrm{PixNumY}\cdot\mathrm{PixSizeY}\,\sin\xi \\ \mathrm{PixNumY}\cdot\mathrm{PixSizeY} \\ 0 \end{pmatrix}
+\begin{pmatrix} \mathrm{PixNumX}\cdot\mathrm{PixSizeX} + \mathrm{PixNumY}\cdot\mathrm{PixSizeY}\,\tan\xi \\ \mathrm{PixNumY}\cdot\mathrm{PixSizeY} \\ 0 \end{pmatrix}
 $$
 
 By combining this pixel-shape correction with the tilt correction described above, any pixel on a tilted IP can be mapped to its correct position on the untilted $XY$ plane. This mapping is the basis for the parameter determination in the next chapter and for [A3. Image integration](a3-image-integration.md).

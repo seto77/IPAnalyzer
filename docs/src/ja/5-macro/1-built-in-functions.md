@@ -13,7 +13,7 @@
 | `GetFileNames(message="")` | 複数選択ダイアログを開き、選択したファイルのフルパスを文字列配列で返します。 |
 | `GetAllFileNames(message="")` | フォルダを選択し、その中（サブフォルダ含む）の全ファイルのフルパスを配列で返します。 |
 | `ReadImage(filename="", flag=None)` | 画像ファイルを読み込みます。省略すると選択ダイアログが開きます。 |
-| `ReadImageHDF(filename, flag)` | HDF5 画像を読み込みます。`flag` で正規化の有無を切り替えます。 |
+| `ReadImageHDF(filename, flag)` | HDF5 画像を読み込みます。`flag` で正規化の有無を切り替えます。現行版では HDF5（`.h5`）の読み込みは機能しません。NeXus（`.nxs`）は `ReadImage(filename)` で読み込めます。 |
 | `SaveImage(filename="")` | 現在の画像を保存します（旧 API のエイリアス。既定は TIFF）。 |
 | `SaveImageAsTIFF(filename="")` | 画像を TIFF 形式で保存します。 |
 | `SaveImageAsPNG(filename="")` | 画像を PNG 形式で保存します。 |
@@ -72,7 +72,7 @@
 
 | メンバー | 説明 |
 |------|------|
-| `MaskSpots()` | スポットをマスクします（「スポット除外」ボタンと同じ動作）。 |
+| `MaskSpots()` | スポットをマスクします（**スポット検出** ボタンと同じ動作）。 |
 | `ClearMask()` | 現在のマスクをすべて消去します。 |
 | `InvertMask()` | 現在のマスク領域を反転します。 |
 | `MaskAll()` | 全領域をマスクします。 |
@@ -97,10 +97,10 @@
 | `SaveProfileAsPDI` | PDI 形式で保存するかを True/False で設定／取得します。 |
 | `SaveProfileAsCSV` | CSV 形式で保存するかを True/False で設定／取得します。 |
 | `SaveProfileAsTSV` | TSV 形式で保存するかを True/False で設定／取得します。 |
-| `SaveProfileAsGSAS` | GSAS 形式で保存するかを True/False で設定／取得します。 |
+| `SaveProfileAsGSAS` | GSAS 形式で保存するかを True/False で設定／取得します。GSAS で保存できるのは同心円積分で横軸が 2θ の場合だけで、複数のプロファイルを 1 ファイルにまとめる設定では保存されません。 |
 | `SaveProfileInOneFile` | シーケンシャル／方位角分割のプロファイルを 1 ファイルにまとめて保存するかを True/False で設定／取得します。 |
 | `SaveProfileAtImageDirectory` | 画像と同じディレクトリに保存するかを True/False で設定／取得します。 |
-| `GetProfile(filename="")` | 一次元化を実行します。`filename` を指定するとそのファイルに保存します。 |
+| `GetProfile(filename="")` | 一次元化を実行します。`filename` を指定すると、それを出力のベース名とし、形式の拡張子を付けて保存します（例: `GetProfile("sample.stl")` を CSV で保存すると `sample.stl.csv`）。保存先を「毎回選択」にしている場合は保存ダイアログが出ます。 |
 
 ## IPA.IntegralProperty
 
@@ -141,5 +141,5 @@
 |------|------|
 | `Debug` | PDIndexer 側マクロをステップ実行するかを True/False で設定／取得します。 |
 | `Timeout` | マクロ操作のタイムアウト秒数を設定／取得します（既定 30 秒）。 |
-| `RunMacro(obj1, obj2, ...)` | PDIndexer 側でマクロコードを実行します。引数は PDI 側で `Obj[1]`, `Obj[2]`, … として読めます。 |
-| `RunMacroName(name, obj1, obj2, ...)` | PDIndexer 側の名前付きマクロ `name` を実行します。引数は PDI 側で `Obj[1]`, `Obj[2]`, … として読めます。 |
+| `RunMacro(obj1, obj2, ...)` | PDIndexer のマクロエディタで開いているコードを実行します。引数は PDIndexer 側で `PDI.Obj[0]`, `PDI.Obj[1]`, … として読めます。 |
+| `RunMacroName(name, obj1, obj2, ...)` | PDIndexer に保存された名前付きマクロ `name` を実行します。引数は PDIndexer 側で `PDI.Obj[0]`, `PDI.Obj[1]`, … として読めます。 |

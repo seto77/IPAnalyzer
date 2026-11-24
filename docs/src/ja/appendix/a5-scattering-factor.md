@@ -4,6 +4,8 @@
 
 **Scattering Factor** は、選択中の結晶について許される結晶面（反射）の一覧を作成し、それぞれの **構造因子** と回折強度を計算します。放射線の種類（X線・電子線・中性子線）を切り替えられるので、同じ結晶の構造因子を回折手法ごとに比較できます。
 
+現行版では、この一覧は結晶ウィンドウの **ビーム相互作用 (Beam interaction)** → **反射 (Reflections)** タブにあります（原子散乱因子そのものは同じウィンドウの **散乱因子 (Scattering factors)** タブで扱います）。以下の画面・項目の説明は旧版の Scattering Factor ウィンドウに基づきます。
+
 IPAnalyzer では、パラメータ校正で用いる標準結晶を定義する **Crystal ウィンドウ**（[4. 実際の手順](../4-procedures.md) の幾何学的校正や [6. パラメータ校正（力ずく）](../6-find-parameter.md) で開く CrystalControl）の中から、このサブウィンドウを開けます。
 
 ![散乱因子](../../assets/cap-ja-auto/FormScatteringFactor.png)

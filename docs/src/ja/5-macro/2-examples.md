@@ -5,7 +5,7 @@
 以下の例は、マクロエディタにそのままコピー＆ペーストして使えます。`IPA.File.GetFileNames()` などのダイアログを伴う関数は、実行するとファイル選択画面が開きます。各メンバーの詳細は[組み込み関数](1-built-in-functions.md)を参照してください。
 
 !!! tip
-    エディタの保存済みマクロが空のときは、より多くのサンプル（基本ループ・数学関数・幾何設定・方位角分割・マスク・PDIndexer 送信など）が自動で挿入されます。まずはそれらを眺めると書き方が掴めます。
+    マクロエディタの **サンプルを表示** をオンにすると、より多くのサンプル（基本ループ・数学関数・幾何設定・方位角分割・マスク・PDIndexer 送信など）を読み取り専用で表示できます。まずはそれらを眺めると書き方が掴めます。
 
 ## 複数ファイルを一次元プロファイルに変換して保存（単一画像ファイルの場合）
 
@@ -29,7 +29,7 @@ for filename in filelist:
         IPA.Profile.SaveProfileAfterGetProfile = True
         # CSV 形式で保存したい場合は True に (他に SaveProfileAsTSV, SaveProfileAsPDI など)
         IPA.Profile.SaveProfileAsCSV = True
-        # Get Profile を実行し、指定したファイル名でプロファイルを保存
+        # Get Profile を実行し、filename に形式の拡張子 (.csv など) を付けた名前で保存
         IPA.Profile.GetProfile(filename)
 ```
 
@@ -51,10 +51,12 @@ for filename in filelist:
         IPA.Profile.MaskSpotsBeforeGetProfile = True
         IPA.Profile.SaveProfileAfterGetProfile = True
         IPA.Profile.SaveProfileAsCSV = True
+        # 1 フレームずつ一次元化する設定にする (「全画像」の設定のままだと毎回全フレームを処理する)
+        IPA.Sequential.Target_TopmostImage = True
         # 含まれる画像枚数 (IPA.Sequential.Count) だけループ
         for num in range(IPA.Sequential.Count):
             # フレーム番号を指定
-            IPA.Sequential.SelectedIndex = num
+            IPA.Sequential.SelectIndex(num)
             # Get Profile を実行し、フレーム番号を付けて保存
             IPA.Profile.GetProfile(filename + '_' + str(num))
 ```

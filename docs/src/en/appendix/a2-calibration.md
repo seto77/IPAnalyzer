@@ -14,11 +14,11 @@ For calibration, you measure a standard material whose lattice constants are kno
 
 ## Camera length — two-distance method
 
-The camera length $\mathrm{CL}$ is defined as the distance connecting the sample and the direct spot on the IP. If you take two diffraction patterns while changing the camera length by $\Delta$, you can determine the absolute value of $\mathrm{CL}$ from the change in the radius (in pixels) $r_1,\ r_2$ of the same ring. The distance difference $\Delta$ can be controlled accurately with a Magnescale or similar device.
+The camera length $\mathrm{CL}$ is defined as the distance connecting the sample and the direct spot on the IP. If you take two diffraction patterns while changing the camera length by $\Delta$, you can determine the absolute value of $\mathrm{CL}$ from the change in the radius $r_1,\ r_2$ of the same ring. The distance difference $\Delta$ can be controlled accurately with a Magnescale or similar device.
 
 ![Two-distance determination of the camera length. The same ring is recorded at two positions, distances CL and CL+Δ from the sample, and CL is obtained from the radii r₁, r₂.](../../assets/references/calibration-camera-length.svg){width=440px}
 
-From the similar triangles $\dfrac{r_1}{\mathrm{CL}} = \dfrac{r_2}{\mathrm{CL}+\Delta} = \tan 2\theta$,
+From the similar triangles $\dfrac{r_1}{\mathrm{CL}} = \dfrac{r_2}{\mathrm{CL}+\Delta} = \tan 2\theta$ (with $r_i$ in the same length unit as $\mathrm{CL}$),
 
 $$
 \mathrm{CL} = \frac{r_1\,\Delta}{r_2 - r_1}
@@ -30,7 +30,7 @@ is obtained. Here $r_1,\ r_2$ may remain in pixel units, and the camera length c
 
 ## Wavelength and pixel size — two-line method
 
-If two diffraction lines can be recorded, the diffraction angles $\theta_1,\ \theta_2$ can be calculated from the ratio of their peak positions (in pixels) $p_1,\ p_2$ and their d-spacings $d_1,\ d_2$, without knowing the pixel size or the camera length. Let the d-spacing ratio be $\rho_d = d_1/d_2$ and the peak-position ratio be $\rho_p = p_1/p_2$.
+If two diffraction lines can be recorded, the Bragg angles $\theta_1,\ \theta_2$ can be calculated from the ratio of their peak positions (in pixels) $p_1,\ p_2$ and their d-spacings $d_1,\ d_2$, without knowing the pixel size or the camera length. Let the d-spacing ratio be $\rho_d = d_1/d_2$ and the peak-position ratio be $\rho_p = p_1/p_2$.
 
 From Bragg's law and the geometry of the flat detector,
 

@@ -6,7 +6,7 @@ IPAnalyzer converts Debye–Scherrer rings recorded with imaging plates (IP) or 
 
 Main features:
 
-- Supports a wide range of image formats (FujiBAS2000/2500, R-AXIS4/5, ITEX, Bruker CCD, IP Display, IPAimage, Fuji FDL, Rayonix, Mar research, Perkin Elmer, ADSC, RadIcon, and general image formats)
+- Supports a wide range of image formats (FujiBAS2000/2500, R-AXIS4/5, ITEX, Bruker CCD, IP Display, IPAimage, Fuji FDL, Rayonix, Mar research, Perkin Elmer, ADSC, RadIcon, Rigaku RINT-RAPID II, SMV, MRC, Digital Micrograph 3/4, NeXus (`.nxs`), and general image formats)
 - X-ray, electron, and neutron sources
 - Integration with PDIndexer
 - Semi-automatic analysis of measurement parameters
@@ -28,9 +28,12 @@ The software is distributed under the MIT License.
 
 ### Installation
 
-1. Install [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) in advance.
-2. Download `IPAnalyzerSetup.msi` from the GitHub [releases page](https://github.com/seto77/IPAnalyzer/releases).
-3. Run `IPAnalyzerSetup.msi` to install.
+1. Download the file that matches your PC from the GitHub [releases page](https://github.com/seto77/IPAnalyzer/releases/latest).
+    - `IPAnalyzer-setup.msi`: installer for ordinary (x64) Windows PCs (recommended). `IPAnalyzerSetup.msi` is identical; that name is kept for auto-update from older versions.
+    - `IPAnalyzer-setup_arm64.msi`: installer for Windows on Arm.
+    - `IPAnalyzer-v.<version>.zip` / `IPAnalyzer-v.<version>_arm64.zip`: portable version (no installation; the .NET runtime is bundled), for PCs without administrator rights.
+2. For the installer, install [.NET Desktop Runtime 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) in advance and then run the downloaded `.msi`.
+3. For the portable version, extract the ZIP to a user-writable folder and run `IPAnalyzer.exe` (do not start it from inside the ZIP viewer).
 
 ## Axis orientation, IP tilt, and pixel shape
 
@@ -44,7 +47,7 @@ IPAnalyzer uses a right-handed coordinate system, with the origin and axis direc
 
 <!-- TODO(figure): Coordinate axes (X / Y / Z) definition diagram. Equivalent to legacy doc image040.png / image041.png. To be recreated against the current GUI. -->
 
-The camera length, \( \varphi \), \( \tau \), pixel size, and \( \xi \) are set on the IP Condition tab of the property window (see [2. Property Windows](2-property-windows.md)).
+The camera length, \( \varphi \), \( \tau \), pixel size, and \( \xi \) are set on the **Detector condition** tab of the property window (see [2. Property Windows](2-property-windows.md)).
 
 ### Relationship with (WIN)PIP
 
@@ -52,7 +55,7 @@ In IPAnalyzer, the X axis (the rightward direction of the IP image) is rotated c
 
 ## Pixel intensity integration method
 
-The central problem in one-dimensionalization is how to distribute, among the integration steps, the intensity of a pixel that straddles several steps — which happens when the angular step interval is smaller than the pixel interval (i.e. the pixel size).
+The central problem in one-dimensionalization is how to distribute, among the integration steps, the intensity of a pixel that straddles several steps — which happens whenever the range of scattering angles covered by one pixel spans more than one 2θ step (more often the finer the step).
 
 The software computes the intersections between the lines that delimit each step and the pixel, and distributes the intensity by finding the pixel area contained in each step. To handle cases where the pixel is not exactly square — because of IP tilt or pixel-shape distortion — the coordinates of the four corners of each pixel are computed successively to determine its quadrilateral shape. In principle, this lets the pixel intensity be distributed smoothly across the steps no matter how small the steps are made.
 

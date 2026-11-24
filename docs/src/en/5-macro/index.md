@@ -38,7 +38,7 @@ See [Built-in functions](1-built-in-functions.md) for the member list, and [Exam
 
 ## Sample macros
 
-When the editor's saved-macro list is empty, sample macros (basic loops, math functions, geometry setup, batch processing, azimuthal division, masking, sending to PDIndexer, etc.) are inserted automatically. They are an easy starting point to adapt.
+Turn on **Show samples** in the editor to list the read-only sample macros (basic loops, math functions, geometry setup, batch processing, azimuthal division, masking, sending to PDIndexer, etc.); turn it off to return to your own saved macros. They are an easy starting point to adapt.
 
 ## Working with Auto Procedure
 

@@ -68,7 +68,7 @@ $$
 P_3 = \frac{\mathrm{CL}}{\mathrm{CL} + (P_2)_z}\,\big((P_2)_x,\ (P_2)_y,\ 0\big)
 $$
 
-の形にまとまります。傾き補正全体は線形（同次座標では射影）変換なので、各画素の位置をコンピュータ上で高速に計算できます。
+の形にまとまります。中心投影を含む傾き補正は射影変換で、同次座標を使えば行列で表せるので、各画素の位置をコンピュータ上で高速に計算できます。
 
 ---
 
@@ -80,10 +80,10 @@ IP の画素形状は、$X$ 軸方向の長さ $\mathrm{PixSizeX}$、$Y$ 軸方�
 
 $$
 P =
-\begin{pmatrix} \mathrm{PixSizeX} & \mathrm{PixSizeY}\,\sin\xi & 0 \\ 0 & \mathrm{PixSizeY} & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\begin{pmatrix} \mathrm{PixSizeX} & \mathrm{PixSizeY}\,\tan\xi & 0 \\ 0 & \mathrm{PixSizeY} & 0 \\ 0 & 0 & 1 \end{pmatrix}
 \begin{pmatrix} \mathrm{PixNumX} \\ \mathrm{PixNumY} \\ 0 \end{pmatrix}
 =
-\begin{pmatrix} \mathrm{PixNumX}\cdot\mathrm{PixSizeX} + \mathrm{PixNumY}\cdot\mathrm{PixSizeY}\,\sin\xi \\ \mathrm{PixNumY}\cdot\mathrm{PixSizeY} \\ 0 \end{pmatrix}
+\begin{pmatrix} \mathrm{PixNumX}\cdot\mathrm{PixSizeX} + \mathrm{PixNumY}\cdot\mathrm{PixSizeY}\,\tan\xi \\ \mathrm{PixNumY}\cdot\mathrm{PixSizeY} \\ 0 \end{pmatrix}
 $$
 
 で与えられます。この画素形状補正と、上で述べた傾き補正を組み合わせることで、傾いた IP 上の任意の画素を、傾きのない $XY$ 平面上の正しい位置へ対応づけられます。この対応づけが、次章のパラメータ決定と [A3. 画像の積算](a3-image-integration.md) の前提になります。

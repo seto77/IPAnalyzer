@@ -4,6 +4,8 @@
 
 **Scattering Factor** lists the allowed crystal planes (reflections) of the selected crystal and calculates the **structure factor** and diffraction intensity of each. The radiation type (X-ray, electron, or neutron) can be switched, so the structure factors of the same crystal can be compared across diffraction techniques.
 
+In the current version this list is on the **Reflections** tab of **Beam interaction** in the crystal window (atomic scattering factors themselves are on the **Scattering factors** tab of the same window). The screens and items described below are based on the former Scattering Factor window.
+
 In IPAnalyzer, this sub-window is opened from the **Crystal window** (the CrystalControl used in [4. Practical procedures](../4-procedures.md) for geometric calibration and in [6. Find Parameter (brute force)](../6-find-parameter.md)).
 
 ![Scattering Factor](../../assets/cap-en-auto/FormScatteringFactor.png)

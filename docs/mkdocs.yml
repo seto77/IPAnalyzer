@@ -86,6 +86,7 @@ plugins:
             5.1. Built-in functions: 5.1. 組み込み関数
             5.2. Examples: 5.2. 使用例
             6. Find Parameter (brute force): 6. パラメータ校正（力ずく）
+            7. Q&A: 7. Q&A（よくある質問）  # 261124Cl 追加
             Appendix: 付録
             A1. Detector geometry: A1. 検出器の幾何
             A2. Parameter determination: A2. パラメータの決定
@@ -343,6 +344,7 @@ nav:
       - 5.1. Built-in functions: 5-macro/1-built-in-functions.md
       - 5.2. Examples: 5-macro/2-examples.md
   - 6. Find Parameter (brute force): 6-find-parameter.md
+  - 7. Q&A: 7-qa.md   # 261124Cl 追加: 問い合わせ (issue・メール) から作った Q&A。現状 en/ja のみ、他言語は英語フォールバック
   - Appendix:
       - appendix/index.md
       - A1. Detector geometry: appendix/a1-geometry.md

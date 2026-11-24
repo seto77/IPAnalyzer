@@ -17,17 +17,17 @@
 | カメラ長・波長を校正する | [実際の手順](4-procedures.md) | [各種ツール](3-tools.md)、[パラメータ校正（力ずく）](6-find-parameter.md) |
 | スポット除外・マルチフレーム処理 | [各種ツール](3-tools.md) | [実際の手順](4-procedures.md) |
 | 処理を自動化する | [マクロ](5-macro/index.md) | [組み込み関数](5-macro/1-built-in-functions.md)、[使用例](5-macro/2-examples.md)、[Auto Procedure](3-tools.md) |
+| 困ったとき・よくある疑問 | [Q&A](7-qa.md) | [GitHub Issues](https://github.com/seto77/IPAnalyzer/issues) |
 
 ## 主な機能
 
-* **多彩なフォーマット対応** : Fuji BAS2000/2500/FDL、Rigaku R-AXIS IV/V、ITEX、Bruker CCD、Rayonix、MAR research、Perkin Elmer、ADSC、RadIcon、Rad-Xcam、HDF5/NeXus、Digital Micrograph 3/4、および一般画像形式。ほとんどの入出力でドラッグ＆ドロップが使えます。
+* **多彩なフォーマット対応** : Fuji BAS2000/2500/FDL、Rigaku R-AXIS IV/V、ITEX、Bruker CCD、Rayonix、MAR research、Perkin Elmer、ADSC、RadIcon、Rigaku RINT-RAPID II、SMV、MRC、NeXus（`.nxs`）、Digital Micrograph 3/4、および一般画像形式。ほとんどの入出力でドラッグ＆ドロップが使えます。
 * **1 次元化** : 同心円（散乱角）積算・偏角（方位角／ケーキ）積算・切り開き計算に対応。画素と積算ステップの交差を計算するサブピクセル面積分配アルゴリズムにより、検出器の傾きや平行四辺形画素も正しく扱います。
 * **幾何校正** : 波長・カメラ長・画素サイズ／歪み・傾き (φ, τ) をダブルカセット法で精密化するほか、収束しにくいデータ向けの総当たり（力ずく）探索も備えます。
-* **画像処理** : ビーム中心の自動検出、単結晶スポットの検出・マスク、回転ぼかし、リング描画、強度テーブルによる検出器校正、幾何情報を保持した IPA 形式保存。
-* **マルチフレーム** : HDF5/NeXus などのシーケンシャルデータでフレームの選択・平均・合計が可能。フレームごとのエネルギー情報から波長を自動更新します。
+* **画像処理** : ビーム中心の自動検出、単結晶スポットの検出・マスク、回転ぼかし、リング描画、R-AXIS 画像の強度校正、幾何情報を保持した IPA 形式保存。
+* **マルチフレーム** : NeXus（`.nxs`）や多ページ TIFF などのシーケンシャルデータで、フレームの選択・平均・合計が可能。フレームにエネルギー情報があれば、そのフレームを選んだときに波長を更新します。
 * **自動化** : フォルダ監視の Auto Procedure と、バッチ・スクリプト処理向けの Python ライク[マクロ](5-macro/index.md)。
 * **PDIndexer 連携** : クリップボード経由でプロファイルを [PDIndexer](https://github.com/seto77/PDIndexer) に送り、名前付きマクロを呼び出せます。
-* **ライト／ダークテーマ** : 画面はライト／ダークの配色モードを選べます。
 
 ## 動作環境
 
@@ -44,8 +44,8 @@
 1. [Releases](https://github.com/seto77/IPAnalyzer/releases/latest) からインストーラを入手してインストールします。
 2. 回折像を読み込みます（ファイル → 画像を読込、またはドラッグ＆ドロップ）。
 3. プロパティウィンドウで **Wave source** と **Detector condition**（カメラ長・画素サイズ・おおよその中心）を設定します。
-4. 中心を検索し、必要ならスポットを除外して、**Get Profile** で 1 次元プロファイルを取得します。
-5. 幾何が未知の場合は標準物質から校正します。[実際の手順](4-procedures.md)を参照してください。
+4. 幾何（カメラ長・波長・傾き）が未知の場合は、先に標準試料の画像から校正し、得た値を設定します。[実際の手順](4-procedures.md)を参照してください。
+5. 試料の画像で中心を検索し、必要ならスポットを除外して、**1次元化 (Get Profile)** で 1 次元プロファイルを取得します。
 
 詳しい流れは[実際の手順](4-procedures.md)を参照してください。
 

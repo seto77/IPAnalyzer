@@ -5,7 +5,7 @@
 The examples below can be copied and pasted directly into the macro editor. Functions that involve a dialog, such as `IPA.File.GetFileNames()`, open a file-selection screen when run. See [Built-in functions](1-built-in-functions.md) for the details of each member.
 
 !!! tip
-    When the editor's saved-macro list is empty, a richer set of samples (basic loops, math functions, geometry setup, azimuthal division, masking, sending to PDIndexer, etc.) is inserted automatically. Browsing those first is a good way to learn the style.
+    Turn on **Show samples** in the macro editor to view a richer set of read-only samples (basic loops, math functions, geometry setup, azimuthal division, masking, sending to PDIndexer, etc.). Browsing those first is a good way to learn the style.
 
 ## Convert several files to 1D profiles and save them (single-image files)
 
@@ -29,7 +29,7 @@ for filename in filelist:
         IPA.Profile.SaveProfileAfterGetProfile = True
         # Set True to save as CSV (also SaveProfileAsTSV, SaveProfileAsPDI, ...)
         IPA.Profile.SaveProfileAsCSV = True
-        # Run Get Profile and save to the given file name
+        # Run Get Profile; the profile is saved as filename plus the format extension (.csv etc.)
         IPA.Profile.GetProfile(filename)
 ```
 
@@ -51,10 +51,12 @@ for filename in filelist:
         IPA.Profile.MaskSpotsBeforeGetProfile = True
         IPA.Profile.SaveProfileAfterGetProfile = True
         IPA.Profile.SaveProfileAsCSV = True
+        # Integrate one frame at a time (with the 'all images' setting every frame would be processed on each pass)
+        IPA.Sequential.Target_TopmostImage = True
         # Loop over the number of contained images (IPA.Sequential.Count)
         for num in range(IPA.Sequential.Count):
             # Select the frame
-            IPA.Sequential.SelectedIndex = num
+            IPA.Sequential.SelectIndex(num)
             # Run Get Profile and save with the frame number appended
             IPA.Profile.GetProfile(filename + '_' + str(num))
 ```

@@ -25,8 +25,8 @@ Each of the following pages assumes the same coordinate system as a common premi
 | Symbol | Name | Meaning |
 |------|------|------|
 | $\lambda$ | Wave Length | Wavelength of the source. Known for characteristic X-rays; for synchrotron radiation it varies with the monochromator position and must be determined each time. |
-| $\mathrm{CL}$ | Camera Length | Distance between the sample and the origin (direct spot). The sample position is $(0,0,-\mathrm{CL})$. |
+| $\mathrm{CL}$ | Camera Length | Distance between the sample and the origin (direct spot). The sample position is $(0,0,-\mathrm{CL})$. Corresponds to **Camera Length 1** on screen; **Camera Length 2** is the perpendicular sample-to-detector distance, which differs when there is a tilt $\tau$. |
 | $\varphi,\ \tau$ | Tilt Correction | Tilt of the IP relative to the optical axis ($Z$ axis). $\varphi$ is the azimuth of the tilt axis in the XY plane, and $\tau$ is the rotation angle about that axis. |
 | $\mathrm{PixSizeX},\ \mathrm{PixSizeY},\ \xi$ | Pixel Size | Represents a pixel as a parallelogram. $\xi$ is the offset of the readout laser's scan starting point (distortion angle). |
 
-These values are set on the IP Condition tab of the property window (see [2. Property windows](../2-property-windows.md)).
+The wavelength is set on the **Wave source** tab of the property window, and the camera length, tilt and pixel shape on the **Detector condition** tab (see [2. Property windows](../2-property-windows.md)).

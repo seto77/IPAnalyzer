@@ -13,7 +13,7 @@ The methods and properties callable from a macro, grouped by namespace under the
 | `GetFileNames(message="")` | Opens a multi-select dialog and returns the full paths as a string array. |
 | `GetAllFileNames(message="")` | Selects a folder and returns the full paths of all files in it (recursive) as an array. |
 | `ReadImage(filename="", flag=None)` | Reads an image file. If omitted, a selection dialog opens. |
-| `ReadImageHDF(filename, flag)` | Reads an HDF5 image. `flag` toggles normalization. |
+| `ReadImageHDF(filename, flag)` | Reads an HDF5 image. `flag` toggles normalization. In the current version HDF5 (`.h5`) reading does not work; NeXus (`.nxs`) files can be read with `ReadImage(filename)`. |
 | `SaveImage(filename="")` | Saves the current image (legacy alias; defaults to TIFF). |
 | `SaveImageAsTIFF(filename="")` | Saves the image as TIFF. |
 | `SaveImageAsPNG(filename="")` | Saves the image as PNG. |
@@ -97,10 +97,10 @@ For all read/save methods, omitting or giving an invalid file name opens a selec
 | `SaveProfileAsPDI` | True/False. Save as PDI format. |
 | `SaveProfileAsCSV` | True/False. Save as CSV format. |
 | `SaveProfileAsTSV` | True/False. Save as TSV format. |
-| `SaveProfileAsGSAS` | True/False. Save as GSAS format. |
+| `SaveProfileAsGSAS` | True/False. Save as GSAS format. Only possible for concentric integration with a 2θ axis; not written when several profiles are saved in one file. |
 | `SaveProfileInOneFile` | True/False. Save sequential/azimuthal-division profiles in one file. |
 | `SaveProfileAtImageDirectory` | True/False. Save in the same directory as the image. |
-| `GetProfile(filename="")` | Runs one-dimensionalization. If `filename` is given, the profile is saved to that file. |
+| `GetProfile(filename="")` | Runs one-dimensionalization. If `filename` is given, it is used as the base name and the format extension is appended (e.g. `GetProfile("sample.stl")` saved as CSV gives `sample.stl.csv`). If the destination is set to "choose each time", the save dialog is shown. |
 
 ## IPA.IntegralProperty
 
@@ -141,5 +141,5 @@ For all read/save methods, omitting or giving an invalid file name opens a selec
 |------|------|
 | `Debug` | True/False. Run the macro on PDIndexer step-by-step. |
 | `Timeout` | Set/get the timeout (seconds) for the macro operation (default 30 s). |
-| `RunMacro(obj1, obj2, ...)` | Executes macro code on PDIndexer. Parameters are read on PDI as `Obj[1]`, `Obj[2]`, … |
-| `RunMacroName(name, obj1, obj2, ...)` | Executes the named macro `name` on PDIndexer. Parameters are read on PDI as `Obj[1]`, `Obj[2]`, … |
+| `RunMacro(obj1, obj2, ...)` | Executes the code currently open in PDIndexer's macro editor. Parameters are read on PDIndexer as `PDI.Obj[0]`, `PDI.Obj[1]`, … |
+| `RunMacroName(name, obj1, obj2, ...)` | Executes the macro saved under `name` in PDIndexer. Parameters are read on PDIndexer as `PDI.Obj[0]`, `PDI.Obj[1]`, … |

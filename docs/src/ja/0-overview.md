@@ -6,7 +6,7 @@ IPAnalyzer は、イメージングプレート (IP) や CCD/CMOS 検出器で�
 
 主な特徴は次のとおりです。
 
-- 多様な画像形式に対応（FujiBAS2000/2500、R-AXIS4/5、ITEX、Bruker CCD、IP Display、IPAimage、Fuji FDL、Rayonix、Mar research、Perkin Elmer、ADSC、RadIcon、一般的な画像形式）
+- 多様な画像形式に対応（FujiBAS2000/2500、R-AXIS4/5、ITEX、Bruker CCD、IP Display、IPAimage、Fuji FDL、Rayonix、Mar research、Perkin Elmer、ADSC、RadIcon、Rigaku RINT-RAPID II、SMV、MRC、Digital Micrograph 3/4、NeXus（`.nxs`）、一般的な画像形式）
 - X 線・電子線・中性子線の各線源に対応
 - PDIndexer との連携
 - 測定パラメータの半自動解析機能
@@ -28,9 +28,12 @@ IPAnalyzer は、イメージングプレート (IP) や CCD/CMOS 検出器で�
 
 ### インストール
 
-1. あらかじめ [.NET デスクトップランタイム 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) をインストールしておきます。
-2. GitHub の [releases ページ](https://github.com/seto77/IPAnalyzer/releases) から `IPAnalyzerSetup.msi` をダウンロードします。
-3. `IPAnalyzerSetup.msi` を実行してインストールします。
+1. GitHub の [releases ページ](https://github.com/seto77/IPAnalyzer/releases/latest) から、使っている PC に合うファイルをダウンロードします。
+    - `IPAnalyzer-setup.msi`: 通常の (x64) Windows 用のインストーラ（推奨）。`IPAnalyzerSetup.msi` は同じ内容で、旧版からの自動更新用の名前です。
+    - `IPAnalyzer-setup_arm64.msi`: Windows on Arm 用のインストーラ。
+    - `IPAnalyzer-v.<版>.zip` / `IPAnalyzer-v.<版>_arm64.zip`: インストール不要のポータブル版（.NET ランタイム同梱）。管理者権限が無い PC 向けです。
+2. インストーラを使う場合は、あらかじめ [.NET デスクトップランタイム 11.0](https://dotnet.microsoft.com/download/dotnet/11.0) をインストールしてから、ダウンロードした `.msi` を実行します。
+3. ポータブル版は、ZIP をユーザーが書き込めるフォルダに展開し、`IPAnalyzer.exe` を実行します（ZIP の中から直接起動しないでください）。
 
 ## 軸の向き・IP の傾き・画素形状
 
@@ -44,7 +47,7 @@ IPAnalyzer は、イメージングプレート (IP) や CCD/CMOS 検出器で�
 
 <!-- TODO(図): 座標軸 (X / Y / Z) の定義図。旧 doc image040.png / image041.png 相当。現 GUI に合わせて後日作成。 -->
 
-カメラ長・\( \varphi \)・\( \tau \)・画素サイズ・\( \xi \) は、プロパティウィンドウの IP Condition で設定します（[2. プロパティウィンドウ](2-property-windows.md) を参照）。
+カメラ長・\( \varphi \)・\( \tau \)・画素サイズ・\( \xi \) は、プロパティウィンドウの **Detector condition**（検出器の設定）タブで設定します（[2. プロパティウィンドウ](2-property-windows.md) を参照）。
 
 ### (WIN)PIP との関係
 
@@ -52,7 +55,7 @@ IPAnalyzer では、X 軸（IP 画像の右方向）を時計回りに \( \varph
 
 ## ピクセル強度の積算方法
 
-一次元化における最大の問題は、一次元化の際の角度ステップ間隔が画素間隔（画素サイズ）より小さい場合に、複数のステップにまたがる画素の強度を各ステップへどのように配分するか、という点です。
+一次元化における最大の問題は、1 つの画素が覆う散乱角の範囲が複数の 2θ ステップにまたがるとき、その画素の強度を各ステップへどのように配分するか、という点です（ステップを細かくするほど、このような画素が増えます）。
 
 本ソフトでは、ステップを区切る線と画素との交点を計算し、各ステップに含まれる画素の面積を求めて強度を配分します。IP の傾きや画素形状の歪みによって画素が正確な正方形でない場合に備え、画素の四隅の座標を逐次計算して四角形の形状を求めています。この方法により、原理的にはステップをどれだけ小さくしても、画素強度は各ステップへ滑らかに配分されます。
 
