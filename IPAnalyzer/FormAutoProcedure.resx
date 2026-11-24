@@ -447,7 +447,8 @@
     <value>Segoe UI Symbol, 8pt</value>
   </data>
   <data name="checkBoxKeywords.Text" xml:space="preserve">
-    <value>Keyowrd</value>
+    <value>Keyword</value>
+    <comment>261124Cl changed: typo "Keyowrd" -&gt; "Keyword"</comment>
   </data>
   <data name="checkBoxAutoLoad.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>

@@ -543,7 +543,8 @@ integration, removing detector-edge artifacts.</value>
     <value>5</value>
   </data>
   <data name="checkBoxThresholdMax.Text" xml:space="preserve">
-    <value>Over intenstiy of</value>
+    <value>Over intensity of</value>
+    <comment>261124Cl changed: typo "intenstiy" -&gt; "intensity"</comment>
   </data>
   <data name="checkBoxThresholdMax.ToolTip" xml:space="preserve">
     <value>Exclude saturated pixels: ignore pixels whose
