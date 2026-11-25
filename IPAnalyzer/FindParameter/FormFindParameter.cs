@@ -1718,7 +1718,9 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         PointD centerOffsetDev = new PointD();
         //Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], FilmDistance[0], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
         // 261124Cl 変更: secondary では secondary のカメラ長 (FilmDistance[1] = primary + 差) を使う (SetSphericfalCorrection と同じ選び方)
-        Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], IsPrimary ? FilmDistance[0] : FilmDistance[1], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev);
+        //Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], IsPrimary ? FilmDistance[0] : FilmDistance[1], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev); // 261125Cl 変更前
+        // 261125Cl 変更: Crystallography 48caf95 から、リング対ごとの u = X − Y·tanξ の標本標準偏差 (mm) を戻り値で返す (XY の相関も含む)。下で中心 X の誤差に使う
+        var centerUDev = Geometry.GetTiltAndOffset([.. EllipseCenter], [.. Radius], IsPrimary ? FilmDistance[0] : FilmDistance[1], ref centerOffset, ref centerOffsetDev, ref IP.tau, ref tauDev, ref IP.phi, ref phiDev, IP.ksi);
 
         //center位置をPixel単位に変換
         //p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
@@ -1726,7 +1728,9 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         //   その逆は Δx_px = (x_mm - y_mm * tan(ξ)) / PixSizeX。旧式は y 由来の項を PixSizeY で割っていた (PixSizeX = PixSizeY または ξ = 0 なら同一)。誤差 (Dev) の式は据え置き
         p.X = (centerOffset.X - centerOffset.Y * Math.Tan(IP.ksi)) / IP.PixSizeX;
         p.Y = centerOffset.Y / IP.PixSizeY;
-        centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
+        //centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY; // 261125Cl 変更前: 標準偏差の引き算で、Y の項を PixSizeY で割っていた
+        // 261125Cl 変更: 中心 X の誤差は u = X − Y·tanξ の標本標準偏差 (Crystallography 48caf95 の戻り値) を PixSizeX で割ったもの。有効なリング対が 2 組未満なら NaN
+        centerOffsetDev.X = centerUDev / IP.PixSizeX;
         centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY;
 
         //260413Cl 一回あたりの中心位置変化量を ±1 pixel にクランプ (発散防止)
@@ -1805,6 +1809,8 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
                 EllipseCenter.Add(p);
         }
 
+        if (EllipseCenter.Count == 0) return; // 261125Cl 追加: 有効なリング中心が 1 つも無いと Average が例外を投げる
+
         //260413Cl LINQ Average で平均中心を計算 (CenterOffset は mm 単位)
         PointD centerOffset = new(
             EllipseCenter.Average(p => p.X),
@@ -1817,8 +1823,10 @@ public partial class FormFindParameter : FormBase //260604Cl FormBase 継承に�
         //p.X = centerOffset.X / IP.PixSizeX - centerOffset.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
         p.X = (centerOffset.X - centerOffset.Y * Math.Tan(IP.ksi)) / IP.PixSizeX; // 261124Cl 変更: SetTiltCorrection と同じく、順変換 x_mm = Δx_px * PixSizeX + y_mm * tan(ξ) の正しい逆変換にする
         p.Y = centerOffset.Y / IP.PixSizeY;
-        centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY;
-        centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY;
+        //centerOffsetDev.X = centerOffsetDev.X / IP.PixSizeX - centerOffsetDev.Y * Math.Tan(IP.ksi) / IP.PixSizeY; // 261125Cl 変更前
+        //centerOffsetDev.Y = centerOffsetDev.Y / IP.PixSizeY; // 261125Cl 変更前
+        // 261125Cl 変更: この経路はリング中心を平均するだけで偏差を推定していない (centerOffsetDev は常に (0,0)) ので、0 ではなく NaN (算出不可) を出す
+        centerOffsetDev = new PointD(double.NaN, double.NaN);
 
         //260413Cl 一回あたりの中心位置変化量を ±1 pixel にクランプ (発散防止)
         p.X = Math.Clamp(p.X, -1.0, 1.0);

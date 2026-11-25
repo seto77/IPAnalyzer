@@ -158,6 +158,10 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
     public bool IsFlatPanelMode => FormProperty.radioButtonFlatPanel.Checked;
 
     public PseudoBitmap pseudoBitmap = new();
+
+    /// <summary>261125Cl 追加: 主画面・サムネイルがそれぞれ所有する描画先 (PseudoBitmap.RenderInto で描く)。大きさか画素形式が変わったときだけ作り直す。
+    /// PseudoBitmap を差し替えても使い回すので、差し替え時の旧 Image の Dispose からは除く</summary>
+    private Bitmap mainViewBitmap, thumbViewBitmap;
     public bool SkipDrawing { get; set; } = false;
 
     public Size SrcImgSize;
@@ -776,8 +780,23 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //var bmp = pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize);
         // 261124Cl 変更 (所見 11): GetImage は PseudoBitmap 内部のキャッシュ destBmp を返し、別の大きさで呼ばれると Dispose する (主画面とサムネイルで共有)。
         //   表示・保存に使う前に Clone して呼び出し側で所有する (キャッシュは Dispose しない)。旧: キャッシュをそのまま pictureBox に渡していた
-        var bmp = (Bitmap)pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize)?.Clone();
-        if (bmp == null) return;
+        //var bmp = (Bitmap)pseudoBitmap.GetImage(scalablePictureBox.Center, scalablePictureBox.Zoom, scalablePictureBox.pictureBox.ClientSize)?.Clone(); // 261125Cl 変更前
+        // 261125Cl 変更: Crystallography 48caf95 の PseudoBitmap.RenderInto で、この画面が所有する Bitmap (mainViewBitmap) に描く。
+        //   大きさか画素形式が変わったときだけ作り直し、描画のたびの全画素 Clone をやめる。描画中はロックされるので、表示中なら先に外す
+        var viewSize = scalablePictureBox.pictureBox.ClientSize;
+        if (scalablePictureBox.Center.IsNaN || viewSize.Width <= 0 || viewSize.Height <= 0) return;
+        if (mainViewBitmap == null || mainViewBitmap.Width != viewSize.Width || mainViewBitmap.Height != viewSize.Height || mainViewBitmap.PixelFormat != pseudoBitmap.ImagePixelFormat)
+        {
+            var next = new Bitmap(viewSize.Width, viewSize.Height, pseudoBitmap.ImagePixelFormat); // 先に確保する (失敗しても前の Bitmap は生きたまま)
+            if (ReferenceEquals(scalablePictureBox.pictureBox.Image, mainViewBitmap)) scalablePictureBox.pictureBox.Image = null;
+            var previous = mainViewBitmap;
+            mainViewBitmap = next;
+            previous?.Dispose();
+        }
+        else if (ReferenceEquals(scalablePictureBox.pictureBox.Image, mainViewBitmap))
+            scalablePictureBox.pictureBox.Image = null;
+        if (!pseudoBitmap.RenderInto(PseudoBitmap.GetDrawingArea(scalablePictureBox.Center, scalablePictureBox.Zoom, viewSize), mainViewBitmap)) return;
+        var bmp = mainViewBitmap;
         using var g = Graphics.FromImage(bmp); //260712Cl using化 (毎フレームの GDI ハンドル滞留を防止)
         g.SmoothingMode = SmoothingMode.AntiAlias;
 
@@ -1174,8 +1193,23 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //var bmp = pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize);
         // 261124Cl 変更 (所見 11): GetImage は PseudoBitmap 内部のキャッシュ destBmp を返し、別の大きさで呼ばれると Dispose する (主画面とサムネイルで共有)。
         //   表示・保存に使う前に Clone して呼び出し側で所有する (キャッシュは Dispose しない)。旧: キャッシュをそのまま pictureBox に渡していた
-        var bmp = (Bitmap)pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize)?.Clone();
-        if (bmp == null) return; //260712Cl Draw() と同様の null ガード (パネル折り畳み等でクライアントサイズ 0 の場合)
+        //var bmp = (Bitmap)pseudoBitmap.GetImage(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, scalablePictureBoxThumbnail.pictureBox.ClientSize)?.Clone(); // 261125Cl 変更前
+        // 261125Cl 変更: Crystallography 48caf95 の PseudoBitmap.RenderInto で、この画面が所有する Bitmap (thumbViewBitmap) に描く。
+        //   大きさか画素形式が変わったときだけ作り直し、描画のたびの全画素 Clone をやめる。描画中はロックされるので、表示中なら先に外す
+        var viewSize = scalablePictureBoxThumbnail.pictureBox.ClientSize;
+        if (scalablePictureBoxThumbnail.Center.IsNaN || viewSize.Width <= 0 || viewSize.Height <= 0) return;
+        if (thumbViewBitmap == null || thumbViewBitmap.Width != viewSize.Width || thumbViewBitmap.Height != viewSize.Height || thumbViewBitmap.PixelFormat != pseudoBitmap.ImagePixelFormat)
+        {
+            var next = new Bitmap(viewSize.Width, viewSize.Height, pseudoBitmap.ImagePixelFormat); // 先に確保する (失敗しても前の Bitmap は生きたまま)
+            if (ReferenceEquals(scalablePictureBoxThumbnail.pictureBox.Image, thumbViewBitmap)) scalablePictureBoxThumbnail.pictureBox.Image = null;
+            var previous = thumbViewBitmap;
+            thumbViewBitmap = next;
+            previous?.Dispose();
+        }
+        else if (ReferenceEquals(scalablePictureBoxThumbnail.pictureBox.Image, thumbViewBitmap))
+            scalablePictureBoxThumbnail.pictureBox.Image = null;
+        if (!pseudoBitmap.RenderInto(PseudoBitmap.GetDrawingArea(scalablePictureBoxThumbnail.Center, scalablePictureBoxThumbnail.Zoom, viewSize), thumbViewBitmap)) return;
+        var bmp = thumbViewBitmap;
         using var g = Graphics.FromImage(bmp); //260712Cl using化
         g.SmoothingMode = SmoothingMode.AntiAlias;
         if (thumbnailmode)
@@ -2146,9 +2180,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         var oldThumb = scalablePictureBoxThumbnail.pictureBox.Image;
         scalablePictureBox.PseudoBitmap = pseudoBitmap;
         scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
-        if (oldMain != null && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
+        //if (oldMain != null && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
+        //    oldMain.Dispose();
+        //if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
+        //    oldThumb.Dispose();
+        // 261125Cl 変更: 画面ごとの描画先 (mainViewBitmap / thumbViewBitmap) は使い回すので Dispose しない。それ以外 (旧版の Clone など) だけを解放する
+        if (oldMain != null && !ReferenceEquals(oldMain, mainViewBitmap) && !ReferenceEquals(oldMain, thumbViewBitmap) && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
             oldMain.Dispose();
-        if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
+        if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, mainViewBitmap) && !ReferenceEquals(oldThumb, thumbViewBitmap) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
             oldThumb.Dispose();
         setScale();
     }
@@ -2319,7 +2358,8 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
         //   この後の bmp.Dispose() は自分の複製だけを破棄する (旧: キャッシュそのものを破棄し、次の GetImage が破棄済み Bitmap を使いえた)
         //var bmp = (Bitmap)pseudoBitmap.GetImage(new RectangleD(new Point(0, 0), new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))
         //    , new Size(scalablePictureBox.PseudoBitmap.Width, scalablePictureBox.PseudoBitmap.Height))?.Clone(); // 261125Cl 変更前
-        var bmp = (Bitmap)pseudoBitmap.GetImage()?.Clone(); // 261125Cl 変更: 引数なしの GetImage() は同じ全体範囲 (0, 0, Width, Height) を等倍で返す
+        //var bmp = (Bitmap)pseudoBitmap.GetImage()?.Clone(); // 261125Cl 変更: 引数なしの GetImage() は同じ全体範囲 (0, 0, Width, Height) を等倍で返す
+        var bmp = pseudoBitmap.CreateImage(new RectangleD(0, 0, pseudoBitmap.Width, pseudoBitmap.Height), new Size(pseudoBitmap.Width, pseudoBitmap.Height)); // 261125Cl 変更: 呼び出し側が所有する画像を直接作る (Crystallography 48caf95)。全体範囲を等倍で
         if (bmp == null) return;
 
         try // 261125Cl 変更: 目盛の描画や保存で例外が出ても、Clone した bmp (目盛付きなら bmpWithAxis) を必ず Dispose する
@@ -4348,9 +4388,14 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
             var oldThumb = scalablePictureBoxThumbnail.pictureBox.Image;
             scalablePictureBox.PseudoBitmap = pseudoBitmap;
             scalablePictureBoxThumbnail.PseudoBitmap = pseudoBitmap;
-            if (oldMain != null && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
+            //if (oldMain != null && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
+            //    oldMain.Dispose();
+            //if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
+            //    oldThumb.Dispose();
+            // 261125Cl 変更: 画面ごとの描画先 (mainViewBitmap / thumbViewBitmap) は使い回すので Dispose しない。それ以外 (旧版の Clone など) だけを解放する
+            if (oldMain != null && !ReferenceEquals(oldMain, mainViewBitmap) && !ReferenceEquals(oldMain, thumbViewBitmap) && !ReferenceEquals(oldMain, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldMain, scalablePictureBoxThumbnail.pictureBox.Image))
                 oldMain.Dispose();
-            if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
+            if (oldThumb != null && !ReferenceEquals(oldThumb, oldMain) && !ReferenceEquals(oldThumb, mainViewBitmap) && !ReferenceEquals(oldThumb, thumbViewBitmap) && !ReferenceEquals(oldThumb, scalablePictureBox.pictureBox.Image) && !ReferenceEquals(oldThumb, scalablePictureBoxThumbnail.pictureBox.Image))
                 oldThumb.Dispose();
             Draw();
         }
@@ -4460,14 +4505,17 @@ public partial class FormMain : FormBase //260604Cl FormBase 継承に変更
                         var rec = new RectangleD(_left, _top, _right - _left + 1, _bottom - _top + 1);
                         //Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize()), true);
                         // 261124Cl 変更 (所見 11): キャッシュを直接渡さず複製を渡す (copy=true なのでクリップボードへ移した後は破棄してよい)
-                        using var clip = (Bitmap)scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize())?.Clone();
+                        //using var clip = (Bitmap)scalablePictureBox.PseudoBitmap.GetImage(rec, rec.ToSize())?.Clone(); // 261125Cl 変更前
+                        using var clip = scalablePictureBox.PseudoBitmap.CreateImage(rec, rec.ToSize()); // 261125Cl 変更: 呼び出し側が所有する画像を直接作る
                         if (clip != null) Clipboard.SetDataObject(clip, true);
                     }
                     else
                     {
                         //Clipboard.SetDataObject(scalablePictureBox.PseudoBitmap.GetImage(), true);
                         // 261124Cl 変更 (所見 11): 上と同じく複製を渡す
-                        using var clip = (Bitmap)scalablePictureBox.PseudoBitmap.GetImage()?.Clone();
+                        //using var clip = (Bitmap)scalablePictureBox.PseudoBitmap.GetImage()?.Clone(); // 261125Cl 変更前
+                        var pb = scalablePictureBox.PseudoBitmap; // 261125Cl 変更: 全体範囲の所有画像を直接作る
+                        using var clip = pb.CreateImage(new RectangleD(0, 0, pb.Width, pb.Height), new Size(pb.Width, pb.Height));
                         if (clip != null) Clipboard.SetDataObject(clip, true);
                     }
                 }
